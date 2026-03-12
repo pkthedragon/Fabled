@@ -1,0 +1,259 @@
+======================================================================
+FABLED BATTLE LOG  —  2026-03-12 13:49:58
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1:
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Crimson Fury  (passive=False)
+    Basics: Rend, Feint
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=195  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Spread Fortune  (passive=True)
+    Basics: Volley, Hunter's Mark
+    Item:   Health Potion
+  [back_right] Aldric, Lost Lamb (Cleric)  HP=230  ATK=45  DEF=60  SPD=35
+    Talent: All-Caring
+    Sig:    Sanctuary  (passive=True)
+    Basics: Bless, Smite
+    Item:   Healing Tonic
+Player 2:
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Shimmering Valor  (passive=False)
+    Basics: Shield Bash, Condemn
+    Item:   —
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sneak Attack, Post Bounty
+    Item:   —
+  [back_right] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Midnight Dour  (passive=True)
+    Basics: Fire Blast, Thunder Call
+    Item:   —
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=195/195 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Battle begins!
+[Queued] Sir Roland: Condemn → Risa Redcloak
+[Queued] Ashen Ella: Skip
+[Queued] Hunold the Piper: Post Bounty → Risa Redcloak
+─── P2 Actions ───
+[Resolved] Sir Roland: Condemn → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Condemn → Risa Redcloak
+    [T] DMGCALC [Condemn] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+Sir Roland uses Condemn on Risa Redcloak for 27 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 223  (-27)
+  Risa Redcloak loses -10 Attack for 2 rounds.
+[Resolved] Ashen Ella: Skip
+    [T] ACTION P2 Ashen Ella[back_right]: skip/recharge
+Ashen Ella skips.
+[Resolved] Hunold the Piper: Post Bounty → Risa Redcloak
+    [T] ACTION P2 Hunold the Piper[back_left]: Post Bounty → Risa Redcloak
+  Risa Redcloak gains expose for 2 rounds.
+[Queued] Risa Redcloak: Crimson Fury → Sir Roland
+[Queued] Aldric, Lost Lamb: Bless → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Volley
+─── P1 Actions ───
+[Resolved] Risa Redcloak: Crimson Fury → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Crimson Fury → Sir Roland
+    [T] DMGCALC [Crimson Fury] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=65 def=80 raw=52.81 ceil=53
+    [T]   FINAL_DMG=63
+Risa Redcloak uses Crimson Fury on Sir Roland for 63 damage.
+    [T] HPCHANGE Sir Roland: 265 → 202  (-63)
+  Risa Redcloak gains expose for 2 rounds.
+[Resolved] Aldric, Lost Lamb: Bless → Robin, Hooded Avenger
+    [T] ACTION P1 Aldric, Lost Lamb[back_right]: Bless → Robin, Hooded Avenger
+  Robin, Hooded Avenger is Guarded for 2 rounds.
+[Resolved] Robin, Hooded Avenger: Volley
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Volley → spread/auto
+Robin, Hooded Avenger uses Volley (spread).
+    [T] DMGCALC [Volley] Robin, Hooded Avenger[back_left] → Sir Roland[front] (spread)
+    [T]   power=40
+    [T]   atk=70 def=80 raw=35.00 ceil=35
+    [T]   FINAL_DMG=18
+Robin, Hooded Avenger uses Volley on Sir Roland for 18 damage.
+    [T] HPCHANGE Sir Roland: 202 → 184  (-18)
+    [T] DMGCALC [Volley] Robin, Hooded Avenger[back_left] → Hunold the Piper[back_left] (spread)
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=39
+Robin, Hooded Avenger uses Volley on Hunold the Piper for 39 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 171  (-39)
+─── End of Round ───
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[front] HP=223/250 statuses=[expose(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=195/195 statuses=[guard(2r)]
+    [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=184/265 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=171/210 statuses=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+  Risa Redcloak heals 27 HP.
+  All-Caring: Risa Redcloak is Guarded for 2 rounds.
+  Ashen Ella heals 0 HP.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=65(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(2r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=195/195 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=184/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=171/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Crimson Fury → Sir Roland
+[Queued] Aldric, Lost Lamb: Smite → Sir Roland
+[Queued] Risa Redcloak: Crimson Fury → Sir Roland
+[Queued] Aldric, Lost Lamb: Bless → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Volley
+─── P1 Actions ───
+[Resolved] Risa Redcloak: Crimson Fury → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Crimson Fury → Sir Roland
+    [T] DMGCALC [Crimson Fury] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=65 def=80 raw=52.81 ceil=53
+    [T]   FINAL_DMG=63
+Risa Redcloak uses Crimson Fury on Sir Roland for 63 damage.
+    [T] HPCHANGE Sir Roland: 184 → 121  (-63)
+  Risa Redcloak gains expose for 2 rounds.
+[Resolved] Aldric, Lost Lamb: Bless → Risa Redcloak
+    [T] ACTION P1 Aldric, Lost Lamb[back_right]: Bless → Risa Redcloak
+  Risa Redcloak is Guarded for 2 rounds.
+[Resolved] Robin, Hooded Avenger: Volley
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Volley → spread/auto
+Robin, Hooded Avenger uses Volley (spread).
+    [T] DMGCALC [Volley] Robin, Hooded Avenger[back_left] → Sir Roland[front] (spread)
+    [T]   power=40
+    [T]   atk=70 def=80 raw=35.00 ceil=35
+    [T]   FINAL_DMG=18
+Robin, Hooded Avenger uses Volley on Sir Roland for 18 damage.
+    [T] HPCHANGE Sir Roland: 121 → 103  (-18)
+    [T] DMGCALC [Volley] Robin, Hooded Avenger[back_left] → Hunold the Piper[back_left] (spread)
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=39
+Robin, Hooded Avenger uses Volley on Hunold the Piper for 39 damage.
+    [T] HPCHANGE Hunold the Piper: 171 → 132  (-39)
+[Queued] Sir Roland: Condemn → Risa Redcloak
+[Queued] Ashen Ella: Skip
+[Queued] Hunold the Piper: Post Bounty → Risa Redcloak
+─── P2 Actions ───
+[Resolved] Sir Roland: Condemn → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Condemn → Risa Redcloak
+    [T] DMGCALC [Condemn] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+Sir Roland uses Condemn on Risa Redcloak for 27 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 223  (-27)
+  Risa Redcloak loses -10 Attack for 2 rounds.
+[Resolved] Ashen Ella: Skip
+    [T] ACTION P2 Ashen Ella[back_right]: skip/recharge
+Ashen Ella skips.
+[Resolved] Hunold the Piper: Post Bounty → Risa Redcloak
+    [T] ACTION P2 Hunold the Piper[back_left]: Post Bounty → Risa Redcloak
+  Risa Redcloak gains expose for 2 rounds.
+─── End of Round ───
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[front] HP=223/250 statuses=[expose(2r), guard(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=195/195 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=103/265 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=132/210 statuses=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+  Risa Redcloak heals 27 HP.
+  All-Caring: Risa Redcloak is Guarded for 2 rounds.
+  Ashen Ella heals 0 HP.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=65(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(2r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=195/195 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=103/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=132/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Condemn → Risa Redcloak
+[Queued] Ashen Ella: Skip
+[Queued] Hunold the Piper: Post Bounty → Risa Redcloak
+─── P2 Actions ───
+[Resolved] Sir Roland: Condemn → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Condemn → Risa Redcloak
+    [T] DMGCALC [Condemn] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+Sir Roland uses Condemn on Risa Redcloak for 27 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 223  (-27)
+  Risa Redcloak loses -10 Attack for 2 rounds.
+[Resolved] Ashen Ella: Skip
+    [T] ACTION P2 Ashen Ella[back_right]: skip/recharge
+Ashen Ella skips.
+[Resolved] Hunold the Piper: Post Bounty → Risa Redcloak
+    [T] ACTION P2 Hunold the Piper[back_left]: Post Bounty → Risa Redcloak
+  Risa Redcloak gains expose for 2 rounds.
