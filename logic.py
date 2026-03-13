@@ -194,16 +194,27 @@ def determine_initiative(battle: BattleState):
     if fl2 and fl2.defn.id == "march_hare" and fl1:
         spd1 = max(1, spd1 - 15)
 
+    n1 = fl1.name if fl1 else "none"
+    n2 = fl2.name if fl2 else "none"
+    mh1 = f" (adj from {raw_spd1})" if raw_spd1 != spd1 else ""
+    mh2 = f" (adj from {raw_spd2})" if raw_spd2 != spd2 else ""
+
     if spd1 > spd2:
         battle.init_player = 1
         battle.prev_loser  = 2
+        battle.init_reason = f"{n1} SPD {spd1}{mh1} > {n2} SPD {spd2}{mh2} — P1 acts first"
     elif spd2 > spd1:
         battle.init_player = 2
         battle.prev_loser  = 1
+        battle.init_reason = f"{n2} SPD {spd2}{mh2} > {n1} SPD {spd1}{mh1} — P2 acts first"
     else:
         # Tie: previous round loser acts first
         battle.init_player = battle.prev_loser
         battle.prev_loser  = 1 if battle.init_player == 2 else 2
+        battle.init_reason = (
+            f"{n1} SPD {spd1}{mh1} = {n2} SPD {spd2}{mh2} — tied!"
+            f" P{battle.init_player} acts first (last round's loser)"
+        )
 
     # Round 1: initiative loser gets extra swap phase
     if battle.round_num == 1:
@@ -213,6 +224,8 @@ def determine_initiative(battle: BattleState):
 
     battle_log.section(f"ROUND {battle.round_num}")
     battle.log_add(f"Round {battle.round_num} — P{battle.init_player} has initiative.")
+    if battle.r1_extra_swap_player is not None:
+        battle.log_add(f"P{battle.r1_extra_swap_player} receives a free formation swap.")
     battle.log_tech(
         f"INITIATIVE: P1 FL={fl1.name if fl1 else 'none'} spd={spd1}"
         f"{f' (MH adj from {raw_spd1})' if raw_spd1 != spd1 else ''}"
@@ -605,6 +618,8 @@ def compute_damage(
         power += mode.bonus_if_target_acted
     if mode.bonus_vs_higher_hp and target.max_hp > actor.max_hp:
         power += mode.bonus_vs_higher_hp
+    if mode.bonus_vs_backline and target.slot != SLOT_FRONT:
+        power += mode.bonus_vs_backline
     if mode.bonus_vs_statused and (target.has_status("expose") or target.has_status("weaken")):
         power += mode.bonus_vs_statused
 
@@ -649,13 +664,11 @@ def compute_damage(
     if _has_signature_effect(actor, "natural_order") and actor.slot == SLOT_FRONT and target.ability_charges.get("rounds_since_swap", 0) >= 2:
         power += 15
 
-    # Spinning Wheel FL: +5 damage per unique stat buff among other allies
+    # Spinning Wheel FL: +7 damage per unique stat buff among all other adventurers
     if _has_signature_effect(actor, "spinning_wheel") and actor.slot == SLOT_FRONT:
-        actor_team = battle.get_team(acting_player)
-        unique_buff_stats = {b.stat for ally in actor_team.alive()
-                             if ally != actor
-                             for b in ally.buffs if b.duration > 0}
-        power += 5 * len(unique_buff_stats)
+        all_others = [u for u in battle.team1.alive() + battle.team2.alive() if u != actor]
+        unique_buff_stats = {b.stat for u in all_others for b in u.buffs if b.duration > 0}
+        power += 7 * len(unique_buff_stats)
 
     # ── Sovereign Edict FL: if target has 2+ statuses, apply def_ignore and guard bypass ──
     _sovereign_edict_override = False
@@ -2311,7 +2324,7 @@ def resolve_queued_action(
         return
 
     atype = action["type"]
-    battle.log_add(f"[Resolved] {actor.name}: {describe_action(action)}")
+    battle.log_add(f"{actor.name}: {describe_action(action)}")
 
     # Technical action log
     if atype == "ability":

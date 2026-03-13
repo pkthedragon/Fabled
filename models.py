@@ -25,6 +25,7 @@ class AbilityMode:
     bonus_if_not_acted: int = 0    # +power if target has not acted this round
     bonus_if_target_acted: int = 0 # +power if target has acted this round
     bonus_vs_higher_hp: int = 0    # +flat bonus if target max HP > actor max HP
+    bonus_vs_backline: int = 0     # +flat bonus if target is in the backline
     bonus_vs_statused: int = 0     # +flat bonus if target has any status condition
 
     # Lifesteal
@@ -348,6 +349,7 @@ class BattleState:
     winner: Optional[int] = None
     r1_extra_swap_player: Optional[int] = None
     swap_used_this_turn: bool = False
+    init_reason: str = ""           # human-readable explanation of initiative result
     crumb_team: Optional[int] = None   # which player's crumb is on the field (Crumb Trail)
     crumb_slot: Optional[str] = None   # which slot the crumb was dropped at
     crumb_picked_up: Optional[int] = None  # which player's team picked up crumb this turn
@@ -393,3 +395,4 @@ class CampaignProfile:
     ranked_glory_unlocked: bool = False
     tutorial_seen: "Set[str]" = field(default_factory=set)
     saved_teams: List[dict] = field(default_factory=list)
+    fast_resolution: bool = False   # skip per-action step-through; resolve all at once

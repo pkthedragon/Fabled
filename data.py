@@ -749,7 +749,7 @@ BRIAR_ROSE = AdventurerDef(
     id="briar_rose", name="Briar Rose", cls="Ranger",
     hp=195, attack=60, defense=45, speed=60,
     talent_name="Curse of Sleeping",
-    talent_text="Enemies are immobilized on the round after Root expires.",
+    talent_text="The lowest HP Rooted enemy loses Root, cannot act, and cannot be Rooted next round.",
     sig_options=[BRIAR_S1, BRIAR_S2, BRIAR_S3], twist=BRIAR_T,
 )
 
@@ -803,13 +803,13 @@ ROBIN_S3 = Ability(
 ROBIN_T = Ability(
     id="kingmaker", name="Kingmaker", category="twist", passive=False,
     frontline=AbilityMode(power=70, ignore_guard=True, cant_redirect=True,
-                          bonus_vs_higher_hp=20),
+                          bonus_vs_backline=20),
     backline=AbilityMode(power=70, ignore_guard=True, cant_redirect=True,
-                         bonus_vs_higher_hp=20),
+                         bonus_vs_backline=20),
 )
 ROBIN = AdventurerDef(
     id="robin_hooded_avenger", name="Robin, Hooded Avenger", cls="Ranger",
-    hp=195, attack=70, defense=40, speed=65,
+    hp=185, attack=70, defense=40, speed=65,
     talent_name="Keen Eye",
     talent_text="Robin deals +15 damage with abilities to backline enemies.",
     sig_options=[ROBIN_S1, ROBIN_S2, ROBIN_S3], twist=ROBIN_T,
@@ -964,7 +964,7 @@ GREEN_KNIGHT = AdventurerDef(
     sig_options=[GREEN_S1, GREEN_S2, GREEN_S3], twist=GREEN_T,
 )
 
-# ── RAPUNZEL, GOLDEN-HAIRED (Noble) ─────────────────────────────────────────
+# ── RAPUNZEL THE GOLDEN (Noble) ──────────────────────────────────────────────
 RAPUNZEL_S1 = Ability(
     id="golden_snare", name="Golden Snare", category="signature", passive=False,
     frontline=AbilityMode(power=60, special="golden_snare_front"),
@@ -986,7 +986,7 @@ RAPUNZEL_T = Ability(
     backline=AbilityMode(special="severed_tether"),
 )
 RAPUNZEL = AdventurerDef(
-    id="rapunzel", name="Rapunzel, Golden-Haired", cls="Noble",
+    id="rapunzel", name="Rapunzel the Golden", cls="Noble",
     hp=258, attack=60, defense=65, speed=30,
     talent_name="Flowing Locks",
     talent_text="Ignore melee targeting restrictions once per battle; refreshes after ending round in backline.",

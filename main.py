@@ -23,6 +23,8 @@ import random
 import pygame
 
 import battle_log
+import net
+import ai as _ai
 from settings import *
 from models import BattleState, CampaignProfile
 from data import ROSTER, CLASS_BASICS, ITEMS
@@ -48,6 +50,10 @@ from ui import (
     draw_campaign_mission_select, draw_quest_select,
     draw_pre_quest, draw_post_quest, draw_campaign_complete,
     draw_practice_menu, draw_teambuilder, draw_story_team_select,
+    draw_settings_screen, draw_rename_overlay,
+    draw_catalog, draw_pre_battle_review,
+    draw_pvp_mode_select, draw_lan_lobby,
+    draw_status_tooltip,
     SLOT_RECTS_P1, SLOT_RECTS_P2, LOG_RECT, ACTION_PANEL_RECT, BATTLE_DETAIL_RECT,
 )
 from campaign_data import QUEST_TABLE, MISSION_TABLE, build_quest_enemy_team
@@ -83,11 +89,52 @@ class Game:
 
         # New teambuilder / story-team state
         self._editing_team_slot: int = None
+        self._editing_single_member: bool = False  # True when editing one member's sets only
         self._story_team_idx: int = None
         self._last_practice_btns = None
         self._last_teambuilder_btns = None
         self._last_story_team_btns = None
         self._teambuilder_return_phase = "menu"  # where back_btn in teambuilder leads
+
+        # Rename overlay state (drawn on top of teambuilder)
+        self._renaming_team_slot: int = None
+        self._rename_text: str = ""
+        self._last_rename_overlay_btns = None
+
+        # Settings state
+        self._last_settings_btns = None
+        self._confirm_reset: bool = False
+
+        # Catalog state
+        self._catalog_tab = "adventurers"
+        self._catalog_selected = None
+        self._catalog_scroll = 0
+        self._last_catalog_btns = None
+
+        # Pre-battle review state
+        self._pre_battle_picks = []
+        self._pre_battle_slot_selected = None
+        self._last_pre_battle_btns = None
+
+        # Ticker queue (new battle flow)
+        self._tk            = []     # ticker queue: list of step dicts
+        self._tk_timer      = 0.0    # seconds remaining for current text step
+        self._tk_msg        = ""     # current bottom-bar text
+        self._tk_overlay_msg = ""   # centered overlay box text (round start etc.)
+        self._tk_btn_label  = None   # None = timer; str = show pass button with this label
+        self._tk_btn_rect   = None   # pygame.Rect, set during draw
+
+        # LAN state
+        self._lan = None                    # LANHost or LANClient
+        self._lan_role = None               # "host" | "client"
+        self._lan_ip_input = ""             # IP being typed (client)
+        self._lan_ip_active = False         # IP text field focused
+        self._lan_status = ""               # status shown in lobby
+        self._lan_p1_ready = False          # host team built
+        self._lan_p2_ready = False          # client team received
+        self._lan_disconnected = False
+        self._last_pvp_mode_btns = None
+        self._last_lan_lobby_btns = None
 
         # Team building state
         self.building_player = 1
@@ -119,9 +166,21 @@ class Game:
         self.current_is_extra = False       # True when filling queued2 for extra action
         self._extra_action_queue = []       # list of (player_num, unit) for Stitch In Time
 
+        # Battle start / end-of-round / initiative screens
+        self._last_battle_start_btn = None
+        self._last_eor_btn = None
+        self._last_init_result_btn = None
+        self._completed_round_num = 0   # round that just finished (for end_of_round display)
+
         # Per-player resolution tracking
         self._resolving_player = None       # which player's turn is being resolved
         self._init_player_resolved = False  # True after init player resolves, before second selects
+
+        # Per-action step-through during resolution
+        self._action_step_queue = []        # list of (unit, player_num, is_queued2)
+        self._action_step_unit = None       # unit whose action just resolved
+        self._action_step_player = None     # player_num for the current step batch
+        self._action_log_start = 0          # log length before the current action resolved
 
         # Detail panel
         self._detail_unit = None            # unit whose card is currently shown
@@ -182,6 +241,316 @@ class Game:
     def _is_single_player(self):
         return self.game_mode in ("single_player", "campaign")
 
+    # ─────────────────────────────────────────────────────────────────────────
+    # LAN HELPERS
+    # ─────────────────────────────────────────────────────────────────────────
+
+    def _is_lan(self) -> bool:
+        return self.game_mode in ("lan_host", "lan_client")
+
+    def _lan_my_player(self) -> int:
+        return 1 if self.game_mode == "lan_host" else 2
+
+    def _lan_send(self, msg: dict):
+        if self._lan:
+            self._lan.send(msg)
+
+    def _serialize_picks(self, picks: list) -> list:
+        result = []
+        for p in picks:
+            result.append({
+                "adv_id": p["definition"].id,
+                "sig_id": p["signature"].id,
+                "basics": [b.id for b in p["basics"]],
+                "item_id": p["item"].id,
+            })
+        return result
+
+    def _deserialize_picks(self, data: list) -> list:
+        roster_by_id = {d.id: d for d in ROSTER}
+        items_by_id = {i.id: i for i in ITEMS}
+        picks = []
+        for m in data:
+            defn = roster_by_id[m["adv_id"]]
+            sig = next(a for a in defn.sig_options if a.id == m["sig_id"])
+            basics_pool = CLASS_BASICS[defn.cls]
+            basics = [next(a for a in basics_pool if a.id == bid) for bid in m["basics"]]
+            item = items_by_id[m["item_id"]]
+            picks.append({"definition": defn, "signature": sig, "basics": basics, "item": item})
+        return picks
+
+    def _serialize_unit(self, u) -> dict:
+        return {
+            "hp": u.hp, "ko": u.ko, "slot": u.slot,
+            "statuses": [{"kind": s.kind, "duration": s.duration} for s in u.statuses],
+            "buffs": [{"stat": b.stat, "amount": b.amount, "duration": b.duration} for b in u.buffs],
+            "debuffs": [{"stat": d.stat, "amount": d.amount, "duration": d.duration} for d in u.debuffs],
+            "acted": u.acted, "must_recharge": u.must_recharge, "twist_used": u.twist_used,
+            "item_uses_left": u.item_uses_left, "ranged_uses": u.ranged_uses,
+            "ability_charges": dict(u.ability_charges), "max_hp_bonus": u.max_hp_bonus,
+            "extra_actions_next": u.extra_actions_next, "extra_actions_now": u.extra_actions_now,
+            "retaliate_power": u.retaliate_power, "valor_rounds": u.valor_rounds,
+            "untargetable": u.untargetable, "cant_act": u.cant_act,
+            "dmg_reduction": u.dmg_reduction,
+            "last_status_inflicted": getattr(u, "last_status_inflicted", ""),
+        }
+
+    def _apply_unit_state(self, u, d: dict):
+        from models import StatusInstance, StatMod
+        u.hp = d["hp"]; u.ko = d["ko"]; u.slot = d["slot"]
+        u.statuses = [StatusInstance(kind=s["kind"], duration=s["duration"]) for s in d["statuses"]]
+        u.buffs = [StatMod(stat=b["stat"], amount=b["amount"], duration=b["duration"]) for b in d["buffs"]]
+        u.debuffs = [StatMod(stat=db["stat"], amount=db["amount"], duration=db["duration"]) for db in d["debuffs"]]
+        u.acted = d["acted"]; u.must_recharge = d["must_recharge"]; u.twist_used = d["twist_used"]
+        u.item_uses_left = d["item_uses_left"]; u.ranged_uses = d["ranged_uses"]
+        u.ability_charges = d["ability_charges"]; u.max_hp_bonus = d["max_hp_bonus"]
+        u.extra_actions_next = d["extra_actions_next"]; u.extra_actions_now = d["extra_actions_now"]
+        u.retaliate_power = d["retaliate_power"]; u.valor_rounds = d["valor_rounds"]
+        u.untargetable = d["untargetable"]; u.cant_act = d["cant_act"]
+        u.dmg_reduction = d["dmg_reduction"]
+        u.last_status_inflicted = d.get("last_status_inflicted", "")
+
+    def _serialize_action(self, action: dict, slot_idx: int, team, enemy, is_extra: bool) -> dict:
+        atype = action.get("type", "skip")
+        d = {"slot_idx": slot_idx, "atype": atype, "is_extra": is_extra}
+        if atype == "ability":
+            d["ability_id"] = action["ability"].id
+            target = action.get("target")
+            if target is not None:
+                if target in team.members:
+                    d["target_team"] = "own"
+                    d["target_slot_idx"] = team.members.index(target)
+                else:
+                    d["target_team"] = "enemy"
+                    d["target_slot_idx"] = enemy.members.index(target)
+            swap_target = action.get("swap_target")
+            if swap_target is not None:
+                d["swap_target_slot_idx"] = enemy.members.index(swap_target)
+        elif atype == "swap":
+            target = action.get("target")
+            if target is not None:
+                d["target_slot_idx"] = team.members.index(target)
+        elif atype == "item":
+            target = action.get("target")
+            if target is not None:
+                if target in team.members:
+                    d["target_team"] = "own"
+                    d["target_slot_idx"] = team.members.index(target)
+                else:
+                    d["target_team"] = "enemy"
+                    d["target_slot_idx"] = enemy.members.index(target)
+        return d
+
+    def _deserialize_action(self, data: dict, team, enemy) -> dict:
+        atype = data["atype"]
+        action = {"type": atype}
+        if atype == "ability":
+            actor = team.members[data["slot_idx"]]
+            all_abs = actor.basics + [actor.sig, actor.defn.twist]
+            ability = next((a for a in all_abs if a.id == data["ability_id"]), None)
+            if ability:
+                action["ability"] = ability
+            if "target_slot_idx" in data:
+                t_team = team if data.get("target_team") == "own" else enemy
+                action["target"] = t_team.members[data["target_slot_idx"]]
+            if "swap_target_slot_idx" in data:
+                action["swap_target"] = enemy.members[data["swap_target_slot_idx"]]
+        elif atype == "swap":
+            if "target_slot_idx" in data:
+                action["target"] = team.members[data["target_slot_idx"]]
+        elif atype == "item":
+            if "target_slot_idx" in data:
+                t_team = team if data.get("target_team") == "own" else enemy
+                action["target"] = t_team.members[data["target_slot_idx"]]
+        return action
+
+    def _lan_send_state(self, *, phase: str, extra: dict = None):
+        """Serialize current battle state and send to client (host only)."""
+        if not self.battle or self.game_mode != "lan_host":
+            return
+        msg = {
+            "type": "state_update",
+            "phase": phase,
+            "round_num": self.battle.round_num,
+            "winner": self.battle.winner,
+            "init_player": self.battle.init_player,
+            "init_reason": getattr(self.battle, "init_reason", ""),
+            "swap_used_this_turn": self.battle.swap_used_this_turn,
+            "completed_round_num": self._completed_round_num,
+            "log": list(self.battle.log),
+            "team1": [self._serialize_unit(u) for u in self.battle.team1.members],
+            "team2": [self._serialize_unit(u) for u in self.battle.team2.members],
+        }
+        if extra:
+            msg.update(extra)
+        self._lan_send(msg)
+
+    def _lan_tick(self):
+        """Called every frame: drain incoming messages and check connection status."""
+        if not self._lan:
+            return
+        # Check for new host connection
+        if (self.phase == "lan_lobby" and self.game_mode == "lan_host"
+                and self._lan.connected
+                and not getattr(self, "_lan_host_notified", False)):
+            self._lan_host_notified = True
+            self._lan_status = "Opponent connected! Building your team..."
+            self._start_team_select(1)
+
+        # Check for client connection success
+        if (self.phase == "lan_lobby" and self.game_mode == "lan_client"
+                and isinstance(self._lan, net.LANClient)
+                and self._lan.connected
+                and not getattr(self, "_lan_client_notified", False)):
+            self._lan_client_notified = True
+            self._lan_status = "Connected! Building your team..."
+            self._start_team_select(2)  # Client picks P2's team
+
+        if (self.phase == "lan_lobby" and self.game_mode == "lan_client"
+                and isinstance(self._lan, net.LANClient)
+                and self._lan.error
+                and not self._lan._connecting):
+            self._lan_status = f"Connection failed: {self._lan.error}"
+            self._lan.error = ""  # Clear so it doesn't repeat
+
+        for msg in self._lan.poll():
+            self._handle_lan_message(msg)
+
+    def _handle_lan_message(self, msg: dict):
+        mtype = msg.get("type")
+        if mtype == "_disconnect":
+            self._lan_disconnected = True
+            return
+        if self.game_mode == "lan_host":
+            self._handle_lan_host_msg(msg)
+        elif self.game_mode == "lan_client":
+            self._handle_lan_client_msg(msg)
+
+    def _handle_lan_host_msg(self, msg: dict):
+        mtype = msg.get("type")
+        if mtype == "team_ready":
+            self.p2_picks = self._deserialize_picks(msg["picks"])
+            self._lan_p2_ready = True
+            if self._lan_p1_ready:
+                self._start_lan_battle()
+
+        elif mtype == "actions_ready":
+            if self.phase != "select_actions" or self.selecting_player != 2:
+                return
+            team2 = self.battle.team2
+            team1 = self.battle.team1
+            # Clear P2 queues
+            for u in team2.members:
+                u.queued = None
+                u.queued2 = None
+            self.battle.swap_used_this_turn = False
+            self.current_is_extra = False
+            # Apply received actions
+            for adata in msg.get("actions", []):
+                slot_idx = adata["slot_idx"]
+                actor = team2.members[slot_idx]
+                self.current_is_extra = adata.get("is_extra", False)
+                self.current_actor = actor
+                action = self._deserialize_action(adata, team2, team1)
+                action["queued_from_slot"] = actor.slot
+                if self.current_is_extra:
+                    if actor.queued2 is None:
+                        actor.queued2 = action
+                else:
+                    if actor.queued is None:
+                        actor.queued = action
+            self.current_is_extra = False
+            self.current_actor = None
+            # Trigger resolution for P2
+            self._resolving_player = 2
+            self.phase = "battle"
+
+        elif mtype == "extra_swap_ready":
+            slot_a = msg.get("slot_a")
+            slot_b = msg.get("slot_b")
+            if slot_a is not None and slot_b is not None:
+                team = self.battle.team2
+                do_swap(team.members[slot_a], team.members[slot_b], team, self.battle)
+            self._enter_action_selection(self.battle.init_player)
+
+    def _handle_lan_client_msg(self, msg: dict):
+        mtype = msg.get("type")
+        if mtype == "battle_ready":
+            self.p1_picks = self._deserialize_picks(msg["p1_picks"])
+            self.p2_picks = self._deserialize_picks(msg["p2_picks"])
+            self._start_battle()
+
+        elif mtype == "state_update":
+            if not self.battle:
+                return
+            # Apply unit states
+            for i, udata in enumerate(msg.get("team1", [])):
+                if i < len(self.battle.team1.members):
+                    self._apply_unit_state(self.battle.team1.members[i], udata)
+            for i, udata in enumerate(msg.get("team2", [])):
+                if i < len(self.battle.team2.members):
+                    self._apply_unit_state(self.battle.team2.members[i], udata)
+            # Update metadata
+            self.battle.round_num = msg.get("round_num", self.battle.round_num)
+            self.battle.winner = msg.get("winner", self.battle.winner)
+            self.battle.swap_used_this_turn = msg.get("swap_used_this_turn", False)
+            self.battle.init_player = msg.get("init_player", self.battle.init_player)
+            self.battle.init_reason = msg.get("init_reason", getattr(self.battle, "init_reason", ""))
+            new_log = msg.get("log")
+            if new_log is not None:
+                self.battle.log = new_log
+            # Update phase
+            new_phase = msg.get("phase")
+            if not new_phase:
+                return
+            selecting_player = msg.get("selecting_player", 0)
+            if new_phase == "select_actions" and selecting_player == 2:
+                # Client's turn to pick actions
+                self.selecting_player = 2
+                team = self.battle.team2
+                self.selection_order = []
+                for slot in CLOCKWISE_ORDER:
+                    unit = team.get_slot(slot)
+                    if unit and not unit.ko:
+                        self.selection_order.append((unit, False))
+                        if unit.extra_actions_now > 0:
+                            self.selection_order.append((unit, True))
+                for unit in team.members:
+                    unit.queued = None
+                    unit.queued2 = None
+                self.battle.swap_used_this_turn = False
+                self.current_is_extra = False
+                self._init_player_resolved = False
+                self.phase = "select_actions"
+                self._advance_selection()
+            elif new_phase == "extra_swap_p2":
+                self.phase = "extra_swap_p2"
+                self._init_extra_swap(2)
+            elif new_phase == "battle":
+                self.phase = "battle"
+                # Advance past any pending pass button
+                self._tk_btn_label = None
+                self._tk_btn_rect  = None
+            elif new_phase == "end_of_round":
+                self._completed_round_num = msg.get("completed_round_num", 0)
+                self.phase = "end_of_round"
+            elif new_phase == "result":
+                battle_log.close()
+                self.phase = "result"
+            else:
+                self.selecting_player = selecting_player or self.selecting_player
+                self.phase = new_phase
+
+    def _start_lan_battle(self):
+        """Host: both teams received, start battle and send to client."""
+        self._start_battle()
+        self._lan_send({
+            "type": "battle_ready",
+            "p1_picks": self._serialize_picks(self.p1_picks),
+            "p2_picks": self._serialize_picks(self.p2_picks),
+        })
+        self._lan_send_state(phase="battle_start")
+
     def _is_ai_player(self, player_num: int) -> bool:
         return self._is_single_player() and player_num == self.ai_player
 
@@ -223,107 +592,23 @@ class Game:
         actor = self.current_actor
         if actor is None or actor.ko:
             return False
-        player_num = self.selecting_player
-        team = self.battle.get_team(player_num)
-        enemy = self.battle.get_enemy(player_num)
-
-        def _target_score(target):
-            score = (target.max_hp - target.hp) * 0.5
-            score += target.get_stat("attack") * 0.3
-            if target.hp <= max(35, target.max_hp * 0.3):
-                score += 25
-            if target.slot == SLOT_FRONT:
-                score += 5
-            return score
-
-        best_action = {"type": "skip"}
-        best_score = -9999.0
-
-        abilities = actor.basics + [actor.sig]
-        if len(team.alive()) == 1 and team.alive()[0] == actor:
-            abilities.append(actor.defn.twist)
-
-        for ability in abilities:
-            if not can_use_ability(actor, ability, team):
-                continue
-            mode = ability.frontline if actor.slot == SLOT_FRONT else ability.backline
-            targets = get_legal_targets(self.battle, player_num, actor, ability)
-            if mode.spread:
-                if not enemy.alive():
-                    continue
-                score = sum(_target_score(e) for e in enemy.alive()) * 0.35
-                score += mode.power * 0.4
-                if score > best_score:
-                    best_score = score
-                    best_action = {"type": "ability", "ability": ability, "target": None}
-                continue
-            for target in targets:
-                score = 0.0
-                if target in enemy.alive():
-                    score += mode.power * 0.8
-                    score += _target_score(target)
-                    if target.hp <= max(35, target.max_hp * 0.35):
-                        score += 20
-                    if mode.status or mode.status2 or mode.status3:
-                        score += 10
-                    if mode.atk_debuff or mode.spd_debuff or mode.def_debuff:
-                        score += 7
-                else:
-                    missing = target.max_hp - target.hp
-                    score += min(missing, mode.heal + mode.heal_lowest + mode.heal_self) * 0.9
-                    if target.hp < target.max_hp * 0.5:
-                        score += 20
-                    if mode.guard_target or mode.guard_all_allies or mode.guard_frontline_ally:
-                        score += 10
-                    if target is actor and (mode.atk_buff or mode.spd_buff or mode.def_buff):
-                        score += 7
-
-                action = {"type": "ability", "ability": ability, "target": target}
-                if ability.id == "subterfuge":
-                    swap_targets = get_subterfuge_swap_targets(self.battle, player_num, target)
-                    if not swap_targets:
-                        continue
-                    swap_target = max(swap_targets, key=_target_score)
-                    action["swap_target"] = swap_target
-                    score += 8
-
-                if score > best_score:
-                    best_score = score
-                    best_action = action
-
-        if not self.current_is_extra and not self.battle.swap_used_this_turn and not self._swap_queued_this_turn() and not actor.has_status("root"):
-            allies = [u for u in team.alive() if u != actor]
-            if allies:
-                weakest = min(team.alive(), key=lambda u: u.get_stat("defense") + u.hp)
-                if weakest is actor and actor.slot == SLOT_FRONT:
-                    swap_target = max(allies, key=lambda u: u.get_stat("defense") + u.hp)
-                    swap_score = 24.0
-                    if swap_score > best_score:
-                        best_action = {"type": "swap", "target": swap_target}
-
-        item_targets = get_legal_item_targets(self.battle, player_num, actor)
-        if item_targets:
-            it = actor.item
-            for target in item_targets:
-                score = -5.0
-                if it.heal > 0:
-                    score += min(target.max_hp - target.hp, it.heal) * 0.8
-                if it.guard:
-                    score += 14
-                if it.status:
-                    score += _target_score(target) * 0.4 + 8
-                if target.hp < target.max_hp * 0.4:
-                    score += 10
-                if score > best_score:
-                    best_score = score
-                    best_action = {"type": "item", "target": target}
-
+        best_action = _ai.pick_action(
+            self.battle,
+            self.selecting_player,
+            actor,
+            self.current_is_extra,
+            self.battle.swap_used_this_turn,
+            self._swap_queued_this_turn(),
+        )
         self._set_queued(actor, best_action)
         return True
 
     def _auto_continue_resolve_done(self):
         self._detail_unit = None
         if self.battle.winner:
+            battle_log.close()
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase="result")
             if self.game_mode == "campaign":
                 self._campaign_won_quest = (self.battle.winner == 1)
                 self.phase = "campaign_post_quest"
@@ -332,14 +617,21 @@ class Game:
         elif self._init_player_resolved:
             second = 3 - self.battle.init_player
             self._enter_action_selection(second)
+            # _enter_action_selection sends state to client when second==2
         else:
             apply_passive_stats(self.battle.team1, self.battle)
             apply_passive_stats(self.battle.team2, self.battle)
+            # round_num was already incremented by end_round; the completed round is one less
+            self._completed_round_num = self.battle.round_num - 1
             determine_initiative(self.battle)
-            self._enter_round_start()
+            self.phase = "end_of_round"
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase="end_of_round")
 
     def _maybe_auto_progress(self):
-        if not self._is_single_player() or (not self.battle and self.phase != "menu"):
+        if not self._is_single_player() and not self._is_lan():
+            return
+        if not self._is_single_player() and not self.battle and self.phase != "menu":
             return
 
         progressed = True
@@ -349,21 +641,26 @@ class Game:
             progressed = False
             p = self.phase
 
-            if p.startswith("pass_to_select_p") and self._is_ai_player(int(p[-1])):
-                self._advance_from_pass(); progressed = True; continue
-            if p.startswith("pass_to_extra_swap_p") and self._is_ai_player(int(p[-1])):
-                self._advance_from_pass(); progressed = True; continue
-            if p.startswith("pass_to_extra_action_p") and self._is_ai_player(int(p[-1])):
-                self._advance_from_pass(); progressed = True; continue
-            if p == "pass_to_resolve" and self._is_ai_player(self._resolving_player or 0):
-                self._advance_from_pass(); progressed = True; continue
+            # LAN-specific auto-progress
+            if self._is_lan() and p == "resolve_done":
+                self._auto_continue_resolve_done()
+                progressed = True
+                continue
+            if self._is_lan() and p.startswith("pass_to_"):
+                self._advance_from_pass()
+                progressed = True
+                continue
 
-            if p.startswith("extra_swap_p") and self._is_ai_player(self._extra_swap_player):
-                self._ai_pick_extra_swap(self._extra_swap_player)
+            # LAN extra-swap for AI (LAN compatibility)
+            if p.startswith("extra_swap_p") and self._is_ai_player(self._extra_swap_player) and self._is_lan():
+                swapped = self._ai_pick_extra_swap(self._extra_swap_player)
+                if not swapped:
+                    self.battle.log_add(f"P{self._extra_swap_player} passed on free swap.")
                 self._enter_action_selection(self.battle.init_player)
                 progressed = True
                 continue
 
+            # select_actions AI (for LAN compatibility)
             if p == "select_actions" and self._is_ai_player(self.selecting_player):
                 while self.phase == "select_actions" and self.current_actor is not None and self.selecting_player == self.ai_player:
                     actor = self.current_actor
@@ -377,7 +674,8 @@ class Game:
                 progressed = True
                 continue
 
-            if p.startswith("extra_action_p") and self._is_ai_player(self.selecting_player):
+            # extra_action_p AI (for LAN compatibility)
+            if p.startswith("extra_action_p") and self._is_ai_player(self.selecting_player) and self._is_lan():
                 if self.current_actor and self.current_actor.queued2 is None:
                     if not self._ai_queue_current_actor_action():
                         self._set_queued(self.current_actor, {"type": "skip"})
@@ -385,15 +683,270 @@ class Game:
                 progressed = True
                 continue
 
-            if p == "resolve_done":
+            if p == "resolve_done" and self._is_lan():
                 if self._init_player_resolved:
                     second = 3 - (self._resolving_player or self.battle.init_player)
-                    if self._is_ai_player(second):
+                    if self._is_ai_player(second) or self._is_single_player():
                         self._auto_continue_resolve_done()
                         progressed = True
                 else:
                     self._auto_continue_resolve_done()
                     progressed = True
+
+    def _maybe_fast_skip(self):
+        """Auto-advance battle-flow screens when Fast Skip is enabled."""
+        # Battle ticker handles fast-skip internally; nothing to do here.
+        pass
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # TICKER METHODS
+    # ─────────────────────────────────────────────────────────────────────────
+
+    def _tk_advance(self, dt: float):
+        """Advance the bottom-text ticker each frame."""
+        if self.phase != "battle":
+            return
+        if self._tk_btn_label is not None:
+            return  # waiting for pass-button click
+        if self._tk_timer > 0:
+            self._tk_timer = max(0.0, self._tk_timer - dt)
+            return
+        if self._tk:
+            self._tk_process_next()
+
+    def _tk_process_next(self):
+        """Pop and handle the next step from the ticker queue."""
+        if not self._tk:
+            return
+        step = self._tk.pop(0)
+        k = step["k"]
+        self._tk_overlay_msg = ""   # clear overlay before each new step
+        fast = bool(
+            self.campaign_profile and self.campaign_profile.fast_resolution
+            and not step.get("important", False)
+        )
+
+        if k == "text":
+            if step.get("overlay"):
+                self._tk_overlay_msg = step["msg"]
+                self._tk_msg = ""
+            else:
+                self._tk_msg = step["msg"]
+            self._tk_timer = 0.0 if fast else step.get("dur", 2.0)
+
+        elif k == "btn":
+            self._tk_msg = step["msg"]
+            self._tk_btn_label = step["label"]
+            # _tk_btn_rect is set in draw()
+
+        elif k == "select":
+            player = step["player"]
+            self._tk_msg = f"P{player} is selecting their actions..."
+            self._tk_timer = 0.0
+            if self._is_ai_player(player):
+                self._tk_ai_select_all(player)
+            else:
+                self._enter_action_selection(player)
+                # phase changes to select_actions; _tk resumes when done
+
+        elif k == "swap":
+            player = step["player"]
+            if self._is_ai_player(player):
+                log_before = len(self.battle.log)
+                swapped = self._ai_pick_extra_swap(player)
+                new_lines = self.battle.log[log_before:]
+                inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+                if not swapped:
+                    inject.insert(0, {"k": "text",
+                                      "msg": f"P{player} passed on the free swap.", "dur": 2.0})
+                self._tk[0:0] = inject
+            else:
+                self.phase = f"extra_swap_p{player}"
+                self._init_extra_swap(player)
+                # returns to "battle" when swap done
+
+        elif k == "init_resolve":
+            player = step["player"]
+            self._resolving_player = player
+            self._init_player_resolved = False
+            team = self.battle.get_team(player)
+            self._action_step_queue = []
+            for slot in CLOCKWISE_ORDER:
+                unit = team.get_slot(slot)
+                if unit and not unit.ko:
+                    self._action_step_queue.append((unit, player, False))
+                    if unit.extra_actions_now > 0 and unit.queued2 is not None:
+                        self._action_step_queue.append((unit, player, True))
+
+        elif k == "resolve_action":
+            self._tk_do_one_action()
+
+        elif k == "stitch_select":
+            if self._extra_action_queue:
+                pnum, u = self._extra_action_queue[0]
+                self.selecting_player = pnum
+                self.current_actor    = u
+                self.current_is_extra = True
+                self.selection_sub    = "pick_action"
+                self.pending_action   = None
+                if self._is_ai_player(pnum):
+                    if not self._ai_queue_current_actor_action():
+                        self._set_queued(u, {"type": "skip"})
+                    self._tk.insert(0, {"k": "stitch_resolve"})
+                else:
+                    self.phase = f"extra_action_p{pnum}"
+
+        elif k == "stitch_resolve":
+            self._resolve_stitch_extra_and_continue()
+
+        elif k == "do_end_round":
+            log_before = len(self.battle.log)
+            self.battle.log_add("─── End of Round ───")
+            do_end_round(self.battle)
+            new_lines = self.battle.log[log_before:]
+            inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+            self._tk[0:0] = inject
+
+        elif k == "next_round":
+            self._tk_setup_next_round()
+
+        elif k == "battle_end":
+            self._tk_finish_battle()
+
+    def _tk_do_one_action(self):
+        """Execute one action from _action_step_queue and inject its log lines."""
+        # Skip KO'd units
+        while self._action_step_queue and self._action_step_queue[0][0].ko:
+            self._action_step_queue.pop(0)
+
+        if not self._action_step_queue:
+            # All actions resolved — check for Stitch In Time extras
+            player = self._resolving_player
+            extras = [
+                unit for unit in self.battle.get_team(player).alive()
+                if unit.extra_actions_now > 0 and unit.queued2 is None
+            ]
+            if extras:
+                self._extra_action_queue = [(player, u) for u in extras]
+                self._tk.insert(0, {"k": "stitch_select"})
+            else:
+                if player == self.battle.init_player:
+                    self._init_player_resolved = True
+            return  # fall through to next pre-built queue item
+
+        unit, player_num, is_queued2 = self._action_step_queue.pop(0)
+        log_before = len(self.battle.log)
+        if is_queued2:
+            unit.extra_actions_now -= 1
+            saved       = unit.queued
+            unit.queued  = unit.queued2
+            unit.queued2 = None
+            resolve_queued_action(unit, player_num, self.battle)
+            unit.queued  = saved
+        else:
+            resolve_queued_action(unit, player_num, self.battle)
+            unit.queued = None
+
+        new_lines = self.battle.log[log_before:]
+        inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+        if self.battle.winner:
+            inject.append({"k": "battle_end"})
+        else:
+            inject.append({"k": "resolve_action"})
+        self._tk[0:0] = inject
+
+    def _tk_ai_select_all(self, player: int):
+        """Auto-select all actions for an AI player, synchronously."""
+        self._enter_action_selection(player)
+        safety = 0
+        while self.phase == "select_actions" and self.current_actor is not None and safety < 30:
+            safety += 1
+            already = (self.current_actor.queued2 is not None
+                       if self.current_is_extra else
+                       self.current_actor.queued is not None)
+            if already:
+                self._on_action_queued()
+                continue
+            if not self._ai_queue_current_actor_action():
+                self._set_queued(self.current_actor, {"type": "skip"})
+            self._on_action_queued()
+        # _finish_selection sets phase = "battle"; ensure we're back
+        self.phase = "battle"
+
+    def _tk_setup_next_round(self):
+        """Determine initiative and inject round steps into the ticker."""
+        apply_passive_stats(self.battle.team1, self.battle)
+        apply_passive_stats(self.battle.team2, self.battle)
+        apply_round_start_effects(self.battle)
+        determine_initiative(self.battle)
+
+        init   = self.battle.init_player
+        second = 3 - init
+        rnd    = self.battle.round_num
+        reason = getattr(self.battle, "init_reason", "")
+        esp    = self.battle.r1_extra_swap_player
+        sp     = self._is_single_player()
+        lan    = self._is_lan()
+
+        msg = f"Round {rnd} — P{init} has initiative!"
+        if reason:
+            msg += f"  ({reason})"
+
+        steps = [{"k": "text", "msg": msg, "dur": 2.0, "important": True, "overlay": True}]
+
+        if esp:
+            steps.append({"k": "text",
+                           "msg": f"P{esp} receives a free formation swap.", "dur": 2.0})
+            steps.append({"k": "swap", "player": esp})
+
+        # ── Init player selects and resolves ──────────────────────────────────
+        steps.append({"k": "text",
+                       "msg": f"P{init} is selecting their actions.", "dur": 2.0})
+        steps.append({"k": "select", "player": init})
+        steps.append({"k": "init_resolve", "player": init})
+        steps.append({"k": "resolve_action"})
+        steps.append({"k": "text",
+                       "msg": f"P{init}'s actions are complete.", "dur": 2.0, "important": True})
+
+        # Pass Turn button: when init player is human, or LAN
+        if lan or (sp and not self._is_ai_player(init)):
+            steps.append({"k": "btn",
+                           "msg": f"P{init} has acted — pass the turn to P{second}.",
+                           "label": "Pass Turn →"})
+
+        # ── Second player selects and resolves ────────────────────────────────
+        steps.append({"k": "text",
+                       "msg": f"P{second} is selecting their actions.", "dur": 2.0})
+        steps.append({"k": "select", "player": second})
+        steps.append({"k": "init_resolve", "player": second})
+        steps.append({"k": "resolve_action"})
+
+        # End-of-round effects (injected dynamically by do_end_round)
+        steps.append({"k": "do_end_round"})
+
+        steps.append({"k": "text",
+                       "msg": f"P{second}'s actions are complete.", "dur": 2.0, "important": True})
+
+        # End Round button: when second player is human, or LAN
+        if lan or (sp and not self._is_ai_player(second)):
+            steps.append({"k": "btn",
+                           "msg": "Round complete — end the round.",
+                           "label": "End Round →"})
+
+        steps.append({"k": "next_round"})
+
+        self._tk[0:0] = steps
+
+    def _tk_finish_battle(self):
+        """Route to result screen after battle ends."""
+        battle_log.close()
+        if self._is_lan() and self.game_mode == "lan_host":
+            self._lan_send_state(phase="result")
+        if self.game_mode == "campaign":
+            self._campaign_won_quest = (self.battle.winner == 1)
+            self.phase = "campaign_post_quest"
+        else:
+            self.phase = "result"
 
     # ─────────────────────────────────────────────────────────────────────────
     def run(self):
@@ -411,21 +964,36 @@ class Game:
                 if e.type == pygame.MOUSEBUTTONDOWN and e.button == 1:
                     self.handle_click(mouse_pos)
 
+            self._lan_tick()
             self._maybe_auto_progress()
+            self._maybe_fast_skip()
 
+            dt = self.clock.tick(FPS) / 1000.0
+            self._tk_advance(dt)
             self.draw(mouse_pos)
             pygame.display.flip()
-            self.clock.tick(FPS)
 
     # ─────────────────────────────────────────────────────────────────────────
     # CLICK HANDLER
     # ─────────────────────────────────────────────────────────────────────────
 
     def handle_click(self, pos):
+        if self._lan_disconnected and self._is_lan():
+            disc_btn = getattr(self, "_last_disconnect_btn", None)
+            if disc_btn and disc_btn.collidepoint(pos):
+                self._lan_disconnected = False
+                if self._lan:
+                    self._lan.close()
+                    self._lan = None
+                self.game_mode = "pvp"
+                self.battle = None
+                self.phase = "menu"
+            return
+
         p = self.phase
 
         if p == "menu":
-            story_btn, practice_btn, teambuilder_btn, exit_btn = self._last_menu_btns
+            story_btn, practice_btn, teambuilder_btn, catalog_btn, settings_btn, exit_btn = self._last_menu_btns
             if story_btn.collidepoint(pos):
                 self.phase = "campaign_mission_select"
             elif practice_btn.collidepoint(pos):
@@ -433,8 +1001,32 @@ class Game:
             elif teambuilder_btn.collidepoint(pos):
                 self._teambuilder_return_phase = "menu"
                 self.phase = "teambuilder"
+            elif catalog_btn.collidepoint(pos):
+                self._catalog_tab = "adventurers"
+                self._catalog_selected = None
+                self._catalog_scroll = 0
+                self.phase = "catalog"
+            elif settings_btn.collidepoint(pos):
+                self._confirm_reset = False
+                self.phase = "settings"
             elif exit_btn.collidepoint(pos):
                 pygame.quit(); sys.exit()
+
+        elif p == "catalog":
+            btns = self._last_catalog_btns or {}
+            if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                self.phase = "menu"
+                return
+            for rect, key in btns.get("tab_btns", []):
+                if rect.collidepoint(pos):
+                    self._catalog_tab = key
+                    self._catalog_selected = None
+                    self._catalog_scroll = 0
+                    return
+            for rect, idx in btns.get("list_btns", []):
+                if rect.collidepoint(pos):
+                    self._catalog_selected = idx
+                    return
 
         elif p == "practice_menu":
             btns = self._last_practice_btns or {}
@@ -444,14 +1036,60 @@ class Game:
                     del self._campaign_roster
                 self._start_team_select(1)
             elif btns.get("vs_pvp_btn") and btns["vs_pvp_btn"].collidepoint(pos):
-                self.game_mode = "pvp"
-                if hasattr(self, "_campaign_roster"):
-                    del self._campaign_roster
-                self._start_team_select(1)
+                self.game_mode = "lan_host"
+                self._lan_role = "host"
+                self._lan = net.LANHost()
+                self._lan_host_notified = False
+                self._lan_p1_ready = False
+                self._lan_p2_ready = False
+                self._lan_status = ""
+                self._lan_ip_input = ""
+                self.phase = "lan_lobby"
             elif btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
                 self.phase = "menu"
 
+        elif p == "lan_lobby":
+            btns = self._last_lan_lobby_btns or {}
+            if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                if self._lan:
+                    self._lan.close()
+                    self._lan = None
+                self._lan_role = None
+                self._lan_status = ""
+                self.game_mode = "pvp"
+                self.phase = "practice_menu"
+                return
+            if self._lan_role is None:
+                if btns.get("host_btn") and btns["host_btn"].collidepoint(pos):
+                    self._lan_role = "host"
+                    self._lan = net.LANHost()
+                    self.game_mode = "lan_host"
+                    self._lan_host_notified = False
+                    self._lan_p1_ready = False
+                    self._lan_p2_ready = False
+                elif btns.get("join_btn") and btns["join_btn"].collidepoint(pos):
+                    self._lan_role = "client"
+                    self._lan = net.LANClient()
+                    self.game_mode = "lan_client"
+                    self._lan_ip_active = True
+            elif self._lan_role == "client":
+                if btns.get("ip_box") and btns["ip_box"].collidepoint(pos):
+                    self._lan_ip_active = True
+                if btns.get("connect_btn") and btns["connect_btn"].collidepoint(pos):
+                    self._lan_status = ""
+                    self._lan.connect_async(self._lan_ip_input)
+
         elif p == "teambuilder":
+            # If the rename overlay is active, route clicks to it instead.
+            if self._renaming_team_slot is not None:
+                overlay_btns = self._last_rename_overlay_btns or {}
+                if overlay_btns.get("confirm_btn") and overlay_btns["confirm_btn"].collidepoint(pos):
+                    self._commit_rename()
+                elif overlay_btns.get("cancel_btn") and overlay_btns["cancel_btn"].collidepoint(pos):
+                    self._renaming_team_slot = None
+                    self._rename_text = ""
+                return
+
             btns = self._last_teambuilder_btns or {}
             for rect, slot_idx in btns.get("slot_btns", []):
                 if rect.collidepoint(pos):
@@ -463,8 +1101,32 @@ class Game:
                         self.campaign_profile.saved_teams.pop(slot_idx)
                         save_campaign(self.campaign_profile)
                     return
+            for rect, slot_idx in btns.get("rename_btns", []):
+                if rect.collidepoint(pos):
+                    self._start_rename(slot_idx)
+                    return
+            for rect, (slot_idx, member_idx) in btns.get("member_edit_btns", []):
+                if rect.collidepoint(pos):
+                    self._start_teambuilder_edit_member(slot_idx, member_idx)
+                    return
             if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
                 self.phase = self._teambuilder_return_phase
+
+        elif p == "settings":
+            btns = self._last_settings_btns or {}
+            if self._confirm_reset:
+                if btns.get("confirm_btn") and btns["confirm_btn"].collidepoint(pos):
+                    self._reset_player_data()
+                elif btns.get("cancel_btn") and btns["cancel_btn"].collidepoint(pos):
+                    self._confirm_reset = False
+            else:
+                if btns.get("fast_btn") and btns["fast_btn"].collidepoint(pos):
+                    self.campaign_profile.fast_resolution = not self.campaign_profile.fast_resolution
+                    save_campaign(self.campaign_profile)
+                elif btns.get("reset_btn") and btns["reset_btn"].collidepoint(pos):
+                    self._confirm_reset = True
+                elif btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                    self.phase = "menu"
 
         elif p == "team_select":
             self._handle_team_select_click(pos)
@@ -584,6 +1246,7 @@ class Game:
         winner = 2 if conceding_player == 1 else 1
         self.battle.winner = winner
         self.battle.log_add(f"Player {conceding_player} concedes. Player {winner} wins!")
+        battle_log.close()
         self.phase = "result"
 
     def _current_phase_player(self):
@@ -602,7 +1265,49 @@ class Game:
         return None
 
     def _handle_keydown(self, e):
+        # LAN IP text input
+        if self._lan_ip_active and self.phase == "lan_lobby" and self._lan_role == "client":
+            if e.key == pygame.K_RETURN:
+                self._lan_ip_active = False
+            elif e.key == pygame.K_BACKSPACE:
+                self._lan_ip_input = self._lan_ip_input[:-1]
+            else:
+                ch = e.unicode
+                if ch and (ch.isdigit() or ch == ".") and len(self._lan_ip_input) < 15:
+                    self._lan_ip_input += ch
+            return
+
+        # Text input for rename overlay
+        if self._renaming_team_slot is not None:
+            if e.key == pygame.K_RETURN or e.key == pygame.K_KP_ENTER:
+                self._commit_rename()
+            elif e.key == pygame.K_ESCAPE:
+                self._renaming_team_slot = None
+                self._rename_text = ""
+            elif e.key == pygame.K_BACKSPACE:
+                self._rename_text = self._rename_text[:-1]
+            else:
+                ch = e.unicode
+                if ch and ch.isprintable() and len(self._rename_text) < 24:
+                    self._rename_text += ch
+            return
+
         if e.key != pygame.K_ESCAPE:
+            return
+
+        # ESC closes settings confirmation without leaving settings
+        if self.phase == "settings" and self._confirm_reset:
+            self._confirm_reset = False
+            return
+
+        # ESC exits the teambuilder screen.
+        if self.phase == "teambuilder":
+            self.phase = self._teambuilder_return_phase
+            return
+
+        # ESC steps back through team-select sub-phases.
+        if self.phase == "team_select":
+            self._do_team_select_back()
             return
 
         # Keep existing UX: ESC cancels target picking first.
@@ -628,7 +1333,9 @@ class Game:
             return False
         p = self.phase
         return (
-            p in ("select_actions", "resolving", "resolve_done", "end_round", "result")
+            p in ("battle", "battle_start", "end_of_round",
+                  "select_actions", "resolving", "resolve_done", "actions_resolving",
+                  "action_result", "end_round", "result", "lan_waiting")
             or p.startswith(("pass_to_", "extra_swap_p", "extra_action_p"))
         )
 
@@ -636,6 +1343,13 @@ class Game:
         # Battle log scroll: works anywhere on screen during battle
         if self._is_in_battle():
             self.battle_log_scroll = max(0, self.battle_log_scroll + e.y * 3)
+            return
+        if self.phase == "catalog":
+            btns = self._last_catalog_btns or {}
+            max_scroll = btns.get("scroll_max", 0)
+            if max_scroll > 0:
+                self._catalog_scroll -= e.y * 40
+                self._catalog_scroll = max(0, min(self._catalog_scroll, max_scroll))
             return
         if self.phase != "team_select":
             return
@@ -654,6 +1368,39 @@ class Game:
     # TEAM SELECTION
     # ─────────────────────────────────────────────────────────────────────────
 
+    def _do_team_select_back(self):
+        """Shared back-navigation logic for team_select, used by Back button and ESC."""
+        sp = self.sub_phase
+        if sp == "pick_adventurers":
+            # Leave team select entirely.
+            if self.game_mode == "teambuilder":
+                self.phase = "teambuilder"
+            else:
+                self.phase = "menu"
+        elif sp == "pick_sig":
+            if self._editing_single_member:
+                # Cancel single-member edit and return to teambuilder.
+                self._editing_single_member = False
+                self.phase = "teambuilder"
+            elif self.current_adv_idx > 0:
+                self.current_adv_idx -= 1
+                self.team_picks[self.current_adv_idx].pop("item", None)
+                self.item_choice = None
+                self.sub_phase = "pick_item"
+            else:
+                self.sub_phase = "pick_adventurers"
+            self.team_select_scroll = 0
+        elif sp == "pick_basics":
+            self.team_picks[self.current_adv_idx].pop("signature", None)
+            self.sig_choice = None
+            self.sub_phase = "pick_sig"
+            self.team_select_scroll = 0
+        elif sp == "pick_item":
+            self.team_picks[self.current_adv_idx].pop("basics", None)
+            self.basic_choices = []
+            self.sub_phase = "pick_basics"
+            self.team_select_scroll = 0
+
     def _start_team_select(self, player_num):
         self.building_player = player_num
         self.sub_phase = "pick_adventurers"
@@ -665,6 +1412,7 @@ class Game:
         self.item_choice = None
         self.team_slot_selected = None
         self.team_select_scroll = 0
+        self._editing_single_member = False
         self.phase = "team_select"
 
     def _handle_team_select_click(self, pos):
@@ -682,20 +1430,26 @@ class Game:
             active_items      = ITEMS
             active_cls_basics = CLASS_BASICS
 
+        # Party slot reorder: works in all sub-phases
+        for rect, idx in clicks.get("party_slots", []):
+            if rect.collidepoint(pos):
+                if self.team_slot_selected is None:
+                    self.team_slot_selected = idx
+                elif self.team_slot_selected == idx:
+                    self.team_slot_selected = None
+                else:
+                    i, j = self.team_slot_selected, idx
+                    self.team_picks[i], self.team_picks[j] = \
+                        self.team_picks[j], self.team_picks[i]
+                    # Keep current_adv_idx pointing at the same member after swap
+                    if self.current_adv_idx == i:
+                        self.current_adv_idx = j
+                    elif self.current_adv_idx == j:
+                        self.current_adv_idx = i
+                    self.team_slot_selected = None
+                return
+
         if self.sub_phase == "pick_adventurers":
-            # Party slot click: select for reordering, or swap with already-selected slot
-            for rect, idx in clicks.get("party_slots", []):
-                if rect.collidepoint(pos):
-                    if self.team_slot_selected is None:
-                        self.team_slot_selected = idx
-                    elif self.team_slot_selected == idx:
-                        self.team_slot_selected = None
-                    else:
-                        i, j = self.team_slot_selected, idx
-                        self.team_picks[i], self.team_picks[j] = \
-                            self.team_picks[j], self.team_picks[i]
-                        self.team_slot_selected = None
-                    return
             for rect, idx in clicks.get("roster", []):
                 if rect.collidepoint(pos):
                     defn = active_roster[idx]
@@ -719,16 +1473,7 @@ class Game:
         elif self.sub_phase == "pick_sig":
             back = clicks.get("back")
             if back and back.collidepoint(pos):
-                if self.current_adv_idx > 0:
-                    # Go back to item pick for previous adventurer
-                    self.current_adv_idx -= 1
-                    self.team_picks[self.current_adv_idx].pop("item", None)
-                    self.item_choice = None
-                    self.sub_phase = "pick_item"
-                else:
-                    # Go back to adventurer selection
-                    self.sub_phase = "pick_adventurers"
-                self.team_select_scroll = 0
+                self._do_team_select_back()
                 return
             for rect, idx in clicks.get("sig", []):
                 if rect.collidepoint(pos):
@@ -755,10 +1500,7 @@ class Game:
         elif self.sub_phase == "pick_basics":
             back = clicks.get("back")
             if back and back.collidepoint(pos):
-                self.team_picks[self.current_adv_idx].pop("signature", None)
-                self.sig_choice = None
-                self.sub_phase = "pick_sig"
-                self.team_select_scroll = 0
+                self._do_team_select_back()
                 return
             pool = active_cls_basics.get(
                 self.team_picks[self.current_adv_idx]["definition"].cls, [])
@@ -780,10 +1522,7 @@ class Game:
         elif self.sub_phase == "pick_item":
             back = clicks.get("back")
             if back and back.collidepoint(pos):
-                self.team_picks[self.current_adv_idx].pop("basics", None)
-                self.basic_choices = []
-                self.sub_phase = "pick_basics"
-                self.team_select_scroll = 0
+                self._do_team_select_back()
                 return
             for rect, idx in clicks.get("items", []):
                 if rect.collidepoint(pos):
@@ -798,19 +1537,43 @@ class Game:
             if confirm and confirm.collidepoint(pos) and self.item_choice is not None:
                 self.team_picks[self.current_adv_idx]["item"] = \
                     active_items[self.item_choice]
-                self.current_adv_idx += 1
-                if self.current_adv_idx < 3:
-                    self.sub_phase = "pick_sig"
-                    self.sig_choice = None
-                    self.team_select_scroll = 0
-                else:
-                    # Done with this player
+                if self._editing_single_member:
+                    # Only editing this one member's sets — save and return.
+                    self._editing_single_member = False
                     self._finish_team_select()
+                else:
+                    self.current_adv_idx += 1
+                    if self.current_adv_idx < 3:
+                        self.sub_phase = "pick_sig"
+                        self.sig_choice = None
+                        self.team_select_scroll = 0
+                    else:
+                        # Done with this player
+                        self._finish_team_select()
 
     def _finish_team_select(self):
         if self.game_mode == "teambuilder":
             self._save_built_team_to_slot()
             self.phase = "teambuilder"
+            return
+
+        # LAN: host picks P1's team, client picks P2's team, simultaneously
+        if self.game_mode == "lan_host":
+            self.p1_picks = list(self.team_picks)
+            self._lan_p1_ready = True
+            if self._lan_p2_ready:
+                self._start_lan_battle()
+            else:
+                self.phase = "lan_waiting_teams"
+            return
+
+        if self.game_mode == "lan_client":
+            self.p2_picks = list(self.team_picks)
+            self._lan_send({
+                "type": "team_ready",
+                "picks": self._serialize_picks(self.p2_picks),
+            })
+            self.phase = "lan_waiting_teams"
             return
 
         if self.building_player == 1:
@@ -839,6 +1602,42 @@ class Game:
         }
         self._start_team_select(1)
 
+    def _start_teambuilder_edit_member(self, slot_idx: int, member_idx: int):
+        """Jump directly to editing one member's sig/basics/item without changing adventurers."""
+        self._editing_team_slot = slot_idx
+        self._editing_single_member = True
+        self.game_mode = "teambuilder"
+        profile = self.campaign_profile
+        self._campaign_roster = [d for d in ROSTER if d.id in profile.recruited]
+        self._campaign_items = [it for it in ITEMS if it.id in profile.unlocked_items]
+        self._campaign_basics = {
+            cls_name: basics_list[:profile.basics_tier]
+            for cls_name, basics_list in CLASS_BASICS.items()
+            if cls_name in profile.unlocked_classes
+        }
+        # Pre-load the existing team picks so the other two members are preserved.
+        existing = self._resolve_saved_team(slot_idx)
+        if existing is None:
+            # Fallback: start fresh if resolve fails.
+            self._editing_single_member = False
+            self._start_team_select(1)
+            return
+        self.team_picks = existing
+        self.building_player = 1
+        self.current_adv_idx = member_idx
+        # Clear only this member's set choices so the user picks fresh.
+        self.team_picks[member_idx].pop("signature", None)
+        self.team_picks[member_idx].pop("basics", None)
+        self.team_picks[member_idx].pop("item", None)
+        self.sig_choice = None
+        self.basic_choices = []
+        self.item_choice = None
+        self.roster_selected = None
+        self.team_slot_selected = None
+        self.team_select_scroll = 0
+        self.sub_phase = "pick_sig"
+        self.phase = "team_select"
+
     def _save_built_team_to_slot(self):
         """Serialize completed team_picks and save to campaign profile."""
         slot = self._editing_team_slot
@@ -852,13 +1651,55 @@ class Game:
                 "basics":  [b.id for b in p["basics"]],
                 "item_id": p["item"].id,
             })
-        team_name = f"Team {slot + 1}"
+        # Preserve existing name if the team already has one.
+        teams = self.campaign_profile.saved_teams
+        existing_name = None
+        if slot < len(teams) and teams[slot] is not None:
+            existing_name = teams[slot].get("name")
+        team_name = existing_name if existing_name else f"Team {slot + 1}"
         entry = {"name": team_name, "members": members}
         while len(self.campaign_profile.saved_teams) <= slot:
             self.campaign_profile.saved_teams.append(None)
         self.campaign_profile.saved_teams[slot] = entry
         save_campaign(self.campaign_profile)
         self._editing_team_slot = None
+
+    # ── Rename ────────────────────────────────────────────────────────────────
+
+    def _start_rename(self, slot_idx: int):
+        """Open the rename overlay for the given team slot."""
+        teams = self.campaign_profile.saved_teams if self.campaign_profile else []
+        current = ""
+        if slot_idx < len(teams) and teams[slot_idx]:
+            current = teams[slot_idx].get("name", "")
+        self._renaming_team_slot = slot_idx
+        self._rename_text = current
+
+    def _commit_rename(self):
+        """Save the typed name and close the overlay."""
+        slot = self._renaming_team_slot
+        text = self._rename_text.strip()
+        if slot is not None and text:
+            teams = self.campaign_profile.saved_teams
+            if slot < len(teams) and teams[slot] is not None:
+                teams[slot]["name"] = text
+                save_campaign(self.campaign_profile)
+        self._renaming_team_slot = None
+        self._rename_text = ""
+
+    # ── Settings / Reset ──────────────────────────────────────────────────────
+
+    def _reset_player_data(self):
+        """Wipe all campaign progress and saved teams, then reload."""
+        import os
+        if os.path.exists("campaign_save.json"):
+            os.remove("campaign_save.json")
+        self.campaign_profile = load_campaign()
+        # Re-apply starter quest rewards
+        apply_quest_rewards(self.campaign_profile, 0)
+        save_campaign(self.campaign_profile)
+        self._confirm_reset = False
+        self.phase = "menu"
 
     def _resolve_saved_team(self, slot_idx: int):
         """Resolve a saved team to picks format. Returns None if invalid."""
@@ -893,11 +1734,13 @@ class Game:
         if picks is None:
             self.phase = "story_team_select"
             return
-        self.p1_picks = picks
         self.p2_picks = build_quest_enemy_team(self.campaign_quest_id)
         self.game_mode = "campaign"
         self.ai_player = 2
-        self._start_battle()
+        # Go to pre-battle review so player can adjust slot order before the fight
+        self._pre_battle_picks = list(picks)
+        self._pre_battle_slot_selected = None
+        self.phase = "pre_battle_review"
 
     # ─────────────────────────────────────────────────────────────────────────
     # BATTLE SETUP
@@ -947,9 +1790,11 @@ class Game:
         self.battle_log_scroll = 0
         apply_passive_stats(team1, self.battle)
         apply_passive_stats(team2, self.battle)
-        determine_initiative(self.battle)
-        self.battle.log_add("Battle begins!")
-        self._enter_round_start()
+        self.phase = "battle"
+        self._tk = [
+            {"k": "text", "msg": "Battle begins!", "dur": 2.0},
+            {"k": "next_round"},
+        ]
 
     def _enter_round_start(self):
         """Begin a new round: check for extra swap phase or go straight to action selection."""
@@ -958,7 +1803,13 @@ class Game:
         # Check if round 1 extra swap applies
         if self.battle.r1_extra_swap_player is not None:
             esp = self.battle.r1_extra_swap_player
-            self.phase = f"pass_to_extra_swap_p{esp}"
+            if self._is_lan() and esp == 2 and self.game_mode == "lan_host":
+                # Client's extra swap — notify them, host waits
+                self.phase = "extra_swap_p2"
+                self._init_extra_swap(2)
+                self._lan_send_state(phase="extra_swap_p2")
+            else:
+                self.phase = f"pass_to_extra_swap_p{esp}"
         else:
             self._enter_action_selection(self.battle.init_player)
 
@@ -981,7 +1832,23 @@ class Game:
             unit.queued2 = None
         self.battle.swap_used_this_turn = False
         self.current_is_extra = False
-        self.phase = f"pass_to_select_p{player_num}"
+
+        if self._is_lan():
+            self._init_player_resolved = False
+            self.phase = "select_actions"
+            if self.game_mode == "lan_host":
+                if player_num == 2:
+                    # Client's turn — notify them
+                    self._lan_send_state(phase="select_actions", extra={"selecting_player": 2})
+                    # Host shows waiting UI (current_actor stays None)
+                else:
+                    # Host's own turn
+                    self._advance_selection()
+            # lan_client: _advance_selection called from _handle_lan_client_msg
+        else:
+            # New ticker flow: go directly to select_actions (no pass screen needed)
+            self.phase = "select_actions"
+            self._advance_selection()
 
     # ─────────────────────────────────────────────────────────────────────────
     # PASS SCREEN ROUTING
@@ -1006,8 +1873,12 @@ class Game:
             self._advance_selection()
 
         elif p == "pass_to_resolve":
-            self.phase = "resolving"
-            self._do_single_resolution(self._resolving_player)
+            # Show a brief "Actions Resolving" pause before executing (skip for LAN)
+            if self._is_lan():
+                self.phase = "resolving"
+                self._do_single_resolution(self._resolving_player)
+            else:
+                self.phase = "actions_resolving"
 
         elif p == "pass_to_round_end":
             self.phase = "end_round"
@@ -1041,8 +1912,14 @@ class Game:
                     if self._extra_swap_pending != unit:
                         do_swap(self._extra_swap_pending, unit, team, self.battle)
                         self._extra_swap_done = True
-                        # Move to first player's action selection
-                        self._enter_action_selection(self.battle.init_player)
+                        if self.game_mode == "lan_client":
+                            idx_a = team.members.index(self._extra_swap_pending)
+                            idx_b = team.members.index(unit)
+                            self._lan_send({"type": "extra_swap_ready", "slot_a": idx_a, "slot_b": idx_b})
+                            self.phase = "lan_waiting"
+                            return
+                        # Return to battle ticker — it has the next steps queued
+                        self.phase = "battle"
                     else:
                         self._extra_swap_pending = None
                 return
@@ -1050,7 +1927,13 @@ class Game:
         # Done button (skip swap)
         if hasattr(self, '_extra_swap_skip_btn') and \
                 self._extra_swap_skip_btn.collidepoint(pos):
-            self._enter_action_selection(self.battle.init_player)
+            if self.game_mode == "lan_client":
+                self._lan_send({"type": "extra_swap_ready"})
+                self.phase = "lan_waiting"
+                return
+            self.battle.log_add(f"P{self._extra_swap_player} passed on free swap.")
+            # Return to battle ticker — it has the next steps queued
+            self.phase = "battle"
 
     # ─────────────────────────────────────────────────────────────────────────
     # ACTION SELECTION
@@ -1099,10 +1982,24 @@ class Game:
 
     def _finish_selection(self):
         """Selection done: route to this player's resolution phase."""
+        if self.game_mode == "lan_client":
+            # Serialize all queued P2 actions and send to host
+            team = self.battle.team2
+            enemy = self.battle.team1
+            actions = []
+            for i, unit in enumerate(team.members):
+                if unit.queued is not None:
+                    actions.append(self._serialize_action(unit.queued, i, team, enemy, False))
+                if unit.queued2 is not None:
+                    actions.append(self._serialize_action(unit.queued2, i, team, enemy, True))
+            self._lan_send({"type": "actions_ready", "actions": actions})
+            self.phase = "lan_waiting"
+            return
+
         # In the new flow, each player selects then immediately resolves.
         # init player → resolve init → (review) → second player selects → resolve second → end round
         self._resolving_player = self.selecting_player
-        self.phase = "pass_to_resolve"
+        self.phase = "battle"
 
     def _unit_at_pos(self, pos):
         """Return the CombatantState whose formation box contains pos, or None."""
@@ -1122,6 +2019,32 @@ class Game:
         self.battle.swap_used_this_turn = False
         self.current_is_extra = False
         self._advance_selection()
+
+    def _go_back_one_selection(self):
+        """Cancel current sub-state or unqueue the previous actor and re-open their selection."""
+        if self.selection_sub == "pick_target":
+            self.selection_sub = "pick_action"
+            self.pending_action = None
+            return
+        # In pick_action: find the most recently queued actor and unqueue them
+        for unit, is_extra in reversed(self.selection_order):
+            if unit.ko:
+                continue
+            if is_extra and unit.queued2 is not None:
+                unit.queued2 = None
+                self.current_actor = unit
+                self.current_is_extra = True
+                self.pending_action = None
+                self.selection_sub = "pick_action"
+                return
+            if not is_extra and unit.queued is not None:
+                unit.queued = None
+                self.current_actor = unit
+                self.current_is_extra = False
+                self.pending_action = None
+                self.selection_sub = "pick_action"
+                return
+        # Nothing to go back to — no-op
 
     def _handle_action_select_click(self, pos):
         # ── Close the detail panel ───────────────────────────────────────────
@@ -1159,6 +2082,10 @@ class Game:
         for rect, action_dict in self._last_action_buttons:
             if rect.collidepoint(pos):
                 atype = action_dict["type"]
+
+                if atype == "back":
+                    self._go_back_one_selection()
+                    return
 
                 if atype == "skip":
                     self._set_queued(actor, {"type": "skip"})
@@ -1292,17 +2219,63 @@ class Game:
     # ─────────────────────────────────────────────────────────────────────────
 
     def _do_single_resolution(self, player_num):
-        """Resolve one player's queued actions, then route to the next phase.
+        """Begin step-through resolution for player_num's queued actions."""
+        self._begin_step_resolution(player_num)
 
-        Flow:
-          init player resolves → show resolve_done (review) → Continue → second selects
-          second player resolves → end_round → show resolve_done → Continue → round_start
-        """
-        init   = self.battle.init_player
-        second = 3 - init
-
+    def _begin_step_resolution(self, player_num):
+        """Resolve player_num's queued actions. Steps through one at a time unless fast_resolution or LAN."""
+        self._action_step_player = player_num
         self.battle.log_add(f"─── P{player_num} Actions ───")
-        resolve_player_turn(self.battle, player_num)
+
+        if self._is_lan() or (self.campaign_profile and self.campaign_profile.fast_resolution):
+            # LAN/Fast mode: resolve everything at once
+            resolve_player_turn(self.battle, player_num)
+            self._finish_step_resolution()
+            return
+
+        team = self.battle.get_team(player_num)
+        order = [team.get_slot(slot) for slot in CLOCKWISE_ORDER]
+        self._action_step_queue = []
+        for unit in order:
+            if unit is None or unit.ko or unit.queued is None:
+                continue
+            self._action_step_queue.append((unit, player_num, False))
+            # Rabbit Hole pre-planned extra action
+            if unit.queued2 is not None and unit.extra_actions_now > 0:
+                self._action_step_queue.append((unit, player_num, True))
+        self._resolve_next_step()
+
+    def _resolve_next_step(self):
+        """Resolve the next action in the step queue, then show action_result."""
+        while self._action_step_queue:
+            unit, player_num, is_queued2 = self._action_step_queue[0]
+            if unit.ko:
+                self._action_step_queue.pop(0)
+                continue
+            self._action_step_queue.pop(0)
+            self._action_log_start = len(self.battle.log)
+            if is_queued2:
+                unit.extra_actions_now -= 1
+                saved = unit.queued
+                unit.queued = unit.queued2
+                unit.queued2 = None
+                resolve_queued_action(unit, player_num, self.battle)
+                unit.queued = saved
+            else:
+                resolve_queued_action(unit, player_num, self.battle)
+                unit.queued = None
+            self._action_step_unit = unit
+            self._action_step_player = player_num
+            self.battle_log_scroll = 0  # scroll to bottom to show latest
+            self.phase = "action_result"
+            return
+        # All actions done — run finish logic
+        self._finish_step_resolution()
+
+    def _finish_step_resolution(self):
+        """After all step-through actions are done, route to the appropriate next phase."""
+        player_num = self._action_step_player
+        init = self.battle.init_player
 
         if self.battle.winner:
             self.phase = "resolve_done"
@@ -1320,7 +2293,6 @@ class Game:
             if self._extra_action_queue:
                 self._start_next_stitch_extra()
                 return
-            # Show resolve_done so players can review before second player selects
             self.phase = "resolve_done"
         else:
             if self._extra_action_queue:
@@ -1350,12 +2322,16 @@ class Game:
         self.current_is_extra = True
         self.selection_sub    = "pick_action"
         self.pending_action   = None
-        self.phase = f"pass_to_extra_action_p{pnum}"
+        if not self._is_lan():
+            self.phase = f"extra_action_p{pnum}"
+        else:
+            self.phase = f"pass_to_extra_action_p{pnum}"
 
     def _resolve_stitch_extra_and_continue(self):
         """Resolve the queued2 extra action for the current Stitch In Time unit."""
         unit = self.current_actor
         pnum = self.selecting_player
+        log_before = len(self.battle.log)
         if unit.queued2 is not None:
             unit.extra_actions_now -= 1
             saved = unit.queued
@@ -1366,7 +2342,17 @@ class Game:
         else:
             unit.extra_actions_now = 0
         self._extra_action_queue.pop(0)
-        self._start_next_stitch_extra()
+        new_lines = self.battle.log[log_before:]
+        inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+        if self.battle.winner:
+            inject.append({"k": "battle_end"})
+        elif self._extra_action_queue:
+            inject.append({"k": "stitch_select"})
+        else:
+            if self._resolving_player == self.battle.init_player:
+                self._init_player_resolved = True
+        self._tk[0:0] = inject
+        self.phase = "battle"
 
     def _do_end_round(self):
         pass  # Already handled inline in _do_full_resolution
@@ -1381,8 +2367,8 @@ class Game:
 
         if p == "menu":
             player_level = max(0, self.campaign_profile.highest_quest_cleared) if self.campaign_profile else 0
-            s, pr, tb, e = draw_main_menu(surf, mouse_pos, player_level)
-            self._last_menu_btns = (s, pr, tb, e)
+            s, pr, tb, cat, st, e = draw_main_menu(surf, mouse_pos, player_level)
+            self._last_menu_btns = (s, pr, tb, cat, st, e)
 
         elif p == "practice_menu":
             btns = draw_practice_menu(surf, mouse_pos)
@@ -1392,12 +2378,41 @@ class Game:
             profile = self.campaign_profile or CampaignProfile()
             btns = draw_teambuilder(surf, profile.saved_teams, mouse_pos, profile)
             self._last_teambuilder_btns = btns
+            # Rename overlay drawn on top when active
+            if self._renaming_team_slot is not None:
+                overlay_btns = draw_rename_overlay(surf, mouse_pos, self._rename_text)
+                self._last_rename_overlay_btns = overlay_btns
+
+        elif p == "catalog":
+            profile = self.campaign_profile or CampaignProfile()
+            btns = draw_catalog(
+                surf, mouse_pos,
+                active_tab=self._catalog_tab,
+                selected_idx=self._catalog_selected,
+                scroll=self._catalog_scroll,
+                profile=profile,
+                roster=ROSTER,
+                class_basics=CLASS_BASICS,
+                items=ITEMS,
+            )
+            self._last_catalog_btns = btns
+
+        elif p == "settings":
+            btns = draw_settings_screen(surf, mouse_pos, self._confirm_reset,
+                                        fast_resolution=self.campaign_profile.fast_resolution)
+            self._last_settings_btns = btns
 
         elif p == "story_team_select":
             quest = QUEST_TABLE.get(self.campaign_quest_id)
             profile = self.campaign_profile or CampaignProfile()
             btns = draw_story_team_select(surf, profile.saved_teams, mouse_pos, quest)
             self._last_story_team_btns = btns
+
+        elif p == "pre_battle_review":
+            btns = draw_pre_battle_review(
+                surf, self._pre_battle_picks,
+                self._pre_battle_slot_selected, mouse_pos)
+            self._last_pre_battle_btns = btns
 
         elif p == "team_select":
             # Use campaign-filtered roster/items when in campaign/teambuilder mode
@@ -1422,9 +2437,15 @@ class Game:
                 if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
                 else 3
             )
+            if self._editing_single_member and self.team_picks and self.current_adv_idx < len(self.team_picks):
+                _adv_name = self.team_picks[self.current_adv_idx].get("definition")
+                _adv_name = _adv_name.name if _adv_name else f"Member {self.current_adv_idx + 1}"
+                _panel_title = f"Edit Sets — {_adv_name}"
+            else:
+                _panel_title = f"Player {self.building_player}"
             clicks = draw_team_select_screen(
                 surf,
-                player_name=f"Player {self.building_player}",
+                player_name=_panel_title,
                 roster=active_roster,
                 selected_idx=sel_idx,
                 team_picks=self.team_picks,
@@ -1439,6 +2460,11 @@ class Game:
                 scroll_offset=self.team_select_scroll,
                 team_slot_selected=self.team_slot_selected,
                 sig_tier=_sig_tier,
+                twists_unlocked=(
+                    self.campaign_profile.twists_unlocked
+                    if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
+                    else True
+                ),
             )
             self.team_select_scroll = min(
                 self.team_select_scroll,
@@ -1451,13 +2477,25 @@ class Game:
             btn = draw_pass_screen(surf, next_who, msg, mouse_pos)
             self._last_pass_btn = btn
 
+        elif p == "battle":
+            self._draw_battle(surf, mouse_pos)
+
+        elif p == "battle_start":
+            self._draw_battle_start(surf, mouse_pos)
+
+        elif p == "end_of_round":
+            self._draw_end_of_round(surf, mouse_pos)
+
+        elif p == "actions_resolving":
+            self._draw_actions_resolving(surf, mouse_pos)
+
         elif p.startswith("extra_swap_p"):
             self._draw_extra_swap(surf, mouse_pos)
 
         elif p == "select_actions" or p.startswith("extra_action_p"):
             self._draw_select_actions(surf, mouse_pos)
 
-        elif p in ("resolving", "resolve_done"):
+        elif p in ("resolving", "resolve_done", "action_result"):
             self._draw_resolving(surf, mouse_pos)
 
         elif p == "result":
@@ -1515,48 +2553,155 @@ class Game:
             btns = draw_campaign_complete(surf, mouse_pos)
             self._last_campaign_btns = btns
 
+        elif p == "lan_lobby":
+            btns = draw_lan_lobby(
+                surf, mouse_pos,
+                role=self._lan_role,
+                ip_input=self._lan_ip_input,
+                status=self._lan_status,
+                local_ip=self._lan.local_ip() if isinstance(self._lan, net.LANHost) else "",
+                connecting=isinstance(self._lan, net.LANClient) and self._lan._connecting,
+            )
+            self._last_lan_lobby_btns = btns
+
+        elif p in ("lan_waiting", "lan_waiting_teams"):
+            if self.battle:
+                surf.fill(BG)
+                draw_top_bar(surf, self.battle, "Waiting for opponent...")
+                draw_formation(surf, self.battle, mouse_pos=mouse_pos)
+                draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+                draw_text(surf, "Waiting for opponent...", 24, TEXT_DIM,
+                          WIDTH // 2, HEIGHT - 70, center=True)
+            else:
+                surf.fill(BG)
+                draw_text(surf, "Waiting for opponent...", 28, TEXT_DIM,
+                          WIDTH // 2, HEIGHT // 2, center=True)
+
         else:
             surf.fill(BG)
             draw_text(surf, f"Phase: {p}", 24, TEXT, 20, 20)
 
+        # LAN disconnect overlay
+        if self._lan_disconnected and self._is_lan():
+            overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+            overlay.fill((0, 0, 0, 180))
+            surf.blit(overlay, (0, 0))
+            draw_text(surf, "Opponent Disconnected", 36, RED, WIDTH // 2, HEIGHT // 2 - 40, center=True)
+            disc_btn = pygame.Rect(WIDTH // 2 - 120, HEIGHT // 2 + 10, 240, 44)
+            draw_button(surf, disc_btn, "Return to Menu", mouse_pos, size=18)
+            self._last_disconnect_btn = disc_btn
+
     def _pass_screen_info(self, phase_key):
-        """Return (message, next_player_name) for the pass screen."""
+        """Return (message, next_player_name) for the pass screen.
+
+        In single-player mode, next_player_name is returned as "" to suppress
+        the 'Pass the device to...' line when there is no second human player.
+        """
         rnd = self.battle.round_num if self.battle else 1
         init = self.battle.init_player if self.battle else 1
+        sp = self._is_single_player()
+
+        def _who(pnum):
+            """Return player label, or "" in single-player (no handoff needed)."""
+            return "" if sp else f"Player {pnum}"
 
         if phase_key == "pass_to_team_p2":
-            return "Player 1 has set their team.", "Player 2"
+            return "Player 1 has set their team.", _who(2)
+        reason = getattr(self.battle, "init_reason", "")
         if phase_key == "pass_to_extra_swap_p1":
-            return "P1 lost initiative — free swap before round starts.", "Player 1"
+            msg = "P1 lost initiative — free swap before round starts."
+            if reason:
+                msg = f"P2 wins initiative!\n{reason}\nP1 gets a free formation swap first."
+            return msg, _who(1)
         if phase_key == "pass_to_extra_swap_p2":
-            return "P2 lost initiative — free swap before round starts.", "Player 2"
+            msg = "P2 lost initiative — free swap before round starts."
+            if reason:
+                msg = f"P1 wins initiative!\n{reason}\nP2 gets a free formation swap first."
+            return msg, _who(2)
         if phase_key == "pass_to_select_p1":
             if self._init_player_resolved:
-                return f"P{init} has acted. P1 — plan your response!", "Player 1"
-            return f"Round {rnd} — P1 has initiative. Plan your actions!", "Player 1"
+                return f"P{init} has acted. P1 — plan your response!", _who(1)
+            msg = f"Round {rnd} — P1 acts first! Plan your actions!"
+            if reason:
+                msg = f"Round {rnd} — P1 acts first!\n{reason}"
+            return msg, _who(1)
         if phase_key == "pass_to_select_p2":
             if self._init_player_resolved:
-                return f"P{init} has acted. P2 — plan your response!", "Player 2"
-            return f"Round {rnd} — P2 has initiative. Plan your actions!", "Player 2"
+                return f"P{init} has acted. P2 — plan your response!", _who(2)
+            msg = f"Round {rnd} — P2 acts first! Plan your actions!"
+            if reason:
+                msg = f"Round {rnd} — P2 acts first!\n{reason}"
+            return msg, _who(2)
         if phase_key == "pass_to_resolve":
             p = self._resolving_player or init
             return (f"P{p} locked in — both players watch their actions!",
-                    f"Both Watch")
+                    "" if sp else "Both Watch")
         if phase_key.startswith("pass_to_extra_action_p"):
             pnum = phase_key[-1]
             unit = self._extra_action_queue[0][1] if self._extra_action_queue else None
             name = unit.name if unit else "?"
             return (f"Stitch In Time — {name} gets an extra action!",
-                    f"Player {pnum}")
-        return "Ready?", "Next Player"
+                    _who(int(pnum)))
+        return "Ready?", "" if sp else "Next Player"
+
+    def _draw_battle(self, surf, mouse_pos):
+        """Main battle view: always shows formation + log + bottom ticker."""
+        surf.fill(BG)
+        if not self.battle:
+            return
+        init = self.battle.init_player
+        rnd  = self.battle.round_num
+        draw_top_bar(surf, self.battle, f"Round {rnd}  —  P{init} has initiative")
+        _status_hover = []
+        draw_formation(surf, self.battle, mouse_pos=mouse_pos, status_rects_out=_status_hover)
+        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+
+        # Bottom bar: message text
+        if self._tk_msg:
+            draw_text(surf, self._tk_msg, 20, YELLOW, WIDTH // 2, HEIGHT - 68, center=True)
+
+        # Pass button
+        if self._tk_btn_label:
+            btn_rect = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 50, 260, 40)
+            draw_button(surf, btn_rect, self._tk_btn_label, mouse_pos, size=18,
+                        normal=BLUE_DARK, hover=BLUE)
+            self._tk_btn_rect = btn_rect
+        else:
+            self._tk_btn_rect = None
+
+        # Centered overlay box for round-start / initiative announcement
+        if self._tk_overlay_msg:
+            box_w, box_h = 560, 90
+            bx = WIDTH // 2 - box_w // 2
+            by = HEIGHT // 2 - box_h // 2
+            overlay_surf = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
+            overlay_surf.fill((10, 10, 30, 210))
+            surf.blit(overlay_surf, (bx, by))
+            pygame.draw.rect(surf, (100, 140, 220), (bx, by, box_w, box_h), 2, border_radius=6)
+            draw_text(surf, self._tk_overlay_msg, 26, (230, 230, 255),
+                      WIDTH // 2, HEIGHT // 2, center=True)
+
+        # Status tooltip
+        for r, kind in _status_hover:
+            if r.collidepoint(mouse_pos):
+                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                break
 
     def _draw_extra_swap(self, surf, mouse_pos):
         surf.fill(BG)
         player = self._extra_swap_player
         draw_top_bar(surf, self.battle,
                      f"Round 1 Extra Swap — Player {player}")
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
+        _status_hover = []
+        draw_formation(surf, self.battle, mouse_pos=mouse_pos,
+                       status_rects_out=_status_hover)
         draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+
+        # LAN: only interactive for the player whose swap it is
+        if self._is_lan() and self._extra_swap_player != self._lan_my_player():
+            draw_text(surf, "Waiting for opponent's formation swap...", 22, TEXT_DIM,
+                      WIDTH // 2, HEIGHT - 70, center=True)
+            return
 
         draw_text(surf, "Click TWO allies to swap them, or skip.", 20, YELLOW,
                   WIDTH // 2, HEIGHT - 80, center=True)
@@ -1568,20 +2713,46 @@ class Game:
         draw_button(surf, skip_btn, "Skip Swap", mouse_pos, size=18)
         self._extra_swap_skip_btn = skip_btn
 
-        # Click handling must go here for extra_swap phase
-        # (handled in handle_click already)
+        # Status tooltip — drawn last
+        for r, kind in _status_hover:
+            if r.collidepoint(mouse_pos):
+                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                break
 
     def _draw_select_actions(self, surf, mouse_pos):
         surf.fill(BG)
-        if not self.battle or not self.current_actor:
+        if not self.battle:
+            return
+
+        # LAN: show waiting overlay when it's the opponent's turn
+        if self._is_lan() and self.selecting_player != self._lan_my_player():
+            draw_top_bar(surf, self.battle, f"Waiting for P{self.selecting_player}...")
+            _lan_sh = []
+            draw_formation(surf, self.battle, mouse_pos=mouse_pos, status_rects_out=_lan_sh)
+            draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+            draw_text(surf, "Waiting for opponent to pick their actions...",
+                      22, TEXT_DIM, WIDTH // 2, HEIGHT - 70, center=True)
+            for r, kind in _lan_sh:
+                if r.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                    break
+            return
+
+        if not self.current_actor:
             return
 
         actor = self.current_actor
         team  = self.battle.get_team(self.selecting_player)
         is_last = len(team.alive()) == 1 and team.alive()[0] == actor
 
-        draw_top_bar(surf, self.battle,
-                     f"P{self.selecting_player} — Selecting Actions")
+        rnd = self.battle.round_num
+        init = self.battle.init_player
+        ai_turn = self._is_single_player() and self._is_ai_player(self.selecting_player)
+        if self.selecting_player == init:
+            ctx = f"Round {rnd} — Initiative  |  P{self.selecting_player} Selecting Actions"
+        else:
+            ctx = f"Round {rnd} — Responding  |  P{self.selecting_player} Selecting Actions"
+        draw_top_bar(surf, self.battle, ctx)
 
         # Formation (left)
         valid_targets = []
@@ -1602,30 +2773,15 @@ class Game:
             elif self.pending_action["type"] == "item":
                 valid_targets = team.alive()
 
+        _status_hover = []
         draw_formation(surf, self.battle,
                        selected_unit=actor,
                        valid_targets=valid_targets,
                        mouse_pos=mouse_pos,
-                       acting_player=self.selecting_player)
+                       acting_player=self.selecting_player,
+                       status_rects_out=_status_hover)
 
         draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-
-        # Queued summary + clear-queue button
-        draw_queued_summary(surf, team, 520, self.selecting_player)
-
-        # Clear Queue button (only in main selection phase, not extra-action phase)
-        if self.phase == "select_actions":
-            team_has_queued = any(
-                u.queued is not None or u.queued2 is not None
-                for u in team.members if not u.ko
-            )
-            clear_rect = pygame.Rect(580, 646, 190, 34)
-            draw_button(surf, clear_rect, "Clear Queue", mouse_pos, size=15,
-                        normal=(55, 30, 30), hover=(80, 40, 40),
-                        disabled=not team_has_queued)
-            self._last_clear_btn = clear_rect if team_has_queued else None
-        else:
-            self._last_clear_btn = None
 
         # Detail panel — drawn below formations when a unit is inspected
         if self._detail_unit is not None:
@@ -1639,7 +2795,7 @@ class Game:
             draw_text(surf, "Click any unit to inspect", 13, TEXT_MUTED,
                       20, BATTLE_DETAIL_RECT.y + 6)
 
-        # Action buttons
+        # Action buttons (drawn first so panel background is laid down)
         if self.selection_sub == "pick_action":
             abilities = actor.all_active_abilities(is_last)
             valid_abs = [a for a in abilities
@@ -1651,10 +2807,33 @@ class Game:
             )
             self._last_action_buttons = btns
 
+        # Queued summary — drawn after action menu so it renders on top
+        # x and panel_w match ACTION_PANEL_RECT exactly
+        draw_queued_summary(surf, team, 700, self.selecting_player,
+                            x=ACTION_PANEL_RECT.x, panel_w=ACTION_PANEL_RECT.width)
+
+        # Clear Queue button (only in main selection phase, not extra-action phase)
+        if self.phase == "select_actions":
+            team_has_queued = any(
+                u.queued is not None or u.queued2 is not None
+                for u in team.members if not u.ko
+            )
+            clear_rect = pygame.Rect(995, 840, 190, 34)
+            draw_button(surf, clear_rect, "Clear Queue", mouse_pos, size=15,
+                        normal=(55, 30, 30), hover=(80, 40, 40),
+                        disabled=not team_has_queued)
+            self._last_clear_btn = clear_rect if team_has_queued else None
+        else:
+            self._last_clear_btn = None
+
+        # Bottom status text
+        if ai_turn:
+            draw_text(surf, f"P{self.selecting_player} is choosing their actions...",
+                      20, TEXT_DIM, WIDTH // 2, HEIGHT - 36, center=True)
+        elif self.selection_sub == "pick_action":
             prefix = "EXTRA ACTION — " if self.current_is_extra else ""
             draw_text(surf, f"{prefix}Assigning: {actor.name}", 22, CYAN,
                       WIDTH // 2, HEIGHT - 36, center=True)
-
         elif self.selection_sub == "pick_target":
             prompt = "Click a valid target (highlighted)"
             if (self.pending_action and self.pending_action.get("type") == "ability"
@@ -1667,6 +2846,113 @@ class Game:
                       TEXT_MUTED, WIDTH // 2, HEIGHT - 16, center=True)
             self._last_action_buttons = []
 
+        # Status tooltip — drawn last so it appears on top of everything
+        for r, kind in _status_hover:
+            if r.collidepoint(mouse_pos):
+                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                break
+
+    def _draw_actions_resolving(self, surf, mouse_pos):
+        surf.fill(BG)
+        if not self.battle:
+            return
+        rp = self._resolving_player
+        draw_top_bar(surf, self.battle, f"P{rp} — Actions Selected")
+        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
+        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+        draw_text(surf, "Actions Selected", 34, (200, 200, 80),
+                  WIDTH // 2, HEIGHT - 90, center=True)
+        cont_btn = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 60, 260, 44)
+        draw_button(surf, cont_btn, "Resolve Actions →", mouse_pos, size=18,
+                    normal=BLUE_DARK, hover=BLUE)
+        self._last_actions_resolving_btn = cont_btn
+
+    def _draw_battle_start(self, surf, mouse_pos):
+        surf.fill(BG)
+        if not self.battle:
+            return
+        t1 = self.battle.team1.player_name
+        t2 = self.battle.team2.player_name
+        draw_top_bar(surf, self.battle, f"{t1}  vs  {t2}")
+        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
+        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+        init = self.battle.init_player
+        reason = getattr(self.battle, "init_reason", "")
+        esp = self.battle.r1_extra_swap_player
+        # Stack text lines above the button, anchored from the bottom up
+        btn_top = HEIGHT - 50
+        cont_btn = pygame.Rect(WIDTH // 2 - 130, btn_top, 260, 40)
+        y = btn_top - 22
+        if esp:
+            draw_text(surf, f"P{esp} receives a free formation swap before actions.", 15, CYAN,
+                      WIDTH // 2, y, center=True)
+            y -= 22
+        if reason:
+            draw_text(surf, reason, 15, TEXT_DIM, WIDTH // 2, y, center=True)
+            y -= 28
+        draw_text(surf, f"Round 1 — P{init} has initiative!", 22, YELLOW,
+                  WIDTH // 2, y, center=True)
+        if self.game_mode == "lan_client":
+            draw_text(surf, "Waiting for host...", 18, TEXT_DIM, WIDTH // 2, btn_top + 10, center=True)
+            self._last_battle_start_btn = pygame.Rect(0, 0, 0, 0)  # non-clickable
+        else:
+            draw_button(surf, cont_btn, "Begin Round 1 →", mouse_pos, size=18,
+                        normal=BLUE_DARK, hover=BLUE)
+            self._last_battle_start_btn = cont_btn
+
+    def _draw_end_of_round(self, surf, mouse_pos):
+        surf.fill(BG)
+        if not self.battle:
+            return
+        next_rnd = self.battle.round_num
+        init = self.battle.init_player
+        reason = getattr(self.battle, "init_reason", "")
+        esp = self.battle.r1_extra_swap_player
+        draw_top_bar(surf, self.battle, f"Round {next_rnd}")
+        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
+        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+        btn_top = HEIGHT - 50
+        cont_btn = pygame.Rect(WIDTH // 2 - 130, btn_top, 260, 40)
+        y = btn_top - 22
+        if esp:
+            draw_text(surf, f"P{esp} receives a free formation swap before actions.", 15, CYAN,
+                      WIDTH // 2, y, center=True)
+            y -= 22
+        if reason:
+            draw_text(surf, reason, 15, TEXT_DIM, WIDTH // 2, y, center=True)
+            y -= 28
+        draw_text(surf, f"Round {next_rnd} — P{init} has initiative!", 22, YELLOW,
+                  WIDTH // 2, y, center=True)
+        if self.game_mode == "lan_client":
+            draw_text(surf, "Waiting for host...", 18, TEXT_DIM, WIDTH // 2, btn_top + 10, center=True)
+            self._last_eor_btn = pygame.Rect(0, 0, 0, 0)  # non-clickable
+        else:
+            draw_button(surf, cont_btn, f"Begin Round {next_rnd} →", mouse_pos, size=18,
+                        normal=BLUE_DARK, hover=BLUE)
+            self._last_eor_btn = cont_btn
+
+    def _draw_initiative_result(self, surf, mouse_pos):
+        surf.fill(BG)
+        if not self.battle:
+            return
+        init = self.battle.init_player
+        rnd = self.battle.round_num
+        draw_top_bar(surf, self.battle, f"Round {rnd} — Initiative")
+        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
+        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+        reason = getattr(self.battle, "init_reason", "")
+        draw_text(surf, f"P{init} acts first this round!", 26, YELLOW,
+                  WIDTH // 2, HEIGHT - 96, center=True)
+        if reason:
+            draw_text(surf, reason, 17, TEXT_DIM, WIDTH // 2, HEIGHT - 66, center=True)
+        if self.game_mode == "lan_client":
+            draw_text(surf, "Waiting for host...", 18, TEXT_DIM, WIDTH // 2, HEIGHT - 50, center=True)
+            self._last_init_result_btn = pygame.Rect(0, 0, 0, 0)  # non-clickable
+        else:
+            cont_btn = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 44, 260, 38)
+            draw_button(surf, cont_btn, "Continue →", mouse_pos, size=18,
+                        normal=BLUE_DARK, hover=BLUE)
+            self._last_init_result_btn = cont_btn
 
     def _draw_resolving(self, surf, mouse_pos):
         surf.fill(BG)
@@ -1675,7 +2961,11 @@ class Game:
         rp = self._resolving_player
         init_done = self._init_player_resolved
 
-        if self.phase == "resolve_done" and init_done:
+        if self.phase == "action_result":
+            actor = self._action_step_unit
+            actor_name = actor.name if actor else "?"
+            lbl = f"{actor_name} acted — review, then continue"
+        elif self.phase == "resolve_done" and init_done:
             lbl = f"P{rp} acted — review, then pass to P{3 - (rp or 1)}"
         elif self.phase == "resolve_done":
             lbl = "Round complete — Continue when ready"
@@ -1683,7 +2973,9 @@ class Game:
             lbl = f"P{rp} Acting — Both Watch" if rp else "Resolution"
 
         draw_top_bar(surf, self.battle, lbl)
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
+        _status_hover = []
+        draw_formation(surf, self.battle, mouse_pos=mouse_pos,
+                       status_rects_out=_status_hover)
         draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
 
         # Detail panel
@@ -1695,19 +2987,42 @@ class Game:
             draw_text(surf, "Click any unit to inspect", 13, TEXT_MUTED,
                       20, BATTLE_DETAIL_RECT.y + 6)
 
-        if self.phase == "resolve_done":
+        if self.phase == "action_result":
+            actor = self._action_step_unit
+            actor_name = actor.name if actor else "?"
+            new_entries = self.battle.log[self._action_log_start:]
+            if new_entries:
+                msg = new_entries[0][:60]  # show the primary action result (first new line)
+            else:
+                msg = f"{actor_name} acted."
+            draw_text(surf, msg, 18, GREEN, WIDTH // 2, HEIGHT - 90, center=True)
+            cont_btn = pygame.Rect(WIDTH // 2 - 100, HEIGHT - 60, 200, 44)
+            draw_button(surf, cont_btn, "Next Action →", mouse_pos, size=18,
+                        normal=BLUE_DARK, hover=BLUE)
+            self._last_resolve_btn = cont_btn
+        elif self.phase == "resolve_done":
+            sp = self._is_single_player()
             if init_done:
                 second = 3 - (rp or self.battle.init_player)
                 btn_label = f"Continue → P{second} selects"
-                msg = f"P{rp} done! Review the log, then hand to P{second}."
+                if sp:
+                    msg = f"P{rp} done! Review the log, then continue."
+                else:
+                    msg = f"P{rp} done! Review the log, then hand to P{second}."
             else:
                 btn_label = "Continue → Next Round"
                 msg = "Round complete! Click Continue for the next round."
-            draw_text(surf, msg, 20, GREEN, WIDTH // 2, HEIGHT - 36, center=True)
+            draw_text(surf, msg, 20, GREEN, WIDTH // 2, HEIGHT - 90, center=True)
             cont_btn = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 60, 260, 44)
             draw_button(surf, cont_btn, btn_label, mouse_pos, size=18,
                         normal=BLUE_DARK, hover=BLUE)
             self._last_resolve_btn = cont_btn
+
+        # Status tooltip — drawn last
+        for r, kind in _status_hover:
+            if r.collidepoint(mouse_pos):
+                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                break
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1717,13 +3032,69 @@ class Game:
 _orig_handle_click = Game.handle_click
 
 def _patched_handle_click(self, pos):
+    if self.phase == "battle":
+        btn = getattr(self, "_tk_btn_rect", None)
+        if btn and btn.collidepoint(pos):
+            self._tk_btn_label = None
+            self._tk_btn_rect  = None
+            # For LAN host: send state update when passing
+            if self._is_lan() and self.game_mode == "lan_host":
+                self._lan_send_state(phase="battle")
+        return
+    if self.phase == "pre_battle_review":
+        btns = getattr(self, "_last_pre_battle_btns", None) or {}
+        for rect, idx in btns.get("slot_btns", []):
+            if rect.collidepoint(pos):
+                if self._pre_battle_slot_selected is None:
+                    self._pre_battle_slot_selected = idx
+                elif self._pre_battle_slot_selected == idx:
+                    self._pre_battle_slot_selected = None
+                else:
+                    i, j = self._pre_battle_slot_selected, idx
+                    self._pre_battle_picks[i], self._pre_battle_picks[j] = \
+                        self._pre_battle_picks[j], self._pre_battle_picks[i]
+                    self._pre_battle_slot_selected = None
+                return
+        if btns.get("start_btn") and btns["start_btn"].collidepoint(pos):
+            self.p1_picks = self._pre_battle_picks
+            self._start_battle()
+            return
+        if btns.get("edit_btn") and btns["edit_btn"].collidepoint(pos):
+            self._editing_team_slot = getattr(self, "_story_team_idx", 0)
+            self._teambuilder_return_phase = "story_team_select"
+            self.phase = "teambuilder"
+            return
+        if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+            self.phase = "story_team_select"
+            return
+        return
+    if self.phase == "actions_resolving":
+        btn = getattr(self, "_last_actions_resolving_btn", None)
+        if btn and btn.collidepoint(pos):
+            self.phase = "resolving"
+            self._do_single_resolution(self._resolving_player)
+        return
+    if self.phase == "battle_start":
+        btn = getattr(self, "_last_battle_start_btn", None)
+        if btn and btn.collidepoint(pos):
+            self._enter_round_start()
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase=self.phase)
+        return
+    if self.phase == "end_of_round":
+        btn = getattr(self, "_last_eor_btn", None)
+        if btn and btn.collidepoint(pos):
+            self._enter_round_start()
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase=self.phase)
+        return
     if self.phase.startswith("extra_swap_p"):
         self._handle_extra_swap_click(pos)
         return
     if self.phase.startswith("extra_action_p"):
         self._handle_action_select_click(pos)
         return
-    if self.phase in ("resolving", "resolve_done"):
+    if self.phase in ("resolving", "resolve_done", "action_result"):
         # Close detail panel
         if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
             self._detail_unit = None
@@ -1736,7 +3107,10 @@ def _patched_handle_click(self, pos):
             return
         btn = getattr(self, "_last_resolve_btn", None)
         if btn and btn.collidepoint(pos):
-            self._auto_continue_resolve_done()
+            if self.phase == "action_result":
+                self._resolve_next_step()
+            else:
+                self._auto_continue_resolve_done()
         return
     _orig_handle_click(self, pos)
 
@@ -1750,7 +3124,7 @@ Game.handle_click = _patched_handle_click
 def main():
     g = Game()
     # Init last-used button caches to avoid AttributeError on first frame
-    g._last_menu_btns   = (pygame.Rect(0,0,1,1),) * 4
+    g._last_menu_btns   = (pygame.Rect(0,0,1,1),) * 5
     g._last_pass_btn    = None
     g._last_team_clicks = {}
     g._last_action_buttons = []
@@ -1767,10 +3141,12 @@ def main():
     g._extra_swap_pending  = None
     g._extra_swap_skip_btn = pygame.Rect(0,0,1,1)
     g._last_resolve_btn    = pygame.Rect(0,0,1,1)
+    g._last_actions_resolving_btn = pygame.Rect(0,0,1,1)
     g._last_clear_btn      = None
     g._detail_close_btn    = None
     g._resolving_player    = None
     g._init_player_resolved = False
+    g._tk_btn_rect         = None
     g.run()
 
 

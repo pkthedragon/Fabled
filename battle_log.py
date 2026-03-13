@@ -6,8 +6,19 @@ to battle_log.txt in the project folder.  Overwritten each battle.
 """
 import datetime
 import os
+import sys
 
 _f = None
+
+
+def _log_path() -> str:
+    """Return the path for battle_log.txt next to the exe (or script) in all cases."""
+    if getattr(sys, "frozen", False):
+        # Running as a PyInstaller bundle — write beside the .exe, not in the temp dir
+        base = os.path.dirname(sys.executable)
+    else:
+        base = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base, "battle_log.txt")
 
 
 def init():
@@ -18,7 +29,7 @@ def init():
             _f.close()
         except Exception:
             pass
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "battle_log.txt")
+    path = _log_path()
     _f = open(path, "w", encoding="utf-8", buffering=1)
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     _w("=" * 70)
@@ -30,6 +41,7 @@ def init():
 def _w(s: str):
     if _f:
         _f.write(s + "\n")
+        _f.flush()
 
 
 def log(s: str):
