@@ -38,6 +38,7 @@ from logic import (
     apply_quest_rewards,
     apply_round_start_effects,
     make_combatant,
+    describe_action,
 )
 do_end_round = end_round
 from ui import (
@@ -53,6 +54,7 @@ from ui import (
     draw_catalog,
     draw_pvp_mode_select, draw_lan_lobby,
     draw_status_tooltip, draw_import_modal, draw_tutorial_popup, draw_intro_popup,
+    _wrap_text,
     SLOT_RECTS_P1, SLOT_RECTS_P2, LOG_RECT, ACTION_PANEL_RECT, BATTLE_DETAIL_RECT,
 )
 from campaign_data import QUEST_TABLE, MISSION_TABLE, build_quest_enemy_team
@@ -982,7 +984,8 @@ class Game:
                 log_before = len(self.battle.log)
                 swapped = self._ai_pick_extra_swap(player)
                 new_lines = self.battle.log[log_before:]
-                inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+                inject = [{"k": "text", "msg": line, "dur": 2.0}
+                  for line in new_lines if not line.startswith("\x01")]
                 if not swapped:
                     inject.insert(0, {"k": "text",
                                       "msg": f"P{player} passed on the free swap.", "dur": 2.0})
@@ -1034,7 +1037,8 @@ class Game:
             self.battle.log_add("─── End of Round ───")
             do_end_round(self.battle)
             new_lines = self.battle.log[log_before:]
-            inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+            inject = [{"k": "text", "msg": line, "dur": 2.0}
+                  for line in new_lines if not line.startswith("\x01")]
             if self.battle.winner:
                 inject.append({"k": "battle_end"})
                 self._tk.clear()   # discard any remaining steps (text, btn, next_round)
@@ -1086,7 +1090,8 @@ class Game:
             unit.queued = None
 
         new_lines = self.battle.log[log_before:]
-        inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+        inject = [{"k": "text", "msg": line, "dur": 2.0}
+                  for line in new_lines if not line.startswith("\x01")]
         if self.battle.winner:
             inject.append({"k": "battle_end"})
         else:
@@ -2655,6 +2660,16 @@ class Game:
             if actor.queued is not None:
                 return  # already has an action queued; ignore duplicate
             actor.queued = action_dict
+        # Log queued action to battle log panel only (not shown in moving ticker)
+        if self.battle:
+            atype = action_dict.get("type", "")
+            if atype == "item":
+                t = action_dict.get("target")
+                tname = t.name if t else "self"
+                desc = f"{actor.item.name} → {tname}"
+            else:
+                desc = describe_action(action_dict)
+            self.battle.log_noshow(f"[Queued] {actor.name}: {desc}")
 
     def _finish_selection(self):
         """Selection done: route to this player's resolution phase."""
@@ -3040,7 +3055,8 @@ class Game:
             unit.extra_actions_now = 0
         self._extra_action_queue.pop(0)
         new_lines = self.battle.log[log_before:]
-        inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+        inject = [{"k": "text", "msg": line, "dur": 2.0}
+                  for line in new_lines if not line.startswith("\x01")]
         if self.battle.winner:
             inject.append({"k": "battle_end"})
         elif self._extra_action_queue:
@@ -3474,10 +3490,20 @@ class Game:
 
         # Centered overlay box for round-start / initiative announcement
         if self._tk_overlay_msg:
-            lines = self._tk_overlay_msg.split("\n")
+            raw_lines = self._tk_overlay_msg.split("\n")
+            box_w = 960
+            text_max_w = box_w - 48
+            # Expand each raw line using word-wrap (first line larger font)
+            display_lines = []  # (text, size, color)
+            for i, raw in enumerate(raw_lines):
+                if i == 0:
+                    display_lines.append((raw, 26, (230, 230, 255)))
+                else:
+                    wrapped = _wrap_text(raw, 17, text_max_w) or [raw]
+                    for wl in wrapped:
+                        display_lines.append((wl, 17, (180, 190, 230)))
             line_h = 32
-            box_w = 740
-            box_h = 36 + line_h * len(lines)
+            box_h = 36 + line_h * len(display_lines)
             bx = WIDTH // 2 - box_w // 2
             by = HEIGHT // 2 - box_h // 2
             overlay_surf = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
@@ -3485,10 +3511,8 @@ class Game:
             surf.blit(overlay_surf, (bx, by))
             pygame.draw.rect(surf, (100, 140, 220), (bx, by, box_w, box_h), 2, border_radius=6)
             text_y = by + 18
-            for i, line in enumerate(lines):
-                size = 26 if i == 0 else 17
-                col  = (230, 230, 255) if i == 0 else (180, 190, 230)
-                draw_text(surf, line, size, col, WIDTH // 2, text_y, center=True)
+            for text, size, col in display_lines:
+                draw_text(surf, text, size, col, WIDTH // 2, text_y, center=True)
                 text_y += line_h
 
         # Status tooltip

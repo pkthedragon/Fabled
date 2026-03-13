@@ -1415,9 +1415,7 @@ def execute_ability(
     if mode.power > 0:
         dmg = compute_damage(actor, target, ability, mode, acting_player, battle,
                              is_spread=is_spread, ignore_pride=ignore_pride)
-        battle.log_add(
-            f"{actor.name} uses {ability.name} on {target.name} for {dmg} damage."
-        )
+        battle.log_add(f"  {target.name} takes {dmg} damage.")
         deal_damage(actor, target, dmg, ability, mode, acting_player, battle)
 
     # ── Purifying Flame: on next attack, Burn the target ─────────────────────
@@ -2233,14 +2231,15 @@ def execute_item(
         return
 
     actor.item_uses_left -= 1
+    battle.log_add(f"{actor.name} uses {item.name}.")
 
     if item.heal > 0:
-        do_heal(target, item.heal, actor, battle)
-        battle.log_add(f"{actor.name} uses {item.name}: heals {target.name}.")
+        do_heal(target, item.heal, actor, battle,
+                action_desc=f"{actor.name} heals {target.name}")
 
     if item.guard:
         target.add_status("guard", item.status_dur)
-        battle.log_add(f"{actor.name} uses {item.name}: {target.name} is Guarded.")
+        battle.log_add(f"  {target.name} is Guarded.")
 
     if item.atk_buff:
         apply_stat_buff(actor, "attack", item.atk_buff, item.atk_buff_dur, battle)
@@ -2253,20 +2252,18 @@ def execute_item(
 
     if item.status and not item.guard:
         apply_status_effect(target, item.status, item.status_dur, battle)
-        battle.log_add(f"{actor.name} uses {item.name} on {target.name}.")
 
     if item.special == "smoke_bomb_swap":
         # Swap actor with a chosen ally (target must be an ally)
         if target != actor and target in team.alive():
             do_swap(actor, target, team, battle)
-        battle.log_add(f"{actor.name} uses Smoke Bomb, swaps with {target.name}.")
+        battle.log_add(f"  Smoke Bomb: swaps with {target.name}.")
 
     if item.special == "ancient_hourglass":
         actor.untargetable = True
         actor.cant_act     = True
         actor.ability_charges["hourglass"] = 1
-        battle.log_add(
-            f"{actor.name} uses Ancient Hourglass — untargetable next round.")
+        battle.log_add(f"  Ancient Hourglass — untargetable next round.")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2478,11 +2475,13 @@ def resolve_queued_action(
 
         _pride_abilities = {"heros_charge", "slay_the_beast"}
         if mode.spread:
+            battle.log_add(f"{actor.name} uses {ability.name}.")
             ignore_pride = action.get("ignore_pride", False) or ability.id in _pride_abilities
             execute_spread_ability(actor, ability, acting_player, battle,
                                    ignore_pride=ignore_pride)
             _track_ranged_use_once(actor, ability, battle)
         elif target and not target.ko:
+            battle.log_add(f"{actor.name} uses {ability.name} on {target.name}.")
             ignore_pride = action.get("ignore_pride", False) or ability.id in _pride_abilities
             execute_ability(actor, ability, target, acting_player, battle,
                             ignore_pride=ignore_pride, action_context=action)

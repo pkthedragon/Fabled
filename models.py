@@ -368,6 +368,11 @@ class BattleState:
         self.log.append(msg)
         battle_log.log(msg)
 
+    def log_noshow(self, msg: str):
+        """Add to the battle log panel and log file, but NOT to the moving ticker."""
+        self.log.append("\x01" + msg)
+        battle_log.log(msg)
+
     def log_tech(self, msg: str):
         """Write a technical detail to the battle log file (not shown in-game)."""
         battle_log.tech(msg)

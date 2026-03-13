@@ -622,6 +622,8 @@ LOG_RECT = pygame.Rect(580, 80, 400, 560)
 
 def _log_color(line: str) -> tuple:
     """Return a colour for a log entry based on its content."""
+    if line.startswith("\x01"):
+        line = line[1:]
     if "───" in line:
         return (100, 130, 160)          # dim blue-grey separator
     lo = line.lower()
@@ -652,6 +654,8 @@ def draw_log(surf, log: list, rect=LOG_RECT, scroll_offset: int = 0):
     display_lines = []
     for entry in log:
         col = _log_color(entry)
+        if entry.startswith("\x01"):
+            entry = entry[1:]
         wrapped = _wrap_text(entry, 13, max_w)
         if not wrapped:
             wrapped = [""]
