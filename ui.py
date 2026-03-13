@@ -421,24 +421,25 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
 
     # Green dot when action already queued
     if has_queued and not unit.ko:
-        pygame.draw.circle(surf, GREEN, (rect.right - 10, rect.y + 10), 5)
+        pygame.draw.circle(surf, GREEN, (rect.x + 10, rect.y + 10), 5)
 
-    x, y = rect.x + 8, rect.y + 6
+    x = rect.x + 8
     w = rect.width - 16
 
-    # Slot label
+    # Slot label — own top row; midright y accounts for center-anchor
     if show_slot:
         slot_lbl = SLOT_LABELS.get(unit.slot, unit.slot)
-        draw_text(surf, slot_lbl, 14, TEXT_MUTED, rect.right - 8,
-                  rect.y + 8, right=True)
+        draw_text(surf, slot_lbl, 13, TEXT_MUTED, rect.right - 8,
+                  rect.y + 14, right=True)
 
-    # Name (short form in unit boxes; full name shown in detail panels)
+    # Name starts below the slot label
+    y = rect.y + 25
     name_color = RED if unit.ko else (TEXT_DIM if unit.untargetable else TEXT)
-    draw_text(surf, short_name(unit.name), 18, name_color, x, y)
+    draw_text(surf, short_name(unit.name), 17, name_color, x, y)
     y += 22
 
     # Class
-    _clsr = draw_text(surf, cls_label(unit.cls), 14, TEXT_MUTED, x, y)
+    _clsr = draw_text(surf, cls_label(unit.cls), 13, TEXT_MUTED, x, y)
     if status_rects_out is not None:
         status_rects_out.append((_clsr, unit.cls))
     y += 18
@@ -447,7 +448,7 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
         draw_text(surf, "KO'd", 20, RED, rect.centerx, rect.centery, center=True)
         return
 
-    # HP bar
+    # HP bar — text centered inside via center=True (y = bar vertical midpoint)
     bar_w = w
     bar_h = 10
     bar_rect = pygame.Rect(x, y, bar_w, bar_h)
@@ -458,9 +459,9 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
         filled = pygame.Rect(x, y, int(bar_w * ratio), bar_h)
         pygame.draw.rect(surf, hp_color, filled, border_radius=3)
     pygame.draw.rect(surf, BORDER, bar_rect, 1, border_radius=3)
-    draw_text(surf, f"{unit.hp}/{unit.max_hp}", 13, TEXT,
-              x + bar_w // 2, y - 1, center=True)
-    y += 14
+    draw_text(surf, f"{unit.hp}/{unit.max_hp}", 12, TEXT,
+              x + bar_w // 2, y + bar_h // 2, center=True)
+    y += 13
 
     # Stats — green if buffed, red if debuffed, dim if neutral
     sx = x
@@ -537,7 +538,7 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
 #   Right: log (x=580) + action panel (x=995)
 
 UNIT_W = 170
-UNIT_H = 130
+UNIT_H = 155
 
 _FORM_LEFT  = 10   # x of back-left units
 _FORM_RIGHT = 390  # x of back-right units
@@ -546,12 +547,12 @@ _FORM_MID   = 200  # x of frontline units (centered in formation area)
 # P2 (opponent): backlines at top (aligned with log/action panel), frontline below
 P2_BL_RECT    = pygame.Rect(_FORM_LEFT,  80,  UNIT_W, UNIT_H)
 P2_BR_RECT    = pygame.Rect(_FORM_RIGHT, 80,  UNIT_W, UNIT_H)
-P2_FRONT_RECT = pygame.Rect(_FORM_MID,  230, UNIT_W, UNIT_H)
+P2_FRONT_RECT = pygame.Rect(_FORM_MID,  245, UNIT_W, UNIT_H)
 
 # P1 (player): frontline at top of P1 area, backlines below
-P1_FRONT_RECT = pygame.Rect(_FORM_MID,  380, UNIT_W, UNIT_H)
-P1_BL_RECT    = pygame.Rect(_FORM_LEFT, 530, UNIT_W, UNIT_H)
-P1_BR_RECT    = pygame.Rect(_FORM_RIGHT,530, UNIT_W, UNIT_H)
+P1_FRONT_RECT = pygame.Rect(_FORM_MID,  410, UNIT_W, UNIT_H)
+P1_BL_RECT    = pygame.Rect(_FORM_LEFT, 575, UNIT_W, UNIT_H)
+P1_BR_RECT    = pygame.Rect(_FORM_RIGHT,575, UNIT_W, UNIT_H)
 
 SLOT_RECTS_P1 = {
     SLOT_FRONT:      P1_FRONT_RECT,
@@ -578,7 +579,7 @@ def draw_formation(surf, battle: BattleState,
 
     # Team labels flanking the formation
     draw_text(surf, battle.team2.player_name, 16, BLUE,  _FORM_CX, 68, center=True)
-    draw_text(surf, battle.team1.player_name, 16, GREEN, _FORM_CX, 668, center=True)
+    draw_text(surf, battle.team1.player_name, 16, GREEN, _FORM_CX, P1_BL_RECT.bottom + 8, center=True)
 
     # Thin dividing line between the two frontlines
     mid_y = (P2_FRONT_RECT.bottom + P1_FRONT_RECT.top) // 2

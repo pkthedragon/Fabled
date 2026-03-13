@@ -87,7 +87,13 @@
       "Bash(cd \"C:/Users/prana/OneDrive/Desktop/GitHub/Fabled\" && pyinstaller Fabled.spec 2>&1 | tail -8)",
       "Bash(cd \"C:/Users/prana/OneDrive/Desktop/GitHub/Fabled\" && pyinstaller Fabled.spec 2>&1 | tail -6 && cp dist/Fabled.exe Fabled.exe)",
       "Bash(cd \"C:/Users/prana/OneDrive/Desktop/GitHub/Fabled\" && pyinstaller Fabled.spec 2>&1 | tail -8 && cp dist/Fabled.exe Fabled.exe)",
-      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && pyinstaller --distpath . Fabled.spec 2>&1)"
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && pyinstaller --distpath . Fabled.spec 2>&1)",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && taskkill /F /IM Fabled.exe 2>&1; sleep 1 && pyinstaller --onefile --windowed --name \"Fabled\" --distpath \".\" main.py 2>&1 | tail -6)",
+      "Bash(taskkill /F /IM Fabled.exe)",
+      "Bash(cmd /c \"taskkill /F /IM Fabled.exe\")",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && cmd /c \"pyinstaller --onefile --windowed --name Fabled --distpath . main.py 2>&1 | tail -6\")",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m PyInstaller --onefile --windowed --name \"Fabled\" --distpath \".\" main.py 2>&1 | tail -8)",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m PyInstaller --onefile --windowed --name \"Fabled\" --distpath \".\" main.py 2>&1 | tail -5)"
     ]
   }
 }
