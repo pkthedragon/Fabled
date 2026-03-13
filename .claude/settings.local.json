@@ -47,7 +47,9 @@
       "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && timeout 3 python main.py 2>&1 || true)",
       "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m PyInstaller --onefile --windowed --name Fabled --distpath . main.py 2>&1 | tail -20)",
       "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -c \"import main; print\\('OK'\\)\")",
-      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m PyInstaller --onefile --windowed --name Fabled --distpath . main.py 2>&1 | tail -8)"
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m PyInstaller --onefile --windowed --name Fabled --distpath . main.py 2>&1 | tail -8)",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m py_compile main.py data.py logic.py ui.py 2>&1)",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && pyinstaller Fabled.spec --distpath \".\" 2>&1)"
     ]
   }
 }

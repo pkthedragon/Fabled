@@ -131,13 +131,13 @@ def draw_panel(surf, rect, title=None, title_size=20):
 # ─────────────────────────────────────────────────────────────────────────────
 
 STATUS_TOOLTIPS = {
-    "burn":      "Burn: takes 10 damage at end of each round.",
+    "burn":      "Burn: takes 10% max HP damage at end of each round.",
     "root":      "Root: cannot perform the Swap action.",
-    "shock":     "Shock: takes 5 damage at end of each round.",
-    "weaken":    "Weaken: attack is reduced.",
-    "expose":    "Expose: defense is reduced; bypasses Guard.",
-    "guard":     "Guard: takes 20% less damage from direct hits.",
-    "spotlight": "Spotlight: all enemies must target this unit.",
+    "shock":     "Shock: ranged units must recharge after 2 ability uses instead of 3.",
+    "weaken":    "Weaken: deals 20% less damage.",
+    "expose":    "Expose: takes 20% more damage.",
+    "guard":     "Guard: takes 20% less damage.",
+    "spotlight": "Spotlight: can be targeted by melee abilities in the backline.",
     "no_heal":   "No Heal: cannot receive any healing.",
     "dormant":   "Dormant: cannot act or be targeted.",
     "reflecting_pool": "Reflecting Pool: reflects 10-20% of incoming damage back to attacker.",
@@ -1113,13 +1113,11 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                 tag = "  [passive]" if sig.passive else ""
                 draw_text(surf, sig.name + tag, 14, TEXT, dx + 6, dy)
                 dy += 15
-                fl_lines = _mode_detail_lines(sig.frontline)
-                bl_lines = _mode_detail_lines(sig.backline)
                 if dy + 12 <= bottom_limit:
-                    draw_text(surf, f"  FL: {fl_lines[0]}", 12, TEXT_DIM, dx + 10, dy)
+                    draw_text(surf, f"  FL: {_mode_summary(sig.frontline)}", 12, TEXT_DIM, dx + 10, dy)
                     dy += 13
                 if dy + 12 <= bottom_limit:
-                    draw_text(surf, f"  BL: {bl_lines[0]}", 12, TEXT_MUTED, dx + 10, dy)
+                    draw_text(surf, f"  BL: {_mode_summary(sig.backline)}", 12, TEXT_MUTED, dx + 10, dy)
                     dy += 13
                 dy += 2
             # ── Twist preview ─────────────────────────────────────────────────
@@ -1325,6 +1323,9 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
 # SPECIAL ABILITY DESCRIPTIONS  (human-readable text for each special key)
 # ─────────────────────────────────────────────────────────────────────────────
 SPECIAL_DESCRIPTIONS: dict = {
+    # Basic – Fighter
+    "rend_back":                       "user's next ability against this target gains +10 Power",
+    "cleave_back":                     "user's next ability against this target ignores 10% Defense",
     # Basic – Rogue
     "riposte_damage_reduction":        "user takes 50% less damage this round",
     "fleetfooted_front":               "first incoming ability each round deals 20% less damage",
@@ -1363,7 +1364,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     # Hunold
     "hypnotic_aura_front":             "Shocked enemies' abilities are redirected to Hunold's back-left",
     "hypnotic_aura_back":              "Shocked enemies' abilities are redirected to Hunold's frontline",
-    "devils_due":                      "one ally ability becomes spread, ignoring melee restriction and spread penalty",
+    "devils_due":                      "Hunold uses one of his own abilities with spread, ignoring melee restriction and spread penalty",
     # Reynard
     "feign_weakness_retaliate_55":     "retaliate 55 power vs incoming attackers next round",
     "feign_weakness_retaliate_45":     "retaliate 45 power vs incoming attackers next round",
@@ -1523,7 +1524,9 @@ def _mode_detail_lines(mode) -> list:
     if mode.bonus_vs_statused:    bonuses.append(f"+{mode.bonus_vs_statused} vs Exposed/Weakened")
     if bonuses:
         parts.append("  ".join(bonuses))
-    if mode.vamp:
+    if mode.double_vamp_no_base:
+        parts.append("2× vamp (no base vamp on this ability)")
+    elif mode.vamp:
         parts.append(f"{int(mode.vamp * 100)}% lifesteal")
     if mode.heal:         parts.append(f"heal {mode.heal}")
     if mode.heal_self:    parts.append(f"self-heal {mode.heal_self}")

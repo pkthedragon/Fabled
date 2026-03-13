@@ -1,5 +1,5 @@
 ======================================================================
-FABLED BATTLE LOG  —  2026-03-12 21:28:22
+FABLED BATTLE LOG  —  2026-03-12 21:51:59
 ======================================================================
 
 
@@ -7,37 +7,37 @@ FABLED BATTLE LOG  —  2026-03-12 21:28:22
 TEAM COMPOSITIONS
 ────────────────────────────────────────────────────────────
 Player 1:
-  [front] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
-    Talent: Electrifying Trance
-    Sig:    Haunting Rhythm  (passive=False)
-    Basics: Sneak Attack, Post Bounty
-    Item:   Family Seal
+  [front] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Breakthrough, Arcane Wave
+    Item:   Arcane Focus
   [back_left] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
     Talent: Silver Aegis
-    Sig:    Shimmering Valor  (passive=False)
-    Basics: Shield Bash, Condemn
-    Item:   Healing Tonic
-  [back_right] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
-    Talent: Two Lives
-    Sig:    Midnight Dour  (passive=True)
-    Basics: Thunder Call, Fire Blast
-    Item:   Health Potion
+    Sig:    Banner of Command  (passive=True)
+    Basics: Stalwart, Slam
+    Item:   Crafty Shield
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Crumb Trail  (passive=False)
+    Basics: Feint, Cleave
+    Item:   Smoke Bomb
 Player 2:
   [front] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
     Talent: Growing Pains
     Sig:    Wooden Wallop  (passive=False)
-    Basics: Dark Grasp, Soul Gaze
-    Item:   —
-  [back_left] Shadow Warlock (Warlock)  HP=185  ATK=70  DEF=40  SPD=50
-    Talent: —
-    Sig:    —  (passive=True)
-    Basics: Dark Grasp, Soul Gaze
-    Item:   —
-  [back_right] Shadow Mage (Mage)  HP=180  ATK=75  DEF=35  SPD=50
-    Talent: —
-    Sig:    —  (passive=True)
-    Basics: Fire Blast, Freezing Gale
-    Item:   —
+    Basics: Blood Pact, Dark Grasp
+    Item:   Smoke Bomb
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Healing Tonic
+  [back_right] Aldric, Lost Lamb (Cleric)  HP=230  ATK=45  DEF=60  SPD=35
+    Talent: All-Caring
+    Sig:    Sanctuary  (passive=True)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
 
 ────────────────────────────────────────────────────────────
 BATTLE START
@@ -48,17 +48,17 @@ ROUND 1
 ────────────────────────────────────────────────────────────
 Round 1 — P1 has initiative.
 P2 receives a free formation swap.
-    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Pinocchio, Cursed Puppet spd=35 (MH adj from 50)  →  P1 acts first
     [T] ROUND 1 STATE SNAPSHOT:
-    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]   P1 March Hare[front] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
     [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P1 Ashen Ella[back_right] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Shadow Warlock[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=50(base=50)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Shadow Mage[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=50(base=50)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=65(base=65) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=65(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]

@@ -2149,12 +2149,12 @@ def apply_special(
                 e.add_debuff("defense", mal * 10, 2)
             battle.log_add(f"  Turn to Foam: all enemies get -{mal*10} Defense for 2 rounds.")
 
-    elif key == "User's ability against this target next round gets +10 Power":
+    elif key == "rend_back":
         # Rend BL: mark target — actor's next ability against it gains +10 Power
         actor.ability_charges[f"rend_bonus_{target.defn.id}"] = 10
         battle.log_add(f"  {actor.name} marks {target.name} — next ability gains +10 Power.")
 
-    elif key == "User's ability against this target next round ignores 10% Defense":
+    elif key == "cleave_back":
         # Cleave BL: mark target — actor's next ability against it ignores 10% Defense
         actor.ability_charges[f"cleave_bonus_{target.defn.id}"] = 10
         battle.log_add(f"  {actor.name} marks {target.name} — next ability ignores 10% Defense.")

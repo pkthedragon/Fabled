@@ -471,7 +471,8 @@ class Game:
             if slot_a is not None and slot_b is not None:
                 team = self.battle.team2
                 do_swap(team.members[slot_a], team.members[slot_b], team, self.battle)
-            self._enter_action_selection(self.battle.init_player)
+            # Return to ticker — it has the remaining round steps (select, resolve, etc.) queued
+            self.phase = "battle"
 
     def _handle_lan_client_msg(self, msg: dict):
         mtype = msg.get("type")
@@ -763,6 +764,9 @@ class Game:
             else:
                 self.phase = f"extra_swap_p{player}"
                 self._init_extra_swap(player)
+                # For LAN: notify the client so they can show their swap UI
+                if self._is_lan() and self.game_mode == "lan_host" and player == 2:
+                    self._lan_send_state(phase=f"extra_swap_p{player}")
                 # returns to "battle" when swap done
 
         elif k == "init_resolve":

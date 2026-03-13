@@ -23,13 +23,13 @@ STRIKE = Ability(
 REND = Ability(
     id="rend", name="Rend", category="basic", passive=False,
     frontline=AbilityMode(power=45, bonus_vs_low_hp=20),
-    backline=AbilityMode(special="User's ability against this target next round gets +10 Power"),
+    backline=AbilityMode(special="rend_back"),
 )
 
 CLEAVE = Ability(
     id="cleave", name="Cleave", category="basic", passive=False,
     frontline=AbilityMode(power=45, def_ignore_pct=20),
-    backline=AbilityMode(special="User's ability against this target next round ignores 10% Defense"),
+    backline=AbilityMode(special="cleave_back"),
 )
 
 FEINT = Ability(
