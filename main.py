@@ -35,7 +35,6 @@ from logic import (
     apply_passive_stats, can_act_this_round,
     get_legal_item_targets,
     get_subterfuge_swap_targets,
-    describe_action,
     apply_quest_rewards,
     apply_round_start_effects,
     make_combatant,
@@ -951,7 +950,7 @@ class Game:
         elif k == "status_condition_tutorial":
             self._maybe_show_tutorial(
                 "status_condition",
-                "Adventurers can be inflicted with status conditions from a variety of effects."
+                "Adventurers can be inflicted with status conditions from a variety of effects. "
                 "Status conditions of the same type do not stack, but an adventurer "
                 "can have any number of different status conditions, most always lasting for "
                 "2 rounds. Hover over a status condition to see what it does!")
@@ -2652,12 +2651,10 @@ class Game:
             if actor.queued2 is not None:
                 return  # already has an extra action queued; ignore duplicate
             actor.queued2 = action_dict
-            self.battle.log_add(f"[Queued Extra] {actor.name}: {describe_action(action_dict)}")
         else:
             if actor.queued is not None:
                 return  # already has an action queued; ignore duplicate
             actor.queued = action_dict
-            self.battle.log_add(f"[Queued] {actor.name}: {describe_action(action_dict)}")
 
     def _finish_selection(self):
         """Selection done: route to this player's resolution phase."""

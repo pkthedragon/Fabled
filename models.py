@@ -285,19 +285,23 @@ class CombatantState:
 
         return max(1, base + self.best_buff(stat) - self.best_debuff(stat))
 
-    def add_buff(self, stat: str, amount: int, duration: int):
+    def add_buff(self, stat: str, amount: int, duration: int) -> bool:
+        """Apply a buff. Returns True if newly applied, False if already present (refreshed)."""
         for buff in self.buffs:
             if buff.stat == stat and buff.amount == amount:
                 buff.duration = max(buff.duration, duration)
-                return
+                return False
         self.buffs.append(StatMod(stat=stat, amount=amount, duration=duration))
+        return True
 
-    def add_debuff(self, stat: str, amount: int, duration: int):
+    def add_debuff(self, stat: str, amount: int, duration: int) -> bool:
+        """Apply a debuff. Returns True if newly applied, False if already present (refreshed)."""
         for debuff in self.debuffs:
             if debuff.stat == stat and debuff.amount == amount:
                 debuff.duration = max(debuff.duration, duration)
-                return
+                return False
         self.debuffs.append(StatMod(stat=stat, amount=amount, duration=duration))
+        return True
 
     # ── Ability list ──────────────────────────────────────────────────────
     def all_active_abilities(self, is_last_alive: bool) -> List[Ability]:

@@ -1,20 +1,20 @@
 {
   "recruited": [
     "risa_redcloak",
-    "aldric_lost_lamb",
-    "robin_hooded_avenger"
+    "robin_hooded_avenger",
+    "aldric_lost_lamb"
   ],
   "sig_tier": 1,
   "basics_tier": 2,
   "unlocked_classes": [
     "Fighter",
-    "Ranger",
-    "Cleric"
+    "Cleric",
+    "Ranger"
   ],
   "unlocked_items": [
+    "family_seal",
     "healing_tonic",
-    "health_potion",
-    "family_seal"
+    "health_potion"
   ],
   "default_sigs": {
     "risa_redcloak": "crimson_fury",
@@ -29,14 +29,51 @@
   "campaign_complete": false,
   "ranked_glory_unlocked": false,
   "tutorial_seen": [
-    "ability_selected",
-    "initiative",
-    "party_editor",
-    "intro",
     "party_built",
-    "action_selection"
+    "initiative",
+    "ability_selected",
+    "action_selection",
+    "intro",
+    "stat_mod",
+    "status_condition",
+    "target_ranged",
+    "target_melee",
+    "party_editor"
   ],
-  "saved_teams": [],
+  "saved_teams": [
+    {
+      "name": "Party 1",
+      "members": [
+        {
+          "adv_id": "risa_redcloak",
+          "sig_id": "crimson_fury",
+          "basics": [
+            "strike",
+            "rend"
+          ],
+          "item_id": "family_seal"
+        },
+        {
+          "adv_id": "aldric_lost_lamb",
+          "sig_id": "benefactor",
+          "basics": [
+            "heal",
+            "bless"
+          ],
+          "item_id": "healing_tonic"
+        },
+        {
+          "adv_id": "robin_hooded_avenger",
+          "sig_id": "snipe_shot",
+          "basics": [
+            "hawkshot",
+            "volley"
+          ],
+          "item_id": "health_potion"
+        }
+      ]
+    }
+  ],
   "tutorials_enabled": true,
   "fast_resolution": false,
   "new_unlocks": []

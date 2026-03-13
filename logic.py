@@ -1135,10 +1135,15 @@ def do_heal(
     amount: int,
     healer: CombatantState,
     battle: BattleState,
+    action_desc: str = None,
 ):
-    """Apply a heal with talent/item bonuses."""
+    """Apply a heal with talent/item bonuses.
+    action_desc: optional prefix for the log line, e.g. 'Aldric heals Risa'."""
     if target.has_status("no_heal"):
         battle.log_add(f"  {target.name} cannot be healed.")
+        return
+
+    if target.hp >= target.max_hp:
         return
 
     # Heart Amulet
@@ -1153,7 +1158,10 @@ def do_heal(
     old = target.hp
     target.hp = min(target.max_hp, target.hp + amount)
     actual = target.hp - old
-    battle.log_add(f"  {target.name} heals {actual} HP.")
+    if action_desc:
+        battle.log_add(f"  {action_desc} for {actual} HP.")
+    else:
+        battle.log_add(f"  {target.name} heals {actual} HP.")
 
     # All-Caring (Aldric talent): healing Guards recipient (only when HP is actually restored)
     if actual > 0 and _has_talent(healer, "aldric_lost_lamb"):
@@ -1214,8 +1222,9 @@ def apply_stat_buff(unit, stat, amount, duration, battle, label=""):
     if unit.has_status("buff_nullify"):
         battle.log_add(f"  {unit.name}'s buffs are nullified.")
         return
-    unit.add_buff(stat, amount, duration)
-    battle.log_add(f"  {unit.name} gains +{amount} {stat.capitalize()} for {duration} rounds.")
+    is_new = unit.add_buff(stat, amount, duration)
+    if is_new:
+        battle.log_add(f"  {unit.name} gains +{amount} {stat.capitalize()} for {duration} rounds.")
     # Art of the Deal: when another adventurer gains a stat buff, Rumpel gains 1 Malice.
     for team in (battle.team1, battle.team2):
         for other in team.alive():
@@ -1224,8 +1233,9 @@ def apply_stat_buff(unit, stat, amount, duration, battle, label=""):
 
 
 def apply_stat_debuff(unit, stat, amount, duration, battle):
-    unit.add_debuff(stat, amount, duration)
-    battle.log_add(f"  {unit.name} loses -{amount} {stat.capitalize()} for {duration} rounds.")
+    is_new = unit.add_debuff(stat, amount, duration)
+    if is_new:
+        battle.log_add(f"  {unit.name} loses -{amount} {stat.capitalize()} for {duration} rounds.")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1426,20 +1436,20 @@ def execute_ability(
 
     # ── Heal to target ────────────────────────────────────────────────────────
     if mode.heal > 0 and not is_spread:
-        battle.log_add(f"{actor.name} heals {target.name}.")
-        do_heal(target, mode.heal, actor, battle)
+        do_heal(target, mode.heal, actor, battle,
+                action_desc=f"{actor.name} heals {target.name}")
 
     # ── Heal self ─────────────────────────────────────────────────────────────
     if mode.heal_self > 0:
-        battle.log_add(f"{actor.name} heals self.")
-        do_heal(actor, mode.heal_self, actor, battle)
+        do_heal(actor, mode.heal_self, actor, battle,
+                action_desc=f"{actor.name} heals self")
 
     # ── Heal lowest HP ally ───────────────────────────────────────────────────
     if mode.heal_lowest > 0:
         lowest = min(team.alive(), key=lambda u: u.hp, default=None)
         if lowest:
-            battle.log_add(f"{actor.name} heals {lowest.name} (lowest HP).")
-            do_heal(lowest, mode.heal_lowest, actor, battle)
+            do_heal(lowest, mode.heal_lowest, actor, battle,
+                    action_desc=f"{actor.name} heals {lowest.name}")
 
     # ── Status on target ──────────────────────────────────────────────────────
     if mode.status:
@@ -2327,7 +2337,6 @@ def resolve_queued_action(
         return
 
     atype = action["type"]
-    battle.log_add(f"{actor.name}: {describe_action(action)}")
 
     # Technical action log
     if atype == "ability":
