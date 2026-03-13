@@ -890,7 +890,7 @@ class Game:
 
         msg = f"Round {rnd} — P{init} has initiative!"
         if reason:
-            msg += f"  ({reason})"
+            msg += f"\n{reason}"
 
         steps = [{"k": "text", "msg": msg, "dur": 2.0, "important": True, "overlay": True}]
 
@@ -1036,10 +1036,9 @@ class Game:
                     del self._campaign_roster
                 self._start_team_select(1)
             elif btns.get("vs_pvp_btn") and btns["vs_pvp_btn"].collidepoint(pos):
-                self.game_mode = "lan_host"
-                self._lan_role = "host"
-                self._lan = net.LANHost()
-                self._lan_host_notified = False
+                self.game_mode = "pvp"
+                self._lan_role = None
+                self._lan = None
                 self._lan_p1_ready = False
                 self._lan_p2_ready = False
                 self._lan_status = ""
@@ -2671,15 +2670,22 @@ class Game:
 
         # Centered overlay box for round-start / initiative announcement
         if self._tk_overlay_msg:
-            box_w, box_h = 560, 90
+            lines = self._tk_overlay_msg.split("\n")
+            line_h = 32
+            box_w = 740
+            box_h = 36 + line_h * len(lines)
             bx = WIDTH // 2 - box_w // 2
             by = HEIGHT // 2 - box_h // 2
             overlay_surf = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
             overlay_surf.fill((10, 10, 30, 210))
             surf.blit(overlay_surf, (bx, by))
             pygame.draw.rect(surf, (100, 140, 220), (bx, by, box_w, box_h), 2, border_radius=6)
-            draw_text(surf, self._tk_overlay_msg, 26, (230, 230, 255),
-                      WIDTH // 2, HEIGHT // 2, center=True)
+            text_y = by + 18
+            for i, line in enumerate(lines):
+                size = 26 if i == 0 else 17
+                col  = (230, 230, 255) if i == 0 else (180, 190, 230)
+                draw_text(surf, line, size, col, WIDTH // 2, text_y, center=True)
+                text_y += line_h
 
         # Status tooltip
         for r, kind in _status_hover:

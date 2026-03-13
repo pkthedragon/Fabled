@@ -1,5 +1,5 @@
 ======================================================================
-FABLED BATTLE LOG  —  2026-03-12 21:11:46
+FABLED BATTLE LOG  —  2026-03-12 21:28:22
 ======================================================================
 
 
@@ -58,90 +58,6 @@ P2 receives a free formation swap.
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
     [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Shadow Warlock[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=50(base=50)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Shadow Mage[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=50(base=50)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-[Queued] Hunold the Piper: Haunting Rhythm → Pinocchio, Cursed Puppet
-[Queued] Ashen Ella: Swap with Sir Roland
-[Queued] Sir Roland: Shield Bash → Pinocchio, Cursed Puppet
-[Resolved] Hunold the Piper: Haunting Rhythm → Pinocchio, Cursed Puppet
-    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Pinocchio, Cursed Puppet
-    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Pinocchio, Cursed Puppet[front]
-    [T]   power=50
-    [T]   atk=60 def=50 raw=60.00 ceil=60
-    [T]   FINAL_DMG=70
-Hunold the Piper uses Haunting Rhythm on Pinocchio, Cursed Puppet for 70 damage.
-    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 150  (-70)
-  Pinocchio, Cursed Puppet gains shock for 2 rounds.
-[Resolved] Ashen Ella: Swap with Sir Roland
-    [T] ACTION P1 Ashen Ella[back_right]: swap ↔ Sir Roland
-Ashen Ella and Sir Roland swap positions.
-[Resolved] Sir Roland: Shield Bash → Pinocchio, Cursed Puppet
-    [T] ACTION P1 Sir Roland[back_right]: Shield Bash → Pinocchio, Cursed Puppet
-  Hunold the Piper is Guarded for 2 rounds.
-[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Hunold the Piper
-[Queued] Shadow Mage: Fire Blast → Hunold the Piper
-[Queued] Shadow Warlock: Dark Grasp → Hunold the Piper
-[Resolved] Pinocchio, Cursed Puppet: Dark Grasp → Hunold the Piper
-    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Dark Grasp → Hunold the Piper
-    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[front] → Hunold the Piper[front]
-    [T]   power=50
-    [T]   atk=65 def=45 raw=72.22 ceil=73
-    [T]   FINAL_DMG=59
-Pinocchio, Cursed Puppet uses Dark Grasp on Hunold the Piper for 59 damage.
-    [T] HPCHANGE Hunold the Piper: 210 → 151  (-59)
-  Pinocchio, Cursed Puppet gains 1 Malice (Dark Grasp). [1/6]
-[Resolved] Shadow Mage: Fire Blast → Hunold the Piper
-    [T] ACTION P2 Shadow Mage[back_right]: Fire Blast → Hunold the Piper
-    [T] DMGCALC [Fire Blast] Shadow Mage[back_right] → Hunold the Piper[front]
-    [T]   power=35
-    [T]   atk=75 def=45 raw=58.33 ceil=59
-    [T]   FINAL_DMG=48
-Shadow Mage uses Fire Blast on Hunold the Piper for 48 damage.
-    [T] HPCHANGE Hunold the Piper: 151 → 103  (-48)
-  Hunold the Piper gains burn for 2 rounds.
-[Resolved] Shadow Warlock: Dark Grasp → Hunold the Piper
-    [T] ACTION P2 Shadow Warlock[back_left]: Dark Grasp → Hunold the Piper
-    [T] DMGCALC [Dark Grasp] Shadow Warlock[back_left] → Hunold the Piper[front]
-    [T]   power=35
-    [T]   atk=70 def=45 raw=54.44 ceil=55
-    [T]   FINAL_DMG=44
-Shadow Warlock uses Dark Grasp on Hunold the Piper for 44 damage.
-    [T] HPCHANGE Hunold the Piper: 103 → 59  (-44)
-─── End of Round ───
-
-────────────────────────────────────────────────────────────
-END OF ROUND 1
-────────────────────────────────────────────────────────────
-    [T] PRE-END STATE (R1):
-    [T]   P1 Hunold the Piper[front] HP=59/210 statuses=[guard(2r), burn(2r)]
-    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
-    [T]   P1 Ashen Ella[back_left] HP=185/185 statuses=[-]
-    [T]   P2 Pinocchio, Cursed Puppet[front] HP=150/220 statuses=[shock(2r)]
-    [T]   P2 Shadow Warlock[back_left] HP=185/185 statuses=[-]
-    [T]   P2 Shadow Mage[back_right] HP=180/180 statuses=[-]
-Hunold the Piper burns for 21 damage.
-    [T] STATUS_TICK Hunold the Piper: guard → 1r left
-    [T] STATUS_TICK Hunold the Piper: burn → 1r left
-  Ashen Ella heals 0 HP.
-    [T] STATUS_TICK Pinocchio, Cursed Puppet: shock → 1r left
-  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [2/6]
-
-────────────────────────────────────────────────────────────
-ROUND 2
-────────────────────────────────────────────────────────────
-Round 2 — P1 has initiative.
-    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
-    [T] ROUND 2 STATE SNAPSHOT:
-    [T]   P1 Hunold the Piper[front] HP=38/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
-    [T]     statuses=[guard(1r), burn(1r)]  buffs=[-]  debuffs=[-]
-    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P1 Ashen Ella[back_left] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Pinocchio, Cursed Puppet[front] HP=150/220 ATK=75(base=65) DEF=60(base=50) SPD=50(base=50)
-    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
     [T]   P2 Shadow Warlock[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=50(base=50)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
     [T]   P2 Shadow Mage[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=50(base=50)
