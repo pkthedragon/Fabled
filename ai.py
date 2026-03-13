@@ -32,6 +32,7 @@ from logic import (
 MAX_SIMULATED_CANDIDATES = 30
 
 DANGEROUS_STATUSES = {"burn", "bleed", "poison"}
+_RANGED_CLASSES = {"Ranger", "Mage", "Cleric"}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -253,40 +254,64 @@ def _heuristic_bonus(battle, player_num: int, actor, action: dict) -> float:
 
         if target is not None and target in enemy.alive():
             # ── Finishing blow ────────────────────────────────────────────
-            # Rough estimate: atk + power vs target def / 2
             est_dmg = actor.get_stat("attack") + mode.power - target.get_stat("defense") // 2
             if est_dmg >= target.hp > 0:
                 bonus += 40.0
 
-            # ── Status application ────────────────────────────────────────
+            # ── Hitting an Exposed target ─────────────────────────────────
+            if target.has_status("expose"):
+                bonus += 24.0
+
+            # ── Status application with context-aware bonuses ─────────────
             statuses = [s for s in (mode.status, mode.status2, mode.status3) if s]
+            enemy_has_healer = any(u.defn.cls == "Cleric" for u in enemy.alive())
             for s in statuses:
                 if target.has_status(s):
                     bonus -= 5.0  # already has it — diminished return
                 else:
-                    bonus += 8.0
+                    if s == "root":
+                        bonus += 22.0  # denies swap entirely
+                    elif s == "shock" and target.defn.cls in _RANGED_CLASSES:
+                        bonus += 20.0  # disrupts ranged carry
+                    elif s == "no_heal" and enemy_has_healer:
+                        bonus += 18.0  # shuts down enemy sustain
+                    else:
+                        bonus += 8.0
 
             # ── Debuffs ───────────────────────────────────────────────────
             debuffs = sum(1 for d in (mode.atk_debuff, mode.spd_debuff, mode.def_debuff) if d > 0)
             bonus += debuffs * 6.0
 
-            # ── Bonus: targeting low-HP enemies ──────────────────────────
+            # ── Targeting low-HP enemies ──────────────────────────────────
             if target.hp < target.max_hp * 0.4:
                 bonus += 10.0
 
+            # ── Misericorde: attacking a statused target ──────────────────
+            if (actor.item.id == "misericorde"
+                    and any(s.duration > 0 for s in target.statuses)):
+                bonus += 12.0
+
         elif target is not None and target in team.alive():
-            # ── Healing waste penalty ─────────────────────────────────────
+            # ── Healing ──────────────────────────────────────────────────
             heal_amt = mode.heal + mode.heal_lowest + mode.heal_self
             if heal_amt > 0:
                 missing = target.max_hp - target.hp
                 if missing < heal_amt * 0.25:
                     bonus -= 20.0
+                elif target.hp < target.max_hp * 0.35:
+                    bonus += 16.0  # ally under lethal pressure
                 elif target.hp < target.max_hp * 0.4:
-                    bonus += 15.0
+                    bonus += 10.0
 
-            # ── Buffs ─────────────────────────────────────────────────────
+            # ── Buffing the team carry before they act ───────────────────
             buffs = sum(1 for b in (mode.atk_buff, mode.spd_buff, mode.def_buff) if b > 0)
-            bonus += buffs * 5.0
+            if buffs > 0:
+                bonus += buffs * 5.0
+                alive = team.alive()
+                if alive:
+                    carry = max(alive, key=lambda u: u.get_stat("attack"))
+                    if target == carry and not carry.acted:
+                        bonus += 14.0
 
             # ── Guard on low-HP ally ──────────────────────────────────────
             if any([mode.guard_target, mode.guard_all_allies, mode.guard_frontline_ally]):
@@ -423,10 +448,8 @@ def _hook_ashen_ella(battle, player_num, actor, action, score):
 
 def _hook_rumpelstiltskin(battle, player_num, actor, action, score):
     """
-    Spinning Wheel passive (logic.py) awards +7 per unique buffed stat among all
-    adventurers.  Encourage Rumpel to attack from frontline when buffs are active,
-    since the simulation may not fully capture the conditional power bonus if the
-    passive triggers implicitly.
+    Spinning Wheel passive awards +7 per unique buffed stat among all adventurers.
+    Encourage Rumpel to attack from frontline when buffs are active.
     """
     if action.get("type") != "ability":
         return score
@@ -445,8 +468,8 @@ def _hook_rumpelstiltskin(battle, player_num, actor, action, score):
 
 def _hook_robin(battle, player_num, actor, action, score):
     """
-    Robin's Keen Eye: +15 damage to backline enemies.
-    Encourage targeting backline enemies slightly more than frontline ones.
+    Robin's Keen Eye: bonus damage to backline enemies.
+    Prioritise backline enemies and Exposed targets.
     """
     if action.get("type") != "ability":
         return score
@@ -454,15 +477,219 @@ def _hook_robin(battle, player_num, actor, action, score):
     if target is None:
         return score
     enemy = battle.get_enemy(player_num)
-    if target in enemy.alive() and target.slot != SLOT_FRONT:
-        score += 10.0  # Keen Eye bonus not always captured by rough estimate
+    if target in enemy.alive():
+        if target.slot != SLOT_FRONT:
+            score += 10.0  # Keen Eye bonus
+        if target.has_status("expose"):
+            score += 16.0  # Exposed backline is the ideal Robin target
     return score
 
 
 def _hook_gretel(battle, player_num, actor, action, score):
-    """Gretel's twist: when available (solo), always prefer it."""
+    """
+    Gretel: use twist when available; prefer attacking already-Burned targets.
+    """
     if action.get("type") == "ability" and action["ability"].category == "twist":
         score += 30.0
+        return score
+    if action.get("type") == "ability":
+        target = action.get("target")
+        enemy  = battle.get_enemy(player_num)
+        mode   = get_mode(actor, action["ability"])
+        if target is not None and target in enemy.alive():
+            if target.has_status("burn"):
+                score += 15.0  # Pressing a Burned target
+            # Hot Mitts on an unburned target is also good
+            statuses = [s for s in (mode.status, mode.status2, mode.status3) if s]
+            if "burn" in statuses and not target.has_status("burn"):
+                score += 10.0
+    return score
+
+
+def _hook_constantine(battle, player_num, actor, action, score):
+    """
+    Constantine: talent lets him target Exposed enemies regardless of position.
+    Strongly prefer Exposed targets; Subterfuge gets bonus for backline repositioning.
+    """
+    if action.get("type") != "ability":
+        return score
+    target = action.get("target")
+    enemy  = battle.get_enemy(player_num)
+    if target is not None and target in enemy.alive():
+        if target.has_status("expose"):
+            score += 20.0  # Exploit Exposed target
+        if target.slot != SLOT_FRONT:
+            score += 8.0   # Backline targets are priority
+    # Subterfuge bonus for repositioning fragile backliners
+    if action["ability"].id == "subterfuge":
+        swap_t = action.get("swap_target")
+        if swap_t is not None and swap_t in enemy.alive():
+            if swap_t.defn.cls in _RANGED_CLASSES:
+                score += 15.0  # Pulling a ranged carry to frontline is high value
+    return score
+
+
+def _hook_hunold(battle, player_num, actor, action, score):
+    """
+    Hunold: talent deals bonus damage to Shocked enemies.
+    Prefer Shocking unshocked targets; press already-Shocked targets hard.
+    """
+    if action.get("type") != "ability":
+        return score
+    target = action.get("target")
+    enemy  = battle.get_enemy(player_num)
+    mode   = get_mode(actor, action["ability"])
+    if target is not None and target in enemy.alive():
+        if target.has_status("shock"):
+            score += 20.0  # Talent bonus activates
+        statuses = [s for s in (mode.status, mode.status2, mode.status3) if s]
+        if "shock" in statuses and not target.has_status("shock"):
+            score += 10.0  # Fresh Shock application
+    return score
+
+
+def _hook_witch(battle, player_num, actor, action, score):
+    """
+    Witch of the Woods: talent grants bonus power against statused/multi-status targets.
+    Strongly prefer any target that already has a status condition.
+    """
+    if action.get("type") != "ability":
+        return score
+    target = action.get("target")
+    enemy  = battle.get_enemy(player_num)
+    if target is not None and target in enemy.alive():
+        n_statuses = sum(1 for s in target.statuses if s.duration > 0)
+        if n_statuses >= 2:
+            score += 22.0  # Multiple statuses = big bonus
+        elif n_statuses == 1:
+            score += 14.0  # Any status gives advantage
+    return score
+
+
+def _hook_briar_rose(battle, player_num, actor, action, score):
+    """
+    Briar Rose: talent makes the lowest-health Rooted enemy unable to act.
+    Prefer Root-inflicting abilities; focus Rooted low-HP targets aggressively.
+    """
+    if action.get("type") != "ability":
+        return score
+    target = action.get("target")
+    enemy  = battle.get_enemy(player_num)
+    mode   = get_mode(actor, action["ability"])
+    statuses = [s for s in (mode.status, mode.status2, mode.status3) if s]
+    if target is not None and target in enemy.alive():
+        if target.has_status("root") and target.hp < target.max_hp * 0.5:
+            score += 22.0  # Rooted low-HP = talent trigger + kill setup
+        if "root" in statuses and not target.has_status("root"):
+            score += 15.0  # Fresh Root very valuable
+    return score
+
+
+def _hook_pinocchio(battle, player_num, actor, action, score):
+    """
+    Pinocchio: builds Malice each turn from frontline.
+    Prefer staying frontline; boost Dark Grasp for Malice building.
+    """
+    if action.get("type") == "swap":
+        # Heavily discourage swapping Pinocchio out — he needs Malice stacks
+        if actor.slot == SLOT_FRONT:
+            score -= 25.0
+        return score
+    if action.get("type") == "ability":
+        ability = action["ability"]
+        # Bonus for Dark Grasp (primary Malice builder)
+        if ability.id == "dark_grasp" and actor.slot == SLOT_FRONT:
+            score += 12.0
+        # General frontline attack bonus (Malice requires frontline)
+        if actor.slot == SLOT_FRONT:
+            mode = get_mode(actor, ability)
+            if mode.power > 0:
+                score += 5.0
+    return score
+
+
+def _hook_matchstick_liesl(battle, player_num, actor, action, score):
+    """
+    Matchstick Liesl: Cauterize applies No Heal; bonus when enemy has a healer.
+    Heal priority on critically low allies.
+    """
+    if action.get("type") != "ability":
+        return score
+    ability = action["ability"]
+    enemy   = battle.get_enemy(player_num)
+    team    = battle.get_team(player_num)
+    mode    = get_mode(actor, ability)
+
+    # Cauterize: extra bonus when the enemy has a healer active
+    if ability.id == "cauterize":
+        target = action.get("target")
+        if target is not None and target in enemy.alive():
+            enemy_has_healer = any(u.defn.cls == "Cleric" for u in enemy.alive())
+            if enemy_has_healer:
+                score += 20.0
+            if not target.has_status("no_heal"):
+                score += 10.0
+
+    # Heal: strongly prefer allies in critical HP range
+    heal_amt = mode.heal + mode.heal_self
+    if heal_amt > 0:
+        target = action.get("target")
+        if target is not None and target in team.alive():
+            if target.hp < target.max_hp * 0.3:
+                score += 10.0
+
+    return score
+
+
+def _hook_risa(battle, player_num, actor, action, score):
+    """
+    Risa Redcloak: talent activates below 50% HP (+Atk, +Spd, vamp).
+    Once in the empowered HP band, strongly prefer attacking over swapping out.
+    """
+    if action.get("type") == "swap":
+        # Discourage swapping Risa out when talent is active
+        if actor.hp < actor.max_hp * 0.5 and actor.hp > actor.max_hp * 0.15:
+            score -= 20.0
+        return score
+    if action.get("type") == "ability":
+        mode = get_mode(actor, action["ability"])
+        if mode.power > 0 and actor.hp < actor.max_hp * 0.5:
+            score += 15.0  # Talent active — hit hard
+    return score
+
+
+def _hook_lady_of_reflections(battle, player_num, actor, action, score):
+    """
+    Lady of Reflections: Reflecting Pool reflects incoming damage.
+    Prefer Lake's Gift on the frontliner to maximize reflection value;
+    use Drown in the Loch to tag priority attackers.
+    """
+    if action.get("type") != "ability":
+        return score
+    team   = battle.get_team(player_num)
+    ability = action["ability"]
+    target  = action.get("target")
+    enemy   = battle.get_enemy(player_num)
+
+    # Lake's Gift (guard): prefer applying to frontline
+    mode = get_mode(actor, ability)
+    if (mode.guard_target or mode.guard_frontline_ally):
+        if target is not None and target in team.alive():
+            if target.slot == SLOT_FRONT:
+                score += 12.0
+
+    # Drown in the Loch: prefer tagging high-attack enemies
+    if ability.id == "drown_in_the_loch" and target in (enemy.alive() if target else []):
+        if target.get_stat("attack") > 70:
+            score += 14.0
+
+    return score
+
+
+def _apply_char_hooks(battle, player_num, actor, action, score):
+    hook = _CHAR_HOOKS.get(actor.defn.id)
+    if hook:
+        score = hook(battle, player_num, actor, action, score)
     return score
 
 
@@ -471,14 +698,15 @@ _CHAR_HOOKS = {
     "rumpelstiltskin":      _hook_rumpelstiltskin,
     "robin_hooded_avenger": _hook_robin,
     "gretel":               _hook_gretel,
+    "lucky_constantine":    _hook_constantine,
+    "hunold_the_piper":     _hook_hunold,
+    "witch_of_the_woods":   _hook_witch,
+    "briar_rose":           _hook_briar_rose,
+    "pinocchio":            _hook_pinocchio,
+    "matchstick_liesl":     _hook_matchstick_liesl,
+    "risa_redcloak":        _hook_risa,
+    "lady_of_reflections":  _hook_lady_of_reflections,
 }
-
-
-def _apply_char_hooks(battle, player_num, actor, action, score):
-    hook = _CHAR_HOOKS.get(actor.defn.id)
-    if hook:
-        score = hook(battle, player_num, actor, action, score)
-    return score
 
 
 # ─────────────────────────────────────────────────────────────────────────────

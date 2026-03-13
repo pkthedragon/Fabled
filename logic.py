@@ -646,7 +646,7 @@ def compute_damage(
 
     # Wooden Wallop FL: +10 power per Malice
     if ability.id == "wooden_wallop" and actor.slot == SLOT_FRONT:
-        power += actor.ability_charges.get("malice", 0) * 10
+        power += actor.ability_charges.get("malice", 0) * 5
 
     # Gallant Charge FL: +20 power if actor was backline last round
     if ability.id == "gallant_charge" and actor.slot == SLOT_FRONT and actor.ability_charges.get("was_backline_last_round", 0) > 0:
@@ -762,13 +762,13 @@ def compute_damage(
         if hunold and target.has_status("shock"):
             dmg += 15
 
-    # Keen Eye (Robin): +15 damage vs backline
+    # Keen Eye (Robin): +10 damage vs backline
     if _has_talent(actor, "robin_hooded_avenger")             and target.slot in (SLOT_BACK_LEFT, SLOT_BACK_RIGHT):
-        dmg += 15
+        dmg += 10
 
-    # Challenge Accepted (Green Knight): +25 to enemy across from him
+    # Challenge Accepted (Green Knight): +15 to enemy across from him
     if _has_talent(actor, "green_knight") and actor.slot == target.slot:
-        dmg += 25
+        dmg += 15
 
     # Chosen One: attackers who damaged champion take +25 from Prince's next ability
     if actor.defn.id == "prince_charming" and target.ability_charges.get("chosen_one_mark", 0) > 0:
@@ -893,8 +893,10 @@ def compute_damage(
 
 
 def _actor_has_talent(actor_id, acting_player, battle, talent_id):
-    """Check if a specific adventurer with a given talent is on the acting team."""
-    return False  # stub – talents are checked directly in compute_damage
+    """Check if a specific talent is active for the acting player's team."""
+    if talent_id == "electrifying_trance":
+        return _find_hunold(acting_player, battle) is not None
+    return False
 
 
 def _find_hunold(acting_player, battle):
@@ -2043,13 +2045,13 @@ def apply_special(
             apply_status_effect(target, "expose", 2, battle)
 
     elif key == "blood_pact_front":
-        actor.hp = max(1, actor.hp - 20)
-        battle.log_add(f"  {actor.name} loses 20 HP.")
+        actor.hp = max(1, actor.hp - 50)
+        battle.log_add(f"  {actor.name} loses 50 HP.")
         _gain_malice(actor, 2, battle, "Blood Pact")
 
     elif key == "blood_pact_back":
         if _spend_malice(actor, 1, battle, "Blood Pact"):
-            do_heal(actor, 20, actor, battle)
+            do_heal(actor, 25, actor, battle)
 
     elif key == "cut_strings_back":
         if _spend_malice(actor, 2, battle, "Cut the Strings"):
@@ -2350,6 +2352,14 @@ def resolve_queued_action(
             f"ACTION P{acting_player} {actor.name}[{actor.slot}]: skip/recharge"
         )
 
+    # If unit must recharge, force a recharge regardless of chosen action
+    if actor.must_recharge and atype in ("swap", "item"):
+        actor.ranged_uses = 0
+        actor.must_recharge = False
+        battle.log_add(f"{actor.name} recharges.")
+        actor.acted = True
+        return
+
     if atype == "skip":
         if actor.must_recharge:
             actor.ranged_uses = 0
@@ -2583,7 +2593,7 @@ def end_round(battle: BattleState):
                 else:
                     fl = team.frontline()
                     if fl:
-                        heal = math.ceil(fl.max_hp * 0.125)
+                        heal = math.ceil(fl.max_hp / 12)
                         do_heal(fl, heal, unit, battle)
 
             # Midnight Dour backline: Ella heals 35 HP at end of round
@@ -2735,7 +2745,9 @@ def end_round(battle: BattleState):
 
             # Reset per-round flags
             unit.acted = False
-            unit.dmg_reduction = 0.0
+            # Don't clear Shimmering Valor's multi-round reduction
+            if unit.valor_rounds == 0:
+                unit.dmg_reduction = 0.0
             unit.retaliate_power = 0
             unit.retaliate_speed_steal = 0
 
@@ -2823,8 +2835,9 @@ def can_act_this_round(unit: CombatantState, battle: BattleState = None, acting_
 # CAMPAIGN REWARD APPLICATION
 # ─────────────────────────────────────────────────────────────────────────────
 
-def apply_quest_rewards(profile, quest_id: int):
-    """Apply rewards for clearing quest_id to profile.  Idempotent."""
+def apply_quest_rewards(profile, quest_id: int, notify: bool = True):
+    """Apply rewards for clearing quest_id to profile.  Idempotent.
+    notify=False suppresses new_unlocks badges (used for bootstrap/starter calls)."""
     from campaign_data import QUEST_TABLE
 
     quest = QUEST_TABLE.get(quest_id)
@@ -2836,6 +2849,8 @@ def apply_quest_rewards(profile, quest_id: int):
     # ── Recruit new adventurers ────────────────────────────────────────────────
     for entry in rewards.get("recruit", []):
         adv_id, sig_id = entry
+        if notify and adv_id not in profile.recruited:
+            profile.new_unlocks.add("adventurers")
         profile.recruited.add(adv_id)
         # Set default sig only if not already chosen by the player
         if adv_id not in profile.default_sigs:
@@ -2844,19 +2859,27 @@ def apply_quest_rewards(profile, quest_id: int):
     # ── Unlock signature tier ──────────────────────────────────────────────────
     new_sig_tier = rewards.get("sig_tier")
     if new_sig_tier is not None:
+        if notify and new_sig_tier > profile.sig_tier:
+            profile.new_unlocks.add("basics")
         profile.sig_tier = max(profile.sig_tier, new_sig_tier)
 
     # ── Unlock basics tier ─────────────────────────────────────────────────────
     new_basics_tier = rewards.get("basics_tier")
     if new_basics_tier is not None:
+        if notify and new_basics_tier > profile.basics_tier:
+            profile.new_unlocks.add("basics")
         profile.basics_tier = max(profile.basics_tier, new_basics_tier)
 
     # ── Unlock items ───────────────────────────────────────────────────────────
     for item_id in rewards.get("items", []):
+        if notify and item_id not in profile.unlocked_items:
+            profile.new_unlocks.add("items")
         profile.unlocked_items.add(item_id)
 
     # ── Unlock classes ─────────────────────────────────────────────────────────
     for cls_name in rewards.get("classes", []):
+        if notify and cls_name not in profile.unlocked_classes:
+            profile.new_unlocks.add("basics")
         profile.unlocked_classes.add(cls_name)
 
     # ── Unlock twists ──────────────────────────────────────────────────────────

@@ -394,5 +394,7 @@ class CampaignProfile:
     campaign_complete: bool = False
     ranked_glory_unlocked: bool = False
     tutorial_seen: "Set[str]" = field(default_factory=set)
+    tutorials_enabled: bool = True  # show tutorial popups
     saved_teams: List[dict] = field(default_factory=list)
     fast_resolution: bool = False   # skip per-action step-through; resolve all at once
+    new_unlocks: "Set[str]" = field(default_factory=set)  # catalog tabs with unseen unlocks

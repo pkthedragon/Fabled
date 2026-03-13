@@ -1,83 +1,39 @@
 {
   "recruited": [
-    "sir_roland",
     "risa_redcloak",
-    "hunold_the_piper",
     "robin_hooded_avenger",
-    "aldric_lost_lamb",
-    "ashen_ella"
+    "aldric_lost_lamb"
   ],
-  "sig_tier": 2,
-  "basics_tier": 3,
+  "sig_tier": 1,
+  "basics_tier": 2,
   "unlocked_classes": [
     "Ranger",
-    "Warden",
-    "Cleric",
-    "Rogue",
-    "Mage",
-    "Fighter"
+    "Fighter",
+    "Cleric"
   ],
   "unlocked_items": [
-    "crafty_shield",
-    "healing_tonic",
+    "health_potion",
     "family_seal",
-    "main_gauche",
-    "health_potion"
+    "healing_tonic"
   ],
   "default_sigs": {
     "risa_redcloak": "crimson_fury",
     "robin_hooded_avenger": "snipe_shot",
-    "aldric_lost_lamb": "benefactor",
-    "sir_roland": "shimmering_valor",
-    "hunold_the_piper": "haunting_rhythm",
-    "ashen_ella": "crowstorm"
+    "aldric_lost_lamb": "benefactor"
   },
   "twists_unlocked": false,
   "quest_cleared": {
-    "0": true,
-    "1": true,
-    "2": true,
-    "3": true,
-    "4": true,
-    "5": true
+    "0": true
   },
-  "highest_quest_cleared": 5,
+  "highest_quest_cleared": 0,
   "campaign_complete": false,
   "ranked_glory_unlocked": false,
-  "tutorial_seen": [],
-  "saved_teams": [
-    {
-      "name": "hunold ella",
-      "members": [
-        {
-          "adv_id": "hunold_the_piper",
-          "sig_id": "haunting_rhythm",
-          "basics": [
-            "sneak_attack",
-            "post_bounty"
-          ],
-          "item_id": "family_seal"
-        },
-        {
-          "adv_id": "sir_roland",
-          "sig_id": "shimmering_valor",
-          "basics": [
-            "shield_bash",
-            "condemn"
-          ],
-          "item_id": "healing_tonic"
-        },
-        {
-          "adv_id": "ashen_ella",
-          "sig_id": "midnight_dour",
-          "basics": [
-            "thunder_call",
-            "fire_blast"
-          ],
-          "item_id": "health_potion"
-        }
-      ]
-    }
+  "tutorial_seen": [
+    "party_editor",
+    "intro"
   ],
-  "fast_resolution": false
+  "saved_teams": [],
+  "tutorials_enabled": true,
+  "fast_resolution": false,
+  "new_unlocks": []
 }

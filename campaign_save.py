@@ -25,7 +25,9 @@ def save_campaign(profile: CampaignProfile) -> None:
         "ranked_glory_unlocked": profile.ranked_glory_unlocked,
         "tutorial_seen":     list(profile.tutorial_seen),
         "saved_teams":       profile.saved_teams,
+        "tutorials_enabled": profile.tutorials_enabled,
         "fast_resolution":   profile.fast_resolution,
+        "new_unlocks":       list(profile.new_unlocks),
     }
     with open(SAVE_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
@@ -52,7 +54,9 @@ def load_campaign() -> CampaignProfile:
         profile.ranked_glory_unlocked    = bool(data.get("ranked_glory_unlocked", False))
         profile.tutorial_seen            = set(data.get("tutorial_seen", []))
         profile.saved_teams              = data.get("saved_teams", [])
+        profile.tutorials_enabled        = bool(data.get("tutorials_enabled", True))
         profile.fast_resolution          = bool(data.get("fast_resolution", False))
+        profile.new_unlocks              = set(data.get("new_unlocks", []))
         return profile
     except (json.JSONDecodeError, KeyError, ValueError):
         # Corrupt save – start fresh

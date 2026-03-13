@@ -9,6 +9,50 @@ from models import CombatantState, TeamState, BattleState
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# CLASS COLORS  (subtle tints for small adventurer cards/list items)
+# ─────────────────────────────────────────────────────────────────────────────
+
+CLASS_COLORS = {
+    "Fighter": (52, 36, 36),
+    "Rogue":   (34, 40, 40),
+    "Warden":  (32, 40, 56),
+    "Mage":    (48, 34, 56),
+    "Ranger":  (32, 50, 36),
+    "Cleric":  (50, 46, 32),
+    "Noble":   (38, 40, 58),
+    "Warlock": (46, 30, 52),
+}
+
+# Text accent colors per class (for the class label)
+CLASS_TEXT_COLORS = {
+    "Fighter": (210, 130, 110),
+    "Rogue":   (130, 190, 160),
+    "Warden":  (110, 165, 220),
+    "Mage":    (185, 130, 220),
+    "Ranger":  (120, 200, 120),
+    "Cleric":  (220, 200, 110),
+    "Noble":   (145, 165, 230),
+    "Warlock": (185, 110, 210),
+}
+
+# Ability / item type label colors
+TYPE_ACTIVE_COL  = (174, 170, 160)  # "Active"  label — muted warm grey
+TYPE_PASSIVE_COL = (158, 165, 192)  # "Passive" label — muted steel blue
+
+# Class type suffixes: M = Melee, R = Ranged, X = Mixed
+_CLASS_TYPE_SUFFIX = {
+    "Fighter": "(M)", "Rogue": "(M)", "Warden": "(M)",
+    "Ranger":  "(R)", "Mage":  "(R)", "Cleric": "(R)",
+    "Noble":   "(X)", "Warlock": "(X)",
+}
+
+def cls_label(cls):
+    """Return e.g. 'Warden (M)', 'Mage (R)', 'Warlock (X)'."""
+    suffix = _CLASS_TYPE_SUFFIX.get(cls, "")
+    return f"{cls} {suffix}" if suffix else cls
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # NAME HELPERS
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -143,7 +187,64 @@ STATUS_TOOLTIPS = {
     "reflecting_pool": "Reflecting Pool: reflects 10-20% of incoming damage back to attacker.",
     "buff_nullify":    "Buff Nullify: incoming stat buffs have no effect.",
     "burn_immune":     "Burn Immune: cannot receive the Burn status.",
+    # Class type tooltips
+    "Fighter": "Fighters are melee.",
+    "Rogue":   "Rogues are melee.",
+    "Warden":  "Wardens are melee.",
+    "Ranger":  "Rangers are ranged.",
+    "Mage":    "Mages are ranged.",
+    "Cleric":  "Clerics are ranged.",
+    "Noble":   "Nobles are mixed; FL melee & BL ranged.",
+    "Warlock": "Warlocks are mixed; FL melee & BL ranged.",
 }
+
+# Maps word variants found in description text → canonical status key
+STATUS_NAME_MAP = {
+    "burn": "burn", "burns": "burn", "burned": "burn", "burning": "burn",
+    "root": "root", "roots": "root", "rooted": "root",
+    "shock": "shock", "shocks": "shock", "shocked": "shock",
+    "weaken": "weaken", "weakens": "weaken", "weakened": "weaken",
+    "expose": "expose", "exposes": "expose", "exposed": "expose",
+    "guard": "guard", "guards": "guard", "guarded": "guard",
+    "spotlight": "spotlight", "spotlighted": "spotlight",
+    "dormant": "dormant",
+}
+
+
+def _draw_rich_line(surf, text, size, default_color, x, y, status_rects_out=None):
+    """Draw a line of text word-by-word, coloring status keywords in their STATUS_COLORS.
+
+    If status_rects_out is a list, appends (pygame.Rect, status_key) for each
+    colored word so callers can show tooltips on hover.
+    """
+    f = font(size)
+    space_w = f.size(" ")[0]
+    cx = x
+    for word in text.split(" "):
+        if not word:
+            cx += space_w
+            continue
+        # Strip leading/trailing punctuation for keyword lookup
+        clean = word.strip(".,;:()[]!?\"'").lower()
+        key = STATUS_NAME_MAP.get(clean)
+        color = STATUS_COLORS.get(key, default_color) if key else default_color
+        s = f.render(word, True, color)
+        r = s.get_rect(topleft=(cx, y))
+        surf.blit(s, r)
+        if key is not None and status_rects_out is not None:
+            status_rects_out.append((r, key))
+        cx += r.width + space_w
+
+
+def _draw_scroll_arrows(surf, view_rect, scroll, max_scroll):
+    """Draw ↑/↓ arrows at top/bottom right of a scrollable viewport."""
+    if max_scroll <= 0:
+        return
+    x = view_rect.right - 16
+    if scroll > 0:
+        draw_text(surf, "↑", 14, TEXT_MUTED, x, view_rect.top + 2)
+    if scroll < max_scroll:
+        draw_text(surf, "↓", 14, TEXT_MUTED, x, view_rect.bottom - 16)
 
 
 def draw_status_tooltip(surf, kind: str, tip_x: int, tip_y: int):
@@ -158,6 +259,124 @@ def draw_status_tooltip(surf, kind: str, tip_x: int, tip_y: int):
     pygame.draw.rect(surf, (20, 22, 30), tip_rect, border_radius=4)
     pygame.draw.rect(surf, BORDER_ACTIVE, tip_rect, 1, border_radius=4)
     draw_text(surf, text, 13, TEXT, x + 9, y + 5)
+
+
+INTRO_TEXTS = [
+    "Welcome to Fantasia! You're a wealthy, but cripplingly lazy, magnate with a fondness for collecting rare artifacts.",
+    "One such artifact, the Dragon Jewel, would be perfect for your collection. Unfortunately, the Dragon Jewel was shattered into nine pieces, scattered across the land, and you only have one.",
+    "Over the years, you've managed to track the shards down, but you're not really the adventuring type. You don't have deep pocketbooks for nothing though; there's plenty of adventurers in Fantasia looking to take on a dangerous quest for a quick buck.",
+    "No time to waste! Head to the Tavern to form a party and start gathering the shards. The Dragon Jewel will sitting pretty in your foyer in no time!",
+]
+
+
+def draw_intro_popup(surf, visible_count: int, mouse_pos):
+    """Draw the sequential intro story popup.
+
+    visible_count: how many text sections are currently shown (1–4).
+    Returns the 'Let's Go' button rect when visible_count == 4, else None.
+    """
+    box_w   = 680
+    content_w = box_w - 48
+    text_size = 17
+    line_h  = 25
+    sec_gap = 18   # vertical gap between sections
+    pad     = 28   # top/bottom inner padding
+    footer_h = 38  # space reserved at the bottom for hint/button
+
+    f = font(text_size)
+
+    # Word-wrap all sections (for stable box size) but only render visible ones
+    all_wrapped = []
+    for text in INTRO_TEXTS:
+        words = text.split()
+        lines, line = [], ""
+        for word in words:
+            test = (line + " " + word).strip()
+            if f.size(test)[0] <= content_w:
+                line = test
+            else:
+                if line:
+                    lines.append(line)
+                line = word
+        if line:
+            lines.append(line)
+        all_wrapped.append(lines)
+
+    wrapped_sections = all_wrapped[:visible_count]
+
+    # Box height always sized for all 4 sections
+    total_text_h = sum(len(lines) * line_h for lines in all_wrapped)
+    total_text_h += (len(INTRO_TEXTS) - 1) * sec_gap
+    box_h = pad + total_text_h + pad + footer_h
+
+    cx, cy = WIDTH // 2, HEIGHT // 2
+    box_rect = pygame.Rect(cx - box_w // 2, cy - box_h // 2, box_w, box_h)
+
+    overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+    overlay.fill((0, 0, 0, 165))
+    surf.blit(overlay, (0, 0))
+
+    draw_rect_border(surf, box_rect, (28, 30, 42), BORDER_ACTIVE, 2)
+
+    ty = box_rect.y + pad
+    for si, lines in enumerate(wrapped_sections):
+        for ln in lines:
+            draw_text(surf, ln, text_size, TEXT, cx, ty, center=True)
+            ty += line_h
+        if si < visible_count - 1:
+            ty += sec_gap
+
+    lets_go_btn = None
+    if visible_count >= 4:
+        lets_go_btn = pygame.Rect(cx - 100, box_rect.bottom - footer_h + 4, 200, 30)
+        draw_button(surf, lets_go_btn, "Let's Go!", mouse_pos, size=16,
+                    normal=(40, 90, 50), hover=(55, 120, 65))
+    else:
+        draw_text(surf, "Click anywhere to continue", 13, TEXT_MUTED,
+                  cx, box_rect.bottom - footer_h + 12, center=True)
+
+    return lets_go_btn
+
+
+def draw_tutorial_popup(surf, text: str):
+    """Draw a centered tutorial popup overlay. Click anywhere to dismiss."""
+    overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+    overlay.fill((0, 0, 0, 155))
+    surf.blit(overlay, (0, 0))
+
+    cx, cy = WIDTH // 2, HEIGHT // 2
+    max_w = 580
+    f = font(18)
+
+    # Word-wrap text
+    words = text.split()
+    lines = []
+    line = ""
+    for word in words:
+        test = (line + " " + word).strip()
+        if f.size(test)[0] <= max_w - 40:
+            line = test
+        else:
+            if line:
+                lines.append(line)
+            line = word
+    if line:
+        lines.append(line)
+
+    line_h = 28
+    pad = 26
+    box_h = pad * 2 + len(lines) * line_h + 30
+    box_w = max_w
+    box_rect = pygame.Rect(cx - box_w // 2, cy - box_h // 2, box_w, box_h)
+
+    draw_rect_border(surf, box_rect, (28, 30, 42), BORDER_ACTIVE, 2)
+
+    ty = box_rect.y + pad
+    for ln in lines:
+        draw_text(surf, ln, 18, TEXT, cx, ty, center=True)
+        ty += line_h
+
+    draw_text(surf, "Click anywhere to continue", 13, TEXT_MUTED, cx, box_rect.bottom - 20, center=True)
 
 
 def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
@@ -219,7 +438,9 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
     y += 22
 
     # Class
-    draw_text(surf, unit.cls, 14, TEXT_MUTED, x, y)
+    _clsr = draw_text(surf, cls_label(unit.cls), 14, TEXT_MUTED, x, y)
+    if status_rects_out is not None:
+        status_rects_out.append((_clsr, unit.cls))
     y += 18
 
     if unit.ko:
@@ -374,7 +595,9 @@ def draw_formation(surf, battle: BattleState,
 
     for slot, rect in SLOT_RECTS_P1.items():
         unit = battle.team1.get_slot(slot)
-        actual_unit = next((m for m in battle.team1.members if m.slot == slot), None)
+        # Prefer alive unit at this slot; fall back to KO'd unit for display
+        actual_unit = (next((m for m in battle.team1.members if m.slot == slot and not m.ko), None)
+                       or next((m for m in battle.team1.members if m.slot == slot), None))
         is_tgt = unit in valid_targets if valid_targets else False
         is_acting = (acting_player == 1 and unit == selected_unit)
         has_q  = (actual_unit is not None and not actual_unit.ko
@@ -514,9 +737,9 @@ def draw_action_menu(surf, mouse_pos, actor: CombatantState,
         buttons.append((rect, {"type": "ability", "ability": ability, "target": None}))
         y += btn_h + 4
 
-    # Item
+    # Item — hidden when unit must recharge (forced skip)
     item = actor.item
-    if not item.passive and actor.item_uses_left > 0:
+    if not item.passive and actor.item_uses_left > 0 and not actor.must_recharge:
         y += 6
         item_btn_h = 52
         rect = pygame.Rect(BUTTON_X, y, BUTTON_W, item_btn_h)
@@ -530,18 +753,19 @@ def draw_action_menu(surf, mouse_pos, actor: CombatantState,
         buttons.append((rect, {"type": "item", "target": None}))
         y += item_btn_h + 4
 
-    # Swap (once per turn)
+    # Swap (once per turn; also blocked when unit must recharge)
     y += 6
     rect = pygame.Rect(BUTTON_X, y, BUTTON_W, BUTTON_H)
     draw_button(surf, rect, "Swap with ally", mouse_pos, size=15,
-                disabled=swap_used or actor.has_status("root"))
-    if not swap_used and not actor.has_status("root"):
+                disabled=swap_used or actor.has_status("root") or actor.must_recharge)
+    if not swap_used and not actor.has_status("root") and not actor.must_recharge:
         buttons.append((rect, {"type": "swap", "target": None}))
     y += BUTTON_H + 4
 
-    # Skip
+    # Skip — label changes to "Recharge" when must_recharge
     rect = pygame.Rect(BUTTON_X, y, BUTTON_W, BUTTON_H)
-    draw_button(surf, rect, "Skip", mouse_pos, size=15, normal=(40, 40, 45))
+    skip_label = "Recharge" if actor.must_recharge else "Skip"
+    draw_button(surf, rect, skip_label, mouse_pos, size=15, normal=(40, 40, 45))
     buttons.append((rect, {"type": "skip"}))
     y += BUTTON_H + 14  # larger gap to visually separate Back
 
@@ -684,7 +908,7 @@ def draw_pass_screen(surf, player_name: str, message: str,
 # MAIN MENU
 # ─────────────────────────────────────────────────────────────────────────────
 
-def draw_main_menu(surf, mouse_pos, player_level=0):
+def draw_main_menu(surf, mouse_pos, player_level=0, new_catalog_unlocks=False):
     surf.fill(BG)
     cx = WIDTH // 2
     draw_text(surf, "FABLED", 80, TEXT, cx, 130, center=True)
@@ -694,27 +918,36 @@ def draw_main_menu(surf, mouse_pos, player_level=0):
     practice_btn    = pygame.Rect(cx - 130, 348, 260, 52)
     teambuilder_btn = pygame.Rect(cx - 130, 411, 260, 52)
     catalog_btn     = pygame.Rect(cx - 130, 474, 260, 52)
-    settings_btn    = pygame.Rect(cx - 130, 537, 260, 52)
-    exit_btn        = pygame.Rect(cx - 130, 600, 260, 52)
 
-    draw_button(surf, story_btn, "Story", mouse_pos, size=22,
+    draw_button(surf, story_btn, "Quests", mouse_pos, size=22,
                 normal=(40, 90, 50), hover=(55, 120, 65), border=BORDER_ACTIVE)
-    draw_button(surf, practice_btn, "Practice", mouse_pos, size=22,
+    draw_button(surf, practice_btn, "Training", mouse_pos, size=22,
                 normal=BLUE_DARK, hover=BLUE)
-    draw_button(surf, teambuilder_btn, "Teambuilder", mouse_pos, size=22,
+    draw_button(surf, teambuilder_btn, "Tavern", mouse_pos, size=22,
                 normal=(75, 45, 120), hover=(105, 65, 165), border=BORDER_ACTIVE)
-    draw_button(surf, catalog_btn, "Catalog", mouse_pos, size=22,
+    draw_button(surf, catalog_btn, "Guidebook", mouse_pos, size=22,
                 normal=(55, 75, 80), hover=(75, 105, 115), border=BORDER_ACTIVE)
-    draw_button(surf, settings_btn, "Settings", mouse_pos, size=22,
-                normal=(60, 55, 45), hover=(85, 78, 62))
-    draw_button(surf, exit_btn, "Exit", mouse_pos, size=22,
-                normal=PANEL, hover=PANEL_HIGHLIGHT)
+    if new_catalog_unlocks:
+        bx, by = catalog_btn.right, catalog_btn.top
+        pygame.draw.circle(surf, (190, 130, 30), (bx, by), 11)
+        draw_text(surf, "!", 14, TEXT, bx - 3, by - 9)
+
+    # Small icon buttons — upper-right corner
+    settings_btn = pygame.Rect(WIDTH - 98, 14, 40, 40)
+    exit_btn     = pygame.Rect(WIDTH - 52, 14, 40, 40)
+    s_hov = settings_btn.collidepoint(mouse_pos)
+    e_hov = exit_btn.collidepoint(mouse_pos)
+    draw_rect_border(surf, settings_btn, PANEL_HIGHLIGHT if s_hov else PANEL_ALT, BORDER_ACTIVE if s_hov else BORDER)
+    draw_rect_border(surf, exit_btn,     PANEL_HIGHLIGHT if e_hov else PANEL_ALT, BORDER_ACTIVE if e_hov else BORDER)
+    draw_text(surf, "⚙", 22, TEXT if s_hov else TEXT_DIM, settings_btn.x + 8, settings_btn.y + 8)
+    draw_text(surf, "✕", 20, RED if e_hov else TEXT_DIM,  exit_btn.x + 10,     exit_btn.y + 9)
 
     return story_btn, practice_btn, teambuilder_btn, catalog_btn, settings_btn, exit_btn
 
 
 def draw_settings_screen(surf, mouse_pos, confirm_reset: bool = False,
-                         fast_resolution: bool = False) -> dict:
+                         fast_resolution: bool = False,
+                         tutorials_enabled: bool = True) -> dict:
     """Draw the settings screen. Returns button rects."""
     surf.fill(BG)
     cx = WIDTH // 2
@@ -723,22 +956,32 @@ def draw_settings_screen(surf, mouse_pos, confirm_reset: bool = False,
     back_btn = pygame.Rect(20, 20, 100, 36)
     draw_button(surf, back_btn, "Back", mouse_pos, size=16)
 
-    # Fast Skip toggle
     toggle_on  = (55, 130, 65)
     toggle_off = (50, 50, 55)
-    fast_btn = pygame.Rect(cx - 180, 160, 360, 48)
+
+    # Tutorial toggle
+    tutorial_btn = pygame.Rect(cx - 180, 160, 360, 48)
+    tutorial_label = f"Tutorial: {'ON' if tutorials_enabled else 'OFF'}"
+    draw_button(surf, tutorial_btn, tutorial_label, mouse_pos, size=20,
+                normal=toggle_on if tutorials_enabled else toggle_off,
+                hover=(80, 175, 90) if tutorials_enabled else (70, 70, 80))
+    draw_text(surf, "Show tutorial popups during gameplay.",
+              14, TEXT_MUTED, cx, 218, center=True)
+
+    # Fast Skip toggle
+    fast_btn = pygame.Rect(cx - 180, 240, 360, 48)
     fast_label = f"Fast Skip: {'ON' if fast_resolution else 'OFF'}"
     draw_button(surf, fast_btn, fast_label, mouse_pos, size=20,
                 normal=toggle_on if fast_resolution else toggle_off,
                 hover=(80, 175, 90) if fast_resolution else (70, 70, 80))
     draw_text(surf, "Resolve all actions at once instead of one at a time.",
-              14, TEXT_MUTED, cx, 218, center=True)
+              14, TEXT_MUTED, cx, 298, center=True)
 
-    reset_btn = pygame.Rect(cx - 180, 256, 360, 58)
+    reset_btn = pygame.Rect(cx - 180, 336, 360, 58)
     draw_button(surf, reset_btn, "Reset Player Data", mouse_pos, size=22,
                 normal=(90, 35, 35), hover=(130, 50, 50), border=(180, 60, 60))
-    draw_text(surf, "Clears all campaign progress and saved teams.",
-              15, TEXT_MUTED, cx, 328, center=True)
+    draw_text(surf, "Clears all campaign progress and saved parties.",
+              15, TEXT_MUTED, cx, 408, center=True)
 
     confirm_btn = None
     cancel_btn  = None
@@ -759,11 +1002,12 @@ def draw_settings_screen(surf, mouse_pos, confirm_reset: bool = False,
         draw_button(surf, cancel_btn, "Cancel", mouse_pos, size=18)
 
     return {
-        "back_btn":    back_btn,
-        "fast_btn":    fast_btn,
-        "reset_btn":   reset_btn,
-        "confirm_btn": confirm_btn,
-        "cancel_btn":  cancel_btn,
+        "back_btn":      back_btn,
+        "tutorial_btn":  tutorial_btn,
+        "fast_btn":      fast_btn,
+        "reset_btn":     reset_btn,
+        "confirm_btn":   confirm_btn,
+        "cancel_btn":    cancel_btn,
     }
 
 
@@ -778,7 +1022,7 @@ def draw_rename_overlay(surf, mouse_pos, current_text: str) -> dict:
     panel = pygame.Rect(cx - 280, cy - 90, 560, 180)
     draw_rect_border(surf, panel, (30, 35, 45), BORDER_ACTIVE, 2)
 
-    draw_text(surf, "Team Name", 22, TEXT, cx, cy - 72, center=True)
+    draw_text(surf, "Party Name", 22, TEXT, cx, cy - 72, center=True)
 
     # Input box
     input_rect = pygame.Rect(cx - 220, cy - 38, 440, 40)
@@ -798,7 +1042,7 @@ def draw_rename_overlay(surf, mouse_pos, current_text: str) -> dict:
 def draw_practice_menu(surf, mouse_pos) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
-    draw_text(surf, "Practice", 48, TEXT, cx, 80, center=True)
+    draw_text(surf, "Training", 48, TEXT, cx, 80, center=True)
     draw_text(surf, "Play with full access to all adventurers, basics, and items.",
               18, TEXT_DIM, cx, 145, center=True)
 
@@ -818,8 +1062,8 @@ def draw_practice_menu(surf, mouse_pos) -> dict:
 def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
-    draw_text(surf, "Team Builder", 48, TEXT, cx, 40, center=True)
-    draw_text(surf, "Build up to 6 teams using your unlocked adventurers.",
+    draw_text(surf, "Tavern", 48, TEXT, cx, 40, center=True)
+    draw_text(surf, "Build up to 6 parties using your unlocked adventurers.",
               18, TEXT_DIM, cx, 95, center=True)
 
     back_btn = pygame.Rect(20, 20, 100, 36)
@@ -834,7 +1078,6 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
     slot_btns = []
     delete_btns = []
     rename_btns = []
-    member_edit_btns = []
 
     for row in range(3):
         for col in range(2):
@@ -848,11 +1091,10 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
             if idx < len(saved_teams) and saved_teams[idx] is not None:
                 team = saved_teams[idx]
                 draw_rect_border(surf, rect, PANEL_ALT, BORDER_ACTIVE)
-                draw_text(surf, team.get("name", f"Team {idx+1}"), 18, TEXT,
+                draw_text(surf, team.get("name", f"Party {idx+1}"), 18, TEXT,
                           rect.x + 10, rect.y + 8)
 
                 members = team.get("members", [])
-                # Show each member with an individual "Edit Sets" button
                 member_col_w = (slot_w - 110) // 3
                 for mi, m in enumerate(members[:3]):
                     mx = rect.x + 10 + mi * member_col_w
@@ -866,15 +1108,11 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
                     draw_text(surf, basics_str[:22], 11, TEXT_DIM, mx, my + 30)
                     item_name = m.get("item_id", "").replace("_", " ").title()
                     draw_text(surf, item_name[:18], 11, TEXT_DIM, mx, my + 44)
-                    edit_sets_btn = pygame.Rect(mx, rect.y + slot_h - 34, member_col_w - 8, 26)
-                    draw_button(surf, edit_sets_btn, "Edit Sets", mouse_pos, size=12,
-                                normal=(50, 70, 100), hover=(70, 100, 140))
-                    member_edit_btns.append((edit_sets_btn, (idx, mi)))
 
                 edit_btn_rect   = pygame.Rect(rect.right - 95, rect.y + 10, 85, 26)
                 rename_btn_rect = pygame.Rect(rect.right - 95, rect.y + 42, 85, 26)
                 del_btn_rect    = pygame.Rect(rect.right - 95, rect.y + 74, 85, 26)
-                draw_button(surf, edit_btn_rect,   "Edit Team", mouse_pos, size=12,
+                draw_button(surf, edit_btn_rect,   "Edit Party", mouse_pos, size=12,
                             normal=BLUE_DARK, hover=BLUE)
                 draw_button(surf, rename_btn_rect, "Rename",    mouse_pos, size=12,
                             normal=(60, 60, 30), hover=(90, 90, 45))
@@ -888,7 +1126,7 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
                 draw_text(surf, f"Slot {idx+1}  (empty)", 16, TEXT_MUTED,
                           rect.centerx, rect.centery, center=True)
                 build_btn = pygame.Rect(rect.right - 110, rect.centery - 16, 100, 32)
-                draw_button(surf, build_btn, "Build Team", mouse_pos, size=14,
+                draw_button(surf, build_btn, "Build Party", mouse_pos, size=14,
                             normal=(40, 90, 50), hover=(55, 120, 65))
                 slot_btns.append((build_btn, idx))
 
@@ -896,7 +1134,6 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
         "slot_btns": slot_btns,
         "delete_btns": delete_btns,
         "rename_btns": rename_btns,
-        "member_edit_btns": member_edit_btns,
         "back_btn": back_btn,
     }
 
@@ -904,7 +1141,7 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
 def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
-    draw_text(surf, "Select Your Team", 40, TEXT, cx, 50, center=True)
+    draw_text(surf, "Select Your Party", 40, TEXT, cx, 50, center=True)
     # quest_def.key_preview omitted for now; restore the draw_text call here to re-add it
 
     back_btn = pygame.Rect(20, 20, 100, 36)
@@ -916,10 +1153,10 @@ def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def) -> dic
     valid_teams = [(i, t) for i, t in enumerate(saved_teams) if t is not None]
 
     if not valid_teams:
-        draw_text(surf, "No teams saved. Build a team in the Teambuilder first.",
+        draw_text(surf, "No parties saved. Build a party in the Tavern first.",
                   20, RED, cx, 250, center=True)
         teambuilder_btn = pygame.Rect(cx - 140, 310, 280, 55)
-        draw_button(surf, teambuilder_btn, "Go to Teambuilder", mouse_pos, size=20,
+        draw_button(surf, teambuilder_btn, "Go to Tavern", mouse_pos, size=20,
                     normal=(40, 90, 50), hover=(55, 120, 65))
     else:
         card_w = 700
@@ -932,7 +1169,7 @@ def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def) -> dic
             hov = rect.collidepoint(mouse_pos)
             fill = PANEL_HIGHLIGHT if hov else PANEL_ALT
             draw_rect_border(surf, rect, fill, BORDER_ACTIVE)
-            draw_text(surf, team.get("name", f"Team {slot_idx+1}"), 18, TEXT,
+            draw_text(surf, team.get("name", f"Party {slot_idx+1}"), 18, TEXT,
                       rect.x + 14, rect.y + 12)
             members = team.get("members", [])
             member_str = "  |  ".join(
@@ -961,14 +1198,29 @@ DETAIL_W      = 680
 DETAIL_H      = 760
 
 
-def draw_adventurer_card(surf, rect, defn, selected, in_team, mouse_pos):
+def draw_adventurer_card(surf, rect, defn, selected, in_team, mouse_pos, status_rects_out=None):
     if defn is None:
         return
-    fill = (50, 65, 50) if in_team else (PANEL_ALT if not selected else PANEL_HIGHLIGHT)
+    cls_fill = CLASS_COLORS.get(defn.cls, PANEL_ALT)
+    if in_team:
+        fill = tuple(min(255, c + 14) for c in cls_fill)
+    elif selected:
+        fill = tuple(min(255, c + 24) for c in cls_fill)
+    else:
+        fill = cls_fill
     bord = GREEN if in_team else (BORDER_ACTIVE if selected else BORDER)
     draw_rect_border(surf, rect, fill, bord)
-    draw_text(surf, defn.name, 15, TEXT, rect.x + 6, rect.y + 6)
-    draw_text(surf, defn.cls,  13, TEXT_MUTED, rect.x + 6, rect.y + 24)
+    _name = defn.name
+    _f15 = font(15)
+    _max_name_w = rect.w - 12
+    if _f15.size(_name)[0] > _max_name_w:
+        while _f15.size(_name + "…")[0] > _max_name_w and len(_name) > 1:
+            _name = _name[:-1]
+        _name = _name + "…"
+    draw_text(surf, _name, 15, TEXT, rect.x + 6, rect.y + 6)
+    _cr = draw_text(surf, cls_label(defn.cls), 13, CLASS_TEXT_COLORS.get(defn.cls, TEXT_MUTED), rect.x + 6, rect.y + 24)
+    if status_rects_out is not None:
+        status_rects_out.append((_cr, defn.cls))
     draw_text(surf, f"HP {defn.hp}  ATK {defn.attack}", 12, TEXT_DIM,
               rect.x + 6, rect.y + 42)
     draw_text(surf, f"DEF {defn.defense}  SPD {defn.speed}", 12, TEXT_DIM,
@@ -987,15 +1239,23 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                               scroll_offset: int = 0,
                               team_slot_selected=None,
                               sig_tier: int = 3,
-                              twists_unlocked: bool = False) -> dict:
+                              twists_unlocked: bool = False,
+                              status_rects_out: list = None,
+                              confirm_label: str = "Ready",
+                              pre_battle_mode: bool = False,
+                              enemy_picks: list = None,
+                              focused_slot: int = None) -> dict:
     """
     Draw the team selection screen.
     Returns a dict of {region_name: [list of (rect, value)]} for click handling.
     sub_phase: "pick_adventurers" | "pick_sig" | "pick_basics" | "pick_item"
     """
     surf.fill(BG)
-    draw_text(surf, f"{player_name} — Build Your Party", 28, TEXT, WIDTH // 2,
-              30, center=True)
+    if pre_battle_mode:
+        draw_text(surf, "Pre-Battle Setup", 28, TEXT, WIDTH // 2, 30, center=True)
+    else:
+        draw_text(surf, f"{player_name} — Build Your Party", 28, TEXT, WIDTH // 2,
+                  30, center=True)
 
     clicks = {
         "roster": [],
@@ -1003,95 +1263,342 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
         "basics": [],
         "items": [],
         "party_slots": [],
+        "party_remove": [],
+        "party_swap": [],
         "confirm": None,
         "back": None,
+        "edit_sets_btn": None,
         "scroll_max": 0,
         "scroll_viewport": None,
+        "enemy_cards": [],
     }
 
-    # Dynamic roster layout so larger pools (e.g. 24 adventurers) fit.
-    roster_cols = 4 if len(roster) >= 24 else ROSTER_COLS
-    card_w = 160 if roster_cols == 4 else CARD_W
-    card_h = 92 if roster_cols == 4 else CARD_H
+    # Always 3-column scrollable grid, sorted by class.
+    roster_cols = ROSTER_COLS
+    card_w = CARD_W
+    card_h = CARD_H
 
-    # ── Roster grid (left) ────────────────────────────────────────────────────
-    roster_panel_h = HEIGHT - ROSTER_Y - 20
-    roster_view = pygame.Rect(ROSTER_X, ROSTER_Y, DETAIL_X - ROSTER_X - 20, roster_panel_h)
-    _n_roster_rows = (len(roster) + roster_cols - 1) // roster_cols
-    roster_content_h = _n_roster_rows * (card_h + CARD_PAD)
-    slots_h = 22 + 50
-    roster_content_h += slots_h + 36
-    max_scroll = max(0, roster_content_h - roster_view.height)
-    roster_scroll = 0
-    if sub_phase == "pick_adventurers":
-        roster_scroll = max(0, min(scroll_offset, max_scroll))
-        clicks["scroll_max"] = max_scroll
-        clicks["scroll_viewport"] = roster_view
-
-    prev_clip = surf.get_clip()
-    surf.set_clip(roster_view)
-    for i, defn in enumerate(roster):
-        col = i % roster_cols
-        row = i // roster_cols
-        x = ROSTER_X + col * (card_w + CARD_PAD)
-        y = ROSTER_Y + row * (card_h + CARD_PAD) - roster_scroll
-        rect = pygame.Rect(x, y, card_w, card_h)
-        in_team = any(p.get("definition") == defn for p in team_picks)
-        sel = selected_idx == i
-        if rect.bottom >= roster_view.top and rect.top <= roster_view.bottom:
-            draw_adventurer_card(surf, rect, defn, sel, in_team, mouse_pos)
-        clicks["roster"].append((rect, i))
-
-    # Party slots — always show reorder hint when 2+ members
-    _slots_y = ROSTER_Y + _n_roster_rows * (card_h + CARD_PAD) - roster_scroll
-    if len(team_picks) >= 2:
-        draw_text(surf, "Your Party:  (click slots to reorder)", 18, TEXT_DIM, ROSTER_X, _slots_y)
+    if pre_battle_mode:
+        # ── Enemy formation cards in place of roster grid ─────────────────────
+        enemy_card_w = 210
+        enemy_card_h = 200
+        enemy_card_pad = 12
+        slot_labels_enemy = ["Front", "Back Left", "Back Right"]
+        draw_text(surf, "Enemy Formation", 16, TEXT_MUTED, ROSTER_X, ROSTER_Y - 22)
+        for i, ep in enumerate(enemy_picks or []):
+            ex = ROSTER_X + i * (enemy_card_w + enemy_card_pad)
+            ey = ROSTER_Y
+            erect = pygame.Rect(ex, ey, enemy_card_w, enemy_card_h)
+            ep_defn = ep.get("definition")
+            cls_fill = CLASS_COLORS.get(ep_defn.cls, PANEL_ALT) if ep_defn else PANEL_ALT
+            _ep_hover = erect.collidepoint(mouse_pos)
+            draw_rect_border(surf, erect, cls_fill, BORDER_ACTIVE if _ep_hover else BORDER)
+            clicks["enemy_cards"].append((erect, ep))
+            edy = ey + 6
+            draw_text(surf, slot_labels_enemy[i], 12, TEXT_MUTED, ex + 6, edy)
+            edy += 16
+            if ep_defn:
+                _ename = ep_defn.name
+                _ef = font(15)
+                if _ef.size(_ename)[0] > enemy_card_w - 12:
+                    while _ef.size(_ename + "…")[0] > enemy_card_w - 12 and len(_ename) > 1:
+                        _ename = _ename[:-1]
+                    _ename = _ename + "…"
+                draw_text(surf, _ename, 15, TEXT, ex + 6, edy)
+                edy += 20
+                _ecr = draw_text(surf, cls_label(ep_defn.cls), 12,
+                                 CLASS_TEXT_COLORS.get(ep_defn.cls, TEXT_MUTED), ex + 6, edy)
+                if status_rects_out is not None:
+                    status_rects_out.append((_ecr, ep_defn.cls))
+                edy += 16
+                draw_text(surf, f"HP {ep_defn.hp}", 11, TEXT_DIM, ex + 6, edy)
+                edy += 14
+                draw_text(surf, f"ATK {ep_defn.attack}  DEF {ep_defn.defense}  SPD {ep_defn.speed}",
+                          11, TEXT_DIM, ex + 6, edy)
+                edy += 14
+                ep_sig = ep.get("signature")
+                if ep_sig:
+                    _sname = ep_sig.name
+                    if font(12).size(_sname)[0] > enemy_card_w - 14:
+                        _sname = _sname[:18] + "…"
+                    draw_text(surf, _sname, 12, YELLOW, ex + 6, edy)
+                    edy += 14
+                for eb in ep.get("basics", []):
+                    _bname = eb.name
+                    if font(11).size(_bname)[0] > enemy_card_w - 14:
+                        _bname = _bname[:20] + "…"
+                    draw_text(surf, _bname, 11, TEXT_DIM, ex + 6, edy)
+                    edy += 13
+                ep_item = ep.get("item")
+                if ep_item:
+                    _iname = ep_item.name
+                    if font(11).size(_iname)[0] > enemy_card_w - 14:
+                        _iname = _iname[:20] + "…"
+                    draw_text(surf, _iname, 11, (140, 190, 140), ex + 6, edy)
+        # clicks["roster"] stays empty in pre_battle_mode
     else:
-        draw_text(surf, "Your Party:", 18, TEXT_DIM, ROSTER_X, _slots_y)
+        roster = sorted(roster, key=lambda d: (d.cls, d.name))
+
+        # ── Roster grid (left) ────────────────────────────────────────────────────
+        # Reserve 100px at the bottom for fixed party slots
+        roster_panel_h = HEIGHT - ROSTER_Y - 100
+        roster_view = pygame.Rect(ROSTER_X, ROSTER_Y, DETAIL_X - ROSTER_X - 20, roster_panel_h)
+        _n_roster_rows = (len(roster) + roster_cols - 1) // roster_cols
+        roster_content_h = _n_roster_rows * (card_h + CARD_PAD)
+        max_scroll = max(0, roster_content_h - roster_view.height)
+        roster_scroll = 0
+        if sub_phase == "pick_adventurers":
+            roster_scroll = max(0, min(scroll_offset, max_scroll))
+            clicks["scroll_max"] = max_scroll
+            clicks["scroll_viewport"] = roster_view
+
+        prev_clip = surf.get_clip()
+        surf.set_clip(roster_view)
+        for i, defn in enumerate(roster):
+            col = i % roster_cols
+            row = i // roster_cols
+            x = ROSTER_X + col * (card_w + CARD_PAD)
+            y = ROSTER_Y + row * (card_h + CARD_PAD) - roster_scroll
+            rect = pygame.Rect(x, y, card_w, card_h)
+            in_team = any(p.get("definition") == defn for p in team_picks)
+            sel = selected_idx is defn
+            if rect.bottom >= roster_view.top and rect.top <= roster_view.bottom:
+                draw_adventurer_card(surf, rect, defn, sel, in_team, mouse_pos, status_rects_out)
+            clicks["roster"].append((rect, defn))
+        surf.set_clip(prev_clip)
+        if sub_phase == "pick_adventurers":
+            _draw_scroll_arrows(surf, roster_view, roster_scroll, max_scroll)
+
+    # ── Party slots — fixed at the bottom of the left panel (outside scroll clip) ──
     slot_labels = ["Front", "Back Left", "Back Right"]
+    draw_text(surf, "Your Party:", 18, TEXT_DIM, ROSTER_X, HEIGHT - 95)
     for i in range(3):
         x = ROSTER_X + i * 220
-        y = _slots_y + 22
-        rect = pygame.Rect(x, y, 210, 50)
-        is_selected = (team_slot_selected == i)
+        rect = pygame.Rect(x, HEIGHT - 73, 210, 50)
         if i < len(team_picks):
             p = team_picks[i]
             slot_defn = p.get("definition")
-            fill = PANEL_HIGHLIGHT if is_selected else PANEL_ALT
-            border = BORDER_ACTIVE if is_selected else BORDER
+            cls_fill = CLASS_COLORS.get(slot_defn.cls, PANEL_ALT) if slot_defn else PANEL_ALT
+            # Highlight the slot being edited or focused
+            is_editing = (sub_phase in ("pick_sig", "pick_basics", "pick_item")
+                          and current_adv_idx == i)
+            is_focused = (sub_phase == "pick_adventurers" and focused_slot == i)
+            fill = tuple(min(255, c + 28) for c in cls_fill) if (is_editing or is_focused) else tuple(min(255, c + 14) for c in cls_fill)
+            border = BORDER_ACTIVE if (is_editing or is_focused) else BORDER
             draw_rect_border(surf, rect, fill, border)
-            draw_text(surf, slot_labels[i], 13, CYAN if is_selected else TEXT_MUTED, x + 6, y + 4)
+            draw_text(surf, slot_labels[i], 13, CYAN if is_editing else TEXT_MUTED, x + 6, HEIGHT - 73 + 4)
             if slot_defn:
-                draw_text(surf, slot_defn.name[:22], 15, TEXT, x + 6, y + 20)
+                draw_text(surf, slot_defn.name[:22], 15, TEXT, x + 6, HEIGHT - 73 + 20)
             else:
-                draw_text(surf, "(empty)", 15, TEXT_MUTED, x + 6, y + 20)
+                draw_text(surf, "(empty)", 15, TEXT_MUTED, x + 6, HEIGHT - 73 + 20)
+
+            # Set status indicators at y+37
+            _f10 = font(10)
+            _sx = x + 6
+            _sy = HEIGHT - 73 + 37
+            _has_sig = "signature" in p
+            _has_basics = len(p.get("basics", [])) == 2
+            _has_item = "item" in p
+            for _lbl, _ok in (("Sig", _has_sig), ("Basics", _has_basics), ("Item", _has_item)):
+                _mark = "✓" if _ok else "○"
+                _col = (80, 210, 80) if _ok else TEXT_MUTED
+                _s = _f10.render(f"{_lbl}{_mark}", True, _col)
+                surf.blit(_s, (_sx, _sy))
+                _sx += _s.get_width() + 4
+
+            if pre_battle_mode:
+                # In pre_battle_mode: ⇄ shifted to where × was, no × button
+                swapbtn = pygame.Rect(x + 188, HEIGHT - 73 + 2, 20, 18)
+                s_hov = swapbtn.collidepoint(mouse_pos)
+                pygame.draw.rect(surf, (40, 80, 120) if s_hov else (30, 55, 80), swapbtn, border_radius=3)
+                draw_text(surf, "⇄", 11, (140, 200, 240) if s_hov else TEXT_MUTED, swapbtn.x + 2, swapbtn.y + 2)
+                clicks["party_swap"].append((swapbtn, i))
+            else:
+                # Normal mode: ⇄ swap button (left of ×)
+                swapbtn = pygame.Rect(x + 166, HEIGHT - 73 + 2, 20, 18)
+                s_hov = swapbtn.collidepoint(mouse_pos)
+                pygame.draw.rect(surf, (40, 80, 120) if s_hov else (30, 55, 80), swapbtn, border_radius=3)
+                draw_text(surf, "⇄", 11, (140, 200, 240) if s_hov else TEXT_MUTED, swapbtn.x + 2, swapbtn.y + 2)
+                clicks["party_swap"].append((swapbtn, i))
+
+                # × remove button
+                xbtn = pygame.Rect(x + 188, HEIGHT - 73 + 2, 20, 18)
+                hov = xbtn.collidepoint(mouse_pos)
+                pygame.draw.rect(surf, RED_DARK if hov else (70, 40, 40), xbtn, border_radius=3)
+                draw_text(surf, "×", 14, RED if hov else TEXT_DIM, xbtn.x + 3, xbtn.y + 1)
+                clicks["party_remove"].append((xbtn, i))
             clicks["party_slots"].append((rect, i))
         else:
             draw_rect_border(surf, rect, PANEL_ALT, BORDER)
-            draw_text(surf, slot_labels[i], 13, TEXT_MUTED, x + 6, y + 4)
-            draw_text(surf, "(empty)", 15, TEXT_MUTED, x + 6, y + 20)
-    surf.set_clip(prev_clip)
+            draw_text(surf, slot_labels[i], 13, TEXT_MUTED, x + 6, HEIGHT - 73 + 4)
+            draw_text(surf, "(empty)", 15, TEXT_MUTED, x + 6, HEIGHT - 73 + 20)
 
     # ── Detail panel (right) ──────────────────────────────────────────────────
     detail_rect = pygame.Rect(DETAIL_X, DETAIL_Y, DETAIL_W, DETAIL_H)
     draw_panel(surf, detail_rect)
 
-    if sub_phase != "pick_adventurers" and team_picks and current_adv_idx < len(team_picks):
+    # Focused slot in pick_adventurers: show that member's current sets + Edit Sets button
+    if sub_phase == "pick_adventurers" and focused_slot is not None and focused_slot < len(team_picks):
+        _pm = team_picks[focused_slot]
+        _pm_defn = _pm.get("definition")
+        _slot_lbl = ["Front", "Back Left", "Back Right"][focused_slot]
+        _dx, _dy = DETAIL_X + 14, DETAIL_Y + 12
+        _detail_max_w = DETAIL_W - 28
+        _bottom_limit = DETAIL_Y + DETAIL_H - 65  # leave room for Edit Sets button
+        draw_text(surf, _slot_lbl, 13, TEXT_MUTED, _dx, _dy)
+        _dy += 18
+        if _pm_defn:
+            # ── Name + class ──────────────────────────────────────────────────
+            draw_text(surf, _pm_defn.name, 22, TEXT, _dx, _dy)
+            _dy += 26
+            _pmcr = draw_text(surf, f"{cls_label(_pm_defn.cls)}  —  {_pm_defn.talent_name}",
+                              14, YELLOW, _dx, _dy)
+            if status_rects_out is not None:
+                status_rects_out.append((_pmcr, _pm_defn.cls))
+            _dy += 18
+            # Talent description
+            for _line in _wrap_text(_pm_defn.talent_text, 12, _detail_max_w):
+                if _dy + 13 > _bottom_limit:
+                    break
+                _draw_rich_line(surf, _line, 12, TEXT_DIM, _dx, _dy, status_rects_out)
+                _dy += 14
+            _dy += 2
+            # Stats
+            if _dy + 14 <= _bottom_limit:
+                draw_text(surf,
+                          f"HP {_pm_defn.hp}   ATK {_pm_defn.attack}   DEF {_pm_defn.defense}   SPD {_pm_defn.speed}",
+                          13, TEXT, _dx, _dy)
+                _dy += 18
+
+            # ── Signature ─────────────────────────────────────────────────────
+            if _dy + 14 <= _bottom_limit:
+                pygame.draw.line(surf, BORDER, (_dx, _dy), (_dx + _detail_max_w, _dy), 1)
+                _dy += 7
+            _pm_sig = _pm.get("signature")
+            if _dy + 14 <= _bottom_limit:
+                draw_text(surf, "Signature", 13, CYAN, _dx, _dy)
+                _dy += 16
+            if _pm_sig and _dy + 13 <= _bottom_limit:
+                draw_text(surf, _pm_sig.name, 14, YELLOW if not _pm_sig.passive else TEXT_DIM,
+                          _dx + 6, _dy)
+                _dy += 16
+                if _dy + 12 <= _bottom_limit:
+                    _stype = "Passive" if _pm_sig.passive else "Active"
+                    _scol  = TYPE_PASSIVE_COL if _pm_sig.passive else TYPE_ACTIVE_COL
+                    draw_text(surf, _stype, 12, _scol, _dx + 10, _dy)
+                    _dy += 13
+                if _fl_bl_same(_pm_sig):
+                    if _dy + 12 <= _bottom_limit:
+                        _draw_rich_line(surf, f"  FL & BL: {_mode_summary(_pm_sig.frontline)}", 12, TEXT_DIM,
+                                        _dx + 10, _dy, status_rects_out)
+                        _dy += 13
+                else:
+                    if _dy + 12 <= _bottom_limit:
+                        _draw_rich_line(surf, f"  FL: {_mode_summary(_pm_sig.frontline)}", 12, TEXT_DIM,
+                                        _dx + 10, _dy, status_rects_out)
+                        _dy += 13
+                    if _dy + 12 <= _bottom_limit:
+                        _draw_rich_line(surf, f"  BL: {_mode_summary(_pm_sig.backline)}", 12, TEXT_MUTED,
+                                        _dx + 10, _dy, status_rects_out)
+                        _dy += 13
+            elif not _pm_sig and _dy + 13 <= _bottom_limit:
+                draw_text(surf, "  —", 13, TEXT_MUTED, _dx + 6, _dy)
+                _dy += 15
+            _dy += 2
+
+            # ── Basics ────────────────────────────────────────────────────────
+            if _dy + 14 <= _bottom_limit:
+                pygame.draw.line(surf, BORDER, (_dx, _dy), (_dx + _detail_max_w, _dy), 1)
+                _dy += 7
+            if _dy + 14 <= _bottom_limit:
+                draw_text(surf, "Basics", 13, CYAN, _dx, _dy)
+                _dy += 16
+            _pm_basics = _pm.get("basics", [])
+            if _pm_basics:
+                for _pb in _pm_basics:
+                    if _dy + 13 > _bottom_limit:
+                        break
+                    draw_text(surf, _pb.name, 13, TEXT, _dx + 6, _dy)
+                    _dy += 14
+                    if _dy + 12 <= _bottom_limit:
+                        _btype = "Passive" if _pb.passive else "Active"
+                        _bcol  = TYPE_PASSIVE_COL if _pb.passive else TYPE_ACTIVE_COL
+                        draw_text(surf, _btype, 12, _bcol, _dx + 10, _dy)
+                        _dy += 13
+                    if _fl_bl_same(_pb):
+                        if _dy + 12 <= _bottom_limit:
+                            _draw_rich_line(surf, f"  FL & BL: {_mode_summary(_pb.frontline)}", 12, TEXT_DIM,
+                                            _dx + 10, _dy, status_rects_out)
+                            _dy += 13
+                    else:
+                        if _dy + 12 <= _bottom_limit:
+                            _draw_rich_line(surf, f"  FL: {_mode_summary(_pb.frontline)}", 12, TEXT_DIM,
+                                            _dx + 10, _dy, status_rects_out)
+                            _dy += 13
+                        if _dy + 12 <= _bottom_limit:
+                            _draw_rich_line(surf, f"  BL: {_mode_summary(_pb.backline)}", 12, TEXT_MUTED,
+                                            _dx + 10, _dy, status_rects_out)
+                            _dy += 13
+                    _dy += 1
+            else:
+                if _dy + 13 <= _bottom_limit:
+                    draw_text(surf, "  —", 13, TEXT_MUTED, _dx + 6, _dy)
+                    _dy += 15
+            _dy += 2
+
+            # ── Item ──────────────────────────────────────────────────────────
+            if _dy + 14 <= _bottom_limit:
+                pygame.draw.line(surf, BORDER, (_dx, _dy), (_dx + _detail_max_w, _dy), 1)
+                _dy += 7
+            if _dy + 14 <= _bottom_limit:
+                draw_text(surf, "Item", 13, CYAN, _dx, _dy)
+                _dy += 16
+            _pm_item = _pm.get("item")
+            if _pm_item and _dy + 13 <= _bottom_limit:
+                draw_text(surf, _pm_item.name, 13, (140, 190, 140), _dx + 6, _dy)
+                _dy += 14
+                if _dy + 12 <= _bottom_limit:
+                    _itype = "Passive" if _pm_item.passive else "Active"
+                    _icol  = TYPE_PASSIVE_COL if _pm_item.passive else TYPE_ACTIVE_COL
+                    draw_text(surf, _itype, 12, _icol, _dx + 10, _dy)
+                    _dy += 13
+                if _pm_item.description:
+                    for _line in _wrap_text(_pm_item.description, 12, _detail_max_w - 10):
+                        if _dy + 12 > _bottom_limit:
+                            break
+                        _draw_rich_line(surf, _line, 12, TEXT_DIM, _dx + 10, _dy, status_rects_out)
+                        _dy += 13
+            elif not _pm_item and _dy + 13 <= _bottom_limit:
+                draw_text(surf, "  None", 13, TEXT_MUTED, _dx + 6, _dy)
+
+        # Edit Sets button — bottom of detail panel
+        edit_sets_rect = pygame.Rect(DETAIL_X + 14, DETAIL_Y + DETAIL_H - 55, 180, 44)
+        draw_button(surf, edit_sets_rect, "Edit Sets →", mouse_pos,
+                    normal=(45, 75, 55), hover=(60, 105, 75), size=16)
+        clicks["edit_sets_btn"] = edit_sets_rect
+        defn = None  # skip normal defn rendering
+    elif sub_phase != "pick_adventurers" and team_picks and current_adv_idx < len(team_picks):
         defn = team_picks[current_adv_idx].get("definition")
-    elif selected_idx is not None and 0 <= selected_idx < len(roster):
-        defn = roster[selected_idx]
+    elif selected_idx is not None:
+        defn = selected_idx  # selected_idx is now a defn object
     else:
         defn = None
+        if sub_phase == "pick_adventurers" and not team_picks:
+            draw_text(surf, "Click a party slot to view and edit their sets.",
+                      16, TEXT_MUTED, DETAIL_X + DETAIL_W // 2, DETAIL_Y + DETAIL_H // 2,
+                      center=True)
     if defn is not None:
         dx, dy = DETAIL_X + 14, DETAIL_Y + 12
 
         draw_text(surf, defn.name, 24, TEXT, dx, dy)
         dy += 30
-        draw_text(surf, f"{defn.cls}  —  {defn.talent_name}",
-                  16, YELLOW, dx, dy)
+        _dcr = draw_text(surf, f"{cls_label(defn.cls)}  —  {defn.talent_name}",
+                         16, YELLOW, dx, dy)
+        if status_rects_out is not None:
+            status_rects_out.append((_dcr, defn.cls))
         dy += 20
         for line in _wrap_text(defn.talent_text, 13, DETAIL_W - 28):
-            draw_text(surf, line, 13, TEXT_DIM, dx, dy)
+            _draw_rich_line(surf, line, 13, TEXT_DIM, dx, dy, status_rects_out)
             dy += 16
         dy += 4
         draw_text(surf,
@@ -1110,15 +1617,24 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             for sig in avail:
                 if dy + 13 > bottom_limit:
                     break
-                tag = "  [passive]" if sig.passive else ""
-                draw_text(surf, sig.name + tag, 14, TEXT, dx + 6, dy)
+                draw_text(surf, sig.name, 14, TEXT, dx + 6, dy)
                 dy += 15
                 if dy + 12 <= bottom_limit:
-                    draw_text(surf, f"  FL: {_mode_summary(sig.frontline)}", 12, TEXT_DIM, dx + 10, dy)
+                    _pstype = "Passive" if sig.passive else "Active"
+                    _pscol  = TYPE_PASSIVE_COL if sig.passive else TYPE_ACTIVE_COL
+                    draw_text(surf, _pstype, 12, _pscol, dx + 10, dy)
                     dy += 13
-                if dy + 12 <= bottom_limit:
-                    draw_text(surf, f"  BL: {_mode_summary(sig.backline)}", 12, TEXT_MUTED, dx + 10, dy)
-                    dy += 13
+                if _fl_bl_same(sig):
+                    if dy + 12 <= bottom_limit:
+                        _draw_rich_line(surf, f"  FL & BL: {_mode_summary(sig.frontline)}", 12, TEXT_DIM, dx + 10, dy, status_rects_out)
+                        dy += 13
+                else:
+                    if dy + 12 <= bottom_limit:
+                        _draw_rich_line(surf, f"  FL: {_mode_summary(sig.frontline)}", 12, TEXT_DIM, dx + 10, dy, status_rects_out)
+                        dy += 13
+                    if dy + 12 <= bottom_limit:
+                        _draw_rich_line(surf, f"  BL: {_mode_summary(sig.backline)}", 12, TEXT_MUTED, dx + 10, dy, status_rects_out)
+                        dy += 13
                 dy += 2
             # ── Twist preview ─────────────────────────────────────────────────
             if dy + 14 <= bottom_limit:
@@ -1128,13 +1644,18 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                     twist = defn.twist
                     draw_text(surf, f"Twist: {twist.name}", 14, ORANGE, dx, dy)
                     dy += 15
-                    tfl = _mode_detail_lines(twist.frontline)
-                    tbl = _mode_detail_lines(twist.backline)
                     if dy + 12 <= bottom_limit:
-                        draw_text(surf, f"  FL: {tfl[0]}", 12, TEXT_DIM, dx + 10, dy)
+                        draw_text(surf, "Active", 12, TYPE_ACTIVE_COL, dx + 10, dy)
                         dy += 13
-                    if dy + 12 <= bottom_limit:
-                        draw_text(surf, f"  BL: {tbl[0]}", 12, TEXT_MUTED, dx + 10, dy)
+                    tfl = _mode_detail_lines(twist.frontline)
+                    _twist_prefix = "  FL: "
+                    for _ti, _tpart in enumerate(tfl):
+                        for _twline in _wrap_text((_twist_prefix if _ti == 0 else "       ") + _tpart,
+                                                   12, DETAIL_W - 38):
+                            if dy + 12 > bottom_limit:
+                                break
+                            _draw_rich_line(surf, _twline, 12, TEXT_DIM, dx + 10, dy, status_rects_out)
+                            dy += 13
                 else:
                     draw_text(surf, "Twist: (locked)", 14, TEXT_MUTED, dx, dy)
 
@@ -1142,31 +1663,53 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             draw_text(surf, "Choose Signature Ability:", 18, CYAN, dx, dy)
             dy += 24
             for i, sig in enumerate(defn.sig_options[:sig_tier]):
-                # Measure how tall this entry needs to be
                 fl_lines = _mode_detail_lines(sig.frontline)
                 bl_lines = _mode_detail_lines(sig.backline)
-                # Fixed generous height so wrapped FL/BL lines fit without clipping.
-                entry_h = 152
+                same = _fl_bl_same(sig)
+                # Compute card height: name row + section header(s) + content lines
+                def _sig_rendered_lines(lines):
+                    return sum(len(_wrap_text(l, 13, DETAIL_W - 52)[:2]) for l in lines[:2])
+                fl_n = _sig_rendered_lines(fl_lines)
+                bl_n = _sig_rendered_lines(bl_lines)
+                # name row (20) + type label (13) + section header(s) + content + padding
+                if same:
+                    entry_h = 20 + 13 + 14 + fl_n * 14 + 10
+                else:
+                    entry_h = 20 + 13 + 14 + fl_n * 14 + 14 + bl_n * 14 + 10
+                entry_h = max(entry_h, 80)
                 r = pygame.Rect(dx, dy, DETAIL_W - 28, entry_h)
                 sel_s = sig_choice == i
                 draw_rect_border(surf, r,
                                  PANEL_HIGHLIGHT if sel_s else PANEL_ALT,
                                  BORDER_ACTIVE if sel_s else BORDER)
-                iy = dy + 5
+                iy = dy + 6
                 draw_text(surf, sig.name, 16, TEXT, dx + 8, iy)
-                iy += 20
-                draw_text(surf, "Frontline:", 13, CYAN, dx + 8, iy)
+                iy += 19
+                # Type label
+                _stype = "Passive" if sig.passive else "Active"
+                _scol  = TYPE_PASSIVE_COL if sig.passive else TYPE_ACTIVE_COL
+                draw_text(surf, _stype, 12, _scol, dx + 8, iy)
                 iy += 14
-                for line in fl_lines[:2]:
-                    for wline in _wrap_text(line, 13, DETAIL_W - 52)[:2]:
-                        draw_text(surf, f"  {wline}", 13, TEXT_DIM, dx + 8, iy)
-                        iy += 14
-                draw_text(surf, "Backline:", 13, CYAN, dx + 8, iy)
-                iy += 14
-                for line in bl_lines[:2]:
-                    for wline in _wrap_text(line, 13, DETAIL_W - 52)[:2]:
-                        draw_text(surf, f"  {wline}", 13, TEXT_MUTED, dx + 8, iy)
-                        iy += 14
+                if same:
+                    draw_text(surf, "FL & BL:", 13, CYAN, dx + 8, iy)
+                    iy += 14
+                    for line in fl_lines[:2]:
+                        for wline in _wrap_text(line, 13, DETAIL_W - 52)[:2]:
+                            _draw_rich_line(surf, f"  {wline}", 13, TEXT_DIM, dx + 8, iy, status_rects_out)
+                            iy += 14
+                else:
+                    draw_text(surf, "Frontline:", 13, CYAN, dx + 8, iy)
+                    iy += 14
+                    for line in fl_lines[:2]:
+                        for wline in _wrap_text(line, 13, DETAIL_W - 52)[:2]:
+                            _draw_rich_line(surf, f"  {wline}", 13, TEXT_DIM, dx + 8, iy, status_rects_out)
+                            iy += 14
+                    draw_text(surf, "Backline:", 13, CYAN, dx + 8, iy)
+                    iy += 14
+                    for line in bl_lines[:2]:
+                        for wline in _wrap_text(line, 13, DETAIL_W - 52)[:2]:
+                            _draw_rich_line(surf, f"  {wline}", 13, TEXT_MUTED, dx + 8, iy, status_rects_out)
+                            iy += 14
                 clicks["sig"].append((r, i))
                 dy += entry_h + 6
 
@@ -1178,19 +1721,31 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             list_top = dy
             list_bottom = DETAIL_Y + DETAIL_H - 95
             view_rect = pygame.Rect(dx, list_top, DETAIL_W - 28, max(0, list_bottom - list_top))
-            content_h = len(pool) * 145
+            # Compute per-ability heights
+            def _basic_entry_h(ab):
+                fl_l = _mode_detail_lines(ab.frontline)
+                bl_l = _mode_detail_lines(ab.backline)
+                def _n(lines): return sum(len(_wrap_text(l, 13, DETAIL_W - 56)[:2]) for l in lines[:2])
+                # name (18) + type label (13) + section header + content + padding
+                if _fl_bl_same(ab):
+                    return max(18 + 13 + 13 + _n(fl_l) * 13 + 6, 75)
+                return max(18 + 13 + 13 + _n(fl_l) * 13 + 13 + _n(bl_l) * 13 + 6, 95)
+            ab_heights = [_basic_entry_h(ab) for ab in pool]
+            unified_h = max(ab_heights) if ab_heights else 75
+            content_h = len(pool) * (unified_h + 5)
             max_scroll = max(0, content_h - view_rect.height)
             scroll = max(0, min(scroll_offset, max_scroll))
             clicks["scroll_max"] = max_scroll
             clicks["scroll_viewport"] = view_rect
             prev_clip = surf.get_clip()
             surf.set_clip(view_rect)
+            _ab_y = dy
             for i, ab in enumerate(pool):
                 fl_lines = _mode_detail_lines(ab.frontline)
                 bl_lines = _mode_detail_lines(ab.backline)
-                # Fixed generous height so wrapped FL/BL lines fit without clipping.
-                entry_h = 140
-                y_draw = dy - scroll
+                same = _fl_bl_same(ab)
+                entry_h = unified_h
+                y_draw = _ab_y - scroll
                 r = pygame.Rect(dx, y_draw, DETAIL_W - 28, entry_h)
                 sel_b = i in basic_choices
                 if r.bottom >= view_rect.top and r.top <= view_rect.bottom:
@@ -1198,24 +1753,37 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                                      PANEL_HIGHLIGHT if sel_b else PANEL_ALT,
                                      BORDER_ACTIVE if sel_b else BORDER)
                     iy = y_draw + 5
-                    tag = "  [passive]" if ab.passive else ""
-                    draw_text(surf, ab.name + tag, 15, TEXT, dx + 8, iy)
-                    iy += 18
-                    draw_text(surf, "FL:", 13, CYAN, dx + 8, iy)
+                    draw_text(surf, ab.name, 15, TEXT, dx + 8, iy)
+                    iy += 17
+                    # Type label
+                    _abtype = "Passive" if ab.passive else "Active"
+                    _abcol  = TYPE_PASSIVE_COL if ab.passive else TYPE_ACTIVE_COL
+                    draw_text(surf, _abtype, 12, _abcol, dx + 8, iy)
                     iy += 13
-                    for line in fl_lines[:2]:
-                        for wline in _wrap_text(line, 13, DETAIL_W - 56)[:2]:
-                            draw_text(surf, f"  {wline}", 13, TEXT_DIM, dx + 8, iy)
-                            iy += 13
-                    draw_text(surf, "BL:", 13, CYAN, dx + 8, iy)
-                    iy += 13
-                    for line in bl_lines[:2]:
-                        for wline in _wrap_text(line, 13, DETAIL_W - 56)[:2]:
-                            draw_text(surf, f"  {wline}", 13, TEXT_MUTED, dx + 8, iy)
-                            iy += 13
-                clicks["basics"].append((r.copy(), i))
-                dy += entry_h + 5
+                    if same:
+                        draw_text(surf, "FL & BL:", 13, CYAN, dx + 8, iy)
+                        iy += 13
+                        for line in fl_lines[:2]:
+                            for wline in _wrap_text(line, 13, DETAIL_W - 56)[:2]:
+                                _draw_rich_line(surf, f"  {wline}", 13, TEXT_DIM, dx + 8, iy, status_rects_out)
+                                iy += 13
+                    else:
+                        draw_text(surf, "FL:", 13, CYAN, dx + 8, iy)
+                        iy += 13
+                        for line in fl_lines[:2]:
+                            for wline in _wrap_text(line, 13, DETAIL_W - 56)[:2]:
+                                _draw_rich_line(surf, f"  {wline}", 13, TEXT_DIM, dx + 8, iy, status_rects_out)
+                                iy += 13
+                        draw_text(surf, "BL:", 13, CYAN, dx + 8, iy)
+                        iy += 13
+                        for line in bl_lines[:2]:
+                            for wline in _wrap_text(line, 13, DETAIL_W - 56)[:2]:
+                                _draw_rich_line(surf, f"  {wline}", 13, TEXT_MUTED, dx + 8, iy, status_rects_out)
+                                iy += 13
+                    clicks["basics"].append((r.copy(), i))
+                _ab_y += entry_h + 5
             surf.set_clip(prev_clip)
+            _draw_scroll_arrows(surf, view_rect, scroll, max_scroll)
 
         elif sub_phase == "pick_item":
             draw_text(surf, "Choose an Item:", 18, CYAN, dx, dy)
@@ -1234,7 +1802,8 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                 sel_i = item_choice == i
                 desc_lines = _wrap_text(item.description, 13, inner_w)
                 preview = desc_lines[: (3 if sel_i else 1)]
-                item_heights.append(24 + len(preview) * 14 + 4)
+                # name row (to y+20) + type label (to y+33) + description lines + padding + dy gap
+                item_heights.append(39 + len(preview) * 14)
             content_h = sum(item_heights)
             max_scroll = max(0, content_h - view_rect.height)
             scroll = max(0, min(scroll_offset, max_scroll))
@@ -1249,59 +1818,76 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                 desc_lines = _wrap_text(item.description, 13, inner_w)
                 # Always show at least one description line for readability.
                 preview = desc_lines[: (3 if sel_i else 1)]
-                entry_h = 24 + len(preview) * 14 + 2
+                entry_h = 37 + len(preview) * 14
                 y_draw = dy - scroll
                 r = pygame.Rect(dx, y_draw, DETAIL_W - 28, entry_h)
                 if r.bottom >= view_rect.top and r.top <= view_rect.bottom:
+                    _itype_lbl = "Passive" if item.passive else "Active"
+                    _itype_col = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
                     if is_taken:
                         draw_rect_border(surf, r, (35, 35, 40), BORDER)
-                        display_name = f"{item.name}  {tag}  [taken]"
-                        draw_text(surf, display_name, 14, TEXT_MUTED, dx + 8, y_draw + 4)
-                        iy = y_draw + 20
+                        draw_text(surf, f"{item.name}  [taken]", 14, TEXT_MUTED, dx + 8, y_draw + 4)
+                        draw_text(surf, _itype_lbl, 12, TEXT_MUTED, dx + 8, y_draw + 20)
+                        iy = y_draw + 33
                         for line in preview:
-                            draw_text(surf, line, 13, TEXT_MUTED, dx + 14, iy)
+                            _draw_rich_line(surf, line, 13, TEXT_MUTED, dx + 14, iy, status_rects_out)
                             iy += 14
                     else:
                         draw_rect_border(surf, r,
                                          PANEL_HIGHLIGHT if sel_i else PANEL_ALT,
                                          BORDER_ACTIVE if sel_i else BORDER)
-                        draw_text(surf, f"{item.name}  {tag}", 14,
+                        draw_text(surf, item.name, 14,
                                   TEXT if sel_i else TEXT_DIM, dx + 8, y_draw + 4)
-                        iy = y_draw + 20
+                        draw_text(surf, _itype_lbl, 12, _itype_col, dx + 8, y_draw + 20)
+                        iy = y_draw + 33
                         for line in preview:
-                            draw_text(surf, line, 13, TEXT_DIM if sel_i else TEXT_MUTED, dx + 14, iy)
+                            _draw_rich_line(surf, line, 13, TEXT_DIM if sel_i else TEXT_MUTED, dx + 14, iy, status_rects_out)
                             iy += 14
-                clicks["items"].append((r.copy(), i))
+                    clicks["items"].append((r.copy(), i))
                 dy += entry_h + 2
             surf.set_clip(prev_clip)
-
-    if clicks["scroll_max"] > 0 and clicks["scroll_viewport"] is not None:
-        draw_text(surf, "Scroll list with mouse wheel", 13, TEXT_MUTED,
-                  DETAIL_X + 14, DETAIL_Y + DETAIL_H - 102)
+            _draw_scroll_arrows(surf, view_rect, scroll, max_scroll)
 
     # ── Confirm / instructions ────────────────────────────────────────────────
-    inst = {
-        "pick_adventurers": "Click adventurers to add them (first = Front). Need 3.",
-        "pick_sig": "Select a Signature Ability, then confirm.",
-        "pick_basics": "Select 2 Basic Abilities, then confirm.",
-        "pick_item": "Select an Item, then confirm.",
-    }
+    if pre_battle_mode:
+        inst = {
+            "pick_adventurers": "Click a party slot below to edit their sets.",
+            "pick_sig": "Select a Signature Ability, then confirm.",
+            "pick_basics": "Select 2 Basic Abilities, then confirm.",
+            "pick_item": "Select an Item (optional), then confirm.",
+        }
+    else:
+        inst = {
+            "pick_adventurers": "Click roster to add/remove members. Click a filled slot to edit their sets.",
+            "pick_sig": "Select a Signature Ability, then confirm.",
+            "pick_basics": "Select 2 Basic Abilities, then confirm.",
+            "pick_item": "Select an Item (optional), then confirm.",
+        }
     draw_text(surf, inst.get(sub_phase, ""), 15, TEXT_DIM,
               DETAIL_X + 14, DETAIL_Y + DETAIL_H - 80)
 
-    confirm_text = {
-        "pick_adventurers": "Continue →" if len(team_picks) == 3 else f"Need {3 - len(team_picks)} more",
-        "pick_sig": "Confirm Signature" if sig_choice is not None else "Pick a Signature",
-        "pick_basics": "Confirm Basics" if len(basic_choices) == 2 else f"Need {2 - len(basic_choices)} more",
-        "pick_item": "Confirm Item" if item_choice is not None else "Pick an Item",
-    }.get(sub_phase, "Confirm")
+    def _team_valid(picks):
+        return (len(picks) == 3 and
+                all("signature" in pk and len(pk.get("basics", [])) == 2 for pk in picks))
 
-    can_confirm = {
-        "pick_adventurers": len(team_picks) == 3,
-        "pick_sig": sig_choice is not None,
-        "pick_basics": len(basic_choices) == 2,
-        "pick_item": item_choice is not None,
-    }.get(sub_phase, False)
+    if sub_phase == "pick_adventurers":
+        valid = _team_valid(team_picks)
+        if valid:
+            confirm_text = confirm_label
+        else:
+            confirm_text = "Not Ready"
+        can_confirm = valid
+    else:
+        confirm_text = {
+            "pick_sig": "Confirm Signature" if sig_choice is not None else "Pick a Signature",
+            "pick_basics": "Confirm Basics" if len(basic_choices) == 2 else f"Need {2 - len(basic_choices)} more",
+            "pick_item": "Confirm Item" if item_choice is not None else "Skip Item →",
+        }.get(sub_phase, "Confirm")
+        can_confirm = {
+            "pick_sig": sig_choice is not None,
+            "pick_basics": len(basic_choices) == 2,
+            "pick_item": True,  # item is optional; always can confirm
+        }.get(sub_phase, False)
 
     confirm_rect = pygame.Rect(DETAIL_X + DETAIL_W - 230, DETAIL_Y + DETAIL_H - 55,
                                220, 44)
@@ -1310,13 +1896,92 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
     if can_confirm:
         clicks["confirm"] = confirm_rect
 
+    # Import Team button — only shown in pick_adventurers, not pre_battle_mode, not when a slot is focused
+    if sub_phase == "pick_adventurers" and not pre_battle_mode and focused_slot is None:
+        import_rect = pygame.Rect(DETAIL_X + 14, DETAIL_Y + DETAIL_H - 55, 180, 44)
+        draw_button(surf, import_rect, "Import Party", mouse_pos,
+                    normal=PANEL, hover=PANEL_HIGHLIGHT, border=BORDER_ACTIVE, size=16)
+        clicks["import_btn"] = import_rect
+
     # Back button for sub-phases after pick_adventurers
     if sub_phase != "pick_adventurers":
-        back_rect = pygame.Rect(DETAIL_X, DETAIL_Y + DETAIL_H - 55, 160, 44)
+        back_rect = pygame.Rect(DETAIL_X + 14, DETAIL_Y + DETAIL_H - 55, 160, 44)
         draw_button(surf, back_rect, "← Back", mouse_pos, size=16)
         clicks["back"] = back_rect
 
     return clicks
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# IMPORT TEAM MODAL
+# ─────────────────────────────────────────────────────────────────────────────
+
+def draw_import_modal(surf, text: str, error: str, mouse_pos) -> dict:
+    """Draw a centered modal overlay for pasting/typing a team import string.
+
+    Returns dict with keys:
+        "confirm": pygame.Rect or None  (Import button, only when text is non-empty)
+        "cancel":  pygame.Rect
+    """
+    # Semi-transparent dark overlay
+    overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+    overlay.fill((0, 0, 0, 180))
+    surf.blit(overlay, (0, 0))
+
+    # Modal box dimensions
+    modal_w, modal_h = 700, 480
+    mx = (WIDTH  - modal_w) // 2
+    my = (HEIGHT - modal_h) // 2
+    modal_rect = pygame.Rect(mx, my, modal_w, modal_h)
+
+    draw_rect_border(surf, modal_rect, PANEL, BORDER_ACTIVE, 2)
+
+    # Title
+    draw_text(surf, "Import Party", 26, TEXT, mx + modal_w // 2, my + 18, center=True)
+
+    # Instructions
+    draw_text(surf, "Paste your party with Ctrl+V or type below:", 15, TEXT_DIM,
+              mx + 16, my + 52)
+
+    # Text area background
+    text_area = pygame.Rect(mx + 14, my + 74, modal_w - 28, modal_h - 170)
+    draw_rect_border(surf, text_area, (20, 22, 28), BORDER)
+
+    # Render last ~12 lines of text with a cursor on the final line
+    lines = text.split("\n") if text else [""]
+    display_lines = lines[-12:]
+    # Append cursor to last visible line
+    if display_lines:
+        display_lines = list(display_lines)
+        display_lines[-1] = display_lines[-1] + "|"
+
+    ty = text_area.y + 6
+    line_h = 17
+    for line in display_lines:
+        if ty + line_h > text_area.bottom - 4:
+            break
+        draw_text(surf, line, 14, TEXT, text_area.x + 8, ty)
+        ty += line_h
+
+    # Error message
+    if error:
+        draw_text(surf, error, 16, RED, mx + modal_w // 2, my + modal_h - 100,
+                  center=True)
+
+    # Buttons
+    cancel_rect  = pygame.Rect(mx + 14,                  my + modal_h - 56, 140, 42)
+    confirm_rect = pygame.Rect(mx + modal_w - 14 - 180,  my + modal_h - 56, 180, 42)
+
+    draw_button(surf, cancel_rect, "Cancel", mouse_pos, size=16)
+
+    has_text = bool(text.strip())
+    draw_button(surf, confirm_rect, "Import", mouse_pos,
+                normal=BLUE_DARK, hover=BLUE, disabled=not has_text, size=16)
+
+    return {
+        "confirm": confirm_rect if has_text else None,
+        "cancel":  cancel_rect,
+    }
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1419,7 +2084,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     "benefactor_front":                "healing effects restore 25% more HP",
     "benefactor_back":                 "healing effects restore 15% more HP",
     "sanctuary_front":                 "allies heal 1/10 max HP each round",
-    "sanctuary_back":                  "frontline ally heals 1/8 max HP each round",
+    "sanctuary_back":                  "frontline ally heals 1/12 max HP each round",
     "redemption":                      "+100 max HP; Aldric heals 50 HP at end of round for 2 rounds",
     # Liesl
     "cinder_blessing_avg":             "sets Liesl and ally HP to the average of both",
@@ -1457,13 +2122,13 @@ SPECIAL_DESCRIPTIONS: dict = {
     "warlock_gain_malice_1":          "gain 1 Malice",
     "warlock_spend1_weaken":         "spend 1 Malice to Weaken target for 2 rounds",
     "warlock_spend1_expose":         "spend 1 Malice to Expose target for 2 rounds",
-    "blood_pact_front":              "lose 20 HP and gain 2 Malice",
-    "blood_pact_back":               "heal 20 HP; spend 1 Malice to heal 20 more HP",
+    "blood_pact_front":              "lose 50 HP and gain 2 Malice",
+    "blood_pact_back":               "heal 25 HP; spend 1 Malice to heal 25 more HP",
     "cursed_armor":                  "gain 1 Malice whenever damaged by an enemy ability",
     "void_step_front":               "on swapping to backline, gain 1 Malice",
     "void_step_back":                "on swapping to frontline, spend 2 Malice for +10 Spd (2r)",
     # Pinocchio (Warlock)
-    "wooden_wallop_front":           "+10 power per Malice",
+    "wooden_wallop_front":           "+5 power per Malice",
     "cut_strings_back":              "spend 2 Malice to Spotlight target for 2 rounds",
     "become_real_front":             "at 3+ Malice: abilities gain +15 damage; immune to statuses",
     "become_real_back":              "at 3+ Malice: abilities do not increment ranged recharge",
@@ -1489,6 +2154,13 @@ SPECIAL_DESCRIPTIONS: dict = {
     "holy_diadem":                     "once per battle: survive fatal damage at 1 HP, take no damage that round",
     "spiked_mail":                     "enemies that damage user take 15 damage",
 }
+
+
+def _fl_bl_same(ability) -> bool:
+    """Return True if the frontline and backline effects are identical (and both available)."""
+    if ability.frontline.unavailable or ability.backline.unavailable:
+        return False
+    return _mode_detail_lines(ability.frontline) == _mode_detail_lines(ability.backline)
 
 
 def _mode_summary(mode) -> str:
@@ -1592,7 +2264,8 @@ BATTLE_DETAIL_RECT = pygame.Rect(20, 375, 550, 465)
 
 
 def draw_combatant_detail(surf, unit: CombatantState,
-                           rect: pygame.Rect = None) -> pygame.Rect:
+                           rect: pygame.Rect = None,
+                           status_rects_out: list = None) -> pygame.Rect:
     """
     Draw the full detail card for a combatant during the battle screen.
     Shows: stats, talent, signature, basics, item.
@@ -1611,7 +2284,9 @@ def draw_combatant_detail(surf, unit: CombatantState,
 
     # ── Name + class + stats ─────────────────────────────────────────────────
     draw_text(surf, unit.name, 20, TEXT, x, y)
-    draw_text(surf, unit.cls, 14, TEXT_MUTED, r.right - 30, y + 4, right=True)
+    _cdcr = draw_text(surf, cls_label(unit.cls), 14, TEXT_MUTED, r.right - 30, y + 4, right=True)
+    if status_rects_out is not None:
+        status_rects_out.append((_cdcr, unit.cls))
     y += 24
     draw_text(surf,
               f"HP {unit.hp}/{unit.max_hp}   "
@@ -1627,7 +2302,7 @@ def draw_combatant_detail(surf, unit: CombatantState,
     for line in _wrap_text(unit.defn.talent_text, 13, w - 8):
         if y + 14 > r.bottom - 4:
             break
-        draw_text(surf, line, 13, TEXT_DIM, x + 8, y)
+        _draw_rich_line(surf, line, 13, TEXT_DIM, x + 8, y, status_rects_out)
         y += 15
     y += 4
 
@@ -1636,15 +2311,29 @@ def draw_combatant_detail(surf, unit: CombatantState,
     y += 5
     draw_text(surf, "Signature  —  " + unit.sig.name, 14, CYAN, x, y)
     y += 17
-    for prefix, mode in (("FL", unit.sig.frontline), ("BL", unit.sig.backline)):
-        lines = _mode_detail_lines(mode)
-        draw_text(surf, f"{prefix}: {lines[0]}", 12, TEXT_DIM, x + 8, y)
+    _stype = "Passive" if unit.sig.passive else "Active"
+    _scol  = TYPE_PASSIVE_COL if unit.sig.passive else TYPE_ACTIVE_COL
+    draw_text(surf, _stype, 12, _scol, x + 8, y)
+    y += 14
+    if _fl_bl_same(unit.sig):
+        lines = _mode_detail_lines(unit.sig.frontline)
+        _draw_rich_line(surf, f"FL & BL: {lines[0]}", 12, TEXT_DIM, x + 8, y, status_rects_out)
         y += 14
         for extra in lines[1:]:
             if y + 13 > r.bottom - 4:
                 break
-            draw_text(surf, f"      {extra}", 12, TEXT_MUTED, x + 8, y)
+            _draw_rich_line(surf, f"         {extra}", 12, TEXT_MUTED, x + 8, y, status_rects_out)
             y += 13
+    else:
+        for prefix, mode in (("FL", unit.sig.frontline), ("BL", unit.sig.backline)):
+            lines = _mode_detail_lines(mode)
+            _draw_rich_line(surf, f"{prefix}: {lines[0]}", 12, TEXT_DIM, x + 8, y, status_rects_out)
+            y += 14
+            for extra in lines[1:]:
+                if y + 13 > r.bottom - 4:
+                    break
+                _draw_rich_line(surf, f"      {extra}", 12, TEXT_MUTED, x + 8, y, status_rects_out)
+                y += 13
     y += 4
 
     # ── Basics ───────────────────────────────────────────────────────────────
@@ -1653,36 +2342,55 @@ def draw_combatant_detail(surf, unit: CombatantState,
     draw_text(surf, "Basic Abilities", 14, CYAN, x, y)
     y += 17
     for ab in unit.basics:
-        tag = " [passive]" if ab.passive else ""
-        draw_text(surf, ab.name + tag, 14, TEXT, x, y)
+        draw_text(surf, ab.name, 14, TEXT, x, y)
         y += 15
-        for prefix, mode in (("FL", ab.frontline), ("BL", ab.backline)):
-            lines = _mode_detail_lines(mode)
-            draw_text(surf, f"{prefix}: {lines[0]}", 12, TEXT_DIM, x + 8, y)
+        _abtype = "Passive" if ab.passive else "Active"
+        _abcol  = TYPE_PASSIVE_COL if ab.passive else TYPE_ACTIVE_COL
+        draw_text(surf, _abtype, 12, _abcol, x + 8, y)
+        y += 13
+        if _fl_bl_same(ab):
+            lines = _mode_detail_lines(ab.frontline)
+            _draw_rich_line(surf, f"FL & BL: {lines[0]}", 12, TEXT_DIM, x + 8, y, status_rects_out)
             y += 13
             for extra in lines[1:]:
                 if y + 12 > r.bottom - 4:
                     break
-                draw_text(surf, f"      {extra}", 12, TEXT_MUTED, x + 8, y)
+                _draw_rich_line(surf, f"         {extra}", 12, TEXT_MUTED, x + 8, y, status_rects_out)
                 y += 12
+        else:
+            for prefix, mode in (("FL", ab.frontline), ("BL", ab.backline)):
+                lines = _mode_detail_lines(mode)
+                _draw_rich_line(surf, f"{prefix}: {lines[0]}", 12, TEXT_DIM, x + 8, y, status_rects_out)
+                y += 13
+                for extra in lines[1:]:
+                    if y + 12 > r.bottom - 4:
+                        break
+                    _draw_rich_line(surf, f"      {extra}", 12, TEXT_MUTED, x + 8, y, status_rects_out)
+                    y += 12
         y += 2
 
     # ── Item ─────────────────────────────────────────────────────────────────
     pygame.draw.line(surf, BORDER, (x, y), (x + w, y), 1)
     y += 5
     item = unit.item
-    if item.passive:
-        tag = "[passive]"
-    elif item.once_per_battle:
-        tag = "[used]" if unit.item_uses_left <= 0 else "[once per battle]"
-    else:
-        tag = "[active]"
-    draw_text(surf, f"Item: {item.name}  {tag}", 14, GREEN, x, y)
+    draw_text(surf, f"Item: {item.name}", 14, GREEN, x, y)
     y += 16
+    # Type label + usage state
+    if item.passive:
+        _it_type = "Passive"
+        _it_col  = TYPE_PASSIVE_COL
+    else:
+        _it_type = "Active"
+        _it_col  = TYPE_ACTIVE_COL
+    _it_state = ""
+    if item.once_per_battle:
+        _it_state = "  [used]" if unit.item_uses_left <= 0 else "  [once per battle]"
+    draw_text(surf, _it_type + _it_state, 12, _it_col, x + 8, y)
+    y += 14
     for line in _wrap_text(item.description, 13, w - 8):
         if y + 14 > r.bottom - 4:
             break
-        draw_text(surf, line, 13, TEXT_DIM, x + 8, y)
+        _draw_rich_line(surf, line, 13, TEXT_DIM, x + 8, y, status_rects_out)
         y += 15
 
     return close_rect
@@ -1753,8 +2461,8 @@ def draw_campaign_mission_select(surf, missions: list, mouse_pos, profile) -> di
     surf.fill(BG)
     cx = WIDTH // 2
 
-    draw_text(surf, "FABLED — Story Mode", 48, TEXT, cx, 50, center=True)
-    draw_text(surf, "Select a Mission", 24, TEXT_DIM, cx, 100, center=True)
+    draw_text(surf, "FABLED — Quests", 48, TEXT, cx, 50, center=True)
+    draw_text(surf, "Select a Quest", 24, TEXT_DIM, cx, 100, center=True)
 
     # Back button
     back_btn = pygame.Rect(20, 20, 100, 36)
@@ -1805,7 +2513,7 @@ def draw_campaign_mission_select(surf, missions: list, mouse_pos, profile) -> di
         if unlocked:
             draw_text(surf, mission.name, 20, TEXT if not all_cleared else GREEN,
                       rect.x + 14, rect.y + 10)
-            draw_text(surf, f"Quests {first_q}–{last_q}  |  Level {mission.level_range[0]}–{mission.level_range[1]}",
+            draw_text(surf, f"Encounters {first_q}–{last_q}  |  Level {mission.level_range[0]}–{mission.level_range[1]}",
                       14, TEXT_DIM, rect.x + 14, rect.y + 36)
             # Wrap description within card width; cap at 2 lines
             desc_lines = _wrap_text(mission.description, 13, col_w - 28)
@@ -1880,7 +2588,7 @@ def draw_quest_select(surf, mission, quests: list, mouse_pos, profile) -> dict:
         if unlocked:
             # Quest title — key_preview omitted for now; restore by appending:
             #   f"  —  {quest.key_preview}"
-            draw_text(surf, f"Quest {quest.quest_id}",
+            draw_text(surf, f"Encounter {quest.quest_id}",
                       18, TEXT if not cleared else GREEN, rect.x + 14, rect.y + 10)
             # Reward summary
             reward_parts = []
@@ -1906,14 +2614,14 @@ def draw_quest_select(surf, mission, quests: list, mouse_pos, profile) -> dict:
                           rect.right - 115, rect.y + 58)
             quest_btns.append((rect, quest.quest_id))
         else:
-            draw_text(surf, f"Quest {quest.quest_id}  —  LOCKED", 16, TEXT_MUTED,
+            draw_text(surf, f"Encounter {quest.quest_id}  —  LOCKED", 16, TEXT_MUTED,
                       rect.x + 14, rect.y + 36)
 
     return {"quest_btns": quest_btns, "back_btn": back_btn}
 
 
 def draw_pre_quest(surf, quest_def, mission, quest_pos: int, total_quests: int,
-                   enemy_picks: list, mouse_pos) -> dict:
+                   enemy_picks: list, mouse_pos, status_rects_out: list = None) -> dict:
     """Show pre-battle screen with enemy lineup and reward preview."""
     surf.fill(BG)
     cx = WIDTH // 2
@@ -1927,11 +2635,11 @@ def draw_pre_quest(surf, quest_def, mission, quest_pos: int, total_quests: int,
     # Header
     mission_name = mission.name if mission else "?"
     mission_id   = mission.mission_id if mission else "?"
-    draw_text(surf, f"Mission {mission_id}  \u2014  {mission_name}",
+    draw_text(surf, f"Quest {mission_id}  \u2014  {mission_name}",
               30, TEXT, cx, 42, center=True)
     # Quest position — key_preview omitted for now; restore by appending:
     #   f"  \u00b7  {quest_def.key_preview}"
-    draw_text(surf, f"Quest {quest_pos} / {total_quests}",
+    draw_text(surf, f"Encounter {quest_pos} / {total_quests}",
               18, TEXT_DIM, cx, 78, center=True)
 
     # Mission description — wrapped so it never gets cut off
@@ -1960,7 +2668,9 @@ def draw_pre_quest(surf, quest_def, mission, quest_pos: int, total_quests: int,
         defn = pick["definition"]
         draw_text(surf, slot_labels[i], 14, TEXT_DIM, rect.x + 10, rect.y + 6)
         draw_text(surf, defn.name, 18, TEXT, rect.x + 10, rect.y + 24)
-        draw_text(surf, defn.cls, 14, YELLOW, rect.x + 10, rect.y + 46)
+        _pqcr = draw_text(surf, cls_label(defn.cls), 14, YELLOW, rect.x + 10, rect.y + 46)
+        if status_rects_out is not None:
+            status_rects_out.append((_pqcr, defn.cls))
         draw_text(surf, f"HP {defn.hp}  ATK {defn.attack}  DEF {defn.defense}  SPD {defn.speed}",
                   13, TEXT_DIM, rect.x + 10, rect.y + 68)
         sig  = pick["signature"]
@@ -2008,7 +2718,7 @@ def draw_post_quest(surf, quest_def, won: bool, rewards: dict, mouse_pos) -> dic
 
     if won:
         draw_text(surf, "VICTORY!", 72, YELLOW, cx, cy - 170, center=True)
-        draw_text(surf, f"Quest {quest_def.quest_id} Cleared!", 34, GREEN,
+        draw_text(surf, f"Encounter {quest_def.quest_id} Cleared!", 34, GREEN,
                   cx, cy - 85, center=True)
 
         # Show rewards
@@ -2065,12 +2775,27 @@ def draw_campaign_complete(surf, mouse_pos) -> dict:
     return {"menu_btn": menu_btn}
 
 
+def _adv_damage_type(defn) -> str:
+    """Return "melee", "ranged", or "mixed" for an adventurer definition."""
+    role = defn.role  # "melee", "ranged", "warlock", "noble"
+    if role == "melee":
+        return "melee"
+    elif role == "ranged":
+        return "ranged"
+    return "mixed"
+
+
 def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                  scroll: int, profile, roster: list,
-                 class_basics: dict, items: list) -> dict:
+                 class_basics: dict, items: list,
+                 status_rects_out: list = None,
+                 filters: dict = None) -> dict:
     """
     Catalog screen — Adventurers / Basic Moves / Items tabs.
-    Returns click dict with keys: back_btn, tab_btns, list_btns, scroll_max, scroll_viewport.
+    filters: dict of active filter sets for the current tab, e.g.
+             {"classes": {"Fighter"}, "damage_types": set()}
+    Returns click dict with keys: back_btn, tab_btns, list_btns, scroll_max,
+            scroll_viewport, filter_chips, clear_all_btn.
     """
     surf.fill(BG)
     cx = WIDTH // 2
@@ -2078,7 +2803,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     # ── Back + Title ──────────────────────────────────────────────────────────
     back_btn = pygame.Rect(20, 18, 100, 36)
     draw_button(surf, back_btn, "Back", mouse_pos, size=16)
-    draw_text(surf, "Catalog", 40, TEXT, cx, 28, center=True)
+    draw_text(surf, "Guidebook", 40, TEXT, cx, 28, center=True)
 
     # ── Tabs ─────────────────────────────────────────────────────────────────
     tab_labels = [("adventurers", "Adventurers"), ("basics", "Basic Moves"), ("items", "Items")]
@@ -2101,19 +2826,24 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     LIST_W, LIST_H = 360, 762
     DETAIL_PX, DETAIL_PY = 400, 118
     DETAIL_PW, DETAIL_PH = 980, 762
+    FILTER_H = 94   # height of filter chips area above the list
 
-    list_view = pygame.Rect(LIST_X, LIST_Y, LIST_W, LIST_H)
     detail_rect_c = pygame.Rect(DETAIL_PX, DETAIL_PY, DETAIL_PW, DETAIL_PH)
-    draw_rect_border(surf, list_view, PANEL, BORDER)
     draw_rect_border(surf, detail_rect_c, PANEL, BORDER)
 
-    # ── Build filtered lists ──────────────────────────────────────────────────
+    # ── Build lists (unfiltered) ──────────────────────────────────────────────
     recruited = getattr(profile, "recruited", set())
     sig_tier = getattr(profile, "sig_tier", 3)
     twists_unlocked = getattr(profile, "twists_unlocked", False)
     unlocked_classes = getattr(profile, "unlocked_classes", set())
     basics_tier = getattr(profile, "basics_tier", 5)
     unlocked_items = getattr(profile, "unlocked_items", set())
+
+    # Build basics-to-class map always (used by detail panel and filtering)
+    _basics_cls_map = {}
+    for _bcls, _babs in class_basics.items():
+        for _bab in _babs:
+            _basics_cls_map[_bab.id] = _bcls
 
     if active_tab == "adventurers":
         list_items = [d for d in roster if d.id in recruited]
@@ -2126,32 +2856,127 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     else:  # items
         list_items = [it for it in items if it.id in unlocked_items]
 
-    # ── Draw list (left panel) ────────────────────────────────────────────────
+    # ── Filter area ───────────────────────────────────────────────────────────
+    _active_f = filters or {}
+    _chip_w, _chip_h, _chip_gap = 84, 22, 4
+    _row_h = _chip_h + _chip_gap
+    _fx, _fy = LIST_X + 6, LIST_Y + 5
+    _all_classes = ["Fighter", "Rogue", "Warden", "Mage", "Ranger", "Cleric", "Noble", "Warlock"]
+
+    filter_chips = []
+    clear_all_btn = None
+
+    filter_rect = pygame.Rect(LIST_X, LIST_Y, LIST_W, FILTER_H)
+    draw_rect_border(surf, filter_rect, PANEL, BORDER)
+
+    def _draw_chip(text, rect, active):
+        if active:
+            bg, bd, tc = (45, 70, 100), BORDER_ACTIVE, TEXT
+        elif rect.collidepoint(mouse_pos):
+            bg, bd, tc = PANEL_ALT, BORDER, TEXT_DIM
+        else:
+            bg, bd, tc = (28, 30, 38), BORDER, TEXT_MUTED
+        draw_rect_border(surf, rect, bg, bd, width=1)
+        draw_text(surf, text, 11, tc, rect.centerx, rect.centery, center=True)
+
+    if active_tab in ("adventurers", "basics"):
+        _active_cls = _active_f.get("classes", set())
+        for i, cls in enumerate(_all_classes):
+            row, col = divmod(i, 4)
+            r = pygame.Rect(_fx + col * (_chip_w + _chip_gap),
+                            _fy + row * _row_h, _chip_w, _chip_h)
+            _draw_chip(cls, r, cls in _active_cls)
+            filter_chips.append((r, "classes", cls))
+        _fy3 = _fy + 2 * _row_h
+        if active_tab == "adventurers":
+            _active_dt = _active_f.get("damage_types", set())
+            for i, (lbl, val) in enumerate([("Melee", "melee"), ("Ranged", "ranged"), ("Mixed", "mixed")]):
+                r = pygame.Rect(_fx + i * (_chip_w + _chip_gap), _fy3, _chip_w, _chip_h)
+                _draw_chip(lbl, r, val in _active_dt)
+                filter_chips.append((r, "damage_types", val))
+        else:  # basics
+            _active_types = _active_f.get("types", set())
+            for i, (lbl, val) in enumerate([("Active", "active"), ("Passive", "passive")]):
+                r = pygame.Rect(_fx + i * (_chip_w + _chip_gap), _fy3, _chip_w, _chip_h)
+                _draw_chip(lbl, r, val in _active_types)
+                filter_chips.append((r, "types", val))
+        clear_all_btn = pygame.Rect(_fx + 3 * (_chip_w + _chip_gap), _fy3, _chip_w, _chip_h)
+    else:  # items
+        _active_types = _active_f.get("types", set())
+        _fy_items = _fy + _row_h
+        for i, (lbl, val) in enumerate([("Active", "active"), ("Passive", "passive")]):
+            r = pygame.Rect(_fx + i * (_chip_w + _chip_gap), _fy_items, _chip_w, _chip_h)
+            _draw_chip(lbl, r, val in _active_types)
+            filter_chips.append((r, "types", val))
+        clear_all_btn = pygame.Rect(_fx + 3 * (_chip_w + _chip_gap), _fy_items, _chip_w, _chip_h)
+
+    _has_active_filters = any(bool(s) for s in _active_f.values() if isinstance(s, set))
+    _ca_bg = (55, 28, 28) if _has_active_filters else (28, 30, 38)
+    _ca_bd = (160, 80, 60) if _has_active_filters else BORDER
+    _ca_tc = (210, 130, 110) if _has_active_filters else TEXT_MUTED
+    draw_rect_border(surf, clear_all_btn, _ca_bg, _ca_bd, width=1)
+    draw_text(surf, "Clear All", 11, _ca_tc, clear_all_btn.centerx, clear_all_btn.centery, center=True)
+
+    # ── Apply active filters to list ──────────────────────────────────────────
+    if active_tab == "adventurers":
+        if _active_f.get("classes"):
+            list_items = [x for x in list_items if x.cls in _active_f["classes"]]
+        if _active_f.get("damage_types"):
+            list_items = [x for x in list_items if _adv_damage_type(x) in _active_f["damage_types"]]
+    elif active_tab == "basics":
+        if _active_f.get("classes"):
+            list_items = [x for x in list_items if _basics_cls_map.get(x.id) in _active_f["classes"]]
+        if _active_f.get("types"):
+            list_items = [x for x in list_items if ("passive" if x.passive else "active") in _active_f["types"]]
+    else:  # items
+        if _active_f.get("types"):
+            list_items = [x for x in list_items if ("passive" if x.passive else "active") in _active_f["types"]]
+
+    # ── Draw list (left panel, below filter area) ─────────────────────────────
+    actual_list_y = LIST_Y + FILTER_H
+    actual_list_h = LIST_H - FILTER_H
+    list_view = pygame.Rect(LIST_X, actual_list_y, LIST_W, actual_list_h)
+    draw_rect_border(surf, list_view, PANEL, BORDER)
+
     ITEM_H = 52 if active_tab == "adventurers" else 42
     content_h = len(list_items) * (ITEM_H + 4)
-    scroll_max = max(0, content_h - LIST_H + 8)
+    scroll_max = max(0, content_h - actual_list_h + 8)
     scroll = max(0, min(scroll, scroll_max))
 
     prev_clip = surf.get_clip()
     surf.set_clip(list_view)
     list_btns = []
-    y = LIST_Y + 6 - scroll
+    y = actual_list_y + 6 - scroll
     for i, item in enumerate(list_items):
         r = pygame.Rect(LIST_X + 6, y, LIST_W - 12, ITEM_H)
-        if r.bottom >= LIST_Y and r.top <= LIST_Y + LIST_H:
+        if r.bottom >= actual_list_y and r.top <= actual_list_y + actual_list_h:
             is_sel = (selected_idx == i)
-            fill = PANEL_HIGHLIGHT if is_sel else (PANEL_ALT if r.collidepoint(mouse_pos) else PANEL)
+            if active_tab == "adventurers":
+                _item_cls = item.cls
+            elif active_tab == "basics":
+                _item_cls = _basics_cls_map.get(item.id)
+            else:
+                _item_cls = None
+            cls_fill = CLASS_COLORS.get(_item_cls, PANEL) if _item_cls else PANEL
+            if is_sel:
+                fill = tuple(min(255, c + 24) for c in cls_fill)
+            elif r.collidepoint(mouse_pos):
+                fill = tuple(min(255, c + 16) for c in cls_fill)
+            else:
+                fill = cls_fill
             bord = BORDER_ACTIVE if is_sel else BORDER
             draw_rect_border(surf, r, fill, bord)
             if active_tab == "adventurers":
                 draw_text(surf, item.name, 15, TEXT, r.x + 8, r.y + 6)
-                draw_text(surf, item.cls, 13, TEXT_MUTED, r.x + 8, r.y + 24)
+                _catcr = draw_text(surf, cls_label(item.cls), 13, CLASS_TEXT_COLORS.get(item.cls, TEXT_MUTED), r.x + 8, r.y + 24)
+                if status_rects_out is not None:
+                    status_rects_out.append((_catcr, item.cls))
                 draw_text(surf, f"HP {item.hp}  ATK {item.attack}  DEF {item.defense}  SPD {item.speed}",
                           11, TEXT_DIM, r.x + 8, r.y + 38)
             elif active_tab == "basics":
                 tag = "  [passive]" if item.passive else ""
                 draw_text(surf, item.name + tag, 15, TEXT, r.x + 8, r.y + 6)
-                draw_text(surf, item.category.title(), 12, TEXT_MUTED, r.x + 8, r.y + 24)
+                draw_text(surf, _item_cls or item.category.title(), 12, CLASS_TEXT_COLORS.get(_item_cls, TEXT_MUTED), r.x + 8, r.y + 24)
             else:
                 tag = "  [passive]" if item.passive else "  [active]"
                 draw_text(surf, item.name + tag, 15, TEXT, r.x + 8, r.y + 6)
@@ -2164,9 +2989,9 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     if scroll_max > 0:
         # Scroll bar hint
         bar_x = LIST_X + LIST_W - 8
-        bar_ratio = LIST_H / max(content_h, 1)
-        bar_h = max(30, int(LIST_H * bar_ratio))
-        bar_y = LIST_Y + int(scroll / max(scroll_max, 1) * (LIST_H - bar_h))
+        bar_ratio = actual_list_h / max(content_h, 1)
+        bar_h = max(30, int(actual_list_h * bar_ratio))
+        bar_y = actual_list_y + int(scroll / max(scroll_max, 1) * (actual_list_h - bar_h))
         pygame.draw.rect(surf, BORDER, pygame.Rect(bar_x, bar_y, 4, bar_h), border_radius=2)
 
     # ── Draw detail panel (right) ─────────────────────────────────────────────
@@ -2177,10 +3002,13 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
         dw = DETAIL_PW - 32
         bottom_limit = DETAIL_PY + DETAIL_PH - 10
 
-        def _dline(surf, text, size, color, x, y, indent=0):
+        def _dline(surf, text, size, color, x, y, indent=0, rich=False):
             if y + size + 2 > bottom_limit:
                 return y
-            draw_text(surf, text, size, color, x + indent, y)
+            if rich:
+                _draw_rich_line(surf, text, size, color, x + indent, y, status_rects_out)
+            else:
+                draw_text(surf, text, size, color, x + indent, y)
             return y + size + 3
 
         def _dsep(surf, y):
@@ -2192,7 +3020,9 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
         if active_tab == "adventurers":
             # Name + class
             draw_text(surf, item.name, 26, TEXT, dx, dy)
-            draw_text(surf, item.cls, 16, TEXT_MUTED, DETAIL_PX + DETAIL_PW - 20, dy + 4, right=True)
+            _catdcr = draw_text(surf, cls_label(item.cls), 16, TEXT_MUTED, DETAIL_PX + DETAIL_PW - 20, dy + 4, right=True)
+            if status_rects_out is not None:
+                status_rects_out.append((_catdcr, item.cls))
             dy += 32
             # Stats
             dy = _dline(surf, f"HP {item.hp}   ATK {item.attack}   DEF {item.defense}   SPD {item.speed}",
@@ -2201,7 +3031,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
             # Talent
             dy = _dline(surf, f"Talent: {item.talent_name}", 15, YELLOW, dx, dy)
             for line in _wrap_text(item.talent_text, 13, dw - 8):
-                dy = _dline(surf, line, 13, TEXT_DIM, dx, dy, indent=8)
+                dy = _dline(surf, line, 13, TEXT_DIM, dx, dy, indent=8, rich=True)
             dy = _dsep(surf, dy + 2)
 
             # Signature abilities
@@ -2214,9 +3044,9 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                 dy = _dline(surf, sig.name + tag, 15, TEXT, dx, dy, indent=4)
                 for prefix, mode in (("FL", sig.frontline), ("BL", sig.backline)):
                     lines = _mode_detail_lines(mode)
-                    dy = _dline(surf, f"  {prefix}: {lines[0]}", 13, TEXT_DIM, dx, dy, indent=12)
+                    dy = _dline(surf, f"  {prefix}: {lines[0]}", 13, TEXT_DIM, dx, dy, indent=12, rich=True)
                     for extra in lines[1:3]:
-                        dy = _dline(surf, f"      {extra}", 12, TEXT_MUTED, dx, dy, indent=12)
+                        dy = _dline(surf, f"      {extra}", 12, TEXT_MUTED, dx, dy, indent=12, rich=True)
                 dy += 2
             dy = _dsep(surf, dy + 2)
 
@@ -2226,9 +3056,9 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                 dy = _dline(surf, f"Twist: {twist.name}", 15, ORANGE, dx, dy)
                 for prefix, mode in (("FL", twist.frontline), ("BL", twist.backline)):
                     lines = _mode_detail_lines(mode)
-                    dy = _dline(surf, f"  {prefix}: {lines[0]}", 13, TEXT_DIM, dx, dy, indent=12)
+                    dy = _dline(surf, f"  {prefix}: {lines[0]}", 13, TEXT_DIM, dx, dy, indent=12, rich=True)
                     for extra in lines[1:3]:
-                        dy = _dline(surf, f"      {extra}", 12, TEXT_MUTED, dx, dy, indent=12)
+                        dy = _dline(surf, f"      {extra}", 12, TEXT_MUTED, dx, dy, indent=12, rich=True)
             else:
                 dy = _dline(surf, "Twist: (not yet unlocked)", 14, TEXT_MUTED, dx, dy)
 
@@ -2236,12 +3066,16 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
             tag = "  [passive]" if item.passive else ""
             draw_text(surf, item.name + tag, 26, TEXT, dx, dy)
             dy += 34
+            _bab_cls = _basics_cls_map.get(item.id)
+            if _bab_cls:
+                dy = _dline(surf, _bab_cls, 15, CLASS_TEXT_COLORS.get(_bab_cls, TEXT_MUTED), dx, dy)
+                dy += 4
             for prefix, mode in (("Frontline", item.frontline), ("Backline", item.backline)):
                 dy = _dline(surf, prefix + ":", 15, CYAN, dx, dy)
                 lines = _mode_detail_lines(mode)
                 for line in lines:
                     for wl in _wrap_text(line, 13, dw - 20):
-                        dy = _dline(surf, wl, 13, TEXT_DIM, dx, dy, indent=12)
+                        dy = _dline(surf, wl, 13, TEXT_DIM, dx, dy, indent=12, rich=True)
                 dy += 4
 
         else:  # items
@@ -2249,7 +3083,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
             draw_text(surf, f"{item.name}  {tag}", 26, TEXT, dx, dy)
             dy += 34
             for line in _wrap_text(item.description, 14, dw):
-                dy = _dline(surf, line, 14, TEXT_DIM, dx, dy)
+                dy = _dline(surf, line, 14, TEXT_DIM, dx, dy, rich=True)
     else:
         # Placeholder
         hint = {
@@ -2266,10 +3100,12 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
         "list_btns": list_btns,
         "scroll_max": scroll_max,
         "scroll_viewport": list_view,
+        "filter_chips": filter_chips,
+        "clear_all_btn": clear_all_btn,
     }
 
 
-def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos) -> dict:
+def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos, status_rects_out: list = None) -> dict:
     """Screen shown after team pick, before battle — lets player swap slot positions.
 
     picks: list of 3 dicts (definition, signature, basics, item)
@@ -2291,7 +3127,9 @@ def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos) -> dict:
         x = start_x + i * (card_w + 30)
         rect = pygame.Rect(x, card_y, card_w, card_h)
         is_sel = (selected_slot == i)
-        fill = PANEL_HIGHLIGHT if is_sel else PANEL_ALT
+        _pdefn = pick.get("definition")
+        _cls_fill = CLASS_COLORS.get(_pdefn.cls, PANEL_ALT) if _pdefn else PANEL_ALT
+        fill = tuple(min(255, c + 24) for c in _cls_fill) if is_sel else tuple(min(255, c + 10) for c in _cls_fill)
         border = BORDER_ACTIVE if is_sel else BORDER
         draw_rect_border(surf, rect, fill, border, width=3 if is_sel else 2)
 
@@ -2307,8 +3145,11 @@ def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos) -> dict:
         if defn:
             draw_text(surf, defn.name, 20, TEXT, x + 12, dy)
             dy += 26
-            draw_text(surf, f"{defn.cls}   HP {defn.hp}  ATK {defn.attack}  DEF {defn.defense}  SPD {defn.speed}",
-                      13, TEXT_DIM, x + 12, dy)
+            _pbcr = draw_text(surf, cls_label(defn.cls), 13, CLASS_TEXT_COLORS.get(defn.cls, TEXT_MUTED), x + 12, dy)
+            if status_rects_out is not None:
+                status_rects_out.append((_pbcr, defn.cls))
+            draw_text(surf, f"   HP {defn.hp}  ATK {defn.attack}  DEF {defn.defense}  SPD {defn.speed}",
+                      13, TEXT_DIM, x + 12 + font(13).size(cls_label(defn.cls))[0], dy)
             dy += 20
             if sig:
                 draw_text(surf, f"Sig: {sig.name}", 14, YELLOW, x + 12, dy)
@@ -2328,7 +3169,7 @@ def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos) -> dict:
     start_btn = pygame.Rect(WIDTH // 2 + 200, HEIGHT - 70, 200, 46)
     draw_button(surf, back_btn,  "← Back", mouse_pos, size=16,
                 normal=PANEL, hover=PANEL_HIGHLIGHT)
-    draw_button(surf, edit_btn,  "Edit Team Loadout", mouse_pos, size=16,
+    draw_button(surf, edit_btn,  "Edit Party Loadout", mouse_pos, size=16,
                 normal=(50, 70, 50), hover=(65, 95, 65))
     draw_button(surf, start_btn, "Start Battle →", mouse_pos, size=18,
                 normal=BLUE_DARK, hover=BLUE)

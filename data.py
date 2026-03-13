@@ -248,7 +248,7 @@ SOUL_GAZE = Ability(
 BLOOD_PACT = Ability(
     id="blood_pact", name="Blood Pact", category="basic", passive=False,
     frontline=AbilityMode(special="blood_pact_front"),
-    backline=AbilityMode(heal_self=20, special="blood_pact_back"),
+    backline=AbilityMode(heal_self=25, special="blood_pact_back"),
 )
 
 CURSED_ARMOR = Ability(
@@ -811,7 +811,7 @@ ROBIN = AdventurerDef(
     id="robin_hooded_avenger", name="Robin, Hooded Avenger", cls="Ranger",
     hp=185, attack=70, defense=40, speed=65,
     talent_name="Keen Eye",
-    talent_text="Robin deals +15 damage with abilities to backline enemies.",
+    talent_text="Robin deals +10 damage with abilities to backline enemies.",
     sig_options=[ROBIN_S1, ROBIN_S2, ROBIN_S3], twist=ROBIN_T,
 )
 
@@ -960,7 +960,7 @@ GREEN_KNIGHT = AdventurerDef(
     id="green_knight", name="Green Knight", cls="Noble",
     hp=275, attack=60, defense=60, speed=20,
     talent_name="Challenge Accepted",
-    talent_text="The Green Knight deals +25 damage to the target across from him.",
+    talent_text="The Green Knight deals +15 damage to the target across from him.",
     sig_options=[GREEN_S1, GREEN_S2, GREEN_S3], twist=GREEN_T,
 )
 

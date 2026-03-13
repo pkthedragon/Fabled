@@ -51,9 +51,9 @@ from ui import (
     draw_pre_quest, draw_post_quest, draw_campaign_complete,
     draw_practice_menu, draw_teambuilder, draw_story_team_select,
     draw_settings_screen, draw_rename_overlay,
-    draw_catalog, draw_pre_battle_review,
+    draw_catalog,
     draw_pvp_mode_select, draw_lan_lobby,
-    draw_status_tooltip,
+    draw_status_tooltip, draw_import_modal, draw_tutorial_popup, draw_intro_popup,
     SLOT_RECTS_P1, SLOT_RECTS_P2, LOG_RECT, ACTION_PANEL_RECT, BATTLE_DETAIL_RECT,
 )
 from campaign_data import QUEST_TABLE, MISSION_TABLE, build_quest_enemy_team
@@ -69,6 +69,10 @@ class Game:
         pygame.init()
         # Fullscreen at native resolution; all game logic uses the 1400×900 canvas.
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        try:
+            pygame.scrap.init()
+        except Exception:
+            pass
         self._native_w, self._native_h = self.screen.get_size()
         self._canvas = pygame.Surface((WIDTH, HEIGHT))
         # Pre-compute scale and letterbox offset.
@@ -92,7 +96,7 @@ class Game:
         # Campaign state
         self.campaign_profile: CampaignProfile = load_campaign()
         if not self.campaign_profile.quest_cleared.get(0):
-            apply_quest_rewards(self.campaign_profile, 0)
+            apply_quest_rewards(self.campaign_profile, 0, notify=False)
             save_campaign(self.campaign_profile)
         self.campaign_quest_id: int = 0
         self.campaign_mission_id: int = 1
@@ -102,6 +106,15 @@ class Game:
         # New teambuilder / story-team state
         self._editing_team_slot: int = None
         self._editing_single_member: bool = False  # True when editing one member's sets only
+        self._editing_from_roster: bool = False    # True when editing sets jumped from pick_adventurers
+        self._focused_slot: int = None             # slot shown in detail panel (not yet editing)
+        self._edit_sets_backup: dict = None        # backup of sig/basics/item before Edit Sets
+
+        # Import modal state
+        self._import_modal_open: bool = False
+        self._import_modal_text: str = ""
+        self._import_modal_error: str = ""
+        self._last_import_modal_clicks: dict = {}
         self._story_team_idx: int = None
         self._last_practice_btns = None
         self._last_teambuilder_btns = None
@@ -113,6 +126,20 @@ class Game:
         self._rename_text: str = ""
         self._last_rename_overlay_btns = None
 
+        # Tutorial popup state
+        self._tutorial_pending: str = None
+
+        # Intro story popup state
+        self._intro_visible: int = 0     # 0 = hidden; 1–4 = sections shown
+        self._intro_timer: float = 0.0   # countdown before showing
+        self._intro_lets_go_btn = None
+        if (self.campaign_profile
+                and self.campaign_profile.tutorials_enabled
+                and "intro" not in self.campaign_profile.tutorial_seen):
+            self._intro_timer = 1.0
+            self.campaign_profile.tutorial_seen.add("intro")
+            save_campaign(self.campaign_profile)
+
         # Settings state
         self._last_settings_btns = None
         self._confirm_reset: bool = False
@@ -122,11 +149,22 @@ class Game:
         self._catalog_selected = None
         self._catalog_scroll = 0
         self._last_catalog_btns = None
+        self._catalog_filters = {
+            "adventurers": {"classes": set(), "damage_types": set()},
+            "basics":      {"classes": set(), "types": set()},
+            "items":       {"types": set()},
+        }
 
         # Pre-battle review state
         self._pre_battle_picks = []
         self._pre_battle_slot_selected = None
         self._last_pre_battle_btns = None
+
+        # Pre-battle edit state
+        self._pbe_enemy_picks = []
+        self._pbe_back_phase = "menu"
+        self._lan_pbe_local_ready = False
+        self._lan_pbe_opponent_ready = False
 
         # Ticker queue (new battle flow)
         self._tk            = []     # ticker queue: list of step dicts
@@ -201,57 +239,146 @@ class Game:
         # Curated AI draft pool (meta-style lineups)
         self._ai_team_pool = [
             {
-                "name": "Tempo Lockdown",
+                "name": "Expose Focus",
                 "members": [
-                    {"defn": "march_hare", "sig": "rabbit_hole", "basics": ["fire_blast", "arcane_wave"], "item": "ancient_hourglass"},
-                    {"defn": "witch_of_the_woods", "sig": "crawling_abode", "basics": ["fire_blast", "breakthrough"], "item": "hunters_net"},
-                    {"defn": "briar_rose", "sig": "garden_of_thorns", "basics": ["hawkshot", "trapping_blow"], "item": "smoke_bomb"},
+                    {"defn": "prince_charming",      "sig": "condescend",      "basics": ["impose", "command"],       "item": "family_seal"},
+                    {"defn": "lucky_constantine",    "sig": "feline_gambit",   "basics": ["post_bounty", "sucker_punch"], "item": "holy_diadem"},
+                    {"defn": "robin_hooded_avenger", "sig": "snipe_shot",      "basics": ["hunters_mark", "hunters_badge"], "item": "arcane_focus"},
                 ],
             },
             {
-                "name": "Guarded Attrition",
+                "name": "Shock Punish",
                 "members": [
-                    {"defn": "sir_roland", "sig": "knights_challenge", "basics": ["shield_bash", "stalwart"], "item": "iron_buckler"},
-                    {"defn": "aldric_lost_lamb", "sig": "sanctuary", "basics": ["bless", "protection"], "item": "holy_diadem"},
-                    {"defn": "porcus_iii", "sig": "porcine_honor", "basics": ["slam", "stalwart"], "item": "spiked_mail"},
+                    {"defn": "sir_roland",           "sig": "knights_challenge","basics": ["shield_bash", "stalwart"], "item": "spiked_mail"},
+                    {"defn": "hunold_the_piper",     "sig": "haunting_rhythm", "basics": ["sucker_punch", "fleetfooted"], "item": "family_seal"},
+                    {"defn": "march_hare",           "sig": "tempus_fugit",    "basics": ["thunder_call", "arcane_wave"], "item": "lightning_boots"},
                 ],
             },
             {
-                "name": "Burst Hunters",
+                "name": "Root Lock",
                 "members": [
-                    {"defn": "frederic", "sig": "on_the_hunt", "basics": ["hawkshot", "hunters_badge"], "item": "vampire_fang"},
-                    {"defn": "risa_redcloak", "sig": "blood_hunt", "basics": ["strike", "feint"], "item": "hunters_net"},
-                    {"defn": "robin_hooded_avenger", "sig": "bring_down", "basics": ["volley", "trapping_blow"], "item": "main_gauche"},
+                    {"defn": "green_knight",         "sig": "heros_bargain",   "basics": ["edict", "command"],        "item": "iron_buckler"},
+                    {"defn": "briar_rose",           "sig": "thorn_snare",     "basics": ["trapping_blow", "hunters_badge"], "item": "misericorde"},
+                    {"defn": "rapunzel",             "sig": "golden_snare",    "basics": ["edict", "decree"],         "item": "holy_diadem"},
                 ],
             },
             {
-                "name": "Debuff & Control",
+                "name": "Burn Pressure",
                 "members": [
-                    {"defn": "hunold_the_piper", "sig": "hypnotic_aura", "basics": ["sneak_attack", "fleetfooted"], "item": "ancient_hourglass"},
-                    {"defn": "gretel", "sig": "hot_mitts", "basics": ["strike", "intimidate"], "item": "hunters_net"},
-                    {"defn": "ashen_ella", "sig": "midnight_dour", "basics": ["fire_blast", "breakthrough"], "item": "holy_diadem"},
+                    {"defn": "gretel",               "sig": "hot_mitts",       "basics": ["cleave", "intimidate"],    "item": "family_seal"},
+                    {"defn": "witch_of_the_woods",   "sig": "cauldron_bubble", "basics": ["fire_blast", "breakthrough"], "item": "misericorde"},
+                    {"defn": "matchstick_liesl",     "sig": "cauterize",       "basics": ["heal", "protection"],      "item": "heart_amulet"},
                 ],
             },
             {
-                "name": "Swap Tricks",
+                "name": "Tank Sustain",
                 "members": [
-                    {"defn": "lucky_constantine", "sig": "subterfuge", "basics": ["sneak_attack", "sucker_punch"], "item": "smoke_bomb"},
-                    {"defn": "reynard", "sig": "cutpurse", "basics": ["riposte", "fleetfooted"], "item": "main_gauche"},
-                    {"defn": "lady_of_reflections", "sig": "postmortem_passage", "basics": ["shield_bash", "armored"], "item": "iron_buckler"},
+                    {"defn": "porcus_iii",           "sig": "porcine_honor",   "basics": ["shield_bash", "stalwart"], "item": "spiked_mail"},
+                    {"defn": "aldric_lost_lamb",     "sig": "benefactor",      "basics": ["heal", "protection"],      "item": "heart_amulet"},
+                    {"defn": "lady_of_reflections",  "sig": "lakes_gift",      "basics": ["condemn", "armored"],      "item": "crafty_shield"},
                 ],
             },
             {
-                "name": "Burn & Sustain",
+                "name": "Last-Stand Brawler",
                 "members": [
-                    {"defn": "little_jack", "sig": "magic_growth", "basics": ["strike", "cleave"], "item": "vampire_fang"},
-                    {"defn": "matchstick_liesl", "sig": "cinder_blessing", "basics": ["heal", "bless"], "item": "health_potion"},
-                    {"defn": "snowkissed_aurora", "sig": "birdsong", "basics": ["smite", "medic"], "item": "holy_diadem"},
+                    {"defn": "risa_redcloak",        "sig": "blood_hunt",      "basics": ["rend", "feint"],           "item": "vampire_fang"},
+                    {"defn": "porcus_iii",           "sig": "not_by_the_hair", "basics": ["shield_bash", "armored"],  "item": "iron_buckler"},
+                    {"defn": "snowkissed_aurora",    "sig": "toxin_purge",     "basics": ["heal", "medic"],           "item": "heart_amulet"},
+                ],
+            },
+            {
+                "name": "Speed Tempo",
+                "members": [
+                    {"defn": "little_jack",          "sig": "skyfall",         "basics": ["cleave", "feint"],         "item": "family_seal"},
+                    {"defn": "march_hare",           "sig": "rabbit_hole",     "basics": ["arcane_wave", "thunder_call"], "item": "lightning_boots"},
+                    {"defn": "frederic",             "sig": "on_the_hunt",     "basics": ["hunters_mark", "hunters_badge"], "item": "main_gauche"},
+                ],
+            },
+            {
+                "name": "Swap Punish",
+                "members": [
+                    {"defn": "briar_rose",           "sig": "garden_of_thorns","basics": ["trapping_blow", "volley"], "item": "misericorde"},
+                    {"defn": "green_knight",         "sig": "natural_order",   "basics": ["summons", "edict"],        "item": "family_seal"},
+                    {"defn": "reynard",              "sig": "cutpurse",        "basics": ["sneak_attack", "fleetfooted"], "item": "smoke_bomb"},
+                ],
+            },
+            {
+                "name": "Safe Mage Shell",
+                "members": [
+                    {"defn": "sir_roland",           "sig": "shimmering_valor","basics": ["shield_bash", "armored"],  "item": "spiked_mail"},
+                    {"defn": "ashen_ella",           "sig": "fae_blessing",    "basics": ["fire_blast", "arcane_wave"], "item": "holy_diadem"},
+                    {"defn": "snowkissed_aurora",    "sig": "birdsong",        "basics": ["heal", "medic"],           "item": "heart_amulet"},
+                ],
+            },
+            {
+                "name": "Backline Hunter",
+                "members": [
+                    {"defn": "prince_charming",      "sig": "gallant_charge",  "basics": ["impose", "summons"],       "item": "main_gauche"},
+                    {"defn": "robin_hooded_avenger", "sig": "bring_down",      "basics": ["hawkshot", "hunters_badge"], "item": "family_seal"},
+                    {"defn": "lucky_constantine",    "sig": "subterfuge",      "basics": ["post_bounty", "sneak_attack"], "item": "lightning_boots"},
+                ],
+            },
+            {
+                "name": "Malice Growth",
+                "members": [
+                    {"defn": "pinocchio",            "sig": "become_real",     "basics": ["dark_grasp", "cursed_armor"], "item": "family_seal"},
+                    {"defn": "rumpelstiltskin",      "sig": "straw_to_gold",   "basics": ["soul_gaze", "blood_pact"],  "item": "arcane_focus"},
+                    {"defn": "prince_charming",      "sig": "chosen_one",      "basics": ["decree", "summons"],       "item": "holy_diadem"},
+                ],
+            },
+            {
+                "name": "Anti-Heal Pressure",
+                "members": [
+                    {"defn": "gretel",               "sig": "shove_over",      "basics": ["intimidate", "strike"],    "item": "misericorde"},
+                    {"defn": "matchstick_liesl",     "sig": "cauterize",       "basics": ["heal", "protection"],      "item": "heart_amulet"},
+                    {"defn": "robin_hooded_avenger", "sig": "snipe_shot",      "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+                ],
+            },
+            {
+                "name": "Reflection Punish",
+                "members": [
+                    {"defn": "lady_of_reflections",  "sig": "drown_in_the_loch","basics": ["condemn", "stalwart"],    "item": "spiked_mail"},
+                    {"defn": "reynard",              "sig": "feign_weakness",  "basics": ["riposte", "fleetfooted"],  "item": "holy_diadem"},
+                    {"defn": "sir_roland",           "sig": "banner_of_command","basics": ["shield_bash", "armored"], "item": "crafty_shield"},
+                ],
+            },
+            {
+                "name": "Noble Midrange",
+                "members": [
+                    {"defn": "prince_charming",      "sig": "chosen_one",      "basics": ["decree", "summons"],       "item": "family_seal"},
+                    {"defn": "green_knight",         "sig": "awaited_blow",    "basics": ["edict", "command"],        "item": "iron_buckler"},
+                    {"defn": "rapunzel",             "sig": "ivory_tower",     "basics": ["impose", "decree"],        "item": "holy_diadem"},
+                ],
+            },
+            {
+                "name": "Status Spread",
+                "members": [
+                    {"defn": "witch_of_the_woods",   "sig": "toil_and_trouble","basics": ["fire_blast", "thunder_call"], "item": "misericorde"},
+                    {"defn": "hunold_the_piper",     "sig": "dying_dance",     "basics": ["sucker_punch", "fleetfooted"], "item": "arcane_focus"},
+                    {"defn": "briar_rose",           "sig": "creeping_doubt",  "basics": ["trapping_blow", "hunters_mark"], "item": "family_seal"},
+                ],
+            },
+            {
+                "name": "Balanced Generalist",
+                "members": [
+                    {"defn": "frederic",             "sig": "heros_charge",    "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
+                    {"defn": "snowkissed_aurora",    "sig": "dictate_of_nature","basics": ["heal", "medic"],           "item": "heart_amulet"},
+                    {"defn": "prince_charming",      "sig": "condescend",      "basics": ["impose", "command"],       "item": "main_gauche"},
                 ],
             },
         ]
 
     def _is_single_player(self):
         return self.game_mode in ("single_player", "campaign")
+
+    def _maybe_show_tutorial(self, key: str, text: str):
+        """Show a tutorial popup if it hasn't been seen yet and tutorials are enabled."""
+        if (self.campaign_profile
+                and self.campaign_profile.tutorials_enabled
+                and key not in self.campaign_profile.tutorial_seen):
+            self.campaign_profile.tutorial_seen.add(key)
+            save_campaign(self.campaign_profile)
+            self._tutorial_pending = text
 
     # ─────────────────────────────────────────────────────────────────────────
     # LAN HELPERS
@@ -406,7 +533,7 @@ class Game:
                 and self._lan.connected
                 and not getattr(self, "_lan_host_notified", False)):
             self._lan_host_notified = True
-            self._lan_status = "Opponent connected! Building your team..."
+            self._lan_status = "Opponent connected! Building your party..."
             self._start_team_select(1)
 
         # Check for client connection success
@@ -415,7 +542,7 @@ class Game:
                 and self._lan.connected
                 and not getattr(self, "_lan_client_notified", False)):
             self._lan_client_notified = True
-            self._lan_status = "Connected! Building your team..."
+            self._lan_status = "Connected! Building your party..."
             self._start_team_select(2)  # Client picks P2's team
 
         if (self.phase == "lan_lobby" and self.game_mode == "lan_client"
@@ -444,6 +571,18 @@ class Game:
             self.p2_picks = self._deserialize_picks(msg["picks"])
             self._lan_p2_ready = True
             if self._lan_p1_ready:
+                self._enter_pre_battle_edit(self.p1_picks, self.p2_picks, None)
+                # Tell client to enter pre_battle_edit (client=p2, enemy=p1)
+                self._lan_send({
+                    "type": "pre_battle_start",
+                    "p1_picks": self._serialize_picks(self.p1_picks),
+                    "p2_picks": self._serialize_picks(self.p2_picks),
+                })
+            # If host not ready yet, they'll enter pre_battle_edit when they finish (and send msg)
+
+        elif mtype == "pre_battle_ready":
+            self._lan_pbe_opponent_ready = True
+            if self._lan_pbe_local_ready:
                 self._start_lan_battle()
 
         elif mtype == "actions_ready":
@@ -492,6 +631,18 @@ class Game:
             self.p1_picks = self._deserialize_picks(msg["p1_picks"])
             self.p2_picks = self._deserialize_picks(msg["p2_picks"])
             self._start_battle()
+
+        elif mtype == "pre_battle_start":
+            # Host signals both teams built: client enters pre_battle_edit
+            self.p1_picks = self._deserialize_picks(msg["p1_picks"])
+            self.p2_picks = self._deserialize_picks(msg["p2_picks"])
+            # Client is p2, enemy is p1
+            self._enter_pre_battle_edit(self.p2_picks, self.p1_picks, None)
+
+        elif mtype == "pre_battle_ready":
+            self._lan_pbe_opponent_ready = True
+            if self._lan_pbe_local_ready:
+                self._start_battle()
 
         elif mtype == "state_update":
             if not self.battle:
@@ -752,6 +903,17 @@ class Game:
             self._tk_btn_label = step["label"]
             # _tk_btn_rect is set in draw()
 
+        elif k == "initiative_tutorial":
+            self._maybe_show_tutorial(
+                "initiative",
+                "The speed of the frontline adventurer determines who goes first each round. "
+                "In the case of a tie, it goes to whoever lost the last initiative. For only "
+                "the first round, whoever loses initiative can make a swap at the beginning "
+                "of the battle for free.")
+            if self._tutorial_pending:
+                # Pause the ticker until the popup is dismissed
+                self._tk_btn_label = "__tutorial__"
+
         elif k == "select":
             player = step["player"]
             self._tk_msg = f"P{player} is selecting their actions..."
@@ -821,10 +983,16 @@ class Game:
             do_end_round(self.battle)
             new_lines = self.battle.log[log_before:]
             inject = [{"k": "text", "msg": line, "dur": 2.0} for line in new_lines]
+            if self.battle.winner:
+                inject.append({"k": "battle_end"})
+                self._tk.clear()   # discard any remaining steps (text, btn, next_round)
             self._tk[0:0] = inject
 
         elif k == "next_round":
-            self._tk_setup_next_round()
+            if self.battle.winner:
+                self._tk_finish_battle()
+            else:
+                self._tk_setup_next_round()
 
         elif k == "battle_end":
             self._tk_finish_battle()
@@ -910,6 +1078,9 @@ class Game:
 
         steps = [{"k": "text", "msg": msg, "dur": 2.0, "important": True, "overlay": True}]
 
+        if rnd == 1:
+            steps.insert(0, {"k": "initiative_tutorial"})
+
         if esp:
             steps.append({"k": "text",
                            "msg": f"P{esp} receives a free formation swap.", "dur": 2.0})
@@ -993,12 +1164,16 @@ class Game:
 
             dt = self.clock.tick(FPS) / 1000.0
             self._tk_advance(dt)
+            if self._intro_timer > 0:
+                self._intro_timer -= dt
+                if self._intro_timer <= 0:
+                    self._intro_visible = 1
             self.draw(mouse_pos)
 
             # Scale the logical canvas to fill the screen (letterboxed if aspect differs).
             scaled_w = int(WIDTH  * self._scale)
             scaled_h = int(HEIGHT * self._scale)
-            scaled = pygame.transform.scale(self._canvas, (scaled_w, scaled_h))
+            scaled = pygame.transform.smoothscale(self._canvas, (scaled_w, scaled_h))
             self.screen.fill((0, 0, 0))
             self.screen.blit(scaled, self._canvas_offset)
             pygame.display.flip()
@@ -1008,6 +1183,13 @@ class Game:
     # ─────────────────────────────────────────────────────────────────────────
 
     def handle_click(self, pos):
+        if self._intro_visible > 0:
+            if self._intro_visible < 4:
+                self._intro_visible += 1
+            elif self._intro_lets_go_btn and self._intro_lets_go_btn.collidepoint(pos):
+                self._intro_visible = 0
+            return
+
         if self._lan_disconnected and self._is_lan():
             disc_btn = getattr(self, "_last_disconnect_btn", None)
             if disc_btn and disc_btn.collidepoint(pos):
@@ -1018,6 +1200,13 @@ class Game:
                 self.game_mode = "pvp"
                 self.battle = None
                 self.phase = "menu"
+            return
+
+        if self._tutorial_pending:
+            self._tutorial_pending = None
+            if self._tk_btn_label == "__tutorial__":
+                self._tk_btn_label = None
+                self._tk_btn_rect = None
             return
 
         p = self.phase
@@ -1036,6 +1225,9 @@ class Game:
                 self._catalog_selected = None
                 self._catalog_scroll = 0
                 self.phase = "catalog"
+                if self.campaign_profile:
+                    self.campaign_profile.new_unlocks.discard("adventurers")
+                    save_campaign(self.campaign_profile)
             elif settings_btn.collidepoint(pos):
                 self._confirm_reset = False
                 self.phase = "settings"
@@ -1052,6 +1244,25 @@ class Game:
                     self._catalog_tab = key
                     self._catalog_selected = None
                     self._catalog_scroll = 0
+                    if self.campaign_profile:
+                        self.campaign_profile.new_unlocks.discard(key)
+                        save_campaign(self.campaign_profile)
+                    return
+            if btns.get("clear_all_btn") and btns["clear_all_btn"].collidepoint(pos):
+                for s in self._catalog_filters.get(self._catalog_tab, {}).values():
+                    if isinstance(s, set):
+                        s.clear()
+                self._catalog_selected = None
+                return
+            for rect, fkey, val in btns.get("filter_chips", []):
+                if rect.collidepoint(pos):
+                    tab_f = self._catalog_filters.setdefault(self._catalog_tab, {})
+                    fset = tab_f.setdefault(fkey, set())
+                    if val in fset:
+                        fset.discard(val)
+                    else:
+                        fset.add(val)
+                    self._catalog_selected = None
                     return
             for rect, idx in btns.get("list_btns", []):
                 if rect.collidepoint(pos):
@@ -1134,10 +1345,6 @@ class Game:
                 if rect.collidepoint(pos):
                     self._start_rename(slot_idx)
                     return
-            for rect, (slot_idx, member_idx) in btns.get("member_edit_btns", []):
-                if rect.collidepoint(pos):
-                    self._start_teambuilder_edit_member(slot_idx, member_idx)
-                    return
             if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
                 self.phase = self._teambuilder_return_phase
 
@@ -1149,7 +1356,10 @@ class Game:
                 elif btns.get("cancel_btn") and btns["cancel_btn"].collidepoint(pos):
                     self._confirm_reset = False
             else:
-                if btns.get("fast_btn") and btns["fast_btn"].collidepoint(pos):
+                if btns.get("tutorial_btn") and btns["tutorial_btn"].collidepoint(pos):
+                    self.campaign_profile.tutorials_enabled = not self.campaign_profile.tutorials_enabled
+                    save_campaign(self.campaign_profile)
+                elif btns.get("fast_btn") and btns["fast_btn"].collidepoint(pos):
                     self.campaign_profile.fast_resolution = not self.campaign_profile.fast_resolution
                     save_campaign(self.campaign_profile)
                 elif btns.get("reset_btn") and btns["reset_btn"].collidepoint(pos):
@@ -1158,6 +1368,35 @@ class Game:
                     self.phase = "menu"
 
         elif p == "team_select":
+            # Import modal intercepts clicks when open
+            if self._import_modal_open:
+                modal_clicks = getattr(self, "_last_import_modal_clicks", {}) or {}
+                cancel = modal_clicks.get("cancel")
+                confirm = modal_clicks.get("confirm")
+                if cancel and cancel.collidepoint(pos):
+                    self._import_modal_open = False
+                    self._import_modal_text = ""
+                    self._import_modal_error = ""
+                elif confirm and confirm.collidepoint(pos):
+                    allow_all = self.game_mode not in ("campaign", "teambuilder")
+                    picks, err = self._parse_team_import(self._import_modal_text, allow_all)
+                    if picks is not None:
+                        self.team_picks = picks
+                        self.roster_selected = picks[0]["definition"]
+                        self._import_modal_open = False
+                        self._import_modal_text = ""
+                        self._import_modal_error = ""
+                        self.sub_phase = "pick_adventurers"
+                        self.team_select_scroll = 0
+                    else:
+                        self._import_modal_error = err
+                return
+            self._handle_team_select_click(pos)
+
+        elif p == "pre_battle_edit":
+            if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+                self._detail_unit = None
+                return
             self._handle_team_select_click(pos)
 
         elif p.startswith("pass_"):
@@ -1303,6 +1542,36 @@ class Game:
         return None
 
     def _handle_keydown(self, e):
+        # Import modal text input — takes priority
+        if self._import_modal_open:
+            if e.key == pygame.K_ESCAPE:
+                self._import_modal_open = False
+                self._import_modal_text = ""
+                self._import_modal_error = ""
+            elif e.key == pygame.K_BACKSPACE:
+                self._import_modal_text = self._import_modal_text[:-1]
+            elif e.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+                self._import_modal_text += "\n"
+            elif (e.key == pygame.K_v
+                  and (e.mod & pygame.KMOD_CTRL)):
+                # Paste from clipboard
+                try:
+                    clip_data = pygame.scrap.get(pygame.SCRAP_TEXT)
+                    if clip_data:
+                        # pygame.scrap returns bytes on some platforms
+                        if isinstance(clip_data, (bytes, bytearray)):
+                            clip_str = clip_data.decode("utf-8", errors="ignore").rstrip("\x00")
+                        else:
+                            clip_str = str(clip_data)
+                        self._import_modal_text += clip_str
+                except Exception:
+                    pass
+            else:
+                ch = e.unicode
+                if ch and ch.isprintable():
+                    self._import_modal_text += ch
+            return
+
         # LAN IP text input
         if self._lan_ip_active and self.phase == "lan_lobby" and self._lan_role == "client":
             if e.key == pygame.K_RETURN:
@@ -1344,7 +1613,7 @@ class Game:
             return
 
         # ESC steps back through team-select sub-phases.
-        if self.phase == "team_select":
+        if self.phase in ("team_select", "pre_battle_edit"):
             self._do_team_select_back()
             return
 
@@ -1389,7 +1658,7 @@ class Game:
                 self._catalog_scroll -= e.y * 40
                 self._catalog_scroll = max(0, min(self._catalog_scroll, max_scroll))
             return
-        if self.phase != "team_select":
+        if self.phase not in ("team_select", "pre_battle_edit"):
             return
         if self.sub_phase not in ("pick_adventurers", "pick_basics", "pick_item"):
             return
@@ -1410,24 +1679,37 @@ class Game:
         """Shared back-navigation logic for team_select, used by Back button and ESC."""
         sp = self.sub_phase
         if sp == "pick_adventurers":
+            if self.phase == "pre_battle_edit":
+                # Back from pick_adventurers in pre_battle_edit goes to back_phase
+                if self._pbe_back_phase:
+                    self.phase = self._pbe_back_phase
+                return
             # Leave team select entirely.
             if self.game_mode == "teambuilder":
                 self.phase = "teambuilder"
             else:
                 self.phase = "menu"
         elif sp == "pick_sig":
+            # In the new flow, Back from pick_sig always returns to pick_adventurers
             if self._editing_single_member:
                 # Cancel single-member edit and return to teambuilder.
                 self._editing_single_member = False
                 self.phase = "teambuilder"
-            elif self.current_adv_idx > 0:
-                self.current_adv_idx -= 1
-                self.team_picks[self.current_adv_idx].pop("item", None)
-                self.item_choice = None
-                self.sub_phase = "pick_item"
             else:
+                self._editing_from_roster = False
+                self._focused_slot = self.current_adv_idx  # restore focus to the member we were editing
+                # Restore sets backup if available (user backed out without changing anything)
+                if self._edit_sets_backup is not None:
+                    bk = self._edit_sets_backup
+                    if bk.get("signature"):
+                        self.team_picks[self.current_adv_idx]["signature"] = bk["signature"]
+                    if bk.get("basics"):
+                        self.team_picks[self.current_adv_idx]["basics"] = bk["basics"]
+                    if bk.get("item"):
+                        self.team_picks[self.current_adv_idx]["item"] = bk["item"]
+                    self._edit_sets_backup = None
                 self.sub_phase = "pick_adventurers"
-            self.team_select_scroll = 0
+                self.team_select_scroll = 0
         elif sp == "pick_basics":
             self.team_picks[self.current_adv_idx].pop("signature", None)
             self.sig_choice = None
@@ -1438,6 +1720,102 @@ class Game:
             self.basic_choices = []
             self.sub_phase = "pick_basics"
             self.team_select_scroll = 0
+
+    def _parse_team_import(self, text: str, allow_all: bool):
+        """Parse a team import string. Returns (picks_list, error_string).
+        picks_list is None on any validation error.
+        allow_all=True: practice/single_player mode (full ROSTER/ITEMS/CLASS_BASICS).
+        allow_all=False: use campaign/teambuilder restricted lists.
+        """
+        # Determine the active pools
+        if allow_all:
+            active_roster     = ROSTER
+            active_items      = ITEMS
+            active_cls_basics = CLASS_BASICS
+        else:
+            active_roster     = getattr(self, "_campaign_roster", ROSTER)
+            active_items      = getattr(self, "_campaign_items", ITEMS)
+            active_cls_basics = getattr(self, "_campaign_basics", CLASS_BASICS)
+
+        # Build case-insensitive lookup dicts
+        roster_by_name = {d.name.lower(): d for d in active_roster}
+        items_by_name  = {it.name.lower(): it for it in active_items}
+
+        # Normalize lines
+        raw_lines = [l.rstrip() for l in text.splitlines()]
+        lines = [l for l in raw_lines if l.strip()]
+
+        # Need exactly 12 non-empty lines: 4 per member * 3 members
+        if len(lines) != 12:
+            return (None, "Can't upload this.")
+
+        picks = []
+        used_item_ids = set()
+
+        for block_start in range(0, 12, 4):
+            block = lines[block_start: block_start + 4]
+            # Line 0: "Adventurer @ Item"
+            if " @ " not in block[0]:
+                return (None, "Can't upload this.")
+            adv_part, item_part = block[0].split(" @ ", 1)
+            adv_name  = adv_part.strip().lower()
+            item_name = item_part.strip().lower()
+
+            # Lines 1-3: "- AbilityName"
+            ability_names = []
+            for raw in block[1:4]:
+                s = raw.strip()
+                if not s.startswith("- "):
+                    return (None, "Can't upload this.")
+                ability_names.append(s[2:].strip().lower())
+
+            # Look up adventurer
+            defn = roster_by_name.get(adv_name)
+            if defn is None:
+                return (None, "Can't upload this.")
+
+            # Look up item
+            item = items_by_name.get(item_name)
+            if item is None:
+                return (None, "Can't upload this.")
+
+            # No duplicate items
+            if item.id in used_item_ids:
+                return (None, "Can't upload this.")
+            used_item_ids.add(item.id)
+
+            # Look up signature (case-insensitive, within allowed sigs)
+            if allow_all:
+                avail_sigs = defn.sig_options
+            else:
+                sig_tier = (
+                    self.campaign_profile.sig_tier
+                    if self.campaign_profile else 3
+                )
+                avail_sigs = defn.sig_options[:sig_tier]
+            sig_by_name = {s.name.lower(): s for s in avail_sigs}
+            sig = sig_by_name.get(ability_names[0])
+            if sig is None:
+                return (None, "Can't upload this.")
+
+            # Look up basics (2 basics for this class)
+            cls_pool = active_cls_basics.get(defn.cls, [])
+            basics_by_name = {b.name.lower(): b for b in cls_pool}
+            basic1 = basics_by_name.get(ability_names[1])
+            basic2 = basics_by_name.get(ability_names[2])
+            if basic1 is None or basic2 is None:
+                return (None, "Can't upload this.")
+            if basic1 is basic2:
+                return (None, "Can't upload this.")
+
+            picks.append({
+                "definition": defn,
+                "signature":  sig,
+                "basics":     [basic1, basic2],
+                "item":       item,
+            })
+
+        return (picks, "")
 
     def _start_team_select(self, player_num):
         self.building_player = player_num
@@ -1451,7 +1829,9 @@ class Game:
         self.team_slot_selected = None
         self.team_select_scroll = 0
         self._editing_single_member = False
+        self._focused_slot = None
         self.phase = "team_select"
+        self._maybe_show_tutorial("party_editor", "Select three adventurers to form a party!")
 
     def _handle_team_select_click(self, pos):
         clicks = self._last_team_clicks
@@ -1468,45 +1848,123 @@ class Game:
             active_items      = ITEMS
             active_cls_basics = CLASS_BASICS
 
-        # Party slot reorder: works in all sub-phases
-        for rect, idx in clicks.get("party_slots", []):
+        _in_pbe = (self.phase == "pre_battle_edit")
+
+        # Party slot × remove button — check before swap/slots so the small hit-target wins
+        # Not used in pre_battle_edit mode
+        if not _in_pbe:
+            for rect, idx in clicks.get("party_remove", []):
+                if rect.collidepoint(pos):
+                    if idx < len(self.team_picks):
+                        self.team_picks.pop(idx)
+                        # If we were editing this or a later member's sets, cancel that
+                        if self._editing_from_roster and self.current_adv_idx >= idx:
+                            self._editing_from_roster = False
+                            self.sub_phase = "pick_adventurers"
+                        if self.current_adv_idx >= len(self.team_picks):
+                            self.current_adv_idx = max(0, len(self.team_picks) - 1)
+                        self.team_slot_selected = None
+                    return
+
+        # Party slot ⇄ swap button — rotate member i to (i+1) % len
+        for rect, idx in clicks.get("party_swap", []):
             if rect.collidepoint(pos):
-                if self.team_slot_selected is None:
-                    self.team_slot_selected = idx
-                elif self.team_slot_selected == idx:
-                    self.team_slot_selected = None
-                else:
-                    i, j = self.team_slot_selected, idx
-                    self.team_picks[i], self.team_picks[j] = \
-                        self.team_picks[j], self.team_picks[i]
+                n = len(self.team_picks)
+                if n >= 2 and idx < n:
+                    j = (idx + 1) % n
+                    self.team_picks[idx], self.team_picks[j] = \
+                        self.team_picks[j], self.team_picks[idx]
                     # Keep current_adv_idx pointing at the same member after swap
-                    if self.current_adv_idx == i:
+                    if self.current_adv_idx == idx:
                         self.current_adv_idx = j
                     elif self.current_adv_idx == j:
-                        self.current_adv_idx = i
+                        self.current_adv_idx = idx
+                    self._editing_from_roster = False
+                    if self.sub_phase != "pick_adventurers":
+                        self.sub_phase = "pick_adventurers"
                     self.team_slot_selected = None
                 return
 
-        if self.sub_phase == "pick_adventurers":
-            for rect, idx in clicks.get("roster", []):
-                if rect.collidepoint(pos):
-                    defn = active_roster[idx]
+        # Party slot body click — focus the slot (show info), don't edit yet
+        for rect, idx in clicks.get("party_slots", []):
+            if rect.collidepoint(pos):
+                if idx < len(self.team_picks):
+                    if self.sub_phase == "pick_adventurers":
+                        # Just focus the slot; editing requires clicking "Edit Sets"
+                        self._focused_slot = idx
+                    elif self.sub_phase in ("pick_sig", "pick_basics", "pick_item"):
+                        # Clicking a different slot while editing: focus it, return to pick_adventurers
+                        self._focused_slot = idx
+                        self.sub_phase = "pick_adventurers"
+                        self.team_select_scroll = 0
                     self.team_slot_selected = None
-                    # Toggle: if already in team, remove it
+                return
+
+        # Edit Sets button — now clear sets and open set editor for the focused slot
+        edit_sets_btn = clicks.get("edit_sets_btn")
+        if edit_sets_btn and edit_sets_btn.collidepoint(pos):
+            idx = self._focused_slot
+            if idx is not None and idx < len(self.team_picks):
+                self.current_adv_idx = idx
+                self._editing_from_roster = True
+                # Save backup so Back can restore without losing sets
+                self._edit_sets_backup = {
+                    "signature": self.team_picks[idx].get("signature"),
+                    "basics":    list(self.team_picks[idx].get("basics", [])),
+                    "item":      self.team_picks[idx].get("item"),
+                }
+                self.team_picks[idx].pop("signature", None)
+                self.team_picks[idx].pop("basics", None)
+                self.team_picks[idx].pop("item", None)
+                self.sig_choice = None
+                self.basic_choices = []
+                self.item_choice = None
+                self.sub_phase = "pick_sig"
+                self.team_select_scroll = 0
+            return
+
+        if self.sub_phase == "pick_adventurers":
+            # Import Team button
+            import_btn = clicks.get("import_btn")
+            if import_btn and import_btn.collidepoint(pos):
+                self._import_modal_open = True
+                self._import_modal_text = ""
+                self._import_modal_error = ""
+                return
+
+            for rect, defn in clicks.get("roster", []):
+                if rect.collidepoint(pos):
+                    self.team_slot_selected = None
+                    # Check if already in team
                     existing = [i for i, p in enumerate(self.team_picks)
                                 if p.get("definition") == defn]
                     if existing:
-                        self.team_picks.pop(existing[0])
+                        if len(self.team_picks) == 3:
+                            # All 3 slots filled — focus this member for editing
+                            self._focused_slot = existing[0]
+                        else:
+                            # Fewer than 3 — remove as before
+                            self.team_picks.pop(existing[0])
+                            self._focused_slot = None
                     elif len(self.team_picks) < 3:
                         self.team_picks.append({"definition": defn})
-                    self.roster_selected = idx
+                        if len(self.team_picks) == 3:
+                            self._maybe_show_tutorial("party_built", "Now, edit their sets to give them abilities!")
+                    self.roster_selected = defn
                     return
             confirm = clicks.get("confirm")
-            if confirm and confirm.collidepoint(pos) and len(self.team_picks) == 3:
-                self.team_slot_selected = None
-                self.current_adv_idx = 0
-                self.sub_phase = "pick_sig"
-                self.sig_choice = None
+            if confirm and confirm.collidepoint(pos):
+                # Validate: all 3 members must have sig and 2 basics
+                def _team_valid(picks):
+                    return (len(picks) == 3 and
+                            all("signature" in pk and len(pk.get("basics", [])) == 2
+                                for pk in picks))
+                if _team_valid(self.team_picks):
+                    self.team_slot_selected = None
+                    if _in_pbe:
+                        self._confirm_pre_battle_edit()
+                    else:
+                        self._finish_team_select()
 
         elif self.sub_phase == "pick_sig":
             back = clicks.get("back")
@@ -1531,6 +1989,7 @@ class Game:
                 else:
                     self.team_picks[self.current_adv_idx]["signature"] = \
                         available_sigs[0] if available_sigs else defn.sig_options[0]
+                self._edit_sets_backup = None  # committed to new sig; discard backup
                 self.sub_phase = "pick_basics"
                 self.basic_choices = []
                 self.team_select_scroll = 0
@@ -1566,28 +2025,102 @@ class Game:
                 if rect.collidepoint(pos):
                     # Reject items already used by other team members
                     taken_ids = {p["item"].id for i, p in enumerate(self.team_picks)
-                                 if "item" in p and i < self.current_adv_idx}
+                                 if "item" in p and i != self.current_adv_idx}
                     if active_items[idx].id in taken_ids:
                         return  # item already taken by another team member
                     self.item_choice = idx
                     return
             confirm = clicks.get("confirm")
-            if confirm and confirm.collidepoint(pos) and self.item_choice is not None:
-                self.team_picks[self.current_adv_idx]["item"] = \
-                    active_items[self.item_choice]
+            if confirm and confirm.collidepoint(pos):
+                # Item is optional — save if one is selected, otherwise clear it
+                if self.item_choice is not None:
+                    self.team_picks[self.current_adv_idx]["item"] = \
+                        active_items[self.item_choice]
+                else:
+                    self.team_picks[self.current_adv_idx].pop("item", None)
                 if self._editing_single_member:
                     # Only editing this one member's sets — save and return.
                     self._editing_single_member = False
                     self._finish_team_select()
                 else:
-                    self.current_adv_idx += 1
-                    if self.current_adv_idx < 3:
-                        self.sub_phase = "pick_sig"
-                        self.sig_choice = None
-                        self.team_select_scroll = 0
+                    # Always return to pick_adventurers after item (new flow)
+                    self._editing_from_roster = False
+                    self.sub_phase = "pick_adventurers"
+                    self.team_select_scroll = 0
+
+        # Enemy card click in pre_battle_edit — toggle detail panel
+        if _in_pbe:
+            for rect, pick in clicks.get("enemy_cards", []):
+                if rect.collidepoint(pos):
+                    defn = pick["definition"]
+                    if self._detail_unit and self._detail_unit.defn is defn:
+                        self._detail_unit = None
                     else:
-                        # Done with this player
-                        self._finish_team_select()
+                        self._detail_unit = make_combatant(
+                            defn, SLOT_FRONT,
+                            pick["signature"], pick["basics"], pick["item"],
+                        )
+                    return
+
+    def _ensure_picks_have_items(self, picks):
+        """Ensure each pick has an item (use first available as fallback)."""
+        fallback = ITEMS[0] if ITEMS else None
+        if fallback is None:
+            return
+        for p in picks:
+            if "item" not in p:
+                p["item"] = fallback
+
+    def _enter_pre_battle_edit(self, p1_picks, enemy_picks, back_phase):
+        """Transition to the pre-battle team editor."""
+        self.team_picks = list(p1_picks)
+        self._pbe_enemy_picks = list(enemy_picks) if enemy_picks else []
+        self._pbe_back_phase = back_phase
+        self.sub_phase = "pick_adventurers"
+        self.current_adv_idx = 0
+        self.sig_choice = None
+        self.basic_choices = []
+        self.item_choice = None
+        self.team_select_scroll = 0
+        self.roster_selected = None
+        self.team_slot_selected = None
+        self._editing_from_roster = False
+        self._editing_single_member = False
+        self._focused_slot = None
+        self._lan_pbe_local_ready = False
+        self._lan_pbe_opponent_ready = False
+        self.phase = "pre_battle_edit"
+
+    def _confirm_pre_battle_edit(self):
+        """Player confirmed their formation in pre-battle edit."""
+        def _team_valid(picks):
+            return (len(picks) == 3 and
+                    all("signature" in pk and len(pk.get("basics", [])) == 2
+                        for pk in picks))
+        if not _team_valid(self.team_picks):
+            return
+        # Store picks for the appropriate player
+        if self.game_mode == "lan_client":
+            self.p2_picks = list(self.team_picks)
+            self._ensure_picks_have_items(self.p2_picks)
+        else:
+            self.p1_picks = list(self.team_picks)
+            self._ensure_picks_have_items(self.p1_picks)
+
+        if self._is_lan():
+            self._lan_pbe_local_ready = True
+            self._lan_send({"type": "pre_battle_ready"})
+            # If opponent already ready, start now
+            if self._lan_pbe_opponent_ready:
+                if self.game_mode == "lan_host":
+                    self._start_lan_battle()
+                else:
+                    self._start_battle()
+            # else: wait for opponent's pre_battle_ready message
+            return
+
+        # For all non-LAN modes, start the battle
+        self._start_battle()
 
     def _finish_team_select(self):
         if self.game_mode == "teambuilder":
@@ -1598,15 +2131,22 @@ class Game:
         # LAN: host picks P1's team, client picks P2's team, simultaneously
         if self.game_mode == "lan_host":
             self.p1_picks = list(self.team_picks)
+            self._ensure_picks_have_items(self.p1_picks)
             self._lan_p1_ready = True
             if self._lan_p2_ready:
-                self._start_lan_battle()
+                self._enter_pre_battle_edit(self.p1_picks, self.p2_picks, None)
+                self._lan_send({
+                    "type": "pre_battle_start",
+                    "p1_picks": self._serialize_picks(self.p1_picks),
+                    "p2_picks": self._serialize_picks(self.p2_picks),
+                })
             else:
                 self.phase = "lan_waiting_teams"
             return
 
         if self.game_mode == "lan_client":
             self.p2_picks = list(self.team_picks)
+            self._ensure_picks_have_items(self.p2_picks)
             self._lan_send({
                 "type": "team_ready",
                 "picks": self._serialize_picks(self.p2_picks),
@@ -1616,14 +2156,17 @@ class Game:
 
         if self.building_player == 1:
             self.p1_picks = list(self.team_picks)
+            self._ensure_picks_have_items(self.p1_picks)
             if self.game_mode == "single_player":
                 self.ai_comp_name, self.p2_picks = self._generate_ai_team()
-                self._start_battle()
+                self._enter_pre_battle_edit(self.p1_picks, self.p2_picks, "team_select")
+                return
             else:
                 # pvp — pass to player 2
                 self.phase = "pass_to_team_p2"
         else:
             self.p2_picks = list(self.team_picks)
+            self._ensure_picks_have_items(self.p2_picks)
             self._start_battle()
 
     def _start_teambuilder_edit(self, slot_idx: int):
@@ -1638,7 +2181,25 @@ class Game:
             for cls_name, basics_list in CLASS_BASICS.items()
             if cls_name in profile.unlocked_classes
         }
-        self._start_team_select(1)
+        # Load existing team picks if available, otherwise start fresh
+        existing = self._resolve_saved_team(slot_idx)
+        if existing is not None:
+            self.team_picks = existing
+        else:
+            self.team_picks = []
+        self.building_player = 1
+        self.sub_phase = "pick_adventurers"
+        self.roster_selected = self.team_picks[0]["definition"] if self.team_picks else None
+        self.current_adv_idx = 0
+        self.sig_choice = None
+        self.basic_choices = []
+        self.item_choice = None
+        self.team_slot_selected = None
+        self.team_select_scroll = 0
+        self._editing_from_roster = False
+        self._editing_single_member = False
+        self.phase = "team_select"
+        self._maybe_show_tutorial("party_editor", "Select three adventurers to form a party!")
 
     def _start_teambuilder_edit_member(self, slot_idx: int, member_idx: int):
         """Jump directly to editing one member's sig/basics/item without changing adventurers."""
@@ -1683,18 +2244,22 @@ class Game:
             return
         members = []
         for p in self.team_picks:
-            members.append({
+            entry = {
                 "adv_id":  p["definition"].id,
                 "sig_id":  p["signature"].id,
                 "basics":  [b.id for b in p["basics"]],
-                "item_id": p["item"].id,
-            })
+            }
+            if "item" in p:
+                entry["item_id"] = p["item"].id
+            else:
+                entry["item_id"] = ""
+            members.append(entry)
         # Preserve existing name if the team already has one.
         teams = self.campaign_profile.saved_teams
         existing_name = None
         if slot < len(teams) and teams[slot] is not None:
             existing_name = teams[slot].get("name")
-        team_name = existing_name if existing_name else f"Team {slot + 1}"
+        team_name = existing_name if existing_name else f"Party {slot + 1}"
         entry = {"name": team_name, "members": members}
         while len(self.campaign_profile.saved_teams) <= slot:
             self.campaign_profile.saved_teams.append(None)
@@ -1733,8 +2298,8 @@ class Game:
         if os.path.exists("campaign_save.json"):
             os.remove("campaign_save.json")
         self.campaign_profile = load_campaign()
-        # Re-apply starter quest rewards
-        apply_quest_rewards(self.campaign_profile, 0)
+        # Re-apply starter quest rewards (no badge for starting gear)
+        apply_quest_rewards(self.campaign_profile, 0, notify=False)
         save_campaign(self.campaign_profile)
         self._confirm_reset = False
         self.phase = "menu"
@@ -1760,7 +2325,11 @@ class Game:
             basics = [basics_by_id.get(bid) for bid in m.get("basics", [])]
             if any(b is None for b in basics) or len(basics) != 2:
                 return None
-            item = items_by_id.get(m.get("item_id"))
+            item_id = m.get("item_id")
+            item = items_by_id.get(item_id) if item_id else None
+            # Fall back to first available item if none set (item is optional in teambuilder)
+            if item is None and ITEMS:
+                item = ITEMS[0]
             if item is None:
                 return None
             picks.append({"definition": defn, "signature": sig, "basics": basics, "item": item})
@@ -1775,10 +2344,9 @@ class Game:
         self.p2_picks = build_quest_enemy_team(self.campaign_quest_id)
         self.game_mode = "campaign"
         self.ai_player = 2
-        # Go to pre-battle review so player can adjust slot order before the fight
-        self._pre_battle_picks = list(picks)
-        self._pre_battle_slot_selected = None
-        self.phase = "pre_battle_review"
+        # Go to pre-battle edit so player can adjust slot order and sets before the fight
+        self._ensure_picks_have_items(picks)
+        self._enter_pre_battle_edit(picks, self.p2_picks, "story_team_select")
 
     # ─────────────────────────────────────────────────────────────────────────
     # BATTLE SETUP
@@ -1788,7 +2356,7 @@ class Game:
         p1_name = "Player 1"
         if self.game_mode == "campaign":
             quest = QUEST_TABLE.get(self.campaign_quest_id)
-            p2_name = f"Quest {self.campaign_quest_id} Enemies" if quest else "Enemy"
+            p2_name = f"Encounter {self.campaign_quest_id} Enemies" if quest else "Enemy"
         elif self._is_single_player():
             p2_name = "AI Opponent"
         else:
@@ -1983,6 +2551,8 @@ class Game:
 
     def _advance_selection(self):
         """Move to the next unqueued actor (or extra-action slot), or finish."""
+        # Count how many non-extra actors have already been queued this selection phase
+        n_queued = sum(1 for (u, ie) in self.selection_order if not ie and u.queued is not None)
         for (unit, is_extra) in self.selection_order:
             if unit.ko:
                 continue
@@ -1992,6 +2562,24 @@ class Game:
                 self.current_is_extra = is_extra
                 self.pending_action = None
                 self.selection_sub = "pick_action"
+                if not is_extra:
+                    if n_queued == 0:
+                        self._maybe_show_tutorial(
+                            "action_selection",
+                            "Each adventurer can select one action each turn: using an ability, "
+                            "using an item, or swapping. You can only swap once per round, though "
+                            "abilities and items that let you swap ignore that limit.")
+                    elif n_queued >= 1:
+                        # Find the most recently queued action
+                        last_queued = None
+                        for (u, ie) in self.selection_order:
+                            if not ie and u.queued is not None:
+                                last_queued = u.queued
+                        if last_queued and last_queued.get("type") == "ability":
+                            self._maybe_show_tutorial(
+                                "ability_selected",
+                                "Abilities change their effects depending on whether the user is "
+                                "frontline or backline when they resolve.")
                 return
         # All units have actions queued → done with this player
         self._finish_selection()
@@ -2049,7 +2637,9 @@ class Game:
                              (self.battle.team2, SLOT_RECTS_P2)):
             for slot, rect in rects.items():
                 if rect.collidepoint(pos):
-                    return next((m for m in team.members if m.slot == slot), None)
+                    # Prefer alive unit at slot; fall back to KO'd for card viewing
+                    return (next((m for m in team.members if m.slot == slot and not m.ko), None)
+                            or next((m for m in team.members if m.slot == slot), None))
         return None
 
     def _restart_selection(self):
@@ -2173,6 +2763,25 @@ class Game:
                         "substep": "pick_primary",
                     }
                     self.selection_sub = "pick_target"
+                    role = actor.role
+                    if role == "ranged":
+                        self._maybe_show_tutorial(
+                            "target_ranged",
+                            "While in the backline, ranged adventurers can only target the enemy "
+                            "across from them and the frontline. In the frontline however, they "
+                            "can target any enemy. Be careful though, after three abilities, "
+                            "they must recharge for one round.")
+                    elif role == "melee":
+                        self._maybe_show_tutorial(
+                            "target_melee",
+                            "Melee adventurers can only target the frontline, and most melee "
+                            "abilities deal no damage from the backline.")
+                    elif role in ("noble", "warlock"):
+                        self._maybe_show_tutorial(
+                            "target_mixed",
+                            "Mixed adventurers are melee while in the frontline and ranged while "
+                            "in the backline. They only increment ranged recharge when using "
+                            "abilities from the backline.")
                     return
 
                 if atype == "item":
@@ -2409,7 +3018,8 @@ class Game:
 
         if p == "menu":
             player_level = max(0, self.campaign_profile.highest_quest_cleared) if self.campaign_profile else 0
-            s, pr, tb, cat, st, e = draw_main_menu(surf, mouse_pos, player_level)
+            _new_cat = bool(self.campaign_profile and self.campaign_profile.new_unlocks)
+            s, pr, tb, cat, st, e = draw_main_menu(surf, mouse_pos, player_level, new_catalog_unlocks=_new_cat)
             self._last_menu_btns = (s, pr, tb, cat, st, e)
 
         elif p == "practice_menu":
@@ -2427,6 +3037,7 @@ class Game:
 
         elif p == "catalog":
             profile = self.campaign_profile or CampaignProfile()
+            _catalog_desc_hover = []
             btns = draw_catalog(
                 surf, mouse_pos,
                 active_tab=self._catalog_tab,
@@ -2436,12 +3047,19 @@ class Game:
                 roster=ROSTER,
                 class_basics=CLASS_BASICS,
                 items=ITEMS,
+                status_rects_out=_catalog_desc_hover,
+                filters=self._catalog_filters.get(self._catalog_tab, {}),
             )
             self._last_catalog_btns = btns
+            for _r, _kind in _catalog_desc_hover:
+                if _r.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                    break
 
         elif p == "settings":
             btns = draw_settings_screen(surf, mouse_pos, self._confirm_reset,
-                                        fast_resolution=self.campaign_profile.fast_resolution)
+                                        fast_resolution=self.campaign_profile.fast_resolution,
+                                        tutorials_enabled=self.campaign_profile.tutorials_enabled)
             self._last_settings_btns = btns
 
         elif p == "story_team_select":
@@ -2450,11 +3068,70 @@ class Game:
             btns = draw_story_team_select(surf, profile.saved_teams, mouse_pos, quest)
             self._last_story_team_btns = btns
 
-        elif p == "pre_battle_review":
-            btns = draw_pre_battle_review(
-                surf, self._pre_battle_picks,
-                self._pre_battle_slot_selected, mouse_pos)
-            self._last_pre_battle_btns = btns
+        elif p == "pre_battle_edit":
+            # Use campaign-filtered roster/items when in campaign mode
+            if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
+                active_items      = self._campaign_items
+                active_cls_basics = self._campaign_basics
+            else:
+                active_items      = ITEMS
+                active_cls_basics = CLASS_BASICS
+
+            _sig_tier = (
+                self.campaign_profile.sig_tier
+                if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
+                else 3
+            )
+            _lan_wait = self._is_lan() and self._lan_pbe_local_ready
+            _confirm_lbl = "Waiting for opponent…" if _lan_wait else "Ready for Battle →"
+            _team_desc_hover = []
+            clicks = draw_team_select_screen(
+                surf,
+                player_name="Pre-Battle Setup",
+                roster=[],
+                selected_idx=self.roster_selected,
+                team_picks=self.team_picks,
+                sub_phase=self.sub_phase,
+                current_adv_idx=self.current_adv_idx,
+                sig_choice=self.sig_choice,
+                basic_choices=self.basic_choices,
+                item_choice=self.item_choice,
+                items=active_items,
+                class_basics=active_cls_basics,
+                mouse_pos=mouse_pos,
+                scroll_offset=self.team_select_scroll,
+                team_slot_selected=self.team_slot_selected,
+                sig_tier=_sig_tier,
+                twists_unlocked=(
+                    self.campaign_profile.twists_unlocked
+                    if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
+                    else True
+                ),
+                status_rects_out=_team_desc_hover,
+                confirm_label=_confirm_lbl,
+                pre_battle_mode=True,
+                enemy_picks=self._pbe_enemy_picks,
+                focused_slot=self._focused_slot,
+            )
+            self.team_select_scroll = min(
+                self.team_select_scroll,
+                clicks.get("scroll_max", 0),
+            )
+            self._last_team_clicks = clicks
+            for _r, _kind in _team_desc_hover:
+                if _r.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                    break
+            if self._detail_unit is not None:
+                _dh = []
+                close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
+                self._detail_close_btn = close_btn
+                for _r, _kind in _dh:
+                    if _r.collidepoint(mouse_pos):
+                        draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                        break
+            else:
+                self._detail_close_btn = None
 
         elif p == "team_select":
             # Use campaign-filtered roster/items when in campaign/teambuilder mode
@@ -2467,12 +3144,8 @@ class Game:
                 active_items      = ITEMS
                 active_cls_basics = CLASS_BASICS
 
-            # Compute selected_idx in the active roster
-            sel_idx = None
-            if self.roster_selected is not None:
-                # roster_selected was stored as index into active_roster at click time
-                if 0 <= self.roster_selected < len(active_roster):
-                    sel_idx = self.roster_selected
+            # roster_selected is a defn object (or None)
+            sel_idx = self.roster_selected
 
             _sig_tier = (
                 self.campaign_profile.sig_tier
@@ -2485,6 +3158,8 @@ class Game:
                 _panel_title = f"Edit Sets — {_adv_name}"
             else:
                 _panel_title = f"Player {self.building_player}"
+            _team_desc_hover = []
+            _confirm_label = "Save Party" if self.game_mode == "teambuilder" else "Ready"
             clicks = draw_team_select_screen(
                 surf,
                 player_name=_panel_title,
@@ -2507,12 +3182,24 @@ class Game:
                     if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
                     else True
                 ),
+                status_rects_out=_team_desc_hover,
+                confirm_label=_confirm_label,
+                focused_slot=self._focused_slot,
             )
             self.team_select_scroll = min(
                 self.team_select_scroll,
                 clicks.get("scroll_max", 0),
             )
             self._last_team_clicks = clicks
+            for _r, _kind in _team_desc_hover:
+                if _r.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                    break
+            # Draw import modal on top if open
+            if self._import_modal_open:
+                _modal_clicks = draw_import_modal(
+                    surf, self._import_modal_text, self._import_modal_error, mouse_pos)
+                self._last_import_modal_clicks = _modal_clicks
 
         elif p.startswith("pass_"):
             msg, next_who = self._pass_screen_info(p)
@@ -2572,11 +3259,21 @@ class Game:
                     quest_pos, total_quests = 1, 1
                     mission = None
                 enemy_picks = build_quest_enemy_team(self.campaign_quest_id)
-                btns = draw_pre_quest(surf, quest, mission, quest_pos, total_quests, enemy_picks, mouse_pos)
+                _pq_hover = []
+                btns = draw_pre_quest(surf, quest, mission, quest_pos, total_quests, enemy_picks, mouse_pos, status_rects_out=_pq_hover)
                 self._last_campaign_btns = btns
+                for _r, _kind in _pq_hover:
+                    if _r.collidepoint(mouse_pos):
+                        draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                        break
                 if self._detail_unit is not None:
-                    close_btn = draw_combatant_detail(surf, self._detail_unit)
+                    _dh = []
+                    close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
                     self._detail_close_btn = close_btn
+                    for _r, _kind in _dh:
+                        if _r.collidepoint(mouse_pos):
+                            draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                            break
                 else:
                     self._detail_close_btn = None
 
@@ -2615,8 +3312,13 @@ class Game:
                 draw_text(surf, "Waiting for opponent...", 24, TEXT_DIM,
                           WIDTH // 2, HEIGHT - 70, center=True)
                 if self._detail_unit is not None:
-                    close_btn = draw_combatant_detail(surf, self._detail_unit)
+                    _dh = []
+                    close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
                     self._detail_close_btn = close_btn
+                    for _r, _kind in _dh:
+                        if _r.collidepoint(mouse_pos):
+                            draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                            break
                 else:
                     self._detail_close_btn = None
             else:
@@ -2628,6 +3330,10 @@ class Game:
             surf.fill(BG)
             draw_text(surf, f"Phase: {p}", 24, TEXT, 20, 20)
 
+        # Tutorial popup overlay
+        if self._tutorial_pending:
+            draw_tutorial_popup(surf, self._tutorial_pending)
+
         # LAN disconnect overlay
         if self._lan_disconnected and self._is_lan():
             overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
@@ -2637,6 +3343,10 @@ class Game:
             disc_btn = pygame.Rect(WIDTH // 2 - 120, HEIGHT // 2 + 10, 240, 44)
             draw_button(surf, disc_btn, "Return to Menu", mouse_pos, size=18)
             self._last_disconnect_btn = disc_btn
+
+        # Intro story popup (topmost overlay)
+        if self._intro_visible > 0:
+            self._intro_lets_go_btn = draw_intro_popup(surf, self._intro_visible, mouse_pos)
 
     def _pass_screen_info(self, phase_key):
         """Return (message, next_player_name) for the pass screen.
@@ -2653,7 +3363,7 @@ class Game:
             return "" if sp else f"Player {pnum}"
 
         if phase_key == "pass_to_team_p2":
-            return "Player 1 has set their team.", _who(2)
+            return "Player 1 has set their party.", _who(2)
         reason = getattr(self.battle, "init_reason", "")
         if phase_key == "pass_to_extra_swap_p1":
             msg = "P1 lost initiative — free swap before round starts."
@@ -2708,7 +3418,7 @@ class Game:
             draw_text(surf, self._tk_msg, 20, YELLOW, WIDTH // 2, HEIGHT - 68, center=True)
 
         # Pass button
-        if self._tk_btn_label:
+        if self._tk_btn_label and self._tk_btn_label != "__tutorial__":
             btn_rect = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 50, 260, 40)
             draw_button(surf, btn_rect, self._tk_btn_label, mouse_pos, size=18,
                         normal=BLUE_DARK, hover=BLUE)
@@ -2786,6 +3496,16 @@ class Game:
             draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
             draw_text(surf, "Waiting for opponent to pick their actions...",
                       22, TEXT_DIM, WIDTH // 2, HEIGHT - 70, center=True)
+            if self._detail_unit is not None:
+                _dh = []
+                close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
+                self._detail_close_btn = close_btn
+                for _r, _kind in _dh:
+                    if _r.collidepoint(mouse_pos):
+                        draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                        break
+            else:
+                self._detail_close_btn = None
             for r, kind in _lan_sh:
                 if r.collidepoint(mouse_pos):
                     draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
@@ -2839,8 +3559,13 @@ class Game:
 
         # Detail panel — drawn below formations when a unit is inspected
         if self._detail_unit is not None:
-            close_btn = draw_combatant_detail(surf, self._detail_unit)
+            _dh = []
+            close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
             self._detail_close_btn = close_btn
+            for _r, _kind in _dh:
+                if _r.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                    break
         else:
             self._detail_close_btn = None
 
@@ -2852,8 +3577,14 @@ class Game:
         # Action buttons (drawn first so panel background is laid down)
         if self.selection_sub == "pick_action":
             abilities = actor.all_active_abilities(is_last)
+            _twists_ok = (
+                self.game_mode not in ("campaign", "teambuilder")
+                or not self.campaign_profile
+                or self.campaign_profile.twists_unlocked
+            )
             valid_abs = [a for a in abilities
-                         if can_use_ability(actor, a, team)]
+                         if can_use_ability(actor, a, team)
+                         and (_twists_ok or a.category != "twist")]
             btns = draw_action_menu(
                 surf, mouse_pos, actor, valid_abs,
                 swap_used=self.battle.swap_used_this_turn or self._swap_queued_this_turn(),
@@ -3034,8 +3765,13 @@ class Game:
 
         # Detail panel
         if self._detail_unit is not None:
-            close_btn = draw_combatant_detail(surf, self._detail_unit)
+            _dh = []
+            close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
             self._detail_close_btn = close_btn
+            for _r, _kind in _dh:
+                if _r.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
+                    break
         else:
             self._detail_close_btn = None
             draw_text(surf, "Click any unit to inspect", 13, TEXT_MUTED,
@@ -3094,33 +3830,6 @@ def _patched_handle_click(self, pos):
             # For LAN host: send state update when passing
             if self._is_lan() and self.game_mode == "lan_host":
                 self._lan_send_state(phase="battle")
-        return
-    if self.phase == "pre_battle_review":
-        btns = getattr(self, "_last_pre_battle_btns", None) or {}
-        for rect, idx in btns.get("slot_btns", []):
-            if rect.collidepoint(pos):
-                if self._pre_battle_slot_selected is None:
-                    self._pre_battle_slot_selected = idx
-                elif self._pre_battle_slot_selected == idx:
-                    self._pre_battle_slot_selected = None
-                else:
-                    i, j = self._pre_battle_slot_selected, idx
-                    self._pre_battle_picks[i], self._pre_battle_picks[j] = \
-                        self._pre_battle_picks[j], self._pre_battle_picks[i]
-                    self._pre_battle_slot_selected = None
-                return
-        if btns.get("start_btn") and btns["start_btn"].collidepoint(pos):
-            self.p1_picks = self._pre_battle_picks
-            self._start_battle()
-            return
-        if btns.get("edit_btn") and btns["edit_btn"].collidepoint(pos):
-            self._editing_team_slot = getattr(self, "_story_team_idx", 0)
-            self._teambuilder_return_phase = "story_team_select"
-            self.phase = "teambuilder"
-            return
-        if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
-            self.phase = "story_team_select"
-            return
         return
     if self.phase == "actions_resolving":
         btn = getattr(self, "_last_actions_resolving_btn", None)
