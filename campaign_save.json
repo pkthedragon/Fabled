@@ -7,14 +7,14 @@
   "sig_tier": 1,
   "basics_tier": 2,
   "unlocked_classes": [
-    "Ranger",
     "Fighter",
+    "Ranger",
     "Cleric"
   ],
   "unlocked_items": [
-    "family_seal",
+    "healing_tonic",
     "health_potion",
-    "healing_tonic"
+    "family_seal"
   ],
   "default_sigs": {
     "risa_redcloak": "crimson_fury",
@@ -29,10 +29,12 @@
   "campaign_complete": false,
   "ranked_glory_unlocked": false,
   "tutorial_seen": [
+    "ability_selected",
+    "initiative",
     "party_editor",
     "intro",
     "party_built",
-    "initiative"
+    "action_selection"
   ],
   "saved_teams": [],
   "tutorials_enabled": true,

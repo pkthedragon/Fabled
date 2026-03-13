@@ -128,6 +128,7 @@ class Game:
 
         # Tutorial popup state
         self._tutorial_pending: str = None
+        self._practice_tutorials_seen: "Set[str]" = set()
 
         # Intro story popup state
         self._intro_visible: int = 0     # 0 = hidden; 1–4 = sections shown
@@ -372,13 +373,37 @@ class Game:
         return self.game_mode in ("single_player", "campaign")
 
     def _maybe_show_tutorial(self, key: str, text: str):
-        """Show a tutorial popup if it hasn't been seen yet and tutorials are enabled."""
-        if (self.campaign_profile
-                and self.campaign_profile.tutorials_enabled
-                and key not in self.campaign_profile.tutorial_seen):
+        """Show a tutorial popup if it hasn't been seen yet. Only fires in single-player/campaign."""
+        if not self._is_single_player():
+            return
+        if self.campaign_profile:
+            if not self.campaign_profile.tutorials_enabled:
+                return
+            if key in self.campaign_profile.tutorial_seen:
+                return
             self.campaign_profile.tutorial_seen.add(key)
             save_campaign(self.campaign_profile)
-            self._tutorial_pending = text
+        else:
+            if key in self._practice_tutorials_seen:
+                return
+            self._practice_tutorials_seen.add(key)
+        self._tutorial_pending = text
+
+    def _maybe_inject_battle_tutorials(self) -> list:
+        """Return ticker steps for any first-time battle tutorials that should now fire."""
+        if not self._is_single_player() or not self.battle:
+            return []
+        if self.campaign_profile and not self.campaign_profile.tutorials_enabled:
+            return []
+        seen = (self.campaign_profile.tutorial_seen
+                if self.campaign_profile else self._practice_tutorials_seen)
+        steps = []
+        all_units = self.battle.team1.members + self.battle.team2.members
+        if "status_condition" not in seen and any(u.statuses for u in all_units):
+            steps.append({"k": "status_condition_tutorial"})
+        if "stat_mod" not in seen and any(u.buffs or u.debuffs for u in all_units):
+            steps.append({"k": "stat_mod_tutorial"})
+        return steps
 
     # ─────────────────────────────────────────────────────────────────────────
     # LAN HELPERS
@@ -914,6 +939,34 @@ class Game:
                 # Pause the ticker until the popup is dismissed
                 self._tk_btn_label = "__tutorial__"
 
+        elif k == "action_selection_tutorial":
+            self._maybe_show_tutorial(
+                "action_selection",
+                "Each adventurer can select one action each turn: using an ability, "
+                "using an item, or swapping. You can only swap once per round, though "
+                "abilities and items that let you swap ignore that limit.")
+            if self._tutorial_pending:
+                self._tk_btn_label = "__tutorial__"
+
+        elif k == "status_condition_tutorial":
+            self._maybe_show_tutorial(
+                "status_condition",
+                "Adventurers can be inflicted with status conditions from a variety of effects."
+                "Status conditions of the same type do not stack, but an adventurer "
+                "can have any number of different status conditions, most always lasting for "
+                "2 rounds. Hover over a status condition to see what it does!")
+            if self._tutorial_pending:
+                self._tk_btn_label = "__tutorial__"
+
+        elif k == "stat_mod_tutorial":
+            self._maybe_show_tutorial(
+                "stat_mod",
+                "An adventurer's stats can be buffed or debuffed by a variety of effects. "
+                "Temporary stat buffs and debuffs do not stack, but multiple stats can be "
+                "buffed or debuffed at once.")
+            if self._tutorial_pending:
+                self._tk_btn_label = "__tutorial__"
+
         elif k == "select":
             player = step["player"]
             self._tk_msg = f"P{player} is selecting their actions..."
@@ -986,6 +1039,8 @@ class Game:
             if self.battle.winner:
                 inject.append({"k": "battle_end"})
                 self._tk.clear()   # discard any remaining steps (text, btn, next_round)
+            else:
+                inject += self._maybe_inject_battle_tutorials()
             self._tk[0:0] = inject
 
         elif k == "next_round":
@@ -1036,6 +1091,7 @@ class Game:
         if self.battle.winner:
             inject.append({"k": "battle_end"})
         else:
+            inject += self._maybe_inject_battle_tutorials()
             inject.append({"k": "resolve_action"})
         self._tk[0:0] = inject
 
@@ -1089,6 +1145,8 @@ class Game:
         # ── Init player selects and resolves ──────────────────────────────────
         steps.append({"k": "text",
                        "msg": f"P{init} is selecting their actions.", "dur": 2.0})
+        if rnd == 1 and not self._is_ai_player(init):
+            steps.append({"k": "action_selection_tutorial"})
         steps.append({"k": "select", "player": init})
         steps.append({"k": "init_resolve", "player": init})
         steps.append({"k": "resolve_action"})
@@ -1104,6 +1162,8 @@ class Game:
         # ── Second player selects and resolves ────────────────────────────────
         steps.append({"k": "text",
                        "msg": f"P{second} is selecting their actions.", "dur": 2.0})
+        if rnd == 1 and not self._is_ai_player(second):
+            steps.append({"k": "action_selection_tutorial"})
         steps.append({"k": "select", "player": second})
         steps.append({"k": "init_resolve", "player": second})
         steps.append({"k": "resolve_action"})
@@ -2562,24 +2622,6 @@ class Game:
                 self.current_is_extra = is_extra
                 self.pending_action = None
                 self.selection_sub = "pick_action"
-                if not is_extra:
-                    if n_queued == 0:
-                        self._maybe_show_tutorial(
-                            "action_selection",
-                            "Each adventurer can select one action each turn: using an ability, "
-                            "using an item, or swapping. You can only swap once per round, though "
-                            "abilities and items that let you swap ignore that limit.")
-                    elif n_queued >= 1:
-                        # Find the most recently queued action
-                        last_queued = None
-                        for (u, ie) in self.selection_order:
-                            if not ie and u.queued is not None:
-                                last_queued = u.queued
-                        if last_queued and last_queued.get("type") == "ability":
-                            self._maybe_show_tutorial(
-                                "ability_selected",
-                                "Abilities change their effects depending on whether the user is "
-                                "frontline or backline when they resolve.")
                 return
         # All units have actions queued → done with this player
         self._finish_selection()
@@ -2589,6 +2631,13 @@ class Game:
         if self.phase.startswith("extra_action_p"):
             self._resolve_stitch_extra_and_continue()
         else:
+            if not self.current_is_extra:
+                just_queued = self.current_actor.queued
+                if just_queued and just_queued.get("type") == "ability":
+                    self._maybe_show_tutorial(
+                        "ability_selected",
+                        "Abilities change their effects depending on whether the user is "
+                        "frontline or backline when they resolve.")
             self._advance_selection()
 
     def _swap_queued_this_turn(self):
