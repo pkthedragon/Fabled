@@ -3822,6 +3822,12 @@ class Game:
 _orig_handle_click = Game.handle_click
 
 def _patched_handle_click(self, pos):
+    if self._tutorial_pending:
+        self._tutorial_pending = None
+        if self._tk_btn_label == "__tutorial__":
+            self._tk_btn_label = None
+            self._tk_btn_rect = None
+        return
     if self.phase == "battle":
         btn = getattr(self, "_tk_btn_rect", None)
         if btn and btn.collidepoint(pos):

@@ -403,7 +403,7 @@ MISSION_TABLE: Dict[int, MissionDef] = {
     ),
     6: MissionDef(
         mission_id=6,
-        name="The Witch Hunt",
+        name="The Drowned Witch",
         quest_range=(19, 22),
         level_range=(19, 22),
         description="You recieved a tip from a drunk fisherman that a witch under a lake had a piece of the Dragon Jewel. Fortunately, you'd never hire adventurers who couldn't swim.",

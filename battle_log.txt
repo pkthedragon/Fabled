@@ -1,43 +1,44 @@
 ======================================================================
-FABLED BATTLE LOG  —  2026-03-13 05:31:03
+FABLED BATTLE LOG  —  2026-03-13 13:00:55
 ======================================================================
 
 
 ────────────────────────────────────────────────────────────
 TEAM COMPOSITIONS
 ────────────────────────────────────────────────────────────
+AI archetype: Shock Punish
 Player 1:
-  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
-    Talent: Red and Wolf
-    Sig:    Crimson Fury  (passive=False)
-    Basics: Strike, Rend
-    Item:   Family Seal
-  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
-    Talent: Keen Eye
-    Sig:    Snipe Shot  (passive=False)
-    Basics: Hawkshot, Volley
-    Item:   Health Potion
+  [front] Green Knight (Noble)  HP=275  ATK=60  DEF=60  SPD=20
+    Talent: Challenge Accepted
+    Sig:    Hero's Bargain  (passive=False)
+    Basics: Summons, Decree
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Sucker Punch, Post Bounty
+    Item:   Misericorde
   [back_right] Aldric, Lost Lamb (Cleric)  HP=230  ATK=45  DEF=60  SPD=35
     Talent: All-Caring
-    Sig:    Benefactor  (passive=True)
-    Basics: Heal, Bless
-    Item:   Healing Tonic
+    Sig:    Sanctuary  (passive=True)
+    Basics: Protection, Medic
+    Item:   Heart Amulet
 Player 2:
   [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
     Talent: Silver Aegis
-    Sig:    Shimmering Valor  (passive=False)
-    Basics: Shield Bash, Condemn
-    Item:   —
-  [back_left] Knight Warden (Warden)  HP=200  ATK=60  DEF=65  SPD=25
-    Talent: —
-    Sig:    —  (passive=True)
-    Basics: Shield Bash, Condemn
-    Item:   —
-  [back_right] Holy Cleric (Cleric)  HP=185  ATK=55  DEF=45  SPD=35
-    Talent: —
-    Sig:    —  (passive=True)
-    Basics: Heal, Bless
-    Item:   —
+    Sig:    Knight's Challenge  (passive=False)
+    Basics: Shield Bash, Stalwart
+    Item:   Spiked Mail
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Family Seal
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Tempus Fugit  (passive=False)
+    Basics: Thunder Call, Arcane Wave
+    Item:   Lightning Boots
 
 ────────────────────────────────────────────────────────────
 BATTLE START
@@ -48,37 +49,18 @@ ROUND 1
 ────────────────────────────────────────────────────────────
 Round 1 — P2 has initiative.
 P1 receives a free formation swap.
-    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] INITIATIVE: P1 FL=Green Knight spd=20  vs  P2 FL=Sir Roland spd=30  →  P2 acts first
     [T] ROUND 1 STATE SNAPSHOT:
-    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
-    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=65(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=45(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
     [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
     [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Knight Warden[back_left] HP=200/200 ATK=60(base=60) DEF=65(base=65) SPD=25(base=25)
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-    [T]   P2 Holy Cleric[back_right] HP=185/185 ATK=55(base=55) DEF=45(base=45) SPD=35(base=35)
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
-P1 passed on free swap.
-[Queued] Sir Roland: Condemn → Risa Redcloak
-[Queued] Holy Cleric: Bless → Sir Roland
-[Queued] Knight Warden: Condemn → Risa Redcloak
-Sir Roland: Condemn → Risa Redcloak
-    [T] ACTION P2 Sir Roland[front]: Condemn → Risa Redcloak
-    [T] DMGCALC [Condemn] Sir Roland[front] → Risa Redcloak[front]
-    [T]   power=40
-    [T]   atk=40 def=60 raw=26.67 ceil=27
-    [T]   FINAL_DMG=27
-Sir Roland uses Condemn on Risa Redcloak for 27 damage.
-    [T] HPCHANGE Risa Redcloak: 250 → 223  (-27)
-  Risa Redcloak loses -10 Attack for 2 rounds.
-Holy Cleric: Bless → Sir Roland
-    [T] ACTION P2 Holy Cleric[back_right]: Bless → Sir Roland
-  Sir Roland is Guarded for 2 rounds.
-Knight Warden: Condemn → Risa Redcloak
-    [T] ACTION P2 Knight Warden[back_left]: Condemn → Risa Redcloak
-  Risa Redcloak loses -10 Attack for 2 rounds.
-Player 2 concedes. Player 1 wins!
+Player 1 concedes. Player 2 wins!
