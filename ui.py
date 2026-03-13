@@ -2943,7 +2943,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     list_view = pygame.Rect(LIST_X, actual_list_y, LIST_W, actual_list_h)
     draw_rect_border(surf, list_view, PANEL, BORDER)
 
-    ITEM_H = 52 if active_tab == "adventurers" else 42
+    ITEM_H = 52
     content_h = len(list_items) * (ITEM_H + 4)
     scroll_max = max(0, content_h - actual_list_h + 8)
     scroll = max(0, min(scroll, scroll_max))
@@ -2979,14 +2979,19 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                 draw_text(surf, f"HP {item.hp}  ATK {item.attack}  DEF {item.defense}  SPD {item.speed}",
                           11, TEXT_DIM, r.x + 8, r.y + 38)
             elif active_tab == "basics":
-                tag = "  [passive]" if item.passive else ""
-                draw_text(surf, item.name + tag, 15, TEXT, r.x + 8, r.y + 6)
-                draw_text(surf, _item_cls or item.category.title(), 12, CLASS_TEXT_COLORS.get(_item_cls, TEXT_MUTED), r.x + 8, r.y + 24)
+                _btype = "Passive" if item.passive else "Active"
+                _bcol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
+                draw_text(surf, item.name, 15, TEXT, r.x + 8, r.y + 4)
+                draw_text(surf, _btype, 12, _bcol, r.x + 8, r.y + 20)
+                draw_text(surf, _item_cls or item.category.title(), 12,
+                          CLASS_TEXT_COLORS.get(_item_cls, TEXT_MUTED), r.x + 8, r.y + 34)
             else:
-                tag = "  [passive]" if item.passive else "  [active]"
-                draw_text(surf, item.name + tag, 15, TEXT, r.x + 8, r.y + 6)
+                _itype = "Passive" if item.passive else "Active"
+                _icol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
+                draw_text(surf, item.name, 15, TEXT, r.x + 8, r.y + 4)
+                draw_text(surf, _itype, 12, _icol, r.x + 8, r.y + 20)
                 draw_text(surf, item.description[:44] + ("…" if len(item.description) > 44 else ""),
-                          11, TEXT_MUTED, r.x + 8, r.y + 24)
+                          11, TEXT_MUTED, r.x + 8, r.y + 34)
         list_btns.append((r, i))
         y += ITEM_H + 4
     surf.set_clip(prev_clip)
@@ -3045,8 +3050,10 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                         15, CYAN, dx, dy)
             dy += 2
             for sig in avail_sigs:
-                tag = "  [passive]" if sig.passive else ""
-                dy = _dline(surf, sig.name + tag, 15, TEXT, dx, dy, indent=4)
+                dy = _dline(surf, sig.name, 15, TEXT, dx, dy, indent=4)
+                _stype = "Passive" if sig.passive else "Active"
+                _scol = TYPE_PASSIVE_COL if sig.passive else TYPE_ACTIVE_COL
+                dy = _dline(surf, _stype, 12, _scol, dx, dy, indent=12)
                 for prefix, mode in (("FL", sig.frontline), ("BL", sig.backline)):
                     lines = _mode_detail_lines(mode)
                     dy = _dline(surf, f"  {prefix}: {lines[0]}", 13, TEXT_DIM, dx, dy, indent=12, rich=True)
@@ -3068,9 +3075,11 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                 dy = _dline(surf, "Twist: (not yet unlocked)", 14, TEXT_MUTED, dx, dy)
 
         elif active_tab == "basics":
-            tag = "  [passive]" if item.passive else ""
-            draw_text(surf, item.name + tag, 26, TEXT, dx, dy)
+            draw_text(surf, item.name, 26, TEXT, dx, dy)
             dy += 34
+            _btype = "Passive" if item.passive else "Active"
+            _bcol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
+            dy = _dline(surf, _btype, 14, _bcol, dx, dy)
             _bab_cls = _basics_cls_map.get(item.id)
             if _bab_cls:
                 dy = _dline(surf, _bab_cls, 15, CLASS_TEXT_COLORS.get(_bab_cls, TEXT_MUTED), dx, dy)
@@ -3084,9 +3093,11 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                 dy += 4
 
         else:  # items
-            tag = "[passive]" if item.passive else "[active]"
-            draw_text(surf, f"{item.name}  {tag}", 26, TEXT, dx, dy)
+            draw_text(surf, item.name, 26, TEXT, dx, dy)
             dy += 34
+            _itype = "Passive" if item.passive else "Active"
+            _icol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
+            dy = _dline(surf, _itype, 14, _icol, dx, dy)
             for line in _wrap_text(item.description, 14, dw):
                 dy = _dline(surf, line, 14, TEXT_DIM, dx, dy, rich=True)
     else:
