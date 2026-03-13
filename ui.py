@@ -2796,7 +2796,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                  status_rects_out: list = None,
                  filters: dict = None) -> dict:
     """
-    Catalog screen — Adventurers / Basic Moves / Items tabs.
+    Catalog screen — Adventurers / Basic Abilities / Items tabs.
     filters: dict of active filter sets for the current tab, e.g.
              {"classes": {"Fighter"}, "damage_types": set()}
     Returns click dict with keys: back_btn, tab_btns, list_btns, scroll_max,
@@ -2811,7 +2811,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     draw_text(surf, "Guidebook", 40, TEXT, cx, 28, center=True)
 
     # ── Tabs ─────────────────────────────────────────────────────────────────
-    tab_labels = [("adventurers", "Adventurers"), ("basics", "Basic Moves"), ("items", "Items")]
+    tab_labels = [("adventurers", "Adventurers"), ("basics", "Basic Abilities"), ("items", "Items")]
     tab_w, tab_h = 200, 38
     tabs_x = cx - (len(tab_labels) * tab_w + (len(tab_labels) - 1) * 8) // 2
     tab_y = 65
@@ -2982,9 +2982,12 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                 _btype = "Passive" if item.passive else "Active"
                 _bcol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
                 draw_text(surf, item.name, 15, TEXT, r.x + 8, r.y + 4)
-                draw_text(surf, _btype, 12, _bcol, r.x + 8, r.y + 20)
-                draw_text(surf, _item_cls or item.category.title(), 12,
-                          CLASS_TEXT_COLORS.get(_item_cls, TEXT_MUTED), r.x + 8, r.y + 34)
+                _bcls_text = cls_label(_item_cls) if _item_cls else item.category.title()
+                _bcls_col = CLASS_TEXT_COLORS.get(_item_cls, TEXT_MUTED)
+                _bcls_rect = draw_text(surf, _bcls_text, 12, _bcls_col, r.x + 8, r.y + 20)
+                if _item_cls and status_rects_out is not None:
+                    status_rects_out.append((_bcls_rect, _item_cls))
+                draw_text(surf, _btype, 12, _bcol, r.x + 8, r.y + 34)
             else:
                 _itype = "Passive" if item.passive else "Active"
                 _icol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
@@ -3030,7 +3033,9 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
         if active_tab == "adventurers":
             # Name + class
             draw_text(surf, item.name, 26, TEXT, dx, dy)
-            _catdcr = draw_text(surf, cls_label(item.cls), 16, TEXT_MUTED, DETAIL_PX + DETAIL_PW - 20, dy + 4, right=True)
+            _catdcr = draw_text(surf, cls_label(item.cls), 16,
+                                CLASS_TEXT_COLORS.get(item.cls, TEXT_MUTED),
+                                DETAIL_PX + DETAIL_PW - 20, dy + 4, right=True)
             if status_rects_out is not None:
                 status_rects_out.append((_catdcr, item.cls))
             dy += 32
@@ -3076,14 +3081,18 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
 
         elif active_tab == "basics":
             draw_text(surf, item.name, 26, TEXT, dx, dy)
+            _bab_cls = _basics_cls_map.get(item.id)
+            if _bab_cls:
+                _bcls_rect = draw_text(surf, cls_label(_bab_cls), 16,
+                                       CLASS_TEXT_COLORS.get(_bab_cls, TEXT_MUTED),
+                                       DETAIL_PX + DETAIL_PW - 20, dy + 4, right=True)
+                if status_rects_out is not None:
+                    status_rects_out.append((_bcls_rect, _bab_cls))
             dy += 34
             _btype = "Passive" if item.passive else "Active"
             _bcol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
             dy = _dline(surf, _btype, 14, _bcol, dx, dy)
-            _bab_cls = _basics_cls_map.get(item.id)
-            if _bab_cls:
-                dy = _dline(surf, _bab_cls, 15, CLASS_TEXT_COLORS.get(_bab_cls, TEXT_MUTED), dx, dy)
-                dy += 4
+            dy += 4
             for prefix, mode in (("Frontline", item.frontline), ("Backline", item.backline)):
                 dy = _dline(surf, prefix + ":", 15, CYAN, dx, dy)
                 lines = _mode_detail_lines(mode)
