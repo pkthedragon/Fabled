@@ -3131,6 +3131,7 @@ class Game:
             self._last_story_team_btns = btns
 
         elif p == "pre_battle_edit":
+            _PRE_BATTLE_DETAIL_RECT = pygame.Rect(700, 80, 680, 760)
             # Use campaign-filtered roster/items when in campaign mode
             if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
                 active_items      = self._campaign_items
@@ -3186,7 +3187,9 @@ class Game:
                     break
             if self._detail_unit is not None:
                 _dh = []
-                close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
+                close_btn = draw_combatant_detail(surf, self._detail_unit,
+                                                  rect=_PRE_BATTLE_DETAIL_RECT,
+                                                  status_rects_out=_dh)
                 self._detail_close_btn = close_btn
                 for _r, _kind in _dh:
                     if _r.collidepoint(mouse_pos):
