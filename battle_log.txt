@@ -1,5 +1,5 @@
 ======================================================================
-FABLED BATTLE LOG  —  2026-03-12 21:51:59
+FABLED BATTLE LOG  —  2026-03-12 22:29:09
 ======================================================================
 
 
@@ -10,13 +10,13 @@ Player 1:
   [front] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
     Talent: On Time!
     Sig:    Rabbit Hole  (passive=False)
-    Basics: Breakthrough, Arcane Wave
+    Basics: Arcane Wave, Breakthrough
     Item:   Arcane Focus
   [back_left] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
     Talent: Silver Aegis
     Sig:    Banner of Command  (passive=True)
-    Basics: Stalwart, Slam
-    Item:   Crafty Shield
+    Basics: Shield Bash, Stalwart
+    Item:   Healing Tonic
   [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
     Talent: Sugar Rush
     Sig:    Crumb Trail  (passive=False)
@@ -26,7 +26,7 @@ Player 2:
   [front] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
     Talent: Growing Pains
     Sig:    Wooden Wallop  (passive=False)
-    Basics: Blood Pact, Dark Grasp
+    Basics: Dark Grasp, Blood Pact
     Item:   Smoke Bomb
   [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
     Talent: Purifying Flame
@@ -62,3 +62,133 @@ P2 receives a free formation swap.
     [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
     [T]   P2 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=65(base=60) SPD=35(base=35)
     [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+[Queued] March Hare: Swap with Sir Roland
+[Queued] Witch-Hunter Gretel: Crumb Trail → Witch-Hunter Gretel
+[Queued] Sir Roland: Shield Bash → Pinocchio, Cursed Puppet
+March Hare: Swap with Sir Roland
+    [T] ACTION P1 March Hare[front]: swap ↔ Sir Roland
+March Hare and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: March Hare is Guarded.
+Witch-Hunter Gretel: Crumb Trail → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Crumb Trail → Witch-Hunter Gretel
+  Witch-Hunter Gretel drops a Crumb Trail at back_right.
+Sir Roland: Shield Bash → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Pinocchio, Cursed Puppet
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=30
+Sir Roland uses Shield Bash on Pinocchio, Cursed Puppet for 30 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 190  (-30)
+  All allies are Guarded for 2 rounds.
+Pinocchio, Cursed Puppet: Blood Pact → Sir Roland
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Blood Pact → Sir Roland
+  Pinocchio, Cursed Puppet loses 20 HP.
+  Pinocchio, Cursed Puppet gains 2 Malice (Blood Pact). [2/6]
+Aldric, Lost Lamb: Heal → Pinocchio, Cursed Puppet
+    [T] ACTION P2 Aldric, Lost Lamb[back_right]: Heal → Pinocchio, Cursed Puppet
+Aldric, Lost Lamb heals Pinocchio, Cursed Puppet.
+  Pinocchio, Cursed Puppet heals 50 HP.
+  All-Caring: Pinocchio, Cursed Puppet is Guarded for 2 rounds.
+Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[back_left]: skip/recharge
+Matchstick Liesl skips.
+─── End of Round ───
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[guard(2r)]
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[guard(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 statuses=[guard(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Aldric, Lost Lamb[back_right] HP=230/230 statuses=[-]
+    [T] STATUS_TICK March Hare: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: guard → 1r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] BUFF_EXPIRED Pinocchio, Cursed Puppet: defense+5
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [3/6]
+    [T] BUFF_EXPIRED Matchstick Liesl: defense+5
+  Pinocchio, Cursed Puppet heals 0 HP.
+    [T] BUFF_EXPIRED Aldric, Lost Lamb: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=80(base=65) DEF=70(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=65(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+Pinocchio, Cursed Puppet: Blood Pact → Sir Roland
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Blood Pact → Sir Roland
+  Pinocchio, Cursed Puppet loses 20 HP.
+  Pinocchio, Cursed Puppet gains 2 Malice (Blood Pact). [5/6]
+Aldric, Lost Lamb: Heal → Pinocchio, Cursed Puppet
+    [T] ACTION P2 Aldric, Lost Lamb[back_right]: Heal → Pinocchio, Cursed Puppet
+Aldric, Lost Lamb heals Pinocchio, Cursed Puppet.
+  Pinocchio, Cursed Puppet heals 20 HP.
+  All-Caring: Pinocchio, Cursed Puppet is Guarded for 2 rounds.
+Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[back_left]: skip/recharge
+Matchstick Liesl skips.
+[Queued] Sir Roland: Shield Bash → Pinocchio, Cursed Puppet
+[Queued] Sir Roland: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Crumb Trail → Witch-Hunter Gretel
+[Queued] March Hare: Rabbit Hole → Sir Roland
+Sir Roland: Swap with Witch-Hunter Gretel
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Witch-Hunter Gretel
+Sir Roland and Witch-Hunter Gretel swap positions.
+  Banner of Command: Witch-Hunter Gretel is Guarded.
+  Sir Roland heals 0 HP.
+  Sir Roland picks up the Crumb Trail! (+40 HP)
+Witch-Hunter Gretel: Crumb Trail → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Crumb Trail → Witch-Hunter Gretel
+  Witch-Hunter Gretel retargets to Pinocchio, Cursed Puppet after swapping to front.
+    [T] DMGCALC [Crumb Trail] Witch-Hunter Gretel[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=75 (base=55)
+    [T]   atk=80 def=80 raw=75.00 ceil=75
+    [T]   FINAL_DMG=60
+Witch-Hunter Gretel uses Crumb Trail on Pinocchio, Cursed Puppet for 60 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 160  (-60)
+March Hare: Rabbit Hole → Sir Roland
+    [T] ACTION P1 March Hare[back_left]: Rabbit Hole → Sir Roland
+March Hare and Sir Roland swap positions.
+  Banner of Command: March Hare is Guarded.
+─── End of Round ───
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 March Hare[back_right] HP=190/190 statuses=[guard(2r)]
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 statuses=[guard(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=160/220 statuses=[guard(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Aldric, Lost Lamb[back_right] HP=230/230 statuses=[-]
+    [T] STATUS_TICK March Hare: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] STATUS_TICK Witch-Hunter Gretel: guard → 1r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] BUFF_EXPIRED Pinocchio, Cursed Puppet: defense+5
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [6/6]
+    [T] BUFF_EXPIRED Matchstick Liesl: defense+5
+  Pinocchio, Cursed Puppet heals 43 HP.
+  All-Caring: Pinocchio, Cursed Puppet is Guarded for 2 rounds.
+    [T] BUFF_EXPIRED Aldric, Lost Lamb: defense+5

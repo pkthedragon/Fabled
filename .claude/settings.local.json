@@ -49,7 +49,10 @@
       "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -c \"import main; print\\('OK'\\)\")",
       "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m PyInstaller --onefile --windowed --name Fabled --distpath . main.py 2>&1 | tail -8)",
       "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m py_compile main.py data.py logic.py ui.py 2>&1)",
-      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && pyinstaller Fabled.spec --distpath \".\" 2>&1)"
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && pyinstaller Fabled.spec --distpath \".\" 2>&1)",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m py_compile main.py 2>&1 && pyinstaller Fabled.spec --distpath \".\" 2>&1 | tail -5)",
+      "Bash(cd \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\" && python -m py_compile logic.py 2>&1 && pyinstaller Fabled.spec --distpath \".\" 2>&1 | tail -5)",
+      "Bash(grep -rn \"^WIDTH\\\\|^HEIGHT\\\\|^TITLE\\\\|^FPS\" \"C:\\\\Users\\\\prana\\\\OneDrive\\\\Desktop\\\\GitHub\\\\Fabled\"/*.py | head -20)"
     ]
   }
 }

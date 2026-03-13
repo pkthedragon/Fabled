@@ -399,6 +399,7 @@ def get_legal_targets(
         "falling_kingdom", "feign_weakness_retaliate_45", "last_laugh",
         "crumb_trail_drop", "blue_faerie_boon", "turn_to_foam", "misappropriate_front",
         "fated_duel", "severed_tether", "happily_ever_after",
+        "blood_pact_front",
     }
     # Specials that explicitly target allies.
     _ALLY_SPECIALS = {

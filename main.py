@@ -67,7 +67,19 @@ from campaign_save import save_campaign, load_campaign
 class Game:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        # Fullscreen at native resolution; all game logic uses the 1400×900 canvas.
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        self._native_w, self._native_h = self.screen.get_size()
+        self._canvas = pygame.Surface((WIDTH, HEIGHT))
+        # Pre-compute scale and letterbox offset.
+        scale = min(self._native_w / WIDTH, self._native_h / HEIGHT)
+        self._scale = scale
+        scaled_w = int(WIDTH  * scale)
+        scaled_h = int(HEIGHT * scale)
+        self._canvas_offset = (
+            (self._native_w - scaled_w) // 2,
+            (self._native_h - scaled_h) // 2,
+        )
         pygame.display.set_caption(TITLE)
         self.clock = pygame.time.Clock()
 
@@ -953,9 +965,16 @@ class Game:
             self.phase = "result"
 
     # ─────────────────────────────────────────────────────────────────────────
+    def _to_logical(self, screen_pos):
+        """Translate a screen-space position to the 1400×900 logical canvas space."""
+        ox, oy = self._canvas_offset
+        lx = (screen_pos[0] - ox) / self._scale
+        ly = (screen_pos[1] - oy) / self._scale
+        return (int(lx), int(ly))
+
     def run(self):
         while True:
-            mouse_pos = pygame.mouse.get_pos()
+            mouse_pos = self._to_logical(pygame.mouse.get_pos())
             events = pygame.event.get()
             for e in events:
                 if e.type == pygame.QUIT:
@@ -975,6 +994,13 @@ class Game:
             dt = self.clock.tick(FPS) / 1000.0
             self._tk_advance(dt)
             self.draw(mouse_pos)
+
+            # Scale the logical canvas to fill the screen (letterboxed if aspect differs).
+            scaled_w = int(WIDTH  * self._scale)
+            scaled_h = int(HEIGHT * self._scale)
+            scaled = pygame.transform.scale(self._canvas, (scaled_w, scaled_h))
+            self.screen.fill((0, 0, 0))
+            self.screen.blit(scaled, self._canvas_offset)
             pygame.display.flip()
 
     # ─────────────────────────────────────────────────────────────────────────
@@ -1140,6 +1166,15 @@ class Game:
 
         elif p == "select_actions":
             self._handle_action_select_click(pos)
+
+        elif p == "lan_waiting":
+            if self.battle:
+                if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+                    self._detail_unit = None
+                    return
+                unit = self._unit_at_pos(pos)
+                if unit:
+                    self._detail_unit = None if self._detail_unit is unit else unit
 
         elif p == "result":
             menu_btn, quit_btn = self._last_result_btns
@@ -1794,10 +1829,14 @@ class Game:
         apply_passive_stats(team1, self.battle)
         apply_passive_stats(team2, self.battle)
         self.phase = "battle"
-        self._tk = [
-            {"k": "text", "msg": "Battle begins!", "dur": 2.0},
-            {"k": "next_round"},
-        ]
+        # LAN clients are driven entirely by host state_updates — they never run the ticker.
+        if self.game_mode == "lan_client":
+            self._tk = []
+        else:
+            self._tk = [
+                {"k": "text", "msg": "Battle begins!", "dur": 2.0},
+                {"k": "next_round"},
+            ]
 
     def _enter_round_start(self):
         """Begin a new round: check for extra swap phase or go straight to action selection."""
@@ -2365,7 +2404,7 @@ class Game:
     # ─────────────────────────────────────────────────────────────────────────
 
     def draw(self, mouse_pos):
-        surf = self.screen
+        surf = self._canvas
         p = self.phase
 
         if p == "menu":
@@ -2575,6 +2614,11 @@ class Game:
                 draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
                 draw_text(surf, "Waiting for opponent...", 24, TEXT_DIM,
                           WIDTH // 2, HEIGHT - 70, center=True)
+                if self._detail_unit is not None:
+                    close_btn = draw_combatant_detail(surf, self._detail_unit)
+                    self._detail_close_btn = close_btn
+                else:
+                    self._detail_close_btn = None
             else:
                 surf.fill(BG)
                 draw_text(surf, "Waiting for opponent...", 28, TEXT_DIM,
