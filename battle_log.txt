@@ -1,5 +1,5 @@
 ======================================================================
-FABLED BATTLE LOG  —  2026-03-13 14:42:09
+FABLED BATTLE LOG  —  2026-03-13 21:40:04
 ======================================================================
 
 
@@ -62,4 +62,23 @@ P1 receives a free formation swap.
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
     [T]   P2 Holy Cleric[back_right] HP=185/185 ATK=55(base=55) DEF=45(base=45) SPD=35(base=35)
     [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Sir Roland: Condemn → Risa Redcloak
+[Queued] Holy Cleric: Bless → Sir Roland
+[Queued] Knight Warden: Condemn → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Condemn → Risa Redcloak
+Sir Roland uses Condemn on Risa Redcloak.
+    [T] DMGCALC [Condemn] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+  Risa Redcloak takes 27 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 223  (-27)
+  Risa Redcloak loses -10 Attack for 2 rounds.
+    [T] ACTION P2 Holy Cleric[back_right]: Bless → Sir Roland
+Holy Cleric uses Bless on Sir Roland.
+  Sir Roland is Guarded for 2 rounds.
+    [T] ACTION P2 Knight Warden[back_left]: Condemn → Risa Redcloak
+Knight Warden uses Condemn on Risa Redcloak.
+[Queued] Risa Redcloak: Crimson Fury → Sir Roland
 Player 1 concedes. Player 2 wins!

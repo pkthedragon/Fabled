@@ -2,22 +2,19 @@
 
 Writes every game-visible log entry PLUS extra technical details
 (damage formula steps, HP changes, stat values, status ticks, etc.)
-to battle_log.txt in the project folder.  Overwritten each battle.
+to battle_log.txt in the user's Saved Games folder. Overwritten each battle.
 """
 import datetime
 import os
-import sys
 
 _f = None
 
 
 def _log_path() -> str:
-    """Return the path for battle_log.txt next to the exe (or script) in all cases."""
-    if getattr(sys, "frozen", False):
-        # Running as a PyInstaller bundle — write beside the .exe, not in the temp dir
-        base = os.path.dirname(sys.executable)
-    else:
-        base = os.path.dirname(os.path.abspath(__file__))
+    """Return the path for battle_log.txt under the per-user Saved Games folder."""
+    home = os.path.expanduser("~")
+    base = os.path.join(home, "Saved Games", "Fabled")
+    os.makedirs(base, exist_ok=True)
     return os.path.join(base, "battle_log.txt")
 
 

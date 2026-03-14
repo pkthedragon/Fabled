@@ -58,7 +58,7 @@ from ui import (
     SLOT_RECTS_P1, SLOT_RECTS_P2, LOG_RECT, ACTION_PANEL_RECT, BATTLE_DETAIL_RECT,
 )
 from campaign_data import QUEST_TABLE, MISSION_TABLE, build_quest_enemy_team
-from campaign_save import save_campaign, load_campaign
+from campaign_save import save_campaign, load_campaign, get_campaign_save_path
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -373,9 +373,13 @@ class Game:
     def _is_single_player(self):
         return self.game_mode in ("single_player", "campaign")
 
+    def _tutorials_allowed(self):
+        """Tutorial popups are allowed in solo flows, including the tavern editor."""
+        return self.game_mode in ("single_player", "campaign", "teambuilder")
+
     def _maybe_show_tutorial(self, key: str, text: str):
         """Show a tutorial popup if it hasn't been seen yet. Only fires in single-player/campaign."""
-        if not self._is_single_player():
+        if not self._tutorials_allowed():
             return
         if self.campaign_profile:
             if not self.campaign_profile.tutorials_enabled:
@@ -392,7 +396,7 @@ class Game:
 
     def _maybe_inject_battle_tutorials(self) -> list:
         """Return ticker steps for any first-time battle tutorials that should now fire."""
-        if not self._is_single_player() or not self.battle:
+        if not self._tutorials_allowed() or not self.battle:
             return []
         if self.campaign_profile and not self.campaign_profile.tutorials_enabled:
             return []
@@ -550,6 +554,19 @@ class Game:
             msg.update(extra)
         self._lan_send(msg)
 
+    def _lan_action_state_extra(self) -> dict:
+        """Return LAN metadata for the current resolved action."""
+        actor = self._action_step_unit
+        if not actor or not self.battle:
+            return {}
+        actor_player = 1 if actor in self.battle.team1.members else 2
+        return {
+            "action_step_player": self._action_step_player,
+            "action_log_start": self._action_log_start,
+            "action_actor_player": actor_player,
+            "action_actor_slot": actor.slot,
+        }
+
     def _lan_tick(self):
         """Called every frame: drain incoming messages and check connection status."""
         if not self._lan:
@@ -689,6 +706,13 @@ class Game:
             new_log = msg.get("log")
             if new_log is not None:
                 self.battle.log = new_log
+            self._action_step_player = msg.get("action_step_player", self._action_step_player)
+            self._action_log_start = msg.get("action_log_start", self._action_log_start)
+            actor_player = msg.get("action_actor_player")
+            actor_slot = msg.get("action_actor_slot")
+            if actor_player in (1, 2) and actor_slot:
+                team = self.battle.team1 if actor_player == 1 else self.battle.team2
+                self._action_step_unit = next((unit for unit in team.members if unit.slot == actor_slot), None)
             # Update phase
             new_phase = msg.get("phase")
             if not new_phase:
@@ -2359,8 +2383,9 @@ class Game:
     def _reset_player_data(self):
         """Wipe all campaign progress and saved teams, then reload."""
         import os
-        if os.path.exists("campaign_save.json"):
-            os.remove("campaign_save.json")
+        save_path = get_campaign_save_path()
+        if os.path.exists(save_path):
+            os.remove(save_path)
         self.campaign_profile = load_campaign()
         # Re-apply starter quest rewards (no badge for starting gear)
         apply_quest_rewards(self.campaign_profile, 0, notify=False)
@@ -2935,12 +2960,12 @@ class Game:
         self._begin_step_resolution(player_num)
 
     def _begin_step_resolution(self, player_num):
-        """Resolve player_num's queued actions. Steps through one at a time unless fast_resolution or LAN."""
+        """Resolve player_num's queued actions. Steps through one at a time unless fast_resolution."""
         self._action_step_player = player_num
         self.battle.log_add(f"─── P{player_num} Actions ───")
 
-        if self._is_lan() or (self.campaign_profile and self.campaign_profile.fast_resolution):
-            # LAN/Fast mode: resolve everything at once
+        if self.campaign_profile and self.campaign_profile.fast_resolution:
+            # Fast mode: resolve everything at once
             resolve_player_turn(self.battle, player_num)
             self._finish_step_resolution()
             return
@@ -2980,6 +3005,8 @@ class Game:
             self._action_step_player = player_num
             self.battle_log_scroll = 0  # scroll to bottom to show latest
             self.phase = "action_result"
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase="action_result", extra=self._lan_action_state_extra())
             return
         # All actions done — run finish logic
         self._finish_step_resolution()
@@ -2991,6 +3018,8 @@ class Game:
 
         if self.battle.winner:
             self.phase = "resolve_done"
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase="resolve_done")
             return
 
         # Detect Stitch In Time extras for this player
@@ -3006,6 +3035,8 @@ class Game:
                 self._start_next_stitch_extra()
                 return
             self.phase = "resolve_done"
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase="resolve_done")
         else:
             if self._extra_action_queue:
                 self._start_next_stitch_extra()
@@ -3014,6 +3045,8 @@ class Game:
                 self.battle.log_add("─── End of Round ───")
                 do_end_round(self.battle)
             self.phase = "resolve_done"
+            if self.game_mode == "lan_host":
+                self._lan_send_state(phase="resolve_done")
 
     def _start_next_stitch_extra(self):
         """Start the next pending Stitch In Time extra-action selection."""
@@ -3859,6 +3892,11 @@ class Game:
             else:
                 msg = f"{actor_name} acted."
             draw_text(surf, msg, 18, GREEN, WIDTH // 2, HEIGHT - 90, center=True)
+            if self.game_mode == "lan_client":
+                self._last_resolve_btn = None
+                draw_text(surf, "Waiting for host to continue...", 16, TEXT_MUTED,
+                          WIDTH // 2, HEIGHT - 56, center=True)
+                return
             cont_btn = pygame.Rect(WIDTH // 2 - 100, HEIGHT - 60, 200, 44)
             draw_button(surf, cont_btn, "Next Action →", mouse_pos, size=18,
                         normal=BLUE_DARK, hover=BLUE)
@@ -3876,6 +3914,11 @@ class Game:
                 btn_label = "Continue → Next Round"
                 msg = "Round complete! Click Continue for the next round."
             draw_text(surf, msg, 20, GREEN, WIDTH // 2, HEIGHT - 90, center=True)
+            if self.game_mode == "lan_client":
+                self._last_resolve_btn = None
+                draw_text(surf, "Waiting for host to continue...", 16, TEXT_MUTED,
+                          WIDTH // 2, HEIGHT - 56, center=True)
+                return
             cont_btn = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 60, 260, 44)
             draw_button(surf, cont_btn, btn_label, mouse_pos, size=18,
                         normal=BLUE_DARK, hover=BLUE)

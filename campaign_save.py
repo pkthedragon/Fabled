@@ -6,11 +6,38 @@ import os
 
 from models import CampaignProfile
 
-SAVE_PATH = "campaign_save.json"
+
+LEGACY_SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "campaign_save.json")
+
+
+def _saved_games_dir() -> str:
+    """Return Fabled's per-user save directory under Saved Games."""
+    home = os.path.expanduser("~")
+    saved_games = os.path.join(home, "Saved Games", "Fabled")
+    os.makedirs(saved_games, exist_ok=True)
+    return saved_games
+
+
+def get_campaign_save_path() -> str:
+    """Return the full path to the campaign save file."""
+    return os.path.join(_saved_games_dir(), "campaign_save.json")
+
+
+def _migrate_legacy_save() -> str:
+    """Move a save from the game folder into Saved Games on first run."""
+    save_path = get_campaign_save_path()
+    if os.path.exists(save_path) or not os.path.exists(LEGACY_SAVE_PATH):
+        return save_path
+    try:
+        os.replace(LEGACY_SAVE_PATH, save_path)
+    except OSError:
+        pass
+    return save_path
 
 
 def save_campaign(profile: CampaignProfile) -> None:
-    """Serialize the profile to JSON and write to SAVE_PATH."""
+    """Serialize the profile to JSON and write to the per-user save path."""
+    save_path = get_campaign_save_path()
     data = {
         "recruited":         list(profile.recruited),
         "sig_tier":          profile.sig_tier,
@@ -29,16 +56,17 @@ def save_campaign(profile: CampaignProfile) -> None:
         "fast_resolution":   profile.fast_resolution,
         "new_unlocks":       list(profile.new_unlocks),
     }
-    with open(SAVE_PATH, "w", encoding="utf-8") as f:
+    with open(save_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
 
 def load_campaign() -> CampaignProfile:
-    """Load a CampaignProfile from SAVE_PATH.  Returns a fresh profile if the file is missing."""
-    if not os.path.exists(SAVE_PATH):
+    """Load a CampaignProfile from the per-user save path."""
+    save_path = _migrate_legacy_save()
+    if not os.path.exists(save_path):
         return CampaignProfile()
     try:
-        with open(SAVE_PATH, "r", encoding="utf-8") as f:
+        with open(save_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         profile = CampaignProfile()
         profile.recruited                = set(data.get("recruited", list(profile.recruited)))
