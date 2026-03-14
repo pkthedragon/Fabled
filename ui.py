@@ -177,7 +177,7 @@ def draw_panel(surf, rect, title=None, title_size=20):
 STATUS_TOOLTIPS = {
     "burn":      "Burn: takes 10% max HP damage at end of each round.",
     "root":      "Root: cannot perform the Swap action.",
-    "shock":     "Shock: ranged units must recharge after 2 ability uses instead of 3.",
+    "shock":     "Shock: this adventurer takes 20% recoil on attacks.",
     "weaken":    "Weaken: deals 20% less damage.",
     "expose":    "Expose: takes 20% more damage.",
     "guard":     "Guard: takes 20% less damage.",
@@ -518,7 +518,7 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
     if unit.must_recharge:
         draw_text(surf, "RECHARGE", 13, YELLOW, x, y)
     elif hasattr(unit, 'ranged_uses') and (unit.role == "ranged" or (unit.role == "warlock" and unit.slot != SLOT_FRONT)):
-        limit = 2 if unit.has_status("shock") else 3
+        limit = 3
         draw_text(surf, f"uses {unit.ranged_uses}/{limit}", 12, TEXT_MUTED, x, y)
 
 
@@ -2036,8 +2036,8 @@ SPECIAL_DESCRIPTIONS: dict = {
     "hypnotic_aura_back":              "Shocked enemies' abilities are redirected to Hunold's frontline",
     "devils_due":                      "Hunold uses one of his own abilities with spread, ignoring melee restriction and spread penalty",
     # Reynard
-    "feign_weakness_retaliate_55":     "retaliate 55 power vs incoming attackers next round",
     "feign_weakness_retaliate_45":     "retaliate 45 power vs incoming attackers next round",
+    "feign_weakness_retaliate_40":     "retaliate 40 power vs incoming attackers",
     "last_laugh":                      "retaliate 65 power + steal 10 speed (2r) vs incoming attackers",
     "cutpurse_swap_frontline":         "swap Reynard with frontline ally",
     # Roland
@@ -2056,7 +2056,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     "unbreakable_defense":             "remove Porcus' statuses; double Defense for 2 rounds",
     # Lady
     "postmortem_passage":              "when ally is KO'd, they fire a 40-power attack at attacker",
-    "drown_dmg_bonus":                 "target takes +10 damage from all sources for 2 rounds",
+    "drown_dmg_bonus":                 "target takes +7 damage from all sources for 2 rounds",
     "lakes_gift_pool_front":           "ally gains Reflecting Pool (2r) and +10 Atk (2r)",
     "lakes_gift_pool_back":            "ally gains Reflecting Pool (2r)",
     "journey_to_avalon":               "Lady is KO'd; revive one ally at 50% HP with Reflecting Pool (2r)",
@@ -2068,6 +2068,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     # March Hare
     "rabbit_hole_extra_action":        "March Hare gains an extra action next round",
     "rabbit_hole_swap":                "March Hare swaps with an ally",
+    "nebulous_ides_back":              "+20 power if March Hare swapped this round",
     "stitch_extra_action_now":         "March Hare gains an extra action this round",
     # Witch
     "toil_spread_status_right":        "spreads target's last status to enemy adjacent to their right",
@@ -2089,26 +2090,27 @@ SPECIAL_DESCRIPTIONS: dict = {
     "benefactor_front":                "healing effects restore 25% more HP",
     "benefactor_back":                 "healing effects restore 15% more HP",
     "sanctuary_front":                 "allies heal 1/10 max HP each round",
-    "sanctuary_back":                  "frontline ally heals 1/12 max HP each round",
+    "sanctuary_back":                  "frontline ally heals 1/10 max HP each round",
+    "repentance_front":                "next ability against target has 20% vamp (triggers All-Caring)",
     "redemption":                      "+100 max HP; Aldric heals 50 HP at end of round for 2 rounds",
     # Liesl
     "cinder_blessing_avg":             "sets Liesl and ally HP to the average of both",
     "flame_of_renewal":                "when Liesl is KO'd, allies heal 1/2 max HP + Purifying Flame",
     "cleansing_inferno_burn_boost":    "vamp increases to 60% against Burned targets",
     # Aurora
-    "toxin_purge_all":                 "remove all status conditions from Aurora or an ally",
+    "toxin_purge_all":                 "remove all status conditions from Aurora or an ally; heal 15 per removed",
     "toxin_purge_last":                "remove last inflicted status from Aurora or an ally",
-    "birdsong_front":                  "at end of round, cure last inflicted status on Aurora and allies",
-    "birdsong_back":                   "+5 Atk for 2r when Innocent Heart triggers (stacks up to x3)",
+    "birdsong_front":                  "when Innocent Heart triggers, gain a bird; Aurora abilities deal +10 damage per bird (up to x3)",
+    "birdsong_back":                   "end of round: cure Aurora if she has a bird, plus one more ally per additional bird clockwise",
     "deathlike_slumber":               "Innocent Heart effect x2; recipient dormant 2r; cure Aurora's statuses",
     # Noble basics
     "summons_swap":                  "swap with an ally (cannot be used on consecutive turns)",
     "command_front":                 "enemies that attacked user last round take +10 damage from ally abilities",
     "command_back":                  "enemies that attacked allies last round take +10 damage from user's abilities",
     # Prince Charming (Noble)
-    "condescend_back":               "next ability against target has +15 power",
+    "condescend_back":               "next ability against target has +10 power",
     "gallant_charge_front":          "+20 power if Prince Charming was backline last round",
-    "chosen_one":                    "first ally swapped with becomes champion; attackers take +25 from next ability",
+    "chosen_one":                    "first ally swapped with becomes champion; attackers take +15 from next ability",
     "happily_ever_after":            "gain +15 to each KO ally's highest non-HP stat for 2 rounds",
     # Green Knight (Noble)
     "heros_bargain_back":            "swap target with enemy frontline",
@@ -2147,17 +2149,17 @@ SPECIAL_DESCRIPTIONS: dict = {
     "spinning_wheel_back":           "when an ally loses a stat buff, spend 2 Malice to refresh it",
     "thieve_the_first_born":         "steal all enemy stat buffs, refresh them, +5 value each per Malice",
     # Sea Wench Asha (Warlock)
-    "misappropriate_front":          "spend 2 Malice to use enemy frontline signature (or gain passive for 2r)",
-    "abyssal_call_front":            "spend 2 Malice: target gets -10 Def for 2 rounds",
+    "misappropriate_front":          "spend 1 Malice to use enemy frontline signature (or gain passive for 2r)",
+    "abyssal_call_front":            "spend 1 Malice: target gets -10 Def for 2 rounds",
     "abyssal_call_back":             "refresh target's existing stat debuffs",
-    "faustian_bargain_front":        "on swap to frontline, spend 2 Malice to gain bottled talent for 2r",
-    "faustian_bargain_back":         "on KO, bottle target's talent and gain +10 Spd for 2 rounds",
+    "faustian_bargain_front":        "on swap to frontline, spend 1 Malice to gain bottled talent for 2r",
+    "faustian_bargain_back":         "on KO, bottle target's talent and gain +15 Spd for 2 rounds",
     "turn_to_foam":                  "gain 3 Malice, then consume all: enemies get -10 Def per Malice (2r)",
     # Items
     "smoke_bomb_swap":                 "user switches positions with an ally",
     "ancient_hourglass":               "user cannot act or be targeted next round (once per battle)",
     "holy_diadem":                     "once per battle: survive fatal damage at 1 HP, take no damage that round",
-    "spiked_mail":                     "enemies that damage user take 15 damage",
+    "spiked_mail":                     "enemies that damage user take 10 damage",
 }
 
 

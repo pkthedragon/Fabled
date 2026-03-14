@@ -245,16 +245,16 @@ class CombatantState:
     def has_status(self, kind: str) -> bool:
         return any(s.kind == kind and s.duration > 0 for s in self.statuses)
 
-    def add_status(self, kind: str, duration: int):
+    def add_status(self, kind: str, duration: int) -> bool:
         # Briar Rose root immunity: block new Root while charge is active
         if kind == "root" and self.ability_charges.get("briar_root_immune", 0) > 0:
-            return
+            return False
         for s in self.statuses:
             if s.kind == kind:
-                s.duration = max(s.duration, duration)
-                return
+                return False
         self.statuses.append(StatusInstance(kind=kind, duration=duration))
         self.last_status_inflicted = kind
+        return True
 
     def remove_status(self, kind: str):
         self.statuses = [s for s in self.statuses if s.kind != kind]

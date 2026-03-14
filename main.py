@@ -240,134 +240,206 @@ class Game:
 
         # Curated AI draft pool (meta-style lineups)
         self._ai_team_pool = [
-            {
-                "name": "Expose Focus",
-                "members": [
-                    {"defn": "prince_charming",      "sig": "condescend",      "basics": ["impose", "command"],       "item": "family_seal"},
-                    {"defn": "lucky_constantine",    "sig": "feline_gambit",   "basics": ["post_bounty", "sucker_punch"], "item": "holy_diadem"},
-                    {"defn": "robin_hooded_avenger", "sig": "snipe_shot",      "basics": ["hunters_mark", "hunters_badge"], "item": "arcane_focus"},
-                ],
-            },
-            {
-                "name": "Shock Punish",
-                "members": [
-                    {"defn": "sir_roland",           "sig": "knights_challenge","basics": ["shield_bash", "stalwart"], "item": "spiked_mail"},
-                    {"defn": "hunold_the_piper",     "sig": "haunting_rhythm", "basics": ["sucker_punch", "fleetfooted"], "item": "family_seal"},
-                    {"defn": "march_hare",           "sig": "tempus_fugit",    "basics": ["thunder_call", "arcane_wave"], "item": "lightning_boots"},
-                ],
-            },
-            {
-                "name": "Root Lock",
-                "members": [
-                    {"defn": "green_knight",         "sig": "heros_bargain",   "basics": ["edict", "command"],        "item": "iron_buckler"},
-                    {"defn": "briar_rose",           "sig": "thorn_snare",     "basics": ["trapping_blow", "hunters_badge"], "item": "misericorde"},
-                    {"defn": "rapunzel",             "sig": "golden_snare",    "basics": ["edict", "decree"],         "item": "holy_diadem"},
-                ],
-            },
-            {
-                "name": "Burn Pressure",
-                "members": [
-                    {"defn": "gretel",               "sig": "hot_mitts",       "basics": ["cleave", "intimidate"],    "item": "family_seal"},
-                    {"defn": "witch_of_the_woods",   "sig": "cauldron_bubble", "basics": ["fire_blast", "breakthrough"], "item": "misericorde"},
-                    {"defn": "matchstick_liesl",     "sig": "cauterize",       "basics": ["heal", "protection"],      "item": "heart_amulet"},
-                ],
-            },
-            {
-                "name": "Tank Sustain",
-                "members": [
-                    {"defn": "porcus_iii",           "sig": "porcine_honor",   "basics": ["shield_bash", "stalwart"], "item": "spiked_mail"},
-                    {"defn": "aldric_lost_lamb",     "sig": "benefactor",      "basics": ["heal", "protection"],      "item": "heart_amulet"},
-                    {"defn": "lady_of_reflections",  "sig": "lakes_gift",      "basics": ["condemn", "armored"],      "item": "crafty_shield"},
-                ],
-            },
-            {
-                "name": "Last-Stand Brawler",
-                "members": [
-                    {"defn": "risa_redcloak",        "sig": "blood_hunt",      "basics": ["rend", "feint"],           "item": "vampire_fang"},
-                    {"defn": "porcus_iii",           "sig": "not_by_the_hair", "basics": ["shield_bash", "armored"],  "item": "iron_buckler"},
-                    {"defn": "snowkissed_aurora",    "sig": "toxin_purge",     "basics": ["heal", "medic"],           "item": "heart_amulet"},
-                ],
-            },
-            {
-                "name": "Speed Tempo",
-                "members": [
-                    {"defn": "little_jack",          "sig": "skyfall",         "basics": ["cleave", "feint"],         "item": "family_seal"},
-                    {"defn": "march_hare",           "sig": "rabbit_hole",     "basics": ["arcane_wave", "thunder_call"], "item": "lightning_boots"},
-                    {"defn": "frederic",             "sig": "on_the_hunt",     "basics": ["hunters_mark", "hunters_badge"], "item": "main_gauche"},
-                ],
-            },
-            {
-                "name": "Swap Punish",
-                "members": [
-                    {"defn": "briar_rose",           "sig": "garden_of_thorns","basics": ["trapping_blow", "volley"], "item": "misericorde"},
-                    {"defn": "green_knight",         "sig": "natural_order",   "basics": ["summons", "edict"],        "item": "family_seal"},
-                    {"defn": "reynard",              "sig": "cutpurse",        "basics": ["sneak_attack", "fleetfooted"], "item": "smoke_bomb"},
-                ],
-            },
-            {
-                "name": "Safe Mage Shell",
-                "members": [
-                    {"defn": "sir_roland",           "sig": "shimmering_valor","basics": ["shield_bash", "armored"],  "item": "spiked_mail"},
-                    {"defn": "ashen_ella",           "sig": "fae_blessing",    "basics": ["fire_blast", "arcane_wave"], "item": "holy_diadem"},
-                    {"defn": "snowkissed_aurora",    "sig": "birdsong",        "basics": ["heal", "medic"],           "item": "heart_amulet"},
-                ],
-            },
-            {
-                "name": "Backline Hunter",
-                "members": [
-                    {"defn": "prince_charming",      "sig": "gallant_charge",  "basics": ["impose", "summons"],       "item": "main_gauche"},
-                    {"defn": "robin_hooded_avenger", "sig": "bring_down",      "basics": ["hawkshot", "hunters_badge"], "item": "family_seal"},
-                    {"defn": "lucky_constantine",    "sig": "subterfuge",      "basics": ["post_bounty", "sneak_attack"], "item": "lightning_boots"},
-                ],
-            },
-            {
-                "name": "Malice Growth",
-                "members": [
-                    {"defn": "pinocchio",            "sig": "become_real",     "basics": ["dark_grasp", "cursed_armor"], "item": "family_seal"},
-                    {"defn": "rumpelstiltskin",      "sig": "straw_to_gold",   "basics": ["soul_gaze", "blood_pact"],  "item": "arcane_focus"},
-                    {"defn": "prince_charming",      "sig": "chosen_one",      "basics": ["decree", "summons"],       "item": "holy_diadem"},
-                ],
-            },
-            {
-                "name": "Anti-Heal Pressure",
-                "members": [
-                    {"defn": "gretel",               "sig": "shove_over",      "basics": ["intimidate", "strike"],    "item": "misericorde"},
-                    {"defn": "matchstick_liesl",     "sig": "cauterize",       "basics": ["heal", "protection"],      "item": "heart_amulet"},
-                    {"defn": "robin_hooded_avenger", "sig": "snipe_shot",      "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
-                ],
-            },
-            {
-                "name": "Reflection Punish",
-                "members": [
-                    {"defn": "lady_of_reflections",  "sig": "drown_in_the_loch","basics": ["condemn", "stalwart"],    "item": "spiked_mail"},
-                    {"defn": "reynard",              "sig": "feign_weakness",  "basics": ["riposte", "fleetfooted"],  "item": "holy_diadem"},
-                    {"defn": "sir_roland",           "sig": "banner_of_command","basics": ["shield_bash", "armored"], "item": "crafty_shield"},
-                ],
-            },
-            {
-                "name": "Noble Midrange",
-                "members": [
-                    {"defn": "prince_charming",      "sig": "chosen_one",      "basics": ["decree", "summons"],       "item": "family_seal"},
-                    {"defn": "green_knight",         "sig": "awaited_blow",    "basics": ["edict", "command"],        "item": "iron_buckler"},
-                    {"defn": "rapunzel",             "sig": "ivory_tower",     "basics": ["impose", "decree"],        "item": "holy_diadem"},
-                ],
-            },
-            {
-                "name": "Status Spread",
-                "members": [
-                    {"defn": "witch_of_the_woods",   "sig": "toil_and_trouble","basics": ["fire_blast", "thunder_call"], "item": "misericorde"},
-                    {"defn": "hunold_the_piper",     "sig": "dying_dance",     "basics": ["sucker_punch", "fleetfooted"], "item": "arcane_focus"},
-                    {"defn": "briar_rose",           "sig": "creeping_doubt",  "basics": ["trapping_blow", "hunters_mark"], "item": "family_seal"},
-                ],
-            },
-            {
-                "name": "Balanced Generalist",
-                "members": [
-                    {"defn": "frederic",             "sig": "heros_charge",    "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
-                    {"defn": "snowkissed_aurora",    "sig": "dictate_of_nature","basics": ["heal", "medic"],           "item": "heart_amulet"},
-                    {"defn": "prince_charming",      "sig": "condescend",      "basics": ["impose", "command"],       "item": "main_gauche"},
-                ],
-            },
+            {"name": "Anti-Heal Pressure", "usage": "Open by weakening the frontline with Gretel, land no-heal with Liesl, then cash out with Robin. Once no-heal is active, stop trying to refresh it and just kill. Best into sustain and midrange.", "members": [
+                {"defn": "gretel", "sig": "shove_over", "basics": ["intimidate", "strike"], "item": "misericorde"},
+                {"defn": "matchstick_liesl", "sig": "cauterize", "basics": ["heal", "protection"], "item": "heart_amulet"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+            ]},
+            {"name": "Expose Hunter", "usage": "Lucky exposes, Prince softens or controls, Robin finishes. Never spend a turn double-exposing an already exposed target. Very easy AI script: choose one target and collapse.", "members": [
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["impose", "command"], "item": "main_gauche"},
+                {"defn": "lucky_constantine", "sig": "feline_gambit", "basics": ["post_bounty", "sucker_punch"], "item": "holy_diadem"},
+                {"defn": "robin_hooded_avenger", "sig": "bring_down", "basics": ["hawkshot", "hunters_badge"], "item": "family_seal"},
+            ]},
+            {"name": "Balanced Generalist", "usage": "Frederic pressures, Aurora stabilizes, Prince converts. If nobody is in danger, attack. If one ally is in danger, Aurora fixes it once, then resume pressure.", "members": [
+                {"defn": "frederic", "sig": "heros_charge", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "medic"], "item": "heart_amulet"},
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["impose", "command"], "item": "main_gauche"},
+            ]},
+            {"name": "Reflection Punish", "usage": "Let the enemy attack into Lady and punish the trade. Reynard is the real finisher. Roland exists to preserve formation and protect the punish core. Great into straightforward aggro.", "members": [
+                {"defn": "lady_of_reflections", "sig": "drown_in_the_loch", "basics": ["condemn", "stalwart"], "item": "spiked_mail"},
+                {"defn": "reynard", "sig": "feign_weakness", "basics": ["riposte", "fleetfooted"], "item": "holy_diadem"},
+                {"defn": "sir_roland", "sig": "banner_of_command", "basics": ["shield_bash", "armored"], "item": "crafty_shield"},
+            ]},
+            {"name": "Speed Tempo", "usage": "Create tempo with Hare, then convert immediately with Jack/Frederic. If no real kill window appears by round 3, stop setting up and just burst the frontline.", "members": [
+                {"defn": "little_jack", "sig": "skyfall", "basics": ["cleave", "feint"], "item": "family_seal"},
+                {"defn": "march_hare", "sig": "rabbit_hole", "basics": ["arcane_wave", "thunder_call"], "item": "lightning_boots"},
+                {"defn": "frederic", "sig": "on_the_hunt", "basics": ["hunters_mark", "hunters_badge"], "item": "main_gauche"},
+            ]},
+            {"name": "Last-Stand Brawler", "usage": "Don't over-heal Risa if she is entering a winning low-HP band. Porcus buys time, Aurora keeps the team alive, Risa closes. Best into teams that cannot burst through Porcus quickly.", "members": [
+                {"defn": "risa_redcloak", "sig": "blood_hunt", "basics": ["rend", "feint"], "item": "vampire_fang"},
+                {"defn": "porcus_iii", "sig": "not_by_the_hair", "basics": ["shield_bash", "armored"], "item": "iron_buckler"},
+                {"defn": "snowkissed_aurora", "sig": "toxin_purge", "basics": ["heal", "medic"], "item": "heart_amulet"},
+            ]},
+            {"name": "Burnline Pressure", "usage": "Spread burn and anti-heal, then switch to damage. Do not keep reburning the same target if another enemy is still clean. Best into bulky teams that hate attrition plus burst.", "members": [
+                {"defn": "gretel", "sig": "hot_mitts", "basics": ["intimidate", "strike"], "item": "misericorde"},
+                {"defn": "matchstick_liesl", "sig": "cauterize", "basics": ["heal", "smite"], "item": "heart_amulet"},
+                {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "thunder_call"], "item": "misericorde"},
+            ]},
+            {"name": "Root Killbox", "usage": "Root once, then convert. Jack and Briar create the trap, Robin punishes it. Great into swap-reliant teams and mixed-class backlines.", "members": [
+                {"defn": "little_jack", "sig": "magic_growth", "basics": ["cleave", "feint"], "item": "family_seal"},
+                {"defn": "briar_rose", "sig": "creeping_doubt", "basics": ["trapping_blow", "hunters_mark"], "item": "family_seal"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+            ]},
+            {"name": "Shock Punish", "usage": "Shock the most dangerous ranged enemy, then manipulate tempo so their recharge timing gets ruined. Don't reshock an already shocked target unless lethal is available.", "members": [
+                {"defn": "sir_roland", "sig": "banner_of_command", "basics": ["shield_bash", "armored"], "item": "crafty_shield"},
+                {"defn": "hunold_the_piper", "sig": "dying_dance", "basics": ["sucker_punch", "fleetfooted"], "item": "arcane_focus"},
+                {"defn": "march_hare", "sig": "tempus_fugit", "basics": ["arcane_wave", "thunder_call"], "item": "lightning_boots"},
+            ]},
+            {"name": "Safe Midrange", "usage": "This is the cleanest stable AI team. Roland buys turns, Aurora prevents collapse, Prince wins the middle turns. Attack more than you heal.", "members": [
+                {"defn": "sir_roland", "sig": "banner_of_command", "basics": ["shield_bash", "armored"], "item": "crafty_shield"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "medic"], "item": "heart_amulet"},
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["impose", "command"], "item": "main_gauche"},
+            ]},
+            {"name": "Backline Hunter", "usage": "Lucky and Robin attack the enemy's structure while Prince keeps the team coherent. Use Subterfuge only when it improves legal targeting or forces a kill sequence.", "members": [
+                {"defn": "prince_charming", "sig": "gallant_charge", "basics": ["impose", "summons"], "item": "main_gauche"},
+                {"defn": "robin_hooded_avenger", "sig": "bring_down", "basics": ["hawkshot", "hunters_badge"], "item": "family_seal"},
+                {"defn": "lucky_constantine", "sig": "subterfuge", "basics": ["post_bounty", "sneak_attack"], "item": "lightning_boots"},
+            ]},
+            {"name": "Frontline Breaker", "usage": "Jack and Frederic crack the tank, Aurora keeps the push alive. Best against Porcus/Lady/Roland type fronts.", "members": [
+                {"defn": "little_jack", "sig": "belligerence", "basics": ["cleave", "strike"], "item": "family_seal"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "bless"], "item": "heart_amulet"},
+                {"defn": "frederic", "sig": "on_the_hunt", "basics": ["hunters_mark", "hunters_badge"], "item": "main_gauche"},
+            ]},
+            {"name": "Double Rogue Tempo", "usage": "Lucky opens, Reynard punishes, Prince keeps control. Works best into squishier or poorly guarded teams.", "members": [
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["impose", "summons"], "item": "main_gauche"},
+                {"defn": "lucky_constantine", "sig": "subterfuge", "basics": ["post_bounty", "sneak_attack"], "item": "lightning_boots"},
+                {"defn": "reynard", "sig": "feign_weakness", "basics": ["riposte", "fleetfooted"], "item": "holy_diadem"},
+            ]},
+            {"name": "No-Heal Collapse", "usage": "Similar to Anti-Heal Pressure, but Frederic gives stronger frontline conversions instead of Robin pick power.", "members": [
+                {"defn": "gretel", "sig": "shove_over", "basics": ["intimidate", "feint"], "item": "misericorde"},
+                {"defn": "matchstick_liesl", "sig": "cauterize", "basics": ["heal", "bless"], "item": "heart_amulet"},
+                {"defn": "frederic", "sig": "heros_charge", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
+            ]},
+            {"name": "Status Spread", "usage": "One status on the primary threat, one different status elsewhere, then kill. This team is bad if it spends turns redundantly refreshing statuses.", "members": [
+                {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "thunder_call"], "item": "misericorde"},
+                {"defn": "hunold_the_piper", "sig": "dying_dance", "basics": ["sucker_punch", "fleetfooted"], "item": "arcane_focus"},
+                {"defn": "briar_rose", "sig": "creeping_doubt", "basics": ["trapping_blow", "hunters_mark"], "item": "family_seal"},
+            ]},
+            {"name": "Burn Shock Split", "usage": "Burn one unit, shock another, no-heal the sustain anchor. Meant to overload the enemy's support bandwidth.", "members": [
+                {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "thunder_call"], "item": "misericorde"},
+                {"defn": "hunold_the_piper", "sig": "haunting_rhythm", "basics": ["sucker_punch", "fleetfooted"], "item": "arcane_focus"},
+                {"defn": "matchstick_liesl", "sig": "cauterize", "basics": ["heal", "smite"], "item": "heart_amulet"},
+            ]},
+            {"name": "Double Ranger Pressure", "usage": "High legal-damage density. If Briar roots a priority target, everyone focuses it.", "members": [
+                {"defn": "frederic", "sig": "on_the_hunt", "basics": ["hunters_mark", "hunters_badge"], "item": "main_gauche"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hawkshot", "hunters_mark"], "item": "arcane_focus"},
+                {"defn": "briar_rose", "sig": "creeping_doubt", "basics": ["trapping_blow", "hunters_mark"], "item": "family_seal"},
+            ]},
+            {"name": "Ranger-Rogue Kill Chain", "usage": "Probably the simplest burst team to pilot: expose target, mark target, shoot target.", "members": [
+                {"defn": "frederic", "sig": "heros_charge", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
+                {"defn": "lucky_constantine", "sig": "feline_gambit", "basics": ["post_bounty", "sucker_punch"], "item": "holy_diadem"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+            ]},
+            {"name": "Roland Counterbattery", "usage": "Roland frontloads survivability, Robin is your damage engine, Aurora keeps Robin online. Good default versus mixed offense.", "members": [
+                {"defn": "sir_roland", "sig": "knights_challenge", "basics": ["shield_bash", "stalwart"], "item": "spiked_mail"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hawkshot", "hunters_mark"], "item": "arcane_focus"},
+                {"defn": "snowkissed_aurora", "sig": "toxin_purge", "basics": ["heal", "medic"], "item": "heart_amulet"},
+            ]},
+            {"name": "Lady Control Shell", "usage": "Lady is the anchor, Prince is the closer. Use Lake's Gift to buff the ally most likely to secure tempo next turn.", "members": [
+                {"defn": "lady_of_reflections", "sig": "lakes_gift", "basics": ["condemn", "armored"], "item": "crafty_shield"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "medic"], "item": "heart_amulet"},
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["impose", "command"], "item": "main_gauche"},
+            ]},
+            {"name": "Porcus Fortress", "usage": "Slow but punishing. Best used by AI into heavy aggro or glass-cannon teams, not as a blind default.", "members": [
+                {"defn": "porcus_iii", "sig": "porcine_honor", "basics": ["shield_bash", "stalwart"], "item": "spiked_mail"},
+                {"defn": "aldric_lost_lamb", "sig": "benefactor", "basics": ["heal", "protection"], "item": "heart_amulet"},
+                {"defn": "lady_of_reflections", "sig": "lakes_gift", "basics": ["condemn", "armored"], "item": "crafty_shield"},
+            ]},
+            {"name": "Sustain Into Spike", "usage": "Defend early, then switch to Prince once the enemy has committed.", "members": [
+                {"defn": "porcus_iii", "sig": "sturdy_home", "basics": ["shield_bash", "armored"], "item": "iron_buckler"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "bless"], "item": "heart_amulet"},
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["impose", "command"], "item": "main_gauche"},
+            ]},
+            {"name": "Brawler Punish", "usage": "Let the opponent overcommit into Lady/Reynard, then let Risa finish once she is empowered.", "members": [
+                {"defn": "risa_redcloak", "sig": "blood_hunt", "basics": ["rend", "feint"], "item": "vampire_fang"},
+                {"defn": "lady_of_reflections", "sig": "drown_in_the_loch", "basics": ["condemn", "stalwart"], "item": "spiked_mail"},
+                {"defn": "reynard", "sig": "feign_weakness", "basics": ["riposte", "fleetfooted"], "item": "holy_diadem"},
+            ]},
+            {"name": "Last-Stand Midrange", "usage": "More conservative Risa shell. Use Wolf's Pursuit when the enemy wants to dance around formation.", "members": [
+                {"defn": "risa_redcloak", "sig": "wolfs_pursuit", "basics": ["rend", "feint"], "item": "vampire_fang"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "medic"], "item": "heart_amulet"},
+                {"defn": "prince_charming", "sig": "chosen_one", "basics": ["impose", "command"], "item": "holy_diadem"},
+            ]},
+            {"name": "Crowstorm Burn", "usage": "Ella frontlines for the burn spread, Liesl covers sustain, Gretel punishes burned targets. Very strong into clustered midrange.", "members": [
+                {"defn": "ashen_ella", "sig": "crowstorm", "basics": ["fire_blast", "arcane_wave"], "item": "arcane_focus"},
+                {"defn": "matchstick_liesl", "sig": "cauterize", "basics": ["heal", "bless"], "item": "heart_amulet"},
+                {"defn": "gretel", "sig": "hot_mitts", "basics": ["intimidate", "strike"], "item": "misericorde"},
+            ]},
+            {"name": "Ella Pivot Shell", "usage": "Roland fronts, Ella pivots between frontline and protected value turns, Aurora keeps the shell clean. Safe, AI-friendly, and difficult to burst.", "members": [
+                {"defn": "sir_roland", "sig": "banner_of_command", "basics": ["shield_bash", "armored"], "item": "crafty_shield"},
+                {"defn": "ashen_ella", "sig": "fae_blessing", "basics": ["fire_blast", "arcane_wave"], "item": "arcane_focus"},
+                {"defn": "snowkissed_aurora", "sig": "toxin_purge", "basics": ["heal", "medic"], "item": "heart_amulet"},
+            ]},
+            {"name": "Royal Root Pressure", "usage": "Prince or Briar roots, Robin capitalizes. Very good into swap-heavy teams and nobles/warlocks.", "members": [
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["edict", "command"], "item": "main_gauche"},
+                {"defn": "briar_rose", "sig": "creeping_doubt", "basics": ["trapping_blow", "hunters_mark"], "item": "family_seal"},
+                {"defn": "robin_hooded_avenger", "sig": "bring_down", "basics": ["hawkshot", "hunters_badge"], "item": "family_seal"},
+            ]},
+            {"name": "Gretel Tempo Kill", "usage": "Gretel establishes weaken, Lucky improves the angle, Robin kills. This is a fast kill-chain team, not a prolonged one.", "members": [
+                {"defn": "gretel", "sig": "shove_over", "basics": ["intimidate", "feint"], "item": "misericorde"},
+                {"defn": "lucky_constantine", "sig": "subterfuge", "basics": ["post_bounty", "sneak_attack"], "item": "lightning_boots"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+            ]},
+            {"name": "Shocked Quarry", "usage": "Shock the main carry, then use tempo tools to punish the forced recharge line. Frederic cleans up.", "members": [
+                {"defn": "frederic", "sig": "on_the_hunt", "basics": ["hunters_mark", "hunters_badge"], "item": "main_gauche"},
+                {"defn": "hunold_the_piper", "sig": "dying_dance", "basics": ["sucker_punch", "fleetfooted"], "item": "arcane_focus"},
+                {"defn": "march_hare", "sig": "rabbit_hole", "basics": ["arcane_wave", "thunder_call"], "item": "lightning_boots"},
+            ]},
+            {"name": "Prince-Robin Midrange", "usage": "A cleaner, more offensive version of Safe Midrange. Prince and Robin do most of the work; Aurora just stops disasters.", "members": [
+                {"defn": "prince_charming", "sig": "gallant_charge", "basics": ["impose", "command"], "item": "main_gauche"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "medic"], "item": "heart_amulet"},
+            ]},
+            {"name": "Execute Line", "usage": "Lucky exposes, Jack chunks, Risa executes. High volatility, very good into fragile teams.", "members": [
+                {"defn": "little_jack", "sig": "skyfall", "basics": ["cleave", "feint"], "item": "family_seal"},
+                {"defn": "risa_redcloak", "sig": "blood_hunt", "basics": ["rend", "feint"], "item": "vampire_fang"},
+                {"defn": "lucky_constantine", "sig": "feline_gambit", "basics": ["post_bounty", "sucker_punch"], "item": "holy_diadem"},
+            ]},
+            {"name": "Burn-Root Hunter", "usage": "Burn one target, root another, then collapse on whichever target is now easiest to kill. Strong into slower control teams.", "members": [
+                {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "freezing_gale"], "item": "misericorde"},
+                {"defn": "briar_rose", "sig": "creeping_doubt", "basics": ["hunters_mark", "trapping_blow"], "item": "family_seal"},
+                {"defn": "frederic", "sig": "heros_charge", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
+            ]},
+            {"name": "Green Knight Root Midrange", "usage": "Root the most important frontline target, then let Robin immediately convert. Aurora should only interrupt the damage plan when a heal or cleanse prevents a knockout.", "members": [
+                {"defn": "green_knight", "sig": "heros_bargain", "basics": ["command", "edict"], "item": "family_seal"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["heal", "medic"], "item": "heart_amulet"},
+            ]},
+            {"name": "Rapunzel Collapse", "usage": "Mark one target for collapse and avoid splitting damage. Use Flowing Locks opportunistically to finish a vulnerable backliner if it cleanly wins the trade.", "members": [
+                {"defn": "rapunzel", "sig": "lower_guard", "basics": ["command", "edict"], "item": "main_gauche"},
+                {"defn": "lucky_constantine", "sig": "feline_gambit", "basics": ["post_bounty", "sucker_punch"], "item": "holy_diadem"},
+                {"defn": "frederic", "sig": "heros_charge", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
+            ]},
+            {"name": "Rapunzel Pin Control", "usage": "Root first, then anti-heal the sustain anchor, then focus the rooted unit. This team wins by converting control into a clean kill instead of maintaining it forever.", "members": [
+                {"defn": "rapunzel", "sig": "golden_snare", "basics": ["impose", "command"], "item": "family_seal"},
+                {"defn": "robin_hooded_avenger", "sig": "bring_down", "basics": ["hawkshot", "hunters_badge"], "item": "arcane_focus"},
+                {"defn": "matchstick_liesl", "sig": "cauterize", "basics": ["heal", "bless"], "item": "heart_amulet"},
+            ]},
+            {"name": "Pinocchio Malice Fortress", "usage": "Keep frontline Pinocchio in place long enough to reach 3+ Malice, then stop playing defensively and force kills with boosted warlock attacks.", "members": [
+                {"defn": "pinocchio", "sig": "become_real", "basics": ["dark_grasp", "cursed_armor"], "item": "family_seal"},
+                {"defn": "sir_roland", "sig": "banner_of_command", "basics": ["shield_bash", "armored"], "item": "crafty_shield"},
+                {"defn": "snowkissed_aurora", "sig": "toxin_purge", "basics": ["heal", "medic"], "item": "heart_amulet"},
+            ]},
+            {"name": "Pinocchio Spotlight Break", "usage": "Soften with Prince, spotlight the priority target, then immediately convert with Prince and Robin. Do not stall for more Malice if a clear kill is already available.", "members": [
+                {"defn": "prince_charming", "sig": "condescend", "basics": ["impose", "command"], "item": "main_gauche"},
+                {"defn": "pinocchio", "sig": "cut_the_strings", "basics": ["soul_gaze", "void_step"], "item": "family_seal"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
+            ]},
+            {"name": "Rumpel Buff Engine", "usage": "Seed buff value early, then let Rumpel convert that tempo into a swing turn. Once Rumpel has real speed and a good buff target exists, trade aggressively.", "members": [
+                {"defn": "prince_charming", "sig": "chosen_one", "basics": ["decree", "summons"], "item": "holy_diadem"},
+                {"defn": "rumpelstiltskin", "sig": "straw_to_gold", "basics": ["blood_pact", "soul_gaze"], "item": "arcane_focus"},
+                {"defn": "snowkissed_aurora", "sig": "dictate_of_nature", "basics": ["bless", "medic"], "item": "heart_amulet"},
+            ]},
+            {"name": "Sea Wench Theft Shell", "usage": "Asha should stay backline until there is enough Malice and a worthwhile frontline signature to steal. Otherwise Roland protects the shell and Robin converts pressure.", "members": [
+                {"defn": "sir_roland", "sig": "banner_of_command", "basics": ["shield_bash", "armored"], "item": "crafty_shield"},
+                {"defn": "sea_wench_asha", "sig": "misappropriate", "basics": ["dark_grasp", "cursed_armor"], "item": "arcane_focus"},
+                {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "family_seal"},
+            ]},
+            {"name": "Sea Wench Debuff Burst", "usage": "Use Blood Pact only when it sets up a real swing turn. Once Asha and Frederic have softened a target, keep all damage on that one unit until it drops.", "members": [
+                {"defn": "sea_wench_asha", "sig": "abyssal_call", "basics": ["soul_gaze", "blood_pact"], "item": "arcane_focus"},
+                {"defn": "rapunzel", "sig": "lower_guard", "basics": ["impose", "summons"], "item": "main_gauche"},
+                {"defn": "frederic", "sig": "on_the_hunt", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
+            ]},
         ]
 
     def _is_single_player(self):

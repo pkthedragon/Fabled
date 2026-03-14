@@ -28,7 +28,7 @@ MAX_SIMULATED_CANDIDATES = 30
 TOP_LEVEL_CANDIDATES = 5
 BEAM_WIDTH = 4
 RULEBOOK_DANGEROUS_STATUSES = {"burn", "root", "shock", "weaken", "expose", "spotlight"}
-CONTROL_STATUSES = {"root", "shock", "spotlight", "taunt"}
+CONTROL_STATUSES = {"root", "spotlight", "taunt"}
 
 
 def top_n(items, n, key):
@@ -150,14 +150,22 @@ def apply_damage_modifiers(dmg, source, target, battle):
         return 0
     if source.has_status("weaken"):
         dmg = math.ceil(dmg * 0.80)
+    if source.defn.id == "little_jack" and target.max_hp > source.max_hp:
+        dmg = math.ceil(dmg * 1.20)
     if target.has_status("expose"):
         dmg = math.ceil(dmg * 1.20)
     if target.has_status("guard"):
         dmg = math.ceil(dmg * 0.80)
+    if target.has_status("bonus_damage"):
+        dmg += 7
     if source.defn.id == "robin_hooded_avenger" and target.slot != SLOT_FRONT:
         dmg += 10
     if source.defn.id == "lucky_constantine" and target.slot != SLOT_FRONT:
         dmg = max(0, dmg - 10)
+    if source.defn.id == "snowkissed_aurora" and source.sig.id == "birdsong" and source.slot == SLOT_FRONT:
+        dmg += source.ability_charges.get("birdsong_birds", 0) * 10
+    if source.defn.id == "prince_charming" and target.ability_charges.get("chosen_one_mark", 0) > 0:
+        dmg += 15
     return max(0, dmg)
 
 
@@ -184,6 +192,10 @@ def _estimate_power(actor, ability, target):
         power += 15
     if ability.id == "lower_guard" and actor.slot == SLOT_FRONT and target.debuffs:
         power += 15
+    if target.ability_charges.get("condescend_bonus", 0) > 0 and ability.id != "condescend":
+        power += 10
+    if ability.id == "nebulous_ides" and actor.slot != SLOT_FRONT and actor.ability_charges.get("swapped_this_round", 0) > 0:
+        power += 20
     if ability.id == "wooden_wallop" and actor.slot == SLOT_FRONT:
         power += actor.ability_charges.get("malice", 0) * 5
     return power
@@ -201,6 +213,8 @@ def estimate_damage(actor, ability, target, battle):
         defense = 1
     dmg = estimate_raw_damage(power, effective_attack(actor, battle), defense)
     dmg = apply_damage_modifiers(dmg, actor, target, battle)
+    if target.defn.id == "sir_roland" and target.ability_charges.get("silver_aegis", 0) > 0:
+        dmg = math.ceil(dmg * 0.25)
     if mode.spread:
         if actor.defn.id == "robin_hooded_avenger" and actor.slot == SLOT_FRONT:
             dmg = math.ceil(dmg * 0.75)
@@ -218,14 +232,150 @@ def estimate_heal_value(actor, ability, target, battle):
         return 0.0
     mode = get_mode(actor, ability)
     heal_amount = mode.heal + mode.heal_self + mode.heal_lowest
+    if ability.id == "toxin_purge" and actor.slot == SLOT_FRONT:
+        heal_amount += 15 * sum(1 for status in target.statuses if status.duration > 0 and status.kind in RULEBOOK_DANGEROUS_STATUSES)
+    if heal_amount > 0 and actor.item.id == "heart_amulet":
+        heal_amount += actor.item.flat_heal_bonus
+    if heal_amount > 0 and actor.sig.id == "benefactor":
+        heal_amount = math.ceil(heal_amount * (1.25 if actor.slot == SLOT_FRONT else 1.15))
+    if target.ability_charges.get("hunters_net_heal_dur", 0) > 0:
+        heal_amount = math.ceil(heal_amount * 0.50)
     if heal_amount <= 0:
         return 0.0
     missing = max(0, target.max_hp - target.hp)
-    return min(missing, heal_amount) * 1.5
+    value = min(missing, heal_amount) * 1.5
+    if actor.defn.id == "aldric_lost_lamb":
+        value += 10.0 if not target.has_status("guard") else 0.0
+    return value
+
+
+def estimate_guard_value(target):
+    if target is None or target.has_status("guard"):
+        return 0.0
+    return 18.0 + (20.0 if target.hp / max(1, target.max_hp) < 0.45 else 0.0)
+
+
+def estimate_repentance_rider(actor, ability, target, battle):
+    if ability.id != "repentance" or actor.slot != SLOT_FRONT or target is None:
+        return 0.0
+    if target.ability_charges.get("repentance_bonus", 0) > 0:
+        return 0.0
+    followup_attack = max(
+        (ally.get_stat("attack") for ally in battle.get_team(1 if actor in battle.team1.members else 2).alive() if ally != actor),
+        default=actor.get_stat("attack"),
+    )
+    return 10.0 + followup_attack * 0.08
+
+
+def focus_fire_status_bonus(target):
+    if target is None:
+        return 0.0
+    bonus = 0.0
+    for kind, value in {
+        "expose": 8.0,
+        "root": 6.0,
+        "shock": 5.0,
+        "weaken": 4.0,
+        "spotlight": 4.0,
+        "no_heal": 6.0,
+        "bonus_damage": 5.0,
+        "burn": 3.0,
+    }.items():
+        if target.has_status(kind):
+            bonus += value
+    return min(bonus, 14.0)
+
+
+def redundant_status_penalty(battle, player_num, actor, action):
+    if action.get("type") != "ability":
+        return 0.0
+    target = action.get("target")
+    if target is None:
+        return 0.0
+    ability = action["ability"]
+    if estimate_ko_chance_or_certainty(actor, ability, target, battle) >= 1.0:
+        return 0.0
+    mode = get_mode(actor, ability)
+    statuses = [status for status in (mode.status, mode.status2, mode.status3) if status]
+    if not statuses:
+        return 0.0
+    legal_targets = get_legal_targets(battle, player_num, actor, ability)
+    penalty = 0.0
+    for status in statuses:
+        if not target.has_status(status):
+            continue
+        if any(other is not target and not other.has_status(status) for other in legal_targets):
+            penalty += 10.0
+        else:
+            penalty += 4.0
+    return penalty
+
+
+def _team_member_ids(battle, player_num):
+    return {unit.defn.id for unit in battle.get_team(player_num).members}
+
+
+def composition_plan_bonus(battle, player_num, actor, action):
+    team_ids = _team_member_ids(battle, player_num)
+    target = action.get("target")
+    score = 0.0
+
+    if action.get("type") == "ability":
+        ability = action["ability"]
+        aid = ability.id
+        enemy_team = battle.get_enemy(player_num)
+        has_root_shell = bool(team_ids & {"green_knight", "rapunzel", "briar_rose", "witch_of_the_woods"})
+        has_collapse_shell = bool(team_ids & {"lucky_constantine", "rapunzel", "prince_charming"}) and bool(
+            team_ids & {"robin_hooded_avenger", "frederic", "risa_redcloak", "little_jack", "pinocchio"}
+        )
+
+        if target is not None and has_root_shell and target.has_status("root") and estimate_damage(actor, ability, target, battle) > 0:
+            score += 10.0
+        if target is not None and has_root_shell and aid in {"heros_bargain", "golden_snare", "bring_down", "creeping_doubt", "thorn_snare", "edict", "freezing_gale", "trapping_blow"}:
+            already_rooted = any(enemy.has_status("root") for enemy in enemy_team.alive())
+            if already_rooted and not target.has_status("root") and estimate_ko_chance_or_certainty(actor, ability, target, battle) < 1.0:
+                score -= 6.0
+
+        if target is not None and has_collapse_shell and (target.has_status("expose") or target.has_status("bonus_damage") or target.has_status("spotlight")):
+            score += 8.0
+
+        if "matchstick_liesl" in team_ids and aid == "cauterize" and target is not None:
+            if not target.has_status("no_heal") and is_primary_support(target, enemy_team):
+                score += 14.0
+            if target.has_status("no_heal") and estimate_damage(actor, ability, target, battle) > 0:
+                score += 8.0
+
+        if "pinocchio" in team_ids and actor.defn.id == "pinocchio":
+            malice = actor.ability_charges.get("malice", 0)
+            if actor.slot == SLOT_FRONT and aid != "blood_pact":
+                score += 6.0 if malice < 3 else 10.0
+            if malice >= 3 and target is not None and estimate_damage(actor, ability, target, battle) > 0:
+                score += 8.0
+
+        if "rumpelstiltskin" in team_ids and aid in {"bless", "decree", "straw_to_gold"}:
+            score += 8.0
+
+        if "sea_wench_asha" in team_ids and actor.defn.id == "sea_wench_asha":
+            if aid == "blood_pact":
+                dangerous = actor.hp <= 90 or any(ally.hp / max(1, ally.max_hp) < 0.35 for ally in battle.get_team(player_num).alive())
+                score += -10.0 if dangerous else 4.0
+            if target is not None and (target.has_status("expose") or target.has_status("bonus_damage")):
+                score += 6.0
+
+    if "pinocchio" in team_ids and actor.defn.id == "pinocchio" and action.get("type") == "swap" and actor.slot == SLOT_FRONT:
+        if actor.ability_charges.get("malice", 0) < 3:
+            score -= 12.0
+
+    if "snowkissed_aurora" in team_ids and actor.defn.id == "snowkissed_aurora" and action.get("type") == "ability":
+        if target is not None and target in battle.get_team(player_num).alive():
+            if target.hp / max(1, target.max_hp) > 0.6 and estimate_heal_value(actor, action["ability"], target, battle) > 0:
+                score -= 6.0
+
+    return score
 
 
 def would_status_deny_action(kind, target, battle):
-    return kind in ("root", "shock", "taunt") and has_not_acted_yet(target)
+    return kind in ("root", "taunt") and has_not_acted_yet(target)
 
 
 def would_status_change_target_access(kind, target, battle, player_num):
@@ -263,12 +413,12 @@ def estimate_status_value(status_kind, source, target, battle):
         value += 12.0
     if would_status_change_target_access(status_kind, target, battle, 1 if source in battle.team1.members else 2):
         value += 14.0
-    if status_kind == "shock" and is_recharge_sensitive(target):
-        value += 12.0
-        if target.slot != SLOT_FRONT:
-            value += 10.0
-        if is_primary_carry(target, battle.get_enemy(1 if source in battle.team1.members else 2)):
+    if status_kind == "shock":
+        value += 4.0
+        if target.get_stat("attack") >= 65:
             value += 8.0
+        if has_not_acted_yet(target):
+            value += 6.0
     if status_kind == "spotlight" and target.slot != SLOT_FRONT:
         player_num = 1 if source in battle.team1.members else 2
         melee_followup = sum(1 for ally in battle.get_team(player_num).alive() if ally != source and is_melee_now(ally))
@@ -285,11 +435,14 @@ def estimate_status_value(status_kind, source, target, battle):
 def estimate_item_value(actor, item, target, battle):
     value = 0.0
     if item.heal > 0 and target is not None:
-        value += min(item.heal, max(0, target.max_hp - target.hp)) * 1.4
+        heal_amount = item.heal + (item.flat_heal_bonus if actor.item.id == "heart_amulet" else 0)
+        value += min(heal_amount, max(0, target.max_hp - target.hp)) * 1.4
     if item.guard and target is not None:
-        value += 18.0 + (20.0 if target.hp / max(1, target.max_hp) < 0.45 else 0.0)
+        value += estimate_guard_value(target)
     if item.status and target is not None:
         value += estimate_status_value(item.status, actor, target, battle)
+        if item.special == "hunters_net" and is_primary_support(target, battle.get_enemy(1 if actor in battle.team1.members else 2)):
+            value += 8.0
     value -= 5.0
     return value
 
@@ -349,8 +502,7 @@ def target_access_score(actor, target, battle):
 
 
 def count_recharge_pressure(unit):
-    limit = 2 if unit.has_status("shock") else 3
-    return max(0, limit - unit.ranged_uses)
+    return max(0, 3 - unit.ranged_uses)
 
 
 def ability_uses_until_recharge(unit):
@@ -395,12 +547,6 @@ def recharge_pressure_score(unit, action, battle):
 
 def score_recharge_tempo(actor, action, battle):
     score = recharge_pressure_score(actor, action, battle)
-    target = action.get("target")
-    if target is not None and action.get("type") == "ability":
-        mode = get_mode(actor, action["ability"])
-        statuses = [s for s in (mode.status, mode.status2, mode.status3) if s]
-        if "shock" in statuses and is_recharge_sensitive(target) and ability_uses_until_recharge(target) <= 1:
-            score += 18.0
     return score
 
 
@@ -516,11 +662,19 @@ def motif_deny_before_action(before, after, player_num, actor, action):
 
 def motif_guard_save(before, after, player_num, actor, action):
     if action.get("type") == "item" and actor.item.guard and action.get("target") is not None:
-        target = action["target"]
-        return 16.0 if target.hp / max(1, target.max_hp) < 0.45 else 8.0
+        return estimate_guard_value(action["target"])
     if action.get("type") == "ability":
         mode = get_mode(actor, action["ability"])
-        if mode.guard_target or mode.guard_all_allies or mode.guard_frontline_ally or mode.guard_self:
+        target = action.get("target")
+        if mode.guard_self and not actor.has_status("guard"):
+            return 14.0
+        if mode.guard_target and estimate_guard_value(target) > 0:
+            return 14.0
+        if mode.guard_frontline_ally:
+            front = before.get_team(player_num).frontline()
+            if front is not None and front != actor and estimate_guard_value(front) > 0:
+                return 14.0
+        if mode.guard_all_allies and any(not ally.has_status("guard") for ally in before.get_team(player_num).alive()):
             return 14.0
     return 0.0
 
@@ -532,15 +686,6 @@ def motif_frontline_initiative_flip(before, after, player_num, actor, action):
 
 
 def motif_recharge_trap(before, after, player_num, actor, action):
-    if action.get("type") != "ability":
-        return 0.0
-    target = action.get("target")
-    if target is None:
-        return 0.0
-    mode = get_mode(actor, action["ability"])
-    statuses = [s for s in (mode.status, mode.status2, mode.status3) if s]
-    if "shock" in statuses and is_recharge_sensitive(target) and ability_uses_until_recharge(target) <= 1:
-        return 20.0
     return 0.0
 
 
@@ -651,16 +796,22 @@ def evaluate_immediate_resolution(before, after, player_num, actor, action):
         target = action.get("target")
         if target is not None:
             score += target_access_score(actor, target, before)
+            score += focus_fire_status_bonus(target)
             for status in (mode.status, mode.status2, mode.status3):
                 score += estimate_status_value(status, actor, target, before)
+            score += estimate_repentance_rider(actor, action["ability"], target, before)
+        score -= redundant_status_penalty(before, player_num, actor, action)
         if mode.spread:
             legal_targets = get_legal_targets(before, player_num, actor, action["ability"])
             score += 0.6 * estimate_spread_damage(actor, action["ability"], legal_targets, before)
         score += estimate_heal_value(actor, action["ability"], action.get("target"), before)
+        score += composition_plan_bonus(before, player_num, actor, action)
     elif action.get("type") == "swap":
         score += estimate_swap_value(actor, action["target"], before)
+        score += composition_plan_bonus(before, player_num, actor, action)
     elif action.get("type") == "item":
         score += estimate_item_value(actor, actor.item, action.get("target"), before)
+        score += composition_plan_bonus(before, player_num, actor, action)
     elif action.get("type") == "skip":
         score -= 12.0
     return score
@@ -700,6 +851,10 @@ def risk_penalty(before, after, player_num, actor, action):
         if sim_actor.has_status("expose"):
             score += 8.0
     score += max(0.0, -recharge_pressure_score(actor, action, before))
+    if action.get("type") == "ability" and action.get("target") is not None:
+        target = action["target"]
+        if target.item.id == "spiked_mail" and estimate_damage(actor, action["ability"], target, before) > 0:
+            score += 10.0
     if action.get("type") == "ability" and action["ability"].category == "twist" and not motif_burst_now(before, after, player_num, actor, action):
         score += 10.0
     return score
@@ -766,19 +921,25 @@ def fast_pre_score(action, battle, player_num, actor):
             score += estimate_damage(actor, ability, target, battle) * 1.2
             score += estimate_ko_chance_or_certainty(actor, ability, target, battle) * 18.0
             score += target_access_score(actor, target, battle)
+            score += focus_fire_status_bonus(target)
             for status in (mode.status, mode.status2, mode.status3):
                 score += estimate_status_value(status, actor, target, battle)
+            score += estimate_repentance_rider(actor, ability, target, battle)
             if not target.acted:
                 score += 8.0
+        score -= redundant_status_penalty(battle, player_num, actor, action)
         if mode.spread:
             legal_targets = get_legal_targets(battle, player_num, actor, ability)
             score += estimate_spread_damage(actor, ability, legal_targets, battle) * 0.7
         score += estimate_heal_value(actor, ability, target, battle)
         score += score_recharge_tempo(actor, action, battle)
+        score += composition_plan_bonus(battle, player_num, actor, action)
     elif action.get("type") == "swap":
         score += estimate_swap_value(actor, action["target"], battle)
+        score += composition_plan_bonus(battle, player_num, actor, action)
     elif action.get("type") == "item":
         score += estimate_item_value(actor, actor.item, target, battle)
+        score += composition_plan_bonus(battle, player_num, actor, action)
     else:
         score -= 12.0
     return _apply_char_hooks(battle, player_num, actor, action, score)
@@ -886,8 +1047,8 @@ def _hook_hunold(battle, player_num, actor, action, score):
     statuses = [s for s in (mode.status, mode.status2, mode.status3) if s]
     if target.has_status("shock"):
         score += 18.0
-    if "shock" in statuses and is_recharge_sensitive(target):
-        score += 14.0
+    if "shock" in statuses and target.get_stat("attack") >= 65:
+        score += 10.0
     if action["ability"].category == "twist" and mode.spread:
         score += 14.0
     return score
