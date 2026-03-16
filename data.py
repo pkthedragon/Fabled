@@ -109,26 +109,26 @@ STALWART = Ability(
 # ── MAGE ──────────────────────────────────────────────────────────────────────
 FIRE_BLAST = Ability(
     id="fire_blast", name="Fire Blast", category="basic", passive=False,
-    frontline=AbilityMode(power=70, status="burn", status_dur=2),
-    backline=AbilityMode(power=40, status="burn", status_dur=2),
+    frontline=AbilityMode(power=45, status="burn", status_dur=2),
+    backline=AbilityMode(power=30, status="burn", status_dur=2),
 )
 
 THUNDER_CALL = Ability(
     id="thunder_call", name="Thunder Call", category="basic", passive=False,
-    frontline=AbilityMode(power=70, status="shock", status_dur=2),
-    backline=AbilityMode(power=40, status="shock", status_dur=2),
+    frontline=AbilityMode(power=45, status="shock", status_dur=2),
+    backline=AbilityMode(power=30, status="shock", status_dur=2),
 )
 
 FREEZING_GALE = Ability(
     id="freezing_gale", name="Freezing Gale", category="basic", passive=False,
-    frontline=AbilityMode(power=70, status="root", status_dur=2),
-    backline=AbilityMode(power=40, status="root", status_dur=2),
+    frontline=AbilityMode(power=45, status="root", status_dur=2),
+    backline=AbilityMode(power=30, status="root", status_dur=2),
 )
 
 ARCANE_WAVE = Ability(
     id="arcane_wave", name="Arcane Wave", category="basic", passive=False,
-    frontline=AbilityMode(power=80, special="arcane_wave_self_debuff"),
-    backline=AbilityMode(power=45),
+    frontline=AbilityMode(power=60, special="arcane_wave_self_debuff"),
+    backline=AbilityMode(power=40),
 )
 
 BREAKTHROUGH = Ability(
@@ -140,25 +140,25 @@ BREAKTHROUGH = Ability(
 # ── RANGER ────────────────────────────────────────────────────────────────────
 HAWKSHOT = Ability(
     id="hawkshot", name="Hawkshot", category="basic", passive=False,
-    frontline=AbilityMode(power=55, cant_redirect=True),
-    backline=AbilityMode(power=40, cant_redirect=True),
+    frontline=AbilityMode(power=45, cant_redirect=True),
+    backline=AbilityMode(power=35, cant_redirect=True),
 )
 
 VOLLEY = Ability(
     id="volley", name="Volley", category="basic", passive=False,
-    frontline=AbilityMode(power=50, spread=True),
-    backline=AbilityMode(power=40, spread=True),
+    frontline=AbilityMode(power=45, spread=True),
+    backline=AbilityMode(power=35, spread=True),
 )
 
 TRAPPING_BLOW = Ability(
     id="trapping_blow", name="Trapping Blow", category="basic", passive=False,
-    frontline=AbilityMode(power=50, special="trapping_blow_root_weakened"),
-    backline=AbilityMode(power=35, status="weaken", status_dur=2),
+    frontline=AbilityMode(power=40, special="trapping_blow_root_weakened"),
+    backline=AbilityMode(power=30, status="weaken", status_dur=2),
 )
 
 HUNTERS_MARK = Ability(
     id="hunters_mark", name="Hunter's Mark", category="basic", passive=False,
-    frontline=AbilityMode(power=45, special="hunters_mark_dot"),
+    frontline=AbilityMode(power=40, special="hunters_mark_dot"),
     backline=AbilityMode(power=30, special="hunters_mark_dot"),
 )
 
@@ -183,8 +183,8 @@ BLESS = Ability(
 
 SMITE = Ability(
     id="smite", name="Smite", category="basic", passive=False,
-    frontline=AbilityMode(power=55, status="burn", status_dur=2),
-    backline=AbilityMode(power=45),
+    frontline=AbilityMode(power=40, status="burn", status_dur=2),
+    backline=AbilityMode(power=40),
 )
 
 MEDIC = Ability(
@@ -644,7 +644,7 @@ ELLA_S1 = Ability(
 )
 ELLA_S2 = Ability(
     id="crowstorm", name="Crowstorm", category="signature", passive=False,
-    frontline=AbilityMode(power=80, spread=True, status="burn", status_dur=2),
+    frontline=AbilityMode(power=60, spread=True, status="burn", status_dur=2),
     backline=AbilityMode(status="burn", status_dur=2,
                          special="ella_ignore_two_lives"),
 )
@@ -670,8 +670,8 @@ ELLA = AdventurerDef(
 # ── MARCH HARE (Mage) ─────────────────────────────────────────────────────────
 HARE_S1 = Ability(
     id="tempus_fugit", name="Tempus Fugit", category="signature", passive=False,
-    frontline=AbilityMode(power=75, spd_debuff=15, spd_debuff_dur=2),
-    backline=AbilityMode(power=45, spd_debuff=12, spd_debuff_dur=2),
+    frontline=AbilityMode(power=60, spd_debuff=15, spd_debuff_dur=2),
+    backline=AbilityMode(power=35, spd_debuff=12, spd_debuff_dur=2),
 )
 HARE_S2 = Ability(
     id="rabbit_hole", name="Rabbit Hole", category="signature", passive=False,
@@ -680,8 +680,8 @@ HARE_S2 = Ability(
 )
 HARE_S3 = Ability(
     id="nebulous_ides", name="Nebulous Ides", category="signature", passive=False,
-    frontline=AbilityMode(power=70, bonus_if_target_acted=15),
-    backline=AbilityMode(power=40, special="nebulous_ides_back"),
+    frontline=AbilityMode(power=60, bonus_if_target_acted=15),
+    backline=AbilityMode(power=35, special="nebulous_ides_back"),
 )
 HARE_T = Ability(
     id="stitch_in_time", name="Stitch In Time", category="twist", passive=False,
@@ -699,12 +699,12 @@ MARCH_HARE = AdventurerDef(
 # ── WITCH OF THE WOODS (Mage) ─────────────────────────────────────────────────
 WITCH_S1 = Ability(
     id="toil_and_trouble", name="Toil and Trouble", category="signature", passive=False,
-    frontline=AbilityMode(power=70, special="toil_spread_status_right"),
-    backline=AbilityMode(power=40, status="burn", status_dur=2),
+    frontline=AbilityMode(power=60, special="toil_spread_status_right"),
+    backline=AbilityMode(power=35, status="burn", status_dur=2),
 )
 WITCH_S2 = Ability(
     id="cauldron_bubble", name="Cauldron Bubble", category="signature", passive=False,
-    frontline=AbilityMode(power=65, spread=True, special="cauldron_extend_status"),
+    frontline=AbilityMode(power=60, spread=True, special="cauldron_extend_status"),
     backline=AbilityMode(power=35, spread=True, special="cauldron_extend_status"),
 )
 WITCH_S3 = Ability(
@@ -734,7 +734,7 @@ BRIAR_S1 = Ability(
 BRIAR_S2 = Ability(
     id="creeping_doubt", name="Creeping Doubt", category="signature", passive=False,
     frontline=AbilityMode(power=55, bonus_vs_rooted=30),
-    backline=AbilityMode(power=40, status="root", status_dur=2),
+    backline=AbilityMode(power=30, status="root", status_dur=2),
 )
 BRIAR_S3 = Ability(
     id="garden_of_thorns", name="Garden of Thorns", category="signature", passive=True,
@@ -757,17 +757,17 @@ BRIAR_ROSE = AdventurerDef(
 # ── FREDERIC THE BEASTSLAYER (Ranger) ─────────────────────────────────────────
 FRED_S1 = Ability(
     id="heros_charge", name="Hero's Charge", category="signature", passive=False,
-    frontline=AbilityMode(power=65, special="heros_charge_ignore_pride_front"),
-    backline=AbilityMode(power=30, spd_buff=12, spd_buff_dur=2),
+    frontline=AbilityMode(power=60, special="heros_charge_ignore_pride_front"),
+    backline=AbilityMode(power=20, spd_buff=12, spd_buff_dur=2),
 )
 FRED_S2 = Ability(
     id="on_the_hunt", name="On the Hunt", category="signature", passive=False,
-    frontline=AbilityMode(power=50, atk_buff=12, atk_buff_dur=2),
-    backline=AbilityMode(power=25, status="expose", status_dur=2),
+    frontline=AbilityMode(power=55, atk_buff=12, atk_buff_dur=2),
+    backline=AbilityMode(power=20, status="expose", status_dur=2),
 )
 FRED_S3 = Ability(
     id="jovial_shot", name="Jovial Shot", category="signature", passive=False,
-    frontline=AbilityMode(power=55, status="weaken", status_dur=2),
+    frontline=AbilityMode(power=45, status="weaken", status_dur=2),
     backline=AbilityMode(heal_self=80, self_status="weaken", self_status_dur=2),
 )
 FRED_T = Ability(
@@ -788,8 +788,8 @@ FREDERIC = AdventurerDef(
 # ── ROBIN, HOODED AVENGER (Ranger) ────────────────────────────────────────────
 ROBIN_S1 = Ability(
     id="snipe_shot", name="Snipe Shot", category="signature", passive=False,
-    frontline=AbilityMode(power=60),
-    backline=AbilityMode(power=35, ignore_guard=True),
+    frontline=AbilityMode(power=50),
+    backline=AbilityMode(power=30, ignore_guard=True),
 )
 ROBIN_S2 = Ability(
     id="spread_fortune", name="Spread Fortune", category="signature", passive=True,
@@ -798,8 +798,8 @@ ROBIN_S2 = Ability(
 )
 ROBIN_S3 = Ability(
     id="bring_down", name="Bring Down", category="signature", passive=False,
-    frontline=AbilityMode(power=55, special="bring_down_steal_atk"),
-    backline=AbilityMode(power=35, status="root", status_dur=2),
+    frontline=AbilityMode(power=50, special="bring_down_steal_atk"),
+    backline=AbilityMode(power=30, status="root", status_dur=2),
 )
 ROBIN_T = Ability(
     id="kingmaker", name="Kingmaker", category="twist", passive=False,
@@ -829,8 +829,8 @@ ALDRIC_S2 = Ability(
 )
 ALDRIC_S3 = Ability(
     id="repentance", name="Repentance", category="signature", passive=False,
-    frontline=AbilityMode(power=65, vamp=0.40, special="repentance_front"),
-    backline=AbilityMode(power=45, vamp=0.25),
+    frontline=AbilityMode(power=45, vamp=0.40, special="repentance_front"),
+    backline=AbilityMode(power=30, vamp=0.25),
 )
 ALDRIC_T = Ability(
     id="redemption", name="Redemption", category="twist", passive=False,
@@ -858,8 +858,8 @@ LIESL_S2 = Ability(
 )
 LIESL_S3 = Ability(
     id="cauterize", name="Cauterize", category="signature", passive=False,
-    frontline=AbilityMode(power=60, status="no_heal", status_dur=2),
-    backline=AbilityMode(power=45, status="no_heal", status_dur=2),
+    frontline=AbilityMode(power=55, status="no_heal", status_dur=2),
+    backline=AbilityMode(power=35, status="no_heal", status_dur=2),
 )
 LIESL_T = Ability(
     id="cleansing_inferno", name="Cleansing Inferno", category="twist", passive=False,
@@ -884,8 +884,8 @@ AURORA_S1 = Ability(
 )
 AURORA_S2 = Ability(
     id="dictate_of_nature", name="Dictate of Nature", category="signature", passive=False,
-    frontline=AbilityMode(power=50, heal_lowest=35),
-    backline=AbilityMode(power=30, heal_lowest=20),
+    frontline=AbilityMode(power=45, heal_lowest=35),
+    backline=AbilityMode(power=25, heal_lowest=20),
 )
 AURORA_S3 = Ability(
     id="birdsong", name="Birdsong", category="signature", passive=True,

@@ -194,9 +194,6 @@ class SwapTracker:
 
 
 def load_metadata(pool):
-    uncovered = [team["name"] for team in pool if team["name"] not in ARCHETYPE_MAP]
-    if uncovered:
-        raise RuntimeError(f"Missing archetype mapping for: {', '.join(uncovered)}")
     roster_by_id = {defn.id: defn for defn in rr.ROSTER}
     items_by_id = {item.id: item for item in rr.ITEMS}
     return roster_by_id, items_by_id
@@ -277,12 +274,13 @@ def make_battle(comp1, picks1, comp2, picks2):
 
 def build_side_metadata(team_name, battle_team):
     units = []
+    archetype = ARCHETYPE_MAP.get(team_name, team_name)
     for unit in battle_team.members:
         units.append(
             {
                 "unit": unit,
                 "team": team_name,
-                "archetype": ARCHETYPE_MAP[team_name],
+                "archetype": archetype,
                 "adventurer": unit.name,
                 "class": unit.cls,
                 "type": type_for_class(unit.cls),

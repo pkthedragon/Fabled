@@ -25,6 +25,7 @@ import pygame
 import battle_log
 import net
 import ai as _ai
+from ai_team_pool import AI_TEAM_POOL
 from settings import *
 from models import BattleState, CampaignProfile
 from data import ROSTER, CLASS_BASICS, ITEMS
@@ -441,6 +442,7 @@ class Game:
                 {"defn": "frederic", "sig": "on_the_hunt", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
             ]},
         ]
+        self._ai_team_pool = AI_TEAM_POOL
 
     def _is_single_player(self):
         return self.game_mode in ("single_player", "campaign")
