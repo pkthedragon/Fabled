@@ -1,0 +1,428 @@
+Battle 179
+Player 1 Team: Speed Tempo
+Player 2 Team: Shocked Quarry
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:51:33
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 179
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Shocked Quarry
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] March Hare: Thunder Call → Little Jack
+[Queued] Hunold the Piper: Sucker Punch → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=90
+  Little Jack takes 90 damage.
+    [T] HPCHANGE Little Jack: 220 → 130  (-90)
+  Little Jack is Marked — takes +10 damage next round.
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Little Jack
+March Hare uses Thunder Call on Little Jack.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=70 def=50 raw=49.00 ceil=49
+    [T]   FINAL_DMG=49
+  Little Jack takes 49 damage.
+    [T] HPCHANGE Little Jack: 130 → 81  (-49)
+  Little Jack gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Little Jack
+Hunold the Piper uses Sucker Punch on Little Jack.
+  Little Jack gains weaken for 2 rounds.
+[Queued] Little Jack: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: On the Hunt → Frederic the Beastslayer
+[Queued] March Hare: Thunder Call → Hunold the Piper
+    [T] ACTION P1 Little Jack[front]: swap ↔ Frederic the Beastslayer
+Little Jack and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: On the Hunt → Frederic the Beastslayer
+Frederic the Beastslayer uses On the Hunt on Frederic the Beastslayer.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=84
+  Frederic the Beastslayer takes 84 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 116  (-84)
+  Frederic the Beastslayer gains +15 Attack for 2 rounds.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Hunold the Piper
+March Hare uses Thunder Call on Hunold the Piper.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Hunold the Piper[back_left]
+    [T]   power=35
+    [T]   atk=70 def=45 raw=54.44 ceil=55
+    [T]   FINAL_DMG=50
+  Hunold the Piper takes 50 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 160  (-50)
+  Hunold the Piper gains shock for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[back_right] HP=81/220 statuses=[shock(2r), weaken(2r)]
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=116/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=160/210 statuses=[shock(2r)]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Little Jack: shock → 1r left
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Hunold the Piper: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=81/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=80(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), attack+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=116/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=160/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Hunold the Piper
+[Queued] Little Jack: Skyfall → Frederic the Beastslayer
+[Queued] March Hare: Arcane Wave → Hunold the Piper
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Hunold the Piper
+Frederic the Beastslayer uses Hunter's Mark on Hunold the Piper.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Hunold the Piper[back_left]
+    [T]   power=50
+    [T]   atk=80 def=45 raw=88.89 ceil=89
+    [T]   FINAL_DMG=81
+  Hunold the Piper takes 81 damage.
+    [T] HPCHANGE Hunold the Piper: 160 → 79  (-81)
+  Hunold the Piper is Marked — takes +10 damage next round.
+    [T] ACTION P1 Little Jack[back_right]: Skyfall → Frederic the Beastslayer
+Little Jack uses Skyfall on Frederic the Beastslayer.
+  Frederic the Beastslayer gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[back_left]: Arcane Wave → Hunold the Piper
+March Hare uses Arcane Wave on Hunold the Piper.
+    [T] DMGCALC [Arcane Wave] March Hare[back_left] → Hunold the Piper[back_left]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=63
+  Hunold the Piper takes 63 damage.
+    [T] HPCHANGE Hunold the Piper: 79 → 16  (-63)
+[Queued] Frederic the Beastslayer: Hunter's Mark → March Hare
+[Queued] March Hare: Thunder Call → Frederic the Beastslayer
+[Queued] Hunold the Piper: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → March Hare
+Frederic the Beastslayer uses Hunter's Mark on March Hare.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → March Hare[back_left]
+    [T]   power=50
+    [T]   atk=75 def=35 raw=107.14 ceil=108
+    [T]   FINAL_DMG=108
+  March Hare takes 108 damage.
+    [T] HPCHANGE March Hare: 190 → 82  (-108)
+  March Hare is Marked — takes +10 damage next round.
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Frederic the Beastslayer
+March Hare uses Thunder Call on Frederic the Beastslayer.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Frederic the Beastslayer[front]
+    [T]   power=35
+    [T]   atk=70 def=45 raw=54.44 ceil=55
+    [T]   FINAL_DMG=55
+  Frederic the Beastslayer takes 55 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 145  (-55)
+  Frederic the Beastslayer gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: swap ↔ Frederic the Beastslayer
+Hunold the Piper and Frederic the Beastslayer swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[back_right] HP=81/220 statuses=[shock(1r), weaken(1r)]
+    [T]   P1 March Hare[back_left] HP=82/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=145/200 statuses=[shock(2r)]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=116/200 statuses=[expose(2r)]
+    [T]   P2 Hunold the Piper[front] HP=16/210 statuses=[shock(1r)]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Little Jack: shock → 0r left
+    [T] STATUS_TICK Little Jack: weaken → 0r left
+    [T] STATUS_EXPIRED Little Jack: shock
+    [T] STATUS_EXPIRED Little Jack: weaken
+    [T] STATUS_TICK Frederic the Beastslayer: shock → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+15
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Hunold the Piper: shock → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: shock
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=81/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=82/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=145/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[shock(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=116/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=16/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Frederic the Beastslayer
+[Queued] March Hare: Arcane Wave → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Frederic the Beastslayer
+Hunold the Piper uses Dying Dance on Frederic the Beastslayer.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=103
+  Frederic the Beastslayer takes 103 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 145 → 42  (-103)
+    [T] ACTION P2 March Hare[back_right]: Arcane Wave → Frederic the Beastslayer
+March Hare uses Arcane Wave on Frederic the Beastslayer.
+    [T] DMGCALC [Arcane Wave] March Hare[back_right] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=78
+  Frederic the Beastslayer takes 78 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 42 → 0  (-78) **KO**
+  March Hare must recharge next turn.
+March Hare moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+[Queued] March Hare: Thunder Call → Frederic the Beastslayer
+[Queued] Little Jack: Skyfall → Hunold the Piper
+    [T] ACTION P1 March Hare[front]: Thunder Call → Frederic the Beastslayer
+March Hare uses Thunder Call on Frederic the Beastslayer.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Frederic the Beastslayer[back_left]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=136
+  Frederic the Beastslayer takes 136 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 116 → 0  (-136) **KO**
+  Frederic the Beastslayer gains shock for 2 rounds.
+  March Hare must recharge next turn.
+    [T] ACTION P1 Little Jack[back_right]: Skyfall → Hunold the Piper
+Little Jack uses Skyfall on Hunold the Piper.
+  Hunold the Piper gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[back_right] HP=81/220 statuses=[-]
+    [T]   P1 March Hare[front] HP=82/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=16/210 statuses=[expose(2r)]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Hunold the Piper spd=50 (MH adj from 65)  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=81/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=82/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=16/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Hunold the Piper
+    [T] ACTION P1 March Hare[front]: swap ↔ Little Jack
+March Hare recharges.
+    [T] ACTION P1 Little Jack[back_right]: Skyfall → Hunold the Piper
+Little Jack uses Skyfall on Hunold the Piper.
+[Queued] Hunold the Piper: Sucker Punch → March Hare
+[Queued] March Hare: Swap with Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → March Hare
+Hunold the Piper uses Sucker Punch on March Hare.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=60 def=35 raw=68.57 ceil=69
+    [T]   FINAL_DMG=69
+  March Hare takes 69 damage.
+    [T] HPCHANGE March Hare: 82 → 13  (-69)
+    [T] ACTION P2 March Hare[back_right]: swap ↔ Hunold the Piper
+March Hare recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[back_right] HP=81/220 statuses=[-]
+    [T]   P1 March Hare[front] HP=13/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=16/210 statuses=[expose(1r)]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: expose → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: expose
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Hunold the Piper spd=50 (MH adj from 65)  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=81/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=13/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=16/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Hunold the Piper
+[Queued] Little Jack: Skyfall → Hunold the Piper
+    [T] ACTION P1 March Hare[front]: Thunder Call → Hunold the Piper
+March Hare uses Thunder Call on Hunold the Piper.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Hunold the Piper[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=82
+  Hunold the Piper takes 82 damage.
+    [T] HPCHANGE Hunold the Piper: 16 → 0  (-82) **KO**
+  Hunold the Piper gains shock for 2 rounds.
+March Hare moves to frontline.
+    [T] ACTION P1 Little Jack[back_right]: Skyfall → Hunold the Piper
+Little Jack's target is no longer legal — Skyfall fizzles.
+[Queued] March Hare: Thunder Call → Little Jack
+    [T] ACTION P2 March Hare[front]: Thunder Call → Little Jack
+March Hare uses Thunder Call on Little Jack.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Little Jack[back_right]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=91
+  Little Jack takes 91 damage.
+    [T] HPCHANGE Little Jack: 81 → 0  (-91) **KO**
+  Little Jack gains shock for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare[front] HP=13/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare[front] HP=190/190 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=55 (MH adj from 70)  vs  P2 FL=March Hare spd=55 (MH adj from 70)  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare[front] HP=13/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare[front] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → March Hare
+    [T] ACTION P2 March Hare[front]: Thunder Call → March Hare
+March Hare uses Thunder Call on March Hare.
+    [T] DMGCALC [Thunder Call] March Hare[front] → March Hare[front]
+    [T]   power=65
+    [T]   atk=70 def=35 raw=130.00 ceil=130
+    [T]   FINAL_DMG=130
+  March Hare takes 130 damage.
+    [T] HPCHANGE March Hare: 13 → 0  (-130) **KO**
+  March Hare gains shock for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

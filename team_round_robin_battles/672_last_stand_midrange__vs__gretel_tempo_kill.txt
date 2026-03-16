@@ -1,0 +1,483 @@
+Battle 672
+Player 1 Team: Last-Stand Midrange
+Player 2 Team: Gretel Tempo Kill
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:42:12
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 672
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Midrange
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Wolf's Pursuit  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Chosen One  (passive=True)
+    Basics: Impose, Command
+    Item:   Holy Diadem
+Player 2: Gretel Tempo Kill
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Risa Redcloak
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Risa Redcloak
+Witch-Hunter Gretel uses Shove Over on Risa Redcloak.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Risa Redcloak[front]
+    [T]   power=65
+    [T]   atk=80 def=60 raw=86.67 ceil=87
+    [T]   FINAL_DMG=87
+  Risa Redcloak takes 87 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 163  (-87)
+  Risa Redcloak gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 255 → 189  (-66)
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Risa Redcloak
+Lucky Constantine uses Post Bounty on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+[Queued] Risa Redcloak: Wolf's Pursuit → Witch-Hunter Gretel
+[Queued] Prince Charming: Impose → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Wolf's Pursuit → Witch-Hunter Gretel
+Risa Redcloak uses Wolf's Pursuit on Witch-Hunter Gretel.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=68
+  Witch-Hunter Gretel takes 68 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 147  (-68)
+  Risa Redcloak heals 5 HP.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Witch-Hunter Gretel
+Prince Charming uses Impose on Witch-Hunter Gretel.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=30
+    [T]   atk=65 def=45 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Witch-Hunter Gretel takes 44 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 147 → 103  (-44)
+  Witch-Hunter Gretel loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[front] HP=223/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=189/255 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=103/215 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Witch-Hunter Gretel spd=50  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=223/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=189/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=103/215 ATK=80(base=80) DEF=45(base=45) SPD=50(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Risa Redcloak
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Risa Redcloak
+Witch-Hunter Gretel uses Shove Over on Risa Redcloak.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Risa Redcloak[front]
+    [T]   power=65
+    [T]   atk=80 def=70 raw=74.29 ceil=75
+    [T]   FINAL_DMG=75
+  Risa Redcloak takes 75 damage.
+    [T] HPCHANGE Risa Redcloak: 223 → 148  (-75)
+  Risa Redcloak gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 189 → 123  (-66)
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Risa Redcloak
+Lucky Constantine uses Post Bounty on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+[Queued] Risa Redcloak: Rend → Witch-Hunter Gretel
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Witch-Hunter Gretel
+Risa Redcloak uses Rend on Witch-Hunter Gretel.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Witch-Hunter Gretel[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=88
+  Witch-Hunter Gretel takes 88 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 103 → 15  (-88)
+  Risa Redcloak heals 7 HP.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Robin, Hooded Avenger
+Prince Charming uses Impose on Robin, Hooded Avenger.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=30
+    [T]   atk=65 def=40 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Robin, Hooded Avenger takes 49 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 136  (-49)
+  Robin, Hooded Avenger loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[front] HP=210/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=123/255 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=15/215 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=136/185 statuses=[-]
+    [T] DEBUFF_EXPIRED Witch-Hunter Gretel: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=210/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=123/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=15/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=136/185 ATK=70(base=70) DEF=40(base=40) SPD=55(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+[Queued] Witch-Hunter Gretel: Shove Over → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Risa Redcloak
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Risa Redcloak
+Witch-Hunter Gretel uses Shove Over on Risa Redcloak.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Risa Redcloak[front]
+    [T]   power=65
+    [T]   atk=80 def=70 raw=74.29 ceil=75
+    [T]   FINAL_DMG=75
+  Risa Redcloak takes 75 damage.
+    [T] HPCHANGE Risa Redcloak: 210 → 135  (-75)
+  Risa Redcloak gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 123 → 57  (-66)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Risa Redcloak
+Lucky Constantine uses Post Bounty on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+[Queued] Risa Redcloak: Rend → Witch-Hunter Gretel
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch-Hunter Gretel
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Witch-Hunter Gretel
+Risa Redcloak uses Rend on Witch-Hunter Gretel.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Witch-Hunter Gretel[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=88
+  Witch-Hunter Gretel takes 88 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 15 → 0  (-88) **KO**
+  Risa Redcloak heals 7 HP.
+Lucky Constantine moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Robin, Hooded Avenger
+Prince Charming uses Impose on Robin, Hooded Avenger.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=30
+    [T]   atk=65 def=40 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Robin, Hooded Avenger takes 49 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 136 → 87  (-49)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Witch-Hunter Gretel
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[front] HP=142/250 statuses=[weaken(2r), expose(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=57/255 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=87/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=142/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=57/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=87/185 ATK=70(base=70) DEF=40(base=40) SPD=55(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+[Queued] Lucky Constantine: Sneak Attack → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Swap with Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Sneak Attack → Risa Redcloak
+Lucky Constantine uses Sneak Attack on Risa Redcloak.
+    [T] DMGCALC [Sneak Attack] Lucky Constantine[front] → Risa Redcloak[front]
+    [T]   power=60 (base=45)
+    [T]   atk=70 def=60 raw=70.00 ceil=70
+    [T]   FINAL_DMG=84
+  Risa Redcloak takes 84 damage.
+    [T] HPCHANGE Risa Redcloak: 142 → 58  (-84)
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Lucky Constantine
+Robin, Hooded Avenger recharges.
+[Queued] Risa Redcloak: Wolf's Pursuit → Lucky Constantine
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Wolf's Pursuit → Lucky Constantine
+Risa Redcloak uses Wolf's Pursuit on Lucky Constantine.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=76
+  Lucky Constantine takes 76 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 139  (-76)
+  Risa Redcloak heals 21 HP.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Risa Redcloak
+Prince Charming recharges.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[front] HP=134/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=57/255 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=139/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=87/185 statuses=[-]
+    [T] DEBUFF_EXPIRED Robin, Hooded Avenger: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=134/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=57/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=139/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=87/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Post Bounty → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Prince Charming
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Risa Redcloak
+Lucky Constantine uses Post Bounty on Risa Redcloak.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=70 def=70 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Risa Redcloak takes 40 damage.
+    [T] HPCHANGE Risa Redcloak: 134 → 94  (-40)
+  Risa Redcloak gains expose for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Prince Charming
+Robin, Hooded Avenger uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=25
+    [T]   atk=77 def=55 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Prince Charming takes 45 damage.
+    [T] HPCHANGE Prince Charming: 57 → 12  (-45)
+  Prince Charming is Marked — takes +10 damage next round.
+[Queued] Risa Redcloak: Wolf's Pursuit → Lucky Constantine
+[Queued] Prince Charming: Impose → Lucky Constantine
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Wolf's Pursuit → Lucky Constantine
+Risa Redcloak uses Wolf's Pursuit on Lucky Constantine.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=94
+  Lucky Constantine takes 94 damage.
+    [T] HPCHANGE Lucky Constantine: 139 → 45  (-94)
+  Risa Redcloak heals 26 HP.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Lucky Constantine
+Prince Charming uses Impose on Lucky Constantine.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Lucky Constantine[front]
+    [T]   power=30
+    [T]   atk=65 def=40 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Lucky Constantine takes 49 damage.
+    [T] HPCHANGE Lucky Constantine: 45 → 0  (-49) **KO**
+  Lucky Constantine loses -10 Speed for 2 rounds.
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[front] HP=120/250 statuses=[expose(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=12/255 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=87/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=120/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=12/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=87/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Kingmaker → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Kingmaker → Snowkissed Aurora
+Robin, Hooded Avenger uses Kingmaker on Snowkissed Aurora.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Snowkissed Aurora[back_left]
+    [T]   power=90 (base=70)
+    [T]   atk=70 def=60 raw=105.00 ceil=105
+    [T]   FINAL_DMG=115
+  Snowkissed Aurora takes 115 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 110  (-115)
+[Queued] Risa Redcloak: Rend → Robin, Hooded Avenger
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Robin, Hooded Avenger
+Risa Redcloak uses Rend on Robin, Hooded Avenger.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Robin, Hooded Avenger[front]
+    [T]   power=65 (base=45)
+    [T]   atk=90 def=40 raw=146.25 ceil=147
+    [T]   FINAL_DMG=147
+  Robin, Hooded Avenger takes 147 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 87 → 0  (-147) **KO**
+  Risa Redcloak heals 40 HP.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 1 wins!

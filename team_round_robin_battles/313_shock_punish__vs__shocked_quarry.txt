@@ -1,0 +1,1115 @@
+Battle 313
+Player 1 Team: Shock Punish
+Player 2 Team: Shocked Quarry
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:02:51
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 313
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shock Punish
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Tempus Fugit  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Shocked Quarry
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → March Hare
+[Queued] March Hare: Thunder Call → March Hare
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → March Hare
+Frederic the Beastslayer uses Hunter's Mark on March Hare.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → March Hare[back_right]
+    [T]   power=50
+    [T]   atk=75 def=35 raw=107.14 ceil=108
+    [T]   FINAL_DMG=108
+  March Hare takes 108 damage.
+    [T] HPCHANGE March Hare: 190 → 82  (-108)
+  March Hare is Marked — takes +10 damage next round.
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → March Hare
+March Hare uses Thunder Call on March Hare.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → March Hare[back_right]
+    [T]   power=35
+    [T]   atk=70 def=35 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  March Hare takes 70 damage.
+    [T] HPCHANGE March Hare: 82 → 12  (-70)
+  March Hare gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Swap with March Hare
+[Queued] March Hare: Thunder Call → Frederic the Beastslayer
+[Queued] Hunold the Piper: Sucker Punch → Frederic the Beastslayer
+    [T] ACTION P1 Sir Roland[front]: swap ↔ March Hare
+Sir Roland and March Hare swap positions.
+  Banner of Command: March Hare is Guarded.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Frederic the Beastslayer
+March Hare uses Thunder Call on Frederic the Beastslayer.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=113
+  Frederic the Beastslayer takes 113 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 87  (-113)
+  Shock recoil: March Hare takes 23 damage.
+  Frederic the Beastslayer gains shock for 2 rounds.
+Hunold the Piper moves to frontline.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Frederic the Beastslayer
+Hunold the Piper uses Sucker Punch on Frederic the Beastslayer.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=75
+  Frederic the Beastslayer takes 75 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 87 → 12  (-75)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[weaken(2r)]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=12/200 statuses=[shock(2r)]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Frederic the Beastslayer: shock → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=12/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[shock(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Frederic the Beastslayer
+[Queued] Sir Roland: Item Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Frederic the Beastslayer
+Hunold the Piper uses Dying Dance on Frederic the Beastslayer.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=103
+  Frederic the Beastslayer takes 103 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 12 → 0  (-103) **KO**
+Hunold the Piper moves to frontline.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Hunold the Piper
+Sir Roland uses Crafty Shield.
+  Hunold the Piper is Guarded.
+[Queued] Hunold the Piper: Dying Dance → Hunold the Piper
+[Queued] March Hare: Rabbit Hole → March Hare
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Hunold the Piper
+Hunold the Piper uses Dying Dance on Hunold the Piper.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=52
+  Hunold the Piper takes 52 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 158  (-52)
+    [T] ACTION P2 March Hare[back_right]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[weaken(1r)]
+    [T]   P1 Hunold the Piper[front] HP=158/210 statuses=[guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=158/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Hunold the Piper
+[Queued] March Hare: Thunder Call → Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Hunold the Piper
+Hunold the Piper uses Dying Dance on Hunold the Piper.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=52
+  Hunold the Piper takes 52 damage.
+    [T] HPCHANGE Hunold the Piper: 158 → 106  (-52)
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Hunold the Piper
+March Hare uses Thunder Call on Hunold the Piper.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=70 def=45 raw=54.44 ceil=55
+    [T]   FINAL_DMG=44
+  Hunold the Piper takes 44 damage.
+    [T] HPCHANGE Hunold the Piper: 106 → 62  (-44)
+  Hunold the Piper gains shock for 2 rounds.
+  March Hare must recharge next turn.
+[Queued] Hunold the Piper: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper[back_right] HP=62/210 statuses=[guard(1r), shock(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_TICK Hunold the Piper: shock → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=62/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Item March Hare
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P2 March Hare[front]: item [Lightning Boots] → March Hare
+March Hare recharges.
+[Queued] Sir Roland: Item Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → March Hare
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Hunold the Piper
+Sir Roland uses Crafty Shield.
+  Hunold the Piper is Guarded.
+    [T] ACTION P1 Hunold the Piper[back_right]: Sucker Punch → March Hare
+Hunold the Piper uses Sucker Punch on March Hare.
+  March Hare gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper[back_right] HP=62/210 statuses=[shock(1r), guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[front] HP=190/190 statuses=[weaken(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: shock → 0r left
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: shock
+    [T] STATUS_TICK March Hare: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=15 (MH adj from 30)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=62/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Hunold the Piper
+[Queued] Hunold the Piper: Swap with March Hare
+    [T] ACTION P2 March Hare[front]: Thunder Call → Hunold the Piper
+March Hare uses Thunder Call on Hunold the Piper.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Hunold the Piper[back_right]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=60
+  Hunold the Piper takes 60 damage.
+    [T] HPCHANGE Hunold the Piper: 62 → 2  (-60)
+  Hunold the Piper gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_right]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Hunold the Piper: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Hunold the Piper[back_right]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper[front] HP=2/210 statuses=[guard(1r), shock(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[weaken(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_TICK Hunold the Piper: shock → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+    [T] STATUS_TICK March Hare: weaken → 0r left
+    [T] STATUS_EXPIRED March Hare: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=2/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with Sir Roland
+[Queued] Sir Roland: Item Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Hunold the Piper
+Sir Roland uses Crafty Shield.
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Rabbit Hole → March Hare
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P2 March Hare[front]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+  March Hare will have an extra action next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper[back_right] HP=2/210 statuses=[shock(1r), guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[front] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: shock → 0r left
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: shock
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=15 (MH adj from 30)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=2/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Swap with Hunold the Piper
+[Queued] March Hare: Rabbit Hole → March Hare
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 March Hare[front]: swap ↔ Hunold the Piper
+March Hare and Hunold the Piper swap positions.
+    [T] ACTION P2 March Hare[back_right]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+  March Hare must recharge next turn.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=60 def=90 raw=26.67 ceil=27
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 265 → 258  (-7)
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Hunold the Piper: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Hunold the Piper[back_right]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[back_right] HP=258/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper[front] HP=2/210 statuses=[guard(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=258/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=2/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with Sir Roland
+[Queued] Sir Roland: Item Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Hunold the Piper
+Sir Roland uses Crafty Shield.
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Item March Hare
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P2 March Hare[front]: item [Lightning Boots] → March Hare
+March Hare recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=258/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper[back_right] HP=2/210 statuses=[guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[front] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=15 (MH adj from 30)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=258/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=2/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Hunold the Piper
+[Queued] Hunold the Piper: Swap with March Hare
+    [T] ACTION P2 March Hare[front]: Thunder Call → Hunold the Piper
+March Hare uses Thunder Call on Hunold the Piper.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Hunold the Piper[back_right]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=74
+  Hunold the Piper takes 74 damage.
+    [T] HPCHANGE Hunold the Piper: 2 → 0  (-74) **KO**
+  Hunold the Piper gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_right]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 7 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Rabbit Hole → March Hare
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P2 March Hare[front]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+  March Hare will have an extra action next round.
+[Queued] Sir Roland: Shield Bash → March Hare
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → March Hare
+Sir Roland uses Shield Bash on March Hare.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=45 def=35 raw=51.43 ceil=52
+    [T]   FINAL_DMG=52
+  March Hare takes 52 damage.
+    [T] HPCHANGE March Hare: 190 → 138  (-52)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[front] HP=138/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=15 (MH adj from 30)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=138/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Swap with Hunold the Piper
+[Queued] March Hare: Rabbit Hole → March Hare
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 March Hare[front]: swap ↔ Hunold the Piper
+March Hare and Hunold the Piper swap positions.
+    [T] ACTION P2 March Hare[back_right]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+  March Hare must recharge next turn.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=60 def=90 raw=26.67 ceil=27
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 265 → 258  (-7)
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 178  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=258/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=178/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=138/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=258/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=178/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=138/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Item March Hare
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P2 March Hare[front]: item [Lightning Boots] → March Hare
+March Hare recharges.
+[Queued] Sir Roland: Shield Bash → March Hare
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → March Hare
+Sir Roland uses Shield Bash on March Hare.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=45 def=35 raw=51.43 ceil=52
+    [T]   FINAL_DMG=52
+  March Hare takes 52 damage.
+    [T] HPCHANGE March Hare: 138 → 86  (-52)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[front] HP=258/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=178/210 statuses=[-]
+    [T]   P2 March Hare[front] HP=86/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=15 (MH adj from 30)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=258/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=178/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=86/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 March Hare[front]: swap ↔ Hunold the Piper
+March Hare and Hunold the Piper swap positions.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=60 def=90 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 258 → 231  (-27)
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 178 → 146  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Sir Roland[front] HP=231/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=146/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=86/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=231/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=146/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=86/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Rabbit Hole → March Hare
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P2 March Hare[front]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+  March Hare will have an extra action next round.
+[Queued] Sir Roland: Shield Bash → March Hare
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → March Hare
+Sir Roland uses Shield Bash on March Hare.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=45 def=35 raw=51.43 ceil=52
+    [T]   FINAL_DMG=52
+  March Hare takes 52 damage.
+    [T] HPCHANGE March Hare: 86 → 34  (-52)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Sir Roland[front] HP=231/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=146/210 statuses=[-]
+    [T]   P2 March Hare[front] HP=34/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=15 (MH adj from 30)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=231/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[back_right] HP=146/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=34/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Swap with Hunold the Piper
+[Queued] March Hare: Rabbit Hole → March Hare
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 March Hare[front]: swap ↔ Hunold the Piper
+March Hare and Hunold the Piper swap positions.
+    [T] ACTION P2 March Hare[back_right]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=60 def=90 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 231 → 204  (-27)
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 146 → 114  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Sir Roland[front] HP=204/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=114/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=34/190 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=204/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=114/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=34/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Rabbit Hole → March Hare
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P2 March Hare[front]: Rabbit Hole → March Hare
+March Hare uses Rabbit Hole on March Hare.
+  March Hare will have an extra action next round.
+  March Hare must recharge next turn.
+[Queued] Sir Roland: Shield Bash → March Hare
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → March Hare
+Sir Roland uses Shield Bash on March Hare.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=45 def=35 raw=51.43 ceil=52
+    [T]   FINAL_DMG=52
+  March Hare takes 52 damage.
+    [T] HPCHANGE March Hare: 34 → 0  (-52) **KO**
+Hunold the Piper moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Sir Roland[front] HP=204/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=114/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=204/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=114/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Devil's Due → Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Devil's Due → Hunold the Piper
+Hunold the Piper uses Devil's Due on Hunold the Piper.
+  Devil's Due! Dying Dance is now Spread this round.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 114 → 82  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Sir Roland[front] HP=204/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=82/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=204/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=82/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 204 → 172  (-32)
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 82 → 50  (-32)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Sir Roland[front] HP=172/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=50/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=172/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=50/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 172 → 132  (-40)
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 50 → 18  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Sir Roland[front] HP=132/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=18/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=132/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Hunold the Piper[front] HP=18/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 132 → 100  (-32)
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 18 → 0  (-32) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 20)
+────────────────────────────────────────────────────────────
+Player 1 wins!

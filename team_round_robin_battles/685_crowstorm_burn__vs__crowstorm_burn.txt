@@ -1,0 +1,438 @@
+Battle 685
+Player 1 Team: Crowstorm Burn
+Player 2 Team: Crowstorm Burn
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:43:42
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 685
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+Player 2: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Ashen Ella: Arcane Wave → Ashen Ella
+[Queued] Witch-Hunter Gretel: Swap with Ashen Ella
+[Queued] Matchstick Liesl: Cauterize → Ashen Ella
+    [T] ACTION P2 Ashen Ella[front]: Arcane Wave → Ashen Ella
+Ashen Ella uses Arcane Wave on Ashen Ella.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Ashen Ella[front]
+    [T]   power=80
+    [T]   atk=80 def=40 raw=160.00 ceil=160
+    [T]   FINAL_DMG=160
+  Ashen Ella takes 160 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 25  (-160)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Ashen Ella
+Witch-Hunter Gretel and Ashen Ella swap positions.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Ashen Ella
+Matchstick Liesl uses Cauterize on Ashen Ella.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Ashen Ella takes 50 damage.
+    [T] HPCHANGE Ashen Ella: 25 → 0  (-50) **KO**
+  Ashen Ella gains no_heal for 2 rounds.
+Matchstick Liesl moves to frontline.
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl and Witch-Hunter Gretel swap positions.
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch-Hunter Gretel takes 80 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 135  (-80)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 statuses=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=135/215 statuses=[burn(2r), weaken(2r)]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 ATK=70(base=80) DEF=30(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=113/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Strike on Witch-Hunter Gretel.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=55
+    [T]   atk=80 def=45 raw=97.78 ceil=98
+    [T]   FINAL_DMG=119
+  Witch-Hunter Gretel takes 119 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 113 → 0  (-119) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+[Queued] Ashen Ella: Crowstorm → Witch-Hunter Gretel
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=56
+  Witch-Hunter Gretel takes 56 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 159  (-56)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+    [T] ACTION P2 Ashen Ella[back_right]: Crowstorm → Witch-Hunter Gretel
+Ashen Ella uses Crowstorm on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains burn for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P1 Witch-Hunter Gretel[front] HP=159/215 statuses=[no_heal(2r), burn(2r)]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 1r left
+    [T] DEBUFF_EXPIRED Ashen Ella: attack-10
+    [T] DEBUFF_EXPIRED Ashen Ella: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[front] HP=137/215 ATK=95(base=80) DEF=45(base=45) SPD=70(base=60)
+    [T]     statuses=[no_heal(1r), burn(1r)]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Witch-Hunter Gretel: Intimidate → Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Matchstick Liesl
+Witch-Hunter Gretel uses Intimidate on Matchstick Liesl.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=95 def=50 raw=85.50 ceil=86
+    [T]   FINAL_DMG=86
+  Matchstick Liesl takes 86 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 124  (-86)
+  Matchstick Liesl gains burn for 2 rounds.
+  Matchstick Liesl gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Witch-Hunter Gretel cannot be healed.
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+[Queued] Ashen Ella: Crowstorm → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[back_right]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Matchstick Liesl takes 40 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 170  (-40)
+  Matchstick Liesl gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Ashen Ella[back_right]: Crowstorm → Matchstick Liesl
+Ashen Ella uses Crowstorm on Matchstick Liesl.
+  Matchstick Liesl gains burn for 2 rounds.
+  Ashen Ella must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=170/210 statuses=[no_heal(2r), burn(2r)]
+    [T]   P1 Witch-Hunter Gretel[front] HP=137/215 statuses=[no_heal(1r), burn(1r)]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=124/210 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+Matchstick Liesl burns for 21 damage.
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 1r left
+    [T] STATUS_TICK Matchstick Liesl: burn → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: no_heal
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Matchstick Liesl: burn → 1r left
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=149/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r), burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[front] HP=115/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=103/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Witch-Hunter Gretel: Strike → Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Matchstick Liesl
+Witch-Hunter Gretel uses Strike on Matchstick Liesl.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Matchstick Liesl[front]
+    [T]   power=55
+    [T]   atk=80 def=50 raw=88.00 ceil=88
+    [T]   FINAL_DMG=108
+  Matchstick Liesl takes 108 damage.
+    [T] HPCHANGE Matchstick Liesl: 103 → 0  (-108) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Ashen Ella moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Ashen Ella: Skip
+    [T] ACTION P2 Ashen Ella[front]: skip/recharge
+Ashen Ella recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=149/210 statuses=[no_heal(1r), burn(1r)]
+    [T]   P1 Witch-Hunter Gretel[front] HP=170/215 statuses=[burn_immune(2r)]
+    [T]   P2 Ashen Ella[front] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 0r left
+    [T] STATUS_TICK Matchstick Liesl: burn → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: no_heal
+    [T] STATUS_EXPIRED Matchstick Liesl: burn
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Ashen Ella spd=65  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=128/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[front] HP=170/215 ATK=95(base=80) DEF=45(base=45) SPD=70(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Witch-Hunter Gretel: Intimidate → Ashen Ella
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Ashen Ella
+Witch-Hunter Gretel uses Intimidate on Ashen Ella.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Ashen Ella[front]
+    [T]   power=45
+    [T]   atk=95 def=40 raw=106.88 ceil=107
+    [T]   FINAL_DMG=107
+  Ashen Ella takes 107 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 78  (-107)
+  Ashen Ella gains burn for 2 rounds.
+  Ashen Ella gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 45 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Ashen Ella: Crowstorm
+    [T] ACTION P2 Ashen Ella[front]: Crowstorm → spread/auto
+Ashen Ella uses Crowstorm.
+Ashen Ella uses Crowstorm (spread).
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → Matchstick Liesl[back_right] (spread)
+    [T]   power=75
+    [T]   atk=80 def=50 raw=120.00 ceil=120
+    [T]   FINAL_DMG=48
+  Matchstick Liesl takes 48 damage.
+    [T] HPCHANGE Matchstick Liesl: 128 → 80  (-48)
+  Matchstick Liesl gains burn for 2 rounds.
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → Witch-Hunter Gretel[front] (spread)
+    [T]   power=75
+    [T]   atk=80 def=45 raw=133.33 ceil=134
+    [T]   FINAL_DMG=54
+  Witch-Hunter Gretel takes 54 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 161  (-54)
+  Witch-Hunter Gretel is immune to Burn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=80/210 statuses=[burn(2r)]
+    [T]   P1 Witch-Hunter Gretel[front] HP=161/215 statuses=[burn_immune(1r)]
+    [T]   P2 Ashen Ella[front] HP=78/185 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Matchstick Liesl: burn → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+Ashen Ella burns for 19 damage.
+    [T] STATUS_TICK Ashen Ella: burn → 1r left
+    [T] STATUS_TICK Ashen Ella: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=59/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[front] HP=161/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=59/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Ashen Ella: Crowstorm
+    [T] ACTION P2 Ashen Ella[front]: Crowstorm → spread/auto
+Ashen Ella uses Crowstorm.
+Ashen Ella uses Crowstorm (spread).
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → Matchstick Liesl[back_right] (spread)
+    [T]   power=75
+    [T]   atk=80 def=50 raw=120.00 ceil=120
+    [T]   FINAL_DMG=48
+  Matchstick Liesl takes 48 damage.
+    [T] HPCHANGE Matchstick Liesl: 59 → 11  (-48)
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → Witch-Hunter Gretel[front] (spread)
+    [T]   power=75
+    [T]   atk=80 def=45 raw=133.33 ceil=134
+    [T]   FINAL_DMG=54
+  Witch-Hunter Gretel takes 54 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 161 → 107  (-54)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+[Queued] Witch-Hunter Gretel: Strike → Ashen Ella
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Ashen Ella
+Witch-Hunter Gretel uses Strike on Ashen Ella.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Ashen Ella[front]
+    [T]   power=55
+    [T]   atk=80 def=40 raw=110.00 ceil=110
+    [T]   FINAL_DMG=132
+  Ashen Ella takes 132 damage.
+    [T] HPCHANGE Ashen Ella: 59 → 0  (-132) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 1 wins!

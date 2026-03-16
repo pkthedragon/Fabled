@@ -1,0 +1,1774 @@
+Battle 401
+Player 1 Team: Frontline Breaker
+Player 2 Team: Royal Root Pressure
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:12:59
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 401
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Frontline Breaker
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Belligerence  (passive=True)
+    Basics: Cleave, Strike
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Royal Root Pressure
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Edict, Command
+    Item:   Main-Gauche
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Little Jack: Cleave → Prince Charming
+[Queued] Frederic the Beastslayer: On the Hunt → Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Little Jack[front]: Cleave → Prince Charming
+Little Jack uses Cleave on Prince Charming.
+    [T] DMGCALC [Cleave] Little Jack[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=80 def=36 raw=100.00 ceil=100
+    [T]   FINAL_DMG=120
+  Prince Charming takes 120 damage.
+    [T] HPCHANGE Prince Charming: 255 → 135  (-120)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Prince Charming
+Frederic the Beastslayer uses On the Hunt on Prince Charming.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 135 → 96  (-39)
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=45 def=55 raw=28.64 ceil=29
+    [T]   FINAL_DMG=35
+  Prince Charming takes 35 damage.
+    [T] HPCHANGE Prince Charming: 96 → 61  (-35)
+[Queued] Prince Charming: Swap with Briar Rose
+[Queued] Robin, Hooded Avenger: Bring Down → Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Briar Rose
+Prince Charming and Briar Rose swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Frederic the Beastslayer
+Robin, Hooded Avenger uses Bring Down on Frederic the Beastslayer.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=35
+    [T]   atk=75 def=45 raw=58.33 ceil=59
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Little Jack[front]
+    [T]   power=55
+    [T]   atk=60 def=50 raw=66.00 ceil=66
+    [T]   FINAL_DMG=76
+  Little Jack takes 76 damage.
+    [T] HPCHANGE Little Jack: 220 → 144  (-76)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=144/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=121/200 statuses=[root(2r)]
+    [T]   P2 Prince Charming[back_left] HP=61/255 statuses=[expose(2r)]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+  Innocent Heart: Frederic the Beastslayer +10 Def.
+  Curse of Sleeping: Frederic the Beastslayer loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=144/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(2r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=61/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Bring Down → Frederic the Beastslayer
+[Queued] Prince Charming: Edict → Little Jack
+    [T] ACTION P2 Briar Rose[front]: Hunter's Mark → Frederic the Beastslayer
+Briar Rose uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=60 def=55 raw=54.55 ceil=55
+    [T]   FINAL_DMG=61
+  Frederic the Beastslayer takes 61 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 121 → 60  (-61)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Frederic the Beastslayer
+Robin, Hooded Avenger uses Bring Down on Frederic the Beastslayer.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=35
+    [T]   atk=75 def=55 raw=47.73 ceil=48
+    [T]   FINAL_DMG=68
+  Frederic the Beastslayer takes 68 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 60 → 0  (-68) **KO**
+  Frederic the Beastslayer is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Prince Charming[back_left]: Edict → Little Jack
+Prince Charming uses Edict on Little Jack.
+    [T] DMGCALC [Edict] Prince Charming[back_left] → Little Jack[front]
+    [T]   power=30
+    [T]   atk=65 def=50 raw=39.00 ceil=39
+    [T]   FINAL_DMG=39
+  Little Jack takes 39 damage.
+    [T] HPCHANGE Little Jack: 144 → 105  (-39)
+  Little Jack gains spotlight for 2 rounds.
+[Queued] Little Jack: Cleave → Briar Rose
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Briar Rose
+Little Jack uses Cleave on Briar Rose.
+    [T] DMGCALC [Cleave] Little Jack[front] → Briar Rose[front]
+    [T]   power=45
+    [T]   atk=80 def=29 raw=124.14 ceil=125
+    [T]   FINAL_DMG=125
+  Briar Rose takes 125 damage.
+    [T] HPCHANGE Briar Rose: 195 → 70  (-125)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=160/220 statuses=[spotlight(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[back_left] HP=61/255 statuses=[expose(1r)]
+    [T]   P2 Briar Rose[front] HP=70/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Little Jack: spotlight → 1r left
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=160/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[back_left] HP=61/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[front] HP=70/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Little Jack
+[Queued] Robin, Hooded Avenger: Bring Down → Little Jack
+[Queued] Prince Charming: Edict → Snowkissed Aurora
+    [T] ACTION P2 Briar Rose[front]: Hunter's Mark → Little Jack
+Briar Rose uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 160 → 100  (-60)
+  Little Jack is Marked — takes +10 damage next round.
+  Briar Rose must recharge next turn.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Little Jack
+Robin, Hooded Avenger uses Bring Down on Little Jack.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=75 def=50 raw=52.50 ceil=53
+    [T]   FINAL_DMG=63
+  Little Jack takes 63 damage.
+    [T] HPCHANGE Little Jack: 100 → 37  (-63)
+  Little Jack gains root for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Prince Charming[back_left]: Edict → Snowkissed Aurora
+Prince Charming uses Edict on Snowkissed Aurora.
+    [T] DMGCALC [Edict] Prince Charming[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=30
+    [T]   atk=65 def=60 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Snowkissed Aurora takes 33 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 192  (-33)
+  Snowkissed Aurora gains spotlight for 2 rounds.
+[Queued] Little Jack: Cleave → Briar Rose
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+    [T] ACTION P1 Little Jack[front]: Cleave → Briar Rose
+Little Jack uses Cleave on Briar Rose.
+    [T] DMGCALC [Cleave] Little Jack[front] → Briar Rose[front]
+    [T]   power=45
+    [T]   atk=80 def=29 raw=124.14 ceil=125
+    [T]   FINAL_DMG=125
+  Briar Rose takes 125 damage.
+    [T] HPCHANGE Briar Rose: 70 → 0  (-125) **KO**
+Prince Charming moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Briar Rose
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=37/220 statuses=[spotlight(1r), root(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=192/225 statuses=[spotlight(2r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[front] HP=61/255 statuses=[-]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Little Jack: spotlight → 0r left
+    [T] STATUS_TICK Little Jack: root → 1r left
+    [T] STATUS_EXPIRED Little Jack: spotlight
+  Innocent Heart: Little Jack +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: spotlight → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=37/220 ATK=80(base=80) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[root(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=192/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[front] HP=61/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Little Jack: Cleave → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Prince Charming
+Little Jack uses Cleave on Prince Charming.
+    [T] DMGCALC [Cleave] Little Jack[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=80 def=36 raw=100.00 ceil=100
+    [T]   FINAL_DMG=120
+  Prince Charming takes 120 damage.
+    [T] HPCHANGE Prince Charming: 61 → 0  (-120) **KO**
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[front] HP=92/220 statuses=[root(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=192/225 statuses=[spotlight(1r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Little Jack: root → 0r left
+    [T] STATUS_EXPIRED Little Jack: root
+  Innocent Heart: Little Jack +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: spotlight → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: spotlight
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=92/220 ATK=80(base=80) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=192/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Kingmaker → Little Jack
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Kingmaker → Little Jack
+Robin, Hooded Avenger uses Kingmaker on Little Jack.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Little Jack[front]
+    [T]   power=70
+    [T]   atk=80 def=60 raw=93.33 ceil=94
+    [T]   FINAL_DMG=94
+  Little Jack takes 94 damage.
+    [T] HPCHANGE Little Jack: 92 → 0  (-94) **KO**
+Snowkissed Aurora moves to frontline.
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=192/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=192/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=90
+  Snowkissed Aurora takes 90 damage.
+    [T] HPCHANGE Snowkissed Aurora: 192 → 102  (-90)
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=45 def=40 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Robin, Hooded Avenger takes 57 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 128  (-57)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=152/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=128/185 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=152/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=128/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=90
+  Snowkissed Aurora takes 90 damage.
+    [T] HPCHANGE Snowkissed Aurora: 152 → 62  (-90)
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=45 def=40 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Robin, Hooded Avenger takes 57 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 128 → 71  (-57)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=112/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=71/185 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=112/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=71/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=45 def=40 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Robin, Hooded Avenger takes 57 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 71 → 14  (-57)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=162/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=14/185 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=162/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=14/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=90
+  Snowkissed Aurora takes 90 damage.
+    [T] HPCHANGE Snowkissed Aurora: 162 → 72  (-90)
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=72/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=14/185 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=72/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=14/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hawkshot → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Snowkissed Aurora
+Robin, Hooded Avenger uses Hawkshot on Snowkissed Aurora.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Snowkissed Aurora takes 80 damage.
+    [T] HPCHANGE Snowkissed Aurora: 72 → 0  (-80) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 2 wins!
++5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=80/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Snowkissed Aurora
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Snowkissed Aurora
+Hunold the Piper uses Dying Dance on Snowkissed Aurora.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Snowkissed Aurora takes 60 damage.
+    [T] HPCHANGE Snowkissed Aurora: 215 → 155  (-60)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Hunold the Piper
+Frederic the Beastslayer and Hunold the Piper swap positions.
+[Queued] Snowkissed Aurora: Dictate of Nature → Hunold the Piper
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Hunold the Piper
+Snowkissed Aurora uses Dictate of Nature on Hunold the Piper.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Hunold the Piper[back_right]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=45
+  Hunold the Piper takes 45 damage.
+    [T] HPCHANGE Hunold the Piper: 80 → 35  (-45)
+  Snowkissed Aurora heals Little Jack for 50 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Little Jack[back_left] HP=188/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=155/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_right] HP=35/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=188/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=155/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_right] HP=35/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Snowkissed Aurora
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Hunold the Piper
+Frederic the Beastslayer and Hunold the Piper swap positions.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Snowkissed Aurora
+Hunold the Piper uses Sucker Punch on Snowkissed Aurora.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=60 def=60 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Snowkissed Aurora takes 40 damage.
+    [T] HPCHANGE Snowkissed Aurora: 155 → 115  (-40)
+[Queued] Snowkissed Aurora: Dictate of Nature → Hunold the Piper
+[Queued] Little Jack: Cleave → Hunold the Piper
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Hunold the Piper
+Snowkissed Aurora uses Dictate of Nature on Hunold the Piper.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Hunold the Piper takes 40 damage.
+    [T] HPCHANGE Hunold the Piper: 35 → 0  (-40) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Hunold the Piper
+Little Jack's target is no longer legal — Cleave fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Little Jack[back_left] HP=188/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=188/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 188 → 128  (-60)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Little Jack[back_left] HP=198/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=198/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 198 → 128  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Little Jack[back_left] HP=128/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=128/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Little Jack[back_left] HP=198/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=198/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 198 → 138  (-60)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Little Jack[back_left] HP=208/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=208/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 208 → 138  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Little Jack[back_left] HP=208/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=208/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 208 → 138  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Little Jack[back_left] HP=138/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=138/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Little Jack[back_left] HP=208/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=208/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 208 → 148  (-60)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Little Jack[back_left] HP=218/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=218/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 218 → 148  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Little Jack[back_left] HP=218/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=218/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 218 → 148  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Little Jack[back_left] HP=148/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=148/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Little Jack[back_left] HP=218/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=218/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 218 → 158  (-60)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 62 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 220 → 150  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 220 → 150  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Little Jack[back_left] HP=150/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=150/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 220 → 160  (-60)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 60 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 220 → 150  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 220 → 150  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Little Jack[back_left] HP=150/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=150/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 220 → 160  (-60)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 60 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 220 → 150  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Little Jack takes 70 damage.
+    [T] HPCHANGE Little Jack: 220 → 150  (-70)
+  Little Jack is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Little Jack[back_left] HP=150/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=150/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Cleave → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Frederic the Beastslayer
+Little Jack uses Cleave on Frederic the Beastslayer.
+  Little Jack marks Frederic the Beastslayer — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 33
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R33):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 34
+────────────────────────────────────────────────────────────
+Round 34 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 34 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 220 → 160  (-60)
+  Little Jack is Marked — takes +10 damage next round.

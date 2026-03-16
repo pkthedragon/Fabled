@@ -1,0 +1,600 @@
+Battle 454
+Player 1 Team: No-Heal Collapse
+Player 2 Team: Crowstorm Burn
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:17:16
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 454
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: No-Heal Collapse
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Ashen Ella: Fire Blast → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P2 Ashen Ella[front]: Fire Blast → Witch-Hunter Gretel
+Ashen Ella uses Fire Blast on Witch-Hunter Gretel.
+    [T] DMGCALC [Fire Blast] Ashen Ella[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=116
+  Witch-Hunter Gretel takes 116 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 99  (-116)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 99 → 54  (-45)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+[Queued] Witch-Hunter Gretel: Shove Over → Ashen Ella
+[Queued] Frederic the Beastslayer: Hunter's Mark → Ashen Ella
+[Queued] Matchstick Liesl: Cauterize → Ashen Ella
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Ashen Ella
+Witch-Hunter Gretel uses Shove Over on Ashen Ella.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Ashen Ella[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=104
+  Ashen Ella takes 104 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 81  (-104)
+  Ashen Ella gains weaken for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Ashen Ella
+Frederic the Beastslayer uses Hunter's Mark on Ashen Ella.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Ashen Ella[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=53
+  Ashen Ella takes 53 damage.
+    [T] HPCHANGE Ashen Ella: 81 → 28  (-53)
+  Ashen Ella is Marked — takes +10 damage next round.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Ashen Ella
+Matchstick Liesl uses Cauterize on Ashen Ella.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Ashen Ella takes 50 damage.
+    [T] HPCHANGE Ashen Ella: 28 → 0  (-50) **KO**
+  Ashen Ella gains no_heal for 2 rounds.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=54/215 statuses=[burn(2r), weaken(2r), no_heal(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=32/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r), weaken(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Frederic the Beastslayer
+Witch-Hunter Gretel and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-[Queued] Robin, Hooded Avenger: Bring Down → Frederic the Beastslayer
+[Queued] Prince Charming: Edict → Matchstick Liesl
+    [T] ACTION P2 Briar Rose[front]: Hunter's Mark → Witch-Hunter Gretel
+Briar Rose uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Witch-Hunter Gretel takes 67 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 131 → 64  (-67)
+  Witch-Hunter[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Frederic the Beastslayer
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Frederic the Beastslayer
+Witch-Hunter Gretel uses Intimidate on Frederic the Beastslayer.
+  Frederic the Beastslayer gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STAT[Queued] Witch-Hunter Gretel: Shove Over → Briar Rose
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Briar Rose
+Witch-Hunter Gretel uses Shove Over on Briar Rose.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Briar Rose[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=116
+  Briar Rose takes 116 damage.
+    [T] HPCHANGE Briar Rose: 195 → 79  (-116)
+  Briar Rose gains weaken for 2 rounds.
+Frederic the Beastslayer cannot act.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=119/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=178/210 statuses=[spotlight(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=42/200 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=123/255 statuses=[weaken(1r), no_heal(1r)]
+    [T]   P2 Briar Rose[front] HP=79/195 statuses=[weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=130/185 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Matchstick Liesl: spotlight → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Frederic the Beastslayer: attack-10
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_TICK Prince Charming: no_heal → 0r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] STATUS_EXPIRED Prince Charming: no_heal
+    [T] STATUS_TICK Briar Rose: weaken → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Briar Rose spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=119/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=178/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=42/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=123/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[front] HP=79/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=130/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Briar Rose
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Briar Rose
+Witch-Hunter Gretel uses Shove Over on Briar Rose.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Briar Rose[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=126
+  Briar Rose takes 126 damage.
+    [T] HPCHANGE Briar Rose: 79 → 0  (-126) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Prince Charming moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Briar Rose
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+ weaken → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: weaken
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=80/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=117/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=207/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Matchstick Liesl
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Matchstick Liesl
+Witch-Hunter Gretel uses Strike on Matchstick Liesl.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Matchstick Liesl[front]
+    [T]   power=55
+    [T]   atk=80 def=50 raw=88.00 ceil=88
+    [T]   FINAL_DMG=108
+  Matchstick Liesl takes 108 damage.
+    [T] HPCHANGE Matchstick Liesl: 117 → 9  (-108)
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl and Witch-Hunter Gretel swap positions.
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Matchstick Liesl
+Witch-Hunter Gretel uses Intimidate on Matchstick Liesl.
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_left] → Matchstick Liesl[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Matchstick Liesl takes 42 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 168  (-42)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=80/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[front] HP=9/210 statuses=[burn(1r), weaken(1r)]
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=168/210 statuses=[weaken(1r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=207/215 statuses=[-]
+Matchstick Liesl burns for 21 damage.
+Frederic the Beastslayer moves to frontline.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Matchstick Liesl: weaken → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=80/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=168/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=207/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Matchstick Liesl
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Witch-Hunter Gretel
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Matchstick Liesl
+Witch-Hunter Gretel uses Intimidate on Matchstick Liesl.
+  Matchstick Liesl gains weaken for 2 rounds.
+[Queued] Matchstick Liesl: Bless → Matchstick Liesl
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Bless → Matchstick Liesl
+Matchstick Liesl uses Bless on Matchstick Liesl.
+  Matchstick Liesl is Guarded for 2 rounds.
+  Matchstick Liesl gains +10 Attack for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=80/215 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=168/210 statuses=[weaken(2r), guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=207/215 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+    [T] STATUS_TICK Matchstick Liesl: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=80/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=168/210 ATK=60(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=207/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+[Queued] Witch-Hunter Gretel: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 168 → 96  (-72)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: swap ↔ Frederic the Beastslayer
+Witch-Hunter Gretel and Frederic the Beastslayer swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel[front] HP=80/215 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=96/210 statuses=[weaken(1r), guard(1r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=207/215 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Matchstick Liesl: weaken → 0r left
+    [T] STATUS_TICK Matchstick Liesl: guard → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: weaken
+    [T] STATUS_EXPIRED Matchstick Liesl: guard
+    [T] BUFF_EXPIRED Matchstick Liesl: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=80/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=96/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=207/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Matchstick Liesl
+Witch-Hunter Gretel uses Shove Over on Matchstick Liesl.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=80 def=50 raw=104.00 ceil=104
+    [T]   FINAL_DMG=114
+  Matchstick Liesl takes 114 damage.
+    [T] HPCHANGE Matchstick Liesl: 96 → 0  (-114) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Matchstick Liesl gains weaken for 2 rounds.
+Witch-Hunter Gretel moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch-Hunter Gretel takes 80 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 80 → 0  (-80) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+Frederic the Beastslayer moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=207/215 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=70  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=207/215 ATK=95(base=80) DEF=45(base=45) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Into the Oven → Frederic the Beastslayer
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Into the Oven → Frederic the Beastslayer
+Witch-Hunter Gretel uses Into the Oven on Frederic the Beastslayer.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=95 def=45 raw=137.22 ceil=138
+    [T]   FINAL_DMG=152
+  Frederic the Beastslayer takes 152 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 48  (-152)
+  Frederic the Beastslayer gains burn for 2 rounds.
+  Frederic the Beastslayer gains weaken for 2 rounds.
+  Frederic the Beastslayer gains root for 2 rounds.
+[Queued] Frederic the Beastslayer: Slay the Beast → Witch-Hunter Gretel
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Witch-Hunter Gretel
+Frederic the Beastslayer uses Slay the Beast on Witch-Hunter Gretel.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=85 (base=65)
+    [T]   atk=75 def=45 raw=141.67 ceil=142
+    [T]   FINAL_DMG=114
+  Witch-Hunter Gretel takes 114 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 207 → 93  (-114)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=48/200 statuses=[burn(2r), weaken(2r), root(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=93/215 statuses=[-]
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=28/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r), weaken(1r), root(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=93/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=82
+  Witch-Hunter Gretel takes 82 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 93 → 11  (-82)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Witch-Hunter Gretel: Strike → Frederic the Beastslayer
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Frederic the Beastslayer
+Witch-Hunter Gretel uses Strike on Frederic the Beastslayer.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=55
+    [T]   atk=80 def=45 raw=97.78 ceil=98
+    [T]   FINAL_DMG=130
+  Frederic the Beastslayer takes 130 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 28 → 0  (-130) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 2 wins!

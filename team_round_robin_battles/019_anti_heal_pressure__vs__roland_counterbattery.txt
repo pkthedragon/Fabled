@@ -1,0 +1,779 @@
+Battle 19
+Player 1 Team: Anti-Heal Pressure
+Player 2 Team: Roland Counterbattery
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:36:39
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 19
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Anti-Heal Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Roland Counterbattery
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Knight's Challenge  (passive=False)
+    Basics: Shield Bash, Stalwart
+    Item:   Spiked Mail
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Robin, Hooded Avenger: Hawkshot → Snowkissed Aurora
+[Queued] Matchstick Liesl: Cauterize → Sir Roland
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=80 raw=65.00 ceil=65
+    [T]   FINAL_DMG=55
+  Sir Roland takes 55 damage.
+    [T] HPCHANGE Sir Roland: 265 → 210  (-55)
+  Spiked Mail! Witch-Hunter Gretel takes 10 damage.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Snowkissed Aurora
+Robin, Hooded Avenger uses Hawkshot on Snowkissed Aurora.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 163  (-62)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Sir Roland
+Matchstick Liesl uses Cauterize on Sir Roland.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=50 def=80 raw=25.00 ceil=25
+    [T]   FINAL_DMG=15
+  Sir Roland takes 15 damage.
+    [T] HPCHANGE Sir Roland: 210 → 195  (-15)
+  Spiked Mail! Matchstick Liesl takes 10 damage.
+  Sir Roland gains no_heal for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch-Hunter Gretel
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Witch-Hunter Gretel
+Sir Roland uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=26
+  Witch-Hunter Gretel takes 26 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 205 → 179  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Sir Roland cannot be healed.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hawkshot on Witch-Hunter Gretel.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=62
+  Witch-Hunter Gretel takes 62 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 179 → 117  (-62)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=117/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=200/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=195/265 statuses=[weaken(2r), no_heal(2r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=163/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: no_heal → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=117/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=200/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=195/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), no_heal(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=163/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=80 raw=65.00 ceil=65
+    [T]   FINAL_DMG=52
+  Sir Roland takes 52 damage.
+    [T] HPCHANGE Sir Roland: 195 → 143  (-52)
+  Spiked Mail! Witch-Hunter Gretel takes 10 damage.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 163 → 101  (-62)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Sir Roland: Knight's Challenge → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch-Hunter Gretel
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Witch-Hunter Gretel
+Sir Roland uses Knight's Challenge on Witch-Hunter Gretel.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Witch-Hunter Gretel[front]
+    [T]   power=35
+    [T]   atk=40 def=50 raw=28.00 ceil=28
+    [T]   FINAL_DMG=23
+  Witch-Hunter Gretel takes 23 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 162 → 139  (-23)
+  Witch-Hunter Gretel is Taunted for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Sir Roland cannot be healed.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hawkshot on Witch-Hunter Gretel.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=62
+  Witch-Hunter Gretel takes 62 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 139 → 77  (-62)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=77/215 statuses=[burn_immune(2r), taunt(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=200/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=143/265 statuses=[weaken(1r), no_heal(1r), guard(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=101/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: taunt → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: no_heal → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_EXPIRED Sir Roland: no_heal
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+  Innocent Heart: Robin, Hooded Avenger +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=77/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r), taunt(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=200/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=143/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=101/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=90 raw=57.78 ceil=58
+    [T]   FINAL_DMG=48
+  Sir Roland takes 48 damage.
+    [T] HPCHANGE Sir Roland: 143 → 95  (-48)
+  Spiked Mail! Witch-Hunter Gretel takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=77 def=70 raw=44.00 ceil=44
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 101 → 47  (-54)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Witch-Hunter Gretel
+Sir Roland uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=26
+  Witch-Hunter Gretel takes 26 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 122 → 96  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hunter's Mark → Matchstick Liesl
+Robin, Hooded Avenger uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_left] → Matchstick Liesl[back_left]
+    [T]   power=25
+    [T]   atk=77 def=50 raw=38.50 ceil=39
+    [T]   FINAL_DMG=49
+  Matchstick Liesl takes 49 damage.
+    [T] HPCHANGE Matchstick Liesl: 200 → 151  (-49)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel[front] HP=96/215 statuses=[burn_immune(1r), taunt(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=151/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=150/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=47/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: taunt → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: taunt
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=96/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=151/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=150/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=47/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Robin, Hooded Avenger: Swap with Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=90 raw=57.78 ceil=58
+    [T]   FINAL_DMG=48
+  Sir Roland takes 48 damage.
+    [T] HPCHANGE Sir Roland: 150 → 102  (-48)
+  Spiked Mail! Witch-Hunter Gretel takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Witch-Hunter Gretel
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Matchstick Liesl[back_left]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Sir Roland: Shield Bash → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Witch-Hunter Gretel
+Sir Roland uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=26
+  Witch-Hunter Gretel takes 26 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 86 → 60  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: skip/recharge
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[front] HP=60/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=151/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=102/265 statuses=[burn(2r), weaken(2r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=47/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+  Innocent Heart: Robin, Hooded Avenger +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=60/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=151/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=75/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), weaken(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=47/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Hawkshot → Snowkissed Aurora
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Snowkissed Aurora
+Robin, Hooded Avenger uses Hawkshot on Snowkissed Aurora.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=77 def=70 raw=44.00 ceil=44
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 47 → 0  (-54) **KO**
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Matchstick Liesl
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Matchstick Liesl
+Robin, Hooded Avenger uses Hawkshot on Matchstick Liesl.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=70 def=50 raw=84.00 ceil=84
+    [T]   FINAL_DMG=84
+  Matchstick Liesl takes 84 damage.
+    [T] HPCHANGE Matchstick Liesl: 151 → 67  (-84)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=130/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[front] HP=67/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=75/265 statuses=[burn(1r), weaken(1r), guard(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=130/215 ATK=80(base=80) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=67/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=48/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=101
+  Robin, Hooded Avenger takes 101 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 84  (-101)
+    [T] ACTION P2 Sir Roland[back_left]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+  Robin, Hooded Avenger is Guarded for 2 rounds.
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Swap with Matchstick Liesl
+[Queued] Witch-Hunter Gretel: Intimidate → Robin, Hooded Avenger
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 70 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Matchstick Liesl
+Robin, Hooded Avenger and Matchstick Liesl swap positions.
+    [T] ACTION P1 Witch-Hunter Gretel[back_left]: Intimidate → Robin, Hooded Avenger
+Witch-Hunter Gretel uses Intimidate on Robin, Hooded Avenger.
+  Robin, Hooded Avenger gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=130/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=67/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=154/185 statuses=[burn_immune(2r)]
+    [T]   P2 Sir Roland[back_left] HP=48/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[guard(2r), weaken(2r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=130/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=67/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=154/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=48/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Sir Roland
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Sir Roland
+Robin, Hooded Avenger uses Snipe Shot on Sir Roland.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Sir Roland[back_left]
+    [T]   power=65
+    [T]   atk=70 def=80 raw=56.88 ceil=57
+    [T]   FINAL_DMG=57
+  Sir Roland takes 57 damage.
+    [T] HPCHANGE Sir Roland: 48 → 0  (-57) **KO**
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Witch-Hunter Gretel[back_left]: Intimidate → Robin, Hooded Avenger
+Witch-Hunter Gretel uses Intimidate on Robin, Hooded Avenger.
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Matchstick Liesl
+Robin, Hooded Avenger uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Matchstick Liesl[back_right]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=66
+  Matchstick Liesl takes 66 damage.
+    [T] HPCHANGE Matchstick Liesl: 67 → 1  (-66)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=185/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=1/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=154/185 statuses=[burn_immune(1r)]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[guard(1r), weaken(1r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=185/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=1/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=154/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=88
+  Robin, Hooded Avenger takes 88 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 97  (-88)
+  Robin, Hooded Avenger gains burn for 2 rounds.
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+    [T] ACTION P1 Witch-Hunter Gretel[back_left]: Intimidate → Robin, Hooded Avenger
+Witch-Hunter Gretel uses Intimidate on Robin, Hooded Avenger.
+  Robin, Hooded Avenger gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=185/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=1/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=154/185 statuses=[-]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=97/185 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=185/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=1/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=154/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=78/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Swap with Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+[Queued] Witch-Hunter Gretel: Intimidate → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: swap ↔ Witch-Hunter Gretel
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 31 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+    [T] ACTION P1 Witch-Hunter Gretel[back_left]: Intimidate → Robin, Hooded Avenger
+Witch-Hunter Gretel uses Intimidate on Robin, Hooded Avenger.
+[Queued] Robin, Hooded Avenger: Snipe Shot → Witch-Hunter Gretel
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Snipe Shot on Witch-Hunter Gretel.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[back_left]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=83
+  Witch-Hunter Gretel takes 83 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 185 → 102  (-83)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=102/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=1/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[burn_immune(2r)]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=78/185 statuses=[burn(1r), weaken(1r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=102/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=1/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=59/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Witch-Hunter Gretel
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Snipe Shot on Witch-Hunter Gretel.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[back_left]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=101
+  Witch-Hunter Gretel takes 101 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 102 → 1  (-101)
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=88
+  Robin, Hooded Avenger takes 88 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 59 → 0  (-88) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 1 wins!

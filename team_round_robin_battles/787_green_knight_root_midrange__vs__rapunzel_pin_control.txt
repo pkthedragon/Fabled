@@ -1,0 +1,625 @@
+Battle 787
+Player 1 Team: Green Knight Root Midrange
+Player 2 Team: Rapunzel Pin Control
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:52:03
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 787
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Green Knight Root Midrange
+  [front] Green Knight (Noble)  HP=275  ATK=60  DEF=60  SPD=20
+    Talent: Challenge Accepted
+    Sig:    Hero's Bargain  (passive=False)
+    Basics: Command, Edict
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Green Knight spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Rapunzel the Golden: Golden Snare → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Bring Down → Robin, Hooded Avenger
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Robin, Hooded Avenger
+Rapunzel the Golden uses Golden Snare on Robin, Hooded Avenger.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=100
+  Robin, Hooded Avenger takes 100 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 85  (-100)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=50 def=60 raw=33.33 ceil=34
+    [T]   FINAL_DMG=34
+  Snowkissed Aurora takes 34 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 191  (-34)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Bring Down on Robin, Hooded Avenger.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=35
+    [T]   atk=82 def=40 raw=71.75 ceil=72
+    [T]   FINAL_DMG=82
+  Robin, Hooded Avenger takes 82 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 85 → 3  (-82)
+[Queued] Green Knight: Swap with Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Rapunzel the Golden
+    [T] ACTION P1 Green Knight[front]: swap ↔ Robin, Hooded Avenger
+Green Knight and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Innocent Heart: Robin, Hooded Avenger +10 Def.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Rapunzel the Golden
+Robin, Hooded Avenger uses Hawkshot on Rapunzel the Golden.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Rapunzel the Golden[front]
+    [T]   power=60
+    [T]   atk=70 def=65 raw=64.62 ceil=65
+    [T]   FINAL_DMG=65
+  Rapunzel the Golden takes 65 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 193  (-65)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Green Knight[back_left] HP=275/275 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=58/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=191/225 statuses=[no_heal(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=193/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Green Knight[back_left] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=58/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=193/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Matchstick Liesl
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Green Knight: Edict → Rapunzel the Golden
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Matchstick Liesl
+Robin, Hooded Avenger uses Snipe Shot on Matchstick Liesl.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Matchstick Liesl[back_right]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=101
+  Matchstick Liesl takes 101 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 109  (-101)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P1 Green Knight[back_left]: Edict → Rapunzel the Golden
+Green Knight uses Edict on Rapunzel the Golden.
+    [T] DMGCALC [Edict] Green Knight[back_left] → Rapunzel the Golden[front]
+    [T]   power=30
+    [T]   atk=60 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=28
+  Rapunzel the Golden takes 28 damage.
+    [T] HPCHANGE Rapunzel the Golden: 193 → 165  (-28)
+  Rapunzel the Golden gains spotlight for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Robin, Hooded Avenger
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Robin, Hooded Avenger
+Rapunzel the Golden uses Golden Snare on Robin, Hooded Avenger.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=60 def=50 raw=72.00 ceil=72
+    [T]   FINAL_DMG=82
+  Robin, Hooded Avenger takes 82 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 113 → 31  (-82)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Bring Down on Robin, Hooded Avenger.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Robin, Hooded Avenger[front]
+    [T]   power=35
+    [T]   atk=82 def=50 raw=57.40 ceil=58
+    [T]   FINAL_DMG=58
+  Robin, Hooded Avenger takes 58 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 31 → 0  (-58) **KO**
+Green Knight moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Green Knight[front] HP=275/275 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=191/225 statuses=[no_heal(1r)]
+    [T]   P2 Rapunzel the Golden[front] HP=220/258 statuses=[spotlight(2r), burn_immune(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=109/210 statuses=[-]
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: no_heal
+    [T] STATUS_TICK Rapunzel the Golden: spotlight → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Green Knight spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=220/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[spotlight(1r), burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=109/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Rapunzel the Golden: Golden Snare → Green Knight
+[Queued] Matchstick Liesl: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Green Knight
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Green Knight
+Rapunzel the Golden uses Golden Snare on Green Knight.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Green Knight[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Green Knight takes 70 damage.
+    [T] HPCHANGE Green Knight: 275 → 205  (-70)
+  Green Knight gains burn for 2 rounds.
+  Green Knight gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Robin, Hooded Avenger
+Matchstick Liesl and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Green Knight
+Robin, Hooded Avenger uses Bring Down on Green Knight.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Green Knight[front]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Green Knight takes 48 damage.
+    [T] HPCHANGE Green Knight: 205 → 157  (-48)
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Green Knight: Hero's Bargain → Rapunzel the Golden
+[Queued] Snowkissed Aurora: Swap with Green Knight
+    [T] ACTION P1 Green Knight[front]: Hero's Bargain → Rapunzel the Golden
+Green Knight uses Hero's Bargain on Rapunzel the Golden.
+    [T] DMGCALC [Hero's Bargain] Green Knight[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=72
+  Rapunzel the Golden takes 72 damage.
+    [T] HPCHANGE Rapunzel the Golden: 220 → 148  (-72)
+  Rapunzel the Golden gains root for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Green Knight
+Snowkissed Aurora and Green Knight swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Green Knight[back_right] HP=157/275 statuses=[burn(2r), root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=191/225 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=148/258 statuses=[spotlight(1r), burn_immune(1r), root(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 statuses=[-]
+Green Knight burns for 28 damage.
+    [T] STATUS_TICK Green Knight: burn → 1r left
+    [T] STATUS_TICK Green Knight: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: spotlight → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: root → 1r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: spotlight
+    [T] STATUS_EXPIRED Rapunzel the Golden: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Green Knight[back_right] HP=129/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[burn(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=148/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rapunzel the Golden
+[Queued] Green Knight: Edict → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rapunzel the Golden
+Snowkissed Aurora uses Dictate of Nature on Rapunzel the Golden.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=45 def=65 raw=34.62 ceil=35
+    [T]   FINAL_DMG=35
+  Rapunzel the Golden takes 35 damage.
+    [T] HPCHANGE Rapunzel the Golden: 148 → 113  (-35)
+  Snowkissed Aurora heals Green Knight for 50 HP.
+  Innocent Heart: Green Knight +10 Def.
+  Innocent Heart: Green Knight +10 Def.
+  Medic: Green Knight cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Green Knight[back_right]: Edict → Rapunzel the Golden
+Green Knight uses Edict on Rapunzel the Golden.
+    [T] DMGCALC [Edict] Green Knight[back_right] → Rapunzel the Golden[front]
+    [T]   power=30
+    [T]   atk=60 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=28
+  Rapunzel the Golden takes 28 damage.
+    [T] HPCHANGE Rapunzel the Golden: 113 → 85  (-28)
+  Rapunzel the Golden gains spotlight for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Snowkissed Aurora takes 70 damage.
+    [T] HPCHANGE Snowkissed Aurora: 191 → 121  (-70)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Green Knight[back_right] HP=179/275 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=121/225 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=140/258 statuses=[root(1r), spotlight(2r), burn_immune(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 statuses=[-]
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: root → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: spotlight → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: root
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Green Knight[back_right] HP=179/275 ATK=60(base=60) DEF=70(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=121/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=140/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[spotlight(1r), burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+[Queued] Green Knight: Edict → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Green Knight[back_right]: Edict → Robin, Hooded Avenger
+Green Knight uses Edict on Robin, Hooded Avenger.
+    [T] DMGCALC [Edict] Green Knight[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=60
+  Robin, Hooded Avenger takes 60 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 125  (-60)
+  Robin, Hooded Avenger gains spotlight for 2 rounds.
+  Green Knight must recharge next turn.
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Bring Down → Green Knight
+[Queued] Matchstick Liesl: Swap with Robin, Hooded Avenger
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Snowkissed Aurora takes 70 damage.
+    [T] HPCHANGE Snowkissed Aurora: 121 → 51  (-70)
+  Snowkissed Aurora gains burn for 2 rounds.
+  Snowkissed Aurora's root is refreshed to 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Green Knight
+Robin, Hooded Avenger uses Bring Down on Green Knight.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Green Knight[back_right]
+    [T]   power=35
+    [T]   atk=82 def=70 raw=41.00 ceil=41
+    [T]   FINAL_DMG=51
+  Green Knight takes 51 damage.
+    [T] HPCHANGE Green Knight: 179 → 128  (-51)
+  Green Knight gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: swap ↔ Robin, Hooded Avenger
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Green Knight[back_right] HP=128/275 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=51/225 statuses=[root(2r), burn(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=140/258 statuses=[spotlight(1r), burn_immune(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=125/185 statuses=[spotlight(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 statuses=[-]
+Snowkissed Aurora burns for 23 damage.
+    [T] STATUS_TICK Green Knight: root → 1r left
+    [T] BUFF_EXPIRED Green Knight: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: burn → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: spotlight → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: spotlight
+    [T] STATUS_EXPIRED Rapunzel the Golden: burn_immune
+    [T] STATUS_TICK Robin, Hooded Avenger: spotlight → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Green Knight[back_right] HP=128/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=28/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r), burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=140/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=125/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[spotlight(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Green Knight
+[Queued] Green Knight: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Green Knight
+Snowkissed Aurora uses Heal on Green Knight.
+  Snowkissed Aurora heals Green Knight for 70 HP.
+  Innocent Heart: Green Knight +10 Def.
+  Medic: Green Knight cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Green Knight[back_right]: skip/recharge
+Green Knight recharges.
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Bring Down → Green Knight
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Snowkissed Aurora takes 70 damage.
+    [T] HPCHANGE Snowkissed Aurora: 28 → 0  (-70) **KO**
+  Snowkissed Aurora's root is refreshed to 2 rounds.
+Green Knight moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Green Knight
+Robin, Hooded Avenger uses Bring Down on Green Knight.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Green Knight[front]
+    [T]   power=35
+    [T]   atk=82 def=70 raw=41.00 ceil=41
+    [T]   FINAL_DMG=41
+  Green Knight takes 41 damage.
+    [T] HPCHANGE Green Knight: 198 → 157  (-41)
+  Green Knight gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Snowkissed Aurora
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Green Knight[front] HP=157/275 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=140/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=125/185 statuses=[spotlight(1r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 statuses=[-]
+    [T] STATUS_TICK Green Knight: root → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: spotlight → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: spotlight
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Green Knight spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Green Knight[front] HP=157/275 ATK=60(base=60) DEF=70(base=60) SPD=20(base=20)
+    [T]     statuses=[root(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=140/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=125/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Rapunzel the Golden: Golden Snare → Green Knight
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Green Knight
+Rapunzel the Golden uses Golden Snare on Green Knight.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Green Knight[front]
+    [T]   power=60
+    [T]   atk=60 def=70 raw=51.43 ceil=52
+    [T]   FINAL_DMG=62
+  Green Knight takes 62 damage.
+    [T] HPCHANGE Green Knight: 157 → 95  (-62)
+  Green Knight's root is refreshed to 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+[Queued] Green Knight: Edict → Robin, Hooded Avenger
+    [T] ACTION P1 Green Knight[front]: Edict → Robin, Hooded Avenger
+Green Knight uses Edict on Robin, Hooded Avenger.
+    [T] DMGCALC [Edict] Green Knight[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=90
+  Robin, Hooded Avenger takes 90 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 125 → 35  (-90)
+  Robin, Hooded Avenger gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Green Knight[front] HP=95/275 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=195/258 statuses=[burn_immune(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=35/185 statuses=[root(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 statuses=[-]
+    [T] STATUS_TICK Green Knight: root → 1r left
+    [T] BUFF_EXPIRED Green Knight: defense+10
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Green Knight spd=20  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Green Knight[front] HP=95/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=195/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=35/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=109/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Green Knight
+[Queued] Rapunzel the Golden: Golden Snare → Green Knight
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Green Knight
+Robin, Hooded Avenger uses Bring Down on Green Knight.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Green Knight[front]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Green Knight takes 80 damage.
+    [T] HPCHANGE Green Knight: 95 → 15  (-80)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Green Knight
+Rapunzel the Golden uses Golden Snare on Green Knight.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Green Knight[front]
+    [T]   power=30
+    [T]   atk=60 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=40
+  Green Knight takes 40 damage.
+    [T] HPCHANGE Green Knight: 15 → 0  (-40) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 8)
+────────────────────────────────────────────────────────────
+Player 2 wins!

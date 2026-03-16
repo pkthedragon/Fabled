@@ -1,0 +1,396 @@
+Battle 541
+Player 1 Team: Double Ranger Pressure
+Player 2 Team: Pinocchio Spotlight Break
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:22:00
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 541
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Double Ranger Pressure
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Pinocchio Spotlight Break
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Cut the Strings  (passive=False)
+    Basics: Soul Gaze, Void Step
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=83
+  Prince Charming takes 83 damage.
+    [T] HPCHANGE Prince Charming: 255 → 172  (-83)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=60 def=55 raw=43.64 ceil=44
+    [T]   FINAL_DMG=54
+  Prince Charming takes 54 damage.
+    [T] HPCHANGE Prince Charming: 172 → 118  (-54)
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Hawkshot → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Hawkshot on Pinocchio, Cursed Puppet.
+  Robin, Hooded Avenger loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Pinocchio, Cursed Puppet[back_left]
+    [T]   power=40
+    [T]   atk=67 def=50 raw=53.60 ceil=54
+    [T]   FINAL_DMG=64
+  Pinocchio, Cursed Puppet takes 64 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 156  (-64)
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=81
+  Frederic the Beastslayer takes 81 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 119  (-81)
+  Frederic the Beastslayer loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=77 def=35 raw=88.00 ceil=88
+    [T]   FINAL_DMG=88
+  Frederic the Beastslayer takes 88 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 119 → 31  (-88)
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: Cut the Strings → Robin, Hooded Avenger
+Pinocchio, Cursed Puppet uses Cut the Strings on Robin, Hooded Avenger.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 110  (-75)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=31/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=110/185 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=118/255 statuses=[root(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=156/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Prince Charming: root → 1r left
+  Curse of Sleeping: Prince Charming loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=31/200 ATK=75(base=65) DEF=35(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=110/185 ATK=60(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=118/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=156/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=93
+  Prince Charming takes 93 damage.
+    [T] HPCHANGE Prince Charming: 118 → 25  (-93)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=60 def=55 raw=43.64 ceil=44
+    [T]   FINAL_DMG=64
+  Prince Charming takes 64 damage.
+    [T] HPCHANGE Prince Charming: 25 → 0  (-64) **KO**
+  Prince Charming is immune to Root (Curse of Sleeping).
+Pinocchio, Cursed Puppet moves to frontline.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Hawkshot → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Hawkshot on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Pinocchio, Cursed Puppet[front]
+    [T]   power=40
+    [T]   atk=67 def=50 raw=53.60 ceil=54
+    [T]   FINAL_DMG=54
+  Pinocchio, Cursed Puppet takes 54 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 156 → 102  (-54)
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Frederic the Beastslayer
+Pinocchio, Cursed Puppet uses Cut the Strings on Frederic the Beastslayer.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=65 def=35 raw=111.43 ceil=112
+    [T]   FINAL_DMG=134
+  Frederic the Beastslayer takes 134 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 31 → 0  (-134) **KO**
+  Frederic the Beastslayer gains expose for 2 rounds.
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Frederic the Beastslayer
+Robin, Hooded Avenger's target is no longer legal — Hunter's Mark fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=102/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] DEBUFF_EXPIRED Robin, Hooded Avenger: attack-10
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [1/6]
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=102/220 ATK=70(base=65) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Pinocchio, Cursed Puppet
+[Queued] Briar Rose: Creeping Doubt → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Hunter's Mark on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=64
+  Pinocchio, Cursed Puppet takes 64 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 102 → 38  (-64)
+  Pinocchio, Cursed Puppet is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Pinocchio, Cursed Puppet
+Briar Rose uses Creeping Doubt on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Pinocchio, Cursed Puppet[front]
+    [T]   power=40
+    [T]   atk=60 def=55 raw=43.64 ceil=44
+    [T]   FINAL_DMG=54
+  Pinocchio, Cursed Puppet takes 54 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 38 → 0  (-54) **KO**
+  Pinocchio, Cursed Puppet gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+Robin, Hooded Avenger moves to frontline.
+[Queued] Robin, Hooded Avenger: Kingmaker → Briar Rose
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Kingmaker → Briar Rose
+Robin, Hooded Avenger uses Kingmaker on Briar Rose.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Briar Rose[back_right]
+    [T]   power=90 (base=70)
+    [T]   atk=70 def=45 raw=140.00 ceil=140
+    [T]   FINAL_DMG=150
+  Briar Rose takes 150 damage.
+    [T] HPCHANGE Briar Rose: 195 → 45  (-150)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=45/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=45/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Briar Rose
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Briar Rose
+Robin, Hooded Avenger uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Briar Rose[back_right]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=88
+  Briar Rose takes 88 damage.
+    [T] HPCHANGE Briar Rose: 45 → 0  (-88) **KO**
+  Briar Rose is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P1 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 statuses=[-]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=88
+  Robin, Hooded Avenger takes 88 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 97  (-88)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 statuses=[-]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=97/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=110/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=97/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=114
+  Robin, Hooded Avenger takes 114 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 110 → 0  (-114) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

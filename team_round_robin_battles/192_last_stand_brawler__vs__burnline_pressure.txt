@@ -1,0 +1,768 @@
+Battle 192
+Player 1 Team: Last-Stand Brawler
+Player 2 Team: Burnline Pressure
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:52:10
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 192
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Brawler
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Not By The Hair  (passive=False)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Porcus III swap positions.
+[Queued] Witch-Hunter Gretel: Intimidate → Porcus III
+[Queued] Witch of the Woods: Thunder Call → Snowkissed Aurora
+[Queued] Matchstick Liesl: Cauterize → Risa Redcloak
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Porcus III
+Witch-Hunter Gretel uses Intimidate on Porcus III.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Porcus III[front]
+    [T]   power=45
+    [T]   atk=80 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Porcus III takes 40 damage.
+    [T] HPCHANGE Porcus III: 280 → 240  (-40)
+  Porcus III gains burn for 2 rounds.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Snowkissed Aurora
+Witch of the Woods uses Thunder Call on Snowkissed Aurora.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=35
+    [T]   atk=75 def=60 raw=43.75 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+  Snowkissed Aurora gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Risa Redcloak
+Matchstick Liesl uses Cauterize on Risa Redcloak.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Risa Redcloak[back_left]
+    [T]   power=40
+    [T]   atk=50 def=60 raw=33.33 ceil=34
+    [T]   FINAL_DMG=34
+  Risa Redcloak takes 34 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 216  (-34)
+  Risa Redcloak gains no_heal for 2 rounds.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 40 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Witch-Hunter Gretel after swapping to front.
+Risa Redcloak uses Feint on Witch-Hunter Gretel.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=75 def=45 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Witch-Hunter Gretel takes 75 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 140  (-75)
+  Risa Redcloak cannot be healed.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[front] HP=216/250 statuses=[no_heal(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=181/225 statuses=[shock(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=140/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: no_heal → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=216/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[no_heal(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=140/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Risa Redcloak
+[Queued] Witch of the Woods: Thunder Call → Risa Redcloak
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Risa Redcloak
+Witch-Hunter Gretel uses Intimidate on Risa Redcloak.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Risa Redcloak[front]
+    [T]   power=45
+    [T]   atk=80 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Risa Redcloak takes 70 damage.
+    [T] HPCHANGE Risa Redcloak: 216 → 146  (-70)
+  Risa Redcloak gains burn for 2 rounds.
+  Risa Redcloak gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Risa Redcloak
+Witch of the Woods uses Thunder Call on Risa Redcloak.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Risa Redcloak[front]
+    [T]   power=35
+    [T]   atk=75 def=60 raw=43.75 ceil=44
+    [T]   FINAL_DMG=54
+  Risa Redcloak takes 54 damage.
+    [T] HPCHANGE Risa Redcloak: 146 → 92  (-54)
+  Double Double! Porcus III gains weaken.
+  Risa Redcloak gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Risa Redcloak: Blood Hunt → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Witch-Hunter Gretel
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Witch-Hunter Gretel
+Risa Redcloak uses Blood Hunt on Witch-Hunter Gretel.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Witch-Hunter Gretel[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=80
+  Witch-Hunter Gretel takes 80 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 195 → 115  (-80)
+  Shock recoil: Risa Redcloak takes 16 damage.
+  Risa Redcloak cannot be healed.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Risa Redcloak cannot be healed.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Witch-Hunter Gretel
+Porcus III uses Shield Bash on Witch-Hunter Gretel.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[front] HP=76/250 statuses=[no_heal(1r), burn(2r), weaken(2r), shock(2r), guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[weaken(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=181/225 statuses=[shock(1r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=115/215 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+Risa Redcloak burns for 25 damage.
+    [T] STATUS_TICK Risa Redcloak: no_heal → 0r left
+    [T] STATUS_TICK Risa Redcloak: burn → 1r left
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+    [T] STATUS_TICK Risa Redcloak: shock → 1r left
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: no_heal
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: shock → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: shock
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=51/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[burn(1r), weaken(1r), shock(1r), guard(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=115/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Risa Redcloak
+[Queued] Witch of the Woods: Toil and Trouble → Risa Redcloak
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Risa Redcloak
+Witch-Hunter Gretel uses Strike on Risa Redcloak.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Risa Redcloak[front]
+    [T]   power=55
+    [T]   atk=80 def=60 raw=73.33 ceil=74
+    [T]   FINAL_DMG=77
+  Risa Redcloak takes 77 damage.
+    [T] HPCHANGE Risa Redcloak: 51 → 0  (-77) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Porcus III moves to frontline.
+    [T] ACTION P2 Witch of the Woods[back_right]: Toil and Trouble → Risa Redcloak
+Witch of the Woods's target is no longer legal — Toil and Trouble fizzles.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Porcus III: Shield Bash → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Swap with Porcus III
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Witch-Hunter Gretel
+Porcus III uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=35 def=45 raw=31.11 ceil=32
+    [T]   FINAL_DMG=26
+  Witch-Hunter Gretel takes 26 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 170 → 144  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Porcus III
+Snowkissed Aurora and Porcus III swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[weaken(1r), guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=181/225 statuses=[guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=144/215 statuses=[burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T] STATUS_TICK Porcus III: weaken → 0r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] STATUS_EXPIRED Porcus III: weaken
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Witch-Hunter Gretel spd=70  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=144/215 ATK=95(base=80) DEF=45(base=45) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Snowkissed Aurora
+[Queued] Witch of the Woods: Thunder Call → Snowkissed Aurora
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Snowkissed Aurora
+Witch-Hunter Gretel uses Intimidate on Snowkissed Aurora.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=95 def=60 raw=71.25 ceil=72
+    [T]   FINAL_DMG=68
+  Snowkissed Aurora takes 68 damage.
+    [T] HPCHANGE Snowkissed Aurora: 181 → 113  (-68)
+  Snowkissed Aurora gains burn for 2 rounds.
+  Snowkissed Aurora gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Snowkissed Aurora
+Witch of the Woods uses Thunder Call on Snowkissed Aurora.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=75 def=60 raw=43.75 ceil=44
+    [T]   FINAL_DMG=46
+  Snowkissed Aurora takes 46 damage.
+    [T] HPCHANGE Snowkissed Aurora: 113 → 67  (-46)
+  Snowkissed Aurora gains shock for 2 rounds.
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P2 Matchstick Liesl[back_left]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 70 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=137/225 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=144/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=137/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=144/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Porcus III
+[Queued] Witch of the Woods: Swap with Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Porcus III
+Witch-Hunter Gretel uses Intimidate on Porcus III.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Porcus III[front]
+    [T]   power=45
+    [T]   atk=80 def=95 raw=37.89 ceil=38
+    [T]   FINAL_DMG=38
+  Porcus III takes 38 damage.
+    [T] HPCHANGE Porcus III: 280 → 242  (-38)
+  Porcus III gains burn for 2 rounds.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: swap ↔ Witch-Hunter Gretel
+Witch of the Woods recharges.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Porcus III: Shield Bash → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Swap with Porcus III
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Witch-Hunter Gretel
+Porcus III uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Witch-Hunter Gretel takes 29 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 199 → 170  (-29)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=242/280 statuses=[burn(2r), weaken(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=137/225 statuses=[guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=170/215 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+Porcus III burns for 28 damage.
+    [T] STATUS_TICK Porcus III: burn → 1r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=214/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[burn(1r), weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=137/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=170/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Porcus III
+[Queued] Witch of the Woods: Thunder Call → Porcus III
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Porcus III
+Witch-Hunter Gretel uses Strike on Porcus III.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Porcus III[front]
+    [T]   power=55
+    [T]   atk=80 def=95 raw=46.32 ceil=47
+    [T]   FINAL_DMG=53
+  Porcus III takes 53 damage.
+    [T] HPCHANGE Porcus III: 214 → 161  (-53)
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Porcus III
+Witch of the Woods uses Thunder Call on Porcus III.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Porcus III[front]
+    [T]   power=35
+    [T]   atk=75 def=95 raw=27.63 ceil=28
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 161 → 128  (-33)
+  Porcus III gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 45 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 70 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[back_right] HP=198/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=137/225 statuses=[guard(1r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 statuses=[burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[back_right] HP=198/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=137/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Snowkissed Aurora
+[Queued] Witch of the Woods: Thunder Call → Snowkissed Aurora
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Snowkissed Aurora
+Witch-Hunter Gretel uses Strike on Snowkissed Aurora.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Snowkissed Aurora[front]
+    [T]   power=55
+    [T]   atk=80 def=70 raw=62.86 ceil=63
+    [T]   FINAL_DMG=63
+  Snowkissed Aurora takes 63 damage.
+    [T] HPCHANGE Snowkissed Aurora: 137 → 74  (-63)
+  Snowkissed Aurora gains burn for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Snowkissed Aurora
+Witch of the Woods uses Thunder Call on Snowkissed Aurora.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=75 def=70 raw=37.50 ceil=38
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 74 → 26  (-48)
+  Snowkissed Aurora gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=50 def=70 raw=28.57 ceil=29
+    [T]   FINAL_DMG=29
+  Snowkissed Aurora takes 29 damage.
+    [T] HPCHANGE Snowkissed Aurora: 26 → 0  (-29) **KO**
+  Snowkissed Aurora gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+Porcus III moves to frontline.
+[Queued] Porcus III: Shield Bash → Witch-Hunter Gretel
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Witch-Hunter Gretel
+Porcus III uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=35 def=45 raw=31.11 ceil=32
+    [T]   FINAL_DMG=32
+  Witch-Hunter Gretel takes 32 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 183  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=198/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=183/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=198/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=183/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Porcus III
+[Queued] Witch of the Woods: Thunder Call → Porcus III
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Porcus III
+Witch-Hunter Gretel uses Intimidate on Porcus III.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Porcus III[front]
+    [T]   power=45
+    [T]   atk=80 def=95 raw=37.89 ceil=38
+    [T]   FINAL_DMG=41
+  Porcus III takes 41 damage.
+    [T] HPCHANGE Porcus III: 198 → 157  (-41)
+  Porcus III gains burn for 2 rounds.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Porcus III
+Witch of the Woods uses Thunder Call on Porcus III.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Porcus III[front]
+    [T]   power=35
+    [T]   atk=75 def=95 raw=27.63 ceil=28
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 157 → 124  (-33)
+  Porcus III gains shock for 2 rounds.
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P2 Matchstick Liesl[back_left]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+[Queued] Porcus III: Unbreakable Defense → Porcus III
+    [T] ACTION P1 Porcus III[front]: Unbreakable Defense → Porcus III
+Porcus III uses Unbreakable Defense on Porcus III.
+  Porcus III clears statuses and doubles Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=124/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=183/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=124/280 ATK=40(base=35) DEF=180(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+95(1r), attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=183/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Porcus III
+[Queued] Witch of the Woods: Swap with Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Porcus III
+Witch-Hunter Gretel uses Intimidate on Porcus III.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Porcus III[front]
+    [T]   power=45
+    [T]   atk=80 def=180 raw=20.00 ceil=20
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 124 → 104  (-20)
+  Porcus III gains burn for 2 rounds.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: swap ↔ Witch-Hunter Gretel
+Witch of the Woods recharges.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 32 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Porcus III: Shield Bash → Witch-Hunter Gretel
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Witch-Hunter Gretel
+Porcus III uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Witch-Hunter Gretel takes 29 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 186  (-29)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=104/280 statuses=[burn(2r), weaken(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=186/215 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+Porcus III burns for 28 damage.
+    [T] STATUS_TICK Porcus III: burn → 1r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+95
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=76/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[burn(1r), weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=186/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Porcus III
+[Queued] Witch of the Woods: Thunder Call → Porcus III
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Porcus III
+Witch-Hunter Gretel uses Strike on Porcus III.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Porcus III[front]
+    [T]   power=55
+    [T]   atk=80 def=95 raw=46.32 ceil=47
+    [T]   FINAL_DMG=53
+  Porcus III takes 53 damage.
+    [T] HPCHANGE Porcus III: 76 → 23  (-53)
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Porcus III
+Witch of the Woods uses Thunder Call on Porcus III.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Porcus III[front]
+    [T]   power=35
+    [T]   atk=75 def=95 raw=27.63 ceil=28
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 23 → 0  (-33) **KO**
+  Porcus III gains shock for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 2 wins!

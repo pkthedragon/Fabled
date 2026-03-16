@@ -1,0 +1,2015 @@
+Battle 328
+Player 1 Team: Safe Midrange
+Player 2 Team: Double Rogue Tempo
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:04:14
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 328
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Safe Midrange
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Double Rogue Tempo
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Condescend → Sir Roland
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=90 raw=36.11 ceil=37
+    [T]   FINAL_DMG=37
+  Sir Roland takes 37 damage.
+    [T] HPCHANGE Sir Roland: 265 → 228  (-37)
+  Sir Roland loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Reynard, Lupine Trickster
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Reynard, Lupine Trickster
+Sir Roland uses Shield Bash on Reynard, Lupine Trickster.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=16
+  Reynard, Lupine Trickster takes 16 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 189  (-16)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Reynard, Lupine Trickster takes 58 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 189 → 131  (-58)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 37 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=131/205 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=131/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lucky Constantine
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lucky Constantine
+Reynard, Lupine Trickster and Lucky Constantine swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 255 → 216  (-39)
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=80 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Sir Roland takes 35 damage.
+    [T] HPCHANGE Sir Roland: 265 → 230  (-35)
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+[Queued] Prince Charming: Condescend → Lucky Constantine
+[Queued] Snowkissed Aurora: Dictate of Nature → Reynard, Lupine Trickster
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Lucky Constantine takes 45 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 170  (-45)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Lucky Constantine
+Prince Charming uses Condescend on Lucky Constantine.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Lucky Constantine takes 65 damage.
+    [T] HPCHANGE Lucky Constantine: 170 → 105  (-65)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Reynard, Lupine Trickster
+Snowkissed Aurora uses Dictate of Nature on Reynard, Lupine Trickster.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Reynard, Lupine Trickster[back_left]
+    [T]   power=45 (base=35)
+    [T]   atk=45 def=45 raw=45.00 ceil=45
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=21
+  Reynard, Lupine Trickster takes 21 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 131 → 110  (-21)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[front] HP=230/265 statuses=[expose(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=251/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=105/215 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=110/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] DEBUFF_EXPIRED Sir Roland: defense-10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=230/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=251/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=105/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=110/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Subterfuge → Sir Roland ↔ Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+    [T] ACTION P2 Lucky Constantine[front]: Subterfuge → Sir Roland
+Lucky Constantine uses Subterfuge on Sir Roland.
+    [T] DMGCALC [Subterfuge] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=70 def=90 raw=38.89 ceil=39
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 230 → 192  (-38)
+Sir Roland and Prince Charming swap positions.
+  Banner of Command: Prince Charming is Guarded.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=65 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Prince Charming takes 32 damage.
+    [T] HPCHANGE Prince Charming: 251 → 219  (-32)
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+[Queued] Prince Charming: Impose → Lucky Constantine
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Lucky Constantine
+    [T] ACTION P1 Prince Charming[front]: Impose → Lucky Constantine
+Prince Charming uses Impose on Lucky Constantine.
+    [T] DMGCALC [Impose] Prince Charming[front] → Lucky Constantine[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=40 raw=97.50 ceil=98
+    [T]   FINAL_DMG=98
+  Lucky Constantine takes 98 damage.
+    [T] HPCHANGE Lucky Constantine: 105 → 7  (-98)
+  Lucky Constantine loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Lucky Constantine
+Snowkissed Aurora uses Dictate of Nature on Lucky Constantine.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Lucky Constantine[front]
+    [T]   power=35
+    [T]   atk=45 def=40 raw=39.38 ceil=40
+    [T]   FINAL_DMG=40
+  Lucky Constantine takes 40 damage.
+    [T] HPCHANGE Lucky Constantine: 7 → 0  (-40) **KO**
+  Snowkissed Aurora heals Sir Roland for 35 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_right] HP=227/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[front] HP=219/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=110/205 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=227/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=219/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=110/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=227/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=181/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=219/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=110/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=227/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=219/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=110/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=65 def=70 raw=41.79 ceil=42
+    [T]   FINAL_DMG=42
+  Snowkissed Aurora takes 42 damage.
+    [T] HPCHANGE Snowkissed Aurora: 181 → 139  (-42)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 139 → 101  (-38)
+  Prince Charming must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Reynard, Lupine Trickster
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Reynard, Lupine Trickster
+Snowkissed Aurora uses Dictate of Nature on Reynard, Lupine Trickster.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=10
+  Reynard, Lupine Trickster takes 10 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 110 → 100  (-10)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+  Banner of Command: Prince Charming is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=227/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=151/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[front] HP=219/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=100/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=227/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=151/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=219/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=100/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Prince Charming
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Prince Charming
+Reynard, Lupine Trickster uses Riposte on Prince Charming.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Prince Charming[front]
+    [T]   power=55 (base=45)
+    [T]   atk=65 def=55 raw=65.00 ceil=65
+    [T]   FINAL_DMG=52
+  Prince Charming takes 52 damage.
+    [T] HPCHANGE Prince Charming: 219 → 167  (-52)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Reynard, Lupine Trickster
+Prince Charming recharges.
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=227/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=151/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=222/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=100/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=227/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=151/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=222/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=100/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 227 → 220  (-7)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=65 def=65 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 222 → 182  (-40)
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=24
+  Reynard, Lupine Trickster takes 24 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 100 → 76  (-24)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[back_left] HP=220/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=151/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=252/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=76/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=220/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=151/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=252/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=76/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=55 (base=45)
+    [T]   atk=65 def=60 raw=59.58 ceil=60
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 151 → 103  (-48)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+    [T] ACTION P1 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[back_left] HP=220/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=103/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=252/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=76/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=220/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=103/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=252/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=76/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Reynard, Lupine Trickster
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Sir Roland: Swap with Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Reynard, Lupine Trickster
+Snowkissed Aurora uses Dictate of Nature on Reynard, Lupine Trickster.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Reynard, Lupine Trickster[back_right]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=45 raw=46.67 ceil=47
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=22
+  Reynard, Lupine Trickster takes 22 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 76 → 54  (-22)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=40
+    [T]   atk=55 def=45 raw=48.89 ceil=49
+    [T]   FINAL_DMG=49
+  Reynard, Lupine Trickster takes 49 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 54 → 5  (-49)
+    [T] ACTION P1 Sir Roland[back_left]: swap ↔ Prince Charming
+Sir Roland and Prince Charming swap positions.
+  Banner of Command: Prince Charming is Guarded.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 153 → 106  (-47)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[back_right] HP=220/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=106/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=252/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=5/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=220/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=106/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=252/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=5/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=65 def=60 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Snowkissed Aurora takes 49 damage.
+    [T] HPCHANGE Snowkissed Aurora: 106 → 57  (-49)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 57 → 13  (-44)
+[Queued] Snowkissed Aurora: Dictate of Nature → Reynard, Lupine Trickster
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Reynard, Lupine Trickster
+Snowkissed Aurora uses Dictate of Nature on Reynard, Lupine Trickster.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=45 raw=60.00 ceil=60
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=12
+  Reynard, Lupine Trickster takes 12 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[back_right] HP=220/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=63/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[front] HP=252/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=220/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=63/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=252/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Prince Charming
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Prince Charming
+Reynard, Lupine Trickster uses Riposte on Prince Charming.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Prince Charming[front]
+    [T]   power=55 (base=45)
+    [T]   atk=65 def=65 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Prince Charming takes 55 damage.
+    [T] HPCHANGE Prince Charming: 252 → 197  (-55)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=30
+    [T]   atk=65 def=65 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 197 → 167  (-30)
+  Prince Charming loses -10 Speed for 2 rounds.
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Reynard, Lupine Trickster
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+  Banner of Command: Prince Charming is Guarded.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Reynard, Lupine Trickster
+Snowkissed Aurora uses Dictate of Nature on Reynard, Lupine Trickster.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=20
+  Reynard, Lupine Trickster takes 20 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-20) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[back_right] HP=220/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=113/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=167/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=220/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=113/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=167/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 255 → 207  (-48)
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=70 raw=55.71 ceil=56
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 113 → 68  (-45)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[back_right] HP=220/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=68/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=167/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=207/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=220/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=68/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=167/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 68 → 24  (-44)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+  Banner of Command: Prince Charming is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Sir Roland[back_right] HP=220/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=24/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[front] HP=237/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=207/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: speed-10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=220/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=24/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[front] HP=237/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 45 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 24 → 0  (-44) **KO**
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=237/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=207/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=237/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 237 → 177  (-60)
+  Prince Charming loses -10 Speed for 2 rounds.
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Prince Charming is Guarded.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=177/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=207/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=177/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Prince Charming[front] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=90 raw=36.11 ceil=37
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=10
+  Sir Roland takes 10 damage.
+    [T] HPCHANGE Sir Roland: 265 → 255  (-10)
+  Sir Roland loses -10 Defense for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Sir Roland[back_right] HP=255/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=177/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=207/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=255/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=177/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Sir Roland: Item Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=55 raw=70.91 ceil=71
+    [T]   FINAL_DMG=71
+  Prince Charming takes 71 damage.
+    [T] HPCHANGE Prince Charming: 207 → 136  (-71)
+  Prince Charming loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 177 → 129  (-48)
+  Prince Charming loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Sir Roland[back_right] HP=255/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=129/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=136/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] DEBUFF_EXPIRED Sir Roland: defense-10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=25  vs  P2 FL=Prince Charming spd=25  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=255/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=129/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Prince Charming[front] HP=136/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 129 → 81  (-48)
+  Prince Charming loses -10 Defense for 2 rounds.
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Sir Roland[front] HP=255/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=136/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=255/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=45(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P2 Prince Charming[front] HP=136/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=90 raw=36.11 ceil=37
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 255 → 247  (-8)
+  Sir Roland loses -10 Defense for 2 rounds.
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Sir Roland[back_right] HP=247/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=136/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] DEBUFF_EXPIRED Prince Charming: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=247/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=136/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Happily Ever After → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Happily Ever After → Prince Charming
+Prince Charming uses Happily Ever After on Prince Charming.
+    [T] DMGCALC [Happily Ever After] Prince Charming[front] → Prince Charming[front]
+    [T]   power=70
+    [T]   atk=65 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=83
+  Prince Charming takes 83 damage.
+    [T] HPCHANGE Prince Charming: 136 → 53  (-83)
+  Prince Charming gains +15 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Sir Roland[front] HP=247/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] DEBUFF_EXPIRED Sir Roland: defense-10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=50  →  P2 acts first
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=247/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=50(base=35)
+    [T]     statuses=[-]  buffs=[speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=90 raw=36.11 ceil=37
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 247 → 239  (-8)
+  Sir Roland loses -10 Defense for 2 rounds.
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Sir Roland[back_right] HP=239/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=239/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=75 raw=43.33 ceil=44
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 239 → 230  (-9)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Sir Roland[front] HP=230/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=230/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 230 → 197  (-33)
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Sir Roland[back_right] HP=197/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=197/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=75 raw=43.33 ceil=44
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 197 → 188  (-9)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Sir Roland[front] HP=188/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=188/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 188 → 155  (-33)
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Sir Roland[back_right] HP=155/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=155/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=75 raw=43.33 ceil=44
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 155 → 146  (-9)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Sir Roland[front] HP=146/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=146/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 146 → 113  (-33)
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Sir Roland[back_right] HP=113/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=113/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=75 raw=43.33 ceil=44
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 113 → 104  (-9)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Sir Roland[front] HP=104/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=104/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 104 → 71  (-33)
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Sir Roland[back_right] HP=71/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=71/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=75 raw=43.33 ceil=44
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 71 → 62  (-9)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Sir Roland[front] HP=62/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=62/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 62 → 29  (-33)
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Sir Roland[back_right] HP=29/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=29/265 ATK=40(base=40) DEF=75(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=75 raw=43.33 ceil=44
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 29 → 20  (-9)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Sir Roland[front] HP=20/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=20/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Impose → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 20 → 0  (-33) **KO**
+  Sir Roland loses -10 Speed for 2 rounds.
+Prince Charming moves to frontline.
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 53 → 0  (-60) **KO**
+  Prince Charming loses -10 Speed for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 33)
+────────────────────────────────────────────────────────────
+Player 1 wins!

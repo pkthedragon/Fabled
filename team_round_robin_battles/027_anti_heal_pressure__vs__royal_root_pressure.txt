@@ -1,0 +1,484 @@
+Battle 27
+Player 1 Team: Anti-Heal Pressure
+Player 2 Team: Royal Root Pressure
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:37:21
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 27
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Anti-Heal Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Royal Root Pressure
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Edict, Command
+    Item:   Main-Gauche
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Matchstick Liesl: Cauterize → Prince Charming
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Prince Charming
+Witch-Hunter Gretel uses Shove Over on Prince Charming.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=80 def=55 raw=94.55 ceil=95
+    [T]   FINAL_DMG=95
+  Prince Charming takes 95 damage.
+    [T] HPCHANGE Prince Charming: 255 → 160  (-95)
+  Prince Charming gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=56
+  Prince Charming takes 56 damage.
+    [T] HPCHANGE Prince Charming: 160 → 104  (-56)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Prince Charming
+Matchstick Liesl uses Cauterize on Prince Charming.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=50 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 104 → 67  (-37)
+  Prince Charming gains no_heal for 2 rounds.
+[Queued] Prince Charming: Condescend → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Bring Down → Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Witch-Hunter Gretel
+    [T] ACTION P2 Prince Charming[front]: Condescend → Witch-Hunter Gretel
+Prince Charming uses Condescend on Witch-Hunter Gretel.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=65 def=50 raw=65.00 ceil=65
+    [T]   FINAL_DMG=52
+  Witch-Hunter Gretel takes 52 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 163  (-52)
+  Witch-Hunter Gretel loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Bring Down on Robin, Hooded Avenger.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=35
+    [T]   atk=75 def=45 raw=58.33 ceil=59
+    [T]   FINAL_DMG=79
+  Robin, Hooded Avenger takes 79 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 106  (-79)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Witch-Hunter Gretel
+Briar Rose uses Creeping Doubt on Witch-Hunter Gretel.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Witch-Hunter Gretel takes 70 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 163 → 93  (-70)
+  Witch-Hunter Gretel gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=93/215 statuses=[root(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=106/185 statuses=[root(2r)]
+    [T]   P2 Prince Charming[front] HP=67/255 statuses=[weaken(2r), no_heal(2r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: root → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Prince Charming: no_heal → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+  Curse of Sleeping: Witch-Hunter Gretel loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=93/215 ATK=80(base=80) DEF=40(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=106/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=67/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[weaken(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+Witch-Hunter Gretel cannot act.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=56
+  Prince Charming takes 56 damage.
+    [T] HPCHANGE Prince Charming: 67 → 11  (-56)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 55 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+[Queued] Prince Charming: Edict → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Bring Down → Witch-Hunter Gretel
+[Queued] Briar Rose: Creeping Doubt → Witch-Hunter Gretel
+    [T] ACTION P2 Prince Charming[front]: Edict → Witch-Hunter Gretel
+Prince Charming uses Edict on Witch-Hunter Gretel.
+    [T] DMGCALC [Edict] Prince Charming[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=65 def=40 raw=81.25 ceil=82
+    [T]   FINAL_DMG=66
+  Witch-Hunter Gretel takes 66 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 93 → 27  (-66)
+  Witch-Hunter Gretel is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Bring Down on Witch-Hunter Gretel.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=35
+    [T]   atk=75 def=40 raw=65.62 ceil=66
+    [T]   FINAL_DMG=76
+  Witch-Hunter Gretel takes 76 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 27 → 0  (-76) **KO**
+  Witch-Hunter Gretel is immune to Root (Curse of Sleeping).
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Witch-Hunter Gretel
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=161/185 statuses=[root(1r), burn_immune(2r)]
+    [T]   P2 Prince Charming[front] HP=11/255 statuses=[weaken(1r), no_heal(1r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: root
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_TICK Prince Charming: no_heal → 0r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] STATUS_EXPIRED Prince Charming: no_heal
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=161/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=11/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Robin, Hooded Avenger
+Matchstick Liesl and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=83
+  Prince Charming takes 83 damage.
+    [T] HPCHANGE Prince Charming: 11 → 0  (-83) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+Briar Rose moves to frontline.
+[Queued] Briar Rose: Creeping Doubt → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Robin, Hooded Avenger
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Robin, Hooded Avenger
+Briar Rose uses Creeping Doubt on Robin, Hooded Avenger.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Robin, Hooded Avenger[front]
+    [T]   power=55
+    [T]   atk=60 def=50 raw=66.00 ceil=66
+    [T]   FINAL_DMG=76
+  Robin, Hooded Avenger takes 76 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 161 → 85  (-76)
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Bring Down on Robin, Hooded Avenger.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=35
+    [T]   atk=75 def=50 raw=52.50 ceil=53
+    [T]   FINAL_DMG=63
+  Robin, Hooded Avenger takes 63 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 85 → 22  (-63)
+  Robin, Hooded Avenger gains root for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=22/185 statuses=[burn_immune(1r), root(2r)]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+  Curse of Sleeping: Robin, Hooded Avenger loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Briar Rose spd=60  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=22/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+Robin, Hooded Avenger cannot act.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 55 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Briar Rose: Creeping Doubt → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Swap with Briar Rose
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Robin, Hooded Avenger
+Briar Rose uses Creeping Doubt on Robin, Hooded Avenger.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Robin, Hooded Avenger[front]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=84
+  Robin, Hooded Avenger takes 84 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 77 → 0  (-84) **KO**
+  Briar Rose must recharge next turn.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Briar Rose
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Matchstick Liesl
+    [T] ACTION P2 Briar Rose[front]: swap ↔ Robin, Hooded Avenger
+Briar Rose recharges.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Matchstick Liesl
+Robin, Hooded Avenger uses Bring Down on Matchstick Liesl.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=75 def=50 raw=52.50 ceil=53
+    [T]   FINAL_DMG=63
+  Matchstick Liesl takes 63 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 147  (-63)
+  Matchstick Liesl gains root for 2 rounds.
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=147/210 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: root → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+  Curse of Sleeping: Matchstick Liesl loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=147/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Bring Down → Matchstick Liesl
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Matchstick Liesl
+Briar Rose uses Creeping Doubt on Matchstick Liesl.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Matchstick Liesl[front]
+    [T]   power=55
+    [T]   atk=60 def=50 raw=66.00 ceil=66
+    [T]   FINAL_DMG=76
+  Matchstick Liesl takes 76 damage.
+    [T] HPCHANGE Matchstick Liesl: 147 → 71  (-76)
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Matchstick Liesl
+Robin, Hooded Avenger uses Bring Down on Matchstick Liesl.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=75 def=50 raw=52.50 ceil=53
+    [T]   FINAL_DMG=63
+  Matchstick Liesl takes 63 damage.
+    [T] HPCHANGE Matchstick Liesl: 71 → 8  (-63)
+  Matchstick Liesl is immune to Root (Curse of Sleeping).
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=8/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=8/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Bring Down → Matchstick Liesl
+    [T] ACTION P2 Briar Rose[front]: Hunter's Mark → Matchstick Liesl
+Briar Rose uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Matchstick Liesl takes 60 damage.
+    [T] HPCHANGE Matchstick Liesl: 8 → 0  (-60) **KO**
+  Matchstick Liesl is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

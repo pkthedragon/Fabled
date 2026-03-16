@@ -1,0 +1,867 @@
+Battle 440
+Player 1 Team: Double Rogue Tempo
+Player 2 Team: Rumpel Buff Engine
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:16:21
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 443
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: No-Heal Collapse
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: No-Heal Collapse
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Shove Over on Witch-Hunter Gretel.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=116
+  Witch-Hunter Gretel takes 116 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 99  (-116)
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Witch-Hunter Gretel takes 47 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 99 → 52  (-47)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 52 → 7  (-45)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+[Queued] Witch-Hunter Gretel: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Frederic the Beastslayer
+Witch-Hunter Gretel and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=94
+  Witch-Hunter Gretel takes 94 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 121  (-94)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Witch-Hunter Gretel cannot be healed.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=7/215 statuses=[weaken(2r), no_heal(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=121/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=7/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=121/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=111
+  Witch-Hunter Gretel takes 111 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 121 → 10  (-111)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Witch-Hunter Gretel cannot be healed.
+[Queued] Witch-Hunter Gretel: Shove Over → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Frederic the Beastslayer
+Witch-Hunter Gretel uses Shove Over on Frederic the Beastslayer.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=103
+  Frederic the Beastslayer takes 103 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 97  (-103)
+  Frederic the Beastslayer gains weaken for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Frederic the Beastslayer[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Frederic the Beastslayer takes 47 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 97 → 50  (-47)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Frederic the Beastslayer
+Matchstick Liesl uses Cauterize on Frederic the Beastslayer.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Frederic the Beastslayer takes 45 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 50 → 5  (-45)
+  Frederic the Beastslayer gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=7/215 statuses=[weaken(1r), no_heal(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=5/200 statuses=[weaken(2r), no_heal(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=10/215 statuses=[weaken(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: weaken
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: no_heal
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=7/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=5/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r), no_heal(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=10/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Frederic the Beastslayer
+Witch-Hunter Gretel and Frederic the Beastslayer swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=114
+  Frederic the Beastslayer takes 114 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 5 → 0  (-114) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Frederic the Beastslayer
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel[front] HP=77/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=10/215 statuses=[weaken(1r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: weaken
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=77/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=10/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Frederic the Beastslayer
+Witch-Hunter Gretel uses Shove Over on Frederic the Beastslayer.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=128
+  Frederic the Beastslayer takes 128 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 72  (-128)
+  Frederic the Beastslayer gains burn for 2 rounds.
+  Frederic the Beastslayer gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+[Queued] Frederic the Beastslayer: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Witch-Hunter Gretel
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Frederic the Beastslayer
+Matchstick Liesl uses Heal on Frederic the Beastslayer.
+  Matchstick Liesl heals Frederic the Beastslayer for 55 HP.
+  Purifying Flame: Frederic the Beastslayer will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[front] HP=77/215 statuses=[burn_immune(1r), weaken(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=10/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=127/200 statuses=[burn(2r), weaken(2r), burn_immune(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: burn_immune → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=77/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=10/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=107/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r), weaken(1r), burn_immune(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+��──────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=127/205 statuses=[expose(1r)]
+    [T]   P2 Prince Charming[front] HP=201/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: expose
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=127/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=201/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Prince Charming
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Prince Charming
+Reynard, Lupine Trickster uses Riposte on Prince Charming.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=65 def=55 raw=53.18 ceil=54
+    [T]   FINAL_DMG=54
+  Prince Charming takes 54 damage.
+    [T] HPCHANGE Prince Charming: 201 → 147  (-54)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Rumpelstiltskin[back_right]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Rumpelstiltskin takes 40 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 175  (-40)
+[Queued] Prince Charming: Decree → Reynard, Lupine Trickster
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Prince Charming[front]: Decree → Reynard, Lupine Trickster
+Prince Charming uses Decree on Reynard, Lupine Trickster.
+    [T] DMGCALC [Decree] Prince Charming[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=75 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=27
+  Reynard, Lupine Trickster takes 27 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 127 → 100  (-27)
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [3/6]
+    [T] ACTION P2 Rumpelstiltskin[back_right]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin heals self for 25 HP.
+  Rumpelstiltskin spends 1 Malice (Blood Pact). [2/6]
+  Rumpelstiltskin heals 15 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=100/205 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=147/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=214/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=100/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=147/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Prince Charming
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Prince Charming
+Reynard, Lupine Trickster uses Riposte on Prince Charming.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=65 def=55 raw=53.18 ceil=54
+    [T]   FINAL_DMG=54
+  Prince Charming takes 54 damage.
+    [T] HPCHANGE Prince Charming: 147 → 93  (-54)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Rumpelstiltskin[back_right]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Rumpelstiltskin takes 40 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 175  (-40)
+[Queued] Prince Charming: Decree → Reynard, Lupine Trickster
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Prince Charming[front]: Decree → Reynard, Lupine Trickster
+Prince Charming uses Decree on Reynard, Lupine Trickster.
+    [T] DMGCALC [Decree] Prince Charming[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=75 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=27
+  Reynard, Lupine Trickster takes 27 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 100 → 73  (-27)
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [3/6]
+    [T] ACTION P2 Rumpelstiltskin[back_right]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin heals self for 25 HP.
+  Rumpelstiltskin spends 1 Malice (Blood Pact). [2/6]
+  Rumpelstiltskin heals 15 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=73/205 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=93/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=214/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=73/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=93/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Prince Charming
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Prince Charming
+Reynard, Lupine Trickster uses Riposte on Prince Charming.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=65 def=55 raw=53.18 ceil=54
+    [T]   FINAL_DMG=54
+  Prince Charming takes 54 damage.
+    [T] HPCHANGE Prince Charming: 93 → 39  (-54)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Rumpelstiltskin[back_right]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Rumpelstiltskin takes 40 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 175  (-40)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Swap with Rumpelstiltskin
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Rumpelstiltskin
+Prince Charming and Rumpelstiltskin swap positions.
+    [T] ACTION P2 Rumpelstiltskin[front]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin loses 50 HP.
+  Rumpelstiltskin gains 2 Malice (Blood Pact). [4/6]
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=73/205 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=39/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=125/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Rumpelstiltskin spd=80  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=214/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=73/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=39/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=125/215 ATK=70(base=70) DEF=55(base=55) SPD=80(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Rumpelstiltskin: Soul Gaze → Reynard, Lupine Trickster
+[Queued] Prince Charming: Swap with Rumpelstiltskin
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Reynard, Lupine Trickster
+Rumpelstiltskin uses Soul Gaze on Reynard, Lupine Trickster.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Reynard, Lupine Trickster[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=56
+  Reynard, Lupine Trickster takes 56 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 73 → 17  (-56)
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [3/6]
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Rumpelstiltskin
+Prince Charming and Rumpelstiltskin swap positions.
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=17/205 statuses=[expose(2r)]
+    [T]   P2 Prince Charming[front] HP=39/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=125/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=17/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=39/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=125/215 ATK=70(base=70) DEF=55(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+[Queued] Prince Charming: Swap with Rumpelstiltskin
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Rumpelstiltskin
+Prince Charming and Rumpelstiltskin swap positions.
+    [T] ACTION P2 Rumpelstiltskin[front]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin loses 50 HP.
+  Rumpelstiltskin gains 2 Malice (Blood Pact). [5/6]
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=1/205 statuses=[expose(1r)]
+    [T]   P2 Prince Charming[back_right] HP=39/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=75/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: expose
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Rumpelstiltskin spd=85  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=39/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=75/215 ATK=70(base=70) DEF=55(base=55) SPD=85(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Rumpelstiltskin: Soul Gaze → Reynard, Lupine Trickster
+[Queued] Prince Charming: Decree → Reynard, Lupine Trickster
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Reynard, Lupine Trickster
+Rumpelstiltskin uses Soul Gaze on Reynard, Lupine Trickster.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Reynard, Lupine Trickster[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=56
+  Reynard, Lupine Trickster takes 56 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-56) **KO**
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [4/6]
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+Prince Charming moves to frontline.
+    [T] ACTION P2 Prince Charming[back_right]: Decree → Reynard, Lupine Trickster
+Prince Charming's target is no longer legal — Decree fizzles.
+[Queued] Prince Charming: Impose → Rumpelstiltskin
+    [T] ACTION P1 Prince Charming[front]: Impose → Rumpelstiltskin
+Prince Charming uses Impose on Rumpelstiltskin.
+    [T] DMGCALC [Impose] Prince Charming[front] → Rumpelstiltskin[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=55 raw=70.91 ceil=71
+    [T]   FINAL_DMG=71
+  Rumpelstiltskin takes 71 damage.
+    [T] HPCHANGE Rumpelstiltskin: 75 → 4  (-71)
+  Rumpelstiltskin loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Prince Charming[back_right] HP=39/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=4/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Rumpelstiltskin spd=70  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Prince Charming[back_right] HP=39/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=4/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Rumpelstiltskin: Soul Gaze → Prince Charming
+[Queued] Prince Charming: Decree → Prince Charming
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Prince Charming
+Rumpelstiltskin uses Soul Gaze on Prince Charming.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=70 def=55 raw=57.27 ceil=58
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 214 → 156  (-58)
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [3/6]
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Decree → Prince Charming
+Prince Charming uses Decree on Prince Charming.
+    [T] DMGCALC [Decree] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=65 def=55 raw=29.55 ceil=30
+    [T]   FINAL_DMG=36
+  Prince Charming takes 36 damage.
+    [T] HPCHANGE Prince Charming: 156 → 120  (-36)
+  Prince Charming loses -10 Attack for 2 rounds.
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Impose → Rumpelstiltskin
+    [T] ACTION P1 Prince Charming[front]: Impose → Rumpelstiltskin
+Prince Charming uses Impose on Rumpelstiltskin.
+    [T] DMGCALC [Impose] Prince Charming[front] → Rumpelstiltskin[front]
+    [T]   power=50
+    [T]   atk=55 def=55 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Rumpelstiltskin takes 50 damage.
+    [T] HPCHANGE Rumpelstiltskin: 4 → 0  (-50) **KO**
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Prince Charming[front] HP=120/255 statuses=[expose(2r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Prince Charming[front] HP=39/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=120/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Prince Charming[front] HP=39/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=55 def=55 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+Holy Diadem activates! Prince Charming survives at 1 HP.
+  Prince Charming loses -10 Speed for 2 rounds.
+[Queued] Prince Charming: Decree → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Decree → Prince Charming
+Prince Charming uses Decree on Prince Charming.
+    [T] DMGCALC [Decree] Prince Charming[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 120 → 62  (-58)
+  Prince Charming gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Prince Charming[front] HP=62/255 statuses=[expose(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Prince Charming[front] HP=1/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=25  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=62/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Prince Charming[front] HP=1/255 ATK=75(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 1 → 0  (-60) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 14)
+────────────────────────────────────────────────────────────
+Player 1 wins!

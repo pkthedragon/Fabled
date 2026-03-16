@@ -1,0 +1,436 @@
+Battle 250
+Player 1 Team: Burnline Pressure
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:58:42
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 250
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Little Jack and Risa Redcloak swap positions.
+[Queued] Witch-Hunter Gretel: Intimidate → Risa Redcloak
+[Queued] Witch of the Woods: Thunder Call → Lucky Constantine
+[Queued] Matchstick Liesl: Cauterize → Little Jack
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Risa Redcloak
+Witch-Hunter Gretel uses Intimidate on Risa Redcloak.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Risa Redcloak[front]
+    [T]   power=45
+    [T]   atk=80 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Risa Redcloak takes 60 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 190  (-60)
+  Risa Redcloak gains burn for 2 rounds.
+  Risa Redcloak gains weaken for 2 rounds.
+    [T] ACTION P1 Witch of the Woods[back_right]: Thunder Call → Lucky Constantine
+Witch of the Woods uses Thunder Call on Lucky Constantine.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Lucky Constantine[back_right]
+    [T]   power=35
+    [T]   atk=75 def=40 raw=65.62 ceil=66
+    [T]   FINAL_DMG=66
+  Lucky Constantine takes 66 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 149  (-66)
+  Lucky Constantine gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Little Jack
+Matchstick Liesl uses Cauterize on Little Jack.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Little Jack[back_left]
+    [T]   power=40
+    [T]   atk=50 def=50 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Little Jack takes 40 damage.
+    [T] HPCHANGE Little Jack: 220 → 180  (-40)
+  Little Jack gains no_heal for 2 rounds.
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Witch-Hunter Gretel
+[Queued] Little Jack: Skyfall → Witch-Hunter Gretel
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Witch-Hunter Gretel
+Lucky Constantine uses Sucker Punch on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Witch-Hunter Gretel
+Little Jack uses Skyfall on Witch-Hunter Gretel.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Witch-Hunter Gretel[front]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=153
+  Witch-Hunter Gretel takes 153 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 62  (-153)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=62/215 statuses=[weaken(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T]   P2 Little Jack[front] HP=180/220 statuses=[no_heal(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=190/250 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Lucky Constantine[back_right] HP=149/215 statuses=[shock(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+Risa Redcloak burns for 25 damage.
+    [T] STATUS_TICK Little Jack: no_heal → 1r left
+    [T] STATUS_TICK Risa Redcloak: burn → 1r left
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=62/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=180/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=165/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=149/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Little Jack
+[Queued] Witch of the Woods: Thunder Call → Little Jack
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Little Jack
+Witch-Hunter Gretel uses Intimidate on Little Jack.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=80 def=50 raw=72.00 ceil=72
+    [T]   FINAL_DMG=68
+  Little Jack takes 68 damage.
+    [T] HPCHANGE Little Jack: 180 → 112  (-68)
+  Little Jack gains burn for 2 rounds.
+  Little Jack gains weaken for 2 rounds.
+    [T] ACTION P1 Witch of the Woods[back_right]: Thunder Call → Little Jack
+Witch of the Woods uses Thunder Call on Little Jack.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=75 def=50 raw=52.50 ceil=53
+    [T]   FINAL_DMG=63
+  Little Jack takes 63 damage.
+    [T] HPCHANGE Little Jack: 112 → 49  (-63)
+  Little Jack gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Little Jack: Skyfall → Witch-Hunter Gretel
+[Queued] Lucky Constantine: Swap with Little Jack
+[Queued] Risa Redcloak: Rend → Witch-Hunter Gretel
+    [T] ACTION P2 Little Jack[front]: Skyfall → Witch-Hunter Gretel
+Little Jack uses Skyfall on Witch-Hunter Gretel.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Witch-Hunter Gretel[front]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=125
+  Witch-Hunter Gretel takes 125 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 117 → 0  (-125) **KO**
+  Shock recoil: Little Jack takes 25 damage.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Lucky Constantine[back_right]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+    [T] ACTION P2 Risa Redcloak[back_left]: Rend → Witch-Hunter Gretel
+Risa Redcloak's target is no longer legal — Rend fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=24/220 statuses=[no_heal(1r), burn(2r), weaken(2r), shock(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=165/250 statuses=[burn(1r), weaken(1r)]
+    [T]   P2 Lucky Constantine[front] HP=149/215 statuses=[shock(1r)]
+Little Jack burns for 22 damage.
+Risa Redcloak burns for 25 damage.
+    [T] STATUS_TICK Little Jack: no_heal → 0r left
+    [T] STATUS_TICK Little Jack: burn → 1r left
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] STATUS_TICK Little Jack: shock → 1r left
+    [T] STATUS_EXPIRED Little Jack: no_heal
+    [T] STATUS_TICK Risa Redcloak: burn → 0r left
+    [T] STATUS_TICK Risa Redcloak: weaken → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: burn
+    [T] STATUS_EXPIRED Risa Redcloak: weaken
+    [T] STATUS_TICK Lucky Constantine: shock → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: shock
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=2/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r), weaken(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=140/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=149/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Matchstick Liesl
+[Queued] Risa Redcloak: Blood Hunt → Matchstick Liesl
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Matchstick Liesl
+Little Jack uses Skyfall on Matchstick Liesl.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Matchstick Liesl[front]
+    [T]   power=80
+    [T]   atk=80 def=50 raw=128.00 ceil=128
+    [T]   FINAL_DMG=113
+  Matchstick Liesl takes 113 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 97  (-113)
+  Shock recoil: Little Jack takes 23 damage.
+Risa Redcloak moves to frontline.
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Matchstick Liesl
+Risa Redcloak uses Blood Hunt on Matchstick Liesl.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=75 def=50 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Matchstick Liesl takes 90 damage.
+    [T] HPCHANGE Matchstick Liesl: 97 → 7  (-90)
+[Queued] Matchstick Liesl: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Lucky Constantine
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Witch of the Woods
+Matchstick Liesl and Witch of the Woods swap positions.
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Lucky Constantine
+Witch of the Woods uses Thunder Call on Lucky Constantine.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Lucky Constantine[back_right]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Lucky Constantine takes 122 damage.
+    [T] HPCHANGE Lucky Constantine: 149 → 27  (-122)
+  Lucky Constantine gains shock for 2 rounds.
+  Witch of the Woods must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=7/210 statuses=[-]
+    [T]   P1 Witch of the Woods[front] HP=180/180 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[front] HP=140/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=27/215 statuses=[shock(2r)]
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=7/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[front] HP=140/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=27/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Cauterize → Risa Redcloak
+    [T] ACTION P1 Witch of the Woods[front]: swap ↔ Matchstick Liesl
+Witch of the Woods recharges.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Risa Redcloak
+Matchstick Liesl uses Cauterize on Risa Redcloak.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=50 def=60 raw=33.33 ceil=34
+    [T]   FINAL_DMG=34
+  Risa Redcloak takes 34 damage.
+    [T] HPCHANGE Risa Redcloak: 140 → 106  (-34)
+  Risa Redcloak gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+[Queued] Risa Redcloak: Blood Hunt → Witch of the Woods
+[Queued] Lucky Constantine: Swap with Risa Redcloak
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Witch of the Woods
+Risa Redcloak uses Blood Hunt on Witch of the Woods.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Witch of the Woods[front]
+    [T]   power=60
+    [T]   atk=75 def=35 raw=128.57 ceil=129
+    [T]   FINAL_DMG=129
+  Witch of the Woods takes 129 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 51  (-129)
+  Risa Redcloak cannot be healed.
+    [T] ACTION P2 Lucky Constantine[back_right]: swap ↔ Risa Redcloak
+Lucky Constantine and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=7/210 statuses=[-]
+    [T]   P1 Witch of the Woods[front] HP=51/180 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=106/250 statuses=[no_heal(2r)]
+    [T]   P2 Lucky Constantine[front] HP=27/215 statuses=[shock(1r)]
+    [T] STATUS_TICK Risa Redcloak: no_heal → 1r left
+    [T] STATUS_TICK Lucky Constantine: shock → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: shock
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=7/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[front] HP=51/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=106/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[no_heal(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=27/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Witch of the Woods
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Witch of the Woods
+Lucky Constantine uses Feline Gambit on Witch of the Woods.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=70 def=35 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Witch of the Woods takes 90 damage.
+    [T] HPCHANGE Witch of the Woods: 51 → 0  (-90) **KO**
+  Witch of the Woods gains expose for 2 rounds.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_right]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=7/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=106/250 statuses=[no_heal(1r)]
+    [T]   P2 Lucky Constantine[front] HP=27/215 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: no_heal → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: no_heal
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=7/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=106/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=27/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Matchstick Liesl
+[Queued] Risa Redcloak: Rend → Matchstick Liesl
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Matchstick Liesl
+Lucky Constantine uses Feline Gambit on Matchstick Liesl.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=70 def=50 raw=63.00 ceil=63
+    [T]   FINAL_DMG=63
+  Matchstick Liesl takes 63 damage.
+    [T] HPCHANGE Matchstick Liesl: 7 → 0  (-63) **KO**
+  Matchstick Liesl gains expose for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

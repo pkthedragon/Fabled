@@ -1,0 +1,900 @@
+Battle 636
+Player 1 Team: Sustain Into Spike
+Player 2 Team: Royal Root Pressure
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:36:26
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 636
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Sustain Into Spike
+  [front] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Sturdy Home  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Royal Root Pressure
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Edict, Command
+    Item:   Main-Gauche
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Robin, Hooded Avenger: Bring Down → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=35
+  Porcus III takes 35 damage.
+    [T] HPCHANGE Porcus III: 280 → 245  (-35)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Prince Charming
+Robin, Hooded Avenger uses Bring Down on Prince Charming.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=75 def=62 raw=42.34 ceil=43
+    [T]   FINAL_DMG=63
+  Prince Charming takes 63 damage.
+    [T] HPCHANGE Prince Charming: 255 → 192  (-63)
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=40
+    [T]   atk=60 def=67 raw=35.82 ceil=36
+    [T]   FINAL_DMG=46
+  Snowkissed Aurora takes 46 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 179  (-46)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 255 → 225  (-30)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=55 def=40 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 130  (-55)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Porcus III[front] HP=245/280 statuses=[root(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=179/225 statuses=[root(2r), guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[root(2r), guard(2r)]
+    [T]   P2 Prince Charming[front] HP=225/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=130/185 statuses=[-]
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: root → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Curse of Sleeping: Snowkissed Aurora loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=245/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=179/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r), defense+10(2r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=55(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[defense+7(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=130/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Robin, Hooded Avenger: Bring Down → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=28
+  Porcus III takes 28 damage.
+    [T] HPCHANGE Porcus III: 245 → 217  (-28)
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Prince Charming
+Robin, Hooded Avenger uses Bring Down on Prince Charming.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=75 def=62 raw=42.34 ceil=43
+    [T]   FINAL_DMG=55
+  Prince Charming takes 55 damage.
+    [T] HPCHANGE Prince Charming: 247 → 192  (-55)
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=40
+    [T]   atk=60 def=70 raw=34.29 ceil=35
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 179 → 141  (-38)
+  Snowkissed Aurora is immune to Root (Curse of Sleeping).
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 225 → 195  (-30)
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=55 def=40 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 130 → 75  (-55)
+Snowkissed Aurora cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Porcus III[front] HP=217/280 statuses=[root(1r), guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=141/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=192/255 statuses=[root(1r), guard(1r)]
+    [T]   P2 Prince Charming[front] HP=195/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=75/185 statuses=[-]
+    [T] STATUS_TICK Porcus III: root → 0r left
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: root
+  Innocent Heart: Porcus III +10 Def.
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: root → 0r left
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: root
+  Innocent Heart: Prince Charming +10 Def.
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=217/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=141/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+7(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=192/255 ATK=55(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+7(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=195/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=75/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Robin, Hooded Avenger: Bring Down → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=35
+  Porcus III takes 35 damage.
+    [T] HPCHANGE Porcus III: 217 → 182  (-35)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Prince Charming
+Robin, Hooded Avenger uses Bring Down on Prince Charming.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=75 def=65 raw=40.38 ceil=41
+    [T]   FINAL_DMG=61
+  Prince Charming takes 61 damage.
+    [T] HPCHANGE Prince Charming: 192 → 131  (-61)
+  Prince Charming gains root for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=40
+    [T]   atk=60 def=70 raw=34.29 ceil=35
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 141 → 96  (-45)
+  Snowkissed Aurora is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 195 → 165  (-30)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=55 def=40 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 75 → 20  (-55)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Porcus III[front] HP=182/280 statuses=[root(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=96/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=186/255 statuses=[root(2r), guard(2r)]
+    [T]   P2 Prince Charming[front] HP=165/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=20/185 statuses=[-]
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: root → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+  Innocent Heart: Porcus III +10 Def.
+  Curse of Sleeping: Porcus III loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=182/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(2r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=96/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=186/255 ATK=55(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[defense+7(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=165/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=20/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=28
+  Porcus III takes 28 damage.
+    [T] HPCHANGE Porcus III: 182 → 154  (-28)
+  Porcus III is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Prince Charming
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Briar Rose[back_left]: skip/recharge
+Briar Rose recharges.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+Porcus III cannot act.
+    [T] ACTION P1 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Porcus III[front] HP=154/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=96/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=241/255 statuses=[root(1r), guard(1r)]
+    [T]   P2 Prince Charming[front] HP=165/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=20/185 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: root → 0r left
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: root
+  Innocent Heart: Prince Charming +10 Def.
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=154/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=96/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+7(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=241/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=165/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=20/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Robin, Hooded Avenger: Bring Down → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=35
+  Porcus III takes 35 damage.
+    [T] HPCHANGE Porcus III: 154 → 119  (-35)
+  Porcus III is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Prince Charming
+Robin, Hooded Avenger uses Bring Down on Prince Charming.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=75 def=65 raw=40.38 ceil=41
+    [T]   FINAL_DMG=61
+  Prince Charming takes 61 damage.
+    [T] HPCHANGE Prince Charming: 241 → 180  (-61)
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=40
+    [T]   atk=60 def=70 raw=34.29 ceil=35
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 96 → 51  (-45)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Robin, Hooded Avenger
+Prince Charming uses Impose on Robin, Hooded Avenger.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40 (base=30)
+    [T]   atk=55 def=40 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 20 → 0  (-55) **KO**
+  Robin, Hooded Avenger loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Porcus III[back_left] HP=119/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=51/225 statuses=[root(2r)]
+    [T]   P1 Prince Charming[back_right] HP=180/255 statuses=[root(2r)]
+    [T]   P2 Prince Charming[front] HP=165/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: root → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Curse of Sleeping: Snowkissed Aurora loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=119/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=51/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(2r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=180/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=165/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+Snowkissed Aurora cannot act.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 165 → 125  (-40)
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+[Queued] Prince Charming: Edict → Snowkissed Aurora
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Edict → Snowkissed Aurora
+Prince Charming uses Edict on Snowkissed Aurora.
+    [T] DMGCALC [Edict] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 51 → 4  (-47)
+  Snowkissed Aurora is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=60 def=70 raw=34.29 ceil=35
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 4 → 0  (-45) **KO**
+  Snowkissed Aurora is immune to Root (Curse of Sleeping).
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Porcus III[back_right] HP=119/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=180/255 statuses=[root(1r)]
+    [T]   P2 Prince Charming[front] HP=125/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Prince Charming: root → 0r left
+    [T] STATUS_EXPIRED Prince Charming: root
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=119/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=180/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=125/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Prince Charming: Edict → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Edict → Prince Charming
+Prince Charming uses Edict on Prince Charming.
+    [T] DMGCALC [Edict] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=65 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+    [T] HPCHANGE Prince Charming: 180 → 130  (-50)
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=60 def=65 raw=36.92 ceil=37
+    [T]   FINAL_DMG=47
+  Prince Charming takes 47 damage.
+    [T] HPCHANGE Prince Charming: 130 → 83  (-47)
+  Briar Rose must recharge next turn.
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=55 raw=70.91 ceil=71
+    [T]   FINAL_DMG=71
+  Prince Charming takes 71 damage.
+    [T] HPCHANGE Prince Charming: 125 → 54  (-71)
+  Prince Charming loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Prince Charming is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Porcus III[back_right] HP=119/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=83/255 statuses=[root(2r), guard(2r)]
+    [T]   P2 Prince Charming[front] HP=54/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Prince Charming: root → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+  Curse of Sleeping: Prince Charming loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=25  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=119/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=83/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=54/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+Prince Charming cannot act.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+[Queued] Prince Charming: Edict → Prince Charming
+[Queued] Briar Rose: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Edict → Prince Charming
+Prince Charming uses Edict on Prince Charming.
+    [T] DMGCALC [Edict] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=65 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 83 → 43  (-40)
+  Prince Charming is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Briar Rose[back_left]: swap ↔ Prince Charming
+Briar Rose recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Porcus III[back_right] HP=119/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=43/255 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=54/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=119/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=43/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=54/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Prince Charming: Edict → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Edict → Prince Charming
+Prince Charming uses Edict on Prince Charming.
+    [T] DMGCALC [Edict] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=65 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+    [T] HPCHANGE Prince Charming: 43 → 0  (-50) **KO**
+  Prince Charming is immune to Root (Curse of Sleeping).
+Porcus III moves to frontline.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Prince Charming
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+[Queued] Porcus III: Unbreakable Defense → Porcus III
+    [T] ACTION P1 Porcus III[front]: Unbreakable Defense → Porcus III
+Porcus III uses Unbreakable Defense on Porcus III.
+  Porcus III clears statuses and doubles Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Porcus III[front] HP=119/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=54/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=119/280 ATK=40(base=35) DEF=175(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+90(1r), attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=54/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=175 raw=18.57 ceil=19
+    [T]   FINAL_DMG=19
+  Porcus III takes 19 damage.
+    [T] HPCHANGE Porcus III: 119 → 100  (-19)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Porcus III
+Briar Rose uses Creeping Doubt on Porcus III.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=60 def=175 raw=13.71 ceil=14
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 100 → 76  (-24)
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 54 → 24  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Porcus III[front] HP=76/280 statuses=[root(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=24/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+90
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+  Curse of Sleeping: Porcus III loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=76/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=24/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=28
+  Porcus III takes 28 damage.
+    [T] HPCHANGE Porcus III: 76 → 48  (-28)
+  Porcus III is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Porcus III
+Briar Rose uses Creeping Doubt on Porcus III.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=60 def=95 raw=25.26 ceil=26
+    [T]   FINAL_DMG=31
+  Porcus III takes 31 damage.
+    [T] HPCHANGE Porcus III: 48 → 17  (-31)
+  Porcus III is immune to Root (Curse of Sleeping).
+[Queued] Porcus III: Shield Bash → Prince Charming
+Porcus III cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Porcus III[front] HP=17/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=24/255 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=17/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=24/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Prince Charming: Edict → Porcus III
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Edict → Porcus III
+Prince Charming uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=35
+  Porcus III takes 35 damage.
+    [T] HPCHANGE Porcus III: 17 → 0  (-35) **KO**
+  Porcus III is immune to Root (Curse of Sleeping).
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 12)
+────────────────────────────────────────────────────────────
+Player 2 wins!

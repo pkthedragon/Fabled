@@ -1,0 +1,914 @@
+Battle 224
+Player 1 Team: Last-Stand Brawler
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:57:15
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 224
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Brawler
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Not By The Hair  (passive=False)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Porcus III swap positions.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+[Queued] Sea Wench Asha: Misappropriate → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+  Banner of Command: Robin, Hooded Avenger is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Snowkissed Aurora[back_right]
+    [T]   power=65
+    [T]   atk=70 def=60 raw=75.83 ceil=76
+    [T]   FINAL_DMG=96
+  Snowkissed Aurora takes 96 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 129  (-96)
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Risa Redcloak
+Sea Wench Asha uses Misappropriate on Risa Redcloak.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Risa Redcloak[back_left]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Risa Redcloak takes 48 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 202  (-48)
+  Risa Redcloak gains root for 2 rounds.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 48 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Robin, Hooded Avenger after swapping to front.
+Risa Redcloak uses Feint on Robin, Hooded Avenger.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=75 def=40 raw=84.38 ceil=85
+    [T]   FINAL_DMG=68
+  Robin, Hooded Avenger takes 68 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 117  (-68)
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=129/225 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=117/185 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=129/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=117/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Risa Redcloak
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Snowkissed Aurora[back_right]
+    [T]   power=65
+    [T]   atk=70 def=60 raw=75.83 ceil=76
+    [T]   FINAL_DMG=96
+  Snowkissed Aurora takes 96 damage.
+    [T] HPCHANGE Snowkissed Aurora: 129 → 33  (-96)
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Risa Redcloak
+Sea Wench Asha uses Misappropriate on Risa Redcloak.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Risa Redcloak[front]
+    [T]   power=35
+    [T]   atk=82 def=70 raw=41.00 ceil=41
+    [T]   FINAL_DMG=41
+  Risa Redcloak takes 41 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 209  (-41)
+  Risa Redcloak gains root for 2 rounds.
+[Queued] Risa Redcloak: Blood Hunt → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Risa Redcloak uses Blood Hunt on Robin, Hooded Avenger.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=91
+  Robin, Hooded Avenger takes 91 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 117 → 26  (-91)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 41 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Robin, Hooded Avenger
+Porcus III uses Shield Bash on Robin, Hooded Avenger.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=33/225 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=26/185 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=33/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=26/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Porcus III
+[Queued] Sea Wench Asha: Misappropriate → Snowkissed Aurora
+[Queued] Sir Roland: Item Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Porcus III
+Robin, Hooded Avenger uses Snipe Shot on Porcus III.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Porcus III[back_left]
+    [T]   power=65
+    [T]   atk=70 def=90 raw=50.56 ceil=51
+    [T]   FINAL_DMG=71
+  Porcus III takes 71 damage.
+    [T] HPCHANGE Porcus III: 280 → 209  (-71)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Snowkissed Aurora
+Sea Wench Asha uses Misappropriate on Snowkissed Aurora.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 33 → 0  (-48) **KO**
+  Snowkissed Aurora gains root for 2 rounds.
+  Sea Wench Asha must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Robin, Hooded Avenger
+Sir Roland uses Crafty Shield.
+  Robin, Hooded Avenger is Guarded.
+[Queued] Risa Redcloak: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Robin, Hooded Avenger
+Porcus III uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=35 def=40 raw=35.00 ceil=35
+    [T]   FINAL_DMG=28
+  Robin, Hooded Avenger takes 28 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 26 → 0  (-28) **KO**
+  All allies are Guarded for 2 rounds.
+Sir Roland moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[front] HP=209/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Sir Roland spd=30  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=209/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Skip
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[front]: skip/recharge
+Sea Wench Asha recharges.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Sea Wench Asha
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Sea Wench Asha
+Risa Redcloak uses Rend on Sea Wench Asha.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sea Wench Asha[front]
+    [T]   power=45
+    [T]   atk=75 def=45 raw=75.00 ceil=75
+    [T]   FINAL_DMG=60
+  Sea Wench Asha takes 60 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 150  (-60)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [2/6]
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=209/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=150/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=209/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=150/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [1/6]
+    [T] DMGCALC [Blood Hunt] Sea Wench Asha[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Risa Redcloak takes 75 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 175  (-75)
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Risa Redcloak: Blood Hunt → Sea Wench Asha
+[Queued] Porcus III: Shield Bash → Sea Wench Asha
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sea Wench Asha
+Risa Redcloak uses Blood Hunt on Sea Wench Asha.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sea Wench Asha[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=75
+  Sea Wench Asha takes 75 damage.
+    [T] HPCHANGE Sea Wench Asha: 150 → 75  (-75)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [2/6]
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sea Wench Asha
+Porcus III uses Shield Bash on Sea Wench Asha.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[front] HP=175/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=209/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=75/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=175/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=209/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=75/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [1/6]
+    [T] DMGCALC [Blood Hunt] Sea Wench Asha[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=60
+  Risa Redcloak takes 60 damage.
+    [T] HPCHANGE Risa Redcloak: 175 → 115  (-60)
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Risa Redcloak: Blood Hunt → Sea Wench Asha
+[Queued] Porcus III: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sea Wench Asha
+Risa Redcloak uses Blood Hunt on Sea Wench Asha.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sea Wench Asha[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=75
+  Sea Wench Asha takes 75 damage.
+    [T] HPCHANGE Sea Wench Asha: 75 → 0  (-75) **KO**
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [2/6]
+  Risa Redcloak heals 30 HP.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak[back_left] HP=145/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[front] HP=209/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Sir Roland spd=30  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=145/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=209/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sir Roland: Shield Bash → Porcus III
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Porcus III
+Sir Roland uses Shield Bash on Porcus III.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=45 def=95 raw=18.95 ceil=19
+    [T]   FINAL_DMG=19
+  Porcus III takes 19 damage.
+    [T] HPCHANGE Porcus III: 209 → 190  (-19)
+  All allies are Guarded for 2 rounds.
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 265 → 261  (-4)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 203.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak[back_left] HP=203/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=190/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=203/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Sir Roland spd=30  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=203/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=190/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=203/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 62 HP.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 265 → 225  (-40)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak[front] HP=203/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=190/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=225/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=203/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=190/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=225/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 225 → 187  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 206 → 182  (-24)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak[front] HP=182/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=190/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=187/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=182/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=190/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=187/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 187 → 147  (-40)
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 182 → 158  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Risa Redcloak[front] HP=158/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=190/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=147/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=158/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=190/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=147/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Risa Redcloak takes 30 damage.
+    [T] HPCHANGE Risa Redcloak: 158 → 128  (-30)
+  All allies are Guarded for 2 rounds.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=31
+  Sir Roland takes 31 damage.
+    [T] HPCHANGE Sir Roland: 147 → 116  (-31)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Risa Redcloak[front] HP=131/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=190/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=116/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=131/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=190/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=116/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=90 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 116 → 72  (-44)
+  Risa Redcloak heals 4 HP.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 135 → 111  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Risa Redcloak[front] HP=111/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=190/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=72/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=111/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=190/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=72/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=65 (base=45)
+    [T]   atk=90 def=90 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Sir Roland takes 65 damage.
+    [T] HPCHANGE Sir Roland: 72 → 7  (-65)
+  Risa Redcloak heals 18 HP.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Risa Redcloak[front] HP=129/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=190/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=7/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=129/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=190/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Sir Roland[front] HP=7/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 129 → 105  (-24)
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 7 → 0  (-40) **KO**
+  Risa Redcloak heals 16 HP.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 14)
+────────────────────────────────────────────────────────────
+Player 1 wins!

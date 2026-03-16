@@ -1,0 +1,328 @@
+Battle 158
+Player 1 Team: Speed Tempo
+Player 2 Team: Root Killbox
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:50:32
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 158
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Root Killbox
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Magic Growth  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Little Jack spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Little Jack: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → March Hare
+    [T] ACTION P2 Little Jack[front]: swap ↔ Robin, Hooded Avenger
+Little Jack and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=114
+  Frederic the Beastslayer takes 114 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 86  (-114)
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → March Hare
+Briar Rose uses Creeping Doubt on March Hare.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → March Hare[back_left]
+    [T]   power=40
+    [T]   atk=60 def=35 raw=68.57 ceil=69
+    [T]   FINAL_DMG=79
+  March Hare takes 79 damage.
+    [T] HPCHANGE March Hare: 190 → 111  (-79)
+  March Hare gains root for 2 rounds.
+[Queued] Little Jack: Swap with March Hare
+[Queued] Frederic the Beastslayer: On the Hunt → Robin, Hooded Avenger
+[Queued] March Hare: Thunder Call → Robin, Hooded Avenger
+    [T] ACTION P1 Little Jack[front]: swap ↔ March Hare
+Little Jack and March Hare swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Robin, Hooded Avenger
+Frederic the Beastslayer uses On the Hunt on Robin, Hooded Avenger.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=53
+  Robin, Hooded Avenger takes 53 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 132  (-53)
+  Robin, Hooded Avenger gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Robin, Hooded Avenger
+March Hare uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Robin, Hooded Avenger[front]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=137
+  Robin, Hooded Avenger takes 137 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 132 → 0  (-137) **KO**
+  Robin, Hooded Avenger gains shock for 2 rounds.
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 March Hare[front] HP=111/190 statuses=[root(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK March Hare: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: March Hare loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Briar Rose spd=45 (MH adj from 60)  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=111/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] March Hare: Thunder Call → Little Jack
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+[Queued] Little Jack: Skyfall → Briar Rose
+March Hare cannot act.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Briar Rose
+Frederic the Beastslayer uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Briar Rose[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Briar Rose takes 47 damage.
+    [T] HPCHANGE Briar Rose: 195 → 148  (-47)
+  Briar Rose is Marked — takes +10 damage next round.
+    [T] ACTION P1 Little Jack[back_left]: Skyfall → Briar Rose
+Little Jack uses Skyfall on Briar Rose.
+  Briar Rose gains expose for 2 rounds.
+[Queued] Briar Rose: Trapping Blow → Frederic the Beastslayer
+[Queued] Little Jack: Magic Growth → March Hare
+    [T] ACTION P2 Briar Rose[front]: Trapping Blow → Frederic the Beastslayer
+Briar Rose uses Trapping Blow on Frederic the Beastslayer.
+    [T] DMGCALC [Trapping Blow] Briar Rose[front] → Frederic the Beastslayer[back_right]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=88
+  Frederic the Beastslayer takes 88 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 86 → 0  (-88) **KO**
+    [T] ACTION P2 Little Jack[back_right]: Magic Growth → March Hare
+Little Jack uses Magic Growth on March Hare.
+  March Hare is immune to Root (Curse of Sleeping).
+  Little Jack's next ability has +15 Power.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 March Hare[front] HP=111/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 Briar Rose[front] HP=148/195 statuses=[expose(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Briar Rose: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Briar Rose spd=45 (MH adj from 60)  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=111/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[front] HP=148/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] March Hare: Arcane Wave → Briar Rose
+[Queued] Little Jack: Skyfall → Briar Rose
+    [T] ACTION P1 March Hare[front]: Arcane Wave → Briar Rose
+March Hare uses Arcane Wave on Briar Rose.
+    [T] DMGCALC [Arcane Wave] March Hare[front] → Briar Rose[front]
+    [T]   power=80
+    [T]   atk=70 def=45 raw=124.44 ceil=125
+    [T]   FINAL_DMG=160
+  Briar Rose takes 160 damage.
+    [T] HPCHANGE Briar Rose: 148 → 0  (-160) **KO**
+  March Hare has -10 Atk and -10 Def for 2 rounds.
+Little Jack moves to frontline.
+    [T] ACTION P1 Little Jack[back_left]: Skyfall → Briar Rose
+Little Jack's target is no longer legal — Skyfall fizzles.
+[Queued] Little Jack: Magic Growth → March Hare
+    [T] ACTION P2 Little Jack[front]: Magic Growth → March Hare
+Little Jack uses Magic Growth on March Hare.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → March Hare[front]
+    [T]   power=50
+    [T]   atk=80 def=25 raw=160.00 ceil=160
+    [T]   FINAL_DMG=170
+  March Hare takes 170 damage.
+    [T] HPCHANGE March Hare: 111 → 0  (-170) **KO**
+  March Hare is immune to Root (Curse of Sleeping).
+Little Jack moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Little Jack spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Magic Growth → Little Jack
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Little Jack
+Little Jack uses Magic Growth on Little Jack.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=80 def=50 raw=80.00 ceil=80
+    [T]   FINAL_DMG=90
+  Little Jack takes 90 damage.
+    [T] HPCHANGE Little Jack: 220 → 130  (-90)
+  Little Jack gains root for 2 rounds.
+[Queued] Little Jack: Fell the Beanstalk → Little Jack
+    [T] ACTION P1 Little Jack[front]: Fell the Beanstalk → Little Jack
+Little Jack uses Fell the Beanstalk on Little Jack.
+    [T] DMGCALC [Fell the Beanstalk] Little Jack[front] → Little Jack[front]
+    [T]   power=85
+    [T]   atk=80 def=35 raw=194.29 ceil=195
+    [T]   FINAL_DMG=195
+  Little Jack takes 195 damage.
+    [T] HPCHANGE Little Jack: 220 → 25  (-195)
+  Little Jack gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[front] HP=130/220 statuses=[root(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Little Jack[front] HP=25/220 statuses=[expose(2r)]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Little Jack: root → 1r left
+    [T] STATUS_TICK Little Jack: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Little Jack spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=130/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Little Jack[front] HP=25/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Skyfall → Little Jack
+    [T] ACTION P1 Little Jack[front]: Skyfall → Little Jack
+Little Jack uses Skyfall on Little Jack.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Little Jack[front]
+    [T]   power=80
+    [T]   atk=80 def=50 raw=128.00 ceil=128
+    [T]   FINAL_DMG=164
+  Little Jack takes 164 damage.
+    [T] HPCHANGE Little Jack: 25 → 0  (-164) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 1 wins!

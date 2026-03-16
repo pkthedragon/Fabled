@@ -1,0 +1,724 @@
+Battle 39
+Player 1 Team: Anti-Heal Pressure
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:37:57
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 39
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Anti-Heal Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Sir Roland
+[Queued] Matchstick Liesl: Cauterize → Sea Wench Asha
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Sir Roland
+Robin, Hooded Avenger uses Hawkshot on Sir Roland.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=70 def=90 raw=46.67 ceil=47
+    [T]   FINAL_DMG=47
+  Sir Roland takes 47 damage.
+    [T] HPCHANGE Sir Roland: 265 → 218  (-47)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Matchstick Liesl uses Cauterize on Sea Wench Asha.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Sea Wench Asha[back_left]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Sea Wench Asha takes 45 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 165  (-45)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [2/6]
+  Sea Wench Asha gains no_heal for 2 rounds.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+[Queued] Sea Wench Asha: Misappropriate → Robin, Hooded Avenger
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=73
+  Robin, Hooded Avenger takes 73 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 112  (-73)
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Robin, Hooded Avenger
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [1/6]
+    [T] DMGCALC [Snipe Shot] Sea Wench Asha[front] → Robin, Hooded Avenger[front]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=109
+  Robin, Hooded Avenger takes 109 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 112 → 3  (-109)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=3/185 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=218/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=165/210 statuses=[no_heal(2r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: no_heal → 1r left
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=3/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=218/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=165/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sea Wench Asha: Swap with Sir Roland
+[Queued] Robin, Hooded Avenger: Snipe Shot → Witch-Hunter Gretel
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: swap ↔ Sir Roland
+Sea Wench Asha and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Snipe Shot on Witch-Hunter Gretel.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=40
+    [T]   atk=70 def=50 raw=56.00 ceil=56
+    [T]   FINAL_DMG=76
+  Witch-Hunter Gretel takes 76 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 139  (-76)
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Robin, Hooded Avenger: Snipe Shot → Sea Wench Asha
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Robin, Hooded Avenger uses Snipe Shot on Sea Wench Asha.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Sea Wench Asha[back_left]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=92
+  Sea Wench Asha takes 92 damage.
+    [T] HPCHANGE Sea Wench Asha: 165 → 73  (-92)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [3/6]
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 55 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=139/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=58/185 statuses=[burn_immune(2r)]
+    [T]   P2 Sir Roland[front] HP=218/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[back_left] HP=73/210 statuses=[no_heal(1r), guard(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: no_heal → 0r left
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: no_heal
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=139/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=58/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=218/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=73/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=98
+  Robin, Hooded Avenger takes 98 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 87  (-98)
+  Robin, Hooded Avenger gains burn for 2 rounds.
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Sir Roland: Item Sea Wench Asha
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Sea Wench Asha: Misappropriate → Robin, Hooded Avenger
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 194 → 149  (-45)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Robin, Hooded Avenger
+Sea Wench Asha uses Misappropriate on Robin, Hooded Avenger.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Robin, Hooded Avenger[front]
+    [T]   power=35
+    [T]   atk=82 def=45 raw=63.78 ceil=64
+    [T]   FINAL_DMG=64
+  Robin, Hooded Avenger takes 64 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 58 → 0  (-64) **KO**
+  Robin, Hooded Avenger gains root for 2 rounds.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=149/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=218/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[back_left] HP=73/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=87/185 statuses=[burn(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=149/215 ATK=80(base=80) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=218/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=73/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=68/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Robin, Hooded Avenger: Skip
+[Queued] Sea Wench Asha: Misappropriate → Matchstick Liesl
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: skip/recharge
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Matchstick Liesl
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [2/6]
+    [T] DMGCALC [Cauterize] Sea Wench Asha[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Matchstick Liesl takes 75 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 135  (-75)
+  Matchstick Liesl gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=149/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[front] HP=135/210 statuses=[no_heal(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[back_left] HP=218/265 statuses=[weaken(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=73/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=68/185 statuses=[burn(1r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+10
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 1r left
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=149/215 ATK=80(base=80) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=135/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[back_left] HP=218/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=73/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=49/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sea Wench Asha: Dark Grasp → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Sir Roland: Item Robin, Hooded Avenger
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Matchstick Liesl
+Sea Wench Asha uses Dark Grasp on Matchstick Liesl.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Matchstick Liesl takes 75 damage.
+    [T] HPCHANGE Matchstick Liesl: 135 → 60  (-75)
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [3/6]
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=42
+  Witch-Hunter Gretel takes 42 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 149 → 107  (-42)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Robin, Hooded Avenger
+Sir Roland uses Crafty Shield.
+  Robin, Hooded Avenger is Guarded.
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Sea Wench Asha
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl and Witch-Hunter Gretel swap positions.
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Sea Wench Asha
+Witch-Hunter Gretel uses Intimidate on Sea Wench Asha.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Sea Wench Asha[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Sea Wench Asha takes 80 damage.
+    [T] HPCHANGE Sea Wench Asha: 73 → 0  (-80) **KO**
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [4/6]
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Sea Wench Asha gains weaken for 2 rounds.
+Sir Roland moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel[front] HP=107/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=60/210 statuses=[no_heal(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=218/265 statuses=[weaken(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=49/185 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+10
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: no_heal
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=107/215 ATK=95(base=80) DEF=50(base=45) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=60/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=218/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=49/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=95 def=90 raw=68.61 ceil=69
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=18
+  Sir Roland takes 18 damage.
+    [T] HPCHANGE Sir Roland: 218 → 200  (-18)
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Sir Roland: Shield Bash → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Witch-Hunter Gretel
+Sir Roland uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=39
+  Witch-Hunter Gretel takes 39 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 162 → 123  (-39)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 123 → 78  (-45)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel[front] HP=78/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=60/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=200/265 statuses=[burn(2r), weaken(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=49/185 statuses=[guard(1r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=78/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=60/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=173/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=49/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=90 raw=57.78 ceil=58
+    [T]   FINAL_DMG=57
+  Sir Roland takes 57 damage.
+    [T] HPCHANGE Sir Roland: 173 → 116  (-57)
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Sir Roland: Item Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Robin, Hooded Avenger
+Sir Roland uses Crafty Shield.
+  Robin, Hooded Avenger is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Matchstick Liesl
+Robin, Hooded Avenger uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Matchstick Liesl[back_right]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Matchstick Liesl takes 45 damage.
+    [T] HPCHANGE Matchstick Liesl: 60 → 15  (-45)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel[front] HP=133/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=15/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=116/265 statuses=[burn(1r), weaken(1r), guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=49/185 statuses=[guard(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=133/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=15/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=89/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=49/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=90 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 89 → 31  (-58)
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch-Hunter Gretel[front] HP=188/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=15/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[back_right] HP=31/265 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=49/185 statuses=[guard(1r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=188/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=15/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[back_right] HP=4/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=49/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Sir Roland: Item Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Witch-Hunter Gretel takes 70 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 188 → 118  (-70)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Robin, Hooded Avenger
+Sir Roland uses Crafty Shield.
+  Robin, Hooded Avenger is Guarded.
+[Queued] Witch-Hunter Gretel: Shove Over → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Robin, Hooded Avenger
+Witch-Hunter Gretel uses Shove Over on Robin, Hooded Avenger.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Robin, Hooded Avenger[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=114
+  Robin, Hooded Avenger takes 114 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 49 → 0  (-114) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Robin, Hooded Avenger gains weaken for 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch-Hunter Gretel[front] HP=118/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=15/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sir Roland[front] HP=4/265 statuses=[burn(1r), weaken(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+Sir Roland burns for 27 damage.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 1 wins!

@@ -1,0 +1,1041 @@
+Battle 413
+Player 1 Team: Frontline Breaker
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:13:53
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 416
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Double Rogue Tempo
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+Player 2: No-Heal Collapse
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Prince Charming
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Prince Charming
+Witch-Hunter Gretel uses Shove Over on Prince Charming.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=80 def=55 raw=94.55 ceil=95
+    [T]   FINAL_DMG=95
+  Prince Charming takes 95 damage.
+    [T] HPCHANGE Prince Charming: 255 → 160  (-95)
+  Prince Charming gains weaken for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 160 → 121  (-39)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+  Matchstick Liesl loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Lucky Constantine takes 40 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 175  (-40)
+  Lucky Constantine gains no_heal for 2 rounds.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Lucky Constantine: Post Bounty → Witch-Hunter Gretel
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 175  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_right] HP=121/255 statuses=[weaken(2r)]
+    [T]   P1 Lucky Constantine[back_left] HP=175/215 statuses=[no_heal(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 statuses=[expose(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=121/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=175/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=40(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lucky Constantine
+[Queued] Prince Charming: Condescend → Witch-Hunter Gretel
+[Queued] Lucky Constantine: Post Bounty → Witch-Hunter Gretel
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Lucky Constantine
+Reynard, Lupine Trickster and Lucky Constantine swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Witch-Hunter Gretel
+Prince Charming uses Condescend on Witch-Hunter Gretel.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 158  (-57)
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=50 (base=40)
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=94
+  Witch-Hunter Gretel takes 94 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 158 → 64  (-94)
+[Queued] Witch-Hunter Gretel: Shove Over → Lucky Constantine
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Lucky Constantine
+Witch-Hunter Gretel uses Shove Over on Lucky Constantine.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=140
+  Lucky Constantine takes 140 damage.
+    [T] HPCHANGE Lucky Constantine: 175 → 35  (-140)
+  Lucky Constantine gains weaken for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Lucky Constantine[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=53
+  Lucky Constantine takes 53 damage.
+    [T] HPCHANGE Lucky Constantine: 35 → 0  (-53) **KO**
+  Lucky Constantine is Marked — takes +10 damage next round.
+Reynard, Lupine Trickster moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_right] HP=121/255 statuses=[weaken(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=119/215 statuses=[expose(1r), burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: expose
+    [T] DEBUFF_EXPIRED Matchstick Liesl: attack-10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=121/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=119/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch-Hunter Gretel
+[Queued] Prince Charming: Condescend → Witch-Hunter Gretel
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch-Hunter Gretel
+Reynard, Lupine Trickster uses Riposte on Witch-Hunter Gretel.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Witch-Hunter Gretel takes 65 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 119 → 54  (-65)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Witch-Hunter Gretel
+Prince Charming uses Condescend on Witch-Hunter Gretel.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Witch-Hunter Gretel takes 58 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 54 → 0  (-58) **KO**
+Matchstick Liesl moves to frontline.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     [Queued] Robin, Hooded Avenger: Swap with Sir Roland
+[Queued] Sea Wench Asha: Skip
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Sir Roland
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Sea Wench Asha[back_right]: skip/recharge
+Sea Wench Asha recharges.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Snowkissed Aurora: Skip
+[Queued] Little Jack: Cleave → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Robin, Hooded Avenger
+Little Jack uses Cleave on Robin, Hooded Avenger.
+  Little Jack marks Robin, Hooded Avenger — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[back_left] HP=177/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=138/225 statuses=[root(1r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=39/185 statuses=[guard(1r)]
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=177/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=138/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=39/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Little Jack
+[Queued] Sea Wench Asha: Misappropriate → Snowkissed Aurora
+[Queued] Sir Roland: Item Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Little Jack
+Robin, Hooded Avenger uses Snipe Shot on Little Jack.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Little Jack[back_left]
+    [T]   power=65
+    [T]   atk=56 def=50 raw=72.80 ceil=73
+    [T]   FINAL_DMG=93
+  Little Jack takes 93 damage.
+    [T] HPCHANGE Little Jack: 177 → 84  (-93)
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Snowkissed Aurora
+Sea Wench Asha uses Misappropriate on Snowkissed Aurora.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=82 def=70 raw=41.00 ceil=41
+    [T]   FINAL_DMG=41
+  Snowkissed Aurora takes 41 damage.
+    [T] HPCHANGE Snowkissed Aurora: 138 → 97  (-41)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Robin, Hooded Avenger
+Sir Roland uses Crafty Shield.
+  Robin, Hooded Avenger is Guarded.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+[Queued] Little Jack: Cleave → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [6/6]
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=45 def=40 raw=56.25 ceil=57
+    [T]   FINAL_DMG=46
+  Robin, Hooded Avenger takes 46 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 39 → 0  (-46) **KO**
+  Snowkissed Aurora heals Little Jack for 50 HP.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Robin, Hooded Avenger
+Little Jack's target is no longer legal — Cleave fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack[back_left] HP=134/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=97/225 statuses=[root(2r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=134/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=97/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+[Queued] Little Jack: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sea Wench Asha
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sea Wench Asha[back_right]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sea Wench Asha takes 50 damage.
+    [T] HPCHANGE Sea Wench Asha: 160 → 110  (-50)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Little Jack[back_left]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Little Jack
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Little Jack
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+  Sea Wench Asha gains Belligerence for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack[front] HP=134/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=147/225 statuses=[root(1r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=110/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=134/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=147/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=110/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Little Jack
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Little Jack
+Sea Wench Asha uses Dark Grasp on Little Jack.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=94
+  Little Jack takes 94 damage.
+    [T] HPCHANGE Little Jack: 134 → 40  (-94)
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [6/6]
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Little Jack: Cleave → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sea Wench Asha
+Little Jack uses Cleave on Sea Wench Asha.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sea Wench Asha[front]
+    [T]   power=45
+    [T]   atk=80 def=29 raw=124.14 ceil=125
+    [T]   FINAL_DMG=100
+  Sea Wench Asha takes 100 damage.
+    [T] HPCHANGE Sea Wench Asha: 110 → 10  (-100)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Little Jack[front] HP=95/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=147/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=10/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=95/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=147/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=10/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Little Jack
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Little Jack
+Sea Wench Asha uses Dark Grasp on Little Jack.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Little Jack takes 75 damage.
+    [T] HPCHANGE Little Jack: 95 → 20  (-75)
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Little Jack: Cleave → Sea Wench Asha
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sea Wench Asha
+Little Jack uses Cleave on Sea Wench Asha.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sea Wench Asha[front]
+    [T]   power=45
+    [T]   atk=80 def=29 raw=124.14 ceil=125
+    [T]   FINAL_DMG=100
+  Sea Wench Asha takes 100 damage.
+    [T] HPCHANGE Sea Wench Asha: 10 → 0  (-100) **KO**
+Sir Roland moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Little Jack[front] HP=20/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=147/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=20/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=147/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 147 → 117  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Little Jack[back_left] HP=90/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=117/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=90/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=117/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Heal → Little Jack
+[Queued] Little Jack: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+    [T] ACTION P1 Little Jack[back_left]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Little Jack takes 36 damage.
+    [T] HPCHANGE Little Jack: 160 → 124  (-36)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Little Jack[front] HP=124/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=117/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=124/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=117/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 117 → 87  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Little Jack[back_left] HP=194/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=87/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=194/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=87/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Little Jack[back_left]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+  Little Jack marks Sir Roland — next ability ignores 10% Defense.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 87 → 57  (-30)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Little Jack[back_left] HP=194/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=57/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=194/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=57/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Little Jack: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 265 → 258  (-7)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Little Jack[back_left]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Little Jack takes 36 damage.
+    [T] HPCHANGE Little Jack: 194 → 158  (-36)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Little Jack[front] HP=158/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=107/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=258/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=158/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=107/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=258/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=52 raw=69.23 ceil=70
+    [T]   FINAL_DMG=68
+  Sir Roland takes 68 damage.
+    [T] HPCHANGE Sir Roland: 258 → 190  (-68)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 75 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Little Jack[front] HP=213/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=107/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=213/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=107/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=76
+  Sir Roland takes 76 damage.
+    [T] HPCHANGE Sir Roland: 265 → 189  (-76)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=45 def=90 raw=17.50 ceil=18
+    [T]   FINAL_DMG=18
+  Sir Roland takes 18 damage.
+    [T] HPCHANGE Sir Roland: 189 → 171  (-18)
+  Snowkissed Aurora heals Snowkissed Aurora for 35 HP.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Little Jack takes 36 damage.
+    [T] HPCHANGE Little Jack: 213 → 177  (-36)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Little Jack[front] HP=177/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=142/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=171/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=177/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=142/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=171/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=61
+  Sir Roland takes 61 damage.
+    [T] HPCHANGE Sir Roland: 171 → 110  (-61)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Little Jack takes 36 damage.
+    [T] HPCHANGE Little Jack: 177 → 141  (-36)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Little Jack[front] HP=141/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=142/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=110/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=141/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=142/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=110/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=76
+  Sir Roland takes 76 damage.
+    [T] HPCHANGE Sir Roland: 110 → 34  (-76)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Little Jack[front] HP=196/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=142/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=34/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=196/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=142/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=34/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=61
+  Sir Roland takes 61 damage.
+    [T] HPCHANGE Sir Roland: 34 → 0  (-61) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 18)
+────────────────────────────────────────────────────────────
+Player 1 wins!

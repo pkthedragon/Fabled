@@ -1,0 +1,405 @@
+Battle 248
+Player 1 Team: Burnline Pressure
+Player 2 Team: Shocked Quarry
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:58:37
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 248
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+Player 2: Shocked Quarry
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch of the Woods
+[Queued] March Hare: Thunder Call → Witch of the Woods
+[Queued] Hunold the Piper: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Witch of the Woods
+Frederic the Beastslayer uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch of the Woods[back_right]
+    [T]   power=50
+    [T]   atk=75 def=35 raw=107.14 ceil=108
+    [T]   FINAL_DMG=108
+  Witch of the Woods takes 108 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 72  (-108)
+  Witch of the Woods is Marked — takes +10 damage next round.
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Witch of the Woods
+March Hare uses Thunder Call on Witch of the Woods.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Witch of the Woods[back_right]
+    [T]   power=35
+    [T]   atk=70 def=35 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Witch of the Woods takes 70 damage.
+    [T] HPCHANGE Witch of the Woods: 72 → 2  (-70)
+  Witch of the Woods gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: swap ↔ Frederic the Beastslayer
+Hunold the Piper and Frederic the Beastslayer swap positions.
+[Queued] Witch-Hunter Gretel: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → March Hare
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Witch of the Woods
+Witch-Hunter Gretel and Witch of the Woods swap positions.
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → March Hare
+Witch of the Woods uses Thunder Call on March Hare.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → March Hare[back_right]
+    [T]   power=65
+    [T]   atk=75 def=35 raw=139.29 ceil=140
+    [T]   FINAL_DMG=140
+  March Hare takes 140 damage.
+    [T] HPCHANGE March Hare: 190 → 50  (-140)
+  Shock recoil: Witch of the Woods takes 28 damage.
+  March Hare gains shock for 2 rounds.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch of the Woods
+  Matchstick Liesl retargets to Witch-Hunter Gretel after swapping to front.
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=50/190 statuses=[shock(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK March Hare: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=50/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Matchstick Liesl
+[Queued] March Hare: Thunder Call → Matchstick Liesl
+[Queued] Frederic the Beastslayer: On the Hunt → Matchstick Liesl
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Matchstick Liesl
+Hunold the Piper uses Dying Dance on Matchstick Liesl.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=60 def=50 raw=72.00 ceil=72
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 138  (-72)
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Matchstick Liesl
+March Hare uses Thunder Call on Matchstick Liesl.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=70 def=50 raw=49.00 ceil=49
+    [T]   FINAL_DMG=49
+  Matchstick Liesl takes 49 damage.
+    [T] HPCHANGE Matchstick Liesl: 138 → 89  (-49)
+  Shock recoil: March Hare takes 10 damage.
+  Matchstick Liesl gains shock for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Matchstick Liesl
+Frederic the Beastslayer uses On the Hunt on Matchstick Liesl.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Matchstick Liesl[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=57
+  Matchstick Liesl takes 57 damage.
+    [T] HPCHANGE Matchstick Liesl: 89 → 32  (-57)
+  Matchstick Liesl gains expose for 2 rounds.
+[Queued] Matchstick Liesl: Smite → March Hare
+[Queued] Witch-Hunter Gretel: Intimidate → Hunold the Piper
+    [T] ACTION P1 Matchstick Liesl[front]: Smite → March Hare
+Matchstick Liesl uses Smite on March Hare.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → March Hare[back_right]
+    [T]   power=55
+    [T]   atk=50 def=35 raw=78.57 ceil=79
+    [T]   FINAL_DMG=79
+  March Hare takes 79 damage.
+    [T] HPCHANGE March Hare: 40 → 0  (-79) **KO**
+  Shock recoil: Matchstick Liesl takes 16 damage.
+  March Hare gains burn for 2 rounds.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Hunold the Piper
+Witch-Hunter Gretel uses Intimidate on Hunold the Piper.
+  Hunold the Piper gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=16/210 statuses=[shock(2r), expose(2r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[weaken(2r)]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Matchstick Liesl: shock → 1r left
+    [T] STATUS_TICK Matchstick Liesl: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Hunold the Piper: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=16/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r), expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Sucker Punch → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Matchstick Liesl
+Hunold the Piper uses Sucker Punch on Matchstick Liesl.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Matchstick Liesl[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=50 raw=72.00 ceil=72
+    [T]   FINAL_DMG=85
+  Matchstick Liesl takes 85 damage.
+    [T] HPCHANGE Matchstick Liesl: 16 → 0  (-85) **KO**
+Witch-Hunter Gretel moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+[Queued] Witch-Hunter Gretel: Into the Oven → Hunold the Piper
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Into the Oven → Hunold the Piper
+Witch-Hunter Gretel uses Into the Oven on Hunold the Piper.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Hunold the Piper[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=101
+  Hunold the Piper takes 101 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 109  (-101)
+  Hunold the Piper gains burn for 2 rounds.
+  Hunold the Piper gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=109/210 statuses=[weaken(1r), burn(2r), root(2r)]
+    [T]   P2 March Hare [KO]
+Hunold the Piper burns for 21 damage.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Hunold the Piper: weaken → 0r left
+    [T] STATUS_TICK Hunold the Piper: burn → 1r left
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: On the Hunt → Witch-Hunter Gretel
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Witch-Hunter Gretel
+Hunold the Piper uses Dying Dance on Witch-Hunter Gretel.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Witch-Hunter Gretel[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch-Hunter Gretel takes 80 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 135  (-80)
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Witch-Hunter Gretel
+Frederic the Beastslayer uses On the Hunt on Witch-Hunter Gretel.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Witch-Hunter Gretel takes 47 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 135 → 88  (-47)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Witch-Hunter Gretel: Strike → Hunold the Piper
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Hunold the Piper
+Witch-Hunter Gretel uses Strike on Hunold the Piper.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Hunold the Piper[front]
+    [T]   power=55
+    [T]   atk=80 def=45 raw=97.78 ceil=98
+    [T]   FINAL_DMG=96
+  Hunold the Piper takes 96 damage.
+    [T] HPCHANGE Hunold the Piper: 88 → 0  (-96) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Frederic the Beastslayer moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[front] HP=88/215 statuses=[expose(2r)]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=88/215 ATK=95(base=80) DEF=45(base=45) SPD=70(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Witch-Hunter Gretel: Strike → Frederic the Beastslayer
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Frederic the Beastslayer
+Witch-Hunter Gretel uses Strike on Frederic the Beastslayer.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=55
+    [T]   atk=95 def=45 raw=116.11 ceil=117
+    [T]   FINAL_DMG=129
+  Frederic the Beastslayer takes 129 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 71  (-129)
+  Frederic the Beastslayer gains burn for 2 rounds.
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel[front] HP=88/215 statuses=[expose(1r)]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=71/200 statuses=[burn(2r)]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: expose
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=88/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=51/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Slay the Beast → Witch-Hunter Gretel
+    [T] ACTION P2 Frederic the Beastslayer[front]: Slay the Beast → Witch-Hunter Gretel
+Frederic the Beastslayer uses Slay the Beast on Witch-Hunter Gretel.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=85 (base=65)
+    [T]   atk=75 def=45 raw=141.67 ceil=142
+    [T]   FINAL_DMG=142
+  Witch-Hunter Gretel takes 142 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 88 → 0  (-142) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

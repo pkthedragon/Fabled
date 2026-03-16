@@ -273,6 +273,13 @@ class CombatantState:
 
     def get_stat(self, stat: str) -> int:
         base = getattr(self.defn, stat)
+
+        if self.ability_charges.get("unfettered_dur", 0) > 0:
+            if stat in ("attack", "speed"):
+                base = self.defn.defense
+            elif stat == "defense":
+                base = self.defn.attack
+
         base += self.ability_charges.get(f"{stat}_bonus", 0)
 
         malice = self.ability_charges.get("malice", 0)

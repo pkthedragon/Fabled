@@ -1,0 +1,769 @@
+Battle 319
+Player 1 Team: Shock Punish
+Player 2 Team: Rapunzel Pin Control
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:03:15
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 319
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shock Punish
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Tempus Fugit  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Rapunzel the Golden: Golden Snare → March Hare
+[Queued] Matchstick Liesl: Cauterize → March Hare
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → March Hare
+Rapunzel the Golden uses Golden Snare on March Hare.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → March Hare[back_right]
+    [T]   power=60
+    [T]   atk=60 def=35 raw=102.86 ceil=103
+    [T]   FINAL_DMG=113
+  March Hare takes 113 damage.
+    [T] HPCHANGE March Hare: 190 → 77  (-113)
+  March Hare gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → March Hare
+Matchstick Liesl uses Cauterize on March Hare.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → March Hare[back_right]
+    [T]   power=40
+    [T]   atk=50 def=35 raw=57.14 ceil=58
+    [T]   FINAL_DMG=58
+  March Hare takes 58 damage.
+    [T] HPCHANGE March Hare: 77 → 19  (-58)
+  March Hare gains no_heal for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Hunold the Piper
+Robin, Hooded Avenger uses Bring Down on Hunold the Piper.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Hunold the Piper[back_left]
+    [T]   power=35
+    [T]   atk=82 def=45 raw=63.78 ceil=64
+    [T]   FINAL_DMG=67
+  Hunold the Piper takes 67 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 143  (-67)
+  Hunold the Piper gains root for 2 rounds.
+[Queued] Sir Roland: Swap with March Hare
+[Queued] March Hare: Thunder Call → Matchstick Liesl
+[Queued] Hunold the Piper: Sucker Punch → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: swap ↔ March Hare
+Sir Roland and March Hare swap positions.
+  Banner of Command: March Hare is Guarded.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Matchstick Liesl
+March Hare uses Thunder Call on Matchstick Liesl.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Matchstick Liesl[back_right]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=91
+  Matchstick Liesl takes 91 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 119  (-91)
+  Matchstick Liesl gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Rapunzel the Golden
+Hunold the Piper uses Sucker Punch on Rapunzel the Golden.
+  Rapunzel the Golden gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=143/210 statuses=[root(2r)]
+    [T]   P1 March Hare[front] HP=19/190 statuses=[root(2r), no_heal(2r), guard(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=119/210 statuses=[shock(2r)]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+    [T] STATUS_TICK March Hare: root → 1r left
+    [T] STATUS_TICK March Hare: no_heal → 1r left
+    [T] STATUS_TICK March Hare: guard → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Matchstick Liesl: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Rapunzel the Golden spd=15 (MH adj from 30)  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=143/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=19/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[root(1r), no_heal(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=119/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Arcane Wave → Matchstick Liesl
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Rapunzel the Golden
+    [T] ACTION P1 March Hare[front]: Arcane Wave → Matchstick Liesl
+March Hare uses Arcane Wave on Matchstick Liesl.
+    [T] DMGCALC [Arcane Wave] March Hare[front] → Matchstick Liesl[back_right]
+    [T]   power=80
+    [T]   atk=70 def=50 raw=112.00 ceil=112
+    [T]   FINAL_DMG=127
+  Matchstick Liesl takes 127 damage.
+    [T] HPCHANGE Matchstick Liesl: 119 → 0  (-127) **KO**
+  March Hare has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 Hunold the Piper[back_right]: Sucker Punch → Rapunzel the Golden
+Hunold the Piper uses Sucker Punch on Rapunzel the Golden.
+[Queued] Rapunzel the Golden: Golden Snare → March Hare
+[Queued] Robin, Hooded Avenger: Bring Down → March Hare
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → March Hare
+Rapunzel the Golden uses Golden Snare on March Hare.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → March Hare[front]
+    [T]   power=60
+    [T]   atk=60 def=25 raw=144.00 ceil=144
+    [T]   FINAL_DMG=103
+  March Hare takes 103 damage.
+    [T] HPCHANGE March Hare: 19 → 0  (-103) **KO**
+  March Hare's root is refreshed to 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → March Hare
+Robin, Hooded Avenger's target is no longer legal — Bring Down fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=143/210 statuses=[root(1r), guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[weaken(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: root → 0r left
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: root
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: weaken
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=143/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=13
+  Sir Roland takes 13 damage.
+    [T] HPCHANGE Sir Roland: 265 → 252  (-13)
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Robin, Hooded Avenger
+Hunold the Piper uses Sucker Punch on Robin, Hooded Avenger.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Robin, Hooded Avenger takes 60 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 125  (-60)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_right] HP=252/265 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=143/210 statuses=[guard(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=125/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=252/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=143/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=125/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Hunold the Piper: Dying Dance → Robin, Hooded Avenger
+[Queued] Sir Roland: Item Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Robin, Hooded Avenger
+Hunold the Piper uses Dying Dance on Robin, Hooded Avenger.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Robin, Hooded Avenger takes 90 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 125 → 35  (-90)
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Hunold the Piper
+Sir Roland uses Crafty Shield.
+  Hunold the Piper is Guarded.
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+[Queued] Rapunzel the Golden: Golden Snare → Hunold the Piper
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Hunold the Piper
+Robin, Hooded Avenger uses Bring Down on Hunold the Piper.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=80 def=45 raw=106.67 ceil=107
+    [T]   FINAL_DMG=69
+  Hunold the Piper takes 69 damage.
+    [T] HPCHANGE Hunold the Piper: 143 → 74  (-69)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Golden Snare → Hunold the Piper
+Rapunzel the Golden uses Golden Snare on Hunold the Piper.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_left] → Hunold the Piper[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=42
+  Hunold the Piper takes 42 damage.
+    [T] HPCHANGE Hunold the Piper: 74 → 32  (-42)
+  Hunold the Piper gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=252/265 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=32/210 statuses=[guard(2r), root(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=35/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=252/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=32/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=35/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Hunold the Piper
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Golden Snare → Hunold the Piper
+Rapunzel the Golden uses Golden Snare on Hunold the Piper.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_left] → Hunold the Piper[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=34
+  Hunold the Piper takes 34 damage.
+    [T] HPCHANGE Hunold the Piper: 32 → 0  (-34) **KO**
+Sir Roland moves to frontline.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 35 → 0  (-40) **KO**
+  All allies are Guarded for 2 rounds.
+Rapunzel the Golden moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[front] HP=252/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=252/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=28
+  Rapunzel the Golden takes 28 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 230  (-28)
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=11
+  Sir Roland takes 11 damage.
+    [T] HPCHANGE Sir Roland: 252 → 241  (-11)
+  Sir Roland gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=241/265 statuses=[guard(1r), root(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=230/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=241/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=230/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 241 → 191  (-50)
+  Sir Roland's root is refreshed to 2 rounds.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 74 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[root(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=230/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=230/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=28
+  Rapunzel the Golden takes 28 damage.
+    [T] HPCHANGE Rapunzel the Golden: 230 → 202  (-28)
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=42
+  Sir Roland takes 42 damage.
+    [T] HPCHANGE Sir Roland: 265 → 223  (-42)
+  Sir Roland's root is refreshed to 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=223/265 statuses=[root(2r), guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=202/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=223/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=202/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 223 → 173  (-50)
+  Sir Roland's root is refreshed to 2 rounds.
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=28
+  Rapunzel the Golden takes 28 damage.
+    [T] HPCHANGE Rapunzel the Golden: 202 → 174  (-28)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=173/265 statuses=[root(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=174/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=173/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=174/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=28
+  Rapunzel the Golden takes 28 damage.
+    [T] HPCHANGE Rapunzel the Golden: 174 → 146  (-28)
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=42
+  Sir Roland takes 42 damage.
+    [T] HPCHANGE Sir Roland: 173 → 131  (-42)
+  Sir Roland's root is refreshed to 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=131/265 statuses=[root(2r), guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=131/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 131 → 81  (-50)
+  Sir Roland's root is refreshed to 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=81/265 statuses=[root(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=81/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=28
+  Rapunzel the Golden takes 28 damage.
+    [T] HPCHANGE Rapunzel the Golden: 146 → 118  (-28)
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=42
+  Sir Roland takes 42 damage.
+    [T] HPCHANGE Sir Roland: 81 → 39  (-42)
+  Sir Roland's root is refreshed to 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[front] HP=39/265 statuses=[root(2r), guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=118/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=39/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=118/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 39 → 0  (-50) **KO**
+  Sir Roland's root is refreshed to 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 13)
+────────────────────────────────────────────────────────────
+Player 2 wins!

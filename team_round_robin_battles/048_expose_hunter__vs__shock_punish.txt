@@ -1,0 +1,681 @@
+Battle 48
+Player 1 Team: Expose Hunter
+Player 2 Team: Shock Punish
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:38:28
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 48
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Expose Hunter
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+Player 2: Shock Punish
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Tempus Fugit  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Robin, Hooded Avenger: Bring Down → March Hare
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → March Hare
+Robin, Hooded Avenger uses Bring Down on March Hare.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → March Hare[back_right]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=95
+  March Hare takes 95 damage.
+    [T] HPCHANGE March Hare: 190 → 95  (-95)
+  March Hare gains root for 2 rounds.
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 265 → 233  (-32)
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Swap with March Hare
+[Queued] March Hare: Thunder Call → Lucky Constantine
+[Queued] Hunold the Piper: Sucker Punch → Lucky Constantine
+    [T] ACTION P2 Sir Roland[front]: swap ↔ March Hare
+Sir Roland and March Hare swap positions.
+  Banner of Command: March Hare is Guarded.
+    [T] ACTION P2 March Hare[front]: Thunder Call → Lucky Constantine
+March Hare uses Thunder Call on Lucky Constantine.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Lucky Constantine[front]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=114
+  Lucky Constantine takes 114 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 101  (-114)
+  Lucky Constantine gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Lucky Constantine
+Hunold the Piper uses Sucker Punch on Lucky Constantine.
+  Lucky Constantine gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=101/215 statuses=[shock(2r), weaken(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=233/265 statuses=[expose(2r)]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[front] HP=95/190 statuses=[root(2r), guard(2r)]
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+    [T] STATUS_TICK Lucky Constantine: weaken → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK March Hare: root → 1r left
+    [T] STATUS_TICK March Hare: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=60 (MH adj from 75)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=101/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=233/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=95/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Robin, Hooded Avenger
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Hunold the Piper: Swap with Sir Roland
+    [T] ACTION P2 March Hare[front]: Thunder Call → Robin, Hooded Avenger
+March Hare uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=114
+  Robin, Hooded Avenger takes 114 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 71  (-114)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Hunold the Piper[back_left]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+[Queued] Lucky Constantine: Feline Gambit → March Hare
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+[Queued] Prince Charming: Condescend → March Hare
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → March Hare
+Lucky Constantine uses Feline Gambit on March Hare.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → March Hare[front]
+    [T]   power=45
+    [T]   atk=70 def=35 raw=90.00 ceil=90
+    [T]   FINAL_DMG=58
+  March Hare takes 58 damage.
+    [T] HPCHANGE March Hare: 95 → 37  (-58)
+  Shock recoil: Lucky Constantine takes 12 damage.
+  March Hare gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Hunold the Piper
+Robin, Hooded Avenger uses Bring Down on Hunold the Piper.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Hunold the Piper[back_right]
+    [T]   power=35
+    [T]   atk=75 def=45 raw=58.33 ceil=59
+    [T]   FINAL_DMG=62
+  Hunold the Piper takes 62 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 148  (-62)
+  Shock recoil: Robin, Hooded Avenger takes 13 damage.
+  Hunold the Piper gains root for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → March Hare
+Prince Charming uses Condescend on March Hare.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → March Hare[front]
+    [T]   power=40
+    [T]   atk=65 def=35 raw=74.29 ceil=75
+    [T]   FINAL_DMG=72
+  March Hare takes 72 damage.
+    [T] HPCHANGE March Hare: 37 → 0  (-72) **KO**
+Sir Roland moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=89/215 statuses=[shock(1r), weaken(1r)]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=58/185 statuses=[shock(2r)]
+    [T]   P2 Sir Roland[front] HP=233/265 statuses=[expose(1r), guard(2r)]
+    [T]   P2 Hunold the Piper[back_right] HP=148/210 statuses=[guard(2r), root(2r)]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Lucky Constantine: shock → 0r left
+    [T] STATUS_TICK Lucky Constantine: weaken → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: shock
+    [T] STATUS_EXPIRED Lucky Constantine: weaken
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=89/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=58/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=233/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_right] HP=148/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+[Queued] Prince Charming: Swap with Lucky Constantine
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 233 → 226  (-7)
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Hunold the Piper
+Robin, Hooded Avenger uses Bring Down on Hunold the Piper.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Hunold the Piper[back_right]
+    [T]   power=35
+    [T]   atk=75 def=45 raw=58.33 ceil=59
+    [T]   FINAL_DMG=62
+  Hunold the Piper takes 62 damage.
+    [T] HPCHANGE Hunold the Piper: 148 → 86  (-62)
+  Shock recoil: Robin, Hooded Avenger takes 13 damage.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Prince Charming
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Prince Charming
+Hunold the Piper uses Sucker Punch on Prince Charming.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=60 def=55 raw=43.64 ceil=44
+    [T]   FINAL_DMG=44
+  Prince Charming takes 44 damage.
+    [T] HPCHANGE Prince Charming: 255 → 211  (-44)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[front] HP=211/255 statuses=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=89/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 statuses=[shock(1r)]
+    [T]   P2 Sir Roland[back_right] HP=226/265 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Hunold the Piper[front] HP=86/210 statuses=[guard(1r), root(1r)]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: shock
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_TICK Hunold the Piper: root → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+    [T] STATUS_EXPIRED Hunold the Piper: root
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=211/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=89/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=226/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=86/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Prince Charming
+[Queued] Sir Roland: Item Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Prince Charming
+Hunold the Piper uses Dying Dance on Prince Charming.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=60 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 211 → 145  (-66)
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Hunold the Piper
+Sir Roland uses Crafty Shield.
+  Hunold the Piper is Guarded.
+[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Robin, Hooded Avenger: Skip
+[Queued] Lucky Constantine: Sucker Punch → Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: skip/recharge
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Lucky Constantine[front]: Sucker Punch → Sir Roland
+Lucky Constantine uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Sir Roland[back_right]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=85 raw=49.41 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 226 → 176  (-50)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[back_left] HP=145/255 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=89/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=176/265 statuses=[expose(1r)]
+    [T]   P2 Hunold the Piper[front] HP=86/210 statuses=[guard(2r)]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=145/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=89/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=176/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=86/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Lucky Constantine: Feline Gambit → Hunold the Piper
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+[Queued] Prince Charming: Condescend → Hunold the Piper
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Hunold the Piper
+Lucky Constantine uses Feline Gambit on Hunold the Piper.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=45
+  Hunold the Piper takes 45 damage.
+    [T] HPCHANGE Hunold the Piper: 86 → 41  (-45)
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Hunold the Piper
+Robin, Hooded Avenger uses Bring Down on Hunold the Piper.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=75 def=45 raw=58.33 ceil=59
+    [T]   FINAL_DMG=67
+  Hunold the Piper takes 67 damage.
+    [T] HPCHANGE Hunold the Piper: 41 → 0  (-67) **KO**
+  Hunold the Piper gains root for 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Hunold the Piper
+Prince Charming's target is no longer legal — Condescend fizzles.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 89 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[back_left] HP=145/255 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=89/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=145/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=89/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+[Queued] Prince Charming: Swap with Lucky Constantine
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 265 → 258  (-7)
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=75 def=90 raw=29.17 ceil=30
+    [T]   FINAL_DMG=39
+  Sir Roland takes 39 damage.
+    [T] HPCHANGE Sir Roland: 258 → 219  (-39)
+  Sir Roland gains root for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=45 def=55 raw=32.73 ceil=33
+    [T]   FINAL_DMG=33
+  Prince Charming takes 33 damage.
+    [T] HPCHANGE Prince Charming: 145 → 112  (-33)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming[front] HP=112/255 statuses=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=89/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=219/265 statuses=[guard(1r), expose(2r), root(2r)]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=112/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=89/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=219/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), root(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+[Queued] Lucky Constantine: Sucker Punch → Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=75 def=90 raw=29.17 ceil=30
+    [T]   FINAL_DMG=46
+  Sir Roland takes 46 damage.
+    [T] HPCHANGE Sir Roland: 219 → 173  (-46)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Lucky Constantine[front]: Sucker Punch → Sir Roland
+Lucky Constantine uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=90 raw=46.67 ceil=47
+    [T]   FINAL_DMG=57
+  Sir Roland takes 57 damage.
+    [T] HPCHANGE Sir Roland: 173 → 116  (-57)
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Lucky Constantine takes 45 damage.
+    [T] HPCHANGE Lucky Constantine: 89 → 44  (-45)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming[back_left] HP=112/255 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=44/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=116/265 statuses=[expose(1r), root(1r), guard(2r)]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: root
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=112/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=44/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=116/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Lucky Constantine: Feline Gambit → Sir Roland
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Sir Roland
+Lucky Constantine uses Feline Gambit on Sir Roland.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=70 def=90 raw=35.00 ceil=35
+    [T]   FINAL_DMG=28
+  Sir Roland takes 28 damage.
+    [T] HPCHANGE Sir Roland: 116 → 88  (-28)
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Prince Charming
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=65 def=90 raw=28.89 ceil=29
+    [T]   FINAL_DMG=28
+  Sir Roland takes 28 damage.
+    [T] HPCHANGE Sir Roland: 88 → 60  (-28)
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Lucky Constantine takes 45 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Prince Charming[back_left] HP=112/255 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=60/265 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=112/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=45/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=60/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 March Hare [KO]
+[Queued] Lucky Constantine: Swap with Prince Charming
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P1 Lucky Constantine[front]: swap ↔ Prince Charming
+Lucky Constantine and Prince Charming swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Sir Roland[front]
+    [T]   power=45 (base=35)
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=56
+  Sir Roland takes 56 damage.
+    [T] HPCHANGE Sir Roland: 60 → 4  (-56)
+  Sir Roland gains root for 2 rounds.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=90 raw=36.11 ceil=37
+    [T]   FINAL_DMG=45
+  Sir Roland takes 45 damage.
+    [T] HPCHANGE Sir Roland: 4 → 0  (-45) **KO**
+  Sir Roland loses -10 Defense for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 1 wins!

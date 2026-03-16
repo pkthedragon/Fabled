@@ -188,11 +188,11 @@ def determine_initiative(battle: BattleState):
 
     raw_spd1, raw_spd2 = spd1, spd2  # before March Hare
 
-    # March Hare On Time! talent: while March Hare is frontline, enemy frontline -15 speed
+    # March Hare On Time! talent: while March Hare is frontline, enemy frontline -12 speed
     if fl1 and fl1.defn.id == "march_hare" and fl2:
-        spd2 = max(1, spd2 - 15)
+        spd2 = max(1, spd2 - 12)
     if fl2 and fl2.defn.id == "march_hare" and fl1:
-        spd1 = max(1, spd1 - 15)
+        spd1 = max(1, spd1 - 12)
 
     n1 = fl1.name if fl1 else "none"
     n2 = fl2.name if fl2 else "none"
@@ -292,17 +292,17 @@ def apply_passive_stats(team: TeamState, battle: BattleState):
             # Porcine Honor: guard at start of round
             if ab.id == "porcine_honor":
                 if unit.slot == SLOT_FRONT:
-                    unit.add_status("guard", 1)
-                    battle.log_add(f"{unit.name} is Guarded by Porcine Honor.")
+                    if unit.add_status("guard", 1):
+                        battle.log_add(f"{unit.name} is Guarded by Porcine Honor.")
                 else:
                     front = team.frontline()
                     if front:
-                        front.add_status("guard", 1)
-                        battle.log_add(f"{front.name} is Guarded by Porcine Honor.")
+                        if front.add_status("guard", 1):
+                            battle.log_add(f"{front.name} is Guarded by Porcine Honor.")
 
             # Sturdy Home: bonus defense to allies (not the carrier)
             if ab.id == "sturdy_home":
-                bonus = 7 if unit.slot == SLOT_FRONT else 10
+                bonus = 10 if unit.slot == SLOT_FRONT else 12
                 if unit.slot == SLOT_FRONT:
                     for ally in team.alive():
                         if ally != unit:
@@ -315,7 +315,7 @@ def apply_passive_stats(team: TeamState, battle: BattleState):
 
             # Protection: allies +defense (not the carrier)
             if ab.id == "protection":
-                bonus = 10 if unit.slot == SLOT_FRONT else 5
+                bonus = 12 if unit.slot == SLOT_FRONT else 7
                 for ally in team.alive():
                     if ally != unit:
                         ally.add_buff("defense", bonus, 1)
@@ -327,14 +327,14 @@ def apply_passive_stats(team: TeamState, battle: BattleState):
                 enemy_team = battle.get_enemy(1 if team == battle.team1 else 2)
                 for foe in enemy_team.alive():
                     if unit.slot == SLOT_FRONT and is_ranged(foe):
-                        foe.add_debuff("defense", 10, 1)
+                        foe.add_debuff("defense", 12, 1)
                     if unit.slot != SLOT_FRONT and is_melee(foe):
-                        foe.add_debuff("attack", 10, 1)
+                        foe.add_debuff("attack", 12, 1)
 
         # Red and Wolf (Risa talent): below 50% HP
         if unit.defn.id == "risa_redcloak" and unit.hp < unit.max_hp * 0.5:
-            unit.add_buff("attack", 15, 1)
-            unit.add_buff("speed",  15, 1)
+            unit.add_buff("attack", 12, 1)
+            unit.add_buff("speed",  12, 1)
 
         # Crawling Abode (Witch talent): +10 spd if enemy frontline is statused
         if unit.sig.id == "crawling_abode" or any(
@@ -388,16 +388,16 @@ def get_legal_targets(
     _SELF_SPECIALS = {
         "heros_charge_ignore_pride_front", "riposte_bl", "struck_midnight_untargetable",
         "rabbit_hole_extra_action", "stitch_extra_action_now", "devils_due",
-        "final_deception", "redemption", "unbreakable_defense",
+        "final_deception", "redemption", "unfettered",
         "nbth_self_reduce", "shimmering_valor_front", "shimmering_valor_back",
         "falling_kingdom", "feign_weakness_retaliate_45", "feign_weakness_retaliate_40", "last_laugh",
         "crumb_trail_drop", "blue_faerie_boon", "turn_to_foam", "misappropriate_front",
-        "fated_duel", "severed_tether", "happily_ever_after",
+        "fated_duel", "severed_tether", "happily_ever_after", "deathlike_slumber",
         "blood_pact_front",
     }
     # Specials that explicitly target allies.
     _ALLY_SPECIALS = {
-        "rabbit_hole_swap", "deathlike_slumber", "cinder_blessing_avg",
+        "rabbit_hole_swap", "cinder_blessing_avg",
         "straw_to_gold_front", "straw_to_gold_back", "summons_swap",
     }
     # Specials that require an enemy target despite having no power/status fields.
@@ -596,6 +596,7 @@ def compute_damage(
     is_spread: bool = False,
     ignore_pride: bool = False,
     is_retaliation: bool = False,
+    consume_triggers: bool = True,
 ) -> int:
     power = mode.power
     if power <= 0:
@@ -626,7 +627,8 @@ def compute_damage(
     if actor.ability_charges.get("magic_growth_bonus", 0) > 0 \
             and ability.id != "magic_growth":
         power += 15
-        actor.ability_charges["magic_growth_bonus"] = 0
+        if consume_triggers:
+            actor.ability_charges["magic_growth_bonus"] = 0
 
     # Crumb Trail FL: +20 power if an ally picked up the crumb this turn
     if ability.id == "crumb_trail" and actor.slot == SLOT_FRONT \
@@ -636,37 +638,39 @@ def compute_damage(
     # Shove Over BL: +15 power on next attack against the weakened target
     if target.ability_charges.get("shove_over_next_bonus", 0) > 0 and ability.id != "shove_over":
         power += 15
-        target.ability_charges["shove_over_next_bonus"] = 0
+        if consume_triggers:
+            target.ability_charges["shove_over_next_bonus"] = 0
 
     # Wooden Wallop FL: +10 power per Malice
     if ability.id == "wooden_wallop" and actor.slot == SLOT_FRONT:
         power += actor.ability_charges.get("malice", 0) * 5
 
-    # Gallant Charge FL: +20 power if actor was backline last round
+    # Gallant Charge FL: +15 power if actor was backline last round
     if ability.id == "gallant_charge" and actor.slot == SLOT_FRONT and actor.ability_charges.get("was_backline_last_round", 0) > 0:
-        power += 20
+        power += 15
 
     if ability.id == "nebulous_ides" and actor.slot != SLOT_FRONT and actor.ability_charges.get("swapped_this_round", 0) > 0:
-        power += 20
+        power += 15
 
     # Lower Guard FL: +15 power if target has a stat debuff
     if ability.id == "lower_guard" and actor.slot == SLOT_FRONT and target.debuffs:
         power += 15
 
-    # Condescend BL rider: next ability against target has +10 power
+    # Condescend BL rider: next ability against target has +7 power
     if target.ability_charges.get("condescend_bonus", 0) > 0 and ability.id != "condescend":
-        power += 10
-        target.ability_charges["condescend_bonus"] = 0
+        power += 7
+        if consume_triggers:
+            target.ability_charges["condescend_bonus"] = 0
 
-    # Natural Order FL: +15 if target has not swapped for 2+ rounds
+    # Natural Order FL: +10 if target has not swapped for 2+ rounds
     if _has_signature_effect(actor, "natural_order") and actor.slot == SLOT_FRONT and target.ability_charges.get("rounds_since_swap", 0) >= 2:
-        power += 15
+        power += 10
 
-    # Spinning Wheel FL: +7 damage per unique stat buff among all other adventurers
+    # Spinning Wheel FL: +5 damage per unique stat buff among all other adventurers
     if _has_signature_effect(actor, "spinning_wheel") and actor.slot == SLOT_FRONT:
         all_others = [u for u in battle.team1.alive() + battle.team2.alive() if u != actor]
         unique_buff_stats = {b.stat for u in all_others for b in u.buffs if b.duration > 0}
-        power += 7 * len(unique_buff_stats)
+        power += 5 * len(unique_buff_stats)
 
     # ── Sovereign Edict FL: if target has 2+ statuses, apply def_ignore and guard bypass ──
     _sovereign_edict_override = False
@@ -678,7 +682,9 @@ def compute_damage(
     # Rend BL: consume mark for +10 Power on this actor's next ability vs that target
     rend_key = f"rend_bonus_{target.defn.id}"
     if actor.ability_charges.get(rend_key, 0) > 0:
-        power += actor.ability_charges.pop(rend_key)
+        power += actor.ability_charges.get(rend_key, 0)
+        if consume_triggers:
+            actor.ability_charges.pop(rend_key, None)
 
     # ── Attack / Defense ──────────────────────────────────────────────────────
     battle.log_tech(
@@ -705,7 +711,9 @@ def compute_damage(
     # Cleave BL: consume mark for 10% Defense ignore on this actor's next ability vs that target
     cleave_key = f"cleave_bonus_{target.defn.id}"
     if actor.ability_charges.get(cleave_key, 0) > 0:
-        extra_ign = actor.ability_charges.pop(cleave_key)
+        extra_ign = actor.ability_charges.get(cleave_key, 0)
+        if consume_triggers:
+            actor.ability_charges.pop(cleave_key, None)
         defense = max(1, math.ceil(defense * (1 - extra_ign / 100)))
     # Sovereign Edict: fully ignore defense when 2+ statuses on target
     if _sovereign_edict_override:
@@ -724,77 +732,82 @@ def compute_damage(
 
     # ── Outgoing multipliers ──────────────────────────────────────────────────
     if actor.has_status("weaken"):
-        dmg = math.ceil(dmg * 0.80)
+        dmg = math.ceil(dmg * 0.85)
 
-    # Giant Slayer (Little Jack): +20% vs higher max HP
+    # Giant Slayer (Little Jack): +15% vs higher max HP
     if _has_talent(actor, "little_jack") and target.max_hp > actor.max_hp:
-        dmg = math.ceil(dmg * 1.20)
+        dmg = math.ceil(dmg * 1.15)
 
-    # Heedless Pride (Frederic): deals 20% bonus damage to enemy frontline
+    # Heedless Pride (Frederic): deals 15% bonus damage to enemy frontline
     if _has_talent(actor, "frederic") and target.slot == SLOT_FRONT and not ignore_pride:
-        dmg = math.ceil(dmg * 1.20)
+        dmg = math.ceil(dmg * 1.15)
 
     # ── Incoming multipliers ──────────────────────────────────────────────────
     if target.has_status("expose"):
-        dmg = math.ceil(dmg * 1.20)
+        dmg = math.ceil(dmg * 1.15)
 
-    # Bricklayer (Porcus): if single hit ≥ 25% max HP, reduce by 40% and weaken attacker
+    # Bricklayer (Porcus): if single hit ≥ 20% max HP, reduce by 35% and weaken attacker
     if _has_talent(target, "porcus_iii"):
-        threshold = math.ceil(target.max_hp * 0.25)
+        threshold = math.ceil(target.max_hp * 0.20)
         if dmg >= threshold:
-            dmg = math.ceil(dmg * 0.60)
-            actor.add_status("weaken", 2)
-            battle.log_add(f"Bricklayer! {actor.name} is Weakened.")
+            dmg = math.ceil(dmg * 0.65)
+            if actor.add_status("weaken", 2):
+                battle.log_add(f"Bricklayer! {actor.name} is Weakened.")
 
     if not mode.ignore_guard and not _sovereign_edict_override and target.has_status("guard"):
-        dmg = math.ceil(dmg * 0.80)
+        dmg = math.ceil(dmg * 0.85)
 
-    # Heedless Pride (Frederic): takes 10% more from enemy frontline
+    # Heedless Pride (Frederic): takes 7% more from enemy frontline
     if _has_talent(target, "frederic") and actor.slot == SLOT_FRONT and not ignore_pride:
-        dmg = math.ceil(dmg * 1.10)
+        dmg = math.ceil(dmg * 1.07)
 
-    # Electrifying Trance (Hunold): shocked enemies take +15 dmg
+    # Electrifying Trance (Hunold): shocked enemies take +12 dmg
     if _actor_has_talent(actor.defn.id, acting_player, battle, "electrifying_trance"):
         hunold = _find_hunold(acting_player, battle)
         if hunold and target.has_status("shock"):
-            dmg += 15
+            dmg += 12
 
-    # Keen Eye (Robin): +10 damage vs backline
+    # Keen Eye (Robin): +7 damage vs backline
     if _has_talent(actor, "robin_hooded_avenger")             and target.slot in (SLOT_BACK_LEFT, SLOT_BACK_RIGHT):
-        dmg += 10
+        dmg += 7
 
     if actor.defn.id == "snowkissed_aurora" and _has_signature_effect(actor, "birdsong") and actor.slot == SLOT_FRONT:
-        dmg += actor.ability_charges.get("birdsong_birds", 0) * 10
+        dmg += actor.ability_charges.get("birdsong_birds", 0) * 7
 
-    # Challenge Accepted (Green Knight): +15 to enemy across from him
+    # Challenge Accepted (Green Knight): +10 to enemy across from him
     if _has_talent(actor, "green_knight") and actor.slot == target.slot:
-        dmg += 15
+        dmg += 10
 
-    # Chosen One: attackers who damaged champion take +15 from Prince's next ability
+    # Chosen One: attackers who damaged champion take +10 from Prince's next ability
     if actor.defn.id == "prince_charming" and target.ability_charges.get("chosen_one_mark", 0) > 0:
-        dmg += 15
-        target.ability_charges["chosen_one_mark"] = 0
+        dmg += 10
+        if consume_triggers:
+            target.ability_charges["chosen_one_mark"] = 0
 
     # Command marks
     acting_team = battle.get_team(acting_player)
     if any(_has_signature_effect(u, "command") and u.slot == SLOT_FRONT and u != actor for u in acting_team.alive()):
         if target.ability_charges.get(f"command_allies_p{acting_player}", 0) > 0:
-            dmg += 10
+            dmg += 7
     if any(_has_signature_effect(u, "command") and u.slot != SLOT_FRONT and u == actor for u in acting_team.alive()):
         if target.ability_charges.get(f"command_user_p{acting_player}", 0) > 0:
-            dmg += 10
+            dmg += 7
 
     # Cunning Dodge (Reynard): first ability deals 50% damage
     if _has_talent(target, "reynard") \
             and target.ability_charges.get("cunning_dodge", 0) > 0:
         dmg = math.ceil(dmg * 0.50)
-        target.ability_charges["cunning_dodge"] = 0
-        battle.log_add(f"Cunning Dodge! {target.name} takes reduced damage.")
+        if consume_triggers:
+            target.ability_charges["cunning_dodge"] = 0
+            battle.log_add(f"Cunning Dodge! {target.name} takes reduced damage.")
 
-    # Shadowstep (Constantine): -10 damage to backline
+    # Shadowstep (Constantine): -12 damage to backline
     if _has_talent(actor, "lucky_constantine") \
             and target.slot in (SLOT_BACK_LEFT, SLOT_BACK_RIGHT):
-        dmg = max(0, dmg - 10)
+        dmg = max(0, dmg - 12)
+
+    if _has_signature_effect(actor, "become_real") and actor.slot == SLOT_FRONT and actor.ability_charges.get("malice", 0) >= 3:
+        dmg += 10
 
     # Spread: 50% damage
     if is_spread:
@@ -816,9 +829,11 @@ def compute_damage(
     if not is_retaliation and ability.category == "signature" and actor.item.signature_flat_bonus > 0:
         dmg += actor.item.signature_flat_bonus
 
-    # Drown in the Loch: bonus_damage status = +7 flat incoming
-    if target.has_status("bonus_damage"):
-        dmg += 7
+    # Delayed / sustained flat damage riders from specific abilities.
+    if target.ability_charges.get("hunters_mark_active", 0) > 0:
+        dmg += 10
+    if target.ability_charges.get("drown_bonus_dur", 0) > 0:
+        dmg += 10
 
     # Stalwart passive basic: FL carrier takes -10; BL carrier protects frontline ally
     stalwart_protects = False
@@ -833,14 +848,14 @@ def compute_damage(
     if stalwart_protects:
         dmg = max(0, dmg - 10)
 
-    # Hot Mitts passive FL: +10% damage vs already-Burned enemies (or Burn them after, below)
+    # Hot Mitts passive FL: +15% damage vs already-Burned enemies (or Burn them after, below)
     if _has_signature_effect(actor, "hot_mitts") and actor.slot == SLOT_FRONT and target.has_status("burn"):
-        dmg = math.ceil(dmg * 1.10)
+        dmg = math.ceil(dmg * 1.15)
 
     # Fleetfooted: first incoming ability each round deals reduced damage
     if target.ability_charges.get("fleetfooted_ready", 0) > 0:
         if any(b.id == "fleetfooted" for b in target.basics):
-            reduction = 0.20 if target.slot == SLOT_FRONT else 0.10
+            reduction = 0.15 if target.slot == SLOT_FRONT else 0.12
             dmg = math.ceil(dmg * (1 - reduction))
             target.ability_charges["fleetfooted_ready"] = 0
 
@@ -848,19 +863,19 @@ def compute_damage(
     if target.dmg_reduction > 0:
         dmg = math.ceil(dmg * (1 - target.dmg_reduction))
 
-    # Silver Aegis (Roland): 75% less damage from first incoming ability after swapping frontline
+    # Silver Aegis (Roland): 65% less damage from first incoming ability after swapping frontline
     if target.defn.id == "sir_roland" \
             and target.ability_charges.get("silver_aegis", 0) > 0:
-        dmg = math.ceil(dmg * 0.25)
+        dmg = math.ceil(dmg * 0.35)
         target.ability_charges["silver_aegis"] = 0
-        battle.log_add(f"Silver Aegis! {target.name} takes 75% less damage.")
+        battle.log_add(f"Silver Aegis! {target.name} takes 65% less damage.")
 
     # Stolen Voices (Asha): enemy signature damage reduced by Malice while she is frontline
     defending_team = battle.get_enemy(acting_player)
     for u in defending_team.alive():
         if _has_talent(u, "sea_wench_asha") and u.slot == SLOT_FRONT and ability.category == "signature":
             malice = u.ability_charges.get("malice", 0)
-            dmg = max(0, dmg - malice * 5)
+            dmg = max(0, dmg - malice * 4)
             break
 
     # ── NPC Campaign Talents ──────────────────────────────────────────────────
@@ -960,7 +975,7 @@ def deal_damage(
     )
 
     if actor.has_status("shock") and dmg > 0:
-        recoil = max(1, math.ceil(dmg * 0.20))
+        recoil = max(1, math.ceil(dmg * 0.15))
         actor.hp = max(0, actor.hp - recoil)
         if actor.hp == 0:
             actor.ko = True
@@ -974,7 +989,7 @@ def deal_damage(
     vamp_ratio = mode.vamp
     # Double vamp (Blood Hunt frontline): uses 2× current base vamp, no own base
     if mode.double_vamp_no_base:
-        # Use only the talent-based vamp (Red and Wolf: 20%) doubled
+        # Use only the talent-based vamp (Red and Wolf: 15%) doubled
         talent_vamp = _get_talent_vamp(actor)
         vamp_ratio = talent_vamp * 2.0
     else:
@@ -988,7 +1003,7 @@ def deal_damage(
         healed = math.ceil(dmg * vamp_ratio)
         do_heal(actor, healed, actor, battle)
 
-    # Repentance frontline: the next ability against the target gains 20% vamp from Aldric.
+    # Repentance frontline: the next ability against the target gains 25% vamp from Aldric.
     if target.ability_charges.get("repentance_bonus", 0) > 0:
         target.ability_charges["repentance_bonus"] = 0
         if dmg > 0:
@@ -996,21 +1011,21 @@ def deal_damage(
                 (unit for unit in battle.get_team(acting_player).members if unit.defn.id == "aldric_lost_lamb"),
                 actor,
             )
-            healed = math.ceil(dmg * 0.20)
+            healed = math.ceil(dmg * 0.25)
             do_heal(actor, healed, aldric, battle)
-            battle.log_add(f"  Repentance: {actor.name} gains 20% vamp against {target.name}.")
+            battle.log_add(f"  Repentance: {actor.name} gains 25% vamp against {target.name}.")
 
     # ── Spiked Mail ───────────────────────────────────────────────────────────
     if target.item.id == "spiked_mail" and dmg > 0 and not target.ko:
-        actor.hp -= 10
+        actor.hp -= 15
         if actor.hp <= 0:
             actor.hp = 0
             actor.ko = True
-        battle.log_add(f"  Spiked Mail! {actor.name} takes 10 damage.")
+        battle.log_add(f"  Spiked Mail! {actor.name} takes 15 damage.")
 
     # ── Reflecting Pool (Lady talent or Lake's Gift status) ───────────────────
     if target.has_status("reflecting_pool") and dmg > 0:
-        reflect_pct = 0.20 if actor.slot != SLOT_FRONT else 0.10
+        reflect_pct = 0.15 if actor.slot != SLOT_FRONT else 0.12
         reflect_dmg = math.ceil(dmg * reflect_pct)
         actor.hp = max(0, actor.hp - reflect_dmg)
         if actor.hp == 0:
@@ -1019,7 +1034,7 @@ def deal_damage(
             f"  Reflecting Pool: {actor.name} takes {reflect_dmg} reflected damage.")
 
     if _has_talent(target, "lady_of_reflections") and dmg > 0:
-        reflect_pct = 0.20 if actor.slot != SLOT_FRONT else 0.10
+        reflect_pct = 0.15 if actor.slot != SLOT_FRONT else 0.12
         reflect_dmg = math.ceil(dmg * reflect_pct)
         actor.hp = max(0, actor.hp - reflect_dmg)
         if actor.hp == 0:
@@ -1033,15 +1048,15 @@ def deal_damage(
         adj = get_adjacent_left(enemy_team, target)
         status = target.last_status_inflicted
         if adj and status and is_rulebook_status_condition(status):
-            adj.add_status(status, 2)
-            battle.log_add(f"  Double Double! {adj.name} gains {status}.")
+            if adj.add_status(status, 2):
+                battle.log_add(f"  Double Double! {adj.name} gains {status}.")
 
 
     # ── Awaited Blow FL: retaliate vs incoming attackers not across from Green Knight ─
     if not is_retaliation and dmg > 0 and _has_signature_effect(target, "awaited_blow") and target.slot == SLOT_FRONT and actor.slot != target.slot and not target.ko:
         retaliate_ability = Ability(
             id="awaited_blow_retaliation", name="Awaited Blow", category="signature", passive=False,
-            frontline=AbilityMode(power=40), backline=AbilityMode(power=40)
+            frontline=AbilityMode(power=35), backline=AbilityMode(power=35)
         )
         retaliate_mode = retaliate_ability.frontline
         retaliate_player = 2 if acting_player == 1 else 1
@@ -1071,15 +1086,15 @@ def deal_damage(
     # ── Sugar Rush (Gretel talent) ─────────────────────────────────────────────
     if _has_talent(actor, "gretel") and target.ko:
         actor.add_buff("attack", 15, 2)
-        actor.add_buff("speed",  10, 2)
-        battle.log_add(f"  Sugar Rush! {actor.name} gains +15 Atk, +10 Spd for 2 rounds.")
+        actor.add_buff("speed",  15, 2)
+        battle.log_add(f"  Sugar Rush! {actor.name} gains +15 Atk, +15 Spd for 2 rounds.")
 
     # ── Garden of Thorns FL: root any attacker (not just melee) ─────────────
     if not is_retaliation and dmg > 0 and not target.ko \
             and _has_signature_effect(target, "garden_of_thorns") \
             and target.slot == SLOT_FRONT:
-        actor.add_status("root", 2)
-        battle.log_add(f"  Garden of Thorns! {actor.name} is Rooted.")
+        if actor.add_status("root", 2):
+            battle.log_add(f"  Garden of Thorns! {actor.name} is Rooted.")
 
     # ── Midnight Dour FL: when Ella drops to ≤50% HP, swap with backline ally ─
     if not is_retaliation and not target.ko \
@@ -1099,15 +1114,15 @@ def deal_damage(
     # ── On-KO triggers (Postmortem Passage, Flame of Renewal) ─────────────────
     if target.ko and not is_retaliation:
         target_team = battle.get_enemy(acting_player)
-        # Postmortem Passage: KO'd ally fires 40-power posthumous attack at attacker
+        # Postmortem Passage: KO'd ally fires 55-power posthumous attack at attacker
         for m in target_team.alive():
             if _has_signature_effect(m, "postmortem_passage"):
                 if not actor.ko:
                     post_dmg = max(0, math.ceil(
-                        40 * (target.get_stat("attack") / max(1, actor.get_stat("defense")))
+                        55 * (target.get_stat("attack") / max(1, actor.get_stat("defense")))
                     ))
                     if actor.has_status("guard"):
-                        post_dmg = math.ceil(post_dmg * 0.80)
+                        post_dmg = math.ceil(post_dmg * 0.85)
                     actor.hp = max(0, actor.hp - post_dmg)
                     if actor.hp == 0:
                         actor.ko = True
@@ -1145,7 +1160,7 @@ def deal_damage(
 def _get_talent_vamp(actor: CombatantState) -> float:
     """Talent-based vamp ratio for the actor."""
     if _has_talent(actor, "risa_redcloak") and actor.hp < actor.max_hp * 0.5:
-        return 0.20
+        return 0.15
     return 0.0
 
 
@@ -1169,9 +1184,9 @@ def do_heal(
     if healer.item.id == "heart_amulet":
         amount += healer.item.flat_heal_bonus
 
-    # Benefactor (Aldric signature passive): heal 25%/15% more
+    # Benefactor (Aldric signature passive): heal 35%/20% more
     if _has_signature_effect(healer, "benefactor"):
-        mult = 1.25 if healer.slot == SLOT_FRONT else 1.15
+        mult = 1.35 if healer.slot == SLOT_FRONT else 1.20
         amount = math.ceil(amount * mult)
 
     if target.ability_charges.get("hunters_net_heal_dur", 0) > 0:
@@ -1223,21 +1238,39 @@ def apply_status_effect(
     battle: BattleState,
 ):
     if not kind or duration <= 0:
-        return
+        return False
     # Become Real FL: status immunity at 3+ Malice
     if _has_signature_effect(target, "become_real") and target.slot == SLOT_FRONT and target.ability_charges.get("malice", 0) >= 3:
         battle.log_add(f"  {target.name} is immune to statuses (Become Real).")
-        return
+        return False
     # Burn immunity check
     if kind == "burn" and target.has_status("burn_immune"):
         battle.log_add(f"  {target.name} is immune to Burn.")
-        return
+        return False
     # Root immunity (Briar Rose Curse of Sleeping)
     if kind == "root" and target.ability_charges.get("briar_root_immune", 0) > 0:
         battle.log_add(f"  {target.name} is immune to Root (Curse of Sleeping).")
-        return
+        return False
     if target.add_status(kind, duration):
         battle.log_add(f"  {target.name} gains {kind} for {duration} rounds.")
+        return True
+    return False
+
+
+def refresh_status_effect(
+    target: CombatantState,
+    kind: str,
+    duration: int,
+    battle: BattleState,
+):
+    if not kind or duration <= 0:
+        return False
+    for status in target.statuses:
+        if status.kind == kind and status.duration > 0:
+            status.duration = max(status.duration, duration)
+            battle.log_add(f"  {target.name}'s {kind} is refreshed to {status.duration} rounds.")
+            return True
+    return apply_status_effect(target, kind, duration, battle)
 
 
 def apply_stat_buff(unit, stat, amount, duration, battle, label=""):
@@ -1302,9 +1335,9 @@ def do_swap(unit_a: CombatantState, unit_b: CombatantState,
         if _has_signature_effect(team_unit, "banner_of_command"):
             for swapped in (unit_a, unit_b):
                 if swapped != team_unit and swapped in team.members:
-                    swapped.add_status("guard", 2)
-                    battle.log_add(
-                        f"  Banner of Command: {swapped.name} is Guarded.")
+                    if swapped.add_status("guard", 2):
+                        battle.log_add(
+                            f"  Banner of Command: {swapped.name} is Guarded.")
 
     # Two Lives update
     for u in (unit_a, unit_b):
@@ -1319,7 +1352,7 @@ def do_swap(unit_a: CombatantState, unit_b: CombatantState,
                 _gain_malice(u, 1, battle, "Void Step")
             else:
                 if _spend_malice(u, 2, battle, "Void Step"):
-                    apply_stat_buff(u, "speed", 10, 2, battle)
+                    apply_stat_buff(u, "speed", 12, 2, battle)
 
     # Faustian Bargain FL: gain most recently bottled talent for 2 rounds
     for u in (unit_a, unit_b):
@@ -1337,9 +1370,9 @@ def do_swap(unit_a: CombatantState, unit_b: CombatantState,
                 if m.sig.id == "garden_of_thorns" and m.slot != SLOT_FRONT:
                     for swapped in (unit_a, unit_b):
                         if swapped in team.members:
-                            swapped.add_status("root", 2)
-                            battle.log_add(
-                                f"  Garden of Thorns! {swapped.name} is Rooted on swap.")
+                            if swapped.add_status("root", 2):
+                                battle.log_add(
+                                    f"  Garden of Thorns! {swapped.name} is Rooted on swap.")
                     break
 
     # Crumb Trail: if a unit swaps INTO the crumb slot, they pick it up (40 HP)
@@ -1417,6 +1450,7 @@ def execute_ability(
     mode = get_mode(actor, ability)
     team  = battle.get_team(acting_player)
     enemy = battle.get_enemy(acting_player)
+    damage_dealt = 0
 
     # Natural Order BL: abilities against units that have not swapped for 2+ rounds
     # do not increment ranged recharge.
@@ -1424,10 +1458,10 @@ def execute_ability(
         if target.ability_charges.get("rounds_since_swap", 0) >= 2:
             actor.ability_charges["natural_order_skip_recharge"] = 1
 
-    # Mesmerizing (Prince Charming talent): enemies that target his allies get -10 Atk for 2 rounds.
+    # Mesmerizing (Prince Charming talent): enemies that target his allies get -7 Atk for 2 rounds.
     prince = next((u for u in enemy.alive() if u.defn.id == "prince_charming" and u.slot == SLOT_FRONT), None)
     if prince and target is not None and target in enemy.members and target != prince:
-        apply_stat_debuff(actor, "attack", 10, 2, battle)
+        apply_stat_debuff(actor, "attack", 7, 2, battle)
 
     # Flowing Locks consumption: using melee backline access spends the one-time charge
     if actor.defn.id == "rapunzel" and target is not None and actor.slot == SLOT_FRONT and target.slot != SLOT_FRONT:
@@ -1438,6 +1472,7 @@ def execute_ability(
     if mode.power > 0:
         dmg = compute_damage(actor, target, ability, mode, acting_player, battle,
                              is_spread=is_spread, ignore_pride=ignore_pride)
+        damage_dealt = dmg
         battle.log_add(f"  {target.name} takes {dmg} damage.")
         deal_damage(actor, target, dmg, ability, mode, acting_player, battle)
 
@@ -1450,7 +1485,7 @@ def execute_ability(
     # ── Hot Mitts: FL burns target if not already burned; BL always burns ────
     if mode.power > 0 and actor.sig.id == "hot_mitts" and not target.ko:
         if actor.slot == SLOT_FRONT:
-            if not target.has_status("burn"):    # "or" condition: burn OR +10% (FL)
+            if not target.has_status("burn"):    # "or" condition: burn OR +15% (FL)
                 apply_status_effect(target, "burn", 2, battle)
         else:
             apply_status_effect(target, "burn", 2, battle)  # BL always burns
@@ -1530,13 +1565,15 @@ def execute_ability(
     # Faustian Bargain BL: bottle KO target talent and gain speed
     if actor.defn.id == "sea_wench_asha" and _has_signature_effect(actor, "faustian_bargain") and actor.slot != SLOT_FRONT and target.ko:
         actor.ability_charges["asha_bottled_talent"] = target.defn.id
-        apply_stat_buff(actor, "speed", 15, 2, battle)
+        apply_stat_buff(actor, "speed", 12, 2, battle)
         battle.log_add(f"  Faustian Bargain: {actor.name} bottles {target.name}'s talent.")
 
     # ── Special effects (bespoke ability logic) ───────────────────────────────
     if mode.special:
+        ctx = dict(action_context or {})
+        ctx["damage_dealt"] = damage_dealt
         apply_special(actor, ability, mode, target, acting_player, battle,
-                      ignore_pride=ignore_pride, action_context=action_context)
+                      ignore_pride=ignore_pride, action_context=ctx)
 
     # ── Mark twist used ───────────────────────────────────────────────────────
     if ability.category == "twist":
@@ -1606,6 +1643,17 @@ def apply_special(
         target.hp = min(target.max_hp, avg)
         battle.log_add(f"  Blood Hunt: {actor.name} and {target.name} HP set to {avg}.")
 
+    elif key == "crimson_fury_recoil":
+        dealt = 0
+        if action_context:
+            dealt = action_context.get("damage_dealt", 0)
+        if dealt > 0:
+            recoil = max(1, math.ceil(dealt * 0.30))
+            actor.hp = max(0, actor.hp - recoil)
+            if actor.hp == 0:
+                actor.ko = True
+            battle.log_add(f"  Crimson Fury recoil: {actor.name} takes {recoil} damage.")
+
     # ── Final Deception: expose all + steal 5 atk each ───────────────────────
     elif key == "final_deception":
         for e in enemy.alive():
@@ -1616,55 +1664,54 @@ def apply_special(
 
     # ── Not By The Hair: damage reduction ────────────────────────────────────
     elif key == "nbth_self_reduce":
-        actor.dmg_reduction = 0.60
-        battle.log_add(f"  {actor.name} takes 60% less damage this round.")
+        actor.dmg_reduction = 0.50
+        battle.log_add(f"  {actor.name} takes 50% less damage this round.")
 
     elif key == "nbth_ally_reduce":
         front = team.frontline()
         if front and front != actor:
-            front.dmg_reduction = 0.35
-            battle.log_add(f"  {front.name} takes 35% less damage this round.")
+            front.dmg_reduction = 0.40
+            battle.log_add(f"  {front.name} takes 40% less damage this round.")
 
     # ── Unbreakable Defense: clear statuses + double defense ─────────────────
-    elif key == "unbreakable_defense":
+    elif key == "unfettered":
         actor.clear_statuses()
-        cur_def = actor.get_stat("defense")
-        actor.add_buff("defense", cur_def, 2)  # +current = double
+        actor.ability_charges["unfettered_dur"] = 2
         battle.log_add(
-            f"  {actor.name} clears statuses and doubles Defense for 2 rounds.")
+            f"  {actor.name}'s Attack and Speed now use Defense, and Defense uses Attack, for 2 rounds.")
 
     # ── Shimmering Valor frontline: damage reduction for 3 rounds ─────────────
     elif key == "shimmering_valor_front":
         actor.valor_rounds = 3
-        actor.dmg_reduction = 0.40
+        actor.dmg_reduction = 0.35
         battle.log_add(
-            f"  {actor.name} has 40% damage reduction for 3 rounds (Shimmering Valor).")
+            f"  {actor.name} has 35% damage reduction for 3 rounds (Shimmering Valor).")
 
     # ── Shimmering Valor backline: heal based on valor rounds ─────────────────
     elif key == "shimmering_valor_back":
-        heal_amt = 55 + 15 * actor.valor_rounds
+        heal_amt = 60 + 20 * actor.valor_rounds
         do_heal(actor, heal_amt, actor, battle)
         actor.valor_rounds = 0
 
     # ── Taunt (Knight's Challenge): mark target to only attack Roland ─────────
     elif key in ("taunt_target", "taunt_front_ranged"):
         if key == "taunt_target":
-            target.add_status("taunt", 2)
-            battle.log_add(f"  {target.name} is Taunted for 2 rounds.")
+            if target.add_status("taunt", 2):
+                battle.log_add(f"  {target.name} is Taunted for 2 rounds.")
         else:
             # Taunt front-most ranged enemy; fall back to any ranged enemy
             taunted = False
             for e in enemy.alive():
                 if e.slot == SLOT_FRONT and is_ranged(e):
-                    e.add_status("taunt", 2)
-                    battle.log_add(f"  {e.name} is Taunted for 2 rounds.")
-                    taunted = True
+                    if e.add_status("taunt", 2):
+                        battle.log_add(f"  {e.name} is Taunted for 2 rounds.")
+                        taunted = True
                     break
             if not taunted:
                 for e in enemy.alive():
                     if is_ranged(e):
-                        e.add_status("taunt", 2)
-                        battle.log_add(f"  {e.name} is Taunted for 2 rounds.")
+                        if e.add_status("taunt", 2):
+                            battle.log_add(f"  {e.name} is Taunted for 2 rounds.")
                         break
 
     # ── Journey to Avalon: self KO + revive chosen ally ───────────────────────
@@ -1678,10 +1725,10 @@ def apply_special(
             was_ko = target.ko
             if was_ko:
                 target.ko = False
-                target.hp = target.max_hp // 2
+                target.hp = math.ceil(target.max_hp * 0.60)
                 battle.log_add(f"  {target.name} revived at {target.hp} HP.")
-            target.add_status("reflecting_pool", 2)
-            battle.log_add(f"  {target.name} gains Reflecting Pool for 2 rounds.")
+            if target.add_status("reflecting_pool", 2):
+                battle.log_add(f"  {target.name} gains Reflecting Pool for 2 rounds.")
         check_and_promote(battle)
 
     # ── Cinder Blessing frontline: HP averaging with ally ────────────────────
@@ -1714,7 +1761,7 @@ def apply_special(
         for kind in removed:
             _trigger_innocent_heart(target, kind, battle)
         if removed:
-            do_heal(target, 15 * len(removed), actor, battle,
+            do_heal(target, 12 * len(removed), actor, battle,
                     action_desc=f"{target.name} is restored by Toxin Purge")
         battle.log_add(f"  {target.name} is cleansed of rulebook status conditions.")
 
@@ -1737,8 +1784,8 @@ def apply_special(
         pass  # handled in compute_damage
 
     elif key == "slam_back_guard":
-        actor.add_status("guard", 2)
-        battle.log_add(f"  {actor.name} is Guarded for 2 rounds.")
+        if actor.add_status("guard", 2):
+            battle.log_add(f"  {actor.name} is Guarded for 2 rounds.")
 
     # ── Magic Growth backline: flag Jack's next ability +15 power ────────────
     elif key == "magic_growth_power_buff":
@@ -1772,15 +1819,15 @@ def apply_special(
         battle.log_add(f"  {actor.name} will retaliate with 45 power next round.")
 
     elif key == "feign_weakness_retaliate_40":
-        actor.retaliate_power = 40
-        battle.log_add(f"  {actor.name} will retaliate with 40 power next round.")
+        actor.retaliate_power = 45
+        battle.log_add(f"  {actor.name} will retaliate with 45 power next round.")
 
     # ── Last Laugh: retaliate + steal speed ──────────────────────────────────
     elif key == "last_laugh":
-        actor.retaliate_power = 65
-        actor.retaliate_speed_steal = 10
+        actor.retaliate_power = 70
+        actor.retaliate_speed_steal = 12
         battle.log_add(
-            f"  {actor.name} will retaliate (65 power) and steal Speed next round.")
+            f"  {actor.name} will retaliate (70 power) and steal Speed next round.")
 
     # ── Cauldron Bubble: extend status durations ──────────────────────────────
     elif key == "cauldron_extend_status":
@@ -1789,18 +1836,21 @@ def apply_special(
                 s.duration += 1
         battle.log_add(f"  Rulebook status durations extended on {target.name}.")
 
-    # ── Vile Sabbath: reapply last status ─────────────────────────────────────
+    # ── Vile Sabbath: reapply last status and refresh rulebook statuses ──────
     elif key == "vile_sabbath_reapply":
         if target.last_status_inflicted and is_rulebook_status_condition(target.last_status_inflicted):
-            apply_status_effect(target, target.last_status_inflicted, 2, battle)
+            refresh_status_effect(target, target.last_status_inflicted, 2, battle)
+            for status in target.statuses:
+                if status.duration > 0 and is_rulebook_status_condition(status.kind):
+                    status.duration = max(status.duration, 2)
 
     # ── Bring Down: steal atk if target is backline ───────────────────────────
     elif key == "bring_down_steal_atk":
         if target.slot in (SLOT_BACK_LEFT, SLOT_BACK_RIGHT):
-            target.add_debuff("attack", 10, 2)
-            actor.add_buff("attack", 10, 2)
+            target.add_debuff("attack", 7, 2)
+            actor.add_buff("attack", 7, 2)
             battle.log_add(
-                f"  {actor.name} steals 10 Atk from {target.name} for 2 rounds.")
+                f"  {actor.name} steals 7 Atk from {target.name} for 2 rounds.")
 
     # ── Riposte: 50% damage reduction this round (both FL and BL) ────────────
     elif key == "riposte_damage_reduction":
@@ -1815,46 +1865,45 @@ def apply_special(
     elif key == "slay_ignore_pride":
         pass  # caller must set ignore_pride=True
 
-    # ── Hunter's Mark: apply bonus_damage status (tracked in compute_damage) ──
+    # ── Hunter's Mark: +10 incoming damage next round only ───────────────────
     elif key == "hunters_mark_dot":
-        target.add_status("bonus_damage", 2)
+        target.ability_charges["hunters_mark_pending"] = 1
         battle.log_add(f"  {target.name} is Marked — takes +10 damage next round.")
 
     # ── Trapping Blow FL: root target if they are Weakened ───────────────────
     elif key == "trapping_blow_root_weakened":
-        if target.has_status("weaken"):
-            target.add_status("root", 2)
+        if target.has_status("weaken") and apply_status_effect(target, "root", 2, battle):
             battle.log_add(f"  {target.name} is Rooted by Trapping Blow (was Weakened)!")
 
     # ── Dying Dance FL: Shock Weakened targets for 2 rounds ─────────────────
     elif key == "dying_dance_front":
-        if target.has_status("weaken"):
-            target.add_status("shock", 2)
+        if target.has_status("weaken") and apply_status_effect(target, "shock", 2, battle):
             battle.log_add(f"  {target.name} is Shocked by Dying Dance (was Weakened)!")
 
-    # ── Drown in the Loch: flat +10 incoming damage ───────────────────────────
+    # ── Drown in the Loch: flat +7 incoming damage for 2 rounds ──────────────
     elif key == "drown_dmg_bonus":
-        target.add_status("bonus_damage", 2)
-        battle.log_add(f"  {target.name} takes +7 damage from all sources for 2 rounds.")
+        target.ability_charges["drown_bonus_dur"] = max(
+            target.ability_charges.get("drown_bonus_dur", 0), 2
+        )
+        battle.log_add(f"  {target.name} takes +10 damage from all sources for 2 rounds.")
 
     # ── Struck Midnight: Ella can't act/target next round ─────────────────────
     elif key == "struck_midnight_untargetable":
+        for foe in enemy.alive():
+            apply_status_effect(foe, "burn", 2, battle)
         actor.untargetable = True
         actor.cant_act = True
-        # These clear at end of next round; set a counter
         actor.ability_charges["struck_midnight"] = 2
         battle.log_add(f"  {actor.name} retreats — untargetable until end of next round.")
 
     # ── Cleansing Inferno: 60% vamp vs Burned ────────────────────────────────
     elif key == "cleansing_inferno_burn_boost":
         if target.has_status("burn"):
-            # Retroactively adjust vamp (already applied in deal_damage)
-            # Add extra 30% vamp manually here
-            if mode.power > 0:
-                bonus_vamp = math.ceil(
-                    compute_damage(actor, target, ability, mode, acting_player,
-                                   battle, is_spread=True) * 0.30
-                )
+            dealt = 0
+            if action_context:
+                dealt = action_context.get("damage_dealt", 0)
+            if dealt > 0:
+                bonus_vamp = math.ceil(dealt * 0.35)
                 actor.hp = min(actor.max_hp, actor.hp + bonus_vamp)
                 battle.log_add(f"  Extra vamp vs Burned: {actor.name} heals {bonus_vamp}.")
 
@@ -1862,8 +1911,8 @@ def apply_special(
     elif key == "falling_kingdom":
         for e in enemy.alive():
             if e.has_status("root"):
-                e.add_status("root", 99)      # refresh
-                e.add_status("weaken", 2)
+                refresh_status_effect(e, "root", 2, battle)
+                apply_status_effect(e, "weaken", 2, battle)
                 battle.log_add(f"  {e.name}'s Root refreshed + Weakened.")
             else:
                 apply_status_effect(e, "root", 2, battle)
@@ -1872,34 +1921,26 @@ def apply_special(
     elif key == "deathlike_slumber":
         actor.clear_statuses()
         battle.log_add(f"  {actor.name} cures all statuses.")
-        # Innocent Heart effect doubled for 2 rounds
         actor.ability_charges["deathlike_doubled"] = 2
         battle.log_add(f"  Innocent Heart's effect is doubled for 2 rounds.")
-        # Target becomes dormant for 2 rounds
-        if target and target != actor:
-            target.add_status("dormant", 2)
-            target.cant_act = True
-            battle.log_add(
-                f"  {target.name} is dormant for 2 rounds (Deathlike Slumber).")
 
     # ── Lake's Gift: grant Reflecting Pool effect to ally ─────────────────────
     elif key == "lakes_gift_pool_front":
-        target.add_status("reflecting_pool", 2)
-        battle.log_add(f"  {target.name} gains Reflecting Pool for 2 rounds.")
-        target.add_buff("attack", 10, 2)
-        battle.log_add(f"  {target.name} gains +10 Attack for 2 rounds.")
+        if target.add_status("reflecting_pool", 2):
+            battle.log_add(f"  {target.name} gains Reflecting Pool for 2 rounds.")
+        target.add_buff("attack", 12, 2)
+        battle.log_add(f"  {target.name} gains +12 Attack for 2 rounds.")
 
     elif key == "lakes_gift_pool_back":
-        target.add_status("reflecting_pool", 2)
-        battle.log_add(f"  {target.name} gains Reflecting Pool for 2 rounds.")
+        if target.add_status("reflecting_pool", 2):
+            battle.log_add(f"  {target.name} gains Reflecting Pool for 2 rounds.")
 
     # ── Redemption ────────────────────────────────────────────────────────────
     elif key == "redemption":
-        actor.max_hp_bonus += 100
-        actor.hp = min(actor.hp + 100, actor.max_hp)
+        actor.max_hp_bonus += 150
         actor.ability_charges["redemption_heal"] = 2
         battle.log_add(
-            f"  {actor.name} gains +100 max HP and will heal 50 HP at end of round for 2 rounds.")
+            f"  {actor.name} gains +150 max HP and will heal 50 HP at end of round for 2 rounds.")
 
     # ── Hot Mitts: FL burn handled in execute_ability; BL bonus in compute_damage ─
     elif key in ("hot_mitts_front", "hot_mitts_back"):
@@ -2011,7 +2052,7 @@ def apply_special(
 
     elif key == "golden_snare_front":
         if target.has_status("root"):
-            target.add_status("root", 2)
+            refresh_status_effect(target, "root", 2, battle)
         else:
             apply_status_effect(target, "root", 2, battle)
 
@@ -2019,7 +2060,7 @@ def apply_special(
         actor.ability_charges["severed_tether_active"] = 2
         apply_stat_buff(actor, "attack", 20, 2, battle)
         apply_stat_buff(actor, "speed", 20, 2, battle)
-        apply_stat_debuff(actor, "defense", 15, 2, battle)
+        apply_stat_debuff(actor, "defense", 10, 2, battle)
 
     elif key == "happily_ever_after":
         team_all = battle.get_team(acting_player).members
@@ -2085,13 +2126,14 @@ def apply_special(
             apply_status_effect(target, "expose", 2, battle)
 
     elif key == "blood_pact_front":
-        actor.hp = max(1, actor.hp - 50)
-        battle.log_add(f"  {actor.name} loses 50 HP.")
+        actor.hp = max(1, actor.hp - 45)
+        battle.log_add(f"  {actor.name} loses 45 HP.")
         _gain_malice(actor, 2, battle, "Blood Pact")
 
     elif key == "blood_pact_back":
+        do_heal(actor, 30, actor, battle)
         if _spend_malice(actor, 1, battle, "Blood Pact"):
-            do_heal(actor, 25, actor, battle)
+            do_heal(actor, 30, actor, battle)
 
     elif key == "cut_strings_back":
         if _spend_malice(actor, 2, battle, "Cut the Strings"):
@@ -2100,7 +2142,7 @@ def apply_special(
     elif key == "blue_faerie_boon":
         actor.ability_charges["malice_cap"] = 12
         _gain_malice(actor, 6, battle, ability.name)
-        do_heal(actor, actor.ability_charges.get("malice", 0) * 20, actor, battle)
+        do_heal(actor, actor.ability_charges.get("malice", 0) * 15, actor, battle)
 
     elif key == "straw_to_gold_front":
         ally = target
@@ -2139,13 +2181,13 @@ def apply_special(
                 apply_stat_buff(ally, stat, val, 2, battle)
 
     elif key == "name_the_price_front":
-        apply_stat_buff(target, "attack", 10, 2, battle)
+        apply_stat_buff(target, "attack", 7, 2, battle)
 
     elif key == "name_the_price_back":
-        if _spend_malice(actor, 1, battle, ability.name):
+        if _spend_malice(actor, 2, battle, ability.name):
             target.buffs = []
-            target.add_status("buff_nullify", 2)
-            battle.log_add(f"  {target.name}'s stat buffs are nullified for 2 rounds.")
+            if target.add_status("buff_nullify", 2):
+                battle.log_add(f"  {target.name}'s stat buffs are nullified for 2 rounds.")
 
     elif key == "thieve_the_first_born":
         bonus = actor.ability_charges.get("malice", 0) * 5
@@ -2175,7 +2217,7 @@ def apply_special(
 
     elif key == "abyssal_call_front":
         if _spend_malice(actor, 1, battle, ability.name):
-            apply_stat_debuff(target, "defense", 10, 2, battle)
+            apply_stat_debuff(target, "defense", 12, 2, battle)
 
     elif key == "abyssal_call_back":
         for d in target.debuffs:
@@ -2189,8 +2231,8 @@ def apply_special(
         if mal > 0:
             actor.ability_charges["malice"] = 0
             for e in enemy.alive():
-                e.add_debuff("defense", mal * 10, 2)
-            battle.log_add(f"  Turn to Foam: all enemies get -{mal*10} Defense for 2 rounds.")
+                e.add_debuff("defense", mal * 7, 2)
+            battle.log_add(f"  Turn to Foam: all enemies get -{mal*7} Defense for 2 rounds.")
 
     elif key == "rend_back":
         # Rend BL: mark target — actor's next ability against it gains +10 Power
@@ -2220,7 +2262,7 @@ def _trigger_innocent_heart(unit: CombatantState, kind: str,
     )
     if aurora:
         doubled = aurora.ability_charges.get("deathlike_doubled", 0) > 0
-        def_bonus  = 20 if doubled else 10
+        def_bonus  = 14 if doubled else 7
         unit.add_buff("defense", def_bonus, 2)
         battle.log_add(
             f"  Innocent Heart: {unit.name} +{def_bonus} Def.")
@@ -2600,15 +2642,14 @@ def end_round(battle: BattleState):
         for unit in list(team.alive()):
             # Burn damage
             if unit.has_status("burn"):
-                burn_dmg = math.ceil(unit.max_hp * 0.10)
+                burn_dmg = math.ceil(unit.max_hp * 0.08)
                 unit.hp -= burn_dmg
                 if unit.hp <= 0:
                     unit.hp = 0
                     unit.ko = True
                 battle.log_add(f"{unit.name} burns for {burn_dmg} damage.")
 
-            # Drown in the Loch: bonus_damage status ticks with statuses below
-            # (counts down with normal status tick)
+            # Ability-charge riders tick below (Hunter's Mark / Drown in the Loch).
 
         check_and_promote(battle)
         if check_winner(battle):
@@ -2628,30 +2669,32 @@ def end_round(battle: BattleState):
                 malice = unit.ability_charges.get("malice", 0)
                 if malice >= 2:
                     unit.ability_charges["malice"] -= 2
+                    applied_any = False
                     for enemy_unit in enemy_team_for_dark_aura.alive():
-                        enemy_unit.add_status("weaken", 2)
-                    battle.log_add(f"{unit.name} uses Dark Aura — all enemies are Weakened!")
+                        applied_any = enemy_unit.add_status("weaken", 2) or applied_any
+                    if applied_any:
+                        battle.log_add(f"{unit.name} uses Dark Aura — all enemies are Weakened!")
 
         for unit in list(team.alive()):
     # Sanctuary passive: allies/frontline heal at end of round
             if _has_signature_effect(unit, "sanctuary"):
                 if unit.slot == SLOT_FRONT:
                     for ally in team.alive():
-                        heal = math.ceil(ally.max_hp * 0.10)
+                        heal = math.ceil(ally.max_hp / 8)
                         do_heal(ally, heal, unit, battle)
                 else:
                     fl = team.frontline()
                     if fl:
-                        heal = math.ceil(fl.max_hp * 0.10)
+                        heal = math.ceil(fl.max_hp / 8)
                         do_heal(fl, heal, unit, battle)
 
-            # Midnight Dour backline: Ella heals 35 HP at end of round
+            # Midnight Dour backline: Ella heals 40 HP at end of round
             if _has_signature_effect(unit, "midnight_dour") and unit.slot != SLOT_FRONT:
-                do_heal(unit, 35, unit, battle)
-
-            # Awaited Blow BL: heal 40 HP at end of round
-            if _has_signature_effect(unit, "awaited_blow") and unit.slot != SLOT_FRONT:
                 do_heal(unit, 40, unit, battle)
+
+            # Awaited Blow BL: heal 35 HP at end of round
+            if _has_signature_effect(unit, "awaited_blow") and unit.slot != SLOT_FRONT:
+                do_heal(unit, 35, unit, battle)
 
             # Redemption: heal 50 HP for 2 rounds
             if unit.ability_charges.get("redemption_heal", 0) > 0:
@@ -2760,9 +2803,20 @@ def end_round(battle: BattleState):
             # Deathlike Slumber: decrement doubled Innocent Heart counter
             if unit.ability_charges.get("deathlike_doubled", 0) > 0:
                 unit.ability_charges["deathlike_doubled"] -= 1
+            if unit.ability_charges.get("unfettered_dur", 0) > 0:
+                unit.ability_charges["unfettered_dur"] -= 1
 
             if unit.ability_charges.get("hunters_net_heal_dur", 0) > 0:
                 unit.ability_charges["hunters_net_heal_dur"] -= 1
+
+            if unit.ability_charges.get("hunters_mark_pending", 0) > 0:
+                unit.ability_charges["hunters_mark_pending"] -= 1
+                unit.ability_charges["hunters_mark_active"] = 1
+            elif unit.ability_charges.get("hunters_mark_active", 0) > 0:
+                unit.ability_charges["hunters_mark_active"] -= 1
+
+            if unit.ability_charges.get("drown_bonus_dur", 0) > 0:
+                unit.ability_charges["drown_bonus_dur"] -= 1
 
             unit.ability_charges["swapped_this_round"] = 0
 

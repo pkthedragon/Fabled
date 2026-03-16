@@ -1,0 +1,918 @@
+Battle 586
+Player 1 Team: Roland Counterbattery
+Player 2 Team: Pinocchio Spotlight Break
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:27:03
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 586
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Roland Counterbattery
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Knight's Challenge  (passive=False)
+    Basics: Shield Bash, Stalwart
+    Item:   Spiked Mail
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Pinocchio Spotlight Break
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Cut the Strings  (passive=False)
+    Basics: Soul Gaze, Void Step
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Sir Roland
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Sir Roland
+Robin, Hooded Avenger uses Hawkshot on Sir Roland.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=70 def=80 raw=52.50 ceil=53
+    [T]   FINAL_DMG=43
+  Sir Roland takes 43 damage.
+    [T] HPCHANGE Sir Roland: 265 → 222  (-43)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: Cut the Strings → Robin, Hooded Avenger
+Pinocchio, Cursed Puppet uses Cut the Strings on Robin, Hooded Avenger.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 110  (-75)
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Hawkshot on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Pinocchio, Cursed Puppet[back_left]
+    [T]   power=60
+    [T]   atk=70 def=50 raw=84.00 ceil=84
+    [T]   FINAL_DMG=94
+  Pinocchio, Cursed Puppet takes 94 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 126  (-94)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_left] HP=222/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=165/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=126/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=175/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=222/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=165/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=126/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Pinocchio, Cursed Puppet
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Snipe Shot on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Pinocchio, Cursed Puppet[back_left]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=101
+  Pinocchio, Cursed Puppet takes 101 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 126 → 25  (-101)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 43 HP.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+    [T] ACTION P1 Sir Roland[back_left]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+  Robin, Hooded Avenger is Guarded for 2 rounds.
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Pinocchio, Cursed Puppet: Swap with Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=61
+  Robin, Hooded Avenger takes 61 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 165 → 104  (-61)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=42
+  Robin, Hooded Avenger takes 42 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 104 → 62  (-42)
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: swap ↔ Robin, Hooded Avenger
+Pinocchio, Cursed Puppet and Robin, Hooded Avenger swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=62/185 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=25/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=175/185 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [1/6]
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=62/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=25/220 ATK=70(base=65) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=93
+  Prince Charming takes 93 damage.
+    [T] HPCHANGE Prince Charming: 255 → 162  (-93)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Innocent Heart: Robin, Hooded Avenger +10 Def.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Sir Roland[back_left]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Robin, Hooded Avenger
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Robin, Hooded Avenger
+Pinocchio, Cursed Puppet uses Cut the Strings on Robin, Hooded Avenger.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Robin, Hooded Avenger[front]
+    [T]   power=70 (base=60)
+    [T]   atk=70 def=50 raw=98.00 ceil=98
+    [T]   FINAL_DMG=108
+  Robin, Hooded Avenger takes 108 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 117 → 9  (-108)
+  Robin, Hooded Avenger gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Impose → Robin, Hooded Avenger
+Prince Charming uses Impose on Robin, Hooded Avenger.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=30
+    [T]   atk=65 def=50 raw=39.00 ceil=39
+    [T]   FINAL_DMG=47
+  Robin, Hooded Avenger takes 47 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 9 → 0  (-47) **KO**
+  Robin, Hooded Avenger loses -10 Speed for 2 rounds.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger's target is no longer legal — Hunter's Mark fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=162/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=25/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=175/185 statuses=[-]
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [2/6]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=162/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=25/220 ATK=75(base=65) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Snowkissed Aurora
+Pinocchio, Cursed Puppet uses Cut the Strings on Snowkissed Aurora.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Snowkissed Aurora takes 75 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 150  (-75)
+  Snowkissed Aurora gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Snowkissed Aurora
+Robin, Hooded Avenger uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[front]
+    [T]   power=25
+    [T]   atk=77 def=60 raw=32.08 ceil=33
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 150 → 120  (-30)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: Shield Bash → Pinocchio, Cursed Puppet
+Sir Roland uses Shield Bash on Pinocchio, Cursed Puppet.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=120/225 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Prince Charming[back_left] HP=162/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=25/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=175/185 statuses=[-]
+    [T] STATUS_TICK Snowkissed Aurora: expose → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [3/6]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=120/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=162/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=25/220 ATK=80(base=65) DEF=65(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Swap with Pinocchio, Cursed Puppet
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Snowkissed Aurora
+Pinocchio, Cursed Puppet uses Cut the Strings on Snowkissed Aurora.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=87
+  Snowkissed Aurora takes 87 damage.
+    [T] HPCHANGE Snowkissed Aurora: 120 → 33  (-87)
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Pinocchio, Cursed Puppet
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Prince Charming[back_left]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=43
+  Snowkissed Aurora takes 43 damage.
+    [T] HPCHANGE Snowkissed Aurora: 33 → 0  (-43) **KO**
+  Prince Charming must recharge next turn.
+Sir Roland moves to frontline.
+[Queued] Sir Roland: Shield Bash → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Pinocchio, Cursed Puppet
+Sir Roland uses Shield Bash on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=25
+  Pinocchio, Cursed Puppet takes 25 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 25 → 0  (-25) **KO**
+  All allies are Guarded for 2 rounds.
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=162/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=175/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=162/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming recharges.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Sir Roland
+Robin, Hooded Avenger uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=77 def=80 raw=24.06 ceil=25
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=3
+  Sir Roland takes 3 damage.
+    [T] HPCHANGE Sir Roland: 265 → 262  (-3)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Sir Roland is Marked — takes +10 damage next round.
+[Queued] Sir Roland: Knight's Challenge → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Knight's Challenge → Prince Charming
+Sir Roland uses Knight's Challenge on Prince Charming.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=40 def=55 raw=25.45 ceil=26
+    [T]   FINAL_DMG=26
+  Prince Charming takes 26 damage.
+    [T] HPCHANGE Prince Charming: 162 → 136  (-26)
+  Prince Charming is Taunted for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=262/265 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=136/255 statuses=[taunt(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=165/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] STATUS_TICK Prince Charming: taunt → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=262/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=136/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=165/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Sir Roland
+Robin, Hooded Avenger uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=70 def=80 raw=43.75 ceil=44
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 262 → 218  (-44)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Sir Roland is Marked — takes +10 damage next round.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 47 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=136/255 statuses=[taunt(1r)]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=155/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Prince Charming: taunt → 0r left
+    [T] STATUS_EXPIRED Prince Charming: taunt
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=136/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=155/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Prince Charming
+Robin, Hooded Avenger and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 265 → 232  (-33)
+  Spiked Mail! Prince Charming takes 10 damage.
+  Sir Roland loses -10 Defense for 2 rounds.
+[Queued] Sir Roland: Knight's Challenge → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Knight's Challenge → Prince Charming
+Sir Roland uses Knight's Challenge on Prince Charming.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=40 def=55 raw=25.45 ceil=26
+    [T]   FINAL_DMG=26
+  Prince Charming takes 26 damage.
+    [T] HPCHANGE Prince Charming: 126 → 100  (-26)
+  Prince Charming is Taunted for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=232/265 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=100/255 statuses=[taunt(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=155/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] STATUS_TICK Prince Charming: taunt → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=232/265 ATK=40(base=40) DEF=70(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=100/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=155/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Sir Roland
+Robin, Hooded Avenger uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=70 def=70 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 232 → 192  (-40)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Sir Roland is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 145 → 105  (-40)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=192/265 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=100/255 statuses=[taunt(1r)]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=105/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] DEBUFF_EXPIRED Sir Roland: defense-10
+    [T] STATUS_TICK Prince Charming: taunt → 0r left
+    [T] STATUS_EXPIRED Prince Charming: taunt
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=192/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=100/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=105/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Prince Charming
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=65 def=80 raw=32.50 ceil=33
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 192 → 165  (-27)
+  Spiked Mail! Prince Charming takes 10 damage.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 105 → 65  (-40)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=165/265 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=90/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=65/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=165/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=90/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=65/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Prince Charming
+Robin, Hooded Avenger and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=31
+  Sir Roland takes 31 damage.
+    [T] HPCHANGE Sir Roland: 165 → 134  (-31)
+  Spiked Mail! Prince Charming takes 10 damage.
+  Sir Roland loses -10 Defense for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 80 → 50  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=134/265 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=50/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=65/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=134/265 ATK=40(base=40) DEF=70(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=50/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=65/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Sir Roland
+Robin, Hooded Avenger uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60 (base=50)
+    [T]   atk=70 def=70 raw=60.00 ceil=60
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 134 → 96  (-38)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Sir Roland is Marked — takes +10 damage next round.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 55 → 15  (-40)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[front] HP=96/265 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=50/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=15/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] DEBUFF_EXPIRED Sir Roland: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=96/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=50/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=15/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Prince Charming
+Robin, Hooded Avenger and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=41
+  Sir Roland takes 41 damage.
+    [T] HPCHANGE Sir Roland: 96 → 55  (-41)
+  Spiked Mail! Prince Charming takes 10 damage.
+  Sir Roland loses -10 Defense for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 40 → 10  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Sir Roland[front] HP=55/265 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=10/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=15/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=55/265 ATK=40(base=40) DEF=70(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=10/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=15/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Sir Roland
+Robin, Hooded Avenger uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=70 def=70 raw=50.00 ceil=50
+    [T]   FINAL_DMG=30
+  Sir Roland takes 30 damage.
+    [T] HPCHANGE Sir Roland: 55 → 25  (-30)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Sir Roland is Marked — takes +10 damage next round.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 5 → 0  (-40) **KO**
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Sir Roland[front] HP=25/265 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=10/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] DEBUFF_EXPIRED Sir Roland: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=25/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=10/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Prince Charming: Impose → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=41
+  Sir Roland takes 41 damage.
+    [T] HPCHANGE Sir Roland: 25 → 0  (-41) **KO**
+  Sir Roland loses -10 Speed for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 15)
+────────────────────────────────────────────────────────────
+Player 2 wins!

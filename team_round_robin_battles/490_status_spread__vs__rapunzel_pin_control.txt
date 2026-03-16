@@ -1,0 +1,490 @@
+Battle 490
+Player 1 Team: Status Spread
+Player 2 Team: Rapunzel Pin Control
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:19:13
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 493
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Status Spread
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Rumpel Buff Engine
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Chosen One  (passive=True)
+    Basics: Decree, Summons
+    Item:   Holy Diadem
+  [back_left] Rumpelstiltskin (Warlock)  HP=215  ATK=70  DEF=55  SPD=60
+    Talent: Art of the Deal
+    Sig:    Straw to Gold  (passive=False)
+    Basics: Blood Pact, Soul Gaze
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Bless, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Hunold the Piper: Sucker Punch → Prince Charming
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Prince Charming
+Witch of the Woods uses Thunder Call on Prince Charming.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=75 def=55 raw=88.64 ceil=89
+    [T]   FINAL_DMG=89
+  Prince Charming takes 89 damage.
+    [T] HPCHANGE Prince Charming: 255 → 166  (-89)
+  Prince Charming gains shock for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=60 def=55 raw=43.64 ceil=44
+    [T]   FINAL_DMG=69
+  Prince Charming takes 69 damage.
+    [T] HPCHANGE Prince Charming: 166 → 97  (-69)
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Prince Charming
+Hunold the Piper uses Sucker Punch on Prince Charming.
+  Prince Charming gains weaken for 2 rounds.
+[Queued] Prince Charming: Decree → Witch of the Woods
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch of the Woods
+[Queued] Rumpelstiltskin: Soul Gaze → Witch of the Woods
+    [T] ACTION P2 Prince Charming[front]: Decree → Witch of the Woods
+Prince Charming uses Decree on Witch of the Woods.
+    [T] DMGCALC [Decree] Prince Charming[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=65 def=35 raw=74.29 ceil=75
+    [T]   FINAL_DMG=60
+  Witch of the Woods takes 60 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 120  (-60)
+  Shock recoil: Prince Charming takes 12 damage.
+  Prince Charming gains +10 Attack for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [1/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Witch of the Woods
+Snowkissed Aurora uses Dictate of Nature on Witch of the Woods.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=45 def=35 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Witch of the Woods takes 45 damage.
+    [T] HPCHANGE Witch of the Woods: 120 → 75  (-45)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Innocent Heart: Prince Charming +10 Def.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Soul Gaze → Witch of the Woods
+Rumpelstiltskin uses Soul Gaze on Witch of the Woods.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[back_left] → Witch of the Woods[front]
+    [T]   power=30
+    [T]   atk=77 def=35 raw=66.00 ceil=66
+    [T]   FINAL_DMG=66
+  Witch of the Woods takes 66 damage.
+    [T] HPCHANGE Witch of the Woods: 75 → 9  (-66)
+  Rumpelstiltskin gains 1 Malice (Soul Gaze). [2/6]
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[front] HP=9/180 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=120/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=9/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=120/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Thunder Call → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Hunold the Piper: Sucker Punch → Prince Charming
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Prince Charming
+Witch of the Woods uses Thunder Call on Prince Charming.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=75 def=65 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Prince Charming takes 75 damage.
+    [T] HPCHANGE Prince Charming: 120 → 45  (-75)
+  Prince Charming gains shock for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=60 def=65 raw=36.92 ceil=37
+    [T]   FINAL_DMG=62
+  Prince Charming takes 62 damage.
+Holy Diadem activates! Prince Charming survives at 1 HP.
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Prince Charming
+Hunold the Piper uses Sucker Punch on Prince Charming.
+  Prince Charming gains weaken for 2 rounds.
+[Queued] Prince Charming: Summons → Rumpelstiltskin
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch of the Woods
+[Queued] Rumpelstiltskin: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Summons → Rumpelstiltskin
+Prince Charming uses Summons on Rumpelstiltskin.
+Prince Charming and Rumpelstiltskin swap positions.
+  Chosen One: Rumpelstiltskin becomes Prince Charming's champion.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Witch of the Woods
+Snowkissed Aurora uses Dictate of Nature on Witch of the Woods.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=45 def=35 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Witch of the Woods takes 45 damage.
+    [T] HPCHANGE Witch of the Woods: 9 → 0  (-45) **KO**
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Innocent Heart: Prince Charming +10 Def.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+Hunold the Piper moves to frontline.
+    [T] ACTION P2 Rumpelstiltskin[front]: swap ↔ Prince Charming
+Rumpelstiltskin and Prince Charming swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=36/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=36/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Prince Charming
+Hunold the Piper uses Dying Dance on Prince Charming.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=60 def=65 raw=55.38 ceil=56
+    [T]   FINAL_DMG=56
+  Prince Charming takes 56 damage.
+    [T] HPCHANGE Prince Charming: 36 → 0  (-56) **KO**
+Rumpelstiltskin moves to frontline.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+[Queued] Rumpelstiltskin: Soul Gaze → Hunold the Piper
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Hunold the Piper
+Rumpelstiltskin uses Soul Gaze on Hunold the Piper.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Hunold the Piper[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=56
+  Hunold the Piper takes 56 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 154  (-56)
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [1/6]
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Briar Rose[back_right]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Briar Rose takes 35 damage.
+    [T] HPCHANGE Briar Rose: 195 → 160  (-35)
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=154/210 statuses=[expose(2r)]
+    [T]   P1 Briar Rose[back_right] HP=160/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin[front] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Rumpelstiltskin spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=154/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=160/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin[front] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=65(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Rumpelstiltskin: Soul Gaze → Hunold the Piper
+[Queued] Snowkissed Aurora: Swap with Rumpelstiltskin
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Hunold the Piper
+Rumpelstiltskin uses Soul Gaze on Hunold the Piper.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Hunold the Piper[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=68
+  Hunold the Piper takes 68 damage.
+    [T] HPCHANGE Hunold the Piper: 154 → 86  (-68)
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [0/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Rumpelstiltskin
+Snowkissed Aurora recharges.
+[Queued] Hunold the Piper: Dying Dance → Rumpelstiltskin
+[Queued] Briar Rose: Creeping Doubt → Rumpelstiltskin
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Rumpelstiltskin
+Hunold the Piper uses Dying Dance on Rumpelstiltskin.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Rumpelstiltskin[front]
+    [T]   power=60
+    [T]   atk=60 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=66
+  Rumpelstiltskin takes 66 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 149  (-66)
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Rumpelstiltskin
+Briar Rose uses Creeping Doubt on Rumpelstiltskin.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Rumpelstiltskin[front]
+    [T]   power=40
+    [T]   atk=60 def=55 raw=43.64 ceil=44
+    [T]   FINAL_DMG=54
+  Rumpelstiltskin takes 54 damage.
+    [T] HPCHANGE Rumpelstiltskin: 149 → 95  (-54)
+  Rumpelstiltskin gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=86/210 statuses=[expose(1r)]
+    [T]   P1 Briar Rose[back_right] HP=160/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin[front] HP=95/215 statuses=[root(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: expose → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: expose
+    [T] STATUS_TICK Rumpelstiltskin: root → 1r left
+  Innocent Heart: Rumpelstiltskin +10 Def.
+  Curse of Sleeping: Rumpelstiltskin loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Rumpelstiltskin spd=60  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=86/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=160/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin[front] HP=95/215 ATK=70(base=70) DEF=65(base=55) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(2r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Rumpelstiltskin
+[Queued] Briar Rose: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Rumpelstiltskin
+Hunold the Piper uses Dying Dance on Rumpelstiltskin.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Rumpelstiltskin[front]
+    [T]   power=60
+    [T]   atk=60 def=65 raw=55.38 ceil=56
+    [T]   FINAL_DMG=56
+  Rumpelstiltskin takes 56 damage.
+    [T] HPCHANGE Rumpelstiltskin: 95 → 39  (-56)
+    [T] ACTION P1 Briar Rose[back_right]: swap ↔ Hunold the Piper
+Briar Rose recharges.
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+Rumpelstiltskin cannot act.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Briar Rose[back_right]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Briar Rose takes 35 damage.
+    [T] HPCHANGE Briar Rose: 160 → 125  (-35)
+  Snowkissed Aurora heals Rumpelstiltskin for 35 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions.
+--- End o[Queued] Robin, Hooded Avenger: Hawkshot → Briar Rose
+[Queued] Matchstick Liesl: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Briar Rose
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Briar Rose
+Robin, Hooded Avenger uses Hawkshot on Briar Rose.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Briar Rose[front]
+    [T]   power=60
+    [T]   atk=80 def=45 raw=106.67 ceil=107
+    [T]   FINAL_DMG=107
+  Briar Rose takes 107 damage.
+    [T] HPCHANGE Briar Rose: 121 → 14  (-107)
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Rapunzel the Golden
+Matchstick Liesl recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Golden Snare → Briar Rose
+Rapunzel the Golden uses Golden Snare on Briar Rose.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_left] → Briar Rose[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Briar Rose takes 50 damage.
+    [T] HPCHANGE Briar Rose: 14 → 0  (-50) **KO**
+  Briar Rose gains root for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!
+ack_right] HP=125/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin[front] HP=74/215 ATK=70(base=70) DEF=65(base=55) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Rumpelstiltskin
+[Queued] Briar Rose: Creeping Doubt → Rumpelstiltskin
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Rumpelstiltskin
+Hunold the Piper uses Dying Dance on Rumpelstiltskin.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Rumpelstiltskin[front]
+    [T]   power=60
+    [T]   atk=60 def=65 raw=55.38 ceil=56
+    [T]   FINAL_DMG=56
+  Rumpelstiltskin takes 56 damage.
+    [T] HPCHANGE Rumpelstiltskin: 74 → 18  (-56)
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Rumpelstiltskin
+Briar Rose uses Creeping Doubt on Rumpelstiltskin.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Rumpelstiltskin[front]
+    [T]   power=40
+    [T]   atk=60 def=65 raw=36.92 ceil=37
+    [T]   FINAL_DMG=47
+  Rumpelstiltskin takes 47 damage.
+    [T] HPCHANGE Rumpelstiltskin: 18 → 0  (-47) **KO**
+  Rumpelstiltskin is immune to Root (Curse of Sleeping).
+Snowkissed Aurora moves to frontline.
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Briar Rose[back_right]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Briar Rose takes 50 damage.
+    [T] HPCHANGE Briar Rose: 125 → 75  (-50)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=86/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=75/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=86/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=75/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]

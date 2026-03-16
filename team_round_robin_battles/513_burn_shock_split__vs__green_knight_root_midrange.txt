@@ -1,0 +1,315 @@
+Battle 513
+Player 1 Team: Burn Shock Split
+Player 2 Team: Green Knight Root Midrange
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:20:33
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 516
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+Player 2: Pinocchio Malice Fortress
+  [front] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Become Real  (passive=True)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Family Seal
+  [back_left] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Pinocchio, Cursed Puppet and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Pinocchio, Cursed Puppet is Guarded.
+[Queued] Witch of the Woods: Thunder Call → Pinocchio, Cursed Puppet
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Pinocchio, Cursed Puppet
+Witch of the Woods uses Thunder Call on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Pinocchio, Cursed Puppet[back_left]
+    [T]   power=65
+    [T]   atk=75 def=50 raw=97.50 ceil=98
+    [T]   FINAL_DMG=89
+  Pinocchio, Cursed Puppet takes 89 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 131  (-89)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [1/6]
+  Pinocchio, Cursed Puppet gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=50 def=60 raw=33.33 ceil=34
+    [T]   FINAL_DMG=34
+  Snowkissed Aurora takes 34 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 191  (-34)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+  Sir Roland gains shock for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Witch of the Woods
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Witch of the Woods
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Witch of the Woods
+Sir Roland uses Shield Bash on Witch of the Woods.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=40 def=35 raw=45.71 ceil=46
+    [T]   FINAL_DMG=46
+  Witch of the Woods takes 46 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 134  (-46)
+  Shock recoil: Sir Roland takes 10 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+  Snowkissed Aurora heals Pinocchio, Cursed Puppet for 55 HP.
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+  Medic: Pinocchio, Cursed Puppet cleansed of rulebook status conditions.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: Dark Grasp → Witch of the Woods
+Pinocchio, Cursed Puppet uses Dark Grasp on Witch of the Woods.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_left] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=70 def=35 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Witch of the Woods takes 70 damage.
+    [T] HPCHANGE Witch of the Woods: 134 → 64  (-70)
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [0/6]
+  Witch of the Woods gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[front] HP=64/180 statuses=[weaken(2r)]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=186/220 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=255/265 statuses=[shock(2r), guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 statuses=[no_heal(2r), guard(2r)]
+    [T] STATUS_TICK Witch of the Woods: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=64/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=186/220 ATK=65(base=65) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=255/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[shock(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[no_heal(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          [Queued] Robin, Hooded Avenger: Swap with Green Knight
+[Queued] Snowkissed Aurora: Skip
+[Queued] Green Knight: Edict → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Green Knight
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Green Knight[back_left]: Edict → Matchstick Liesl
+Green Knight uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Green Knight[back_left] → Matchstick Liesl[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Matchstick Liesl takes 36 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 174  (-36)
+  Shock recoil: Green Knight takes 8 damage.
+  Matchstick Liesl gains spotlight for 2 rounds.
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=174/210 statuses=[spotlight(2r)]
+    [T]   P2 Green Knight[back_left] HP=74/275 statuses=[shock(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=173/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: spotlight → 1r left
+    [T] STATUS_TICK Green Knight: shock → 0r left
+    [T] STATUS_EXPIRED Green Knight: shock
+  Innocent Heart: Green Knight +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=174/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Green Knight[back_left] HP=74/275 ATK=60(base=60) DEF=70(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=173/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Matchstick Liesl
+[Queued] Snowkissed Aurora: Dictate of Nature → Matchstick Liesl
+[Queued] Green Knight: Edict → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Matchstick Liesl
+Robin, Hooded Avenger uses Snipe Shot on Matchstick Liesl.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=91
+  Matchstick Liesl takes 91 damage.
+    [T] HPCHANGE Matchstick Liesl: 174 → 83  (-91)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Matchstick Liesl
+Snowkissed Aurora uses Dictate of Nature on Matchstick Liesl.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=45 def=50 raw=31.50 ceil=32
+    [T]   FINAL_DMG=32
+  Matchstick Liesl takes 32 damage.
+    [T] HPCHANGE Matchstick Liesl: 83 → 51  (-32)
+  Snowkissed Aurora heals Green Knight for 35 HP.
+  Medic: Green Knight cleansed of rulebook status conditions.
+    [T] ACTION P2 Green Knight[back_left]: Edict → Matchstick Liesl
+Green Knight uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Green Knight[back_left] → Matchstick Liesl[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Matchstick Liesl takes 36 damage.
+    [T] HPCHANGE Matchstick Liesl: 51 → 15  (-36)
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=50 def=40 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Robin, Hooded Avenger takes 63 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 173 → 110  (-63)
+  Robin, Hooded Avenger gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=15/210 statuses=[spotlight(1r)]
+    [T]   P2 Green Knight[back_left] HP=109/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=110/185 statuses=[no_heal(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: spotlight → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: spotlight
+    [T] BUFF_EXPIRED Green Knight: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=15/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Green Knight[back_left] HP=109/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=110/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Green Knight
+[Queued] Snowkissed Aurora: Heal → Green Knight
+[Queued] Green Knight: Edict → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Green Knight
+Robin, Hooded Avenger and Green Knight swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Green Knight
+Snowkissed Aurora uses Heal on Green Knight.
+  Snowkissed Aurora heals Green Knight for 55 HP.
+  Medic: Green Knight cleansed of rulebook status conditions.
+    [T] ACTION P2 Green Knight[front]: Edict → Matchstick Liesl
+Green Knight uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Green Knight[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=75
+  Matchstick Liesl takes 75 damage.
+    [T] HPCHANGE Matchstick Liesl: 15 → 0  (-75) **KO**
+  Matchstick Liesl gains root for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

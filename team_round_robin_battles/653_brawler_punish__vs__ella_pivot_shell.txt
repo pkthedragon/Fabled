@@ -1,0 +1,1202 @@
+Battle 653
+Player 1 Team: Brawler Punish
+Player 2 Team: Ella Pivot Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:39:26
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 653
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Brawler Punish
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+Player 2: Ella Pivot Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Fae Blessing  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_left] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Lady of Reflections swap positions.
+[Queued] Sir Roland: Swap with Ashen Ella
+[Queued] Snowkissed Aurora: Heal → Ashen Ella
+[Queued] Ashen Ella: Fae Blessing → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Ashen Ella
+Sir Roland and Ashen Ella swap positions.
+  Banner of Command: Ashen Ella is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Ashen Ella
+Snowkissed Aurora uses Heal on Ashen Ella.
+    [T] ACTION P2 Ashen Ella[front]: Fae Blessing → Sir Roland
+  Ashen Ella retargets to Ashen Ella after swapping to front.
+Ashen Ella uses Fae Blessing on Ashen Ella.
+  Ashen Ella gains +20 Attack for 2 rounds.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Riposte → Ashen Ella
+[Queued] Risa Redcloak: Rend → Ashen Ella
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Ashen Ella
+Reynard, Lupine Trickster uses Riposte on Ashen Ella.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Ashen Ella[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=60
+  Ashen Ella takes 60 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 125  (-60)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Risa Redcloak[back_left]: Rend → Ashen Ella
+Risa Redcloak uses Rend on Ashen Ella.
+  Risa Redcloak marks Ashen Ella — next ability gains +10 Power.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella[front] HP=125/185 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Ashen Ella: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Ashen Ella spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=125/185 ATK=100(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[attack+20(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Ashen Ella
+[Queued] Risa Redcloak: Rend → Ashen Ella
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Ashen Ella
+Lady of Reflections uses Drown in the Loch on Ashen Ella.
+  Ashen Ella takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Ashen Ella
+Risa Redcloak uses Rend on Ashen Ella.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Ashen Ella[front]
+    [T]   power=55 (base=45)
+    [T]   atk=75 def=40 raw=103.12 ceil=104
+    [T]   FINAL_DMG=91
+  Ashen Ella takes 91 damage.
+    [T] HPCHANGE Ashen Ella: 125 → 34  (-91)
+[Queued] Ashen Ella: Arcane Wave → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Ashen Ella
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P2 Ashen Ella[front]: Arcane Wave → Risa Redcloak
+Ashen Ella uses Arcane Wave on Risa Redcloak.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Risa Redcloak[front]
+    [T]   power=80
+    [T]   atk=100 def=60 raw=133.33 ceil=134
+    [T]   FINAL_DMG=124
+  Risa Redcloak takes 124 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 126  (-124)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Ashen Ella
+Snowkissed Aurora uses Heal on Ashen Ella.
+  Snowkissed Aurora heals Ashen Ella for 55 HP.
+  Innocent Heart: Ashen Ella +10 Def.
+  Medic: Ashen Ella cleansed of rulebook status conditions.
+    [T] ACTION P2 Sir Roland[back_left]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[front] HP=126/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=205/205 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella[front] HP=89/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Ashen Ella: attack+20
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=126/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=89/185 ATK=70(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Arcane Wave → Risa Redcloak
+[Queued] Sir Roland: Item Ashen Ella
+[Queued] Snowkissed Aurora: Heal → Ashen Ella
+    [T] ACTION P2 Ashen Ella[front]: Arcane Wave → Risa Redcloak
+Ashen Ella uses Arcane Wave on Risa Redcloak.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Risa Redcloak[front]
+    [T]   power=80
+    [T]   atk=70 def=60 raw=93.33 ceil=94
+    [T]   FINAL_DMG=84
+  Risa Redcloak takes 84 damage.
+    [T] HPCHANGE Risa Redcloak: 126 → 42  (-84)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+  Ashen Ella must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Ashen Ella
+Sir Roland uses Crafty Shield.
+  Ashen Ella is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Ashen Ella
+Snowkissed Aurora uses Heal on Ashen Ella.
+  Snowkissed Aurora heals Ashen Ella for 55 HP.
+  Innocent Heart: Ashen Ella +10 Def.
+  Medic: Ashen Ella cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Blood Hunt → Ashen Ella
+[Queued] Lady of Reflections: Drown in the Loch → Ashen Ella
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Ashen Ella
+Risa Redcloak uses Blood Hunt on Ashen Ella.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Ashen Ella[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=120
+  Ashen Ella takes 120 damage.
+    [T] HPCHANGE Ashen Ella: 144 → 24  (-120)
+  Risa Redcloak heals 48 HP.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Ashen Ella
+Lady of Reflections uses Drown in the Loch on Ashen Ella.
+  Ashen Ella takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Reynard, Lupine Trickster[back_left]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[back_left] HP=90/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella[front] HP=24/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Ashen Ella spd=65  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=90/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=24/185 ATK=70(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Ashen Ella
+[Queued] Lady of Reflections: Drown in the Loch → Ashen Ella
+[Queued] Risa Redcloak: Swap with Lady of Reflections
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Ashen Ella
+Reynard, Lupine Trickster uses Riposte on Ashen Ella.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Ashen Ella[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=81
+  Ashen Ella takes 81 damage.
+    [T] HPCHANGE Ashen Ella: 24 → 0  (-81) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Ashen Ella
+Lady of Reflections's target is no longer legal — Drown in the Loch fizzles.
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Lady of Reflections
+Risa Redcloak and Lady of Reflections swap positions.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[back_right] HP=90/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=90/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=65 def=60 raw=48.75 ceil=49
+    [T]   FINAL_DMG=40
+  Snowkissed Aurora takes 40 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 185  (-40)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Risa Redcloak[back_right]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+  Blood Hunt: Risa Redcloak and Snowkissed Aurora HP set to 137.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[back_left] HP=137/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=137/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=137/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=137/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 265 → 261  (-4)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 199.
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 66 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak[back_left] HP=199/250 statuses=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=137/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=199/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=137/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 175  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+    [T] ACTION P1 Risa Redcloak[back_left]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak[back_left] HP=199/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=162/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=199/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=162/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Snowkissed Aurora
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Snowkissed Aurora
+Lady of Reflections uses Drown in the Loch on Snowkissed Aurora.
+  Snowkissed Aurora takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=75 def=70 raw=48.21 ceil=49
+    [T]   FINAL_DMG=56
+  Snowkissed Aurora takes 56 damage.
+    [T] HPCHANGE Snowkissed Aurora: 162 → 106  (-56)
+  Risa Redcloak heals 4 HP.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak[front] HP=203/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=106/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=203/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=106/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=20
+  Risa Redcloak takes 20 damage.
+    [T] HPCHANGE Risa Redcloak: 203 → 183  (-20)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+[Queued] Risa Redcloak: Swap with Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Drown in the Loch → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Reynard, Lupine Trickster
+Risa Redcloak and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Snowkissed Aurora
+Lady of Reflections uses Drown in the Loch on Snowkissed Aurora.
+  Snowkissed Aurora takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=65 def=60 raw=48.75 ceil=49
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 106 → 59  (-47)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak[back_left] HP=183/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=59/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=183/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=59/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Snowkissed Aurora
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Snowkissed Aurora
+Lady of Reflections uses Drown in the Loch on Snowkissed Aurora.
+  Snowkissed Aurora takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=70 raw=69.64 ceil=70
+    [T]   FINAL_DMG=77
+  Snowkissed Aurora takes 77 damage.
+    [T] HPCHANGE Snowkissed Aurora: 59 → 0  (-77) **KO**
+  Risa Redcloak heals 6 HP.
+Sir Roland moves to frontline.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=17
+  Risa Redcloak takes 17 damage.
+    [T] HPCHANGE Risa Redcloak: 189 → 172  (-17)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Risa Redcloak[front] HP=172/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=172/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=20
+  Risa Redcloak takes 20 damage.
+    [T] HPCHANGE Risa Redcloak: 172 → 152  (-20)
+  All allies are Guarded for 2 rounds.
+[Queued] Risa Redcloak: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Lady of Reflections
+Risa Redcloak and Lady of Reflections swap positions.
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 265 → 261  (-4)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Reynard, Lupine Trickster[back_left]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Risa Redcloak[back_right] HP=152/250 statuses=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=261/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=152/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=261/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 206.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=34
+  Sir Roland takes 34 damage.
+    [T] HPCHANGE Sir Roland: 206 → 172  (-34)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 93 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Risa Redcloak[back_right] HP=206/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=206/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 235.
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+    [T]   FINAL_DMG=18
+  Sir Roland takes 18 damage.
+    [T] HPCHANGE Sir Roland: 235 → 217  (-18)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 statuses=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=217/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=217/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=34
+  Sir Roland takes 34 damage.
+    [T] HPCHANGE Sir Roland: 217 → 183  (-34)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Shield Bash → Reynard, Lupine Trickster
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Reynard, Lupine Trickster
+Sir Roland uses Shield Bash on Reynard, Lupine Trickster.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=4
+  Reynard, Lupine Trickster takes 4 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 175 → 171  (-4)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=171/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=183/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=171/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=183/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+    [T]   FINAL_DMG=18
+  Sir Roland takes 18 damage.
+    [T] HPCHANGE Sir Roland: 183 → 165  (-18)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 statuses=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=171/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=165/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=171/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=165/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=34
+  Sir Roland takes 34 damage.
+    [T] HPCHANGE Sir Roland: 165 → 131  (-34)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Shield Bash → Reynard, Lupine Trickster
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Reynard, Lupine Trickster
+Sir Roland uses Shield Bash on Reynard, Lupine Trickster.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=4
+  Reynard, Lupine Trickster takes 4 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 171 → 167  (-4)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=167/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=131/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=235/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=167/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=131/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=75 (base=45)
+    [T]   atk=75 def=90 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Sir Roland takes 63 damage.
+    [T] HPCHANGE Sir Roland: 131 → 68  (-63)
+  Risa Redcloak heals 5 HP.
+    [T] ACTION P1 Lady of Reflections[back_left]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Risa Redcloak[front] HP=240/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=167/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=68/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=240/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=167/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=68/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=20
+  Risa Redcloak takes 20 damage.
+    [T] HPCHANGE Risa Redcloak: 240 → 220  (-20)
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=90 raw=54.17 ceil=55
+    [T]   FINAL_DMG=51
+  Sir Roland takes 51 damage.
+    [T] HPCHANGE Sir Roland: 68 → 17  (-51)
+  Risa Redcloak heals 4 HP.
+    [T] ACTION P1 Reynard, Lupine Trickster[back_right]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Lady of Reflections[back_left]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Risa Redcloak[back_right] HP=224/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=167/205 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=17/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=224/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=167/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=17/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 17 → 0  (-25) **KO**
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 19)
+────────────────────────────────────────────────────────────
+Player 1 wins!

@@ -1,0 +1,1041 @@
+Battle 496
+Player 1 Team: Burn Shock Split
+Player 2 Team: Burn Shock Split
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:19:31
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 496
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+Player 2: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Witch of the Woods and Hunold the Piper swap positions.
+[Queued] Witch of the Woods: Thunder Call → Witch of the Woods
+[Queued] Matchstick Liesl: Cauterize → Hunold the Piper
+[Queued] Hunold the Piper: Haunting Rhythm → Hunold the Piper
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Witch of the Woods
+Witch of the Woods uses Thunder Call on Witch of the Woods.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Witch of the Woods[back_left]
+    [T]   power=65
+    [T]   atk=75 def=35 raw=139.29 ceil=140
+    [T]   FINAL_DMG=140
+  Witch of the Woods takes 140 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 40  (-140)
+  Witch of the Woods gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Hunold the Piper
+Matchstick Liesl uses Cauterize on Hunold the Piper.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=36
+  Hunold the Piper takes 36 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 174  (-36)
+  Hunold the Piper gains no_heal for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Haunting Rhythm → Hunold the Piper
+Hunold the Piper uses Haunting Rhythm on Hunold the Piper.
+  Hunold the Piper gains shock for 2 rounds.
+[Queued] Hunold the Piper: Haunting Rhythm → Witch of the Woods
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Witch of the Woods
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Witch of the Woods
+Hunold the Piper uses Haunting Rhythm on Witch of the Woods.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=60 def=35 raw=85.71 ceil=86
+    [T]   FINAL_DMG=86
+  Witch of the Woods takes 86 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 94  (-86)
+  Shock recoil: Hunold the Piper takes 18 damage.
+  Witch of the Woods gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+    [T] ACTION P1 Witch of the Woods[back_left]: Thunder Call → Witch of the Woods
+Witch of the Woods uses Thunder Call on Witch of the Woods.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_left] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=100
+  Witch of the Woods takes 100 damage.
+    [T] HPCHANGE Witch of the Woods: 94 → 0  (-100) **KO**
+  Shock recoil: Witch of the Woods takes 20 damage.
+Hunold the Piper moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[back_left] HP=75/180 statuses=[shock(2r), burn_immune(2r)]
+    [T]   P1 Hunold the Piper[front] HP=156/210 statuses=[no_heal(2r), shock(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Witch of the Woods: shock → 1r left
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 1r left
+    [T] STATUS_TICK Hunold the Piper: no_heal → 1r left
+    [T] STATUS_TICK Hunold the Piper: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[back_left] HP=75/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[shock(1r), burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=156/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Hunold the Piper
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Hunold the Piper
+Hunold the Piper uses Haunting Rhythm on Hunold the Piper.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=54
+  Hunold the Piper takes 54 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 156  (-54)
+  Shock recoil: Hunold the Piper takes 11 damage.
+  Hunold the Piper gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+    [T] ACTION P1 Witch of the Woods[back_left]: Thunder Call → Hunold the Piper
+Witch of the Woods uses Thunder Call on Hunold the Piper.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_left] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=75 def=45 raw=58.33 ceil=59
+    [T]   FINAL_DMG=84
+  Hunold the Piper takes 84 damage.
+    [T] HPCHANGE Hunold the Piper: 156 → 72  (-84)
+  Shock recoil: Witch of the Woods takes 17 damage.
+  Hunold the Piper gains burn for 2 rounds.
+[Queued] Hunold the Piper: Haunting Rhythm → Hunold the Piper
+[Queued] Matchstick Liesl: Cauterize → Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Haunting Rhythm → Hunold the Piper
+Hunold the Piper uses Haunting Rhythm on Hunold the Piper.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=66
+  Hunold the Piper takes 66 damage.
+    [T] HPCHANGE Hunold the Piper: 145 → 79  (-66)
+  Shock recoil: Hunold the Piper takes 14 damage.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Hunold the Piper
+Matchstick Liesl uses Cauterize on Hunold the Piper.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=60
+  Hunold the Piper takes 60 damage.
+    [T] HPCHANGE Hunold the Piper: 79 → 19  (-60)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods[back_left] HP=113/180 statuses=[shock(1r), burn_immune(1r)]
+    [T]   P1 Hunold the Piper[front] HP=19/210 statuses=[no_heal(1r), shock(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=58/210 statuses=[shock(2r), burn(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Witch of the Woods: shock → 0r left
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch of the Woods: shock
+    [T] STATUS_EXPIRED Witch of the Woods: burn_immune
+    [T] STATUS_TICK Hunold the Piper: no_heal → 0r left
+    [T] STATUS_TICK Hunold the Piper: shock → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: no_heal
+    [T] STATUS_EXPIRED Hunold the Piper: shock
+Hunold the Piper burns for 21 damage.
+    [T] STATUS_TICK Hunold the Piper: shock → 1r left
+    [T] STATUS_TICK Hunold the Piper: burn → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[back_left] HP=113/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=19/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=37/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[shock(1r), burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Hunold the Piper
+[Queued] Matchstick Liesl: Cauterize → Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Haunting Rhythm → Hunold the Piper
+Hunold the Piper uses Haunting Rhythm on Hunold the Piper.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=54
+  Hunold the Piper takes 54 damage.
+    [T] HPCHANGE Hunold the Piper: 19 → 0  (-54) **KO**
+  Shock recoil: Hunold the Piper takes 11 damage.
+  Hunold the Piper gains shock for 2 rounds.
+Witch of the Woods moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Hunold the Piper
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+[Queued] Witch of the Woods: Toil and Trouble → Hunold the Piper
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P1 Witch of the Woods[front]: Toil and Trouble → Hunold the Piper
+Witch of the Woods uses Toil and Trouble on Hunold the Piper.
+    [T] DMGCALC [Toil and Trouble] Witch of the Woods[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=88
+  Hunold the Piper takes 88 damage.
+    [T] HPCHANGE Hunold the Piper: 26 → 0  (-88) **KO**
+  Witch of the Woods must recharge next turn.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods[front] HP=168/180 statuses=[burn_immune(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=168/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Witch of the Woods[front]: swap ↔ Matchstick Liesl
+Witch of the Woods recharges.
+    [T] ACTION P1 Matchstick Liesl[back_right]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Matchstick Liesl: Cauterize → Witch of the Woods
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Witch of the Woods
+Matchstick Liesl uses Cauterize on Witch of the Woods.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=50 def=35 raw=71.43 ceil=72
+    [T]   FINAL_DMG=72
+  Witch of the Woods takes 72 damage.
+    [T] HPCHANGE Witch of the Woods: 168 → 96  (-72)
+  Witch of the Woods gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods[front] HP=96/180 statuses=[burn_immune(1r), no_heal(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 0r left
+    [T] STATUS_TICK Witch of the Woods: no_heal → 1r left
+    [T] STATUS_EXPIRED Witch of the Woods: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=96/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Thunder Call → Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Matchstick Liesl
+Witch of the Woods uses Thunder Call on Matchstick Liesl.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=75 def=50 raw=97.50 ceil=98
+    [T]   FINAL_DMG=98
+  Matchstick Liesl takes 98 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 112  (-98)
+  Matchstick Liesl gains burn for 2 rounds.
+  Matchstick Liesl gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Witch of the Woods cannot be healed.
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods[front] HP=96/180 statuses=[no_heal(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=112/210 statuses=[burn(2r), shock(2r)]
+    [T] STATUS_TICK Witch of the Woods: no_heal → 0r left
+    [T] STATUS_EXPIRED Witch of the Woods: no_heal
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Matchstick Liesl: burn → 1r left
+    [T] STATUS_TICK Matchstick Liesl: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=96/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=91/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Thunder Call → Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Matchstick Liesl
+Witch of the Woods uses Thunder Call on Matchstick Liesl.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=75 def=50 raw=97.50 ceil=98
+    [T]   FINAL_DMG=108
+  Matchstick Liesl takes 108 damage.
+    [T] HPCHANGE Matchstick Liesl: 91 → 0  (-108) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 1 wins!
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            [Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 174 → 145  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 statuses=[burn_immune(1r), taunt(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=246/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_TICK Hunold the Piper: taunt → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+    [T] STATUS_EXPIRED Hunold the Piper: taunt
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=246/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 246 → 222  (-24)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 190 → 161  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 49 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=161/210 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=161/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 265 → 241  (-24)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 206 → 177  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=177/210 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=235/265 statuses=[burn(2r), shock(2r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=177/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=208/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), shock(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=80 raw=37.50 ceil=38
+    [T]   FINAL_DMG=36
+  Sir Roland takes 36 damage.
+    [T] HPCHANGE Sir Roland: 208 → 172  (-36)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 43 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Sir Roland: Knight's Challenge → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Hunold the Piper
+Sir Roland uses Knight's Challenge on Hunold the Piper.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=40 def=45 raw=31.11 ceil=32
+    [T]   FINAL_DMG=26
+  Hunold the Piper takes 26 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 184  (-26)
+  Shock recoil: Sir Roland takes 6 damage.
+  Hunold the Piper is Taunted for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=184/210 statuses=[burn_immune(2r), taunt(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=221/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Hunold the Piper: taunt → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=184/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r), taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=221/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 221 → 197  (-24)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Hunold the Piper
+Matchstick Liesl recharges.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 174 → 145  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 statuses=[burn_immune(1r), taunt(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=246/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_TICK Hunold the Piper: taunt → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+    [T] STATUS_EXPIRED Hunold the Piper: taunt
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=246/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 246 → 222  (-24)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 190 → 161  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 49 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=161/210 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=161/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 265 → 241  (-24)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 206 → 177  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=177/210 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=235/265 statuses=[burn(2r), shock(2r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=177/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=208/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), shock(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=80 raw=37.50 ceil=38
+    [T]   FINAL_DMG=36
+  Sir Roland takes 36 damage.
+    [T] HPCHANGE Sir Roland: 208 → 172  (-36)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 43 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Sir Roland: Knight's Challenge → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Hunold the Piper
+Sir Roland uses Knight's Challenge on Hunold the Piper.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=40 def=45 raw=31.11 ceil=32
+    [T]   FINAL_DMG=26
+  Hunold the Piper takes 26 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 184  (-26)
+  Shock recoil: Sir Roland takes 6 damage.
+  Hunold the Piper is Taunted for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=184/210 statuses=[burn_immune(2r), taunt(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=221/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Hunold the Piper: taunt → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=184/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r), taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=221/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 221 → 197  (-24)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Hunold the Piper
+Matchstick Liesl recharges.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 174 → 145  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 statuses=[burn_immune(1r), taunt(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=246/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_TICK Hunold the Piper: taunt → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+    [T] STATUS_EXPIRED Hunold the Piper: taunt
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=246/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=92/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 246 → 222  (-24)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.

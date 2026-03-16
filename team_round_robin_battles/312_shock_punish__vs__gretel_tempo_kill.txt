@@ -1,0 +1,761 @@
+Battle 312
+Player 1 Team: Shock Punish
+Player 2 Team: Gretel Tempo Kill
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:02:47
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 312
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shock Punish
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Tempus Fugit  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Gretel Tempo Kill
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Robin, Hooded Avenger: Hawkshot → March Hare
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=90 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 265 → 207  (-58)
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → March Hare
+Robin, Hooded Avenger uses Hawkshot on March Hare.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → March Hare[back_right]
+    [T]   power=40
+    [T]   atk=77 def=35 raw=88.00 ceil=88
+    [T]   FINAL_DMG=98
+  March Hare takes 98 damage.
+    [T] HPCHANGE March Hare: 190 → 92  (-98)
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] March Hare: Thunder Call → Robin, Hooded Avenger
+[Queued] Hunold the Piper: Sucker Punch → Witch-Hunter Gretel
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 March Hare[back_right]: Thunder Call → Robin, Hooded Avenger
+March Hare uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=35
+    [T]   atk=70 def=40 raw=61.25 ceil=62
+    [T]   FINAL_DMG=62
+  Robin, Hooded Avenger takes 62 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 123  (-62)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Witch-Hunter Gretel
+Hunold the Piper uses Sucker Punch on Witch-Hunter Gretel.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=54
+  Witch-Hunter Gretel takes 54 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 161  (-54)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_left] HP=207/265 statuses=[weaken(2r), expose(2r)]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[guard(2r)]
+    [T]   P1 March Hare[back_right] HP=92/190 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=161/215 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=123/185 statuses=[shock(2r)]
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=207/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=92/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=161/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=123/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Thunder Call → Witch-Hunter Gretel
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+  Banner of Command: March Hare is Guarded.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Witch-Hunter Gretel
+March Hare uses Thunder Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=102
+  Witch-Hunter Gretel takes 102 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 161 → 59  (-102)
+  Witch-Hunter Gretel gains shock for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Witch-Hunter Gretel: Intimidate → March Hare
+[Queued] Robin, Hooded Avenger: Snipe Shot → March Hare
+[Queued] Lucky Constantine: Subterfuge → Sir Roland ↔ March Hare
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → March Hare
+Witch-Hunter Gretel uses Intimidate on March Hare.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → March Hare[front]
+    [T]   power=45
+    [T]   atk=80 def=35 raw=102.86 ceil=103
+    [T]   FINAL_DMG=93
+  March Hare takes 93 damage.
+    [T] HPCHANGE March Hare: 92 → 0  (-93) **KO**
+  Shock recoil: Witch-Hunter Gretel takes 19 damage.
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  March Hare gains weaken for 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → March Hare
+Robin, Hooded Avenger's target is no longer legal — Snipe Shot fizzles.
+    [T] ACTION P2 Lucky Constantine[back_left]: Subterfuge → Sir Roland
+Lucky Constantine must choose a second enemy for Subterfuge — action fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[front] HP=207/265 statuses=[weaken(1r), expose(1r), guard(2r)]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 statuses=[guard(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=40/215 statuses=[shock(2r)]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=123/185 statuses=[shock(1r)]
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: shock
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Witch-Hunter Gretel spd=70  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=207/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=40/215 ATK=95(base=80) DEF=45(base=45) SPD=70(base=60)
+    [T]     statuses=[shock(1r)]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=123/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Hunold the Piper
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Hunold the Piper
+Robin, Hooded Avenger uses Hawkshot on Hunold the Piper.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Hunold the Piper[back_right]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=94
+  Hunold the Piper takes 94 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 116  (-94)
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Robin, Hooded Avenger
+Hunold the Piper uses Sucker Punch on Robin, Hooded Avenger.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Robin, Hooded Avenger takes 60 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 123 → 63  (-60)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_right] HP=207/265 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Hunold the Piper[front] HP=116/210 statuses=[guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 statuses=[shock(1r)]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=63/185 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: shock
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=207/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=116/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=63/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Robin, Hooded Avenger
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Robin, Hooded Avenger
+Hunold the Piper uses Dying Dance on Robin, Hooded Avenger.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Robin, Hooded Avenger takes 90 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 63 → 0  (-90) **KO**
+Lucky Constantine moves to frontline.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lucky Constantine: Post Bounty → Hunold the Piper
+[Queued] Witch-Hunter Gretel: Intimidate → Hunold the Piper
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Hunold the Piper
+Lucky Constantine uses Post Bounty on Hunold the Piper.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=41
+  Hunold the Piper takes 41 damage.
+    [T] HPCHANGE Hunold the Piper: 116 → 75  (-41)
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Hunold the Piper
+Witch-Hunter Gretel uses Intimidate on Hunold the Piper.
+  Hunold the Piper gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=207/265 statuses=[expose(1r), guard(2r)]
+    [T]   P1 Hunold the Piper[front] HP=75/210 statuses=[guard(1r), expose(2r), weaken(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+    [T] STATUS_TICK Hunold the Piper: weaken → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=207/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=75/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Subterfuge → Hunold the Piper ↔ Sir Roland
+[Queued] Witch-Hunter Gretel: Intimidate → Hunold the Piper
+    [T] ACTION P2 Lucky Constantine[front]: Subterfuge → Hunold the Piper
+Lucky Constantine uses Subterfuge on Hunold the Piper.
+    [T] DMGCALC [Subterfuge] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=76
+  Hunold the Piper takes 76 damage.
+    [T] HPCHANGE Hunold the Piper: 75 → 0  (-76) **KO**
+Hunold the Piper and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Hunold the Piper
+Witch-Hunter Gretel's target is no longer legal — Intimidate fizzles.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 58 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 265 → 257  (-8)
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=36
+  Lucky Constantine takes 36 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 179  (-36)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=257/265 statuses=[expose(2r), weaken(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=179/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=257/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=40/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=179/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Sneak Attack → Sir Roland
+[Queued] Witch-Hunter Gretel: Swap with Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Sneak Attack → Sir Roland
+Lucky Constantine uses Sneak Attack on Sir Roland.
+    [T] DMGCALC [Sneak Attack] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=60 (base=45)
+    [T]   atk=70 def=90 raw=46.67 ceil=47
+    [T]   FINAL_DMG=46
+  Sir Roland takes 46 damage.
+    [T] HPCHANGE Sir Roland: 257 → 211  (-46)
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Lucky Constantine
+Witch-Hunter Gretel and Lucky Constantine swap positions.
+[Queued] Sir Roland: Shield Bash → Witch-Hunter Gretel
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Witch-Hunter Gretel
+Sir Roland uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Witch-Hunter Gretel takes 32 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 40 → 8  (-32)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=211/265 statuses=[expose(1r), weaken(1r), guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=8/215 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=179/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=211/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=8/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=179/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Witch-Hunter Gretel: Shove Over → Sir Roland
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Sir Roland
+Witch-Hunter Gretel uses Shove Over on Sir Roland.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=90 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 211 → 153  (-58)
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Witch-Hunter Gretel
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Witch-Hunter Gretel
+Sir Roland uses Shield Bash on Witch-Hunter Gretel.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Witch-Hunter Gretel takes 32 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 8 → 0  (-32) **KO**
+  All allies are Guarded for 2 rounds.
+Lucky Constantine moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=153/265 statuses=[weaken(2r), expose(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=179/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=153/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=179/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Sneak Attack → Sir Roland
+    [T] ACTION P2 Lucky Constantine[front]: Sneak Attack → Sir Roland
+Lucky Constantine uses Sneak Attack on Sir Roland.
+    [T] DMGCALC [Sneak Attack] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=60 (base=45)
+    [T]   atk=70 def=90 raw=46.67 ceil=47
+    [T]   FINAL_DMG=46
+  Sir Roland takes 46 damage.
+    [T] HPCHANGE Sir Roland: 153 → 107  (-46)
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=36
+  Lucky Constantine takes 36 damage.
+    [T] HPCHANGE Lucky Constantine: 179 → 143  (-36)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=107/265 statuses=[weaken(1r), expose(1r), guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=143/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=107/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=143/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 107 → 75  (-32)
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Lucky Constantine takes 45 damage.
+    [T] HPCHANGE Lucky Constantine: 143 → 98  (-45)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=75/265 statuses=[expose(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=98/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=75/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=98/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Sneak Attack → Sir Roland
+    [T] ACTION P2 Lucky Constantine[front]: Sneak Attack → Sir Roland
+Lucky Constantine uses Sneak Attack on Sir Roland.
+    [T] DMGCALC [Sneak Attack] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=60 (base=45)
+    [T]   atk=70 def=90 raw=46.67 ceil=47
+    [T]   FINAL_DMG=46
+  Sir Roland takes 46 damage.
+    [T] HPCHANGE Sir Roland: 75 → 29  (-46)
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Lucky Constantine takes 45 damage.
+    [T] HPCHANGE Lucky Constantine: 98 → 53  (-45)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=29/265 statuses=[expose(1r), guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=53/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=29/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=53/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 29 → 0  (-32) **KO**
+  Sir Roland gains expose for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 12)
+────────────────────────────────────────────────────────────
+Player 2 wins!

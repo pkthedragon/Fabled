@@ -1,0 +1,743 @@
+Battle 593
+Player 1 Team: Lady Control Shell
+Player 2 Team: Brawler Punish
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:28:09
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 593
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Lady Control Shell
+  [front] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Lake's Gift  (passive=False)
+    Basics: Condemn, Armored
+    Item:   Crafty Shield
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Brawler Punish
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Lady of Reflections swap positions.
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Snowkissed Aurora: Dictate of Nature → Risa Redcloak
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=27
+  Reynard, Lupine Trickster takes 27 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 178  (-27)
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Risa Redcloak
+Snowkissed Aurora uses Dictate of Nature on Risa Redcloak.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Risa Redcloak[back_left]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 212  (-38)
+[Queued] Lady of Reflections: Drown in the Loch → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Snowkissed Aurora
+Lady of Reflections uses Drown in the Loch on Snowkissed Aurora.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+  Blood Hunt: Risa Redcloak and Snowkissed Aurora HP set to 205.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=205/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=205/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 statuses=[-]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=205/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=205/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Risa Redcloak
+[Queued] Prince Charming: Condescend → Risa Redcloak
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Risa Redcloak
+Snowkissed Aurora uses Dictate of Nature on Risa Redcloak.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Risa Redcloak[back_right]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 205 → 167  (-38)
+  Snowkissed Aurora heals Snowkissed Aurora for 20 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Risa Redcloak
+Prince Charming uses Condescend on Risa Redcloak.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Risa Redcloak[back_right]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Risa Redcloak takes 44 damage.
+    [T] HPCHANGE Risa Redcloak: 167 → 123  (-44)
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+  Blood Hunt: Risa Redcloak and Snowkissed Aurora HP set to 174.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=65 def=60 raw=48.75 ceil=49
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 174 → 127  (-47)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=127/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=178/205 statuses=[-]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=127/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+[Queued] Lady of Reflections: Drown in the Loch → Snowkissed Aurora
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+  Risa Redcloak marks Snowkissed Aurora — next ability gains +10 Power.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Snowkissed Aurora
+Lady of Reflections uses Drown in the Loch on Snowkissed Aurora.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=22
+  Snowkissed Aurora takes 22 damage.
+    [T] HPCHANGE Snowkissed Aurora: 127 → 105  (-22)
+  Snowkissed Aurora takes +7 damage from all sources for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Risa Redcloak
+[Queued] Prince Charming: Condescend → Risa Redcloak
+[Queued] Lady of Reflections: Swap with Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Risa Redcloak
+Snowkissed Aurora uses Dictate of Nature on Risa Redcloak.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Risa Redcloak[back_right]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=60 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Risa Redcloak takes 45 damage.
+    [T] HPCHANGE Risa Redcloak: 174 → 129  (-45)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Risa Redcloak
+Prince Charming uses Condescend on Risa Redcloak.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Risa Redcloak[back_right]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Risa Redcloak takes 44 damage.
+    [T] HPCHANGE Risa Redcloak: 129 → 85  (-44)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Prince Charming
+Lady of Reflections and Prince Charming swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=155/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=85/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 statuses=[-]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=155/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=85/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+[Queued] Prince Charming: Item Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=70 (base=60)
+    [T]   atk=90 def=70 raw=90.00 ceil=90
+    [T]   FINAL_DMG=79
+  Snowkissed Aurora takes 79 damage.
+    [T] HPCHANGE Snowkissed Aurora: 155 → 76  (-79)
+  Risa Redcloak heals 32 HP.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=76/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=117/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 statuses=[-]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Risa Redcloak spd=45  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=76/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=117/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+[Queued] Lady of Reflections: Drown in the Loch → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=65 (base=45)
+    [T]   atk=90 def=60 raw=97.50 ceil=98
+    [T]   FINAL_DMG=79
+  Snowkissed Aurora takes 79 damage.
+    [T] HPCHANGE Snowkissed Aurora: 76 → 0  (-79) **KO**
+  Risa Redcloak heals 22 HP.
+Prince Charming moves to frontline.
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Snowkissed Aurora
+Lady of Reflections's target is no longer legal — Drown in the Loch fizzles.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Lady of Reflections: Item Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=60 raw=65.00 ceil=65
+    [T]   FINAL_DMG=55
+  Risa Redcloak takes 55 damage.
+    [T] HPCHANGE Risa Redcloak: 139 → 84  (-55)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Lady of Reflections[back_right]: item [Crafty Shield] → Prince Charming
+Lady of Reflections uses Crafty Shield.
+  Prince Charming is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=255/255 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[front] HP=84/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=178/205 statuses=[-]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Risa Redcloak spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=84/250 ATK=90(base=75) DEF=60(base=60) SPD=35(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Condescend → Risa Redcloak
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Prince Charming[front]: Condescend → Risa Redcloak
+Prince Charming uses Condescend on Risa Redcloak.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=45
+  Risa Redcloak takes 45 damage.
+    [T] HPCHANGE Risa Redcloak: 84 → 39  (-45)
+  Risa Redcloak loses -10 Defense for 2 rounds.
+    [T] ACTION P1 Lady of Reflections[back_right]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Prince Charming
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=90 def=55 raw=98.18 ceil=99
+    [T]   FINAL_DMG=80
+  Prince Charming takes 80 damage.
+    [T] HPCHANGE Prince Charming: 255 → 175  (-80)
+  Risa Redcloak heals 32 HP.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lady of Reflections[back_left]: Drown in the Loch → Prince Charming
+Lady of Reflections uses Drown in the Loch on Prince Charming.
+  Prince Charming takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=175/255 statuses=[guard(1r)]
+    [T]   P2 Risa Redcloak[back_right] HP=71/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=178/205 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] DEBUFF_EXPIRED Risa Redcloak: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=175/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=71/250 ATK=90(base=75) DEF=50(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+[Queued] Lady of Reflections: Drown in the Loch → Prince Charming
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+  Blood Hunt: Risa Redcloak and Prince Charming HP set to 123.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Prince Charming
+Lady of Reflections uses Drown in the Loch on Prince Charming.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 123 → 86  (-37)
+  Prince Charming takes +7 damage from all sources for 2 rounds.
+[Queued] Prince Charming: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Lady of Reflections
+Prince Charming and Lady of Reflections swap positions.
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Prince Charming
+Lady of Reflections uses Crafty Shield.
+  Prince Charming is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=86/255 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_right] HP=123/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] DEBUFF_EXPIRED Risa Redcloak: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=86/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=123/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lady of Reflections: Item Lady of Reflections
+[Queued] Prince Charming: Swap with Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Lady of Reflections
+Prince Charming and Lady of Reflections swap positions.
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Prince Charming
+[Queued] Reynard, Lupine Trickster: Riposte → Prince Charming
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Prince Charming
+Risa Redcloak uses Rend on Prince Charming.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=65 (base=45)
+    [T]   atk=90 def=55 raw=106.36 ceil=107
+    [T]   FINAL_DMG=93
+  Prince Charming takes 93 damage.
+    [T] HPCHANGE Prince Charming: 86 → 0  (-93) **KO**
+  Risa Redcloak heals 26 HP.
+Lady of Reflections moves to frontline.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: Riposte → Prince Charming
+Reynard, Lupine Trickster's target is no longer legal — Riposte fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Risa Redcloak[front] HP=149/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Risa Redcloak[front] HP=149/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=178/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lady of Reflections: Condemn → Risa Redcloak
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Risa Redcloak
+Lady of Reflections uses Condemn on Risa Redcloak.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=20
+  Risa Redcloak takes 20 damage.
+    [T] HPCHANGE Risa Redcloak: 149 → 129  (-20)
+  Risa Redcloak loses -10 Attack for 2 rounds.
+[Queued] Risa Redcloak: Swap with Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Drown in the Loch → Lady of Reflections
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Reynard, Lupine Trickster
+Risa Redcloak and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Lady of Reflections
+Lady of Reflections uses Drown in the Loch on Lady of Reflections.
+  Lady of Reflections takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=45 raw=86.67 ceil=87
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 178 → 142  (-36)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=129/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=142/205 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=129/250 ATK=65(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=142/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Drown in the Loch → Lady of Reflections
+[Queued] Risa Redcloak: Blood Hunt → Lady of Reflections
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Lady of Reflections
+Lady of Reflections uses Drown in the Loch on Lady of Reflections.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=40 def=85 raw=18.82 ceil=19
+    [T]   FINAL_DMG=26
+  Lady of Reflections takes 26 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 229  (-26)
+  Reflecting Pool: Lady of Reflections takes 3 reflected damage.
+  Lady of Reflections takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: Blood Hunt → Lady of Reflections
+Risa Redcloak uses Blood Hunt on Lady of Reflections.
+  Blood Hunt: Risa Redcloak and Lady of Reflections HP set to 179.
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Lady of Reflections[front] HP=179/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=179/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=252/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=142/205 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] DEBUFF_EXPIRED Risa Redcloak: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=179/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=179/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=252/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=142/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lady of Reflections: Journey to Avalon → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Journey to Avalon → Lady of Reflections
+Lady of Reflections uses Journey to Avalon on Lady of Reflections.
+  Lady of Reflections sacrifices herself (Journey to Avalon).
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 11)
+────────────────────────────────────────────────────────────
+Player 2 wins!

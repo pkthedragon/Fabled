@@ -1,0 +1,477 @@
+Battle 522
+Player 1 Team: Double Ranger Pressure
+Player 2 Team: Ranger-Rogue Kill Chain
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:21:02
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 522
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Double Ranger Pressure
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Ranger-Rogue Kill Chain
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[[Queued] Frederic the Beastslayer: Hunter'[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Lucky Constantine: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=112
+  Frederic the Beastslayer takes 112 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 88  (-112)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=69
+  Frederic the Beastslayer takes 69 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 88 → 19  (-69)
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Frederic the Beastslayer
+Lucky Constantine and Frederic the Beastslayer swap positions.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Hawkshot → Lucky Constantine
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=113
+  Lucky Constantine takes 113 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 102  (-113)
+  Lucky Constantine is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+    [T] HPCHANGE Lucky Constantine: 102 → 32  (-70)
+  Lucky Constantine gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Hawkshot → Lucky Constantine
+Robin, Hooded Avenger uses Hawkshot on Lucky Constantine.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=77
+  Lucky Constantine takes 77 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[root(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+  Curse of Sleeping: Lucky Constantine loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[Queued] Frederic the Beastsl[Queued] Lucky Constantine: Swap with Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Briar Rose
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+Lucky Constantine cannot act.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Briar Rose
+Robin, Hooded Avenger uses Hawkshot on Briar Rose.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Briar Rose[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Briar Rose takes 79 damage.
+    [T] HPCHANGE Briar Rose: 195 → 116  (-79)
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=44
+  Robin, Hooded Avenger takes 44 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 141  (-44)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Lucky Constantine
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=123
+  Lucky Constantine takes 123 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-123) **KO**
+  Lucky Constantine is Marked — takes +10 damage next round.
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Lucky Constantine
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Hunter's Mark → Lucky Constantine
+Robin, Hooded Avenger's target is no longer legal — Hunter's Mark fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=141/185 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=116/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=141/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=116/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Robin, Hooded Avenger
+Frederic the Beastslayer and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Robin, Hooded Avenger
+Briar Rose uses Creeping Doubt on Robin, Hooded Avenger.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Robin, Hooded Avenger takes 70 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 115  (-70)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=86
+  Frederic the Beastslayer takes 86 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 114  (-86)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=123
+  Robin, Hooded Avenger takes 123 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 141 → 18  (-123)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=87
+  Robin, Hooded Avenger takes 87 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 18 → 0  (-87) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+Frederic the Beastslayer moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=116/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=114/200 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=115/185 statuses=[root(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+  Curse of Sleeping: Robin, Hooded Avenger loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=116/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=114/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky [Queued] Robin, Hooded Avenger: Swap with Frederic the Beastslayer
+[Queued] Briar Rose: Skip
+[Queued] Frederic the Beastslayer: On the Hunt → Porcus III
+    [T] ACTION P1 Robin, Hooded Avenger[front]: swap ↔ Frederic the Beastslayer
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Briar Rose[back_right]: skip/recharge
+Briar Rose recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: On the Hunt → Porcus III
+Frederic the Beastslayer uses On the Hunt on Porcus III.
+    [T] DMGCALC [Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=9[Queued] Porcus III: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Lake's Gift → Porcus III
+    [T] ACTION P2 Porcus III[front]: swap ↔ Lady of Reflections
+Porcus III and Lady of Reflections swap positions.
+    [T] ACTION P2 Lady of Reflections[front]: Lake's Gift → Porcus III
+Lady of Reflections uses Lake's Gift on Porcus III.
+  Porcus III gains Reflecting Pool for 2 rounds.
+  Porcus III gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=118/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=140/185 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=172/195 statuses=[-]
+    [T]   P2 Porcus III[back_right] HP=235/280 statuses=[guard(1r), expose(2r), reflecting_pool(2r)]
+    [T]   P2 Aldric, Lost Lamb [KO]
+    [T]   P2 Lady of Reflections[front] HP=181/255 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_TICK Porcus III: reflecting_pool → 1r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+Lady of Reflections is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=118/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=140/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=172/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=235/280 ATK=45(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[expose(1r), reflecting_pool(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Aldric, Lost Lamb [KO]
+    [T]   P2 Lady of Reflections[front] HP=181/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+] Briar Rose: Skip
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Briar Rose
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Briar Rose[back_right]: skip/recharge
+Briar Rose recharges.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+[Queued] Robin, Hooded Avenger: Swap with Frederic the Beastslayer
+Frederic the Beastslayer cannot act.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Frederic the Beastslayer
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=116/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=40/200 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=21/185 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=116/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=40/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=21/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Briar Rose
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Briar Rose
+Frederic the Beastslayer uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Briar Rose[back_right]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=84
+  Briar Rose takes 84 damage.
+    [T] HPCHANGE Briar Rose: 116 → 32  (-84)
+  Briar Rose is Marked — takes +10 damage next round.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Briar Rose
+Robin, Hooded Avenger uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Briar Rose[back_right]
+    [T]   power=25
+    [T]   atk=77 def=45 raw=42.78 ceil=43
+    [T]   FINAL_DMG=53
+  Briar Rose takes 53 damage.
+    [T] HPCHANGE Briar Rose: 32 → 0  (-53) **KO**
+  Briar Rose is Marked — takes +10 damage next round.
+[Queued] Frederic the Beastslayer: Slay the Beast → Robin, Hooded Avenger
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Robin, Hooded Avenger
+Frederic the Beastslayer uses Slay the Beast on Robin, Hooded Avenger.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Robin, Hooded Avenger takes 122 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 21 → 0  (-122) **KO**
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=40/200 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=19/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=40/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=112
+  Frederic the Beastslayer takes 112 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 40 → 0  (-112) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 1 wins!

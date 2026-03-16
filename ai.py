@@ -145,6 +145,15 @@ def status_already_present(target, kind):
     return target.has_status(kind)
 
 
+def flat_damage_rider_bonus(target):
+    bonus = 0
+    if target.ability_charges.get("hunters_mark_active", 0) > 0:
+        bonus += 10
+    if target.ability_charges.get("drown_bonus_dur", 0) > 0:
+        bonus += 7
+    return bonus
+
+
 def apply_damage_modifiers(dmg, source, target, battle):
     if dmg <= 0:
         return 0
@@ -156,8 +165,7 @@ def apply_damage_modifiers(dmg, source, target, battle):
         dmg = math.ceil(dmg * 1.20)
     if target.has_status("guard"):
         dmg = math.ceil(dmg * 0.80)
-    if target.has_status("bonus_damage"):
-        dmg += 7
+    dmg += flat_damage_rider_bonus(target)
     if source.defn.id == "robin_hooded_avenger" and target.slot != SLOT_FRONT:
         dmg += 10
     if source.defn.id == "lucky_constantine" and target.slot != SLOT_FRONT:
@@ -267,6 +275,45 @@ def estimate_repentance_rider(actor, ability, target, battle):
     return 10.0 + followup_attack * 0.08
 
 
+def estimate_damage_rider_value(actor, ability, target, battle):
+    if target is None:
+        return 0.0
+    if ability.id == "hunters_mark":
+        return 14.0 + estimate_threat(target, battle, 1 if actor in battle.team1.members else 2) * 0.05
+    if ability.id == "drown_in_the_loch":
+        return 12.0
+    return 0.0
+
+
+def estimate_refresh_or_extension_value(actor, ability, target, battle):
+    player_num = 1 if actor in battle.team1.members else 2
+    if ability.id == "golden_snare" and target is not None and target.has_status("root"):
+        return 12.0 + estimate_threat(target, battle, player_num) * 0.05
+    if ability.id == "vile_sabbath" and target is not None:
+        value = 0.0
+        for status in target.statuses:
+            if status.duration > 0 and is_rulebook_status_condition(status.kind):
+                value += 5.0
+        if target.last_status_inflicted and is_rulebook_status_condition(target.last_status_inflicted):
+            value += 6.0
+        return value
+    if ability.id == "falling_kingdom":
+        value = 0.0
+        for enemy_unit in battle.get_enemy(player_num).alive():
+            if enemy_unit.has_status("root"):
+                value += 12.0 + estimate_status_value("weaken", actor, enemy_unit, battle) * 0.4
+            else:
+                value += estimate_status_value("root", actor, enemy_unit, battle) * 0.7
+        return value
+    if ability.id == "cauldron_bubble" and target is not None:
+        return sum(
+            4.0
+            for status in target.statuses
+            if status.duration > 0 and is_rulebook_status_condition(status.kind)
+        )
+    return 0.0
+
+
 def focus_fire_status_bonus(target):
     if target is None:
         return 0.0
@@ -278,11 +325,12 @@ def focus_fire_status_bonus(target):
         "weaken": 4.0,
         "spotlight": 4.0,
         "no_heal": 6.0,
-        "bonus_damage": 5.0,
         "burn": 3.0,
     }.items():
         if target.has_status(kind):
             bonus += value
+    if flat_damage_rider_bonus(target) > 0:
+        bonus += 5.0
     return min(bonus, 14.0)
 
 
@@ -336,7 +384,7 @@ def composition_plan_bonus(battle, player_num, actor, action):
             if already_rooted and not target.has_status("root") and estimate_ko_chance_or_certainty(actor, ability, target, battle) < 1.0:
                 score -= 6.0
 
-        if target is not None and has_collapse_shell and (target.has_status("expose") or target.has_status("bonus_damage") or target.has_status("spotlight")):
+        if target is not None and has_collapse_shell and (target.has_status("expose") or flat_damage_rider_bonus(target) > 0 or target.has_status("spotlight")):
             score += 8.0
 
         if "matchstick_liesl" in team_ids and aid == "cauterize" and target is not None:
@@ -359,7 +407,7 @@ def composition_plan_bonus(battle, player_num, actor, action):
             if aid == "blood_pact":
                 dangerous = actor.hp <= 90 or any(ally.hp / max(1, ally.max_hp) < 0.35 for ally in battle.get_team(player_num).alive())
                 score += -10.0 if dangerous else 4.0
-            if target is not None and (target.has_status("expose") or target.has_status("bonus_damage")):
+            if target is not None and (target.has_status("expose") or flat_damage_rider_bonus(target) > 0):
                 score += 6.0
 
     if "pinocchio" in team_ids and actor.defn.id == "pinocchio" and action.get("type") == "swap" and actor.slot == SLOT_FRONT:
@@ -800,6 +848,8 @@ def evaluate_immediate_resolution(before, after, player_num, actor, action):
             for status in (mode.status, mode.status2, mode.status3):
                 score += estimate_status_value(status, actor, target, before)
             score += estimate_repentance_rider(actor, action["ability"], target, before)
+            score += estimate_damage_rider_value(actor, action["ability"], target, before)
+            score += estimate_refresh_or_extension_value(actor, action["ability"], target, before)
         score -= redundant_status_penalty(before, player_num, actor, action)
         if mode.spread:
             legal_targets = get_legal_targets(before, player_num, actor, action["ability"])
@@ -925,6 +975,8 @@ def fast_pre_score(action, battle, player_num, actor):
             for status in (mode.status, mode.status2, mode.status3):
                 score += estimate_status_value(status, actor, target, battle)
             score += estimate_repentance_rider(actor, ability, target, battle)
+            score += estimate_damage_rider_value(actor, ability, target, battle)
+            score += estimate_refresh_or_extension_value(actor, ability, target, battle)
             if not target.acted:
                 score += 8.0
         score -= redundant_status_penalty(battle, player_num, actor, action)

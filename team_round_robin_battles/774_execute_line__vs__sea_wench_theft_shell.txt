@@ -1,0 +1,702 @@
+Battle 774
+Player 1 Team: Execute Line
+Player 2 Team: Sea Wench Theft Shell
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:51:09
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 774
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P1 Little Jack[front]: Skyfall → Sir Roland
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=97
+  Sir Roland takes 97 damage.
+    [T] HPCHANGE Sir Roland: 265 → 168  (-97)
+    [T] ACTION P1 Lucky Constantine[back_right]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Little Jack
+[Queued] Sea Wench Asha: Misappropriate → Lucky Constantine
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+  Banner of Command: Robin, Hooded Avenger is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Little Jack
+Robin, Hooded Avenger uses Snipe Shot on Little Jack.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Little Jack[front]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=101
+  Little Jack takes 101 damage.
+    [T] HPCHANGE Little Jack: 220 → 119  (-101)
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Lucky Constantine
+Sea Wench Asha uses Misappropriate on Lucky Constantine.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Lucky Constantine[back_left]
+    [T]   power=35
+    [T]   atk=82 def=40 raw=71.75 ceil=72
+    [T]   FINAL_DMG=72
+  Lucky Constantine takes 72 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 143  (-72)
+  Lucky Constantine gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=119/220 statuses=[-]
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=143/215 statuses=[root(2r)]
+    [T]   P2 Sir Roland[back_right] HP=168/265 statuses=[expose(2r)]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[guard(2r)]
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=119/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=143/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=168/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Lucky Constantine
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Little Jack
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Lucky Constantine
+Robin, Hooded Avenger uses Snipe Shot on Lucky Constantine.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Lucky Constantine[back_left]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=134
+  Lucky Constantine takes 134 damage.
+    [T] HPCHANGE Lucky Constantine: 143 → 9  (-134)
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Little Jack
+Sea Wench Asha uses Misappropriate on Little Jack.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=82 def=50 raw=57.40 ceil=58
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 119 → 61  (-58)
+  Little Jack gains root for 2 rounds.
+[Queued] Little Jack: Skyfall → Robin, Hooded Avenger
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Sir Roland
+    [T] ACTION P1 Little Jack[front]: Skyfall → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Little Jack uses Skyfall on Robin, Hooded Avenger.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=80
+    [T]   atk=80 def=40 raw=160.00 ceil=160
+    [T]   FINAL_DMG=138
+  Robin, Hooded Avenger takes 138 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 47  (-138)
+    [T] ACTION P1 Risa Redcloak[back_right]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P1 Lucky Constantine[back_left]: Sucker Punch → Sir Roland
+Lucky Constantine uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[back_right] HP=61/220 statuses=[root(2r)]
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=9/215 statuses=[root(1r)]
+    [T]   P2 Sir Roland[back_left] HP=168/265 statuses=[expose(1r), weaken(2r)]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=47/185 statuses=[guard(1r)]
+    [T] STATUS_TICK Little Jack: root → 1r left
+    [T] STATUS_TICK Lucky Constantine: root → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: root
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=61/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=9/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=168/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=47/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Little Jack
+[Queued] Sea Wench Asha: Misappropriate → Risa Redcloak
+[Queued] Sir Roland: Item Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Little Jack
+Robin, Hooded Avenger uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Little Jack[back_right]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=80
+  Little Jack takes 80 damage.
+    [T] HPCHANGE Little Jack: 61 → 0  (-80) **KO**
+  Little Jack is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Risa Redcloak
+Sea Wench Asha uses Misappropriate on Risa Redcloak.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Risa Redcloak[front]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Risa Redcloak takes 48 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 202  (-48)
+  Risa Redcloak gains root for 2 rounds.
+  Sea Wench Asha must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Robin, Hooded Avenger
+Sir Roland uses Crafty Shield.
+  Robin, Hooded Avenger is Guarded.
+[Queued] Risa Redcloak: Feint → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Robin, Hooded Avenger
+Risa Redcloak uses Feint on Robin, Hooded Avenger.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=75 def=40 raw=84.38 ceil=85
+    [T]   FINAL_DMG=68
+  Robin, Hooded Avenger takes 68 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 47 → 0  (-68) **KO**
+  Risa Redcloak heals 5 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Lucky Constantine[back_left]: swap ↔ Risa Redcloak
+Lucky Constantine and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=207/250 statuses=[root(2r)]
+    [T]   P1 Lucky Constantine[front] HP=9/215 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=168/265 statuses=[weaken(1r)]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: root → 1r left
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=207/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[root(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=9/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=168/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Lucky Constantine[front]: swap ↔ Risa Redcloak
+Lucky Constantine and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Sir Roland after swapping to front.
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=10
+  Sir Roland takes 10 damage.
+    [T] HPCHANGE Sir Roland: 168 → 158  (-10)
+  Risa Redcloak heals 1 HP.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Skip
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[front]: skip/recharge
+Sea Wench Asha recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[front] HP=208/250 statuses=[root(1r)]
+    [T]   P1 Lucky Constantine[back_left] HP=9/215 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=158/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: root → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: root
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[front] HP=208/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=9/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=158/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [1/6]
+    [T] DMGCALC [Blood Hunt] Sea Wench Asha[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Risa Redcloak takes 75 damage.
+    [T] HPCHANGE Risa Redcloak: 208 → 133  (-75)
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Sea Wench Asha
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Sea Wench Asha
+Lucky Constantine uses Post Bounty on Sea Wench Asha.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=51
+  Sea Wench Asha takes 51 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 159  (-51)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [2/6]
+  Sea Wench Asha gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=133/250 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=9/215 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=158/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=159/210 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_TICK Sea Wench Asha: expose → 1r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sea Wench Asha spd=65  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=133/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=9/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=158/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=159/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Sucker Punch → Sea Wench Asha
+[Queued] Risa Redcloak: Blood Hunt → Sea Wench Asha
+    [T] ACTION P1 Lucky Constantine[front]: Sucker Punch → Sea Wench Asha
+Lucky Constantine uses Sucker Punch on Sea Wench Asha.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Sea Wench Asha[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=113
+  Sea Wench Asha takes 113 damage.
+    [T] HPCHANGE Sea Wench Asha: 159 → 46  (-113)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [3/6]
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Sea Wench Asha
+Risa Redcloak uses Blood Hunt on Sea Wench Asha.
+  Blood Hunt: Risa Redcloak and Sea Wench Asha HP set to 89.
+[Queued] Sea Wench Asha: Swap with Sir Roland
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: swap ↔ Sir Roland
+Sea Wench Asha and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=89/250 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=9/215 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=158/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[back_right] HP=89/210 statuses=[expose(1r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: expose → 0r left
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_EXPIRED Sea Wench Asha: expose
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=89/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=9/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=158/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=89/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Feline Gambit → Sir Roland
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Sir Roland
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [4/6]
+Lucky Constantine uses Feline Gambit on Sir Roland.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=70 def=90 raw=35.00 ceil=35
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 158 → 149  (-9)
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Sir Roland
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [5/6]
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 119.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Sea Wench Asha: Misappropriate → Lucky Constantine
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Lucky Constantine
+Sea Wench Asha uses Misappropriate on Lucky Constantine.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Lucky Constantine[front]
+    [T]   power=35
+    [T]   atk=82 def=40 raw=71.75 ceil=72
+    [T]   FINAL_DMG=72
+  Lucky Constantine takes 72 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  Lucky Constantine gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=119/250 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 statuses=[root(2r)]
+    [T]   P2 Sir Roland[front] HP=119/265 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha[back_right] HP=89/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[back_left] HP=119/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=119/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=89/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Sucker Punch → Sir Roland
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P1 Lucky Constantine[front]: Sucker Punch → Sir Roland
+Lucky Constantine uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Sir Roland[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=90 raw=46.67 ceil=47
+    [T]   FINAL_DMG=46
+  Sir Roland takes 46 damage.
+    [T] HPCHANGE Sir Roland: 119 → 73  (-46)
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Risa Redcloak
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Risa Redcloak
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [4/6]
+    [T] DMGCALC [Blood Hunt] Sea Wench Asha[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Risa Redcloak takes 75 damage.
+    [T] HPCHANGE Risa Redcloak: 119 → 44  (-75)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[front] HP=44/250 statuses=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=1/215 statuses=[root(1r)]
+    [T]   P2 Sir Roland[back_right] HP=73/265 statuses=[expose(1r), guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=89/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] STATUS_TICK Lucky Constantine: root → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: root
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak[front] HP=44/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=73/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=89/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Risa Redcloak
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Risa Redcloak
+Sea Wench Asha uses Dark Grasp on Risa Redcloak.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Risa Redcloak takes 63 damage.
+    [T] HPCHANGE Risa Redcloak: 44 → 0  (-63) **KO**
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [5/6]
+Lucky Constantine moves to frontline.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lucky Constantine: Post Bounty → Sea Wench Asha
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Sea Wench Asha
+Lucky Constantine uses Post Bounty on Sea Wench Asha.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=51
+  Sea Wench Asha takes 51 damage.
+    [T] HPCHANGE Sea Wench Asha: 89 → 38  (-51)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [6/6]
+  Sea Wench Asha gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=73/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=38/210 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_TICK Sea Wench Asha: expose → 1r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sea Wench Asha spd=65  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=73/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=38/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Feline Gambit → Sea Wench Asha
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Sea Wench Asha
+Lucky Constantine uses Feline Gambit on Sea Wench Asha.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Sea Wench Asha[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=54
+  Sea Wench Asha takes 54 damage.
+    [T] HPCHANGE Sea Wench Asha: 38 → 0  (-54) **KO**
+Sir Roland moves to frontline.
+[Queued] Sir Roland: Shield Bash → Lucky Constantine
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Lucky Constantine takes 40 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-40) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 2 wins!

@@ -1,0 +1,412 @@
+Battle 555
+Player 1 Team: Ranger-Rogue Kill Chain
+Player 2 Team: Gretel Tempo Kill
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:22:59
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 555
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Ranger-Rogue Kill Chain
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Gretel Tempo Kill
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     [Queued] Frederic the Beastslayer: Hunter's Mark → Risa Redcl[Queued] Witch-Hunter Gretel: Shove Over → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Post Bounty → Frederic the Beastslayer
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Frederic the Beastslayer
+Witch-Hunter Gretel uses Shove Over on Frederic the Beastslayer.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=128
+  Frederic the Beastslayer takes 128 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 72  (-128)
+  Frederic the Beastslayer gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hawkshot on Robin, Hooded Avenger.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=87
+  Robin, Hooded Avenger takes 87 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 98  (-87)
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Frederic the Beastslayer
+Lucky Constantine uses Post Bounty on Frederic the B[Queued] Little Jack: Skyfall → Frederic the Beastslayer
+    [T] [Queued] Frederic the Beastslayer: Swap with Lucky Constantine
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch-Hunter Gretel
+[Queued] Lucky Constantine: Post Bounty → Witch-Hunter Gretel
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Lucky Constantine
+Frederic the Beastslayer and Lucky Constantine swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hawkshot on Witch-Hunter Gretel.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=69
+  Witch-Hunter Gretel takes 69 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 146  (-69)
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=63
+  Witch-Hunter Gretel takes 63 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 146 → 83  (-63)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=72/200 statuses=[weaken(2r), expose(2r)]
+    [T]   P1 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=98/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=83/215 statuses=[expose(2r)]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=72/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r), expose(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=98/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=83/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Post Bounty → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch-Hunter Gretel[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] Robin, Hooded Avenger: Hawkshot → Risa Redcloak
+[Queued] Lucky Constantine: Sucker Punch → Risa Redcloak
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[back_left]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Little Jack takes 75 damage.
+    [T] HPCHANGE Little Jack: 220 → 145  (-75)
+  Little Jack is Marked — takes +10 damage next round.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Risa Redcloak
+Robin, Hooded Avenger uses Hawkshot on Risa Redcloak.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Risa Redcloak[back_right]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=83
+  Risa Redcloak takes 83 damage.
+    [T] HPCHANGE Risa Redcloak: 63 → 0  (-83) **KO**
+    [T] ACTION P1 Lucky Constantine[back_left]: Sucker Punch → Risa Redcloak
+Lucky Constantine's target is no longer legal — Sucker Punch fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[front] HP=63/200 statuses=[expose(1r)]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack[back_left] HP=145/220 statuses=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: expose
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=63/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=145/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Frederic the Beastslayer
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Frederic the Beastslayer
+Little Jack uses Skyfall on Frederic the Beastslayer.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Frederic the Beastslayer[front]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=168
+  Frederic the Beastslayer takes 168 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 63 → 0  (-168) **KO**
+Lucky Constantine moves to frontline.
+[Queued] Lucky Constantine: Feline Gambit → Little Jack
+[Queued] Robin, Hooded Avenger: Snipe Shot → Little Jack
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Little Jack
+Lucky Constantine uses Feline Gambit on Little Jack.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=70 def=50 raw=63.00 ceil=63
+    [T]   FINAL_DMG=73
+  Little Jack takes 73 damage.
+    [T] HPCHANGE Little Jack: 145 → 72  (-73)
+  Little Jack gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Little Jack
+Robin, Hooded Avenger uses Snipe Shot on Little Jack.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=85
+  Little Jack takes 85 damage.
+    [T] HPCHANGE Little Jack: 72 → 0  (-85) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+Lucky Constantine moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Swap with Lucky Constantine
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Lucky Constantine
+Lucky Constantine uses Feline Gambit on Lucky Constantine.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=79
+  Lucky Constantine takes 79 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 136  (-79)
+  Lucky Constantine gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Lucky Constantine
+Robin, Hooded Avenger recharges.
+[Queued] Lucky Constantine: Feline Gambit → Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Lucky Constantine
+Lucky Constantine uses Feline Gambit on Lucky Constantine.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=79
+  Lucky Constantine takes 79 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 136  (-79)
+  Lucky Constantine gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Lucky Constantine[front] HP=136/215 statuses=[expose(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=136/215 statuses=[expose(2r)]
+    [T] STATUS_TICK Lucky Constantine: expose → 1r left
+    [T] STATUS_TICK Lucky Constantine: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Lucky Constantine[front] HP=136/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=136/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Sucker Punch → Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Lucky Constantine
+Lucky Constantine uses Sucker Punch on Lucky Constantine.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=40 raw=105.00 ceil=105
+    [T]   FINAL_DMG=126
+  Lucky Constantine takes 126 damage.
+    [T] HPCHANGE Lucky Constantine: 136 → 10  (-126)
+=Lucky Constantine spd=75  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=11/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=136/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=87/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Subterfuge → Lucky Constantine ↔ Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Subterfuge → Lucky Constantine
+Lucky Constantine uses Subterfuge on Lucky Constantine.
+    [T] DMGCALC [Subterfuge] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=106
+  Lucky Constantine takes 106 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-106) **KO**
+Lucky Constantine and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Lucky Constantine
+Robin, Hooded Avenger's target is no longer legal — Hunter's Mark fizzles.
+[Queued] Robin, Hooded Avenger: Kingmaker → Lucky Constantine
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Kingmaker → Lucky Constantine
+Robin, Hooded Avenger uses Kingmaker on Lucky Constantine.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Lucky Constantine[front]
+    [T]   power=70
+    [T]   atk=70 def=40 raw=122.50 ceil=123
+    [T]   FINAL_DMG=148
+  Lucky Constantine takes 148 damage.
+    [T] HPCHANGE Lucky Constantine: 136 → 0  (-148) **KO**
+Robin, Hooded Avenger moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=11/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=87/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=11/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=87/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=88
+  Robin, Hooded Avenger takes 88 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 87 → 0  (-88) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 1 wins!

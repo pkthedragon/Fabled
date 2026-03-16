@@ -1,0 +1,1132 @@
+Battle 307
+Player 1 Team: Shock Punish
+Player 2 Team: Brawler Punish
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:02:15
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 307
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shock Punish
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Tempus Fugit  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Brawler Punish
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 265 → 215  (-50)
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lady of Reflections[back_left]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Swap with March Hare
+[Queued] March Hare: Thunder Call → Risa Redcloak
+[Queued] Hunold the Piper: Sucker Punch → Reynard, Lupine Trickster
+    [T] ACTION P1 Sir Roland[front]: swap ↔ March Hare
+Sir Roland and March Hare swap positions.
+  Banner of Command: March Hare is Guarded.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Risa Redcloak
+March Hare uses Thunder Call on Risa Redcloak.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Risa Redcloak[back_right]
+    [T]   power=65
+    [T]   atk=70 def=60 raw=75.83 ceil=76
+    [T]   FINAL_DMG=76
+  Risa Redcloak takes 76 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 174  (-76)
+  Risa Redcloak gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Reynard, Lupine Trickster
+Hunold the Piper uses Sucker Punch on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_right] HP=215/265 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 March Hare[front] HP=190/190 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 statuses=[shock(2r)]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=205/205 statuses=[weaken(2r)]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK March Hare: guard → 1r left
+    [T] STATUS_TICK Risa Redcloak: shock → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Reynard, Lupine Trickster spd=60 (MH adj from 75)  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=215/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Arcane Wave → Risa Redcloak
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Hunold the Piper: Swap with Sir Roland
+    [T] ACTION P1 March Hare[front]: Arcane Wave → Risa Redcloak
+March Hare uses Arcane Wave on Risa Redcloak.
+    [T] DMGCALC [Arcane Wave] March Hare[front] → Risa Redcloak[back_right]
+    [T]   power=80
+    [T]   atk=70 def=60 raw=93.33 ceil=94
+    [T]   FINAL_DMG=109
+  Risa Redcloak takes 109 damage.
+    [T] HPCHANGE Risa Redcloak: 174 → 65  (-109)
+  March Hare has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Hunold the Piper[back_left]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Blood Hunt → March Hare
+[Queued] Lady of Reflections: Drown in the Loch → March Hare
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → March Hare
+Risa Redcloak uses Blood Hunt on March Hare.
+  Blood Hunt: Risa Redcloak and March Hare HP set to 127.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → March Hare
+Lady of Reflections uses Drown in the Loch on March Hare.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=40 def=25 raw=64.00 ceil=64
+    [T]   FINAL_DMG=52
+  March Hare takes 52 damage.
+    [T] HPCHANGE March Hare: 127 → 75  (-52)
+  March Hare takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[back_left] HP=215/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 statuses=[guard(2r)]
+    [T]   P1 March Hare[front] HP=75/190 statuses=[guard(1r)]
+    [T]   P2 Risa Redcloak[back_right] HP=127/250 statuses=[shock(1r)]
+    [T]   P2 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 statuses=[weaken(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_TICK March Hare: guard → 0r left
+    [T] STATUS_EXPIRED March Hare: guard
+    [T] STATUS_TICK Risa Redcloak: shock → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: shock
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Lady of Reflections spd=17 (MH adj from 32)  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=215/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=75/190 ATK=60(base=70) DEF=25(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Risa Redcloak[back_right] HP=127/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Risa Redcloak
+[Queued] Hunold the Piper: Sucker Punch → Lady of Reflections
+[Queued] Sir Roland: Item March Hare
+    [T] ACTION P1 March Hare[front]: Thunder Call → Risa Redcloak
+March Hare uses Thunder Call on Risa Redcloak.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Risa Redcloak[back_right]
+    [T]   power=65
+    [T]   atk=60 def=60 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Risa Redcloak takes 65 damage.
+    [T] HPCHANGE Risa Redcloak: 127 → 62  (-65)
+  Risa Redcloak gains shock for 2 rounds.
+  March Hare must recharge next turn.
+    [T] ACTION P1 Hunold the Piper[back_right]: Sucker Punch → Lady of Reflections
+Hunold the Piper uses Sucker Punch on Lady of Reflections.
+  Lady of Reflections gains weaken for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_left]: item [Crafty Shield] → March Hare
+Sir Roland uses Crafty Shield.
+  March Hare is Guarded.
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → March Hare
+[Queued] Reynard, Lupine Trickster: Riposte → March Hare
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → March Hare
+Risa Redcloak uses Blood Hunt on March Hare.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → March Hare[front]
+    [T]   power=60
+    [T]   atk=75 def=25 raw=180.00 ceil=180
+    [T]   FINAL_DMG=151
+  March Hare takes 151 damage.
+    [T] HPCHANGE March Hare: 75 → 0  (-151) **KO**
+  Shock recoil: Risa Redcloak takes 31 damage.
+  Risa Redcloak heals 61 HP.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: Riposte → March Hare
+Reynard, Lupine Trickster's target is no longer legal — Riposte fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[front] HP=215/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 statuses=[guard(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[front] HP=92/250 statuses=[shock(2r)]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 statuses=[weaken(2r)]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+    [T] STATUS_TICK Risa Redcloak: shock → 1r left
+    [T] STATUS_TICK Lady of Reflections: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Risa Redcloak spd=45  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=215/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[front] HP=92/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Lady of Reflections
+Risa Redcloak and Lady of Reflections swap positions.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 215 → 211  (-4)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Lady of Reflections
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Lady of Reflections
+Hunold the Piper uses Sucker Punch on Lady of Reflections.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=38
+  Lady of Reflections takes 38 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 217  (-38)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Reflecting Pool: Hunold the Piper takes 4 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=211/265 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=196/210 statuses=[guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=92/250 statuses=[shock(1r)]
+    [T]   P2 Lady of Reflections[front] HP=217/255 statuses=[weaken(1r)]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_TICK Risa Redcloak: shock → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: shock
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] STATUS_TICK Lady of Reflections: weaken → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=211/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=196/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=92/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=217/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Lady of Reflections
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Lady of Reflections
+Hunold the Piper uses Dying Dance on Lady of Reflections.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=38
+  Lady of Reflections takes 38 damage.
+    [T] HPCHANGE Lady of Reflections: 217 → 179  (-38)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Reflecting Pool: Hunold the Piper takes 4 reflected damage.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Hunold the Piper
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Hunold the Piper
+Risa Redcloak uses Blood Hunt on Hunold the Piper.
+  Blood Hunt: Risa Redcloak and Hunold the Piper HP set to 137.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 175  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=211/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper[front] HP=137/210 statuses=[guard(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=137/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=179/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=211/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=137/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=137/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=179/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Hunold the Piper
+[Queued] Risa Redcloak: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Drown in the Loch → Hunold the Piper
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Hunold the Piper
+Reynard, Lupine Trickster uses Riposte on Hunold the Piper.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Hunold the Piper[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=52
+  Hunold the Piper takes 52 damage.
+    [T] HPCHANGE Hunold the Piper: 137 → 85  (-52)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Lady of Reflections
+Risa Redcloak and Lady of Reflections swap positions.
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Hunold the Piper
+Lady of Reflections uses Drown in the Loch on Hunold the Piper.
+  Hunold the Piper takes +7 damage from all sources for 2 rounds.
+[Queued] Hunold the Piper: Dying Dance → Reynard, Lupine Trickster
+[Queued] Sir Roland: Item Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Reynard, Lupine Trickster
+Hunold the Piper uses Dying Dance on Reynard, Lupine Trickster.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=28
+  Reynard, Lupine Trickster takes 28 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 175 → 147  (-28)
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Hunold the Piper
+Sir Roland uses Crafty Shield.
+  Hunold the Piper is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[back_right] HP=211/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper[front] HP=85/210 statuses=[guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=137/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=179/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=211/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=85/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=137/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=179/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Hunold the Piper
+[Queued] Lady of Reflections: Drown in the Loch → Hunold the Piper
+[Queued] Risa Redcloak: Swap with Lady of Reflections
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Hunold the Piper
+Reynard, Lupine Trickster uses Riposte on Hunold the Piper.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Hunold the Piper[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=48
+  Hunold the Piper takes 48 damage.
+    [T] HPCHANGE Hunold the Piper: 85 → 37  (-48)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Hunold the Piper
+Lady of Reflections uses Drown in the Loch on Hunold the Piper.
+  Hunold the Piper takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lady of Reflections
+Risa Redcloak and Lady of Reflections swap positions.
+[Queued] Hunold the Piper: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=211/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper[back_right] HP=37/210 statuses=[guard(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=137/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=179/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=211/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=37/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=137/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=179/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 174.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 174 → 170  (-4)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Lady of Reflections
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Lady of Reflections
+Hunold the Piper uses Sucker Punch on Lady of Reflections.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=75 raw=32.00 ceil=32
+    [T]   FINAL_DMG=22
+  Lady of Reflections takes 22 damage.
+    [T] HPCHANGE Lady of Reflections: 179 → 157  (-22)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Reflecting Pool: Hunold the Piper takes 3 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[back_right] HP=170/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper[front] HP=24/210 statuses=[guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=157/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=170/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=24/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=157/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=85 raw=34.41 ceil=35
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 170 → 161  (-9)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=161/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper[back_right] HP=24/210 statuses=[guard(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=157/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: guard → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: guard
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=161/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=24/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=157/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+    [T]   FINAL_DMG=15
+  Sir Roland takes 15 damage.
+    [T] HPCHANGE Sir Roland: 161 → 146  (-15)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Lady of Reflections
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Lady of Reflections
+Hunold the Piper uses Sucker Punch on Lady of Reflections.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=75 raw=32.00 ceil=32
+    [T]   FINAL_DMG=22
+  Lady of Reflections takes 22 damage.
+    [T] HPCHANGE Lady of Reflections: 157 → 135  (-22)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Reflecting Pool: Hunold the Piper takes 3 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[back_right] HP=146/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper[front] HP=11/210 statuses=[guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=135/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=146/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=11/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=135/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Lady of Reflections
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Lady of Reflections
+Hunold the Piper uses Dying Dance on Lady of Reflections.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=38
+  Lady of Reflections takes 38 damage.
+    [T] HPCHANGE Lady of Reflections: 135 → 97  (-38)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Reflecting Pool: Hunold the Piper takes 4 reflected damage.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=85 raw=34.41 ceil=35
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=9
+  Sir Roland takes 9 damage.
+    [T] HPCHANGE Sir Roland: 146 → 137  (-9)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=137/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=97/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=137/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=97/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+    [T]   FINAL_DMG=15
+  Sir Roland takes 15 damage.
+    [T] HPCHANGE Sir Roland: 137 → 122  (-15)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 100 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[front] HP=222/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=97/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lady of Reflections spd=32  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=222/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=97/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 198.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 198 → 158  (-40)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Sir Roland[front] HP=158/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=198/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=97/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=158/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=198/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=97/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+  Risa Redcloak marks Sir Roland — next ability gains +10 Power.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+    [T]   FINAL_DMG=15
+  Sir Roland takes 15 damage.
+    [T] HPCHANGE Sir Roland: 158 → 143  (-15)
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Lady of Reflections
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Lady of Reflections
+Sir Roland uses Shield Bash on Lady of Reflections.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=45 def=75 raw=24.00 ceil=24
+    [T]   FINAL_DMG=14
+  Lady of Reflections takes 14 damage.
+    [T] HPCHANGE Lady of Reflections: 97 → 83  (-14)
+  Spiked Mail! Sir Roland takes 10 damage.
+  Reflecting Pool: Sir Roland takes 2 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Sir Roland[front] HP=131/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=198/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=83/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lady of Reflections spd=32  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=131/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=198/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=83/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Sir Roland
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=75 (base=45)
+    [T]   atk=75 def=90 raw=62.50 ceil=63
+    [T]   FINAL_DMG=70
+  Sir Roland takes 70 damage.
+    [T] HPCHANGE Sir Roland: 131 → 61  (-70)
+  Risa Redcloak heals 5 HP.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Sir Roland[front] HP=61/265 statuses=[guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[front] HP=203/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=83/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=61/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[front] HP=203/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=83/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=147/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=20
+  Risa Redcloak takes 20 damage.
+    [T] HPCHANGE Risa Redcloak: 203 → 183  (-20)
+[Queued] Risa Redcloak: Swap with Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Reynard, Lupine Trickster
+Risa Redcloak and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 147 → 117  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Sir Roland[front] HP=61/265 statuses=[guard(1r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=183/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=83/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=117/205 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=61/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=183/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=83/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=117/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Sir Roland
+[Queued] Risa Redcloak: Rend → Sir Roland
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Sir Roland
+Lady of Reflections uses Drown in the Loch on Sir Roland.
+  Sir Roland takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Sir Roland
+Risa Redcloak uses Rend on Sir Roland.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=90 raw=54.17 ceil=55
+    [T]   FINAL_DMG=62
+  Sir Roland takes 62 damage.
+    [T] HPCHANGE Sir Roland: 61 → 0  (-62) **KO**
+  Risa Redcloak heals 5 HP.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 17)
+────────────────────────────────────────────────────────────
+Player 2 wins!

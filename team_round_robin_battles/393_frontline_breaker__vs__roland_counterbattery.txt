@@ -1,0 +1,1270 @@
+Battle 393
+Player 1 Team: Frontline Breaker
+Player 2 Team: Roland Counterbattery
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:11:25
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 393
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Frontline Breaker
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Belligerence  (passive=True)
+    Basics: Cleave, Strike
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Roland Counterbattery
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Knight's Challenge  (passive=False)
+    Basics: Shield Bash, Stalwart
+    Item:   Spiked Mail
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Little Jack: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Little Jack[front]: swap ↔ Frederic the Beastslayer
+Little Jack and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=80 raw=35.00 ceil=35
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 265 → 233  (-32)
+  Spiked Mail! Frederic the Beastslayer takes 10 damage.
+  Frederic the Beastslayer gains +15 Attack for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=35
+    [T]   atk=45 def=40 raw=39.38 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 145  (-40)
+  Snowkissed Aurora heals Frederic the Beastslayer for 10 HP.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 40 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=104
+  Frederic the Beastslayer takes 104 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 96  (-104)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=233/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 ATK=80(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), attack+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=233/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Snipe Shot on Frederic the Beastslayer.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=113
+  Frederic the Beastslayer takes 113 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 96 → 0  (-113) **KO**
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 32 HP.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+    [T] ACTION P2 Sir Roland[back_left]: Shield Bash → Frederic the Beastslayer
+Sir Roland's target is no longer legal — Shield Bash fizzles.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+[Queued] Little Jack: Cleave → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=45 def=40 raw=56.25 ceil=57
+    [T]   FINAL_DMG=47
+  Robin, Hooded Avenger takes 47 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 138  (-47)
+    [T] ACTION P1 Little Jack[back_right]: Cleave → Robin, Hooded Avenger
+Little Jack uses Cleave on Robin, Hooded Avenger.
+  Little Jack marks Robin, Hooded Avenger — next ability ignores 10% Defense.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=138/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=138/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Little Jack
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Little Jack
+Robin, Hooded Avenger uses Snipe Shot on Little Jack.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Little Jack[back_right]
+    [T]   power=65
+    [T]   atk=56 def=50 raw=72.80 ceil=73
+    [T]   FINAL_DMG=83
+  Little Jack takes 83 damage.
+    [T] HPCHANGE Little Jack: 220 → 137  (-83)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 47 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_left]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+[Queued] Snowkissed Aurora: Swap with Little Jack
+[Queued] Little Jack: Cleave → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Little Jack
+Snowkissed Aurora and Little Jack swap positions.
+    [T] ACTION P1 Little Jack[front]: Cleave → Robin, Hooded Avenger
+Little Jack uses Cleave on Robin, Hooded Avenger.
+    [T] DMGCALC [Cleave] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=80 def=24 raw=150.00 ceil=150
+    [T]   FINAL_DMG=140
+  Robin, Hooded Avenger takes 140 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 45  (-140)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=137/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=45/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=137/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=45/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Sir Roland
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Sir Roland[back_right]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+  Robin, Hooded Avenger is Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Little Jack: Cleave → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Robin, Hooded Avenger
+Little Jack uses Cleave on Robin, Hooded Avenger.
+    [T] DMGCALC [Cleave] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=80 def=26 raw=138.46 ceil=139
+    [T]   FINAL_DMG=102
+  Robin, Hooded Avenger takes 102 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 45 → 0  (-102) **KO**
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[front] HP=192/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=192/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Cleave → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Snowkissed Aurora
+Little Jack uses Cleave on Snowkissed Aurora.
+    [T] DMGCALC [Cleave] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=80 def=39 raw=92.31 ceil=93
+    [T]   FINAL_DMG=102
+  Snowkissed Aurora takes 102 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 123  (-102)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 192 → 160  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack[front] HP=160/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=160/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 60 HP.
+[Queued] Sir Roland: Knight's Challenge → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Snowkissed Aurora
+Sir Roland uses Knight's Challenge on Snowkissed Aurora.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=40 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 201  (-24)
+  Snowkissed Aurora is Taunted for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 statuses=[taunt(2r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=123/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Snowkissed Aurora: taunt → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=123/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 201 → 174  (-27)
+  All allies are Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Little Jack: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=3
+  Sir Roland takes 3 damage.
+    [T] HPCHANGE Sir Roland: 265 → 262  (-3)
+  Spiked Mail! Snowkissed Aurora takes 10 damage.
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Little Jack[back_right]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=214/225 statuses=[taunt(1r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=262/265 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Snowkissed Aurora: taunt → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: taunt
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=214/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 [Queued] Snowkissed Aurora: Heal → Lady of Reflections
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal →[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=52 raw=69.23 ceil=70
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 262 → 204  (-58)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Little Jack
+Snowkissed Aurora and Little Jack swap positions.
+[Queued] Sir Roland: Knight's Challenge → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Snowkissed Aurora
+Sir Roland uses Knight's Challenge on Snowkissed Aurora.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=40 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 214 → 190  (-24)
+  Snowkissed Aurora is Taunted for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Little Jack[back_right] HP=210/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=190/225 statuses=[taunt(2r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=259/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Snowkissed Aurora: taunt → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T] [Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Little Jack: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: On the Hunt → Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 169 → 128  (-41)
+  Snowkissed Aurora heals Frederic the Beastslayer for 50 HP.
+    [T] ACTION P1 Little Jack[back_right]: swap ↔ Frederic the Beastslayer
+Little Jack and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Lady of Reflections
+Frederic the Beastslayer uses On the Hunt on Lady of Reflections.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Lady of Reflections[front]
+    [T]   power=25
+    [T]   atk=70 def=85 raw=20.59 ceil=21
+    [T]   FINAL_DMG=26
+  Lady of Reflections takes 26 damage.
+    [T] HPCHANGE Lady of Reflections: 215 → 189  (-26)
+  Reflecting Pool: Frederic the Beastslayer takes 6 reflected damage.
+  Lady of Reflections gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Lady of Reflections: Item Lady of Reflections
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Frederic the Beastslayer takes 58 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 179 → 121  (-58)
+  Prince Charming must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 185 → 158  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Little Jack[back_left] HP=212/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=158/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=121/200 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=189/255 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=163/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Lady of Reflections: expose → 1r left
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=212/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=158/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=189/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=163/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+ra heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Little Jack[front] HP=181/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=237/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=181/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=237/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=66
+  Sir Roland takes 66 damage.
+    [T] HPCHANGE Sir Roland: 237 → 171  (-66)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+[Queued] Sir Roland: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 171 → 139  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Little Jack[front] HP=139/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=171/265 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=139/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=171/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=52 raw=69.23 ceil=70
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 171 → 113  (-58)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+[Queued] Sir Roland: Knight's Challenge → Little Jack
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Little Jack
+Sir Roland uses Knight's Challenge on Little Jack.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=40 def=50 raw=28.00 ceil=28
+    [T]   FINAL_DMG=28
+  Little Jack takes 28 damage.
+    [T] HPCHANGE Little Jack: 184 → 156  (-28)
+  Little Jack is Taunted for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Little Jack[front] HP=156/220 statuses=[taunt(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=168/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Little Jack: taunt → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=156/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=168/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=66
+  Sir Roland takes 66 damage.
+    [T] HPCHANGE Sir Roland: 168 → 102  (-66)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+[Queued] Sir Roland: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 201 → 169  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Little Jack[front] HP=169/220 statuses=[taunt(1r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=157/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Little Jack: taunt → 0r left
+    [T] STATUS_EXPIRED Little Jack: taunt
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=169/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=157/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=66
+  Sir Roland takes 66 damage.
+    [T] HPCHANGE Sir Roland: 157 → 91  (-66)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 214 → 182  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Little Jack[front] HP=182/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=146/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=182/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=146/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=66
+  Sir Roland takes 66 damage.
+    [T] HPCHANGE Sir Roland: 146 → 80  (-66)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+[Queued] Sir Roland: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 172 → 140  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Little Jack[front] HP=140/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=80/265 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=140/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=80/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=52 raw=69.23 ceil=70
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 80 → 22  (-58)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+[Queued] Sir Roland: Knight's Challenge → Little Jack
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Little Jack
+Sir Roland uses Knight's Challenge on Little Jack.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=40 def=50 raw=28.00 ceil=28
+    [T]   FINAL_DMG=28
+  Little Jack takes 28 damage.
+    [T] HPCHANGE Little Jack: 185 → 157  (-28)
+  Little Jack is Taunted for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Little Jack[front] HP=157/220 statuses=[taunt(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=77/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Little Jack: taunt → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=157/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=77/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=66
+  Sir Roland takes 66 damage.
+    [T] HPCHANGE Sir Roland: 77 → 11  (-66)
+  Spiked Mail! Little Jack takes 10 damage.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+[Queued] Sir Roland: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 202 → 170  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Little Jack[front] HP=170/220 statuses=[taunt(1r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=66/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Little Jack: taunt → 0r left
+    [T] STATUS_EXPIRED Little Jack: taunt
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=170/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=66/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=123/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Cleave → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Sir Roland
+Little Jack uses Cleave on Sir Roland.
+    [T] DMGCALC [Cleave] Little Jack[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=58 raw=62.07 ceil=63
+    [T]   FINAL_DMG=66
+  Sir Roland takes 66 damage.
+    [T] HPCHANGE Sir Roland: 66 → 0  (-66) **KO**
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=148/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=148/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Little Jack: Cleave → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Snowkissed Aurora
+Little Jack uses Cleave on Snowkissed Aurora.
+    [T] DMGCALC [Cleave] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=96
+  Snowkissed Aurora takes 96 damage.
+    [T] HPCHANGE Snowkissed Aurora: 148 → 52  (-96)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Little Jack
+Snowkissed Aurora recharges.
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=52/225 statuses=[-]
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=190/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=52/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P1 Little Jack[front]: swap ↔ Snowkissed Aurora
+Little Jack and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 52 → 14  (-38)
+  Snowkissed Aurora heals Snowkissed Aurora for 35 HP.
+[Queued] Snowkissed Aurora: Deathlike Slumber → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Deathlike Slumber → Snowkissed Aurora
+Snowkissed Aurora uses Deathlike Slumber on Snowkissed Aurora.
+  Snowkissed Aurora cures all statuses.
+  Innocent Heart's effect is doubled for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=14/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=14/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Little Jack: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 14 → 0  (-38) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 21)
+────────────────────────────────────────────────────────────
+Player 1 wins!

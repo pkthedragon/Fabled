@@ -1,0 +1,394 @@
+Battle 700
+Player 1 Team: Crowstorm Burn
+Player 2 Team: Sea Wench Debuff Burst
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:44:37
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 700
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+Player 2: Sea Wench Debuff Burst
+  [front] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Abyssal Call  (passive=False)
+    Basics: Soul Gaze, Blood Pact
+    Item:   Arcane Focus
+  [back_left] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Sea Wench Asha: Abyssal Call → Ashen Ella
+[Queued] Frederic the Beastslayer: On the Hunt → Ashen Ella
+[Queued] Rapunzel the Golden: Impose → Ashen Ella
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Ashen Ella
+Sea Wench Asha uses Abyssal Call on Ashen Ella.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Ashen Ella[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=113
+  Ashen Ella takes 113 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 72  (-113)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Ashen Ella
+Frederic the Beastslayer uses On the Hunt on Ashen Ella.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Ashen Ella[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=63
+  Ashen Ella takes 63 damage.
+    [T] HPCHANGE Ashen Ella: 72 → 9  (-63)
+  Ashen Ella gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Impose → Ashen Ella
+Rapunzel the Golden uses Impose on Ashen Ella.
+    [T] DMGCALC [Impose] Rapunzel the Golden[back_left] → Ashen Ella[front]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=54
+  Ashen Ella takes 54 damage.
+    [T] HPCHANGE Ashen Ella: 9 → 0  (-54) **KO**
+  Ashen Ella loses -10 Speed for 2 rounds.
+Matchstick Liesl moves to frontline.
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+[Queued] Witch-Hunter Gretel: Intimidate → Sea Wench Asha
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Frederic the Beastslayer
+Matchstick Liesl uses Cauterize on Frederic the Beastslayer.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=62
+  Frederic the Beastslayer takes 62 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 138  (-62)
+  Frederic the Beastslayer gains no_heal for 2 rounds.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Sea Wench Asha
+Witch-Hunter Gretel uses Intimidate on Sea Wench Asha.
+  Sea Wench Asha gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[weaken(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 statuses=[no_heal(2r)]
+    [T] STATUS_TICK Sea Wench Asha: weaken → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[no_heal(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Sea Wench Asha: Abyssal Call → Matchstick Liesl
+[Queued] Frederic the Beastslayer: On the Hunt → Matchstick Liesl
+[Queued] Rapunzel the Golden: Lower Guard → Matchstick Liesl
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Matchstick Liesl
+Sea Wench Asha uses Abyssal Call on Matchstick Liesl.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=75 def=50 raw=90.00 ceil=90
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 138  (-72)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Matchstick Liesl
+Frederic the Beastslayer uses On the Hunt on Matchstick Liesl.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Matchstick Liesl[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=52
+  Matchstick Liesl takes 52 damage.
+    [T] HPCHANGE Matchstick Liesl: 138 → 86  (-52)
+  Matchstick Liesl gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Matchstick Liesl
+Rapunzel the Golden uses Lower Guard on Matchstick Liesl.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Matchstick Liesl[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=44
+  Matchstick Liesl takes 44 damage.
+    [T] HPCHANGE Matchstick Liesl: 86 → 42  (-44)
+  Matchstick Liesl loses -10 Defense for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Sea Wench Asha
+[Queued] Witch-Hunter Gretel: Intimidate → Sea Wench Asha
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Sea Wench Asha
+Matchstick Liesl uses Cauterize on Sea Wench Asha.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=56
+  Sea Wench Asha takes 56 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 154  (-56)
+  Sea Wench Asha gains no_heal for 2 rounds.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Sea Wench Asha
+Witch-Hunter Gretel uses Intimidate on Sea Wench Asha.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=42/210 statuses=[expose(2r)]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=154/210 statuses=[weaken(1r), no_heal(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 statuses=[no_heal(1r)]
+    [T] STATUS_TICK Matchstick Liesl: expose → 1r left
+    [T] STATUS_TICK Sea Wench Asha: weaken → 0r left
+    [T] STATUS_TICK Sea Wench Asha: no_heal → 1r left
+    [T] STATUS_EXPIRED Sea Wench Asha: weaken
+    [T] STATUS_TICK Frederic the Beastslayer: no_heal → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: no_heal
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=42/210 ATK=50(base=50) DEF=40(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=154/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Sea Wench Asha: Abyssal Call → Matchstick Liesl
+[Queued] Frederic the Beastslayer: On the Hunt → Witch-Hunter Gretel
+[Queued] Rapunzel the Golden: Lower Guard → Matchstick Liesl
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Matchstick Liesl
+Sea Wench Asha uses Abyssal Call on Matchstick Liesl.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=136
+  Matchstick Liesl takes 136 damage.
+    [T] HPCHANGE Matchstick Liesl: 42 → 0  (-136) **KO**
+Witch-Hunter Gretel moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Witch-Hunter Gretel
+Frederic the Beastslayer uses On the Hunt on Witch-Hunter Gretel.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 158  (-57)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Matchstick Liesl
+Rapunzel the Golden's target is no longer legal — Lower Guard fizzles.
+[Queued] Witch-Hunter Gretel: Into the Oven → Sea Wench Asha
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Into the Oven → Sea Wench Asha
+Witch-Hunter Gretel uses Into the Oven on Sea Wench Asha.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Sea Wench Asha[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=126
+  Sea Wench Asha takes 126 damage.
+    [T] HPCHANGE Sea Wench Asha: 154 → 28  (-126)
+  Sea Wench Asha gains burn for 2 rounds.
+  Sea Wench Asha gains weaken for 2 rounds.
+  Sea Wench Asha gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=158/215 statuses=[expose(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=28/210 statuses=[no_heal(1r), burn(2r), weaken(2r), root(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+Sea Wench Asha burns for 21 damage.
+    [T] STATUS_TICK Sea Wench Asha: no_heal → 0r left
+    [T] STATUS_TICK Sea Wench Asha: burn → 1r left
+    [T] STATUS_TICK Sea Wench Asha: weaken → 1r left
+    [T] STATUS_TICK Sea Wench Asha: root → 1r left
+    [T] STATUS_EXPIRED Sea Wench Asha: no_heal
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=158/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=7/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn(1r), weaken(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Sea Wench Asha: Abyssal Call → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Swap with Sea Wench Asha
+[Queued] Rapunzel the Golden: Lower Guard → Witch-Hunter Gretel
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Witch-Hunter Gretel
+Sea Wench Asha uses Abyssal Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Witch-Hunter Gretel[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=96
+  Witch-Hunter Gretel takes 96 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 158 → 62  (-96)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Sea Wench Asha
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Witch-Hunter Gretel
+Rapunzel the Golden uses Lower Guard on Witch-Hunter Gretel.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Witch-Hunter Gretel takes 48 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 62 → 14  (-48)
+  Witch-Hunter Gretel loses -10 Defense for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+[Queued] Witch-Hunter Gretel: Strike → Sea Wench Asha
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Sea Wench Asha
+Witch-Hunter Gretel uses Strike on Sea Wench Asha.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Sea Wench Asha[front]
+    [T]   power=55
+    [T]   atk=80 def=45 raw=97.78 ceil=98
+    [T]   FINAL_DMG=119
+  Sea Wench Asha takes 119 damage.
+    [T] HPCHANGE Sea Wench Asha: 7 → 0  (-119) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Rapunzel the Golden moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=14/215 statuses=[expose(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: expose
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=14/215 ATK=95(base=80) DEF=35(base=45) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=138/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Rapunzel the Golden
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Rapunzel the Golden
+Witch-Hunter Gretel uses Intimidate on Rapunzel the Golden.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Rapunzel the Golden[front]
+    [T]   power=45
+    [T]   atk=95 def=65 raw=65.77 ceil=66
+    [T]   FINAL_DMG=66
+  Rapunzel the Golden takes 66 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 192  (-66)
+  Rapunzel the Golden gains burn for 2 rounds.
+  Rapunzel the Golden gains weaken for 2 rounds.
+[Queued] Rapunzel the Golden: Lower Guard → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: On the Hunt → Witch-Hunter Gretel
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Witch-Hunter Gretel
+Rapunzel the Golden uses Lower Guard on Witch-Hunter Gretel.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Witch-Hunter Gretel[front]
+    [T]   power=70 (base=55)
+    [T]   atk=60 def=35 raw=120.00 ceil=120
+    [T]   FINAL_DMG=96
+  Witch-Hunter Gretel takes 96 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 14 → 0  (-96) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!

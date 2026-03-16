@@ -1,0 +1,481 @@
+Battle 286
+Player 1 Team: Root Killbox
+Player 2 Team: Rapunzel Collapse
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:00:34
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 286
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Root Killbox
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Magic Growth  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Little Jack: Magic Growth → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Rapunzel the Golden
+Little Jack uses Magic Growth on Rapunzel the Golden.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=80 def=65 raw=61.54 ceil=62
+    [T]   FINAL_DMG=85
+  Rapunzel the Golden takes 85 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 173  (-85)
+  Rapunzel the Golden gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 145  (-70)
+  Lucky Constantine gains root for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → Robin, Hooded Avenger
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+[Queued] Lucky Constantine: Post Bounty → Little Jack
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Robin, Hooded Avenger
+Rapunzel the Golden uses Edict on Robin, Hooded Avenger.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 110  (-75)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Little Jack
+Lucky Constantine uses Post Bounty on Little Jack.
+  Little Jack gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[expose(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=110/185 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=173/258 statuses=[root(2r)]
+    [T]   P2 Lucky Constantine[back_left] HP=145/215 statuses=[root(2r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Little Jack: expose → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: root → 1r left
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Lucky Constantine loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=110/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=173/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=145/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=121/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] Rapunzel the Golden: Edict → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Sucker Punch → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=108
+  Little Jack takes 108 damage.
+    [T] HPCHANGE Little Jack: 220 → 112  (-108)
+  Little Jack is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Edict → Robin, Hooded Avenger
+Rapunzel the Golden uses Edict on Robin, Hooded Avenger.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 110 → 65  (-45)
+  Robin, Hooded Avenger gains spotlight for 2 rounds.
+Lucky Constantine cannot act.
+[Queued] Little Jack: Magic Growth → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Frederic the Beastslayer
+Little Jack uses Magic Growth on Frederic the Beastslayer.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=80 def=45 raw=88.89 ceil=89
+    [T]   FINAL_DMG=108
+  Frederic the Beastslayer takes 108 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 121 → 13  (-108)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=69
+  Frederic the Beastslayer takes 69 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 13 → 0  (-69) **KO**
+Lucky Constantine moves to frontline.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Frederic the Beastslayer
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=112/220 statuses=[expose(1r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=65/185 statuses=[root(1r), spotlight(2r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=173/258 statuses=[root(1r)]
+    [T]   P2 Lucky Constantine[front] HP=145/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Little Jack: expose → 0r left
+    [T] STATUS_EXPIRED Little Jack: expose
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: spotlight → 1r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: root
+    [T] STATUS_TICK Rapunzel the Golden: root → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: root
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=112/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=65/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=173/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=145/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Lucky Constantine: Feline Gambit → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Edict → Little Jack
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Robin, Hooded Avenger
+Lucky Constantine uses Feline Gambit on Robin, Hooded Avenger.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=69
+  Robin, Hooded Avenger takes 69 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 65 → 0  (-69) **KO**
+  Robin, Hooded Avenger gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Edict → Little Jack
+Rapunzel the Golden uses Edict on Little Jack.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_right] → Little Jack[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=46
+  Little Jack takes 46 damage.
+    [T] HPCHANGE Little Jack: 112 → 66  (-46)
+  Little Jack gains spotlight for 2 rounds.
+[Queued] Little Jack: Magic Growth → Lucky Constantine
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Lucky Constantine
+Little Jack uses Magic Growth on Lucky Constantine.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=80 def=40 raw=100.00 ceil=100
+    [T]   FINAL_DMG=110
+  Lucky Constantine takes 110 damage.
+    [T] HPCHANGE Lucky Constantine: 145 → 35  (-110)
+  Lucky Constantine is immune to Root (Curse of Sleeping).
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  Lucky Constantine is immune to Root (Curse of Sleeping).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=66/220 statuses=[spotlight(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=173/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Little Jack: spotlight → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=66/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=173/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Lucky Constantine: Feline Gambit → Little Jack
+[Queued] Rapunzel the Golden: Edict → Little Jack
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Little Jack
+Lucky Constantine uses Feline Gambit on Little Jack.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=70 def=50 raw=63.00 ceil=63
+    [T]   FINAL_DMG=63
+  Little Jack takes 63 damage.
+    [T] HPCHANGE Little Jack: 66 → 3  (-63)
+  Little Jack gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Edict → Little Jack
+Rapunzel the Golden uses Edict on Little Jack.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_right] → Little Jack[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=44
+  Little Jack takes 44 damage.
+    [T] HPCHANGE Little Jack: 3 → 0  (-44) **KO**
+  Rapunzel the Golden must recharge next turn.
+Briar Rose moves to frontline.
+[Queued] Briar Rose: Hunter's Mark → Lucky Constantine
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Lucky Constantine
+Briar Rose uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Lucky Constantine takes 75 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-75) **KO**
+  Lucky Constantine is Marked — takes +10 damage next round.
+  Briar Rose must recharge next turn.
+Rapunzel the Golden moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=173/258 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=173/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Skip
+    [T] ACTION P1 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+[Queued] Rapunzel the Golden: Edict → Briar Rose
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Briar Rose
+Rapunzel the Golden uses Edict on Briar Rose.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Briar Rose takes 67 damage.
+    [T] HPCHANGE Briar Rose: 195 → 128  (-67)
+  Briar Rose gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=128/195 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=173/258 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Briar Rose: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=128/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=173/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Creeping Doubt → Rapunzel the Golden
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Rapunzel the Golden
+Briar Rose uses Creeping Doubt on Rapunzel the Golden.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=60 def=65 raw=50.77 ceil=51
+    [T]   FINAL_DMG=61
+  Rapunzel the Golden takes 61 damage.
+    [T] HPCHANGE Rapunzel the Golden: 173 → 112  (-61)
+[Queued] Rapunzel the Golden: Lower Guard → Briar Rose
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Briar Rose
+Rapunzel the Golden uses Lower Guard on Briar Rose.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Briar Rose[front]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=74
+  Briar Rose takes 74 damage.
+    [T] HPCHANGE Briar Rose: 128 → 54  (-74)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=54/195 statuses=[root(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=112/258 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Briar Rose: root → 0r left
+    [T] STATUS_EXPIRED Briar Rose: root
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=54/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=112/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Creeping Doubt → Rapunzel the Golden
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Rapunzel the Golden
+Briar Rose uses Creeping Doubt on Rapunzel the Golden.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=60 def=65 raw=50.77 ceil=51
+    [T]   FINAL_DMG=61
+  Rapunzel the Golden takes 61 damage.
+    [T] HPCHANGE Rapunzel the Golden: 112 → 51  (-61)
+[Queued] Rapunzel the Golden: Edict → Briar Rose
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Briar Rose
+Rapunzel the Golden uses Edict on Briar Rose.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Briar Rose takes 67 damage.
+    [T] HPCHANGE Briar Rose: 54 → 0  (-67) **KO**
+  Briar Rose gains root for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

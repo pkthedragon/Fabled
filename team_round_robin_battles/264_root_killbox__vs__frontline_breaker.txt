@@ -1,0 +1,346 @@
+Battle 264
+Player 1 Team: Root Killbox
+Player 2 Team: Frontline Breaker
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:59:24
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 264
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Root Killbox
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Magic Growth  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Frontline Breaker
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Belligerence  (passive=True)
+    Basics: Cleave, Strike
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Little Jack spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Little Jack: Cleave → Little Jack
+[Queued] Frederic the Beastslayer: On the Hunt → Little Jack
+[Queued] Snowkissed Aurora: Swap with Little Jack
+    [T] ACTION P2 Little Jack[front]: Cleave → Little Jack
+Little Jack uses Cleave on Little Jack.
+    [T] DMGCALC [Cleave] Little Jack[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=80 def=32 raw=112.50 ceil=113
+    [T]   FINAL_DMG=113
+  Little Jack takes 113 damage.
+    [T] HPCHANGE Little Jack: 220 → 107  (-113)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Little Jack
+Frederic the Beastslayer uses On the Hunt on Little Jack.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Little Jack[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Little Jack takes 42 damage.
+    [T] HPCHANGE Little Jack: 107 → 65  (-42)
+  Little Jack gains expose for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: swap ↔ Little Jack
+Snowkissed Aurora and Little Jack swap positions.
+[Queued] Little Jack: Magic Growth → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Snowkissed Aurora
+Little Jack uses Magic Growth on Snowkissed Aurora.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=80 def=60 raw=66.67 ceil=67
+    [T]   FINAL_DMG=91
+  Snowkissed Aurora takes 91 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 134  (-91)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=60 def=60 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Snowkissed Aurora takes 50 damage.
+    [T] HPCHANGE Snowkissed Aurora: 134 → 84  (-50)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=65/220 statuses=[expose(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=84/225 statuses=[root(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Little Jack: expose → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Curse of Sleeping: Snowkissed Aurora loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=65/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=84/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(2r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Hawkshot → Snowkissed Aurora
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Snowkissed Aurora
+Little Jack uses Magic Growth on Snowkissed Aurora.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=80 def=70 raw=57.14 ceil=58
+    [T]   FINAL_DMG=80
+  Snowkissed Aurora takes 80 damage.
+    [T] HPCHANGE Snowkissed Aurora: 84 → 4  (-80)
+  Snowkissed Aurora is immune to Root (Curse of Sleeping).
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Snowkissed Aurora
+Robin, Hooded Avenger uses Hawkshot on Snowkissed Aurora.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=77 def=70 raw=44.00 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 4 → 0  (-44) **KO**
+Little Jack moves to frontline.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+[Queued] Little Jack: Cleave → Little Jack
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Little Jack[front]: Cleave → Little Jack
+Little Jack uses Cleave on Little Jack.
+    [T] DMGCALC [Cleave] Little Jack[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=80 def=32 raw=112.50 ceil=113
+    [T]   FINAL_DMG=136
+  Little Jack takes 136 damage.
+    [T] HPCHANGE Little Jack: 65 → 0  (-136) **KO**
+Briar Rose moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Little Jack
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Snipe Shot → Frederic the Beastslayer
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Frederic the Beastslayer
+Briar Rose uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=74
+  Frederic the Beastslayer takes 74 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 121 → 47  (-74)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Snipe Shot on Frederic the Beastslayer.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 47 → 0  (-79) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Little Jack: Fell the Beanstalk → Briar Rose
+    [T] ACTION P2 Little Jack[front]: Fell the Beanstalk → Briar Rose
+Little Jack uses Fell the Beanstalk on Briar Rose.
+    [T] DMGCALC [Fell the Beanstalk] Little Jack[front] → Briar Rose[front]
+    [T]   power=85
+    [T]   atk=80 def=26 raw=261.54 ceil=262
+    [T]   FINAL_DMG=262
+  Briar Rose takes 262 damage.
+    [T] HPCHANGE Briar Rose: 195 → 0  (-262) **KO**
+  Briar Rose gains expose for 2 rounds.
+Robin, Hooded Avenger moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P1 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Little Jack: Cleave → Robin, Hooded Avenger
+    [T] ACTION P2 Little Jack[front]: Cleave → Robin, Hooded Avenger
+Little Jack uses Cleave on Robin, Hooded Avenger.
+    [T] DMGCALC [Cleave] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=80 def=26 raw=138.46 ceil=139
+    [T]   FINAL_DMG=139
+  Robin, Hooded Avenger takes 139 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 46  (-139)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=46/185 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=46/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Robin, Hooded Avenger: Kingmaker → Little Jack
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Kingmaker → Little Jack
+Robin, Hooded Avenger uses Kingmaker on Little Jack.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Little Jack[front]
+    [T]   power=70
+    [T]   atk=70 def=50 raw=98.00 ceil=98
+    [T]   FINAL_DMG=98
+  Little Jack takes 98 damage.
+    [T] HPCHANGE Little Jack: 220 → 122  (-98)
+[Queued] Little Jack: Cleave → Robin, Hooded Avenger
+    [T] ACTION P2 Little Jack[front]: Cleave → Robin, Hooded Avenger
+Little Jack uses Cleave on Robin, Hooded Avenger.
+    [T] DMGCALC [Cleave] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=80 def=26 raw=138.46 ceil=139
+    [T]   FINAL_DMG=139
+  Robin, Hooded Avenger takes 139 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 46 → 0  (-139) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!

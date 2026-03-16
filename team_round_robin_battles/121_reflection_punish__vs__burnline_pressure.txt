@@ -1,0 +1,1051 @@
+Battle 121
+Player 1 Team: Reflection Punish
+Player 2 Team: Burnline Pressure
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:44:14
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 121
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Reflection Punish
+  [front] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_left] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+  [back_right] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+Player 2: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Lady of Reflections and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Lady of Reflections is Guarded.
+[Queued] Witch-Hunter Gretel: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Sir Roland
+[Queued] Matchstick Liesl: Cauterize → Reynard, Lupine Trickster
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Witch of the Woods
+Witch-Hunter Gretel and Witch of the Woods swap positions.
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Sir Roland
+Witch of the Woods uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=12
+  Sir Roland takes 12 damage.
+    [T] HPCHANGE Sir Roland: 265 → 253  (-12)
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Reynard, Lupine Trickster
+Matchstick Liesl uses Cauterize on Reynard, Lupine Trickster.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Reynard, Lupine Trickster[back_left]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=21
+  Reynard, Lupine Trickster takes 21 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 184  (-21)
+  Reynard, Lupine Trickster gains no_heal for 2 rounds.
+[Queued] Sir Roland: Swap with Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Drown in the Loch → Witch of the Woods
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Reynard, Lupine Trickster
+Sir Roland and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+  Banner of Command: Reynard, Lupine Trickster is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Witch of the Woods
+Lady of Reflections uses Drown in the Loch on Witch of the Woods.
+  Witch of the Woods takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 184 → 154  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=154/205 statuses=[no_heal(2r), guard(2r)]
+    [T]   P1 Sir Roland[back_left] HP=253/265 statuses=[shock(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: no_heal → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=154/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[no_heal(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=253/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=91
+  Witch of the Woods takes 91 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 89  (-91)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Witch of the Woods: Thunder Call → Reynard, Lupine Trickster
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Reynard, Lupine Trickster
+Witch of the Woods uses Thunder Call on Reynard, Lupine Trickster.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Reynard, Lupine Trickster[front]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 154 → 118  (-36)
+  Reynard, Lupine Trickster gains shock for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=118/205 statuses=[no_heal(1r), guard(1r), shock(2r), weaken(2r)]
+    [T]   P1 Sir Roland[back_right] HP=253/265 statuses=[shock(1r), guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=144/180 statuses=[burn_immune(2r)]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Reynard, Lupine Trickster: no_heal → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: shock → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: no_heal
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: guard
+    [T] STATUS_TICK Sir Roland: shock → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: shock
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=118/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[shock(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=253/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=144/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+[Queued] Sir Roland: Item Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Swap with Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=68
+  Witch of the Woods takes 68 damage.
+    [T] HPCHANGE Witch of the Woods: 144 → 76  (-68)
+  Shock recoil: Reynard, Lupine Trickster takes 14 damage.
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Reynard, Lupine Trickster
+Sir Roland uses Crafty Shield.
+  Reynard, Lupine Trickster is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+  Banner of Command: Lady of Reflections is Guarded.
+[Queued] Witch of the Woods: Thunder Call → Sir Roland
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Sir Roland
+Witch of the Woods uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Sir Roland[back_left]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=57
+  Sir Roland takes 57 damage.
+    [T] HPCHANGE Sir Roland: 253 → 196  (-57)
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains shock for 2 rounds.
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 statuses=[shock(1r), weaken(1r), guard(2r)]
+    [T]   P1 Sir Roland[back_left] HP=196/265 statuses=[guard(1r), burn(2r), shock(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=131/180 statuses=[burn_immune(1r)]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: shock → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: shock
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch of the Woods: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=169/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), shock(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=131/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=84
+  Witch of the Woods takes 84 damage.
+    [T] HPCHANGE Witch of the Woods: 131 → 47  (-84)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Witch of the Woods: Swap with Matchstick Liesl
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Witch of the Woods[front]: swap ↔ Matchstick Liesl
+Witch of the Woods recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 statuses=[guard(1r), weaken(2r)]
+    [T]   P1 Sir Roland[back_right] HP=169/265 statuses=[burn(1r), shock(1r), guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=47/180 statuses=[-]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: guard
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: shock → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] STATUS_EXPIRED Sir Roland: shock
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=142/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=47/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+[Queued] Sir Roland: Item Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Swap with Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=68
+  Witch of the Woods takes 68 damage.
+    [T] HPCHANGE Witch of the Woods: 47 → 0  (-68) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Reynard, Lupine Trickster
+Sir Roland uses Crafty Shield.
+  Reynard, Lupine Trickster is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+  Banner of Command: Lady of Reflections is Guarded.
+[Queued] Matchstick Liesl: Cauterize → Sir Roland
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Sir Roland
+Matchstick Liesl uses Cauterize on Sir Roland.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Sir Roland[back_left]
+    [T]   power=50
+    [T]   atk=50 def=85 raw=29.41 ceil=30
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 142 → 118  (-24)
+  Sir Roland gains no_heal for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 statuses=[weaken(1r), guard(2r)]
+    [T]   P1 Sir Roland[back_left] HP=118/265 statuses=[guard(1r), no_heal(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: no_heal → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=118/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[no_heal(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Matchstick Liesl
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Matchstick Liesl
+Reynard, Lupine Trickster uses Riposte on Matchstick Liesl.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=59
+  Matchstick Liesl takes 59 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 151  (-59)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Matchstick Liesl: Smite → Sir Roland
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P2 Matchstick Liesl[front]: Smite → Sir Roland
+Matchstick Liesl uses Smite on Sir Roland.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Sir Roland[back_right]
+    [T]   power=55
+    [T]   atk=50 def=85 raw=32.35 ceil=33
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 118 → 91  (-27)
+  Sir Roland gains burn for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 statuses=[guard(1r), weaken(2r)]
+    [T]   P1 Sir Roland[back_right] HP=91/265 statuses=[no_heal(1r), guard(2r), burn(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=151/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: guard
+    [T] STATUS_TICK Sir Roland: no_heal → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_EXPIRED Sir Roland: no_heal
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=64/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r), burn(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=151/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Matchstick Liesl
+[Queued] Sir Roland: Item Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Swap with Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Matchstick Liesl
+Reynard, Lupine Trickster uses Riposte on Matchstick Liesl.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=48
+  Matchstick Liesl takes 48 damage.
+    [T] HPCHANGE Matchstick Liesl: 151 → 103  (-48)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Reynard, Lupine Trickster
+Sir Roland uses Crafty Shield.
+  Reynard, Lupine Trickster is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+  Banner of Command: Lady of Reflections is Guarded.
+[Queued] Matchstick Liesl: Cauterize → Sir Roland
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Sir Roland
+Matchstick Liesl uses Cauterize on Sir Roland.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Sir Roland[back_left]
+    [T]   power=50
+    [T]   atk=50 def=85 raw=29.41 ceil=30
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 64 → 40  (-24)
+  Sir Roland gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 statuses=[weaken(1r), guard(2r)]
+    [T]   P1 Sir Roland[back_left] HP=40/265 statuses=[guard(1r), burn(1r), no_heal(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=103/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: no_heal → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=13/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[no_heal(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=103/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Matchstick Liesl
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Matchstick Liesl
+Reynard, Lupine Trickster uses Riposte on Matchstick Liesl.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=59
+  Matchstick Liesl takes 59 damage.
+    [T] HPCHANGE Matchstick Liesl: 103 → 44  (-59)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P2 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 statuses=[guard(1r), weaken(2r)]
+    [T]   P1 Sir Roland[back_right] HP=13/265 statuses=[no_heal(1r), guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=44/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: guard
+    [T] STATUS_TICK Sir Roland: no_heal → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: no_heal
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=104/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=13/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=44/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Matchstick Liesl
+[Queued] Sir Roland: Item Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Swap with Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Matchstick Liesl
+Reynard, Lupine Trickster uses Riposte on Matchstick Liesl.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=48
+  Matchstick Liesl takes 48 damage.
+    [T] HPCHANGE Matchstick Liesl: 44 → 0  (-48) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Witch-Hunter Gretel moves to frontline.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Reynard, Lupine Trickster
+Sir Roland uses Crafty Shield.
+  Reynard, Lupine Trickster is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+  Banner of Command: Lady of Reflections is Guarded.
+[Queued] Witch-Hunter Gretel: Into the Oven → Reynard, Lupine Trickster
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Into the Oven → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Into the Oven on Reynard, Lupine Trickster.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Reynard, Lupine Trickster[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=38
+  Reynard, Lupine Trickster takes 38 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 104 → 66  (-38)
+  Reynard, Lupine Trickster gains burn for 2 rounds.
+  Reynard, Lupine Trickster gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=66/205 statuses=[weaken(1r), guard(2r), burn(2r), root(2r)]
+    [T]   P1 Sir Roland[back_left] HP=13/265 statuses=[guard(1r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=45/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[guard(1r), burn(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=13/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch-Hunter Gretel
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch-Hunter Gretel
+Reynard, Lupine Trickster uses Riposte on Witch-Hunter Gretel.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Witch-Hunter Gretel takes 65 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 150  (-65)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Reynard, Lupine Trickster[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=29
+  Reynard, Lupine Trickster takes 29 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 45 → 16  (-29)
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=16/205 statuses=[guard(1r), burn(1r), root(1r), weaken(2r)]
+    [T]   P1 Sir Roland[back_right] HP=13/265 statuses=[guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=150/215 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+Reynard, Lupine Trickster burns for 21 damage.
+Lady of Reflections moves to frontline.
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=13/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=150/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Intimidate → Lady of Reflections
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Lady of Reflections
+Witch-Hunter Gretel uses Intimidate on Lady of Reflections.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Lady of Reflections[front]
+    [T]   power=45
+    [T]   atk=80 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=38
+  Lady of Reflections takes 38 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 217  (-38)
+  Spiked Mail! Witch-Hunter Gretel takes 10 damage.
+  Reflecting Pool: Witch-Hunter Gretel takes 4 reflected damage.
+  Lady of Reflections gains burn for 2 rounds.
+  Lady of Reflections gains weaken for 2 rounds.
+[Queued] Lady of Reflections: Drown in the Loch → Witch-Hunter Gretel
+[Queued] Sir Roland: Item Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Witch-Hunter Gretel
+Lady of Reflections uses Drown in the Loch on Witch-Hunter Gretel.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Witch-Hunter Gretel takes 29 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 136 → 107  (-29)
+  Witch-Hunter Gretel takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Lady of Reflections
+Sir Roland uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Lady of Reflections[front] HP=217/255 statuses=[burn(2r), weaken(2r), guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=13/265 statuses=[guard(1r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=107/215 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+Lady of Reflections burns for 26 damage.
+    [T] STATUS_TICK Lady of Reflections: burn → 1r left
+    [T] STATUS_TICK Lady of Reflections: weaken → 1r left
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=191/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[burn(1r), weaken(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=13/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=107/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Strike → Lady of Reflections
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Lady of Reflections
+Witch-Hunter Gretel uses Strike on Lady of Reflections.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Lady of Reflections[front]
+    [T]   power=55
+    [T]   atk=80 def=75 raw=58.67 ceil=59
+    [T]   FINAL_DMG=53
+  Lady of Reflections takes 53 damage.
+    [T] HPCHANGE Lady of Reflections: 191 → 138  (-53)
+  Spiked Mail! Witch-Hunter Gretel takes 10 damage.
+  Reflecting Pool: Witch-Hunter Gretel takes 6 reflected damage.
+[Queued] Lady of Reflections: Drown in the Loch → Witch-Hunter Gretel
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Witch-Hunter Gretel
+Lady of Reflections uses Drown in the Loch on Witch-Hunter Gretel.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=36
+  Witch-Hunter Gretel takes 36 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 91 → 55  (-36)
+  Witch-Hunter Gretel takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Lady of Reflections[front] HP=138/255 statuses=[burn(1r), weaken(1r), guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=13/265 statuses=[guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=55/215 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+Lady of Reflections burns for 26 damage.
+    [T] STATUS_TICK Lady of Reflections: burn → 0r left
+    [T] STATUS_TICK Lady of Reflections: weaken → 0r left
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: burn
+    [T] STATUS_EXPIRED Lady of Reflections: weaken
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=112/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=13/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=55/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Intimidate → Lady of Reflections
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Lady of Reflections
+Witch-Hunter Gretel uses Intimidate on Lady of Reflections.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Lady of Reflections[front]
+    [T]   power=45
+    [T]   atk=80 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=38
+  Lady of Reflections takes 38 damage.
+    [T] HPCHANGE Lady of Reflections: 112 → 74  (-38)
+  Spiked Mail! Witch-Hunter Gretel takes 10 damage.
+  Reflecting Pool: Witch-Hunter Gretel takes 4 reflected damage.
+  Lady of Reflections gains burn for 2 rounds.
+  Lady of Reflections gains weaken for 2 rounds.
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Lady of Reflections is Guarded.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Lady of Reflections
+Sir Roland uses Crafty Shield.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Lady of Reflections[back_right] HP=74/255 statuses=[burn(2r), weaken(2r), guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=13/265 statuses=[guard(1r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=41/215 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+Lady of Reflections burns for 26 damage.
+    [T] STATUS_TICK Lady of Reflections: burn → 1r left
+    [T] STATUS_TICK Lady of Reflections: weaken → 1r left
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=48/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[burn(1r), weaken(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=13/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=41/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=80 def=90 raw=40.00 ceil=40
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 13 → 5  (-8)
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Lady of Reflections: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Lady of Reflections[front] HP=48/255 statuses=[burn(1r), weaken(1r), guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=5/265 statuses=[burn(2r), weaken(2r), guard(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=41/215 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+Lady of Reflections burns for 26 damage.
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Lady of Reflections: burn → 0r left
+    [T] STATUS_TICK Lady of Reflections: weaken → 0r left
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: burn
+    [T] STATUS_EXPIRED Lady of Reflections: weaken
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=22/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=41/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Intimidate → Lady of Reflections
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Lady of Reflections
+Witch-Hunter Gretel uses Intimidate on Lady of Reflections.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Lady of Reflections[front]
+    [T]   power=45
+    [T]   atk=80 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=38
+  Lady of Reflections takes 38 damage.
+    [T] HPCHANGE Lady of Reflections: 22 → 0  (-38) **KO**
+  Reflecting Pool: Witch-Hunter Gretel takes 4 reflected damage.
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Lady of Reflections gains weaken for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 15)
+────────────────────────────────────────────────────────────
+Player 2 wins!

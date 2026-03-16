@@ -1,0 +1,740 @@
+Battle 119
+Player 1 Team: Reflection Punish
+Player 2 Team: Speed Tempo
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:43:42
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 119
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Reflection Punish
+  [front] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_left] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+  [back_right] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+Player 2: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+Lady of Reflections and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Lady of Reflections is Guarded.
+[Queued] Little Jack: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+[Queued] March Hare: Thunder Call → Reynard, Lupine Trickster
+    [T] ACTION P2 Little Jack[front]: swap ↔ Frederic the Beastslayer
+Little Jack and Frederic the Beastslayer swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[front]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=85 raw=32.94 ceil=33
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 265 → 257  (-8)
+  Frederic the Beastslayer gains +15 Attack for 2 rounds.
+    [T] ACTION P2 March Hare[back_left]: Thunder Call → Reynard, Lupine Trickster
+March Hare uses Thunder Call on Reynard, Lupine Trickster.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Reynard, Lupine Trickster[back_left]
+    [T]   power=35
+    [T]   atk=70 def=45 raw=54.44 ceil=55
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=26
+  Reynard, Lupine Trickster takes 26 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 179  (-26)
+  Reynard, Lupine Trickster gains shock for 2 rounds.
+[Queued] Sir Roland: Swap with Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Drown in the Loch → Frederic the Beastslayer
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Reynard, Lupine Trickster
+Sir Roland and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+  Banner of Command: Reynard, Lupine Trickster is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Frederic the Beastslayer
+Lady of Reflections uses Drown in the Loch on Frederic the Beastslayer.
+  Frederic the Beastslayer takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 179 → 149  (-30)
+  Shock recoil: Reynard, Lupine Trickster takes 6 damage.
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=143/205 statuses=[shock(2r), guard(2r)]
+    [T]   P1 Sir Roland[back_left] HP=257/265 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: shock → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=143/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[shock(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=257/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=80(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), attack+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Frederic the Beastslayer
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Frederic the Beastslayer
+Reynard, Lupine Trickster uses Riposte on Frederic the Beastslayer.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Frederic the Beastslayer[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+  Shock recoil: Reynard, Lupine Trickster takes 16 damage.
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Reynard, Lupine Trickster
+[Queued] Little Jack: Skyfall → Reynard, Lupine Trickster
+[Queued] March Hare: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Reynard, Lupine Trickster
+Frederic the Beastslayer uses Hunter's Mark on Reynard, Lupine Trickster.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=80 def=45 raw=88.89 ceil=89
+    [T]   FINAL_DMG=31
+  Reynard, Lupine Trickster takes 31 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 127 → 96  (-31)
+  Reynard, Lupine Trickster is Marked — takes +10 damage next round.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Reynard, Lupine Trickster
+Little Jack uses Skyfall on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+    [T] ACTION P2 March Hare[back_left]: swap ↔ Frederic the Beastslayer
+March Hare and Frederic the Beastslayer swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=96/205 statuses=[shock(1r), guard(1r), expose(2r)]
+    [T]   P1 Sir Roland[back_right] HP=257/265 statuses=[guard(2r)]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 March Hare[front] HP=190/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Reynard, Lupine Trickster: shock → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: shock
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: guard
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+15
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=60 (MH adj from 75)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=96/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=257/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Reynard, Lupine Trickster
+[Queued] Little Jack: Skyfall → Reynard, Lupine Trickster
+[Queued] Frederic the Beastslayer: Hunter's Mark → Reynard, Lupine Trickster
+    [T] ACTION P2 March Hare[front]: Thunder Call → Reynard, Lupine Trickster
+March Hare uses Thunder Call on Reynard, Lupine Trickster.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Reynard, Lupine Trickster[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=99
+  Reynard, Lupine Trickster takes 99 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster gains shock for 2 rounds.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Reynard, Lupine Trickster
+Little Jack uses Skyfall on Reynard, Lupine Trickster.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: Hunter's Mark → Reynard, Lupine Trickster
+Frederic the Beastslayer uses Hunter's Mark on Reynard, Lupine Trickster.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_left] → Reynard, Lupine Trickster[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=0
+  Reynard, Lupine Trickster takes 0 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 1  (-0)
+  Reynard, Lupine Trickster is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Reynard, Lupine Trickster: Riposte → March Hare
+[Queued] Sir Roland: Item Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → March Hare
+Reynard, Lupine Trickster uses Riposte on March Hare.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → March Hare[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=84
+  March Hare takes 84 damage.
+    [T] HPCHANGE March Hare: 190 → 106  (-84)
+  Shock recoil: Reynard, Lupine Trickster takes 17 damage.
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Lady of Reflections moves to frontline.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Reynard, Lupine Trickster
+Sir Roland's item target is no longer legal — item fizzles.
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=257/265 statuses=[guard(1r)]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 March Hare[front] HP=106/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=17 (MH adj from 32)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=257/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=106/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Sir Roland
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+    [T] ACTION P2 March Hare[front]: Thunder Call → Sir Roland
+March Hare uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Sir Roland[back_right]
+    [T]   power=65
+    [T]   atk=70 def=85 raw=53.53 ceil=54
+    [T]   FINAL_DMG=54
+  Sir Roland takes 54 damage.
+    [T] HPCHANGE Sir Roland: 257 → 203  (-54)
+  Sir Roland gains shock for 2 rounds.
+  March Hare must recharge next turn.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+  Lady of Reflections gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: swap ↔ Little Jack
+Frederic the Beastslayer recharges.
+[Queued] Lady of Reflections: Drown in the Loch → March Hare
+[Queued] Sir Roland: Item Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → March Hare
+Lady of Reflections uses Drown in the Loch on March Hare.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=40 def=35 raw=45.71 ceil=46
+    [T]   FINAL_DMG=46
+  March Hare takes 46 damage.
+    [T] HPCHANGE March Hare: 106 → 60  (-46)
+  March Hare takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Lady of Reflections
+Sir Roland uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[expose(2r), guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=203/265 statuses=[shock(2r)]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 March Hare[front] HP=60/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: expose → 1r left
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=17 (MH adj from 32)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=203/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=60/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] March Hare: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lady of Reflections
+    [T] ACTION P2 March Hare[front]: swap ↔ Little Jack
+March Hare recharges.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: Hunter's Mark → Lady of Reflections
+Frederic the Beastslayer uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_left] → Lady of Reflections[front]
+    [T]   power=25
+    [T]   atk=70 def=75 raw=23.33 ceil=24
+    [T]   FINAL_DMG=18
+  Lady of Reflections takes 18 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 237  (-18)
+  Spiked Mail! Frederic the Beastslayer takes 10 damage.
+  Reflecting Pool: Frederic the Beastslayer takes 4 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+[Queued] Lady of Reflections: Drown in the Loch → March Hare
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → March Hare
+Lady of Reflections uses Drown in the Loch on March Hare.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=40 def=35 raw=45.71 ceil=46
+    [T]   FINAL_DMG=53
+  March Hare takes 53 damage.
+    [T] HPCHANGE March Hare: 60 → 7  (-53)
+  March Hare takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Lady of Reflections[front] HP=237/255 statuses=[expose(1r), guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=203/265 statuses=[shock(1r), guard(2r)]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 March Hare[front] HP=7/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=107/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: expose → 0r left
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: expose
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Sir Roland: shock → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: shock
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=17 (MH adj from 32)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=237/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=203/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=7/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] March Hare: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] Frederic the Beastslayer: On the Hunt → Lady of Reflections
+    [T] ACTION P2 March Hare[front]: swap ↔ Little Jack
+March Hare and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=75 raw=85.33 ceil=86
+    [T]   FINAL_DMG=114
+  Lady of Reflections takes 114 damage.
+    [T] HPCHANGE Lady of Reflections: 237 → 123  (-114)
+  Spiked Mail! Little Jack takes 10 damage.
+  Reflecting Pool: Little Jack takes 12 reflected damage.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Lady of Reflections
+Frederic the Beastslayer uses On the Hunt on Lady of Reflections.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Lady of Reflections[front]
+    [T]   power=25
+    [T]   atk=70 def=75 raw=23.33 ceil=24
+    [T]   FINAL_DMG=29
+  Lady of Reflections takes 29 damage.
+    [T] HPCHANGE Lady of Reflections: 123 → 94  (-29)
+  Spiked Mail! Frederic the Beastslayer takes 10 damage.
+  Reflecting Pool: Frederic the Beastslayer takes 6 reflected damage.
+  Lady of Reflections gains expose for 2 rounds.
+[Queued] Lady of Reflections: Drown in the Loch → Little Jack
+[Queued] Sir Roland: Item Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Little Jack
+Lady of Reflections uses Drown in the Loch on Little Jack.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 198 → 166  (-32)
+  Little Jack takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Lady of Reflections
+Sir Roland uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Lady of Reflections[front] HP=94/255 statuses=[expose(2r), guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=203/265 statuses=[guard(1r)]
+    [T]   P2 Little Jack[front] HP=166/220 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=91/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: expose → 1r left
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=94/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=203/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=166/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=91/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] March Hare: Thunder Call → Sir Roland
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+    [T] ACTION P2 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=75 raw=85.33 ceil=86
+    [T]   FINAL_DMG=100
+  Lady of Reflections takes 100 damage.
+    [T] HPCHANGE Lady of Reflections: 94 → 0  (-100) **KO**
+  Reflecting Pool: Little Jack takes 10 reflected damage.
+Sir Roland moves to frontline.
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Sir Roland
+March Hare uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=70 def=85 raw=28.82 ceil=29
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 203 → 195  (-8)
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: swap ↔ Little Jack
+Frederic the Beastslayer and Little Jack swap positions.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 70 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[shock(2r), guard(2r)]
+    [T]   P2 Little Jack[back_left] HP=156/220 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=91/200 statuses=[-]
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[shock(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=156/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=91/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+[Queued] March Hare: Arcane Wave → Sir Roland
+[Queued] Little Jack: Skyfall → Sir Roland
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Little Jack
+Frederic the Beastslayer and Little Jack swap positions.
+    [T] ACTION P2 March Hare[back_right]: Arcane Wave → Sir Roland
+March Hare uses Arcane Wave on Sir Roland.
+    [T] DMGCALC [Arcane Wave] March Hare[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+    [T]   FINAL_DMG=26
+  Sir Roland takes 26 damage.
+    [T] HPCHANGE Sir Roland: 265 → 239  (-26)
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=80
+  Sir Roland takes 80 damage.
+    [T] HPCHANGE Sir Roland: 239 → 159  (-80)
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Little Jack takes 36 damage.
+    [T] HPCHANGE Little Jack: 156 → 120  (-36)
+  Shock recoil: Sir Roland takes 8 damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=151/265 statuses=[shock(1r), guard(1r)]
+    [T]   P2 Little Jack[front] HP=120/220 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=91/200 statuses=[-]
+    [T] STATUS_TICK Sir Roland: shock → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: shock
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=151/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=120/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=91/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] March Hare: Thunder Call → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=97
+  Sir Roland takes 97 damage.
+    [T] HPCHANGE Sir Roland: 151 → 54  (-97)
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Sir Roland
+March Hare uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=70 def=90 raw=27.22 ceil=28
+    [T]   FINAL_DMG=28
+  Sir Roland takes 28 damage.
+    [T] HPCHANGE Sir Roland: 54 → 26  (-28)
+  Sir Roland gains shock for 2 rounds.
+  March Hare must recharge next turn.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 26 → 2  (-24)
+  Sir Roland gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=2/265 statuses=[shock(2r), expose(2r), guard(2r)]
+    [T]   P2 Little Jack[front] HP=120/220 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=91/200 statuses=[-]
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[front] HP=2/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[shock(1r), expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=120/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=7/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=91/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] March Hare: Swap with Little Jack
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=94
+  Sir Roland takes 94 damage.
+    [T] HPCHANGE Sir Roland: 2 → 0  (-94) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 2 wins!

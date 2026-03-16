@@ -1,0 +1,895 @@
+Battle 708
+Player 1 Team: Ella Pivot Shell
+Player 2 Team: Green Knight Root Midrange
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:45:53
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 708
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Ella Pivot Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Fae Blessing  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Green Knight Root Midrange
+  [front] Green Knight (Noble)  HP=275  ATK=60  DEF=60  SPD=20
+    Talent: Challenge Accepted
+    Sig:    Hero's Bargain  (passive=False)
+    Basics: Command, Edict
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella[back_left] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Sir Roland: Swap with Ashen Ella
+[Queued] Snowkissed Aurora: Heal → Ashen Ella
+[Queued] Ashen Ella: Fae Blessing → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Ashen Ella
+Sir Roland and Ashen Ella swap positions.
+  Banner of Command: Ashen Ella is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Ashen Ella
+Snowkissed Aurora uses Heal on Ashen Ella.
+    [T] ACTION P1 Ashen Ella[front]: Fae Blessing → Sir Roland
+  Ashen Ella retargets to Ashen Ella after swapping to front.
+Ashen Ella uses Fae Blessing on Ashen Ella.
+  Ashen Ella gains +20 Attack for 2 rounds.
+[Queued] Green Knight: Hero's Bargain → Ashen Ella
+[Queued] Snowkissed Aurora: Dictate of Nature → Ashen Ella
+[Queued] Robin, Hooded Avenger: Snipe Shot → Ashen Ella
+    [T] ACTION P2 Green Knight[front]: Hero's Bargain → Ashen Ella
+Green Knight uses Hero's Bargain on Ashen Ella.
+    [T] DMGCALC [Hero's Bargain] Green Knight[front] → Ashen Ella[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=85
+  Ashen Ella takes 85 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 100  (-85)
+  Ashen Ella gains root for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Ashen Ella
+Snowkissed Aurora uses Dictate of Nature on Ashen Ella.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Ashen Ella[front]
+    [T]   power=35
+    [T]   atk=45 def=40 raw=39.38 ceil=40
+    [T]   FINAL_DMG=32
+  Ashen Ella takes 32 damage.
+    [T] HPCHANGE Ashen Ella: 100 → 68  (-32)
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Snipe Shot → Ashen Ella
+Robin, Hooded Avenger uses Snipe Shot on Ashen Ella.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_left] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=77
+  Ashen Ella takes 77 damage.
+    [T] HPCHANGE Ashen Ella: 68 → 0  (-77) **KO**
+Sir Roland moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Green Knight[front] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Green Knight
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Green Knight
+Sir Roland uses Shield Bash on Green Knight.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Green Knight[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Green Knight takes 30 damage.
+    [T] HPCHANGE Green Knight: 275 → 245  (-30)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+[Queued] Green Knight: Hero's Bargain → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+    [T] ACTION P2 Green Knight[front]: Hero's Bargain → Snowkissed Aurora
+Green Knight uses Hero's Bargain on Snowkissed Aurora.
+    [T] DMGCALC [Hero's Bargain] Green Knight[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=60 def=60 raw=50.00 ceil=50
+    [T]   FINAL_DMG=65
+  Snowkissed Aurora takes 65 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 160  (-65)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Robin, Hooded Avenger
+Snowkissed Aurora and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=52
+  Snowkissed Aurora takes 52 damage.
+    [T] HPCHANGE Snowkissed Aurora: 160 → 108  (-52)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=108/225 statuses=[guard(2r), root(2r)]
+    [T]   P2 Green Knight[front] HP=245/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=108/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=245/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 40 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P1 Sir Roland[back_right]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Snowkissed Aurora is Guarded.
+[Queued] Green Knight: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Green Knight
+    [T] ACTION P2 Green Knight[front]: swap ↔ Robin, Hooded Avenger
+Green Knight and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Snowkissed Aurora[back_right]
+    [T]   power=65
+    [T]   atk=70 def=70 raw=65.00 ceil=65
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 148 → 86  (-62)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Green Knight
+Snowkissed Aurora uses Heal on Green Knight.
+  Snowkissed Aurora heals Green Knight for 30 HP.
+  Medic: Green Knight cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=86/225 statuses=[guard(2r)]
+    [T]   P2 Green Knight[back_right] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=86/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[back_right] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Snowkissed Aurora
+[Queued] Green Knight: Edict → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Snowkissed Aurora
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Green Knight[back_right]: Edict → Snowkissed Aurora
+Green Knight uses Edict on Snowkissed Aurora.
+    [T] DMGCALC [Edict] Green Knight[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=30
+    [T]   atk=60 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=36
+  Snowkissed Aurora takes 36 damage.
+    [T] HPCHANGE Snowkissed Aurora: 86 → 50  (-36)
+  Snowkissed Aurora gains spotlight for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=45 def=90 raw=17.50 ceil=18
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=5
+  Sir Roland takes 5 damage.
+    [T] HPCHANGE Sir Roland: 265 → 260  (-5)
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 140  (-45)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=260/265 statuses=[guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=50/225 statuses=[guard(1r), spotlight(2r)]
+    [T]   P2 Green Knight[back_right] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=140/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: spotlight → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=260/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=50/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[spotlight(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[back_right] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=140/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Sir Roland
+[Queued] Green Knight: Edict → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Green Knight
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Sir Roland
+Robin, Hooded Avenger uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Sir Roland[back_right]
+    [T]   power=50
+    [T]   atk=70 def=85 raw=41.18 ceil=42
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 260 → 216  (-44)
+  Sir Roland is Marked — takes +10 damage next round.
+    [T] ACTION P2 Green Knight[back_right]: Edict → Sir Roland
+Green Knight uses Edict on Sir Roland.
+    [T] DMGCALC [Edict] Green Knight[back_right] → Sir Roland[back_right]
+    [T]   power=30
+    [T]   atk=60 def=85 raw=21.18 ceil=22
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 216 → 183  (-33)
+  Sir Roland gains spotlight for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: swap ↔ Green Knight
+Snowkissed Aurora recharges.
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 70 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=253/265 statuses=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=50/225 statuses=[spotlight(1r), guard(2r)]
+    [T]   P2 Green Knight[back_right] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=140/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: spotlight → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: spotlight
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=253/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=50/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[back_right] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=140/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Sir Roland
+[Queued] Green Knight: Edict → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Sir Roland
+Robin, Hooded Avenger uses Snipe Shot on Sir Roland.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Sir Roland[back_right]
+    [T]   power=65
+    [T]   atk=70 def=90 raw=50.56 ceil=51
+    [T]   FINAL_DMG=71
+  Sir Roland takes 71 damage.
+    [T] HPCHANGE Sir Roland: 253 → 182  (-71)
+    [T] ACTION P2 Green Knight[back_right]: Edict → Sir Roland
+Green Knight uses Edict on Sir Roland.
+    [T] DMGCALC [Edict] Green Knight[back_right] → Sir Roland[back_right]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+    [T]   FINAL_DMG=45
+  Sir Roland takes 45 damage.
+    [T] HPCHANGE Sir Roland: 182 → 137  (-45)
+  Sir Roland gains spotlight for 2 rounds.
+  Green Knight must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 45 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[back_right] HP=137/265 statuses=[spotlight(2r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=50/225 statuses=[guard(1r)]
+    [T]   P2 Green Knight[back_right] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: spotlight → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=137/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[spotlight(1r), guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=50/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[back_right] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Snowkissed Aurora
+[Queued] Green Knight: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Snowkissed Aurora
+Robin, Hooded Avenger uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=70 def=70 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Snowkissed Aurora takes 50 damage.
+    [T] HPCHANGE Snowkissed Aurora: 50 → 0  (-50) **KO**
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Green Knight[back_right]: swap ↔ Snowkissed Aurora
+Green Knight recharges.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 100 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=237/265 statuses=[spotlight(1r), guard(1r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: spotlight → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: spotlight
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=237/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Snowkissed Aurora
+[Queued] Green Knight: Edict → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Snowkissed Aurora
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Green Knight[back_right]: Edict → Sir Roland
+Green Knight uses Edict on Sir Roland.
+    [T] DMGCALC [Edict] Green Knight[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=5
+  Sir Roland takes 5 damage.
+    [T] HPCHANGE Sir Roland: 237 → 232  (-5)
+  Sir Roland gains spotlight for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=45 def=90 raw=17.50 ceil=18
+    [T]   FINAL_DMG=18
+  Sir Roland takes 18 damage.
+    [T] HPCHANGE Sir Roland: 232 → 214  (-18)
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 140  (-45)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=214/265 statuses=[spotlight(2r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=140/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: spotlight → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=214/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[spotlight(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=140/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Green Knight
+[Queued] Green Knight: Edict → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Green Knight
+Robin, Hooded Avenger and Green Knight swap positions.
+    [T] ACTION P2 Green Knight[front]: Edict → Sir Roland
+Green Knight uses Edict on Sir Roland.
+    [T] DMGCALC [Edict] Green Knight[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=43
+  Sir Roland takes 43 damage.
+    [T] HPCHANGE Sir Roland: 214 → 171  (-43)
+  Sir Roland gains root for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=45 def=90 raw=17.50 ceil=18
+    [T]   FINAL_DMG=15
+  Sir Roland takes 15 damage.
+    [T] HPCHANGE Sir Roland: 171 → 156  (-15)
+  Snowkissed Aurora heals Robin, Hooded Avenger for 35 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Green Knight
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Green Knight
+Sir Roland uses Shield Bash on Green Knight.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Green Knight[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Green Knight takes 30 damage.
+    [T] HPCHANGE Green Knight: 275 → 245  (-30)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=156/265 statuses=[spotlight(1r), guard(1r), root(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[front] HP=245/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=175/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: spotlight → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_EXPIRED Sir Roland: spotlight
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=156/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[front] HP=245/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Green Knight
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Green Knight
+Sir Roland uses Shield Bash on Green Knight.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Green Knight[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Green Knight takes 30 damage.
+    [T] HPCHANGE Green Knight: 245 → 215  (-30)
+  All allies are Guarded for 2 rounds.
+[Queued] Green Knight: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Sir Roland
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Green Knight[front]: swap ↔ Robin, Hooded Avenger
+Green Knight and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Sir Roland
+Robin, Hooded Avenger uses Snipe Shot on Sir Roland.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=70 def=90 raw=50.56 ceil=51
+    [T]   FINAL_DMG=41
+  Sir Roland takes 41 damage.
+    [T] HPCHANGE Sir Roland: 156 → 115  (-41)
+    [T] ACTION P2 Snowkissed Aurora[back_left]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=115/265 statuses=[root(1r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=215/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=175/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: root
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=115/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=215/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Snowkissed Aurora
+[Queued] Green Knight: Edict → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Green Knight
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Snowkissed Aurora
+Robin, Hooded Avenger and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Green Knight[back_right]: Edict → Sir Roland
+Green Knight uses Edict on Sir Roland.
+    [T] DMGCALC [Edict] Green Knight[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+    [T]   FINAL_DMG=16
+  Sir Roland takes 16 damage.
+    [T] HPCHANGE Sir Roland: 115 → 99  (-16)
+  Sir Roland gains spotlight for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Green Knight
+Snowkissed Aurora uses Heal on Green Knight.
+  Snowkissed Aurora heals Green Knight for 60 HP.
+  Medic: Green Knight cleansed of rulebook status conditions and stat debuffs.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 195  (-30)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=99/265 statuses=[guard(1r), spotlight(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=175/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=195/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: spotlight → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=99/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[spotlight(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[back_right] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=175/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=195/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Green Knight: Swap with Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Hawkshot → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 99 → 74  (-25)
+  Snowkissed Aurora heals Robin, Hooded Avenger for 10 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Green Knight[back_right]: swap ↔ Snowkissed Aurora
+Green Knight and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Sir Roland
+Robin, Hooded Avenger uses Hawkshot on Sir Roland.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=77 def=90 raw=34.22 ceil=35
+    [T]   FINAL_DMG=35
+  Sir Roland takes 35 damage.
+    [T] HPCHANGE Sir Roland: 74 → 39  (-35)
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[front] HP=39/265 statuses=[spotlight(1r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[front] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=195/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: spotlight → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: spotlight
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=39/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=195/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Green Knight
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Green Knight
+Sir Roland uses Shield Bash on Green Knight.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Green Knight[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Green Knight takes 30 damage.
+    [T] HPCHANGE Green Knight: 275 → 245  (-30)
+[Queued] Green Knight: Edict → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Robin, Hooded Avenger: Swap with Green Knight
+    [T] ACTION P2 Green Knight[front]: Edict → Sir Roland
+Green Knight uses Edict on Sir Roland.
+    [T] DMGCALC [Edict] Green Knight[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=43
+  Sir Roland takes 43 damage.
+    [T] HPCHANGE Sir Roland: 39 → 0  (-43) **KO**
+  Sir Roland gains root for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 13)
+────────────────────────────────────────────────────────────
+Player 2 wins!

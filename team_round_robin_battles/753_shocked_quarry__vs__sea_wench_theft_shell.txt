@@ -1,0 +1,617 @@
+Battle 753
+Player 1 Team: Shocked Quarry
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:49:26
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 753
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shocked Quarry
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] March Hare: Thunder Call → Robin, Hooded Avenger
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=94
+  Robin, Hooded Avenger takes 94 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 91  (-94)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P1 March Hare[back_right]: Thunder Call → Robin, Hooded Avenger
+March Hare uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=35
+    [T]   atk=70 def=40 raw=61.25 ceil=62
+    [T]   FINAL_DMG=62
+  Robin, Hooded Avenger takes 62 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 91 → 29  (-62)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → March Hare
+[Queued] Sea Wench Asha: Misappropriate → Frederic the Beastslayer
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+  Banner of Command: Robin, Hooded Avenger is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → March Hare
+Robin, Hooded Avenger uses Snipe Shot on March Hare.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → March Hare[back_right]
+    [T]   power=65
+    [T]   atk=70 def=35 raw=130.00 ceil=130
+    [T]   FINAL_DMG=150
+  March Hare takes 150 damage.
+    [T] HPCHANGE March Hare: 190 → 40  (-150)
+  Shock recoil: Robin, Hooded Avenger takes 30 damage.
+Sea Wench Asha moves to frontline.
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Frederic the Beastslayer
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 March Hare[back_right] HP=40/190 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[weaken(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=40/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Frederic the Beastslayer
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Frederic the Beastslayer
+Sea Wench Asha uses Dark Grasp on Frederic the Beastslayer.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=93
+  Frederic the Beastslayer takes 93 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 107  (-93)
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [1/6]
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Frederic the Beastslayer: Swap with March Hare
+[Queued] March Hare: Thunder Call → Sea Wench Asha
+[Queued] Hunold the Piper: Sucker Punch → Sea Wench Asha
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ March Hare
+Frederic the Beastslayer and March Hare swap positions.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Sea Wench Asha
+March Hare uses Thunder Call on Sea Wench Asha.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Sea Wench Asha[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=82
+  Sea Wench Asha takes 82 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 128  (-82)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [2/6]
+  Sea Wench Asha gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Sea Wench Asha
+Hunold the Piper uses Sucker Punch on Sea Wench Asha.
+  Sea Wench Asha gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 March Hare[front] HP=40/190 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[weaken(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=128/210 statuses=[guard(2r), shock(2r), weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_TICK Sea Wench Asha: shock → 1r left
+    [T] STATUS_TICK Sea Wench Asha: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Sea Wench Asha spd=50 (MH adj from 65)  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=40/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=128/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r), shock(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] March Hare: Swap with Hunold the Piper
+[Queued] Frederic the Beastslayer: On the Hunt → Sea Wench Asha
+[Queued] Hunold the Piper: Sucker Punch → Sea Wench Asha
+    [T] ACTION P1 March Hare[front]: swap ↔ Hunold the Piper
+March Hare and Hunold the Piper swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Sea Wench Asha
+Frederic the Beastslayer uses On the Hunt on Sea Wench Asha.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Sea Wench Asha[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=43
+  Sea Wench Asha takes 43 damage.
+    [T] HPCHANGE Sea Wench Asha: 128 → 85  (-43)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [3/6]
+  Sea Wench Asha gains expose for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Sea Wench Asha
+Hunold the Piper uses Sucker Punch on Sea Wench Asha.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sea Wench Asha[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=92
+  Sea Wench Asha takes 92 damage.
+    [T] HPCHANGE Sea Wench Asha: 85 → 0  (-92) **KO**
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [4/6]
+Sir Roland moves to frontline.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 181  (-29)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=181/210 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=40/190 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=40/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+[Queued] March Hare: Thunder Call → Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=5
+  Sir Roland takes 5 damage.
+    [T] HPCHANGE Sir Roland: 265 → 260  (-5)
+  Sir Roland gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Sir Roland
+March Hare uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=70 def=90 raw=50.56 ceil=51
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 260 → 210  (-50)
+  Sir Roland gains shock for 2 rounds.
+  March Hare must recharge next turn.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=181/210 statuses=[-]
+    [T]   P1 March Hare[front] HP=40/190 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r), expose(2r), shock(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Sir Roland spd=15 (MH adj from 30)  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=40/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), shock(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] March Hare: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P1 March Hare[front]: swap ↔ Frederic the Beastslayer
+March Hare recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Shield Bash → March Hare
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → March Hare
+Sir Roland uses Shield Bash on March Hare.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=45 def=35 raw=51.43 ceil=52
+    [T]   FINAL_DMG=42
+  March Hare takes 42 damage.
+    [T] HPCHANGE March Hare: 40 → 0  (-42) **KO**
+  Shock recoil: Sir Roland takes 9 damage.
+  All allies are Guarded for 2 rounds.
+Hunold the Piper moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=181/210 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=256/265 statuses=[expose(1r), shock(1r), weaken(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: shock → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: shock
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=256/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 256 → 224  (-32)
+  Sir Roland gains shock for 2 rounds.
+  Sir Roland is Shocked by Dying Dance (was Weakened)!
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=35
+  Sir Roland takes 35 damage.
+    [T] HPCHANGE Sir Roland: 224 → 189  (-35)
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=26
+  Hunold the Piper takes 26 damage.
+    [T] HPCHANGE Hunold the Piper: 181 → 155  (-26)
+  Shock recoil: Sir Roland takes 6 damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=155/210 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=183/265 statuses=[weaken(1r), guard(1r), shock(2r), expose(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=155/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=183/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[shock(1r), expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=63
+  Sir Roland takes 63 damage.
+    [T] HPCHANGE Sir Roland: 183 → 120  (-63)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Sir Roland
+Frederic the Beastslayer uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 120 → 76  (-44)
+  Sir Roland is Marked — takes +10 damage next round.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=155/210 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=76/265 statuses=[shock(1r), expose(1r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: shock → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: shock
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=155/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=76/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=42
+  Sir Roland takes 42 damage.
+    [T] HPCHANGE Sir Roland: 76 → 34  (-42)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=30
+  Sir Roland takes 30 damage.
+    [T] HPCHANGE Sir Roland: 34 → 4  (-30)
+  Sir Roland gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 155 → 123  (-32)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=123/210 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=4/265 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=107/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=123/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Sir Roland[front] HP=4/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Sir Roland takes 48 damage.
+    [T] HPCHANGE Sir Roland: 4 → 0  (-48) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 1 wins!

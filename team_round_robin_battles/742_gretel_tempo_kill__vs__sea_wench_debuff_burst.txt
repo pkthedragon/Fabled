@@ -1,0 +1,410 @@
+Battle 742
+Player 1 Team: Gretel Tempo Kill
+Player 2 Team: Sea Wench Debuff Burst
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:48:43
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 742
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Gretel Tempo Kill
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Sea Wench Debuff Burst
+  [front] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Abyssal Call  (passive=False)
+    Basics: Soul Gaze, Blood Pact
+    Item:   Arcane Focus
+  [back_left] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Sea Wench Asha: Abyssal Call → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: On the Hunt → Witch-Hunter Gretel
+[Queued] Rapunzel the Golden: Lower Guard → Lucky Constantine
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Witch-Hunter Gretel
+Sea Wench Asha uses Abyssal Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Witch-Hunter Gretel[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=100
+  Witch-Hunter Gretel takes 100 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 115  (-100)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Witch-Hunter Gretel
+Frederic the Beastslayer uses On the Hunt on Witch-Hunter Gretel.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 115 → 58  (-57)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Lucky Constantine
+Rapunzel the Golden uses Lower Guard on Lucky Constantine.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Lucky Constantine[back_left]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Lucky Constantine takes 45 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 170  (-45)
+  Lucky Constantine loses -10 Defense for 2 rounds.
+[Queued] Witch-Hunter Gretel: Swap with Lucky Constantine
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Lucky Constantine: Post Bounty → Sea Wench Asha
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Lucky Constantine
+Witch-Hunter Gretel and Lucky Constantine swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Sea Wench Asha
+Lucky Constantine uses Post Bounty on Sea Wench Asha.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=63
+  Sea Wench Asha takes 63 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 147  (-63)
+  Sea Wench Asha gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=58/215 statuses=[expose(2r)]
+    [T]   P1 Lucky Constantine[front] HP=170/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=147/210 statuses=[expose(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] STATUS_TICK Sea Wench Asha: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sea Wench Asha spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_left] HP=58/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=170/215 ATK=70(base=70) DEF=30(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=147/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Subterfuge → Sea Wench Asha ↔ Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Sea Wench Asha
+[Queued] Witch-Hunter Gretel: Intimidate → Sea Wench Asha
+    [T] ACTION P1 Lucky Constantine[front]: Subterfuge → Sea Wench Asha
+Lucky Constantine uses Subterfuge on Sea Wench Asha.
+    [T] DMGCALC [Subterfuge] Lucky Constantine[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=94
+  Sea Wench Asha takes 94 damage.
+    [T] HPCHANGE Sea Wench Asha: 147 → 53  (-94)
+Sea Wench Asha and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Sea Wench Asha
+Robin, Hooded Avenger uses Hawkshot on Sea Wench Asha.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Sea Wench Asha[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=93
+  Sea Wench Asha takes 93 damage.
+    [T] HPCHANGE Sea Wench Asha: 53 → 0  (-93) **KO**
+    [T] ACTION P1 Witch-Hunter Gretel[back_left]: Intimidate → Sea Wench Asha
+Witch-Hunter Gretel's target is no longer legal — Intimidate fizzles.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Rapunzel the Golden: Lower Guard → Lucky Constantine
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=70 def=30 raw=116.67 ceil=117
+    [T]   FINAL_DMG=141
+  Lucky Constantine takes 141 damage.
+    [T] HPCHANGE Lucky Constantine: 170 → 29  (-141)
+  Lucky Constantine is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Lucky Constantine
+Rapunzel the Golden uses Lower Guard on Lucky Constantine.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Lucky Constantine[front]
+    [T]   power=30
+    [T]   atk=60 def=30 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Lucky Constantine takes 60 damage.
+    [T] HPCHANGE Lucky Constantine: 29 → 0  (-60) **KO**
+Witch-Hunter Gretel moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=58/215 statuses=[expose(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: expose
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=58/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=121/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Rapunzel the Golden: Impose → Witch-Hunter Gretel
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=101
+  Witch-Hunter Gretel takes 101 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 58 → 0  (-101) **KO**
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Impose → Witch-Hunter Gretel
+Rapunzel the Golden's target is no longer legal — Impose fizzles.
+[Queued] Robin, Hooded Avenger: Kingmaker → Frederic the Beastslayer
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Kingmaker → Frederic the Beastslayer
+Robin, Hooded Avenger uses Kingmaker on Frederic the Beastslayer.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Frederic the Beastslayer[front]
+    [T]   power=70
+    [T]   atk=70 def=45 raw=108.89 ceil=109
+    [T]   FINAL_DMG=120
+  Frederic the Beastslayer takes 120 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 121 → 1  (-120)
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P1 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Impose → Robin, Hooded Avenger
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Impose → Robin, Hooded Avenger
+Rapunzel the Golden uses Impose on Robin, Hooded Avenger.
+    [T] DMGCALC [Impose] Rapunzel the Golden[back_left] → Robin, Hooded Avenger[front]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 140  (-45)
+  Robin, Hooded Avenger loses -10 Speed for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=140/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=55  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=140/185 ATK=70(base=70) DEF=40(base=40) SPD=55(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=113
+  Robin, Hooded Avenger takes 113 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 140 → 27  (-113)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: swap ↔ Frederic the Beastslayer
+Rapunzel the Golden recharges.
+[Queued] Robin, Hooded Avenger: Snipe Shot → Rapunzel the Golden
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Rapunzel the Golden
+Robin, Hooded Avenger uses Snipe Shot on Rapunzel the Golden.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Rapunzel the Golden[back_left]
+    [T]   power=65
+    [T]   atk=70 def=65 raw=70.00 ceil=70
+    [T]   FINAL_DMG=80
+  Rapunzel the Golden takes 80 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 178  (-80)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=27/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=178/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 statuses=[-]
+    [T] DEBUFF_EXPIRED Robin, Hooded Avenger: speed-10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=27/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=178/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Rapunzel the Golden
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Rapunzel the Golden
+Robin, Hooded Avenger uses Snipe Shot on Rapunzel the Golden.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Rapunzel the Golden[back_left]
+    [T]   power=65
+    [T]   atk=70 def=65 raw=70.00 ceil=70
+    [T]   FINAL_DMG=80
+  Rapunzel the Golden takes 80 damage.
+    [T] HPCHANGE Rapunzel the Golden: 178 → 98  (-80)
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Impose → Robin, Hooded Avenger
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=123
+  Robin, Hooded Avenger takes 123 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 27 → 0  (-123) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

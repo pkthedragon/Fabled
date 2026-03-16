@@ -1,0 +1,709 @@
+Battle 475
+Player 1 Team: Status Spread
+Player 2 Team: Lady Control Shell
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:18:25
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 477
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Status Spread
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Sustain Into Spike
+  [front] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Sturdy Home  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Hunold the Piper: Sucker Punch → Porcus III
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Prince Charming
+Witch of the Woods uses Thunder Call on Prince Charming.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=75 def=62 raw=78.63 ceil=79
+    [T]   FINAL_DMG=79
+  Prince Charming takes 79 damage.
+    [T] HPCHANGE Prince Charming: 255 → 176  (-79)
+  Prince Charming gains shock for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=60 def=62 raw=38.71 ceil=39
+    [T]   FINAL_DMG=64
+  Prince Charming takes 64 damage.
+    [T] HPCHANGE Prince Charming: 176 → 112  (-64)
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Porcus III
+Hunold the Piper uses Sucker Punch on Porcus III.
+  Porcus III gains weaken for 2 rounds.
+[Queued] Porcus III: Shield Bash → Witch of the Woods
+[Queued] Prince Charming: Condescend → Witch of the Woods
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Witch of the Woods
+Porcus III uses Shield Bash on Witch of the Woods.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=40 def=35 raw=45.71 ceil=46
+    [T]   FINAL_DMG=37
+  Witch of the Woods takes 37 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 143  (-37)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Witch of the Woods
+Prince Charming uses Condescend on Witch of the Woods.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=65 def=35 raw=74.29 ceil=75
+    [T]   FINAL_DMG=75
+  Witch of the Woods takes 75 damage.
+    [T] HPCHANGE Witch of the Woods: 143 → 68  (-75)
+  Shock recoil: Prince Charming takes 15 damage.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[front] HP=68/180 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Porcus III[front] HP=280/280 statuses=[weaken(2r), guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=152/255 statuses=[shock(2r), root(2r), guard(2r)]
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: shock → 1r left
+    [T] STATUS_TICK Prince Charming: root → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+  Innocent Heart: Prince Charming +10 Def.
+  Curse of Sleeping: Prince Charming loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=68/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[shock(1r), guard(1r)]  buffs=[defense+7(1r), defense+10(2r)]  debuffs=[-]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               [Queued] Lady of Reflections: Condemn → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P2 Lady of Reflections[front]: Condemn → Hunold the Piper
+Lady of Reflections uses Condemn on Hunold the Piper.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 134 → 102  (-32)
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=102/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=135/195 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=180/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=102/210 ATK=50(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Briar Rose[back_right] HP=135/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=180/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Hunold the Piper: Dying Dance → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Lady of Reflections
+Hunold the Piper uses Dying Dance on Lady of Reflections.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=50 def=85 raw=35.29 ceil=36
+    [T]   FINAL_DMG=36
+  Lady of Reflections takes 36 damage.
+    [T] HPCHANGE Lady of Reflections: 180 → 144  (-36)
+  Reflecting Pool: Hunold the Piper takes 4 reflected damage.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 144 → 105  (-39)
+  Reflecting Pool: Briar Rose takes 8 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+[Queued] Lady of Reflections: Item Lady of Reflections
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P2 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=98/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=127/195 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=160/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] DEBUFF_EXPIRED Hunold the Piper: attack-10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=98/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=127/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=160/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Hunold the Piper: Dying Dance → Lady of Reflections
+[Queued] Briar Rose: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Lady of Reflections
+Hunold the Piper uses Dying Dance on Lady of Reflections.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=85 raw=42.35 ceil=43
+    [T]   FINAL_DMG=43
+  Lady of Reflections takes 43 damage.
+    [T] HPCHANGE Lady of Reflections: 160 → 117  (-43)
+  Reflecting Pool: Hunold the Piper takes 5 reflected damage.
+    [T] ACTION P1 Briar Rose[back_right]: swap ↔ Hunold the Piper
+Briar Rose recharges.
+[Queued] Lady of Reflections: Item Lady of Reflections
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+    [T] ACTION P2 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=93/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=127/195 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=117/255 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=93/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=127/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=117/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Hunold the Piper: Dying Dance → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Lady of Reflections
+Hunold the Piper uses Dying Dance on Lady of Reflections.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=85 raw=42.35 ceil=43
+    [T]   FINAL_DMG=35
+  Lady of Reflections takes 35 damage.
+    [T] HPCHANGE Lady of Reflections: 117 → 82  (-35)
+  Reflecting Pool: Hunold the Piper takes 4 reflected damage.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=34
+  Lady of Reflections takes 34 damage.
+    [T] HPCHANGE Lady of Reflections: 82 → 48  (-34)
+  Reflecting Pool: Briar Rose takes 7 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+[Queued] Lady of Reflections: Condemn → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P2 Lady of Reflections[front]: Condemn → Hunold the Piper
+Lady of Reflections uses Condemn on Hunold the Piper.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 89 → 57  (-32)
+  Hunold the Piper loses -10 Attack for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=57/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=120/195 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=103/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=57/210 ATK=50(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Briar Rose[back_right] HP=120/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=103/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Hunold the Piper: Dying Dance → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Lady of Reflections
+Hunold the Piper uses Dying Dance on Lady of Reflections.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=50 def=85 raw=35.29 ceil=36
+    [T]   FINAL_DMG=36
+  Lady of Reflections takes 36 damage.
+    [T] HPCHANGE Lady of Reflections: 103 → 67  (-36)
+  Reflecting Pool: Hunold the Piper takes 4 reflected damage.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 67 → 28  (-39)
+  Reflecting Pool: Briar Rose takes 8 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+[Queued] Lady of Reflections: Condemn → Hunold the Piper
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P2 Lady of Reflections[front]: Condemn → Hunold the Piper
+Lady of Reflections uses Condemn on Hunold the Piper.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 53 → 21  (-32)
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=21/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=112/195 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=83/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=21/210 ATK=50(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Briar Rose[back_right] HP=112/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=83/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Hunold the Piper: Dying Dance → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Lady of Reflections
+Hunold the Piper uses Dying Dance on Lady of Reflections.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=50 def=85 raw=35.29 ceil=36
+    [T]   FINAL_DMG=36
+  Lady of Reflections takes 36 damage.
+    [T] HPCHANGE Lady of Reflections: 83 → 47  (-36)
+  Reflecting Pool: Hunold the Piper takes 4 reflected damage.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 47 → 8  (-39)
+  Reflecting Pool: Briar Rose takes 8 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+[Queued] Lady of Reflections: Item Lady of Reflections
+[Queued] Snowkissed Aurora: Dictate of Nature → Hunold the Piper
+    [T] ACTION P2 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Hunold the Piper
+Snowkissed Aurora uses Dictate of Nature on Hunold the Piper.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=28
+  Hunold the Piper takes 28 damage.
+    [T] HPCHANGE Hunold the Piper: 17 → 0  (-28) **KO**
+  Snowkissed Aurora heals Lady of Reflections for 35 HP.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=104/195 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=43/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=104/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=43/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Briar Rose: Skip
+    [T] ACTION P1 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+[Queued] Lady of Reflections: Item Lady of Reflections
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+    [T] ACTION P2 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=104/195 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=43/255 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=104/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=43/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=169/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Snowkissed Aurora[back_left]
+    [T]   power=55
+    [T]   atk=60 def=60 raw=55.00 ceil=55
+    [T]   FINAL_DMG=65
+  Snowkissed Aurora takes 65 damage.
+    [T] HPCHANGE Snowkissed Aurora: 169 → 104  (-65)
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Briar Rose takes 50 damage.
+    [T] HPCHANGE Briar Rose: 104 → 54  (-50)
+  Snowkissed Aurora heals Lady of Reflections for 50 HP.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Medic: Lady of Reflections cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=54/195 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=93/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=104/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=54/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=93/255 ATK=40(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=104/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Snowkissed Aurora[front]
+    [T]   power=55
+    [T]   atk=60 def=60 raw=55.00 ceil=55
+    [T]   FINAL_DMG=65
+  Snowkissed Aurora takes 65 damage.
+    [T] HPCHANGE Snowkissed Aurora: 104 → 39  (-65)
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Briar Rose takes 50 damage.
+    [T] HPCHANGE Briar Rose: 54 → 4  (-50)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=4/195 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=93/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=89/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=4/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=93/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=89/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Snowkissed Aurora[front]
+    [T]   power=55
+    [T]   atk=60 def=60 raw=55.00 ceil=55
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 89 → 35  (-54)
+  Briar Rose must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Briar Rose takes 50 damage.
+    [T] HPCHANGE Briar Rose: 4 → 0  (-50) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 15)
+────────────────────────────────────────────────────────────
+Player 2 wins!

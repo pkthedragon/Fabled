@@ -1,0 +1,599 @@
+Battle 193
+Player 1 Team: Last-Stand Brawler
+Player 2 Team: Root Killbox
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:52:15
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 193
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Brawler
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Not By The Hair  (passive=False)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Root Killbox
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Magic Growth  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Porcus III swap positions.
+[Queued] Little Jack: Magic Growth → Porcus III
+[Queued] Robin, Hooded Avenger: Hawkshot → Snowkissed Aurora
+[Queued] Briar Rose: Creeping Doubt → Risa Redcloak
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Porcus III
+Little Jack uses Magic Growth on Porcus III.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=80 def=90 raw=44.44 ceil=45
+    [T]   FINAL_DMG=64
+  Porcus III takes 64 damage.
+    [T] HPCHANGE Porcus III: 280 → 216  (-64)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Snowkissed Aurora
+Robin, Hooded Avenger uses Hawkshot on Snowkissed Aurora.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 163  (-62)
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Risa Redcloak
+Briar Rose uses Creeping Doubt on Risa Redcloak.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Risa Redcloak[back_left]
+    [T]   power=40
+    [T]   atk=60 def=60 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Risa Redcloak takes 50 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 200  (-50)
+  Risa Redcloak gains root for 2 rounds.
+[Queued] Porcus III: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Risa Redcloak: Blood Hunt → Little Jack
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=35 def=50 raw=28.00 ceil=28
+    [T]   FINAL_DMG=28
+  Little Jack takes 28 damage.
+    [T] HPCHANGE Little Jack: 220 → 192  (-28)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Little Jack
+Risa Redcloak uses Blood Hunt on Little Jack.
+  Blood Hunt: Risa Redcloak and Little Jack HP set to 196.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[back_left] HP=196/250 statuses=[root(2r), guard(2r)]
+    [T]   P1 Porcus III[front] HP=271/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=163/225 statuses=[guard(2r)]
+    [T]   P2 Little Jack[front] HP=196/220 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: root → 1r left
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+  Innocent Heart: Risa Redcloak +10 Def.
+  Curse of Sleeping: Risa Redcloak loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=196/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(2r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=271/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=163/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=196/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Porcus III
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+[Queued] Briar Rose: Creeping Doubt → Risa Redcloak
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Porcus III
+Little Jack uses Magic Growth on Porcus III.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=80 def=95 raw=42.11 ceil=43
+    [T]   FINAL_DMG=62
+  Porcus III takes 62 damage.
+    [T] HPCHANGE Porcus III: 271 → 209  (-62)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 163 → 101  (-62)
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Risa Redcloak
+Briar Rose uses Creeping Doubt on Risa Redcloak.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Risa Redcloak[back_left]
+    [T]   power=40
+    [T]   atk=60 def=70 raw=34.29 ceil=35
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 196 → 158  (-38)
+  Risa Redcloak is immune to Root (Curse of Sleeping).
+[Queued] Porcus III: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Risa Redcloak: Swap with Porcus III
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 196 → 164  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions.
+Risa Redcloak cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[back_left] HP=158/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[front] HP=264/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=101/225 statuses=[guard(1r)]
+    [T]   P2 Little Jack[front] HP=164/220 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=158/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=264/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=101/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=164/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Porcus III
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Porcus III
+Little Jack uses Magic Growth on Porcus III.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=80 def=95 raw=42.11 ceil=43
+    [T]   FINAL_DMG=62
+  Porcus III takes 62 damage.
+    [T] HPCHANGE Porcus III: 264 → 202  (-62)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=77 def=70 raw=44.00 ceil=44
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 101 → 47  (-54)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Porcus III
+Briar Rose uses Creeping Doubt on Porcus III.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=60 def=95 raw=25.26 ceil=26
+    [T]   FINAL_DMG=36
+  Porcus III takes 36 damage.
+    [T] HPCHANGE Porcus III: 202 → 166  (-36)
+  Briar Rose must recharge next turn.
+[Queued] Porcus III: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 164 → 132  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[back_right] HP=158/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=221/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=47/225 statuses=[guard(2r)]
+    [T]   P2 Little Jack[front] HP=132/220 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=158/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=221/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=47/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=132/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Porcus III
+[Queued] Robin, Hooded Avenger: Swap with Little Jack
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Porcus III
+Little Jack uses Magic Growth on Porcus III.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=80 def=95 raw=42.11 ceil=43
+    [T]   FINAL_DMG=62
+  Porcus III takes 62 damage.
+    [T] HPCHANGE Porcus III: 221 → 159  (-62)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Little Jack
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Briar Rose[back_left]: skip/recharge
+Briar Rose recharges.
+[Queued] Porcus III: Shield Bash → Little Jack
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 132 → 100  (-32)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_right]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[back_right] HP=158/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[front] HP=159/280 statuses=[root(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=47/225 statuses=[guard(1r)]
+    [T]   P2 Little Jack[front] HP=100/220 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Curse of Sleeping: Porcus III loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=158/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=159/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(2r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=47/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=100/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Porcus III
+[Queued] Robin, Hooded Avenger: Hawkshot → Risa Redcloak
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Porcus III
+Little Jack uses Magic Growth on Porcus III.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=80 def=95 raw=42.11 ceil=43
+    [T]   FINAL_DMG=52
+  Porcus III takes 52 damage.
+    [T] HPCHANGE Porcus III: 159 → 107  (-52)
+  Porcus III is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Risa Redcloak
+Robin, Hooded Avenger uses Hawkshot on Risa Redcloak.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Risa Redcloak[back_right]
+    [T]   power=40
+    [T]   atk=77 def=70 raw=44.00 ceil=44
+    [T]   FINAL_DMG=54
+  Risa Redcloak takes 54 damage.
+    [T] HPCHANGE Risa Redcloak: 158 → 104  (-54)
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=40
+    [T]   atk=60 def=70 raw=34.29 ceil=35
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 47 → 2  (-45)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+Porcus III cannot act.
+    [T] ACTION P1 Risa Redcloak[back_right]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[back_right] HP=159/250 statuses=[-]
+    [T]   P1 Porcus III[front] HP=107/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=2/225 statuses=[root(2r)]
+    [T]   P2 Little Jack[front] HP=100/220 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Curse of Sleeping: Snowkissed Aurora loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=159/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=107/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=2/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(2r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=100/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Porcus III
+[Queued] Robin, Hooded Avenger: Hawkshot → Risa Redcloak
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Porcus III
+Little Jack uses Magic Growth on Porcus III.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=80 def=95 raw=42.11 ceil=43
+    [T]   FINAL_DMG=62
+  Porcus III takes 62 damage.
+    [T] HPCHANGE Porcus III: 107 → 45  (-62)
+  Porcus III is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Risa Redcloak
+Robin, Hooded Avenger uses Hawkshot on Risa Redcloak.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Risa Redcloak[back_right]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=62
+  Risa Redcloak takes 62 damage.
+    [T] HPCHANGE Risa Redcloak: 159 → 97  (-62)
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=40
+    [T]   atk=60 def=70 raw=34.29 ceil=35
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 2 → 0  (-45) **KO**
+  Snowkissed Aurora is immune to Root (Curse of Sleeping).
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Little Jack
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Little Jack
+Risa Redcloak uses Blood Hunt on Little Jack.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Little Jack[front]
+    [T]   power=60
+    [T]   atk=75 def=50 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Little Jack takes 90 damage.
+    [T] HPCHANGE Little Jack: 100 → 10  (-90)
+  Risa Redcloak heals 36 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak[front] HP=133/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=45/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=10/220 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=133/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=45/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=10/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Snipe Shot → Porcus III
+[Queued] Briar Rose: Creeping Doubt → Risa Redcloak
+    [T] ACTION P2 Little Jack[front]: Magic Growth → Risa Redcloak
+Little Jack uses Magic Growth on Risa Redcloak.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=80 def=60 raw=66.67 ceil=67
+    [T]   FINAL_DMG=91
+  Risa Redcloak takes 91 damage.
+    [T] HPCHANGE Risa Redcloak: 133 → 42  (-91)
+  Risa Redcloak gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Porcus III
+Robin, Hooded Avenger uses Snipe Shot on Porcus III.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Porcus III[back_right]
+    [T]   power=40
+    [T]   atk=77 def=90 raw=34.22 ceil=35
+    [T]   FINAL_DMG=45
+  Porcus III takes 45 damage.
+    [T] HPCHANGE Porcus III: 45 → 0  (-45) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Risa Redcloak
+Briar Rose uses Creeping Doubt on Risa Redcloak.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=60 def=60 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Risa Redcloak takes 50 damage.
+    [T] HPCHANGE Risa Redcloak: 42 → 0  (-50) **KO**
+  Briar Rose must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

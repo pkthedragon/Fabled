@@ -1,0 +1,406 @@
+Battle 508
+Player 1 Team: Burn Shock Split
+Player 2 Team: Gretel Tempo Kill
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:20:18
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 512
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+Player 2: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[Queued] Witch of the Woods: Thunder Call → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: C[Queued] Witch of the Woods: Freezin[Queued] Hunold the Piper: Haun[Queued] Frederic the Beastslayer: Hunter's Mark → Hunold the Piper
+[Queued] Briar Rose: Creeping Doubt → Witch of the Woods
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Witch of the Woods
+Witch of the Woods uses Freezing Gale on Witch of the Woods.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Witch of the Woods[back_left]
+    [T]   power=65
+    [T]   atk=75 def=35 raw=139.29 ceil=140
+    [T]   FINAL_DMG=140
+  Witch of the Woods takes 140 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 40  (-140)
+  Witch of the Woods gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Hunold the Piper
+Frederic the Beastslayer uses Hunter's Mark on Hunold the Piper.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Hunold the Piper[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=38
+  Hunold the Piper takes 38 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 172  (-38)
+  Hunold the Piper is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Witch of the Woods
+Briar Rose uses Creeping Doubt on Witch of the Woods.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Witch of the Woods[back_left]
+    [T]   power=40
+    [T]   atk=60 def=35 raw=68.57 ceil=69
+    [T]   FINAL_DMG=79
+  Witch of the Woods takes 79 damage.
+    [T] HPCHANGE Witch of the Woods: 40 → 0  (-79) **KO**
+[Queued] Hunold the Piper: Haunting Rhythm → Witch of the Woods
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Witch of the Woods
+Hunold the Piper uses Haunting Rhythm on Witch of the Woods.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=60 def=35 raw=85.71 ceil=86
+    [T]   FINAL_DMG=86
+  Witch of the Woods takes 86 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 94  (-86)
+  Witch of the Woods gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 38 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=94/180 statuses=[shock(2r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Witch of the Woods: shock → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of t[Queued] Lucky Constantine: Post Bounty → Witch of the Woods
+[Queued] Witch-Hunter Gretel: Intimidate → Witch of the Woods
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Witch of the Woods
+Lucky Constantine uses Post Bounty on Witch of the Woods.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=70 def=35 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch [Queued] Hunold the Piper: Haunting Rhythm → Witch of the Woods
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Witch of the Woods
+Hunold the Piper uses Haunting Rhythm on Witch of the Woods.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] [Queued] Hunold the Piper: Haunting Rhythm → Lucky Constantine
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Lucky Constantine
+Hunold the Piper uses Haunting Rhythm on Lucky Constantine.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Lucky Constantine takes 75 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 140  (-75)
+  Lucky Constantine gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+    [T] DMGCALC [Cauterize] Matc[Queued] Briar Rose: Creeping Doubt → Hunold the Piper
+[Queued] Frederic the Beastslayer: Hunter's Mark → Hunold the Piper
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Hunold the Piper
+Briar Rose uses Creeping Doubt on Hunold the Piper.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Hunold the Piper[front]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=76
+  Hunold the Piper takes 76 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 134  (-76)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Hunold the Piper
+Frederic the Beastslayer uses Hunter's Mark on Hunold the Piper.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Hunold the Piper[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=57
+  Hunold the Piper takes 57 damage.
+    [T] HPCHANGE Hunold the Piper: 134 → 77  (-57)
+  Hunold the Piper is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=77/210 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=155/200 statuses=[no_heal(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+    [T] STATUS_TICK Frederic the Beastslayer: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Briar Rose spd=60  →  P1 acts first
+    [T] R[Queued] Lucky Constantine: Post Bounty → Hunold the Piper
+[Queued] Witch-Hunter Gretel: Intimidate → Hunold the Piper
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Hunold the Piper
+Lucky Constantine uses Post Bounty on Hunold the Piper.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=51
+  Hunold the Piper takes 51 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 159  (-51)
+  Shock recoil: Lucky Constantine takes 11 damage.
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: Intimidate → Hunold the Piper
+Witch-Hunter Gretel uses Intimidate on Hunold the Piper.
+  Hunold the Piper gains weaken for 2 rounds.
+[Queued] Hunold the Piper: Haunting Rhythm → Lucky Constantine
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Lucky Constantine
+Hunold the Piper uses Haunting Rhythm on Lucky Constantine.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Lucky Constantine[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Lucky Constantine takes 75 damage.
+    [T] HPCHANGE Lucky Constantine: 64 → 0  (-75) **KO**
+Witch-Hunter Gretel moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Lucky Constantine
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=159/210 statuses=[expose(2r), weaken(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=185/215 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+    [T] STATUS_TICK Hunold the Piper: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=159/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=185/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Witch-Hunter Gretel
+Hunold the Piper uses Haunting Rhythm on Witch-Hunter Gretel.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=54
+  Witch-Hunter Gretel takes 54 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 185 → 131  (-54)
+  Witch-Hunter Gretel gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 51 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Witch-Hunter Gretel: Into the Oven → Hunold the Piper
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Into the Oven → Hunold the Piper
+Witch-Hunter Gretel uses Into the Oven on Hunold the Piper.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Hunold the Piper[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=120
+  Hunold the Piper takes 120 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 90  (-120)
+  Shock recoil: Witch-Hunter Gretel takes 24 damage.
+  Hunold the Piper is immune to Burn.
+  Hunold the Piper gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=90/210 statuses=[expose(1r), weaken(1r), burn_immune(2r), root(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=107/215 statuses=[shock(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Hunold the Piper: expose → 0r left
+    [T] STATUS_TICK Hunold the Piper: weaken → 0r left
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: expose
+    [T] STATUS_EXPIRED Hunold the Piper: weaken
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=90/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=107/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Witch-Hunter Gretel
+Hunold the Piper uses Haunting Rhythm on Witch-Hunter Gretel.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=82
+  Witch-Hunter Gretel takes 82 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 107 → 25  (-82)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Hunold the Piper
+Matchstick Liesl recharges.
+[Queued] Witch-Hunter Gretel: Shove Over → Hunold the Piper
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Hunold the Piper
+Witch-Hunter Gretel uses Shove Over on Hunold the Piper.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Hunold the Piper[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=101
+  Hunold the Piper takes 101 damage.
+    [T] HPCHANGE Hunold the Piper: 90 → 0  (-101) **KO**
+  Shock recoil: Witch-Hunter Gretel takes 21 damage.
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Hunold the Piper gains weaken for 2 rounds.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=4/215 statuses=[shock(1r), burn(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+Witch-Hunter Gretel burns for 22 damage.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 1 wins!
+�───────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=158/210 statuses=[burn_immune(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=38/195 statuses=[burn(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=118/200 statuses=[burn(2r)]
+    [T] STATUS_TICK Matchstick Liesl: burn_immune → 1r left
+Briar Rose burns for 20 damage.
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Briar Rose: burn → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=158/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=18/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=98/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r)]  buffs=[attack+5(1r)]  debuffs=[-]

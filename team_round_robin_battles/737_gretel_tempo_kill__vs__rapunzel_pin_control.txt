@@ -1,0 +1,402 @@
+Battle 737
+Player 1 Team: Gretel Tempo Kill
+Player 2 Team: Rapunzel Pin Control
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:48:19
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 737
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Gretel Tempo Kill
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Hawkshot → Matchstick Liesl
+[Queued] Lucky Constantine: Post Bounty → Rapunzel the Golden
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Rapunzel the Golden
+Witch-Hunter Gretel uses Shove Over on Rapunzel the Golden.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Rapunzel the Golden[front]
+    [T]   power=65
+    [T]   atk=80 def=65 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Rapunzel the Golden takes 80 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 178  (-80)
+  Rapunzel the Golden gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Matchstick Liesl
+Robin, Hooded Avenger uses Hawkshot on Matchstick Liesl.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Matchstick Liesl[back_right]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 138  (-72)
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Rapunzel the Golden
+Lucky Constantine uses Post Bounty on Rapunzel the Golden.
+  Rapunzel the Golden gains expose for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Witch-Hunter Gretel
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Robin, Hooded Avenger
+Rapunzel the Golden uses Golden Snare on Robin, Hooded Avenger.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=82
+  Robin, Hooded Avenger takes 82 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 103  (-82)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Bring Down on Witch-Hunter Gretel.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=35
+    [T]   atk=82 def=45 raw=63.78 ceil=64
+    [T]   FINAL_DMG=64
+  Witch-Hunter Gretel takes 64 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 151  (-64)
+  Witch-Hunter Gretel gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=151/215 statuses=[root(2r)]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=103/185 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=233/258 statuses=[weaken(2r), expose(2r), burn_immune(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=138/210 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: root → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: expose → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=151/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=103/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=233/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), expose(1r), burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=138/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Hawkshot → Matchstick Liesl
+[Queued] Lucky Constantine: Post Bounty → Rapunzel the Golden
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Rapunzel the Golden
+Witch-Hunter Gretel uses Shove Over on Rapunzel the Golden.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Rapunzel the Golden[front]
+    [T]   power=65
+    [T]   atk=80 def=65 raw=80.00 ceil=80
+    [T]   FINAL_DMG=106
+  Rapunzel the Golden takes 106 damage.
+    [T] HPCHANGE Rapunzel the Golden: 233 → 127  (-106)
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Matchstick Liesl
+Robin, Hooded Avenger uses Hawkshot on Matchstick Liesl.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Matchstick Liesl[back_right]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 138 → 66  (-72)
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Rapunzel the Golden
+Lucky Constantine uses Post Bounty on Rapunzel the Golden.
+[Queued] Rapunzel the Golden: Golden Snare → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch-Hunter Gretel
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Witch-Hunter Gretel
+Rapunzel the Golden uses Golden Snare on Witch-Hunter Gretel.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Witch-Hunter Gretel[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=74
+  Witch-Hunter Gretel takes 74 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 151 → 77  (-74)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+  Witch-Hunter Gretel's root is refreshed to 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hawkshot on Witch-Hunter Gretel.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=82 def=45 raw=72.89 ceil=73
+    [T]   FINAL_DMG=73
+  Witch-Hunter Gretel takes 73 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 77 → 4  (-73)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=4/215 statuses=[root(2r), burn(2r)]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=103/185 statuses=[root(1r)]
+    [T]   P2 Rapunzel the Golden[front] HP=182/258 statuses=[weaken(1r), expose(1r), burn_immune(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=66/210 statuses=[-]
+Witch-Hunter Gretel burns for 22 damage.
+Lucky Constantine moves to frontline.
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: root
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: expose → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: weaken
+    [T] STATUS_EXPIRED Rapunzel the Golden: expose
+    [T] STATUS_EXPIRED Rapunzel the Golden: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=103/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=182/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=66/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Post Bounty → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Snipe Shot → Matchstick Liesl
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Rapunzel the Golden
+Lucky Constantine uses Post Bounty on Rapunzel the Golden.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=70 def=65 raw=43.08 ceil=44
+    [T]   FINAL_DMG=44
+  Rapunzel the Golden takes 44 damage.
+    [T] HPCHANGE Rapunzel the Golden: 182 → 138  (-44)
+  Rapunzel the Golden gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Matchstick Liesl
+Robin, Hooded Avenger uses Snipe Shot on Matchstick Liesl.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Matchstick Liesl[back_right]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 66 → 0  (-72) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Rapunzel the Golden: Golden Snare → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Bring Down → Lucky Constantine
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lucky Constantine
+Rapunzel the Golden uses Golden Snare on Lucky Constantine.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lucky Constantine[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=100
+  Lucky Constantine takes 100 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 115  (-100)
+  Lucky Constantine gains burn for 2 rounds.
+  Lucky Constantine gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Lucky Constantine
+Robin, Hooded Avenger uses Bring Down on Lucky Constantine.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Lucky Constantine[front]
+    [T]   power=35
+    [T]   atk=82 def=40 raw=71.75 ceil=72
+    [T]   FINAL_DMG=72
+  Lucky Constantine takes 72 damage.
+    [T] HPCHANGE Lucky Constantine: 115 → 43  (-72)
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine[front] HP=43/215 statuses=[burn(2r), root(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=103/185 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=138/258 statuses=[expose(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+Lucky Constantine burns for 22 damage.
+    [T] STATUS_TICK Lucky Constantine: burn → 1r left
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: expose → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine[front] HP=21/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[burn(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=103/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=138/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Lucky Constantine: Sneak Attack → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Swap with Lucky Constantine
+    [T] ACTION P1 Lucky Constantine[front]: Sneak Attack → Rapunzel the Golden
+Lucky Constantine uses Sneak Attack on Rapunzel the Golden.
+    [T] DMGCALC [Sneak Attack] Lucky Constantine[front] → Rapunzel the Golden[front]
+    [T]   power=60 (base=45)
+    [T]   atk=70 def=65 raw=64.62 ceil=65
+    [T]   FINAL_DMG=78
+  Rapunzel the Golden takes 78 damage.
+    [T] HPCHANGE Rapunzel the Golden: 138 → 60  (-78)
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Lucky Constantine
+Robin, Hooded Avenger recharges.
+[Queued] Rapunzel the Golden: Golden Snare → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lucky Constantine
+Rapunzel the Golden uses Golden Snare on Lucky Constantine.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lucky Constantine[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=100
+  Lucky Constantine takes 100 damage.
+    [T] HPCHANGE Lucky Constantine: 21 → 0  (-100) **KO**
+  Lucky Constantine's root is refreshed to 2 rounds.
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=103/185 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=60/258 statuses=[expose(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Rapunzel the Golden: expose → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: expose
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=103/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=60/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Kingmaker → Rapunzel the Golden
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Kingmaker → Rapunzel the Golden
+Robin, Hooded Avenger uses Kingmaker on Rapunzel the Golden.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Rapunzel the Golden[front]
+    [T]   power=70
+    [T]   atk=70 def=65 raw=75.38 ceil=76
+    [T]   FINAL_DMG=76
+  Rapunzel the Golden takes 76 damage.
+    [T] HPCHANGE Rapunzel the Golden: 60 → 0  (-76) **KO**
+Robin, Hooded Avenger moves to frontline.
+[Queued] Robin, Hooded Avenger: Hawkshot → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hawkshot on Robin, Hooded Avenger.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=113
+  Robin, Hooded Avenger takes 113 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 103 → 0  (-113) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!

@@ -1,0 +1,686 @@
+Battle 232
+Player 1 Team: Burnline Pressure
+Player 2 Team: Double Rogue Tempo
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:57:48
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 232
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+Player 2: Double Rogue Tempo
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Intimidate → Prince Charming
+[Queued] Witch of the Woods: Thunder Call → Prince Charming
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Prince Charming
+Witch-Hunter Gretel uses Intimidate on Prince Charming.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=80 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 255 → 189  (-66)
+  Prince Charming gains burn for 2 rounds.
+  Prince Charming gains weaken for 2 rounds.
+    [T] ACTION P1 Witch of the Woods[back_right]: Thunder Call → Prince Charming
+Witch of the Woods uses Thunder Call on Prince Charming.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=75 def=55 raw=47.73 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 189 → 131  (-58)
+  Double Double! Lucky Constantine gains weaken.
+  Prince Charming gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+  Matchstick Liesl loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Lucky Constantine takes 40 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 175  (-40)
+  Lucky Constantine gains no_heal for 2 rounds.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Lucky Constantine: Post Bounty → Witch-Hunter Gretel
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 175  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 statuses=[expose(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=131/255 statuses=[burn(2r), weaken(2r), shock(2r)]
+    [T]   P2 Lucky Constantine[back_left] HP=175/215 statuses=[weaken(2r), no_heal(2r)]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+Prince Charming burns for 26 damage.
+    [T] STATUS_TICK Prince Charming: burn → 1r left
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Prince Charming: shock → 1r left
+    [T] STATUS_TICK Lucky Constantine: weaken → 1r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=40(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=105/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[burn(1r), weaken(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=175/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[weaken(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lucky Constantine
+[Queued] Prince Charming: Condescend → Witch-Hunter Gretel
+[Queued] Lucky Constantine: Post Bounty → Witch-Hunter Gretel
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lucky Constantine
+Reynard, Lupine Trickster and Lucky Constantine swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Witch-Hunter Gretel
+Prince Charming uses Condescend on Witch-Hunter Gretel.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 158  (-57)
+  Shock recoil: Prince Charming takes 12 damage.
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=50 (base=40)
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=76
+  Witch-Hunter Gretel takes 76 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 158 → 82  (-76)
+[Queued] Witch-Hunter Gretel: Strike → Lucky Constantine
+[Queued] Witch of the Woods: Thunder Call → Lucky Constantine
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Lucky Constantine
+Witch-Hunter Gretel uses Strike on Lucky Constantine.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=55
+    [T]   atk=80 def=40 raw=110.00 ceil=110
+    [T]   FINAL_DMG=120
+  Lucky Constantine takes 120 damage.
+    [T] HPCHANGE Lucky Constantine: 175 → 55  (-120)
+  Lucky Constantine gains burn for 2 rounds.
+    [T] ACTION P1 Witch of the Woods[back_right]: Thunder Call → Lucky Constantine
+Witch of the Woods uses Thunder Call on Lucky Constantine.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Lucky Constantine[front]
+    [T]   power=35
+    [T]   atk=75 def=40 raw=65.62 ceil=66
+    [T]   FINAL_DMG=76
+  Lucky Constantine takes 76 damage.
+    [T] HPCHANGE Lucky Constantine: 55 → 0  (-76) **KO**
+  Lucky Constantine gains shock for 2 rounds.
+Reynard, Lupine Trickster moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=137/215 statuses=[expose(1r), burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=93/255 statuses=[burn(1r), weaken(1r), shock(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: expose
+    [T] DEBUFF_EXPIRED Matchstick Liesl: attack-10
+Prince Charming burns for 26 damage.
+    [T] STATUS_TICK Prince Charming: burn → 0r left
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_TICK Prince Charming: shock → 0r left
+    [T] STATUS_EXPIRED Prince Charming: burn
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] STATUS_EXPIRED Prince Charming: shock
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=137/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=67/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch-Hunter Gretel
+[Queued] Prince Charming: Condescend → Witch of the Woods
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Witch-Hunter Gretel
+Reynard, Lupine Trickster uses Riposte on Witch-Hunter Gretel.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Witch-Hunter Gretel takes 65 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 137 → 72  (-65)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Witch of the Woods
+Prince Charming uses Condescend on Witch of the Woods.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch of the Woods[back_right]
+    [T]   power=40
+    [T]   atk=65 def=35 raw=74.29 ceil=75
+    [T]   FINAL_DMG=75
+  Witch of the Woods takes 75 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 105  (-75)
+[Queued] Witch-Hunter Gretel: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Prince Charming
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Witch of the Woods
+Witch-Hunter Gretel and Witch of the Woods swap positions.
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Prince Charming
+Witch of the Woods uses Thunder Call on Prince Charming.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=75 def=55 raw=88.64 ceil=89
+    [T]   FINAL_DMG=89
+  Prince Charming takes 89 damage.
+    [T] HPCHANGE Prince Charming: 67 → 0  (-89) **KO**
+  Prince Charming gains shock for 2 rounds.
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=72/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods[front] HP=160/180 statuses=[burn_immune(2r)]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=72/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[front] HP=160/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=55 (base=45)
+    [T]   atk=65 def=35 raw=102.14 ceil=103
+    [T]   FINAL_DMG=103
+  Witch of the Woods takes 103 damage.
+    [T] HPCHANGE Witch of the Woods: 160 → 57  (-103)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Witch of the Woods: Swap with Matchstick Liesl
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Witch of the Woods[front]: swap ↔ Matchstick Liesl
+Witch of the Woods recharges.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=72/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods[front] HP=57/180 statuses=[burn_immune(1r)]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[weaken(2r)]
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch of the Woods: burn_immune
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=72/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[front] HP=57/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=68
+  Witch of the Woods takes 68 damage.
+    [T] HPCHANGE Witch of the Woods: 57 → 0  (-68) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Matchstick Liesl moves to frontline.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=142/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[weaken(1r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=142/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Matchstick Liesl
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Matchstick Liesl
+Reynard, Lupine Trickster uses Riposte on Matchstick Liesl.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=59
+  Matchstick Liesl takes 59 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 151  (-59)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=212/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[front] HP=151/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[weaken(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=212/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=151/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Matchstick Liesl
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Matchstick Liesl
+Reynard, Lupine Trickster uses Riposte on Matchstick Liesl.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=48
+  Matchstick Liesl takes 48 damage.
+    [T] HPCHANGE Matchstick Liesl: 151 → 103  (-48)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl and Witch-Hunter Gretel swap positions.
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Reynard, Lupine Trickster[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=20
+  Reynard, Lupine Trickster takes 20 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 175 → 155  (-20)
+  Reynard, Lupine Trickster gains burn for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel[front] HP=212/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=103/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=155/205 statuses=[weaken(1r), burn(2r)]
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=212/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=103/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=134/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch-Hunter Gretel
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Witch-Hunter Gretel
+Reynard, Lupine Trickster uses Riposte on Witch-Hunter Gretel.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Witch-Hunter Gretel takes 65 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 212 → 147  (-65)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Witch-Hunter Gretel: Intimidate → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Intimidate on Reynard, Lupine Trickster.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Reynard, Lupine Trickster[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=40
+  Reynard, Lupine Trickster takes 40 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 134 → 94  (-40)
+  Reynard, Lupine Trickster gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch-Hunter Gretel[front] HP=202/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=103/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=94/205 statuses=[burn(1r), weaken(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: burn
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=202/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=103/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=73/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch-Hunter Gretel
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Witch-Hunter Gretel
+Reynard, Lupine Trickster uses Riposte on Witch-Hunter Gretel.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=52
+  Witch-Hunter Gretel takes 52 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 202 → 150  (-52)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Witch-Hunter Gretel: Strike → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Reynard, Lupine Trickster
+Witch-Hunter Gretel uses Strike on Reynard, Lupine Trickster.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Reynard, Lupine Trickster[front]
+    [T]   power=55
+    [T]   atk=80 def=45 raw=97.78 ceil=98
+    [T]   FINAL_DMG=44
+  Reynard, Lupine Trickster takes 44 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 73 → 29  (-44)
+  Reynard, Lupine Trickster gains burn for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch-Hunter Gretel[front] HP=150/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=103/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=29/205 statuses=[weaken(1r), burn(2r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Reynard, Lupine Trickster: weaken → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=150/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=103/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=8/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch-Hunter Gretel
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Witch-Hunter Gretel
+Reynard, Lupine Trickster uses Riposte on Witch-Hunter Gretel.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Witch-Hunter Gretel takes 65 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 150 → 85  (-65)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=155/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[front] HP=103/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=8/205 statuses=[burn(1r)]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+Reynard, Lupine Trickster burns for 21 damage.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 1 wins!

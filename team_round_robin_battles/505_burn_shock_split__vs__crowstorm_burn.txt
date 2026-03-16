@@ -1,0 +1,621 @@
+Battle 505
+Player 1 Team: Burn Shock Split
+Player 2 Team: Crowstorm Burn
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:20:12
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 510
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+Player 2: Prince-Robin Midrange
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Cauterize → Prince Charming
+[Queued] Hunold the Piper: Haunting Rhythm → Prince Charming
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Robin, Hooded Avenger
+Witch of the Woods uses Thunder Call on Robin, Hooded Avenger.
+  Witch of the Woods loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=65
+    [T]   atk=65 def=40 raw=105.62 ceil=106
+    [T]   FINAL_DMG=106
+  Robin, Hooded Avenger takes 106 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 79  (-106)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Prince Charming
+Matchstick Liesl uses Cauterize on Prince Charming.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=50 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 255 → 218  (-37)
+  Prince Charming gains no_heal for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Haunting Rhythm → Prince Charming
+Hunold the Piper uses Haunting Rhythm on Prince Charming.
+  Prince Charming gains shock for 2 rounds.
+ick Liesl: Cauterize → Ashen Ella
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Ashen Ella
+Hunold the Piper uses Haunting Rhythm on Ashen Ella.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Ashen Ella[front]
+    [T]   power=50
+    [T]   atk=60 def=30 raw=100.00 ceil=100
+    [T]   FINAL_DMG=80
+  Ashen Ella takes 80 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 105  (-80)
+  Ashen Ella gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Ashen Ella
+Matchstick Liesl uses Cauterize on Ashen Ella.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=50 def=30 raw=66.67 ceil=67
+    [T]   FINAL_DMG=82
+  Ashen Ella takes 82 damage.
+    [T] HPCHANGE Ashen Ella: 105 → 23  (-82)
+  Ashen Ella gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=174/210 statuses=[weaken(2r), no_heal(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Ashen Ella[front] HP=23/185 statuses=[shock(2r), no_heal(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: weaken → 1r left
+    [T] STATUS_TICK Hunold the Piper: no_heal → 1r left
+    [T] STATUS_TICK Ashen Ella: shock → 1r left
+    [T] STATUS_TICK Ashen Ella: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Ashen Ella spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=174/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[weaken(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=23/185 ATK=70(base=80) DEF=30(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r), no_heal(1r)]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Ashen Ella
+[Queued] Matchstick Liesl: Cauterize → Ashen Ella
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Ashen Ella
+Hunold the Piper uses Haunting Rhythm on Ashen Ella.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Ashen Ella[front]
+    [T]   power=50
+    [T]   atk=60 def=30 raw=100.00 ceil=100
+    [T]   FINAL_DMG=95
+  Ashen Ella takes 95 damage.
+    [T] HPCHANGE Ashen Ella: 23 → 0  (-95) **KO**
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Ashen Ella
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+[Queued] Witch-Hunter Gretel: Intimidate → Hunold the Piper
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[back_right]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 160  (-50)
+  Matchstick Liesl gains no_heal for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Hunold the Piper
+Witch-Hunter Gretel uses Intimidate on Hunold the Piper.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=174/210 statuses=[weaken(1r), no_heal(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=160/210 statuses=[no_heal(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: weaken → 0r left
+    [T] STATUS_TICK Hunold the Piper: no_heal → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: weaken
+    [T] STATUS_EXPIRED Hunold the Piper: no_heal
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=174/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=160/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Matchstick Liesl
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Matchstick Liesl
+Hunold the Piper uses Haunting Rhythm on Matchstick Liesl.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Matchstick Liesl takes 60 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 150  (-60)
+  Matchstick Liesl gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 170  (-45)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Hunold the Piper
+[Queued] Witch-Hunter Gretel: Intimidate → Hunold the Piper
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Hunold the Piper
+Matchstick Liesl uses Cauterize on Hunold the Piper.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=45
+  Hunold the Piper takes 45 damage.
+    [T] HPCHANGE Hunold the Piper: 174 → 129  (-45)
+  Shock recoil: Matchstick Liesl takes 9 damage.
+  Hunold the Piper gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Hunold the Piper
+Witch-Hunter Gretel uses Intimidate on Hunold the Piper.
+  Hunold the Piper gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=129/210 statuses=[no_heal(2r), weaken(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=160/210 statuses=[no_heal(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=141/210 statuses=[shock(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=170/215 statuses=[no_heal(2r)]
+    [T] STATUS_TICK Hunold the Piper: no_heal → 1r left
+    [T] STATUS_TICK Hunold the Piper: weaken → 1r left
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: no_heal
+    [T] STATUS_TICK Matchstick Liesl: shock → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=129/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=160/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=141/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=170/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Matchstick Liesl
+Hunold the Piper and Matchstick Liesl swap positions.
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=56
+  Witch-Hunter Gretel takes 56 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 170 → 114  (-56)
+  Matchstick Liesl must recharge next turn.
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Matchstick Liesl
+Witch-Hunter Gretel uses Intimidate on Matchstick Liesl.
+  Matchstick Liesl gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=129/210 statuses=[no_heal(1r), weaken(1r)]
+    [T]   P1 Matchstick Liesl[front] HP=160/210 statuses=[weaken(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=141/210 statuses=[shock(1r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=114/215 statuses=[no_heal(1r)]
+    [T] STATUS_TICK Hunold the Piper: no_heal → 0r left
+    [T] STATUS_TICK Hunold the Piper: weaken → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: no_heal
+    [T] STATUS_EXPIRED Hunold the Piper: weaken
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+    [T] STATUS_TICK Matchstick Liesl: shock → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: shock
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=129/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=160/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=141/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=114/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+[Queued] Matchstick Liesl: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Haunting Rhythm → Witch-Hunter Gretel
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Hunold the Piper
+Matchstick Liesl recharges.
+    [T] ACTION P1 Hunold the Piper[back_right]: Haunting Rhythm → Witch-Hunter Gretel
+Hunold the Piper uses Haunting Rhythm on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains shock for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=129/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=160/210 statuses=[weaken(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=141/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=184/215 statuses=[burn_immune(2r), shock(2r)]
+    [T] STATUS_TICK Matchstick Liesl: weaken → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: weaken
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=129/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=160/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=141/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=184/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Matchstick Liesl
+[Queued] Matchstick Liesl: Cauterize → Hunold the Piper
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Matchstick Liesl
+Witch-Hunter Gretel uses Strike on Matchstick Liesl.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Matchstick Liesl[front]
+    [T]   power=55
+    [T]   atk=80 def=50 raw=88.00 ceil=88
+    [T]   FINAL_DMG=88
+  Matchstick Liesl takes 88 damage.
+    [T] HPCHANGE Matchstick Liesl: 160 → 72  (-88)
+  Shock recoil: Witch-Hunter Gretel takes 18 damage.
+  Matchstick Liesl gains burn for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Hunold the Piper
+Matchstick Liesl uses Cauterize on Hunold the Piper.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Hunold the Piper[back_right]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=41
+  Hunold the Piper takes 41 damage.
+    [T] HPCHANGE Hunold the Piper: 129 → 88  (-41)
+  Hunold the Piper gains no_heal for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+[Queued] Hunold the Piper: Swap with Matchstick Liesl
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=71
+  Witch-Hunter Gretel takes 71 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 166 → 95  (-71)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_right]: swap ↔ Matchstick Liesl
+Hunold the Piper and Matchstick Liesl swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 statuses=[no_heal(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=72/210 statuses=[burn(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=141/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=95/215 statuses=[burn_immune(1r), shock(1r), no_heal(2r)]
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Hunold the Piper: no_heal → 1r left
+    [T] STATUS_TICK Matchstick Liesl: burn → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: shock
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=51/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=141/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=95/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Witch-Hunter Gretel
+Hunold the Piper uses Haunting Rhythm on Witch-Hunter Gretel.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Witch-Hunter Gretel takes 67 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 95 → 28  (-67)
+  Witch-Hunter Gretel gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=60
+  Witch-Hunter Gretel takes 60 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 28 → 0  (-60) **KO**
+Matchstick Liesl moves to frontline.
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[back_right]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 51 → 1  (-50)
+  Matchstick Liesl gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 statuses=[no_heal(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=1/210 statuses=[burn(1r), no_heal(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=141/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Hunold the Piper: no_heal → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=141/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Matchstick Liesl
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Matchstick Liesl
+Hunold the Piper uses Haunting Rhythm on Matchstick Liesl.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Matchstick Liesl takes 60 damage.
+    [T] HPCHANGE Matchstick Liesl: 141 → 81  (-60)
+  Matchstick Liesl gains shock for 2 rounds.
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=81/210 statuses=[shock(2r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T] STATUS_TICK Matchstick Liesl: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=81/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Matchstick Liesl
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Matchstick Liesl
+Hunold the Piper uses Haunting Rhythm on Matchstick Liesl.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=75
+  Matchstick Liesl takes 75 damage.
+    [T] HPCHANGE Matchstick Liesl: 81 → 6  (-75)
+[Queued] Matchstick Liesl: Bless → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Bless → Matchstick Liesl
+Matchstick Liesl uses Bless on Matchstick Liesl.
+  Matchstick Liesl is Guarded for 2 rounds.
+  Matchstick Liesl gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=6/210 statuses=[shock(1r), guard(2r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T] STATUS_TICK Matchstick Liesl: shock → 0r left
+    [T] STATUS_TICK Matchstick Liesl: guard → 1r left
+    [T] STATUS_EXPIRED Matchstick Liesl: shock
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=6/210 ATK=60(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Matchstick Liesl
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Matchstick Liesl
+Hunold the Piper uses Haunting Rhythm on Matchstick Liesl.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=48
+  Matchstick Liesl takes 48 damage.
+    [T] HPCHANGE Matchstick Liesl: 6 → 0  (-48) **KO**
+  Matchstick Liesl gains shock for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 1 wins!

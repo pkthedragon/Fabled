@@ -1,0 +1,723 @@
+Battle 84
+Player 1 Team: Balanced Generalist
+Player 2 Team: Burnline Pressure
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:40:59
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 84
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Balanced Generalist
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Frederic the Beastslayer and Prince Charming swap positions.
+[Queued] Witch-Hunter Gretel: Intimidate → Prince Charming
+[Queued] Witch of the Woods: Thunder Call → Prince Charming
+[Queued] Matchstick Liesl: Cauterize → Prince Charming
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Prince Charming
+Witch-Hunter Gretel uses Intimidate on Prince Charming.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=80 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 255 → 189  (-66)
+  Prince Charming gains burn for 2 rounds.
+  Prince Charming gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Prince Charming
+Witch of the Woods uses Thunder Call on Prince Charming.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=75 def=55 raw=47.73 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 189 → 131  (-58)
+  Double Double! Snowkissed Aurora gains weaken.
+  Prince Charming gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Prince Charming
+Matchstick Liesl uses Cauterize on Prince Charming.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=50 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 131 → 94  (-37)
+  Prince Charming gains no_heal for 2 rounds.
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=101
+  Witch-Hunter Gretel takes 101 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 114  (-101)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Prince Charming cannot be healed.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[weaken(2r)]
+    [T]   P1 Prince Charming[back_right] HP=94/255 statuses=[burn(2r), weaken(2r), shock(2r), no_heal(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=114/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+Prince Charming burns for 26 damage.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: weaken → 1r left
+    [T] STATUS_TICK Prince Charming: burn → 1r left
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Prince Charming: shock → 1r left
+    [T] STATUS_TICK Prince Charming: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=68/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[burn(1r), weaken(1r), shock(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=114/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Prince Charming: Condescend → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch-Hunter Gretel
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=111
+  Witch-Hunter Gretel takes 111 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 114 → 3  (-111)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Witch-Hunter Gretel
+Prince Charming uses Condescend on Witch-Hunter Gretel.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 3 → 0  (-57) **KO**
+  Shock recoil: Prince Charming takes 12 damage.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Witch-Hunter Gretel
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+[Queued] Matchstick Liesl: Smite → Frederic the Beastslayer
+[Queued] Witch of the Woods: Thunder Call → Prince Charming
+    [T] ACTION P2 Matchstick Liesl[front]: Smite → Frederic the Beastslayer
+Matchstick Liesl uses Smite on Frederic the Beastslayer.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Frederic the Beastslayer[front]
+    [T]   power=55
+    [T]   atk=50 def=45 raw=61.11 ceil=62
+    [T]   FINAL_DMG=69
+  Frederic the Beastslayer takes 69 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 131  (-69)
+  Frederic the Beastslayer gains burn for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Prince Charming
+Witch of the Woods uses Thunder Call on Prince Charming.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=75 def=55 raw=47.73 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 56 → 0  (-58) **KO**
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[front] HP=131/200 statuses=[burn(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[weaken(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: weaken → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: weaken
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=111/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch of the Woods
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch of the Woods
+Frederic the Beastslayer uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch of the Woods[back_right]
+    [T]   power=50
+    [T]   atk=75 def=35 raw=107.14 ceil=108
+    [T]   FINAL_DMG=108
+  Witch of the Woods takes 108 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 72  (-108)
+  Witch of the Woods is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 55 HP.
+  Innocent Heart: Frederic the Beastslayer +10 Def.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+[Queued] Witch of the Woods: Swap with Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 70 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch of the Woods[back_right]: swap ↔ Matchstick Liesl
+Witch of the Woods and Matchstick Liesl swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[front] HP=166/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=142/180 statuses=[burn_immune(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=166/200 ATK=75(base=65) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=142/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Thunder Call → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Swap with Witch of the Woods
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Frederic the Beastslayer
+Witch of the Woods uses Thunder Call on Frederic the Beastslayer.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=75 def=55 raw=88.64 ceil=89
+    [T]   FINAL_DMG=98
+  Frederic the Beastslayer takes 98 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 166 → 68  (-98)
+  Frederic the Beastslayer gains burn for 2 rounds.
+  Frederic the Beastslayer gains shock for 2 rounds.
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Witch of the Woods
+Matchstick Liesl recharges.
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch of the Woods
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Witch of the Woods
+Snowkissed Aurora uses Dictate of Nature on Witch of the Woods.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=45 def=35 raw=45.00 ceil=45
+    [T]   FINAL_DMG=55
+  Witch of the Woods takes 55 damage.
+    [T] HPCHANGE Witch of the Woods: 142 → 87  (-55)
+  Snowkissed Aurora heals Frederic the Beastslayer for 35 HP.
+  Innocent Heart: Frederic the Beastslayer +10 Def.
+  Innocent Heart: Frederic the Beastslayer +10 Def.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[front] HP=103/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=87/180 statuses=[burn_immune(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch of the Woods: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=103/200 ATK=75(base=65) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=87/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P2 Witch of the Woods[front]: swap ↔ Matchstick Liesl
+Witch of the Woods recharges.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch of the Woods
+[Queued] Snowkissed Aurora: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Witch of the Woods
+Frederic the Beastslayer uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=75 def=35 raw=107.14 ceil=108
+    [T]   FINAL_DMG=130
+  Witch of the Woods takes 130 damage.
+    [T] HPCHANGE Witch of the Woods: 142 → 12  (-130)
+  Witch of the Woods is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Frederic the Beastslayer
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[front] HP=103/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=12/180 statuses=[burn_immune(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=103/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=12/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Thunder Call → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Frederic the Beastslayer
+Witch of the Woods uses Thunder Call on Frederic the Beastslayer.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=120
+  Frederic the Beastslayer takes 120 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 103 → 0  (-120) **KO**
+  Frederic the Beastslayer gains shock for 2 rounds.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch of the Woods
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Witch of the Woods
+Snowkissed Aurora uses Dictate of Nature on Witch of the Woods.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=45 def=35 raw=64.29 ceil=65
+    [T]   FINAL_DMG=75
+  Witch of the Woods takes 75 damage.
+    [T] HPCHANGE Witch of the Woods: 67 → 0  (-75) **KO**
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=50 def=60 raw=41.67 ceil=42
+    [T]   FINAL_DMG=42
+  Snowkissed Aurora takes 42 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 183  (-42)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Matchstick Liesl
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Matchstick Liesl
+Snowkissed Aurora uses Dictate of Nature on Matchstick Liesl.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Matchstick Liesl takes 45 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 165  (-45)
+  Snowkissed Aurora cannot be healed.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=183/225 statuses=[no_heal(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=165/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=183/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=165/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Snowkissed Aurora: Dictate of Nature → Matchstick Liesl
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Matchstick Liesl
+Snowkissed Aurora uses Dictate of Nature on Matchstick Liesl.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Matchstick Liesl takes 45 damage.
+    [T] HPCHANGE Matchstick Liesl: 165 → 120  (-45)
+  Snowkissed Aurora cannot be healed.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=183/225 statuses=[no_heal(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=120/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=183/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=120/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=50 def=60 raw=41.67 ceil=42
+    [T]   FINAL_DMG=42
+  Snowkissed Aurora takes 42 damage.
+    [T] HPCHANGE Snowkissed Aurora: 183 → 141  (-42)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=141/225 statuses=[no_heal(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=120/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=141/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=120/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Smite → Snowkissed Aurora
+    [T] ACTION P2 Matchstick Liesl[front]: Smite → Snowkissed Aurora
+Matchstick Liesl uses Smite on Snowkissed Aurora.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Snowkissed Aurora[front]
+    [T]   power=55
+    [T]   atk=50 def=60 raw=45.83 ceil=46
+    [T]   FINAL_DMG=46
+  Snowkissed Aurora takes 46 damage.
+    [T] HPCHANGE Snowkissed Aurora: 141 → 95  (-46)
+  Snowkissed Aurora gains burn for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Matchstick Liesl
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Matchstick Liesl
+Snowkissed Aurora uses Dictate of Nature on Matchstick Liesl.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Matchstick Liesl takes 45 damage.
+    [T] HPCHANGE Matchstick Liesl: 120 → 75  (-45)
+  Snowkissed Aurora cannot be healed.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=95/225 statuses=[no_heal(1r), burn(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=75/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+Snowkissed Aurora burns for 23 damage.
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: burn → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=72/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=75/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=50 def=60 raw=41.67 ceil=42
+    [T]   FINAL_DMG=42
+  Snowkissed Aurora takes 42 damage.
+    [T] HPCHANGE Snowkissed Aurora: 72 → 30  (-42)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Matchstick Liesl
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Matchstick Liesl
+Snowkissed Aurora uses Dictate of Nature on Matchstick Liesl.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Matchstick Liesl takes 45 damage.
+    [T] HPCHANGE Matchstick Liesl: 75 → 30  (-45)
+  Snowkissed Aurora cannot be healed.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=30/225 statuses=[burn(1r), no_heal(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=30/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+Snowkissed Aurora burns for 23 damage.
+    [T] STATUS_TICK Snowkissed Aurora: burn → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: burn
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=7/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[no_heal(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=30/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Snowkissed Aurora: Dictate of Nature → Matchstick Liesl
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Matchstick Liesl
+Snowkissed Aurora uses Dictate of Nature on Matchstick Liesl.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Matchstick Liesl takes 45 damage.
+    [T] HPCHANGE Matchstick Liesl: 30 → 0  (-45) **KO**
+  Snowkissed Aurora cannot be healed.
+  Snowkissed Aurora must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 12)
+────────────────────────────────────────────────────────────
+Player 1 wins!

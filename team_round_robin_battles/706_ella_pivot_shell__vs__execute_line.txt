@@ -1,0 +1,707 @@
+Battle 706
+Player 1 Team: Ella Pivot Shell
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:45:39
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 706
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Ella Pivot Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Fae Blessing  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella[back_left] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=97
+  Sir Roland takes 97 damage.
+    [T] HPCHANGE Sir Roland: 265 → 168  (-97)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Sir Roland: Swap with Ashen Ella
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Ashen Ella: Fae Blessing → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Ashen Ella
+Sir Roland and Ashen Ella swap positions.
+  Banner of Command: Ashen Ella is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+    [T] ACTION P1 Ashen Ella[front]: Fae Blessing → Sir Roland
+  Ashen Ella retargets to Ashen Ella after swapping to front.
+Ashen Ella uses Fae Blessing on Ashen Ella.
+  Ashen Ella gains +20 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_left] HP=223/265 statuses=[-]
+    [T]   P1 Ashen Ella[front] HP=185/185 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Ashen Ella: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=223/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella[front] HP=185/185 ATK=100(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[attack+20(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Arcane Wave → Lucky Constantine
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P1 Ashen Ella[front]: Arcane Wave → Lucky Constantine
+Ashen Ella uses Arcane Wave on Lucky Constantine.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Lucky Constantine[back_left]
+    [T]   power=80
+    [T]   atk=100 def=40 raw=200.00 ceil=200
+    [T]   FINAL_DMG=200
+  Lucky Constantine takes 200 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 15  (-200)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 42 HP.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+    [T] ACTION P1 Sir Roland[back_left]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+[Queued] Little Jack: Skyfall → Ashen Ella
+[Queued] Risa Redcloak: Rend → Ashen Ella
+[Queued] Lucky Constantine: Swap with Little Jack
+    [T] ACTION P2 Little Jack[front]: Skyfall → Ashen Ella
+Little Jack uses Skyfall on Ashen Ella.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Ashen Ella[front]
+    [T]   power=80
+    [T]   atk=80 def=30 raw=213.33 ceil=214
+    [T]   FINAL_DMG=182
+  Ashen Ella takes 182 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 3  (-182)
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Ashen Ella
+Risa Redcloak uses Rend on Ashen Ella.
+  Risa Redcloak marks Ashen Ella — next ability gains +10 Power.
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Ashen Ella[front] HP=3/185 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=15/215 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Ashen Ella: guard → 0r left
+    [T] STATUS_EXPIRED Ashen Ella: guard
+  Innocent Heart: Ashen Ella +10 Def.
+    [T] BUFF_EXPIRED Ashen Ella: attack+20
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella[front] HP=3/185 ATK=70(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Ashen Ella
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Ashen Ella
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Ashen Ella
+Lucky Constantine uses Feline Gambit on Ashen Ella.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Ashen Ella[front]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=79
+  Ashen Ella takes 79 damage.
+    [T] HPCHANGE Ashen Ella: 3 → 0  (-79) **KO**
+  Ashen Ella gains expose for 2 rounds.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Ashen Ella
+  Little Jack retargets to Snowkissed Aurora after swapping to back_right.
+Little Jack uses Skyfall on Snowkissed Aurora.
+  Snowkissed Aurora gains expose for 2 rounds.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=15/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: expose → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[expose(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Sucker Punch → Snowkissed Aurora
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Risa Redcloak: Swap with Little Jack
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Snowkissed Aurora
+Lucky Constantine uses Sucker Punch on Snowkissed Aurora.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Snowkissed Aurora[back_right]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=70 raw=60.00 ceil=60
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 163  (-62)
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Toxin Purge → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Sir Roland
+Snowkissed Aurora uses Toxin Purge on Sir Roland.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Sir Roland is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=163/225 statuses=[expose(1r), guard(2r)]
+    [T]   P2 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=15/215 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: expose → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: expose
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=163/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Little Jack
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+[Queued] Little Jack: Skyfall → Snowkissed Aurora
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+  Risa Redcloak marks Snowkissed Aurora — next ability gains +10 Power.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Snowkissed Aurora
+Little Jack uses Skyfall on Snowkissed Aurora.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=80
+    [T]   atk=80 def=70 raw=91.43 ceil=92
+    [T]   FINAL_DMG=99
+  Snowkissed Aurora takes 99 damage.
+    [T] HPCHANGE Snowkissed Aurora: 163 → 64  (-99)
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=64/225 statuses=[guard(1r)]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=15/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=64/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Snowkissed Aurora
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Snowkissed Aurora
+    [T] ACTION P2 Little Jack[front]: Skyfall → Snowkissed Aurora
+Little Jack uses Skyfall on Snowkissed Aurora.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=80
+    [T]   atk=80 def=70 raw=91.43 ceil=92
+    [T]   FINAL_DMG=121
+  Snowkissed Aurora takes 121 damage.
+    [T] HPCHANGE Snowkissed Aurora: 64 → 0  (-121) **KO**
+Sir Roland moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Snowkissed Aurora
+  Lucky Constantine retargets to Sir Roland after swapping to back_right.
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Little Jack takes 32 damage.
+    [T] HPCHANGE Little Jack: 220 → 188  (-32)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=188/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=188/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Lucky Constantine: Sucker Punch → Sir Roland
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=29
+  Sir Roland takes 29 damage.
+    [T] HPCHANGE Sir Roland: 265 → 236  (-29)
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Sir Roland
+Lucky Constantine uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 243.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 22 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[expose(1r), weaken(2r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=188/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=243/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=188/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=243/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=80
+  Sir Roland takes 80 damage.
+    [T] HPCHANGE Sir Roland: 265 → 185  (-80)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 214.
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Little Jack takes 29 damage.
+    [T] HPCHANGE Little Jack: 188 → 159  (-29)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=214/265 statuses=[weaken(1r), guard(1r), expose(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=159/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=214/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=214/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=159/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=214/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Lucky Constantine: Sucker Punch → Sir Roland
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=115
+  Sir Roland takes 115 damage.
+    [T] HPCHANGE Sir Roland: 214 → 99  (-115)
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Sir Roland
+Lucky Constantine uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=99/265 statuses=[expose(1r), weaken(2r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=159/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=214/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=15/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=99/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=159/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=214/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=80
+  Sir Roland takes 80 damage.
+    [T] HPCHANGE Sir Roland: 99 → 19  (-80)
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Sir Roland
+Lucky Constantine uses Post Bounty on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Little Jack
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Little Jack takes 29 damage.
+    [T] HPCHANGE Little Jack: 159 → 130  (-29)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=19/265 statuses=[weaken(1r), guard(1r), expose(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=130/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=214/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=19/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Little Jack[front] HP=130/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=214/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=15/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Lucky Constantine: Sucker Punch → Sir Roland
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=115
+  Sir Roland takes 115 damage.
+    [T] HPCHANGE Sir Roland: 19 → 0  (-115) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 11)
+────────────────────────────────────────────────────────────
+Player 2 wins!

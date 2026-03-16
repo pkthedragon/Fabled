@@ -1,0 +1,497 @@
+Battle 756
+Player 1 Team: Prince-Robin Midrange
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:49:40
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 756
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Prince-Robin Midrange
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Little Jack: Skyfall → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Prince Charming
+Little Jack uses Skyfall on Prince Charming.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Prince Charming[front]
+    [T]   power=80
+    [T]   atk=80 def=55 raw=116.36 ceil=117
+    [T]   FINAL_DMG=151
+  Prince Charming takes 151 damage.
+    [T] HPCHANGE Prince Charming: 255 → 104  (-151)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Prince Charming
+Lucky Constantine uses Post Bounty on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Lucky Constantine
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Lucky Constantine
+Robin, Hooded Avenger uses Hawkshot on Lucky Constantine.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Lucky Constantine[back_left]
+    [T]   power=60
+    [T]   atk=70 def=40 raw=105.00 ceil=105
+    [T]   FINAL_DMG=115
+  Lucky Constantine takes 115 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 100  (-115)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_left] HP=159/255 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=100/215 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=159/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=100/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Lucky Constantine
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Gallant Charge → Lucky Constantine
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Lucky Constantine
+Robin, Hooded Avenger uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Lucky Constantine[back_left]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=98
+  Lucky Constantine takes 98 damage.
+    [T] HPCHANGE Lucky Constantine: 100 → 2  (-98)
+  Lucky Constantine is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P1 Prince Charming[back_left]: Gallant Charge → Lucky Constantine
+Prince Charming uses Gallant Charge on Lucky Constantine.
+    [T] DMGCALC [Gallant Charge] Prince Charming[back_left] → Lucky Constantine[back_left]
+    [T]   power=35
+    [T]   atk=65 def=40 raw=56.88 ceil=57
+    [T]   FINAL_DMG=57
+  Lucky Constantine takes 57 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  Prince Charming gains +15 Speed for 2 rounds.
+[Queued] Little Jack: Skyfall → Robin, Hooded Avenger
+[Queued] Risa Redcloak: Rend → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Swap with Little Jack
+    [T] ACTION P2 Little Jack[front]: Skyfall → Robin, Hooded Avenger
+Little Jack uses Skyfall on Robin, Hooded Avenger.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=80
+    [T]   atk=80 def=40 raw=160.00 ceil=160
+    [T]   FINAL_DMG=170
+  Robin, Hooded Avenger takes 170 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 15  (-170)
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Robin, Hooded Avenger
+Risa Redcloak uses Rend on Robin, Hooded Avenger.
+  Risa Redcloak marks Robin, Hooded Avenger — next ability gains +10 Power.
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_left] HP=214/255 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=15/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=50(base=35)
+    [T]     statuses=[-]  buffs=[speed+15(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=15/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Robin, Hooded Avenger
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Robin, Hooded Avenger
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Robin, Hooded Avenger
+Lucky Constantine uses Feline Gambit on Robin, Hooded Avenger.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=79
+  Robin, Hooded Avenger takes 79 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 15 → 0  (-79) **KO**
+  Robin, Hooded Avenger gains expose for 2 rounds.
+Prince Charming moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Robin, Hooded Avenger
+  Little Jack retargets to Prince Charming after swapping to back_right.
+Little Jack uses Skyfall on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+[Queued] Prince Charming: Gallant Charge → Lucky Constantine
+[Queued] Snowkissed Aurora: Dictate of Nature → Lucky Constantine
+    [T] ACTION P1 Prince Charming[front]: Gallant Charge → Lucky Constantine
+Prince Charming uses Gallant Charge on Lucky Constantine.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Lucky Constantine[front]
+    [T]   power=85 (base=65)
+    [T]   atk=65 def=40 raw=138.12 ceil=139
+    [T]   FINAL_DMG=149
+  Lucky Constantine takes 149 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-149) **KO**
+Risa Redcloak moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Dictate of Nature → Lucky Constantine
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[front] HP=214/255 statuses=[expose(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] BUFF_EXPIRED Prince Charming: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Prince Charming: Gallant Charge → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Gallant Charge → Risa Redcloak
+Prince Charming uses Gallant Charge on Risa Redcloak.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=65
+    [T]   atk=65 def=60 raw=70.42 ceil=71
+    [T]   FINAL_DMG=71
+  Risa Redcloak takes 71 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 179  (-71)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 41 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Prince Charming
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Prince Charming
+Little Jack uses Skyfall on Prince Charming.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Prince Charming[front]
+    [T]   power=80
+    [T]   atk=80 def=65 raw=98.46 ceil=99
+    [T]   FINAL_DMG=129
+  Prince Charming takes 129 damage.
+    [T] HPCHANGE Prince Charming: 255 → 126  (-129)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[front] HP=126/255 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=179/250 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=126/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=179/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Little Jack: Skyfall → Prince Charming
+[Queued] Risa Redcloak: Rend → Prince Charming
+    [T] ACTION P2 Little Jack[front]: Skyfall → Prince Charming
+Little Jack uses Skyfall on Prince Charming.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Prince Charming[front]
+    [T]   power=80
+    [T]   atk=80 def=65 raw=98.46 ceil=99
+    [T]   FINAL_DMG=129
+  Prince Charming takes 129 damage.
+    [T] HPCHANGE Prince Charming: 126 → 0  (-129) **KO**
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_right]: Rend → Prince Charming
+Risa Redcloak's target is no longer legal — Rend fizzles.
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=179/250 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=179/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Little Jack: Skyfall → Snowkissed Aurora
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+    [T] ACTION P2 Little Jack[front]: Skyfall → Snowkissed Aurora
+Little Jack uses Skyfall on Snowkissed Aurora.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=139
+  Snowkissed Aurora takes 139 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 86  (-139)
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+  Blood Hunt: Risa Redcloak and Snowkissed Aurora HP set to 132.
+[Queued] Snowkissed Aurora: Dictate of Nature → Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Risa Redcloak
+Snowkissed Aurora uses Dictate of Nature on Risa Redcloak.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Risa Redcloak[back_right]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 132 → 94  (-38)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=182/225 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=94/250 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=182/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=94/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Little Jack: Skyfall → Snowkissed Aurora
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+    [T] ACTION P2 Little Jack[front]: Skyfall → Snowkissed Aurora
+Little Jack uses Skyfall on Snowkissed Aurora.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=139
+  Snowkissed Aurora takes 139 damage.
+    [T] HPCHANGE Snowkissed Aurora: 182 → 43  (-139)
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+  Blood Hunt: Risa Redcloak and Snowkissed Aurora HP set to 68.
+[Queued] Snowkissed Aurora: Dictate of Nature → Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Risa Redcloak
+Snowkissed Aurora uses Dictate of Nature on Risa Redcloak.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Risa Redcloak[back_right]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 68 → 30  (-38)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=118/225 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=30/250 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=118/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=30/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Little Jack: Skyfall → Snowkissed Aurora
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+    [T] ACTION P2 Little Jack[front]: Skyfall → Snowkissed Aurora
+Little Jack uses Skyfall on Snowkissed Aurora.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=139
+  Snowkissed Aurora takes 139 damage.
+    [T] HPCHANGE Snowkissed Aurora: 118 → 0  (-139) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 8)
+────────────────────────────────────────────────────────────
+Player 2 wins!

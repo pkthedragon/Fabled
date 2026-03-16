@@ -1,0 +1,663 @@
+Battle 762
+Player 1 Team: Prince-Robin Midrange
+Player 2 Team: Pinocchio Spotlight Break
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:50:10
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 762
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Prince-Robin Midrange
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Pinocchio Spotlight Break
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Cut the Strings  (passive=False)
+    Basics: Soul Gaze, Void Step
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Swap with Pinocchio, Cursed Puppet
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Pinocchio, Cursed Puppet
+Prince Charming and Pinocchio, Cursed Puppet swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=56
+  Prince Charming takes 56 damage.
+    [T] HPCHANGE Prince Charming: 255 → 199  (-56)
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Robin, Hooded Avenger
+  Pinocchio, Cursed Puppet retargets to Prince Charming after swapping to front.
+Pinocchio, Cursed Puppet uses Cut the Strings on Prince Charming.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=65 def=55 raw=70.91 ceil=71
+    [T]   FINAL_DMG=81
+  Prince Charming takes 81 damage.
+    [T] HPCHANGE Prince Charming: 199 → 118  (-81)
+  Prince Charming gains expose for 2 rounds.
+[Queued] Prince Charming: Gallant Charge → Pinocchio, Cursed Puppet
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Prince Charming[front]: Gallant Charge → Pinocchio, Cursed Puppet
+Prince Charming uses Gallant Charge on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=65
+    [T]   atk=65 def=50 raw=84.50 ceil=85
+    [T]   FINAL_DMG=85
+  Pinocchio, Cursed Puppet takes 85 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 135  (-85)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Hawkshot → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Hawkshot on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Pinocchio, Cursed Puppet[front]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=62
+  Pinocchio, Cursed Puppet takes 62 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 135 → 73  (-62)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[front] HP=173/255 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=73/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [1/6]
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=173/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=73/220 ATK=70(base=65) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Prince Charming
+Pinocchio, Cursed Puppet uses Cut the Strings on Prince Charming.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=70 def=65 raw=64.62 ceil=65
+    [T]   FINAL_DMG=75
+  Prince Charming takes 75 damage.
+    [T] HPCHANGE Prince Charming: 173 → 98  (-75)
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=77 def=65 raw=47.38 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 98 → 40  (-58)
+    [T] ACTION P2 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=65 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 40 → 0  (-48) **KO**
+Robin, Hooded Avenger moves to frontline.
+[Queued] Robin, Hooded Avenger: Snipe Shot → Pinocchio, Cursed Puppet
+[Queued] Snowkissed Aurora: Dictate of Nature → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Snipe Shot on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=83
+  Pinocchio, Cursed Puppet takes 83 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 73 → 0  (-83) **KO**
+Prince Charming moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Dictate of Nature → Pinocchio, Cursed Puppet
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Prince Charming
+Robin, Hooded Avenger uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=64
+  Prince Charming takes 64 damage.
+    [T] HPCHANGE Prince Charming: 255 → 191  (-64)
+  Prince Charming is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=45 def=55 raw=28.64 ceil=29
+    [T]   FINAL_DMG=29
+  Prince Charming takes 29 damage.
+    [T] HPCHANGE Prince Charming: 191 → 162  (-29)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=25
+    [T]   atk=77 def=40 raw=48.12 ceil=49
+    [T]   FINAL_DMG=49
+  Robin, Hooded Avenger takes 49 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 136  (-49)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=136/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=162/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=136/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=162/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: swap ↔ Snowkissed Aurora
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 49 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Prince Charming
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=162/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=162/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Prince Charming
+[Queued] Snowkissed Aurora: Swap with Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Prince Charming
+Robin, Hooded Avenger uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=64
+  Prince Charming takes 64 damage.
+    [T] HPCHANGE Prince Charming: 162 → 98  (-64)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Robin, Hooded Avenger
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=77
+  Robin, Hooded Avenger takes 77 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 108  (-77)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=108/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=98/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=108/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=98/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Prince Charming
+Robin, Hooded Avenger uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=74
+  Prince Charming takes 74 damage.
+    [T] HPCHANGE Prince Charming: 98 → 24  (-74)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=77
+  Robin, Hooded Avenger takes 77 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 163 → 86  (-77)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=86/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=24/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=86/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=24/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Prince Charming
+Robin, Hooded Avenger uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=74
+  Prince Charming takes 74 damage.
+    [T] HPCHANGE Prince Charming: 24 → 0  (-74) **KO**
+  Prince Charming is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=88
+  Robin, Hooded Avenger takes 88 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 141 → 53  (-88)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=53/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=53/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Robin, Hooded Avenger: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: swap ↔ Snowkissed Aurora
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=108/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger[front] HP=108/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Swap with Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=70 def=40 raw=87.50 ceil=88
+    [T]   FINAL_DMG=88
+  Robin, Hooded Avenger takes 88 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 97  (-88)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Robin, Hooded Avenger
+Snowkissed Aurora recharges.
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[front]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=114
+  Robin, Hooded Avenger takes 114 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 108 → 0  (-114) **KO**
+Snowkissed Aurora moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=97/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=97/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Snowkissed Aurora
+Robin, Hooded Avenger uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=70 def=60 raw=58.33 ceil=59
+    [T]   FINAL_DMG=59
+  Snowkissed Aurora takes 59 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 166  (-59)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=45 def=40 raw=56.25 ceil=57
+    [T]   FINAL_DMG=67
+  Robin, Hooded Avenger takes 67 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 97 → 30  (-67)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=216/225 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=30/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=216/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=30/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Snowkissed Aurora
+Robin, Hooded Avenger uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=70 def=60 raw=58.33 ceil=59
+    [T]   FINAL_DMG=69
+  Snowkissed Aurora takes 69 damage.
+    [T] HPCHANGE Snowkissed Aurora: 216 → 147  (-69)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=45 def=40 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Robin, Hooded Avenger takes 57 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 30 → 0  (-57) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 11)
+────────────────────────────────────────────────────────────
+Player 1 wins!

@@ -1,0 +1,1088 @@
+Battle 683
+Player 1 Team: Last-Stand Midrange
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:43:28
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 683
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Midrange
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Wolf's Pursuit  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Chosen One  (passive=True)
+    Basics: Impose, Command
+    Item:   Holy Diadem
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+[Queued] Sea Wench Asha: Misappropriate → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+  Banner of Command: Robin, Hooded Avenger is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=103
+  Prince Charming takes 103 damage.
+    [T] HPCHANGE Prince Charming: 255 → 152  (-103)
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Snowkissed Aurora
+Sea Wench Asha uses Misappropriate on Snowkissed Aurora.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 177  (-48)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Risa Redcloak: Wolf's Pursuit → Robin, Hooded Avenger
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Wolf's Pursuit → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Risa Redcloak uses Wolf's Pursuit on Robin, Hooded Avenger.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=76
+  Robin, Hooded Avenger takes 76 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 109  (-76)
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Robin, Hooded Avenger
+Prince Charming uses Impose on Robin, Hooded Avenger.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=30
+    [T]   atk=65 def=40 raw=48.75 ceil=49
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 109 → 69  (-40)
+  Robin, Hooded Avenger loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[root(2r)]
+    [T]   P1 Prince Charming[back_right] HP=207/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=69/185 statuses=[guard(2r)]
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Robin, Hooded Avenger spd=55  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=69/185 ATK=70(base=70) DEF=40(base=40) SPD=55(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Risa Redcloak
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=103
+  Prince Charming takes 103 damage.
+    [T] HPCHANGE Prince Charming: 207 → 104  (-103)
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Risa Redcloak
+Sea Wench Asha uses Misappropriate on Risa Redcloak.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Risa Redcloak[front]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Risa Redcloak takes 48 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 202  (-48)
+  Risa Redcloak gains root for 2 rounds.
+[Queued] Risa Redcloak: Rend → Robin, Hooded Avenger
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Robin, Hooded Avenger
+Risa Redcloak uses Rend on Robin, Hooded Avenger.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Robin, Hooded Avenger[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=98
+  Robin, Hooded Avenger takes 98 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 69 → 0  (-98) **KO**
+  Risa Redcloak heals 7 HP.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Robin, Hooded Avenger
+Prince Charming's target is no longer legal — Impose fizzles.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[front] HP=209/250 statuses=[root(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[root(1r)]
+    [T]   P1 Prince Charming[back_right] HP=104/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: root → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=209/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=104/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=10
+  Sir Roland takes 10 damage.
+    [T] HPCHANGE Sir Roland: 265 → 255  (-10)
+  Risa Redcloak heals 1 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Risa Redcloak
+Prince Charming and Risa Redcloak swap positions.
+  Chosen One: Risa Redcloak becomes Prince Charming's champion.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Prince Charming
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Prince Charming
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [1/6]
+  Sea Wench Asha gains Chosen One for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[back_right] HP=210/250 statuses=[root(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[front] HP=159/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Risa Redcloak: root → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: root
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=210/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=159/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Prince Charming
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Prince Charming
+Sea Wench Asha uses Dark Grasp on Prince Charming.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=69
+  Prince Charming takes 69 damage.
+    [T] HPCHANGE Prince Charming: 159 → 90  (-69)
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [2/6]
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Prince Charming: Impose → Sea Wench Asha
+[Queued] Risa Redcloak: Wolf's Pursuit → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Sea Wench Asha
+Prince Charming uses Impose on Sea Wench Asha.
+    [T] DMGCALC [Impose] Prince Charming[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=59
+  Sea Wench Asha takes 59 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 151  (-59)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [3/6]
+  Sea Wench Asha loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_right]: Wolf's Pursuit → Sea Wench Asha
+Risa Redcloak uses Wolf's Pursuit on Sea Wench Asha.
+  Sea Wench Asha gains expose for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[back_right] HP=210/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[front] HP=145/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=151/210 statuses=[guard(2r), expose(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_TICK Sea Wench Asha: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Sea Wench Asha spd=55  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=210/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=145/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=151/210 ATK=75(base=75) DEF=45(base=45) SPD=55(base=65)
+    [T]     statuses=[guard(1r), expose(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Prince Charming
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Prince Charming
+Sea Wench Asha uses Dark Grasp on Prince Charming.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=69
+  Prince Charming takes 69 damage.
+    [T] HPCHANGE Prince Charming: 145 → 76  (-69)
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [4/6]
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Impose → Sea Wench Asha
+[Queued] Risa Redcloak: Wolf's Pursuit → Sea Wench Asha
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Sea Wench Asha
+Prince Charming uses Impose on Sea Wench Asha.
+    [T] DMGCALC [Impose] Prince Charming[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=71
+  Sea Wench Asha takes 71 damage.
+    [T] HPCHANGE Sea Wench Asha: 151 → 80  (-71)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [5/6]
+    [T] ACTION P1 Risa Redcloak[back_right]: Wolf's Pursuit → Sea Wench Asha
+Risa Redcloak uses Wolf's Pursuit on Sea Wench Asha.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[back_right] HP=210/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[front] HP=76/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=80/210 statuses=[guard(1r), expose(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_TICK Sea Wench Asha: expose → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] STATUS_EXPIRED Sea Wench Asha: expose
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Sea Wench Asha spd=55  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=210/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=76/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=80/210 ATK=75(base=75) DEF=45(base=45) SPD=55(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Prince Charming
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Prince Charming
+Sea Wench Asha uses Dark Grasp on Prince Charming.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=69
+  Prince Charming takes 69 damage.
+    [T] HPCHANGE Prince Charming: 76 → 7  (-69)
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [6/6]
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Risa Redcloak
+Prince Charming and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Wolf's Pursuit → Sea Wench Asha
+Risa Redcloak uses Wolf's Pursuit on Sea Wench Asha.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=38
+  Sea Wench Asha takes 38 damage.
+    [T] HPCHANGE Sea Wench Asha: 80 → 42  (-38)
+  Risa Redcloak heals 3 HP.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak[front] HP=213/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=62/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=42/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] DEBUFF_EXPIRED Sea Wench Asha: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=213/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=62/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=42/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Risa Redcloak
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Risa Redcloak
+Sea Wench Asha uses Dark Grasp on Risa Redcloak.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Risa Redcloak takes 63 damage.
+    [T] HPCHANGE Risa Redcloak: 213 → 150  (-63)
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Risa Redcloak: Rend → Sea Wench Asha
+[Queued] Prince Charming: Impose → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Sea Wench Asha
+Risa Redcloak uses Rend on Sea Wench Asha.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Sea Wench Asha[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=88
+  Sea Wench Asha takes 88 damage.
+    [T] HPCHANGE Sea Wench Asha: 42 → 0  (-88) **KO**
+  Risa Redcloak heals 7 HP.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Sea Wench Asha
+Prince Charming's target is no longer legal — Impose fizzles.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak[front] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=62/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=255/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=62/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=255/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Impose → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=5
+  Sir Roland takes 5 damage.
+    [T] HPCHANGE Sir Roland: 255 → 250  (-5)
+  Sir Roland loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 15 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=132/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=20  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=132/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=20(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Impose → Sir Roland
+[Queued] Risa Redcloak: Wolf's Pursuit → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=22
+  Sir Roland takes 22 damage.
+    [T] HPCHANGE Sir Roland: 265 → 243  (-22)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Risa Redcloak[back_left]: Wolf's Pursuit → Sir Roland
+Risa Redcloak uses Wolf's Pursuit on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 177 → 147  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=132/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=243/265 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=20  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=132/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=243/265 ATK=45(base=40) DEF=90(base=80) SPD=20(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Risa Redcloak
+Prince Charming recharges.
+    [T] ACTION P1 Risa Redcloak[back_left]: Wolf's Pursuit → Sir Roland
+Risa Redcloak uses Wolf's Pursuit on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 147 → 117  (-30)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=117/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=202/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=243/265 statuses=[expose(1r), guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] DEBUFF_EXPIRED Sir Roland: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=117/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=243/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Prince Charming: Impose → Sir Roland
+[Queued] Risa Redcloak: Wolf's Pursuit → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 243 → 218  (-25)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=22
+  Sir Roland takes 22 damage.
+    [T] HPCHANGE Sir Roland: 218 → 196  (-22)
+  Sir Roland loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: Wolf's Pursuit → Sir Roland
+Risa Redcloak uses Wolf's Pursuit on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 167 → 137  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=137/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=202/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=196/265 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=20  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=137/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=196/265 ATK=45(base=40) DEF=90(base=80) SPD=20(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Prince Charming: Impose → Sir Roland
+[Queued] Risa Redcloak: Swap with Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 196 → 172  (-24)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=22
+  Sir Roland takes 22 damage.
+    [T] HPCHANGE Sir Roland: 172 → 150  (-22)
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Prince Charming
+Risa Redcloak and Prince Charming swap positions.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 187 → 157  (-30)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=157/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=150/265 statuses=[expose(1r), guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=20  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=157/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=150/265 ATK=45(base=40) DEF=90(base=80) SPD=20(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Sir Roland
+[Queued] Prince Charming: Impose → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Risa Redcloak[back_right]: Wolf's Pursuit → Sir Roland
+Risa Redcloak uses Wolf's Pursuit on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 150 → 123  (-27)
+  Prince Charming must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 157 → 127  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=127/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=123/265 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=20  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=127/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=123/265 ATK=45(base=40) DEF=90(base=80) SPD=20(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Risa Redcloak: Wolf's Pursuit → Sir Roland
+[Queued] Prince Charming: Swap with Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 123 → 99  (-24)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Risa Redcloak[back_right]: Wolf's Pursuit → Sir Roland
+Risa Redcloak uses Wolf's Pursuit on Sir Roland.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Risa Redcloak
+Prince Charming recharges.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 177 → 147  (-30)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=99/265 statuses=[expose(1r), guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] DEBUFF_EXPIRED Sir Roland: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=99/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Risa Redcloak: Wolf's Pursuit → Sir Roland
+[Queued] Prince Charming: Impose → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 99 → 74  (-25)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Risa Redcloak[back_right]: Wolf's Pursuit → Sir Roland
+Risa Redcloak uses Wolf's Pursuit on Sir Roland.
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 74 → 47  (-27)
+  Sir Roland loses -10 Speed for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=47/265 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=20  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=47/265 ATK=45(base=40) DEF=90(base=80) SPD=20(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Sir Roland
+[Queued] Prince Charming: Impose → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Wolf's Pursuit → Sir Roland
+Risa Redcloak uses Wolf's Pursuit on Sir Roland.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=75 def=90 raw=41.67 ceil=42
+    [T]   FINAL_DMG=41
+  Sir Roland takes 41 damage.
+    [T] HPCHANGE Sir Roland: 47 → 6  (-41)
+  Risa Redcloak heals 3 HP.
+    [T] ACTION P1 Prince Charming[back_left]: Impose → Sir Roland
+Prince Charming uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=22
+  Sir Roland takes 22 damage.
+    [T] HPCHANGE Sir Roland: 6 → 0  (-22) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 16)
+────────────────────────────────────────────────────────────
+Player 1 wins!

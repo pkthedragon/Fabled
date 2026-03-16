@@ -1,0 +1,631 @@
+Battle 503
+Player 1 Team: Burn Shock Split
+Player 2 Team: Brawler Punish
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:20:05
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 507
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+Player 2: Royal Root Pressure
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Edict, Command
+    Item:   Main-Gauche
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+[Queued] Hunold the Piper: Haunting Rhythm → Prince Charming
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Robin, Hooded Avenger
+Witch of the Woods uses Thunder Call on Robin, Hooded Avenger.
+  Witch of the Woods loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=65 def=40 raw=105.62 ceil=106
+    [T]   FINAL_DMG=106
+  Robin, Hooded Avenger takes 106 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 79  (-106)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+  Matchstick Liesl loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 79 → 24  (-55)
+  Robin, Hooded Avenger gains no_heal for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Haunting Rhythm → Prince Charming
+Hunold the Piper uses Haunting Rhythm on Prince Charming.
+  Prince Charming gains shock for 2 rounds.
+[Queued] Prince Charming: Condescend → Witch of the Woods
+[Queued] Robin, Hooded Avenger: Bring Down → Witch of the Woods
+[Queued] Briar Rose: Creeping Doubt → Witch of the Woods
+    [T] ACTION P2 Prince Charming[front]: Condescend → Witch of the Woods
+Prince Charming uses Condescend on Witch of the Woods.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=65 def=35 raw=92.86 ceil=93
+    [T]   FINAL_DMG=93
+  Witch of the Woods takes 93 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 87  (-93)
+  Shock recoil: Prince Charming takes 19 damage.
+  Witch of the Woods loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Witch of the Woods
+Robin, Hooded Avenger uses Bring Down on Witch of the Woods.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=75 def=25 raw=105.00 ceil=105
+    [T]   FINAL_DMG=115
+  Witch of the Woods takes 115 damage.
+    [T] HPCHANGE Witch of the Woods: 87 → 0  (-115) **KO**
+  Shock recoil: Robin, Hooded Avenger takes 23 damage.
+  Witch of the Woods gains root for 2 rounds.
+Hunold the Piper moves to frontline.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Witch of the Woods
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=236/255 statuses=[shock(2r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=1/185 statuses=[shock(2r), no_heal(2r)]
+    [T] STATUS_TICK Prince Charming: shock → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: no_heal → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=40(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=236/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=1/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r), no_heal(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Prince Charming
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Prince Charming
+Hunold the Piper uses Haunting Rhythm on Prince Charming.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=60 def=55 raw=54.55 ceil=55
+    [T]   FINAL_DMG=70
+  Prince Charming takes 70 damage.
+    [T] HPCHANGE Prince Charming: 236 → 166  (-70)
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 1 → 0  (-55) **KO**
+[Queued] Prince Charming: Edict → Hunold the Piper
+[Queued] Briar Rose: Creeping Doubt → Hunold the Piper
+    [T] ACTION P2 Prince Charming[front]: Edict → Hunold the Piper
+Prince Charming uses Edict on Hunold the Piper.
+    [T] DMGCALC [Edict] Prince Charming[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=59
+  Hunold the Piper takes 59 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 151  (-59)
+  Shock recoil: Prince Charming takes 12 damage.
+  Hunold the Piper gains root for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Hunold the Piper
+Briar Rose uses Creeping Doubt on Hunold the Piper.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Hunold the Piper takes 64 damage.
+    [T] HPCHANGE Hunold the Piper: 151 → 87  (-64)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 statuses=[root(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=154/255 statuses=[shock(1r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+    [T] STATUS_TICK Prince Charming: shock → 0r left
+    [T] STATUS_EXPIRED Prince Charming: shock
+  Curse of Sleeping: Hunold the Piper loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=40(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=154/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Prince Charming
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+Hunold the Piper cannot act.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         [Queued] Reynard, Lupine Trickster: Swap with Lady of Reflections
+[Queued] Risa Redcloak: Blood Hunt → Hunold the Piper
+[Queued] Lady of Reflections: Drown in the Loch → Hunold the Piper
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Lady of Reflections
+Reynard, Lupine Trickster and Lady of Reflections swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Hunold the Piper
+Risa Redcloak uses Blood Hunt on Hunold the Piper.
+  Blood Hunt: Risa Redcloak and Hunold the Piper HP set to 131.
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Hunold the Piper
+Lady of Reflections uses Drown in the Loch on Hunold the Piper.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 131 → 102  (-29)
+  Hunold the Piper takes +7 damage from all sources for 2 rounds.
+[Queued] Hunold the Piper: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Matchstick Liesl
+Hunold the Piper and Matchstick Liesl swap positions.
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 70 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=172/210 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=131/250 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=18/205 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=172/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=131/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=18/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+[Queued] Hunold the Piper: Haunting Rhythm → Lady of Reflections
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 38 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+    [T] ACTION P1 Hunold the Piper[back_right]: Haunting Rhythm → Lady of Reflections
+Hunold the Piper uses Haunting Rhythm on Lady of Reflections.
+  Lady of Reflections gains shock for 2 rounds.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Matchstick Liesl
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Matchstick Liesl
+Risa Redcloak uses Blood Hunt on Matchstick Liesl.
+  Blood Hunt: Risa Redcloak and Matchstick Liesl HP set to 170.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl[front] HP=170/210 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=170/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 statuses=[shock(2r)]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+    [T] STATUS_TICK Lady of Reflections: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=170/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=170/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Matchstick Liesl
+[Queued] Lady of Reflections: Drown in the Loch → Matchstick Liesl
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Matchstick Liesl
+Risa Redcloak uses Rend on Matchstick Liesl.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=75 def=50 raw=67.50 ceil=68
+    [T]   FINAL_DMG=68
+  Matchstick Liesl takes 68 damage.
+    [T] HPCHANGE Matchstick Liesl: 170 → 102  (-68)
+  Risa Redcloak heals 5 HP.
+    [T] ACTION P2 Lady of Reflections[back_left]: Drown in the Loch → Matchstick Liesl
+Lady of Reflections uses Drown in the Loch on Matchstick Liesl.
+  Matchstick Liesl takes +7 damage from all sources for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Reynard, Lupine Trickster
+[Queued] Hunold the Piper: Haunting Rhythm → Risa Redcloak
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Reynard, Lupine Trickster
+Matchstick Liesl uses Cauterize on Reynard, Lupine Trickster.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Reynard, Lupine Trickster[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=26
+  Reynard, Lupine Trickster takes 26 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-26) **KO**
+  Reynard, Lupine Trickster gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Hunold the Piper[back_right]: Haunting Rhythm → Risa Redcloak
+Hunold the Piper uses Haunting Rhythm on Risa Redcloak.
+  Risa Redcloak gains shock for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=102/210 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=175/250 statuses=[shock(2r)]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 statuses=[shock(1r)]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Risa Redcloak: shock → 1r left
+    [T] STATUS_TICK Lady of Reflections: shock → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: shock
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=102/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=175/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Matchstick Liesl: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Risa Redcloak
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Hunold the Piper
+Matchstick Liesl recharges.
+    [T] ACTION P1 Hunold the Piper[back_right]: Sucker Punch → Risa Redcloak
+Hunold the Piper uses Sucker Punch on Risa Redcloak.
+  Risa Redcloak gains weaken for 2 rounds.
+[Queued] Risa Redcloak: Rend → Matchstick Liesl
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Matchstick Liesl
+Risa Redcloak uses Rend on Matchstick Liesl.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Matchstick Liesl[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=50 raw=97.50 ceil=98
+    [T]   FINAL_DMG=86
+  Matchstick Liesl takes 86 damage.
+    [T] HPCHANGE Matchstick Liesl: 102 → 16  (-86)
+  Shock recoil: Risa Redcloak takes 18 damage.
+  Risa Redcloak heals 7 HP.
+    [T] ACTION P2 Lady of Reflections[back_left]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=16/210 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=164/250 statuses=[shock(1r), weaken(2r)]
+    [T]   P2 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] STATUS_TICK Risa Redcloak: shock → 0r left
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: shock
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=16/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=164/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Matchstick Liesl: Smite → Risa Redcloak
+[Queued] Hunold the Piper: Haunting Rhythm → Lady of Reflections
+    [T] ACTION P1 Matchstick Liesl[front]: Smite → Risa Redcloak
+Matchstick Liesl uses Smite on Risa Redcloak.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Risa Redcloak[back_left]
+    [T]   power=55
+    [T]   atk=50 def=60 raw=45.83 ceil=46
+    [T]   FINAL_DMG=46
+  Risa Redcloak takes 46 damage.
+    [T] HPCHANGE Risa Redcloak: 164 → 118  (-46)
+  Risa Redcloak gains burn for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_right]: Haunting Rhythm → Lady of Reflections
+Hunold the Piper uses Haunting Rhythm on Lady of Reflections.
+  Lady of Reflections gains shock for 2 rounds.
+[Queued] Lady of Reflections: Drown in the Loch → Matchstick Liesl
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Matchstick Liesl
+Lady of Reflections uses Drown in the Loch on Matchstick Liesl.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=40 def=50 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Matchstick Liesl takes 32 damage.
+    [T] HPCHANGE Matchstick Liesl: 16 → 0  (-32) **KO**
+  Shock recoil: Lady of Reflections takes 7 damage.
+  Matchstick Liesl takes +7 damage from all sources for 2 rounds.
+Hunold the Piper moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_left]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=118/250 statuses=[weaken(1r), burn(2r)]
+    [T]   P2 Lady of Reflections[front] HP=248/255 statuses=[shock(2r)]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+Risa Redcloak burns for 25 damage.
+    [T] STATUS_TICK Risa Redcloak: weaken → 0r left
+    [T] STATUS_TICK Risa Redcloak: burn → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: weaken
+    [T] STATUS_TICK Lady of Reflections: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=93/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[burn(1r)]  buffs=[speed+10(1r), attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=248/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Lady of Reflections
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Lady of Reflections
+Hunold the Piper uses Haunting Rhythm on Lady of Reflections.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=60 def=75 raw=40.00 ceil=40
+    [T]   FINAL_DMG=45
+  Lady of Reflections takes 45 damage.
+    [T] HPCHANGE Lady of Reflections: 248 → 203  (-45)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Reflecting Pool: Hunold the Piper takes 5 reflected damage.
+  Lady of Reflections gains burn for 2 rounds.
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Hunold the Piper
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Hunold the Piper
+Risa Redcloak uses Blood Hunt on Hunold the Piper.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=90 def=45 raw=120.00 ceil=120
+    [T]   FINAL_DMG=96
+  Hunold the Piper takes 96 damage.
+    [T] HPCHANGE Hunold the Piper: 195 → 99  (-96)
+  Risa Redcloak heals 39 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=99/210 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Risa Redcloak[front] HP=132/250 statuses=[burn(1r)]
+    [T]   P2 Lady of Reflections[back_left] HP=203/255 statuses=[shock(1r), burn(2r)]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+Risa Redcloak burns for 25 damage.
+Lady of Reflections burns for 26 damage.
+    [T] STATUS_TICK Risa Redcloak: burn → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: burn
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] STATUS_TICK Lady of Reflections: shock → 0r left
+    [T] STATUS_TICK Lady of Reflections: burn → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: shock
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Risa Redcloak spd=45  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=99/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Risa Redcloak[front] HP=107/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=177/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Hunold the Piper: Haunting Rhythm → Risa Redcloak
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Risa Redcloak
+Hunold the Piper uses Haunting Rhythm on Risa Redcloak.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=60 def=60 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Risa Redcloak takes 40 damage.
+    [T] HPCHANGE Risa Redcloak: 107 → 67  (-40)
+  Risa Redcloak gains shock for 2 rounds.
+[Queued] Risa Redcloak: Rend → Hunold the Piper
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Hunold the Piper
+Risa Redcloak uses Rend on Hunold the Piper.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Hunold the Piper[front]
+    [T]   power=65 (base=45)
+    [T]   atk=90 def=45 raw=130.00 ceil=130
+    [T]   FINAL_DMG=104
+  Hunold the Piper takes 104 damage.
+    [T] HPCHANGE Hunold the Piper: 99 → 0  (-104) **KO**
+  Shock recoil: Risa Redcloak takes 21 damage.
+  Risa Redcloak heals 29 HP.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 11)
+────────────────────────────────────────────────────────────
+Player 2 wins!

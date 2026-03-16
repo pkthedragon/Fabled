@@ -1,0 +1,427 @@
+Battle 720
+Player 1 Team: Royal Root Pressure
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:47:13
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 720
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Royal Root Pressure
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Edict, Command
+    Item:   Main-Gauche
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Little Jack: Skyfall → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Prince Charming
+Little Jack uses Skyfall on Prince Charming.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Prince Charming[front]
+    [T]   power=80
+    [T]   atk=80 def=55 raw=116.36 ceil=117
+    [T]   FINAL_DMG=151
+  Prince Charming takes 151 damage.
+    [T] HPCHANGE Prince Charming: 255 → 104  (-151)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Prince Charming
+Lucky Constantine uses Post Bounty on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Risa Redcloak
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Risa Redcloak
+Robin, Hooded Avenger uses Bring Down on Risa Redcloak.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Risa Redcloak[back_right]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=95
+  Risa Redcloak takes 95 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 155  (-95)
+  Robin, Hooded Avenger steals 10 Atk from Risa Redcloak for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 145  (-70)
+  Lucky Constantine gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_right] HP=104/255 statuses=[expose(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=155/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=145/215 statuses=[root(2r)]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+  Curse of Sleeping: Lucky Constantine loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=104/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=155/250 ATK=65(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Lucky Constantine[back_left] HP=145/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Lucky Constantine
+[Queued] Prince Charming: Edict → Little Jack
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Lucky Constantine
+Robin, Hooded Avenger uses Bring Down on Lucky Constantine.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Lucky Constantine[back_left]
+    [T]   power=60
+    [T]   atk=80 def=40 raw=120.00 ceil=120
+    [T]   FINAL_DMG=140
+  Lucky Constantine takes 140 damage.
+    [T] HPCHANGE Lucky Constantine: 145 → 5  (-140)
+  Robin, Hooded Avenger steals 10 Atk from Lucky Constantine for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: Edict → Little Jack
+Prince Charming uses Edict on Little Jack.
+    [T] DMGCALC [Edict] Prince Charming[back_right] → Little Jack[front]
+    [T]   power=30
+    [T]   atk=65 def=50 raw=39.00 ceil=39
+    [T]   FINAL_DMG=39
+  Little Jack takes 39 damage.
+    [T] HPCHANGE Little Jack: 220 → 181  (-39)
+  Little Jack gains spotlight for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  Lucky Constantine is immune to Root (Curse of Sleeping).
+[Queued] Little Jack: Skyfall → Robin, Hooded Avenger
+[Queued] Risa Redcloak: Blood Hunt → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Sucker Punch → Prince Charming
+    [T] ACTION P2 Little Jack[front]: Skyfall → Robin, Hooded Avenger
+Little Jack uses Skyfall on Robin, Hooded Avenger.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=80
+    [T]   atk=80 def=40 raw=160.00 ceil=160
+    [T]   FINAL_DMG=170
+  Robin, Hooded Avenger takes 170 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 15  (-170)
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Robin, Hooded Avenger
+Risa Redcloak uses Blood Hunt on Robin, Hooded Avenger.
+  Blood Hunt: Risa Redcloak and Robin, Hooded Avenger HP set to 85.
+Lucky Constantine cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_right] HP=104/255 statuses=[expose(1r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=85/185 statuses=[-]
+    [T]   P2 Little Jack[front] HP=181/220 statuses=[spotlight(2r)]
+    [T]   P2 Risa Redcloak[back_right] HP=85/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] STATUS_TICK Little Jack: spotlight → 1r left
+    [T] DEBUFF_EXPIRED Risa Redcloak: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=104/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=85/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=181/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=85/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=60(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+[Queued] Robin, Hooded Avenger: Bring Down → Risa Redcloak
+[Queued] Prince Charming: Edict → Risa Redcloak
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Risa Redcloak
+Robin, Hooded Avenger uses Bring Down on Risa Redcloak.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Risa Redcloak[back_right]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=100
+  Risa Redcloak takes 100 damage.
+    [T] HPCHANGE Risa Redcloak: 85 → 0  (-100) **KO**
+  Robin, Hooded Avenger steals 10 Atk from Risa Redcloak for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: Edict → Risa Redcloak
+Prince Charming's target is no longer legal — Edict fizzles.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 181 → 123  (-58)
+  Little Jack gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+[Queued] Little Jack: Skyfall → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Swap with Little Jack
+    [T] ACTION P2 Little Jack[front]: Skyfall → Robin, Hooded Avenger
+Little Jack uses Skyfall on Robin, Hooded Avenger.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=80
+    [T]   atk=80 def=40 raw=160.00 ceil=160
+    [T]   FINAL_DMG=170
+  Robin, Hooded Avenger takes 170 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 85 → 0  (-170) **KO**
+Briar Rose moves to frontline.
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[back_right] HP=104/255 statuses=[-]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[back_left] HP=123/220 statuses=[spotlight(1r), root(2r)]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T] STATUS_TICK Little Jack: spotlight → 0r left
+    [T] STATUS_TICK Little Jack: root → 1r left
+    [T] STATUS_EXPIRED Little Jack: spotlight
+    [T] DEBUFF_EXPIRED Lucky Constantine: attack-10
+  Curse of Sleeping: Little Jack loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=104/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[back_left] HP=123/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Briar Rose
+[Queued] Little Jack: Skyfall → Briar Rose
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Briar Rose
+Lucky Constantine uses Feline Gambit on Briar Rose.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Briar Rose[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Briar Rose takes 70 damage.
+    [T] HPCHANGE Briar Rose: 195 → 125  (-70)
+  Briar Rose gains expose for 2 rounds.
+Little Jack cannot act.
+[Queued] Briar Rose: Swap with Prince Charming
+[Queued] Prince Charming: Edict → Lucky Constantine
+    [T] ACTION P1 Briar Rose[front]: swap ↔ Prince Charming
+Briar Rose recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Edict → Lucky Constantine
+Prince Charming uses Edict on Lucky Constantine.
+    [T] DMGCALC [Edict] Prince Charming[back_right] → Lucky Constantine[front]
+    [T]   power=30
+    [T]   atk=65 def=40 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Lucky Constantine takes 49 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-49) **KO**
+  Lucky Constantine gains spotlight for 2 rounds.
+Little Jack moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[back_right] HP=104/255 statuses=[-]
+    [T]   P1 Briar Rose[front] HP=125/195 statuses=[expose(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=123/220 statuses=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T] STATUS_TICK Briar Rose: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=104/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[front] HP=125/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=123/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+[Queued] Prince Charming: Edict → Little Jack
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Little Jack[front]
+    [T]   power=55
+    [T]   atk=60 def=50 raw=66.00 ceil=66
+    [T]   FINAL_DMG=76
+  Little Jack takes 76 damage.
+    [T] HPCHANGE Little Jack: 123 → 47  (-76)
+    [T] ACTION P1 Prince Charming[back_right]: Edict → Little Jack
+Prince Charming uses Edict on Little Jack.
+    [T] DMGCALC [Edict] Prince Charming[back_right] → Little Jack[front]
+    [T]   power=30
+    [T]   atk=65 def=50 raw=39.00 ceil=39
+    [T]   FINAL_DMG=39
+  Little Jack takes 39 damage.
+    [T] HPCHANGE Little Jack: 47 → 8  (-39)
+  Little Jack gains spotlight for 2 rounds.
+  Prince Charming must recharge next turn.
+[Queued] Little Jack: Fell the Beanstalk → Briar Rose
+    [T] ACTION P2 Little Jack[front]: Fell the Beanstalk → Briar Rose
+Little Jack uses Fell the Beanstalk on Briar Rose.
+    [T] DMGCALC [Fell the Beanstalk] Little Jack[front] → Briar Rose[front]
+    [T]   power=85
+    [T]   atk=80 def=32 raw=212.50 ceil=213
+    [T]   FINAL_DMG=256
+  Briar Rose takes 256 damage.
+    [T] HPCHANGE Briar Rose: 125 → 0  (-256) **KO**
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[front] HP=104/255 statuses=[-]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=8/220 statuses=[spotlight(2r)]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T] STATUS_TICK Little Jack: spotlight → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=104/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=8/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Little Jack: Skyfall → Prince Charming
+    [T] ACTION P2 Little Jack[front]: Skyfall → Prince Charming
+Little Jack uses Skyfall on Prince Charming.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Prince Charming[front]
+    [T]   power=80
+    [T]   atk=80 def=55 raw=116.36 ceil=117
+    [T]   FINAL_DMG=151
+  Prince Charming takes 151 damage.
+    [T] HPCHANGE Prince Charming: 104 → 0  (-151) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

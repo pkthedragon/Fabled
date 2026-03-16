@@ -1,0 +1,606 @@
+Battle 494
+Player 1 Team: Status Spread
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:19:27
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 494
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Status Spread
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Robin, Hooded Avenger
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Robin, Hooded Avenger
+Witch of the Woods uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Robin, Hooded Avenger takes 122 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 63  (-122)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Briar Rose uses Creeping Doubt on Robin, Hooded Avenger.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=85
+  Robin, Hooded Avenger takes 85 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 63 → 0  (-85) **KO**
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Witch of the Woods
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Witch of the Woods
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [0/6]
+    [T] DMGCALC [Toil and Trouble] Sea Wench Asha[front] → Witch of the Woods[front]
+    [T]   power=60
+    [T]   atk=75 def=35 raw=128.57 ceil=129
+    [T]   FINAL_DMG=129
+  Witch of the Woods takes 129 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 51  (-129)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[front] HP=51/180 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[weaken(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=51/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Witch of the Woods
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Witch of the Woods
+Sea Wench Asha uses Dark Grasp on Witch of the Woods.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[fr[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Sir Roland: Shield Bash → Witch of the Woods
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Witch of the Woods
+Robin, Hooded Avenger uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=70 def=35 raw=100.00 ceil=100
+    [T]   FINAL_DMG=100
+  Witch of the Woods takes 100 damage.
+    [T] HPCHANGE Witch of the Woods: 60 → 0  (-100) **KO**
+  Witch of the Woods is Marked — takes +10 damage next round.
+Hunold the Piper moves to frontline.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P2 Sir Roland[back_left]: Shield Bash → Witch of the Woods
+Sir Roland's target is no longer legal — Shield Bash fizzles.
+[Queued] Hunold the Piper: Haunting Rhythm → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Robin, Hooded Avenger
+Hunold the Piper uses Haunting Rhythm on Robin, Hooded Avenger.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=50
+  Robin, Hooded Avenger takes 50 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 173 → 123  (-50)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=50 def=50 raw=40.00 ceil=40
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 123 → 78  (-45)
+  Robin, Hooded Avenger gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[shock(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=78/185 statuses=[shock(2r), no_heal(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 statuses=[no_heal(1r)]
+    [T] STATUS_TICK Sir Roland: shock → 0r left
+    [T] STATUS_EXPIRED Sir Roland: shock
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: no_heal → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUN[Queued] Hunold the Piper: Dying Dance → Sea Wench Asha
+[Queued] Briar Rose: Creeping Doubt → Sea Wench Asha
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Sea Wench Asha
+Hunold the Piper uses Dying Dance on Sea Wench Asha.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sea Wench Asha[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=65
+  Sea Wench Asha takes 65 damage.
+    [T] HPCHANGE Sea Wench Asha: 107 → 42  (-65)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [4/6]
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Sea Wench Asha
+Briar Rose uses Creeping Doubt on Sea Wench Asha.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FIN[Queued] Hunold the Piper: Haunting Rhythm → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Robin, Hooded Avenger
+Hunold the Piper uses Haunting Rhythm on Robin, Hooded Avenger.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=80
+  Robin, Hooded Avenger takes 80 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 78 → 0  (-80) **KO**
+Sir Roland moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 181  (-29)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=181/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=191/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Snowkissed Aurora
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Snowkissed Aurora
+Hunold the Piper uses Haunting Rhythm on Snowkissed Aurora.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=60 def=60 raw=50.00 ceil=50
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 191 → 161  (-30)
+  Snowkissed Aurora gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 29 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Knight's Challenge → Hunold the Piper
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P2 Sir Roland[front]: Knight's Challenge → Hunold the Piper
+Sir Roland uses Knight's Challenge on Hunold the Piper.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=40 def=45 raw=31.11 ceil=32
+    [T]   FINAL_DMG=26
+  Hunold the Piper takes 26 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 184  (-26)
+  Hunold the Piper is Taunted for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=184/210 statuses=[burn_immune(2r), taunt(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=161/225 statuses=[guard(1r), shock(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Hunold the Piper: taunt → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: shock → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=184/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r), taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=161/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[shock(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=6
+  Sir Roland takes 6 damage.
+    [T] HPCHANGE Sir Roland: 265 → 259  (-6)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Hunold the Piper
+Matchstick Liesl recharges.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 174 → 145  (-29)
+  Shock recoil: Sir Roland takes 6 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 statuses=[burn_immune(1r), taunt(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=253/265 statuses=[burn(2r), shock(2r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=161/225 statuses=[shock(1r), guard(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_TICK Hunold the Piper: taunt → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+    [T] STATUS_EXPIRED Hunold the Piper: taunt
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: shock → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: shock → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: shock
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=145/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=226/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), shock(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=161/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Snowkissed Aurora
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Snowkissed Aurora
+Hunold the Piper uses Haunting Rhythm on Snowkissed Aurora.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=60 def=70 raw=42.86 ceil=43
+    [T]   FINAL_DMG=25
+  Snowkissed Aurora takes 25 damage.
+    [T] HPCHANGE Snowkissed Aurora: 161 → 136  (-25)
+  Snowkissed Aurora gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+[Queued] Snowkissed Aurora: Toxin Purge → Sir Roland
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Toxin Purge → Sir Roland
+Snowkissed Aurora uses Toxin Purge on Sir Roland.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Sir Roland is restored by Toxin Purge for 39 HP.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+  Sir Roland is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Silver Aegis ready for Sir Roland.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=200/210 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=136/225 statuses=[guard(1r), shock(2r)]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: shock → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=200/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=136/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[shock(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Sir Roland
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Sir Roland
+Hunold the Piper uses Haunting Rhythm on Sir Roland.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=6
+  Sir Roland takes 6 damage.
+    [T] HPCHANGE Sir Roland: 265 → 259  (-6)
+  Spiked Mail! Hunold the Piper takes 10 damage.
+  Sir Roland gains burn for 2 rounds.
+  Sir Roland gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=50 def=70 raw=28.57 ceil=29
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 136 → 92  (-44)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+��──────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=117/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=79/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+[Queued] Briar Rose: Creeping Doubt → Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 79 → 39  (-40)
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Sir Roland
+Briar Rose uses Creeping Doubt on Sir Roland.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=60 def=90 raw=26.67 ceil=27
+    [T]   FINAL_DMG=37
+  Sir Roland takes 37 damage.
+    [T] HPCHANGE Sir Roland: 39 → 2  (-37)
+  Sir Roland gains root for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=117/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=2/265 statuses=[root(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+  Curse of Sleeping: Sir Roland loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=117/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=2/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Skip
+[Queued] Briar Rose: Creeping Doubt → Sir Roland
+    [T] ACTION P1 Hunold the Piper[front]: skip/recharge
+Hunold the Piper skips.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Sir Roland
+Briar Rose uses Creeping Doubt on Sir Roland.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=60 def=90 raw=26.67 ceil=27
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 2 → 0  (-32) **KO**
+  Sir Roland is immune to Root (Curse of Sleeping).
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 1 wins!

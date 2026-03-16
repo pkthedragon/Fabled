@@ -1,0 +1,593 @@
+Battle 799
+Player 1 Team: Rapunzel Collapse
+Player 2 Team: Sea Wench Debuff Burst
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:53:23
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 799
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Sea Wench Debuff Burst
+  [front] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Abyssal Call  (passive=False)
+    Basics: Soul Gaze, Blood Pact
+    Item:   Arcane Focus
+  [back_left] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Sea Wench Asha: Abyssal Call → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: On the Hunt → Frederic the Beastslayer
+[Queued] Rapunzel the Golden: Lower Guard → Lucky Constantine
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Rapunzel the Golden
+Sea Wench Asha uses Abyssal Call on Rapunzel the Golden.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Rapunzel the Golden[front]
+    [T]   power=60
+    [T]   atk=75 def=65 raw=69.23 ceil=70
+    [T]   FINAL_DMG=70
+  Rapunzel the Golden takes 70 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 188  (-70)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Frederic the Beastslayer
+Frederic the Beastslayer uses On the Hunt on Frederic the Beastslayer.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=49
+  Frederic the Beastslayer takes 49 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 151  (-49)
+  Frederic the Beastslayer gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Lucky Constantine
+Rapunzel the Golden uses Lower Guard on Lucky Constantine.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Lucky Constantine[back_left]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Lucky Constantine takes 45 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 170  (-45)
+  Lucky Constantine loses -10 Defense for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → Sea Wench Asha
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sea Wench Asha
+[Queued] Lucky Constantine: Swap with Rapunzel the Golden
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Sea Wench Asha
+Rapunzel the Golden uses Edict on Sea Wench Asha.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Sea Wench Asha takes 67 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 143  (-67)
+  Sea Wench Asha gains root for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Sea Wench Asha
+Frederic the Beastslayer uses Hunter's Mark on Sea Wench Asha.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Sea Wench Asha[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Sea Wench Asha takes 47 damage.
+    [T] HPCHANGE Sea Wench Asha: 143 → 96  (-47)
+  Sea Wench Asha is Marked — takes +10 damage next round.
+    [T] ACTION P1 Lucky Constantine[back_left]: swap ↔ Rapunzel the Golden
+Lucky Constantine and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Rapunzel the Golden[back_left] HP=188/258 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=170/215 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=151/200 statuses=[expose(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=96/210 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sea Wench Asha: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sea Wench Asha spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_left] HP=188/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=170/215 ATK=70(base=70) DEF=30(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=151/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=96/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Sea Wench Asha
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sea Wench Asha
+[Queued] Rapunzel the Golden: Edict → Sea Wench Asha
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Sea Wench Asha
+Lucky Constantine uses Feline Gambit on Sea Wench Asha.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Sea Wench Asha[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=80
+  Sea Wench Asha takes 80 damage.
+    [T] HPCHANGE Sea Wench Asha: 96 → 16  (-80)
+  Sea Wench Asha gains expose for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Sea Wench Asha
+Frederic the Beastslayer uses Hunter's Mark on Sea Wench Asha.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Sea Wench Asha[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=67
+  Sea Wench Asha takes 67 damage.
+    [T] HPCHANGE Sea Wench Asha: 16 → 0  (-67) **KO**
+  Sea Wench Asha is Marked — takes +10 damage next round.
+Rapunzel the Golden moves to frontline.
+    [T] ACTION P1 Rapunzel the Golden[back_left]: Edict → Sea Wench Asha
+Rapunzel the Golden's target is no longer legal — Edict fizzles.
+[Queued] Rapunzel the Golden: Lower Guard → Lucky Constantine
+[Queued] Frederic the Beastslayer: On the Hunt → Lucky Constantine
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Lucky Constantine
+Rapunzel the Golden uses Lower Guard on Lucky Constantine.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Lucky Constantine[front]
+    [T]   power=70 (base=55)
+    [T]   atk=60 def=30 raw=140.00 ceil=140
+    [T]   FINAL_DMG=140
+  Lucky Constantine takes 140 damage.
+    [T] HPCHANGE Lucky Constantine: 170 → 30  (-140)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Lucky Constantine
+Frederic the Beastslayer uses On the Hunt on Lucky Constantine.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Lucky Constantine[front]
+    [T]   power=25
+    [T]   atk=70 def=30 raw=58.33 ceil=59
+    [T]   FINAL_DMG=81
+  Lucky Constantine takes 81 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  Lucky Constantine gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Rapunzel the Golden[back_left] HP=188/258 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 statuses=[expose(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=151/200 statuses=[expose(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lucky Constantine: expose → 1r left
+    [T] DEBUFF_EXPIRED Lucky Constantine: defense-10
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: expose
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_left] HP=188/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=151/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hunter's Mark → Rapunzel the Golden
+[Queued] Rapunzel the Golden: Edict → Rapunzel the Golden
+    [T] ACTION P1 Lucky Constantine[front]: swap ↔ Rapunzel the Golden
+Lucky Constantine and Rapunzel the Golden swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Rapunzel the Golden
+Frederic the Beastslayer uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=33
+  Rapunzel the Golden takes 33 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 225  (-33)
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Rapunzel the Golden
+Rapunzel the Golden uses Edict on Rapunzel the Golden.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=47
+  Rapunzel the Golden takes 47 damage.
+    [T] HPCHANGE Rapunzel the Golden: 225 → 178  (-47)
+  Rapunzel the Golden gains root for 2 rounds.
+[Queued] Rapunzel the Golden: Lower Guard → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Frederic the Beastslayer
+Rapunzel the Golden uses Lower Guard on Frederic the Beastslayer.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Frederic the Beastslayer[back_right]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=82
+  Frederic the Beastslayer takes 82 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 151 → 69  (-82)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 statuses=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=1/215 statuses=[expose(1r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=69/200 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=178/258 statuses=[root(2r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lucky Constantine: expose → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: expose
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=69/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=178/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Rapunzel the Golden: Impose → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lucky Constantine[back_left]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=94
+  Lucky Constantine takes 94 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-94) **KO**
+  Lucky Constantine is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Impose → Frederic the Beastslayer
+Rapunzel the Golden uses Impose on Frederic the Beastslayer.
+    [T] DMGCALC [Impose] Rapunzel the Golden[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 69 → 29  (-40)
+  Frederic the Beastslayer loses -10 Speed for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Frederic the Beastslayer
+Rapunzel the Golden uses Edict on Frederic the Beastslayer.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=74
+  Frederic the Beastslayer takes 74 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 126  (-74)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=29/200 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=178/258 statuses=[root(1r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=126/200 statuses=[root(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: root → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: root
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=29/200 ATK=70(base=65) DEF=45(base=45) SPD=50(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=178/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=126/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Skip
+[Queued] Rapunzel the Golden: Lower Guard → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: skip/recharge
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Lower Guard → Frederic the Beastslayer
+Rapunzel the Golden uses Lower Guard on Frederic the Beastslayer.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 29 → 0  (-40) **KO**
+  Frederic the Beastslayer loses -10 Defense for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+[Queued] Rapunzel the Golden: Lower Guard → Frederic the Beastslayer
+    [T] ACTION P1 Rapunzel the Golden[front]: Lower Guard → Frederic the Beastslayer
+Rapunzel the Golden uses Lower Guard on Frederic the Beastslayer.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Frederic the Beastslayer[front]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=82
+  Frederic the Beastslayer takes 82 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 126 → 44  (-82)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=178/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=44/200 statuses=[root(1r)]
+    [T] STATUS_TICK Frederic the Beastslayer: root → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: root
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=178/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=44/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Item Rapunzel the Golden
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Rapunzel the Golden[front]: item [Main-Gauche] → Rapunzel the Golden
+Rapunzel the Golden recharges.
+[Queued] Rapunzel the Golden: Edict → Frederic the Beastslayer
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Frederic the Beastslayer
+Rapunzel the Golden uses Edict on Frederic the Beastslayer.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=74
+  Frederic the Beastslayer takes 74 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 44 → 0  (-74) **KO**
+  Frederic the Beastslayer gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=178/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=188/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=178/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Rapunzel the Golden: Edict → Rapunzel the Golden
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Rapunzel the Golden
+Rapunzel the Golden uses Edict on Rapunzel the Golden.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=47
+  Rapunzel the Golden takes 47 damage.
+    [T] HPCHANGE Rapunzel the Golden: 178 → 131  (-47)
+  Rapunzel the Golden gains root for 2 rounds.
+[Queued] Rapunzel the Golden: Impose → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Impose → Rapunzel the Golden
+Rapunzel the Golden uses Impose on Rapunzel the Golden.
+    [T] DMGCALC [Impose] Rapunzel the Golden[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=47
+  Rapunzel the Golden takes 47 damage.
+    [T] HPCHANGE Rapunzel the Golden: 188 → 141  (-47)
+  Rapunzel the Golden loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Rapunzel the Golden[front] HP=141/258 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=131/258 statuses=[root(2r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Rapunzel the Golden: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=141/258 ATK=60(base=60) DEF=65(base=65) SPD=20(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=131/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Rapunzel the Golden: Lower Guard → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Rapunzel the Golden
+Rapunzel the Golden uses Lower Guard on Rapunzel the Golden.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Rapunzel the Golden[front]
+    [T]   power=70 (base=55)
+    [T]   atk=60 def=65 raw=64.62 ceil=65
+    [T]   FINAL_DMG=65
+  Rapunzel the Golden takes 65 damage.
+    [T] HPCHANGE Rapunzel the Golden: 141 → 76  (-65)
+[Queued] Rapunzel the Golden: Severed Tether → Rapunzel the Golden
+    [T] ACTION P1 Rapunzel the Golden[front]: Severed Tether → Rapunzel the Golden
+Rapunzel the Golden uses Severed Tether on Rapunzel the Golden.
+  Rapunzel the Golden gains +20 Attack for 2 rounds.
+  Rapunzel the Golden gains +20 Speed for 2 rounds.
+  Rapunzel the Golden loses -15 Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Rapunzel the Golden[front] HP=76/258 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=131/258 statuses=[root(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] DEBUFF_EXPIRED Rapunzel the Golden: speed-10
+    [T] STATUS_TICK Rapunzel the Golden: root → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: root
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=50  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=76/258 ATK=80(base=60) DEF=50(base=65) SPD=50(base=30)
+    [T]     statuses=[-]  buffs=[attack+20(1r), speed+20(1r)]  debuffs=[defense-15(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=131/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Rapunzel the Golden: Edict → Rapunzel the Golden
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Rapunzel the Golden
+Rapunzel the Golden uses Edict on Rapunzel the Golden.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=80 def=65 raw=61.54 ceil=62
+    [T]   FINAL_DMG=62
+  Rapunzel the Golden takes 62 damage.
+    [T] HPCHANGE Rapunzel the Golden: 131 → 69  (-62)
+  Rapunzel the Golden gains root for 2 rounds.
+[Queued] Rapunzel the Golden: Lower Guard → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Rapunzel the Golden
+Rapunzel the Golden uses Lower Guard on Rapunzel the Golden.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Rapunzel the Golden[front]
+    [T]   power=70 (base=55)
+    [T]   atk=60 def=50 raw=84.00 ceil=84
+    [T]   FINAL_DMG=84
+  Rapunzel the Golden takes 84 damage.
+    [T] HPCHANGE Rapunzel the Golden: 76 → 0  (-84) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 2 wins!

@@ -1,0 +1,978 @@
+Battle 80
+Player 1 Team: Balanced Generalist
+Player 2 Team: Balanced Generalist
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:40:33
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 80
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Balanced Generalist
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Balanced Generalist
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Frederic the Beastslayer and Prince Charming swap positions.
+[Queued] Frederic the Beastslayer: Hero's Charge → Frederic the Beastslayer
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hero's Charge → Frederic the Beastslayer
+Frederic the Beastslayer uses Hero's Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=110
+  Frederic the Beastslayer takes 110 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 90  (-110)
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 255 → 207  (-48)
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Prince Charming[front]
+    [T]   power=45 (base=35)
+    [T]   atk=45 def=55 raw=36.82 ceil=37
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 207 → 170  (-37)
+  Snowkissed Aurora heals Frederic the Beastslayer for 35 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=112
+  Frederic the Beastslayer takes 112 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 125 → 13  (-112)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=13/200 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=13/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=122
+  Frederic the Beastslayer takes 122 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 13 → 0  (-122) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Frederic the Beastslayer
+Prince Charming's target is no longer legal — Condescend fizzles.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=56
+  Frederic the Beastslayer takes 56 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 144  (-56)
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Frederic the Beastslayer takes 58 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 144 → 86  (-58)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[front] HP=86/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=86/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=45 raw=60.00 ceil=60
+    [T]   FINAL_DMG=66
+  Frederic the Beastslayer takes 66 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 156 → 90  (-66)
+  Snowkissed Aurora heals Snowkissed Aurora for 44 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=90/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=90/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 255 → 216  (-39)
+  Prince Charming is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 170  (-55)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=170/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=216/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=170/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Frederic the Beastslayer: Skip
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: skip/recharge
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 216 → 158  (-58)
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=50 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Snowkissed Aurora takes 65 damage.
+    [T] HPCHANGE Snowkissed Aurora: 170 → 105  (-65)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Frederic the Beastslayer takes 35 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 160 → 125  (-35)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=125/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=105/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=193/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=125/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=105/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=193/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 105 → 50  (-55)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Frederic the Beastslayer takes 35 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 125 → 90  (-35)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 228 → 180  (-48)
+  Prince Charming must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer[front] HP=160/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=50/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=180/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=160/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=50/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=180/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=75 def=55 raw=81.82 ceil=82
+    [T]   FINAL_DMG=99
+  Prince Charming takes 99 damage.
+    [T] HPCHANGE Prince Charming: 180 → 81  (-99)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 40 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Frederic the Beastslayer
+Prince Charming recharges.
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=81
+  Frederic the Beastslayer takes 81 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 119  (-81)
+  Frederic the Beastslayer loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=35
+    [T]   atk=45 def=50 raw=31.50 ceil=32
+    [T]   FINAL_DMG=32
+  Snowkissed Aurora takes 32 damage.
+    [T] HPCHANGE Snowkissed Aurora: 50 → 18  (-32)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Frederic the Beastslayer[front] HP=119/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=18/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=116/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=119/200 ATK=75(base=65) DEF=35(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=18/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=116/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 116 → 58  (-58)
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 18 → 0  (-55) **KO**
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+Prince Charming moves to frontline.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=189/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=225/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=58/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=189/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=58/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 225 → 165  (-60)
+  Prince Charming loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+  Frederic the Beastslayer loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[back_right]
+    [T]   power=60 (base=50)
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Snowkissed Aurora takes 60 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 165  (-60)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Frederic the Beastslayer[front] HP=189/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=165/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=113/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=189/200 ATK=65(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=113/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[back_right]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=65
+  Snowkissed Aurora takes 65 damage.
+    [T] HPCHANGE Snowkissed Aurora: 165 → 100  (-65)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=55 def=60 raw=36.67 ceil=37
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 100 → 53  (-47)
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=81
+  Frederic the Beastslayer takes 81 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 189 → 108  (-81)
+  Frederic the Beastslayer loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Frederic the Beastslayer[front] HP=108/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=53/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=168/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=108/200 ATK=65(base=65) DEF=35(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=53/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=168/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Prince Charming
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=55 def=60 raw=36.67 ceil=37
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 53 → 6  (-47)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Frederic the Beastslayer[front] HP=108/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=6/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=238/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Frederic the Beastslayer: attack-10
+    [T] DEBUFF_EXPIRED Frederic the Beastslayer: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=108/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=6/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=238/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=60 (base=50)
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=90
+  Snowkissed Aurora takes 90 damage.
+    [T] HPCHANGE Snowkissed Aurora: 6 → 0  (-90) **KO**
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+Prince Charming moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Frederic the Beastslayer
+Prince Charming recharges.
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=81
+  Frederic the Beastslayer takes 81 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 108 → 27  (-81)
+  Frederic the Beastslayer loses -10 Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Frederic the Beastslayer[front] HP=27/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=238/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=27/200 ATK=75(base=65) DEF=35(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=165/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=238/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Prince Charming
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Prince Charming
+Frederic the Beastslayer and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=55 raw=70.91 ceil=71
+    [T]   FINAL_DMG=71
+  Prince Charming takes 71 damage.
+    [T] HPCHANGE Prince Charming: 238 → 167  (-71)
+  Prince Charming loses -10 Speed for 2 rounds.
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 165 → 105  (-60)
+  Prince Charming loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=27/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=105/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=167/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Frederic the Beastslayer: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=25  vs  P2 FL=Prince Charming spd=25  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=27/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=105/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=167/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 105 → 45  (-60)
+  Prince Charming loses -10 Defense for 2 rounds.
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 167 → 90  (-77)
+  Prince Charming is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Frederic the Beastslayer[front] HP=27/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=45/255 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=90/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=27/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=45/255 ATK=65(base=65) DEF=45(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=90/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=93
+  Prince Charming takes 93 damage.
+    [T] HPCHANGE Prince Charming: 90 → 0  (-93) **KO**
+  Prince Charming is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 15)
+────────────────────────────────────────────────────────────
+Player 1 wins!

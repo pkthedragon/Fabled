@@ -1,0 +1,710 @@
+Battle 116
+Player 1 Team: Balanced Generalist
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:43:21
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 116
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Balanced Generalist
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sea Wench Asha
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Sea Wench Asha
+Frederic the Beastslayer uses Hunter's Mark on Sea Wench Asha.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Sea Wench Asha[back_left]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=84
+  Sea Wench Asha takes 84 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 126  (-84)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [1/6]
+  Sea Wench Asha is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Robin, Hooded Avenger takes 65 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 120  (-65)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [3/6]
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Sea Wench Asha[back_left]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Sea Wench Asha takes 35 damage.
+    [T] HPCHANGE Sea Wench Asha: 126 → 91  (-35)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [4/6]
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Frederic the Beastslayer
+[Queued] Sea Wench Asha: Misappropriate → Frederic the Beastslayer
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+  Banner of Command: Robin, Hooded Avenger is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Snipe Shot on Frederic the Beastslayer.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=123
+  Frederic the Beastslayer takes 123 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 77  (-123)
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Frederic the Beastslayer
+Sea Wench Asha uses Misappropriate on Frederic the Beastslayer.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Frederic the Beastslayer[front]
+    [T]   power=35
+    [T]   atk=82 def=45 raw=63.78 ceil=64
+    [T]   FINAL_DMG=64
+  Frederic the Beastslayer takes 64 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 77 → 13  (-64)
+  Frederic the Beastslayer gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=13/200 statuses=[root(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=91/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=120/185 statuses=[guard(2r)]
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=13/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=91/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=120/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+[Queued] Sir Roland: Item Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=103
+  Prince Charming takes 103 damage.
+    [T] HPCHANGE Prince Charming: 255 → 152  (-103)
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Snowkissed Aurora
+Sea Wench Asha uses Misappropriate on Snowkissed Aurora.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 177  (-48)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sea Wench Asha
+[Queued] Prince Charming: Impose → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Sea Wench Asha
+Frederic the Beastslayer uses Hunter's Mark on Sea Wench Asha.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Sea Wench Asha[back_left]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=78
+  Sea Wench Asha takes 78 damage.
+    [T] HPCHANGE Sea Wench Asha: 91 → 13  (-78)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [5/6]
+  Sea Wench Asha is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Robin, Hooded Avenger
+Prince Charming uses Impose on Robin, Hooded Avenger.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40 (base=30)
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=52
+  Robin, Hooded Avenger takes 52 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 120 → 68  (-52)
+  Robin, Hooded Avenger loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [6/6]
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Sea Wench Asha[back_left]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=38
+  Sea Wench Asha takes 38 damage.
+    [T] HPCHANGE Sea Wench Asha: 13 → 0  (-38) **KO**
+  Snowkissed Aurora heals Frederic the Beastslayer for 35 HP.
+  Innocent Heart: Frederic the Beastslayer +10 Def.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[front] HP=48/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[root(2r)]
+    [T]   P1 Prince Charming[back_right] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=68/185 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=55  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=48/200 ATK=75(base=65) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=68/185 ATK=70(base=70) DEF=40(base=40) SPD=55(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=113
+  Robin, Hooded Avenger takes 113 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 68 → 0  (-113) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming's target is no longer legal — Condescend fizzles.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Frederic the Beastslayer
+Sir Roland uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=33
+  Frederic the Beastslayer takes 33 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 48 → 15  (-33)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[front] HP=15/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[root(1r)]
+    [T]   P1 Prince Charming[back_right] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=15/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=65 def=90 raw=28.89 ceil=29
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=6
+  Sir Roland takes 6 damage.
+    [T] HPCHANGE Sir Roland: 265 → 259  (-6)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 55 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Frederic the Beastslayer
+Sir Roland uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=44
+  Frederic the Beastslayer takes 44 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 70 → 26  (-44)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[front] HP=26/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=259/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=26/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=259/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sir Roland
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Sir Roland
+Frederic the Beastslayer uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Sir Roland[front]
+    [T]   power=60 (base=50)
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=60
+  Sir Roland takes 60 damage.
+    [T] HPCHANGE Sir Roland: 259 → 199  (-60)
+  Sir Roland is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Frederic the Beastslayer
+Prince Charming recharges.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 66 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[front] HP=26/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=26/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sir Roland
+[Queued] Prince Charming: Condescend → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Sir Roland
+Frederic the Beastslayer uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=75 def=90 raw=41.67 ceil=42
+    [T]   FINAL_DMG=51
+  Sir Roland takes 51 damage.
+    [T] HPCHANGE Sir Roland: 265 → 214  (-51)
+  Sir Roland is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=65 def=90 raw=28.89 ceil=29
+    [T]   FINAL_DMG=34
+  Sir Roland takes 34 damage.
+    [T] HPCHANGE Sir Roland: 214 → 180  (-34)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 55 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Frederic the Beastslayer
+Sir Roland uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=44
+  Frederic the Beastslayer takes 44 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 81 → 37  (-44)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer[front] HP=37/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=180/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=37/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=180/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=65 def=90 raw=28.89 ceil=29
+    [T]   FINAL_DMG=39
+  Sir Roland takes 39 damage.
+    [T] HPCHANGE Sir Roland: 180 → 141  (-39)
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=90 raw=30.00 ceil=30
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 141 → 101  (-40)
+  Snowkissed Aurora heals Frederic the Beastslayer for 50 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=87/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=101/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=87/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=101/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hero's Charge → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Sir Roland
+Frederic the Beastslayer uses Hero's Charge on Sir Roland.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=70 def=90 raw=23.33 ceil=24
+    [T]   FINAL_DMG=30
+  Sir Roland takes 30 damage.
+    [T] HPCHANGE Sir Roland: 101 → 71  (-30)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 177 → 147  (-30)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=157/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=71/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=157/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=71/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Skip
+[Queued] Prince Charming: Condescend → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Frederic the Beastslayer
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: skip/recharge
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Sir Roland
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=65 def=90 raw=28.89 ceil=29
+    [T]   FINAL_DMG=29
+  Sir Roland takes 29 damage.
+    [T] HPCHANGE Sir Roland: 71 → 42  (-29)
+  Prince Charming must recharge next turn.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=157/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=42/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=157/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=147/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=42/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sir Roland
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=90 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 42 → 18  (-24)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Sir Roland
+Frederic the Beastslayer uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 18 → 0  (-20) **KO**
+  Sir Roland is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 1 wins!

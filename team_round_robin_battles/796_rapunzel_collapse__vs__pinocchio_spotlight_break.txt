@@ -1,0 +1,441 @@
+Battle 796
+Player 1 Team: Rapunzel Collapse
+Player 2 Team: Pinocchio Spotlight Break
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:53:02
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 796
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Pinocchio Spotlight Break
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Cut the Strings  (passive=False)
+    Basics: Soul Gaze, Void Step
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Lucky Constantine
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=114
+  Frederic the Beastslayer takes 114 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 86  (-114)
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: Cut the Strings → Lucky Constantine
+Pinocchio, Cursed Puppet uses Cut the Strings on Lucky Constantine.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=75
+  Lucky Constantine takes 75 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 140  (-75)
+[Queued] Rapunzel the Golden: Edict → Robin, Hooded Avenger
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Swap with Rapunzel the Golden
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Robin, Hooded Avenger
+Rapunzel the Golden uses Edict on Robin, Hooded Avenger.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 110  (-75)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=53
+  Robin, Hooded Avenger takes 53 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 110 → 57  (-53)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P1 Lucky Constantine[back_left]: swap ↔ Rapunzel the Golden
+Lucky Constantine and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=140/215 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=57/185 statuses=[root(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=140/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=57/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Robin, Hooded Avenger
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Edict → Robin, Hooded Avenger
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Robin, Hooded Avenger
+Lucky Constantine uses Feline Gambit on Robin, Hooded Avenger.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=89
+  Robin, Hooded Avenger takes 89 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 57 → 0  (-89) **KO**
+  Robin, Hooded Avenger gains expose for 2 rounds.
+Pinocchio, Cursed Puppet moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+    [T] ACTION P1 Rapunzel the Golden[back_left]: Edict → Robin, Hooded Avenger
+Rapunzel the Golden's target is no longer legal — Edict fizzles.
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Lucky Constantine
+[Queued] Prince Charming: Condescend → Lucky Constantine
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Lucky Constantine
+Pinocchio, Cursed Puppet uses Cut the Strings on Lucky Constantine.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Lucky Constantine[front]
+    [T]   power=60
+    [T]   atk=65 def=40 raw=97.50 ceil=98
+    [T]   FINAL_DMG=108
+  Lucky Constantine takes 108 damage.
+    [T] HPCHANGE Lucky Constantine: 140 → 32  (-108)
+  Lucky Constantine gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Lucky Constantine
+Prince Charming uses Condescend on Lucky Constantine.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=78
+  Lucky Constantine takes 78 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 statuses=[expose(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lucky Constantine: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [1/6]
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=70(base=65) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Feline Gambit → Pinocchio, Cursed Puppet
+[Queued] Frederic the Beastslayer: Hunter's Mark → Pinocchio, Cursed Puppet
+[Queued] Rapunzel the Golden: Edict → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Pinocchio, Cursed Puppet
+Lucky Constantine uses Feline Gambit on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=45
+    [T]   atk=70 def=55 raw=57.27 ceil=58
+    [T]   FINAL_DMG=58
+  Pinocchio, Cursed Puppet takes 58 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 162  (-58)
+  Pinocchio, Cursed Puppet gains expose for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Pinocchio, Cursed Puppet
+Frederic the Beastslayer uses Hunter's Mark on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Pinocchio, Cursed Puppet[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=47
+  Pinocchio, Cursed Puppet takes 47 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 162 → 115  (-47)
+  Pinocchio, Cursed Puppet is Marked — takes +10 damage next round.
+    [T] ACTION P1 Rapunzel the Golden[back_left]: Edict → Pinocchio, Cursed Puppet
+Rapunzel the Golden uses Edict on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Pinocchio, Cursed Puppet[front]
+    [T]   power=30
+    [T]   atk=60 def=55 raw=32.73 ceil=33
+    [T]   FINAL_DMG=40
+  Pinocchio, Cursed Puppet takes 40 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 115 → 75  (-40)
+  Pinocchio, Cursed Puppet gains spotlight for 2 rounds.
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Lucky Constantine
+[Queued] Prince Charming: Impose → Lucky Constantine
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Lucky Constantine
+Pinocchio, Cursed Puppet uses Cut the Strings on Lucky Constantine.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Lucky Constantine[front]
+    [T]   power=70 (base=60)
+    [T]   atk=70 def=40 raw=122.50 ceil=123
+    [T]   FINAL_DMG=158
+  Lucky Constantine takes 158 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-158) **KO**
+Rapunzel the Golden moves to frontline.
+    [T] ACTION P2 Prince Charming[back_right]: Impose → Lucky Constantine
+Prince Charming's target is no longer legal — Impose fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=75/220 statuses=[expose(2r), spotlight(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: expose → 1r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: spotlight → 1r left
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [2/6]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=86/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=75/220 ATK=75(base=65) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r), spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Rapunzel the Golden
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Rapunzel the Golden
+Pinocchio, Cursed Puppet uses Cut the Strings on Rapunzel the Golden.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Rapunzel the Golden[front]
+    [T]   power=60
+    [T]   atk=75 def=65 raw=69.23 ceil=70
+    [T]   FINAL_DMG=80
+  Rapunzel the Golden takes 80 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 178  (-80)
+  Rapunzel the Golden gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Frederic the Beastslayer takes 58 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 86 → 28  (-58)
+[Queued] Rapunzel the Golden: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hero's Charge → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Rapunzel the Golden[front]: swap ↔ Frederic the Beastslayer
+Rapunzel the Golden and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hero's Charge → Pinocchio, Cursed Puppet
+  Frederic the Beastslayer retargets to Frederic the Beastslayer after swapping to front.
+Frederic the Beastslayer uses Hero's Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=70 (base=60)
+    [T]   atk=70 def=45 raw=108.89 ceil=109
+    [T]   FINAL_DMG=119
+  Frederic the Beastslayer takes 119 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 28 → 0  (-119) **KO**
+  Frederic the Beastslayer must recharge next turn.
+Rapunzel the Golden moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Rapunzel the Golden[front] HP=178/258 statuses=[expose(2r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=75/220 statuses=[expose(1r), spotlight(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Rapunzel the Golden: expose → 1r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: expose → 0r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: spotlight → 0r left
+    [T] STATUS_EXPIRED Pinocchio, Cursed Puppet: expose
+    [T] STATUS_EXPIRED Pinocchio, Cursed Puppet: spotlight
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [3/6]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=178/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=75/220 ATK=80(base=65) DEF=65(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Rapunzel the Golden
+[Queued] Prince Charming: Condescend → Rapunzel the Golden
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Rapunzel the Golden
+Pinocchio, Cursed Puppet uses Cut the Strings on Rapunzel the Golden.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Rapunzel the Golden[front]
+    [T]   power=60
+    [T]   atk=80 def=65 raw=73.85 ceil=74
+    [T]   FINAL_DMG=99
+  Rapunzel the Golden takes 99 damage.
+    [T] HPCHANGE Rapunzel the Golden: 178 → 79  (-99)
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Rapunzel the Golden
+Prince Charming uses Condescend on Rapunzel the Golden.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=65 def=65 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Rapunzel the Golden takes 48 damage.
+    [T] HPCHANGE Rapunzel the Golden: 79 → 31  (-48)
+  Prince Charming must recharge next turn.
+[Queued] Rapunzel the Golden: Edict → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Rapunzel the Golden[front]: Edict → Pinocchio, Cursed Puppet
+Rapunzel the Golden uses Edict on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=47
+  Pinocchio, Cursed Puppet takes 47 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 75 → 28  (-47)
+  Pinocchio, Cursed Puppet gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Rapunzel the Golden[front] HP=31/258 statuses=[expose(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=28/220 statuses=[root(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Rapunzel the Golden: expose → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: expose
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: root → 1r left
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [4/6]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=31/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=28/220 ATK=85(base=65) DEF=70(base=50) SPD=50(base=50)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Rapunzel the Golden
+[Queued] Prince Charming: Swap with Pinocchio, Cursed Puppet
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Rapunzel the Golden
+Pinocchio, Cursed Puppet uses Cut the Strings on Rapunzel the Golden.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Rapunzel the Golden[front]
+    [T]   power=70 (base=60)
+    [T]   atk=85 def=65 raw=91.54 ceil=92
+    [T]   FINAL_DMG=102
+  Rapunzel the Golden takes 102 damage.
+    [T] HPCHANGE Rapunzel the Golden: 31 → 0  (-102) **KO**
+  Rapunzel the Golden gains expose for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

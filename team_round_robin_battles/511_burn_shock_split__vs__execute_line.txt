@@ -1,0 +1,563 @@
+Battle 511
+Player 1 Team: Burn Shock Split
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:20:25
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 511
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Little Jack and Risa Redcloak swap positions.
+[Queued] Witch of the Woods: Thunder Call → Lucky Constantine
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+[Queued] Hunold the Piper: Haunting Rhythm → Risa Redcloak
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Lucky Constantine
+Witch of the Woods uses Thunder Call on Lucky Constantine.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Lucky Constantine[back_right]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Lucky Constantine takes 122 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 93  (-122)
+  Lucky Constantine gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Lucky Constantine[back_right]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=65
+  Lucky Constantine takes 65 damage.
+    [T] HPCHANGE Lucky Constantine: 93 → 28  (-65)
+  Lucky Constantine gains no_heal for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Haunting Rhythm → Risa Redcloak
+Hunold the Piper uses Haunting Rhythm on Risa Redcloak.
+  Risa Redcloak gains shock for 2 rounds.
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Witch of the Woods
+[Queued] Little Jack: Skyfall → Witch of the Woods
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Witch of the Woods
+Lucky Constantine uses Sucker Punch on Witch of the Woods.
+  Witch of the Woods gains weaken for 2 rounds.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Witch of the Woods
+Little Jack uses Skyfall on Witch of the Woods.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Witch of the Woods[front]
+    [T]   power=80
+    [T]   atk=80 def=35 raw=182.86 ceil=183
+    [T]   FINAL_DMG=193
+  Witch of the Woods takes 193 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 0  (-193) **KO**
+Hunold the Piper moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[shock(2r)]
+    [T]   P2 Lucky Constantine[back_right] HP=28/215 statuses=[shock(2r), no_heal(2r)]
+    [T] STATUS_TICK Risa Redcloak: shock → 1r left
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=28/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Little Jack
+[Queued] Matchstick Liesl: Cauterize → Little Jack
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Little Jack
+Hunold the Piper uses Haunting Rhythm on Little Jack.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 220 → 160  (-60)
+  Little Jack gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Cauterize → Little Jack
+Matchstick Liesl uses Cauterize on Little Jack.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=50 def=50 raw=40.00 ceil=40
+    [T]   FINAL_DMG=55
+  Little Jack takes 55 damage.
+    [T] HPCHANGE Little Jack: 160 → 105  (-55)
+  Little Jack gains no_heal for 2 rounds.
+[Queued] Little Jack: Skyfall → Hunold the Piper
+[Queued] Lucky Constantine: Swap with Little Jack
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P2 Little Jack[front]: Skyfall → Hunold the Piper
+Little Jack uses Skyfall on Hunold the Piper.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Hunold the Piper[front]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=123
+  Hunold the Piper takes 123 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 87  (-123)
+  Shock recoil: Little Jack takes 25 damage.
+    [T] ACTION P2 Lucky Constantine[back_right]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+    [T] ACTION P2 Risa Redcloak[back_left]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=80/220 statuses=[shock(2r), no_heal(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[shock(1r)]
+    [T]   P2 Lucky Constantine[front] HP=28/215 statuses=[shock(1r), no_heal(1r)]
+    [T] STATUS_TICK Little Jack: shock → 1r left
+    [T] STATUS_TICK Little Jack: no_heal → 1r left
+    [T] STATUS_TICK Risa Redcloak: shock → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: shock
+    [T] STATUS_TICK Lucky Constantine: shock → 0r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: shock
+    [T] STATUS_EXPIRED Lucky Constantine: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=80/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=28/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Risa Redcloak
+[Queued] Little Jack: Skyfall → Hunold the Piper
+[Queued] Risa Redcloak: Rend → Hunold the Piper
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Risa Redcloak
+Lucky Constantine and Risa Redcloak swap positions.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Hunold the Piper
+Little Jack uses Skyfall on Hunold the Piper.
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Hunold the Piper
+Risa Redcloak uses Rend on Hunold the Piper.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Hunold the Piper[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=105
+  Hunold the Piper takes 105 damage.
+    [T] HPCHANGE Hunold the Piper: 87 → 0  (-105) **KO**
+Matchstick Liesl moves to frontline.
+[Queued] Matchstick Liesl: Smite → Little Jack
+    [T] ACTION P1 Matchstick Liesl[front]: Smite → Little Jack
+Matchstick Liesl uses Smite on Little Jack.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Little Jack[back_right]
+    [T]   power=55
+    [T]   atk=50 def=50 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Little Jack takes 55 damage.
+    [T] HPCHANGE Little Jack: 80 → 25  (-55)
+  Little Jack gains burn for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick[Queued] Frederic the Beastslayer: Hero's Charge → Matchstick Liesl
+[Queued] Rapunzel the Golden: Edict → Hunold the Piper
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Hunold the Piper
+Lucky Constantine uses Feline Gambit on Hunold the Piper.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=56
+  Hunold the Piper takes 56 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 154  (-56)
+  Shock recoil: Lucky Constantine takes 12 damage.
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Matchstick Liesl
+Frederic the Beastslayer uses Hero's Charge on Matchstick Liesl.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Matchstick Liesl[back_right]
+    [T]   power=30
+    [T]   atk=70 def=50 raw=42.00 ceil=42
+    [T]   FINAL_DMG=62
+  Matchstick Liesl takes 62 damage.
+    [T] HPCHANGE Matchstick Liesl: 175 → 113  (-62)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Hunold the Piper
+Rapunzel the Golden uses Edict on Hunold the Piper.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Hunold the Piper[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Hunold the Piper takes 48 damage.
+    [T] HPCHANGE Hunold the Piper: 154 → 106  (-48)
+  Hunold the Piper gains spotlight for 2 rounds.
+[Queued] Hunold the Piper: Haunting Rhythm → Lucky Constantine
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Lucky Constantine
+Hunold the Piper uses Haunting Rhythm on Lucky Constantine.
+    [T] DMGCALC [Haunt[Queued] Risa Redcloak: Swap with Lucky Constantine
+[Queued] Little Jack: Skyfall → Matchstick Liesl
+[Queued] Lucky Constantine: Post Bounty → Matchstick Liesl
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Matchstick Liesl
+Little Jack uses Skyfall on Matchstick Liesl.
+  Matchstick Liesl gains expose for 2 rounds.
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Matchstick Liesl
+Lucky Constantine uses Post Bounty on Matchstick Liesl.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=70 def=50 raw=56.00 ceil=56
+    [T]   FINAL_DMG=68
+  Matchstick Liesl takes 68 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 142  (-68)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=142/210 statuses=[expose(2r)]
+    [T]   P2 Little Jack[back_right] HP=3/220 statuses=[burn(1r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=28/215 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: expose → 1r left
+Little Jack burns for 22 damage.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=142/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=28/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Sucker Punch → Matchstick Liesl
+[Queued] Risa Redcloak: Rend → Matchstick Liesl
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Matchstick Liesl
+Lucky Constantine uses Sucker Punch on Matchstick Liesl.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Matchstick Liesl[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=50 raw=84.00 ceil=84
+    [T]   FINAL_DMG=101
+  Matchstick Liesl takes 101 damage.
+    [T] HPCHANGE Matchstick Liesl: 142 → 41  (-101)
+    [T] ACTION P2 Risa Redcloak[back_left]: Rend → Matchstick Liesl
+Risa Redcloak uses Rend on Matchstick Liesl.
+  Risa Redcloak marks Matchstick Liesl — next ability gains +10 Power.
+[Queued] Matchstick Liesl: Cleansing Inferno
+    [T] ACTION P1 Matchstick Liesl[front]: Cleansing Inferno → spread/auto
+Matchstick Liesl uses Cleansing Inferno.
+Matchstick Liesl uses Cleansing Inferno (spread).
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Risa Redcloak[back_left] (spread)
+    [T]   power=60
+    [T]   atk=50 def=60 raw=50.00 ceil=50
+    [T]   FINAL_DMG=25
+  Risa Redcloak takes 25 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 225  (-25)
+  Matchstick Liesl heals 18 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Risa Redcloak gains burn for 2 rounds.
+  Extra vamp vs Burned: Matchstick Liesl heals 8.
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Lucky Constantine[front] (spread)
+    [T]   power=60
+    [T]   atk=50 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=38
+  Lucky Constantine takes 38 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=67/210 statuses=[expose(1r), burn_immune(2r)]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=225/250 statuses=[burn(2r)]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: expose → 0r left
+    [T] STATUS_TICK Matchstick Liesl: burn_immune → 1r left
+    [T] STATUS_EXPIRED Matchstick Liesl: expose
+Risa Redcloak burns for 25 damage.
+    [T] STATUS_TICK Risa Redcloak: burn → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Matchstick Liesl[front] HP=67/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=200/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Matchstick Liesl
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Risa Redcloak
+Lucky Constantine and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Matchstick Liesl
+Risa Redcloak uses Rend on Matchstick Liesl.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Matchstick Liesl[front]
+    [T]   power=75 (base=45)
+    [T]   atk=75 def=50 raw=112.50 ceil=113
+    [T]   FINAL_DMG=113
+  Matchstick Liesl takes 113 damage.
+    [T] HPCHANGE Matchstick Liesl: 67 → 0  (-113) **KO**
+  Risa Redcloak heals 8 HP.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!
+
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Rapunzel the Golden
+Hunold the Piper uses Haunting Rhythm on Rapunzel the Golden.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=47
+  Rapunzel the Golden takes 47 damage.
+    [T] HPCHANGE Rapunzel the Golden: 240 → 193  (-47)
+  Rapunzel the Golden gains burn for 2 rounds.
+  Rapunzel the Golden gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+[Queued] Rapunzel the Golden: Edict → Hunold the Piper
+[Queued] Frederic the Beastslayer: Hero's Charge → Matchstick Liesl
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Hunold the Piper
+Rapunzel the Golden uses Edict on Hunold the Piper.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=54
+  Hunold the Piper takes 54 damage.
+    [T] HPCHANGE Hunold the Piper: 77 → 23  (-54)
+  Shock recoil: Rapunzel the Golden takes 11 damage.
+  Hunold the Piper gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Matchstick Liesl
+Frederic the Beastslayer uses Hero's Charge on Matchstick Liesl.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Matchstick Liesl[back_right]
+    [T]   power=30
+    [T]   atk=70 def=50 raw=42.00 ceil=42
+    [T]   FINAL_DMG=52
+  Matchstick Liesl takes 52 damage.
+    [T] HPCHANGE Matchstick Liesl: 113 → 61  (-52)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=23/210 statuses=[burn_immune(2r), root(2r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=61/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=182/258 statuses=[burn(2r), shock(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=1/200 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 1r left
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+Rapunzel the Golden burns for 26 damage.
+    [T] STATUS_TICK Rapunzel the Golden: burn → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: shock → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=23/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=61/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=156/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[burn(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=1/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Rapunzel the Golden
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Haunting Rhythm → Rapunzel the Golden
+Hunold the Piper uses Haunting Rhythm on Rapunzel the Golden.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=62
+  Rapunzel the Golden takes 62 damage.
+    [T] HPCHANGE Rapunzel the Golden: 156 → 94  (-62)
+    [T] ACTION P1 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+[Queued] Rapunzel the Golden: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Hunold the Piper
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Frederic the Beastslayer
+Rapunzel the Golden and Frederic the Beastslayer swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Hunold the Piper
+Frederic the Beastslayer uses Hunter's Mark on Hunold the Piper.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Hunold the Piper[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=76
+  Hunold the Piper takes 76 damage.
+    [T] HPCHANGE Hunold the Piper: 78 → 2  (-76)
+  Hunold the Piper is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=2/210 statuses=[burn_immune(1r), root(1r)]
+    [T]   P1 Matchstick Liesl[back_right] HP=61/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=94/258 statuses=[burn(1r), shock(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: burn_immune → 0r left
+    [T] STATUS_TICK Hunold the Piper: root → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn_immune
+    [T] STATUS_EXPIRED Hunold the Piper: root
+Rapunzel the Golden burns for 26 damage.
+    [T] STATUS_TICK Rapunzel the Golden: burn → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: shock → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: burn
+    [T] STATUS_EXPIRED Rapunzel the Golden: shock
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=2/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=61/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=68/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=1/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]

@@ -1,0 +1,829 @@
+Battle 309
+Player 1 Team: Shock Punish
+Player 2 Team: Crowstorm Burn
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:02:28
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 309
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shock Punish
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Tempus Fugit  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Ashen Ella: Crowstorm
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Cauterize → Hunold the Piper
+    [T] ACTION P2 Ashen Ella[front]: Crowstorm → spread/auto
+Ashen Ella uses Crowstorm.
+Ashen Ella uses Crowstorm (spread).
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → Sir Roland[front] (spread)
+    [T]   power=75
+    [T]   atk=80 def=90 raw=66.67 ceil=67
+    [T]   FINAL_DMG=34
+  Sir Roland takes 34 damage.
+    [T] HPCHANGE Sir Roland: 265 → 231  (-34)
+  Sir Roland gains burn for 2 rounds.
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → Hunold the Piper[back_left] (spread)
+    [T]   power=75
+    [T]   atk=80 def=45 raw=133.33 ceil=134
+    [T]   FINAL_DMG=61
+  Hunold the Piper takes 61 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 149  (-61)
+  Hunold the Piper gains burn for 2 rounds.
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → March Hare[back_right] (spread)
+    [T]   power=75
+    [T]   atk=80 def=35 raw=171.43 ceil=172
+    [T]   FINAL_DMG=86
+  March Hare takes 86 damage.
+    [T] HPCHANGE March Hare: 190 → 104  (-86)
+  March Hare gains burn for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Hunold the Piper
+  Matchstick Liesl retargets to Sir Roland after swapping to back_right.
+Matchstick Liesl uses Cauterize on Sir Roland.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=50 def=90 raw=22.22 ceil=23
+    [T]   FINAL_DMG=23
+  Sir Roland takes 23 damage.
+    [T] HPCHANGE Sir Roland: 231 → 208  (-23)
+  Sir Roland gains no_heal for 2 rounds.
+[Queued] Sir Roland: Swap with March Hare
+[Queued] March Hare: Thunder Call → Ashen Ella
+[Queued] Hunold the Piper: Sucker Punch → Ashen Ella
+    [T] ACTION P1 Sir Roland[front]: swap ↔ March Hare
+Sir Roland and March Hare swap positions.
+  Banner of Command: March Hare is Guarded.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Ashen Ella
+March Hare uses Thunder Call on Ashen Ella.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Ashen Ella[front]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=114
+  Ashen Ella takes 114 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 71  (-114)
+  Ashen Ella gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Ashen Ella
+Hunold the Piper uses Sucker Punch on Ashen Ella.
+  Ashen Ella gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_right] HP=208/265 statuses=[burn(2r), no_heal(2r)]
+    [T]   P1 Hunold the Piper[back_left] HP=149/210 statuses=[burn(2r)]
+    [T]   P1 March Hare[front] HP=104/190 statuses=[burn(2r), guard(2r)]
+    [T]   P2 Ashen Ella[front] HP=71/185 statuses=[shock(2r), weaken(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 statuses=[-]
+Sir Roland burns for 27 damage.
+Hunold the Piper burns for 21 damage.
+March Hare burns for 19 damage.
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: no_heal → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Hunold the Piper: burn → 1r left
+    [T] STATUS_TICK March Hare: burn → 1r left
+    [T] STATUS_TICK March Hare: guard → 1r left
+    [T] STATUS_TICK Ashen Ella: shock → 1r left
+    [T] STATUS_TICK Ashen Ella: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Ashen Ella spd=50 (MH adj from 65)  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=181/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), no_heal(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=128/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=85/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[burn(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=71/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Witch-Hunter Gretel
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Hunold the Piper: Swap with Sir Roland
+    [T] ACTION P1 March Hare[front]: Thunder Call → Witch-Hunter Gretel
+March Hare uses Thunder Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Witch-Hunter Gretel[back_left]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=102
+  Witch-Hunter Gretel takes 102 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 113  (-102)
+  Witch-Hunter Gretel gains shock for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Hunold the Piper[back_left]: swap ↔ Sir Roland
+Hunold the Piper and Sir Roland swap positions.
+  Banner of Command: Hunold the Piper is Guarded.
+[Queued] Ashen Ella: Fire Blast → March Hare
+[Queued] Matchstick Liesl: Heal → Ashen Ella
+[Queued] Witch-Hunter Gretel: Intimidate → March Hare
+    [T] ACTION P2 Ashen Ella[front]: Fire Blast → March Hare
+Ashen Ella uses Fire Blast on March Hare.
+    [T] DMGCALC [Fire Blast] Ashen Ella[front] → March Hare[front]
+    [T]   power=65
+    [T]   atk=80 def=35 raw=148.57 ceil=149
+    [T]   FINAL_DMG=96
+  March Hare takes 96 damage.
+    [T] HPCHANGE March Hare: 85 → 0  (-96) **KO**
+  Shock recoil: Ashen Ella takes 20 damage.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Ashen Ella
+Matchstick Liesl uses Heal on Ashen Ella.
+  Matchstick Liesl heals Ashen Ella for 55 HP.
+  Purifying Flame: Ashen Ella will Burn their next target.
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: Intimidate → March Hare
+Witch-Hunter Gretel's target is no longer legal — Intimidate fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[front] HP=181/265 statuses=[burn(1r), no_heal(1r), guard(2r)]
+    [T]   P1 Hunold the Piper[back_right] HP=128/210 statuses=[burn(1r), guard(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=106/185 statuses=[shock(1r), weaken(1r), burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=113/215 statuses=[shock(2r)]
+Sir Roland burns for 27 damage.
+Hunold the Piper burns for 21 damage.
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: no_heal → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] STATUS_EXPIRED Sir Roland: no_heal
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Hunold the Piper: burn → 0r left
+    [T] STATUS_TICK Hunold the Piper: guard → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: burn
+    [T] STATUS_TICK Ashen Ella: shock → 0r left
+    [T] STATUS_TICK Ashen Ella: weaken → 0r left
+    [T] STATUS_TICK Ashen Ella: burn_immune → 1r left
+    [T] STATUS_EXPIRED Ashen Ella: shock
+    [T] STATUS_EXPIRED Ashen Ella: weaken
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=154/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_right] HP=107/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=106/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=113/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Arcane Wave → Hunold the Piper
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+    [T] ACTION P2 Ashen Ella[front]: Arcane Wave → Hunold the Piper
+Ashen Ella uses Arcane Wave on Hunold the Piper.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Hunold the Piper[back_right]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=104
+  Hunold the Piper takes 104 damage.
+    [T] HPCHANGE Hunold the Piper: 107 → 3  (-104)
+  Hunold the Piper gains burn for 2 rounds.
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+  Ashen Ella must recharge next turn.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Ashen Ella
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Hunold the Piper
+Sir Roland and Hunold the Piper swap positions.
+    [T] ACTION P1 Hunold the Piper[front]: Sucker Punch → Ashen Ella
+Hunold the Piper uses Sucker Punch on Ashen Ella.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=60 def=30 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Ashen Ella takes 80 damage.
+    [T] HPCHANGE Ashen Ella: 106 → 26  (-80)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_right] HP=154/265 statuses=[guard(1r), weaken(2r)]
+    [T]   P1 Hunold the Piper[front] HP=3/210 statuses=[guard(1r), burn(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=26/185 statuses=[burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=168/215 statuses=[shock(1r), burn_immune(2r)]
+Hunold the Piper burns for 21 damage.
+Sir Roland moves to frontline.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Ashen Ella: burn_immune → 0r left
+    [T] STATUS_EXPIRED Ashen Ella: burn_immune
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: shock
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=154/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=26/185 ATK=70(base=80) DEF=30(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=168/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Swap with Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Skip
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+    [T] ACTION P2 Ashen Ella[front]: swap ↔ Witch-Hunter Gretel
+Ashen Ella recharges.
+    [T] ACTION P2 Matchstick Liesl[back_right]: skip/recharge
+Matchstick Liesl recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 100 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[front] HP=254/265 statuses=[weaken(1r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=26/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=168/215 statuses=[burn_immune(1r)]
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] DEBUFF_EXPIRED Ashen Ella: attack-10
+    [T] DEBUFF_EXPIRED Ashen Ella: defense-10
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=254/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=26/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=168/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Ashen Ella
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+    [T] ACTION P2 Ashen Ella[front]: swap ↔ Matchstick Liesl
+Ashen Ella and Matchstick Liesl swap positions.
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Ashen Ella
+Matchstick Liesl uses Heal on Ashen Ella.
+  Matchstick Liesl heals Ashen Ella for 70 HP.
+  Purifying Flame: Ashen Ella will Burn their next target.
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Matchstick Liesl takes 29 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 181  (-29)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[front] HP=254/265 statuses=[guard(1r), weaken(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_right] HP=96/185 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[front] HP=181/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=168/215 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Ashen Ella: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=254/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_right] HP=96/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=181/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=168/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Heal → Ashen Ella
+[Queued] Ashen Ella: Crowstorm → Sir Roland
+[Queued] Witch-Hunter Gretel: Swap with Ashen Ella
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Ashen Ella
+Matchstick Liesl uses Heal on Ashen Ella.
+  Matchstick Liesl heals Ashen Ella for 70 HP.
+  Purifying Flame: Ashen Ella will Burn their next target.
+    [T] ACTION P2 Ashen Ella[back_right]: Crowstorm → Sir Roland
+Ashen Ella uses Crowstorm on Sir Roland.
+  Sir Roland gains burn for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: swap ↔ Ashen Ella
+Witch-Hunter Gretel and Ashen Ella swap positions.
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Matchstick Liesl takes 29 damage.
+    [T] HPCHANGE Matchstick Liesl: 181 → 152  (-29)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=254/265 statuses=[weaken(1r), burn(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=166/185 statuses=[burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[front] HP=152/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=168/215 statuses=[-]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Ashen Ella: burn_immune → 0r left
+    [T] STATUS_EXPIRED Ashen Ella: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=227/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=166/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=152/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=168/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+[Queued] Ashen Ella: Crowstorm → Sir Roland
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 47 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P2 Ashen Ella[back_left]: Crowstorm → Sir Roland
+Ashen Ella uses Crowstorm on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Matchstick Liesl takes 29 damage.
+    [T] HPCHANGE Matchstick Liesl: 152 → 123  (-29)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=227/265 statuses=[burn(1r), guard(1r), weaken(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=166/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=123/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[burn_immune(2r)]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=200/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=166/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=123/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Ashen Ella
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+[Queued] Ashen Ella: Crowstorm → Sir Roland
+    [T] ACTION P2 Matchstick Liesl[front]: swap ↔ Ashen Ella
+Matchstick Liesl recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+    [T] ACTION P2 Ashen Ella[back_left]: Crowstorm → Sir Roland
+Ashen Ella uses Crowstorm on Sir Roland.
+  Sir Roland gains burn for 2 rounds.
+  Ashen Ella must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Matchstick Liesl takes 29 damage.
+    [T] HPCHANGE Matchstick Liesl: 123 → 94  (-29)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=200/265 statuses=[weaken(1r), burn(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=166/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=94/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[burn_immune(1r)]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=173/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=166/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=94/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Heal → Ashen Ella
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+[Queued] Ashen Ella: Swap with Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Ashen Ella
+Matchstick Liesl uses Heal on Ashen Ella.
+  Matchstick Liesl heals Ashen Ella for 19 HP.
+  Purifying Flame: Ashen Ella will Burn their next target.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+    [T] ACTION P2 Ashen Ella[back_left]: swap ↔ Matchstick Liesl
+Ashen Ella recharges.
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Matchstick Liesl takes 29 damage.
+    [T] HPCHANGE Matchstick Liesl: 94 → 65  (-29)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=173/265 statuses=[burn(1r), guard(1r), weaken(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=185/185 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[front] HP=65/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Ashen Ella: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=146/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_left] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=65/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Sir Roland
+[Queued] Witch-Hunter Gretel: Swap with Ashen Ella
+[Queued] Ashen Ella: Crowstorm → Sir Roland
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Sir Roland
+Matchstick Liesl uses Cauterize on Sir Roland.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=50 def=90 raw=27.78 ceil=28
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 146 → 139  (-7)
+  Sir Roland gains no_heal for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Ashen Ella
+Witch-Hunter Gretel and Ashen Ella swap positions.
+    [T] ACTION P2 Ashen Ella[back_right]: Crowstorm → Sir Roland
+Ashen Ella uses Crowstorm on Sir Roland.
+  Sir Roland gains burn for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=29
+  Matchstick Liesl takes 29 damage.
+    [T] HPCHANGE Matchstick Liesl: 65 → 36  (-29)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=139/265 statuses=[weaken(1r), no_heal(2r), burn(2r), guard(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 statuses=[burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[front] HP=36/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 statuses=[-]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: no_heal → 1r left
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Ashen Ella: burn_immune → 0r left
+    [T] STATUS_EXPIRED Ashen Ella: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=112/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[no_heal(1r), burn(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[back_right] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=36/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Ashen Ella
+[Queued] Ashen Ella: Crowstorm → Sir Roland
+[Queued] Witch-Hunter Gretel: Intimidate → Sir Roland
+    [T] ACTION P2 Matchstick Liesl[front]: swap ↔ Ashen Ella
+Matchstick Liesl and Ashen Ella swap positions.
+    [T] ACTION P2 Ashen Ella[front]: Crowstorm → Sir Roland
+Ashen Ella uses Crowstorm.
+Ashen Ella uses Crowstorm (spread).
+    [T] DMGCALC [Crowstorm] Ashen Ella[front] → Sir Roland[front] (spread)
+    [T]   power=75
+    [T]   atk=80 def=90 raw=66.67 ceil=67
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 112 → 85  (-27)
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: Intimidate → Sir Roland
+Witch-Hunter Gretel uses Intimidate on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Ashen Ella
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Ashen Ella
+Sir Roland uses Shield Bash on Ashen Ella.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=36
+  Ashen Ella takes 36 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 149  (-36)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=85/265 statuses=[no_heal(1r), burn(1r), guard(1r), weaken(2r)]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=149/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=36/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 statuses=[-]
+Sir Roland burns for 27 damage.
+    [T] STATUS_TICK Sir Roland: no_heal → 0r left
+    [T] STATUS_TICK Sir Roland: burn → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_EXPIRED Sir Roland: no_heal
+    [T] STATUS_EXPIRED Sir Roland: burn
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=58/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Ashen Ella[front] HP=149/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=36/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Fire Blast → Sir Roland
+[Queued] Matchstick Liesl: Heal → Ashen Ella
+[Queued] Witch-Hunter Gretel: Swap with Ashen Ella
+    [T] ACTION P2 Ashen Ella[front]: Fire Blast → Sir Roland
+Ashen Ella uses Fire Blast on Sir Roland.
+    [T] DMGCALC [Fire Blast] Ashen Ella[front] → Sir Roland[front]
+    [T]   power=65
+    [T]   atk=80 def=90 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 58 → 0  (-58) **KO**
+  Sir Roland gains burn for 2 rounds.
+  Ashen Ella must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 12)
+────────────────────────────────────────────────────────────
+Player 2 wins!

@@ -1,0 +1,1106 @@
+Battle 437
+Player 1 Team: Double Rogue Tempo
+Player 2 Team: Rapunzel Pin Control
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:16:00
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 437
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Double Rogue Tempo
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Prince Charming: Condescend → Rapunzel the Golden
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Rapunzel the Golden
+    [T] ACTION P1 Prince Charming[front]: Condescend → Rapunzel the Golden
+Prince Charming uses Condescend on Rapunzel the Golden.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=65 def=65 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Rapunzel the Golden takes 50 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 208  (-50)
+  Rapunzel the Golden loses -10 Defense for 2 rounds.
+    [T] ACTION P1 Reynard, Lupine Trickster[back_right]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Rapunzel the Golden
+Lucky Constantine uses Post Bounty on Rapunzel the Golden.
+  Rapunzel the Golden gains expose for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Lucky Constantine
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Lucky Constantine
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lucky Constantine
+Rapunzel the Golden uses Golden Snare on Lucky Constantine.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lucky Constantine[back_left]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=100
+  Lucky Constantine takes 100 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 115  (-100)
+  Lucky Constantine gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 50 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Lucky Constantine
+Robin, Hooded Avenger uses Bring Down on Lucky Constantine.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Lucky Constantine[back_left]
+    [T]   power=35
+    [T]   atk=82 def=40 raw=71.75 ceil=72
+    [T]   FINAL_DMG=82
+  Lucky Constantine takes 82 damage.
+    [T] HPCHANGE Lucky Constantine: 115 → 33  (-82)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=33/215 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[expose(2r), burn_immune(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: expose → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=33/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=55(base=65) SPD=30(base=30)
+    [T]     statuses=[expose(1r), burn_immune(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lucky Constantine
+[Queued] Prince Charming: Condescend → Rapunzel the Golden
+[Queued] Lucky Constantine: Subterfuge → Rapunzel the Golden ↔ Robin, Hooded Avenger
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Lucky Constantine
+Reynard, Lupine Trickster and Lucky Constantine swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Rapunzel the Golden
+Prince Charming uses Condescend on Rapunzel the Golden.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=58
+  Rapunzel the Golden takes 58 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 200  (-58)
+    [T] ACTION P1 Lucky Constantine[front]: Subterfuge → Rapunzel the Golden
+Lucky Constantine uses Subterfuge on Rapunzel the Golden.
+    [T] DMGCALC [Subterfuge] Lucky Constantine[front] → Rapunzel the Golden[front]
+    [T]   power=60 (base=50)
+    [T]   atk=70 def=55 raw=76.36 ceil=77
+    [T]   FINAL_DMG=93
+  Rapunzel the Golden takes 93 damage.
+    [T] HPCHANGE Rapunzel the Golden: 200 → 107  (-93)
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Lucky Constantine
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=60
+    [T]   atk=75 def=55 raw=81.82 ceil=82
+    [T]   FINAL_DMG=92
+  Prince Charming takes 92 damage.
+    [T] HPCHANGE Prince Charming: 255 → 163  (-92)
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Golden Snare → Lucky Constantine
+Rapunzel the Golden uses Golden Snare on Lucky Constantine.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_left] → Lucky Constantine[front]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=55
+  Lucky Constantine takes 55 damage.
+    [T] HPCHANGE Lucky Constantine: 33 → 0  (-55) **KO**
+Reynard, Lupine Trickster moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_right] HP=163/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=162/258 statuses=[expose(1r), burn_immune(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Rapunzel the Golden: expose → 0r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: expose
+    [T] STATUS_EXPIRED Rapunzel the Golden: burn_immune
+    [T] DEBUFF_EXPIRED Rapunzel the Golden: defense-10
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=163/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=162/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Robin, Hooded Avenger
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Robin, Hooded Avenger
+Reynard, Lupine Trickster uses Riposte on Robin, Hooded Avenger.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=74
+  Robin, Hooded Avenger takes 74 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 111  (-74)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Robin, Hooded Avenger takes 65 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 111 → 46  (-65)
+[Queued] Robin, Hooded Avenger: Bring Down → Prince Charming
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Golden Snare → Reynard, Lupine Trickster
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Prince Charming
+Robin, Hooded Avenger uses Bring Down on Prince Charming.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=60
+    [T]   atk=80 def=55 raw=87.27 ceil=88
+    [T]   FINAL_DMG=98
+  Prince Charming takes 98 damage.
+    [T] HPCHANGE Prince Charming: 163 → 65  (-98)
+  Robin, Hooded Avenger steals 10 Atk from Prince Charming for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 55 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Golden Snare → Reynard, Lupine Trickster
+Rapunzel the Golden uses Golden Snare on Reynard, Lupine Trickster.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_left] → Reynard, Lupine Trickster[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=12
+  Reynard, Lupine Trickster takes 12 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 193  (-12)
+  Reynard, Lupine Trickster gains burn for 2 rounds.
+  Reynard, Lupine Trickster gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[back_right] HP=65/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=193/205 statuses=[burn(2r), root(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=162/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=101/185 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=65/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=172/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[burn(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=162/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=101/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Robin, Hooded Avenger
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Robin, Hooded Avenger
+Reynard, Lupine Trickster uses Riposte on Robin, Hooded Avenger.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Robin, Hooded Avenger[front]
+    [T]   power=55 (base=45)
+    [T]   atk=65 def=40 raw=89.38 ceil=90
+    [T]   FINAL_DMG=90
+  Robin, Hooded Avenger takes 90 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 101 → 11  (-90)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=55 def=40 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 11 → 0  (-55) **KO**
+  Prince Charming must recharge next turn.
+Rapunzel the Golden moves to frontline.
+[Queued] Rapunzel the Golden: Golden Snare → Prince Charming
+[Queued] Matchstick Liesl: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Prince Charming
+Rapunzel the Golden uses Golden Snare on Prince Charming.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Prince Charming[back_right]
+    [T]   power=60
+    [T]   atk=60 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=76
+  Prince Charming takes 76 damage.
+    [T] HPCHANGE Prince Charming: 65 → 0  (-76) **KO**
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Rapunzel the Golden
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=172/205 statuses=[burn(1r), root(1r)]
+    [T]   P2 Rapunzel the Golden[front] HP=162/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: burn
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: root
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=151/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=162/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Rapunzel the Golden
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Rapunzel the Golden
+Reynard, Lupine Trickster uses Riposte on Rapunzel the Golden.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Rapunzel the Golden[front]
+    [T]   power=45
+    [T]   atk=65 def=65 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Rapunzel the Golden takes 45 damage.
+    [T] HPCHANGE Rapunzel the Golden: 162 → 117  (-45)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Rapunzel the Golden: Golden Snare → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Reynard, Lupine Trickster
+Rapunzel the Golden uses Golden Snare on Reynard, Lupine Trickster.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 151 → 115  (-36)
+  Reynard, Lupine Trickster gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=115/205 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=172/258 statuses=[burn_immune(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=115/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=172/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Rapunzel the Golden
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Rapunzel the Golden
+Reynard, Lupine Trickster uses Riposte on Rapunzel the Golden.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Rapunzel the Golden[front]
+    [T]   power=45
+    [T]   atk=65 def=65 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Rapunzel the Golden takes 45 damage.
+    [T] HPCHANGE Rapunzel the Golden: 172 → 127  (-45)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Rapunzel the Golden: Golden Snare → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Reynard, Lupine Trickster
+Rapunzel the Golden uses Golden Snare on Reynard, Lupine Trickster.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 115 → 79  (-36)
+  Reynard, Lupine Trickster gains burn for 2 rounds.
+  Reynard, Lupine Trickster's root is refreshed to 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=79/205 statuses=[root(2r), burn(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=182/258 statuses=[burn_immune(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=58/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[root(1r), burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=182/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Rapunzel the Golden
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Rapunzel the Golden
+Reynard, Lupine Trickster uses Riposte on Rapunzel the Golden.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Rapunzel the Golden[front]
+    [T]   power=45
+    [T]   atk=65 def=65 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Rapunzel the Golden takes 45 damage.
+    [T] HPCHANGE Rapunzel the Golden: 182 → 137  (-45)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Rapunzel the Golden: Golden Snare → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Reynard, Lupine Trickster
+Rapunzel the Golden uses Golden Snare on Reynard, Lupine Trickster.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 58 → 22  (-36)
+  Reynard, Lupine Trickster's root is refreshed to 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 55 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=22/205 statuses=[root(2r), burn(1r)]
+    [T]   P2 Rapunzel the Golden[front] HP=192/258 statuses=[burn_immune(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+Reynard, Lupine Trickster burns for 21 damage.
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: burn → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: burn
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=192/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Rapunzel the Golden
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Rapunzel the Golden
+Reynard, Lupine Trickster uses Riposte on Rapunzel the Golden.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Rapunzel the Golden[front]
+    [T]   power=45
+    [T]   atk=65 def=65 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Rapunzel the Golden takes 45 damage.
+    [T] HPCHANGE Rapunzel the Golden: 192 → 147  (-45)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Rapunzel the Golden: Golden Snare → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Reynard, Lupine Trickster
+Rapunzel the Golden uses Golden Snare on Reynard, Lupine Trickster.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster gains burn for 2 rounds.
+  Reynard, Lupine Trickster's root is refreshed to 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Rapunzel the Golden
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=1/205 statuses=[root(2r), burn(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=147/258 statuses=[burn_immune(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+Reynard, Lupine Trickster burns for 21 damage.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 8)
+────────────────────────────────────────────────────────────
+Player 2 wins!
+ra: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=105/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=189/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=205/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+[Queued] Prince Charming: Condescend → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 205 → 172  (-33)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Pinocchio, Cursed Puppet
+Prince Charming uses Condescend on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=40
+    [T]   atk=65 def=50 raw=52.00 ceil=52
+    [T]   FINAL_DMG=52
+  Pinocchio, Cursed Puppet takes 52 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 189 → 137  (-52)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [1/6]
+  Prince Charming must recharge next turn.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Prince Charming
+Pinocchio, Cursed Puppet uses Dark Grasp on Prince Charming.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=70 def=55 raw=44.55 ceil=45
+    [T]   FINAL_DMG=45
+  Prince Charming takes 45 damage.
+    [T] HPCHANGE Prince Charming: 105 → 60  (-45)
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [0/6]
+  Prince Charming gains weaken for 2 rounds.
+  Pinocchio, Cursed Puppet must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+  Snowkissed Aurora heals Pinocchio, Cursed Puppet for 55 HP.
+  Medic: Pinocchio, Cursed Puppet cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Prince Charming[back_right] HP=60/255 statuses=[weaken(2r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=192/220 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=172/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=60/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=192/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=172/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 172 → 145  (-27)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Reynard, Lupine Trickster
+Prince Charming recharges.
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Pinocchio, Cursed Puppet: Swap with Sir Roland
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: swap ↔ Sir Roland
+Pinocchio, Cursed Puppet recharges.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Prince Charming[back_right] HP=60/255 statuses=[weaken(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=192/220 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=200/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=60/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=192/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=200/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+[Queued] Prince Charming: Condescend → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 200 → 167  (-33)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Pinocchio, Cursed Puppet
+Prince Charming uses Condescend on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=40
+    [T]   atk=65 def=50 raw=52.00 ceil=52
+    [T]   FINAL_DMG=52
+  Pinocchio, Cursed Puppet takes 52 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 192 → 140  (-52)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [1/6]
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Prince Charming
+[Queued] Snowkissed Aurora: Swap with Pinocchio, Cursed Puppet
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Prince Charming
+Pinocchio, Cursed Puppet uses Dark Grasp on Prince Charming.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=70 def=55 raw=44.55 ceil=45
+    [T]   FINAL_DMG=45
+  Prince Charming takes 45 damage.
+    [T] HPCHANGE Prince Charming: 60 → 15  (-45)
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [0/6]
+  Prince Charming gains weaken for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: swap ↔ Pinocchio, Cursed Puppet
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Prince Charming[back_right] HP=15/255 statuses=[weaken(2r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=140/220 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=167/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=15/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=140/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=167/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+[Queued] Prince Charming: Condescend → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 167 → 140  (-27)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Pinocchio, Cursed Puppet
+Prince Charming uses Condescend on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=40
+    [T]   atk=65 def=50 raw=52.00 ceil=52
+    [T]   FINAL_DMG=42
+  Pinocchio, Cursed Puppet takes 42 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 140 → 98  (-42)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [1/6]
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Prince Charming
+Pinocchio, Cursed Puppet uses Dark Grasp on Prince Charming.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=70 def=55 raw=44.55 ceil=45
+    [T]   FINAL_DMG=45
+  Prince Charming takes 45 damage.
+    [T] HPCHANGE Prince Charming: 15 → 0  (-45) **KO**
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [0/6]
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+  Snowkissed Aurora heals Pinocchio, Cursed Puppet for 55 HP.
+  Medic: Pinocchio, Cursed Puppet cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=153/220 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=140/265 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=153/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=140/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 140 → 107  (-33)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Pinocchio, Cursed Puppet: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: swap ↔ Snowkissed Aurora
+Pinocchio, Cursed Puppet and Snowkissed Aurora swap positions.
+  Banner of Command: Pinocchio, Cursed Puppet is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=153/220 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=162/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=22/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=153/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=162/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=22/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 162 → 129  (-33)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Pinocchio, Cursed Puppet: Swap with Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: swap ↔ Snowkissed Aurora
+Pinocchio, Cursed Puppet and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=153/220 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=184/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 0r left
+    [T] STATUS_EXPIRED Pinocchio, Cursed Puppet: guard
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=153/220 ATK=65(base=65) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=184/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Sir Roland takes 33 damage.
+    [T] HPCHANGE Sir Roland: 184 → 151  (-33)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Sir Roland: Shield Bash → Reynard, Lupine Trickster
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Reynard, Lupine Trickster
+[Queued] Snowkissed Aurora: Swap with Pinocchio, Cursed Puppet
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Reynard, Lupine Trickster
+Sir Roland uses Shield Bash on Reynard, Lupine Trickster.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=8
+  Reynard, Lupine Trickster takes 8 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 175 → 167  (-8)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Reynard, Lupine Trickster
+Pinocchio, Cursed Puppet uses Dark Grasp on Reynard, Lupine Trickster.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Reynard, Lupine Trickster[front]
+    [T]   power=35
+    [T]   atk=65 def=45 raw=50.56 ceil=51
+    [T]   FINAL_DMG=26
+  Reynard, Lupine Trickster takes 26 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 167 → 141  (-26)
+  Pinocchio, Cursed Puppet must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: swap ↔ Pinocchio, Cursed Puppet
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=141/205 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=153/220 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=151/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] BUFF_EXPIRED Pinocchio, Cursed Puppet: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=141/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=153/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=151/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=22/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Sir Roland
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Sir Roland
+Reynard, Lupine Trickster uses Riposte on Sir Roland.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=65 def=90 raw=32.50 ceil=33
+    [T]   FINAL_DMG=27
+  Sir Roland takes 27 damage.
+    [T] HPCHANGE Sir Roland: 151 → 124  (-27)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).

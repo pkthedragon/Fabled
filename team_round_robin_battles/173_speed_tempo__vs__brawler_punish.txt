@@ -1,0 +1,637 @@
+Battle 173
+Player 1 Team: Speed Tempo
+Player 2 Team: Brawler Punish
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:51:19
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 173
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Brawler Punish
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Lady of Reflections swap positions.
+[Queued] Little Jack: Swap with March Hare
+[Queued] Frederic the Beastslayer: On the Hunt → Reynard, Lupine Trickster
+[Queued] March Hare: Thunder Call → Risa Redcloak
+    [T] ACTION P1 Little Jack[front]: swap ↔ March Hare
+Little Jack and March Hare swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Reynard, Lupine Trickster
+Frederic the Beastslayer uses On the Hunt on Reynard, Lupine Trickster.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=18
+  Reynard, Lupine Trickster takes 18 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 187  (-18)
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Risa Redcloak
+March Hare uses Thunder Call on Risa Redcloak.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Risa Redcloak[back_left]
+    [T]   power=65
+    [T]   atk=70 def=60 raw=75.83 ceil=76
+    [T]   FINAL_DMG=76
+  Risa Redcloak takes 76 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 174  (-76)
+  Risa Redcloak gains shock for 2 rounds.
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → March Hare
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → March Hare
+Risa Redcloak uses Blood Hunt on March Hare.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → March Hare[front]
+    [T]   power=60
+    [T]   atk=75 def=35 raw=128.57 ceil=129
+    [T]   FINAL_DMG=129
+  March Hare takes 129 damage.
+    [T] HPCHANGE March Hare: 190 → 61  (-129)
+  Shock recoil: Risa Redcloak takes 26 damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P1 March Hare[front] HP=61/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=148/250 statuses=[shock(2r)]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=187/205 statuses=[expose(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Risa Redcloak: shock → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Risa Redcloak spd=15 (MH adj from 30)  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=61/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=148/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=187/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Reynard, Lupine Trickster
+[Queued] Frederic the Beastslayer: Hunter's Mark → Reynard, Lupine Trickster
+[Queued] Little Jack: Skyfall → Risa Redcloak
+    [T] ACTION P1 March Hare[front]: Thunder Call → Reynard, Lupine Trickster
+March Hare uses Thunder Call on Reynard, Lupine Trickster.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Reynard, Lupine Trickster[back_right]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=111
+  Reynard, Lupine Trickster takes 111 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 187 → 76  (-111)
+  Reynard, Lupine Trickster gains shock for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Reynard, Lupine Trickster
+Frederic the Beastslayer uses Hunter's Mark on Reynard, Lupine Trickster.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Reynard, Lupine Trickster takes 47 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 76 → 29  (-47)
+  Reynard, Lupine Trickster is Marked — takes +10 damage next round.
+    [T] ACTION P1 Little Jack[back_left]: Skyfall → Risa Redcloak
+Little Jack uses Skyfall on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+[Queued] Risa Redcloak: Blood Hunt → March Hare
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → March Hare
+Risa Redcloak uses Blood Hunt on March Hare.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → March Hare[front]
+    [T]   power=60
+    [T]   atk=75 def=35 raw=128.57 ceil=129
+    [T]   FINAL_DMG=129
+  March Hare takes 129 damage.
+    [T] HPCHANGE March Hare: 61 → 0  (-129) **KO**
+  Shock recoil: Risa Redcloak takes 26 damage.
+  Risa Redcloak heals 52 HP.
+Little Jack moves to frontline.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+    [T] ACTION P2 Lady of Reflections[back_left]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=174/250 statuses=[shock(1r), expose(2r)]
+    [T]   P2 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=29/205 statuses=[expose(1r), shock(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Risa Redcloak: shock → 0r left
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: shock
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: shock → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: expose
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=29/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] Frederic the Beastslayer: On the Hunt → Reynard, Lupine Trickster
+    [T] ACTION P1 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=75 raw=85.33 ceil=86
+    [T]   FINAL_DMG=104
+  Lady of Reflections takes 104 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 151  (-104)
+  Spiked Mail! Little Jack takes 10 damage.
+  Reflecting Pool: Little Jack takes 11 reflected damage.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Reynard, Lupine Trickster
+Frederic the Beastslayer uses On the Hunt on Reynard, Lupine Trickster.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=45
+  Reynard, Lupine Trickster takes 45 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Little Jack
+    [T] ACTION P2 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=0
+  Reynard, Lupine Trickster takes 0 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 1  (-0)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+    [T] ACTION P2 Risa Redcloak[back_left]: Blood Hunt → Little Jack
+Risa Redcloak uses Blood Hunt on Little Jack.
+  Blood Hunt: Risa Redcloak and Little Jack HP set to 186.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=186/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=186/250 statuses=[expose(1r)]
+    [T]   P2 Lady of Reflections[back_right] HP=151/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 statuses=[shock(1r), expose(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Risa Redcloak: expose → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: expose
+    [T] STATUS_TICK Reynard, Lupine Trickster: shock → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: shock
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=186/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=186/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=151/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Lady of Reflections: Drown in the Loch → Little Jack
+[Queued] Risa Redcloak: Rend → Little Jack
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Little Jack
+Lady of Reflections uses Drown in the Loch on Little Jack.
+  Little Jack takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Little Jack
+Risa Redcloak uses Rend on Little Jack.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=75 def=50 raw=67.50 ceil=68
+    [T]   FINAL_DMG=75
+  Little Jack takes 75 damage.
+    [T] HPCHANGE Little Jack: 186 → 111  (-75)
+  Risa Redcloak heals 6 HP.
+[Queued] Little Jack: Skyfall → Risa Redcloak
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Skyfall → Risa Redcloak
+Little Jack uses Skyfall on Risa Redcloak.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Risa Redcloak[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=129
+  Risa Redcloak takes 129 damage.
+    [T] HPCHANGE Risa Redcloak: 192 → 63  (-129)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Little Jack
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[front] HP=111/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=63/250 statuses=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=151/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=1/205 statuses=[expose(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: expose
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Risa Redcloak spd=45  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=111/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=63/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[back_right] HP=151/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Risa Redcloak
+[Queued] Frederic the Beastslayer: On the Hunt → Risa Redcloak
+    [T] ACTION P1 Little Jack[front]: Skyfall → Risa Redcloak
+Little Jack uses Skyfall on Risa Redcloak.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Risa Redcloak[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=129
+  Risa Redcloak takes 129 damage.
+    [T] HPCHANGE Risa Redcloak: 63 → 0  (-129) **KO**
+Reynard, Lupine Trickster moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Risa Redcloak
+Frederic the Beastslayer's target is no longer legal — On the Hunt fizzles.
+[Queued] Reynard, Lupine Trickster: Riposte → Little Jack
+[Queued] Lady of Reflections: Drown in the Loch → Little Jack
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Little Jack
+Reynard, Lupine Trickster uses Riposte on Little Jack.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=66
+  Little Jack takes 66 damage.
+    [T] HPCHANGE Little Jack: 111 → 45  (-66)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Little Jack
+Lady of Reflections uses Drown in the Loch on Little Jack.
+  Little Jack takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack[front] HP=45/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[back_right] HP=151/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=45/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[back_right] HP=151/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Little Jack
+[Queued] Lady of Reflections: Drown in the Loch → Little Jack
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Little Jack
+Reynard, Lupine Trickster uses Riposte on Little Jack.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=66
+  Little Jack takes 66 damage.
+    [T] HPCHANGE Little Jack: 45 → 0  (-66) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P2 Lady of Reflections[back_right]: Drown in the Loch → Little Jack
+Lady of Reflections's target is no longer legal — Drown in the Loch fizzles.
+[Queued] Frederic the Beastslayer: Slay the Beast → Reynard, Lupine Trickster
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Reynard, Lupine Trickster
+Frederic the Beastslayer uses Slay the Beast on Reynard, Lupine Trickster.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Reynard, Lupine Trickster[front]
+    [T]   power=85 (base=65)
+    [T]   atk=70 def=45 raw=132.22 ceil=133
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=23
+  Reynard, Lupine Trickster takes 23 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-23) **KO**
+Lady of Reflections moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=151/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=151/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lady of Reflections
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lady of Reflections
+Frederic the Beastslayer uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=75 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Lady of Reflections takes 50 damage.
+    [T] HPCHANGE Lady of Reflections: 151 → 101  (-50)
+  Spiked Mail! Frederic the Beastslayer takes 10 damage.
+  Reflecting Pool: Frederic the Beastslayer takes 5 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+[Queued] Lady of Reflections: Drown in the Loch → Frederic the Beastslayer
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Frederic the Beastslayer
+Lady of Reflections uses Drown in the Loch on Frederic the Beastslayer.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 185 → 145  (-40)
+  Frederic the Beastslayer takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=145/200 statuses=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=101/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=145/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=101/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lady of Reflections
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lady of Reflections
+Frederic the Beastslayer uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=75 raw=50.00 ceil=50
+    [T]   FINAL_DMG=60
+  Lady of Reflections takes 60 damage.
+    [T] HPCHANGE Lady of Reflections: 101 → 41  (-60)
+  Spiked Mail! Frederic the Beastslayer takes 10 damage.
+  Reflecting Pool: Frederic the Beastslayer takes 6 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Lady of Reflections: Drown in the Loch → Frederic the Beastslayer
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Frederic the Beastslayer
+Lady of Reflections uses Drown in the Loch on Frederic the Beastslayer.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=47
+  Frederic the Beastslayer takes 47 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 129 → 82  (-47)
+  Frederic the Beastslayer takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=82/200 statuses=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=41/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=82/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=41/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Lady of Reflections: Drown in the Loch → Frederic the Beastslayer
+    [T] ACTION P2 Lady of Reflections[front]: Drown in the Loch → Frederic the Beastslayer
+Lady of Reflections uses Drown in the Loch on Frederic the Beastslayer.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=47
+  Frederic the Beastslayer takes 47 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 82 → 35  (-47)
+  Frederic the Beastslayer takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=35/200 statuses=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=41/255 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=35/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak [KO]
+    [T]   P2 Lady of Reflections[front] HP=41/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lady of Reflections
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lady of Reflections
+Frederic the Beastslayer uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=75 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Lady of Reflections takes 50 damage.
+    [T] HPCHANGE Lady of Reflections: 41 → 0  (-50) **KO**
+  Reflecting Pool: Frederic the Beastslayer takes 5 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 1 wins!

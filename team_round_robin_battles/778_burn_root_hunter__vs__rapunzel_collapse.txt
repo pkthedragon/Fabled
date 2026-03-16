@@ -1,0 +1,496 @@
+Battle 778
+Player 1 Team: Burn-Root Hunter
+Player 2 Team: Rapunzel Collapse
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:51:23
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 778
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Fire Blast → Lucky Constantine
+[Queued] Frederic the Beastslayer: Hunter's Mark → Rapunzel the Golden
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+    [T] ACTION P1 Witch of the Woods[front]: Fire Blast → Lucky Constantine
+Witch of the Woods uses Fire Blast on Lucky Constantine.
+    [T] DMGCALC [Fire Blast] Witch of the Woods[front] → Lucky Constantine[back_left]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Lucky Constantine takes 122 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 93  (-122)
+  Lucky Constantine gains burn for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Rapunzel the Golden
+Frederic the Beastslayer uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=33
+  Rapunzel the Golden takes 33 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 225  (-33)
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+    [T] HPCHANGE Lucky Constantine: 93 → 23  (-70)
+  Lucky Constantine gains root for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → Witch of the Woods
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch of the Woods
+[Queued] Lucky Constantine: Post Bounty → Witch of the Woods
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Witch of the Woods
+Rapunzel the Golden uses Edict on Witch of the Woods.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=60 def=35 raw=85.71 ceil=86
+    [T]   FINAL_DMG=86
+  Witch of the Woods takes 86 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 94  (-86)
+  Witch of the Woods gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Witch of the Woods
+Frederic the Beastslayer uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Witch of the Woods[front]
+    [T]   power=25
+    [T]   atk=70 def=35 raw=50.00 ceil=50
+    [T]   FINAL_DMG=60
+  Witch of the Woods takes 60 damage.
+    [T] HPCHANGE Witch of the Woods: 94 → 34  (-60)
+  Witch of the Woods is Marked — takes +10 damage next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Witch of the Woods
+Lucky Constantine uses Post Bounty on Witch of the Woods.
+  Witch of the Woods gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[front] HP=34/180 statuses=[root(2r), expose(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=225/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=23/215 statuses=[burn(2r), root(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Witch of the Woods: root → 1r left
+    [T] STATUS_TICK Witch of the Woods: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Lucky Constantine burns for 22 damage.
+    [T] STATUS_TICK Lucky Constantine: burn → 1r left
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Lucky Constantine loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=34/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[root(1r), expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=225/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Lucky Constantine
+[Queued] Frederic the Beastslayer: Hunter's Mark → Rapunzel the Golden
+[Queued] Briar Rose: Creeping Doubt → Rapunzel the Golden
+    [T] ACTION P1 Witch of the Woods[front]: Freezing Gale → Lucky Constantine
+Witch of the Woods uses Freezing Gale on Lucky Constantine.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Lucky Constantine[back_left]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=132
+  Lucky Constantine takes 132 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  Lucky Constantine is immune to Root (Curse of Sleeping).
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Rapunzel the Golden
+Frederic the Beastslayer uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=43
+  Rapunzel the Golden takes 43 damage.
+    [T] HPCHANGE Rapunzel the Golden: 225 → 182  (-43)
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Rapunzel the Golden
+Briar Rose uses Creeping Doubt on Rapunzel the Golden.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=60 def=65 raw=36.92 ceil=37
+    [T]   FINAL_DMG=57
+  Rapunzel the Golden takes 57 damage.
+    [T] HPCHANGE Rapunzel the Golden: 182 → 125  (-57)
+  Rapunzel the Golden gains root for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch of the Woods
+[Queued] Lucky Constantine: Sucker Punch → Witch of the Woods
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Frederic the Beastslayer
+Rapunzel the Golden uses Edict on Frederic the Beastslayer.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=74
+  Frederic the Beastslayer takes 74 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 126  (-74)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Witch of the Woods
+Frederic the Beastslayer uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Witch of the Woods[front]
+    [T]   power=25
+    [T]   atk=70 def=35 raw=50.00 ceil=50
+    [T]   FINAL_DMG=82
+  Witch of the Woods takes 82 damage.
+    [T] HPCHANGE Witch of the Woods: 34 → 0  (-82) **KO**
+  Witch of the Woods is Marked — takes +10 damage next round.
+Briar Rose moves to frontline.
+Lucky Constantine cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=126/200 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=125/258 statuses=[root(2r)]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[burn(1r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Lucky Constantine burns for 22 damage.
+    [T] STATUS_TICK Rapunzel the Golden: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Rapunzel the Golden loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=126/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=125/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hero's Charge → Rapunzel the Golden
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Rapunzel the Golden
+Briar Rose uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=57
+  Rapunzel the Golden takes 57 damage.
+    [T] HPCHANGE Rapunzel the Golden: 125 → 68  (-57)
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+  Briar Rose must recharge next turn.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Rapunzel the Golden
+Frederic the Beastslayer uses Hero's Charge on Rapunzel the Golden.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=30
+    [T]   atk=70 def=65 raw=32.31 ceil=33
+    [T]   FINAL_DMG=53
+  Rapunzel the Golden takes 53 damage.
+    [T] HPCHANGE Rapunzel the Golden: 68 → 15  (-53)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Rapunzel the Golden: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+Rapunzel the Golden cannot act.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=39
+  Frederic the Beastslayer takes 39 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 126 → 87  (-39)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=87/200 statuses=[root(1r)]
+    [T]   P2 Rapunzel the Golden[front] HP=15/258 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: root → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: root
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=87/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=15/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Skip
+    [T] ACTION P1 Briar Rose[front]: swap ↔ Frederic the Beastslayer
+Briar Rose recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: skip/recharge
+Frederic the Beastslayer recharges.
+[Queued] Rapunzel the Golden: Edict → Briar Rose
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Briar Rose
+Rapunzel the Golden uses Edict on Briar Rose.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Briar Rose takes 67 damage.
+    [T] HPCHANGE Briar Rose: 195 → 128  (-67)
+  Briar Rose gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=128/195 statuses=[root(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=87/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=15/258 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Briar Rose: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=128/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=87/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=15/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hunter's Mark → Rapunzel the Golden
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Rapunzel the Golden
+Briar Rose uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=47
+  Rapunzel the Golden takes 47 damage.
+    [T] HPCHANGE Rapunzel the Golden: 15 → 0  (-47) **KO**
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Rapunzel the Golden
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Briar Rose
+Frederic the Beastslayer uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=94
+  Briar Rose takes 94 damage.
+    [T] HPCHANGE Briar Rose: 128 → 34  (-94)
+  Briar Rose is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=34/195 statuses=[root(1r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=87/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Briar Rose: root → 0r left
+    [T] STATUS_EXPIRED Briar Rose: root
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=34/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=87/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Briar Rose
+Frederic the Beastslayer uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=111
+  Briar Rose takes 111 damage.
+    [T] HPCHANGE Briar Rose: 34 → 0  (-111) **KO**
+  Briar Rose is Marked — takes +10 damage next round.
+Frederic the Beastslayer moves to frontline.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=104
+  Frederic the Beastslayer takes 104 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 96  (-104)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=87/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=96/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=87/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=96/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=122
+  Frederic the Beastslayer takes 122 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 96 → 0  (-122) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 1 wins!

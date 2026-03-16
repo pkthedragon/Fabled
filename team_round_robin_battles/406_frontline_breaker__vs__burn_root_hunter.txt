@@ -1,0 +1,459 @@
+Battle 406
+Player 1 Team: Frontline Breaker
+Player 2 Team: Burn-Root Hunter
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:13:20
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 406
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Frontline Breaker
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Belligerence  (passive=True)
+    Basics: Cleave, Strike
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch of the Woods: Freezing Gale → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Frederic the Beastslayer
+Witch of the Woods uses Freezing Gale on Frederic the Beastslayer.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Frederic the Beastslayer[back_right]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=120
+  Frederic the Beastslayer takes 120 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 80  (-120)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Little Jack[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Little Jack takes 42 damage.
+    [T] HPCHANGE Little Jack: 220 → 178  (-42)
+  Little Jack is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 178 → 120  (-58)
+  Little Jack gains root for 2 rounds.
+[Queued] Little Jack: Strike → Witch of the Woods
+[Queued] Frederic the Beastslayer: On the Hunt → Witch of the Woods
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Strike → Witch of the Woods
+Little Jack uses Strike on Witch of the Woods.
+    [T] DMGCALC [Strike] Little Jack[front] → Witch of the Woods[front]
+    [T]   power=55
+    [T]   atk=80 def=28 raw=157.14 ceil=158
+    [T]   FINAL_DMG=158
+  Witch of the Woods takes 158 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 22  (-158)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Witch of the Woods
+Frederic the Beastslayer uses On the Hunt on Witch of the Woods.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Witch of the Woods[front]
+    [T]   power=25
+    [T]   atk=70 def=35 raw=50.00 ceil=50
+    [T]   FINAL_DMG=60
+  Witch of the Woods takes 60 damage.
+    [T] HPCHANGE Witch of the Woods: 22 → 0  (-60) **KO**
+  Witch of the Woods gains expose for 2 rounds.
+Briar Rose moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=175/220 statuses=[root(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=80/200 statuses=[root(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Little Jack: root → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Innocent Heart: Frederic the Beastslayer +10 Def.
+  Curse of Sleeping: Frederic the Beastslayer loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=175/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=80/200 ATK=70(base=65) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(2r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5[Queued] Lucky Constantine: Feline Gambit → Little Jack
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] Rapunzel the Golden: Edict → Little Jack
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Little Jack
+Lucky Constantine uses Feline Gambit on Little Jack.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=70 def=50 raw=63.00 ceil=63
+    [T]   FINAL_DMG=73
+  Little Jack takes 73 damage.
+    [T] HPCHANGE Little Jack: 178 → 105  (-73)
+  Little Jack gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Little Jack[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=61
+  Little Jack takes 61 damage.
+    [T] HPCHANGE Li[Queued] Little Jack: Cleave → Briar Rose
+[Queued] Frederic the Beastslayer: On the Hunt → Briar Rose
+[Queued] Snowkissed Aurora: Heal → Little Jack
+    [T] ACTION P1 Little Jack[front]: Cleave → Briar Rose
+Little Jack uses Cleave on Briar Rose.
+    [T] DMGCALC [Cleave] Little Jack[front] → Briar Rose[front]
+    [T]   power=45
+    [T]   atk=80 def=29 raw=124.14 ceil=125
+    [T]   FINAL_DMG=125
+  Briar Rose takes 125 damage.
+    [T] HPCHANGE Briar Rose: 195 → 70  (-125)
+Frederic the Beastslayer cannot act.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Little Jack
+Snowkissed Aurora uses Heal on Little Jack.
+  Snowkissed Aurora heals Little Jack for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=65/220 statuses=[root(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=80/200 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=70/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Little Jack: root → 0r left
+    [T] STATUS_EXPIRED Little Jack: root
+  Innocent Heart: Little Jack +10 Def.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=65/220 ATK=80(base=80) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=80/200 ATK=70(base=65) DEF=55(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=70/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Little Jack[front]
+    [T]   power=55
+    [T]   atk=60 def=60 raw=55.00 ceil=55
+    [T]   FINAL_DMG=75
+  Little Jack takes 75 damage.
+    [T] HPCHANGE Little Jack: 65 → 0  (-75) **KO**
+  Briar Rose must recharge next turn.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Little Jack
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+[Queued] Frederic the Beastslayer: On the Hunt → Briar Rose
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Briar Rose takes 50 damage.
+    [T] HPCHANG[Queued] Lucky Constantine: Feline Gambit → Snowkissed Aurora
+c the Beastslayer for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Briar Rose
+Frederic the Beastslayer uses On the Hunt on Briar Rose.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Briar Rose[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Briar Rose takes 47 damage.
+    [T] HPCHANGE Briar Rose: 20 → 0  (-47) **KO**
+  Briar Rose gains expose for 2 rounds.
+Frederic the Beastslayer moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=130/200 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=130/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hero's Charge → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hero's Charge → Frederic the Beastslayer
+Frederic the Beastslayer uses Hero's Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=110
+  Frederic the Beastslayer takes 110 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 90  (-110)
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: On the Hunt → Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Frederic the Beastslayer
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Frederic the Beastslayer
+Frederic the Beastslayer uses On the Hunt on Frederic the Beastslayer.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Frederic the Beastslayer[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Frederic the Beastslayer takes 47 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 90 → 43  (-47)
+  Frederic the Beastslayer gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=130/200 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=43/200 statuses=[expose(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=130/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=43/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Skip
+    [T] ACTION P2 Frederic the Beastslayer[front]: skip/recharge
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=43/200 statuses=[expose(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: expose
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=43/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=93
+  Frederic the Beastslayer takes 93 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 107  (-93)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=177/200 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=43/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=177/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=43/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=112
+  Frederic the Beastslayer takes 112 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 43 → 0  (-112) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 1 wins!

@@ -1,0 +1,804 @@
+Battle 226
+Player 1 Team: Burnline Pressure
+Player 2 Team: Burnline Pressure
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:57:25
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 226
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+Player 2: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+[Queued] Witch of the Woods: Thunder Call → Witch of the Woods
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=80 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch-Hunter Gretel takes 80 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 135  (-80)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P2 Witch of the Woods[back_right]: Thunder Call → Witch of the Woods
+Witch of the Woods uses Thunder Call on Witch of the Woods.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_right] → Witch of the Woods[back_right]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Witch of the Woods takes 75 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 105  (-75)
+  Witch of the Woods gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 135 → 90  (-45)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+[Queued] Witch-Hunter Gretel: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Witch of the Woods
+Witch-Hunter Gretel and Witch of the Woods swap positions.
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Witch-Hunter Gretel
+Witch of the Woods uses Thunder Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=109
+  Witch-Hunter Gretel takes 109 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 106  (-109)
+  Shock recoil: Witch of the Woods takes 22 damage.
+  Witch-Hunter Gretel gains shock for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=90/215 statuses=[burn(2r), weaken(2r), no_heal(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods[front] HP=138/180 statuses=[shock(2r), burn_immune(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=106/215 statuses=[shock(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 statuses=[-]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] STATUS_TICK Witch of the Woods: shock → 1r left
+    [T] STATUS_TICK Witch of the Woods: burn_immune → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=68/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r), weaken(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[front] HP=138/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[shock(1r), burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=106/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Thunder Call → Witch of the Woods
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Witch of the Woods
+Witch of the Woods uses Thunder Call on Witch of the Woods.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Witch of the Woods[back_right]
+    [T]   power=65
+    [T]   atk=75 def=35 raw=139.29 ceil=140
+    [T]   FINAL_DMG=140
+  Witch of the Woods takes 140 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 40  (-140)
+  Shock recoil: Witch of the Woods takes 28 damage.
+  Witch of the Woods gains burn for 2 rounds.
+  Witch of the Woods gains shock for 2 rounds.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch of the Woods
+Matchstick Liesl uses Heal on Witch of the Woods.
+  Matchstick Liesl heals Witch of the Woods for 55 HP.
+  Purifying Flame: Witch of the Woods will Burn their next target.
+[Queued] Witch-Hunter Gretel: Strike → Witch of the Woods
+[Queued] Witch of the Woods: Fire Blast → Witch of the Woods
+[Queued] Matchstick Liesl: Cauterize → Witch of the Woods
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Witch of the Woods
+Witch-Hunter Gretel uses Strike on Witch of the Woods.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Witch of the Woods[front]
+    [T]   power=55
+    [T]   atk=80 def=35 raw=125.71 ceil=126
+    [T]   FINAL_DMG=111
+  Witch of the Woods takes 111 damage.
+    [T] HPCHANGE Witch of the Woods: 165 → 54  (-111)
+  Shock recoil: Witch-Hunter Gretel takes 23 damage.
+  Witch of the Woods is immune to Burn.
+    [T] ACTION P2 Witch of the Woods[back_right]: Fire Blast → Witch of the Woods
+Witch of the Woods uses Fire Blast on Witch of the Woods.
+    [T] DMGCALC [Fire Blast] Witch of the Woods[back_right] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=85
+  Witch of the Woods takes 85 damage.
+    [T] HPCHANGE Witch of the Woods: 54 → 0  (-85) **KO**
+  Shock recoil: Witch of the Woods takes 17 damage.
+  Witch of the Woods is immune to Burn.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Witch of the Woods
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=68/215 statuses=[burn(1r), weaken(1r), no_heal(1r)]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=83/215 statuses=[shock(1r), weaken(2r)]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=23/180 statuses=[burn(2r), shock(2r)]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: weaken
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: no_heal
+Witch of the Woods burns for 18 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: shock
+    [T] STATUS_TICK Witch of the Woods: burn → 1r left
+    [T] STATUS_TICK Witch of the Woods: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=46/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=83/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=5/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[burn(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch of the Woods
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Witch of the Woods
+Witch-Hunter Gretel and Witch of the Woods swap positions.
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Witch-Hunter Gretel
+Witch of the Woods uses Thunder Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=109
+  Witch-Hunter Gretel takes 109 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 46 → 0  (-109) **KO**
+  Shock recoil: Witch of the Woods takes 22 damage.
+  Witch-Hunter Gretel gains shock for 2 rounds.
+  Witch of the Woods must recharge next turn.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch of the Woods
+  Matchstick Liesl retargets to Witch-Hunter Gretel after swapping to front.
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Matchstick Liesl: Cleansing Inferno
+    [T] ACTION P1 Matchstick Liesl[front]: Cleansing Inferno → spread/auto
+Matchstick Liesl uses Cleansing Inferno.
+Matchstick Liesl uses Cleansing Inferno (spread).
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Witch-Hunter Gretel[back_right] (spread)
+    [T]   power=60
+    [T]   atk=50 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=34
+  Witch-Hunter Gretel takes 34 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 153 → 119  (-34)
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Matchstick Liesl[front] (spread)
+    [T]   power=60
+    [T]   atk=50 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=30
+  Matchstick Liesl takes 30 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 180  (-30)
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=119/215 statuses=[weaken(1r), burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=119/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Matchstick Liesl
+Witch-Hunter Gretel uses Intimidate on Matchstick Liesl.
+  Matchstick Liesl gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[weaken(2r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=189/215 statuses=[burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=189/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Matchstick Liesl
+Witch-Hunter Gretel uses Intimidate on Matchstick Liesl.
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 189 → 144  (-45)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[weaken(1r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=144/215 statuses=[no_heal(2r)]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Matchstick Liesl: weaken → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: weaken
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=144/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Smite → Witch-Hunter Gretel
+    [T] ACTION P1 Matchstick Liesl[front]: Smite → Witch-Hunter Gretel
+Matchstick Liesl uses Smite on Witch-Hunter Gretel.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=55
+    [T]   atk=50 def=45 raw=61.11 ceil=62
+    [T]   FINAL_DMG=62
+  Witch-Hunter Gretel takes 62 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 144 → 82  (-62)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Witch-Hunter Gretel cannot be healed.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=82/215 statuses=[no_heal(1r), burn(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=180/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=60/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=180/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=56
+  Witch-Hunter Gretel takes 56 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 130 → 74  (-56)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=74/215 statuses=[burn(1r), burn_immune(2r), no_heal(2r)]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=52/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Witch-Hunter Gretel cannot be healed.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=52/215 statuses=[burn_immune(1r), no_heal(1r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=180/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel[front] HP=52/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=180/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=56
+  Witch-Hunter Gretel takes 56 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 52 → 0  (-56) **KO**
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=180/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 180 → 130  (-50)
+  Matchstick Liesl gains no_heal for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 160  (-50)
+  Matchstick Liesl gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=160/210 statuses=[no_heal(2r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=130/210 statuses=[no_heal(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 1r left
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=160/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=130/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Smite → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Smite → Matchstick Liesl
+Matchstick Liesl uses Smite on Matchstick Liesl.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Matchstick Liesl[front]
+    [T]   power=55
+    [T]   atk=50 def=50 raw=55.00 ceil=55
+    [T]   FINAL_DMG=55
+  Matchstick Liesl takes 55 damage.
+    [T] HPCHANGE Matchstick Liesl: 160 → 105  (-55)
+  Matchstick Liesl gains burn for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 130 → 80  (-50)
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=105/210 statuses=[no_heal(1r), burn(2r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=80/210 statuses=[no_heal(1r)]
+    [T]   P2 Witch of the Woods [KO]
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 0r left
+    [T] STATUS_TICK Matchstick Liesl: burn → 1r left
+    [T] STATUS_EXPIRED Matchstick Liesl: no_heal
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: no_heal
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=84/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=80/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 84 → 34  (-50)
+  Matchstick Liesl gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=34/210 statuses=[burn(1r), no_heal(2r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=80/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Matchstick Liesl: burn → 0r left
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 1r left
+    [T] STATUS_EXPIRED Matchstick Liesl: burn
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=13/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=80/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 80 → 30  (-50)
+  Matchstick Liesl gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=13/210 statuses=[no_heal(1r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=30/210 statuses=[no_heal(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: no_heal
+    [T] STATUS_TICK Matchstick Liesl: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=13/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Matchstick Liesl[front] HP=30/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Matchstick Liesl: Cauterize → Matchstick Liesl
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Matchstick Liesl
+Matchstick Liesl uses Cauterize on Matchstick Liesl.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Matchstick Liesl takes 50 damage.
+    [T] HPCHANGE Matchstick Liesl: 30 → 0  (-50) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 14)
+────────────────────────────────────────────────────────────
+Player 1 wins!

@@ -1,0 +1,538 @@
+Battle 186
+Player 1 Team: Speed Tempo
+Player 2 Team: Pinocchio Malice Fortress
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:51:48
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 186
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Pinocchio Malice Fortress
+  [front] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Become Real  (passive=True)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Family Seal
+  [back_left] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Little Jack
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+[Queued] Sir Roland: Item Pinocchio, Cursed Puppet
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Dark Grasp → Little Jack
+Pinocchio, Cursed Puppet uses Dark Grasp on Little Jack.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=65 def=50 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Little Jack takes 65 damage.
+    [T] HPCHANGE Little Jack: 220 → 155  (-65)
+  Pinocchio, Cursed Puppet gains 1 Malice (Dark Grasp). [1/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Pinocchio, Cursed Puppet
+Sir Roland uses Crafty Shield.
+  Pinocchio, Cursed Puppet is Guarded.
+[Queued] Little Jack: Skyfall → Pinocchio, Cursed Puppet
+[Queued] Frederic the Beastslayer: On the Hunt → Pinocchio, Cursed Puppet
+[Queued] March Hare: Thunder Call → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Little Jack[front]: Skyfall → Pinocchio, Cursed Puppet
+Little Jack uses Skyfall on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=80
+    [T]   atk=80 def=55 raw=116.36 ceil=117
+    [T]   FINAL_DMG=104
+  Pinocchio, Cursed Puppet takes 104 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 116  (-104)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [2/6]
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Pinocchio, Cursed Puppet
+Frederic the Beastslayer uses On the Hunt on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Pinocchio, Cursed Puppet[front]
+    [T]   power=25
+    [T]   atk=70 def=60 raw=29.17 ceil=30
+    [T]   FINAL_DMG=29
+  Pinocchio, Cursed Puppet takes 29 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 116 → 87  (-29)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [3/6]
+  Pinocchio, Cursed Puppet is immune to statuses (Become Real).
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Pinocchio, Cursed Puppet
+March Hare uses Thunder Call on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Pinocchio, Cursed Puppet[front]
+    [T]   power=35
+    [T]   atk=70 def=65 raw=37.69 ceil=38
+    [T]   FINAL_DMG=31
+  Pinocchio, Cursed Puppet takes 31 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 87 → 56  (-31)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [4/6]
+  Pinocchio, Cursed Puppet is immune to statuses (Become Real).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=155/220 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=56/220 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [5/6]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=155/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=56/220 ATK=90(base=65) DEF=75(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Pinocchio, Cursed Puppet
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+[Queued] March Hare: Thunder Call → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Little Jack[front]: Skyfall → Pinocchio, Cursed Puppet
+Little Jack uses Skyfall on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=80
+    [T]   atk=80 def=75 raw=85.33 ceil=86
+    [T]   FINAL_DMG=79
+  Pinocchio, Cursed Puppet takes 79 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 56 → 0  (-79) **KO**
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [6/6]
+Sir Roland moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Little Jack
+Frederic the Beastslayer and Little Jack swap positions.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Pinocchio, Cursed Puppet
+March Hare's target is no longer legal — Thunder Call fizzles.
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Frederic the Beastslayer
+Sir Roland uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 160  (-40)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[back_right] HP=155/220 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=160/200 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=155/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[front] HP=160/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Snowkissed Aurora
+[Queued] March Hare: Thunder Call → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Little Jack
+Frederic the Beastslayer and Little Jack swap positions.
+    [T] ACTION P1 Little Jack[front]: Skyfall → Snowkissed Aurora
+Little Jack uses Skyfall on Snowkissed Aurora.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=114
+  Snowkissed Aurora takes 114 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 111  (-114)
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Snowkissed Aurora
+March Hare uses Thunder Call on Snowkissed Aurora.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=70 def=60 raw=40.83 ceil=41
+    [T]   FINAL_DMG=33
+  Snowkissed Aurora takes 33 damage.
+    [T] HPCHANGE Snowkissed Aurora: 111 → 78  (-33)
+  Snowkissed Aurora gains shock for 2 rounds.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 40 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=155/220 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=118/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=155/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=118/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+[Queued] March Hare: Thunder Call → Sir Roland
+    [T] ACTION P1 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 265 → 240  (-25)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 240 → 216  (-24)
+  Sir Roland gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Sir Roland
+March Hare uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=70 def=90 raw=27.22 ceil=28
+    [T]   FINAL_DMG=34
+  Sir Roland takes 34 damage.
+    [T] HPCHANGE Sir Roland: 216 → 182  (-34)
+  Sir Roland gains shock for 2 rounds.
+  March Hare must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Little Jack
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Little Jack
+Sir Roland uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=45 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=36
+  Little Jack takes 36 damage.
+    [T] HPCHANGE Little Jack: 155 → 119  (-36)
+  Shock recoil: Sir Roland takes 8 damage.
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[front] HP=119/220 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=229/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=118/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=119/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=229/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=118/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+[Queued] March Hare: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=97
+  Sir Roland takes 97 damage.
+    [T] HPCHANGE Sir Roland: 229 → 132  (-97)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 132 → 108  (-24)
+  Sir Roland gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P1 March Hare[back_left]: swap ↔ Little Jack
+March Hare recharges.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack[front] HP=119/220 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=108/265 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=118/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=119/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=108/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=118/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+[Queued] March Hare: Thunder Call → Sir Roland
+    [T] ACTION P1 Little Jack[front]: Skyfall → Sir Roland
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=94
+  Sir Roland takes 94 damage.
+    [T] HPCHANGE Sir Roland: 108 → 14  (-94)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Little Jack
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Sir Roland
+March Hare uses Thunder Call on Sir Roland.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=70 def=90 raw=27.22 ceil=28
+    [T]   FINAL_DMG=28
+  Sir Roland takes 28 damage.
+    [T] HPCHANGE Sir Roland: 14 → 0  (-28) **KO**
+  Sir Roland gains shock for 2 rounds.
+Snowkissed Aurora moves to frontline.
+[Queued] Snowkissed Aurora: Deathlike Slumber → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Deathlike Slumber → Snowkissed Aurora
+Snowkissed Aurora uses Deathlike Slumber on Snowkissed Aurora.
+  Snowkissed Aurora cures all statuses.
+  Innocent Heart's effect is doubled for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack[front] HP=119/220 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=118/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=119/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=160/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=118/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Feint → Snowkissed Aurora
+[Queued] Frederic the Beastslayer: On the Hunt → Snowkissed Aurora
+[Queued] March Hare: Thunder Call → Snowkissed Aurora
+    [T] ACTION P1 Little Jack[front]: Feint → Snowkissed Aurora
+Little Jack uses Feint on Snowkissed Aurora.
+    [T] DMGCALC [Feint] Little Jack[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=80 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=72
+  Snowkissed Aurora takes 72 damage.
+    [T] HPCHANGE Snowkissed Aurora: 118 → 46  (-72)
+  Little Jack gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Snowkissed Aurora
+Frederic the Beastslayer uses On the Hunt on Snowkissed Aurora.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Snowkissed Aurora[front]
+    [T]   power=25
+    [T]   atk=70 def=60 raw=29.17 ceil=30
+    [T]   FINAL_DMG=36
+  Snowkissed Aurora takes 36 damage.
+    [T] HPCHANGE Snowkissed Aurora: 46 → 10  (-36)
+  Snowkissed Aurora gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Snowkissed Aurora
+March Hare uses Thunder Call on Snowkissed Aurora.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=70 def=60 raw=40.83 ceil=41
+    [T]   FINAL_DMG=50
+  Snowkissed Aurora takes 50 damage.
+    [T] HPCHANGE Snowkissed Aurora: 10 → 0  (-50) **KO**
+  Snowkissed Aurora gains shock for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 1 wins!

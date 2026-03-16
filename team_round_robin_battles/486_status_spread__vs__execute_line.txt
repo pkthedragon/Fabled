@@ -1,0 +1,347 @@
+Battle 486
+Player 1 Team: Status Spread
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:19:02
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 490
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Status Spread
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Matchstick Liesl
+[Queued] Hunold the Piper: Sucker Punch → Rapunzel the Golden
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Robin, Hooded Avenger
+Witch of the Woods uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Robin, Hooded Avenger takes 122 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 63  (-122)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Matchstick Liesl
+Briar Rose uses Creeping Doubt on Matchstick Liesl.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Matchstick Liesl[back_right]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Matchstick Liesl takes 58 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 152  (-58)
+  Matchstick Liesl gains root for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Rapunzel the Golden
+Hunold the Piper uses Sucker Punch on Rapunzel the Golden.
+  Rapunzel the Golden gains weaken for 2 rounds.
+er Punch → Witch of the Woods
+[Queued] Little Jack: Skyfall → Witch of the Woods
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Witch of the Woods
+Lucky Constantine uses Sucker Punch on Witch of the Woods.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=70 def=35 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch of the Woods takes 80 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 100  (-80)
+  Shock recoil: Lucky Constantine takes 16 damage.
+Little Jack moves to frontline.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Witch of the Woods
+Little Jack uses Skyfall on Witch of the Woods.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Witch of the Woods[front]
+    [T]   power=80
+    [T]   atk=80 def=35 raw=182.86 ceil=183
+    [T]   FINAL_DMG=193
+  Witch of the Woods takes 193 damage.
+    [T] HPCHANGE Witch of the Woods: 100 → 0  (-193) **KO**
+Hunold the Piper moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[weaken(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Hunold the Piper: Dying Dance → Little Jack
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Little Jack
+Hunold the Piper uses Dying Dance on Little Jack.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Little Jack[front]
+    [T]   power=60
+    [T]   atk=60 def=50 raw=72.00 ceil=72
+    [T]   FINAL_DMG=72
+  Little Jack takes 72 damage.
+    [T] HPCHANGE Little Jack: 220 → 148  (-72)
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 148 → 90  (-58)
+  Little Jack gains root for 2 rounds.
+[Queued] Little Jack: Skyfall → Hunold the Piper
+[Queued] Risa Redcloak: Swap with Little Jack
+    [T] ACTION P2 Little Jack[front]: Skyfall → Hunold the Piper
+Little Jack uses Skyfall on Hunold the Piper.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Hunold the Piper[front]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=123
+  Hunold the Piper takes 123 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 87  (-123)
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=90/220 statuses=[root(2r)]
+    [T]   P2 Risa Redcloak[front] HP=250/250 statuses=[weaken(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T] STATUS_TICK Little Jack: root → 1r left
+    [T] STATUS_TICK Risa Redcloak: weaken → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: weaken
+  Curse of Sleeping: Little Jack loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=90/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Hunold the Piper: Dying Dance → Risa Redcloak
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Risa Redcloak
+Hunold the Piper uses Dying Dance on Risa Redcloak.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Risa Redcloak takes 60 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 190  (-60)
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Little Jack[back_right]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 90 → 32  (-58)
+  Little Jack is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+[Queued] Risa Redcloak: Rend → Hunold the Piper
+[Queued] Little Jack: Skyfall → Hunold the Piper
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Hunold the Piper
+Risa Redcloak uses Rend on Hunold the Piper.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Hunold the Piper[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=88
+  Hunold the Piper takes 88 damage.
+    [T] HPCHANGE Hunold the Piper: 87 → 0  (-88) **KO**
+  Risa Redcloak heals 7 HP.
+Briar Rose moves to frontline.
+Little Jack cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=32/220 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=197/250 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=32/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=197/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Briar Rose: Skip
+    [T] ACTION P1 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Briar Rose
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Briar Rose
+Little Jack uses Skyfall on Briar Rose.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Briar Rose[front]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=153
+  Briar Rose takes 153 damage.
+    [T] HPCHANGE Briar Rose: 195 → 42  (-153)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=42/195 statuses=[-]
+    [T]   P2 Little Jack[front] HP=32/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=197/250 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=42/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=32/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=197/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+[Queued] Briar Rose: Hunter's Mark → Little Jack
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Little Jack
+Briar Rose uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Little Jack takes 60 damage.
+    [T] HPCHANGE Little Jack: 32 → 0  (-60) **KO**
+  Little Jack is Marked — takes +10 damage next round.
+Risa Redcloak moves to frontline.
+[Queued] Risa Redcloak: Grandmother's Vengeance → Briar Rose
+    [T] ACTION P2 Risa Redcloak[front]: Grandmother's Vengeance → Briar Rose
+Risa Redcloak uses Grandmother's Vengeance on Briar Rose.
+    [T] DMGCALC [Grandmother's Vengeance] Risa Redcloak[front] → Briar Rose[front]
+    [T]   power=70
+    [T]   atk=75 def=45 raw=116.67 ceil=117
+    [T]   FINAL_DMG=117
+  Briar Rose takes 117 damage.
+    [T] HPCHANGE Briar Rose: 42 → 0  (-117) **KO**
+  Risa Redcloak heals 53 HP.
+  Risa Redcloak gains +15 Attack for 2 rounds.
+  Risa Redcloak gains +15 Speed for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!

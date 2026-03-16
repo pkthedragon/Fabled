@@ -1,0 +1,941 @@
+Battle 704
+Player 1 Team: Ella Pivot Shell
+Player 2 Team: Shocked Quarry
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:45:29
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 704
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Ella Pivot Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Fae Blessing  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Shocked Quarry
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella[back_left] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+[Queued] March Hare: Thunder Call → Snowkissed Aurora
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[back_right]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Snowkissed Aurora takes 63 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 162  (-63)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+    [T] ACTION P2 March Hare[back_right]: Thunder Call → Snowkissed Aurora
+March Hare uses Thunder Call on Snowkissed Aurora.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=35
+    [T]   atk=70 def=60 raw=40.83 ceil=41
+    [T]   FINAL_DMG=41
+  Snowkissed Aurora takes 41 damage.
+    [T] HPCHANGE Snowkissed Aurora: 162 → 121  (-41)
+  Snowkissed Aurora gains shock for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Swap with Ashen Ella
+[Queued] Snowkissed Aurora: Toxin Purge → Sir Roland
+[Queued] Ashen Ella: Fae Blessing → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Ashen Ella
+Sir Roland and Ashen Ella swap positions.
+  Banner of Command: Ashen Ella is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Toxin Purge → Sir Roland
+Snowkissed Aurora uses Toxin Purge on Sir Roland.
+  Innocent Heart: Sir Roland +10 Def.
+  Sir Roland loses weaken.
+    [T] ACTION P1 Ashen Ella[front]: Fae Blessing → Snowkissed Aurora
+  Ashen Ella retargets to Ashen Ella after swapping to front.
+Ashen Ella uses Fae Blessing on Ashen Ella.
+  Ashen Ella gains +20 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P1 Ashen Ella[front] HP=185/185 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=121/225 statuses=[shock(2r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Ashen Ella: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: shock → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella[front] HP=185/185 ATK=100(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[attack+20(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=121/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Arcane Wave → March Hare
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Ashen Ella[front]: Arcane Wave → March Hare
+Ashen Ella uses Arcane Wave on March Hare.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → March Hare[back_right]
+    [T]   power=80
+    [T]   atk=100 def=35 raw=228.57 ceil=229
+    [T]   FINAL_DMG=229
+  March Hare takes 229 damage.
+    [T] HPCHANGE March Hare: 190 → 0  (-229) **KO**
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Ashen Ella
+[Queued] Hunold the Piper: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Ashen Ella
+Frederic the Beastslayer uses Hunter's Mark on Ashen Ella.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Ashen Ella[front]
+    [T]   power=50
+    [T]   atk=75 def=30 raw=125.00 ceil=125
+    [T]   FINAL_DMG=120
+  Ashen Ella takes 120 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 65  (-120)
+  Ashen Ella is Marked — takes +10 damage next round.
+    [T] ACTION P2 Hunold the Piper[back_left]: swap ↔ Frederic the Beastslayer
+Hunold the Piper and Frederic the Beastslayer swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Ashen Ella[front] HP=65/185 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=121/225 statuses=[shock(1r), guard(2r)]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Ashen Ella: guard → 0r left
+    [T] STATUS_EXPIRED Ashen Ella: guard
+  Innocent Heart: Ashen Ella +10 Def.
+    [T] BUFF_EXPIRED Ashen Ella: attack+20
+    [T] STATUS_TICK Snowkissed Aurora: shock → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: shock
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella[front] HP=65/185 ATK=70(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=121/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Ashen Ella
+[Queued] Frederic the Beastslayer: On the Hunt → Ashen Ella
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Ashen Ella
+Hunold the Piper uses Dying Dance on Ashen Ella.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Ashen Ella[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=100
+  Ashen Ella takes 100 damage.
+    [T] HPCHANGE Ashen Ella: 65 → 0  (-100) **KO**
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Ashen Ella
+Frederic the Beastslayer's target is no longer legal — On the Hunt fizzles.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 181  (-29)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=121/225 statuses=[guard(1r)]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=181/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=121/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ Frederic the Beastslayer
+Hunold the Piper and Frederic the Beastslayer swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[front]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=70 def=90 raw=31.11 ceil=32
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=10
+  Sir Roland takes 10 damage.
+    [T] HPCHANGE Sir Roland: 265 → 255  (-10)
+  Frederic the Beastslayer gains +15 Attack for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Frederic the Beastslayer
+Sir Roland uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=44
+  Frederic the Beastslayer takes 44 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 156  (-44)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 10 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=121/225 statuses=[guard(2r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=156/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=121/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=156/200 ATK=80(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Hunold the Piper
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+  Sir Roland gains weaken for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Frederic the Beastslayer
+Sir Roland uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=36
+  Frederic the Beastslayer takes 36 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 156 → 120  (-36)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[weaken(2r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=121/225 statuses=[guard(1r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=120/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+15
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=121/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=120/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+[Queued] Hunold the Piper: Sucker Punch → Snowkissed Aurora
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=70 raw=53.57 ceil=54
+    [T]   FINAL_DMG=65
+  Snowkissed Aurora takes 65 damage.
+    [T] HPCHANGE Snowkissed Aurora: 121 → 56  (-65)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Snowkissed Aurora
+Hunold the Piper uses Sucker Punch on Snowkissed Aurora.
+  Snowkissed Aurora gains weaken for 2 rounds.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[weaken(1r), guard(1r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=81/225 statuses=[guard(2r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=120/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: weaken → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: weaken
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=81/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=120/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+[Queued] Hunold the Piper: Sucker Punch → Snowkissed Aurora
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=70 raw=53.57 ceil=54
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 81 → 19  (-62)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Snowkissed Aurora
+Hunold the Piper uses Sucker Punch on Snowkissed Aurora.
+  Snowkissed Aurora gains weaken for 2 rounds.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=19/225 statuses=[guard(1r), weaken(2r)]
+    [T]   P2 Frederic the Beastslayer[front] HP=120/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: weaken → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=19/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=120/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=181/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Snowkissed Aurora
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Hunold the Piper
+Frederic the Beastslayer and Hunold the Piper swap positions.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Snowkissed Aurora
+Hunold the Piper uses Sucker Punch on Snowkissed Aurora.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Snowkissed Aurora[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=70 raw=51.43 ceil=52
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 19 → 0  (-62) **KO**
+Sir Roland moves to frontline.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=29
+  Hunold the Piper takes 29 damage.
+    [T] HPCHANGE Hunold the Piper: 181 → 152  (-29)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=152/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=152/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=10
+  Sir Roland takes 10 damage.
+    [T] HPCHANGE Sir Roland: 265 → 255  (-10)
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 255 → 231  (-24)
+  Sir Roland gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 34 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[expose(2r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=152/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=152/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=39
+  Sir Roland takes 39 damage.
+    [T] HPCHANGE Sir Roland: 265 → 226  (-39)
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: swap ↔ Hunold the Piper
+Frederic the Beastslayer recharges.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 152 → 120  (-32)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=226/265 statuses=[expose(1r), guard(1r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=120/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=226/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=120/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 226 → 186  (-40)
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=24
+  Sir Roland takes 24 damage.
+    [T] HPCHANGE Sir Roland: 186 → 162  (-24)
+  Sir Roland gains expose for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 120 → 88  (-32)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=162/265 statuses=[expose(2r), guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=88/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=162/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=120/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: swap ↔ Frederic the Beastslayer
+Hunold the Piper and Frederic the Beastslayer swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Sir Roland
+Frederic the Beastslayer uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=70 def=90 raw=38.89 ceil=39
+    [T]   FINAL_DMG=46
+  Sir Roland takes 46 damage.
+    [T] HPCHANGE Sir Roland: 162 → 116  (-46)
+  Sir Roland is Marked — takes +10 damage next round.
+[Queued] Sir Roland: Shield Bash → Frederic the Beastslayer
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Frederic the Beastslayer
+Sir Roland uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=44
+  Frederic the Beastslayer takes 44 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 120 → 76  (-44)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[front] HP=116/265 statuses=[expose(1r), guard(1r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=76/200 statuses=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=88/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: expose → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: expose
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=116/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=76/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Hunold the Piper
+Frederic the Beastslayer and Hunold the Piper swap positions.
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=60 def=90 raw=26.67 ceil=27
+    [T]   FINAL_DMG=37
+  Sir Roland takes 37 damage.
+    [T] HPCHANGE Sir Roland: 116 → 79  (-37)
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Sir Roland[front] HP=79/265 statuses=[guard(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=76/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=88/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=79/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=76/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=88/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Dying Dance → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Sir Roland
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Sir Roland
+Hunold the Piper uses Dying Dance on Sir Roland.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 79 → 47  (-32)
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: On the Hunt → Sir Roland
+Frederic the Beastslayer uses On the Hunt on Sir Roland.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 47 → 27  (-20)
+  Sir Roland gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Hunold the Piper
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Hunold the Piper
+Sir Roland uses Shield Bash on Hunold the Piper.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Hunold the Piper takes 32 damage.
+    [T] HPCHANGE Hunold the Piper: 88 → 56  (-32)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Sir Roland[front] HP=27/265 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=76/200 statuses=[-]
+    [T]   P2 Hunold the Piper[front] HP=56/210 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: expose → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=27/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=76/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Hunold the Piper[front] HP=56/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+[Queued] Hunold the Piper: Sucker Punch → Sir Roland
+[Queued] Frederic the Beastslayer: Swap with Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Sucker Punch → Sir Roland
+Hunold the Piper uses Sucker Punch on Sir Roland.
+    [T] DMGCALC [Sucker Punch] Hunold the Piper[front] → Sir Roland[front]
+    [T]   power=60 (base=40)
+    [T]   atk=60 def=90 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Sir Roland takes 48 damage.
+    [T] HPCHANGE Sir Roland: 27 → 0  (-48) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 15)
+────────────────────────────────────────────────────────────
+Player 2 wins!

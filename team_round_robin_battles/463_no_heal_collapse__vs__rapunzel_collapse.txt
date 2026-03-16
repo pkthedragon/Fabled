@@ -1,0 +1,638 @@
+Battle 463
+Player 1 Team: No-Heal Collapse
+Player 2 Team: Rapunzel Collapse
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:17:47
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 463
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: No-Heal Collapse
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hunter's Mark → Rapunzel the Golden
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Rapunzel the Golden
+Witch-Hunter Gretel uses Shove Over on Rapunzel the Golden.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Rapunzel the Golden[front]
+    [T]   power=65
+    [T]   atk=80 def=65 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Rapunzel the Golden takes 80 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 178  (-80)
+  Rapunzel the Golden gains weaken for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Rapunzel the Golden
+Frederic the Beastslayer uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=33
+  Rapunzel the Golden takes 33 damage.
+    [T] HPCHANGE Rapunzel the Golden: 178 → 145  (-33)
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Lucky Constantine takes 50 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 165  (-50)
+  Lucky Constantine gains no_heal for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Lucky Constantine: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Frederic the Beastslayer
+Rapunzel the Golden uses Edict on Frederic the Beastslayer.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=60
+  Frederic the Beastslayer takes 60 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 140  (-60)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=47
+  Witch-Hunter Gretel takes 47 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 168  (-47)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Rapunzel the Golden
+Lucky Constantine and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=168/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=140/200 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=145/258 statuses=[weaken(2r)]
+    [T]   P2 Lucky Constantine[front] HP=165/215 statuses=[no_heal(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 1r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=168/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=140/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=145/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=165/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Rapunzel the Golden: Edict → Witch-Hunter Gretel
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Witch-Hunter Gretel
+Lucky Constantine uses Feline Gambit on Witch-Hunter Gretel.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=80
+  Witch-Hunter Gretel takes 80 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 168 → 88  (-80)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=67
+  Witch-Hunter Gretel takes 67 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 88 → 21  (-67)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Witch-Hunter Gretel
+Rapunzel the Golden uses Edict on Witch-Hunter Gretel.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=49
+  Witch-Hunter Gretel takes 49 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 21 → 0  (-49) **KO**
+  Witch-Hunter Gretel gains spotlight for 2 rounds.
+Matchstick Liesl moves to frontline.
+[Queued] Matchstick Liesl: Heal → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Frederic the Beastslayer
+Matchstick Liesl uses Heal on Frederic the Beastslayer.
+  Matchstick Liesl heals Frederic the Beastslayer for 60 HP.
+  Purifying Flame: Frederic the Beastslayer will Burn their next target.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Lucky Constantine[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=53
+  Lucky Constantine takes 53 damage.
+    [T] HPCHANGE Lucky Constantine: 165 → 112  (-53)
+  Lucky Constantine gains burn for 2 rounds.
+  Lucky Constantine is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[root(1r), burn_immune(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=145/258 statuses=[weaken(1r)]
+    [T]   P2 Lucky Constantine[front] HP=112/215 statuses=[no_heal(1r), burn(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: root → 0r left
+    [T] STATUS_TICK Frederic the Beastslayer: burn_immune → 1r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: root
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Lucky Constantine burns for 22 damage.
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: weaken
+    [T] STATUS_TICK Lucky Constantine: no_heal → 0r left
+    [T] STATUS_TICK Lucky Constantine: burn → 1r left
+    [T] STATUS_EXPIRED Lucky Constantine: no_heal
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=145/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=90/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Hero's Charge → Frederic the Beastslayer
+[Queued] Rapunzel the Golden: Edict → Matchstick Liesl
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Matchstick Liesl
+Lucky Constantine uses Feline Gambit on Matchstick Liesl.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=70 def=50 raw=63.00 ceil=63
+    [T]   FINAL_DMG=63
+  Matchstick Liesl takes 63 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 147  (-63)
+  Matchstick Liesl gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Frederic the Beastslayer
+Frederic the Beastslayer uses Hero's Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=30
+    [T]   atk=70 def=45 raw=46.67 ceil=47
+    [T]   FINAL_DMG=57
+  Frederic the Beastslayer takes 57 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 143  (-57)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Matchstick Liesl
+Rapunzel the Golden uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Matchstick Liesl[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=44
+  Matchstick Liesl takes 44 damage.
+    [T] HPCHANGE Matchstick Liesl: 147 → 103  (-44)
+  Matchstick Liesl gains spotlight for 2 rounds.
+[Queued] Matchstick Liesl: Heal → Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hero's Charge → Lucky Constantine
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Frederic the Beastslayer
+Matchstick Liesl uses Heal on Frederic the Beastslayer.
+  Matchstick Liesl heals Frederic the Beastslayer for 57 HP.
+  Purifying Flame: Frederic the Beastslayer will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Lucky Constantine
+Frederic the Beastslayer uses Hero's Charge on Lucky Constantine.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Lucky Constantine[front]
+    [T]   power=30
+    [T]   atk=70 def=40 raw=52.50 ceil=53
+    [T]   FINAL_DMG=73
+  Lucky Constantine takes 73 damage.
+    [T] HPCHANGE Lucky Constantine: 90 → 17  (-73)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=103/210 statuses=[expose(2r), spotlight(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[burn_immune(1r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=145/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=17/215 statuses=[burn(1r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: expose → 1r left
+    [T] STATUS_TICK Matchstick Liesl: spotlight → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: burn_immune → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: burn_immune
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Lucky Constantine burns for 22 damage.
+Rapunzel the Golden moves to frontline.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=103/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r), spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=145/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Frederic the Beastslayer
+Matchstick Liesl recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: skip/recharge
+Frederic the Beastslayer recharges.
+[Queued] Rapunzel the Golden: Edict → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Matchstick Liesl
+Rapunzel the Golden uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 103 → 31  (-72)
+  Matchstick Liesl gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=31/210 statuses=[expose(1r), spotlight(1r), root(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=145/258 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: expose → 0r left
+    [T] STATUS_TICK Matchstick Liesl: spotlight → 0r left
+    [T] STATUS_TICK Matchstick Liesl: root → 1r left
+    [T] STATUS_EXPIRED Matchstick Liesl: expose
+    [T] STATUS_EXPIRED Matchstick Liesl: spotlight
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=31/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=145/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hunter's Mark → Rapunzel the Golden
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Rapunzel the Golden
+Matchstick Liesl uses Cauterize on Rapunzel the Golden.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=50 def=65 raw=38.46 ceil=39
+    [T]   FINAL_DMG=39
+  Rapunzel the Golden takes 39 damage.
+    [T] HPCHANGE Rapunzel the Golden: 145 → 106  (-39)
+  Rapunzel the Golden gains no_heal for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Rapunzel the Golden
+Frederic the Beastslayer uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=33
+  Rapunzel the Golden takes 33 damage.
+    [T] HPCHANGE Rapunzel the Golden: 106 → 73  (-33)
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+[Queued] Rapunzel the Golden: Edict → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Matchstick Liesl
+Rapunzel the Golden uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Matchstick Liesl takes 60 damage.
+    [T] HPCHANGE Matchstick Liesl: 31 → 0  (-60) **KO**
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=73/258 statuses=[no_heal(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=73/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Slay the Beast → Rapunzel the Golden
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Rapunzel the Golden
+Frederic the Beastslayer uses Slay the Beast on Rapunzel the Golden.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Rapunzel the Golden[front]
+    [T]   power=85 (base=65)
+    [T]   atk=75 def=65 raw=98.08 ceil=99
+    [T]   FINAL_DMG=109
+  Rapunzel the Golden takes 109 damage.
+    [T] HPCHANGE Rapunzel the Golden: 73 → 0  (-109) **KO**
+Frederic the Beastslayer moves to frontline.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=104
+  Frederic the Beastslayer takes 104 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 96  (-104)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=122
+  Frederic the Beastslayer takes 122 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 96 → 0  (-122) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!
+ative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=130/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=67/220 ATK=95(base=65) DEF=90(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Matchstick Liesl
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+[Queued] Sir Roland: Item Pinocchio, Cursed Puppet
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Dark Grasp → Matchstick Liesl
+Pinocchio, Cursed Puppet uses Dark Grasp on Matchstick Liesl.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=95 def=50 raw=95.00 ceil=95
+    [T]   FINAL_DMG=95
+  Matchstick Liesl takes 95 damage.
+    [T] HPCHANGE Matchstick Liesl: 130 → 35  (-95)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+  Snowkissed Aurora heals Pinocchio, Cursed Puppet for 55 HP.
+  Medic: Pinocchio, Cursed Puppet cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Pinocchio, Cursed Puppet
+Sir Roland uses Crafty Shield.
+  Pinocchio, Cursed Puppet is Guarded.
+[Queued] Matchstick Liesl: Cleansing Inferno
+    [T] ACTION P1 Matchstick Liesl[front]: Cleansing Inferno → spread/auto
+Matchstick Liesl uses Cleansing Inferno.
+Matchstick Liesl uses Cleansing Inferno (spread).
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Pinocchio, Cursed Puppet[front] (spread)
+    [T]   power=60
+    [T]   atk=50 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=14
+  Pinocchio, Cursed Puppet takes 14 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 122 → 108  (-14)
+  Matchstick Liesl heals 15 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Pinocchio, Cursed Puppet is immune to statuses (Become Real).
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Sir Roland[back_left] (spread)
+    [T]   power=60
+    [T]   atk=50 def=85 raw=35.29 ceil=36
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 265 → 261  (-4)
+  Matchstick Liesl heals 12 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Sir Roland gains burn for 2 rounds.
+  Extra vamp vs Burned: Matchstick Liesl heals 2.
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Snowkissed Aurora[back_right] (spread)
+    [T]   power=60
+    [T]   atk=50 def=60 raw=50.00 ceil=50
+    [T]   FINAL_DMG=25
+  Snowkissed Aurora takes 25 damage.
+    [T] HPCHANGE Snowkissed Aurora: 191 → 166  (-25)
+  Matchstick Liesl heals 18 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Snowkissed Aurora gains burn for 2 rounds.
+  Extra vamp vs Burned: Matchstick Liesl heals 8.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=90/210 statuses=[burn_immune(2r)]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=108/220 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[back_left] HP=261/265 statuses=[guard(1r), burn(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=166/225 statuses=[burn(2r)]
+    [T] STATUS_TICK Matchstick Liesl: burn_immune → 1r left
+Sir Roland burns for 27 damage.
+Snowkissed Aurora burns for 23 damage.
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] BUFF_EXPIRED Pinocchio, Cursed Puppet: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: burn → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: burn → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=90/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=108/220 ATK=95(base=65) DEF=80(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=234/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[burn(1r)]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=143/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Snowkissed Aurora[back_right]
+    [T]   power=50
+    [T]   atk=50 def=60 raw=41.67 ceil=42
+    [T]   FINAL_DMG=42
+  Snowkissed Aurora takes 42 damage.
+    [T] HPCHANGE Snowkissed Aurora: 143 → 101  (-42)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.

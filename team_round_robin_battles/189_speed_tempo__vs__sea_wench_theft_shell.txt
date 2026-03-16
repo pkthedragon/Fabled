@@ -1,0 +1,388 @@
+Battle 189
+Player 1 Team: Speed Tempo
+Player 2 Team: Sea Wench Theft Shell
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:51:57
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 189
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Little Jack: Swap with March Hare
+[Queued] Frederic the Beastslayer: On the Hunt → Robin, Hooded Avenger
+[Queued] March Hare: Thunder Call → Sea Wench Asha
+    [T] ACTION P1 Little Jack[front]: swap ↔ March Hare
+Little Jack and March Hare swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Frederic the Beastslayer uses On the Hunt on Robin, Hooded Avenger.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=44
+  Robin, Hooded Avenger takes 44 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 141  (-44)
+  Robin, Hooded Avenger gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Sea Wench Asha
+March Hare uses Thunder Call on Sea Wench Asha.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Sea Wench Asha[back_left]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=102
+  Sea Wench Asha takes 102 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 108  (-102)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [2/6]
+  Sea Wench Asha gains shock for 2 rounds.
+[Queued] Sir Roland: Shield Bash → March Hare
+[Queued] Robin, Hooded Avenger: Snipe Shot → March Hare
+[Queued] Sea Wench Asha: Misappropriate → March Hare
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → March Hare
+Sir Roland uses Shield Bash on March Hare.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → March Hare[front]
+    [T]   power=40
+    [T]   atk=45 def=35 raw=51.43 ceil=52
+    [T]   FINAL_DMG=52
+  March Hare takes 52 damage.
+    [T] HPCHANGE March Hare: 190 → 138  (-52)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → March Hare
+Robin, Hooded Avenger uses Snipe Shot on March Hare.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → March Hare[front]
+    [T]   power=40
+    [T]   atk=70 def=35 raw=80.00 ceil=80
+    [T]   FINAL_DMG=90
+  March Hare takes 90 damage.
+    [T] HPCHANGE March Hare: 138 → 48  (-90)
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → March Hare
+Sea Wench Asha uses Misappropriate on March Hare.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → March Hare[front]
+    [T]   power=35
+    [T]   atk=82 def=35 raw=82.00 ceil=82
+    [T]   FINAL_DMG=82
+  March Hare takes 82 damage.
+    [T] HPCHANGE March Hare: 48 → 0  (-82) **KO**
+  Shock recoil: Sea Wench Asha takes 17 damage.
+  March Hare gains root for 2 rounds.
+Little Jack moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[back_left] HP=91/210 statuses=[shock(2r), guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=141/185 statuses=[expose(2r), guard(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: shock → 1r left
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: expose → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=91/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[shock(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=141/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Sir Roland
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P1 Little Jack[front]: Skyfall → Sir Roland
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [3/6]
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+    [T]   FINAL_DMG=80
+  Sir Roland takes 80 damage.
+    [T] HPCHANGE Sir Roland: 265 → 185  (-80)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=43
+  Robin, Hooded Avenger takes 43 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 141 → 98  (-43)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Frederic the Beastslayer
+[Queued] Sea Wench Asha: Misappropriate → Little Jack
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Snipe Shot on Frederic the Beastslayer.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=133
+  Frederic the Beastslayer takes 133 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 67  (-133)
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Little Jack
+Sea Wench Asha uses Misappropriate on Little Jack.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=82 def=50 raw=57.40 ceil=58
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 220 → 162  (-58)
+  Shock recoil: Sea Wench Asha takes 12 damage.
+  Little Jack gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=162/220 statuses=[root(2r)]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=67/200 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=185/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[back_left] HP=79/210 statuses=[shock(1r), guard(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=98/185 statuses=[expose(1r), guard(1r)]
+    [T] STATUS_TICK Little Jack: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: shock → 0r left
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: shock
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] STATUS_TICK Robin, Hooded Avenger: expose → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: expose
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=162/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=67/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=185/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=79/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=98/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Frederic the Beastslayer
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Little Jack
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=96
+  Frederic the Beastslayer takes 96 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 67 → 0  (-96) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Little Jack
+Sea Wench Asha uses Misappropriate on Little Jack.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=82 def=50 raw=57.40 ceil=58
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 162 → 104  (-58)
+  Sea Wench Asha must recharge next turn.
+[Queued] Little Jack: Fell the Beanstalk → Robin, Hooded Avenger
+    [T] ACTION P1 Little Jack[front]: Fell the Beanstalk → Robin, Hooded Avenger
+Little Jack uses Fell the Beanstalk on Robin, Hooded Avenger.
+    [T] DMGCALC [Fell the Beanstalk] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=85
+    [T]   atk=80 def=28 raw=242.86 ceil=243
+    [T]   FINAL_DMG=253
+  Robin, Hooded Avenger takes 253 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 98 → 0  (-253) **KO**
+  Robin, Hooded Avenger gains expose for 2 rounds.
+Sir Roland moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=104/220 statuses=[root(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=185/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=79/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Little Jack: root → 0r left
+    [T] STATUS_EXPIRED Little Jack: root
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=104/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[front] HP=185/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=79/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Little Jack: Skyfall → Sir Roland
+    [T] ACTION P1 Little Jack[front]: Skyfall → Sir Roland
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [4/6]
+Little Jack uses Skyfall on Sir Roland.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Sir Roland[front]
+    [T]   power=80
+    [T]   atk=80 def=90 raw=71.11 ceil=72
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 185 → 160  (-25)
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Skip
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+    [T] ACTION P2 Sea Wench Asha[front]: skip/recharge
+Sea Wench Asha recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[front] HP=104/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=160/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=79/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=104/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Sir Roland[back_right] HP=160/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=79/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [3/6]
+    [T] DMGCALC [Skyfall] Sea Wench Asha[front] → Little Jack[front]
+    [T]   power=80
+    [T]   atk=75 def=50 raw=120.00 ceil=120
+    [T]   FINAL_DMG=120
+  Little Jack takes 120 damage.
+    [T] HPCHANGE Little Jack: 104 → 0  (-120) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!

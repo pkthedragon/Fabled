@@ -1,0 +1,412 @@
+Battle 729
+Player 1 Team: Royal Root Pressure
+Player 2 Team: Sea Wench Debuff Burst
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:47:52
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 729
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Royal Root Pressure
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Edict, Command
+    Item:   Main-Gauche
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+Player 2: Sea Wench Debuff Burst
+  [front] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Abyssal Call  (passive=False)
+    Basics: Soul Gaze, Blood Pact
+    Item:   Arcane Focus
+  [back_left] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Sea Wench Asha: Abyssal Call → Prince Charming
+[Queued] Frederic the Beastslayer: On the Hunt → Prince Charming
+[Queued] Rapunzel the Golden: Lower Guard → Prince Charming
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Prince Charming
+Sea Wench Asha uses Abyssal Call on Prince Charming.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=75 def=55 raw=81.82 ceil=82
+    [T]   FINAL_DMG=82
+  Prince Charming takes 82 damage.
+    [T] HPCHANGE Prince Charming: 255 → 173  (-82)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Prince Charming
+Frederic the Beastslayer uses On the Hunt on Prince Charming.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=49
+  Prince Charming takes 49 damage.
+    [T] HPCHANGE Prince Charming: 173 → 124  (-49)
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Prince Charming
+Rapunzel the Golden uses Lower Guard on Prince Charming.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Prince Charming[front]
+    [T]   power=30
+    [T]   atk=60 def=55 raw=32.73 ceil=33
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 124 → 84  (-40)
+  Prince Charming loses -10 Defense for 2 rounds.
+[Queued] Prince Charming: Condescend → Sea Wench Asha
+[Queued] Robin, Hooded Avenger: Bring Down → Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → Sea Wench Asha
+    [T] ACTION P1 Prince Charming[front]: Condescend → Sea Wench Asha
+Prince Charming uses Condescend on Sea Wench Asha.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=73
+  Sea Wench Asha takes 73 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 137  (-73)
+  Sea Wench Asha loses -10 Defense for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Frederic the Beastslayer
+Robin, Hooded Avenger uses Bring Down on Frederic the Beastslayer.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=35
+    [T]   atk=75 def=45 raw=58.33 ceil=59
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Sea Wench Asha
+Briar Rose uses Creeping Doubt on Sea Wench Asha.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=60 def=35 raw=68.57 ceil=69
+    [T]   FINAL_DMG=79
+  Sea Wench Asha takes 79 damage.
+    [T] HPCHANGE Sea Wench Asha: 137 → 58  (-79)
+  Sea Wench Asha gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[front] HP=84/255 statuses=[expose(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=58/210 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 statuses=[root(2r)]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Sea Wench Asha: root → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Sea Wench Asha loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=84/255 ATK=65(base=65) DEF=45(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=58/210 ATK=75(base=75) DEF=35(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Sea Wench Asha: Swap with Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Rapunzel the Golden: Lower Guard → Prince Charming
+Sea Wench Asha cannot act.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=57
+  Prince Charming takes 57 damage.
+    [T] HPCHANGE Prince Charming: 84 → 27  (-57)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Prince Charming
+Rapunzel the Golden uses Lower Guard on Prince Charming.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Prince Charming[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 27 → 0  (-48) **KO**
+Briar Rose moves to frontline.
+[Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Bring Down → Sea Wench Asha
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Frederic the Beastslayer
+Briar Rose uses Creeping Doubt on Frederic the Beastslayer.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Frederic the Beastslayer[back_right]
+    [T]   power=77 (base=55)
+    [T]   atk=60 def=45 raw=102.67 ceil=103
+    [T]   FINAL_DMG=124
+  Frederic the Beastslayer takes 124 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 121 → 0  (-124) **KO**
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Sea Wench Asha
+Robin, Hooded Avenger uses Bring Down on Sea Wench Asha.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Sea Wench Asha[front]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=85
+  Sea Wench Asha takes 85 damage.
+    [T] HPCHANGE Sea Wench Asha: 58 → 0  (-85) **KO**
+  Sea Wench Asha is immune to Root (Curse of Sleeping).
+Rapunzel the Golden moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Creeping Doubt → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Rapunzel the Golden
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Rapunzel the Golden
+Briar Rose uses Creeping Doubt on Rapunzel the Golden.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=60 def=65 raw=50.77 ceil=51
+    [T]   FINAL_DMG=61
+  Rapunzel the Golden takes 61 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 197  (-61)
+  Briar Rose must recharge next turn.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Rapunzel the Golden
+Robin, Hooded Avenger uses Bring Down on Rapunzel the Golden.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Rapunzel the Golden[front]
+    [T]   power=35
+    [T]   atk=75 def=65 raw=40.38 ceil=41
+    [T]   FINAL_DMG=51
+  Rapunzel the Golden takes 51 damage.
+    [T] HPCHANGE Rapunzel the Golden: 197 → 146  (-51)
+  Rapunzel the Golden gains root for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Rapunzel the Golden: Lower Guard → Robin, Hooded Avenger
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Robin, Hooded Avenger
+Rapunzel the Golden uses Lower Guard on Robin, Hooded Avenger.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=55
+    [T]   atk=60 def=40 raw=82.50 ceil=83
+    [T]   FINAL_DMG=83
+  Robin, Hooded Avenger takes 83 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 102  (-83)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=102/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 statuses=[root(2r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: root → 1r left
+  Curse of Sleeping: Rapunzel the Golden loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=102/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P1 Briar Rose[front]: swap ↔ Robin, Hooded Avenger
+Briar Rose recharges.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Rapunzel the Golden: Severed Tether → Rapunzel the Golden
+Rapunzel the Golden cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=102/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=102/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=146/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Creeping Doubt → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Rapunzel the Golden
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Rapunzel the Golden
+Briar Rose uses Creeping Doubt on Rapunzel the Golden.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=60 def=65 raw=50.77 ceil=51
+    [T]   FINAL_DMG=61
+  Rapunzel the Golden takes 61 damage.
+    [T] HPCHANGE Rapunzel the Golden: 146 → 85  (-61)
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Rapunzel the Golden
+Robin, Hooded Avenger uses Bring Down on Rapunzel the Golden.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Rapunzel the Golden[front]
+    [T]   power=35
+    [T]   atk=75 def=65 raw=40.38 ceil=41
+    [T]   FINAL_DMG=51
+  Rapunzel the Golden takes 51 damage.
+    [T] HPCHANGE Rapunzel the Golden: 85 → 34  (-51)
+  Rapunzel the Golden is immune to Root (Curse of Sleeping).
+[Queued] Rapunzel the Golden: Lower Guard → Briar Rose
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Briar Rose
+Rapunzel the Golden uses Lower Guard on Briar Rose.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Briar Rose[front]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=74
+  Briar Rose takes 74 damage.
+    [T] HPCHANGE Briar Rose: 195 → 121  (-74)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=121/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=102/185 statuses=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=34/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=121/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=102/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=34/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Hunter's Mark → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Rapunzel the Golden
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Rapunzel the Golden
+Briar Rose uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=60 def=65 raw=46.15 ceil=47
+    [T]   FINAL_DMG=47
+  Rapunzel the Golden takes 47 damage.
+    [T] HPCHANGE Rapunzel the Golden: 34 → 0  (-47) **KO**
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 1 wins!

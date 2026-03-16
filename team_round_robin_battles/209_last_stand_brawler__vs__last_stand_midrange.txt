@@ -1,0 +1,2310 @@
+Battle 209
+Player 1 Team: Last-Stand Brawler
+Player 2 Team: Last-Stand Midrange
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:55:04
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 209
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Brawler
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Not By The Hair  (passive=False)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Last-Stand Midrange
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Wolf's Pursuit  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Chosen One  (passive=True)
+    Basics: Impose, Command
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Porcus III swap positions.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Prince Charming[back_right]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=30
+    [T]   atk=65 def=60 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Snowkissed Aurora takes 33 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 192  (-33)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Porcus III takes 25 damage.
+    [T] HPCHANGE Porcus III: 280 → 255  (-25)
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 201  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 25 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions.
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=192/225 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=201/225 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=192/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Porcus III
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[back_left]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 192 → 161  (-31)
+  Snowkissed Aurora heals Snowkissed Aurora for 24 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Risa Redcloak
+Prince Charming and Risa Redcloak swap positions.
+  Chosen One: Risa Redcloak becomes Prince Charming's champion.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Porcus III
+Risa Redcloak uses Wolf's Pursuit on Porcus III.
+  Porcus III gains expose for 2 rounds.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Snowkissed Aurora: Toxin Purge → Porcus III
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Porcus III
+Snowkissed Aurora uses Toxin Purge on Porcus III.
+  Innocent Heart: Porcus III +10 Def.
+  Porcus III is cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=161/225 statuses=[guard(1r)]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=161/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora and Porcus III swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 201  (-24)
+  All allies are Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Risa Redcloak: Wolf's Pursuit → Porcus III
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[back_left]
+    [T]   power=50
+    [T]   atk=45 def=70 raw=32.14 ceil=33
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 161 → 134  (-27)
+  Snowkissed Aurora heals Snowkissed Aurora for 24 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Porcus III
+Risa Redcloak uses Wolf's Pursuit on Porcus III.
+  Porcus III gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_left]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(2r), expose(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r), expose(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Porcus III
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Prince Charming[front]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=34
+  Porcus III takes 34 damage.
+    [T] HPCHANGE Porcus III: 280 → 246  (-34)
+  Porcus III loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Prince Charming after swapping to front.
+Risa Redcloak uses Feint on Prince Charming.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=75 def=55 raw=61.36 ceil=62
+    [T]   FINAL_DMG=62
+  Prince Charming takes 62 damage.
+    [T] HPCHANGE Prince Charming: 255 → 193  (-62)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 34 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 statuses=[guard(1r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=193/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=10(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=193/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=75 def=55 raw=81.82 ceil=82
+    [T]   FINAL_DMG=82
+  Prince Charming takes 82 damage.
+    [T] HPCHANGE Prince Charming: 193 → 111  (-82)
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 212  (-38)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Risa Redcloak[back_left]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[front] HP=212/250 statuses=[guard(2r), expose(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=166/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] DEBUFF_EXPIRED Porcus III: speed-10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=212/250 ATK=75(base=75) DEF=60(base=60) SPD=20(base=30)
+    [T]     statuses=[guard(1r), expose(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=166/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=53
+  Risa Redcloak takes 53 damage.
+    [T] HPCHANGE Risa Redcloak: 212 → 159  (-53)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Risa Redcloak[back_left]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak[back_left] HP=229/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=134/225 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=221/255 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=229/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=134/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=221/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Prince Charming after swapping to front.
+Risa Redcloak uses Feint on Prince Charming.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=75 def=55 raw=61.36 ceil=62
+    [T]   FINAL_DMG=62
+  Prince Charming takes 62 damage.
+    [T] HPCHANGE Prince Charming: 221 → 159  (-62)
+  Risa Redcloak heals 5 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 234 → 196  (-38)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Risa Redcloak[back_left]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak[front] HP=196/250 statuses=[guard(2r), expose(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 statuses=[guard(1r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=196/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r), expose(1r)]  buffs=[speed+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Snowkissed Aurora: Skip
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=53
+  Risa Redcloak takes 53 damage.
+    [T] HPCHANGE Risa Redcloak: 196 → 143  (-53)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Risa Redcloak[back_left]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak[back_left] HP=213/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=134/225 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=213/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=134/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=75 def=55 raw=81.82 ceil=82
+    [T]   FINAL_DMG=82
+  Prince Charming takes 82 damage.
+    [T] HPCHANGE Prince Charming: 214 → 132  (-82)
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Risa Redcloak
+Prince Charming and Risa Redcloak swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Risa Redcloak[front]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=75 def=70 raw=53.57 ceil=54
+    [T]   FINAL_DMG=44
+  Risa Redcloak takes 44 damage.
+    [T] HPCHANGE Risa Redcloak: 213 → 169  (-44)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak[front] HP=169/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 statuses=[guard(1r)]
+    [T]   P2 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=187/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=169/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=134/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=187/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Impose → Risa Redcloak
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Prince Charming
+Risa Redcloak and Prince Charming swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Risa Redcloak takes 44 damage.
+    [T] HPCHANGE Risa Redcloak: 169 → 125  (-44)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Risa Redcloak[back_left] HP=195/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=134/225 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=242/255 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=195/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=134/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=242/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+  Blood Hunt: Risa Redcloak and Prince Charming HP set to 218.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 134 → 90  (-44)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Snowkissed Aurora
+Risa Redcloak uses Wolf's Pursuit on Snowkissed Aurora.
+  Snowkissed Aurora gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Risa Redcloak[back_left] HP=218/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=90/225 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=218/255 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: expose → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=218/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=90/225 ATK=45(base=45) DEF=70(base=60) SPD=30(base=40)
+    [T]     statuses=[expose(1r)]  buffs=[defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=218/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=57
+  Snowkissed Aurora takes 57 damage.
+    [T] HPCHANGE Snowkissed Aurora: 90 → 33  (-57)
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=70 raw=22.50 ceil=23
+    [T]   FINAL_DMG=28
+  Snowkissed Aurora takes 28 damage.
+    [T] HPCHANGE Snowkissed Aurora: 33 → 5  (-28)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+  Blood Hunt: Risa Redcloak and Prince Charming HP set to 235.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Risa Redcloak[back_left] HP=235/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=30/225 statuses=[guard(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=235/255 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=235/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=30/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=235/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Prince Charming after swapping to front.
+Risa Redcloak uses Feint on Prince Charming.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=45
+    [T]   atk=75 def=55 raw=61.36 ceil=62
+    [T]   FINAL_DMG=62
+  Prince Charming takes 62 damage.
+    [T] HPCHANGE Prince Charming: 235 → 173  (-62)
+  Risa Redcloak heals 5 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Risa Redcloak takes 44 damage.
+    [T] HPCHANGE Risa Redcloak: 240 → 196  (-44)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Risa Redcloak[back_left]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Risa Redcloak[front] HP=196/250 statuses=[guard(2r), expose(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=30/225 statuses=[guard(1r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=173/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=196/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r), expose(1r)]  buffs=[speed+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=30/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=173/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Snowkissed Aurora: Dictate of Nature → Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=53
+  Risa Redcloak takes 53 damage.
+    [T] HPCHANGE Risa Redcloak: 196 → 143  (-53)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Risa Redcloak
+Snowkissed Aurora uses Dictate of Nature on Risa Redcloak.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Risa Redcloak[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Risa Redcloak takes 27 damage.
+    [T] HPCHANGE Risa Redcloak: 143 → 116  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Risa Redcloak[back_left]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=75 def=55 raw=81.82 ceil=82
+    [T]   FINAL_DMG=82
+  Prince Charming takes 82 damage.
+    [T] HPCHANGE Prince Charming: 208 → 126  (-82)
+  Risa Redcloak heals 33 HP.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Risa Redcloak[back_right] HP=204/250 statuses=[-]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=30/225 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=126/255 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=204/250 ATK=75(base=75) DEF=70(base=60) SPD=20(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=30/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=126/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Porcus III
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=35
+  Porcus III takes 35 damage.
+    [T] HPCHANGE Porcus III: 280 → 245  (-35)
+  Porcus III loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Risa Redcloak[back_left]: Wolf's Pursuit → Porcus III
+Risa Redcloak uses Wolf's Pursuit on Porcus III.
+  Porcus III gains expose for 2 rounds.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 46 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=245/280 statuses=[expose(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=30/225 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=181/255 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=245/280 ATK=35(base=35) DEF=90(base=85) SPD=10(base=20)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=30/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=181/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Risa Redcloak: Rend → Prince Charming
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Prince Charming
+Risa Redcloak uses Rend on Prince Charming.
+  Risa Redcloak marks Prince Charming — next ability gains +10 Power.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Risa Redcloak: Wolf's Pursuit → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Risa Redcloak
+Prince Charming and Risa Redcloak swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=22
+  Snowkissed Aurora takes 22 damage.
+    [T] HPCHANGE Snowkissed Aurora: 30 → 8  (-22)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Risa Redcloak[front]: Wolf's Pursuit → Snowkissed Aurora
+Risa Redcloak uses Wolf's Pursuit on Snowkissed Aurora.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=51
+  Snowkissed Aurora takes 51 damage.
+    [T] HPCHANGE Snowkissed Aurora: 8 → 0  (-51) **KO**
+Porcus III moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[front] HP=245/280 statuses=[expose(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] STATUS_TICK Porcus III: expose → 0r left
+    [T] STATUS_EXPIRED Porcus III: expose
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] DEBUFF_EXPIRED Porcus III: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Risa Redcloak spd=30  →  P2 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=245/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+[Queued] Prince Charming: Impose → Porcus III
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=65 def=95 raw=20.53 ceil=21
+    [T]   FINAL_DMG=21
+  Porcus III takes 21 damage.
+    [T] HPCHANGE Porcus III: 245 → 224  (-21)
+  Porcus III loses -10 Speed for 2 rounds.
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+  Risa Redcloak marks Snowkissed Aurora — next ability gains +10 Power.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=224/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=10  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=224/280 ATK=40(base=35) DEF=95(base=85) SPD=10(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Impose → Porcus III
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=45 def=95 raw=23.68 ceil=24
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 224 → 204  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=65 def=95 raw=20.53 ceil=21
+    [T]   FINAL_DMG=17
+  Porcus III takes 17 damage.
+    [T] HPCHANGE Porcus III: 204 → 187  (-17)
+  Prince Charming must recharge next turn.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Risa Redcloak
+Risa Redcloak uses Rend on Risa Redcloak.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=45
+    [T]   atk=75 def=60 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Risa Redcloak takes 57 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 193  (-57)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=187/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=193/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=187/280 ATK=35(base=35) DEF=90(base=85) SPD=10(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=193/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Risa Redcloak
+Porcus III uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 193 → 169  (-24)
+  All allies are Guarded for 2 rounds.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Prince Charming: Skip
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_left]: skip/recharge
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=187/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] DEBUFF_EXPIRED Porcus III: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=187/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Impose → Porcus III
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=45 def=95 raw=23.68 ceil=24
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 187 → 167  (-20)
+  Snowkissed Aurora heals Prince Charming for 39 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=65 def=95 raw=20.53 ceil=21
+    [T]   FINAL_DMG=32
+  Porcus III takes 32 damage.
+    [T] HPCHANGE Porcus III: 167 → 135  (-32)
+  Porcus III loses -10 Speed for 2 rounds.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Risa Redcloak
+Risa Redcloak uses Rend on Risa Redcloak.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=45
+    [T]   atk=75 def=60 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Risa Redcloak takes 57 damage.
+    [T] HPCHANGE Risa Redcloak: 239 → 182  (-57)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=135/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=182/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=135/280 ATK=35(base=35) DEF=90(base=85) SPD=10(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=182/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Risa Redcloak
+Porcus III uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 182 → 158  (-24)
+  All allies are Guarded for 2 rounds.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+[Queued] Prince Charming: Impose → Porcus III
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 135 → 102  (-33)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=102/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=158/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=10  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=102/280 ATK=40(base=35) DEF=95(base=85) SPD=10(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=158/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Impose → Porcus III
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=65 def=95 raw=20.53 ceil=21
+    [T]   FINAL_DMG=17
+  Porcus III takes 17 damage.
+    [T] HPCHANGE Porcus III: 102 → 85  (-17)
+  Prince Charming must recharge next turn.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Risa Redcloak
+Risa Redcloak uses Rend on Risa Redcloak.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=45
+    [T]   atk=75 def=60 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Risa Redcloak takes 57 damage.
+    [T] HPCHANGE Risa Redcloak: 228 → 171  (-57)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=85/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=171/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=85/280 ATK=35(base=35) DEF=90(base=85) SPD=10(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=171/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Risa Redcloak
+Porcus III uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 171 → 147  (-24)
+  All allies are Guarded for 2 rounds.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Prince Charming: Skip
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_left]: skip/recharge
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=85/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=217/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] DEBUFF_EXPIRED Porcus III: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=85/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=217/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Impose → Porcus III
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=45 def=95 raw=23.68 ceil=24
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 85 → 65  (-20)
+  Snowkissed Aurora heals Risa Redcloak for 33 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=65 def=95 raw=20.53 ceil=21
+    [T]   FINAL_DMG=32
+  Porcus III takes 32 damage.
+    [T] HPCHANGE Porcus III: 65 → 33  (-32)
+  Porcus III loses -10 Speed for 2 rounds.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Risa Redcloak
+Risa Redcloak uses Rend on Risa Redcloak.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=45
+    [T]   atk=75 def=60 raw=56.25 ceil=57
+    [T]   FINAL_DMG=57
+  Risa Redcloak takes 57 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 193  (-57)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=33/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=193/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=33/280 ATK=35(base=35) DEF=90(base=85) SPD=10(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=193/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Risa Redcloak
+Porcus III uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 193 → 169  (-24)
+  All allies are Guarded for 2 rounds.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+[Queued] Prince Charming: Impose → Porcus III
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Porcus III
+Prince Charming uses Impose on Porcus III.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=65 def=90 raw=21.67 ceil=22
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 33 → 0  (-33) **KO**
+Risa Redcloak moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=169/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=169/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_left]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+[Queued] Risa Redcloak: Grandmother's Vengeance → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Grandmother's Vengeance → Prince Charming
+Risa Redcloak uses Grandmother's Vengeance on Prince Charming.
+    [T] DMGCALC [Grandmother's Vengeance] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=80 (base=70)
+    [T]   atk=75 def=55 raw=109.09 ceil=110
+    [T]   FINAL_DMG=110
+  Prince Charming takes 110 damage.
+    [T] HPCHANGE Prince Charming: 255 → 145  (-110)
+  Risa Redcloak gains +15 Attack for 2 rounds.
+  Risa Redcloak gains +15 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=145/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=145/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=90 def=55 raw=98.18 ceil=99
+    [T]   FINAL_DMG=99
+  Prince Charming takes 99 damage.
+    [T] HPCHANGE Prince Charming: 145 → 46  (-99)
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=66
+  Risa Redcloak takes 66 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 184  (-66)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Risa Redcloak[front] HP=184/250 statuses=[expose(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=101/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: expose
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=184/250 ATK=75(base=75) DEF=60(base=60) SPD=20(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=101/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=70 (base=60)
+    [T]   atk=75 def=60 raw=87.50 ceil=88
+    [T]   FINAL_DMG=88
+  Snowkissed Aurora takes 88 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 137  (-88)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Risa Redcloak[front] HP=184/250 statuses=[expose(2r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=137/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=171/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] DEBUFF_EXPIRED Risa Redcloak: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=184/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=137/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=171/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+[Queued] Prince Charming: Impose → Risa Redcloak
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Risa Redcloak[front]
+    [T]   power=30
+    [T]   atk=65 def=60 raw=32.50 ceil=33
+    [T]   FINAL_DMG=40
+  Risa Redcloak takes 40 damage.
+    [T] HPCHANGE Risa Redcloak: 184 → 144  (-40)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+  Prince Charming must recharge next turn.
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Snowkissed Aurora takes 75 damage.
+    [T] HPCHANGE Snowkissed Aurora: 137 → 62  (-75)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Risa Redcloak[front] HP=144/250 statuses=[expose(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=62/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=171/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: expose
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=20  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=144/250 ATK=75(base=75) DEF=60(base=60) SPD=20(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=62/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=171/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_left]: swap ↔ Snowkissed Aurora
+Prince Charming recharges.
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=60 raw=81.25 ceil=82
+    [T]   FINAL_DMG=82
+  Snowkissed Aurora takes 82 damage.
+    [T] HPCHANGE Snowkissed Aurora: 62 → 0  (-82) **KO**
+  Risa Redcloak heals 6 HP.
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Risa Redcloak[front] HP=150/250 statuses=[expose(2r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=241/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] DEBUFF_EXPIRED Risa Redcloak: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=150/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=241/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=66
+  Risa Redcloak takes 66 damage.
+    [T] HPCHANGE Risa Redcloak: 150 → 84  (-66)
+  Risa Redcloak loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=75 def=55 raw=81.82 ceil=82
+    [T]   FINAL_DMG=82
+  Prince Charming takes 82 damage.
+    [T] HPCHANGE Prince Charming: 241 → 159  (-82)
+  Risa Redcloak heals 33 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Risa Redcloak[front] HP=117/250 statuses=[expose(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=159/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: expose
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=117/250 ATK=90(base=75) DEF=60(base=60) SPD=35(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=159/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Prince Charming
+Risa Redcloak uses Blood Hunt on Prince Charming.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=90 def=55 raw=98.18 ceil=99
+    [T]   FINAL_DMG=99
+  Prince Charming takes 99 damage.
+    [T] HPCHANGE Prince Charming: 159 → 60  (-99)
+  Risa Redcloak heals 40 HP.
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Risa Redcloak takes 55 damage.
+    [T] HPCHANGE Risa Redcloak: 157 → 102  (-55)
+    [T] ACTION P2 Risa Redcloak[back_right]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+  Risa Redcloak gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Risa Redcloak[front] HP=102/250 statuses=[expose(2r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=60/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=102/250 ATK=90(base=75) DEF=60(base=60) SPD=35(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=60/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Risa Redcloak
+Prince Charming and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Risa Redcloak
+Risa Redcloak uses Rend on Risa Redcloak.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=60 raw=81.25 ceil=82
+    [T]   FINAL_DMG=99
+  Risa Redcloak takes 99 damage.
+    [T] HPCHANGE Risa Redcloak: 102 → 3  (-99)
+  Risa Redcloak heals 7 HP.
+[Queued] Risa Redcloak: Blood Hunt → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Risa Redcloak
+Risa Redcloak uses Blood Hunt on Risa Redcloak.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=90 def=60 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Risa Redcloak takes 90 damage.
+    [T] HPCHANGE Risa Redcloak: 246 → 156  (-90)
+  Risa Redcloak heals 36 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 33
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R33):
+    [T]   P1 Risa Redcloak[front] HP=39/250 statuses=[expose(1r)]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=156/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=60/255 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: expose
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] DEBUFF_EXPIRED Risa Redcloak: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 34
+────────────────────────────────────────────────────────────
+Round 34 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 34 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=39/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[front] HP=156/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[back_right] HP=60/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Risa Redcloak
+Risa Redcloak uses Blood Hunt on Risa Redcloak.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=90 def=60 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Risa Redcloak takes 90 damage.
+    [T] HPCHANGE Risa Redcloak: 156 → 66  (-90)
+  Risa Redcloak heals 36 HP.
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+[Queued] Prince Charming: Swap with Risa Redcloak
+    [T] ACTION P2 Risa Redcloak[front]: Wolf's Pursuit → Risa Redcloak
+Risa Redcloak uses Wolf's Pursuit on Risa Redcloak.
+    [T] DMGCALC [Wolf's Pursuit] Risa Redcloak[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Risa Redcloak takes 63 damage.
+    [T] HPCHANGE Risa Redcloak: 75 → 12  (-63)
+  Risa Redcloak heals 18 HP.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Risa Redcloak
+Prince Charming and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 34
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R34):
+    [T]   P1 Risa Redcloak[front] HP=12/250 statuses=[-]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=84/250 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=60/255 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 35
+────────────────────────────────────────────────────────────
+Round 35 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 35 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=12/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Porcus III [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Risa Redcloak[back_right] HP=84/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T]   P2 Prince Charming[front] HP=60/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Rend → Prince Charming
+    [T] ACTION P1 Risa Redcloak[front]: Rend → Prince Charming
+Risa Redcloak uses Rend on Prince Charming.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Prince Charming[front]
+    [T]   power=65 (base=45)
+    [T]   atk=90 def=55 raw=106.36 ceil=107
+    [T]   FINAL_DMG=107
+  Prince Charming takes 107 damage.
+Holy Diadem activates! Prince Charming survives at 1 HP.
+[Queued] Prince Charming: Impose → Risa Redcloak
+[Queued] Risa Redcloak: Wolf's Pursuit → Risa Redcloak
+    [T] ACTION P2 Prince Charming[front]: Impose → Risa Redcloak
+Prince Charming uses Impose on Risa Redcloak.
+    [T] DMGCALC [Impose] Prince Charming[front] → Risa Redcloak[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=70
+  Risa Redcloak takes 70 damage.
+    [T] HPCHANGE Risa Redcloak: 12 → 0  (-70) **KO**
+  Risa Redcloak loses -10 Speed for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 35)
+────────────────────────────────────────────────────────────
+Player 2 wins!

@@ -1,0 +1,1136 @@
+Battle 621
+Player 1 Team: Porcus Fortress
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:32:57
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 621
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Porcus Fortress
+  [front] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Porcine Honor  (passive=True)
+    Basics: Shield Bash, Stalwart
+    Item:   Spiked Mail
+  [back_left] Aldric, Lost Lamb (Cleric)  HP=230  ATK=45  DEF=60  SPD=35
+    Talent: All-Caring
+    Sig:    Benefactor  (passive=True)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Lake's Gift  (passive=False)
+    Basics: Condemn, Armored
+    Item:   Crafty Shield
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Little Jack: Swap with Risa Redcloak
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+[Queued] Risa Redcloak: Blood Hunt → Porcus III
+    [T] ACTION P2 Little Jack[front]: swap ↔ Risa Redcloak
+Little Jack and Risa Redcloak swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Porcus III
+Risa Redcloak uses Blood Hunt on Porcus III.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Porcus III[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=38
+  Porcus III takes 38 damage.
+    [T] HPCHANGE Porcus III: 280 → 242  (-38)
+  Spiked Mail! Risa Redcloak takes 10 damage.
+[Queued] Porcus III: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Aldric, Lost Lamb
+[Queued] Aldric, Lost Lamb: Heal → Porcus III
+    [T] ACTION P1 Porcus III[front]: swap ↔ Lady of Reflections
+Porcus III and Lady of Reflections swap positions.
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Aldric, Lost Lamb
+Lady of Reflections uses Crafty Shield.
+  Aldric, Lost Lamb is Guarded.
+    [T] ACTION P1 Aldric, Lost Lamb[back_left]: Heal → Porcus III
+Aldric, Lost Lamb uses Heal on Porcus III.
+  Aldric, Lost Lamb heals Porcus III for 38 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=230/230 statuses=[guard(2r)]
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=240/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Aldric, Lost Lamb: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+Lady of Reflections is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r), attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=240/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lady of Reflections: Condemn → Risa Redcloak
+[Queued] Porcus III: Swap with Aldric, Lost Lamb
+[Queued] Aldric, Lost Lamb: Heal → Porcus III
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Risa Redcloak
+Lady of Reflections uses Condemn on Risa Redcloak.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Risa Redcloak takes 30 damage.
+    [T] HPCHANGE Risa Redcloak: 240 → 210  (-30)
+  Risa Redcloak loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Aldric, Lost Lamb
+Porcus III and Aldric, Lost Lamb swap positions.
+    [T] ACTION P1 Aldric, Lost Lamb[back_right]: Heal → Porcus III
+Aldric, Lost Lamb uses Heal on Porcus III.
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+[Queued] Little Jack: Skyfall → Lady of Reflections
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Porcus III
+Lucky Constantine uses Sucker Punch on Porcus III.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=85 raw=75.29 ceil=76
+    [T]   FINAL_DMG=74
+  Lady of Reflections takes 74 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 181  (-74)
+  Reflecting Pool: Little Jack takes 8 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[expose(1r), weaken(2r)]
+    [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 statuses=[guard(1r)]
+    [T]   P1 Lady of Reflections[front] HP=181/255 statuses=[guard(1r)]
+    [T]   P2 Little Jack[front] HP=212/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=210/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: expose → 0r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_EXPIRED Porcus III: expose
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Aldric, Lost Lamb: guard → 0r left
+    [T] STATUS_EXPIRED Aldric, Lost Lamb: guard
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+Lady of Reflections is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_right] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[front] HP=181/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r), attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=212/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=210/250 ATK=65(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] Lucky Constantine: Post Bounty → Lady of Reflections
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=85 raw=75.29 ceil=76
+    [T]   FINAL_DMG=74
+  Lady of Reflections takes 74 damage.
+    [T] HPCHANGE Lady of Reflections: 181 → 107  (-74)
+  Reflecting Pool: Little Jack takes 8 reflected damage.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Lady of Reflections
+Lucky Constantine uses Post Bounty on Lady of Reflections.
+  Lady of Reflections gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Lady of Reflections: Swap with Aldric, Lost Lamb
+[Queued] Aldric, Lost Lamb: Heal → Lady of Reflections
+[Queued] Porcus III: Shield Bash → Little Jack
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Aldric, Lost Lamb
+Lady of Reflections and Aldric, Lost Lamb swap positions.
+    [T] ACTION P1 Aldric, Lost Lamb[front]: Heal → Lady of Reflections
+Aldric, Lost Lamb uses Heal on Lady of Reflections.
+  Aldric, Lost Lamb heals Lady of Reflections for 88 HP.
+  Aldric, Lost Lamb must recharge next turn.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+  Aldric, Lost Lamb is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[weaken(1r)]
+    [T]   P1 Aldric, Lost Lamb[front] HP=230/230 statuses=[guard(2r)]
+    [T]   P1 Lady of Reflections[back_right] HP=195/255 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Little Jack[front] HP=204/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=210/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: weaken → 0r left
+    [T] STATUS_EXPIRED Porcus III: weaken
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Aldric, Lost Lamb: guard → 1r left
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_TICK Lady of Reflections: expose → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] DEBUFF_EXPIRED Risa Redcloak: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Aldric, Lost Lamb spd=35  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[front] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=195/255 ATK=40(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[expose(1r)]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=204/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=210/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Aldric, Lost Lamb
+[Queued] Risa Redcloak: Blood Hunt → Aldric, Lost Lamb
+[Queued] Lucky Constantine: Sucker Punch → Lady of Reflections
+    [T] ACTION P2 Little Jack[front]: Skyfall → Aldric, Lost Lamb
+Little Jack uses Skyfall on Aldric, Lost Lamb.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Aldric, Lost Lamb[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=104
+  Aldric, Lost Lamb takes 104 damage.
+    [T] HPCHANGE Aldric, Lost Lamb: 230 → 126  (-104)
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Aldric, Lost Lamb
+Risa Redcloak uses Blood Hunt on Aldric, Lost Lamb.
+  Blood Hunt: Risa Redcloak and Aldric, Lost Lamb HP set to 168.
+    [T] ACTION P2 Lucky Constantine[back_left]: Sucker Punch → Lady of Reflections
+Lucky Constantine uses Sucker Punch on Lady of Reflections.
+  Lady of Reflections gains weaken for 2 rounds.
+[Queued] Aldric, Lost Lamb: Swap with Porcus III
+[Queued] Lady of Reflections: Item Porcus III
+[Queued] Porcus III: Shield Bash → Little Jack
+    [T] ACTION P1 Aldric, Lost Lamb[front]: swap ↔ Porcus III
+Aldric, Lost Lamb recharges.
+    [T] ACTION P1 Lady of Reflections[back_right]: item [Crafty Shield] → Porcus III
+Lady of Reflections uses Crafty Shield.
+  Porcus III is Guarded.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[guard(2r)]
+    [T]   P1 Aldric, Lost Lamb[front] HP=168/230 statuses=[guard(1r)]
+    [T]   P1 Lady of Reflections[back_right] HP=195/255 statuses=[expose(1r), weaken(2r)]
+    [T]   P2 Little Jack[front] HP=204/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=168/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Aldric, Lost Lamb: guard → 0r left
+    [T] STATUS_EXPIRED Aldric, Lost Lamb: guard
+    [T] STATUS_TICK Lady of Reflections: expose → 0r left
+    [T] STATUS_TICK Lady of Reflections: weaken → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: expose
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+Aldric, Lost Lamb is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Aldric, Lost Lamb spd=35  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[front] HP=168/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=195/255 ATK=40(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=204/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=168/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Aldric, Lost Lamb
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Aldric, Lost Lamb
+    [T] ACTION P2 Little Jack[front]: Skyfall → Aldric, Lost Lamb
+Little Jack uses Skyfall on Aldric, Lost Lamb.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Aldric, Lost Lamb[front]
+    [T]   power=80
+    [T]   atk=80 def=60 raw=106.67 ceil=107
+    [T]   FINAL_DMG=104
+  Aldric, Lost Lamb takes 104 damage.
+    [T] HPCHANGE Aldric, Lost Lamb: 168 → 64  (-104)
+    [T] ACTION P2 Risa Redcloak[back_right]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Aldric, Lost Lamb
+Lucky Constantine uses Post Bounty on Aldric, Lost Lamb.
+  Aldric, Lost Lamb gains expose for 2 rounds.
+[Queued] Aldric, Lost Lamb: Heal → Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+[Queued] Porcus III: Swap with Aldric, Lost Lamb
+    [T] ACTION P1 Aldric, Lost Lamb[front]: Heal → Lady of Reflections
+Aldric, Lost Lamb uses Heal on Lady of Reflections.
+  Aldric, Lost Lamb heals Lady of Reflections for 60 HP.
+  All-Caring: Lady of Reflections is Guarded for 2 rounds.
+    [T] ACTION P1 Lady of Reflections[back_right]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Aldric, Lost Lamb
+Porcus III and Aldric, Lost Lamb swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=64/230 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[weaken(1r), guard(2r)]
+    [T]   P2 Little Jack[front] HP=204/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=168/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Aldric, Lost Lamb: guard → 0r left
+    [T] STATUS_TICK Aldric, Lost Lamb: expose → 1r left
+    [T] STATUS_EXPIRED Aldric, Lost Lamb: guard
+    [T] STATUS_TICK Lady of Reflections: weaken → 0r left
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: weaken
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=64/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=204/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=168/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Sucker Punch → Aldric, Lost Lamb
+[Queued] Risa Redcloak: Blood Hunt → Porcus III
+    [T] ACTION P2 Little Jack[front]: swap ↔ Lucky Constantine
+Little Jack and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Aldric, Lost Lamb
+Lucky Constantine uses Sucker Punch on Aldric, Lost Lamb.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Aldric, Lost Lamb[back_left]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=60 raw=70.00 ceil=70
+    [T]   FINAL_DMG=74
+  Aldric, Lost Lamb takes 74 damage.
+    [T] HPCHANGE Aldric, Lost Lamb: 64 → 0  (-74) **KO**
+    [T] ACTION P2 Risa Redcloak[back_left]: Blood Hunt → Porcus III
+Risa Redcloak uses Blood Hunt on Porcus III.
+  Blood Hunt: Risa Redcloak and Porcus III HP set to 224.
+[Queued] Porcus III: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Lake's Gift → Lady of Reflections
+    [T] ACTION P1 Porcus III[front]: swap ↔ Lady of Reflections
+Porcus III and Lady of Reflections swap positions.
+    [T] ACTION P1 Lady of Reflections[front]: Lake's Gift → Lady of Reflections
+Lady of Reflections uses Lake's Gift on Lady of Reflections.
+  Lady of Reflections gains Reflecting Pool for 2 rounds.
+  Lady of Reflections gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Porcus III[back_right] HP=224/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[guard(1r), reflecting_pool(2r)]
+    [T]   P2 Little Jack[back_right] HP=204/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=224/250 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_TICK Lady of Reflections: reflecting_pool → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+Lady of Reflections is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=224/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=50(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[reflecting_pool(1r), guard(1r)]  buffs=[attack+10(1r), attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=204/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=224/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] Risa Redcloak: Blood Hunt → Lady of Reflections
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Little Jack
+Lucky Constantine and Little Jack swap positions.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=85 raw=75.29 ceil=76
+    [T]   FINAL_DMG=74
+  Lady of Reflections takes 74 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 181  (-74)
+  Reflecting Pool: Little Jack takes 8 reflected damage.
+  Reflecting Pool: Little Jack takes 8 reflected damage.
+    [T] ACTION P2 Risa Redcloak[back_left]: Blood Hunt → Lady of Reflections
+Risa Redcloak uses Blood Hunt on Lady of Reflections.
+  Blood Hunt: Risa Redcloak and Lady of Reflections HP set to 202.
+[Queued] Lady of Reflections: Condemn → Little Jack
+[Queued] Porcus III: Swap with Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Little Jack
+Lady of Reflections uses Condemn on Little Jack.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=50 def=50 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Little Jack takes 40 damage.
+    [T] HPCHANGE Little Jack: 188 → 148  (-40)
+  Little Jack loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Lady of Reflections
+Porcus III and Lady of Reflections swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Porcus III[front] HP=224/280 statuses=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=202/255 statuses=[reflecting_pool(1r), guard(1r)]
+    [T]   P2 Little Jack[front] HP=148/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=202/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: reflecting_pool → 0r left
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: reflecting_pool
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: attack+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=224/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=202/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=148/220 ATK=70(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Risa Redcloak[back_left] HP=202/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Swap with Risa Redcloak
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+[Queued] Risa Redcloak: Blood Hunt → Porcus III
+    [T] ACTION P2 Little Jack[front]: swap ↔ Risa Redcloak
+Little Jack and Risa Redcloak swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Porcus III
+Risa Redcloak uses Blood Hunt on Porcus III.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Porcus III[front]
+    [T]   power=60
+    [T]   atk=75 def=85 raw=52.94 ceil=53
+    [T]   FINAL_DMG=42
+  Porcus III takes 42 damage.
+    [T] HPCHANGE Porcus III: 224 → 182  (-42)
+  Spiked Mail! Risa Redcloak takes 10 damage.
+[Queued] Porcus III: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Porcus III[front]: swap ↔ Lady of Reflections
+Porcus III and Lady of Reflections swap positions.
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Porcus III[back_right] HP=182/280 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=202/255 statuses=[guard(2r)]
+    [T]   P2 Little Jack[back_left] HP=148/220 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=192/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] DEBUFF_EXPIRED Little Jack: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Risa Redcloak spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=182/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=202/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=148/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=192/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lady of Reflections: Condemn → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Risa Redcloak
+Lady of Reflections uses Condemn on Risa Redcloak.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Risa Redcloak takes 30 damage.
+    [T] HPCHANGE Risa Redcloak: 192 → 162  (-30)
+  Risa Redcloak loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Risa Redcloak
+Porcus III uses Shield Bash on Risa Redcloak.
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+[Queued] Little Jack: Skyfall → Lady of Reflections
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Porcus III
+Lucky Constantine uses Sucker Punch on Porcus III.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=85 raw=75.29 ceil=76
+    [T]   FINAL_DMG=74
+  Lady of Reflections takes 74 damage.
+    [T] HPCHANGE Lady of Reflections: 202 → 128  (-74)
+  Reflecting Pool: Little Jack takes 8 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Porcus III[back_right] HP=182/280 statuses=[expose(1r), weaken(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=128/255 statuses=[guard(1r)]
+    [T]   P2 Little Jack[front] HP=140/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=162/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: expose → 0r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_EXPIRED Porcus III: expose
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+Lady of Reflections is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=182/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=128/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=140/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=162/250 ATK=65(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Lady of Reflections
+[Queued] Lucky Constantine: Post Bounty → Lady of Reflections
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Lady of Reflections
+Little Jack uses Skyfall on Lady of Reflections.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Lady of Reflections[front]
+    [T]   power=80
+    [T]   atk=80 def=85 raw=75.29 ceil=76
+    [T]   FINAL_DMG=74
+  Lady of Reflections takes 74 damage.
+    [T] HPCHANGE Lady of Reflections: 128 → 54  (-74)
+  Reflecting Pool: Little Jack takes 8 reflected damage.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Lady of Reflections
+Lucky Constantine uses Post Bounty on Lady of Reflections.
+  Lady of Reflections gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Lady of Reflections: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Little Jack
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Porcus III
+Lady of Reflections and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=35 def=50 raw=28.00 ceil=28
+    [T]   FINAL_DMG=23
+  Little Jack takes 23 damage.
+    [T] HPCHANGE Little Jack: 132 → 109  (-23)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Porcus III[front] HP=182/280 statuses=[weaken(1r), guard(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=54/255 statuses=[guard(1r), expose(2r)]
+    [T]   P2 Little Jack[front] HP=109/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=162/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: weaken → 0r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] STATUS_EXPIRED Porcus III: weaken
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_TICK Lady of Reflections: expose → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] DEBUFF_EXPIRED Risa Redcloak: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=182/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=54/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=109/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=162/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Swap with Lucky Constantine
+[Queued] Risa Redcloak: Blood Hunt → Porcus III
+[Queued] Lucky Constantine: Sucker Punch → Lady of Reflections
+    [T] ACTION P2 Little Jack[front]: swap ↔ Lucky Constantine
+Little Jack and Lucky Constantine swap positions.
+    [T] ACTION P2 Risa Redcloak[back_right]: Blood Hunt → Porcus III
+Risa Redcloak uses Blood Hunt on Porcus III.
+  Blood Hunt: Risa Redcloak and Porcus III HP set to 172.
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Lady of Reflections
+Lucky Constantine uses Sucker Punch on Lady of Reflections.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Lady of Reflections[back_right]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=80 raw=52.50 ceil=53
+    [T]   FINAL_DMG=54
+  Lady of Reflections takes 54 damage.
+    [T] HPCHANGE Lady of Reflections: 54 → 0  (-54) **KO**
+  Reflecting Pool: Lucky Constantine takes 6 reflected damage.
+[Queued] Porcus III: Shield Bash → Lucky Constantine
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Lucky Constantine
+Porcus III uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=35 def=40 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Lucky Constantine takes 35 damage.
+    [T] HPCHANGE Lucky Constantine: 209 → 174  (-35)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Porcus III[front] HP=172/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=109/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=172/250 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=174/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=172/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=109/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=172/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=174/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Porcus III
+[Queued] Little Jack: Skyfall → Porcus III
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Risa Redcloak
+Lucky Constantine and Risa Redcloak swap positions.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Porcus III
+Risa Redcloak uses Rend on Porcus III.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Porcus III[front]
+    [T]   power=45
+    [T]   atk=75 def=85 raw=39.71 ceil=40
+    [T]   FINAL_DMG=22
+  Porcus III takes 22 damage.
+    [T] HPCHANGE Porcus III: 172 → 150  (-22)
+  Risa Redcloak heals 2 HP.
+  Spiked Mail! Risa Redcloak takes 10 damage.
+    [T] ACTION P2 Little Jack[back_left]: Skyfall → Porcus III
+Little Jack uses Skyfall on Porcus III.
+  Porcus III gains expose for 2 rounds.
+[Queued] Porcus III: Unbreakable Defense → Porcus III
+    [T] ACTION P1 Porcus III[front]: Unbreakable Defense → Porcus III
+Porcus III uses Unbreakable Defense on Porcus III.
+  Porcus III clears statuses and doubles Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Porcus III[front] HP=150/280 statuses=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=109/220 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=164/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 statuses=[-]
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Risa Redcloak spd=30  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=150/280 ATK=35(base=35) DEF=170(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[defense+85(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=109/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=164/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+[Queued] Little Jack: Skyfall → Porcus III
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Porcus III
+Lucky Constantine uses Sucker Punch on Porcus III.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Porcus III
+Little Jack uses Skyfall on Porcus III.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Porcus III[front]
+    [T]   power=80
+    [T]   atk=80 def=170 raw=37.65 ceil=38
+    [T]   FINAL_DMG=37
+  Porcus III takes 37 damage.
+    [T] HPCHANGE Porcus III: 150 → 113  (-37)
+  Spiked Mail! Little Jack takes 10 damage.
+[Queued] Porcus III: Shield Bash → Little Jack
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=35 def=50 raw=28.00 ceil=28
+    [T]   FINAL_DMG=23
+  Little Jack takes 23 damage.
+    [T] HPCHANGE Little Jack: 99 → 76  (-23)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Porcus III[front] HP=113/280 statuses=[guard(1r), weaken(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[front] HP=76/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=164/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: defense+85
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=113/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[front] HP=76/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=164/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Swap with Risa Redcloak
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+[Queued] Risa Redcloak: Rend → Porcus III
+    [T] ACTION P2 Little Jack[front]: swap ↔ Risa Redcloak
+Little Jack and Risa Redcloak swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Porcus III
+Risa Redcloak uses Rend on Porcus III.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Porcus III[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+Bricklayer! Risa Redcloak is Weakened.
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 113 → 89  (-24)
+  Risa Redcloak heals 2 HP.
+  Spiked Mail! Risa Redcloak takes 10 damage.
+[Queued] Porcus III: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Risa Redcloak
+Porcus III uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=20
+  Risa Redcloak takes 20 damage.
+    [T] HPCHANGE Risa Redcloak: 156 → 136  (-20)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Porcus III[front] HP=89/280 statuses=[weaken(1r), guard(1r), expose(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=76/220 statuses=[-]
+    [T]   P2 Risa Redcloak[front] HP=136/250 statuses=[weaken(2r)]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: weaken → 0r left
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_EXPIRED Porcus III: weaken
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Risa Redcloak spd=30  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=89/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=76/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=136/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+[Queued] Little Jack: Skyfall → Porcus III
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Porcus III
+Lucky Constantine uses Sucker Punch on Porcus III.
+  Porcus III gains weaken for 2 rounds.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Porcus III
+Little Jack uses Skyfall on Porcus III.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Porcus III[front]
+    [T]   power=80
+    [T]   atk=80 def=85 raw=75.29 ceil=76
+Bricklayer! Little Jack is Weakened.
+    [T]   FINAL_DMG=54
+  Porcus III takes 54 damage.
+    [T] HPCHANGE Porcus III: 89 → 35  (-54)
+  Spiked Mail! Little Jack takes 10 damage.
+[Queued] Porcus III: Shield Bash → Little Jack
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Little Jack
+Porcus III uses Shield Bash on Little Jack.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=35 def=50 raw=28.00 ceil=28
+    [T]   FINAL_DMG=23
+  Little Jack takes 23 damage.
+    [T] HPCHANGE Little Jack: 66 → 43  (-23)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Porcus III[front] HP=35/280 statuses=[expose(1r), guard(1r), weaken(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[front] HP=43/220 statuses=[weaken(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=136/250 statuses=[weaken(1r)]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: expose → 0r left
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_EXPIRED Porcus III: expose
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] STATUS_TICK Risa Redcloak: weaken → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: weaken
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=35/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[front] HP=43/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=136/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Swap with Risa Redcloak
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+[Queued] Risa Redcloak: Rend → Porcus III
+    [T] ACTION P2 Little Jack[front]: swap ↔ Risa Redcloak
+Little Jack and Risa Redcloak swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Porcus III
+Risa Redcloak uses Rend on Porcus III.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Porcus III[front]
+    [T]   power=65 (base=45)
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+Bricklayer! Risa Redcloak is Weakened.
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 35 → 11  (-24)
+  Risa Redcloak heals 2 HP.
+  Spiked Mail! Risa Redcloak takes 10 damage.
+[Queued] Porcus III: Shield Bash → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Risa Redcloak
+Porcus III uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=20
+  Risa Redcloak takes 20 damage.
+    [T] HPCHANGE Risa Redcloak: 128 → 108  (-20)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Porcus III[front] HP=11/280 statuses=[weaken(1r), guard(1r), expose(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=43/220 statuses=[weaken(1r)]
+    [T]   P2 Risa Redcloak[front] HP=108/250 statuses=[weaken(2r)]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 statuses=[-]
+    [T] STATUS_TICK Porcus III: weaken → 0r left
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_EXPIRED Porcus III: weaken
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] STATUS_TICK Little Jack: weaken → 0r left
+    [T] STATUS_EXPIRED Little Jack: weaken
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Risa Redcloak spd=45  →  P2 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=11/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Little Jack[back_left] HP=43/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[front] HP=108/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=174/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Porcus III
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+[Queued] Little Jack: Swap with Risa Redcloak
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → Porcus III
+Risa Redcloak uses Blood Hunt on Porcus III.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Porcus III[front]
+    [T]   power=60
+    [T]   atk=90 def=85 raw=63.53 ceil=64
+    [T]   FINAL_DMG=41
+  Porcus III takes 41 damage.
+    [T] HPCHANGE Porcus III: 11 → 0  (-41) **KO**
+  Risa Redcloak heals 17 HP.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 17)
+────────────────────────────────────────────────────────────
+Player 2 wins!

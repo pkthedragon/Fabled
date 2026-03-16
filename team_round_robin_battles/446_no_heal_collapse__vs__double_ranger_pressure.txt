@@ -1,0 +1,429 @@
+Battle 446
+Player 1 Team: No-Heal Collapse
+Player 2 Team: Double Ranger Pressure
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:16:38
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 449
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: No-Heal Collapse
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Lady Control Shell
+  [front] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Lake's Gift  (passive=False)
+    Basics: Condemn, Armored
+    Item:   Crafty Shield
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Lady of Reflections
+[Queued] Frederic the Beastslayer: Hero's Charge → Prince Charming
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Lady of Reflections
+Witch-Hunter Gretel uses Shove Over on Lady of Reflections.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Lady of Reflections[front]
+    [T]   power=65
+    [T]   atk=80 def=85 raw=61.18 ceil=62
+    [T]   FINAL_DMG=62
+  Lady of Reflections takes 62 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 193  (-62)
+  Reflecting Pool: Witch-Hunter Gretel takes 7 reflected damage.
+  Lady of Reflections gains weaken for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Prince Charming
+Frederic the Beastslayer uses Hero's Charge on Prince Charming.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Prince Charming[back_right]
+    [T]   power=30
+    [T]   atk=70 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=49
+  Prince Charming takes 49 damage.
+    [T] HPCHANGE Prince Charming: 255 → 206  (-49)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=40
+    [T]   atk=50 def=60 raw=33.33 ceil=34
+    [T]   FINAL_DMG=34
+  Snowkissed Aurora takes 34 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 191  (-34)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+[Queued] Lady of Reflections: Condemn → Witch-Hunter Gretel
+[Queued] Prince Charming: Condescend → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P2 Lady of Reflections[front]: Condemn → Witch-Hunter Gretel
+Lady of Reflections uses Condemn on Witch-Hunter Gretel.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Witch-Hunter Gretel takes 32 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 208 → 176  (-32)
+  Witch-Hunter Gretel loses -10 Attack for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Witch-Hunter Gretel
+Prince Charming uses Condescend on Witch-Hunter Gretel.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Witch-Hunter Gretel takes 58 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 176 → 118  (-58)
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Innocent Heart: Lady of Reflections +10 Def.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=118/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Lady of Reflections[front] HP=248/255 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=191/225 statuses=[no_heal(2r)]
+    [T]   P2 Prince Charming[back_right] HP=206/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Lady of Reflections spd=32  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=118/215 ATK=70(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lady of Reflections[front] HP=248/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=206/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    [Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Matchstick Liesl
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=80 def=45 raw=88.89 ceil=89
+    [T]   FINAL_DMG=96
+  Frederic the Beastslayer takes 96 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 87 → 0  (-96) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Frederic the Beastslayer
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Matchstick Liesl
+Robin, Hooded Avenger uses Hawkshot on Matchstick Liesl.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=62
+  Matchstick Liesl takes 62 damage.
+    [T] HPCHANGE Matchstick Liesl: 138 → 76  (-62)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=189/215 statuses=[burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[front] HP=76/210 statuses=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+15
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=189/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=76/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Snipe Shot → Matchstick Liesl
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Robin, Hooded Avenger
+Frederic the Beastslayer and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Matchstick Liesl
+Briar Rose uses Creeping Doubt on Matchstick Liesl.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Matchstick Liesl takes 58 damage.
+    [T] HPCHANGE Matchstick Liesl: 76 → 18  (-58)
+  Matchstick Liesl gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Matchstick Liesl
+Robin, Hooded Avenger uses Snipe Shot on Matchstick Liesl.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=91
+  Matchstick Liesl takes 91 damage.
+    [T] HPCHANGE Matchstick Liesl: 18 → 0  (-91) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+Witch-Hunter Gretel moves to frontline.
+[Queued] Witch-Hunter Gretel: Into the Oven → Robin, Hooded Avenger
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Into the Oven → Robin, Hooded Avenger
+Witch-Hunter Gretel uses Into the Oven on Robin, Hooded Avenger.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Robin, Hooded Avenger[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=130
+  Robin, Hooded Avenger takes 130 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 55  (-130)
+  Robin, Hooded Avenger gains burn for 2 rounds.
+  Robin, Hooded Avenger gains weaken for 2 rounds.
+  Robin, Hooded Avenger gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel[front] HP=189/215 statuses=[burn_immune(1r)]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[weaken(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=55/185 statuses=[burn(2r), weaken(2r), root(2r)]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: weaken
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=189/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=36/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn(1r), weaken(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Skip
+[Queued] Briar Rose: Creeping Doubt → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Swap with Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Witch-Hunter Gretel
+Briar Rose uses Creeping Doubt on Witch-Hunter Gretel.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Witch-Hunter Gretel takes 64 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 189 → 125  (-64)
+  Witch-Hunter Gretel gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: swap ↔ Robin, Hooded Avenger
+Frederic the Beastslayer and Robin, Hooded Avenger swap positions.
+[Queued] Witch-Hunter Gretel: Shove Over → Frederic the Beastslayer
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Frederic the Beastslayer
+Witch-Hunter Gretel uses Shove Over on Frederic the Beastslayer.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=80 def=45 raw=115.56 ceil=116
+    [T]   FINAL_DMG=128
+  Frederic the Beastslayer takes 128 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 72  (-128)
+  Frederic the Beastslayer gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[front] HP=125/215 statuses=[root(2r)]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=72/200 statuses=[weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=36/185 statuses=[burn(1r), weaken(1r), root(1r)]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: root → 1r left
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: weaken
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: root
+  Curse of Sleeping: Witch-Hunter Gretel loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=125/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=72/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=17/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Frederic the Beastslayer
+Witch-Hunter Gretel cannot act.
+[Queued] Frederic the Beastslayer: Swap with Robin, Hooded Avenger
+[Queued] Briar Rose: Skip
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch-Hunter Gretel
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Robin, Hooded Avenger
+Frederic the Beastslayer and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Briar Rose[back_right]: skip/recharge
+Briar Rose recharges.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hawkshot on Witch-Hunter Gretel.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[front]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=94
+  Witch-Hunter Gretel takes 94 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 125 → 31  (-94)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel[front] HP=31/215 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=72/200 statuses=[weaken(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=17/185 statuses=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: weaken
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=31/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=72/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=17/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Frederic the Beastslayer
+Robin, Hooded Avenger and Frederic the Beastslayer swap positions.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Witch-Hunter Gretel
+Briar Rose uses Creeping Doubt on Witch-Hunter Gretel.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Witch-Hunter Gretel takes 64 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 31 → 0  (-64) **KO**
+  Witch-Hunter Gretel is immune to Root (Curse of Sleeping).
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

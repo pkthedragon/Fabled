@@ -1,0 +1,456 @@
+Battle 54
+Player 1 Team: Expose Hunter
+Player 2 Team: Status Spread
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:38:53
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 54
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Expose Hunter
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+Player 2: Status Spread
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Robin, Hooded Avenger
+[Queued] Hunold the Piper: Sucker Punch → Prince Charming
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Robin, Hooded Avenger
+Witch of the Woods uses Thunder Call on Robin, Hooded Avenger.
+  Witch of the Woods loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=65 def=40 raw=105.62 ceil=106
+    [T]   FINAL_DMG=106
+  Robin, Hooded Avenger takes 106 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 79  (-106)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Robin, Hooded Avenger
+Briar Rose uses Creeping Doubt on Robin, Hooded Avenger.
+  Briar Rose loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 79 → 4  (-75)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Sucker Punch → Prince Charming
+Hunold the Piper uses Sucker Punch on Prince Charming.
+  Prince Charming gains weaken for 2 rounds.
+[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Robin, Hooded Avenger: Bring Down → Witch of the Woods
+[Queued] Lucky Constantine: Post Bounty → Witch of the Woods
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Witch of the Woods
+Robin, Hooded Avenger uses Bring Down on Witch of the Woods.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=85
+  Witch of the Woods takes 85 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 95  (-85)
+  Shock recoil: Robin, Hooded Avenger takes 17 damage.
+  Witch of the Woods gains root for 2 rounds.
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Witch of the Woods
+Lucky Constantine uses Post Bounty on Witch of the Woods.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=70 def=35 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch of the Woods takes 80 damage.
+    [T] HPCHANGE Witch of the Woods: 95 → 15  (-80)
+  Witch of the Woods gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[weaken(2r)]
+    [T]   P1 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods[front] HP=15/180 statuses=[root(2r), expose(2r)]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Witch of the Woods: root → 1r left
+    [T] STATUS_TICK Witch of the Woods: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods[front] HP=15/180 ATK=65(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[root(1r), expose(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=50(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+[Queued] Lucky Constantine: Feline Gambit → Witch of the Woods
+[Queued] Prince Charming: Condescend → Witch of the Woods
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Witch of the Woods
+Lucky Constantine uses Feline Gambit on Witch of the Woods.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=70 def=35 raw=90.00 ceil=90
+    [T]   FINAL_DMG=108
+  Witch of the Woods takes 108 damage.
+    [T] HPCHANGE Witch of the Woods: 15 → 0  (-108) **KO**
+Hunold the Piper moves to frontline.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Witch of the Woods
+Prince Charming's target is no longer legal — Condescend fizzles.
+[Queued] Hunold the Piper: Dying Dance → Lucky Constantine
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Lucky Constantine
+Hunold the Piper uses Dying Dance on Lucky Constantine.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lucky Constantine[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Lucky Constantine takes 90 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 125  (-90)
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=60
+  Lucky Constantine takes 60 damage.
+    [T] HPCHANGE Lucky Constantine: 125 → 65  (-60)
+  Lucky Constantine gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[weaken(1r)]
+    [T]   P1 Lucky Constantine[front] HP=65/215 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] DEBUFF_EXPIRED Briar Rose: attack-10
+  Curse of Sleeping: Lucky Constantine loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=65/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Hunold the Piper
+Lucky Constantine cannot act.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Hunold the Piper
+Prince Charming uses Condescend on Hunold the Piper.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=47
+  Hunold the Piper takes 47 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 163  (-47)
+[Queued] Hunold the Piper: Dying Dance → Lucky Constantine
+[Queued] Briar Rose: Creeping Doubt → Lucky Constantine
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Lucky Constantine
+Hunold the Piper uses Dying Dance on Lucky Constantine.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lucky Constantine[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Lucky Constantine takes 90 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Lucky Constantine
+Briar Rose uses Creeping Doubt on Lucky Constantine.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=0
+  Lucky Constantine takes 0 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 1  (-0)
+  Lucky Constantine is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=163/210 statuses=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=163/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Hunold the Piper
+[Queued] Prince Charming: Condescend → Hunold the Piper
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Hunold the Piper
+Lucky Constantine uses Feline Gambit on Hunold the Piper.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=55 (base=45)
+    [T]   atk=70 def=45 raw=85.56 ceil=86
+    [T]   FINAL_DMG=69
+  Hunold the Piper takes 69 damage.
+    [T] HPCHANGE Hunold the Piper: 163 → 94  (-69)
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Hunold the Piper
+Prince Charming uses Condescend on Hunold the Piper.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=70
+  Hunold the Piper takes 70 damage.
+    [T] HPCHANGE Hunold the Piper: 94 → 24  (-70)
+[Queued] Hunold the Piper: Dying Dance → Lucky Constantine
+[Queued] Briar Rose: Swap with Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Lucky Constantine
+Hunold the Piper uses Dying Dance on Lucky Constantine.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Lucky Constantine[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=90
+  Lucky Constantine takes 90 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-90) **KO**
+Prince Charming moves to frontline.
+    [T] ACTION P2 Briar Rose[back_right]: swap ↔ Hunold the Piper
+Briar Rose recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=24/210 statuses=[expose(2r)]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=24/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+    [T] ACTION P2 Hunold the Piper[front]: Dying Dance → Prince Charming
+Hunold the Piper uses Dying Dance on Prince Charming.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=60 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 255 → 189  (-66)
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=60 def=55 raw=43.64 ceil=44
+    [T]   FINAL_DMG=54
+  Prince Charming takes 54 damage.
+    [T] HPCHANGE Prince Charming: 189 → 135  (-54)
+  Prince Charming gains root for 2 rounds.
+[Queued] Prince Charming: Impose → Hunold the Piper
+    [T] ACTION P1 Prince Charming[front]: Impose → Hunold the Piper
+Prince Charming uses Impose on Hunold the Piper.
+    [T] DMGCALC [Impose] Prince Charming[front] → Hunold the Piper[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=45 raw=86.67 ceil=87
+    [T]   FINAL_DMG=84
+  Hunold the Piper takes 84 damage.
+    [T] HPCHANGE Hunold the Piper: 24 → 0  (-84) **KO**
+  Hunold the Piper loses -10 Speed for 2 rounds.
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[front] HP=135/255 statuses=[root(2r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Prince Charming: root → 1r left
+  Curse of Sleeping: Prince Charming loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=135/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Prince Charming[front]
+    [T]   power=55
+    [T]   atk=60 def=55 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Prince Charming takes 70 damage.
+    [T] HPCHANGE Prince Charming: 135 → 65  (-70)
+[Queued] Prince Charming: Happily Ever After → Prince Charming
+Prince Charming cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming[front] HP=65/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=65/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Prince Charming[front]
+    [T]   power=55
+    [T]   atk=60 def=55 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Prince Charming takes 70 damage.
+    [T] HPCHANGE Prince Charming: 65 → 0  (-70) **KO**
+  Briar Rose must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

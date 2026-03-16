@@ -1,0 +1,1072 @@
+Battle 801
+Player 1 Team: Rapunzel Pin Control
+Player 2 Team: Pinocchio Malice Fortress
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:53:30
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 801
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+Player 2: Pinocchio Malice Fortress
+  [front] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Become Real  (passive=True)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Family Seal
+  [back_left] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Rapunzel the Golden spd=30  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Rapunzel the Golden
+[Queued] Snowkissed Aurora: Swap with Pinocchio, Cursed Puppet
+[Queued] Sir Roland: Item Pinocchio, Cursed Puppet
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Dark Grasp → Rapunzel the Golden
+Pinocchio, Cursed Puppet uses Dark Grasp on Rapunzel the Golden.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=65 def=65 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Rapunzel the Golden takes 50 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 208  (-50)
+  Pinocchio, Cursed Puppet gains 1 Malice (Dark Grasp). [1/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Pinocchio, Cursed Puppet
+Snowkissed Aurora and Pinocchio, Cursed Puppet swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+  Banner of Command: Pinocchio, Cursed Puppet is Guarded.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Pinocchio, Cursed Puppet
+Sir Roland uses Crafty Shield.
+[Queued] Rapunzel the Golden: Golden Snare → Pinocchio, Cursed Puppet
+[Queued] Matchstick Liesl: Swap with Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P1 Rapunzel the Golden[front]: Golden Snare → Pinocchio, Cursed Puppet
+Rapunzel the Golden uses Golden Snare on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=60
+    [T]   atk=60 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=63
+  Pinocchio, Cursed Puppet takes 63 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 157  (-63)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [2/6]
+  Pinocchio, Cursed Puppet gains root for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_right]: swap ↔ Rapunzel the Golden
+Matchstick Liesl and Rapunzel the Golden swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Sir Roland[back_left]
+    [T]   power=35
+    [T]   atk=82 def=85 raw=33.76 ceil=34
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 265 → 221  (-44)
+  Sir Roland gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Rapunzel the Golden[back_right] HP=208/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=157/220 statuses=[guard(2r), root(2r)]
+    [T]   P2 Sir Roland[back_left] HP=221/265 statuses=[root(2r)]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: root → 1r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=208/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=157/220 ATK=75(base=65) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=221/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Heal → Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Pinocchio, Cursed Puppet
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Rapunzel the Golden
+Matchstick Liesl uses Heal on Rapunzel the Golden.
+  Matchstick Liesl heals Rapunzel the Golden for 50 HP.
+  Purifying Flame: Rapunzel the Golden will Burn their next target.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Pinocchio, Cursed Puppet
+Rapunzel the Golden uses Golden Snare on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=30
+    [T]   atk=60 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=34
+  Pinocchio, Cursed Puppet takes 34 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 157 → 123  (-34)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [3/6]
+  Pinocchio, Cursed Puppet gains burn for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=39
+  Snowkissed Aurora takes 39 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 186  (-39)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Matchstick Liesl
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+  Snowkissed Aurora heals Pinocchio, Cursed Puppet for 70 HP.
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+  Medic: Pinocchio, Cursed Puppet cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Matchstick Liesl
+Pinocchio, Cursed Puppet uses Dark Grasp on Matchstick Liesl.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=80 def=50 raw=56.00 ceil=56
+    [T]   FINAL_DMG=56
+  Matchstick Liesl takes 56 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 154  (-56)
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [2/6]
+  Matchstick Liesl gains weaken for 2 rounds.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[burn_immune(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=154/210 statuses=[weaken(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=193/220 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=221/265 statuses=[root(1r), guard(2r)]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 statuses=[guard(1r), root(2r)]
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: root
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=154/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=193/220 ATK=75(base=65) DEF=70(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=221/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Pinocchio, Cursed Puppet
+[Queued] Rapunzel the Golden: Golden Snare → Pinocchio, Cursed Puppet
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Pinocchio, Cursed Puppet
+Matchstick Liesl uses Cauterize on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=50
+    [T]   atk=50 def=70 raw=35.71 ceil=36
+    [T]   FINAL_DMG=29
+  Pinocchio, Cursed Puppet takes 29 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 193 → 164  (-29)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [3/6]
+  Pinocchio, Cursed Puppet gains no_heal for 2 rounds.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Pinocchio, Cursed Puppet
+Rapunzel the Golden uses Golden Snare on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=30
+    [T]   atk=60 def=75 raw=24.00 ceil=24
+    [T]   FINAL_DMG=34
+  Pinocchio, Cursed Puppet takes 34 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 164 → 130  (-34)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [4/6]
+  Pinocchio, Cursed Puppet gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Sir Roland[back_left]
+    [T]   power=35
+    [T]   atk=82 def=90 raw=31.89 ceil=32
+    [T]   FINAL_DMG=36
+  Sir Roland takes 36 damage.
+    [T] HPCHANGE Sir Roland: 221 → 185  (-36)
+  Sir Roland gains root for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Matchstick Liesl
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 70 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Matchstick Liesl
+Pinocchio, Cursed Puppet uses Dark Grasp on Matchstick Liesl.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=85 def=50 raw=59.50 ceil=60
+    [T]   FINAL_DMG=60
+  Matchstick Liesl takes 60 damage.
+    [T] HPCHANGE Matchstick Liesl: 154 → 94  (-60)
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [3/6]
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[burn_immune(1r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=94/210 statuses=[weaken(1r)]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=130/220 statuses=[no_heal(2r), root(2r)]
+    [T]   P2 Sir Roland[back_left] HP=255/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 statuses=[root(1r), guard(2r)]
+    [T] STATUS_TICK Rapunzel the Golden: burn_immune → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Matchstick Liesl: weaken → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: weaken
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: no_heal → 1r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: root → 1r left
+    [T] BUFF_EXPIRED Pinocchio, Cursed Puppet: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=94/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=130/220 ATK=80(base=65) DEF=65(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=255/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Pinocchio, Cursed Puppet
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Pinocchio, Cursed Puppet
+Matchstick Liesl uses Cauterize on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=50
+    [T]   atk=50 def=65 raw=38.46 ceil=39
+    [T]   FINAL_DMG=39
+  Pinocchio, Cursed Puppet takes 39 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 130 → 91  (-39)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [4/6]
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Snowkissed Aurora[front]
+    [T]   power=30
+    [T]   atk=60 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 186 → 155  (-31)
+  Snowkissed Aurora gains root for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Matchstick Liesl
+[Queued] Sir Roland: Item Pinocchio, Cursed Puppet
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+  Pinocchio, Cursed Puppet cannot be healed.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Matchstick Liesl
+Pinocchio, Cursed Puppet uses Dark Grasp on Matchstick Liesl.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=85 def=50 raw=59.50 ceil=60
+    [T]   FINAL_DMG=60
+  Matchstick Liesl takes 60 damage.
+    [T] HPCHANGE Matchstick Liesl: 94 → 34  (-60)
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [3/6]
+  Matchstick Liesl gains weaken for 2 rounds.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Pinocchio, Cursed Puppet
+Sir Roland uses Crafty Shield.
+  Pinocchio, Cursed Puppet is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl[front] HP=34/210 statuses=[weaken(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=91/220 statuses=[no_heal(1r), root(1r), guard(2r)]
+    [T]   P2 Sir Roland[back_left] HP=255/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=155/225 statuses=[guard(1r), root(2r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: no_heal → 0r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: root → 0r left
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] STATUS_EXPIRED Pinocchio, Cursed Puppet: no_heal
+    [T] STATUS_EXPIRED Pinocchio, Cursed Puppet: root
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[front] HP=34/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=91/220 ATK=80(base=65) DEF=75(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=255/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=155/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Skip
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Rapunzel the Golden
+Matchstick Liesl recharges.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: skip/recharge
+Rapunzel the Golden recharges.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Sir Roland[back_left]
+    [T]   power=35
+    [T]   atk=82 def=85 raw=33.76 ceil=34
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 255 → 211  (-44)
+  Sir Roland gains root for 2 rounds.
+[Queued] Snowkissed Aurora: Skip
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Matchstick Liesl
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: Dark Grasp → Matchstick Liesl
+Pinocchio, Cursed Puppet uses Dark Grasp on Matchstick Liesl.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=80 def=50 raw=56.00 ceil=56
+    [T]   FINAL_DMG=56
+  Matchstick Liesl takes 56 damage.
+    [T] HPCHANGE Matchstick Liesl: 34 → 0  (-56) **KO**
+  Pinocchio, Cursed Puppet spends 1 Malice (Dark Grasp). [2/6]
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=91/220 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[back_left] HP=211/265 statuses=[root(2r)]
+    [T]   P2 Snowkissed Aurora[front] HP=155/225 statuses=[root(1r), guard(2r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 0r left
+    [T] STATUS_EXPIRED Pinocchio, Cursed Puppet: guard
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=91/220 ATK=75(base=65) DEF=70(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=211/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=155/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hawkshot → Pinocchio, Cursed Puppet
+[Queued] Rapunzel the Golden: Golden Snare → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Pinocchio, Cursed Puppet
+Robin, Hooded Avenger uses Hawkshot on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=60
+    [T]   atk=80 def=70 raw=68.57 ceil=69
+    [T]   FINAL_DMG=79
+  Pinocchio, Cursed Puppet takes 79 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 91 → 12  (-79)
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [3/6]
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Pinocchio, Cursed Puppet
+Rapunzel the Golden uses Golden Snare on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Pinocchio, Cursed Puppet[back_right]
+    [T]   power=30
+    [T]   atk=60 def=75 raw=24.00 ceil=24
+    [T]   FINAL_DMG=34
+  Pinocchio, Cursed Puppet takes 34 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 12 → 0  (-34) **KO**
+  Pinocchio, Cursed Puppet gains 1 Malice (Cursed Armor). [4/6]
+  Pinocchio, Cursed Puppet gains root for 2 rounds.
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 54 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[front] HP=155/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=155/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=80 def=70 raw=68.57 ceil=69
+    [T]   FINAL_DMG=69
+  Snowkissed Aurora takes 69 damage.
+    [T] HPCHANGE Snowkissed Aurora: 155 → 86  (-69)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Snowkissed Aurora[front]
+    [T]   power=30
+    [T]   atk=60 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=36
+  Snowkissed Aurora takes 36 damage.
+    [T] HPCHANGE Snowkissed Aurora: 86 → 50  (-36)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[front] HP=75/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=75/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+    [T] ACTION P1 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Snowkissed Aurora[front]
+    [T]   power=30
+    [T]   atk=60 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 75 → 44  (-31)
+  Snowkissed Aurora gains root for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 40 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[front] HP=84/225 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=84/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hawkshot → Snowkissed Aurora
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Snowkissed Aurora
+Robin, Hooded Avenger uses Hawkshot on Snowkissed Aurora.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=80 def=70 raw=68.57 ceil=69
+    [T]   FINAL_DMG=69
+  Snowkissed Aurora takes 69 damage.
+    [T] HPCHANGE Snowkissed Aurora: 84 → 15  (-69)
+    [T] ACTION P1 Rapunzel the Golden[back_right]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden recharges.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[front] HP=15/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=15/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hawkshot → Sir Roland
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Sir Roland
+Robin, Hooded Avenger uses Hawkshot on Sir Roland.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Sir Roland[back_left]
+    [T]   power=60
+    [T]   atk=80 def=90 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Sir Roland takes 64 damage.
+    [T] HPCHANGE Sir Roland: 265 → 201  (-64)
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Snowkissed Aurora[front]
+    [T]   power=30
+    [T]   atk=60 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=34
+  Snowkissed Aurora takes 34 damage.
+    [T] HPCHANGE Snowkissed Aurora: 15 → 0  (-34) **KO**
+  Snowkissed Aurora gains root for 2 rounds.
+Sir Roland moves to frontline.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 64 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=80 def=90 raw=53.33 ceil=54
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=11
+  Sir Roland takes 11 damage.
+    [T] HPCHANGE Sir Roland: 265 → 254  (-11)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+    [T]   FINAL_DMG=26
+  Sir Roland takes 26 damage.
+    [T] HPCHANGE Sir Roland: 254 → 228  (-26)
+  Sir Roland gains root for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 140  (-45)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=140/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=228/265 statuses=[guard(1r), root(2r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=140/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=228/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P1 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+    [T]   FINAL_DMG=30
+  Sir Roland takes 30 damage.
+    [T] HPCHANGE Sir Roland: 228 → 198  (-30)
+  Rapunzel the Golden must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 140 → 95  (-45)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=95/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=198/265 statuses=[root(1r), guard(2r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: root
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=95/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=198/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Hawkshot → Sir Roland
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Sir Roland
+Robin, Hooded Avenger uses Hawkshot on Sir Roland.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=80 def=90 raw=53.33 ceil=54
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 198 → 154  (-44)
+    [T] ACTION P1 Rapunzel the Golden[back_right]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden recharges.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 95 → 50  (-45)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=50/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=154/265 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=50/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=154/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Hawkshot → Sir Roland
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Sir Roland
+Robin, Hooded Avenger uses Hawkshot on Sir Roland.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=80 def=90 raw=53.33 ceil=54
+    [T]   FINAL_DMG=54
+  Sir Roland takes 54 damage.
+    [T] HPCHANGE Sir Roland: 154 → 100  (-54)
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+    [T]   FINAL_DMG=30
+  Sir Roland takes 30 damage.
+    [T] HPCHANGE Sir Roland: 100 → 70  (-30)
+  Sir Roland gains root for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=45 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 50 → 5  (-45)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=5/185 statuses=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=70/265 statuses=[root(2r), guard(2r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=5/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P2 Pinocchio, Cursed Puppet [KO]
+    [T]   P2 Sir Roland[front] HP=70/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=80 def=90 raw=53.33 ceil=54
+    [T]   FINAL_DMG=44
+  Sir Roland takes 44 damage.
+    [T] HPCHANGE Sir Roland: 70 → 26  (-44)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Rapunzel the Golden[back_right]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+    [T]   FINAL_DMG=26
+  Sir Roland takes 26 damage.
+    [T] HPCHANGE Sir Roland: 26 → 0  (-26) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 15)
+────────────────────────────────────────────────────────────
+Player 1 wins!

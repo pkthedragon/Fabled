@@ -1,0 +1,1423 @@
+Battle 584
+Player 1 Team: Roland Counterbattery
+Player 2 Team: Rapunzel Pin Control
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:26:37
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 584
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Roland Counterbattery
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Knight's Challenge  (passive=False)
+    Basics: Shield Bash, Stalwart
+    Item:   Spiked Mail
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Rapunzel the Golden: Golden Snare → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Swap with Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Robin, Hooded Avenger
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Robin, Hooded Avenger
+Rapunzel the Golden uses Golden Snare on Robin, Hooded Avenger.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=100
+  Robin, Hooded Avenger takes 100 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 85  (-100)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Rapunzel the Golden
+Matchstick Liesl and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Bring Down on Robin, Hooded Avenger.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=35
+    [T]   atk=82 def=40 raw=71.75 ceil=72
+    [T]   FINAL_DMG=82
+  Robin, Hooded Avenger takes 82 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 85 → 3  (-82)
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Matchstick Liesl
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Innocent Heart: Robin, Hooded Avenger +10 Def.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Matchstick Liesl
+Robin, Hooded Avenger uses Hawkshot on Matchstick Liesl.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=70 def=50 raw=84.00 ceil=84
+    [T]   FINAL_DMG=84
+  Matchstick Liesl takes 84 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 126  (-84)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=58/185 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=126/210 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=58/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=126/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Matchstick Liesl
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Sir Roland: Shield Bash → Matchstick Liesl
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Matchstick Liesl
+Robin, Hooded Avenger uses Snipe Shot on Matchstick Liesl.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=91
+  Matchstick Liesl takes 91 damage.
+    [T] HPCHANGE Matchstick Liesl: 126 → 35  (-91)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P1 Sir Roland[back_left]: Shield Bash → Matchstick Liesl
+Sir Roland uses Shield Bash on Matchstick Liesl.
+  Robin, Hooded Avenger is Guarded for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Robin, Hooded Avenger
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=30
+  Robin, Hooded Avenger takes 30 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 113 → 83  (-30)
+  Robin, Hooded Avenger gains no_heal for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Bring Down on Robin, Hooded Avenger.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=35
+    [T]   atk=82 def=50 raw=57.40 ceil=58
+    [T]   FINAL_DMG=37
+  Robin, Hooded Avenger takes 37 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 83 → 46  (-37)
+  Robin, Hooded Avenger gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=46/185 statuses=[guard(2r), no_heal(2r), root(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=35/210 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: no_heal → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=46/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r), no_heal(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=35/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Matchstick Liesl
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Matchstick Liesl
+Robin, Hooded Avenger uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Matchstick Liesl takes 70 damage.
+    [T] HPCHANGE Matchstick Liesl: 35 → 0  (-70) **KO**
+  Matchstick Liesl is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+Rapunzel the Golden moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Robin, Hooded Avenger cannot be healed.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Sir Roland[back_left]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+[Queued] Rapunzel the Golden: Golden Snare → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Robin, Hooded Avenger
+Rapunzel the Golden uses Golden Snare on Robin, Hooded Avenger.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=60 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=72
+  Robin, Hooded Avenger takes 72 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 46 → 0  (-72) **KO**
+  Robin, Hooded Avenger's root is refreshed to 2 rounds.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Snowkissed Aurora takes 60 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 165  (-60)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Snowkissed Aurora: Skip
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 statuses=[root(2r), guard(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Knight's Challenge → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 40 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P1 Sir Roland[back_right]: Knight's Challenge → Rapunzel the Golden
+Sir Roland uses Knight's Challenge on Rapunzel the Golden.
+  Robin, Hooded Avenger is Taunted for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=70 raw=51.43 ceil=52
+    [T]   FINAL_DMG=52
+  Snowkissed Aurora takes 52 damage.
+    [T] HPCHANGE Snowkissed Aurora: 205 → 153  (-52)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=153/225 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[taunt(2r)]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: taunt → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=153/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[taunt(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[back_right]
+    [T]   power=60
+    [T]   atk=60 def=80 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Sir Roland takes 45 damage.
+    [T] HPCHANGE Sir Roland: 265 → 220  (-45)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Sir Roland gains root for 2 rounds.
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 45 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=153/225 statuses=[root(1r), guard(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=248/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[taunt(1r)]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Robin, Hooded Avenger: taunt → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: taunt
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=153/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=248/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Knight's Challenge → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: Knight's Challenge → Rapunzel the Golden
+Sir Roland uses Knight's Challenge on Rapunzel the Golden.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=35
+    [T]   atk=40 def=65 raw=21.54 ceil=22
+    [T]   FINAL_DMG=22
+  Rapunzel the Golden takes 22 damage.
+    [T] HPCHANGE Rapunzel the Golden: 248 → 226  (-22)
+  Rapunzel the Golden is Taunted for 2 rounds.
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Snowkissed Aurora[back_right]
+    [T]   power=60
+    [T]   atk=75 def=70 raw=64.29 ceil=65
+    [T]   FINAL_DMG=62
+  Snowkissed Aurora takes 62 damage.
+    [T] HPCHANGE Snowkissed Aurora: 153 → 91  (-62)
+  Robin, Hooded Avenger steals 10 Atk from Snowkissed Aurora for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=91/225 statuses=[guard(1r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=226/258 statuses=[taunt(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Rapunzel the Golden: taunt → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=91/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=226/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=80 raw=22.50 ceil=23
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=6
+  Sir Roland takes 6 damage.
+    [T] HPCHANGE Sir Roland: 265 → 259  (-6)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Sir Roland gains root for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 145  (-40)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[back_right] HP=259/265 statuses=[root(2r), guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=91/225 statuses=[guard(2r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=216/258 statuses=[taunt(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=145/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+    [T] STATUS_TICK Rapunzel the Golden: taunt → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: taunt
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=259/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=91/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=216/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=145/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 91 → 43  (-48)
+  Snowkissed Aurora gains root for 2 rounds.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Sir Roland: Knight's Challenge → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 40 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Sir Roland[back_right]: Knight's Challenge → Rapunzel the Golden
+Sir Roland uses Knight's Challenge on Rapunzel the Golden.
+  Robin, Hooded Avenger is Taunted for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[back_right] HP=259/265 statuses=[root(1r), guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=83/225 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=216/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=145/185 statuses=[taunt(2r)]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: root
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] STATUS_TICK Robin, Hooded Avenger: taunt → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=259/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=83/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=216/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=145/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[taunt(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=70 raw=51.43 ceil=52
+    [T]   FINAL_DMG=42
+  Snowkissed Aurora takes 42 damage.
+    [T] HPCHANGE Snowkissed Aurora: 83 → 41  (-42)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Sir Roland[back_right]
+    [T]   power=35
+    [T]   atk=82 def=90 raw=31.89 ceil=32
+    [T]   FINAL_DMG=32
+  Sir Roland takes 32 damage.
+    [T] HPCHANGE Sir Roland: 259 → 227  (-32)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Sir Roland gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[back_right] HP=227/265 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=41/225 statuses=[guard(2r), root(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=216/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=135/185 statuses=[taunt(1r)]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: taunt → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: taunt
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=227/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=41/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=216/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=135/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Knight's Challenge → Rapunzel the Golden
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 38 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: Knight's Challenge → Rapunzel the Golden
+Sir Roland uses Knight's Challenge on Rapunzel the Golden.
+  Robin, Hooded Avenger is Taunted for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Snowkissed Aurora
+Rapunzel the Golden uses Golden Snare on Snowkissed Aurora.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=60 def=60 raw=60.00 ceil=60
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 41 → 0  (-48) **KO**
+  Snowkissed Aurora's root is refreshed to 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Sir Roland[front]
+    [T]   power=35
+    [T]   atk=82 def=90 raw=31.89 ceil=32
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=6
+  Sir Roland takes 6 damage.
+    [T] HPCHANGE Sir Roland: 265 → 259  (-6)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Sir Roland gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=259/265 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=216/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=125/185 statuses=[taunt(2r)]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: taunt → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=259/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=216/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=125/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[taunt(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 259 → 219  (-40)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 46 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[root(1r), guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=216/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=115/185 statuses=[taunt(1r)]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_EXPIRED Sir Roland: root
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: taunt → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: taunt
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=216/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=115/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=80 raw=22.50 ceil=23
+    [T]   FINAL_DMG=19
+  Sir Roland takes 19 damage.
+    [T] HPCHANGE Sir Roland: 265 → 246  (-19)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Sir Roland gains root for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Robin, Hooded Avenger
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Robin, Hooded Avenger
+Sir Roland uses Shield Bash on Robin, Hooded Avenger.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 115 → 75  (-40)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Sir Roland[front] HP=246/265 statuses=[guard(1r), root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=206/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=75/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=246/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=206/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=75/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=80 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Sir Roland takes 45 damage.
+    [T] HPCHANGE Sir Roland: 246 → 201  (-45)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Sir Roland's root is refreshed to 2 rounds.
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=25
+  Rapunzel the Golden takes 25 damage.
+    [T] HPCHANGE Rapunzel the Golden: 196 → 171  (-25)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Sir Roland[front] HP=201/265 statuses=[root(2r), guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=171/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=75/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=201/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=171/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=75/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Sir Roland: Knight's Challenge → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Knight's Challenge → Rapunzel the Golden
+Sir Roland uses Knight's Challenge on Rapunzel the Golden.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=35
+    [T]   atk=40 def=65 raw=21.54 ceil=22
+    [T]   FINAL_DMG=22
+  Rapunzel the Golden takes 22 damage.
+    [T] HPCHANGE Rapunzel the Golden: 171 → 149  (-22)
+  Rapunzel the Golden is Taunted for 2 rounds.
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=80 raw=56.25 ceil=57
+    [T]   FINAL_DMG=36
+  Sir Roland takes 36 damage.
+    [T] HPCHANGE Sir Roland: 201 → 165  (-36)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Sir Roland[front] HP=165/265 statuses=[root(1r), guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=149/258 statuses=[taunt(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=65/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: root
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] STATUS_TICK Rapunzel the Golden: taunt → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=165/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=149/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=65/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=80 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Sir Roland takes 45 damage.
+    [T] HPCHANGE Sir Roland: 165 → 120  (-45)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Sir Roland gains root for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=25
+  Rapunzel the Golden takes 25 damage.
+    [T] HPCHANGE Rapunzel the Golden: 139 → 114  (-25)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Sir Roland[front] HP=120/265 statuses=[root(2r), guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=114/258 statuses=[taunt(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=65/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: taunt → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: taunt
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=120/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=114/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=65/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Sir Roland: Knight's Challenge → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Knight's Challenge → Rapunzel the Golden
+Sir Roland uses Knight's Challenge on Rapunzel the Golden.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=35
+    [T]   atk=40 def=65 raw=21.54 ceil=22
+    [T]   FINAL_DMG=22
+  Rapunzel the Golden takes 22 damage.
+    [T] HPCHANGE Rapunzel the Golden: 114 → 92  (-22)
+  Rapunzel the Golden is Taunted for 2 rounds.
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=80 raw=56.25 ceil=57
+    [T]   FINAL_DMG=36
+  Sir Roland takes 36 damage.
+    [T] HPCHANGE Sir Roland: 120 → 84  (-36)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Sir Roland[front] HP=84/265 statuses=[root(1r), guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=92/258 statuses=[taunt(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=55/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: root
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] STATUS_TICK Rapunzel the Golden: taunt → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=84/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=92/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=55/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=60 def=80 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Sir Roland takes 45 damage.
+    [T] HPCHANGE Sir Roland: 84 → 39  (-45)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Sir Roland gains root for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Rapunzel the Golden
+Sir Roland uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=25
+  Rapunzel the Golden takes 25 damage.
+    [T] HPCHANGE Rapunzel the Golden: 82 → 57  (-25)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Sir Roland[front] HP=39/265 statuses=[root(2r), guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=57/258 statuses=[taunt(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=55/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: taunt → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: taunt
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=39/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[root(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=57/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=55/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Sir Roland: Knight's Challenge → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: Knight's Challenge → Rapunzel the Golden
+Sir Roland uses Knight's Challenge on Rapunzel the Golden.
+    [T] DMGCALC [Knight's Challenge] Sir Roland[front] → Rapunzel the Golden[front]
+    [T]   power=35
+    [T]   atk=40 def=65 raw=21.54 ceil=22
+    [T]   FINAL_DMG=22
+  Rapunzel the Golden takes 22 damage.
+    [T] HPCHANGE Rapunzel the Golden: 57 → 35  (-22)
+  Rapunzel the Golden is Taunted for 2 rounds.
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Sir Roland
+Robin, Hooded Avenger uses Bring Down on Sir Roland.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=80 raw=56.25 ceil=57
+    [T]   FINAL_DMG=36
+  Sir Roland takes 36 damage.
+    [T] HPCHANGE Sir Roland: 39 → 3  (-36)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Sir Roland[front] HP=3/265 statuses=[root(1r), guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=35/258 statuses=[taunt(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=45/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Sir Roland: root → 0r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: root
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] STATUS_TICK Rapunzel the Golden: taunt → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=3/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=35/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[taunt(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=45/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Golden Snare → Sir Roland
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Sir Roland
+Rapunzel the Golden uses Golden Snare on Sir Roland.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Sir Roland[front]
+    [T]   power=30
+    [T]   atk=60 def=80 raw=22.50 ceil=23
+    [T]   FINAL_DMG=23
+  Sir Roland takes 23 damage.
+    [T] HPCHANGE Sir Roland: 3 → 0  (-23) **KO**
+  Sir Roland gains root for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 20)
+────────────────────────────────────────────────────────────
+Player 2 wins!
+�───────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=85/225 statuses=[guard(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=179/220 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[back_right] HP=260/265 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[taunt(1r), guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 0r left
+    [T] STATUS_EXPIRED Pinocchio, Cursed Puppet: guard
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: taunt → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: taunt
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=85/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=179/220 ATK=95(base=65) DEF=90(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=260/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Pinocchio, Cursed Puppet: Dark Grasp → Sir Roland
+[Queued] Sir Roland: Swap with Pinocchio, Cursed Puppet
+[Queued] Snowkissed Aurora: Heal → Pinocchio, Cursed Puppet
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Dark Grasp → Sir Roland
+Pinocchio, Cursed Puppet uses Dark Grasp on Sir Roland.
+    [T] DMGCALC [Dark Grasp] Pinocchio, Cursed Puppet[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=95 def=80 raw=59.38 ceil=60
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=10
+  Sir Roland takes 10 damage.
+    [T] HPCHANGE Sir Roland: 265 → 255  (-10)
+  Spiked Mail! Pinocchio, Cursed Puppet takes 10 damage.
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Pinocchio, Cursed Puppet
+Sir Roland and Pinocchio, Cursed Puppet swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Pinocchio, Cursed Puppet is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Pinocchio, Cursed Puppet
+Snowkissed Aurora uses Heal on Pinocchio, Cursed Puppet.
+  Snowkissed Aurora heals Pinocchio, Cursed Puppet for 51 HP.
+  Innocent Heart: Pinocchio, Cursed Puppet +10 Def.
+  Medic: Pinocchio, Cursed Puppet cleansed of rulebook status conditions.
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 10 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=85/225 statuses=[guard(1r)]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=220/220 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=260/265 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=85/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_right] HP=220/220 ATK=95(base=65) DEF=90(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=260/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Sir Roland
+Sir Roland uses Shield Bash on Sir Roland.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=40 def=90 raw=17.78 ceil=18
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=5
+  Sir Roland takes 5 damage.
+    [T] HPCHANGE Sir Roland: 260 → 255  (-5)
+  All allies are Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Pinocchio, Cursed Puppet: Swap with Sir Roland
+[Queued] Snowkissed Aurora: Toxin Purge → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_right]: swap ↔ Sir Roland
+Pinocchio, Cursed Puppet and Sir Roland swap positions.
+  Banner of Command: Pinocchio, Cursed Puppet is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Toxin Purge → Sir Roland
+Snowkissed Aurora uses Toxin Purge on Sir Roland.
+  Innocent Heart: Sir Roland +10 Def.
+  Sir Roland loses guard.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=85/225 statuses=[guard(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[back_right] HP=255/265 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: guard → 1r left
+    [T] BUFF_EXPIRED Pinocchio, Cursed Puppet: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P2 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=85/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=95(base=65) DEF=80(base=50) SPD=50(base=50)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=255/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]

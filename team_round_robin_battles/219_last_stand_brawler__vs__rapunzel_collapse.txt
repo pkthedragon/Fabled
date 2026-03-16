@@ -1,0 +1,917 @@
+Battle 219
+Player 1 Team: Last-Stand Brawler
+Player 2 Team: Rapunzel Collapse
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:56:27
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 219
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Brawler
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Not By The Hair  (passive=False)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+Risa Redcloak and Porcus III swap positions.
+[Queued] Rapunzel the Golden: Edict → Snowkissed Aurora
+[Queued] Frederic the Beastslayer: Hero's Charge → Snowkissed Aurora
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Snowkissed Aurora
+Rapunzel the Golden uses Edict on Snowkissed Aurora.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Snowkissed Aurora[back_right]
+    [T]   power=50
+    [T]   atk=60 def=60 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Snowkissed Aurora takes 50 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 175  (-50)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Snowkissed Aurora
+Frederic the Beastslayer uses Hero's Charge on Snowkissed Aurora.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=30
+    [T]   atk=70 def=60 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 175 → 130  (-45)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Toxin Purge → Porcus III
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Porcus III
+Snowkissed Aurora uses Toxin Purge on Porcus III.
+  Innocent Heart: Porcus III +10 Def.
+  Porcus III is cleansed of rulebook status conditions.
+    [T] ACTION P1 Risa Redcloak[back_left]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=130/225 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=130/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Rapunzel the Golden
+[Queued] Risa Redcloak: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Rapunzel the Golden
+Porcus III uses Shield Bash on Rapunzel the Golden.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+[Queued] Rapunzel the Golden: Swap with Lucky Constantine
+[Queued] Frederic the Beastslayer: Hero's Charge → Risa Redcloak
+[Queued] Lucky Constantine: Post Bounty → Snowkissed Aurora
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Lucky Constantine
+Rapunzel the Golden and Lucky Constantine swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Risa Redcloak
+Frederic the Beastslayer uses Hero's Charge on Risa Redcloak.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Risa Redcloak[back_right]
+    [T]   power=30
+    [T]   atk=70 def=60 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Risa Redcloak takes 45 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 205  (-45)
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Snowkissed Aurora
+Lucky Constantine uses Post Bounty on Snowkissed Aurora.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=70 def=70 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Snowkissed Aurora takes 32 damage.
+    [T] HPCHANGE Snowkissed Aurora: 155 → 123  (-32)
+  Snowkissed Aurora gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[back_right] HP=205/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=123/225 statuses=[guard(2r), expose(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=205/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=123/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r), expose(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Sucker Punch → Snowkissed Aurora
+[Queued] Frederic the Beastslayer: Hero's Charge → Snowkissed Aurora
+[Queued] Rapunzel the Golden: Edict → Snowkissed Aurora
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Snowkissed Aurora
+Lucky Constantine uses Sucker Punch on Snowkissed Aurora.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Snowkissed Aurora[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=70 raw=60.00 ceil=60
+    [T]   FINAL_DMG=58
+  Snowkissed Aurora takes 58 damage.
+    [T] HPCHANGE Snowkissed Aurora: 123 → 65  (-58)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Snowkissed Aurora
+Frederic the Beastslayer uses Hero's Charge on Snowkissed Aurora.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Snowkissed Aurora[front]
+    [T]   power=30
+    [T]   atk=70 def=70 raw=30.00 ceil=30
+    [T]   FINAL_DMG=39
+  Snowkissed Aurora takes 39 damage.
+    [T] HPCHANGE Snowkissed Aurora: 65 → 26  (-39)
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Snowkissed Aurora
+Rapunzel the Golden uses Edict on Snowkissed Aurora.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Snowkissed Aurora[front]
+    [T]   power=30
+    [T]   atk=60 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Snowkissed Aurora takes 26 damage.
+    [T] HPCHANGE Snowkissed Aurora: 26 → 0  (-26) **KO**
+  Snowkissed Aurora gains spotlight for 2 rounds.
+Porcus III moves to frontline.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Lucky Constantine
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Lucky Constantine
+Risa Redcloak uses Blood Hunt on Lucky Constantine.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Lucky Constantine[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=113
+  Lucky Constantine takes 113 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 102  (-113)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[front] HP=205/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=102/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=205/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=102/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Risa Redcloak
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Edict → Risa Redcloak
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Risa Redcloak
+Lucky Constantine uses Feline Gambit on Risa Redcloak.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Risa Redcloak[front]
+    [T]   power=45
+    [T]   atk=70 def=60 raw=52.50 ceil=53
+    [T]   FINAL_DMG=53
+  Risa Redcloak takes 53 damage.
+    [T] HPCHANGE Risa Redcloak: 205 → 152  (-53)
+  Risa Redcloak gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Risa Redcloak
+Rapunzel the Golden uses Edict on Risa Redcloak.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Risa Redcloak[front]
+    [T]   power=30
+    [T]   atk=60 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=36
+  Risa Redcloak takes 36 damage.
+    [T] HPCHANGE Risa Redcloak: 152 → 116  (-36)
+  Risa Redcloak gains spotlight for 2 rounds.
+[Queued] Risa Redcloak: Feint → Lucky Constantine
+[Queued] Porcus III: Shield Bash → Lucky Constantine
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Lucky Constantine
+Risa Redcloak uses Feint on Lucky Constantine.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=75 def=40 raw=84.38 ceil=85
+    [T]   FINAL_DMG=85
+  Lucky Constantine takes 85 damage.
+    [T] HPCHANGE Lucky Constantine: 102 → 17  (-85)
+  Risa Redcloak heals 23 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Lucky Constantine
+Porcus III uses Shield Bash on Lucky Constantine.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[front] HP=139/250 statuses=[expose(2r), spotlight(2r), guard(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=17/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 1r left
+    [T] STATUS_TICK Risa Redcloak: spotlight → 1r left
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=139/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[expose(1r), spotlight(1r), guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=17/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Sucker Punch → Risa Redcloak
+[Queued] Frederic the Beastslayer: Hunter's Mark → Risa Redcloak
+[Queued] Rapunzel the Golden: Edict → Risa Redcloak
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Risa Redcloak
+Lucky Constantine uses Sucker Punch on Risa Redcloak.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Risa Redcloak[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=60 raw=70.00 ceil=70
+    [T]   FINAL_DMG=68
+  Risa Redcloak takes 68 damage.
+    [T] HPCHANGE Risa Redcloak: 139 → 71  (-68)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Risa Redcloak
+Frederic the Beastslayer uses Hunter's Mark on Risa Redcloak.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Risa Redcloak[front]
+    [T]   power=25
+    [T]   atk=70 def=60 raw=29.17 ceil=30
+    [T]   FINAL_DMG=36
+  Risa Redcloak takes 36 damage.
+    [T] HPCHANGE Risa Redcloak: 71 → 35  (-36)
+  Risa Redcloak is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Risa Redcloak
+Rapunzel the Golden uses Edict on Risa Redcloak.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Risa Redcloak[front]
+    [T]   power=30
+    [T]   atk=60 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=29
+  Risa Redcloak takes 29 damage.
+    [T] HPCHANGE Risa Redcloak: 35 → 6  (-29)
+  Rapunzel the Golden must recharge next turn.
+[Queued] Risa Redcloak: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Lucky Constantine
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Lucky Constantine
+Porcus III uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=35 def=40 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Lucky Constantine takes 35 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[back_right] HP=6/250 statuses=[expose(1r), spotlight(1r), guard(1r)]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: expose → 0r left
+    [T] STATUS_TICK Risa Redcloak: spotlight → 0r left
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: expose
+    [T] STATUS_EXPIRED Risa Redcloak: spotlight
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=6/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hunter's Mark → Risa Redcloak
+[Queued] Rapunzel the Golden: Item Rapunzel the Golden
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Rapunzel the Golden
+Lucky Constantine and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Risa Redcloak
+Frederic the Beastslayer uses Hunter's Mark on Risa Redcloak.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Risa Redcloak[back_right]
+    [T]   power=25
+    [T]   atk=70 def=60 raw=29.17 ceil=30
+    [T]   FINAL_DMG=40
+  Risa Redcloak takes 40 damage.
+    [T] HPCHANGE Risa Redcloak: 6 → 0  (-40) **KO**
+  Risa Redcloak is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[front]: item [Main-Gauche] → Rapunzel the Golden
+Rapunzel the Golden recharges.
+[Queued] Porcus III: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Rapunzel the Golden
+Porcus III uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=25
+  Rapunzel the Golden takes 25 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 233  (-25)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=233/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=233/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Rapunzel the Golden: Edict → Porcus III
+[Queued] Frederic the Beastslayer: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Porcus III
+Rapunzel the Golden uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=60 def=95 raw=31.58 ceil=32
+    [T]   FINAL_DMG=32
+  Porcus III takes 32 damage.
+    [T] HPCHANGE Porcus III: 280 → 248  (-32)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Lucky Constantine
+Frederic the Beastslayer and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+[Queued] Porcus III: Unbreakable Defense → Porcus III
+    [T] ACTION P1 Porcus III[front]: Unbreakable Defense → Porcus III
+Porcus III uses Unbreakable Defense on Porcus III.
+  Porcus III clears statuses and doubles Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=248/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=233/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=248/280 ATK=40(base=35) DEF=180(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+95(1r), attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=233/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Rapunzel the Golden: Edict → Porcus III
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+[Queued] Frederic the Beastslayer: Swap with Lucky Constantine
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Porcus III
+Rapunzel the Golden uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=60 def=180 raw=16.67 ceil=17
+    [T]   FINAL_DMG=17
+  Porcus III takes 17 damage.
+    [T] HPCHANGE Porcus III: 248 → 231  (-17)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: swap ↔ Lucky Constantine
+Frederic the Beastslayer and Lucky Constantine swap positions.
+[Queued] Porcus III: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Rapunzel the Golden
+Porcus III uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=25
+  Rapunzel the Golden takes 25 damage.
+    [T] HPCHANGE Rapunzel the Golden: 233 → 208  (-25)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=231/280 statuses=[root(2r), expose(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=208/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+95
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=231/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[root(1r), expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=208/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Rapunzel the Golden: Edict → Porcus III
+[Queued] Frederic the Beastslayer: Hero's Charge → Porcus III
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Porcus III
+Rapunzel the Golden uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=60 def=95 raw=31.58 ceil=32
+    [T]   FINAL_DMG=32
+  Porcus III takes 32 damage.
+    [T] HPCHANGE Porcus III: 231 → 199  (-32)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Porcus III
+Frederic the Beastslayer uses Hero's Charge on Porcus III.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=70 def=95 raw=22.11 ceil=23
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 199 → 166  (-33)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Lucky Constantine[back_left]: Sucker Punch → Porcus III
+Lucky Constantine uses Sucker Punch on Porcus III.
+  Porcus III gains weaken for 2 rounds.
+[Queued] Porcus III: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Rapunzel the Golden
+Porcus III uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=20
+  Rapunzel the Golden takes 20 damage.
+    [T] HPCHANGE Rapunzel the Golden: 208 → 188  (-20)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=166/280 statuses=[root(1r), expose(1r), guard(1r), weaken(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=188/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: root → 0r left
+    [T] STATUS_TICK Porcus III: expose → 0r left
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_EXPIRED Porcus III: root
+    [T] STATUS_EXPIRED Porcus III: expose
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=166/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=188/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Rapunzel the Golden: Edict → Porcus III
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Porcus III
+Rapunzel the Golden uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=60 def=95 raw=31.58 ceil=32
+    [T]   FINAL_DMG=32
+  Porcus III takes 32 damage.
+    [T] HPCHANGE Porcus III: 166 → 134  (-32)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+[Queued] Porcus III: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Rapunzel the Golden
+Porcus III uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=20
+  Rapunzel the Golden takes 20 damage.
+    [T] HPCHANGE Rapunzel the Golden: 188 → 168  (-20)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=134/280 statuses=[weaken(1r), root(2r), expose(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=168/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: weaken → 0r left
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] STATUS_EXPIRED Porcus III: weaken
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=134/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[root(1r), expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=168/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Rapunzel the Golden: Edict → Porcus III
+[Queued] Frederic the Beastslayer: Hunter's Mark → Porcus III
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Porcus III
+Rapunzel the Golden uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=60 def=95 raw=31.58 ceil=32
+    [T]   FINAL_DMG=32
+  Porcus III takes 32 damage.
+    [T] HPCHANGE Porcus III: 134 → 102  (-32)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Porcus III
+Frederic the Beastslayer uses Hunter's Mark on Porcus III.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Porcus III[front]
+    [T]   power=25
+    [T]   atk=70 def=95 raw=18.42 ceil=19
+    [T]   FINAL_DMG=23
+  Porcus III takes 23 damage.
+    [T] HPCHANGE Porcus III: 102 → 79  (-23)
+  Porcus III is Marked — takes +10 damage next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: Sucker Punch → Porcus III
+Lucky Constantine uses Sucker Punch on Porcus III.
+  Porcus III gains weaken for 2 rounds.
+[Queued] Porcus III: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Rapunzel the Golden
+Porcus III uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=20
+  Rapunzel the Golden takes 20 damage.
+    [T] HPCHANGE Rapunzel the Golden: 168 → 148  (-20)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=79/280 statuses=[root(1r), expose(1r), guard(1r), weaken(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=148/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: root → 0r left
+    [T] STATUS_TICK Porcus III: expose → 0r left
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: weaken → 1r left
+    [T] STATUS_EXPIRED Porcus III: root
+    [T] STATUS_EXPIRED Porcus III: expose
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=79/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=148/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Rapunzel the Golden: Edict → Porcus III
+[Queued] Frederic the Beastslayer: Hunter's Mark → Porcus III
+[Queued] Lucky Constantine: Post Bounty → Porcus III
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Porcus III
+Rapunzel the Golden uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=60 def=95 raw=31.58 ceil=32
+    [T]   FINAL_DMG=42
+  Porcus III takes 42 damage.
+    [T] HPCHANGE Porcus III: 79 → 37  (-42)
+  Porcus III gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Porcus III
+Frederic the Beastslayer uses Hunter's Mark on Porcus III.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Porcus III[front]
+    [T]   power=25
+    [T]   atk=70 def=95 raw=18.42 ceil=19
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 37 → 4  (-33)
+  Porcus III is Marked — takes +10 damage next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Porcus III
+Lucky Constantine uses Post Bounty on Porcus III.
+  Porcus III gains expose for 2 rounds.
+[Queued] Porcus III: Shield Bash → Rapunzel the Golden
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Rapunzel the Golden
+Porcus III uses Shield Bash on Rapunzel the Golden.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=20
+  Rapunzel the Golden takes 20 damage.
+    [T] HPCHANGE Rapunzel the Golden: 148 → 128  (-20)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=4/280 statuses=[weaken(1r), root(2r), expose(2r), guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=128/258 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: weaken → 0r left
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_TICK Porcus III: expose → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] STATUS_EXPIRED Porcus III: weaken
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Porcus III[front] HP=4/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[root(1r), expose(1r), guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=128/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Rapunzel the Golden: Edict → Porcus III
+[Queued] Frederic the Beastslayer: Hunter's Mark → Porcus III
+[Queued] Lucky Constantine: Sucker Punch → Porcus III
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Porcus III
+Rapunzel the Golden uses Edict on Porcus III.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=60 def=95 raw=31.58 ceil=32
+    [T]   FINAL_DMG=42
+  Porcus III takes 42 damage.
+    [T] HPCHANGE Porcus III: 4 → 0  (-42) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 13)
+────────────────────────────────────────────────────────────
+Player 2 wins!

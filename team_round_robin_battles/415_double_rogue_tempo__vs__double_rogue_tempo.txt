@@ -1,0 +1,769 @@
+Battle 415
+Player 1 Team: Double Rogue Tempo
+Player 2 Team: Double Rogue Tempo
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:14:00
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 418
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Double Rogue Tempo
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+Player 2: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → Lucky Constantine
+[Queued] Matchstick Liesl: Cauterize → Prince Charming
+[Queued] Hunold the Piper: Haunting Rhythm → Prince Charming
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Lucky Constantine
+Witch of the Woods uses Thunder Call on Lucky Constantine.
+  Witch of the Woods loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Lucky Constantine[back_left]
+    [T]   power=65
+    [T]   atk=65 def=40 raw=105.62 ceil=106
+    [T]   FINAL_DMG=106
+  Lucky Constantine takes 106 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 109  (-106)
+  Lucky Constantine gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Prince Charming
+Matchstick Liesl uses Cauterize on Prince Charming.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=50 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 255 → 218  (-37)
+  Prince Charming gains no_heal for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Haunting Rhythm → Prince Charming
+Hunold the Piper uses Haunting Rhythm on Prince Charming.
+  Prince Charming gains shock for 2 rounds.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Lucky Constantine: Post Bounty → Witch of the Woods
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 175  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Witch of the Woods
+Lucky Constantine uses Post Bounty on Witch of the Woods.
+  Witch of the Woods gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_right] HP=218/255 statuses=[no_heal(2r), shock(2r)]
+    [T]   P1 Lucky Constantine[back_left] HP=109/215 statuses=[shock(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 statuses=[expose(2r)]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Prince Charming: no_heal → 1r left
+    [T] STATUS_TICK Prince Charming: shock → 1r left
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+    [T] STATUS_TICK Witch of the Woods: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=218/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[no_heal(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=109/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=65(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+[Queued] Prince Charming: Condescend → Witch of the Woods
+[Queued] Lucky Constantine: Post Bounty → Witch of the Woods
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=101
+  Witch of the Woods takes 101 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 79  (-101)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Witch of the Woods
+Prince Charming uses Condescend on Witch of the Woods.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=65 def=35 raw=74.29 ceil=75
+    [T]   FINAL_DMG=90
+  Witch of the Woods takes 90 damage.
+    [T] HPCHANGE Witch of the Woods: 79 → 0  (-90) **KO**
+  Shock recoil: Prince Charming takes 18 damage.
+Hunold the Piper moves to frontline.
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Witch of the Woods
+Lucky Constantine's target is no longer legal — Post Bounty fizzles.
+[Queued] Hunold the Piper: Haunting Rhythm → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Smite → Prince Charming
+    [T] ACTION P2 Hunold the Piper[front]: Haunting Rhythm → Reynard, Lupine Trickster
+Hunold the Piper uses Haunting Rhythm on Reynard, Lupine Trickster.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=27
+  Reynard, Lupine Trickster takes 27 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 175 → 148  (-27)
+  Reynard, Lupine Trickster gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Smite → Prince Charming
+Matchstick Liesl uses Smite on Prince Charming.
+    [T] DMGCALC [Smite] Matchstick Liesl[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=50 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=52
+  Prince Charming takes 52 damage.
+    [T] HPCHANGE Prince Charming: 200 → 148  (-52)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_right] HP=148/255 statuses=[no_heal(1r), shock(1r)]
+    [T]   P1 Lucky Constantine[back_left] HP=109/215 statuses=[shock(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=148/205 statuses=[shock(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Prince Charming: no_heal → 0r left
+    [T] STATUS_TICK Prince Charming: shock → 0r left
+    [T] STATUS_EXPIRED Prince Charming: no_heal
+    [T] STATUS_EXPIRED Prince Charming: shock
+    [T] STATUS_TICK Lucky Constantine: shock → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: shock
+    [T] STATUS_TICK Reynard, Lupine Trickster: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=148/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=109/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=148/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                             [Queued] Lucky Constantine: Swap with Prince Charming
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Prince Charming[front]: Summons → Prince Charming
+Prince Charming uses Summons on Prince Charming.
+    [T] ACTION P1 Lucky Constantine[back_right]: swap ↔ Prince Charming
+Lucky Constantine and Prince Charming swap positions.
+    [T] ACTION P1 Reynard, Lupine Trickster[back_left]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[back_right] HP=144/255 statuses=[expose(2r)]
+    [T]   P1 Lucky Constantine[front] HP=133/215 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=205/205 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=66/255 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] DEBUFF_EXPIRED Lucky Constantine: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=144/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=133/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=66/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Post Bounty → Lucky Constantine
+[Queued] Prince Charming: Condescend → Lucky Constantine
+[Queued] Reynard, Lupine Trickster: Riposte → Lucky Constantine
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Lucky Constantine
+Lucky Constantine uses Post Bounty on Lucky Constantine.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=70 def=40 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 145  (-70)
+  Lucky Constantine gains expose for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Lucky Constantine
+Prince Charming uses Condescend on Lucky Constantine.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=78
+  Lucky Constantine takes 78 damage.
+    [T] HPCHANGE Lucky Constantine: 145 → 67  (-78)
+    [T] ACTION P1 Reynard, Lupine Trickster[back_left]: Riposte → Lucky Constantine
+Reynard, Lupine Trickster uses Riposte on Lucky Constantine.
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Lucky Constantine: Post Bounty → Lucky Constantine
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Lucky Constantine
+Lucky Constantine uses Post Bounty on Lucky Constantine.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=70 def=40 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+    [T] HPCHANGE Lucky Constantine: 133 → 63  (-70)
+  Lucky Constantine gains expose for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Lucky Constantine
+Prince Charming uses Condescend on Lucky Constantine.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=78
+  Lucky Constantine takes 78 damage.
+    [T] HPCHANGE Lucky Constantine: 63 → 0  (-78) **KO**
+Reynard, Lupine Trickster moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[back_right] HP=144/255 statuses=[expose(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=66/255 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=67/215 statuses=[expose(2r)]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] STATUS_TICK Lucky Constantine: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=144/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=66/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=67/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Post Bounty → Reynard, Lupine Trickster
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Reynard, Lupine Trickster
+Lucky Constantine uses Post Bounty on Reynard, Lupine Trickster.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=26
+  Reynard, Lupine Trickster takes 26 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 179  (-26)
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=70
+  Reynard, Lupine Trickster takes 70 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 179 → 109  (-70)
+    [T] ACTION P2 Reynard, Lupine Trickster[back_left]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+[Queued] Reynard, Lupine Trickster: Riposte → Lucky Constantine
+[Queued] Prince Charming: Condescend → Lucky Constantine
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Lucky Constantine
+Reynard, Lupine Trickster uses Riposte on Lucky Constantine.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Lucky Constantine[front]
+    [T]   power=55 (base=45)
+    [T]   atk=65 def=40 raw=89.38 ceil=90
+    [T]   FINAL_DMG=108
+  Lucky Constantine takes 108 damage.
+    [T] HPCHANGE Lucky Constantine: 67 → 0  (-108) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Prince Charming moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Lucky Constantine
+Prince Charming's target is no longer legal — Condescend fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[back_right] HP=144/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=109/205 statuses=[expose(2r)]
+    [T]   P2 Prince Charming[front] HP=66/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 statuses=[-]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=144/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=109/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=66/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Reynard, Lupine Trickster
+  Prince Charming retargets to Prince Charming after swapping to front.
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 66 → 6  (-60)
+  Prince Charming loses -10 Defense for 2 rounds.
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 144 → 84  (-60)
+  Prince Charming loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming[front] HP=84/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=109/205 statuses=[expose(1r)]
+    [T]   P2 Prince Charming[front] HP=6/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 statuses=[-]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: expose
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=25  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=84/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=109/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=6/255 ATK=65(base=65) DEF=45(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 84 → 24  (-60)
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=45 raw=86.67 ceil=87
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=36
+  Reynard, Lupine Trickster takes 36 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 109 → 73  (-36)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming[back_right] HP=24/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=73/205 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=6/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 statuses=[-]
+    [T] DEBUFF_EXPIRED Prince Charming: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=24/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=73/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=6/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Reynard, Lupine Trickster
+  Prince Charming retargets to Prince Charming after swapping to front.
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 6 → 0  (-60) **KO**
+  Prince Charming loses -10 Defense for 2 rounds.
+Reynard, Lupine Trickster moves to frontline.
+[Queued] Reynard, Lupine Trickster: Last Laugh → Reynard, Lupine Trickster
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Last Laugh → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Last Laugh on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate (65 power) and steal Speed next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Prince Charming[front] HP=24/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=73/205 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=205/205 statuses=[-]
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=24/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=73/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 175  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 73 → 43  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Prince Charming[back_right] HP=24/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=43/205 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=24/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=43/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=59
+  Reynard, Lupine Trickster takes 59 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 175 → 116  (-59)
+  Reynard, Lupine Trickster loses -10 Defense for 2 rounds.
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=35 raw=92.86 ceil=93
+    [T]   FINAL_DMG=93
+  Reynard, Lupine Trickster takes 93 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 116 → 23  (-93)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Prince Charming[front] HP=24/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=43/205 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=23/205 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=24/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=43/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=23/205 ATK=65(base=65) DEF=35(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=35 raw=92.86 ceil=93
+    [T]   FINAL_DMG=75
+  Reynard, Lupine Trickster takes 75 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 43 → 13  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Prince Charming[back_right] HP=24/255 statuses=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=13/205 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 statuses=[-]
+    [T] DEBUFF_EXPIRED Reynard, Lupine Trickster: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=24/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=13/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=59
+  Reynard, Lupine Trickster takes 59 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-59) **KO**
+  Reynard, Lupine Trickster loses -10 Defense for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 12)
+────────────────────────────────────────────────────────────
+Player 1 wins!

@@ -1,0 +1,507 @@
+Battle 361
+Player 1 Team: Backline Hunter
+Player 2 Team: Burn Shock Split
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:09:13
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 361
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Backline Hunter
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+Player 2: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1[Queued] Prince Charmin[Queued] Witch of the Woods: Thund[Queued] Lucky Constantine: Swa[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+[Queued] Hunold the Piper: Haunting Rhythm → Prince Charming
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Lucky Constantine
+Witch of the Woods uses Thunder Call on Lucky Constantine.
+  Witch of the Woods loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Lucky Constantine[back_right]
+    [T]   power=65
+    [T]   atk=65 def=40 raw=105.62 ceil=106
+    [T]   FINAL_DMG=106
+  Lucky Constantine takes 106 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 109  (-106)
+  Lucky Constantine gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+  Matchstick Liesl loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Lucky Constantine[back_right]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=55
+  Lucky Constantine takes 55 damage.
+    [T] HPCHANGE Lucky Constantine: 109 → 54  (-55)
+  Lucky Constantine gains no_h[Queued] Sir Roland: Shield Bash → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+    [T] ACTION P2 Sir Roland[front]: Shi[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Witch of the Woods
+[Queued] Robin, Hooded Avenger: Bring Down → Witch of the Woods
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Witch of the Woods
+Lucky Constantine uses Post Bounty on Witch of the Woods.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=70 def=35 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch of the Woods takes 80 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 100  (-80)
+  Shock recoil: Lucky Constantine takes 16 damage.
+  Witch of the Woods gains expose for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Bring Down → Witch of the Woods
+Robin, Hooded Avenger uses Bring Down on Witch of the Woods.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=100
+  Witch of the Woods takes 100 damage.
+    [T] HPCHANGE Witch of the Woods: 100 → 0  (-100) **KO**
+  Witch of the Woods gains root for 2 rounds.
+Hunold the Piper moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[shock(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=38/215 statuses=[shock(2r), no_heal(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Prince Charming: shock → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Hunold the Piper spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=38/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     stat[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+[Queued] Lucky Constantine: Post Bounty → Sir Roland
+    [T] ACTION P1 Pri[Queued] Lucky Constantine: Post Bounty → Hunold the Piper
+[Queued] Prince Charming: Gallant Charge → Hunold the Piper
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Hunold the Piper
+Lucky Constantine uses Post Bounty on Hunold the Piper.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=51
+  Hunold the Piper takes 51 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 159  (-51)
+  Shock recoil: Lucky Constantine takes 11 damage.
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: Gallant Charge → Hunold the Piper
+Prince Charming uses Gallant Charge on Hunold the Piper.
+    [T] DMGCALC [Gallant Charge] Prince Charming[back_right] → Hunold the Piper[front]
+    [T]   power=35
+    [T]   atk=65 def=45 raw=50.56 ceil=51
+    [T]   FINAL_DMG=62
+  Hunold the Piper takes 62 dam[Queued] Sir Roland: Shield Bash → Lucky Constantine
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Robin, Hooded Avenger: Snipe Shot → Lucky Constantine
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lucky Constantine
+Sir Roland uses Shield Bash on Lucky Constantine.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Lucky Constantine takes 40 damage.
+    [T] HPCHANGE Lucky Constantine: 205 → 165  (-40)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 43 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Snipe Shot → Lucky Constantine
+Robin, Hooded Avenger uses Snipe Shot on Lucky Constantine.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_left] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=77
+  Lucky Constantine takes 77 damage.
+    [T] HPCHANGE Lucky Constantine: 165 → 88  (-77)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_left] HP=159/255 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=175/185 statuses=[-]
+    [T]   P1 Lucky Constantine[front] HP=88/215 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=169/225 statuses=[guard(1r), root(2r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+  Innocent Heart: Robin, Hooded Avenger +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=159/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=175/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=88/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=169/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+ld the Piper[front]: Haunting Rhythm → Robin, Hooded Avenger
+Hunold the Piper uses Haunting Rhythm on Robin, Hooded Avenger.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 110  (-75)
+  Robin, Hooded Avenger gains burn for 2 rounds.
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Hunold the Piper
+Matchstick Liesl uses Heal on Hunold the Piper.
+  Matchstick Liesl heals Hunold the Piper for 55 HP.
+  Purifying Flame: Hunold the Piper will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+[Queued] Prince Charming: Impose → Hunold the Piper
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Hunold the Piper
+Robin, Hooded Avenger uses Bring Down on Hunold the Piper.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=80 def=45 raw=106.67 ceil=107
+    [T]   FINAL_DMG=112
+  Hunold the Piper takes 112 damage.
+    [T] HPCHANGE Hunold the Piper: 126 → 14  (-112)
+  Shock recoil: Robin, Hooded Avenger takes 23 damage.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Hunold the Piper
+Prince Charming uses Impose on Hunold the Piper.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Hunold the Piper[front]
+    [T]   power=30
+    [T]   atk=65 def=45 raw=43.33 ceil=44
+    [T]   FINAL_DMG=53
+  Hunold the Piper takes 53 damage.
+    [T] HPCHANGE Hunold the Piper: 14 → 0  (-53) **KO**
+  Hunold the Piper loses -10 Speed for 2 rounds.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[back_right] HP=242/255 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=87/185 statuses=[burn(2r), shock(2r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+Robin, Hooded Avenger burns for 19 damage.
+    [T] BUFF_EXPIRED Prince Charming: speed+15
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=242/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=68/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn(1r), shock(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Prince Charming: Gallant Charge → Matchstick Liesl
+    [T] ACTION P1 Robin, Hooded Avenger[front]: swap ↔ Prince Charming
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Gallant Charge → Matchstick Liesl
+Prince Charming uses Gallant Charge on Matchstick Liesl.
+    [T] DMGCALC [Gallant Charge] Prince Charming[back_right] → Matchstick Liesl[front]
+    [T]   power=35
+    [T]   atk=65 def=50 raw=45.50 ceil=46
+    [T]   FINAL_DMG=46
+  Matchstick Liesl takes 46 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 164  (-46)
+  Prince Charming gains +15 Speed for 2 rounds.
+  Prince Charming must recharge next turn.
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P2 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[back_right] HP=242/255 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=68/185 statuses=[burn(1r), shock(1r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=164/210 statuses=[-]
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: shock
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=242/255 ATK=65(base=65) DEF=55(base=55) SPD=50(base=35)
+    [T]     statuses=[-]  buffs=[speed+15(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=49/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=164/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Matchstick Liesl
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Bring Down → Matchstick Liesl
+Robin, Hooded Avenger uses Bring Down on Matchstick Liesl.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=80 def=50 raw=96.00 ceil=96
+    [T]   FINAL_DMG=106
+  Matchstick Liesl takes 106 damage.
+    [T] HPCHANGE Matchstick Liesl: 164 → 58  (-106)
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Robin, Hooded Avenger
+Prince Charming recharges.
+[Queued] Matchstick Liesl: Cleansing Inferno
+    [T] ACTION P2 Matchstick Liesl[front]: Cleansing Inferno → spread/auto
+Matchstick Liesl uses Cleansing Inferno.
+Matchstick Liesl uses Cleansing Inferno (spread).
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Prince Charming[back_right] (spread)
+    [T]   power=60
+    [T]   atk=50 def=55 raw=54.55 ceil=55
+    [T]   FINAL_DMG=28
+  Prince Charming takes 28 damage.
+    [T] HPCHANGE Prince Charming: 242 → 214  (-28)
+  Matchstick Liesl heals 19 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Prince Charming gains burn for 2 rounds.
+  Extra vamp vs Burned: Matchstick Liesl heals 9.
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Robin, Hooded Avenger[front] (spread)
+    [T]   power=60
+    [T]   atk=50 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=38
+  Robin, Hooded Avenger takes 38 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 49 → 11  (-38)
+  Matchstick Liesl heals 22 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Robin, Hooded Avenger gains burn for 2 rounds.
+  Extra vamp vs Burned: Matchstick Liesl heals 12.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[burn(2r)]
+    [T]   P1 Robin, Hooded Avenger[front] HP=11/185 statuses=[burn(2r)]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=120/210 statuses=[burn_immune(2r)]
+Prince Charming burns for 26 damage.
+Robin, Hooded Avenger burns for 19 damage.
+Prince Charming moves to frontline.
+    [T] STATUS_TICK Prince Charming: burn → 1r left
+    [T] BUFF_EXPIRED Prince Charming: speed+15
+    [T] STATUS_TICK Matchstick Liesl: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=188/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=120/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Prince Charming
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Prince Charming
+Matchstick Liesl uses Cauterize on Prince Charming.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=50 def=55 raw=45.45 ceil=46
+    [T]   FINAL_DMG=46
+  Prince Charming takes 46 damage.
+    [T] HPCHANGE Prince Charming: 188 → 142  (-46)
+  Prince Charming gains no_heal for 2 rounds.
+[Queued] Prince Charming: Gallant Charge → Matchstick Liesl
+    [T] ACTION P1 Prince Charming[front]: Gallant Charge → Matchstick Liesl
+Prince Charming uses Gallant Charge on Matchstick Liesl.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=65 def=50 raw=84.50 ceil=85
+    [T]   FINAL_DMG=85
+  Matchstick Liesl takes 85 damage.
+    [T] HPCHANGE Matchstick Liesl: 120 → 35  (-85)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming[front] HP=142/255 statuses=[burn(1r), no_heal(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=35/210 statuses=[burn_immune(1r)]
+Prince Charming burns for 26 damage.
+    [T] STATUS_TICK Prince Charming: burn → 0r left
+    [T] STATUS_TICK Prince Charming: no_heal → 1r left
+    [T] STATUS_EXPIRED Prince Charming: burn
+    [T] STATUS_TICK Matchstick Liesl: burn_immune → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=116/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=35/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Smite → Prince Charming
+    [T] ACTION P2 Matchstick Liesl[front]: Smite → Prince Charming
+Matchstick Liesl uses Smite on Prince Charming.
+    [T] DMGCALC [Smite] Matchstick Liesl[front] → Prince Charming[front]
+    [T]   power=55
+    [T]   atk=50 def=55 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+    [T] HPCHANGE Prince Charming: 116 → 66  (-50)
+  Prince Charming gains burn for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+[Queued] Prince Charming: Gallant Charge → Matchstick Liesl
+    [T] ACTION P1 Prince Charming[front]: Gallant Charge → Matchstick Liesl
+Prince Charming uses Gallant Charge on Matchstick Liesl.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=65 def=50 raw=84.50 ceil=85
+    [T]   FINAL_DMG=85
+  Matchstick Liesl takes 85 damage.
+    [T] HPCHANGE Matchstick Liesl: 35 → 0  (-85) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 1 wins!

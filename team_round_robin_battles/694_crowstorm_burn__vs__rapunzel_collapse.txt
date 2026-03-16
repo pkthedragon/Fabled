@@ -1,0 +1,453 @@
+Battle 694
+Player 1 Team: Crowstorm Burn
+Player 2 Team: Rapunzel Collapse
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:44:12
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 694
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+Player 2: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Ashen Ella: Arcane Wave → Frederic the Beastslayer
+[Queued] Witch-Hunter Gretel: Intimidate → Rapunzel the Golden
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P1 Ashen Ella[front]: Arcane Wave → Frederic the Beastslayer
+Ashen Ella uses Arcane Wave on Frederic the Beastslayer.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Frederic the Beastslayer[back_right]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=158
+  Frederic the Beastslayer takes 158 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 42  (-158)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Rapunzel the Golden
+Witch-Hunter Gretel uses Intimidate on Rapunzel the Golden.
+  Rapunzel the Golden gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Lucky Constantine[back_left]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Lucky Constantine takes 50 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 165  (-50)
+  Lucky Constantine gains no_heal for 2 rounds.
+[Queued] Rapunzel the Golden: Lower Guard → Ashen Ella
+[Queued] Frederic the Beastslayer: Hunter's Mark → Ashen Ella
+[Queued] Lucky Constantine: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Ashen Ella
+Rapunzel the Golden uses Lower Guard on Ashen Ella.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Ashen Ella[front]
+    [T]   power=70 (base=55)
+    [T]   atk=60 def=30 raw=140.00 ceil=140
+    [T]   FINAL_DMG=112
+  Ashen Ella takes 112 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 73  (-112)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Ashen Ella
+Frederic the Beastslayer uses Hunter's Mark on Ashen Ella.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Ashen Ella[front]
+    [T]   power=25
+    [T]   atk=70 def=30 raw=58.33 ceil=59
+    [T]   FINAL_DMG=71
+  Ashen Ella takes 71 damage.
+    [T] HPCHANGE Ashen Ella: 73 → 2  (-71)
+  Ashen Ella is Marked — takes +10 damage next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Rapunzel the Golden
+Lucky Constantine and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Ashen Ella[front] HP=2/185 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[weaken(2r)]
+    [T]   P2 Lucky Constantine[front] HP=165/215 statuses=[no_heal(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=42/200 statuses=[-]
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 1r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella[front] HP=2/185 ATK=70(base=80) DEF=30(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=165/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=42/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Ashen Ella
+[Queued] Frederic the Beastslayer: Hero's Charge → Witch-Hunter Gretel
+[Queued] Rapunzel the Golden: Edict → Ashen Ella
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Ashen Ella
+Lucky Constantine uses Feline Gambit on Ashen Ella.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Ashen Ella[front]
+    [T]   power=45
+    [T]   atk=70 def=30 raw=105.00 ceil=105
+    [T]   FINAL_DMG=115
+  Ashen Ella takes 115 damage.
+    [T] HPCHANGE Ashen Ella: 2 → 0  (-115) **KO**
+  Ashen Ella gains expose for 2 rounds.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hero's Charge on Witch-Hunter Gretel.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=30
+    [T]   atk=70 def=45 raw=46.67 ceil=47
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 158  (-57)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Ashen Ella
+Rapunzel the Golden's target is no longer legal — Edict fizzles.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Lucky Constantine
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 57 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Lucky Constantine
+Witch-Hunter Gretel uses Intimidate on Lucky Constantine.
+  Lucky Constantine gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[burn_immune(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[weaken(1r)]
+    [T]   P2 Lucky Constantine[front] HP=165/215 statuses=[no_heal(1r), weaken(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=42/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: weaken → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: weaken
+    [T] STATUS_TICK Lucky Constantine: no_heal → 0r left
+    [T] STATUS_TICK Lucky Constantine: weaken → 1r left
+    [T] STATUS_EXPIRED Lucky Constantine: no_heal
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=165/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=42/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Hero's Charge → Witch-Hunter Gretel
+[Queued] Rapunzel the Golden: Edict → Matchstick Liesl
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Matchstick Liesl
+Lucky Constantine uses Feline Gambit on Matchstick Liesl.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=70 def=50 raw=63.00 ceil=63
+    [T]   FINAL_DMG=51
+  Matchstick Liesl takes 51 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 159  (-51)
+  Matchstick Liesl gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hero's Charge on Witch-Hunter Gretel.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=30
+    [T]   atk=70 def=45 raw=46.67 ceil=47
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 158  (-57)
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Matchstick Liesl
+Rapunzel the Golden uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Matchstick Liesl[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=44
+  Matchstick Liesl takes 44 damage.
+    [T] HPCHANGE Matchstick Liesl: 159 → 115  (-44)
+  Matchstick Liesl gains spotlight for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+[Queued] Witch-Hunter Gretel: Intimidate → Lucky Constantine
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Frederic the Beastslayer
+Matchstick Liesl uses Cauterize on Frederic the Beastslayer.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=62
+  Frederic the Beastslayer takes 62 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 42 → 0  (-62) **KO**
+  Frederic the Beastslayer gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Lucky Constantine
+Witch-Hunter Gretel uses Intimidate on Lucky Constantine.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=115/210 statuses=[expose(2r), spotlight(2r)]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=158/215 statuses=[burn_immune(1r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=165/215 statuses=[weaken(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Matchstick Liesl: expose → 1r left
+    [T] STATUS_TICK Matchstick Liesl: spotlight → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] STATUS_TICK Lucky Constantine: weaken → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=115/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r), spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=158/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=165/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Lucky Constantine: Sucker Punch → Matchstick Liesl
+[Queued] Rapunzel the Golden: Edict → Matchstick Liesl
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Matchstick Liesl
+Lucky Constantine uses Sucker Punch on Matchstick Liesl.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Matchstick Liesl[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=50 raw=84.00 ceil=84
+    [T]   FINAL_DMG=101
+  Matchstick Liesl takes 101 damage.
+    [T] HPCHANGE Matchstick Liesl: 115 → 14  (-101)
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Matchstick Liesl
+Rapunzel the Golden uses Edict on Matchstick Liesl.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Matchstick Liesl[front]
+    [T]   power=30
+    [T]   atk=60 def=50 raw=36.00 ceil=36
+    [T]   FINAL_DMG=44
+  Matchstick Liesl takes 44 damage.
+    [T] HPCHANGE Matchstick Liesl: 14 → 0  (-44) **KO**
+Witch-Hunter Gretel moves to frontline.
+[Queued] Witch-Hunter Gretel: Into the Oven → Lucky Constantine
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Into the Oven → Lucky Constantine
+Witch-Hunter Gretel uses Into the Oven on Lucky Constantine.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=130
+  Lucky Constantine takes 130 damage.
+    [T] HPCHANGE Lucky Constantine: 165 → 35  (-130)
+  Lucky Constantine gains burn for 2 rounds.
+  Lucky Constantine gains weaken for 2 rounds.
+  Lucky Constantine gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=158/215 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=35/215 statuses=[burn(2r), weaken(2r), root(2r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+Lucky Constantine burns for 22 damage.
+    [T] STATUS_TICK Lucky Constantine: burn → 1r left
+    [T] STATUS_TICK Lucky Constantine: weaken → 1r left
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=158/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=13/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[burn(1r), weaken(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Lucky Constantine: Feline Gambit → Witch-Hunter Gretel
+[Queued] Rapunzel the Golden: Edict → Witch-Hunter Gretel
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Witch-Hunter Gretel
+Lucky Constantine uses Feline Gambit on Witch-Hunter Gretel.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=56
+  Witch-Hunter Gretel takes 56 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 158 → 102  (-56)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → Witch-Hunter Gretel
+Rapunzel the Golden uses Edict on Witch-Hunter Gretel.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=48
+  Witch-Hunter Gretel takes 48 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 102 → 54  (-48)
+  Witch-Hunter Gretel gains spotlight for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+[Queued] Witch-Hunter Gretel: Strike → Lucky Constantine
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Lucky Constantine
+Witch-Hunter Gretel uses Strike on Lucky Constantine.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=55
+    [T]   atk=80 def=40 raw=110.00 ceil=110
+    [T]   FINAL_DMG=132
+  Lucky Constantine takes 132 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=54/215 statuses=[expose(2r), spotlight(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[burn(1r), weaken(1r), root(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: spotlight → 1r left
+Lucky Constantine burns for 22 damage.
+Rapunzel the Golden moves to frontline.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=54/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r), spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Witch-Hunter Gretel: Intimidate → Rapunzel the Golden
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Rapunzel the Golden
+Witch-Hunter Gretel uses Intimidate on Rapunzel the Golden.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Rapunzel the Golden[front]
+    [T]   power=45
+    [T]   atk=80 def=65 raw=55.38 ceil=56
+    [T]   FINAL_DMG=56
+  Rapunzel the Golden takes 56 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 202  (-56)
+  Rapunzel the Golden gains burn for 2 rounds.
+  Rapunzel the Golden gains weaken for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → Witch-Hunter Gretel
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Witch-Hunter Gretel
+Rapunzel the Golden uses Edict on Witch-Hunter Gretel.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=65
+  Witch-Hunter Gretel takes 65 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 54 → 0  (-65) **KO**
+  Witch-Hunter Gretel gains root for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

@@ -1,0 +1,2605 @@
+Battle 609
+Player 1 Team: Lady Control Shell
+Player 2 Team: Sea Wench Theft Shell
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:30:33
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 609
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Lady Control Shell
+  [front] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Lake's Gift  (passive=False)
+    Basics: Condemn, Armored
+    Item:   Crafty Shield
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Robin, Hooded Avenger takes 65 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 120  (-65)
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sea Wench Asha[back_left]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sea Wench Asha takes 50 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 160  (-50)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [3/6]
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+[Queued] Sea Wench Asha: Misappropriate → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+  Banner of Command: Robin, Hooded Avenger is Guarded.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=103
+  Prince Charming takes 103 damage.
+    [T] HPCHANGE Prince Charming: 255 → 152  (-103)
+    [T] ACTION P2 Sea Wench Asha[back_left]: Misappropriate → Snowkissed Aurora
+Sea Wench Asha uses Misappropriate on Snowkissed Aurora.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 177  (-48)
+  Snowkissed Aurora gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 statuses=[root(2r)]
+    [T]   P1 Prince Charming[back_right] HP=152/255 statuses=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=160/210 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=120/185 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=152/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_left] HP=160/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=120/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Lady of Reflections
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=65
+    [T]   atk=70 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=103
+  Prince Charming takes 103 damage.
+    [T] HPCHANGE Prince Charming: 152 → 49  (-103)
+    [T] ACTION P2 Sir Roland[back_right]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Lady of Reflections
+  Sea Wench Asha retargets to Snowkissed Aurora after swapping to back_right.
+Sea Wench Asha uses Misappropriate on Snowkissed Aurora.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 177 → 129  (-48)
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+[Queued] Lady of Reflections: Item Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [4/6]
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=40 raw=67.50 ceil=68
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 120 → 65  (-55)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [5/6]
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=52
+  Robin, Hooded Avenger takes 52 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 65 → 13  (-52)
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Prince Charming
+Lady of Reflections uses Crafty Shield.
+  Prince Charming is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=129/225 statuses=[root(1r)]
+    [T]   P1 Prince Charming[back_right] HP=99/255 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=13/185 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: root → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: root
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: guard
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=129/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=99/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=13/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Prince Charming
+[Queued] Sea Wench Asha: Misappropriate → Prince Charming
+[Queued] Sir Roland: Item Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Prince Charming
+Robin, Hooded Avenger uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=62
+  Prince Charming takes 62 damage.
+    [T] HPCHANGE Prince Charming: 99 → 37  (-62)
+  Prince Charming is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Sea Wench Asha[back_right]: Misappropriate → Prince Charming
+Sea Wench Asha uses Misappropriate on Prince Charming.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Prince Charming[back_right]
+    [T]   power=35
+    [T]   atk=82 def=55 raw=52.18 ceil=53
+    [T]   FINAL_DMG=43
+  Prince Charming takes 43 damage.
+    [T] HPCHANGE Prince Charming: 37 → 0  (-43) **KO**
+  Prince Charming gains root for 2 rounds.
+  Sea Wench Asha must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Robin, Hooded Avenger
+Sir Roland uses Crafty Shield.
+  Robin, Hooded Avenger is Guarded.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [6/6]
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=40 raw=67.50 ceil=68
+    [T]   FINAL_DMG=55
+  Robin, Hooded Avenger takes 55 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 13 → 0  (-55) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=179/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=179/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[back_right] HP=160/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Skip
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P2 Sea Wench Asha[front]: skip/recharge
+Sea Wench Asha recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=179/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P2 Sea Wench Asha[front] HP=160/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=179/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=160/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Dictate of Nature] Sea Wench Asha[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=70 raw=53.57 ceil=54
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 179 → 125  (-54)
+  Sea Wench Asha heals Sea Wench Asha for 40 HP.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sea Wench Asha
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=15
+  Sea Wench Asha takes 15 damage.
+    [T] HPCHANGE Sea Wench Asha: 200 → 185  (-15)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [6/6]
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=175/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=185/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=175/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=185/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Dictate of Nature] Sea Wench Asha[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=51
+  Snowkissed Aurora takes 51 damage.
+    [T] HPCHANGE Snowkissed Aurora: 175 → 124  (-51)
+  Sea Wench Asha heals Sea Wench Asha for 25 HP.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sea Wench Asha
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=15
+  Sea Wench Asha takes 15 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 195  (-15)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [6/6]
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=174/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=195/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=174/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=195/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Dictate of Nature] Sea Wench Asha[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=70 raw=53.57 ceil=54
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 174 → 120  (-54)
+  Sea Wench Asha heals Sea Wench Asha for 15 HP.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sea Wench Asha
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=15
+  Sea Wench Asha takes 15 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 195  (-15)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [6/6]
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=170/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=195/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=170/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=195/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Dictate of Nature] Sea Wench Asha[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=51
+  Snowkissed Aurora takes 51 damage.
+    [T] HPCHANGE Snowkissed Aurora: 170 → 119  (-51)
+  Sea Wench Asha heals Sea Wench Asha for 15 HP.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=119/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=119/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Snowkissed Aurora
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Snowkissed Aurora
+Sea Wench Asha uses Dark Grasp on Snowkissed Aurora.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=70 raw=53.57 ceil=54
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 119 → 65  (-54)
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [6/6]
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sea Wench Asha
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=10
+  Sea Wench Asha takes 10 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 200  (-10)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=115/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=200/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=115/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=200/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Dictate of Nature] Sea Wench Asha[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=51
+  Snowkissed Aurora takes 51 damage.
+    [T] HPCHANGE Snowkissed Aurora: 115 → 64  (-51)
+  Sea Wench Asha heals Sea Wench Asha for 10 HP.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Snowkissed Aurora: Dictate of Nature → Sea Wench Asha
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sea Wench Asha
+Snowkissed Aurora uses Dictate of Nature on Sea Wench Asha.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=15
+  Sea Wench Asha takes 15 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 195  (-15)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [6/6]
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=114/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=195/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=114/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=195/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Dictate of Nature] Sea Wench Asha[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=70 raw=53.57 ceil=54
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 114 → 60  (-54)
+  Sea Wench Asha heals Sea Wench Asha for 15 HP.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora and Lady of Reflections swap positions.
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=85 raw=44.12 ceil=45
+    [T]   FINAL_DMG=45
+  Lady of Reflections takes 45 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 210  (-45)
+  Reflecting Pool: Sea Wench Asha takes 5 reflected damage.
+  Sea Wench Asha gains 1 Malice (Dark Grasp). [6/6]
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Lady of Reflections: Condemn → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Sea Wench Asha
+Lady of Reflections uses Condemn on Sea Wench Asha.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sea Wench Asha takes 32 damage.
+    [T] HPCHANGE Sea Wench Asha: 205 → 173  (-32)
+  Sea Wench Asha loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 45 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=173/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=173/210 ATK=65(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 216  (-39)
+  Reflecting Pool: Sea Wench Asha takes 4 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Lady of Reflections[front] HP=216/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=169/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] DEBUFF_EXPIRED Sea Wench Asha: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=216/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=169/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=85 raw=44.12 ceil=45
+    [T]   FINAL_DMG=45
+  Lady of Reflections takes 45 damage.
+    [T] HPCHANGE Lady of Reflections: 216 → 171  (-45)
+  Reflecting Pool: Sea Wench Asha takes 5 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Lady of Reflections: Condemn → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Sea Wench Asha
+Lady of Reflections uses Condemn on Sea Wench Asha.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sea Wench Asha takes 32 damage.
+    [T] HPCHANGE Sea Wench Asha: 164 → 132  (-32)
+  Sea Wench Asha loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Lady of Reflections[front] HP=226/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=132/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=226/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=132/210 ATK=65(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 226 → 187  (-39)
+  Reflecting Pool: Sea Wench Asha takes 4 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Lady of Reflections[front] HP=242/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=128/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] DEBUFF_EXPIRED Sea Wench Asha: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=242/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=128/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=85 raw=44.12 ceil=45
+    [T]   FINAL_DMG=45
+  Lady of Reflections takes 45 damage.
+    [T] HPCHANGE Lady of Reflections: 242 → 197  (-45)
+  Reflecting Pool: Sea Wench Asha takes 5 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Lady of Reflections: Condemn → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Sea Wench Asha
+Lady of Reflections uses Condemn on Sea Wench Asha.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sea Wench Asha takes 32 damage.
+    [T] HPCHANGE Sea Wench Asha: 123 → 91  (-32)
+  Sea Wench Asha loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Lady of Reflections[front] HP=252/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=91/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=252/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=91/210 ATK=65(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 252 → 213  (-39)
+  Reflecting Pool: Sea Wench Asha takes 4 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Lady of Reflections[front] HP=213/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=87/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] DEBUFF_EXPIRED Sea Wench Asha: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=213/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=87/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=85 raw=44.12 ceil=45
+    [T]   FINAL_DMG=45
+  Lady of Reflections takes 45 damage.
+    [T] HPCHANGE Lady of Reflections: 213 → 168  (-45)
+  Reflecting Pool: Sea Wench Asha takes 5 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Lady of Reflections: Condemn → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Sea Wench Asha
+Lady of Reflections uses Condemn on Sea Wench Asha.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sea Wench Asha takes 32 damage.
+    [T] HPCHANGE Sea Wench Asha: 82 → 50  (-32)
+  Sea Wench Asha loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Lady of Reflections[front] HP=223/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=50/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=223/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=50/210 ATK=65(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 223 → 184  (-39)
+  Reflecting Pool: Sea Wench Asha takes 4 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Lady of Reflections[front] HP=239/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=46/210 statuses=[guard(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] DEBUFF_EXPIRED Sea Wench Asha: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=239/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=46/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=85 raw=44.12 ceil=45
+    [T]   FINAL_DMG=45
+  Lady of Reflections takes 45 damage.
+    [T] HPCHANGE Lady of Reflections: 239 → 194  (-45)
+  Reflecting Pool: Sea Wench Asha takes 5 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Lady of Reflections: Condemn → Sea Wench Asha
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Sea Wench Asha
+Lady of Reflections uses Condemn on Sea Wench Asha.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sea Wench Asha takes 32 damage.
+    [T] HPCHANGE Sea Wench Asha: 41 → 9  (-32)
+  Sea Wench Asha loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 55 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Lady of Reflections[front] HP=249/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha[front] HP=9/210 statuses=[guard(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=249/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=9/210 ATK=65(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Sea Wench Asha: Dark Grasp → Lady of Reflections
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sea Wench Asha[front]: Dark Grasp → Lady of Reflections
+Sea Wench Asha uses Dark Grasp on Lady of Reflections.
+    [T] DMGCALC [Dark Grasp] Sea Wench Asha[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 249 → 210  (-39)
+  Reflecting Pool: Sea Wench Asha takes 4 reflected damage.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Lady of Reflections: Condemn → Sea Wench Asha
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Sea Wench Asha
+Lady of Reflections uses Condemn on Sea Wench Asha.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=32
+  Sea Wench Asha takes 32 damage.
+    [T] HPCHANGE Sea Wench Asha: 5 → 0  (-32) **KO**
+Sir Roland moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Lady of Reflections[front] HP=210/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=210/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 45 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions.
+[Queued] Sir Roland: Shield Bash → Lady of Reflections
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lady of Reflections
+Sir Roland uses Shield Bash on Lady of Reflections.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=45 def=85 raw=21.18 ceil=22
+    [T]   FINAL_DMG=22
+  Lady of Reflections takes 22 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 233  (-22)
+  Reflecting Pool: Sir Roland takes 3 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Lady of Reflections[front] HP=233/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=262/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=233/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=262/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=7
+  Sir Roland takes 7 damage.
+    [T] HPCHANGE Sir Roland: 262 → 255  (-7)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 10 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Lady of Reflections[back_left] HP=233/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=110/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=233/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=110/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 265 → 245  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 160 → 139  (-21)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Lady of Reflections[back_left] HP=233/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=139/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=245/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=233/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=139/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=245/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 139 → 115  (-24)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Lady of Reflections[back_left] HP=233/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=115/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=245/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=233/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=115/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=245/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 245 → 225  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Lady of Reflections
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lady of Reflections
+Sir Roland uses Shield Bash on Lady of Reflections.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=45 def=80 raw=22.50 ceil=23
+    [T]   FINAL_DMG=19
+  Lady of Reflections takes 19 damage.
+    [T] HPCHANGE Lady of Reflections: 233 → 214  (-19)
+  Reflecting Pool: Sir Roland takes 2 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Lady of Reflections[front] HP=214/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=165/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=223/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=214/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=165/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=223/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 223 → 198  (-25)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 215 → 185  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Lady of Reflections[back_left] HP=214/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=185/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=198/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=214/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=185/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=198/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 198 → 178  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 40 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 201  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Lady of Reflections[back_left] HP=214/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=178/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=214/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=178/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 201 → 177  (-24)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Lady of Reflections[back_left] HP=214/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=178/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=214/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=178/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 178 → 158  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 48 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Lady of Reflections
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lady of Reflections
+Sir Roland uses Shield Bash on Lady of Reflections.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=45 def=80 raw=22.50 ceil=23
+    [T]   FINAL_DMG=19
+  Lady of Reflections takes 19 damage.
+    [T] HPCHANGE Lady of Reflections: 214 → 195  (-19)
+  Reflecting Pool: Sir Roland takes 2 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Lady of Reflections[front] HP=195/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=156/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=195/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=156/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Lady of Reflections
+Snowkissed Aurora uses Heal on Lady of Reflections.
+  Snowkissed Aurora heals Lady of Reflections for 60 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions and stat debuffs.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 195  (-30)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=195/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=156/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=195/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=156/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 156 → 136  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 30 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 201  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=136/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=136/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 201 → 177  (-24)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 33
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R33):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=136/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 34
+────────────────────────────────────────────────────────────
+Round 34 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 34 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=177/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=136/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 136 → 116  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 48 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Lady of Reflections
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lady of Reflections
+Sir Roland uses Shield Bash on Lady of Reflections.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=45 def=80 raw=22.50 ceil=23
+    [T]   FINAL_DMG=19
+  Lady of Reflections takes 19 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 236  (-19)
+  Reflecting Pool: Sir Roland takes 2 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 34
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R34):
+    [T]   P1 Lady of Reflections[front] HP=236/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=114/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 35
+────────────────────────────────────────────────────────────
+Round 35 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 35 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=236/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=114/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 114 → 89  (-25)
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 35
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R35):
+    [T]   P1 Lady of Reflections[back_left] HP=236/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=89/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 36
+────────────────────────────────────────────────────────────
+Round 36 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 36 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=236/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=89/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 89 → 69  (-20)
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 201  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 36
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R36):
+    [T]   P1 Lady of Reflections[back_left] HP=236/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=69/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 37
+────────────────────────────────────────────────────────────
+Round 37 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 37 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=236/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=69/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 37
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R37):
+    [T]   P1 Lady of Reflections[back_left] HP=236/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=69/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 38
+────────────────────────────────────────────────────────────
+Round 38 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 38 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=236/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=69/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 69 → 49  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 24 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Lady of Reflections
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Lady of Reflections
+Sir Roland uses Shield Bash on Lady of Reflections.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=45 def=80 raw=22.50 ceil=23
+    [T]   FINAL_DMG=19
+  Lady of Reflections takes 19 damage.
+    [T] HPCHANGE Lady of Reflections: 236 → 217  (-19)
+  Reflecting Pool: Sir Roland takes 2 reflected damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 38
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R38):
+    [T]   P1 Lady of Reflections[front] HP=217/255 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=47/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+  Innocent Heart: Lady of Reflections +10 Def.
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 39
+────────────────────────────────────────────────────────────
+Round 39 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 39 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=217/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=47/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Snowkissed Aurora
+Lady of Reflections and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Sir Roland takes 25 damage.
+    [T] HPCHANGE Sir Roland: 47 → 22  (-25)
+  Snowkissed Aurora heals Lady of Reflections for 38 HP.
+  Medic: Lady of Reflections cleansed of rulebook status conditions and stat debuffs.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 39
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R39):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=22/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 40
+────────────────────────────────────────────────────────────
+Round 40 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 40 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=22/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 22 → 2  (-20)
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Lady of Reflections uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 201  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 40
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R40):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=2/265 statuses=[guard(1r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 41
+────────────────────────────────────────────────────────────
+Round 41 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 41 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=2/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Lady of Reflections
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Lady of Reflections[back_left]: item [Crafty Shield] → Lady of Reflections
+Lady of Reflections uses Crafty Shield.
+  Lady of Reflections is Guarded.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 41
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R41):
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=2/265 statuses=[guard(2r)]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 42
+────────────────────────────────────────────────────────────
+Round 42 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 42 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=201/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Sir Roland[front] HP=2/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sea Wench Asha [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Sir Roland
+[Queued] Lady of Reflections: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Sir Roland
+Snowkissed Aurora uses Dictate of Nature on Sir Roland.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=20
+  Sir Roland takes 20 damage.
+    [T] HPCHANGE Sir Roland: 2 → 0  (-20) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 24 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 42)
+────────────────────────────────────────────────────────────
+Player 1 wins!

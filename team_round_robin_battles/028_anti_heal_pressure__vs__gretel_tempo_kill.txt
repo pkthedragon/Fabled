@@ -1,0 +1,528 @@
+Battle 28
+Player 1 Team: Anti-Heal Pressure
+Player 2 Team: Gretel Tempo Kill
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:37:23
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 28
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Anti-Heal Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Gretel Tempo Kill
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Feint
+    Item:   Misericorde
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Hawkshot → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Swap with Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Shove Over on Witch-Hunter Gretel.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=80 def=50 raw=104.00 ceil=104
+    [T]   FINAL_DMG=104
+  Witch-Hunter Gretel takes 104 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 111  (-104)
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hawkshot on Robin, Hooded Avenger.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Robin, Hooded Avenger takes 79 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 106  (-79)
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Witch-Hunter Gretel
+Lucky Constantine and Witch-Hunter Gretel swap positions.
+[Queued] Witch-Hunter Gretel: Shove Over → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Hawkshot → Lucky Constantine
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Lucky Constantine
+Witch-Hunter Gretel uses Shove Over on Lucky Constantine.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=104
+  Lucky Constantine takes 104 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 111  (-104)
+  Lucky Constantine gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Lucky Constantine
+Robin, Hooded Avenger uses Hawkshot on Lucky Constantine.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=77
+  Lucky Constantine takes 77 damage.
+    [T] HPCHANGE Lucky Constantine: 111 → 34  (-77)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=166/215 statuses=[weaken(2r), burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=106/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=34/215 statuses=[weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Lucky Constantine: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=166/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r), burn_immune(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=106/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_left] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=34/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Post Bounty → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Hawkshot → Robin, Hooded Avenger
+[Queued] Witch-Hunter Gretel: Shove Over → Witch-Hunter Gretel
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=70 def=50 raw=56.00 ceil=56
+    [T]   FINAL_DMG=45
+  Witch-Hunter Gretel takes 45 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 166 → 121  (-45)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hawkshot on Robin, Hooded Avenger.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Robin, Hooded Avenger takes 79 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 106 → 27  (-79)
+    [T] ACTION P2 Witch-Hunter Gretel[back_left]: Shove Over → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Shove Over on Witch-Hunter Gretel.
+  Witch-Hunter Gretel is set up for +15 incoming power.
+[Queued] Witch-Hunter Gretel: Shove Over → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Lucky Constantine
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Lucky Constantine
+Witch-Hunter Gretel uses Shove Over on Lucky Constantine.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=114
+  Lucky Constantine takes 114 damage.
+    [T] HPCHANGE Lucky Constantine: 34 → 0  (-114) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Witch-Hunter Gretel moves to frontline.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hunter's Mark → Lucky Constantine
+Robin, Hooded Avenger's target is no longer legal — Hunter's Mark fizzles.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Lucky Constantine
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=121/215 statuses=[weaken(1r), burn_immune(1r), expose(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=27/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: weaken
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=121/215 ATK=95(base=80) DEF=50(base=45) SPD=70(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[attack+15(1r), speed+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=27/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Shove Over on Witch-Hunter Gretel.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=95 def=45 raw=137.22 ceil=138
+    [T]   FINAL_DMG=138
+  Witch-Hunter Gretel takes 138 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 77  (-138)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=25
+    [T]   atk=77 def=40 raw=48.12 ceil=49
+    [T]   FINAL_DMG=59
+  Robin, Hooded Avenger takes 59 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 126  (-59)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Witch-Hunter Gretel: Shove Over → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Snipe Shot → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Shove Over on Witch-Hunter Gretel.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=80 def=50 raw=104.00 ceil=104
+    [T]   FINAL_DMG=111
+  Witch-Hunter Gretel takes 111 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 176 → 65  (-111)
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Snipe Shot on Witch-Hunter Gretel.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=55 (base=40)
+    [T]   atk=77 def=50 raw=84.70 ceil=85
+    [T]   FINAL_DMG=102
+  Witch-Hunter Gretel takes 102 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 65 → 0  (-102) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=27/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=77/215 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=126/185 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Witch-Hunter Gretel burns for 22 damage.
+    [T] STATUS_TICK Witch-Hunter Gretel: burn → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=27/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=55/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=126/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 70 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=25
+    [T]   atk=77 def=45 raw=42.78 ceil=43
+    [T]   FINAL_DMG=53
+  Witch-Hunter Gretel takes 53 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 55 → 2  (-53)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=97/185 statuses=[burn_immune(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=2/215 statuses=[burn(1r), weaken(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=126/185 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+Witch-Hunter Gretel burns for 22 damage.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=97/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=126/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=80
+  Robin, Hooded Avenger takes 80 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 97 → 17  (-80)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+[Queued] Matchstick Liesl: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Robin, Hooded Avenger
+Matchstick Liesl recharges.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: skip/recharge
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=17/185 statuses=[burn_immune(1r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=126/185 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=17/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=126/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=90
+  Robin, Hooded Avenger takes 90 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 17 → 0  (-90) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+[Queued] Matchstick Liesl: Cleansing Inferno
+    [T] ACTION P1 Matchstick Liesl[front]: Cleansing Inferno → spread/auto
+Matchstick Liesl uses Cleansing Inferno.
+Matchstick Liesl uses Cleansing Inferno (spread).
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Robin, Hooded Avenger[front] (spread)
+    [T]   power=60
+    [T]   atk=50 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=38
+  Robin, Hooded Avenger takes 38 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 126 → 88  (-38)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=88/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=88/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Matchstick Liesl
+Robin, Hooded Avenger uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Matchstick Liesl takes 70 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 140  (-70)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=50 def=40 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Robin, Hooded Avenger takes 63 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 88 → 25  (-63)
+  Robin, Hooded Avenger gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=140/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=25/185 statuses=[no_heal(2r)]
+    [T] STATUS_TICK Robin, Hooded Avenger: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=140/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=25/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=50 def=40 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Robin, Hooded Avenger takes 63 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 25 → 0  (-63) **KO**
+  Matchstick Liesl must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 8)
+────────────────────────────────────────────────────────────
+Player 1 wins!

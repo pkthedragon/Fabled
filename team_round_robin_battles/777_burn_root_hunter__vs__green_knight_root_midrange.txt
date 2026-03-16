@@ -1,0 +1,562 @@
+Battle 777
+Player 1 Team: Burn-Root Hunter
+Player 2 Team: Green Knight Root Midrange
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:51:21
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 777
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Green Knight Root Midrange
+  [front] Green Knight (Noble)  HP=275  ATK=60  DEF=60  SPD=20
+    Talent: Challenge Accepted
+    Sig:    Hero's Bargain  (passive=False)
+    Basics: Command, Edict
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Freezing Gale → Robin, Hooded Avenger
+[Queued] Frederic the Beastslayer: Hunter's Mark → Green Knight
+[Queued] Briar Rose: Creeping Doubt → Robin, Hooded Avenger
+    [T] ACTION P1 Witch of the Woods[front]: Freezing Gale → Robin, Hooded Avenger
+Witch of the Woods uses Freezing Gale on Robin, Hooded Avenger.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Robin, Hooded Avenger takes 122 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 63  (-122)
+  Robin, Hooded Avenger gains root for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Green Knight
+Frederic the Beastslayer uses Hunter's Mark on Green Knight.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Green Knight[front]
+    [T]   power=25
+    [T]   atk=70 def=60 raw=29.17 ceil=30
+    [T]   FINAL_DMG=36
+  Green Knight takes 36 damage.
+    [T] HPCHANGE Green Knight: 275 → 239  (-36)
+  Green Knight is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Robin, Hooded Avenger
+Briar Rose uses Creeping Doubt on Robin, Hooded Avenger.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Robin, Hooded Avenger takes 70 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 63 → 0  (-70) **KO**
+[Queued] Green Knight: Hero's Bargain → Witch of the Woods
+[Queued] Snowkissed Aurora: Heal → Green Knight
+    [T] ACTION P2 Green Knight[front]: Hero's Bargain → Witch of the Woods
+Green Knight uses Hero's Bargain on Witch of the Woods.
+    [T] DMGCALC [Hero's Bargain] Green Knight[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=60 def=35 raw=85.71 ceil=86
+    [T]   FINAL_DMG=111
+  Witch of the Woods takes 111 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 69  (-111)
+  Witch of the Woods gains root for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Green Knight
+Snowkissed Aurora uses Heal on Green Knight.
+  Snowkissed Aurora heals Green Knight for 36 HP.
+  Medic: Green Knight cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[front] HP=69/180 statuses=[root(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Green Knight[front] HP=275/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Witch of the Woods: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=69/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=275/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Snowkissed Aurora
+[Queued] Frederic the Beastslayer: Hero's Charge → Green Knight
+[Queued] Briar Rose: Creeping Doubt → Green Knight
+    [T] ACTION P1 Witch of the Woods[front]: Freezing Gale → Snowkissed Aurora
+Witch of the Woods uses Freezing Gale on Snowkissed Aurora.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Snowkissed Aurora[back_right]
+    [T]   power=65
+    [T]   atk=75 def=60 raw=81.25 ceil=82
+    [T]   FINAL_DMG=82
+  Snowkissed Aurora takes 82 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 143  (-82)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Green Knight
+Frederic the Beastslayer uses Hero's Charge on Green Knight.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Green Knight[front]
+    [T]   power=30
+    [T]   atk=70 def=60 raw=35.00 ceil=35
+    [T]   FINAL_DMG=55
+  Green Knight takes 55 damage.
+    [T] HPCHANGE Green Knight: 275 → 220  (-55)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Green Knight
+Briar Rose uses Creeping Doubt on Green Knight.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Green Knight[front]
+    [T]   power=40
+    [T]   atk=60 def=60 raw=40.00 ceil=40
+    [T]   FINAL_DMG=60
+  Green Knight takes 60 damage.
+    [T] HPCHANGE Green Knight: 220 → 160  (-60)
+  Green Knight gains root for 2 rounds.
+[Queued] Green Knight: Edict → Witch of the Woods
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch of the Woods
+    [T] ACTION P2 Green Knight[front]: Edict → Witch of the Woods
+Green Knight uses Edict on Witch of the Woods.
+    [T] DMGCALC [Edict] Green Knight[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=60 def=35 raw=85.71 ceil=86
+    [T]   FINAL_DMG=101
+  Witch of the Woods takes 101 damage.
+    [T] HPCHANGE Witch of the Woods: 69 → 0  (-101) **KO**
+Briar Rose moves to frontline.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Witch of the Woods
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Green Knight[front] HP=160/275 statuses=[root(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=143/225 statuses=[root(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Green Knight: root → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Curse of Sleeping: Snowkissed Aurora loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=160/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=143/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(2r)]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Green Knight
+[Queued] Frederic the Beastslayer: Hero's Charge → Green Knight
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Green Knight
+Briar Rose uses Creeping Doubt on Green Knight.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Green Knight[front]
+    [T]   power=77 (base=55)
+    [T]   atk=60 def=60 raw=77.00 ceil=77
+    [T]   FINAL_DMG=87
+  Green Knight takes 87 damage.
+    [T] HPCHANGE Green Knight: 160 → 73  (-87)
+  Briar Rose must recharge next turn.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Green Knight
+Frederic the Beastslayer uses Hero's Charge on Green Knight.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Green Knight[front]
+    [T]   power=30
+    [T]   atk=70 def=60 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Green Knight takes 45 damage.
+    [T] HPCHANGE Green Knight: 73 → 28  (-45)
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Green Knight: Hero's Bargain → Briar Rose
+[Queued] Snowkissed Aurora: Heal → Green Knight
+    [T] ACTION P2 Green Knight[front]: Hero's Bargain → Briar Rose
+Green Knight uses Hero's Bargain on Briar Rose.
+    [T] DMGCALC [Hero's Bargain] Green Knight[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=92
+  Briar Rose takes 92 damage.
+    [T] HPCHANGE Briar Rose: 195 → 103  (-92)
+  Briar Rose gains root for 2 rounds.
+Snowkissed Aurora cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=103/195 statuses=[root(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Green Knight[front] HP=28/275 statuses=[root(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=143/225 statuses=[-]
+    [T] STATUS_TICK Briar Rose: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Green Knight: root → 0r left
+    [T] STATUS_EXPIRED Green Knight: root
+  Innocent Heart: Green Knight +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=103/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=28/275 ATK=60(base=60) DEF=70(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=143/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Briar Rose: Skip
+[Queued] Frederic the Beastslayer: Swap with Briar Rose
+    [T] ACTION P1 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Briar Rose
+Frederic the Beastslayer recharges.
+[Queued] Green Knight: Hero's Bargain → Briar Rose
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+    [T] ACTION P2 Green Knight[front]: Hero's Bargain → Briar Rose
+Green Knight uses Hero's Bargain on Briar Rose.
+    [T] DMGCALC [Hero's Bargain] Green Knight[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=92
+  Briar Rose takes 92 damage.
+    [T] HPCHANGE Briar Rose: 103 → 11  (-92)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Briar Rose[front]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Briar Rose takes 35 damage.
+    [T] HPCHANGE Briar Rose: 11 → 0  (-35) **KO**
+  Snowkissed Aurora heals Green Knight for 35 HP.
+  Medic: Green Knight cleansed of rulebook status conditions.
+Frederic the Beastslayer moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Green Knight[front] HP=63/275 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=143/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Green Knight: defense+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Green Knight spd=20  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight[front] HP=63/275 ATK=60(base=60) DEF=60(base=60) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=143/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Slay the Beast → Green Knight
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Green Knight
+Frederic the Beastslayer uses Slay the Beast on Green Knight.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Green Knight[front]
+    [T]   power=85 (base=65)
+    [T]   atk=75 def=60 raw=106.25 ceil=107
+    [T]   FINAL_DMG=107
+  Green Knight takes 107 damage.
+    [T] HPCHANGE Green Knight: 63 → 0  (-107) **KO**
+Snowkissed Aurora moves to frontline.
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=56
+  Frederic the Beastslayer takes 56 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 144  (-56)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=144/200 statuses=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=193/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=144/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=193/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=76
+  Snowkissed Aurora takes 76 damage.
+    [T] HPCHANGE Snowkissed Aurora: 193 → 117  (-76)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=144/200 statuses=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=117/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=144/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=117/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=86
+  Snowkissed Aurora takes 86 damage.
+    [T] HPCHANGE Snowkissed Aurora: 117 → 31  (-86)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=56
+  Frederic the Beastslayer takes 56 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 144 → 88  (-56)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=88/200 statuses=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=81/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=88/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=81/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Skip
+    [T] ACTION P1 Frederic the Beastslayer[front]: skip/recharge
+Frederic the Beastslayer recharges.
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=56
+  Frederic the Beastslayer takes 56 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 88 → 32  (-56)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=32/200 statuses=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=131/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=32/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Green Knight [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=131/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=76
+  Snowkissed Aurora takes 76 damage.
+    [T] HPCHANGE Snowkissed Aurora: 131 → 55  (-76)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=56
+  Frederic the Beastslayer takes 56 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 32 → 0  (-56) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 2 wins!

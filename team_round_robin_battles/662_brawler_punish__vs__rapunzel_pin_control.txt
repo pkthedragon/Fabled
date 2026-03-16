@@ -1,0 +1,753 @@
+Battle 662
+Player 1 Team: Brawler Punish
+Player 2 Team: Rapunzel Pin Control
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:40:24
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 662
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Brawler Punish
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Lady of Reflections swap positions.
+[Queued] Rapunzel the Golden: Golden Snare → Reynard, Lupine Trickster
+[Queued] Matchstick Liesl: Swap with Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Bring Down → Risa Redcloak
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Reynard, Lupine Trickster
+Rapunzel the Golden uses Golden Snare on Reynard, Lupine Trickster.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Reynard, Lupine Trickster[back_right]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=45
+  Reynard, Lupine Trickster takes 45 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 160  (-45)
+  Reynard, Lupine Trickster gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: swap ↔ Rapunzel the Golden
+Matchstick Liesl and Rapunzel the Golden swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Risa Redcloak
+Robin, Hooded Avenger uses Bring Down on Risa Redcloak.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Risa Redcloak[back_left]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=58
+  Risa Redcloak takes 58 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 192  (-58)
+  Risa Redcloak gains root for 2 rounds.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Matchstick Liesl
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=37
+  Reynard, Lupine Trickster takes 37 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 160 → 123  (-37)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Matchstick Liesl
+Risa Redcloak uses Blood Hunt on Matchstick Liesl.
+  Blood Hunt: Risa Redcloak and Matchstick Liesl HP set to 201.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[back_left] HP=201/250 statuses=[root(2r)]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=123/205 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=201/210 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: root → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=201/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=123/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=201/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Matchstick Liesl
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Rend → Matchstick Liesl
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Matchstick Liesl
+Reynard, Lupine Trickster uses Riposte on Matchstick Liesl.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Matchstick Liesl[front]
+    [T]   power=45
+    [T]   atk=65 def=50 raw=58.50 ceil=59
+    [T]   FINAL_DMG=59
+  Matchstick Liesl takes 59 damage.
+    [T] HPCHANGE Matchstick Liesl: 201 → 142  (-59)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Matchstick Liesl
+Risa Redcloak uses Rend on Matchstick Liesl.
+  Risa Redcloak marks Matchstick Liesl — next ability gains +10 Power.
+[Queued] Matchstick Liesl: Cauterize → Risa Redcloak
+[Queued] Rapunzel the Golden: Golden Snare → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Bring Down → Lady of Reflections
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Risa Redcloak
+Matchstick Liesl uses Cauterize on Risa Redcloak.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Risa Redcloak[back_right]
+    [T]   power=50
+    [T]   atk=50 def=60 raw=41.67 ceil=42
+    [T]   FINAL_DMG=42
+  Risa Redcloak takes 42 damage.
+    [T] HPCHANGE Risa Redcloak: 201 → 159  (-42)
+  Risa Redcloak gains no_heal for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Risa Redcloak
+Rapunzel the Golden uses Golden Snare on Risa Redcloak.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Risa Redcloak[back_right]
+    [T]   power=30
+    [T]   atk=60 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=40
+  Risa Redcloak takes 40 damage.
+    [T] HPCHANGE Risa Redcloak: 159 → 119  (-40)
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Lady of Reflections
+Robin, Hooded Avenger uses Bring Down on Lady of Reflections.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Lady of Reflections[back_left]
+    [T]   power=35
+    [T]   atk=82 def=75 raw=38.27 ceil=39
+    [T]   FINAL_DMG=39
+  Lady of Reflections takes 39 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 216  (-39)
+  Spiked Mail! Robin, Hooded Avenger takes 10 damage.
+  Reflecting Pool: Robin, Hooded Avenger takes 8 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[back_right] HP=119/250 statuses=[root(1r), no_heal(2r)]
+    [T]   P1 Lady of Reflections[back_left] HP=216/255 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=123/205 statuses=[root(1r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=167/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=142/210 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: root → 0r left
+    [T] STATUS_TICK Risa Redcloak: no_heal → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: root
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: root
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=119/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[no_heal(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=216/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=123/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=167/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=142/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Matchstick Liesl
+[Queued] Lady of Reflections: Drown in the Loch → Matchstick Liesl
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Risa Redcloak
+Reynard, Lupine Trickster and Risa Redcloak swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Matchstick Liesl
+Risa Redcloak uses Blood Hunt on Matchstick Liesl.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Matchstick Liesl[front]
+    [T]   power=70 (base=60)
+    [T]   atk=90 def=50 raw=126.00 ceil=126
+    [T]   FINAL_DMG=126
+  Matchstick Liesl takes 126 damage.
+    [T] HPCHANGE Matchstick Liesl: 142 → 16  (-126)
+  Risa Redcloak cannot be healed.
+    [T] ACTION P1 Lady of Reflections[back_left]: Drown in the Loch → Matchstick Liesl
+Lady of Reflections uses Drown in the Loch on Matchstick Liesl.
+  Matchstick Liesl takes +7 damage from all sources for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Reynard, Lupine Trickster
+[Queued] Rapunzel the Golden: Golden Snare → Risa Redcloak
+[Queued] Robin, Hooded Avenger: Bring Down → Risa Redcloak
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Reynard, Lupine Trickster
+Matchstick Liesl uses Cauterize on Reynard, Lupine Trickster.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Reynard, Lupine Trickster[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=26
+  Reynard, Lupine Trickster takes 26 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 123 → 97  (-26)
+  Reynard, Lupine Trickster gains no_heal for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Risa Redcloak
+Rapunzel the Golden uses Golden Snare on Risa Redcloak.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Risa Redcloak[front]
+    [T]   power=30
+    [T]   atk=60 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Risa Redcloak takes 30 damage.
+    [T] HPCHANGE Risa Redcloak: 119 → 89  (-30)
+  Risa Redcloak gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Risa Redcloak
+Robin, Hooded Avenger uses Bring Down on Risa Redcloak.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Risa Redcloak[front]
+    [T]   power=35
+    [T]   atk=82 def=60 raw=47.83 ceil=48
+    [T]   FINAL_DMG=38
+  Risa Redcloak takes 38 damage.
+    [T] HPCHANGE Risa Redcloak: 89 → 51  (-38)
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[front] HP=51/250 statuses=[no_heal(1r), root(2r)]
+    [T]   P1 Lady of Reflections[back_left] HP=216/255 statuses=[root(1r)]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=97/205 statuses=[no_heal(2r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=167/185 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=16/210 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: no_heal → 0r left
+    [T] STATUS_TICK Risa Redcloak: root → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: no_heal
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] STATUS_TICK Lady of Reflections: root → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: root
+    [T] STATUS_TICK Reynard, Lupine Trickster: no_heal → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Matchstick Liesl spd=50  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=51/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[root(1r)]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_left] HP=216/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=97/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=167/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=16/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Reynard, Lupine Trickster
+[Queued] Rapunzel the Golden: Golden Snare → Reynard, Lupine Trickster
+[Queued] Robin, Hooded Avenger: Swap with Rapunzel the Golden
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Reynard, Lupine Trickster
+Matchstick Liesl uses Cauterize on Reynard, Lupine Trickster.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Reynard, Lupine Trickster[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=51
+  Reynard, Lupine Trickster takes 51 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 97 → 46  (-51)
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Reynard, Lupine Trickster
+Rapunzel the Golden uses Golden Snare on Reynard, Lupine Trickster.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Reynard, Lupine Trickster takes 50 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster gains root for 2 rounds.
+  Rapunzel the Golden must recharge next turn.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: swap ↔ Rapunzel the Golden
+Robin, Hooded Avenger recharges.
+[Queued] Risa Redcloak: Blood Hunt → Matchstick Liesl
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Matchstick Liesl
+Risa Redcloak uses Blood Hunt on Matchstick Liesl.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Matchstick Liesl[front]
+    [T]   power=60
+    [T]   atk=90 def=50 raw=108.00 ceil=108
+    [T]   FINAL_DMG=115
+  Matchstick Liesl takes 115 damage.
+    [T] HPCHANGE Matchstick Liesl: 16 → 0  (-115) **KO**
+  Risa Redcloak heals 46 HP.
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P1 Reynard, Lupine Trickster[back_right]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+    [T] ACTION P1 Lady of Reflections[back_left]: swap ↔ Risa Redcloak
+Lady of Reflections and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[back_left] HP=97/250 statuses=[root(1r)]
+    [T]   P1 Lady of Reflections[front] HP=216/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=1/205 statuses=[no_heal(1r), root(2r)]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=167/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Risa Redcloak: root → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: root
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] STATUS_TICK Reynard, Lupine Trickster: no_heal → 0r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: no_heal
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=97/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lady of Reflections[front] HP=216/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=167/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Hawkshot → Risa Redcloak
+[Queued] Rapunzel the Golden: Swap with Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Risa Redcloak
+Robin, Hooded Avenger uses Hawkshot on Risa Redcloak.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Risa Redcloak[back_left]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=90
+  Risa Redcloak takes 90 damage.
+    [T] HPCHANGE Risa Redcloak: 97 → 7  (-90)
+    [T] ACTION P2 Rapunzel the Golden[back_right]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden recharges.
+[Queued] Lady of Reflections: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Risa Redcloak: Blood Hunt → Robin, Hooded Avenger
+    [T] ACTION P1 Lady of Reflections[front]: swap ↔ Reynard, Lupine Trickster
+Lady of Reflections and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-30) **KO**
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+Risa Redcloak moves to frontline.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Robin, Hooded Avenger
+Risa Redcloak uses Blood Hunt on Robin, Hooded Avenger.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=90 def=40 raw=135.00 ceil=135
+    [T]   FINAL_DMG=135
+  Robin, Hooded Avenger takes 135 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 167 → 32  (-135)
+  Risa Redcloak heals 54 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[front] HP=61/250 statuses=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=216/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=32/185 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] BUFF_EXPIRED Risa Redcloak: attack+15
+    [T] BUFF_EXPIRED Risa Redcloak: speed+15
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=45  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=61/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=216/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[back_right] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=32/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Robin, Hooded Avenger: Hawkshot → Risa Redcloak
+[Queued] Rapunzel the Golden: Golden Snare → Risa Redcloak
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → Risa Redcloak
+Robin, Hooded Avenger uses Hawkshot on Risa Redcloak.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Risa Redcloak[front]
+    [T]   power=60
+    [T]   atk=80 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=70
+  Risa Redcloak takes 70 damage.
+    [T] HPCHANGE Risa Redcloak: 61 → 0  (-70) **KO**
+Lady of Reflections moves to frontline.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Golden Snare → Risa Redcloak
+Rapunzel the Golden's target is no longer legal — Golden Snare fizzles.
+[Queued] Lady of Reflections: Drown in the Loch → Robin, Hooded Avenger
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Robin, Hooded Avenger
+Lady of Reflections uses Drown in the Loch on Robin, Hooded Avenger.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=40 def=40 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Robin, Hooded Avenger takes 40 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 32 → 0  (-40) **KO**
+  Robin, Hooded Avenger takes +7 damage from all sources for 2 rounds.
+Rapunzel the Golden moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=216/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=216/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Lady of Reflections: Drown in the Loch → Rapunzel the Golden
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Rapunzel the Golden
+Lady of Reflections uses Drown in the Loch on Rapunzel the Golden.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=25
+  Rapunzel the Golden takes 25 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 233  (-25)
+  Rapunzel the Golden takes +7 damage from all sources for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Lady of Reflections
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lady of Reflections
+Rapunzel the Golden uses Golden Snare on Lady of Reflections.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=48
+  Lady of Reflections takes 48 damage.
+    [T] HPCHANGE Lady of Reflections: 216 → 168  (-48)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Reflecting Pool: Rapunzel the Golden takes 5 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=168/255 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=218/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=168/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=218/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Lady of Reflections: Drown in the Loch → Rapunzel the Golden
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Rapunzel the Golden
+Lady of Reflections uses Drown in the Loch on Rapunzel the Golden.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=32
+  Rapunzel the Golden takes 32 damage.
+    [T] HPCHANGE Rapunzel the Golden: 218 → 186  (-32)
+  Rapunzel the Golden takes +7 damage from all sources for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Lady of Reflections
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lady of Reflections
+Rapunzel the Golden uses Golden Snare on Lady of Reflections.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=48
+  Lady of Reflections takes 48 damage.
+    [T] HPCHANGE Lady of Reflections: 168 → 120  (-48)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Reflecting Pool: Rapunzel the Golden takes 5 reflected damage.
+  Lady of Reflections's root is refreshed to 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=120/255 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=171/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=120/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=171/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Lady of Reflections: Drown in the Loch → Rapunzel the Golden
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Rapunzel the Golden
+Lady of Reflections uses Drown in the Loch on Rapunzel the Golden.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=32
+  Rapunzel the Golden takes 32 damage.
+    [T] HPCHANGE Rapunzel the Golden: 171 → 139  (-32)
+  Rapunzel the Golden takes +7 damage from all sources for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Lady of Reflections
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lady of Reflections
+Rapunzel the Golden uses Golden Snare on Lady of Reflections.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=48
+  Lady of Reflections takes 48 damage.
+    [T] HPCHANGE Lady of Reflections: 120 → 72  (-48)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Reflecting Pool: Rapunzel the Golden takes 5 reflected damage.
+  Lady of Reflections's root is refreshed to 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=72/255 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=124/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=72/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=124/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Lady of Reflections: Drown in the Loch → Rapunzel the Golden
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Rapunzel the Golden
+Lady of Reflections uses Drown in the Loch on Rapunzel the Golden.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=32
+  Rapunzel the Golden takes 32 damage.
+    [T] HPCHANGE Rapunzel the Golden: 124 → 92  (-32)
+  Rapunzel the Golden takes +7 damage from all sources for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Lady of Reflections
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lady of Reflections
+Rapunzel the Golden uses Golden Snare on Lady of Reflections.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=48
+  Lady of Reflections takes 48 damage.
+    [T] HPCHANGE Lady of Reflections: 72 → 24  (-48)
+  Spiked Mail! Rapunzel the Golden takes 10 damage.
+  Reflecting Pool: Rapunzel the Golden takes 5 reflected damage.
+  Lady of Reflections's root is refreshed to 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=24/255 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=77/258 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak [KO]
+    [T]   P1 Lady of Reflections[front] HP=24/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P2 Rapunzel the Golden[front] HP=77/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl [KO]
+[Queued] Lady of Reflections: Drown in the Loch → Rapunzel the Golden
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Rapunzel the Golden
+Lady of Reflections uses Drown in the Loch on Rapunzel the Golden.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=40 def=65 raw=24.62 ceil=25
+    [T]   FINAL_DMG=32
+  Rapunzel the Golden takes 32 damage.
+    [T] HPCHANGE Rapunzel the Golden: 77 → 45  (-32)
+  Rapunzel the Golden takes +7 damage from all sources for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → Lady of Reflections
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → Lady of Reflections
+Rapunzel the Golden uses Golden Snare on Lady of Reflections.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → Lady of Reflections[front]
+    [T]   power=60
+    [T]   atk=60 def=75 raw=48.00 ceil=48
+    [T]   FINAL_DMG=48
+  Lady of Reflections takes 48 damage.
+    [T] HPCHANGE Lady of Reflections: 24 → 0  (-48) **KO**
+  Reflecting Pool: Rapunzel the Golden takes 5 reflected damage.
+  Lady of Reflections's root is refreshed to 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 11)
+────────────────────────────────────────────────────────────
+Player 2 wins!

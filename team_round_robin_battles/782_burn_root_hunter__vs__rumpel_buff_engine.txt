@@ -1,0 +1,484 @@
+Battle 782
+Player 1 Team: Burn-Root Hunter
+Player 2 Team: Rumpel Buff Engine
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:51:41
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 782
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+Player 2: Rumpel Buff Engine
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Chosen One  (passive=True)
+    Basics: Decree, Summons
+    Item:   Holy Diadem
+  [back_left] Rumpelstiltskin (Warlock)  HP=215  ATK=70  DEF=55  SPD=60
+    Talent: Art of the Deal
+    Sig:    Straw to Gold  (passive=False)
+    Basics: Blood Pact, Soul Gaze
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Bless, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch of the Woods: Freezing Gale → Rumpelstiltskin
+[Queued] Frederic the Beastslayer: Hero's Charge → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Rumpelstiltskin
+    [T] ACTION P1 Witch of the Woods[front]: Freezing Gale → Rumpelstiltskin
+Witch of the Woods uses Freezing Gale on Rumpelstiltskin.
+  Witch of the Woods loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Rumpelstiltskin[back_left]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Rumpelstiltskin takes 77 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 138  (-77)
+  Rumpelstiltskin gains root for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Prince Charming
+Frederic the Beastslayer uses Hero's Charge on Prince Charming.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=30
+    [T]   atk=70 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=49
+  Prince Charming takes 49 damage.
+    [T] HPCHANGE Prince Charming: 255 → 206  (-49)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [1/6]
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Rumpelstiltskin
+Briar Rose uses Creeping Doubt on Rumpelstiltskin.
+  Briar Rose loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=50 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=47
+  Rumpelstiltskin takes 47 damage.
+    [T] HPCHANGE Rumpelstiltskin: 138 → 91  (-47)
+[Queued] Prince Charming: Decree → Witch of the Woods
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch of the Woods
+[Queued] Rumpelstiltskin: Soul Gaze → Witch of the Woods
+    [T] ACTION P2 Prince Charming[front]: Decree → Witch of the Woods
+Prince Charming uses Decree on Witch of the Woods.
+    [T] DMGCALC [Decree] Prince Charming[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=65 def=35 raw=74.29 ceil=75
+    [T]   FINAL_DMG=75
+  Witch of the Woods takes 75 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 105  (-75)
+  Prince Charming gains +10 Attack for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [2/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Witch of the Woods
+Snowkissed Aurora uses Dictate of Nature on Witch of the Woods.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=45 def=35 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Witch of the Woods takes 45 damage.
+    [T] HPCHANGE Witch of the Woods: 105 → 60  (-45)
+  Snowkissed Aurora heals Rumpelstiltskin for 35 HP.
+  Innocent Heart: Rumpelstiltskin +10 Def.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Soul Gaze → Witch of the Woods
+Rumpelstiltskin uses Soul Gaze on Witch of the Woods.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[back_left] → Witch of the Woods[front]
+    [T]   power=30
+    [T]   atk=77 def=35 raw=66.00 ceil=66
+    [T]   FINAL_DMG=66
+  Witch of the Woods takes 66 damage.
+    [T] HPCHANGE Witch of the Woods: 60 → 0  (-66) **KO**
+  Rumpelstiltskin gains 1 Malice (Soul Gaze). [3/6]
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=206/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=126/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=50(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=206/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=126/215 ATK=70(base=70) DEF=65(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Prince Charming[front]
+    [T]   power=55
+    [T]   atk=50 def=55 raw=50.00 ceil=50
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 206 → 146  (-60)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 146 → 107  (-39)
+  Prince Charming is Marked — takes +10 damage next round.
+[Queued] Prince Charming: Swap with Rumpelstiltskin
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Rumpelstiltskin
+Prince Charming and Rumpelstiltskin swap positions.
+  Chosen One: Rumpelstiltskin becomes Prince Charming's champion.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Briar Rose[front]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Briar Rose takes 35 damage.
+    [T] HPCHANGE Briar Rose: 195 → 160  (-35)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Rumpelstiltskin[front]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin loses 50 HP.
+  Rumpelstiltskin gains 2 Malice (Blood Pact). [5/6]
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=160/195 statuses=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=142/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=76/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] DEBUFF_EXPIRED Briar Rose: attack-10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] BUFF_EXPIRED Rumpelstiltskin: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rumpelstiltskin spd=85  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=160/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=142/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=76/215 ATK=70(base=70) DEF=55(base=55) SPD=85(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Rumpelstiltskin: Soul Gaze → Briar Rose
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+[Queued] Prince Charming: Decree → Briar Rose
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Briar Rose
+Rumpelstiltskin uses Soul Gaze on Briar Rose.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Briar Rose[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Briar Rose takes 70 damage.
+    [T] HPCHANGE Briar Rose: 160 → 90  (-70)
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [4/6]
+  Briar Rose gains expose for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Briar Rose[front]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Briar Rose takes 42 damage.
+    [T] HPCHANGE Briar Rose: 90 → 48  (-42)
+  Snowkissed Aurora heals Rumpelstiltskin for 35 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Prince Charming[back_left]: Decree → Briar Rose
+Prince Charming uses Decree on Briar Rose.
+    [T] DMGCALC [Decree] Prince Charming[back_left] → Briar Rose[front]
+    [T]   power=25
+    [T]   atk=65 def=45 raw=36.11 ceil=37
+    [T]   FINAL_DMG=45
+  Briar Rose takes 45 damage.
+    [T] HPCHANGE Briar Rose: 48 → 3  (-45)
+  Briar Rose loses -10 Attack for 2 rounds.
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Frederic the Beastslayer: Hero's Charge → Rumpelstiltskin
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Prince Charming[back_left]
+    [T]   power=55
+    [T]   atk=50 def=55 raw=50.00 ceil=50
+    [T]   FINAL_DMG=70
+  Prince Charming takes 70 damage.
+    [T] HPCHANGE Prince Charming: 142 → 72  (-70)
+  Briar Rose must recharge next turn.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Rumpelstiltskin
+Frederic the Beastslayer uses Hero's Charge on Rumpelstiltskin.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Rumpelstiltskin[front]
+    [T]   power=30
+    [T]   atk=70 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=49
+  Rumpelstiltskin takes 49 damage.
+    [T] HPCHANGE Rumpelstiltskin: 111 → 62  (-49)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [5/6]
+  Frederic the Beastslayer must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=3/195 statuses=[expose(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=72/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=62/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Briar Rose: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Rumpelstiltskin spd=85  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose[front] HP=3/195 ATK=50(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=72/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=62/215 ATK=70(base=70) DEF=55(base=55) SPD=85(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Rumpelstiltskin: Soul Gaze → Briar Rose
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Briar Rose
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Briar Rose
+Rumpelstiltskin uses Soul Gaze on Briar Rose.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Briar Rose[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=84
+  Briar Rose takes 84 damage.
+    [T] HPCHANGE Briar Rose: 3 → 0  (-84) **KO**
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [4/6]
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_left]: Decree → Briar Rose
+Prince Charming's target is no longer legal — Decree fizzles.
+[Queued] Frederic the Beastslayer: Skip
+    [T] ACTION P1 Frederic the Beastslayer[front]: skip/recharge
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=72/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=62/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Rumpelstiltskin spd=80  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=72/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=62/215 ATK=70(base=70) DEF=55(base=55) SPD=80(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Rumpelstiltskin: Soul Gaze → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+[Queued] Prince Charming: Decree → Frederic the Beastslayer
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Frederic the Beastslayer
+Rumpelstiltskin uses Soul Gaze on Frederic the Beastslayer.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Frederic the Beastslayer[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=77
+  Frederic the Beastslayer takes 77 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 123  (-77)
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [3/6]
+  Frederic the Beastslayer gains expose for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Frederic the Beastslayer[front]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Frederic the Beastslayer takes 42 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 123 → 81  (-42)
+  Snowkissed Aurora heals Rumpelstiltskin for 35 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions.
+    [T] ACTION P2 Prince Charming[back_left]: Decree → Frederic the Beastslayer
+Prince Charming uses Decree on Frederic the Beastslayer.
+    [T] DMGCALC [Decree] Prince Charming[back_left] → Frederic the Beastslayer[front]
+    [T]   power=25
+    [T]   atk=65 def=45 raw=36.11 ceil=37
+    [T]   FINAL_DMG=45
+  Frederic the Beastslayer takes 45 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 81 → 36  (-45)
+  Frederic the Beastslayer loses -10 Attack for 2 rounds.
+[Queued] Frederic the Beastslayer: Slay the Beast → Rumpelstiltskin
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Rumpelstiltskin
+Frederic the Beastslayer uses Slay the Beast on Rumpelstiltskin.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Rumpelstiltskin[front]
+    [T]   power=85 (base=65)
+    [T]   atk=65 def=55 raw=100.45 ceil=101
+    [T]   FINAL_DMG=101
+  Rumpelstiltskin takes 101 damage.
+    [T] HPCHANGE Rumpelstiltskin: 97 → 0  (-101) **KO**
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=36/200 statuses=[expose(2r)]
+    [T]   P2 Prince Charming[front] HP=72/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=36/200 ATK=65(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=72/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=72
+  Prince Charming takes 72 damage.
+Holy Diadem activates! Prince Charming survives at 1 HP.
+  Prince Charming is Marked — takes +10 damage next round.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=66
+  Frederic the Beastslayer takes 66 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 36 → 0  (-66) **KO**
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 6)
+────────────────────────────────────────────────────────────
+Player 2 wins!

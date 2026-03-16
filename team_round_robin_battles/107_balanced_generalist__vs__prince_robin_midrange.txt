@@ -1,0 +1,2519 @@
+Battle 107
+Player 1 Team: Balanced Generalist
+Player 2 Team: Prince-Robin Midrange
+Winner: unresolved
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:42:46
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 107
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Balanced Generalist
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Prince-Robin Midrange
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+  Frederic the Beastslayer loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=50
+    [T]   atk=65 def=40 raw=81.25 ceil=82
+    [T]   FINAL_DMG=82
+  Robin, Hooded Avenger takes 82 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 103  (-82)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 255 → 207  (-48)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=35
+    [T]   atk=35 def=40 raw=30.62 ceil=31
+    [T]   FINAL_DMG=31
+  Robin, Hooded Avenger takes 31 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 103 → 72  (-31)
+[Queued] Prince Charming: Gallant Charge → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Frederic the Beastslayer
+Prince Charming uses Gallant Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=65 def=45 raw=93.89 ceil=94
+    [T]   FINAL_DMG=104
+  Frederic the Beastslayer takes 104 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 96  (-104)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Robin, Hooded Avenger
+Snowkissed Aurora uses Heal on Robin, Hooded Avenger.
+  Snowkissed Aurora heals Robin, Hooded Avenger for 55 HP.
+  Medic: Robin, Hooded Avenger cleansed of rulebook status conditions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=69
+  Frederic the Beastslayer takes 69 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 96 → 27  (-69)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=27/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=207/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=127/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=27/200 ATK=65(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=35(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=127/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=50
+    [T]   atk=65 def=40 raw=81.25 ceil=82
+    [T]   FINAL_DMG=92
+  Robin, Hooded Avenger takes 92 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 127 → 35  (-92)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40 (base=30)
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 207 → 159  (-48)
+  Prince Charming loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=35
+    [T]   atk=35 def=40 raw=30.62 ceil=31
+    [T]   FINAL_DMG=41
+  Robin, Hooded Avenger takes 41 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 35 → 0  (-41) **KO**
+  Snowkissed Aurora heals Frederic the Beastslayer for 35 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+[Queued] Prince Charming: Gallant Charge → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Frederic the Beastslayer
+Prince Charming uses Gallant Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=65 def=45 raw=93.89 ceil=94
+    [T]   FINAL_DMG=104
+  Frederic the Beastslayer takes 104 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 62 → 0  (-104) **KO**
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora's target is no longer legal — Dictate of Nature fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=159/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=25  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=35(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=159/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=35 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=32
+  Prince Charming takes 32 damage.
+    [T] HPCHANGE Prince Charming: 159 → 127  (-32)
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 255 → 178  (-77)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[front] HP=178/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=182/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=178/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=182/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 178 → 101  (-77)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=101/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=237/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=101/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=237/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 171 → 94  (-77)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[front] HP=94/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=237/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=94/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=237/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 94 → 17  (-77)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=45 def=55 raw=28.64 ceil=29
+    [T]   FINAL_DMG=29
+  Prince Charming takes 29 damage.
+    [T] HPCHANGE Prince Charming: 17 → 0  (-29) **KO**
+Snowkissed Aurora moves to frontline.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 237 → 196  (-41)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=196/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=196/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 196 → 155  (-41)
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=210/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=210/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=245/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=245/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 245 → 204  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=204/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=204/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 204 → 163  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=198/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=198/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 198 → 157  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=212/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=212/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=247/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=247/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 247 → 206  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=206/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=206/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 206 → 165  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=200/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=200/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 200 → 159  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=249/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=249/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 249 → 208  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 208 → 167  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=202/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=202/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 202 → 161  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=216/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=216/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=251/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=251/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 251 → 210  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=210/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=210/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 210 → 169  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=204/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=204/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 204 → 163  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=218/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=218/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=253/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=253/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 253 → 212  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=212/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=212/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 212 → 171  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=206/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=206/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 206 → 165  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=220/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=220/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 208 → 167  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 33 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 33
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R33):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 34
+────────────────────────────────────────────────────────────
+Round 34 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 34 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 34
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R34):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 35
+────────────────────────────────────────────────────────────
+Round 35 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 35 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 208 → 167  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 35
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R35):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 36
+────────────────────────────────────────────────────────────
+Round 36 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 36 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 33 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 36
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R36):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 37
+────────────────────────────────────────────────────────────
+Round 37 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 37 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 37
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R37):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 38
+────────────────────────────────────────────────────────────
+Round 38 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 38 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 38
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R38):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 39
+────────────────────────────────────────────────────────────
+Round 39 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 39 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 208 → 167  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 39
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R39):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 40
+────────────────────────────────────────────────────────────
+Round 40 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 40 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 33 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 40
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R40):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 41
+────────────────────────────────────────────────────────────
+Round 41 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 41 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 41
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R41):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 42
+────────────────────────────────────────────────────────────
+Round 42 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 42 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 42
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R42):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 43
+────────────────────────────────────────────────────────────
+Round 43 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 43 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 208 → 167  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 43
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R43):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 44
+────────────────────────────────────────────────────────────
+Round 44 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 44 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 33 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 44
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R44):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 45
+────────────────────────────────────────────────────────────
+Round 45 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 45 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 45
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R45):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 46
+────────────────────────────────────────────────────────────
+Round 46 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 46 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 46
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R46):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 47
+────────────────────────────────────────────────────────────
+Round 47 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 47 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 208 → 167  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 47
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R47):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 48
+────────────────────────────────────────────────────────────
+Round 48 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 48 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=222/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P1 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 33 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 48
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R48):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 49
+────────────────────────────────────────────────────────────
+Round 49 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 49 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 49
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R49):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 50
+────────────────────────────────────────────────────────────
+Round 50 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 50 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=214/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 35 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 50
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R50):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Prince Charming[front] HP=208/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+Battle aborted after safety limit.

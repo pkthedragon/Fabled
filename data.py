@@ -28,26 +28,26 @@ REND = Ability(
 
 CLEAVE = Ability(
     id="cleave", name="Cleave", category="basic", passive=False,
-    frontline=AbilityMode(power=45, def_ignore_pct=20),
+    frontline=AbilityMode(power=45, def_ignore_pct=15),
     backline=AbilityMode(special="cleave_back"),
 )
 
 FEINT = Ability(
     id="feint", name="Feint", category="basic", passive=False,
-    frontline=AbilityMode(power=45, spd_buff=10, spd_buff_dur=2),
-    backline=AbilityMode(spd_buff=10, spd_buff_dur=2),
+    frontline=AbilityMode(power=45, spd_buff=12, spd_buff_dur=2),
+    backline=AbilityMode(spd_buff=12, spd_buff_dur=2),
 )
 
 INTIMIDATE = Ability(
     id="intimidate", name="Intimidate", category="basic", passive=False,
-    frontline=AbilityMode(power=45, status="weaken", status_dur=2),
+    frontline=AbilityMode(power=50, status="weaken", status_dur=2),
     backline=AbilityMode(status="weaken", status_dur=2),
 )
 
 # ── ROGUE ─────────────────────────────────────────────────────────────────────
 SNEAK_ATTACK = Ability(
     id="sneak_attack", name="Sneak Attack", category="basic", passive=False,
-    frontline=AbilityMode(power=45, bonus_if_not_acted=15),
+    frontline=AbilityMode(power=50, bonus_if_not_acted=10),
     backline=AbilityMode(spd_debuff=10, spd_debuff_dur=2),
 )
 
@@ -65,7 +65,7 @@ POST_BOUNTY = Ability(
 
 SUCKER_PUNCH = Ability(
     id="sucker_punch", name="Sucker Punch", category="basic", passive=False,
-    frontline=AbilityMode(power=40, bonus_vs_statused=20),
+    frontline=AbilityMode(power=45, bonus_vs_statused=15),
     backline=AbilityMode(status="weaken", status_dur=2),
 )
 
@@ -78,13 +78,13 @@ FLEETFOOTED = Ability(
 # ── WARDEN ────────────────────────────────────────────────────────────────────
 SHIELD_BASH = Ability(
     id="shield_bash", name="Shield Bash", category="basic", passive=False,
-    frontline=AbilityMode(power=40, guard_all_allies=True),
+    frontline=AbilityMode(power=45, guard_all_allies=True),
     backline=AbilityMode(guard_frontline_ally=True),
 )
 
 CONDEMN = Ability(
     id="condemn", name="Condemn", category="basic", passive=False,
-    frontline=AbilityMode(power=40, atk_debuff=10, atk_debuff_dur=2),
+    frontline=AbilityMode(power=45, atk_debuff=12, atk_debuff_dur=2),
     backline=AbilityMode(atk_debuff=10, atk_debuff_dur=2),
 )
 
@@ -96,8 +96,8 @@ SLAM = Ability(
 
 ARMORED = Ability(
     id="armored", name="Armored", category="basic", passive=True,
-    frontline=AbilityMode(atk_buff=5, def_buff=10),
-    backline=AbilityMode(def_buff=5),
+    frontline=AbilityMode(atk_buff=7, def_buff=12),
+    backline=AbilityMode(def_buff=7),
 )
 
 STALWART = Ability(
@@ -109,82 +109,82 @@ STALWART = Ability(
 # ── MAGE ──────────────────────────────────────────────────────────────────────
 FIRE_BLAST = Ability(
     id="fire_blast", name="Fire Blast", category="basic", passive=False,
-    frontline=AbilityMode(power=65, status="burn", status_dur=2),
-    backline=AbilityMode(power=35, status="burn", status_dur=2),
+    frontline=AbilityMode(power=70, status="burn", status_dur=2),
+    backline=AbilityMode(power=40, status="burn", status_dur=2),
 )
 
 THUNDER_CALL = Ability(
     id="thunder_call", name="Thunder Call", category="basic", passive=False,
-    frontline=AbilityMode(power=65, status="shock", status_dur=2),
-    backline=AbilityMode(power=35, status="shock", status_dur=2),
+    frontline=AbilityMode(power=70, status="shock", status_dur=2),
+    backline=AbilityMode(power=40, status="shock", status_dur=2),
 )
 
 FREEZING_GALE = Ability(
     id="freezing_gale", name="Freezing Gale", category="basic", passive=False,
-    frontline=AbilityMode(power=65, status="root", status_dur=2),
-    backline=AbilityMode(power=35, status="root", status_dur=2),
+    frontline=AbilityMode(power=70, status="root", status_dur=2),
+    backline=AbilityMode(power=40, status="root", status_dur=2),
 )
 
 ARCANE_WAVE = Ability(
     id="arcane_wave", name="Arcane Wave", category="basic", passive=False,
     frontline=AbilityMode(power=80, special="arcane_wave_self_debuff"),
-    backline=AbilityMode(power=40),
+    backline=AbilityMode(power=45),
 )
 
 BREAKTHROUGH = Ability(
     id="breakthrough", name="Breakthrough", category="basic", passive=False,
-    frontline=AbilityMode(atk_buff=15, atk_buff_dur=2),
-    backline=AbilityMode(atk_buff=10, atk_buff_dur=2, self_status="spotlight", self_status_dur=2),
+    frontline=AbilityMode(atk_buff=12, atk_buff_dur=2),
+    backline=AbilityMode(atk_buff=12, atk_buff_dur=2, self_status="spotlight", self_status_dur=2),
 )
 
 # ── RANGER ────────────────────────────────────────────────────────────────────
 HAWKSHOT = Ability(
     id="hawkshot", name="Hawkshot", category="basic", passive=False,
-    frontline=AbilityMode(power=60, cant_redirect=True),
+    frontline=AbilityMode(power=55, cant_redirect=True),
     backline=AbilityMode(power=40, cant_redirect=True),
 )
 
 VOLLEY = Ability(
     id="volley", name="Volley", category="basic", passive=False,
-    frontline=AbilityMode(power=60, spread=True),
+    frontline=AbilityMode(power=50, spread=True),
     backline=AbilityMode(power=40, spread=True),
 )
 
 TRAPPING_BLOW = Ability(
     id="trapping_blow", name="Trapping Blow", category="basic", passive=False,
-    frontline=AbilityMode(power=60, special="trapping_blow_root_weakened"),
+    frontline=AbilityMode(power=50, special="trapping_blow_root_weakened"),
     backline=AbilityMode(power=35, status="weaken", status_dur=2),
 )
 
 HUNTERS_MARK = Ability(
     id="hunters_mark", name="Hunter's Mark", category="basic", passive=False,
-    frontline=AbilityMode(power=50, special="hunters_mark_dot"),
-    backline=AbilityMode(power=25, special="hunters_mark_dot"),
+    frontline=AbilityMode(power=45, special="hunters_mark_dot"),
+    backline=AbilityMode(power=30, special="hunters_mark_dot"),
 )
 
 HUNTERS_BADGE = Ability(
     id="hunters_badge", name="Hunter's Badge", category="basic", passive=True,
     frontline=AbilityMode(atk_buff=10),
-    backline=AbilityMode(atk_buff=5),
+    backline=AbilityMode(atk_buff=7),
 )
 
 # ── CLERIC ────────────────────────────────────────────────────────────────────
 HEAL = Ability(
     id="heal", name="Heal", category="basic", passive=False,
-    frontline=AbilityMode(heal=60),
-    backline=AbilityMode(heal=45),
+    frontline=AbilityMode(heal=65),
+    backline=AbilityMode(heal=50),
 )
 
 BLESS = Ability(
     id="bless", name="Bless", category="basic", passive=False,
-    frontline=AbilityMode(guard_target=True, atk_buff=10, atk_buff_dur=2),
+    frontline=AbilityMode(guard_target=True, atk_buff=7, atk_buff_dur=2),
     backline=AbilityMode(guard_target=True),
 )
 
 SMITE = Ability(
     id="smite", name="Smite", category="basic", passive=False,
     frontline=AbilityMode(power=55, status="burn", status_dur=2),
-    backline=AbilityMode(power=40),
+    backline=AbilityMode(power=45),
 )
 
 MEDIC = Ability(
@@ -204,20 +204,20 @@ PROTECTION = Ability(
 # ── NOBLE ─────────────────────────────────────────────────────────────────────
 IMPOSE = Ability(
     id="impose", name="Impose", category="basic", passive=False,
-    frontline=AbilityMode(power=50, spd_debuff=10, spd_debuff_dur=2),
-    backline=AbilityMode(power=30, spd_debuff=10, spd_debuff_dur=2),
+    frontline=AbilityMode(power=45, spd_debuff=12, spd_debuff_dur=2),
+    backline=AbilityMode(power=30, spd_debuff=12, spd_debuff_dur=2),
 )
 
 EDICT = Ability(
     id="edict", name="Edict", category="basic", passive=False,
-    frontline=AbilityMode(power=50, status="root", status_dur=2),
+    frontline=AbilityMode(power=45, status="root", status_dur=2),
     backline=AbilityMode(power=30, status="spotlight", status_dur=2),
 )
 
 DECREE = Ability(
     id="decree", name="Decree", category="basic", passive=False,
-    frontline=AbilityMode(power=40, atk_buff=10, atk_buff_dur=2),
-    backline=AbilityMode(power=25, atk_debuff=10, atk_debuff_dur=2),
+    frontline=AbilityMode(power=45, atk_buff=12, atk_buff_dur=2),
+    backline=AbilityMode(power=25, atk_debuff=12, atk_debuff_dur=2),
 )
 
 SUMMONS = Ability(
@@ -235,20 +235,20 @@ COMMAND = Ability(
 # ── WARLOCK ───────────────────────────────────────────────────────────────────
 DARK_GRASP = Ability(
     id="dark_grasp", name="Dark Grasp", category="basic", passive=False,
-    frontline=AbilityMode(power=50, special="warlock_gain_malice_1"),
-    backline=AbilityMode(power=35, special="warlock_spend1_weaken"),
+    frontline=AbilityMode(power=45, special="warlock_gain_malice_1"),
+    backline=AbilityMode(power=40, special="warlock_spend1_weaken"),
 )
 
 SOUL_GAZE = Ability(
     id="soul_gaze", name="Soul Gaze", category="basic", passive=False,
-    frontline=AbilityMode(power=45, special="warlock_spend1_expose"),
-    backline=AbilityMode(power=30, special="warlock_gain_malice_1"),
+    frontline=AbilityMode(power=40, special="warlock_spend1_expose"),
+    backline=AbilityMode(power=35, special="warlock_gain_malice_1"),
 )
 
 BLOOD_PACT = Ability(
     id="blood_pact", name="Blood Pact", category="basic", passive=False,
     frontline=AbilityMode(special="blood_pact_front"),
-    backline=AbilityMode(heal_self=25, special="blood_pact_back"),
+    backline=AbilityMode(heal_self=30, special="blood_pact_back"),
 )
 
 CURSED_ARMOR = Ability(
@@ -285,7 +285,7 @@ HEALTH_POTION = Item(
 )
 HEALING_TONIC = Item(
     id="healing_tonic", name="Healing Tonic", passive=False,
-    description="Heals user or ally 40 HP.", heal=40, uses=99,
+    description="Heals user or ally 45 HP.", heal=45, uses=99,
 )
 CRAFTY_SHIELD = Item(
     id="crafty_shield", name="Crafty Shield", passive=False,
@@ -294,17 +294,17 @@ CRAFTY_SHIELD = Item(
 )
 LIGHTNING_BOOTS = Item(
     id="lightning_boots", name="Lightning Boots", passive=False,
-    description="User has +10 Speed next round.", spd_buff=10, spd_buff_dur=2,
+    description="User has +15 Speed next round.", spd_buff=15, spd_buff_dur=2,
     uses=99,
 )
 MAIN_GAUCHE = Item(
     id="main_gauche", name="Main-Gauche", passive=False,
-    description="User has +10 Attack for 2 rounds.", atk_buff=10, atk_buff_dur=2,
+    description="User has +12 Attack for 2 rounds.", atk_buff=12, atk_buff_dur=2,
     uses=99,
 )
 IRON_BUCKLER = Item(
     id="iron_buckler", name="Iron Buckler", passive=False,
-    description="User has +10 Defense for 2 rounds.", def_buff=10, def_buff_dur=2,
+    description="User has +12 Defense for 2 rounds.", def_buff=12, def_buff_dur=2,
     uses=99,
 )
 SMOKE_BOMB = Item(
@@ -337,7 +337,7 @@ VAMPIRE_FANG = Item(
 )
 SPIKED_MAIL = Item(
     id="spiked_mail", name="Spiked Mail", passive=True,
-    description="Enemies damaging the user take 10 damage.", special="spiked_mail",
+    description="Enemies damaging the user take 15 damage.", special="spiked_mail",
 )
 ARCANE_FOCUS = Item(
     id="arcane_focus", name="Arcane Focus", passive=True,
@@ -369,39 +369,39 @@ ITEMS = [
 # ── RISA REDCLOAK (Fighter) ───────────────────────────────────────────────────
 RISA_S1 = Ability(
     id="crimson_fury", name="Crimson Fury", category="signature", passive=False,
-    frontline=AbilityMode(power=70, self_status="expose", self_status_dur=2),
-    backline=AbilityMode(status="weaken", status_dur=2),
+    frontline=AbilityMode(power=70, special="crimson_fury_recoil"),
+    backline=AbilityMode(status="weaken", status_dur=2, heal_self=30),
 )
 RISA_S2 = Ability(
     id="wolfs_pursuit", name="Wolf's Pursuit", category="signature", passive=False,
-    frontline=AbilityMode(power=50, special="wolfs_pursuit_retarget"),
+    frontline=AbilityMode(power=60, special="wolfs_pursuit_retarget"),
     backline=AbilityMode(status="expose", status_dur=2),
 )
 RISA_S3 = Ability(
     id="blood_hunt", name="Blood Hunt", category="signature", passive=False,
-    frontline=AbilityMode(power=60, double_vamp_no_base=True),
+    frontline=AbilityMode(power=65, double_vamp_no_base=True),
     backline=AbilityMode(special="blood_hunt_hp_avg"),
 )
 RISA_T = Ability(
     id="grandmothers_vengeance", name="Grandmother's Vengeance",
     category="twist", passive=False,
-    frontline=AbilityMode(power=70, vamp=1.0, atk_buff=15, atk_buff_dur=2,
-                          spd_buff=15, spd_buff_dur=2),
-    backline=AbilityMode(power=70, vamp=1.0, atk_buff=15, atk_buff_dur=2,
-                          spd_buff=15, spd_buff_dur=2),
+    frontline=AbilityMode(power=65, vamp=1.0, atk_buff=12, atk_buff_dur=2,
+                          spd_buff=12, spd_buff_dur=2),
+    backline=AbilityMode(power=65, vamp=1.0, atk_buff=12, atk_buff_dur=2,
+                         spd_buff=12, spd_buff_dur=2),
 )
 RISA = AdventurerDef(
     id="risa_redcloak", name="Risa Redcloak", cls="Fighter",
-    hp=250, attack=75, defense=60, speed=30,
+    hp=248, attack=71, defense=64, speed=42,
     talent_name="Red and Wolf",
-    talent_text="Below 50% max HP: +15 Atk, +15 Spd, abilities gain 20% vamp.",
+    talent_text="Below 50% max HP: +12 Atk, +12 Spd, abilities gain 15% vamp.",
     sig_options=[RISA_S1, RISA_S2, RISA_S3], twist=RISA_T,
 )
 
 # ── LITTLE JACK (Fighter) ─────────────────────────────────────────────────────
 JACK_S1 = Ability(
     id="skyfall", name="Skyfall", category="signature", passive=False,
-    frontline=AbilityMode(power=80),
+    frontline=AbilityMode(power=85),
     backline=AbilityMode(status="expose", status_dur=2),
 )
 JACK_S2 = Ability(
@@ -411,19 +411,19 @@ JACK_S2 = Ability(
 )
 JACK_S3 = Ability(
     id="magic_growth", name="Magic Growth", category="signature", passive=False,
-    frontline=AbilityMode(power=50, status="root", status_dur=2),
+    frontline=AbilityMode(power=60, status="root", status_dur=2),
     backline=AbilityMode(status="root", status_dur=2, special="magic_growth_power_buff"),
 )
 JACK_T = Ability(
     id="fell_the_beanstalk", name="Fell the Beanstalk", category="twist", passive=False,
-    frontline=AbilityMode(power=85, def_ignore_pct=30, status="expose", status_dur=2),
-    backline=AbilityMode(power=85, def_ignore_pct=30, status="expose", status_dur=2),
+    frontline=AbilityMode(power=85, def_ignore_pct=20, status="expose", status_dur=2),
+    backline=AbilityMode(power=85, def_ignore_pct=20, status="expose", status_dur=2),
 )
 LITTLE_JACK = AdventurerDef(
     id="little_jack", name="Little Jack", cls="Fighter",
-    hp=220, attack=80, defense=50, speed=50,
+    hp=220, attack=82, defense=49, speed=74,
     talent_name="Giant Slayer",
-    talent_text="Jack deals 20% bonus damage to enemies with higher max HP.",
+    talent_text="Jack deals 15% bonus damage to enemies with higher max HP.",
     sig_options=[JACK_S1, JACK_S2, JACK_S3], twist=JACK_T,
 )
 
@@ -446,18 +446,18 @@ GRETEL_S3 = Ability(
 )
 GRETEL_T = Ability(
     id="into_the_oven", name="Into the Oven", category="twist", passive=False,
-    frontline=AbilityMode(power=65, status="burn", status_dur=2,
+    frontline=AbilityMode(power=70, status="burn", status_dur=2,
                           status2="weaken", status2_dur=2,
                           status3="root", status3_dur=2),
-    backline=AbilityMode(power=65, status="burn", status_dur=2,
-                          status2="weaken", status2_dur=2,
-                          status3="root", status3_dur=2),
+    backline=AbilityMode(power=70, status="burn", status_dur=2,
+                         status2="weaken", status2_dur=2,
+                         status3="root", status3_dur=2),
 )
 GRETEL = AdventurerDef(
     id="gretel", name="Witch-Hunter Gretel", cls="Fighter",
-    hp=215, attack=80, defense=45, speed=60,
+    hp=228, attack=75, defense=54, speed=63,
     talent_name="Sugar Rush",
-    talent_text="When Gretel knocks out an enemy: +15 Atk, +10 Spd for 2 rounds.",
+    talent_text="When Gretel knocks out an enemy: +15 Atk, +15 Spd for 2 rounds.",
     sig_options=[GRETEL_S1, GRETEL_S2, GRETEL_S3], twist=GRETEL_T,
 )
 
@@ -469,7 +469,7 @@ CONSTANTINE_S1 = Ability(
 )
 CONSTANTINE_S2 = Ability(
     id="feline_gambit", name="Feline Gambit", category="signature", passive=False,
-    frontline=AbilityMode(power=45, status="expose", status_dur=2),
+    frontline=AbilityMode(power=50, status="expose", status_dur=2),
     backline=AbilityMode(status="expose", status_dur=2),
 )
 CONSTANTINE_S3 = Ability(
@@ -484,21 +484,21 @@ CONSTANTINE_T = Ability(
 )
 CONSTANTINE = AdventurerDef(
     id="lucky_constantine", name="Lucky Constantine", cls="Rogue",
-    hp=215, attack=70, defense=40, speed=75,
+    hp=214, attack=64, defense=41, speed=101,
     talent_name="Shadowstep",
-    talent_text="Constantine ignores melee targeting vs Exposed targets, -10 dmg to backline.",
+    talent_text="Constantine ignores melee targeting vs Exposed targets, -12 dmg to backline.",
     sig_options=[CONSTANTINE_S2, CONSTANTINE_S1, CONSTANTINE_S3], twist=CONSTANTINE_T,
 )
 
 # ── HUNOLD THE PIPER (Rogue) ──────────────────────────────────────────────────
 HUNOLD_S1 = Ability(
     id="haunting_rhythm", name="Haunting Rhythm", category="signature", passive=False,
-    frontline=AbilityMode(power=50, status="shock", status_dur=2),
+    frontline=AbilityMode(power=60, status="shock", status_dur=2),
     backline=AbilityMode(status="shock", status_dur=2),
 )
 HUNOLD_S2 = Ability(
     id="dying_dance", name="Dying Dance", category="signature", passive=False,
-    frontline=AbilityMode(power=60, special="dying_dance_front"),
+    frontline=AbilityMode(power=65, special="dying_dance_front"),
     backline=AbilityMode(status="weaken", status_dur=2),
 )
 HUNOLD_S3 = Ability(
@@ -513,27 +513,27 @@ HUNOLD_T = Ability(
 )
 HUNOLD = AdventurerDef(
     id="hunold_the_piper", name="Hunold the Piper", cls="Rogue",
-    hp=210, attack=60, defense=45, speed=65,
+    hp=232, attack=64, defense=53, speed=76,
     talent_name="Electrifying Trance",
-    talent_text="Shocked enemies take +15 damage from abilities.",
+    talent_text="Shocked enemies take +12 damage from abilities.",
     sig_options=[HUNOLD_S1, HUNOLD_S2, HUNOLD_S3], twist=HUNOLD_T,
 )
 
 # ── REYNARD, LUPINE TRICKSTER (Rogue) ─────────────────────────────────────────
 REYNARD_S1 = Ability(
     id="feign_weakness", name="Feign Weakness", category="signature", passive=False,
-    frontline=AbilityMode(power=50, special="feign_weakness_retaliate_45"),
-    backline=AbilityMode(special="feign_weakness_retaliate_40"),
+    frontline=AbilityMode(power=55, special="feign_weakness_retaliate_45"),
+    backline=AbilityMode(special="feign_weakness_retaliate_45"),
 )
 REYNARD_S2 = Ability(
     id="size_up", name="Size Up", category="signature", passive=False,
-    frontline=AbilityMode(power=45, status="weaken", status_dur=2),
-    backline=AbilityMode(power=35, status="expose", status_dur=2),
+    frontline=AbilityMode(power=55, status="weaken", status_dur=2),
+    backline=AbilityMode(power=40, status="expose", status_dur=2),
 )
 REYNARD_S3 = Ability(
     id="cutpurse", name="Cutpurse", category="signature", passive=False,
-    frontline=AbilityMode(power=40, spd_debuff=10, spd_debuff_dur=2,
-                          spd_buff=10, spd_buff_dur=2),
+    frontline=AbilityMode(power=50, spd_debuff=12, spd_debuff_dur=2,
+                          spd_buff=12, spd_buff_dur=2),
     backline=AbilityMode(special="cutpurse_swap_frontline"),
 )
 REYNARD_T = Ability(
@@ -543,7 +543,7 @@ REYNARD_T = Ability(
 )
 REYNARD = AdventurerDef(
     id="reynard", name="Reynard, Lupine Trickster", cls="Rogue",
-    hp=205, attack=65, defense=45, speed=75,
+    hp=210, attack=75, defense=45, speed=90,
     talent_name="Cunning Dodge",
     talent_text="Reynard takes 50% damage from the first ability each battle. Refreshes when he swaps.",
     sig_options=[REYNARD_S2, REYNARD_S1, REYNARD_S3], twist=REYNARD_T,
@@ -557,7 +557,7 @@ ROLAND_S1 = Ability(
 )
 ROLAND_S2 = Ability(
     id="knights_challenge", name="Knight's Challenge", category="signature", passive=False,
-    frontline=AbilityMode(power=35, special="taunt_target"),
+    frontline=AbilityMode(power=55, special="taunt_target"),
     backline=AbilityMode(special="taunt_front_ranged"),
 )
 ROLAND_S3 = Ability(
@@ -567,14 +567,14 @@ ROLAND_S3 = Ability(
 )
 ROLAND_T = Ability(
     id="purehearted_stand", name="Purehearted Stand", category="twist", passive=False,
-    frontline=AbilityMode(heal_self=100, guard_self=True),
-    backline=AbilityMode(heal_self=100, guard_self=True),
+    frontline=AbilityMode(heal_self=120, guard_self=True),
+    backline=AbilityMode(heal_self=120, guard_self=True),
 )
 ROLAND = AdventurerDef(
     id="sir_roland", name="Sir Roland", cls="Warden",
-    hp=265, attack=40, defense=80, speed=30,
+    hp=282, attack=43, defense=80, speed=20,
     talent_name="Silver Aegis",
-    talent_text="Roland takes 75% less damage from the first incoming ability after swapping to frontline.",
+    talent_text="Roland takes 65% less damage from the first incoming ability after swapping to frontline.",
     sig_options=[ROLAND_S1, ROLAND_S2, ROLAND_S3], twist=ROLAND_T,
 )
 
@@ -595,15 +595,15 @@ PORCUS_S3 = Ability(
     backline=AbilityMode(special="sturdy_home_back"),
 )
 PORCUS_T = Ability(
-    id="unbreakable_defense", name="Unbreakable Defense", category="twist", passive=False,
-    frontline=AbilityMode(special="unbreakable_defense"),
-    backline=AbilityMode(special="unbreakable_defense"),
+    id="unfettered", name="Unfettered", category="twist", passive=False,
+    frontline=AbilityMode(special="unfettered"),
+    backline=AbilityMode(special="unfettered"),
 )
 PORCUS = AdventurerDef(
     id="porcus_iii", name="Porcus III", cls="Warden",
-    hp=280, attack=35, defense=85, speed=20,
+    hp=298, attack=37, defense=82, speed=13,
     talent_name="Bricklayer",
-    talent_text="If an ability would deal 25%+ max HP to Porcus, reduce by 40% and Weaken attacker.",
+    talent_text="If an ability would deal 20%+ max HP to Porcus, reduce by 35% and Weaken attacker.",
     sig_options=[PORCUS_S1, PORCUS_S2, PORCUS_S3], twist=PORCUS_T,
 )
 
@@ -615,7 +615,7 @@ LADY_S1 = Ability(
 )
 LADY_S2 = Ability(
     id="drown_in_the_loch", name="Drown in the Loch", category="signature", passive=False,
-    frontline=AbilityMode(power=40, special="drown_dmg_bonus"),
+    frontline=AbilityMode(power=55, special="drown_dmg_bonus"),
     backline=AbilityMode(special="drown_dmg_bonus"),
 )
 LADY_S3 = Ability(
@@ -630,9 +630,9 @@ LADY_T = Ability(
 )
 LADY = AdventurerDef(
     id="lady_of_reflections", name="Lady of Reflections", cls="Warden",
-    hp=255, attack=40, defense=75, speed=32,
+    hp=266, attack=46, defense=68, speed=40,
     talent_name="Reflecting Pool",
-    talent_text="Reflects 10% of incoming damage onto attacker (20% if attacker is backline).",
+    talent_text="Reflects 12% of incoming damage onto attacker (15% if attacker is backline).",
     sig_options=[LADY_S2, LADY_S1, LADY_S3], twist=LADY_T,
 )
 
@@ -640,27 +640,28 @@ LADY = AdventurerDef(
 ELLA_S1 = Ability(
     id="midnight_dour", name="Midnight Dour", category="signature", passive=True,
     frontline=AbilityMode(special="midnight_dour_swap"),
-    backline=AbilityMode(heal_self=35),
+    backline=AbilityMode(heal_self=40),
 )
 ELLA_S2 = Ability(
     id="crowstorm", name="Crowstorm", category="signature", passive=False,
-    frontline=AbilityMode(power=75, spread=True, status="burn", status_dur=2),
+    frontline=AbilityMode(power=80, spread=True, status="burn", status_dur=2),
     backline=AbilityMode(status="burn", status_dur=2,
                          special="ella_ignore_two_lives"),
 )
 ELLA_S3 = Ability(
     id="fae_blessing", name="Fae Blessing", category="signature", passive=False,
-    frontline=AbilityMode(guard_self=True, atk_buff=20, atk_buff_dur=2),
+    frontline=AbilityMode(guard_self=True, atk_buff=12, atk_buff_dur=2,
+                          spd_buff=12, spd_buff_dur=2),
     backline=AbilityMode(heal=50, special="ella_ignore_two_lives"),
 )
 ELLA_T = Ability(
     id="struck_midnight", name="Struck Midnight", category="twist", passive=False,
-    frontline=AbilityMode(status="burn", status_dur=2, special="struck_midnight_untargetable"),
-    backline=AbilityMode(status="burn", status_dur=2, special="struck_midnight_untargetable"),
+    frontline=AbilityMode(special="struck_midnight_untargetable"),
+    backline=AbilityMode(special="struck_midnight_untargetable"),
 )
 ELLA = AdventurerDef(
     id="ashen_ella", name="Ashen Ella", cls="Mage",
-    hp=185, attack=80, defense=40, speed=65,
+    hp=213, attack=83, defense=45, speed=89,
     talent_name="Two Lives",
     talent_text="Ella is untargetable while backline but can only use abilities while frontline.",
     sig_options=[ELLA_S2, ELLA_S1, ELLA_S3], twist=ELLA_T,
@@ -669,8 +670,8 @@ ELLA = AdventurerDef(
 # ── MARCH HARE (Mage) ─────────────────────────────────────────────────────────
 HARE_S1 = Ability(
     id="tempus_fugit", name="Tempus Fugit", category="signature", passive=False,
-    frontline=AbilityMode(power=65, spd_debuff=20, spd_debuff_dur=2),
-    backline=AbilityMode(power=40, spd_debuff=15, spd_debuff_dur=2),
+    frontline=AbilityMode(power=75, spd_debuff=15, spd_debuff_dur=2),
+    backline=AbilityMode(power=45, spd_debuff=12, spd_debuff_dur=2),
 )
 HARE_S2 = Ability(
     id="rabbit_hole", name="Rabbit Hole", category="signature", passive=False,
@@ -679,7 +680,7 @@ HARE_S2 = Ability(
 )
 HARE_S3 = Ability(
     id="nebulous_ides", name="Nebulous Ides", category="signature", passive=False,
-    frontline=AbilityMode(power=60, bonus_if_target_acted=20),
+    frontline=AbilityMode(power=70, bonus_if_target_acted=15),
     backline=AbilityMode(power=40, special="nebulous_ides_back"),
 )
 HARE_T = Ability(
@@ -689,22 +690,22 @@ HARE_T = Ability(
 )
 MARCH_HARE = AdventurerDef(
     id="march_hare", name="March Hare", cls="Mage",
-    hp=190, attack=70, defense=35, speed=70,
+    hp=212, attack=74, defense=38, speed=96,
     talent_name="On Time!",
-    talent_text="While March Hare is frontline, the frontline enemy has -15 Speed.",
+    talent_text="While March Hare is frontline, the frontline enemy has -12 Speed.",
     sig_options=[HARE_S1, HARE_S2, HARE_S3], twist=HARE_T,
 )
 
 # ── WITCH OF THE WOODS (Mage) ─────────────────────────────────────────────────
 WITCH_S1 = Ability(
     id="toil_and_trouble", name="Toil and Trouble", category="signature", passive=False,
-    frontline=AbilityMode(power=60, special="toil_spread_status_right"),
-    backline=AbilityMode(power=35, status="burn", status_dur=2),
+    frontline=AbilityMode(power=70, special="toil_spread_status_right"),
+    backline=AbilityMode(power=40, status="burn", status_dur=2),
 )
 WITCH_S2 = Ability(
     id="cauldron_bubble", name="Cauldron Bubble", category="signature", passive=False,
-    frontline=AbilityMode(power=60, spread=True, special="cauldron_extend_status"),
-    backline=AbilityMode(power=30, spread=True, special="cauldron_extend_status"),
+    frontline=AbilityMode(power=65, spread=True, special="cauldron_extend_status"),
+    backline=AbilityMode(power=35, spread=True, special="cauldron_extend_status"),
 )
 WITCH_S3 = Ability(
     id="crawling_abode", name="Crawling Abode", category="signature", passive=True,
@@ -713,12 +714,12 @@ WITCH_S3 = Ability(
 )
 WITCH_T = Ability(
     id="vile_sabbath", name="Vile Sabbath", category="twist", passive=False,
-    frontline=AbilityMode(power=70, spread=True, special="vile_sabbath_reapply"),
-    backline=AbilityMode(power=70, spread=True, special="vile_sabbath_reapply"),
+    frontline=AbilityMode(power=75, spread=True, special="vile_sabbath_reapply"),
+    backline=AbilityMode(power=75, spread=True, special="vile_sabbath_reapply"),
 )
 WITCH = AdventurerDef(
     id="witch_of_the_woods", name="Witch of the Woods", cls="Mage",
-    hp=180, attack=75, defense=35, speed=65,
+    hp=198, attack=80, defense=39, speed=98,
     talent_name="Double Double",
     talent_text="Whenever the Witch damages a statused target, spread the target's last inflicted status to the enemy adjacent to their left.",
     sig_options=[WITCH_S1, WITCH_S2, WITCH_S3], twist=WITCH_T,
@@ -732,7 +733,7 @@ BRIAR_S1 = Ability(
 )
 BRIAR_S2 = Ability(
     id="creeping_doubt", name="Creeping Doubt", category="signature", passive=False,
-    frontline=AbilityMode(power=55, bonus_vs_rooted=40),
+    frontline=AbilityMode(power=55, bonus_vs_rooted=30),
     backline=AbilityMode(power=40, status="root", status_dur=2),
 )
 BRIAR_S3 = Ability(
@@ -747,7 +748,7 @@ BRIAR_T = Ability(
 )
 BRIAR_ROSE = AdventurerDef(
     id="briar_rose", name="Briar Rose", cls="Ranger",
-    hp=195, attack=60, defense=45, speed=60,
+    hp=226, attack=57, defense=49, speed=88,
     talent_name="Curse of Sleeping",
     talent_text="The lowest health Rooted enemy is unable to act each round but loses Rooting and can't be Rooted next round.",
     sig_options=[BRIAR_S1, BRIAR_S2, BRIAR_S3], twist=BRIAR_T,
@@ -756,39 +757,39 @@ BRIAR_ROSE = AdventurerDef(
 # ── FREDERIC THE BEASTSLAYER (Ranger) ─────────────────────────────────────────
 FRED_S1 = Ability(
     id="heros_charge", name="Hero's Charge", category="signature", passive=False,
-    frontline=AbilityMode(power=60, special="heros_charge_ignore_pride_front"),
+    frontline=AbilityMode(power=65, special="heros_charge_ignore_pride_front"),
     backline=AbilityMode(power=30, spd_buff=12, spd_buff_dur=2),
 )
 FRED_S2 = Ability(
     id="on_the_hunt", name="On the Hunt", category="signature", passive=False,
-    frontline=AbilityMode(power=40, atk_buff=15, atk_buff_dur=2),
+    frontline=AbilityMode(power=50, atk_buff=12, atk_buff_dur=2),
     backline=AbilityMode(power=25, status="expose", status_dur=2),
 )
 FRED_S3 = Ability(
     id="jovial_shot", name="Jovial Shot", category="signature", passive=False,
-    frontline=AbilityMode(power=50, status="weaken", status_dur=2),
-    backline=AbilityMode(heal_self=60, self_status="weaken", self_status_dur=2),
+    frontline=AbilityMode(power=55, status="weaken", status_dur=2),
+    backline=AbilityMode(heal_self=80, self_status="weaken", self_status_dur=2),
 )
 FRED_T = Ability(
     id="slay_the_beast", name="Slay the Beast", category="twist", passive=False,
-    frontline=AbilityMode(power=65, bonus_vs_higher_hp=20,
+    frontline=AbilityMode(power=70, bonus_vs_higher_hp=20,
                           special="slay_ignore_pride"),
-    backline=AbilityMode(power=65, bonus_vs_higher_hp=20,
+    backline=AbilityMode(power=70, bonus_vs_higher_hp=20,
                          special="slay_ignore_pride"),
 )
 FREDERIC = AdventurerDef(
     id="frederic", name="Frederic the Beastslayer", cls="Ranger",
-    hp=200, attack=65, defense=45, speed=60,
+    hp=236, attack=68, defense=54, speed=67,
     talent_name="Heedless Pride",
-    talent_text="Deals 20% bonus dmg to enemy frontline; takes 10% bonus dmg from enemy frontline.",
+    talent_text="Deals 15% bonus dmg to enemy frontline; takes 7% bonus dmg from enemy frontline.",
     sig_options=[FRED_S1, FRED_S2, FRED_S3], twist=FRED_T,
 )
 
 # ── ROBIN, HOODED AVENGER (Ranger) ────────────────────────────────────────────
 ROBIN_S1 = Ability(
     id="snipe_shot", name="Snipe Shot", category="signature", passive=False,
-    frontline=AbilityMode(power=65),
-    backline=AbilityMode(power=40, ignore_guard=True),
+    frontline=AbilityMode(power=60),
+    backline=AbilityMode(power=35, ignore_guard=True),
 )
 ROBIN_S2 = Ability(
     id="spread_fortune", name="Spread Fortune", category="signature", passive=True,
@@ -797,21 +798,21 @@ ROBIN_S2 = Ability(
 )
 ROBIN_S3 = Ability(
     id="bring_down", name="Bring Down", category="signature", passive=False,
-    frontline=AbilityMode(power=60, special="bring_down_steal_atk"),
+    frontline=AbilityMode(power=55, special="bring_down_steal_atk"),
     backline=AbilityMode(power=35, status="root", status_dur=2),
 )
 ROBIN_T = Ability(
     id="kingmaker", name="Kingmaker", category="twist", passive=False,
-    frontline=AbilityMode(power=70, ignore_guard=True, cant_redirect=True,
-                          bonus_vs_backline=20),
-    backline=AbilityMode(power=70, ignore_guard=True, cant_redirect=True,
-                         bonus_vs_backline=20),
+    frontline=AbilityMode(power=65, ignore_guard=True, cant_redirect=True,
+                          bonus_vs_backline=15),
+    backline=AbilityMode(power=65, ignore_guard=True, cant_redirect=True,
+                         bonus_vs_backline=15),
 )
 ROBIN = AdventurerDef(
     id="robin_hooded_avenger", name="Robin, Hooded Avenger", cls="Ranger",
-    hp=185, attack=70, defense=40, speed=65,
+    hp=221, attack=69, defense=41, speed=89,
     talent_name="Keen Eye",
-    talent_text="Robin deals +10 damage with abilities to backline enemies.",
+    talent_text="Robin deals +7 damage with abilities to backline enemies.",
     sig_options=[ROBIN_S1, ROBIN_S2, ROBIN_S3], twist=ROBIN_T,
 )
 
@@ -828,8 +829,8 @@ ALDRIC_S2 = Ability(
 )
 ALDRIC_S3 = Ability(
     id="repentance", name="Repentance", category="signature", passive=False,
-    frontline=AbilityMode(power=50, vamp=0.35, special="repentance_front"),
-    backline=AbilityMode(power=40, vamp=0.20),
+    frontline=AbilityMode(power=65, vamp=0.40, special="repentance_front"),
+    backline=AbilityMode(power=45, vamp=0.25),
 )
 ALDRIC_T = Ability(
     id="redemption", name="Redemption", category="twist", passive=False,
@@ -838,7 +839,7 @@ ALDRIC_T = Ability(
 )
 ALDRIC = AdventurerDef(
     id="aldric_lost_lamb", name="Aldric, Lost Lamb", cls="Cleric",
-    hp=230, attack=45, defense=60, speed=35,
+    hp=275, attack=47, defense=67, speed=41,
     talent_name="All-Caring",
     talent_text="Aldric's healing effects Guard the recipient for 2 rounds.",
     sig_options=[ALDRIC_S1, ALDRIC_S2, ALDRIC_S3], twist=ALDRIC_T,
@@ -848,7 +849,7 @@ ALDRIC = AdventurerDef(
 LIESL_S1 = Ability(
     id="cinder_blessing", name="Cinder Blessing", category="signature", passive=False,
     frontline=AbilityMode(special="cinder_blessing_avg"),
-    backline=AbilityMode(heal_self=60),
+    backline=AbilityMode(heal_self=70),
 )
 LIESL_S2 = Ability(
     id="flame_of_renewal", name="Flame of Renewal", category="signature", passive=True,
@@ -857,19 +858,19 @@ LIESL_S2 = Ability(
 )
 LIESL_S3 = Ability(
     id="cauterize", name="Cauterize", category="signature", passive=False,
-    frontline=AbilityMode(power=50, status="no_heal", status_dur=2),
-    backline=AbilityMode(power=40, status="no_heal", status_dur=2),
+    frontline=AbilityMode(power=60, status="no_heal", status_dur=2),
+    backline=AbilityMode(power=45, status="no_heal", status_dur=2),
 )
 LIESL_T = Ability(
     id="cleansing_inferno", name="Cleansing Inferno", category="twist", passive=False,
-    frontline=AbilityMode(power=60, spread=True, vamp=0.30,
+    frontline=AbilityMode(power=70, spread=True, vamp=0.35,
                           special="cleansing_inferno_burn_boost"),
-    backline=AbilityMode(power=60, spread=True, vamp=0.30,
+    backline=AbilityMode(power=70, spread=True, vamp=0.35,
                          special="cleansing_inferno_burn_boost"),
 )
 LIESL = AdventurerDef(
     id="matchstick_liesl", name="Matchstick Liesl", cls="Cleric",
-    hp=210, attack=50, defense=50, speed=50,
+    hp=240, attack=55, defense=48, speed=77,
     talent_name="Purifying Flame",
     talent_text="Liesl's healing grants Burn immunity for 2 rounds and causes next attack to Burn.",
     sig_options=[LIESL_S1, LIESL_S2, LIESL_S3], twist=LIESL_T,
@@ -883,8 +884,8 @@ AURORA_S1 = Ability(
 )
 AURORA_S2 = Ability(
     id="dictate_of_nature", name="Dictate of Nature", category="signature", passive=False,
-    frontline=AbilityMode(power=50, heal_lowest=40),
-    backline=AbilityMode(power=35, heal_lowest=25),
+    frontline=AbilityMode(power=50, heal_lowest=35),
+    backline=AbilityMode(power=30, heal_lowest=20),
 )
 AURORA_S3 = Ability(
     id="birdsong", name="Birdsong", category="signature", passive=True,
@@ -898,9 +899,9 @@ AURORA_T = Ability(
 )
 AURORA = AdventurerDef(
     id="snowkissed_aurora", name="Snowkissed Aurora", cls="Cleric",
-    hp=225, attack=45, defense=60, speed=40,
+    hp=255, attack=44, defense=56, speed=65,
     talent_name="Innocent Heart",
-    talent_text="Whenever Aurora or an ally loses a status condition, they get +10 defense for 2 rounds.",
+    talent_text="Whenever Aurora or an ally loses a status condition, they get +7 defense for 2 rounds.",
     sig_options=[AURORA_S1, AURORA_S2, AURORA_S3], twist=AURORA_T,
 )
 
@@ -909,13 +910,13 @@ AURORA = AdventurerDef(
 # ── PRINCE CHARMING (Noble) ─────────────────────────────────────────────────
 PRINCE_S1 = Ability(
     id="condescend", name="Condescend", category="signature", passive=False,
-    frontline=AbilityMode(power=50, def_debuff=10, def_debuff_dur=2),
-    backline=AbilityMode(power=40, special="condescend_back"),
+    frontline=AbilityMode(power=50, def_debuff=7, def_debuff_dur=2),
+    backline=AbilityMode(power=35, special="condescend_back"),
 )
 PRINCE_S2 = Ability(
     id="gallant_charge", name="Gallant Charge", category="signature", passive=False,
-    frontline=AbilityMode(power=65, special="gallant_charge_front"),
-    backline=AbilityMode(power=35, spd_buff=15, spd_buff_dur=2),
+    frontline=AbilityMode(power=60, special="gallant_charge_front"),
+    backline=AbilityMode(power=30, spd_buff=12, spd_buff_dur=2),
 )
 PRINCE_S3 = Ability(
     id="chosen_one", name="Chosen One", category="signature", passive=True,
@@ -929,9 +930,9 @@ PRINCE_T = Ability(
 )
 PRINCE = AdventurerDef(
     id="prince_charming", name="Prince Charming", cls="Noble",
-    hp=255, attack=65, defense=55, speed=35,
+    hp=245, attack=60, defense=55, speed=40,
     talent_name="Mesmerizing",
-    talent_text="While Prince Charming is frontline, enemies that target allies get -10 Attack for 2 rounds.",
+    talent_text="While Prince Charming is frontline, enemies that target allies get -7 Attack for 2 rounds.",
     sig_options=[PRINCE_S1, PRINCE_S2, PRINCE_S3], twist=PRINCE_T,
 )
 
@@ -939,7 +940,7 @@ PRINCE = AdventurerDef(
 GREEN_S1 = Ability(
     id="heros_bargain", name="Hero's Bargain", category="signature", passive=False,
     frontline=AbilityMode(power=50, status="root", status_dur=2),
-    backline=AbilityMode(power=25, special="heros_bargain_back"),
+    backline=AbilityMode(power=40, special="heros_bargain_back"),
 )
 GREEN_S2 = Ability(
     id="natural_order", name="Natural Order", category="signature", passive=True,
@@ -958,9 +959,9 @@ GREEN_T = Ability(
 )
 GREEN_KNIGHT = AdventurerDef(
     id="green_knight", name="Green Knight", cls="Noble",
-    hp=275, attack=60, defense=60, speed=20,
+    hp=266, attack=55, defense=64, speed=20,
     talent_name="Challenge Accepted",
-    talent_text="The Green Knight deals +15 damage to the target across from him.",
+    talent_text="The Green Knight deals +10 damage to the target across from him.",
     sig_options=[GREEN_S1, GREEN_S2, GREEN_S3], twist=GREEN_T,
 )
 
@@ -968,12 +969,12 @@ GREEN_KNIGHT = AdventurerDef(
 RAPUNZEL_S1 = Ability(
     id="golden_snare", name="Golden Snare", category="signature", passive=False,
     frontline=AbilityMode(power=60, special="golden_snare_front"),
-    backline=AbilityMode(power=30, status="root", status_dur=2),
+    backline=AbilityMode(power=35, status="root", status_dur=2),
 )
 RAPUNZEL_S2 = Ability(
     id="lower_guard", name="Lower Guard", category="signature", passive=False,
     frontline=AbilityMode(power=55, special="lower_guard_front"),
-    backline=AbilityMode(power=30, def_debuff=10, def_debuff_dur=2),
+    backline=AbilityMode(power=30, def_debuff=12, def_debuff_dur=2),
 )
 RAPUNZEL_S3 = Ability(
     id="ivory_tower", name="Ivory Tower", category="signature", passive=True,
@@ -987,7 +988,7 @@ RAPUNZEL_T = Ability(
 )
 RAPUNZEL = AdventurerDef(
     id="rapunzel", name="Rapunzel the Golden", cls="Noble",
-    hp=258, attack=60, defense=65, speed=30,
+    hp=258, attack=67, defense=60, speed=30,
     talent_name="Flowing Locks",
     talent_text="Ignore melee targeting restrictions once per battle; refreshes after ending round in backline.",
     sig_options=[RAPUNZEL_S1, RAPUNZEL_S2, RAPUNZEL_S3], twist=RAPUNZEL_T,
@@ -997,11 +998,11 @@ RAPUNZEL = AdventurerDef(
 PINOCCHIO_S1 = Ability(
     id="wooden_wallop", name="Wooden Wallop", category="signature", passive=False,
     frontline=AbilityMode(power=45, special="wooden_wallop_front"),
-    backline=AbilityMode(power=35, special="warlock_gain_malice_1"),
+    backline=AbilityMode(power=30, special="warlock_gain_malice_1"),
 )
 PINOCCHIO_S2 = Ability(
     id="cut_the_strings", name="Cut the Strings", category="signature", passive=False,
-    frontline=AbilityMode(power=60, status="expose", status_dur=2),
+    frontline=AbilityMode(power=65, status="expose", status_dur=2),
     backline=AbilityMode(power=40, special="cut_strings_back"),
 )
 PINOCCHIO_S3 = Ability(
@@ -1016,7 +1017,7 @@ PINOCCHIO_T = Ability(
 )
 PINOCCHIO = AdventurerDef(
     id="pinocchio", name="Pinocchio, Cursed Puppet", cls="Warlock",
-    hp=220, attack=65, defense=50, speed=50,
+    hp=220, attack=58, defense=46, speed=81,
     talent_name="Growing Pains",
     talent_text="End round in frontline: gain 1 Malice (max 6). +5 Atk/Def per Malice.",
     sig_options=[PINOCCHIO_S1, PINOCCHIO_S2, PINOCCHIO_S3], twist=PINOCCHIO_T,
@@ -1030,7 +1031,7 @@ RUMPEL_S1 = Ability(
 )
 RUMPEL_S2 = Ability(
     id="name_the_price", name="Name the Price", category="signature", passive=False,
-    frontline=AbilityMode(power=70, special="name_the_price_front"),
+    frontline=AbilityMode(power=65, special="name_the_price_front"),
     backline=AbilityMode(power=40, special="name_the_price_back"),
 )
 RUMPEL_S3 = Ability(
@@ -1040,12 +1041,12 @@ RUMPEL_S3 = Ability(
 )
 RUMPEL_T = Ability(
     id="thieve_the_first_born", name="Thieve the First-Born", category="twist", passive=False,
-    frontline=AbilityMode(power=70, special="thieve_the_first_born"),
-    backline=AbilityMode(power=70, special="thieve_the_first_born"),
+    frontline=AbilityMode(power=65, special="thieve_the_first_born"),
+    backline=AbilityMode(power=65, special="thieve_the_first_born"),
 )
 RUMPEL = AdventurerDef(
     id="rumpelstiltskin", name="Rumpelstiltskin", cls="Warlock",
-    hp=215, attack=70, defense=55, speed=60,
+    hp=230, attack=67, defense=49, speed=79,
     talent_name="Art of the Deal",
     talent_text="When another adventurer gains a stat buff, gain 1 Malice (max 6). +5 Speed per Malice.",
     sig_options=[RUMPEL_S2, RUMPEL_S1, RUMPEL_S3], twist=RUMPEL_T,
@@ -1055,12 +1056,12 @@ RUMPEL = AdventurerDef(
 ASHA_S1 = Ability(
     id="misappropriate", name="Misappropriate", category="signature", passive=False,
     frontline=AbilityMode(special="misappropriate_front"),
-    backline=AbilityMode(power=35, status="root", status_dur=2),
+    backline=AbilityMode(power=45, status="root", status_dur=2),
 )
 ASHA_S2 = Ability(
     id="abyssal_call", name="Abyssal Call", category="signature", passive=False,
-    frontline=AbilityMode(power=60, special="abyssal_call_front"),
-    backline=AbilityMode(power=40, special="abyssal_call_back"),
+    frontline=AbilityMode(power=65, special="abyssal_call_front"),
+    backline=AbilityMode(power=45, special="abyssal_call_back"),
 )
 ASHA_S3 = Ability(
     id="faustian_bargain", name="Faustian Bargain", category="signature", passive=True,
@@ -1074,9 +1075,9 @@ ASHA_T = Ability(
 )
 ASHA = AdventurerDef(
     id="sea_wench_asha", name="Sea Wench Asha", cls="Warlock",
-    hp=210, attack=75, defense=45, speed=65,
+    hp=223, attack=73, defense=43, speed=86,
     talent_name="Stolen Voices",
-    talent_text="Enemy signature used: gain Malice while backline; while frontline, enemy signatures deal -5 damage per Malice.",
+    talent_text="Enemy signature used: gain Malice while backline; while frontline, enemy signatures deal -4 damage per Malice.",
     sig_options=[ASHA_S2, ASHA_S1, ASHA_S3], twist=ASHA_T,
 )
 

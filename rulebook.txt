@@ -32,7 +32,7 @@ Adventurers have the following attributes:
 A Talent, which is a passive effect during battle.
 A Signature Ability chosen from three adventurer-specific options, which can either be active actions or passive effects.
 Two Basic Abilities chosen from their class pool, which can either be actions or passive effects.
-A Twist Ability unique to each adventurer, which is an action only usable as a last stand
+A Twist Ability unique to each adventurer, which is an action only usable as a last stand.
 An Item chosen from player inventory, which can either be actions or passive effects.
 
 
@@ -93,12 +93,12 @@ Damage = Power x (Attack / Defense), rounded up
 Damaging an enemy lowers its HP by the damage amount. An enemy is knocked out when it takes damage that reduces its HP to 0.
 STATUS CONDITIONS
 Status conditions of the same type do not stack, but status conditions of the different type do.
-Burn: Burned adventurers take 10% max HP damage each round.
+Burn: Burned adventurers take 8% max HP damage each round.
 Root: Rooted adventurers cannot swap.
-Shock: Shocked adventurers have 20% recoil on their attacks.
-Weaken: Weakened adventurers deal 20% less damage.
-Expose: Exposed adventurers take 20% more damage.
-Guard: Guarded adventurers take 20% less damage.
+Shock: Shocked adventurers have 15% recoil on their attacks.
+Weaken: Weakened adventurers deal 15% less damage.
+Expose: Exposed adventurers take 15% more damage.
+Guard: Guarded adventurers take 15% less damage.
 Spotlight: Spotlighted adventurers can be targeted by melee abilities in the backline.
 STAT BUFFS AND DEBUFFS
 Unless stated otherwise, stat buffs and debuffs do not stack. Stat calculation uses the highest stat buff and the highest stat debuff an adventurer has.
@@ -107,39 +107,39 @@ Victory is achieved when all enemy adventurers are knocked out. The battle ends 
 APPENDIX A - ADVENTURERS
 Risa Redcloak
 Class: Fighter
-HP: 250
-Attack: 75
-Defense: 60
-Speed: 30
+HP: 248
+Attack: 71
+Defense: 64
+Speed: 42
 Talent: Red and Wolf
-While below 50% max HP, Risa has +15 Attack, +15 Speed, and her abilities have 20% vamp.
+While below 50% max HP, Risa has +12 Attack, +12 Speed, and her abilities have 15% vamp.
 Signature Ability 1: Crimson Fury
 Active
-Frontline: 70 power, Risa is Exposed for 2 rounds.
-Backline: Weaken target for 2 rounds.
+Frontline: 70 power, 30% recoil
+Backline: Weaken target for 2 rounds, Risa heals 30 HP
 Signature Ability 2: Wolf's Pursuit
 Active
-Frontline: 50 power, if target swaps next turn, Risa uses Wolf's Pursuit on them.
+Frontline: 60 power, if target swaps next turn, Risa uses Wolf's Pursuit on them.
 Backline: Expose target for 2 rounds.
 Signature Ability 3: Blood Hunt
 Active
-Frontline: 60 power, 2x vamp (no base vamp on ability).
+Frontline: 65 power, 2x vamp (no base vamp on ability).
 Backline: Sets Risa and target enemy's HP to an average of both.
 Twist Ability: Grandmother's Vengeance
 Active
-70 power, 100% vamp, Risa has +15 attack and +15 speed for 2 rounds.
+65 power, 100% vamp, Risa has +12 attack and +12 speed for 2 rounds.
 
 Little Jack
 Class: Fighter
 HP: 220
-Attack: 80
-Defense: 50
-Speed: 50
+Attack: 82
+Defense: 49
+Speed: 74
 Talent: Giant Slayer
-Jack deals 20% bonus damage to enemies with higher max HP.
+Jack deals 15% bonus damage to enemies with higher max HP.
 Signature Ability 1: Skyfall
 Active
-Frontline: 80 power.
+Frontline: 85 power.
 Backline: Expose target for 2 rounds.
 Signature Ability 2: Belligerence
 Passive
@@ -147,27 +147,27 @@ Frontline: Jack ignores 20% of enemy Defense.
 Backline: Jack ignores 20% of enemy Attack.
 Signature Ability 3: Magic Growth
 Active
-Frontline: 50 power, Roots target for 2 rounds.
+Frontline: 60 power, Roots target for 2 rounds.
 Backline: Root target for 2 rounds, Jack's next ability has +15 power.
 Twist Ability: Fell the Beanstalk
 Active
-85 power, ignores 30% of enemy Defense, Expose target for 2 rounds.
+85 power, ignores 20% of enemy Defense, Expose target for 2 rounds.
 
 Witch-Hunter Gretel
 Class: Fighter
-HP: 215
-Attack: 80
-Defense: 45
-Speed: 60
+HP: 228
+Attack: 75
+Defense: 54
+Speed: 63
 Talent: Sugar Rush
-When Gretel knocks out an enemy, she has +15 attack and +10 speed for 2 rounds.
+When Gretel knocks out an enemy, she has +15 attack and +15 speed for 2 rounds.
 Signature Ability 1: Shove Over
 Active
 Frontline: 65 power, Weakens target for 2 rounds.
 Backline: Weakens target for 2 rounds, next ability against them has +15 power.
 Signature Ability 2: Hot Mitts
 Passive
-Frontline: Gretel's abilities Burn the target for 2 rounds, or deal 10% more damage to Burned targets.
+Frontline: Gretel's abilities Burn the target for 2 rounds, or deal 15% more damage to Burned targets.
 Backline: Gretel's abilities Burn the target for 2 rounds.
 Signature Ability 3: Crumb Trail
 Active
@@ -175,21 +175,19 @@ Frontline: 60 power, +20 power if an ally picked up a bread crumb this turn.
 Backline: Gretel drops a bread crumb that allies can pick up by swapping to her spot, healing 40 HP.
 Twist Ability: Into the Oven
 Active
-65 power, Burns, Weakens, and Roots target for 2 rounds.
-
-
+70 power, Burns, Weakens, and Roots target for 2 rounds.
 
 Lucky Constantine
 Class: Rogue
-HP: 215
-Attack: 70
-Defense: 40
-Speed: 75
+HP: 214
+Attack: 64
+Defense: 41
+Speed: 101
 Talent: Shadowstep
-Constantine ignores melee targeting restrictions against Exposed targets, but deals -10 damage to backline enemies.
+Constantine ignores melee targeting restrictions against Exposed targets, but deals -12 damage to backline enemies.
 Signature Ability 1: Feline Gambit
 Active
-Frontline: 45 power, Exposes target for 2 rounds.
+Frontline: 50 power, Exposes target for 2 rounds.
 Backline: Exposes target for 2 rounds.
 Signature Ability 2: Subterfuge
 Active
@@ -204,19 +202,19 @@ Exposes all enemies and steals 5 Attack from each for 2 rounds.
 
 Hunold the Piper
 Class: Rogue
-HP: 210
-Attack: 60
-Defense: 45
-Speed: 65
+HP: 232
+Attack: 64
+Defense: 53
+Speed: 76
 Talent: Electrifying Trance
-Shocked enemies take +15 damage from abilities.
+Shocked enemies take +12 damage from abilities.
 Signature Ability 1: Haunting Rhythm
 Active
-Frontline: 50 power, Shocks targets for 2 turns.
+Frontline: 60 power, Shocks targets for 2 turns.
 Backline: Shocks for 2 turns.
 Signature Ability 2: Dying Dance
 Active
-Frontline: 60 power, Shocks Weakened targets for 2 rounds.
+Frontline: 65 power, Shocks Weakened targets for 2 rounds.
 Backline: Weaken target for 2 rounds.
 Signature Ability 3: Hypnotic Aura
 Passive
@@ -228,175 +226,175 @@ Hunold uses an ability. That ability becomes spread and ignores melee targeting 
 
 Reynard, Lupine Trickster
 Class: Rogue
-HP: 205
-Attack: 65
+HP: 210
+Attack: 75
 Defense: 45
-Speed: 75
+Speed: 90
 Talent: Cunning Dodge
 Reynard takes 50% damage from the first ability each battle. Refreshes when he swaps.
 Signature Ability 1: Size Up
 Active
-Frontline: 45 power, Weaken target for 2 rounds.
-Backline: 35 power, Expose target for 2 rounds.
+Frontline: 55 power, Weaken target for 2 rounds.
+Backline: 40 power, Expose target for 2 rounds.
 Signature Ability 2: Feign Weakness
 Active
-Frontline: 50 power, Reynard retaliates for 45 power against incoming attackers next round.
-Backline: Reynard retaliates for 40 power against incoming attackers.
+Frontline: 55 power, Reynard retaliates for 45 power against incoming attackers next round.
+Backline: Reynard retaliates for 45 power against incoming attackers next round.
 Signature Ability 3: Cutpurse
 Active
-Frontline: 40 power, Reynard steals 10 speed from target for 2 rounds.
+Frontline: 50 power, Reynard steals 12 speed from target for 2 rounds.
 Backline: Swap Reynard with frontline ally.
 Twist Ability: Last Laugh
 Active
-Reynard retaliates for 65 power against and steals 10 speed from incoming attackers for 2 rounds.
+Reynard retaliates for 70 power against and steals 12 speed from incoming attackers for 2 rounds.
 
 Sir Roland
 Class: Warden
-HP: 265
-Attack: 40
+HP: 282
+Attack: 43
 Defense: 80
-Speed: 30
+Speed: 20
 Talent: Silver Aegis
-Roland takes 75% less damage from the first incoming ability after swapping to frontline.
+Roland takes 65% less damage from the first incoming ability after swapping to frontline.
 Signature Ability 1: Shimmering Valor
 Active
-Frontline: 40% damage reduction for 3 rounds, ends when Roland swaps.
-Backline: Roland heals 55 HP + 15 HP per Valor round remaining.
+Frontline: 35% damage reduction for 3 rounds, ends when Roland swaps.
+Backline: Roland heals 60 HP + 20 HP per Valor round remaining.
 Signature Ability 2: Knight's Challenge
 Active
-Frontline: 35 power, Taunts target for 2 rounds.
+Frontline: 55 power, Taunts target for 2 rounds.
 Backline: Taunt front-most ranged enemy for 2 rounds.
 Signature Ability 3: Banner of Command
 Passive
 Frontline & Backline: Guard ally for 2 rounds when they swap.
 Twist Ability: Purehearted Stand
 Active
-Roland heals 100 HP. Guard Roland for 2 rounds.
+Roland heals 120 HP. Guard Roland for 2 rounds.
 
 Porcus III
 Class: Warden
-HP: 280
-Attack: 35
-Defense: 85
-Speed: 20
+HP: 298
+Attack: 37
+Defense: 82
+Speed: 13
 Talent: Bricklayer
-If an incoming ability would deal 25% max HP or more to Porcus, reduce damage by 40% and Weaken attacker for 2 rounds.
+If an incoming ability would deal 20% max HP or more to Porcus, reduce damage by 35% and Weaken attacker for 2 rounds.
 Signature Ability 1: Not By The Hair
 Active
-Frontline: Porcus takes 60% less damage this round.
-Backline: Frontline ally takes 35% less damage this round.
+Frontline: Porcus takes 50% less damage this round.
+Backline: Frontline ally takes 40% less damage this round.
 Signature Ability 2: Porcine Honor
 Passive
 Frontline: Guard Porcus for 1 round at beginning of round.
 Backline: Guard frontline ally for 1 round at beginning of round.
 Signature Ability 3: Sturdy Home
 Passive
-Frontline: Allies get +7 defense.
-Backline: Frontline ally gets +10 defense.
-Twist Ability: Unbreakable Defense
+Frontline: Allies get +10 defense.
+Backline: Frontline ally gets +12 defense.
+Twist Ability: Unfettered
 Active
-Remove Porcus' status conditions and double his Defense for 2 rounds.
+Remove Porcus' status conditions, for 2 rounds, his attack and speed are equal to his defense stat and his defense is equal to his attack stat
 
 Lady of Reflections
 Class: Warden
-HP: 255
-Attack: 40
-Defense: 75
-Speed: 32
+HP: 266
+Attack: 46
+Defense: 68
+Speed: 40
 Talent: Reflecting Pool
-The Lady reflects 10% of incoming damage onto the attacker, 20% if the attacker is backline.
+The Lady reflects 12% of incoming damage onto the attacker, 15% if the attacker is backline.
 Signature Ability 1: Drown in the Loch
 Active
-Frontline: 40 power, target takes +7 damage from all sources for 2 rounds.
-Backline: Target takes +7 damage from all sources for 2 rounds.
+Frontline: 55 power, target takes +10 damage from all sources for 2 rounds.
+Backline: Target takes +10 damage from all sources for 2 rounds.
 Signature Ability 2: Postmortem Passage
 Passive
-Frontline & Backline: When an ally is knocked out, they use a 40 power ability against the attacker.
+Frontline & Backline: When an ally is knocked out, they use a 55 power ability against the attacker.
 Signature Ability 3: Lake's Gift
 Active
-Frontline: Ally gets +10 attack and the effects of Reflecting Pool for 2 rounds.
+Frontline: Ally gets +12 attack and the effects of Reflecting Pool for 2 rounds.
 Backline: Ally gets effects of Reflecting Pool for 2 rounds.
 Twist Ability: Journey to Avalon
 Active
-The Lady is knocked out, reviving an ally at 50% HP and granting effects of Reflecting Pool for 2 rounds.
+The Lady is knocked out, reviving an ally at 60% HP and granting effects of Reflecting Pool for 2 rounds.
 
 Ashen Ella
 Class: Mage
-HP: 185
-Attack: 80
-Defense: 40
-Speed: 65
+HP: 213
+Attack: 83
+Defense: 45
+Speed: 89
 Talent: Two Lives
 Ella is untargetable while in the backline but can only use abilities while in the frontline.
 Signature Ability 1: Crowstorm
 Active
-Frontline: 75 power, spread, Burns targets for 2 turns.
+Frontline: 80 power, spread, Burns targets for 2 turns.
 Backline: Burns target for 2 turns, ignores Two Lives use restriction.
 Signature Ability 2: Midnight Dour
 Passive
 Frontline: When an incoming ability leaves Ella at 50% HP or less, she swaps with an ally.
-Backline: Ella heals 35 HP at end of round.
+Backline: Ella heals 40 HP at end of round.
 Signature Ability 3: Fae Blessing
 Active
-Frontline: Guards Ella for 2 turns, Ella has +20 attack for 2 turns.
+Frontline: Guard Ella for 2 turns, Ella has +12 attack and +12 speed for 2 turns.
 Backline: Heals ally for 50 HP, ignores Two Lives use restriction.
 Twist Ability: Struck Midnight
 Active
-Burns target for two turns. Ella cannot act and cannot be targeted until end of next round.
+Burns enemies for two turns. Ella cannot act and cannot be targeted until end of next round.
 
 March Hare
 Class: Mage
-HP: 190
-Attack: 70
-Defense: 35
-Speed: 70
+HP: 212
+Attack: 74
+Defense: 38
+Speed: 96
 Talent: On Time!
-While the March Hare is frontline, the frontline enemy has -15 speed.
+While the March Hare is frontline, the frontline enemy has -12 speed.
 Signature Ability 1: Tempus Fugit
 Active
-Frontline: 65 power, target has -20 Speed next round.
-Backline: 40 power, target has -15 Speed next round.
+Frontline: 75 power, target has -15 Speed next round.
+Backline: 45 power, target has -12 Speed next round.
 Signature Ability 2: Rabbit Hole
 Active
 Frontline: The March Hare gets an extra action next round.
 Backline: The March Hare swaps with an ally.
 Signature Ability 3: Nebulous Ides
 Active
-Frontline: 60 power, +20 power if target acted this round.
-Backline: 40 power. +20 power if March Hare swapped this round.
+Frontline: 70 power, +15 power if target acted this round.
+Backline: 40 power. +15 power if March Hare swapped this round.
 Twist Ability: Stitch In Time
 Active
 The March Hare gets an extra action this round and has +15 speed for 2 rounds.
 
 Witch of the Woods
 Class: Mage
-HP: 180
-Attack: 75
-Defense: 35
-Speed: 65
+HP: 198
+Attack: 80
+Defense: 39
+Speed: 98
 Talent: Double Double
 Whenever the Witch damages a statused target, spread the target's last inflicted status to the enemy adjacent to their left.
 Signature Ability 1: Toil and Trouble
 Active
-Frontline: 60 Power, spreads target's last inflicted status to the enemy adjacent to their right.
-Backline: 35 power, Burns target for 2 rounds.
+Frontline: 70 Power, spreads target's last inflicted status to the enemy adjacent to their right.
+Backline: 40 power, Burns target for 2 rounds.
 Signature Ability 2: Cauldron Bubble
 Active
-Frontline: 60 power, spread, increases target's status duration by 1 round.
-Backline: 30 power, spread, increases target's status duration by 1 round.
+Frontline: 65 power, spread, increases target's status duration by 1 round.
+Backline: 35 power, spread, increases target's status duration by 1 round.
 Signature Ability 3: Crawling Abode
 Passive
 Frontline & Backline: The Witch has +10 speed if frontline enemy is statused. Enemies with two or more status conditions take +10 damage from abilities.
 Twist Ability: Vile Sabbath
 Active
-70 power, spread, reapply last inflicted status to targets and refresh their status durations.
+75 power, spread, reapply last inflicted status to targets and refresh their status durations.
 
 Briar Rose
 Class: Ranger
-HP: 195
-Attack: 60
-Defense: 45
-Speed: 60
+HP: 226
+Attack: 57
+Defense: 49
+Speed: 88
 Talent: Curse of Sleeping
 The lowest health Rooted enemy is unable to act each round but loses Rooting and can't be Rooted next round.
 Signature Ability 1: Thorn Snare
@@ -405,7 +403,7 @@ Frontline: Root target for 2 rounds, spread.
 Backline: Root target for 2 rounds.
 Signature Ability 2: Creeping Doubt
 Active
-Frontline: 55 power, deals 40% more damage to Rooted enemies.
+Frontline: 55 power, deals 30% more damage to Rooted enemies.
 Backline: 40 power, Roots target for 2 turns.
 Signature Ability 3: Garden of Thorns
 Passive
@@ -417,224 +415,229 @@ Refresh Root duration on Rooted enemies and Weaken them for 2 rounds, then Root 
 
 Frederic the Beastslayer
 Class: Ranger
-HP: 200
-Attack: 65
-Defense: 45
-Speed: 60
+HP: 236
+Attack: 68
+Defense: 54
+Speed: 67
 Talent: Heedless Pride
-Frederic deals 20% bonus damage to the enemy frontline and takes 10% bonus damage from the enemy frontline.
+Frederic deals 15% bonus damage to the enemy frontline and takes 7% bonus damage from the enemy frontline.
 Signature Ability 1: Hero's Charge
 Active
-Frontline: 60 power, Frederic ignores Heedless Pride bonus damage from frontline enemies this round.
-Backline: 30 power, Frederic has +12 speed for 2 rounds.
+Frontline: 65 power, Frederic ignores Heedless Pride bonus damage from frontline enemies this round.
+Backline: 30 power, Frederic has +15 speed for 2 rounds.
 Signature Ability 2: On the Hunt
 Active
-Frontline: 40 power, Frederic has +15 attack for 2 rounds.
+Frontline: 50 power, Frederic has +12 attack for 2 rounds.
 Backline: 25 power, Expose target for 2 rounds.
 Signature Ability 3: Jovial Shot
 Active
-Frontline: 50 power, Weakens target for 2 rounds.
-Backline: Frederic heals 60 HP. Weaken Frederic for 2 rounds.
+Frontline: 55 power, Weakens target for 2 rounds.
+Backline: Frederic heals 80 HP. Weaken Frederic for 2 rounds.
 Twist Ability: Slay the Beast
 Active
-65 power, +20 damage to targets with higher HP, Frederic ignores Heedless Pride bonus damage from frontline enemies this round.
+70 power, +20 damage to targets with higher HP, Frederic ignores Heedless Pride bonus damage from frontline enemies this round.
 
 Robin, Hooded Avenger
 Class: Ranger
-HP: 185
-Attack: 70
-Defense: 40
-Speed: 65
+HP: 221
+Attack: 69
+Defense: 41
+Speed: 89
 Talent: Keen Eye
-Robin deals +10 damage with abilities to backline enemies.
+Robin deals +7 damage with abilities to backline enemies.
 Signature Ability 1: Snipe Shot
 Active
-Frontline: 65 power.
-Backline: 40 power, ignores Guard.
+Frontline: 60 power.
+Backline: 35 power, ignores Guard.
 Signature Ability 2: Spread Fortune
 Passive
 Frontline: Spread ability damage nerf is halved.
 Backline: Spread abilities target all enemies.
 Signature Ability 3: Bring Down
 Active
-Frontline: 60 power, Robin steals 10 attack for 2 rounds if the target is backline.
+Frontline: 55 power, Robin steals 7 attack for 2 rounds if the target is backline.
 Backline: 35 power, Roots target for 2 rounds.
 Twist Ability: Kingmaker
 Active
-70 power, +20 damage to backline targets, ignores Guard and cannot be redirected.
+65 power, +15 damage to backline targets, ignores Guard and cannot be redirected.
 
 Aldric, Lost Lamb
 Class: Cleric
-HP: 230
-Attack: 45
-Defense: 60
-Speed: 35
+HP: 275
+Attack: 47
+Defense: 67
+Speed: 41
 Talent: All-Caring
 Aldric's healing effects Guard the recipient for 2 rounds.
 Signature Ability 1: Benefactor
 Passive
-Frontline: Aldric's healing effects heal 25% more HP.
-Backline: Aldric's healing effects heal 15% more HP.
+Frontline: Aldric's healing effects heal 35% more HP.
+Backline: Aldric's healing effects heal 20% more HP.
 Signature Ability 2: Sanctuary
 Passive
-Frontline: Allies heal 1/10 max HP each round.
-Backline: Frontline ally heals 1/10 max HP each round.
+Frontline: Allies heal 1/8 max HP each round.
+Backline: Frontline ally heals 1/8 max HP each round.
 Signature Ability 3: Repentance
 Active
-Frontline: 50 power, 35% vamp. The next ability against the target has 20% vamp (Triggers All-Caring).
-Backline: 40 power, 20% vamp.
+Frontline: 65 power, 40% vamp. The next ability against the target has 25% vamp (Triggers All-Caring).
+Backline: 45 power, 25% vamp.
 Twist Ability: Redemption
 Active
-Gain +100 max HP, Aldric heals 50 HP at end of round for 2 rounds.
+Gain +150 max HP, Aldric heals 50 HP at end of round for 2 rounds.
 
 Matchstick Liesl
 Class: Cleric
-HP: 210
-Attack: 50
-Defense: 50
-Speed: 50
+HP: 240
+Attack: 55
+Defense: 48
+Speed: 77
 Talent: Purifying Flame
 Liesl's healing effects grant Burn immunity to recipients for 2 rounds, and they Burn the target of their next ability for 2 rounds.
 Signature Ability 1: Cinder Blessing
 Active
 Frontline: Sets Liesl's and an ally's HP to an average of both.
-Backline: Liesl heals 60 HP.
+Backline: Liesl heals 70 HP.
 Signature Ability 2: Flame of Renewal
 Passive
 Frontline & Backline: When Liesl is knocked out, heal allies for 1/2 max HP and apply Purifying Flame.
 Signature Ability 3: Cauterize
 Active
-Frontline: 50 power, prevents healing for 2 rounds.
-Backline: 40 power, prevents healing for 2 rounds.
+Frontline: 60 power, prevents healing for 2 rounds.
+Backline: 45 power, prevents healing for 2 rounds.
 Twist Ability: Cleansing Inferno
 Active
-60 power, spread, 30% vamp increased to 60% against Burned targets.
+70 power, spread, 35% vamp, 2x vamp against Burned targets.
 
 Snowkissed Aurora
 Class: Cleric
-HP: 225
-Attack: 45
-Defense: 60
-Speed: 40
+HP: 255
+Attack: 44
+Defense: 56
+Speed: 65
 Talent: Innocent Heart
-Whenever an Aurora or an ally loses a status condition, they have +10 defense for 2 rounds.
+Whenever an Aurora or an ally loses a status condition, they have +7 defense for 2 rounds.
 Signature Ability 1: Toxin Purge
 Active
-Frontline: Remove status conditions from Aurora or an ally. They heal 15 HP for each removed.
+Frontline: Remove status conditions from Aurora or an ally. They heal 12 HP for each removed.
 Backline: Remove the last inflicted status from Aurora or an ally.
 Signature Ability 2: Dictate of Nature
 Active
-Frontline: 50 power, the adventurer in the party with the lowest health heals 40 HP.
-Backline: 35 power, the adventurer in the party with the lowest health heals 25 HP.
+Frontline: 50 power, the adventurer in the party with the lowest health heals 35 HP.
+Backline: 30 power, the adventurer in the party with the lowest health heals 20 HP.
 Signature Ability 3: Birdsong
 Passive
-Frontline: Whenever Innocent Heart triggers, attract a bird that adds +10 damage to Aurora's abilities, up to 3.
+Frontline: Whenever Innocent Heart triggers, attract a bird that adds +7 damage to Aurora's abilities, up to 3.
 Backline: At the end of round, heal the last inflicted status on Aurora if she has a bird, plus an additional ally for each additional bird.
 Twist Ability: Deathlike Slumber
 Active
-For 2 rounds, Innocent Heart's effect is doubled but makes recipient dormant for duration. Cure Aurora's status conditions.
+For 2 rounds, Innocent Heart's stat boosts are doubled and stack. Cure Aurora's status conditions.
+
 Prince Charming
 Class: Noble
-HP: 255
-Attack: 65
+HP: 245
+Attack: 60
 Defense: 55
-Speed: 35
+Speed: 40
 Talent: Mesmerizing
-While Prince Charming is frontline, enemies that target allies get -10 attack for 2 rounds.
+While Prince Charming is frontline, enemies that target allies get -7 attack for 2 rounds.
 Signature Ability 1: Condescend
 Active
-Frontline: 50 power, target has -10 defense for 2 rounds.
-Backline: 40 power, next ability against the target has +10 power. 
+Frontline: 50 power, target has -7 defense for 2 rounds.
+Backline: 35 power, next ability against the target has +7 power.
 Signature Ability 2: Gallant Charge
 Active
-Frontline: 65 power, +20 power if Prince Charming was backline last round.
-Backline: 35 power, Prince Charming has +15 speed next round.
+Frontline: 60 power, +15 power if Prince Charming was backline last round.
+Backline: 30 power, Prince Charming has +12 speed next round.
 Signature Ability 3: Chosen One
 Passive
-Frontline & Backline: The first adventurer Prince Charming swaps with becomes his champion. When an enemy damages his champion, they take +15 damage from his next ability.
+Frontline & Backline: The first adventurer Prince Charming swaps with becomes his champion. When an enemy damages his champion, they take +10 damage from his next ability.
 Twist Ability: Happily Ever After
 Active
 70 power, Prince Charming has +15 of each knocked out ally's highest non-HP stat for 2 rounds.
+
 Green Knight
 Class: Noble
-HP: 275
-Attack: 60
-Defense: 60
+HP: 266
+Attack: 55
+Defense: 64
 Speed: 20
 Talent: Challenge Accepted
-The Green Knight deals +15 damage to the target across from him.
+The Green Knight deals +10 damage to the target across from him.
 Signature Ability 1: Hero's Bargain
 Active
 Frontline: 50 power, Roots target for 2 rounds.
-Backline: 25 power, swap target with frontline enemy.
+Backline: 40 power, swap target with frontline enemy.
 Signature Ability 2: Natural Order
 Passive
-Frontline: The Green Knight deals +15 damage to targets who have not swapped for 2 or more rounds.
+Frontline: The Green Knight deals +10 damage to targets who have not swapped for 2 or more rounds.
 Backline: The Green Knight's abilities do not increment ranged recharge against targets who have not swapped for 2 or more rounds.
 Signature Ability 3: Awaited Blow
 Passive
-Frontline: The Green Knight retaliates for 40 power against incoming attackers not across from him.
-Backline: The Green Knight heals 40 HP at the end of round.
+Frontline: The Green Knight retaliates for 35 power against incoming attackers not across from him.
+Backline: The Green Knight heals 35 HP at the end of round.
 Twist Ability: Fated Duel
 Active
 For 2 rounds, only the Green Knight and the enemy across from him may act.
+
 Rapunzel the Golden
 Class: Noble
 HP: 258
-Attack: 60
-Defense: 65
+Attack: 67
+Defense: 60
 Speed: 30
 Talent: Flowing Locks
 Rapunzel ignores melee targeting restrictions once per battle. Refreshes when she ends the round in the backline.
 Signature Ability 1: Golden Snare
 Active
 Frontline: 60 power, refresh Root duration on target.
-Backline: 30 power, Root target for 2 rounds.
+Backline: 35 power, Root target for 2 rounds.
 Signature Ability 2: Lower Guard
 Active
-Frontline: 55 power, +15 power if the target has a stat debuff.
-Backline: 30 power, target has -10 defense for 2 rounds.
+Frontline: 55 power, +12 power if the target has a stat debuff.
+Backline: 30 power, target has -12 defense for 2 rounds.
 Signature Ability 3: Ivory Tower
 Passive
-Frontline: Ranged enemies have -10 defense.
-Backline: Melee enemies have -10 attack.
+Frontline: Ranged enemies have -12 defense.
+Backline: Melee enemies have -12 attack.
 Twist Ability: Severed Tether
 Active
-Flowing Locks is always active for 2 rounds. Rapunzel has -15 defense, +20 attack, and +20 speed for 2 rounds.
+Flowing Locks is always active for 2 rounds. Rapunzel has -10 defense, +20 attack, and +20 speed for 2 rounds.
+
 Pinocchio, Cursed Puppet
 Class: Warlock
 HP: 220
-Attack: 65
-Defense: 50
-Speed: 50
+Attack: 58
+Defense: 46
+Speed: 81
 Talent: Growing Pains
 When Pinocchio ends the round in the frontline, he gains 1 Malice, up to 6. Pinocchio has +5 attack and +5 defense for each Malice.
 Signature Ability 1: Wooden Wallop
 Active
 Frontline: 45 power, +5 power per Malice.
-Backline: 35 power, gain 1 Malice.
+Backline: 30 power, gain 1 Malice.
 Signature Ability 2: Cut the Strings
 Active
-Frontline: 60 power, Expose target for 2 rounds.
+Frontline: 65 power, Expose target for 2 rounds.
 Backline: 40 power, uses 2 Malice to Spotlight target for 2 rounds.
 Signature Ability 3: Become Real
 Passive
-Frontline: If Pinocchio has at least 3 Malice, his abilities gain +15 damage and he is immune to status.
+Frontline: If Pinocchio has at least 3 Malice, his abilities gain +10 damage and he is immune to status.
 Backline: If Pinocchio has at least 3 Malice, his abilities do not increment ranged recharge.
 Twist Ability: Blue Faerie's Boon
 Active
-Pinocchio can gain up to 6 more Malice. He gains 6 Malice, then heals 20 HP for each Malice.
+Pinocchio can gain up to 6 more Malice. He gains 6 Malice, then heals 15 HP for each Malice.
+
 Rumpelstiltskin
 Class: Warlock
-HP: 215
-Attack: 70
-Defense: 55
-Speed: 60
+HP: 230
+Attack: 67
+Defense: 49
+Speed: 79
 Talent: Art of the Deal
 Whenever another adventurer gains a stat buff, Rumpelstiltskin gains 1 Malice, up to 6. Rumpelstiltskin has +5 speed for each Malice.
 Signature Ability 1: Name the Price
 Active
-Frontline: 70 power, target has +10 attack for 2 rounds.
+Frontline: 65 power, target has +7 attack for 2 rounds.
 Backline: 40 power, uses 2 Malice to nullify target's stat buffs for 2 rounds.
 Signature Ability 2: Straw to Gold
 Active
@@ -642,34 +645,35 @@ Frontline: Steal an ally's highest stat buff for 2 rounds and add +5 to it for e
 Backline: Change an ally's highest stat debuff into a stat buff.
 Signature Ability 3: Spinning Wheel
 Passive
-Frontline: Rumpelstiltskin deals +7 damage with abilities for each unique stat buff among other adventurers.
+Frontline: Rumpelstiltskin deals +5 damage with abilities for each unique stat buff among other adventurers.
 Backline: Whenever an ally loses a stat buff, Rumpelstiltskin uses 2 Malice to refresh it.
 Twist Ability: Thieve the First-Born
 Active
-70 power, steal all stat buffs from enemies, refresh their duration, and add +5 to them for each Malice.
+65 power, steal all stat buffs from enemies, refresh their duration, and add +5 to them for each Malice.
+
 Sea Wench Asha
 Class: Warlock
-HP: 210
-Attack: 75
-Defense: 45
-Speed: 65
+HP: 223
+Attack: 73
+Defense: 43
+Speed: 86
 Talent: Stolen Voices
-When an enemy uses a signature ability, if Asha is backline, she gains 1 Malice, up to 6. If she's frontline, it deals -5 damage for each Malice.
+When an enemy uses a signature ability, if Asha is backline, she gains 1 Malice, up to 6. If she's frontline, it deals -4 damage for each Malice.
 Signature Ability 1: Abyssal Call
 Active
-Frontline: 60 power, uses 1 Malice to give the target -10 defense for 2 rounds.
-Backline: 40 power, refreshes stat debuff duration on target.
+Frontline: 65 power, uses 1 Malice to give the target -12 defense for 2 rounds.
+Backline: 45 power, refreshes stat debuff duration on target.
 Signature Ability 2: Misappropriate
 Active
 Frontline: Asha uses 1 Malice to use the enemy frontline's signature Ability. If it's a passive, Asha gains it for 2 rounds instead.
-Backline: 35 Power, Roots the target for 2 rounds.
+Backline: 45 Power, Roots the target for 2 rounds.
 Signature Ability 3: Faustian Bargain
 Passive
 Frontline: When Asha swaps to frontline, she uses 1 Malice to gain the most recently bottled talent for 2 rounds.
-Backline: When Asha knocks out an enemy, she bottles their talent and has +15 speed for 2 rounds.
+Backline: When Asha knocks out an enemy, she bottles their talent and has +12 speed for 2 rounds.
 Twist Ability: Turn to Foam
 Active
-Asha gains 3 Malice, then consumes all of them to give enemies -10 defense for each Malice consumed for 2 rounds (single stat debuff).
+Asha gains 3 Malice, then consumes all of them to give enemies -7 defense for each Malice consumed for 2 rounds (single stat debuff).
 APPENDIX B - BASIC ABILITIES
 FIGHTER
 Strike
@@ -678,25 +682,25 @@ Frontline: 55 power
 Backline: n/a
 Rend
 Active
-Frontline: 45 power, +20 Power against enemies below 50% HP
-Backline: The user's ability against the target next round gets +10 Power
+Frontline: 45 power, +20 power against enemies below 50% HP
+Backline: The user's ability against the target next round gets +10 power
 Feint
 Active
-Frontline: 45 power, user gains +10 Speed for 2 rounds
-Backline: User gains +10 Speed for 2 rounds
+Frontline: 45 power, user gains +12 Speed for 2 rounds
+Backline: User gains +12 Speed for 2 rounds
 Cleave
 Active
-Frontline: 45 power, ignores 20% Defense
+Frontline: 45 power, ignores 15% Defense
 Backline: The user's ability against the target next round ignores 10% Defense
 Intimidate
 Active
-Frontline: 45 power, Weaken for 2 rounds
+Frontline: 50 power, Weaken for 2 rounds
 Backline: Weaken for 2 rounds
 
 ROGUE
 Sneak Attack
 Active
-Frontline: 45 power, +15 Power if target has not acted this round
+Frontline: 50 power, +10 Power if target has not acted this round
 Backline: Target has -10 Speed next round
 Riposte
 Active
@@ -708,21 +712,21 @@ Frontline: 40 power, Expose for 2 rounds
 Backline: Expose for 2 rounds
 Sucker Punch
 Active
-Frontline: 40 power, +20 Power if the target is Exposed or Weakened
+Frontline: 45 power, +15 Power if the target is Exposed or Weakened
 Backline: Weaken for 2 rounds
 Fleetfooted
 Passive
-Frontline: First incoming ability each round deals 20% less damage
-Backline: First incoming ability each round deals 10% less damage
+Frontline: First incoming ability each round deals 15% less damage
+Backline: First incoming ability each round deals 12% less damage
 
 WARDEN
 Shield Bash
 Active
-Frontline: 40 power, Guards allies for 2 rounds
+Frontline: 45 power, Guards allies for 2 rounds
 Backline: Guard frontline ally for 2 rounds
 Condemn
 Active
-Frontline: 40 power, target has -10 Attack for 2 rounds
+Frontline: 45 power, target has -12 Attack for 2 rounds
 Backline: Target has -10 Attack for 2 rounds
 Slam
 Active
@@ -730,118 +734,118 @@ Frontline: 45 power, +15 Power if user is Guarded
 Backline: Guards user for 2 rounds
 Armored
 Passive
-Frontline: User has +10 Defense and +5 Attack
-Backline: User has +5 Defense
+Frontline: User has +12 Defense and +7 Attack
+Backline: User has +7 Defense
 Stalwart
 Passive
-Frontline: User takes -10 damage from abilities
-Backline: Frontline ally takes -10 damage from abilities
+Frontline: User takes -12 damage from abilities
+Backline: Frontline ally takes -12 damage from abilities
 
 MAGE
 Fire Blast
 Active
-Frontline: 65 power, Burns for 2 rounds
-Backline: 35 power, Burns for 2 rounds
+Frontline: 70 power, Burns for 2 rounds
+Backline: 40 power, Burns for 2 rounds
 Thunder Call
 Active
-Frontline: 65 power, Shocks for 2 rounds
-Backline: 35 power, Shocks for 2 rounds
+Frontline: 70 power, Shocks for 2 rounds
+Backline: 40 power, Shocks for 2 rounds
 Freezing Gale
 Active
-Frontline: 65 power, Roots for 2 rounds
-Backline: 35 power, Roots for 2 rounds
+Frontline: 70 power, Roots for 2 rounds
+Backline: 40 power, Roots for 2 rounds
 Arcane Wave
 Active
-Frontline: 80 power, user has -10 Attack and -10 Defense for 2 rounds
-Backline: 40 power
+Frontline: 80 power, user has -10 Attack for 2 rounds
+Backline: 45 power
 Breakthrough
 Active
-Frontline: User has +15 Attack for 2 rounds
-Backline: User has +10 Attack and is Spotlighted for 2 rounds
+Frontline: User has +12 Attack for 2 rounds
+Backline: User has +12 Attack and is Spotlighted for 2 rounds
 
 RANGER
 Hawkshot
 Active
-Frontline: 60 power, can't be redirected
+Frontline: 55 power, can't be redirected
 Backline: 40 power, can't be redirected
 Volley
 Active
-Frontline: 60 power, spread
+Frontline: 50 power, spread
 Backline: 40 power, spread
 Hunter's Mark
 Active
-Frontline: 50 power, target takes +10 damage from abilities next round
-Backline: 25 power, target takes +10 damage from abilities next round
+Frontline: 45 power, target takes +10 damage from abilities next round
+Backline: 30 power, target takes +10 damage from abilities next round
 Trapping Blow
 Active
-Frontline: 60 power, Roots Weakened targets for 2 rounds
+Frontline: 50 power, Roots Weakened targets for 2 rounds
 Backline: 35 power, Weakens for 2 rounds
 Hunter's Badge
 Passive
 Frontline: User has +10 Attack
-Backline: User has +5 Attack
+Backline: User has +7 Attack
 
 CLERIC
 Heal
 Active
-Frontline: Heal ally 60 HP
-Backline: Heal ally 45 HP
+Frontline: Heal ally 65 HP
+Backline: Heal ally 50 HP
 Bless
 Active
-Frontline: Guard ally for 2 rounds, they gain +10 Attack for 2 rounds
+Frontline: Guard ally for 2 rounds, they gain +7 Attack for 2 rounds
 Backline: Guard ally for 2 rounds
 Smite
 Active
 Frontline: 55 power, Burns for 2 rounds
-Backline: 40 power
+Backline: 45 power
 Medic
 Passive
 Frontline: User's healing effects heal status conditions and debuffs
 Backline: User's healing effects heal the last inflicted status condition or debuff
 Protection
 Passive
-Frontline: Allies have +10 Defense
-Backline: Allies have +5 Defense
+Frontline: Allies have +12 Defense
+Backline: Allies have +7 Defense
 NOBLE
 Impose
 Active
-Frontline: 50 power, target has -10 speed for 2 rounds.
-Backline: 30 power, target has -10 speed for 2 rounds.
+Frontline: 45 power, target has -12 speed for 2 rounds.
+Backline: 30 power, target gas -12 speed for 2 rounds.
 Edict
 Active
-Frontline: 50 power, Roots target for 2 rounds.
+Frontline: 45 power, Roots target for 2 rounds.
 Backline: 30 power, Spotlights target for 2 rounds.
 Decree
 Active
-Frontline: 40 power, user has +10 attack for 2 rounds.
-Backline: 25 power, target has -10 attack for 2 rounds.
+Frontline: 45 power, user has +12 attack for 2 rounds.
+Backline: 25 power, target has -12 attack for 2 rounds.
 Summons
 Active
 Frontline & Backline: User swaps with an ally. Cannot be used on consecutive turns.
 Command
 Passive
-Frontline: Enemies that attacked the user last round take +10 damage from ally abilities.
-Backline: Enemies that attacked an ally last round take +10 damage from the user's abilities.
+Frontline: Enemies that attacked the user last round take +7 damage from ally abilities.
+Backline: Enemies that attacked an ally last round take +7 damage from the user's abilities.
 WARLOCK
 Dark Grasp
 Active
-Frontline: 50 power, gain 1 Malice.
-Backline: 35 power, uses 1 Malice to Weaken target for 2 rounds.
+Frontline: 45 power, gain 1 Malice.
+Backline: 40 power, uses 1 Malice to Weaken target for 2 rounds.
 Soul Gaze
 Active
-Frontline: 45 power, uses 1 Malice to Expose target for 2 rounds.
-Backline: 30 power, gain 1 Malice.
+Frontline: 40 power, uses 1 Malice to Expose target for 2 rounds.
+Backline: 35 power, gain 1 Malice.
 Blood Pact
 Active
-Frontline: User loses 50 HP and gains 2 Malice.
-Backline: User heals 25 HP, uses 1 Malice to heal additional 25 HP.
+Frontline: User loses 45 HP and gains 2 Malice.
+Backline: User heals 30 HP, uses 1 Malice to heal additional 30 HP.
 Cursed Armor
 Passive
 Frontline & Backline: User gains 1 Malice whenever damaged by an enemy ability.
 Void Step
 Passive
 Frontline: When the user swaps to backline, they gain 1 Malice.
-Backline: When the user swaps to frontline, they use 2 Malice to have +10 speed for two rounds.
+Backline: When the user swaps to frontline, they use 2 Malice to have +12 speed for two rounds.
 
 APPENDIX C - ITEMS
 Health Potion
@@ -849,19 +853,19 @@ Active
 Heals 60 HP
 Healing Tonic
 Active
-Heals user or ally 40 HP
+Heals user or ally 45 HP
 Crafty Shield
 Active
 Guards user or ally for 2 rounds
 Lightning Boots
 Active
-User has +10 Speed next round
+User has +15 Speed next round
 Main-Gauche
 Active
-User has +10 Attack for 2 rounds
+User has +12 Attack for 2 rounds
 Iron Buckler
 Active
-User has +10 Defense for 2 rounds
+User has +12 Defense for 2 rounds
 Smoke Bomb
 Active
 User switches positions with an ally
@@ -882,7 +886,7 @@ Passive
 User's abilities have 7% vamp
 Spiked Mail
 Passive
-Enemies damaging the user take 10 damage
+Enemies damaging the user take 15 damage
 Arcane Focus
 Passive
 User has +7 attack when using abilities from the backline

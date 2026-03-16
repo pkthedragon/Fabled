@@ -1,0 +1,1030 @@
+Battle 99
+Player 1 Team: Balanced Generalist
+Player 2 Team: Sustain Into Spike
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:42:16
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 99
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Balanced Generalist
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Sustain Into Spike
+  [front] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Sturdy Home  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Porcus III
+[Queued] Prince Charming: Condescend → Porcus III
+[Queued] Snowkissed Aurora: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Porcus III
+Frederic the Beastslayer uses Hunter's Mark on Porcus III.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=75 def=95 raw=39.47 ceil=40
+    [T]   FINAL_DMG=48
+  Porcus III takes 48 damage.
+    [T] HPCHANGE Porcus III: 280 → 232  (-48)
+  Porcus III is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=65 def=95 raw=27.37 ceil=28
+    [T]   FINAL_DMG=28
+  Porcus III takes 28 damage.
+    [T] HPCHANGE Porcus III: 232 → 204  (-28)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Frederic the Beastslayer
+Snowkissed Aurora and Frederic the Beastslayer swap positions.
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=40 def=60 raw=26.67 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 255 → 207  (-48)
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=207/255 statuses=[-]
+    [T]   P2 Porcus III[front] HP=259/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=259/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Prince Charming: Condescend → Porcus III
+[Queued] Frederic the Beastslayer: Hunter's Mark → Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=95 raw=28.42 ceil=29
+    [T]   FINAL_DMG=34
+  Porcus III takes 34 damage.
+    [T] HPCHANGE Porcus III: 259 → 225  (-34)
+  Snowkissed Aurora heals Snowkissed Aurora for 27 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=65 def=95 raw=27.37 ceil=28
+    [T]   FINAL_DMG=33
+  Porcus III takes 33 damage.
+    [T] HPCHANGE Porcus III: 225 → 192  (-33)
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: Hunter's Mark → Porcus III
+Frederic the Beastslayer uses Hunter's Mark on Porcus III.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_left] → Porcus III[front]
+    [T]   power=35 (base=25)
+    [T]   atk=70 def=95 raw=25.79 ceil=26
+    [T]   FINAL_DMG=36
+  Porcus III takes 36 damage.
+    [T] HPCHANGE Porcus III: 192 → 156  (-36)
+  Porcus III is Marked — takes +10 damage next round.
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Porcus III[front]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Condescend → Prince Charming
+  Prince Charming retargets to Snowkissed Aurora after swapping to front.
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 170  (-55)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=170/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=207/255 statuses=[-]
+    [T]   P2 Porcus III[back_right] HP=211/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=170/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=211/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_right]
+    [T]   power=50
+    [T]   atk=35 def=95 raw=18.42 ceil=19
+    [T]   FINAL_DMG=29
+  Porcus III takes 29 damage.
+    [T] HPCHANGE Porcus III: 211 → 182  (-29)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=33
+  Prince Charming takes 33 damage.
+    [T] HPCHANGE Prince Charming: 255 → 222  (-33)
+  Prince Charming is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 220 → 165  (-55)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Prince Charming
+  Snowkissed Aurora retargets to Snowkissed Aurora after swapping to back_right.
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 165 → 138  (-27)
+  Snowkissed Aurora heals Porcus III for 35 HP.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=138/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=207/255 statuses=[-]
+    [T]   P2 Porcus III[back_left] HP=217/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=222/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=138/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=217/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=222/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 138 → 83  (-55)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Frederic the Beastslayer: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_left]
+    [T]   power=50
+    [T]   atk=35 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 217 → 197  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Prince Charming
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Porcus III[back_left]
+    [T]   power=40
+    [T]   atk=55 def=90 raw=24.44 ceil=25
+    [T]   FINAL_DMG=25
+  Porcus III takes 25 damage.
+    [T] HPCHANGE Porcus III: 197 → 172  (-25)
+  Prince Charming must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=133/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=207/255 statuses=[-]
+    [T]   P2 Porcus III[back_left] HP=172/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=222/255 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=133/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=207/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Porcus III[back_left] HP=172/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=222/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Frederic the Beastslayer
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=27
+  Prince Charming takes 27 damage.
+    [T] HPCHANGE Prince Charming: 222 → 195  (-27)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_left]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 133 → 78  (-55)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=50 raw=31.50 ceil=32
+    [T]   FINAL_DMG=32
+  Snowkissed Aurora takes 32 damage.
+    [T] HPCHANGE Snowkissed Aurora: 78 → 46  (-32)
+  Snowkissed Aurora heals Porcus III for 35 HP.
+    [T] ACTION P2 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=46/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=207/255 statuses=[-]
+    [T]   P2 Porcus III[back_right] HP=207/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=195/255 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=46/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=207/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=195/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Frederic the Beastslayer: Hero's Charge → Porcus III
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_right]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=90 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 207 → 183  (-24)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hero's Charge → Porcus III
+Frederic the Beastslayer uses Hero's Charge on Porcus III.
+  Frederic the Beastslayer loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Porcus III[back_right]
+    [T]   power=30
+    [T]   atk=60 def=90 raw=20.00 ceil=20
+    [T]   FINAL_DMG=30
+  Porcus III takes 30 damage.
+    [T] HPCHANGE Porcus III: 183 → 153  (-30)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 96 → 41  (-55)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 41 → 14  (-27)
+  Snowkissed Aurora heals Porcus III for 35 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=14/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=207/255 statuses=[-]
+    [T]   P2 Porcus III[back_left] HP=188/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=195/255 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 ATK=60(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=14/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=188/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=195/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Prince Charming[back_right]
+    [T]   power=45 (base=35)
+    [T]   atk=45 def=55 raw=36.82 ceil=37
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 207 → 170  (-37)
+  Snowkissed Aurora heals Porcus III for 35 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 14 → 0  (-24) **KO**
+  All allies are Guarded for 2 rounds.
+Frederic the Beastslayer moves to frontline.
+[Queued] Frederic the Beastslayer: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Prince Charming
+Frederic the Beastslayer and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=90 raw=36.11 ceil=37
+    [T]   FINAL_DMG=30
+  Porcus III takes 30 damage.
+    [T] HPCHANGE Porcus III: 223 → 193  (-30)
+  Porcus III loses -10 Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=170/255 statuses=[-]
+    [T]   P2 Porcus III[front] HP=193/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_left] HP=195/255 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Frederic the Beastslayer: attack-10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=170/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=193/280 ATK=40(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=195/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[back_right]
+    [T]   power=50
+    [T]   atk=70 def=67 raw=52.24 ceil=53
+    [T]   FINAL_DMG=43
+  Snowkissed Aurora takes 43 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 182  (-43)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Porcus III: Shield Bash → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Frederic the Beastslayer
+Porcus III uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 160  (-40)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_left]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Frederic the Beastslayer takes 58 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 160 → 102  (-58)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Frederic the Beastslayer[front] HP=102/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=170/255 statuses=[-]
+    [T]   P2 Porcus III[front] HP=193/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=182/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_left] HP=195/255 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] DEBUFF_EXPIRED Porcus III: defense-10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=102/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=170/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=193/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=182/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=195/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+7(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Prince Charming
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 182 → 134  (-48)
+[Queued] Porcus III: Shield Bash → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Frederic the Beastslayer
+Porcus III uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Frederic the Beastslayer[front]
+    [T]   power=50 (base=40)
+    [T]   atk=40 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=50
+  Frederic the Beastslayer takes 50 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 102 → 52  (-50)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+    [T] ACTION P2 Prince Charming[back_left]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=58
+  Frederic the Beastslayer takes 58 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 52 → 0  (-58) **KO**
+  Prince Charming must recharge next turn.
+Prince Charming moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=170/255 statuses=[-]
+    [T]   P2 Porcus III[front] HP=248/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=134/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_left] HP=195/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=170/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=248/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=134/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=195/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Prince Charming[front]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=28
+  Porcus III takes 28 damage.
+    [T] HPCHANGE Porcus III: 248 → 220  (-28)
+  Porcus III loses -10 Defense for 2 rounds.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+    [T] ACTION P2 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 60 HP.
+    [T] ACTION P2 Prince Charming[back_left]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=170/255 statuses=[-]
+    [T]   P2 Porcus III[back_right] HP=220/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[front] HP=134/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=170/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=220/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[front] HP=134/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 170 → 129  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 129 → 81  (-48)
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Prince Charming[front]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=39
+  Porcus III takes 39 damage.
+    [T] HPCHANGE Porcus III: 220 → 181  (-39)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 statuses=[-]
+    [T]   P2 Porcus III[front] HP=181/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=184/225 statuses=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=81/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=181/280 ATK=40(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=184/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Prince Charming[front]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=39
+  Porcus III takes 39 damage.
+    [T] HPCHANGE Porcus III: 181 → 142  (-39)
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Prince Charming[front]
+    [T]   power=50 (base=40)
+    [T]   atk=40 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=37
+  Prince Charming takes 37 damage.
+    [T] HPCHANGE Prince Charming: 81 → 44  (-37)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_left]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=30
+    [T]   atk=65 def=55 raw=35.45 ceil=36
+    [T]   FINAL_DMG=36
+  Prince Charming takes 36 damage.
+    [T] HPCHANGE Prince Charming: 44 → 8  (-36)
+  Prince Charming loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=8/255 statuses=[-]
+    [T]   P2 Porcus III[front] HP=142/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=184/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=25  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=8/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Porcus III[front] HP=142/280 ATK=40(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=184/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Prince Charming[front]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+    [T]   FINAL_DMG=32
+  Porcus III takes 32 damage.
+    [T] HPCHANGE Porcus III: 142 → 110  (-32)
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 70 HP.
+    [T] ACTION P2 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 8 → 0  (-48) **KO**
+  Prince Charming must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 13)
+────────────────────────────────────────────────────────────
+Player 2 wins!

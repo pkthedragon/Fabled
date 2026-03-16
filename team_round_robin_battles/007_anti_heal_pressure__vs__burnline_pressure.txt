@@ -1,0 +1,496 @@
+Battle 7
+Player 1 Team: Anti-Heal Pressure
+Player 2 Team: Burnline Pressure
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:36:05
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 7
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Anti-Heal Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch-Hunter Gretel: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Thunder Call → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: swap ↔ Witch of the Woods
+Witch-Hunter Gretel and Witch of the Woods swap positions.
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → Witch-Hunter Gretel
+Witch of the Woods uses Thunder Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=75 def=50 raw=97.50 ceil=98
+    [T]   FINAL_DMG=98
+  Witch-Hunter Gretel takes 98 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 117  (-98)
+  Witch-Hunter Gretel gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=50 def=50 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Witch-Hunter Gretel takes 40 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 117 → 77  (-40)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+[Queued] Witch-Hunter Gretel: Shove Over → Witch of the Woods
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch of the Woods
+[Queued] Matchstick Liesl: Cauterize → Witch of the Woods
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Witch of the Woods
+Witch-Hunter Gretel uses Shove Over on Witch of the Woods.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Witch of the Woods[front]
+    [T]   power=65
+    [T]   atk=80 def=35 raw=148.57 ceil=149
+    [T]   FINAL_DMG=149
+  Witch of the Woods takes 149 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 31  (-149)
+  Shock recoil: Witch-Hunter Gretel takes 30 damage.
+  Witch of the Woods gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Witch of the Woods
+Robin, Hooded Avenger uses Hawkshot on Witch of the Woods.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=77 def=35 raw=88.00 ceil=88
+    [T]   FINAL_DMG=88
+  Witch of the Woods takes 88 damage.
+    [T] HPCHANGE Witch of the Woods: 31 → 0  (-88) **KO**
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Witch of the Woods
+Matchstick Liesl's target is no longer legal — Cauterize fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=47/215 statuses=[shock(2r), no_heal(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=47/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[shock(1r), no_heal(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=88
+  Witch-Hunter Gretel takes 88 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 127  (-88)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Witch-Hunter Gretel cannot be healed.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Robin, Hooded Avenger
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Robin, Hooded Avenger
+Witch-Hunter Gretel uses Intimidate on Robin, Hooded Avenger.
+  Robin, Hooded Avenger gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=47/215 statuses=[shock(1r), no_heal(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[weaken(2r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=197/215 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: shock
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: no_heal
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=47/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=197/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=83
+  Witch-Hunter Gretel takes 83 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 197 → 114  (-83)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel[front] HP=102/215 statuses=[burn_immune(2r), weaken(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[weaken(1r)]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=184/215 statuses=[burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] STATUS_TICK Robin, Hooded Avenger: weaken → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: weaken
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=102/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r), weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=184/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Shove Over → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Swap with Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Matchstick Liesl
+Witch-Hunter Gretel uses Shove Over on Matchstick Liesl.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Matchstick Liesl[front]
+    [T]   power=65
+    [T]   atk=80 def=50 raw=104.00 ceil=104
+    [T]   FINAL_DMG=84
+  Matchstick Liesl takes 84 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 126  (-84)
+  Matchstick Liesl gains burn for 2 rounds.
+  Matchstick Liesl gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Witch-Hunter Gretel
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+    [T] ACTION P2 Matchstick Liesl[front]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel[front] HP=157/215 statuses=[burn_immune(1r), weaken(1r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=184/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=126/210 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: weaken
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Matchstick Liesl burns for 21 damage.
+    [T] STATUS_TICK Matchstick Liesl: burn → 1r left
+    [T] STATUS_TICK Matchstick Liesl: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=157/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=184/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[front] HP=105/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Strike → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Matchstick Liesl
+Witch-Hunter Gretel uses Strike on Matchstick Liesl.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Matchstick Liesl[front]
+    [T]   power=55
+    [T]   atk=80 def=50 raw=88.00 ceil=88
+    [T]   FINAL_DMG=98
+  Matchstick Liesl takes 98 damage.
+    [T] HPCHANGE Matchstick Liesl: 105 → 7  (-98)
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=25
+    [T]   atk=77 def=45 raw=42.78 ceil=43
+    [T]   FINAL_DMG=53
+  Witch-Hunter Gretel takes 53 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 184 → 131  (-53)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P1 Matchstick Liesl[back_left]: swap ↔ Witch-Hunter Gretel
+Matchstick Liesl recharges.
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch-Hunter Gretel
+    [T] ACTION P2 Matchstick Liesl[front]: Cauterize → Witch-Hunter Gretel
+Matchstick Liesl uses Cauterize on Witch-Hunter Gretel.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Witch-Hunter Gretel takes 40 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 157 → 117  (-40)
+  Witch-Hunter Gretel gains no_heal for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Intimidate on Witch-Hunter Gretel.
+  Witch-Hunter Gretel gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel[front] HP=117/215 statuses=[no_heal(2r), weaken(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=131/215 statuses=[-]
+    [T]   P2 Matchstick Liesl[front] HP=7/210 statuses=[burn(1r), weaken(1r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T] STATUS_TICK Witch-Hunter Gretel: no_heal → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: weaken → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Matchstick Liesl burns for 21 damage.
+Witch-Hunter Gretel moves to frontline.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=117/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[no_heal(1r), weaken(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=131/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Witch-Hunter Gretel: Strike → Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Strike → Witch-Hunter Gretel
+Witch-Hunter Gretel uses Strike on Witch-Hunter Gretel.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Witch-Hunter Gretel[front]
+    [T]   power=55
+    [T]   atk=80 def=50 raw=88.00 ceil=88
+    [T]   FINAL_DMG=98
+  Witch-Hunter Gretel takes 98 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 117 → 19  (-98)
+  Witch-Hunter Gretel gains burn for 2 rounds.
+[Queued] Witch-Hunter Gretel: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: swap ↔ Robin, Hooded Avenger
+Witch-Hunter Gretel and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=88
+  Witch-Hunter Gretel takes 88 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 131 → 43  (-88)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Witch-Hunter Gretel cannot be healed.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=19/215 statuses=[no_heal(1r), weaken(1r), burn(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=43/215 statuses=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+Witch-Hunter Gretel burns for 22 damage.
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=43/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl [KO]
+    [T]   P2 Witch of the Woods [KO]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Matchstick Liesl: Cauterize → Witch-Hunter Gretel
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=88
+  Witch-Hunter Gretel takes 88 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 43 → 0  (-88) **KO**
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 1 wins!

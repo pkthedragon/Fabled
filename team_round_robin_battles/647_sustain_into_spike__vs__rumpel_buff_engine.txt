@@ -1,0 +1,3351 @@
+Battle 647
+Player 1 Team: Sustain Into Spike
+Player 2 Team: Rumpel Buff Engine
+Winner: unresolved
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:38:14
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 647
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Sustain Into Spike
+  [front] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Sturdy Home  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Rumpel Buff Engine
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Chosen One  (passive=True)
+    Basics: Decree, Summons
+    Item:   Holy Diadem
+  [back_left] Rumpelstiltskin (Warlock)  HP=215  ATK=70  DEF=55  SPD=60
+    Talent: Art of the Deal
+    Sig:    Straw to Gold  (passive=False)
+    Basics: Blood Pact, Soul Gaze
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Bless, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Decree → Porcus III
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Rumpelstiltskin: Soul Gaze → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Decree → Porcus III
+Prince Charming uses Decree on Porcus III.
+    [T] DMGCALC [Decree] Prince Charming[front] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=65 def=95 raw=27.37 ceil=28
+    [T]   FINAL_DMG=28
+  Porcus III takes 28 damage.
+    [T] HPCHANGE Porcus III: 280 → 252  (-28)
+  Prince Charming gains +10 Attack for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [1/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+  Chosen One: Snowkissed Aurora becomes Prince Charming's champion.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Soul Gaze → Snowkissed Aurora
+Rumpelstiltskin uses Soul Gaze on Snowkissed Aurora.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=30
+    [T]   atk=77 def=67 raw=34.48 ceil=35
+    [T]   FINAL_DMG=35
+  Snowkissed Aurora takes 35 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 190  (-35)
+  Rumpelstiltskin gains 1 Malice (Soul Gaze). [2/6]
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Rumpelstiltskin takes 41 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 174  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 35 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Porcus III[back_left] HP=252/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=174/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=252/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=174/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Rumpelstiltskin takes 41 damage.
+    [T] HPCHANGE Rumpelstiltskin: 174 → 133  (-41)
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_right]
+    [T]   power=50
+    [T]   atk=45 def=90 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Porcus III takes 25 damage.
+    [T] HPCHANGE Porcus III: 252 → 227  (-25)
+  Snowkissed Aurora heals Rumpelstiltskin for 50 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin heals self for 25 HP.
+  Rumpelstiltskin spends 1 Malice (Blood Pact). [1/6]
+  Rumpelstiltskin heals 7 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Porcus III[back_right] HP=227/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=227/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=65(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 53 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Rumpelstiltskin takes 40 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 175  (-40)
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 194  (-31)
+  Prince Charming gains +10 Attack for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [2/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: swap ↔ Snowkissed Aurora
+Rumpelstiltskin and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=175/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=175/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 255 → 215  (-40)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Summons → Rumpelstiltskin
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Summons → Rumpelstiltskin
+Prince Charming uses Summons on Rumpelstiltskin.
+Prince Charming and Rumpelstiltskin swap positions.
+    [T] ACTION P2 Rumpelstiltskin[front]: swap ↔ Snowkissed Aurora
+Rumpelstiltskin and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=70 raw=32.14 ceil=33
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 194 → 167  (-27)
+  Snowkissed Aurora heals Rumpelstiltskin for 40 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=167/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=215/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=167/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=215/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=215/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Rumpelstiltskin: Soul Gaze → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=25
+    [T]   atk=65 def=70 raw=23.21 ceil=24
+    [T]   FINAL_DMG=20
+  Snowkissed Aurora takes 20 damage.
+    [T] HPCHANGE Snowkissed Aurora: 167 → 147  (-20)
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Soul Gaze → Prince Charming
+Rumpelstiltskin uses Soul Gaze on Prince Charming.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[back_left] → Prince Charming[back_left]
+    [T]   power=30
+    [T]   atk=77 def=55 raw=42.00 ceil=42
+    [T]   FINAL_DMG=42
+  Prince Charming takes 42 damage.
+    [T] HPCHANGE Prince Charming: 255 → 213  (-42)
+  Rumpelstiltskin gains 1 Malice (Soul Gaze). [3/6]
+  Rumpelstiltskin must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=39
+  Rumpelstiltskin takes 39 damage.
+    [T] HPCHANGE Rumpelstiltskin: 215 → 176  (-39)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=213/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=215/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=176/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=213/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=215/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=176/215 ATK=70(base=70) DEF=55(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=50
+    [T]   atk=35 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=32
+  Rumpelstiltskin takes 32 damage.
+    [T] HPCHANGE Rumpelstiltskin: 176 → 144  (-32)
+  Snowkissed Aurora heals Snowkissed Aurora for 28 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Rumpelstiltskin takes 48 damage.
+    [T] HPCHANGE Rumpelstiltskin: 144 → 96  (-48)
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Rumpelstiltskin: Skip
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 213 → 172  (-41)
+  Snowkissed Aurora heals Rumpelstiltskin for 50 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: skip/recharge
+Rumpelstiltskin recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=172/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=215/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=146/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=172/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=215/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=146/215 ATK=70(base=70) DEF=55(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=39
+  Rumpelstiltskin takes 39 damage.
+    [T] HPCHANGE Rumpelstiltskin: 146 → 107  (-39)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Rumpelstiltskin takes 40 damage.
+    [T] HPCHANGE Rumpelstiltskin: 107 → 67  (-40)
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 194  (-31)
+  Prince Charming gains +10 Attack for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [4/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: swap ↔ Snowkissed Aurora
+Rumpelstiltskin and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=222/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=215/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=67/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=222/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=215/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=67/215 ATK=70(base=70) DEF=55(base=55) SPD=80(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 215 → 175  (-40)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Summons → Rumpelstiltskin
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Summons → Rumpelstiltskin
+Prince Charming uses Summons on Rumpelstiltskin.
+Prince Charming and Rumpelstiltskin swap positions.
+  Prince Charming must recharge next turn.
+    [T] ACTION P2 Rumpelstiltskin[front]: swap ↔ Snowkissed Aurora
+Rumpelstiltskin and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 222 → 181  (-41)
+  Snowkissed Aurora heals Rumpelstiltskin for 50 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=181/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=175/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=117/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=181/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=175/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=117/215 ATK=70(base=70) DEF=55(base=55) SPD=80(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Skip
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: skip/recharge
+Prince Charming recharges.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin heals self for 25 HP.
+  Rumpelstiltskin spends 1 Malice (Blood Pact). [3/6]
+  Rumpelstiltskin heals 25 HP.
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=50
+  Rumpelstiltskin takes 50 damage.
+    [T] HPCHANGE Rumpelstiltskin: 167 → 117  (-50)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=231/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=175/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=117/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=231/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=175/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=117/215 ATK=70(base=70) DEF=55(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Rumpelstiltskin takes 41 damage.
+    [T] HPCHANGE Rumpelstiltskin: 117 → 76  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 31 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Rumpelstiltskin takes 48 damage.
+    [T] HPCHANGE Rumpelstiltskin: 76 → 28  (-48)
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 231 → 190  (-41)
+  Snowkissed Aurora heals Rumpelstiltskin for 50 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin heals self for 25 HP.
+  Rumpelstiltskin spends 1 Malice (Blood Pact). [2/6]
+  Rumpelstiltskin heals 25 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=190/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=175/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=128/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=190/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=175/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=128/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=39
+  Rumpelstiltskin takes 39 damage.
+    [T] HPCHANGE Rumpelstiltskin: 128 → 89  (-39)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Rumpelstiltskin takes 40 damage.
+    [T] HPCHANGE Rumpelstiltskin: 89 → 49  (-40)
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 194  (-31)
+  Prince Charming gains +10 Attack for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [3/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: swap ↔ Snowkissed Aurora
+Rumpelstiltskin and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=240/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=175/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=49/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=240/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=175/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=49/215 ATK=70(base=70) DEF=55(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 175 → 135  (-40)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Summons → Rumpelstiltskin
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Summons → Rumpelstiltskin
+Prince Charming uses Summons on Rumpelstiltskin.
+Prince Charming and Rumpelstiltskin swap positions.
+    [T] ACTION P2 Rumpelstiltskin[front]: swap ↔ Snowkissed Aurora
+Rumpelstiltskin and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=70 raw=32.14 ceil=33
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 194 → 167  (-27)
+  Snowkissed Aurora heals Rumpelstiltskin for 50 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=167/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=240/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=135/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=99/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=167/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=240/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=135/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=99/215 ATK=70(base=70) DEF=55(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=25
+    [T]   atk=65 def=70 raw=23.21 ceil=24
+    [T]   FINAL_DMG=20
+  Snowkissed Aurora takes 20 damage.
+    [T] HPCHANGE Snowkissed Aurora: 167 → 147  (-20)
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin heals self for 25 HP.
+  Rumpelstiltskin spends 1 Malice (Blood Pact). [2/6]
+  Rumpelstiltskin heals 25 HP.
+  Rumpelstiltskin must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=39
+  Rumpelstiltskin takes 39 damage.
+    [T] HPCHANGE Rumpelstiltskin: 149 → 110  (-39)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=240/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=135/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=110/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=240/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=135/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=110/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=50
+    [T]   atk=35 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=32
+  Rumpelstiltskin takes 32 damage.
+    [T] HPCHANGE Rumpelstiltskin: 110 → 78  (-32)
+  Snowkissed Aurora heals Snowkissed Aurora for 28 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Rumpelstiltskin takes 48 damage.
+    [T] HPCHANGE Rumpelstiltskin: 78 → 30  (-48)
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Rumpelstiltskin: Skip
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 240 → 199  (-41)
+  Snowkissed Aurora heals Rumpelstiltskin for 50 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: skip/recharge
+Rumpelstiltskin recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=199/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=135/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=80/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=199/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=135/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_left] HP=80/215 ATK=70(base=70) DEF=55(base=55) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Rumpelstiltskin
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=39
+  Rumpelstiltskin takes 39 damage.
+    [T] HPCHANGE Rumpelstiltskin: 80 → 41  (-39)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Rumpelstiltskin
+Prince Charming uses Condescend on Rumpelstiltskin.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Rumpelstiltskin[back_left]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Rumpelstiltskin takes 40 damage.
+    [T] HPCHANGE Rumpelstiltskin: 41 → 1  (-40)
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Rumpelstiltskin: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 194  (-31)
+  Prince Charming gains +10 Attack for 2 rounds.
+  Rumpelstiltskin gains 1 Malice (Art of the Deal). [3/6]
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P2 Rumpelstiltskin[back_left]: swap ↔ Snowkissed Aurora
+Rumpelstiltskin and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=249/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=135/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=1/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=249/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=135/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[back_right] HP=1/215 ATK=70(base=70) DEF=55(base=55) SPD=75(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=55 def=55 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 135 → 95  (-40)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Swap with Rumpelstiltskin
+[Queued] Rumpelstiltskin: Blood Pact → Rumpelstiltskin
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Rumpelstiltskin
+Prince Charming and Rumpelstiltskin swap positions.
+    [T] ACTION P2 Rumpelstiltskin[front]: Blood Pact → Rumpelstiltskin
+Rumpelstiltskin uses Blood Pact on Rumpelstiltskin.
+  Rumpelstiltskin loses 50 HP.
+  Rumpelstiltskin gains 2 Malice (Blood Pact). [5/6]
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=70 raw=22.50 ceil=23
+    [T]   FINAL_DMG=19
+  Snowkissed Aurora takes 19 damage.
+    [T] HPCHANGE Snowkissed Aurora: 194 → 175  (-19)
+  Snowkissed Aurora heals Rumpelstiltskin for 35 HP.
+  Medic: Rumpelstiltskin cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=175/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=249/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=95/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=36/215 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Rumpelstiltskin spd=85  →  P2 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=175/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=249/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=95/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin[front] HP=36/215 ATK=70(base=70) DEF=55(base=55) SPD=85(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Rumpelstiltskin: Soul Gaze → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Rumpelstiltskin[front]: Soul Gaze → Snowkissed Aurora
+Rumpelstiltskin uses Soul Gaze on Snowkissed Aurora.
+    [T] DMGCALC [Soul Gaze] Rumpelstiltskin[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=70 def=70 raw=45.00 ceil=45
+    [T]   FINAL_DMG=36
+  Snowkissed Aurora takes 36 damage.
+    [T] HPCHANGE Snowkissed Aurora: 175 → 139  (-36)
+  Rumpelstiltskin spends 1 Malice (Soul Gaze). [4/6]
+  Snowkissed Aurora gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Snowkissed Aurora: Dictate of Nature → Rumpelstiltskin
+[Queued] Porcus III: Shield Bash → Rumpelstiltskin
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Rumpelstiltskin
+Snowkissed Aurora uses Dictate of Nature on Rumpelstiltskin.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Rumpelstiltskin[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=50
+  Rumpelstiltskin takes 50 damage.
+    [T] HPCHANGE Rumpelstiltskin: 36 → 0  (-50) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+Prince Charming moves to frontline.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Rumpelstiltskin
+Porcus III's target is no longer legal — Shield Bash fizzles.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=189/225 statuses=[guard(1r), expose(2r)]
+    [T]   P1 Prince Charming[back_left] HP=249/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=95/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: expose → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=189/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[expose(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=249/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=95/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+    [T] HPCHANGE Prince Charming: 95 → 45  (-50)
+  Snowkissed Aurora heals Snowkissed Aurora for 36 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 249 → 208  (-41)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[expose(1r), guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=208/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=95/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: expose → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: expose
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=208/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=95/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 208 → 167  (-41)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=237/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=145/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=237/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=145/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 145 → 97  (-48)
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=70 raw=32.14 ceil=33
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=237/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=147/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=237/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=147/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=25
+    [T]   atk=65 def=70 raw=23.21 ceil=24
+    [T]   FINAL_DMG=20
+  Snowkissed Aurora takes 20 damage.
+    [T] HPCHANGE Snowkissed Aurora: 198 → 178  (-20)
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+  Prince Charming must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=60 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Snowkissed Aurora takes 35 damage.
+    [T] HPCHANGE Snowkissed Aurora: 181 → 146  (-35)
+  Snowkissed Aurora heals Snowkissed Aurora for 47 HP.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=30
+    [T]   atk=65 def=60 raw=32.50 ceil=33
+    [T]   FINAL_DMG=33
+  Snowkissed Aurora takes 33 damage.
+    [T] HPCHANGE Snowkissed Aurora: 146 → 113  (-33)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=237/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=147/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=113/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=30  →  P1 acts first
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=237/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=147/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=113/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=35 def=60 raw=29.17 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 113 → 83  (-30)
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 237 → 196  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=196/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=147/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=133/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=196/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=147/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=133/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 196 → 155  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 147 → 99  (-48)
+  Prince Charming must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=225/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=99/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=183/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=225/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=99/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=183/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 225 → 184  (-41)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=184/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=149/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=183/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=184/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=149/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=183/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Decree → Prince Charming
+Prince Charming uses Decree on Prince Charming.
+    [T] DMGCALC [Decree] Prince Charming[back_right] → Prince Charming[back_right]
+    [T]   power=25
+    [T]   atk=65 def=55 raw=29.55 ceil=30
+    [T]   FINAL_DMG=30
+  Prince Charming takes 30 damage.
+    [T] HPCHANGE Prince Charming: 184 → 154  (-30)
+  Prince Charming loses -10 Attack for 2 rounds.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=224/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=149/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=183/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=224/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[back_right] HP=149/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=183/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 31 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=199/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=183/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=199/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=183/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+    [T] HPCHANGE Prince Charming: 199 → 149  (-50)
+  Snowkissed Aurora heals Prince Charming for 41 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 194  (-31)
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=149/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=183/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=194/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=149/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=183/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 149 → 101  (-48)
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=70 raw=32.14 ceil=33
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 194 → 167  (-27)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=167/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=151/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=183/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=167/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=151/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=183/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=25
+    [T]   atk=65 def=70 raw=23.21 ceil=24
+    [T]   FINAL_DMG=20
+  Snowkissed Aurora takes 20 damage.
+    [T] HPCHANGE Snowkissed Aurora: 167 → 147  (-20)
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=35 def=70 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Snowkissed Aurora takes 25 damage.
+    [T] HPCHANGE Snowkissed Aurora: 183 → 158  (-25)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 158 → 120  (-38)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=151/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=120/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=197/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=151/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=120/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=60 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Snowkissed Aurora takes 35 damage.
+    [T] HPCHANGE Snowkissed Aurora: 120 → 85  (-35)
+  Snowkissed Aurora heals Snowkissed Aurora for 28 HP.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=46
+  Snowkissed Aurora takes 46 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 179  (-46)
+  Prince Charming gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=179/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=151/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=85/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=179/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=151/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=85/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+    [T] HPCHANGE Prince Charming: 151 → 101  (-50)
+  Snowkissed Aurora heals Snowkissed Aurora for 46 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 101 → 53  (-48)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=53/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=85/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=53/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=85/225 ATK=55(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Decree → Prince Charming
+  Prince Charming retargets to Snowkissed Aurora after swapping to front.
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 187  (-38)
+  Prince Charming gains +10 Attack for 2 rounds.
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=187/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=85/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=187/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=53/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=85/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[back_right]
+    [T]   power=50
+    [T]   atk=35 def=70 raw=25.00 ceil=25
+    [T]   FINAL_DMG=25
+  Snowkissed Aurora takes 25 damage.
+    [T] HPCHANGE Snowkissed Aurora: 85 → 60  (-25)
+  Snowkissed Aurora heals Snowkissed Aurora for 38 HP.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=70 raw=32.14 ceil=33
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+  Snowkissed Aurora heals Prince Charming for 50 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 33
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R33):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=103/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=60/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 34
+────────────────────────────────────────────────────────────
+Round 34 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 34 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=198/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=103/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=53
+  Snowkissed Aurora takes 53 damage.
+    [T] HPCHANGE Snowkissed Aurora: 198 → 145  (-53)
+  Prince Charming gains +10 Attack for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=55 raw=38.18 ceil=39
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 103 → 64  (-39)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 34
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R34):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=195/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=64/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=60/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 35
+────────────────────────────────────────────────────────────
+Round 35 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 35 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=195/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=64/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=60/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[back_right]
+    [T]   power=50
+    [T]   atk=35 def=60 raw=29.17 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 60 → 30  (-30)
+  Snowkissed Aurora heals Snowkissed Aurora for 30 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=75 def=70 raw=42.86 ceil=43
+    [T]   FINAL_DMG=50
+  Snowkissed Aurora takes 50 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 175  (-50)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 35
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R35):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=175/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=64/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=30/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 36
+────────────────────────────────────────────────────────────
+Round 36 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 36 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=175/225 ATK=35(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=64/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=30/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=70 raw=32.14 ceil=33
+    [T]   FINAL_DMG=33
+  Snowkissed Aurora takes 33 damage.
+    [T] HPCHANGE Snowkissed Aurora: 175 → 142  (-33)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 64 → 16  (-48)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 36
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R36):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=142/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=16/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=80/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 37
+────────────────────────────────────────────────────────────
+Round 37 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 37 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=142/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=16/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Impose → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+Holy Diadem activates! Prince Charming survives at 1 HP.
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=30
+    [T]   atk=65 def=55 raw=35.45 ceil=36
+    [T]   FINAL_DMG=0
+  Prince Charming takes 0 damage.
+    [T] HPCHANGE Prince Charming: 1 → 1  (-0)
+  Prince Charming loses -10 Speed for 2 rounds.
+[Queued] Prince Charming: Decree → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Decree → Snowkissed Aurora
+Prince Charming uses Decree on Snowkissed Aurora.
+    [T] DMGCALC [Decree] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 192 → 161  (-31)
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 37
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R37):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=161/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=1/255 statuses=[-]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=80/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 38
+────────────────────────────────────────────────────────────
+Round 38 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=25  →  P1 acts first
+    [T] ROUND 38 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=161/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=1/255 ATK=75(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 1 → 0  (-41) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Prince Charming
+  Porcus III retargets to Snowkissed Aurora after swapping to back_right.
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 38
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R38):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=214/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=130/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 39
+────────────────────────────────────────────────────────────
+Round 39 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 39 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=130/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 180 → 136  (-44)
+  Prince Charming must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 39
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R39):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=243/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=136/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 40
+────────────────────────────────────────────────────────────
+Round 40 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 40 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=243/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=136/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 243 → 202  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 40
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R40):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=202/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 41
+────────────────────────────────────────────────────────────
+Round 41 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 41 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 53 HP.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 41
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R41):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 42
+────────────────────────────────────────────────────────────
+Round 42 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 42 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=211/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=186/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=60 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Snowkissed Aurora takes 45 damage.
+    [T] HPCHANGE Snowkissed Aurora: 186 → 141  (-45)
+  Snowkissed Aurora heals Snowkissed Aurora for 14 HP.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 42
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R42):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=191/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 43
+────────────────────────────────────────────────────────────
+Round 43 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 43 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=191/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 34 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 43
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R43):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=243/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 44
+────────────────────────────────────────────────────────────
+Round 44 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 44 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=243/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 243 → 202  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 44 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 44
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R44):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=202/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 45
+────────────────────────────────────────────────────────────
+Round 45 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 45 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 53 HP.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40 (base=30)
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 45
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R45):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 46
+────────────────────────────────────────────────────────────
+Round 46 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=30  →  P1 acts first
+    [T] ROUND 46 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=45 def=60 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 181 → 143  (-38)
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 46
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R46):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=214/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=193/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 47
+────────────────────────────────────────────────────────────
+Round 47 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 47 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=214/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=193/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 214 → 173  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 32 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 70 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=60 raw=43.33 ceil=44
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+  Prince Charming must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 47
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R47):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_right] HP=243/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 48
+────────────────────────────────────────────────────────────
+Round 48 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 48 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=243/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=181/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 243 → 202  (-41)
+  Snowkissed Aurora heals Snowkissed Aurora for 44 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 48
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R48):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=202/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 49
+────────────────────────────────────────────────────────────
+Round 49 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 49 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=202/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 53 HP.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 49
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R49):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 50
+────────────────────────────────────────────────────────────
+Round 50 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 50 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=41
+  Prince Charming takes 41 damage.
+    [T] HPCHANGE Prince Charming: 255 → 214  (-41)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 50
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R50):
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=214/255 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Rumpelstiltskin [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+Battle aborted after safety limit.

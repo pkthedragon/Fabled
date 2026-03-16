@@ -1,0 +1,526 @@
+Battle 719
+Player 1 Team: Royal Root Pressure
+Player 2 Team: Prince-Robin Midrange
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:47:10
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 719
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Royal Root Pressure
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Edict, Command
+    Item:   Main-Gauche
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+Player 2: Prince-Robin Midrange
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Robin, Hooded Avenger: Snipe Shot → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 255 → 178  (-77)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Snipe Shot → Prince Charming
+Robin, Hooded Avenger uses Snipe Shot on Prince Charming.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=56
+  Prince Charming takes 56 damage.
+    [T] HPCHANGE Prince Charming: 178 → 122  (-56)
+[Queued] Prince Charming: Swap with Briar Rose
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Briar Rose
+Prince Charming and Briar Rose swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=75 def=60 raw=43.75 ceil=44
+    [T]   FINAL_DMG=54
+  Snowkissed Aurora takes 54 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 171  (-54)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P1 Briar Rose[front]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Snowkissed Aurora[front]
+    [T]   power=77 (base=55)
+    [T]   atk=60 def=60 raw=77.00 ceil=77
+    [T]   FINAL_DMG=87
+  Snowkissed Aurora takes 87 damage.
+    [T] HPCHANGE Snowkissed Aurora: 171 → 84  (-87)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_left] HP=122/255 statuses=[-]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=84/225 statuses=[root(2r)]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Curse of Sleeping: Snowkissed Aurora loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=122/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=84/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(2r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Bring Down → Snowkissed Aurora
+[Queued] Prince Charming: Edict → Snowkissed Aurora
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Snowkissed Aurora
+Briar Rose uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=60 def=70 raw=42.86 ceil=43
+    [T]   FINAL_DMG=43
+  Snowkissed Aurora takes 43 damage.
+    [T] HPCHANGE Snowkissed Aurora: 84 → 41  (-43)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Bring Down → Snowkissed Aurora
+Robin, Hooded Avenger uses Bring Down on Snowkissed Aurora.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=75 def=70 raw=37.50 ceil=38
+    [T]   FINAL_DMG=48
+  Snowkissed Aurora takes 48 damage.
+    [T] HPCHANGE Snowkissed Aurora: 41 → 0  (-48) **KO**
+  Snowkissed Aurora is immune to Root (Curse of Sleeping).
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P1 Prince Charming[back_left]: Edict → Snowkissed Aurora
+Prince Charming's target is no longer legal — Edict fizzles.
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+[Queued] Prince Charming: Gallant Charge → Briar Rose
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=124
+  Robin, Hooded Avenger takes 124 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 61  (-124)
+    [T] ACTION P2 Prince Charming[back_right]: Gallant Charge → Briar Rose
+Prince Charming uses Gallant Charge on Briar Rose.
+    [T] DMGCALC [Gallant Charge] Prince Charming[back_right] → Briar Rose[front]
+    [T]   power=35
+    [T]   atk=65 def=45 raw=50.56 ceil=51
+    [T]   FINAL_DMG=51
+  Briar Rose takes 51 damage.
+    [T] HPCHANGE Briar Rose: 195 → 144  (-51)
+  Prince Charming gains +15 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_left] HP=122/255 statuses=[-]
+    [T]   P1 Briar Rose[front] HP=144/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=61/185 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=122/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[front] HP=144/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=61/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=50(base=35)
+    [T]     statuses=[-]  buffs=[speed+15(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+[Queued] Prince Charming: Gallant Charge → Briar Rose
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=124
+  Robin, Hooded Avenger takes 124 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 61 → 0  (-124) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Prince Charming[back_right]: Gallant Charge → Briar Rose
+Prince Charming uses Gallant Charge on Briar Rose.
+    [T] DMGCALC [Gallant Charge] Prince Charming[back_right] → Briar Rose[front]
+    [T]   power=35
+    [T]   atk=65 def=45 raw=50.56 ceil=51
+    [T]   FINAL_DMG=51
+  Briar Rose takes 51 damage.
+    [T] HPCHANGE Briar Rose: 144 → 93  (-51)
+[Queued] Briar Rose: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Prince Charming: Edict → Robin, Hooded Avenger
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Robin, Hooded Avenger
+Briar Rose uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 110  (-75)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Briar Rose must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_left]: Edict → Robin, Hooded Avenger
+Prince Charming uses Edict on Robin, Hooded Avenger.
+    [T] DMGCALC [Edict] Prince Charming[back_left] → Robin, Hooded Avenger[front]
+    [T]   power=30
+    [T]   atk=65 def=40 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Robin, Hooded Avenger takes 49 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 110 → 61  (-49)
+  Robin, Hooded Avenger gains spotlight for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[back_left] HP=122/255 statuses=[-]
+    [T]   P1 Briar Rose[front] HP=93/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=61/185 statuses=[spotlight(2r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Robin, Hooded Avenger: spotlight → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=122/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[front] HP=93/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=50(base=35)
+    [T]     statuses=[-]  buffs=[speed+15(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=61/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Prince Charming: Gallant Charge → Briar Rose
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Prince Charming
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Gallant Charge → Briar Rose
+Prince Charming uses Gallant Charge on Briar Rose.
+    [T] DMGCALC [Gallant Charge] Prince Charming[back_right] → Briar Rose[front]
+    [T]   power=35
+    [T]   atk=65 def=45 raw=50.56 ceil=51
+    [T]   FINAL_DMG=51
+  Briar Rose takes 51 damage.
+    [T] HPCHANGE Briar Rose: 93 → 42  (-51)
+  Prince Charming must recharge next turn.
+[Queued] Briar Rose: Swap with Prince Charming
+[Queued] Prince Charming: Edict → Robin, Hooded Avenger
+    [T] ACTION P1 Briar Rose[front]: swap ↔ Prince Charming
+Briar Rose recharges.
+    [T] ACTION P1 Prince Charming[back_left]: Edict → Robin, Hooded Avenger
+Prince Charming uses Edict on Robin, Hooded Avenger.
+    [T] DMGCALC [Edict] Prince Charming[back_left] → Robin, Hooded Avenger[front]
+    [T]   power=30
+    [T]   atk=65 def=40 raw=48.75 ceil=49
+    [T]   FINAL_DMG=59
+  Robin, Hooded Avenger takes 59 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 61 → 2  (-59)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[back_left] HP=122/255 statuses=[-]
+    [T]   P1 Briar Rose[front] HP=42/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=2/185 statuses=[spotlight(1r)]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Robin, Hooded Avenger: spotlight → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: spotlight
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=122/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[front] HP=42/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=50(base=35)
+    [T]     statuses=[-]  buffs=[speed+15(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=2/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Prince Charming
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Prince Charming
+Robin, Hooded Avenger uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Prince Charming[back_left]
+    [T]   power=50
+    [T]   atk=70 def=55 raw=63.64 ceil=64
+    [T]   FINAL_DMG=74
+  Prince Charming takes 74 damage.
+    [T] HPCHANGE Prince Charming: 122 → 48  (-74)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Robin, Hooded Avenger
+Prince Charming recharges.
+[Queued] Briar Rose: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Prince Charming: Edict → Robin, Hooded Avenger
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Robin, Hooded Avenger
+Briar Rose uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 2 → 0  (-75) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+Prince Charming moves to frontline.
+    [T] ACTION P1 Prince Charming[back_left]: Edict → Robin, Hooded Avenger
+Prince Charming's target is no longer legal — Edict fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[back_left] HP=48/255 statuses=[-]
+    [T]   P1 Briar Rose[front] HP=42/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] BUFF_EXPIRED Prince Charming: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_left] HP=48/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[front] HP=42/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Briar Rose: Swap with Prince Charming
+[Queued] Prince Charming: Edict → Prince Charming
+    [T] ACTION P1 Briar Rose[front]: swap ↔ Prince Charming
+Briar Rose and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[front]: Edict → Prince Charming
+Prince Charming uses Edict on Prince Charming.
+    [T] DMGCALC [Edict] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 255 → 195  (-60)
+  Prince Charming gains root for 2 rounds.
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=87
+  Prince Charming takes 87 damage.
+    [T] HPCHANGE Prince Charming: 48 → 0  (-87) **KO**
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=42/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=195/255 statuses=[root(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+    [T] STATUS_TICK Prince Charming: root → 1r left
+  Curse of Sleeping: Prince Charming loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=42/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=195/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Briar Rose: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Prince Charming
+Briar Rose uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=60 def=55 raw=54.55 ceil=55
+    [T]   FINAL_DMG=55
+  Prince Charming takes 55 damage.
+    [T] HPCHANGE Prince Charming: 195 → 140  (-55)
+  Prince Charming is Marked — takes +10 damage next round.
+[Queued] Prince Charming: Happily Ever After → Prince Charming
+Prince Charming cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=42/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=140/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Briar Rose[front] HP=42/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=140/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Snowkissed Aurora [KO]
+[Queued] Briar Rose: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Prince Charming
+Briar Rose uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=60 def=55 raw=54.55 ceil=55
+    [T]   FINAL_DMG=65
+  Prince Charming takes 65 damage.
+    [T] HPCHANGE Prince Charming: 140 → 75  (-65)
+  Prince Charming is Marked — takes +10 damage next round.
+  Briar Rose must recharge next turn.
+[Queued] Prince Charming: Happily Ever After → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Happily Ever After → Prince Charming
+Prince Charming uses Happily Ever After on Prince Charming.
+    [T] DMGCALC [Happily Ever After] Prince Charming[front] → Prince Charming[front]
+    [T]   power=70
+    [T]   atk=65 def=55 raw=82.73 ceil=83
+    [T]   FINAL_DMG=93
+  Prince Charming takes 93 damage.
+    [T] HPCHANGE Prince Charming: 75 → 0  (-93) **KO**
+  Prince Charming gains +15 Attack for 2 rounds.
+  Prince Charming gains +15 Defense for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 8)
+────────────────────────────────────────────────────────────
+Player 1 wins!

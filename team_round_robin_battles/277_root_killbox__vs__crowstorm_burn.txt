@@ -1,0 +1,389 @@
+Battle 277
+Player 1 Team: Root Killbox
+Player 2 Team: Crowstorm Burn
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:00:09
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 277
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Root Killbox
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Magic Growth  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Ashen Ella: Arcane Wave → Robin, Hooded Avenger
+[Queued] Witch-Hunter Gretel: Intimidate → Little Jack
+[Queued] Matchstick Liesl: Cauterize → Briar Rose
+    [T] ACTION P2 Ashen Ella[front]: Arcane Wave → Robin, Hooded Avenger
+Ashen Ella uses Arcane Wave on Robin, Hooded Avenger.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=80
+    [T]   atk=80 def=40 raw=160.00 ceil=160
+    [T]   FINAL_DMG=160
+  Robin, Hooded Avenger takes 160 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 25  (-160)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: Intimidate → Little Jack
+Witch-Hunter Gretel uses Intimidate on Little Jack.
+  Little Jack gains weaken for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_left]: Cauterize → Briar Rose
+Matchstick Liesl uses Cauterize on Briar Rose.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Briar Rose[back_left]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Briar Rose takes 45 damage.
+    [T] HPCHANGE Briar Rose: 195 → 150  (-45)
+  Briar Rose gains no_heal for 2 rounds.
+[Queued] Little Jack: Magic Growth → Ashen Ella
+[Queued] Robin, Hooded Avenger: Hawkshot → Ashen Ella
+[Queued] Briar Rose: Creeping Doubt → Ashen Ella
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Ashen Ella
+Little Jack uses Magic Growth on Ashen Ella.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Ashen Ella[front]
+    [T]   power=50
+    [T]   atk=80 def=30 raw=133.33 ceil=134
+    [T]   FINAL_DMG=118
+  Ashen Ella takes 118 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 67  (-118)
+  Ashen Ella gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Ashen Ella
+Robin, Hooded Avenger uses Hawkshot on Ashen Ella.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=77 def=30 raw=102.67 ceil=103
+    [T]   FINAL_DMG=103
+  Ashen Ella takes 103 damage.
+    [T] HPCHANGE Ashen Ella: 67 → 0  (-103) **KO**
+Matchstick Liesl moves to frontline.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Ashen Ella
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[weaken(2r)]
+    [T]   P1 Briar Rose[back_left] HP=150/195 statuses=[no_heal(2r)]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] STATUS_TICK Briar Rose: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=150/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Magic Growth → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch-Hunter Gretel
+[Queued] Briar Rose: Creeping Doubt → Matchstick Liesl
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Matchstick Liesl
+Little Jack uses Magic Growth on Matchstick Liesl.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=80 def=50 raw=80.00 ceil=80
+    [T]   FINAL_DMG=74
+  Matchstick Liesl takes 74 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 136  (-74)
+  Matchstick Liesl gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hawkshot on Witch-Hunter Gretel.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Witch-Hunter Gretel takes 79 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 136  (-79)
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Matchstick Liesl
+Briar Rose uses Creeping Doubt on Matchstick Liesl.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Matchstick Liesl takes 58 damage.
+    [T] HPCHANGE Matchstick Liesl: 136 → 78  (-58)
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P2 Witch-Hunter Gretel[back_right]: swap ↔ Matchstick Liesl
+Witch-Hunter Gretel and Matchstick Liesl swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[weaken(1r)]
+    [T]   P1 Briar Rose[back_left] HP=150/195 statuses=[no_heal(1r)]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=78/210 statuses=[root(2r)]
+    [T]   P2 Witch-Hunter Gretel[front] HP=206/215 statuses=[burn_immune(2r)]
+    [T] STATUS_TICK Little Jack: weaken → 0r left
+    [T] STATUS_EXPIRED Little Jack: weaken
+    [T] STATUS_TICK Briar Rose: no_heal → 0r left
+    [T] STATUS_EXPIRED Briar Rose: no_heal
+    [T] STATUS_TICK Matchstick Liesl: root → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+  Curse of Sleeping: Matchstick Liesl loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=150/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=78/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=206/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Intimidate → Little Jack
+[Queued] Matchstick Liesl: Swap with Witch-Hunter Gretel
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Intimidate → Little Jack
+Witch-Hunter Gretel uses Intimidate on Little Jack.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=80 def=50 raw=72.00 ceil=72
+    [T]   FINAL_DMG=72
+  Little Jack takes 72 damage.
+    [T] HPCHANGE Little Jack: 220 → 148  (-72)
+  Little Jack gains burn for 2 rounds.
+  Little Jack gains weaken for 2 rounds.
+Matchstick Liesl cannot act.
+[Queued] Little Jack: Magic Growth → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Snipe Shot → Matchstick Liesl
+[Queued] Briar Rose: Creeping Doubt → Witch-Hunter Gretel
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Witch-Hunter Gretel
+Little Jack uses Magic Growth on Witch-Hunter Gretel.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=80 def=45 raw=88.89 ceil=89
+    [T]   FINAL_DMG=82
+  Witch-Hunter Gretel takes 82 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 206 → 124  (-82)
+  Witch-Hunter Gretel gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Matchstick Liesl
+Robin, Hooded Avenger uses Snipe Shot on Matchstick Liesl.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Matchstick Liesl[back_right]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=72
+  Matchstick Liesl takes 72 damage.
+    [T] HPCHANGE Matchstick Liesl: 78 → 6  (-72)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Witch-Hunter Gretel
+Briar Rose uses Creeping Doubt on Witch-Hunter Gretel.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Witch-Hunter Gretel takes 64 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 124 → 60  (-64)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=148/220 statuses=[burn(2r), weaken(2r)]
+    [T]   P1 Briar Rose[back_left] HP=150/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=6/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=60/215 statuses=[burn_immune(1r), root(2r)]
+Little Jack burns for 22 damage.
+    [T] STATUS_TICK Little Jack: burn → 1r left
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: root → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+  Curse of Sleeping: Witch-Hunter Gretel loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=126/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=150/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[back_right] HP=6/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=60/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Swap with Matchstick Liesl
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+Witch-Hunter Gretel cannot act.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Little Jack: Magic Growth → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Swap with Little Jack
+[Queued] Briar Rose: Creeping Doubt → Witch-Hunter Gretel
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Witch-Hunter Gretel
+Little Jack uses Magic Growth on Witch-Hunter Gretel.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=80 def=45 raw=88.89 ceil=89
+    [T]   FINAL_DMG=82
+  Witch-Hunter Gretel takes 82 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 115 → 33  (-82)
+  Witch-Hunter Gretel is immune to Root (Curse of Sleeping).
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Little Jack
+Robin, Hooded Avenger recharges.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Witch-Hunter Gretel
+Briar Rose uses Creeping Doubt on Witch-Hunter Gretel.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Witch-Hunter Gretel takes 64 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 33 → 0  (-64) **KO**
+  Witch-Hunter Gretel is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack[front] HP=126/220 statuses=[burn(1r), weaken(1r)]
+    [T]   P1 Briar Rose[back_left] HP=150/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=6/210 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+Little Jack burns for 22 damage.
+    [T] STATUS_TICK Little Jack: burn → 0r left
+    [T] STATUS_TICK Little Jack: weaken → 0r left
+    [T] STATUS_EXPIRED Little Jack: burn
+    [T] STATUS_EXPIRED Little Jack: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=104/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=150/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=25/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Matchstick Liesl[front] HP=6/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+[Queued] Little Jack: Magic Growth → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Matchstick Liesl
+[Queued] Briar Rose: Swap with Little Jack
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Matchstick Liesl
+Little Jack uses Magic Growth on Matchstick Liesl.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=80 def=50 raw=80.00 ceil=80
+    [T]   FINAL_DMG=90
+  Matchstick Liesl takes 90 damage.
+    [T] HPCHANGE Matchstick Liesl: 6 → 0  (-90) **KO**
+  Matchstick Liesl gains root for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 1 wins!

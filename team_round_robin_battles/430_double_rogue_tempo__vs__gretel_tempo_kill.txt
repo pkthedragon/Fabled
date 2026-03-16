@@ -1,0 +1,563 @@
+Battle 430
+Player 1 Team: Double Rogue Tempo
+Player 2 Team: Gretel Tempo Kill
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:15:34
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 433
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Double Rogue Tempo
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Little Jack spd=50  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Little Jack: Skyfall → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+    [T] ACTION P2 Little Jack[front]: Skyfall → Prince Charming
+Little Jack uses Skyfall on Prince Charming.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Prince Charming[front]
+    [T]   power=80
+    [T]   atk=80 def=55 raw=116.36 ceil=117
+    [T]   FINAL_DMG=151
+  Prince Charming takes 151 damage.
+    [T] HPCHANGE Prince Charming: 255 → 104  (-151)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Prince Charming
+Lucky Constantine uses Post Bounty on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[back_left]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Lucky Constantine: Post Bounty → Little Jack
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 175  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Little Jack
+Lucky Constantine uses Post Bounty on Little Jack.
+  Little Jack gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_right] HP=104/255 statuses=[expose(2r)]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[expose(2r)]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] STATUS_TICK Little Jack: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=104/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Lucky Constantine
+[Queued] Prince Charming: Condescend → Little Jack
+[Queued] Lucky Constantine: Post Bounty → Little Jack
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: swap ↔ Lucky Constantine
+Reynard, Lupine Trickster and Lucky Constantine swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Little Jack
+Prince Charming uses Condescend on Little Jack.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=65 def=50 raw=52.00 ceil=52
+    [T]   FINAL_DMG=63
+  Little Jack takes 63 damage.
+    [T] HPCHANGE Little Jack: 220 → 157  (-63)
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Little Jack
+Lucky Constantine uses Post Bounty on Little Jack.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Little Jack[front]
+    [T]   power=50 (base=40)
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=84
+  Little Jack takes 84 damage.
+    [T] HPCHANGE Little Jack: 157 → 73  (-84)
+[Queued] Little Jack: Skyfall → Lucky Constantine
+[Queued] Risa Redcloak: Rend → Lucky Constantine
+ [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 158  (-57)
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Witch-Hunter Gretel
+Lucky Constantine uses Post Bounty on Witch-Hunter Gretel.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=50 (base=40)
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=94
+  Witch-Hunter Gretel takes 94 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 158 → 64  (-94)
+[Queued] Witch-Hunter Gretel: Shove Over → Lucky Constantine
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Lucky Constantine: Subterfuge → Prince Charming ↔ Lucky Constantine
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Lucky Constantine
+Witch-Hunter Gretel uses Shove Over on Lucky Constantine.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=65
+    [T]   atk=80 def=40 raw=130.00 ceil=130
+    [T]   FINAL_DMG=130
+  Lucky Constantine takes 130 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 85  (-130)
+  Lucky Constantine gains weaken for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=78
+  Prince Charming takes 78 damage.
+    [T] HPCHANGE Prince Charming: 104 → 26  (-78)
+    [T] ACTION P2 Lucky Constantine[back_left]: Subterfuge → Prince Charming
+Lucky Constantine uses Subterfuge on Prince Charming.
+Prince Charming and Lucky Constantine swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[front] HP=26/255 statuses=[weaken(1r), expose(1r)]
+    [T]   P1 Lucky Constantine[back_right] HP=85/215 statuses=[weaken(2r)]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=64/215 statuses=[expose(1r)]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] STATUS_TICK Lucky Constantine: weaken → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: expose
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Witch-Hunter Gretel spd=60  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=26/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_right] HP=85/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel[front] HP=64/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Prince Charming
+[Queued] Robin, Hooded Avenger: Snipe Shot → Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+    [T] ACTION P2 Witch-Hunter Gretel[front]: Shove Over → Prince Charming
+Witch-Hunter Gretel uses Shove Over on Prince Charming.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=80 def=55 raw=94.55 ceil=95
+    [T]   FINAL_DMG=95
+  Prince Charming takes 95 damage.
+    [T] HPCHANGE Prince Charming: 26 → 0  (-95) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Prince Charming gains weaken for 2 rounds.
+Reynard, Lupine Trickster moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Lucky Constantine
+Robin, Hooded Avenger uses Snipe Shot on Lucky Constantine.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Lucky Constantine[back_right]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=87
+  Lucky Constantine takes 87 damage.
+    [T] HPCHANGE Lucky Constantine: 85 → 0  (-87) **KO**
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Prince Charming
+Lucky Constantine's target is no longer legal — Post Bounty fizzles.
+[Queued] Reynard, Lupine Trickster: Riposte → Witch-Hunter Gretel
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch-Hunter Gretel
+Reynard, Lupine Trickster uses Riposte on Witch-Hunter Gretel.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=65 def=45 raw=65.00 ceil=65
+    [T]   FINAL_DMG=65
+  Witch-Hunter Gretel takes 65 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 64 → 0  (-65) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Lucky Constantine moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Lucky Constantine
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Lucky Constantine
+Reynard, Lupine Trickster uses Riposte on Lucky Constantine.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=74
+  Lucky Constantine takes 74 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 141  (-74)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Lucky Constantine: Item Lucky Constantine
+[Queued] Robin, Hooded Avenger: Swap with Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: item [Lightning Boots] → Lucky Constantine
+Lucky Constantine uses Lightning Boots.
+  Lucky Constantine gains +10 Speed for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Lucky Constantine
+Robin, Hooded Avenger recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 statuses=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=141/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Lucky Constantine spd=85  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=175/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=141/215 ATK=70(base=70) DEF=40(base=40) SPD=85(base=75)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Post Bounty → Reynard, Lupine Trickster
+[Queued] Robin, Hooded Avenger: Swap with Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Reynard, Lupine Trickster
+Lucky Constantine uses Post Bounty on Reynard, Lupine Trickster.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=26
+  Reynard, Lupine Trickster takes 26 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 175 → 149  (-26)
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Lucky Constantine
+Robin, Hooded Avenger and Lucky Constantine swap positions.
+[Queued] Reynard, Lupine Trickster: Riposte → Robin, Hooded Avenger
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Robin, Hooded Avenger
+Reynard, Lupine Trickster uses Riposte on Robin, Hooded Avenger.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=74
+  Robin, Hooded Avenger takes 74 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 111  (-74)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=149/205 statuses=[expose(2r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[back_right] HP=141/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=111/185 statuses=[-]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 1r left
+    [T] BUFF_EXPIRED Lucky Constantine: speed+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=149/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[back_right] HP=141/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=111/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Robin, Hooded Avenger
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Robin, Hooded Avenger
+Reynard, Lupine Trickster uses Riposte on Robin, Hooded Avenger.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=74
+  Robin, Hooded Avenger takes 74 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 111 → 37  (-74)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+[Queued] Robin, Hooded Avenger: Snipe Shot → Reynard, Lupine Trickster
+[Queued] Lucky Constantine: Post Bounty → Reynard, Lupine Trickster
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Reynard, Lupine Trickster
+Robin, Hooded Avenger uses Snipe Shot on Reynard, Lupine Trickster.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Reynard, Lupine Trickster[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=50
+  Reynard, Lupine Trickster takes 50 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 149 → 99  (-50)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Reynard, Lupine Trickster
+Lucky Constantine uses Post Bounty on Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=99/205 statuses=[expose(1r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[back_right] HP=141/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=37/185 statuses=[-]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: expose
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=99/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[back_right] HP=141/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=37/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Robin, Hooded Avenger
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Robin, Hooded Avenger
+Reynard, Lupine Trickster uses Riposte on Robin, Hooded Avenger.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=74
+  Robin, Hooded Avenger takes 74 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 37 → 0  (-74) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+Lucky Constantine moves to frontline.
+[Queued] Lucky Constantine: Final Deception → Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Final Deception → Lucky Constantine
+Lucky Constantine uses Final Deception on Lucky Constantine.
+  Reynard, Lupine Trickster gains expose for 2 rounds.
+  Lucky Constantine steals Attack from all enemies.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=99/205 statuses=[expose(2r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=141/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=99/205 ATK=60(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[attack-5(1r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=141/215 ATK=75(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Lucky Constantine: Post Bounty → Reynard, Lupine Trickster
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Reynard, Lupine Trickster
+Lucky Constantine uses Post Bounty on Reynard, Lupine Trickster.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=75 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=65
+  Reynard, Lupine Trickster takes 65 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 99 → 34  (-65)
+[Queued] Reynard, Lupine Trickster: Riposte → Lucky Constantine
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Lucky Constantine
+Reynard, Lupine Trickster uses Riposte on Lucky Constantine.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=60 def=40 raw=67.50 ceil=68
+    [T]   FINAL_DMG=68
+  Lucky Constantine takes 68 damage.
+    [T] HPCHANGE Lucky Constantine: 141 → 73  (-68)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=34/205 statuses=[expose(1r)]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=73/215 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] STATUS_TICK Reynard, Lupine Trickster: expose → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: expose
+    [T] DEBUFF_EXPIRED Reynard, Lupine Trickster: attack-5
+    [T] BUFF_EXPIRED Lucky Constantine: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine [KO]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=34/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch-Hunter Gretel [KO]
+    [T]   P2 Lucky Constantine[front] HP=73/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Reynard, Lupine Trickster: Riposte → Lucky Constantine
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Lucky Constantine
+Reynard, Lupine Trickster uses Riposte on Lucky Constantine.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=65 def=40 raw=73.12 ceil=74
+    [T]   FINAL_DMG=74
+  Lucky Constantine takes 74 damage.
+    [T] HPCHANGE Lucky Constantine: 73 → 0  (-74) **KO**
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 1 wins!

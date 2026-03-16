@@ -1,0 +1,491 @@
+Battle 534
+Player 1 Team: Double Ranger Pressure
+Player 2 Team: Prince-Robin Midrange
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:21:41
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 534
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Double Ranger Pressure
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Prince-Robin Midrange
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=83
+  Prince Charming takes 83 damage.
+    [T] HPCHANGE Prince Charming: 255 → 172  (-83)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Snowkissed Aurora
+Briar Rose uses Creeping Doubt on Snowkissed Aurora.
+  Briar Rose loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Snowkissed Aurora[back_right]
+    [T]   power=40
+    [T]   atk=50 def=60 raw=33.33 ceil=34
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 181  (-44)
+  Snowkissed Aurora gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=56
+  Prince Charming takes 56 damage.
+    [T] HPCHANGE Prince Charming: 172 → 116  (-56)
+[Queued] Prince Charming: Gallant Charge → Frederic the Beastslayer
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Frederic the Beastslayer
+Prince Charming uses Gallant Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=65
+    [T]   atk=65 def=45 raw=93.89 ceil=94
+    [T]   FINAL_DMG=104
+  Frederic the Beastslayer takes 104 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 96  (-104)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Hawkshot on Robin, Hooded Avenger.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=40
+    [T]   atk=77 def=40 raw=77.00 ceil=77
+    [T]   FINAL_DMG=87
+  Robin, Hooded Avenger takes 87 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 98  (-87)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=98/185 statuses=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=171/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[root(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Snowkissed Aurora: root → 1r left
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Curse of Sleeping: Snowkissed Aurora loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_left] HP=98/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=50(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=171/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(2r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Briar Rose: Creeping Doubt → Prince Charming
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=75 def=55 raw=68.18 ceil=69
+    [T]   FINAL_DMG=93
+  Prince Charming takes 93 damage.
+    [T] HPCHANGE Prince Charming: 171 → 78  (-93)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Prince Charming
+Briar Rose uses Creeping Doubt on Prince Charming.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=50 def=55 raw=36.36 ceil=37
+    [T]   FINAL_DMG=57
+  Prince Charming takes 57 damage.
+    [T] HPCHANGE Prince Charming: 78 → 21  (-57)
+  Prince Charming gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=77 def=55 raw=56.00 ceil=56
+    [T]   FINAL_DMG=66
+  Prince Charming takes 66 damage.
+    [T] HPCHANGE Prince Charming: 21 → 0  (-66) **KO**
+Robin, Hooded Avenger moves to frontline.
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=124
+  Robin, Hooded Avenger takes 124 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 98 → 0  (-124) **KO**
+Snowkissed Aurora cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Briar Rose: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=96/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=181/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Briar Rose
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Briar Rose
+Robin, Hooded Avenger uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Briar Rose[back_right]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=88
+  Briar Rose takes 88 damage.
+    [T] HPCHANGE Briar Rose: 195 → 107  (-88)
+  Briar Rose is Marked — takes +10 damage next round.
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Frederic the Beastslayer[front]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Frederic the Beastslayer takes 35 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 96 → 61  (-35)
+  Snowkissed Aurora heals Snowkissed Aurora for 35 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkisse[Queued] Frederic the Beastslayer: Hunter's Mark → Rapunzel the Golden
+[Queued] Briar Rose: Creeping Doubt → Rapunzel the Golden
+[Queued] Robin, Hooded Avenger: Snipe Shot → Rapunzel the Golden
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Rapunzel the Golden
+Frederic the Beastslayer uses Hunter's Mark on Rapunzel the Golden.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Rapunzel the Golden[front]
+    [T]   power=50
+    [T]   atk=75 def=65 raw=57.69 ceil=58
+    [T]   FINAL_DMG=80
+  Rapunzel the Golden takes 80 damage.
+    [T] HPCHANGE Rapunzel the Golden: 93 → 13  (-80)
+  Rapunzel the Golden is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Rapunzel the Golden
+Briar Rose uses Creeping Doubt on Rapunzel the Golden.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Rapunzel the Golden[front]
+    [T]   power=40
+    [T]   atk=60 def=65 raw=36.92 ceil=37
+    [T]   FINAL_DMG=57
+  Rapunzel the Golden takes 57 damage.
+    [T] HPCHANGE Rapunzel the Golden: 13 → 0  (-57) **KO**
+  Rapunzel the Golden is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P1 Robin, Hooded Avenger[back_left]: Snipe Shot → Rapunzel the Golden
+Robin, Hooded Avenger's target is no longer legal — Snipe Shot fizzles.
+�──────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[front] HP=61/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=107/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=117/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=61/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=107/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=117/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Briar Rose
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Snowkissed Aurora
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Briar Rose
+Snowkissed Aurora uses Dictate of Nature on Briar Rose.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Briar Rose[back_right]
+    [T]   power=35
+    [T]   atk=45 def=45 raw=35.00 ceil=35
+    [T]   FINAL_DMG=45
+  Briar Rose takes 45 damage.
+    [T] HPCHANGE Briar Rose: 107 → 62  (-45)
+  Snowkissed Aurora heals Snowkissed Aurora for 35 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Frederic the Beastslayer: Swap with Briar Rose
+[Queued] Briar Rose: Skip
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Briar Rose
+Frederic the Beastslayer recharges.
+    [T] ACTION P1 Briar Rose[back_right]: skip/recharge
+Briar Rose recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[front] HP=61/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=62/195 statuses=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=152/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=61/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose[back_right] HP=62/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=152/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Briar Rose
+[Queued] Snowkissed Aurora: Swap with Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Briar Rose
+Robin, Hooded Avenger uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Briar Rose[back_right]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=88
+  Briar Rose takes 88 damage.
+    [T] HPCHANGE Briar Rose: 62 → 0  (-88) **KO**
+  Briar Rose is Marked — takes +10 damage next round.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Robin, Hooded Avenger
+Snowkissed Aurora recharges.
+[Queued] Frederic the Beastslayer: Slay the Beast → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Snowkissed Aurora
+Frederic the Beastslayer uses Slay the Beast on Snowkissed Aurora.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Snowkissed Aurora[back_right]
+    [T]   power=85 (base=65)
+    [T]   atk=75 def=60 raw=106.25 ceil=107
+    [T]   FINAL_DMG=107
+  Snowkissed Aurora takes 107 damage.
+    [T] HPCHANGE Snowkissed Aurora: 152 → 45  (-107)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[front] HP=61/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=45/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=61/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=45/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Snowkissed Aurora
+Robin, Hooded Avenger and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Frederic the Beastslayer
+Snowkissed Aurora uses Dictate of Nature on Frederic the Beastslayer.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=45 def=45 raw=50.00 ceil=50
+    [T]   FINAL_DMG=56
+  Frederic the Beastslayer takes 56 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 61 → 5  (-56)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=76
+  Snowkissed Aurora takes 76 damage.
+    [T] HPCHANGE Snowkissed Aurora: 95 → 19  (-76)
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer[front] HP=5/200 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=19/225 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=5/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P1 Briar Rose [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=19/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Snowkissed Aurora
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Snowkissed Aurora
+Frederic the Beastslayer uses Hunter's Mark on Snowkissed Aurora.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=75 def=60 raw=62.50 ceil=63
+    [T]   FINAL_DMG=86
+  Snowkissed Aurora takes 86 damage.
+    [T] HPCHANGE Snowkissed Aurora: 19 → 0  (-86) **KO**
+  Snowkissed Aurora is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+Robin, Hooded Avenger moves to frontline.
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=86
+  Frederic the Beastslayer takes 86 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 5 → 0  (-86) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

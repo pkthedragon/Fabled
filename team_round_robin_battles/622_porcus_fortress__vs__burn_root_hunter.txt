@@ -1,0 +1,754 @@
+Battle 622
+Player 1 Team: Porcus Fortress
+Player 2 Team: Burn-Root Hunter
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:33:08
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 622
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Porcus Fortress
+  [front] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Porcine Honor  (passive=True)
+    Basics: Shield Bash, Stalwart
+    Item:   Spiked Mail
+  [back_left] Aldric, Lost Lamb (Cleric)  HP=230  ATK=45  DEF=60  SPD=35
+    Talent: All-Caring
+    Sig:    Benefactor  (passive=True)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Lake's Gift  (passive=False)
+    Basics: Condemn, Armored
+    Item:   Crafty Shield
+Player 2: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=230/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch of the Woods: Freezing Gale → Aldric, Lost Lamb
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Aldric, Lost Lamb
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Aldric, Lost Lamb
+Witch of the Woods uses Freezing Gale on Aldric, Lost Lamb.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Aldric, Lost Lamb[back_left]
+    [T]   power=65
+    [T]   atk=75 def=60 raw=81.25 ceil=82
+    [T]   FINAL_DMG=82
+  Aldric, Lost Lamb takes 82 damage.
+    [T] HPCHANGE Aldric, Lost Lamb: 230 → 148  (-82)
+  Aldric, Lost Lamb gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Lady of Reflections
+Frederic the Beastslayer uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Lady of Reflections[back_right]
+    [T]   power=25
+    [T]   atk=70 def=80 raw=21.88 ceil=22
+    [T]   FINAL_DMG=22
+  Lady of Reflections takes 22 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 233  (-22)
+  Reflecting Pool: Frederic the Beastslayer takes 5 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Aldric, Lost Lamb
+Briar Rose uses Creeping Doubt on Aldric, Lost Lamb.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Aldric, Lost Lamb[back_left]
+    [T]   power=40
+    [T]   atk=60 def=60 raw=40.00 ceil=40
+    [T]   FINAL_DMG=50
+  Aldric, Lost Lamb takes 50 damage.
+    [T] HPCHANGE Aldric, Lost Lamb: 148 → 98  (-50)
+[Queued] Porcus III: Shield Bash → Witch of the Woods
+[Queued] Lady of Reflections: Item Aldric, Lost Lamb
+[Queued] Aldric, Lost Lamb: Heal → Lady of Reflections
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Witch of the Woods
+Porcus III uses Shield Bash on Witch of the Woods.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=35 def=35 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Witch of the Woods takes 40 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 140  (-40)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Lady of Reflections[back_right]: item [Crafty Shield] → Aldric, Lost Lamb
+Lady of Reflections uses Crafty Shield.
+    [T] ACTION P1 Aldric, Lost Lamb[back_left]: Heal → Lady of Reflections
+Aldric, Lost Lamb uses Heal on Lady of Reflections.
+  Aldric, Lost Lamb heals Lady of Reflections for 22 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=98/230 statuses=[root(2r), guard(2r)]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P2 Witch of the Woods[front] HP=140/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=195/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Aldric, Lost Lamb: root → 1r left
+    [T] STATUS_TICK Aldric, Lost Lamb: guard → 1r left
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Porcus III is Guarded by Porcine Honor.
+  Curse of Sleeping: Aldric, Lost Lamb loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb[back_left] HP=98/230 ATK=45(base=45) DEF=60(base=60) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=140/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=195/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Aldric, Lost Lamb
+[Queued] Frederic the Beastslayer: Hero's Charge → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Aldric, Lost Lamb
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Aldric, Lost Lamb
+Witch of the Woods uses Freezing Gale on Aldric, Lost Lamb.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Aldric, Lost Lamb[back_left]
+    [T]   power=65
+    [T]   atk=75 def=60 raw=81.25 ceil=82
+    [T]   FINAL_DMG=76
+  Aldric, Lost Lamb takes 76 damage.
+    [T] HPCHANGE Aldric, Lost Lamb: 98 → 22  (-76)
+  Aldric, Lost Lamb is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Lady of Reflections
+Frederic the Beastslayer uses Hero's Charge on Lady of Reflections.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Lady of Reflections[back_right]
+    [T]   power=30
+    [T]   atk=70 def=80 raw=26.25 ceil=27
+    [T]   FINAL_DMG=42
+  Lady of Reflections takes 42 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 213  (-42)
+  Reflecting Pool: Frederic the Beastslayer takes 9 reflected damage.
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Aldric, Lost Lamb
+Briar Rose uses Creeping Doubt on Aldric, Lost Lamb.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Aldric, Lost Lamb[back_left]
+    [T]   power=40
+    [T]   atk=60 def=60 raw=40.00 ceil=40
+    [T]   FINAL_DMG=42
+  Aldric, Lost Lamb takes 42 damage.
+    [T] HPCHANGE Aldric, Lost Lamb: 22 → 0  (-42) **KO**
+  Aldric, Lost Lamb is immune to Root (Curse of Sleeping).
+[Queued] Porcus III: Swap with Lady of Reflections
+[Queued] Lady of Reflections: Lake's Gift → Lady of Reflections
+    [T] ACTION P1 Porcus III[front]: swap ↔ Lady of Reflections
+Porcus III and Lady of Reflections swap positions.
+    [T] ACTION P1 Lady of Reflections[front]: Lake's Gift → Lady of Reflections
+Lady of Reflections uses Lake's Gift on Lady of Reflections.
+  Lady of Reflections gains Reflecting Pool for 2 rounds.
+  Lady of Reflections gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=213/255 statuses=[guard(1r), reflecting_pool(2r)]
+    [T]   P2 Witch of the Woods[front] HP=140/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=186/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_TICK Lady of Reflections: reflecting_pool → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Lady of Reflections is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=213/255 ATK=50(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[reflecting_pool(1r), guard(1r)]  buffs=[attack+10(1r), attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=140/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=186/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Lady of Reflections
+[Queued] Frederic the Beastslayer: Swap with Witch of the Woods
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Lady of Reflections
+Witch of the Woods uses Freezing Gale on Lady of Reflections.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Lady of Reflections[front]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=47
+  Lady of Reflections takes 47 damage.
+    [T] HPCHANGE Lady of Reflections: 213 → 166  (-47)
+  Reflecting Pool: Witch of the Woods takes 5 reflected damage.
+  Reflecting Pool: Witch of the Woods takes 5 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Witch of the Woods
+Frederic the Beastslayer and Witch of the Woods swap positions.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=24
+  Lady of Reflections takes 24 damage.
+    [T] HPCHANGE Lady of Reflections: 166 → 142  (-24)
+  Reflecting Pool: Briar Rose takes 5 reflected damage.
+  Reflecting Pool: Briar Rose takes 5 reflected damage.
+  Briar Rose must recharge next turn.
+[Queued] Lady of Reflections: Condemn → Frederic the Beastslayer
+[Queued] Porcus III: Swap with Lady of Reflections
+    [T] ACTION P1 Lady of Reflections[front]: Condemn → Frederic the Beastslayer
+Lady of Reflections uses Condemn on Frederic the Beastslayer.
+    [T] DMGCALC [Condemn] Lady of Reflections[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=50
+  Frederic the Beastslayer takes 50 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 186 → 136  (-50)
+  Frederic the Beastslayer loses -10 Attack for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Lady of Reflections
+Porcus III and Lady of Reflections swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=142/255 statuses=[reflecting_pool(1r), guard(1r), root(2r)]
+    [T]   P2 Witch of the Woods[back_right] HP=130/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=185/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=136/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: reflecting_pool → 0r left
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: reflecting_pool
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: attack+10
+    [T] BUFF_EXPIRED Lady of Reflections: attack+5
+    [T] BUFF_EXPIRED Lady of Reflections: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Porcus III is Guarded by Porcine Honor.
+  Curse of Sleeping: Lady of Reflections loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=142/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=130/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=185/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=136/200 ATK=65(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r)]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lady of Reflections
+[Queued] Witch of the Woods: Swap with Briar Rose
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Lady of Reflections
+Frederic the Beastslayer uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lady of Reflections[back_right]
+    [T]   power=50
+    [T]   atk=65 def=80 raw=40.62 ceil=41
+    [T]   FINAL_DMG=41
+  Lady of Reflections takes 41 damage.
+    [T] HPCHANGE Lady of Reflections: 142 → 101  (-41)
+  Reflecting Pool: Frederic the Beastslayer takes 5 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Witch of the Woods[back_right]: swap ↔ Briar Rose
+Witch of the Woods recharges.
+    [T] ACTION P2 Briar Rose[back_left]: skip/recharge
+Briar Rose recharges.
+[Queued] Porcus III: Shield Bash → Frederic the Beastslayer
+[Queued] Lady of Reflections: Item Lady of Reflections
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Frederic the Beastslayer
+Porcus III uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=35 def=45 raw=31.11 ceil=32
+    [T]   FINAL_DMG=36
+  Frederic the Beastslayer takes 36 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 131 → 95  (-36)
+  All allies are Guarded for 2 rounds.
+Lady of Reflections cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=101/255 statuses=[guard(2r)]
+    [T]   P2 Witch of the Woods[back_right] HP=130/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=185/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=95/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Frederic the Beastslayer: attack-10
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=280/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[back_right] HP=101/255 ATK=40(base=40) DEF=80(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=130/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=185/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=95/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Freezing Gale → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Witch of the Woods
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Witch of the Woods[back_right]: Freezing Gale → Lady of Reflections
+Witch of the Woods uses Freezing Gale on Lady of Reflections.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[back_right] → Lady of Reflections[back_right]
+    [T]   power=35
+    [T]   atk=75 def=80 raw=32.81 ceil=33
+    [T]   FINAL_DMG=47
+  Lady of Reflections takes 47 damage.
+    [T] HPCHANGE Lady of Reflections: 101 → 54  (-47)
+  Reflecting Pool: Witch of the Woods takes 10 reflected damage.
+  Lady of Reflections is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Porcus III
+Briar Rose uses Creeping Doubt on Porcus III.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 280 → 256  (-24)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Porcus III gains root for 2 rounds.
+[Queued] Porcus III: Shield Bash → Frederic the Beastslayer
+[Queued] Lady of Reflections: Swap with Porcus III
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Frederic the Beastslayer
+Porcus III uses Shield Bash on Frederic the Beastslayer.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=35 def=45 raw=31.11 ceil=32
+    [T]   FINAL_DMG=36
+  Frederic the Beastslayer takes 36 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 95 → 59  (-36)
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Porcus III
+Lady of Reflections and Porcus III swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Porcus III[back_right] HP=256/280 statuses=[guard(1r), root(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=54/255 statuses=[guard(1r)]
+    [T]   P2 Witch of the Woods[back_right] HP=120/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=175/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=59/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Lady of Reflections: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+Lady of Reflections is Guarded by Porcine Honor.
+  Curse of Sleeping: Porcus III loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Porcus III[back_right] HP=256/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections[front] HP=54/255 ATK=45(base=40) DEF=85(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[back_right] HP=120/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=175/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=59/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lady of Reflections
+[Queued] Witch of the Woods: Freezing Gale → Lady of Reflections
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Lady of Reflections
+Frederic the Beastslayer uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=75 def=85 raw=44.12 ceil=45
+    [T]   FINAL_DMG=34
+  Lady of Reflections takes 34 damage.
+    [T] HPCHANGE Lady of Reflections: 54 → 20  (-34)
+  Reflecting Pool: Frederic the Beastslayer takes 4 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+    [T] ACTION P2 Witch of the Woods[back_right]: Freezing Gale → Lady of Reflections
+Witch of the Woods uses Freezing Gale on Lady of Reflections.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[back_right] → Lady of Reflections[front]
+    [T]   power=35
+    [T]   atk=75 def=85 raw=30.88 ceil=31
+    [T]   FINAL_DMG=25
+  Lady of Reflections takes 25 damage.
+    [T] HPCHANGE Lady of Reflections: 20 → 0  (-25) **KO**
+  Reflecting Pool: Witch of the Woods takes 5 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+Porcus III moves to frontline.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Lady of Reflections
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+[Queued] Porcus III: Shield Bash → Frederic the Beastslayer
+Porcus III cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Porcus III[front] HP=256/280 statuses=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[back_right] HP=115/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=175/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=55/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=256/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[back_right] HP=115/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=175/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=55/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Witch of the Woods
+[Queued] Witch of the Woods: Freezing Gale → Porcus III
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Witch of the Woods
+Frederic the Beastslayer and Witch of the Woods swap positions.
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Porcus III
+Witch of the Woods uses Freezing Gale on Porcus III.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Porcus III[front]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=47
+  Porcus III takes 47 damage.
+    [T] HPCHANGE Porcus III: 256 → 209  (-47)
+  Spiked Mail! Witch of the Woods takes 10 damage.
+  Porcus III is immune to Root (Curse of Sleeping).
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Porcus III
+Briar Rose uses Creeping Doubt on Porcus III.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 209 → 185  (-24)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Porcus III is immune to Root (Curse of Sleeping).
+[Queued] Porcus III: Shield Bash → Witch of the Woods
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Witch of the Woods
+Porcus III uses Shield Bash on Witch of the Woods.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=35 def=35 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Witch of the Woods takes 40 damage.
+    [T] HPCHANGE Witch of the Woods: 105 → 65  (-40)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Porcus III[front] HP=185/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[front] HP=65/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=165/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=55/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=185/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[front] HP=65/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=165/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=55/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Porcus III
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Witch of the Woods[front]: swap ↔ Frederic the Beastslayer
+Witch of the Woods recharges.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Porcus III
+Frederic the Beastslayer uses Hunter's Mark on Porcus III.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Porcus III[front]
+    [T]   power=25
+    [T]   atk=70 def=85 raw=20.59 ceil=21
+    [T]   FINAL_DMG=11
+  Porcus III takes 11 damage.
+    [T] HPCHANGE Porcus III: 185 → 174  (-11)
+  Spiked Mail! Frederic the Beastslayer takes 10 damage.
+  Porcus III is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Porcus III
+Briar Rose uses Creeping Doubt on Porcus III.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 174 → 150  (-24)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Porcus III gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+[Queued] Porcus III: Shield Bash → Witch of the Woods
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Witch of the Woods
+Porcus III uses Shield Bash on Witch of the Woods.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=35 def=35 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Witch of the Woods takes 40 damage.
+    [T] HPCHANGE Witch of the Woods: 65 → 25  (-40)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Porcus III[front] HP=150/280 statuses=[guard(1r), root(2r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[front] HP=25/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=155/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=45/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_TICK Porcus III: root → 1r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Porcus III is Guarded by Porcine Honor.
+  Curse of Sleeping: Porcus III loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=150/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[front] HP=25/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=155/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=45/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Porcus III
+[Queued] Frederic the Beastslayer: Hero's Charge → Porcus III
+[Queued] Briar Rose: Swap with Witch of the Woods
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Porcus III
+Witch of the Woods uses Freezing Gale on Porcus III.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Porcus III[front]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=57
+  Porcus III takes 57 damage.
+    [T] HPCHANGE Porcus III: 150 → 93  (-57)
+  Spiked Mail! Witch of the Woods takes 10 damage.
+  Porcus III is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Porcus III
+Frederic the Beastslayer uses Hero's Charge on Porcus III.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Porcus III[front]
+    [T]   power=30
+    [T]   atk=70 def=85 raw=24.71 ceil=25
+    [T]   FINAL_DMG=30
+  Porcus III takes 30 damage.
+    [T] HPCHANGE Porcus III: 93 → 63  (-30)
+  Spiked Mail! Frederic the Beastslayer takes 10 damage.
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Briar Rose[back_left]: swap ↔ Witch of the Woods
+Briar Rose recharges.
+[Queued] Porcus III: Unbreakable Defense → Porcus III
+Porcus III cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Porcus III[front] HP=63/280 statuses=[guard(1r)]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[front] HP=15/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=155/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=35/200 statuses=[-]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+Porcus III is Guarded by Porcine Honor.
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Porcus III[front] HP=63/280 ATK=35(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Aldric, Lost Lamb [KO]
+    [T]   P1 Lady of Reflections [KO]
+    [T]   P2 Witch of the Woods[front] HP=15/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=155/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=35/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Porcus III
+[Queued] Frederic the Beastslayer: Swap with Witch of the Woods
+[Queued] Briar Rose: Creeping Doubt → Porcus III
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Porcus III
+Witch of the Woods uses Freezing Gale on Porcus III.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Porcus III[front]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=47
+  Porcus III takes 47 damage.
+    [T] HPCHANGE Porcus III: 63 → 16  (-47)
+  Spiked Mail! Witch of the Woods takes 10 damage.
+  Porcus III is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Witch of the Woods
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Porcus III
+Briar Rose uses Creeping Doubt on Porcus III.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=60 def=85 raw=28.24 ceil=29
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 16 → 0  (-24) **KO**
+  Porcus III is immune to Root (Curse of Sleeping).
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 2 wins!

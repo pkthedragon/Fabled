@@ -1,0 +1,547 @@
+Battle 12
+Player 1 Team: Anti-Heal Pressure
+Player 2 Team: Frontline Breaker
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:36:23
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 12
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Anti-Heal Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Frontline Breaker
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Belligerence  (passive=True)
+    Basics: Cleave, Strike
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Little Jack
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Cauterize → Little Jack
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Little Jack
+Witch-Hunter Gretel uses Shove Over on Little Jack.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Little Jack[front]
+    [T]   power=65
+    [T]   atk=80 def=50 raw=104.00 ceil=104
+    [T]   FINAL_DMG=104
+  Little Jack takes 104 damage.
+    [T] HPCHANGE Little Jack: 220 → 116  (-104)
+  Little Jack gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Little Jack
+Matchstick Liesl uses Cauterize on Little Jack.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=50 def=50 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Little Jack takes 40 damage.
+    [T] HPCHANGE Little Jack: 116 → 76  (-40)
+  Little Jack gains no_heal for 2 rounds.
+[Queued] Little Jack: Cleave → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: On the Hunt → Witch-Hunter Gretel
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+    [T] ACTION P2 Little Jack[front]: Cleave → Witch-Hunter Gretel
+Little Jack uses Cleave on Witch-Hunter Gretel.
+    [T] DMGCALC [Cleave] Little Jack[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=80 def=32 raw=112.50 ceil=113
+    [T]   FINAL_DMG=91
+  Witch-Hunter Gretel takes 91 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 124  (-91)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Witch-Hunter Gretel
+Frederic the Beastslayer uses On the Hunt on Witch-Hunter Gretel.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Witch-Hunter Gretel takes 42 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 124 → 82  (-42)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=82/215 statuses=[expose(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack[front] HP=76/220 statuses=[weaken(2r), no_heal(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=176/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] STATUS_TICK Little Jack: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=82/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=76/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=176/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Little Jack
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Little Jack
+Witch-Hunter Gretel uses Shove Over on Little Jack.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Little Jack[front]
+    [T]   power=65
+    [T]   atk=80 def=50 raw=104.00 ceil=104
+    [T]   FINAL_DMG=114
+  Little Jack takes 114 damage.
+    [T] HPCHANGE Little Jack: 76 → 0  (-114) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+Snowkissed Aurora moves to frontline.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 176 → 97  (-79)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Witch-Hunter Gretel
+Snowkissed Aurora uses Dictate of Nature on Witch-Hunter Gretel.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=54
+  Witch-Hunter Gretel takes 54 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 137 → 83  (-54)
+  Snowkissed Aurora heals Frederic the Beastslayer for 50 HP.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=51
+  Witch-Hunter Gretel takes 51 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 83 → 32  (-51)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=32/215 statuses=[expose(1r), burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=147/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: expose
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=32/215 ATK=95(base=80) DEF=50(base=45) SPD=70(base=60)
+    [T]     statuses=[burn_immune(1r)]  buffs=[attack+15(1r), speed+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=147/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Shove Over → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Snipe Shot → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Snowkissed Aurora
+Witch-Hunter Gretel uses Shove Over on Snowkissed Aurora.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Snowkissed Aurora[front]
+    [T]   power=65
+    [T]   atk=95 def=60 raw=102.92 ceil=103
+    [T]   FINAL_DMG=103
+  Snowkissed Aurora takes 103 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 122  (-103)
+  Snowkissed Aurora gains burn for 2 rounds.
+  Snowkissed Aurora gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Snipe Shot on Frederic the Beastslayer.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 147 → 68  (-79)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: On the Hunt → Witch-Hunter Gretel
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Witch-Hunter Gretel
+Snowkissed Aurora uses Dictate of Nature on Witch-Hunter Gretel.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=46
+  Witch-Hunter Gretel takes 46 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 87 → 41  (-46)
+  Snowkissed Aurora heals Frederic the Beastslayer for 50 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Witch-Hunter Gretel
+Frederic the Beastslayer uses On the Hunt on Witch-Hunter Gretel.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=52
+  Witch-Hunter Gretel takes 52 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 41 → 0  (-52) **KO**
+  Witch-Hunter Gretel gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=122/225 statuses=[burn(2r), weaken(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=118/200 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+Snowkissed Aurora burns for 23 damage.
+    [T] STATUS_TICK Snowkissed Aurora: burn → 1r left
+    [T] STATUS_TICK Snowkissed Aurora: weaken → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=99/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[burn(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=118/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Robin, Hooded Avenger
+Matchstick Liesl recharges.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: skip/recharge
+Robin, Hooded Avenger recharges.
+[Queued] Snowkissed Aurora: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Frederic the Beastslayer
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=99/225 statuses=[burn(1r), weaken(1r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=118/200 statuses=[-]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+Snowkissed Aurora burns for 23 damage.
+    [T] STATUS_TICK Snowkissed Aurora: burn → 0r left
+    [T] STATUS_TICK Snowkissed Aurora: weaken → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: burn
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_EXPIRED Snowkissed Aurora: weaken
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=76/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=118/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Frederic the Beastslayer
+Matchstick Liesl uses Cauterize on Frederic the Beastslayer.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=50 def=45 raw=55.56 ceil=56
+    [T]   FINAL_DMG=62
+  Frederic the Beastslayer takes 62 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 118 → 56  (-62)
+  Frederic the Beastslayer gains no_heal for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 56 → 0  (-79) **KO**
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 140  (-45)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=140/185 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=126/225 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=140/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=126/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Snowkissed Aurora
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 45 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Snowkissed Aurora
+Robin, Hooded Avenger uses Hawkshot on Snowkissed Aurora.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=52
+  Snowkissed Aurora takes 52 damage.
+    [T] HPCHANGE Snowkissed Aurora: 126 → 74  (-52)
+  Snowkissed Aurora gains burn for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 140  (-45)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=140/185 statuses=[burn_immune(2r)]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=124/225 statuses=[burn(2r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+Snowkissed Aurora burns for 23 damage.
+    [T] STATUS_TICK Snowkissed Aurora: burn → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=140/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[burn_immune(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=101/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Matchstick Liesl: Cauterize → Snowkissed Aurora
+[Queued] Robin, Hooded Avenger: Snipe Shot → Snowkissed Aurora
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Snowkissed Aurora
+Matchstick Liesl uses Cauterize on Snowkissed Aurora.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=50 def=60 raw=41.67 ceil=42
+    [T]   FINAL_DMG=42
+  Snowkissed Aurora takes 42 damage.
+    [T] HPCHANGE Snowkissed Aurora: 101 → 59  (-42)
+  Snowkissed Aurora gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Snipe Shot → Snowkissed Aurora
+Robin, Hooded Avenger uses Snipe Shot on Snowkissed Aurora.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=77 def=60 raw=51.33 ceil=52
+    [T]   FINAL_DMG=52
+  Snowkissed Aurora takes 52 damage.
+    [T] HPCHANGE Snowkissed Aurora: 59 → 7  (-52)
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Snowkissed Aurora: Dictate of Nature → Robin, Hooded Avenger
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Robin, Hooded Avenger
+Snowkissed Aurora uses Dictate of Nature on Robin, Hooded Avenger.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=45 def=50 raw=45.00 ceil=45
+    [T]   FINAL_DMG=45
+  Robin, Hooded Avenger takes 45 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 140 → 95  (-45)
+  Snowkissed Aurora cannot be healed.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=95/185 statuses=[burn_immune(1r)]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=7/225 statuses=[burn(1r), no_heal(2r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+10
+Snowkissed Aurora burns for 23 damage.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 1 wins!

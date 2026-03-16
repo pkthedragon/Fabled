@@ -1,0 +1,326 @@
+Battle 185
+Player 1 Team: Speed Tempo
+Player 2 Team: Rapunzel Pin Control
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:51:46
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 185
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Rapunzel Pin Control
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Golden Snare  (passive=False)
+    Basics: Impose, Command
+    Item:   Family Seal
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Little Jack: Skyfall → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: On the Hunt → Rapunzel the Golden
+[Queued] March Hare: Thunder Call → Robin, Hooded Avenger
+    [T] ACTION P1 Little Jack[front]: Skyfall → Rapunzel the Golden
+Little Jack uses Skyfall on Rapunzel the Golden.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Rapunzel the Golden[front]
+    [T]   power=80
+    [T]   atk=80 def=65 raw=98.46 ceil=99
+    [T]   FINAL_DMG=129
+  Rapunzel the Golden takes 129 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 129  (-129)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Rapunzel the Golden
+Frederic the Beastslayer uses On the Hunt on Rapunzel the Golden.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=33
+  Rapunzel the Golden takes 33 damage.
+    [T] HPCHANGE Rapunzel the Golden: 129 → 96  (-33)
+  Rapunzel the Golden gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Robin, Hooded Avenger
+March Hare uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Robin, Hooded Avenger[back_left]
+    [T]   power=35
+    [T]   atk=70 def=40 raw=61.25 ceil=62
+    [T]   FINAL_DMG=62
+  Robin, Hooded Avenger takes 62 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 123  (-62)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+[Queued] Rapunzel the Golden: Golden Snare → March Hare
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → March Hare
+    [T] ACTION P2 Rapunzel the Golden[front]: Golden Snare → March Hare
+Rapunzel the Golden uses Golden Snare on March Hare.
+    [T] DMGCALC [Golden Snare] Rapunzel the Golden[front] → March Hare[back_left]
+    [T]   power=60
+    [T]   atk=60 def=35 raw=102.86 ceil=103
+    [T]   FINAL_DMG=113
+  March Hare takes 113 damage.
+    [T] HPCHANGE March Hare: 190 → 77  (-113)
+  March Hare gains root for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 55 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → March Hare
+Robin, Hooded Avenger uses Bring Down on March Hare.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → March Hare[back_left]
+    [T]   power=35
+    [T]   atk=82 def=35 raw=82.00 ceil=82
+    [T]   FINAL_DMG=92
+  March Hare takes 92 damage.
+    [T] HPCHANGE March Hare: 77 → 0  (-92) **KO**
+  Shock recoil: Robin, Hooded Avenger takes 19 damage.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=96/258 statuses=[expose(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=159/185 statuses=[shock(2r), burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: expose → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=96/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=159/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r), burn_immune(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Skyfall → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: On the Hunt → Matchstick Liesl
+    [T] ACTION P1 Little Jack[front]: Skyfall → Rapunzel the Golden
+Little Jack uses Skyfall on Rapunzel the Golden.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Rapunzel the Golden[front]
+    [T]   power=80
+    [T]   atk=80 def=65 raw=98.46 ceil=99
+    [T]   FINAL_DMG=153
+  Rapunzel the Golden takes 153 damage.
+    [T] HPCHANGE Rapunzel the Golden: 96 → 0  (-153) **KO**
+Robin, Hooded Avenger moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Matchstick Liesl
+Frederic the Beastslayer uses On the Hunt on Matchstick Liesl.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Matchstick Liesl[back_right]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=35
+  Matchstick Liesl takes 35 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 175  (-35)
+  Matchstick Liesl gains expose for 2 rounds.
+[Queued] Robin, Hooded Avenger: Bring Down → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Frederic the Beastslayer
+Robin, Hooded Avenger uses Bring Down on Frederic the Beastslayer.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=121
+  Frederic the Beastslayer takes 121 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 79  (-121)
+  Shock recoil: Robin, Hooded Avenger takes 25 damage.
+  Frederic the Beastslayer gains burn for 2 rounds.
+  Robin, Hooded Avenger steals 10 Atk from Frederic the Beastslayer for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Frederic the Beastslayer
+Matchstick Liesl uses Cauterize on Frederic the Beastslayer.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Frederic the Beastslayer takes 45 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 79 → 34  (-45)
+  Frederic the Beastslayer gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=34/200 statuses=[burn(2r), no_heal(2r)]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=134/185 statuses=[shock(1r), burn_immune(1r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=175/210 statuses=[expose(2r)]
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 0r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: shock
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn_immune
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Matchstick Liesl: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=14/200 ATK=60(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r), no_heal(1r)]  buffs=[attack+5(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=134/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=175/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Bring Down → Little Jack
+[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Little Jack
+Robin, Hooded Avenger uses Bring Down on Little Jack.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Little Jack[front]
+    [T]   power=60
+    [T]   atk=80 def=50 raw=96.00 ceil=96
+    [T]   FINAL_DMG=96
+  Little Jack takes 96 damage.
+    [T] HPCHANGE Little Jack: 220 → 124  (-96)
+  Robin, Hooded Avenger must recharge next turn.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 51 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Little Jack: Skyfall → Robin, Hooded Avenger
+[Queued] Frederic the Beastslayer: On the Hunt → Robin, Hooded Avenger
+    [T] ACTION P1 Little Jack[front]: Skyfall → Robin, Hooded Avenger
+Little Jack uses Skyfall on Robin, Hooded Avenger.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=80
+    [T]   atk=80 def=40 raw=160.00 ceil=160
+    [T]   FINAL_DMG=170
+  Robin, Hooded Avenger takes 170 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 15  (-170)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Robin, Hooded Avenger
+Frederic the Beastslayer uses On the Hunt on Robin, Hooded Avenger.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=25
+    [T]   atk=60 def=40 raw=37.50 ceil=38
+    [T]   FINAL_DMG=46
+  Robin, Hooded Avenger takes 46 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 15 → 0  (-46) **KO**
+  Robin, Hooded Avenger gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+Matchstick Liesl moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[front] HP=124/220 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=14/200 statuses=[burn(1r), no_heal(1r)]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[front] HP=175/210 statuses=[expose(1r)]
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Matchstick Liesl: expose → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: expose
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=124/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Matchstick Liesl[front] HP=175/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Little Jack: Fell the Beanstalk → Matchstick Liesl
+    [T] ACTION P1 Little Jack[front]: Fell the Beanstalk → Matchstick Liesl
+Little Jack uses Fell the Beanstalk on Matchstick Liesl.
+    [T] DMGCALC [Fell the Beanstalk] Little Jack[front] → Matchstick Liesl[front]
+    [T]   power=85
+    [T]   atk=80 def=35 raw=194.29 ceil=195
+    [T]   FINAL_DMG=195
+  Matchstick Liesl takes 195 damage.
+    [T] HPCHANGE Matchstick Liesl: 175 → 0  (-195) **KO**
+  Matchstick Liesl gains expose for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 4)
+────────────────────────────────────────────────────────────
+Player 1 wins!

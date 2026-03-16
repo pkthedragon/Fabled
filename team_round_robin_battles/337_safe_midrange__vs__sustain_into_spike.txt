@@ -1,0 +1,3342 @@
+Battle 337
+Player 1 Team: Safe Midrange
+Player 2 Team: Sustain Into Spike
+Winner: unresolved
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:05:48
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 337
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Safe Midrange
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Sustain Into Spike
+  [front] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Sturdy Home  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+7(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Sir Roland: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Porcus III
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Prince Charming
+Sir Roland and Prince Charming swap positions.
+  Banner of Command: Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Porcus III[front]
+    [T]   power=50
+    [T]   atk=65 def=95 raw=34.21 ceil=35
+    [T]   FINAL_DMG=35
+  Porcus III takes 35 damage.
+    [T] HPCHANGE Porcus III: 280 → 245  (-35)
+  Porcus III loses -10 Defense for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Porcus III[front]
+    [T]   power=35
+    [T]   atk=45 def=85 raw=18.53 ceil=19
+    [T]   FINAL_DMG=19
+  Porcus III takes 19 damage.
+    [T] HPCHANGE Porcus III: 245 → 226  (-19)
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=40 def=55 raw=29.09 ceil=30
+    [T]   FINAL_DMG=24
+  Prince Charming takes 24 damage.
+    [T] HPCHANGE Prince Charming: 255 → 231  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 231 → 192  (-39)
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 54 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[front] HP=192/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[front] HP=280/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=192/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=85(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 55 HP.
+  Innocent Heart: Prince Charming +10 Def.
+  Medic: Prince Charming cleansed of rulebook status conditions.
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Porcus III[front]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Condescend → Prince Charming
+  Prince Charming retargets to Sir Roland after swapping to front.
+Prince Charming uses Condescend on Sir Roland.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=65 def=85 raw=38.24 ceil=39
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 265 → 257  (-8)
+  Sir Roland loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 198  (-27)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[front] HP=257/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=198/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[-]
+    [T]   P2 Porcus III[back_right] HP=280/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] DEBUFF_EXPIRED Porcus III: defense-10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=257/265 ATK=45(base=40) DEF=80(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=198/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=35 def=80 raw=17.50 ceil=18
+    [T]   FINAL_DMG=15
+  Sir Roland takes 15 damage.
+    [T] HPCHANGE Sir Roland: 257 → 242  (-15)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Snowkissed Aurora[back_left]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 198 → 171  (-27)
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Porcus III
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=65 def=95 raw=27.37 ceil=28
+    [T]   FINAL_DMG=23
+  Porcus III takes 23 damage.
+    [T] HPCHANGE Porcus III: 280 → 257  (-23)
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=95 raw=28.42 ceil=29
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 257 → 233  (-24)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_left] HP=242/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=221/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[-]
+    [T]   P2 Porcus III[front] HP=233/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] DEBUFF_EXPIRED Sir Roland: defense-10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=242/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=221/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[front] HP=233/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Prince Charming: Condescend → Porcus III
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=65 def=95 raw=27.37 ceil=28
+    [T]   FINAL_DMG=23
+  Porcus III takes 23 damage.
+    [T] HPCHANGE Porcus III: 233 → 210  (-23)
+    [T] ACTION P1 Sir Roland[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Porcus III[front]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: Condescend → Prince Charming
+  Prince Charming retargets to Snowkissed Aurora after swapping to front.
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 221 → 183  (-38)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_left] HP=242/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=183/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[-]
+    [T]   P2 Porcus III[back_right] HP=210/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=242/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=183/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=210/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_right]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=95 raw=22.11 ceil=23
+    [T]   FINAL_DMG=23
+  Porcus III takes 23 damage.
+    [T] HPCHANGE Porcus III: 210 → 187  (-23)
+  Snowkissed Aurora heals Snowkissed Aurora for 42 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Banner of Command: Prince Charming is Guarded.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 178  (-47)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=242/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=178/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=247/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_left] HP=242/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=242/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=178/225 ATK=45(base=45) DEF=70(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=242/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 178 → 131  (-47)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 131 → 104  (-27)
+    [T] ACTION P2 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_right]
+    [T]   power=50
+    [T]   atk=35 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 242 → 222  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[back_right] HP=242/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=154/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[front] HP=247/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[back_right] HP=222/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=242/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=154/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[front] HP=247/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=222/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+  Banner of Command: Prince Charming is Guarded.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 23 HP.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 154 → 110  (-44)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=110/225 statuses=[guard(1r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_left] HP=277/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=110/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=277/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Porcus III[back_left]
+    [T]   power=40
+    [T]   atk=55 def=90 raw=24.44 ceil=25
+    [T]   FINAL_DMG=25
+  Porcus III takes 25 damage.
+    [T] HPCHANGE Porcus III: 277 → 252  (-25)
+  Prince Charming must recharge next turn.
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Snowkissed Aurora: Skip
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=20
+  Snowkissed Aurora takes 20 damage.
+    [T] HPCHANGE Snowkissed Aurora: 110 → 90  (-20)
+  All allies are Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=90/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[front] HP=252/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_left] HP=255/255 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: defense-10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=90/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_left] HP=247/255 ATK=55(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Porcus III[front] HP=252/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=95 raw=28.42 ceil=29
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 252 → 228  (-24)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Sir Roland
+Prince Charming recharges.
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Snowkissed Aurora: Heal → Porcus III
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P2 Porcus III[front]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 52 HP.
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 140 → 93  (-47)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=93/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=247/255 statuses=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=93/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_left]
+    [T]   power=50
+    [T]   atk=35 def=95 raw=18.42 ceil=19
+    [T]   FINAL_DMG=19
+  Porcus III takes 19 damage.
+    [T] HPCHANGE Porcus III: 280 → 261  (-19)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Banner of Command: Prince Charming is Guarded.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 143 → 105  (-38)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=22
+  Snowkissed Aurora takes 22 damage.
+    [T] HPCHANGE Snowkissed Aurora: 105 → 83  (-22)
+    [T] ACTION P2 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=83/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_right] HP=261/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=83/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=261/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Prince Charming: Condescend → Porcus III
+[Queued] Sir Roland: Swap with Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_right]
+    [T]   power=50
+    [T]   atk=35 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 261 → 241  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Porcus III[back_right]
+    [T]   power=40
+    [T]   atk=55 def=90 raw=24.44 ceil=25
+    [T]   FINAL_DMG=25
+  Porcus III takes 25 damage.
+    [T] HPCHANGE Porcus III: 241 → 216  (-25)
+    [T] ACTION P1 Sir Roland[back_left]: swap ↔ Prince Charming
+Sir Roland and Prince Charming swap positions.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 133 → 86  (-47)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 55 HP.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=86/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=247/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[back_left] HP=271/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=86/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 ATK=55(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Porcus III[back_left] HP=271/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Porcus III[back_left]
+    [T]   power=40
+    [T]   atk=55 def=90 raw=24.44 ceil=25
+    [T]   FINAL_DMG=25
+  Porcus III takes 25 damage.
+    [T] HPCHANGE Porcus III: 271 → 246  (-25)
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=44
+  Snowkissed Aurora takes 44 damage.
+    [T] HPCHANGE Snowkissed Aurora: 86 → 42  (-44)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Prince Charming is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=42/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 statuses=[-]
+    [T]   P2 Porcus III[back_left] HP=246/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=42/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Porcus III[back_left] HP=246/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_left]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=90 raw=23.33 ceil=24
+    [T]   FINAL_DMG=24
+  Porcus III takes 24 damage.
+    [T] HPCHANGE Porcus III: 246 → 222  (-24)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Banner of Command: Prince Charming is Guarded.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 92 → 45  (-47)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 45 → 18  (-27)
+  Snowkissed Aurora heals Porcus III for 35 HP.
+    [T] ACTION P2 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=18/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_right] HP=257/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=18/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=257/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_right]
+    [T]   power=50
+    [T]   atk=35 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 257 → 237  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 68 → 30  (-38)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 43 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=30/225 statuses=[guard(2r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=30/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=247/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Porcus III
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Porcus III
+Snowkissed Aurora uses Dictate of Nature on Porcus III.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Porcus III[back_left]
+    [T]   power=50
+    [T]   atk=35 def=90 raw=19.44 ceil=20
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 280 → 260  (-20)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Prince Charming[back_left]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Banner of Command: Prince Charming is Guarded.
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Dictate of Nature → Snowkissed Aurora
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=47
+  Snowkissed Aurora takes 47 damage.
+    [T] HPCHANGE Snowkissed Aurora: 80 → 33  (-47)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Dictate of Nature → Snowkissed Aurora
+Snowkissed Aurora uses Dictate of Nature on Snowkissed Aurora.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_right] → Snowkissed Aurora[front]
+    [T]   power=35
+    [T]   atk=45 def=60 raw=26.25 ceil=27
+    [T]   FINAL_DMG=27
+  Snowkissed Aurora takes 27 damage.
+    [T] HPCHANGE Snowkissed Aurora: 33 → 6  (-27)
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Sir Roland[back_left] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[front] HP=6/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_right] HP=260/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=6/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_right] HP=260/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Prince Charming: Condescend → Porcus III
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Porcus III
+Prince Charming uses Condescend on Porcus III.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Porcus III[back_right]
+    [T]   power=40
+    [T]   atk=55 def=90 raw=24.44 ceil=25
+    [T]   FINAL_DMG=25
+  Porcus III takes 25 damage.
+    [T] HPCHANGE Porcus III: 260 → 235  (-25)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Sir Roland[back_left]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+[Queued] Prince Charming: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Porcus III
+Prince Charming and Porcus III swap positions.
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=35 def=60 raw=23.33 ceil=24
+    [T]   FINAL_DMG=20
+  Snowkissed Aurora takes 20 damage.
+    [T] HPCHANGE Snowkissed Aurora: 6 → 0  (-20) **KO**
+  All allies are Guarded for 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Snowkissed Aurora[back_left]: skip/recharge
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=247/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[front] HP=235/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=247/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Porcus III[front] HP=235/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Porcus III
+[Queued] Prince Charming: Swap with Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Porcus III
+Sir Roland uses Shield Bash on Porcus III.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Porcus III[front]
+    [T]   power=50 (base=40)
+    [T]   atk=45 def=95 raw=23.68 ceil=24
+    [T]   FINAL_DMG=20
+  Porcus III takes 20 damage.
+    [T] HPCHANGE Porcus III: 235 → 215  (-20)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Sir Roland
+Prince Charming recharges.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P2 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 247 → 208  (-39)
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 65 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=208/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_left] HP=280/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=208/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 208 → 168  (-40)
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Prince Charming
+Sir Roland and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Snowkissed Aurora
+  Prince Charming retargets to Prince Charming after swapping to front.
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=65 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Prince Charming takes 40 damage.
+    [T] HPCHANGE Prince Charming: 255 → 215  (-40)
+  Prince Charming loses -10 Defense for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=168/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=215/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=168/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=215/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+[Queued] Prince Charming: Swap with Sir Roland
+[Queued] Sir Roland: Item Prince Charming
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Sir Roland
+Prince Charming and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Prince Charming is Guarded.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=168/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=215/255 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] DEBUFF_EXPIRED Prince Charming: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=168/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=55(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=215/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 168 → 129  (-39)
+  Prince Charming must recharge next turn.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 194  (-31)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=129/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=194/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_right] HP=215/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: attack+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=129/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=194/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=215/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[back_right]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=50
+  Prince Charming takes 50 damage.
+    [T] HPCHANGE Prince Charming: 129 → 79  (-50)
+  Snowkissed Aurora heals Snowkissed Aurora for 31 HP.
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Snowkissed Aurora
+Prince Charming recharges.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Prince Charming
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Prince Charming
+Sir Roland uses Crafty Shield.
+  Prince Charming is Guarded.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Snowkissed Aurora[front]
+    [T]   power=40 (base=30)
+    [T]   atk=65 def=70 raw=37.14 ceil=38
+    [T]   FINAL_DMG=31
+  Snowkissed Aurora takes 31 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 194  (-31)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=79/255 statuses=[guard(2r)]
+    [T]   P2 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=194/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=215/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[back_right] HP=79/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=194/225 ATK=45(base=45) DEF=70(base=60) SPD=30(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[speed-10(1r)]
+    [T]   P2 Prince Charming[back_right] HP=215/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Prince Charming
+Sir Roland and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=70 raw=46.43 ceil=47
+    [T]   FINAL_DMG=38
+  Snowkissed Aurora takes 38 damage.
+    [T] HPCHANGE Snowkissed Aurora: 194 → 156  (-38)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Porcus III: Swap with Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=45 def=55 raw=40.91 ceil=41
+    [T]   FINAL_DMG=33
+  Prince Charming takes 33 damage.
+    [T] HPCHANGE Prince Charming: 79 → 46  (-33)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+    [T] ACTION P2 Prince Charming[back_right]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=30
+    [T]   atk=65 def=55 raw=35.45 ceil=36
+    [T]   FINAL_DMG=29
+  Prince Charming takes 29 damage.
+    [T] HPCHANGE Prince Charming: 46 → 17  (-29)
+  Prince Charming loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Sir Roland[back_right] HP=265/265 statuses=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=17/255 statuses=[guard(1r)]
+    [T]   P2 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_left] HP=215/255 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=25  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming[front] HP=17/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[defense-10(1r)]
+    [T]   P2 Prince Charming[back_left] HP=215/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora and Porcus III swap positions.
+    [T] ACTION P2 Porcus III[front]: Shield Bash → Prince Charming
+Porcus III uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=35 def=55 raw=25.45 ceil=26
+    [T]   FINAL_DMG=26
+  Prince Charming takes 26 damage.
+    [T] HPCHANGE Prince Charming: 17 → 0  (-26) **KO**
+  All allies are Guarded for 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P2 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming's target is no longer legal — Condescend fizzles.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[front] HP=280/280 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_left] HP=215/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: defense-10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Porcus III spd=20  →  P1 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 ATK=45(base=45) DEF=67(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_left] HP=215/255 ATK=65(base=65) DEF=62(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[defense+7(1r)]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Porcus III
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Porcus III
+Sir Roland uses Shield Bash on Porcus III.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=45 def=95 raw=18.95 ceil=19
+    [T]   FINAL_DMG=16
+  Porcus III takes 16 damage.
+    [T] HPCHANGE Porcus III: 280 → 264  (-16)
+[Queued] Porcus III: Swap with Prince Charming
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+    [T] ACTION P2 Porcus III[front]: swap ↔ Prince Charming
+Porcus III and Prince Charming swap positions.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 40 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[guard(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+7
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+7
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Skip
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=45 def=55 raw=32.73 ceil=33
+    [T]   FINAL_DMG=27
+  Prince Charming takes 27 damage.
+    [T] HPCHANGE Prince Charming: 255 → 228  (-27)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=228/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=228/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 27 HP.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=23
+  Prince Charming takes 23 damage.
+    [T] HPCHANGE Prince Charming: 255 → 232  (-23)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=232/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=232/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 23 HP.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=23
+  Prince Charming takes 23 damage.
+    [T] HPCHANGE Prince Charming: 255 → 232  (-23)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=232/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=232/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 23 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=206/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 206 → 185  (-21)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=185/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=185/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 33
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R33):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=185/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 34
+────────────────────────────────────────────────────────────
+Round 34 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 34 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=185/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 185 → 161  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 34
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R34):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=161/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 35
+────────────────────────────────────────────────────────────
+Round 35 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 35 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=161/225 ATK=55(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 35
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R35):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=161/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: attack+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 36
+────────────────────────────────────────────────────────────
+Round 36 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 36 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=161/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 161 → 140  (-21)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 36
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R36):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=140/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 37
+────────────────────────────────────────────────────────────
+Round 37 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 37 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=140/225 ATK=55(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 37
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R37):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=140/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: attack+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 38
+────────────────────────────────────────────────────────────
+Round 38 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 38 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=140/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 140 → 119  (-21)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 38
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R38):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 39
+────────────────────────────────────────────────────────────
+Round 39 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 39 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 ATK=55(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 39
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R39):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: attack+10
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 40
+────────────────────────────────────────────────────────────
+Round 40 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 40 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=45 def=55 raw=32.73 ceil=33
+    [T]   FINAL_DMG=27
+  Prince Charming takes 27 damage.
+    [T] HPCHANGE Prince Charming: 255 → 228  (-27)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 40
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R40):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=119/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=228/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 41
+────────────────────────────────────────────────────────────
+Round 41 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 41 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=119/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=228/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 27 HP.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 41
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R41):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 42
+────────────────────────────────────────────────────────────
+Round 42 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 42 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=23
+  Prince Charming takes 23 damage.
+    [T] HPCHANGE Prince Charming: 255 → 232  (-23)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 42
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R42):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=119/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=232/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 43
+────────────────────────────────────────────────────────────
+Round 43 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 43 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=119/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=232/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 23 HP.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 43
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R43):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 44
+────────────────────────────────────────────────────────────
+Round 44 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 44 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Prince Charming
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Prince Charming
+Sir Roland uses Shield Bash on Prince Charming.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=45 def=65 raw=27.69 ceil=28
+    [T]   FINAL_DMG=23
+  Prince Charming takes 23 damage.
+    [T] HPCHANGE Prince Charming: 255 → 232  (-23)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 44
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R44):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=119/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=232/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 45
+────────────────────────────────────────────────────────────
+Round 45 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 45 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=119/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=232/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 23 HP.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 45
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R45):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 46
+────────────────────────────────────────────────────────────
+Round 46 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 46 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=119/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 119 → 98  (-21)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 46
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R46):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=98/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 47
+────────────────────────────────────────────────────────────
+Round 47 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 47 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=98/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=75(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 47
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R47):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=98/225 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 48
+────────────────────────────────────────────────────────────
+Round 48 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 48 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=98/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 98 → 74  (-24)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 48
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R48):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=74/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 49
+────────────────────────────────────────────────────────────
+Round 49 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first
+    [T] ROUND 49 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=74/225 ATK=55(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora and Prince Charming swap positions.
+    [T] ACTION P2 Prince Charming[front]: item [Main-Gauche] → Prince Charming
+Prince Charming uses Main-Gauche.
+  Prince Charming gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Prince Charming is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 49
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R49):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=74/225 statuses=[guard(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[guard(2r)]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Snowkissed Aurora: attack+10
+    [T] STATUS_TICK Prince Charming: guard → 1r left
+    [T] BUFF_EXPIRED Prince Charming: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 50
+────────────────────────────────────────────────────────────
+Round 50 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 50 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=74/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=75(base=65) DEF=65(base=55) SPD=35(base=35)
+    [T]     statuses=[guard(1r)]  buffs=[attack+10(1r), defense+10(1r)]  debuffs=[-]
+[Queued] Prince Charming: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Bless → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Snowkissed Aurora
+Prince Charming and Snowkissed Aurora swap positions.
+    [T] ACTION P2 Snowkissed Aurora[front]: Bless → Snowkissed Aurora
+Snowkissed Aurora uses Bless on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+  Snowkissed Aurora gains +10 Attack for 2 rounds.
+    [T] ACTION P2 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 74 → 53  (-21)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 50
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R50):
+    [T]   P1 Sir Roland[front] HP=265/265 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora [KO]
+    [T]   P1 Prince Charming [KO]
+    [T]   P2 Porcus III[back_left] HP=264/280 statuses=[-]
+    [T]   P2 Snowkissed Aurora[front] HP=53/225 statuses=[guard(2r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[guard(1r)]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Prince Charming: guard → 0r left
+    [T] STATUS_EXPIRED Prince Charming: guard
+  Innocent Heart: Prince Charming +10 Def.
+    [T] BUFF_EXPIRED Prince Charming: attack+10
+Battle aborted after safety limit.

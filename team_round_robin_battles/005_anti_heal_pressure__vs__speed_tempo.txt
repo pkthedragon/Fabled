@@ -1,0 +1,367 @@
+Battle 5
+Player 1 Team: Anti-Heal Pressure
+Player 2 Team: Speed Tempo
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:35:57
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 5
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Anti-Heal Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Shove Over  (passive=False)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Protection
+    Item:   Heart Amulet
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Witch-Hunter Gretel: Shove Over → Little Jack
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Cauterize → March Hare
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → Little Jack
+Witch-Hunter Gretel uses Shove Over on Little Jack.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → Little Jack[front]
+    [T]   power=65
+    [T]   atk=80 def=50 raw=104.00 ceil=104
+    [T]   FINAL_DMG=104
+  Little Jack takes 104 damage.
+    [T] HPCHANGE Little Jack: 220 → 116  (-104)
+  Little Jack gains weaken for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=79
+  Frederic the Beastslayer takes 79 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 121  (-79)
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → March Hare
+Matchstick Liesl uses Cauterize on March Hare.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → March Hare[back_left]
+    [T]   power=40
+    [T]   atk=50 def=35 raw=57.14 ceil=58
+    [T]   FINAL_DMG=58
+  March Hare takes 58 damage.
+    [T] HPCHANGE March Hare: 190 → 132  (-58)
+  March Hare gains no_heal for 2 rounds.
+[Queued] Little Jack: Swap with March Hare
+[Queued] Frederic the Beastslayer: On the Hunt → Witch-Hunter Gretel
+[Queued] March Hare: Thunder Call → Witch-Hunter Gretel
+    [T] ACTION P2 Little Jack[front]: swap ↔ March Hare
+Little Jack and March Hare swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Witch-Hunter Gretel
+Frederic the Beastslayer uses On the Hunt on Witch-Hunter Gretel.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Witch-Hunter Gretel takes 42 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 173  (-42)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+    [T] ACTION P2 March Hare[front]: Thunder Call → Witch-Hunter Gretel
+March Hare uses Thunder Call on Witch-Hunter Gretel.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Witch-Hunter Gretel[front]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=110
+  Witch-Hunter Gretel takes 110 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 173 → 63  (-110)
+  Witch-Hunter Gretel gains shock for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=63/215 statuses=[expose(2r), shock(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T]   P2 Little Jack[back_left] HP=116/220 statuses=[weaken(2r)]
+    [T]   P2 March Hare[front] HP=132/190 statuses=[no_heal(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: shock → 1r left
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: defense+5
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] STATUS_TICK March Hare: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=45 (MH adj from 60)  vs  P2 FL=March Hare spd=70  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=63/215 ATK=80(base=80) DEF=50(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r), shock(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=45(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[back_left] HP=116/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare[front] HP=132/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Robin, Hooded Avenger
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Little Jack: Skyfall → Witch-Hunter Gretel
+    [T] ACTION P2 March Hare[front]: Thunder Call → Robin, Hooded Avenger
+March Hare uses Thunder Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=102
+  Robin, Hooded Avenger takes 102 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 83  (-102)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=51
+  Witch-Hunter Gretel takes 51 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 63 → 12  (-51)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+    [T] ACTION P2 Little Jack[back_left]: Skyfall → Witch-Hunter Gretel
+Little Jack uses Skyfall on Witch-Hunter Gretel.
+[Queued] Witch-Hunter Gretel: Shove Over → March Hare
+[Queued] Robin, Hooded Avenger: Hawkshot → March Hare
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Shove Over → March Hare
+Witch-Hunter Gretel uses Shove Over on March Hare.
+    [T] DMGCALC [Shove Over] Witch-Hunter Gretel[front] → March Hare[front]
+    [T]   power=65
+    [T]   atk=80 def=35 raw=148.57 ceil=149
+    [T]   FINAL_DMG=159
+  March Hare takes 159 damage.
+    [T] HPCHANGE March Hare: 132 → 0  (-159) **KO**
+  Shock recoil: Witch-Hunter Gretel takes 32 damage.
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  March Hare gains weaken for 2 rounds.
+Matchstick Liesl moves to frontline.
+Little Jack moves to frontline.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → March Hare
+Robin, Hooded Avenger's target is no longer legal — Hawkshot fizzles.
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+  Matchstick Liesl retargets to Robin, Hooded Avenger after swapping to front.
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 70 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=153/185 statuses=[shock(2r), burn_immune(2r)]
+    [T]   P2 Little Jack[front] HP=116/220 statuses=[weaken(1r)]
+    [T]   P2 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: defense+5
+    [T] STATUS_TICK Little Jack: weaken → 0r left
+    [T] STATUS_EXPIRED Little Jack: weaken
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Little Jack spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=153/185 ATK=70(base=70) DEF=50(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r), burn_immune(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=116/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=121/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Matchstick Liesl: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+    [T] ACTION P1 Matchstick Liesl[front]: swap ↔ Robin, Hooded Avenger
+Matchstick Liesl and Robin, Hooded Avenger swap positions.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=114
+  Frederic the Beastslayer takes 114 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 121 → 7  (-114)
+  Shock recoil: Robin, Hooded Avenger takes 23 damage.
+  Frederic the Beastslayer gains burn for 2 rounds.
+[Queued] Little Jack: Skyfall → Robin, Hooded Avenger
+[Queued] Frederic the Beastslayer: On the Hunt → Robin, Hooded Avenger
+    [T] ACTION P2 Little Jack[front]: Skyfall → Robin, Hooded Avenger
+Little Jack uses Skyfall on Robin, Hooded Avenger.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Robin, Hooded Avenger[front]
+    [T]   power=80
+    [T]   atk=80 def=50 raw=128.00 ceil=128
+    [T]   FINAL_DMG=138
+  Robin, Hooded Avenger takes 138 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 130 → 0  (-138) **KO**
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Robin, Hooded Avenger
+Frederic the Beastslayer's target is no longer legal — On the Hunt fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=116/220 statuses=[-]
+    [T]   P2 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=7/200 statuses=[burn(2r)]
+Frederic the Beastslayer burns for 20 damage.
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Little Jack spd=50  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=116/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Little Jack: Fell the Beanstalk → Matchstick Liesl
+    [T] ACTION P2 Little Jack[front]: Fell the Beanstalk → Matchstick Liesl
+Little Jack uses Fell the Beanstalk on Matchstick Liesl.
+    [T] DMGCALC [Fell the Beanstalk] Little Jack[front] → Matchstick Liesl[front]
+    [T]   power=85
+    [T]   atk=80 def=35 raw=194.29 ceil=195
+    [T]   FINAL_DMG=195
+  Matchstick Liesl takes 195 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 15  (-195)
+  Matchstick Liesl gains expose for 2 rounds.
+[Queued] Matchstick Liesl: Cauterize → Little Jack
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Little Jack
+Matchstick Liesl uses Cauterize on Little Jack.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=50 def=50 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Little Jack takes 50 damage.
+    [T] HPCHANGE Little Jack: 116 → 66  (-50)
+  Little Jack gains no_heal for 2 rounds.
+  Matchstick Liesl must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=15/210 statuses=[expose(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=66/220 statuses=[no_heal(2r)]
+    [T]   P2 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Matchstick Liesl: expose → 1r left
+    [T] STATUS_TICK Little Jack: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Little Jack spd=50  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=15/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Little Jack[front] HP=66/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 March Hare [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+[Queued] Little Jack: Skyfall → Matchstick Liesl
+    [T] ACTION P2 Little Jack[front]: Skyfall → Matchstick Liesl
+Little Jack uses Skyfall on Matchstick Liesl.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Matchstick Liesl[front]
+    [T]   power=80
+    [T]   atk=80 def=50 raw=128.00 ceil=128
+    [T]   FINAL_DMG=164
+  Matchstick Liesl takes 164 damage.
+    [T] HPCHANGE Matchstick Liesl: 15 → 0  (-164) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!

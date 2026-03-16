@@ -1,0 +1,482 @@
+Battle 745
+Player 1 Team: Shocked Quarry
+Player 2 Team: Execute Line
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:48:51
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 745
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shocked Quarry
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Execute Line
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Little Jack and Risa Redcloak swap positions.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] March Hare: Thunder Call → Lucky Constantine
+[Queued] Hunold the Piper: Sucker Punch → Risa Redcloak
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lucky Constantine[back_right]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=94
+  Lucky Constantine takes 94 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 121  (-94)
+  Lucky Constantine is Marked — takes +10 damage next round.
+    [T] ACTION P1 March Hare[back_right]: Thunder Call → Lucky Constantine
+March Hare uses Thunder Call on Lucky Constantine.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Lucky Constantine[back_right]
+    [T]   power=35
+    [T]   atk=70 def=40 raw=61.25 ceil=62
+    [T]   FINAL_DMG=62
+  Lucky Constantine takes 62 damage.
+    [T] HPCHANGE Lucky Constantine: 121 → 59  (-62)
+  Lucky Constantine gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Risa Redcloak
+Hunold the Piper uses Sucker Punch on Risa Redcloak.
+  Risa Redcloak gains weaken for 2 rounds.
+[Queued] Risa Redcloak: Swap with Little Jack
+[Queued] Lucky Constantine: Sucker Punch → Frederic the Beastslayer
+[Queued] Little Jack: Skyfall → Frederic the Beastslayer
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Little Jack
+Risa Redcloak and Little Jack swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Sucker Punch → Frederic the Beastslayer
+Lucky Constantine uses Sucker Punch on Frederic the Beastslayer.
+  Frederic the Beastslayer gains weaken for 2 rounds.
+    [T] ACTION P2 Little Jack[front]: Skyfall → Frederic the Beastslayer
+Little Jack uses Skyfall on Frederic the Beastslayer.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Frederic the Beastslayer[front]
+    [T]   power=80
+    [T]   atk=80 def=45 raw=142.22 ceil=143
+    [T]   FINAL_DMG=168
+  Frederic the Beastslayer takes 168 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 32  (-168)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=32/200 statuses=[weaken(2r)]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 statuses=[-]
+    [T]   P2 Little Jack[front] HP=220/220 statuses=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[weaken(2r)]
+    [T]   P2 Lucky Constantine[back_right] HP=59/215 statuses=[shock(2r)]
+    [T] STATUS_TICK Frederic the Beastslayer: weaken → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Little Jack spd=50  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=32/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[weaken(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=59/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] March Hare: Thunder Call → Little Jack
+[Queued] Hunold the Piper: Sucker Punch → Little Jack
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=72
+  Little Jack takes 72 damage.
+    [T] HPCHANGE Little Jack: 220 → 148  (-72)
+  Little Jack is Marked — takes +10 damage next round.
+    [T] ACTION P1 March Hare[back_right]: Thunder Call → Little Jack
+March Hare uses Thunder Call on Little Jack.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Little Jack[front]
+    [T]   power=35
+    [T]   atk=70 def=50 raw=49.00 ceil=49
+    [T]   FINAL_DMG=49
+  Little Jack takes 49 damage.
+    [T] HPCHANGE Little Jack: 148 → 99  (-49)
+  Little Jack gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Little Jack
+Hunold the Piper uses Sucker Punch on Little Jack.
+  Little Jack gains weaken for 2 rounds.
+[Queued] Little Jack: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Frederic the Beastslayer
+[Queued] Risa Redcloak: Rend → Frederic the Beastslayer
+    [T] ACTION P2 Little Jack[front]: swap ↔ Lucky Constantine
+Little Jack and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Frederic the Beastslayer
+Lucky Constantine uses Post Bounty on Frederic the Beastslayer.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=70
+  Frederic the Beastslayer takes 70 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 32 → 0  (-70) **KO**
+  Shock recoil: Lucky Constantine takes 14 damage.
+  Frederic the Beastslayer gains expose for 2 rounds.
+Hunold the Piper moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_left]: Rend → Frederic the Beastslayer
+Risa Redcloak's target is no longer legal — Rend fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 statuses=[-]
+    [T]   P2 Little Jack[back_right] HP=99/220 statuses=[shock(2r), weaken(2r)]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 statuses=[weaken(1r)]
+    [T]   P2 Lucky Constantine[front] HP=45/215 statuses=[shock(1r)]
+    [T] STATUS_TICK Little Jack: shock → 1r left
+    [T] STATUS_TICK Little Jack: weaken → 1r left
+    [T] STATUS_TICK Risa Redcloak: weaken → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: weaken
+    [T] STATUS_TICK Lucky Constantine: shock → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: shock
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack[back_right] HP=99/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=45/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Swap with Risa Redcloak
+[Queued] Little Jack: Skyfall → Hunold the Piper
+[Queued] Risa Redcloak: Rend → Hunold the Piper
+    [T] ACTION P2 Lucky Constantine[front]: swap ↔ Risa Redcloak
+Lucky Constantine and Risa Redcloak swap positions.
+    [T] ACTION P2 Little Jack[back_right]: Skyfall → Hunold the Piper
+Little Jack uses Skyfall on Hunold the Piper.
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P2 Risa Redcloak[front]: Rend → Hunold the Piper
+Risa Redcloak uses Rend on Hunold the Piper.
+    [T] DMGCALC [Rend] Risa Redcloak[front] → Hunold the Piper[front]
+    [T]   power=45
+    [T]   atk=75 def=45 raw=75.00 ceil=75
+    [T]   FINAL_DMG=72
+  Hunold the Piper takes 72 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 138  (-72)
+[Queued] Hunold the Piper: Swap with March Hare
+[Queued] March Hare: Arcane Wave → Little Jack
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+    [T] ACTION P1 March Hare[front]: Arcane Wave → Little Jack
+March Hare uses Arcane Wave on Little Jack.
+    [T] DMGCALC [Arcane Wave] March Hare[front] → Little Jack[back_right]
+    [T]   power=80
+    [T]   atk=70 def=50 raw=112.00 ceil=112
+    [T]   FINAL_DMG=137
+  Little Jack takes 137 damage.
+    [T] HPCHANGE Little Jack: 99 → 0  (-137) **KO**
+  March Hare has -10 Atk and -10 Def for 2 rounds.
+  March Hare must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=138/210 statuses=[expose(2r)]
+    [T]   P1 March Hare[front] HP=190/190 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=45/215 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Risa Redcloak spd=15 (MH adj from 30)  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=138/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=190/190 ATK=60(base=70) DEF=25(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=45/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Swap with Hunold the Piper
+[Queued] Hunold the Piper: Sucker Punch → Risa Redcloak
+    [T] ACTION P1 March Hare[front]: swap ↔ Hunold the Piper
+March Hare recharges.
+    [T] ACTION P1 Hunold the Piper[back_right]: Sucker Punch → Risa Redcloak
+Hunold the Piper uses Sucker Punch on Risa Redcloak.
+  Risa Redcloak gains weaken for 2 rounds.
+[Queued] Risa Redcloak: Blood Hunt → March Hare
+[Queued] Lucky Constantine: Sucker Punch → Hunold the Piper
+    [T] ACTION P2 Risa Redcloak[front]: Blood Hunt → March Hare
+Risa Redcloak uses Blood Hunt on March Hare.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → March Hare[front]
+    [T]   power=60
+    [T]   atk=75 def=25 raw=180.00 ceil=180
+    [T]   FINAL_DMG=144
+  March Hare takes 144 damage.
+    [T] HPCHANGE March Hare: 190 → 46  (-144)
+    [T] ACTION P2 Lucky Constantine[back_left]: Sucker Punch → Hunold the Piper
+Lucky Constantine uses Sucker Punch on Hunold the Piper.
+  Hunold the Piper gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=138/210 statuses=[expose(1r), weaken(2r)]
+    [T]   P1 March Hare[front] HP=46/190 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[front] HP=250/250 statuses=[weaken(2r)]
+    [T]   P2 Lucky Constantine[back_left] HP=45/215 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: expose → 0r left
+    [T] STATUS_TICK Hunold the Piper: weaken → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: expose
+    [T] DEBUFF_EXPIRED March Hare: attack-10
+    [T] DEBUFF_EXPIRED March Hare: defense-10
+    [T] STATUS_TICK Risa Redcloak: weaken → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Risa Redcloak spd=15 (MH adj from 30)  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[back_right] HP=138/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=46/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=45/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Risa Redcloak
+[Queued] Hunold the Piper: Swap with March Hare
+    [T] ACTION P1 March Hare[front]: Thunder Call → Risa Redcloak
+March Hare uses Thunder Call on Risa Redcloak.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Risa Redcloak[front]
+    [T]   power=65
+    [T]   atk=70 def=60 raw=75.83 ceil=76
+    [T]   FINAL_DMG=76
+  Risa Redcloak takes 76 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 174  (-76)
+  Risa Redcloak gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_right]: swap ↔ March Hare
+Hunold the Piper and March Hare swap positions.
+[Queued] Risa Redcloak: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Hunold the Piper
+    [T] ACTION P2 Risa Redcloak[front]: swap ↔ Lucky Constantine
+Risa Redcloak and Lucky Constantine swap positions.
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Hunold the Piper
+Lucky Constantine uses Post Bounty on Hunold the Piper.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=70 def=45 raw=62.22 ceil=63
+    [T]   FINAL_DMG=51
+  Hunold the Piper takes 51 damage.
+    [T] HPCHANGE Hunold the Piper: 138 → 87  (-51)
+  Hunold the Piper gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 statuses=[weaken(1r), expose(2r)]
+    [T]   P1 March Hare[back_right] HP=46/190 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=174/250 statuses=[weaken(1r), shock(2r)]
+    [T]   P2 Lucky Constantine[front] HP=45/215 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: weaken → 0r left
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: weaken
+    [T] STATUS_TICK Risa Redcloak: weaken → 0r left
+    [T] STATUS_TICK Risa Redcloak: shock → 1r left
+    [T] STATUS_EXPIRED Risa Redcloak: weaken
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper[front] HP=87/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=46/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=174/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=45/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Sucker Punch → Hunold the Piper
+[Queued] Risa Redcloak: Rend → Hunold the Piper
+    [T] ACTION P2 Lucky Constantine[front]: Sucker Punch → Hunold the Piper
+Lucky Constantine uses Sucker Punch on Hunold the Piper.
+    [T] DMGCALC [Sucker Punch] Lucky Constantine[front] → Hunold the Piper[front]
+    [T]   power=60 (base=40)
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=91
+  Hunold the Piper takes 91 damage.
+    [T] HPCHANGE Hunold the Piper: 87 → 0  (-91) **KO**
+March Hare moves to frontline.
+    [T] ACTION P2 Risa Redcloak[back_left]: Rend → Hunold the Piper
+Risa Redcloak's target is no longer legal — Rend fizzles.
+[Queued] March Hare: Arcane Wave → Risa Redcloak
+    [T] ACTION P1 March Hare[front]: Arcane Wave → Risa Redcloak
+March Hare uses Arcane Wave on Risa Redcloak.
+    [T] DMGCALC [Arcane Wave] March Hare[front] → Risa Redcloak[back_left]
+    [T]   power=80
+    [T]   atk=70 def=60 raw=93.33 ceil=94
+    [T]   FINAL_DMG=94
+  Risa Redcloak takes 94 damage.
+    [T] HPCHANGE Risa Redcloak: 174 → 80  (-94)
+  March Hare has -10 Atk and -10 Def for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare[front] HP=46/190 statuses=[-]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=80/250 statuses=[shock(1r)]
+    [T]   P2 Lucky Constantine[front] HP=45/215 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: shock → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: shock
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Lucky Constantine spd=60 (MH adj from 75)  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare[front] HP=46/190 ATK=60(base=70) DEF=25(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Little Jack [KO]
+    [T]   P2 Risa Redcloak[back_left] HP=80/250 ATK=90(base=75) DEF=60(base=60) SPD=45(base=30)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+15(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=45/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Arcane Wave → Risa Redcloak
+    [T] ACTION P1 March Hare[front]: Arcane Wave → Risa Redcloak
+March Hare uses Arcane Wave on Risa Redcloak.
+    [T] DMGCALC [Arcane Wave] March Hare[front] → Risa Redcloak[back_left]
+    [T]   power=80
+    [T]   atk=60 def=60 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Risa Redcloak takes 80 damage.
+    [T] HPCHANGE Risa Redcloak: 80 → 0  (-80) **KO**
+  March Hare has -10 Atk and -10 Def for 2 rounds.
+  March Hare must recharge next turn.
+[Queued] Lucky Constantine: Feline Gambit → March Hare
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → March Hare
+Lucky Constantine uses Feline Gambit on March Hare.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → March Hare[front]
+    [T]   power=45
+    [T]   atk=70 def=25 raw=126.00 ceil=126
+    [T]   FINAL_DMG=126
+  March Hare takes 126 damage.
+    [T] HPCHANGE March Hare: 46 → 0  (-126) **KO**
+  March Hare gains expose for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

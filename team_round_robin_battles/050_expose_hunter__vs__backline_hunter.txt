@@ -1,0 +1,516 @@
+Battle 50
+Player 1 Team: Expose Hunter
+Player 2 Team: Backline Hunter
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:38:39
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 50
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Expose Hunter
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+Player 2: Backline Hunter
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Gallant Charge  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Bring Down  (passive=False)
+    Basics: Hawkshot, Hunter's Badge
+    Item:   Family Seal
+  [back_right] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+[Queued] Robin, Hooded Avenger: Bring Down → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 255 → 178  (-77)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Prince Charming
+Lucky Constantine uses Post Bounty on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Prince Charming
+Robin, Hooded Avenger uses Bring Down on Prince Charming.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=75 def=55 raw=47.73 ceil=48
+    [T]   FINAL_DMG=68
+  Prince Charming takes 68 damage.
+    [T] HPCHANGE Prince Charming: 178 → 110  (-68)
+  Prince Charming gains root for 2 rounds.
+[Queued] Prince Charming: Impose → Prince Charming
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+    [T] ACTION P1 Prince Charming[front]: Impose → Prince Charming
+Prince Charming uses Impose on Prince Charming.
+    [T] DMGCALC [Impose] Prince Charming[front] → Prince Charming[front]
+    [T]   power=50
+    [T]   atk=65 def=55 raw=59.09 ceil=60
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 255 → 195  (-60)
+  Prince Charming loses -10 Speed for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: swap ↔ Prince Charming
+Robin, Hooded Avenger and Prince Charming swap positions.
+    [T] ACTION P1 Lucky Constantine[back_left]: Post Bounty → Prince Charming
+Lucky Constantine uses Post Bounty on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Prince Charming[back_right] HP=110/255 statuses=[expose(2r), root(2r)]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=195/255 statuses=[expose(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] STATUS_TICK Prince Charming: root → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Prince Charming spd=25  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=110/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r), root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=185/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=195/255 ATK=65(base=65) DEF=55(base=55) SPD=25(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hawkshot → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+[Queued] Lucky Constantine: Sucker Punch → Prince Charming
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Prince Charming
+Robin, Hooded Avenger uses Hawkshot on Prince Charming.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Prince Charming[front]
+    [T]   power=60
+    [T]   atk=80 def=55 raw=87.27 ceil=88
+    [T]   FINAL_DMG=106
+  Prince Charming takes 106 damage.
+    [T] HPCHANGE Prince Charming: 195 → 89  (-106)
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 89 → 31  (-58)
+    [T] ACTION P1 Lucky Constantine[back_left]: Sucker Punch → Prince Charming
+Lucky Constantine uses Sucker Punch on Prince Charming.
+  Prince Charming gains weaken for 2 rounds.
+[Queued] Prince Charming: Gallant Charge → Robin, Hooded Avenger
+[Queued] Lucky Constantine: Post Bounty → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Lucky Constantine
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Robin, Hooded Avenger
+Prince Charming uses Gallant Charge on Robin, Hooded Avenger.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Robin, Hooded Avenger[front]
+    [T]   power=65
+    [T]   atk=65 def=40 raw=105.62 ceil=106
+    [T]   FINAL_DMG=85
+  Robin, Hooded Avenger takes 85 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 100  (-85)
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Robin, Hooded Avenger
+Lucky Constantine uses Post Bounty on Robin, Hooded Avenger.
+  Robin, Hooded Avenger gains expose for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Bring Down → Lucky Constantine
+Robin, Hooded Avenger uses Bring Down on Lucky Constantine.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[back_left] → Lucky Constantine[back_left]
+    [T]   power=35
+    [T]   atk=75 def=40 raw=65.62 ceil=66
+    [T]   FINAL_DMG=86
+  Lucky Constantine takes 86 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 129  (-86)
+  Lucky Constantine gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Prince Charming[back_right] HP=110/255 statuses=[expose(1r), root(1r)]
+    [T]   P1 Lucky Constantine[back_left] HP=129/215 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger[front] HP=100/185 statuses=[expose(2r)]
+    [T]   P2 Prince Charming[front] HP=31/255 statuses=[expose(1r), weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_TICK Prince Charming: root → 0r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] STATUS_EXPIRED Prince Charming: root
+    [T] STATUS_TICK Lucky Constantine: root → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: expose → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] DEBUFF_EXPIRED Prince Charming: speed-10
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=110/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_left] HP=129/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=100/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=31/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=75(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hawkshot → Lucky Constantine
+[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hawkshot → Lucky Constantine
+Robin, Hooded Avenger uses Hawkshot on Lucky Constantine.
+  Robin, Hooded Avenger loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → Lucky Constantine[back_right]
+    [T]   power=60
+    [T]   atk=70 def=40 raw=105.00 ceil=105
+    [T]   FINAL_DMG=115
+  Lucky Constantine takes 115 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 100  (-115)
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+    [T] ACTION P1 Lucky Constantine[back_right]: Post Bounty → Prince Charming
+Lucky Constantine uses Post Bounty on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Lucky Constantine: Subterfuge → Robin, Hooded Avenger ↔ Prince Charming
+[Queued] Robin, Hooded Avenger: Bring Down → Robin, Hooded Avenger
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Lucky Constantine[back_right]: Subterfuge → Robin, Hooded Avenger
+Lucky Constantine uses Subterfuge on Robin, Hooded Avenger.
+Robin, Hooded Avenger and Prince Charming swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Bring Down on Robin, Hooded Avenger.
+  Robin, Hooded Avenger loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_left]
+    [T]   power=60
+    [T]   atk=65 def=40 raw=97.50 ceil=98
+    [T]   FINAL_DMG=138
+  Robin, Hooded Avenger takes 138 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 100 → 0  (-138) **KO**
+  Robin, Hooded Avenger steals 10 Atk from Robin, Hooded Avenger for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Prince Charming[front] HP=110/255 statuses=[-]
+    [T]   P1 Lucky Constantine[back_right] HP=129/215 statuses=[root(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_left] HP=31/255 statuses=[weaken(1r), expose(2r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=100/215 statuses=[-]
+    [T] STATUS_TICK Lucky Constantine: root → 0r left
+    [T] STATUS_EXPIRED Lucky Constantine: root
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=110/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_right] HP=129/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_left] HP=31/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P2 Lucky Constantine[back_right] HP=100/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Prince Charming
+Robin, Hooded Avenger recharges.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Prince Charming
+Lucky Constantine uses Post Bounty on Prince Charming.
+  Prince Charming gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_left]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=35
+    [T]   atk=65 def=55 raw=41.36 ceil=42
+    [T]   FINAL_DMG=51
+  Prince Charming takes 51 damage.
+    [T] HPCHANGE Prince Charming: 110 → 59  (-51)
+  Prince Charming gains +15 Speed for 2 rounds.
+[Queued] Prince Charming: Swap with Lucky Constantine
+[Queued] Lucky Constantine: Post Bounty → Robin, Hooded Avenger
+    [T] ACTION P1 Prince Charming[front]: swap ↔ Lucky Constantine
+Prince Charming and Lucky Constantine swap positions.
+    [T] ACTION P1 Lucky Constantine[front]: Post Bounty → Robin, Hooded Avenger
+Lucky Constantine uses Post Bounty on Robin, Hooded Avenger.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=70 def=40 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Robin, Hooded Avenger takes 70 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 115  (-70)
+  Robin, Hooded Avenger gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Prince Charming[back_right] HP=59/255 statuses=[expose(2r)]
+    [T]   P1 Lucky Constantine[front] HP=129/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_left] HP=31/255 statuses=[expose(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=115/185 statuses=[expose(2r)]
+    [T]   P2 Lucky Constantine[back_right] HP=100/215 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 1r left
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] STATUS_TICK Robin, Hooded Avenger: expose → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+10
+    [T] DEBUFF_EXPIRED Robin, Hooded Avenger: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[back_right] HP=59/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[front] HP=129/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[back_left] HP=31/255 ATK=65(base=65) DEF=55(base=55) SPD=50(base=35)
+    [T]     statuses=[-]  buffs=[speed+15(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=115/185 ATK=80(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[expose(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_right] HP=100/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Robin, Hooded Avenger
+[Queued] Prince Charming: Condescend → Robin, Hooded Avenger
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Robin, Hooded Avenger
+Lucky Constantine uses Feline Gambit on Robin, Hooded Avenger.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Robin, Hooded Avenger[front]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=95
+  Robin, Hooded Avenger takes 95 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 115 → 20  (-95)
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Robin, Hooded Avenger
+Prince Charming uses Condescend on Robin, Hooded Avenger.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=65 def=40 raw=65.00 ceil=65
+    [T]   FINAL_DMG=78
+  Robin, Hooded Avenger takes 78 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 20 → 0  (-78) **KO**
+Prince Charming moves to frontline.
+[Queued] Prince Charming: Gallant Charge → Lucky Constantine
+[Queued] Lucky Constantine: Subterfuge → Prince Charming ↔ Lucky Constantine
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Lucky Constantine
+Prince Charming uses Gallant Charge on Lucky Constantine.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Lucky Constantine[front]
+    [T]   power=85 (base=65)
+    [T]   atk=65 def=40 raw=138.12 ceil=139
+    [T]   FINAL_DMG=139
+  Lucky Constantine takes 139 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+    [T] ACTION P2 Lucky Constantine[back_right]: Subterfuge → Prince Charming
+Lucky Constantine uses Subterfuge on Prince Charming.
+Prince Charming and Lucky Constantine swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Prince Charming[front] HP=59/255 statuses=[expose(1r)]
+    [T]   P1 Lucky Constantine[back_right] HP=1/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=31/255 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Lucky Constantine[back_right] HP=100/215 statuses=[-]
+    [T] STATUS_TICK Prince Charming: expose → 0r left
+    [T] STATUS_EXPIRED Prince Charming: expose
+    [T] BUFF_EXPIRED Prince Charming: speed+15
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Prince Charming spd=35  vs  P2 FL=Prince Charming spd=35  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Prince Charming[front] HP=59/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Lucky Constantine[back_right] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming[front] HP=31/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Lucky Constantine[back_right] HP=100/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Prince Charming: Gallant Charge → Prince Charming
+[Queued] Lucky Constantine: Post Bounty → Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Gallant Charge → Prince Charming
+Prince Charming uses Gallant Charge on Prince Charming.
+    [T] DMGCALC [Gallant Charge] Prince Charming[front] → Prince Charming[front]
+    [T]   power=65
+    [T]   atk=65 def=55 raw=76.82 ceil=77
+    [T]   FINAL_DMG=77
+  Prince Charming takes 77 damage.
+    [T] HPCHANGE Prince Charming: 59 → 0  (-77) **KO**
+Lucky Constantine moves to frontline.
+    [T] ACTION P2 Lucky Constantine[back_right]: Post Bounty → Prince Charming
+Lucky Constantine's target is no longer legal — Post Bounty fizzles.
+[Queued] Lucky Constantine: Feline Gambit → Prince Charming
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Prince Charming
+Lucky Constantine uses Feline Gambit on Prince Charming.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Prince Charming[front]
+    [T]   power=55 (base=45)
+    [T]   atk=70 def=55 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Prince Charming takes 70 damage.
+    [T] HPCHANGE Prince Charming: 31 → 0  (-70) **KO**
+  Prince Charming gains expose for 2 rounds.
+Lucky Constantine moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine[front] HP=1/215 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Lucky Constantine[front] HP=100/215 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Lucky Constantine spd=75  vs  P2 FL=Lucky Constantine spd=75  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Prince Charming [KO]
+    [T]   P1 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Prince Charming [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Lucky Constantine[front] HP=100/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Lucky Constantine
+    [T] ACTION P1 Lucky Constantine[front]: Feline Gambit → Lucky Constantine
+Lucky Constantine uses Feline Gambit on Lucky Constantine.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=70 def=40 raw=78.75 ceil=79
+    [T]   FINAL_DMG=79
+  Lucky Constantine takes 79 damage.
+    [T] HPCHANGE Lucky Constantine: 100 → 21  (-79)
+  Lucky Constantine gains expose for 2 rounds.
+[Queued] Lucky Constantine: Post Bounty → Lucky Constantine
+    [T] ACTION P2 Lucky Constantine[front]: Post Bounty → Lucky Constantine
+Lucky Constantine uses Post Bounty on Lucky Constantine.
+    [T] DMGCALC [Post Bounty] Lucky Constantine[front] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=70 def=40 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Lucky Constantine takes 70 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-70) **KO**
+  Lucky Constantine gains expose for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

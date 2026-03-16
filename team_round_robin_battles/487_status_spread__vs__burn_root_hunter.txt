@@ -1,0 +1,386 @@
+Battle 487
+Player 1 Team: Status Spread
+Player 2 Team: Burn-Root Hunter
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:19:03
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 487
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Status Spread
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+Player 2: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch of the Woods spd=65  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+Witch of the Woods and Hunold the Piper swap positions.
+[Queued] Witch of the Woods: Freezing Gale → Witch of the Woods
+[Queued] Frederic the Beastslayer: Hero's Charge → Briar Rose
+[Queued] Briar Rose: Creeping Doubt → Hunold the Piper
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Witch of the Woods
+Witch of the Woods uses Freezing Gale on Witch of the Woods.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Witch of the Woods[back_left]
+    [T]   power=65
+    [T]   atk=75 def=35 raw=139.29 ceil=140
+    [T]   FINAL_DMG=140
+  Witch of the Woods takes 140 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 40  (-140)
+  Witch of the Woods gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Briar Rose
+Frederic the Beastslayer uses Hero's Charge on Briar Rose.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Briar Rose[back_right]
+    [T]   power=30
+    [T]   atk=70 def=45 raw=46.67 ceil=47
+    [T]   FINAL_DMG=57
+  Briar Rose takes 57 damage.
+    [T] HPCHANGE Briar Rose: 195 → 138  (-57)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Hunold the Piper
+Briar Rose uses Creeping Doubt on Hunold the Piper.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=52
+  Hunold the Piper takes 52 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 158  (-52)
+  Hunold the Piper gains root for 2 rounds.
+[Queued] Hunold the Piper: Dying Dance → Witch of the Woods
+[Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+[Queued] Witch of the Woods: Thunder Call → Witch of the Woods
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Witch of the Woods
+Hunold the Piper uses Dying Dance on Witch of the Woods.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Witch of the Woods[front]
+    [T]   power=60
+    [T]   atk=60 def=35 raw=102.86 ceil=103
+    [T]   FINAL_DMG=103
+  Witch of the Woods takes 103 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 77  (-103)
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Frederic the Beastslayer
+Briar Rose uses Creeping Doubt on Frederic the Beastslayer.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Frederic the Beastslayer takes 64 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 136  (-64)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P1 Witch of the Woods[back_left]: Thunder Call → Witch of the Woods
+Witch of the Woods uses Thunder Call on Witch of the Woods.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[back_left] → Witch of the Woods[front]
+    [T]   power=35
+    [T]   atk=75 def=35 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Witch of the Woods takes 75 damage.
+    [T] HPCHANGE Witch of the Woods: 77 → 2  (-75)
+  Witch of the Woods gains shock for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch of the Woods[back_left] HP=40/180 statuses=[root(2r)]
+    [T]   P1 Hunold the Piper[front] HP=158/210 statuses=[root(2r)]
+    [T]   P1 Briar Rose[back_right] HP=138/195 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=2/180 statuses=[shock(2r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=136/200 statuses=[root(2r)]
+    [T] STATUS_TICK Witch of the Woods: root → 1r left
+    [T] STATUS_TICK Hunold the Piper: root → 1r left
+    [T] STATUS_TICK Witch of the Woods: shock → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Frederic the Beastslayer loses Root — cannot act or be Rooted this round.
+  Curse of Sleeping: Witch of the Woods loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[back_left] HP=40/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=158/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=138/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=2/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=136/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Dying Dance → Witch of the Woods
+[Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+[Queued] Witch of the Woods: Thunder Call → Briar Rose
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Witch of the Woods
+Hunold the Piper uses Dying Dance on Witch of the Woods.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Witch of the Woods[front]
+    [T]   power=60
+    [T]   atk=60 def=35 raw=102.86 ceil=103
+    [T]   FINAL_DMG=118
+  Witch of the Woods takes 118 damage.
+    [T] HPCHANGE Witch of the Woods: 2 → 0  (-118) **KO**
+Briar Rose moves to frontline.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Frederic the Beastslayer
+Briar Rose uses Creeping Doubt on Frederic the Beastslayer.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Frederic the Beastslayer takes 64 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 136 → 72  (-64)
+  Frederic the Beastslayer is immune to Root (Curse of Sleeping).
+Witch of the Woods cannot act.
+[Queued] Briar Rose: Creeping Doubt → Hunold the Piper
+[Queued] Frederic the Beastslayer: Hunter's Mark → Hunold the Piper
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Hunold the Piper
+Briar Rose uses Creeping Doubt on Hunold the Piper.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Hunold the Piper[front]
+    [T]   power=77 (base=55)
+    [T]   atk=60 def=45 raw=102.67 ceil=103
+    [T]   FINAL_DMG=91
+  Hunold the Piper takes 91 damage.
+    [T] HPCHANGE Hunold the Piper: 158 → 67  (-91)
+Frederic the Beastslayer cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch of the Woods[back_left] HP=40/180 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=67/210 statuses=[root(1r)]
+    [T]   P1 Briar Rose[back_right] HP=138/195 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=72/200 statuses=[-]
+    [T] STATUS_TICK Hunold the Piper: root → 0r left
+    [T] STATUS_EXPIRED Hunold the Piper: root
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Briar Rose spd=60  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods[back_left] HP=40/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=67/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_right] HP=138/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=72/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Hunold the Piper: Swap with Witch of the Woods
+[Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+[Queued] Witch of the Woods: Thunder Call → Briar Rose
+    [T] ACTION P1 Hunold the Piper[front]: swap ↔ Witch of the Woods
+Hunold the Piper and Witch of the Woods swap positions.
+    [T] ACTION P1 Briar Rose[back_right]: Creeping Doubt → Frederic the Beastslayer
+Briar Rose uses Creeping Doubt on Frederic the Beastslayer.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Frederic the Beastslayer takes 64 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 72 → 8  (-64)
+  Frederic the Beastslayer is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+    [T] ACTION P1 Witch of the Woods[front]: Thunder Call → Briar Rose
+Witch of the Woods uses Thunder Call on Briar Rose.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → Briar Rose[front]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=109
+  Briar Rose takes 109 damage.
+    [T] HPCHANGE Briar Rose: 195 → 86  (-109)
+  Briar Rose gains shock for 2 rounds.
+[Queued] Briar Rose: Hunter's Mark → Witch of the Woods
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch of the Woods
+    [T] ACTION P2 Briar Rose[front]: Hunter's Mark → Witch of the Woods
+Briar Rose uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCAL[Queued] Matchstick Liesl: Heal → Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Bring Down → Hunold the Piper
+    [T] ACTION P2 Rapunzel the Golden[front]: swap ↔ Robin, Hooded Avenger
+Rapunzel the Golden and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Heal → Robin, Hooded Avenger
+Matchstick Liesl uses Heal on Robin, Hooded Avenger.
+  Matchstick Liesl heals Robin, Hooded Avenger for 55 HP.
+  Purifying Flame: Robin, Hooded Avenger will Burn their next target.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Bring Down → Hunold the Piper
+Robin, Hooded Avenger uses Bring Down on Hunold the Piper.
+    [T] DMGCALC [Bring Down] Robin, Hooded Avenger[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=80
+  Hunold the Piper takes 80 damage.
+    [T] HPCHANGE Hunold the Piper: 158 → 78  (-80)
+  Hunold the Piper gains burn for 2 rounds.
+  Robin, Hooded Avenger must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper[front] HP=78/210 statuses=[root(1r), burn(2r)]
+    [T]   P1 Briar Rose[back_right] HP=121/195 statuses=[root(1r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=116/258 statuses=[shock(1r)]
+    [T]   P2 Robin, Hooded Avenger[front] HP=145/185 statuses=[burn_immune(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=36/210 statuses=[-]
+Hunold the Piper burns for 21 damage.
+    [T] STATUS_TICK Hunold the Piper: root → 0r left
+    [T] STATUS_TICK Hunold the Piper: burn → 1r left
+    [T] STATUS_EXPIRED Hunold the Piper: root
+    [T] STATUS_TICK Briar Rose: root → 0r left
+    [T] STATUS_EXPIRED Briar Rose: root
+    [T] STATUS_TICK Rapunzel the Golden: shock → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: shock
+    [T] STATUS_TICK Robin, Hooded Avenger: burn_immune → 1r left
+    [T] BUFF_EXPIRED Robin, Hooded Avenger: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+R[Queued] Briar Rose: Swap with Hunold the Piper
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Briar Rose
+Hunold the Piper uses Dying Dance on Briar Rose.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Briar Rose[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=95
+  Briar Rose takes 95 damage.
+    [T] HPCHANGE Briar Rose: 68 → 0  (-95) **KO**
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P1 Briar Rose[back_right]: swap ↔ Hunold the Piper
+Briar Rose recharges.
+[Queued] Frederic the Beastslayer: Slay the Beast → Hunold the Piper
+    [T] ACTION P2 Frederic the Beastslayer[front]: Slay the Beast → Hunold the Piper
+Frederic the Beastslayer uses Slay the Beast on Hunold the Piper.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Hunold the Piper[front]
+    [T]   power=85 (base=65)
+    [T]   atk=70 def=45 raw=132.22 ceil=133
+    [T]   FINAL_DMG=107
+  Hunold the Piper takes 107 damage.
+    [T] HPCHANGE Hunold the Piper: 67 → 0  (-107) **KO**
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=138/195 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=8/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 Briar Rose[front] HP=138/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=8/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Briar Rose
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Briar Rose
+Frederic the Beastslayer uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=101
+  Briar Rose takes 101 damage.
+    [T] HPCHANGE Briar Rose: 138 → 37  (-101)
+  Briar Rose is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Briar Rose: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Frederic the Beastslayer
+Briar Rose uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=74
+  Frederic the Beastslayer takes 74 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 8 → 0  (-74) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 1 wins!

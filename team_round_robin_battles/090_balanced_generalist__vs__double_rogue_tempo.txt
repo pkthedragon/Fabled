@@ -1,0 +1,653 @@
+Battle 90
+Player 1 Team: Balanced Generalist
+Player 2 Team: Double Rogue Tempo
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:41:21
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 90
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Balanced Generalist
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Dictate of Nature  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+  [back_right] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+Player 2: Double Rogue Tempo
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Subterfuge  (passive=False)
+    Basics: Post Bounty, Sneak Attack
+    Item:   Lightning Boots
+  [back_right] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Snowkissed Aurora: Dictate of Nature → Lucky Constantine
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+  Frederic the Beastslayer loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lucky Constantine[back_left]
+    [T]   power=50
+    [T]   atk=65 def=40 raw=81.25 ceil=82
+    [T]   FINAL_DMG=82
+  Lucky Constantine takes 82 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 133  (-82)
+  Lucky Constantine is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=40
+    [T]   atk=55 def=45 raw=48.89 ceil=49
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=23
+  Reynard, Lupine Trickster takes 23 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 182  (-23)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Lucky Constantine
+Snowkissed Aurora uses Dictate of Nature on Lucky Constantine.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Lucky Constantine[back_left]
+    [T]   power=35
+    [T]   atk=35 def=40 raw=30.62 ceil=31
+    [T]   FINAL_DMG=31
+  Lucky Constantine takes 31 damage.
+    [T] HPCHANGE Lucky Constantine: 133 → 102  (-31)
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+[Queued] Lucky Constantine: Post Bounty → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=81
+  Frederic the Beastslayer takes 81 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 119  (-81)
+  Frederic the Beastslayer loses -10 Defense for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: Post Bounty → Frederic the Beastslayer
+Lucky Constantine uses Post Bounty on Frederic the Beastslayer.
+  Frederic the Beastslayer gains expose for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=119/200 statuses=[expose(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=102/215 statuses=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=182/205 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: expose → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=119/200 ATK=65(base=65) DEF=35(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r)]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=35(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=102/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=182/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Snowkissed Aurora: Dictate of Nature → Lucky Constantine
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Lucky Constantine[back_left]
+    [T]   power=50
+    [T]   atk=65 def=40 raw=81.25 ceil=82
+    [T]   FINAL_DMG=92
+  Lucky Constantine takes 92 damage.
+    [T] HPCHANGE Lucky Constantine: 102 → 10  (-92)
+  Lucky Constantine is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=40
+    [T]   atk=55 def=45 raw=48.89 ceil=49
+    [T]   FINAL_DMG=45
+  Reynard, Lupine Trickster takes 45 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 182 → 137  (-45)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Dictate of Nature → Lucky Constantine
+Snowkissed Aurora uses Dictate of Nature on Lucky Constantine.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[back_left] → Lucky Constantine[back_left]
+    [T]   power=35
+    [T]   atk=35 def=40 raw=30.62 ceil=31
+    [T]   FINAL_DMG=41
+  Lucky Constantine takes 41 damage.
+    [T] HPCHANGE Lucky Constantine: 10 → 0  (-41) **KO**
+  Snowkissed Aurora heals Frederic the Beastslayer for 35 HP.
+  Innocent Heart: Frederic the Beastslayer +10 Def.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions.
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Prince Charming[front]: Condescend → Frederic the Beastslayer
+Prince Charming uses Condescend on Frederic the Beastslayer.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+    [T]   FINAL_DMG=81
+  Frederic the Beastslayer takes 81 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 154 → 73  (-81)
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+  Reynard, Lupine Trickster will retaliate with 40 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[front] HP=73/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=137/205 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=73/200 ATK=65(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=225/225 ATK=35(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=137/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Snowkissed Aurora: Heal → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Snowkissed Aurora
+Frederic the Beastslayer and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=40
+    [T]   atk=55 def=45 raw=48.89 ceil=49
+    [T]   FINAL_DMG=45
+  Reynard, Lupine Trickster takes 45 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 137 → 92  (-45)
+  Prince Charming must recharge next turn.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Frederic the Beastslayer
+Snowkissed Aurora uses Heal on Frederic the Beastslayer.
+  Snowkissed Aurora heals Frederic the Beastslayer for 70 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60 (base=50)
+    [T]   atk=65 def=45 raw=86.67 ceil=87
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=44
+  Reynard, Lupine Trickster takes 44 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 92 → 48  (-44)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=143/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=48/205 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: defense+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=143/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=48/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+[Queued] Prince Charming: Swap with Reynard, Lupine Trickster
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=65 def=60 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Snowkissed Aurora takes 49 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 176  (-49)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: swap ↔ Reynard, Lupine Trickster
+Prince Charming and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+[Queued] Snowkissed Aurora: Swap with Frederic the Beastslayer
+[Queued] Prince Charming: Item Prince Charming
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Frederic the Beastslayer
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Prince Charming[back_right]: item [Main-Gauche] → Prince Charming
+Prince Charming recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_left] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 255 → 216  (-39)
+  Prince Charming is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=143/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=176/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=216/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=48/205 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=143/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=176/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[back_right] HP=48/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Dictate of Nature → Reynard, Lupine Trickster
+[Queued] Prince Charming: Condescend → Reynard, Lupine Trickster
+[Queued] Frederic the Beastslayer: Swap with Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Reynard, Lupine Trickster
+Snowkissed Aurora uses Dictate of Nature on Reynard, Lupine Trickster.
+  Snowkissed Aurora loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Reynard, Lupine Trickster[back_right]
+    [T]   power=50
+    [T]   atk=35 def=45 raw=38.89 ceil=39
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=18
+  Reynard, Lupine Trickster takes 18 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 48 → 30  (-18)
+  Snowkissed Aurora heals Frederic the Beastslayer for 50 HP.
+  Medic: Frederic the Beastslayer cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Reynard, Lupine Trickster
+Prince Charming uses Condescend on Reynard, Lupine Trickster.
+  Prince Charming loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Reynard, Lupine Trickster[back_right]
+    [T]   power=40
+    [T]   atk=55 def=45 raw=48.89 ceil=49
+    [T]   FINAL_DMG=49
+  Reynard, Lupine Trickster takes 49 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: swap ↔ Prince Charming
+Frederic the Beastslayer recharges.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+[Queued] Reynard, Lupine Trickster: Swap with Prince Charming
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 176 → 121  (-55)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Reynard, Lupine Trickster[back_right]: swap ↔ Prince Charming
+Reynard, Lupine Trickster and Prince Charming swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=193/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=121/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=216/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Reynard, Lupine Trickster spd=75  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=193/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=121/225 ATK=35(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r), speed-10(1r)]
+    [T]   P1 Prince Charming[back_right] HP=255/255 ATK=55(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[back_right] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Snowkissed Aurora
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P2 Reynard, Lupine Trickster[front]: Riposte → Snowkissed Aurora
+Reynard, Lupine Trickster uses Riposte on Snowkissed Aurora.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Snowkissed Aurora[front]
+    [T]   power=45
+    [T]   atk=65 def=60 raw=48.75 ceil=49
+    [T]   FINAL_DMG=49
+  Snowkissed Aurora takes 49 damage.
+    [T] HPCHANGE Snowkissed Aurora: 121 → 72  (-49)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[back_right]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=48
+  Prince Charming takes 48 damage.
+    [T] HPCHANGE Prince Charming: 255 → 207  (-48)
+[Queued] Snowkissed Aurora: Dictate of Nature → Reynard, Lupine Trickster
+[Queued] Prince Charming: Impose → Reynard, Lupine Trickster
+[Queued] Frederic the Beastslayer: Hunter's Mark → Reynard, Lupine Trickster
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Reynard, Lupine Trickster
+Snowkissed Aurora uses Dictate of Nature on Reynard, Lupine Trickster.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Reynard, Lupine Trickster[front]
+    [T]   power=60 (base=50)
+    [T]   atk=35 def=45 raw=46.67 ceil=47
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=10
+  Reynard, Lupine Trickster takes 10 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-10) **KO**
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+Prince Charming moves to frontline.
+    [T] ACTION P1 Prince Charming[back_right]: Impose → Reynard, Lupine Trickster
+Prince Charming's target is no longer legal — Impose fizzles.
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: Hunter's Mark → Reynard, Lupine Trickster
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=193/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=122/225 statuses=[-]
+    [T]   P1 Prince Charming[back_right] HP=207/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=216/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Prince Charming: attack-10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=193/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=122/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Prince Charming[back_right] HP=207/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=216/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Snowkissed Aurora: Heal → Prince Charming
+[Queued] Prince Charming: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Prince Charming
+Snowkissed Aurora uses Heal on Prince Charming.
+  Snowkissed Aurora heals Prince Charming for 48 HP.
+  Medic: Prince Charming cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Prince Charming[back_right]: swap ↔ Frederic the Beastslayer
+Prince Charming and Frederic the Beastslayer swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=39
+  Prince Charming takes 39 damage.
+    [T] HPCHANGE Prince Charming: 216 → 177  (-39)
+  Prince Charming is Marked — takes +10 damage next round.
+[Queued] Prince Charming: Impose → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Impose → Snowkissed Aurora
+Prince Charming uses Impose on Snowkissed Aurora.
+    [T] DMGCALC [Impose] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 122 → 67  (-55)
+  Snowkissed Aurora loses -10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=193/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=67/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=177/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=30  vs  P2 FL=Prince Charming spd=35  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=193/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=67/225 ATK=45(base=45) DEF=60(base=60) SPD=30(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=177/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Prince Charming: Condescend → Snowkissed Aurora
+    [T] ACTION P2 Prince Charming[front]: Condescend → Snowkissed Aurora
+Prince Charming uses Condescend on Snowkissed Aurora.
+    [T] DMGCALC [Condescend] Prince Charming[front] → Snowkissed Aurora[front]
+    [T]   power=50
+    [T]   atk=65 def=60 raw=54.17 ceil=55
+    [T]   FINAL_DMG=55
+  Snowkissed Aurora takes 55 damage.
+    [T] HPCHANGE Snowkissed Aurora: 67 → 12  (-55)
+  Snowkissed Aurora loses -10 Defense for 2 rounds.
+[Queued] Snowkissed Aurora: Swap with Prince Charming
+[Queued] Frederic the Beastslayer: Hunter's Mark → Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Prince Charming
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Prince Charming
+Frederic the Beastslayer uses Hunter's Mark on Prince Charming.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Prince Charming[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=49
+  Prince Charming takes 49 damage.
+    [T] HPCHANGE Prince Charming: 177 → 128  (-49)
+  Prince Charming is Marked — takes +10 damage next round.
+    [T] ACTION P1 Prince Charming[back_left]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_left] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 128 → 70  (-58)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Frederic the Beastslayer[back_right] HP=193/200 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=12/225 statuses=[-]
+    [T]   P1 Prince Charming[back_left] HP=255/255 statuses=[-]
+    [T]   P2 Prince Charming[front] HP=70/255 statuses=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] DEBUFF_EXPIRED Snowkissed Aurora: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_right] HP=193/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=12/225 ATK=45(base=45) DEF=50(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Prince Charming[back_left] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=70/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Reynard, Lupine Trickster [KO]
+[Queued] Snowkissed Aurora: Dictate of Nature → Prince Charming
+[Queued] Frederic the Beastslayer: Swap with Prince Charming
+[Queued] Prince Charming: Condescend → Prince Charming
+    [T] ACTION P1 Snowkissed Aurora[front]: Dictate of Nature → Prince Charming
+Snowkissed Aurora uses Dictate of Nature on Prince Charming.
+    [T] DMGCALC [Dictate of Nature] Snowkissed Aurora[front] → Prince Charming[front]
+    [T]   power=60 (base=50)
+    [T]   atk=45 def=55 raw=49.09 ceil=50
+    [T]   FINAL_DMG=60
+  Prince Charming takes 60 damage.
+    [T] HPCHANGE Prince Charming: 70 → 10  (-60)
+  Snowkissed Aurora heals Snowkissed Aurora for 50 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: swap ↔ Prince Charming
+Frederic the Beastslayer and Prince Charming swap positions.
+    [T] ACTION P1 Prince Charming[back_right]: Condescend → Prince Charming
+Prince Charming uses Condescend on Prince Charming.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Prince Charming[front]
+    [T]   power=40
+    [T]   atk=65 def=55 raw=47.27 ceil=48
+    [T]   FINAL_DMG=58
+  Prince Charming takes 58 damage.
+    [T] HPCHANGE Prince Charming: 10 → 0  (-58) **KO**
+  Prince Charming must recharge next turn.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 9)
+────────────────────────────────────────────────────────────
+Player 1 wins!

@@ -1,0 +1,3488 @@
+Battle 211
+Player 1 Team: Last-Stand Brawler
+Player 2 Team: Ella Pivot Shell
+Winner: unresolved
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:55:21
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 211
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Last-Stand Brawler
+  [front] Risa Redcloak (Fighter)  HP=250  ATK=75  DEF=60  SPD=30
+    Talent: Red and Wolf
+    Sig:    Blood Hunt  (passive=False)
+    Basics: Rend, Feint
+    Item:   Vampire Fang
+  [back_left] Porcus III (Warden)  HP=280  ATK=35  DEF=85  SPD=20
+    Talent: Bricklayer
+    Sig:    Not By The Hair  (passive=False)
+    Basics: Shield Bash, Armored
+    Item:   Iron Buckler
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+Player 2: Ella Pivot Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Fae Blessing  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_right] Snowkissed Aurora (Cleric)  HP=225  ATK=45  DEF=60  SPD=40
+    Talent: Innocent Heart
+    Sig:    Toxin Purge  (passive=False)
+    Basics: Heal, Medic
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[back_left] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+Risa Redcloak and Porcus III swap positions.
+[Queued] Sir Roland: Swap with Ashen Ella
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Ashen Ella: Fae Blessing → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Ashen Ella
+Sir Roland and Ashen Ella swap positions.
+  Banner of Command: Ashen Ella is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+    [T] ACTION P2 Ashen Ella[front]: Fae Blessing → Sir Roland
+  Ashen Ella retargets to Ashen Ella after swapping to front.
+Ashen Ella uses Fae Blessing on Ashen Ella.
+  Ashen Ella gains +20 Attack for 2 rounds.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Ashen Ella after swapping to front.
+Risa Redcloak uses Feint on Ashen Ella.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Ashen Ella[front]
+    [T]   power=45
+    [T]   atk=75 def=40 raw=84.38 ceil=85
+    [T]   FINAL_DMG=68
+  Ashen Ella takes 68 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 117  (-68)
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella[front] HP=117/185 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Ashen Ella: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=117/185 ATK=100(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[attack+20(1r)]  debuffs=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Arcane Wave → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Ashen Ella
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Ashen Ella[front]: Arcane Wave → Risa Redcloak
+Ashen Ella uses Arcane Wave on Risa Redcloak.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Risa Redcloak[front]
+    [T]   power=80
+    [T]   atk=100 def=60 raw=133.33 ceil=134
+    [T]   FINAL_DMG=134
+  Risa Redcloak takes 134 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 116  (-134)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Ashen Ella
+Snowkissed Aurora uses Heal on Ashen Ella.
+  Snowkissed Aurora heals Ashen Ella for 55 HP.
+  Innocent Heart: Ashen Ella +10 Def.
+  Medic: Ashen Ella cleansed of rulebook status conditions.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Risa Redcloak: Blood Hunt → Ashen Ella
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Ashen Ella
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Ashen Ella
+Risa Redcloak uses Blood Hunt on Ashen Ella.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Ashen Ella[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=113
+  Ashen Ella takes 113 damage.
+    [T] HPCHANGE Ashen Ella: 172 → 59  (-113)
+  Risa Redcloak heals 46 HP.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Ashen Ella
+Porcus III uses Shield Bash on Ashen Ella.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Risa Redcloak[front] HP=217/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella[front] HP=59/185 statuses=[-]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Ashen Ella: attack+20
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=217/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=59/185 ATK=70(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Arcane Wave → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Ashen Ella
+[Queued] Sir Roland: Item Ashen Ella
+    [T] ACTION P2 Ashen Ella[front]: Arcane Wave → Snowkissed Aurora
+Ashen Ella uses Arcane Wave on Snowkissed Aurora.
+    [T] DMGCALC [Arcane Wave] Ashen Ella[front] → Snowkissed Aurora[back_right]
+    [T]   power=80
+    [T]   atk=70 def=60 raw=93.33 ceil=94
+    [T]   FINAL_DMG=94
+  Snowkissed Aurora takes 94 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 131  (-94)
+  Ashen Ella has -10 Atk and -10 Def for 2 rounds.
+  Ashen Ella must recharge next turn.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Ashen Ella
+Snowkissed Aurora uses Heal on Ashen Ella.
+  Snowkissed Aurora heals Ashen Ella for 55 HP.
+  Medic: Ashen Ella cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Ashen Ella
+Sir Roland uses Crafty Shield.
+  Ashen Ella is Guarded.
+[Queued] Risa Redcloak: Blood Hunt → Ashen Ella
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Ashen Ella
+Risa Redcloak uses Blood Hunt on Ashen Ella.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Ashen Ella[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=91
+  Ashen Ella takes 91 damage.
+    [T] HPCHANGE Ashen Ella: 114 → 23  (-91)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 33 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=131/225 statuses=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella[front] HP=23/185 statuses=[guard(2r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Ashen Ella: guard → 1r left
+    [T] BUFF_EXPIRED Ashen Ella: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Ashen Ella spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=131/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_left] HP=265/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella[front] HP=23/185 ATK=70(base=80) DEF=30(base=40) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Ashen Ella: Swap with Sir Roland
+[Queued] Snowkissed Aurora: Skip
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Ashen Ella[front]: swap ↔ Sir Roland
+Ashen Ella recharges.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+    [T] ACTION P2 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Porcus III: Shield Bash → Ashen Ella
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Ashen Ella
+Porcus III uses Shield Bash on Ashen Ella.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=40 def=30 raw=53.33 ceil=54
+    [T]   FINAL_DMG=44
+  Ashen Ella takes 44 damage.
+    [T] HPCHANGE Ashen Ella: 23 → 0  (-44) **KO**
+  All allies are Guarded for 2 rounds.
+Sir Roland moves to frontline.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Risa Redcloak[back_left]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_right] HP=131/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Sir Roland spd=30  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=131/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Item Snowkissed Aurora
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+  Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora loses guard.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+    [T] ACTION P1 Risa Redcloak[back_left]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 257.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=131/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=257/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=131/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=257/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Risa Redcloak: Swap with Porcus III
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+    [T] ACTION P1 Risa Redcloak[back_left]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 131 → 110  (-21)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 8 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=110/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=110/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora and Porcus III swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 257.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=35 def=90 raw=15.56 ceil=16
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 257 → 253  (-4)
+  All allies are Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 12 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Sir Roland spd=30  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Porcus III
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Porcus III
+Sir Roland uses Shield Bash on Porcus III.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Porcus III[front]
+    [T]   power=40
+    [T]   atk=45 def=95 raw=18.95 ceil=19
+    [T]   FINAL_DMG=16
+  Porcus III takes 16 damage.
+    [T] HPCHANGE Porcus III: 280 → 264  (-16)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Porcus III
+    [T] ACTION P1 Porcus III[front]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 265 → 225  (-40)
+    [T] ACTION P1 Snowkissed Aurora[back_left]: Heal → Porcus III
+Snowkissed Aurora uses Heal on Porcus III.
+  Snowkissed Aurora heals Porcus III for 16 HP.
+  Innocent Heart: Porcus III +10 Def.
+  Medic: Porcus III cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=225/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=225/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=31
+  Sir Roland takes 31 damage.
+    [T] HPCHANGE Sir Roland: 225 → 194  (-31)
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Risa Redcloak takes 21 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 229  (-21)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Risa Redcloak[front] HP=229/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=249/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=229/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=249/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 249 → 199  (-50)
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 21 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 224  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Risa Redcloak[front] HP=224/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=110/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=254/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=224/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=110/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=254/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 224 → 198  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 11 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 265 → 227  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 49 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=227/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=110/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=227/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 227 → 177  (-50)
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 110 → 80  (-30)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=80/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=177/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=177/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Sir Roland after swapping to front.
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=31
+  Sir Roland takes 31 damage.
+    [T] HPCHANGE Sir Roland: 177 → 146  (-31)
+  Risa Redcloak gains +10 Speed for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 226  (-24)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Risa Redcloak[front] HP=226/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=80/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=201/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=226/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=201/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 201 → 151  (-50)
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 24 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 224  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 14
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R14):
+    [T]   P1 Risa Redcloak[front] HP=224/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=80/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=206/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 15
+────────────────────────────────────────────────────────────
+Round 15 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 15 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=224/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=206/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Risa Redcloak takes 30 damage.
+    [T] HPCHANGE Risa Redcloak: 224 → 194  (-30)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 261 → 223  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 15
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R15):
+    [T]   P1 Risa Redcloak[front] HP=197/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=80/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=223/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 16
+────────────────────────────────────────────────────────────
+Round 16 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 16 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=197/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=223/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 223 → 173  (-50)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 53 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 224  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 16
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R16):
+    [T]   P1 Risa Redcloak[front] HP=224/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=80/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=173/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 17
+────────────────────────────────────────────────────────────
+Round 17 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 17 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=224/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=173/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 224 → 198  (-26)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 228 → 190  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 49 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 17
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R17):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=80/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=190/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 18
+────────────────────────────────────────────────────────────
+Round 18 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 18 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=80/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=190/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 190 → 140  (-50)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 80 → 56  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 18
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R18):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=56/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=195/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 19
+────────────────────────────────────────────────────────────
+Round 19 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 19 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=56/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=195/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Sir Roland after swapping to front.
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 195 → 157  (-38)
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 226  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 19
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R19):
+    [T]   P1 Risa Redcloak[front] HP=226/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=56/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=212/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 20
+────────────────────────────────────────────────────────────
+Round 20 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 20 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=226/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=56/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=212/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 212 → 162  (-50)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 56 → 35  (-21)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 20
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R20):
+    [T]   P1 Risa Redcloak[back_right] HP=226/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=35/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=162/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 21
+────────────────────────────────────────────────────────────
+Round 21 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 21 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=226/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=35/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=162/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Sir Roland after swapping to front.
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=31
+  Sir Roland takes 31 damage.
+    [T] HPCHANGE Sir Roland: 162 → 131  (-31)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Risa Redcloak takes 21 damage.
+    [T] HPCHANGE Risa Redcloak: 229 → 208  (-21)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 21
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R21):
+    [T]   P1 Risa Redcloak[front] HP=208/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=35/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=186/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 22
+────────────────────────────────────────────────────────────
+Round 22 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 22 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=208/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=35/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=186/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 186 → 136  (-50)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 42 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 224  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 22
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R22):
+    [T]   P1 Risa Redcloak[front] HP=224/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=35/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=191/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 23
+────────────────────────────────────────────────────────────
+Round 23 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 23 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=224/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=35/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=191/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 224 → 198  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 246 → 208  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 23
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R23):
+    [T]   P1 Risa Redcloak[front] HP=201/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=35/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=208/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 24
+────────────────────────────────────────────────────────────
+Round 24 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 24 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=201/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=35/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=208/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 208 → 158  (-50)
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 49 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 224  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 24
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R24):
+    [T]   P1 Risa Redcloak[front] HP=224/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=35/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=158/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 25
+────────────────────────────────────────────────────────────
+Round 25 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 25 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=224/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=35/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=158/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 224 → 198  (-26)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 213 → 175  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 49 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 25
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R25):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=35/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=175/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 26
+────────────────────────────────────────────────────────────
+Round 26 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 26 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=35/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=175/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 175 → 125  (-50)
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Snowkissed Aurora takes 30 damage.
+    [T] HPCHANGE Snowkissed Aurora: 35 → 5  (-30)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 26
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R26):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=180/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 27
+────────────────────────────────────────────────────────────
+Round 27 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 27 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=180/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Sir Roland after swapping to front.
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 180 → 142  (-38)
+  Risa Redcloak gains +10 Speed for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 226  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 27
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R27):
+    [T]   P1 Risa Redcloak[front] HP=226/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=5/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=197/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 28
+────────────────────────────────────────────────────────────
+Round 28 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 28 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=226/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=197/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 197 → 147  (-50)
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 24 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 224  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 28
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R28):
+    [T]   P1 Risa Redcloak[front] HP=224/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=147/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 29
+────────────────────────────────────────────────────────────
+Round 29 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 29 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=224/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=147/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=30
+  Risa Redcloak takes 30 damage.
+    [T] HPCHANGE Risa Redcloak: 224 → 194  (-30)
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 202 → 164  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 29
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R29):
+    [T]   P1 Risa Redcloak[front] HP=197/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=164/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 30
+────────────────────────────────────────────────────────────
+Round 30 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 30 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=197/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=164/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 164 → 114  (-50)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 53 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 30
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R30):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=5/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=169/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 31
+────────────────────────────────────────────────────────────
+Round 31 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 31 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=169/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=26
+  Risa Redcloak takes 26 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 224  (-26)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 224 → 186  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 23 HP.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 31
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R31):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=186/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 32
+────────────────────────────────────────────────────────────
+Round 32 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 32 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=186/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 186 → 136  (-50)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 32
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R32):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=136/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 33
+────────────────────────────────────────────────────────────
+Round 33 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 33 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=136/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=225/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Risa Redcloak
+  Risa Redcloak retargets to Sir Roland after swapping to front.
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=31
+  Sir Roland takes 31 damage.
+    [T] HPCHANGE Sir Roland: 136 → 105  (-31)
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: swap ↔ Snowkissed Aurora
+Sir Roland and Snowkissed Aurora swap positions.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 70 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 33
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R33):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[back_right] HP=175/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 34
+────────────────────────────────────────────────────────────
+Round 34 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 34 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=5/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=175/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=225/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 70 HP.
+  Medic: Sir Roland cleansed of rulebook status conditions and stat debuffs.
+    [T] ACTION P2 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Risa Redcloak: Blood Hunt → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Snowkissed Aurora
+Risa Redcloak uses Blood Hunt on Snowkissed Aurora.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Snowkissed Aurora[front]
+    [T]   power=60
+    [T]   atk=75 def=60 raw=75.00 ceil=75
+    [T]   FINAL_DMG=60
+  Snowkissed Aurora takes 60 damage.
+    [T] HPCHANGE Snowkissed Aurora: 225 → 165  (-60)
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 34
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R34):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[back_right] HP=245/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=165/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 35
+────────────────────────────────────────────────────────────
+Round 35 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 35 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=245/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=165/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Risa Redcloak: Rend → Snowkissed Aurora
+[Queued] Porcus III: Shield Bash → Snowkissed Aurora
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora and Porcus III swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Rend → Snowkissed Aurora
+Risa Redcloak uses Rend on Snowkissed Aurora.
+  Risa Redcloak marks Snowkissed Aurora — next ability gains +10 Power.
+    [T] ACTION P1 Porcus III[front]: Shield Bash → Snowkissed Aurora
+Porcus III uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Porcus III[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=35 def=70 raw=20.00 ceil=20
+    [T]   FINAL_DMG=20
+  Snowkissed Aurora takes 20 damage.
+    [T] HPCHANGE Snowkissed Aurora: 165 → 145  (-20)
+  All allies are Guarded for 2 rounds.
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Snowkissed Aurora
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Snowkissed Aurora is Guarded.
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Snowkissed Aurora
+Sir Roland uses Crafty Shield.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 35
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R35):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[front] HP=280/280 statuses=[guard(2r)]
+    [T]   P1 Snowkissed Aurora[back_left] HP=5/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=245/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] STATUS_TICK Porcus III: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 36
+────────────────────────────────────────────────────────────
+Round 36 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Porcus III spd=20  vs  P2 FL=Sir Roland spd=30  →  P2 acts first
+    [T] ROUND 36 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[front] HP=280/280 ATK=40(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=5/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=245/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 20 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Porcus III: Swap with Snowkissed Aurora
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Snowkissed Aurora: Toxin Purge → Risa Redcloak
+    [T] ACTION P1 Porcus III[front]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 257.
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Risa Redcloak
+Snowkissed Aurora uses Toxin Purge on Risa Redcloak.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Risa Redcloak is cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 36
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R36):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[guard(1r)]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=257/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Porcus III: guard → 0r left
+    [T] STATUS_EXPIRED Porcus III: guard
+  Innocent Heart: Porcus III +10 Def.
+    [T] BUFF_EXPIRED Porcus III: attack+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 37
+────────────────────────────────────────────────────────────
+Round 37 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 37 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=95(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=257/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 253.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Item Sir Roland
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 37
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R37):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=253/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[-]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 38
+────────────────────────────────────────────────────────────
+Round 38 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 38 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=5/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=253/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Risa Redcloak: Swap with Porcus III
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P1 Risa Redcloak[back_right]: swap ↔ Porcus III
+Risa Redcloak and Porcus III swap positions.
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Snowkissed Aurora takes 21 damage.
+    [T] HPCHANGE Snowkissed Aurora: 30 → 9  (-21)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 38
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R38):
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=9/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[back_right] HP=253/265 statuses=[guard(1r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=145/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+  Innocent Heart: Sir Roland +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 39
+────────────────────────────────────────────────────────────
+Round 39 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Snowkissed Aurora spd=40  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 39 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_left] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=9/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[back_right] HP=253/265 ATK=40(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), defense+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[front] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P2 Snowkissed Aurora[front]: swap ↔ Sir Roland
+Snowkissed Aurora and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+    [T] ACTION P2 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Snowkissed Aurora: Toxin Purge → Snowkissed Aurora
+[Queued] Porcus III: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Feint → Risa Redcloak
+    [T] ACTION P1 Snowkissed Aurora[front]: Toxin Purge → Snowkissed Aurora
+Snowkissed Aurora uses Toxin Purge on Snowkissed Aurora.
+  Innocent Heart: Snowkissed Aurora +10 Def.
+  Snowkissed Aurora is restored by Toxin Purge for 25 HP.
+  Medic: Snowkissed Aurora cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora is cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_right]: swap ↔ Risa Redcloak
+Porcus III and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[back_right]: Feint → Risa Redcloak
+Risa Redcloak uses Feint on Risa Redcloak.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 39
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R39):
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=34/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=253/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 40
+────────────────────────────────────────────────────────────
+Round 40 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 40 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=250/250 ATK=75(base=75) DEF=60(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=34/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=253/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=10
+  Sir Roland takes 10 damage.
+    [T] HPCHANGE Sir Roland: 253 → 243  (-10)
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 226  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 22 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 40
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R40):
+    [T]   P1 Risa Redcloak[front] HP=226/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=34/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 41
+────────────────────────────────────────────────────────────
+Round 41 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 41 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=226/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=34/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 226 → 202  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=31
+  Sir Roland takes 31 damage.
+    [T] HPCHANGE Sir Roland: 265 → 234  (-31)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 41
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R41):
+    [T]   P1 Risa Redcloak[back_right] HP=205/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=34/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=234/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 42
+────────────────────────────────────────────────────────────
+Round 42 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 42 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=205/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=34/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=234/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=40
+  Sir Roland takes 40 damage.
+    [T] HPCHANGE Sir Roland: 234 → 194  (-40)
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Risa Redcloak takes 21 damage.
+    [T] HPCHANGE Risa Redcloak: 205 → 184  (-21)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 42
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R42):
+    [T]   P1 Risa Redcloak[front] HP=184/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=34/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=249/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 43
+────────────────────────────────────────────────────────────
+Round 43 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 43 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=184/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=34/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=249/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Skip
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 184 → 160  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: skip/recharge
+Snowkissed Aurora recharges.
+[Queued] Risa Redcloak: Swap with Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: swap ↔ Snowkissed Aurora
+Risa Redcloak and Snowkissed Aurora swap positions.
+    [T] ACTION P1 Snowkissed Aurora[front]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 70 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions and stat debuffs.
+  Snowkissed Aurora must recharge next turn.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 43
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R43):
+    [T]   P1 Risa Redcloak[back_right] HP=230/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=34/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=249/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(1r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 44
+────────────────────────────────────────────────────────────
+Round 44 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 44 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=230/250 ATK=75(base=75) DEF=70(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=34/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=249/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Porcus III
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Porcus III
+Snowkissed Aurora recharges.
+    [T] ACTION P1 Risa Redcloak[back_right]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+  Blood Hunt: Risa Redcloak and Sir Roland HP set to 239.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+[Queued] Sir Roland: Shield Bash → Snowkissed Aurora
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Snowkissed Aurora
+Sir Roland uses Shield Bash on Snowkissed Aurora.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Snowkissed Aurora[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Snowkissed Aurora takes 24 damage.
+    [T] HPCHANGE Snowkissed Aurora: 34 → 10  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 26 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 44
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R44):
+    [T]   P1 Risa Redcloak[back_right] HP=239/250 statuses=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=10/225 statuses=[guard(1r)]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 45
+────────────────────────────────────────────────────────────
+Round 45 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Snowkissed Aurora spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 45 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[back_right] HP=239/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=10/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Snowkissed Aurora[front]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 265 → 215  (-50)
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 239 → 215  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 50 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 45
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R45):
+    [T]   P1 Risa Redcloak[front] HP=215/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=10/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 46
+────────────────────────────────────────────────────────────
+Round 46 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 46 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=215/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=10/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Toxin Purge → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 215 → 191  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Toxin Purge → Sir Roland
+Snowkissed Aurora uses Toxin Purge on Sir Roland.
+  Innocent Heart: Sir Roland +10 Def.
+  Sir Roland loses guard.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 265 → 227  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 55 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 46
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R46):
+    [T]   P1 Risa Redcloak[front] HP=249/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=10/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=227/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 47
+────────────────────────────────────────────────────────────
+Round 47 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 47 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=249/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=10/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=227/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Porcus III
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 227 → 177  (-50)
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Porcus III
+Snowkissed Aurora and Porcus III swap positions.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Swap with Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Risa Redcloak takes 21 damage.
+    [T] HPCHANGE Risa Redcloak: 249 → 228  (-21)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: swap ↔ Sir Roland
+Snowkissed Aurora recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 47
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R47):
+    [T]   P1 Risa Redcloak[front] HP=228/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=10/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=177/265 statuses=[guard(2r)]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 48
+────────────────────────────────────────────────────────────
+Round 48 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 48 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=228/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=10/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=177/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 228 → 204  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Heal → Risa Redcloak
+[Queued] Porcus III: Swap with Snowkissed Aurora
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 232 → 194  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: Heal → Risa Redcloak
+Snowkissed Aurora uses Heal on Risa Redcloak.
+  Snowkissed Aurora heals Risa Redcloak for 43 HP.
+  Innocent Heart: Risa Redcloak +10 Def.
+  Medic: Risa Redcloak cleansed of rulebook status conditions.
+    [T] ACTION P1 Porcus III[back_left]: swap ↔ Snowkissed Aurora
+Porcus III and Snowkissed Aurora swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 48
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R48):
+    [T]   P1 Risa Redcloak[front] HP=250/250 statuses=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=10/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=194/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(2r)]
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 49
+────────────────────────────────────────────────────────────
+Round 49 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=40  vs  P2 FL=Sir Roland spd=30  →  P1 acts first
+    [T] ROUND 49 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=250/250 ATK=75(base=75) DEF=70(base=60) SPD=40(base=30)
+    [T]     statuses=[-]  buffs=[speed+10(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Porcus III[back_right] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_left] HP=10/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=194/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Risa Redcloak: Blood Hunt → Sir Roland
+[Queued] Porcus III: Shield Bash → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Porcus III
+    [T] ACTION P1 Risa Redcloak[front]: Blood Hunt → Sir Roland
+Risa Redcloak uses Blood Hunt on Sir Roland.
+    [T] DMGCALC [Blood Hunt] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 194 → 144  (-50)
+    [T] ACTION P1 Porcus III[back_right]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Risa Redcloak is Guarded for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_left]: swap ↔ Porcus III
+Snowkissed Aurora and Porcus III swap positions.
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=70 raw=25.71 ceil=26
+    [T]   FINAL_DMG=21
+  Risa Redcloak takes 21 damage.
+    [T] HPCHANGE Risa Redcloak: 250 → 229  (-21)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 49
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R49):
+    [T]   P1 Risa Redcloak[front] HP=229/250 statuses=[guard(2r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=10/225 statuses=[-]
+    [T]   P2 Sir Roland[front] HP=199/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(1r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 1r left
+    [T] BUFF_EXPIRED Risa Redcloak: speed+10
+    [T] BUFF_EXPIRED Risa Redcloak: defense+10
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 0r left
+    [T] STATUS_EXPIRED Snowkissed Aurora: guard
+  Innocent Heart: Snowkissed Aurora +10 Def.
+
+────────────────────────────────────────────────────────────
+ROUND 50
+────────────────────────────────────────────────────────────
+Round 50 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Risa Redcloak spd=30  vs  P2 FL=Sir Roland spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 50 STATE SNAPSHOT:
+    [T]   P1 Risa Redcloak[front] HP=229/250 ATK=75(base=75) DEF=60(base=60) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Porcus III[back_left] HP=280/280 ATK=35(base=35) DEF=90(base=85) SPD=20(base=20)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Snowkissed Aurora[back_right] HP=10/225 ATK=45(base=45) DEF=60(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sir Roland[front] HP=199/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+10(1r), attack+5(1r)]  debuffs=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 ATK=45(base=45) DEF=70(base=60) SPD=40(base=40)
+    [T]     statuses=[-]  buffs=[defense+10(1r)]  debuffs=[-]
+[Queued] Sir Roland: Shield Bash → Risa Redcloak
+[Queued] Snowkissed Aurora: Heal → Sir Roland
+    [T] ACTION P2 Sir Roland[front]: Shield Bash → Risa Redcloak
+Sir Roland uses Shield Bash on Risa Redcloak.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Risa Redcloak[front]
+    [T]   power=40
+    [T]   atk=45 def=60 raw=30.00 ceil=30
+    [T]   FINAL_DMG=24
+  Risa Redcloak takes 24 damage.
+    [T] HPCHANGE Risa Redcloak: 229 → 205  (-24)
+  All allies are Guarded for 2 rounds.
+    [T] ACTION P2 Snowkissed Aurora[back_right]: Heal → Sir Roland
+Snowkissed Aurora uses Heal on Sir Roland.
+  Snowkissed Aurora heals Sir Roland for 55 HP.
+  Innocent Heart: Sir Roland +10 Def.
+  Medic: Sir Roland cleansed of rulebook status conditions.
+  Snowkissed Aurora must recharge next turn.
+[Queued] Risa Redcloak: Feint → Sir Roland
+[Queued] Snowkissed Aurora: Swap with Risa Redcloak
+[Queued] Porcus III: Shield Bash → Sir Roland
+    [T] ACTION P1 Risa Redcloak[front]: Feint → Sir Roland
+Risa Redcloak uses Feint on Sir Roland.
+    [T] DMGCALC [Feint] Risa Redcloak[front] → Sir Roland[front]
+    [T]   power=45
+    [T]   atk=75 def=90 raw=37.50 ceil=38
+    [T]   FINAL_DMG=38
+  Sir Roland takes 38 damage.
+    [T] HPCHANGE Sir Roland: 254 → 216  (-38)
+  Risa Redcloak heals 3 HP.
+  Risa Redcloak gains +10 Speed for 2 rounds.
+    [T] ACTION P1 Snowkissed Aurora[back_right]: swap ↔ Risa Redcloak
+Snowkissed Aurora and Risa Redcloak swap positions.
+    [T] ACTION P1 Porcus III[back_left]: Shield Bash → Sir Roland
+Porcus III uses Shield Bash on Sir Roland.
+  Snowkissed Aurora is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 50
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R50):
+    [T]   P1 Risa Redcloak[back_right] HP=208/250 statuses=[guard(1r)]
+    [T]   P1 Porcus III[back_left] HP=280/280 statuses=[-]
+    [T]   P1 Snowkissed Aurora[front] HP=10/225 statuses=[guard(2r)]
+    [T]   P2 Sir Roland[front] HP=216/265 statuses=[-]
+    [T]   P2 Ashen Ella [KO]
+    [T]   P2 Snowkissed Aurora[back_right] HP=145/225 statuses=[guard(2r)]
+    [T] STATUS_TICK Risa Redcloak: guard → 0r left
+    [T] STATUS_EXPIRED Risa Redcloak: guard
+  Innocent Heart: Risa Redcloak +10 Def.
+    [T] BUFF_EXPIRED Porcus III: defense+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] STATUS_TICK Snowkissed Aurora: guard → 1r left
+    [T] BUFF_EXPIRED Snowkissed Aurora: defense+10
+Battle aborted after safety limit.

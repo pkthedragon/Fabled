@@ -1,0 +1,528 @@
+Battle 269
+Player 1 Team: Root Killbox
+Player 2 Team: Double Ranger Pressure
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:59:35
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 269
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Root Killbox
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Magic Growth  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+Player 2: Double Ranger Pressure
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hawkshot, Hunter's Mark
+    Item:   Arcane Focus
+  [back_right] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Trapping Blow, Hunter's Mark
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_left] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+[Queued] Robin, Hooded Avenger: Hawkshot → Little Jack
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=75 def=40 raw=93.75 ceil=94
+    [T]   FINAL_DMG=94
+  Robin, Hooded Avenger takes 94 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 91  (-94)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 220 → 162  (-58)
+  Little Jack gains root for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_left]: Hawkshot → Little Jack
+Robin, Hooded Avenger uses Hawkshot on Little Jack.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_left] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=62
+  Little Jack takes 62 damage.
+    [T] HPCHANGE Little Jack: 162 → 100  (-62)
+[Queued] Little Jack: Magic Growth → Frederic the Beastslayer
+[Queued] Robin, Hooded Avenger: Hawkshot → Frederic the Beastslayer
+[Queued] Briar Rose: Creeping Doubt → Frederic the Beastslayer
+    [T] ACTION P1 Little Jack[front]: Magic Growth → Frederic the Beastslayer
+Little Jack uses Magic Growth on Frederic the Beastslayer.
+    [T] DMGCALC [Magic Growth] Little Jack[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=80 def=45 raw=88.89 ceil=89
+    [T]   FINAL_DMG=108
+  Frederic the Beastslayer takes 108 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 92  (-108)
+  Frederic the Beastslayer gains root for 2 rounds.
+    [T] ACTION P1 Robin, Hooded Avenger[back_right]: Hawkshot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hawkshot on Frederic the Beastslayer.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=69
+  Frederic the Beastslayer takes 69 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 92 → 23  (-69)
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Frederic the Beastslayer
+Briar Rose uses Creeping Doubt on Frederic the Beastslayer.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Frederic the Beastslayer takes 64 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 23 → 0  (-64) **KO**
+Robin, Hooded Avenger moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=100/220 statuses=[root(2r)]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=91/185 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 statuses=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Little Jack: root → 1r left
+  Curse of Sleeping: Little Jack loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=100/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=91/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Robin, Hooded Avenger
+Robin, Hooded Avenger uses Snipe Shot on Robin, Hooded Avenger.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=65
+    [T]   atk=70 def=40 raw=113.75 ceil=114
+    [T]   FINAL_DMG=134
+  Robin, Hooded Avenger takes 134 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 91 → 0  (-134) **KO**
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 100 → 42  (-58)
+  Little Jack is immune to Root (Curse of Sleeping).
+[Queued] Little Jack: Magic Growth → Robin, Hooded Avenger
+[Queued] Briar Rose: Creeping Doubt → Robin, Hooded Avenger
+Little Jack cannot act.
+    [T] ACTION P1 Briar Rose[back_left]: Creeping Doubt → Robin, Hooded Avenger
+Briar Rose uses Creeping Doubt on Robin, Hooded Avenger.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Robin, Hooded Avenger[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Robin, Hooded Avenger takes 70 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 115  (-70)
+  Robin, Hooded Avenger gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[front] HP=42/220 statuses=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=115/185 statuses=[root(2r)]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+    [T] STATUS_TICK Robin, Hooded Avenger: root → 1r left
+  Curse of Sleeping: Robin, Hooded Avenger loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=42/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=115/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Briar Rose
+[Queued] Briar Rose: Creeping Doubt → Little Jack
+Robin, Hooded Avenger cannot act.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Little Jack
+Briar Rose uses Creeping Doubt on Little Jack.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Little Jack takes 58 damage.
+    [T] HPCHANGE Little Jack: 42 → 0  (-58) **KO**
+  Little Jack is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+Briar Rose moves to frontline.
+[Queued] Briar Rose: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Robin, Hooded Avenger
+Briar Rose uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 115 → 40  (-75)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+  Briar Rose must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=40/185 statuses=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=40/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_right] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Swap with Briar Rose
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Robin, Hooded Avenger[front]: swap ↔ Briar Rose
+Robin, Hooded Avenger and Briar Rose swap positions.
+    [T] ACTION P2 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+[Queued] Briar Rose: Skip
+    [T] ACTION P1 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=40/185 statuses=[-]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Briar Rose spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=40/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Robin, Hooded Avenger
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Robin, Hooded Avenger
+Briar Rose uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=60 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=75
+  Robin, Hooded Avenger takes 75 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 40 → 0  (-75) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+[Queued] Briar Rose: Creeping Doubt → Briar Rose
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Briar Rose
+Briar Rose uses Creeping Doubt on Briar Rose.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Briar Rose[front]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=84
+  Briar Rose takes 84 damage.
+    [T] HPCHANGE Briar Rose: 195 → 111  (-84)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=111/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Briar Rose spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=111/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Briar Rose
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Briar Rose
+Briar Rose uses Creeping Doubt on Briar Rose.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Briar Rose[front]
+    [T]   power=55
+    [T]   atk=60 def=45 raw=73.33 ceil=74
+    [T]   FINAL_DMG=84
+  Briar Rose takes 84 damage.
+    [T] HPCHANGE Briar Rose: 111 → 27  (-84)
+[Queued] Briar Rose: Falling Kingdom → Briar Rose
+    [T] ACTION P1 Briar Rose[front]: Falling Kingdom → Briar Rose
+Briar Rose uses Falling Kingdom on Briar Rose.
+  Briar Rose gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[root(2r)]
+    [T] STATUS_TICK Briar Rose: root → 1r left
+  Curse of Sleeping: Briar Rose loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Briar Rose spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Briar Rose
+    [T] ACTION P1 Briar Rose[front]: Hunter's Mark → Briar Rose
+Briar Rose uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Briar Rose takes 67 damage.
+    [T] HPCHANGE Briar Rose: 195 → 128  (-67)
+  Briar Rose is Marked — takes +10 damage next round.
+  Briar Rose must recharge next turn.
+[Queued] Briar Rose: Falling Kingdom → Briar Rose
+Briar Rose cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=128/195 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Briar Rose spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=128/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Falling Kingdom → Briar Rose
+    [T] ACTION P2 Briar Rose[front]: Falling Kingdom → Briar Rose
+Briar Rose uses Falling Kingdom on Briar Rose.
+  Briar Rose gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+[Queued] Briar Rose: Skip
+    [T] ACTION P1 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 statuses=[root(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=128/195 statuses=[-]
+    [T] STATUS_TICK Briar Rose: root → 1r left
+  Curse of Sleeping: Briar Rose loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Briar Rose spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=128/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Briar Rose
+Briar Rose cannot act.
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=128/195 statuses=[-]
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Briar Rose spd=60  vs  P2 FL=Briar Rose spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 Briar Rose[front] HP=27/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T]   P2 Briar Rose[front] HP=128/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Briar Rose
+    [T] ACTION P2 Briar Rose[front]: Hunter's Mark → Briar Rose
+Briar Rose uses Hunter's Mark on Briar Rose.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Briar Rose[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=67
+  Briar Rose takes 67 damage.
+    [T] HPCHANGE Briar Rose: 27 → 0  (-67) **KO**
+  Briar Rose is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 10)
+────────────────────────────────────────────────────────────
+Player 2 wins!

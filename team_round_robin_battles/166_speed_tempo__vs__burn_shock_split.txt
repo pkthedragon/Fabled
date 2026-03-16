@@ -1,0 +1,320 @@
+Battle 166
+Player 1 Team: Speed Tempo
+Player 2 Team: Burn Shock Split
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:50:52
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 166
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Burn Shock Split
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Haunting Rhythm  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch of the Woods: Thunder Call → March Hare
+[Queued] Matchstick Liesl: Cauterize → Frederic the Beastslayer
+[Queued] Hunold the Piper: Haunting Rhythm → Little Jack
+    [T] ACTION P2 Witch of the Woods[front]: Thunder Call → March Hare
+Witch of the Woods uses Thunder Call on March Hare.
+    [T] DMGCALC [Thunder Call] Witch of the Woods[front] → March Hare[back_left]
+    [T]   power=65
+    [T]   atk=75 def=35 raw=139.29 ceil=140
+    [T]   FINAL_DMG=140
+  March Hare takes 140 damage.
+    [T] HPCHANGE March Hare: 190 → 50  (-140)
+  March Hare gains shock for 2 rounds.
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Frederic the Beastslayer
+Matchstick Liesl uses Cauterize on Frederic the Beastslayer.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Frederic the Beastslayer[back_right]
+    [T]   power=40
+    [T]   atk=50 def=45 raw=44.44 ceil=45
+    [T]   FINAL_DMG=45
+  Frederic the Beastslayer takes 45 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 155  (-45)
+  Frederic the Beastslayer gains no_heal for 2 rounds.
+    [T] ACTION P2 Hunold the Piper[back_left]: Haunting Rhythm → Little Jack
+Hunold the Piper uses Haunting Rhythm on Little Jack.
+  Little Jack gains shock for 2 rounds.
+[Queued] Little Jack: Skyfall → Witch of the Woods
+[Queued] Frederic the Beastslayer: On the Hunt → Witch of the Woods
+[Queued] March Hare: Thunder Call → Witch of the Woods
+    [T] ACTION P1 Little Jack[front]: Skyfall → Witch of the Woods
+Little Jack uses Skyfall on Witch of the Woods.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Witch of the Woods[front]
+    [T]   power=80
+    [T]   atk=80 def=35 raw=182.86 ceil=183
+    [T]   FINAL_DMG=193
+  Witch of the Woods takes 193 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 0  (-193) **KO**
+  Shock recoil: Little Jack takes 39 damage.
+Hunold the Piper moves to frontline.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Witch of the Woods
+Frederic the Beastslayer's target is no longer legal — On the Hunt fizzles.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Witch of the Woods
+March Hare's target is no longer legal — Thunder Call fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=181/220 statuses=[shock(2r)]
+    [T]   P1 March Hare[back_left] HP=50/190 statuses=[shock(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=155/200 statuses=[no_heal(2r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 statuses=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Little Jack: shock → 1r left
+    [T] STATUS_TICK March Hare: shock → 1r left
+    [T] STATUS_TICK Frederic the Beastslayer: no_heal → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Hunold the Piper spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=181/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=50/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=155/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[no_heal(1r)]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Hunold the Piper: Haunting Rhythm → Little Jack
+[Queued] Matchstick Liesl: Cauterize → Little Jack
+    [T] ACTION P2 Hunold the Piper[front]: Haunting Rhythm → Little Jack
+Hunold the Piper uses Haunting Rhythm on Little Jack.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → Little Jack[front]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=75
+  Little Jack takes 75 damage.
+    [T] HPCHANGE Little Jack: 181 → 106  (-75)
+    [T] ACTION P2 Matchstick Liesl[back_right]: Cauterize → Little Jack
+Matchstick Liesl uses Cauterize on Little Jack.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_right] → Little Jack[front]
+    [T]   power=40
+    [T]   atk=50 def=50 raw=40.00 ceil=40
+    [T]   FINAL_DMG=55
+  Little Jack takes 55 damage.
+    [T] HPCHANGE Little Jack: 106 → 51  (-55)
+  Little Jack gains no_heal for 2 rounds.
+[Queued] Little Jack: Swap with March Hare
+[Queued] Frederic the Beastslayer: On the Hunt → Hunold the Piper
+[Queued] March Hare: Thunder Call → Hunold the Piper
+    [T] ACTION P1 Little Jack[front]: swap ↔ March Hare
+Little Jack and March Hare swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Hunold the Piper
+Frederic the Beastslayer uses On the Hunt on Hunold the Piper.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Hunold the Piper[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=38
+  Hunold the Piper takes 38 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 172  (-38)
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[front]: Thunder Call → Hunold the Piper
+March Hare uses Thunder Call on Hunold the Piper.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Hunold the Piper[front]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=123
+  Hunold the Piper takes 123 damage.
+    [T] HPCHANGE Hunold the Piper: 172 → 49  (-123)
+  Shock recoil: March Hare takes 25 damage.
+  Hunold the Piper gains shock for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[back_left] HP=51/220 statuses=[shock(1r), no_heal(2r)]
+    [T]   P1 March Hare[front] HP=25/190 statuses=[shock(1r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=155/200 statuses=[no_heal(1r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=49/210 statuses=[expose(2r), shock(2r)]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 statuses=[-]
+    [T] STATUS_TICK Little Jack: shock → 0r left
+    [T] STATUS_TICK Little Jack: no_heal → 1r left
+    [T] STATUS_EXPIRED Little Jack: shock
+    [T] STATUS_TICK March Hare: shock → 0r left
+    [T] STATUS_EXPIRED March Hare: shock
+    [T] STATUS_TICK Frederic the Beastslayer: no_heal → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: no_heal
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Hunold the Piper: expose → 1r left
+    [T] STATUS_TICK Hunold the Piper: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Hunold the Piper spd=50 (MH adj from 65)  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=51/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=25/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=155/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper[front] HP=49/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[expose(1r), shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Matchstick Liesl[back_right] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Matchstick Liesl
+[Queued] Frederic the Beastslayer: Hunter's Mark → Hunold the Piper
+[Queued] Little Jack: Swap with Frederic the Beastslayer
+    [T] ACTION P1 March Hare[front]: Thunder Call → Matchstick Liesl
+March Hare uses Thunder Call on Matchstick Liesl.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Matchstick Liesl[back_right]
+    [T]   power=65
+    [T]   atk=70 def=50 raw=91.00 ceil=91
+    [T]   FINAL_DMG=91
+  Matchstick Liesl takes 91 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 119  (-91)
+  Matchstick Liesl gains shock for 2 rounds.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Hunold the Piper
+Frederic the Beastslayer uses Hunter's Mark on Hunold the Piper.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Hunold the Piper[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=46
+  Hunold the Piper takes 46 damage.
+    [T] HPCHANGE Hunold the Piper: 49 → 3  (-46)
+  Hunold the Piper is Marked — takes +10 damage next round.
+    [T] ACTION P1 Little Jack[back_left]: swap ↔ Frederic the Beastslayer
+Little Jack and Frederic the Beastslayer swap positions.
+[Queued] Hunold the Piper: Haunting Rhythm → March Hare
+[Queued] Matchstick Liesl: Heal → Hunold the Piper
+    [T] ACTION P2 Hunold the Piper[front]: Haunting Rhythm → March Hare
+Hunold the Piper uses Haunting Rhythm on March Hare.
+    [T] DMGCALC [Haunting Rhythm] Hunold the Piper[front] → March Hare[front]
+    [T]   power=50
+    [T]   atk=60 def=35 raw=85.71 ceil=86
+    [T]   FINAL_DMG=86
+  March Hare takes 86 damage.
+    [T] HPCHANGE March Hare: 25 → 0  (-86) **KO**
+  Shock recoil: Hunold the Piper takes 18 damage.
+  March Hare gains shock for 2 rounds.
+Frederic the Beastslayer moves to frontline.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Matchstick Liesl[front]: Heal → Hunold the Piper
+Matchstick Liesl's target is no longer legal — Heal fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack[back_right] HP=51/220 statuses=[no_heal(1r)]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=155/200 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=119/210 statuses=[shock(2r)]
+    [T] STATUS_TICK Little Jack: no_heal → 0r left
+    [T] STATUS_EXPIRED Little Jack: no_heal
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Matchstick Liesl: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Matchstick Liesl spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_right] HP=51/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=155/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Hunold the Piper [KO]
+    [T]   P2 Matchstick Liesl[front] HP=119/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Little Jack
+[Queued] Little Jack: Skyfall → Matchstick Liesl
+    [T] ACTION P1 Frederic the Beastslayer[front]: swap ↔ Little Jack
+Frederic the Beastslayer and Little Jack swap positions.
+    [T] ACTION P1 Little Jack[front]: Skyfall → Matchstick Liesl
+Little Jack uses Skyfall on Matchstick Liesl.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Matchstick Liesl[front]
+    [T]   power=80
+    [T]   atk=80 def=50 raw=128.00 ceil=128
+    [T]   FINAL_DMG=138
+  Matchstick Liesl takes 138 damage.
+    [T] HPCHANGE Matchstick Liesl: 119 → 0  (-138) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 4)
+────────────────────────────────────────────────────────────
+Player 1 wins!

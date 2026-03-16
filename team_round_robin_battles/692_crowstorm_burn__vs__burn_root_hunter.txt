@@ -1,0 +1,373 @@
+Battle 692
+Player 1 Team: Crowstorm Burn
+Player 2 Team: Burn-Root Hunter
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:44:04
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 692
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Crowstorm Burn
+  [front] Ashen Ella (Mage)  HP=185  ATK=80  DEF=40  SPD=65
+    Talent: Two Lives
+    Sig:    Crowstorm  (passive=False)
+    Basics: Fire Blast, Arcane Wave
+    Item:   Arcane Focus
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Bless
+    Item:   Heart Amulet
+  [back_right] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+Player 2: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Ashen Ella spd=65  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella[front] HP=185/185 ATK=80(base=80) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Witch of the Woods: Freezing Gale → Ashen Ella
+[Queued] Frederic the Beastslayer: Hunter's Mark → Ashen Ella
+[Queued] Briar Rose: Creeping Doubt → Ashen Ella
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Ashen Ella
+Witch of the Woods uses Freezing Gale on Ashen Ella.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Ashen Ella[front]
+    [T]   power=65
+    [T]   atk=75 def=40 raw=121.88 ceil=122
+    [T]   FINAL_DMG=122
+  Ashen Ella takes 122 damage.
+    [T] HPCHANGE Ashen Ella: 185 → 63  (-122)
+  Ashen Ella gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Ashen Ella
+Frederic the Beastslayer uses Hunter's Mark on Ashen Ella.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Ashen Ella[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=53
+  Ashen Ella takes 53 damage.
+    [T] HPCHANGE Ashen Ella: 63 → 10  (-53)
+  Ashen Ella is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Ashen Ella
+Briar Rose uses Creeping Doubt on Ashen Ella.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Ashen Ella[front]
+    [T]   power=40
+    [T]   atk=60 def=40 raw=60.00 ceil=60
+    [T]   FINAL_DMG=70
+  Ashen Ella takes 70 damage.
+    [T] HPCHANGE Ashen Ella: 10 → 0  (-70) **KO**
+Matchstick Liesl moves to frontline.
+[Queued] Matchstick Liesl: Cauterize → Witch of the Woods
+[Queued] Witch-Hunter Gretel: Intimidate → Witch of the Woods
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Witch of the Woods
+Matchstick Liesl uses Cauterize on Witch of the Woods.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Witch of the Woods[front]
+    [T]   power=50
+    [T]   atk=50 def=35 raw=71.43 ceil=72
+    [T]   FINAL_DMG=72
+  Witch of the Woods takes 72 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 108  (-72)
+  Witch of the Woods gains no_heal for 2 rounds.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Witch of the Woods
+Witch-Hunter Gretel uses Intimidate on Witch of the Woods.
+  Witch of the Woods gains weaken for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=108/180 statuses=[no_heal(2r), weaken(2r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Witch of the Woods: no_heal → 1r left
+    [T] STATUS_TICK Witch of the Woods: weaken → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=108/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r), weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+[Queued] Briar Rose: Creeping Doubt → Matchstick Liesl
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Witch-Hunter Gretel
+Witch of the Woods uses Freezing Gale on Witch-Hunter Gretel.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=88
+  Witch-Hunter Gretel takes 88 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 127  (-88)
+  Witch-Hunter Gretel gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Matchstick Liesl[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Matchstick Liesl takes 42 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 168  (-42)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Matchstick Liesl
+Briar Rose uses Creeping Doubt on Matchstick Liesl.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=58
+  Matchstick Liesl takes 58 damage.
+    [T] HPCHANGE Matchstick Liesl: 168 → 110  (-58)
+  Matchstick Liesl gains root for 2 rounds.
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+[Queued] Witch-Hunter Gretel: Intimidate → Witch of the Woods
+    [T] ACTION P1 Matchstick Liesl[front]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 70 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+    [T] ACTION P1 Witch-Hunter Gretel[back_right]: Intimidate → Witch of the Woods
+Witch-Hunter Gretel uses Intimidate on Witch of the Woods.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=110/210 statuses=[root(2r)]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=197/215 statuses=[root(2r), burn_immune(2r)]
+    [T]   P2 Witch of the Woods[front] HP=108/180 statuses=[no_heal(1r), weaken(1r)]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Matchstick Liesl: root → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: root → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+    [T] STATUS_TICK Witch of the Woods: no_heal → 0r left
+    [T] STATUS_TICK Witch of the Woods: weaken → 0r left
+    [T] STATUS_EXPIRED Witch of the Woods: no_heal
+    [T] STATUS_EXPIRED Witch of the Woods: weaken
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Matchstick Liesl loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl[front] HP=110/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch-Hunter Gretel[back_right] HP=197/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[root(1r), burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=108/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Fire Blast → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+[Queued] Briar Rose: Creeping Doubt → Matchstick Liesl
+    [T] ACTION P2 Witch of the Woods[front]: Fire Blast → Witch-Hunter Gretel
+Witch of the Woods uses Fire Blast on Witch-Hunter Gretel.
+    [T] DMGCALC [Fire Blast] Witch of the Woods[front] → Witch-Hunter Gretel[back_right]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=119
+  Witch-Hunter Gretel takes 119 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 197 → 78  (-119)
+  Witch-Hunter Gretel is immune to Burn.
+  Witch of the Woods must recharge next turn.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Matchstick Liesl[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=52
+  Matchstick Liesl takes 52 damage.
+    [T] HPCHANGE Matchstick Liesl: 110 → 58  (-52)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Matchstick Liesl
+Briar Rose uses Creeping Doubt on Matchstick Liesl.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=60 def=50 raw=48.00 ceil=48
+    [T]   FINAL_DMG=68
+  Matchstick Liesl takes 68 damage.
+    [T] HPCHANGE Matchstick Liesl: 58 → 0  (-68) **KO**
+  Matchstick Liesl is immune to Root (Curse of Sleeping).
+  Briar Rose must recharge next turn.
+Witch-Hunter Gretel moves to frontline.
+[Queued] Witch-Hunter Gretel: Into the Oven → Witch of the Woods
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Into the Oven → Witch of the Woods
+Witch-Hunter Gretel uses Into the Oven on Witch of the Woods.
+    [T] DMGCALC [Into the Oven] Witch-Hunter Gretel[front] → Witch of the Woods[front]
+    [T]   power=65
+    [T]   atk=80 def=35 raw=148.57 ceil=149
+    [T]   FINAL_DMG=149
+  Witch of the Woods takes 149 damage.
+    [T] HPCHANGE Witch of the Woods: 108 → 0  (-149) **KO**
+  Sugar Rush! Witch-Hunter Gretel gains +15 Atk, +10 Spd for 2 rounds.
+  Witch of the Woods gains burn for 2 rounds.
+  Witch of the Woods gains weaken for 2 rounds.
+  Witch of the Woods gains root for 2 rounds.
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=78/215 statuses=[root(1r), burn_immune(1r)]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: root → 0r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 0r left
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: root
+    [T] STATUS_EXPIRED Witch-Hunter Gretel: burn_immune
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=70  vs  P2 FL=Briar Rose spd=60  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=78/215 ATK=95(base=80) DEF=45(base=45) SPD=70(base=60)
+    [T]     statuses=[-]  buffs=[attack+15(1r), speed+10(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Briar Rose
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Briar Rose
+Witch-Hunter Gretel uses Strike on Briar Rose.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Briar Rose[front]
+    [T]   power=55
+    [T]   atk=95 def=45 raw=116.11 ceil=117
+    [T]   FINAL_DMG=117
+  Briar Rose takes 117 damage.
+    [T] HPCHANGE Briar Rose: 195 → 78  (-117)
+  Briar Rose gains burn for 2 rounds.
+[Queued] Briar Rose: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Skip
+    [T] ACTION P2 Briar Rose[front]: swap ↔ Frederic the Beastslayer
+Briar Rose recharges.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: skip/recharge
+Frederic the Beastslayer recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=78/215 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=78/195 statuses=[burn(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: attack+15
+    [T] BUFF_EXPIRED Witch-Hunter Gretel: speed+10
+Briar Rose burns for 20 damage.
+    [T] STATUS_TICK Briar Rose: burn → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Briar Rose spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Ashen Ella [KO]
+    [T]   P1 Matchstick Liesl [KO]
+    [T]   P1 Witch-Hunter Gretel[front] HP=78/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=58/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Trapping Blow → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+    [T] ACTION P2 Briar Rose[front]: Trapping Blow → Witch-Hunter Gretel
+Briar Rose uses Trapping Blow on Witch-Hunter Gretel.
+    [T] DMGCALC [Trapping Blow] Briar Rose[front] → Witch-Hunter Gretel[front]
+    [T]   power=60
+    [T]   atk=60 def=45 raw=80.00 ceil=80
+    [T]   FINAL_DMG=80
+  Witch-Hunter Gretel takes 80 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 78 → 0  (-80) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 5)
+────────────────────────────────────────────────────────────
+Player 2 wins!

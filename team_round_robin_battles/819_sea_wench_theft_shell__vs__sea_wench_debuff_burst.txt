@@ -1,0 +1,768 @@
+Battle 819
+Player 1 Team: Sea Wench Theft Shell
+Player 2 Team: Sea Wench Debuff Burst
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:55:33
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 819
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Sea Wench Theft Shell
+  [front] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+  [back_left] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Misappropriate  (passive=False)
+    Basics: Dark Grasp, Cursed Armor
+    Item:   Arcane Focus
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Family Seal
+Player 2: Sea Wench Debuff Burst
+  [front] Sea Wench Asha (Warlock)  HP=210  ATK=75  DEF=45  SPD=65
+    Talent: Stolen Voices
+    Sig:    Abyssal Call  (passive=False)
+    Basics: Soul Gaze, Blood Pact
+    Item:   Arcane Focus
+  [back_left] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Impose, Summons
+    Item:   Main-Gauche
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=265/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Sea Wench Asha: Abyssal Call → Sir Roland
+[Queued] Frederic the Beastslayer: On the Hunt → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Lower Guard → Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Sir Roland
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+Sea Wench Asha uses Abyssal Call on Sir Roland.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Sir Roland takes 50 damage.
+    [T] HPCHANGE Sir Roland: 265 → 215  (-50)
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: On the Hunt → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Frederic the Beastslayer uses On the Hunt on Robin, Hooded Avenger.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=54
+  Robin, Hooded Avenger takes 54 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 131  (-54)
+  Robin, Hooded Avenger gains expose for 2 rounds.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Lower Guard → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [3/6]
+Rapunzel the Golden uses Lower Guard on Sea Wench Asha.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[back_left] → Sea Wench Asha[back_left]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Sea Wench Asha takes 40 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 170  (-40)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [4/6]
+  Sea Wench Asha loses -10 Defense for 2 rounds.
+[Queued] Sir Roland: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Frederic the Beastslayer
+[Queued] Sea Wench Asha: Misappropriate → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Robin, Hooded Avenger
+Sir Roland and Robin, Hooded Avenger swap positions.
+  Banner of Command: Robin, Hooded Avenger is Guarded.
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Snipe Shot → Frederic the Beastslayer
+Robin, Hooded Avenger uses Snipe Shot on Frederic the Beastslayer.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=133
+  Frederic the Beastslayer takes 133 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 67  (-133)
+    [T] ACTION P1 Sea Wench Asha[back_left]: Misappropriate → Rapunzel the Golden
+Sea Wench Asha uses Misappropriate on Rapunzel the Golden.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_left] → Rapunzel the Golden[back_left]
+    [T]   power=35
+    [T]   atk=82 def=65 raw=44.15 ceil=45
+    [T]   FINAL_DMG=45
+  Rapunzel the Golden takes 45 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 213  (-45)
+  Rapunzel the Golden gains root for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Sir Roland[back_right] HP=215/265 statuses=[-]
+    [T]   P1 Sea Wench Asha[back_left] HP=170/210 statuses=[-]
+    [T]   P1 Robin, Hooded Avenger[front] HP=131/185 statuses=[expose(2r), guard(2r)]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=213/258 statuses=[root(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=67/200 statuses=[-]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Robin, Hooded Avenger: expose → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: guard → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Robin, Hooded Avenger spd=65  vs  P2 FL=Sea Wench Asha spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=215/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha[back_left] HP=170/210 ATK=75(base=75) DEF=35(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P1 Robin, Hooded Avenger[front] HP=131/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[expose(1r), guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=213/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=67/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Frederic the Beastslayer
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Rapunzel the Golden
+    [T] ACTION P1 Robin, Hooded Avenger[front]: Hunter's Mark → Frederic the Beastslayer
+Robin, Hooded Avenger uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Frederic the Beastslayer[back_right]
+    [T]   power=50
+    [T]   atk=70 def=45 raw=77.78 ceil=78
+    [T]   FINAL_DMG=96
+  Frederic the Beastslayer takes 96 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 67 → 0  (-96) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+    [T] ACTION P1 Sir Roland[back_right]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P1 Sea Wench Asha[back_right]: Misappropriate → Rapunzel the Golden
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to back_right.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+    [T] DMGCALC [Misappropriate] Sea Wench Asha[back_right] → Sea Wench Asha[front]
+    [T]   power=35
+    [T]   atk=82 def=45 raw=63.78 ceil=64
+    [T]   FINAL_DMG=64
+  Sea Wench Asha takes 64 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 146  (-64)
+  Sea Wench Asha gains root for 2 rounds.
+[Queued] Sea Wench Asha: Abyssal Call → Robin, Hooded Avenger
+[Queued] Rapunzel the Golden: Impose → Robin, Hooded Avenger
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Robin, Hooded Avenger
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [5/6]
+Sea Wench Asha uses Abyssal Call on Robin, Hooded Avenger.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Robin, Hooded Avenger[front]
+    [T]   power=60
+    [T]   atk=75 def=40 raw=112.50 ceil=113
+    [T]   FINAL_DMG=109
+  Robin, Hooded Avenger takes 109 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 131 → 22  (-109)
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Impose → Robin, Hooded Avenger
+Rapunzel the Golden uses Impose on Robin, Hooded Avenger.
+    [T] DMGCALC [Impose] Rapunzel the Golden[back_left] → Robin, Hooded Avenger[front]
+    [T]   power=30
+    [T]   atk=60 def=40 raw=45.00 ceil=45
+    [T]   FINAL_DMG=44
+  Robin, Hooded Avenger takes 44 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 22 → 0  (-44) **KO**
+  Robin, Hooded Avenger loses -10 Speed for 2 rounds.
+Sir Roland moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Sir Roland[front] HP=215/265 statuses=[-]
+    [T]   P1 Sea Wench Asha[back_right] HP=170/210 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=146/210 statuses=[root(2r)]
+    [T]   P2 Rapunzel the Golden[back_left] HP=213/258 statuses=[root(1r)]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+    [T] DEBUFF_EXPIRED Sea Wench Asha: defense-10
+    [T] STATUS_TICK Sea Wench Asha: root → 1r left
+    [T] STATUS_TICK Rapunzel the Golden: root → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: root
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=215/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha[back_right] HP=170/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=146/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=213/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Abyssal Call → Sir Roland
+[Queued] Rapunzel the Golden: Swap with Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Sir Roland
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [6/6]
+Sea Wench Asha uses Abyssal Call on Sir Roland.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Sir Roland[front]
+    [T]   power=60
+    [T]   atk=75 def=90 raw=50.00 ceil=50
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=13
+  Sir Roland takes 13 damage.
+    [T] HPCHANGE Sir Roland: 215 → 202  (-13)
+    [T] ACTION P2 Rapunzel the Golden[back_left]: swap ↔ Sea Wench Asha
+Rapunzel the Golden and Sea Wench Asha swap positions.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+    [T] ACTION P1 Sea Wench Asha[front]: Misappropriate → Rapunzel the Golden
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [1/6]
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Lower Guard] Sea Wench Asha[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=75 def=65 raw=63.46 ceil=64
+    [T]   FINAL_DMG=64
+  Rapunzel the Golden takes 64 damage.
+    [T] HPCHANGE Rapunzel the Golden: 213 → 149  (-64)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Sir Roland[back_right] HP=202/265 statuses=[-]
+    [T]   P1 Sea Wench Asha[front] HP=170/210 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=146/210 statuses=[root(1r)]
+    [T]   P2 Rapunzel the Golden[front] HP=149/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] STATUS_TICK Sea Wench Asha: root → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: root
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sea Wench Asha spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=202/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha[front] HP=170/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=146/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=149/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P1 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [4/6]
+    [T] DMGCALC [Lower Guard] Sea Wench Asha[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=75 def=65 raw=63.46 ceil=64
+    [T]   FINAL_DMG=64
+  Rapunzel the Golden takes 64 damage.
+    [T] HPCHANGE Rapunzel the Golden: 149 → 85  (-64)
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Rapunzel the Golden: Impose → Sea Wench Asha
+[Queued] Sea Wench Asha: Blood Pact → Sea Wench Asha
+    [T] ACTION P2 Rapunzel the Golden[front]: Impose → Sea Wench Asha
+Rapunzel the Golden uses Impose on Sea Wench Asha.
+    [T] DMGCALC [Impose] Rapunzel the Golden[front] → Sea Wench Asha[front]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=54
+  Sea Wench Asha takes 54 damage.
+    [T] HPCHANGE Sea Wench Asha: 170 → 116  (-54)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [5/6]
+  Sea Wench Asha loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Sea Wench Asha[back_left]: Blood Pact → Sea Wench Asha
+Sea Wench Asha uses Blood Pact on Sea Wench Asha.
+  Sea Wench Asha heals self for 25 HP.
+  Sea Wench Asha spends 1 Malice (Blood Pact). [1/6]
+  Sea Wench Asha heals 25 HP.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Sir Roland[back_right] HP=202/265 statuses=[-]
+    [T]   P1 Sea Wench Asha[front] HP=116/210 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=196/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=85/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sea Wench Asha spd=55  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=202/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha[front] HP=116/210 ATK=75(base=75) DEF=45(base=45) SPD=55(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=196/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=85/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [4/6]
+    [T] DMGCALC [Lower Guard] Sea Wench Asha[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=75 def=65 raw=63.46 ceil=64
+    [T]   FINAL_DMG=64
+  Rapunzel the Golden takes 64 damage.
+    [T] HPCHANGE Rapunzel the Golden: 85 → 21  (-64)
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Rapunzel the Golden: Lower Guard → Sea Wench Asha
+[Queued] Sea Wench Asha: Blood Pact → Sea Wench Asha
+    [T] ACTION P2 Rapunzel the Golden[front]: Lower Guard → Sea Wench Asha
+Rapunzel the Golden uses Lower Guard on Sea Wench Asha.
+    [T] DMGCALC [Lower Guard] Rapunzel the Golden[front] → Sea Wench Asha[front]
+    [T]   power=70 (base=55)
+    [T]   atk=60 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=56
+  Sea Wench Asha takes 56 damage.
+    [T] HPCHANGE Sea Wench Asha: 116 → 60  (-56)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [5/6]
+    [T] ACTION P2 Sea Wench Asha[back_left]: Blood Pact → Sea Wench Asha
+Sea Wench Asha uses Blood Pact on Sea Wench Asha.
+  Sea Wench Asha heals self for 14 HP.
+  Sea Wench Asha spends 1 Malice (Blood Pact). [1/6]
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Sir Roland[back_right] HP=202/265 statuses=[guard(2r)]
+    [T]   P1 Sea Wench Asha[front] HP=60/210 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=21/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] DEBUFF_EXPIRED Sea Wench Asha: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sea Wench Asha spd=65  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=202/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha[front] HP=60/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=21/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Swap with Sir Roland
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P1 Sea Wench Asha[front]: swap ↔ Sir Roland
+Sea Wench Asha and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Sea Wench Asha is Guarded.
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+[Queued] Rapunzel the Golden: Impose → Sea Wench Asha
+[Queued] Sea Wench Asha: Abyssal Call → Sir Roland
+    [T] ACTION P2 Rapunzel the Golden[front]: Impose → Sea Wench Asha
+Rapunzel the Golden uses Impose on Sea Wench Asha.
+    [T] DMGCALC [Impose] Rapunzel the Golden[front] → Sea Wench Asha[back_right]
+    [T]   power=50
+    [T]   atk=60 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=54
+  Sea Wench Asha takes 54 damage.
+    [T] HPCHANGE Sea Wench Asha: 60 → 6  (-54)
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [6/6]
+  Sea Wench Asha loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Sea Wench Asha[back_left]: Abyssal Call → Sir Roland
+Sea Wench Asha uses Abyssal Call on Sir Roland.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[back_left] → Sir Roland[front]
+    [T]   power=40
+    [T]   atk=82 def=85 raw=38.59 ceil=39
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=8
+  Sir Roland takes 8 damage.
+    [T] HPCHANGE Sir Roland: 202 → 194  (-8)
+  Sir Roland's stat debuffs are refreshed.
+  Sea Wench Asha must recharge next turn.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Sir Roland[front] HP=194/265 statuses=[guard(1r)]
+    [T]   P1 Sea Wench Asha[back_right] HP=6/210 statuses=[guard(2r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=21/258 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] STATUS_TICK Sea Wench Asha: guard → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Rapunzel the Golden spd=30  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=194/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha[back_right] HP=6/210 ATK=75(base=75) DEF=45(base=45) SPD=55(base=65)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[speed-10(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[back_left] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=21/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Rapunzel the Golden: Impose → Sir Roland
+[Queued] Sea Wench Asha: Skip
+    [T] ACTION P2 Rapunzel the Golden[front]: Impose → Sir Roland
+Rapunzel the Golden uses Impose on Sir Roland.
+    [T] DMGCALC [Impose] Rapunzel the Golden[front] → Sir Roland[front]
+    [T]   power=50
+    [T]   atk=60 def=90 raw=33.33 ceil=34
+    [T]   FINAL_DMG=34
+  Sir Roland takes 34 damage.
+    [T] HPCHANGE Sir Roland: 194 → 160  (-34)
+  Sir Roland loses -10 Speed for 2 rounds.
+    [T] ACTION P2 Sea Wench Asha[back_left]: skip/recharge
+Sea Wench Asha recharges.
+[Queued] Sir Roland: Swap with Sea Wench Asha
+[Queued] Sea Wench Asha: Misappropriate → Rapunzel the Golden
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Sea Wench Asha
+Sir Roland and Sea Wench Asha swap positions.
+    [T] ACTION P1 Sea Wench Asha[front]: Misappropriate → Rapunzel the Golden
+  Sea Wench Asha gains 1 Malice (Stolen Voices). [2/6]
+  Sea Wench Asha retargets to Sea Wench Asha after swapping to front.
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [5/6]
+    [T] DMGCALC [Lower Guard] Sea Wench Asha[front] → Rapunzel the Golden[front]
+    [T]   power=55
+    [T]   atk=75 def=65 raw=63.46 ceil=64
+    [T]   FINAL_DMG=64
+  Rapunzel the Golden takes 64 damage.
+    [T] HPCHANGE Rapunzel the Golden: 21 → 0  (-64) **KO**
+Sea Wench Asha moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Sir Roland[back_right] HP=160/265 statuses=[-]
+    [T]   P1 Sea Wench Asha[front] HP=6/210 statuses=[guard(1r)]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] STATUS_TICK Sea Wench Asha: guard → 0r left
+    [T] STATUS_EXPIRED Sea Wench Asha: guard
+    [T] DEBUFF_EXPIRED Sea Wench Asha: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Sea Wench Asha spd=65  vs  P2 FL=Sea Wench Asha spd=65  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[back_right] HP=160/265 ATK=40(base=40) DEF=85(base=80) SPD=20(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[speed-10(1r)]
+    [T]   P1 Sea Wench Asha[front] HP=6/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=210/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Misappropriate → Sea Wench Asha
+[Queued] Sir Roland: Item Sea Wench Asha
+    [T] ACTION P1 Sea Wench Asha[front]: Misappropriate → Sea Wench Asha
+Sea Wench Asha uses Misappropriate on Sea Wench Asha.
+  Sea Wench Asha spends 1 Malice (Misappropriate). [4/6]
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Sea Wench Asha[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=90
+  Sea Wench Asha takes 90 damage.
+    [T] HPCHANGE Sea Wench Asha: 210 → 120  (-90)
+  Sea Wench Asha spends 1 Malice (Abyssal Call). [3/6]
+  Sea Wench Asha loses -10 Defense for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sea Wench Asha
+Sir Roland uses Crafty Shield.
+  Sea Wench Asha is Guarded.
+[Queued] Sea Wench Asha: Abyssal Call → Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Abyssal Call → Sea Wench Asha
+Sea Wench Asha uses Abyssal Call on Sea Wench Asha.
+    [T] DMGCALC [Abyssal Call] Sea Wench Asha[front] → Sea Wench Asha[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=65
+  Sea Wench Asha takes 65 damage.
+    [T] HPCHANGE Sea Wench Asha: 6 → 0  (-65) **KO**
+  Sea Wench Asha gains 1 Malice (Cursed Armor). [4/6]
+  Sea Wench Asha spends 1 Malice (Abyssal Call). [1/6]
+  Sea Wench Asha loses -10 Defense for 2 rounds.
+Sir Roland moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Sir Roland[front] HP=160/265 statuses=[-]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=120/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] DEBUFF_EXPIRED Sir Roland: speed-10
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=160/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=120/210 ATK=75(base=75) DEF=35(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[defense-10(1r)]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Turn to Foam → Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Turn to Foam → Sea Wench Asha
+Sea Wench Asha uses Turn to Foam on Sea Wench Asha.
+  Sea Wench Asha gains 3 Malice (Turn to Foam). [4/6]
+  Turn to Foam: all enemies get -40 Defense for 2 rounds.
+[Queued] Sir Roland: Purehearted Stand → Sir Roland
+    [T] ACTION P1 Sir Roland[front]: Purehearted Stand → Sir Roland
+Sir Roland uses Purehearted Stand on Sir Roland.
+  Sir Roland heals self for 100 HP.
+  Sir Roland is Guarded for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Sir Roland[front] HP=260/265 statuses=[guard(2r)]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=120/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] DEBUFF_EXPIRED Sea Wench Asha: defense-10
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=260/265 ATK=45(base=40) DEF=50(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[defense-40(1r)]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=120/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Blood Pact → Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Blood Pact → Sea Wench Asha
+Sea Wench Asha uses Blood Pact on Sea Wench Asha.
+  Sea Wench Asha loses 50 HP.
+  Sea Wench Asha gains 2 Malice (Blood Pact). [2/6]
+[Queued] Sir Roland: Shield Bash → Sea Wench Asha
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Sea Wench Asha
+Sir Roland uses Shield Bash on Sea Wench Asha.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Sea Wench Asha takes 40 damage.
+    [T] HPCHANGE Sea Wench Asha: 70 → 30  (-40)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Sir Roland[front] HP=260/265 statuses=[guard(1r)]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=30/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+    [T] DEBUFF_EXPIRED Sir Roland: defense-40
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=260/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=30/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Blood Pact → Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Blood Pact → Sea Wench Asha
+Sea Wench Asha uses Blood Pact on Sea Wench Asha.
+  Sea Wench Asha loses 50 HP.
+  Sea Wench Asha gains 2 Malice (Blood Pact). [4/6]
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Sir Roland[front]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Sir Roland[front] HP=260/265 statuses=[guard(2r)]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=1/210 statuses=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: attack+5
+    [T] BUFF_EXPIRED Sir Roland: defense+10
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Sir Roland spd=30  vs  P2 FL=Sea Wench Asha spd=65  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Sir Roland[front] HP=260/265 ATK=45(base=40) DEF=90(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[attack+5(1r), defense+10(1r)]  debuffs=[-]
+    [T]   P1 Sea Wench Asha [KO]
+    [T]   P1 Robin, Hooded Avenger [KO]
+    [T]   P2 Sea Wench Asha[front] HP=1/210 ATK=75(base=75) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Sea Wench Asha: Blood Pact → Sea Wench Asha
+    [T] ACTION P2 Sea Wench Asha[front]: Blood Pact → Sea Wench Asha
+Sea Wench Asha uses Blood Pact on Sea Wench Asha.
+  Sea Wench Asha loses 50 HP.
+  Sea Wench Asha gains 2 Malice (Blood Pact). [6/6]
+[Queued] Sir Roland: Shield Bash → Sea Wench Asha
+    [T] ACTION P1 Sir Roland[front]: Shield Bash → Sea Wench Asha
+Sir Roland uses Shield Bash on Sea Wench Asha.
+    [T] DMGCALC [Shield Bash] Sir Roland[front] → Sea Wench Asha[front]
+    [T]   power=40
+    [T]   atk=45 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Sea Wench Asha takes 40 damage.
+    [T] HPCHANGE Sea Wench Asha: 1 → 0  (-40) **KO**
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 12)
+────────────────────────────────────────────────────────────
+Player 1 wins!

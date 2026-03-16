@@ -1,0 +1,505 @@
+Battle 184
+Player 1 Team: Speed Tempo
+Player 2 Team: Rapunzel Collapse
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:51:42
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 184
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Speed Tempo
+  [front] Little Jack (Fighter)  HP=220  ATK=80  DEF=50  SPD=50
+    Talent: Giant Slayer
+    Sig:    Skyfall  (passive=False)
+    Basics: Cleave, Feint
+    Item:   Family Seal
+  [back_left] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+Player 2: Rapunzel Collapse
+  [front] Rapunzel the Golden (Noble)  HP=258  ATK=60  DEF=65  SPD=30
+    Talent: Flowing Locks
+    Sig:    Lower Guard  (passive=False)
+    Basics: Command, Edict
+    Item:   Main-Gauche
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Rapunzel the Golden spd=30  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=220/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[front] HP=258/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Little Jack: Skyfall → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: On the Hunt → Rapunzel the Golden
+[Queued] March Hare: Thunder Call → Lucky Constantine
+    [T] ACTION P1 Little Jack[front]: Skyfall → Rapunzel the Golden
+Little Jack uses Skyfall on Rapunzel the Golden.
+    [T] DMGCALC [Skyfall] Little Jack[front] → Rapunzel the Golden[front]
+    [T]   power=80
+    [T]   atk=80 def=65 raw=98.46 ceil=99
+    [T]   FINAL_DMG=129
+  Rapunzel the Golden takes 129 damage.
+    [T] HPCHANGE Rapunzel the Golden: 258 → 129  (-129)
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Rapunzel the Golden
+Frederic the Beastslayer uses On the Hunt on Rapunzel the Golden.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Rapunzel the Golden[front]
+    [T]   power=25
+    [T]   atk=70 def=65 raw=26.92 ceil=27
+    [T]   FINAL_DMG=33
+  Rapunzel the Golden takes 33 damage.
+    [T] HPCHANGE Rapunzel the Golden: 129 → 96  (-33)
+  Rapunzel the Golden gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[back_left]: Thunder Call → Lucky Constantine
+March Hare uses Thunder Call on Lucky Constantine.
+    [T] DMGCALC [Thunder Call] March Hare[back_left] → Lucky Constantine[back_left]
+    [T]   power=35
+    [T]   atk=70 def=40 raw=61.25 ceil=62
+    [T]   FINAL_DMG=62
+  Lucky Constantine takes 62 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 153  (-62)
+  Lucky Constantine gains shock for 2 rounds.
+[Queued] Rapunzel the Golden: Edict → March Hare
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] Lucky Constantine: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → March Hare
+Rapunzel the Golden uses Edict on March Hare.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → March Hare[back_left]
+    [T]   power=50
+    [T]   atk=60 def=35 raw=85.71 ceil=86
+    [T]   FINAL_DMG=86
+  March Hare takes 86 damage.
+    [T] HPCHANGE March Hare: 190 → 104  (-86)
+  March Hare gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Little Jack[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=42
+  Little Jack takes 42 damage.
+    [T] HPCHANGE Little Jack: 220 → 178  (-42)
+  Little Jack is Marked — takes +10 damage next round.
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Rapunzel the Golden
+Lucky Constantine and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Little Jack[front] HP=178/220 statuses=[-]
+    [T]   P1 March Hare[back_left] HP=104/190 statuses=[root(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=96/258 statuses=[expose(2r)]
+    [T]   P2 Lucky Constantine[front] HP=153/215 statuses=[shock(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK March Hare: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: expose → 1r left
+    [T] STATUS_TICK Lucky Constantine: shock → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Little Jack spd=50  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Little Jack[front] HP=178/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_left] HP=104/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[root(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=96/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=153/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Little Jack
+[Queued] Frederic the Beastslayer: Hunter's Mark → Little Jack
+[Queued] Rapunzel the Golden: Edict → March Hare
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Little Jack
+Lucky Constantine uses Feline Gambit on Little Jack.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Little Jack[front]
+    [T]   power=45
+    [T]   atk=70 def=50 raw=63.00 ceil=63
+    [T]   FINAL_DMG=73
+  Little Jack takes 73 damage.
+    [T] HPCHANGE Little Jack: 178 → 105  (-73)
+  Shock recoil: Lucky Constantine takes 15 damage.
+  Little Jack gains expose for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Little Jack
+Frederic the Beastslayer uses Hunter's Mark on Little Jack.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Little Jack[front]
+    [T]   power=25
+    [T]   atk=70 def=50 raw=35.00 ceil=35
+    [T]   FINAL_DMG=61
+  Little Jack takes 61 damage.
+    [T] HPCHANGE Little Jack: 105 → 44  (-61)
+  Little Jack is Marked — takes +10 damage next round.
+    [T] ACTION P2 Rapunzel the Golden[back_left]: Edict → March Hare
+Rapunzel the Golden uses Edict on March Hare.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_left] → March Hare[back_left]
+    [T]   power=30
+    [T]   atk=60 def=35 raw=51.43 ceil=52
+    [T]   FINAL_DMG=52
+  March Hare takes 52 damage.
+    [T] HPCHANGE March Hare: 104 → 52  (-52)
+  March Hare gains spotlight for 2 rounds.
+[Queued] Little Jack: Swap with March Hare
+[Queued] Frederic the Beastslayer: On the Hunt → Lucky Constantine
+[Queued] March Hare: Arcane Wave → Lucky Constantine
+    [T] ACTION P1 Little Jack[front]: swap ↔ March Hare
+Little Jack and March Hare swap positions.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: On the Hunt → Lucky Constantine
+Frederic the Beastslayer uses On the Hunt on Lucky Constantine.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_right] → Lucky Constantine[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=53
+  Lucky Constantine takes 53 damage.
+    [T] HPCHANGE Lucky Constantine: 138 → 85  (-53)
+  Lucky Constantine gains expose for 2 rounds.
+    [T] ACTION P1 March Hare[front]: Arcane Wave → Lucky Constantine
+March Hare uses Arcane Wave on Lucky Constantine.
+    [T] DMGCALC [Arcane Wave] March Hare[front] → Lucky Constantine[front]
+    [T]   power=80
+    [T]   atk=70 def=40 raw=140.00 ceil=140
+    [T]   FINAL_DMG=168
+  Lucky Constantine takes 168 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  March Hare has -10 Atk and -10 Def for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Little Jack[back_left] HP=44/220 statuses=[expose(2r)]
+    [T]   P1 March Hare[front] HP=52/190 statuses=[root(1r), spotlight(2r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=96/258 statuses=[expose(1r)]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[shock(1r), expose(2r)]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Little Jack: expose → 1r left
+    [T] STATUS_TICK March Hare: root → 0r left
+    [T] STATUS_TICK March Hare: spotlight → 1r left
+    [T] STATUS_EXPIRED March Hare: root
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: expose → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: expose
+    [T] STATUS_TICK Lucky Constantine: shock → 0r left
+    [T] STATUS_TICK Lucky Constantine: expose → 1r left
+    [T] STATUS_EXPIRED Lucky Constantine: shock
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Lucky Constantine spd=60 (MH adj from 75)  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Little Jack[back_left] HP=44/220 ATK=80(base=80) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[front] HP=52/190 ATK=60(base=70) DEF=25(base=35) SPD=70(base=70)
+    [T]     statuses=[spotlight(1r)]  buffs=[-]  debuffs=[attack-10(1r), defense-10(1r)]
+    [T]   P1 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_left] HP=96/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] March Hare: Thunder Call → Rapunzel the Golden
+[Queued] Frederic the Beastslayer: Hunter's Mark → Lucky Constantine
+[Queued] Little Jack: Swap with Frederic the Beastslayer
+    [T] ACTION P1 March Hare[front]: Thunder Call → Rapunzel the Golden
+March Hare uses Thunder Call on Rapunzel the Golden.
+    [T] DMGCALC [Thunder Call] March Hare[front] → Rapunzel the Golden[back_left]
+    [T]   power=65
+    [T]   atk=60 def=65 raw=60.00 ceil=60
+    [T]   FINAL_DMG=60
+  Rapunzel the Golden takes 60 damage.
+    [T] HPCHANGE Rapunzel the Golden: 96 → 36  (-60)
+  Rapunzel the Golden gains shock for 2 rounds.
+  March Hare must recharge next turn.
+    [T] ACTION P1 Frederic the Beastslayer[back_right]: Hunter's Mark → Lucky Constantine
+Frederic the Beastslayer uses Hunter's Mark on Lucky Constantine.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Lucky Constantine[front]
+    [T]   power=25
+    [T]   atk=70 def=40 raw=43.75 ceil=44
+    [T]   FINAL_DMG=64
+  Lucky Constantine takes 64 damage.
+    [T] HPCHANGE Lucky Constantine: 1 → 0  (-64) **KO**
+  Lucky Constantine is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+Rapunzel the Golden moves to frontline.
+    [T] ACTION P1 Little Jack[back_left]: swap ↔ Frederic the Beastslayer
+Little Jack and Frederic the Beastslayer swap positions.
+[Queued] Rapunzel the Golden: Edict → Little Jack
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+    [T] ACTION P2 Rapunzel the Golden[front]: Edict → Little Jack
+Rapunzel the Golden uses Edict on Little Jack.
+    [T] DMGCALC [Edict] Rapunzel the Golden[front] → Little Jack[back_right]
+    [T]   power=50
+    [T]   atk=60 def=50 raw=60.00 ceil=60
+    [T]   FINAL_DMG=82
+  Little Jack takes 82 damage.
+    [T] HPCHANGE Little Jack: 44 → 0  (-82) **KO**
+  Shock recoil: Rapunzel the Golden takes 17 damage.
+  Little Jack gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer and Rapunzel the Golden swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare[front] HP=52/190 statuses=[spotlight(1r)]
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=19/258 statuses=[shock(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] STATUS_TICK March Hare: spotlight → 0r left
+    [T] STATUS_EXPIRED March Hare: spotlight
+    [T] DEBUFF_EXPIRED March Hare: attack-10
+    [T] DEBUFF_EXPIRED March Hare: defense-10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: shock → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=March Hare spd=70  vs  P2 FL=Frederic the Beastslayer spd=45 (MH adj from 60)  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare[front] HP=52/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=19/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] March Hare: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P1 March Hare[front]: swap ↔ Frederic the Beastslayer
+March Hare recharges.
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Frederic the Beastslayer: Hunter's Mark → March Hare
+[Queued] Rapunzel the Golden: Edict → March Hare
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → March Hare
+Frederic the Beastslayer uses Hunter's Mark on March Hare.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → March Hare[front]
+    [T]   power=50
+    [T]   atk=75 def=35 raw=107.14 ceil=108
+    [T]   FINAL_DMG=130
+  March Hare takes 130 damage.
+    [T] HPCHANGE March Hare: 52 → 0  (-130) **KO**
+  March Hare is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+Frederic the Beastslayer moves to frontline.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Edict → March Hare
+Rapunzel the Golden's target is no longer legal — Edict fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=19/258 statuses=[shock(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Rapunzel the Golden: shock → 0r left
+    [T] STATUS_EXPIRED Rapunzel the Golden: shock
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden[back_right] HP=19/258 ATK=60(base=60) DEF=65(base=65) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Rapunzel the Golden
+[Queued] Rapunzel the Golden: Edict → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Rapunzel the Golden
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Rapunzel the Golden[back_right]: Edict → Frederic the Beastslayer
+Rapunzel the Golden uses Edict on Frederic the Beastslayer.
+    [T] DMGCALC [Edict] Rapunzel the Golden[back_right] → Frederic the Beastslayer[front]
+    [T]   power=30
+    [T]   atk=60 def=45 raw=40.00 ceil=40
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 160  (-40)
+  Frederic the Beastslayer gains spotlight for 2 rounds.
+[Queued] Frederic the Beastslayer: Slay the Beast → Rapunzel the Golden
+    [T] ACTION P1 Frederic the Beastslayer[front]: Slay the Beast → Rapunzel the Golden
+Frederic the Beastslayer uses Slay the Beast on Rapunzel the Golden.
+    [T] DMGCALC [Slay the Beast] Frederic the Beastslayer[front] → Rapunzel the Golden[back_right]
+    [T]   power=85 (base=65)
+    [T]   atk=75 def=65 raw=98.08 ceil=99
+    [T]   FINAL_DMG=99
+  Rapunzel the Golden takes 99 damage.
+    [T] HPCHANGE Rapunzel the Golden: 19 → 0  (-99) **KO**
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=160/200 statuses=[spotlight(2r)]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: spotlight → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=160/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[spotlight(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=112
+  Frederic the Beastslayer takes 112 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 88  (-112)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=112
+  Frederic the Beastslayer takes 112 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 160 → 48  (-112)
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=48/200 statuses=[spotlight(1r)]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=88/200 statuses=[-]
+    [T] STATUS_TICK Frederic the Beastslayer: spotlight → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: spotlight
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Little Jack [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P1 Frederic the Beastslayer[front] HP=48/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Rapunzel the Golden [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=88/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Frederic the Beastslayer
+Frederic the Beastslayer uses Hunter's Mark on Frederic the Beastslayer.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=122
+  Frederic the Beastslayer takes 122 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 48 → 0  (-122) **KO**
+  Frederic the Beastslayer is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

@@ -1,0 +1,322 @@
+Battle 751
+Player 1 Team: Shocked Quarry
+Player 2 Team: Pinocchio Spotlight Break
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 19:49:17
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 751
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Shocked Quarry
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    On the Hunt  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Main-Gauche
+  [back_left] Hunold the Piper (Rogue)  HP=210  ATK=60  DEF=45  SPD=65
+    Talent: Electrifying Trance
+    Sig:    Dying Dance  (passive=False)
+    Basics: Sucker Punch, Fleetfooted
+    Item:   Arcane Focus
+  [back_right] March Hare (Mage)  HP=190  ATK=70  DEF=35  SPD=70
+    Talent: On Time!
+    Sig:    Rabbit Hole  (passive=False)
+    Basics: Arcane Wave, Thunder Call
+    Item:   Lightning Boots
+Player 2: Pinocchio Spotlight Break
+  [front] Prince Charming (Noble)  HP=255  ATK=65  DEF=55  SPD=35
+    Talent: Mesmerizing
+    Sig:    Condescend  (passive=False)
+    Basics: Impose, Command
+    Item:   Main-Gauche
+  [back_left] Pinocchio, Cursed Puppet (Warlock)  HP=220  ATK=65  DEF=50  SPD=50
+    Talent: Growing Pains
+    Sig:    Cut the Strings  (passive=False)
+    Basics: Soul Gaze, Void Step
+    Item:   Family Seal
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P1 has initiative.
+P2 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Prince Charming spd=35  →  P1 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=190/190 ATK=70(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Prince Charming[front] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P2 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] March Hare: Thunder Call → Robin, Hooded Avenger
+[Queued] Hunold the Piper: Sucker Punch → Prince Charming
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+  Frederic the Beastslayer loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[back_right]
+    [T]   power=50
+    [T]   atk=65 def=40 raw=81.25 ceil=82
+    [T]   FINAL_DMG=82
+  Robin, Hooded Avenger takes 82 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 103  (-82)
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+    [T] ACTION P1 March Hare[back_right]: Thunder Call → Robin, Hooded Avenger
+March Hare uses Thunder Call on Robin, Hooded Avenger.
+  March Hare loses -10 Attack for 2 rounds.
+    [T] DMGCALC [Thunder Call] March Hare[back_right] → Robin, Hooded Avenger[back_right]
+    [T]   power=35
+    [T]   atk=60 def=40 raw=52.50 ceil=53
+    [T]   FINAL_DMG=53
+  Robin, Hooded Avenger takes 53 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 103 → 50  (-53)
+  Robin, Hooded Avenger gains shock for 2 rounds.
+    [T] ACTION P1 Hunold the Piper[back_left]: Sucker Punch → Prince Charming
+Hunold the Piper uses Sucker Punch on Prince Charming.
+  Prince Charming gains weaken for 2 rounds.
+[Queued] Prince Charming: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Hawkshot → March Hare
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Frederic the Beastslayer
+    [T] ACTION P2 Prince Charming[front]: swap ↔ Robin, Hooded Avenger
+Prince Charming and Robin, Hooded Avenger swap positions.
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hawkshot → March Hare
+Robin, Hooded Avenger uses Hawkshot on March Hare.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[front] → March Hare[back_right]
+    [T]   power=60
+    [T]   atk=70 def=35 raw=120.00 ceil=120
+    [T]   FINAL_DMG=130
+  March Hare takes 130 damage.
+    [T] HPCHANGE March Hare: 190 → 60  (-130)
+  Shock recoil: Robin, Hooded Avenger takes 26 damage.
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: Cut the Strings → Frederic the Beastslayer
+Pinocchio, Cursed Puppet uses Cut the Strings on Frederic the Beastslayer.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[back_left] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=68
+  Frederic the Beastslayer takes 68 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 132  (-68)
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Frederic the Beastslayer[front] HP=132/200 statuses=[-]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 statuses=[-]
+    [T]   P1 March Hare[back_right] HP=60/190 statuses=[-]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[weaken(2r)]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=24/185 statuses=[shock(2r)]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Prince Charming: weaken → 1r left
+    [T] STATUS_TICK Robin, Hooded Avenger: shock → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=132/200 ATK=65(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[attack-10(1r)]
+    [T]   P1 Hunold the Piper[back_left] HP=210/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare[back_right] HP=60/190 ATK=60(base=70) DEF=35(base=35) SPD=70(base=70)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[attack-10(1r)]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[weaken(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[back_left] HP=220/220 ATK=65(base=65) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[front] HP=24/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[shock(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Snipe Shot → Hunold the Piper
+[Queued] Prince Charming: Condescend → March Hare
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Frederic the Beastslayer
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Snipe Shot → Hunold the Piper
+Robin, Hooded Avenger uses Snipe Shot on Hunold the Piper.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[front] → Hunold the Piper[back_left]
+    [T]   power=65
+    [T]   atk=70 def=45 raw=101.11 ceil=102
+    [T]   FINAL_DMG=101
+  Hunold the Piper takes 101 damage.
+    [T] HPCHANGE Hunold the Piper: 210 → 109  (-101)
+  Shock recoil: Robin, Hooded Avenger takes 21 damage.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → March Hare
+Prince Charming uses Condescend on March Hare.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → March Hare[back_right]
+    [T]   power=40
+    [T]   atk=65 def=35 raw=74.29 ceil=75
+    [T]   FINAL_DMG=60
+  March Hare takes 60 damage.
+    [T] HPCHANGE March Hare: 60 → 0  (-60) **KO**
+    [T] ACTION P2 Pinocchio, Cursed Puppet[back_left]: Cut the Strings → Frederic the Beastslayer
+Pinocchio, Cursed Puppet uses Cut the Strings on Frederic the Beastslayer.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[back_left] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=68
+  Frederic the Beastslayer takes 68 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 132 → 64  (-68)
+[Queued] Frederic the Beastslayer: Hunter's Mark → Robin, Hooded Avenger
+[Queued] Hunold the Piper: Swap with Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: Hunter's Mark → Robin, Hooded Avenger
+Frederic the Beastslayer uses Hunter's Mark on Robin, Hooded Avenger.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=65 def=40 raw=81.25 ceil=82
+    [T]   FINAL_DMG=124
+  Robin, Hooded Avenger takes 124 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 3 → 0  (-124) **KO**
+  Robin, Hooded Avenger is Marked — takes +10 damage next round.
+Pinocchio, Cursed Puppet moves to frontline.
+    [T] ACTION P1 Hunold the Piper[back_left]: swap ↔ Frederic the Beastslayer
+Hunold the Piper and Frederic the Beastslayer swap positions.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Frederic the Beastslayer[back_left] HP=64/200 statuses=[-]
+    [T]   P1 Hunold the Piper[front] HP=109/210 statuses=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[weaken(1r)]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 statuses=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] DEBUFF_EXPIRED Frederic the Beastslayer: attack-10
+    [T] STATUS_TICK Prince Charming: weaken → 0r left
+    [T] STATUS_EXPIRED Prince Charming: weaken
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [1/6]
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Hunold the Piper spd=65  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[back_left] HP=64/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper[front] HP=109/210 ATK=60(base=60) DEF=45(base=45) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=220/220 ATK=70(base=65) DEF=55(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Hunold the Piper: Dying Dance → Pinocchio, Cursed Puppet
+[Queued] Frederic the Beastslayer: On the Hunt → Pinocchio, Cursed Puppet
+    [T] ACTION P1 Hunold the Piper[front]: Dying Dance → Pinocchio, Cursed Puppet
+Hunold the Piper uses Dying Dance on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [Dying Dance] Hunold the Piper[front] → Pinocchio, Cursed Puppet[front]
+    [T]   power=60
+    [T]   atk=60 def=55 raw=65.45 ceil=66
+    [T]   FINAL_DMG=66
+  Pinocchio, Cursed Puppet takes 66 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 220 → 154  (-66)
+    [T] ACTION P1 Frederic the Beastslayer[back_left]: On the Hunt → Pinocchio, Cursed Puppet
+Frederic the Beastslayer uses On the Hunt on Pinocchio, Cursed Puppet.
+    [T] DMGCALC [On the Hunt] Frederic the Beastslayer[back_left] → Pinocchio, Cursed Puppet[front]
+    [T]   power=25
+    [T]   atk=70 def=55 raw=31.82 ceil=32
+    [T]   FINAL_DMG=39
+  Pinocchio, Cursed Puppet takes 39 damage.
+    [T] HPCHANGE Pinocchio, Cursed Puppet: 154 → 115  (-39)
+  Pinocchio, Cursed Puppet gains expose for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Hunold the Piper
+[Queued] Prince Charming: Condescend → Hunold the Piper
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Hunold the Piper
+Pinocchio, Cursed Puppet uses Cut the Strings on Hunold the Piper.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Hunold the Piper[front]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=84
+  Hunold the Piper takes 84 damage.
+    [T] HPCHANGE Hunold the Piper: 109 → 25  (-84)
+  Hunold the Piper gains expose for 2 rounds.
+    [T] ACTION P2 Prince Charming[back_right]: Condescend → Hunold the Piper
+Prince Charming uses Condescend on Hunold the Piper.
+    [T] DMGCALC [Condescend] Prince Charming[back_right] → Hunold the Piper[front]
+    [T]   power=40
+    [T]   atk=65 def=45 raw=57.78 ceil=58
+    [T]   FINAL_DMG=70
+  Hunold the Piper takes 70 damage.
+    [T] HPCHANGE Hunold the Piper: 25 → 0  (-70) **KO**
+Frederic the Beastslayer moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Frederic the Beastslayer[front] HP=64/200 statuses=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 statuses=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=115/220 statuses=[expose(2r)]
+    [T]   P2 Robin, Hooded Avenger [KO]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+    [T] STATUS_TICK Pinocchio, Cursed Puppet: expose → 1r left
+  Pinocchio, Cursed Puppet gains 1 Malice (Growing Pains). [2/6]
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Frederic the Beastslayer spd=60  vs  P2 FL=Pinocchio, Cursed Puppet spd=50  →  P1 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Frederic the Beastslayer[front] HP=64/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P1 Hunold the Piper [KO]
+    [T]   P1 March Hare [KO]
+    [T]   P2 Prince Charming[back_right] HP=255/255 ATK=65(base=65) DEF=55(base=55) SPD=35(base=35)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Pinocchio, Cursed Puppet[front] HP=115/220 ATK=75(base=65) DEF=60(base=50) SPD=50(base=50)
+    [T]     statuses=[expose(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger [KO]
+[Queued] Frederic the Beastslayer: Item Frederic the Beastslayer
+    [T] ACTION P1 Frederic the Beastslayer[front]: item [Main-Gauche] → Frederic the Beastslayer
+Frederic the Beastslayer recharges.
+[Queued] Pinocchio, Cursed Puppet: Cut the Strings → Frederic the Beastslayer
+[Queued] Prince Charming: Condescend → Frederic the Beastslayer
+    [T] ACTION P2 Pinocchio, Cursed Puppet[front]: Cut the Strings → Frederic the Beastslayer
+Pinocchio, Cursed Puppet uses Cut the Strings on Frederic the Beastslayer.
+    [T] DMGCALC [Cut the Strings] Pinocchio, Cursed Puppet[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=75 def=45 raw=100.00 ceil=100
+    [T]   FINAL_DMG=121
+  Frederic the Beastslayer takes 121 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 64 → 0  (-121) **KO**
+  Frederic the Beastslayer gains expose for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 4)
+────────────────────────────────────────────────────────────
+Player 2 wins!

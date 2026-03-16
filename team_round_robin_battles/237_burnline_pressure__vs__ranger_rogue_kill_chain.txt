@@ -1,0 +1,474 @@
+Battle 237
+Player 1 Team: Burnline Pressure
+Player 2 Team: Ranger-Rogue Kill Chain
+Winner: P2
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:57:58
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 237
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Burnline Pressure
+  [front] Witch-Hunter Gretel (Fighter)  HP=215  ATK=80  DEF=45  SPD=60
+    Talent: Sugar Rush
+    Sig:    Hot Mitts  (passive=True)
+    Basics: Intimidate, Strike
+    Item:   Misericorde
+  [back_left] Matchstick Liesl (Cleric)  HP=210  ATK=50  DEF=50  SPD=50
+    Talent: Purifying Flame
+    Sig:    Cauterize  (passive=False)
+    Basics: Heal, Smite
+    Item:   Heart Amulet
+  [back_right] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Thunder Call
+    Item:   Misericorde
+Player 2: Ranger-Rogue Kill Chain
+  [front] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+  [back_left] Lucky Constantine (Rogue)  HP=215  ATK=70  DEF=40  SPD=75
+    Talent: Shadowstep
+    Sig:    Feline Gambit  (passive=False)
+    Basics: Post Bounty, Sucker Punch
+    Item:   Holy Diadem
+  [back_right] Robin, Hooded Avenger (Ranger)  HP=185  ATK=70  DEF=40  SPD=65
+    Talent: Keen Eye
+    Sig:    Snipe Shot  (passive=False)
+    Basics: Hunter's Mark, Hawkshot
+    Item:   Arcane Focus
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first  [TIE → prev_loser used]
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods[back_right] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[back_left] HP=215/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+P1 passed on free swap.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch of the Woods
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch of the Woods
+[Queued] Lucky Constantine: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Witch of the Woods
+Frederic the Beastslayer uses Hunter's Mark on Witch of the Woods.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch of the Woods[back_right]
+    [T]   power=50
+    [T]   atk=75 def=35 raw=107.14 ceil=108
+    [T]   FINAL_DMG=108
+  Witch of the Woods takes 108 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 72  (-108)
+  Witch of the Woods is Marked — takes +10 damage next round.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Witch of the Woods
+Robin, Hooded Avenger uses Hawkshot on Witch of the Woods.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Witch of the Woods[back_right]
+    [T]   power=40
+    [T]   atk=77 def=35 raw=88.00 ceil=88
+    [T]   FINAL_DMG=98
+  Witch of the Woods takes 98 damage.
+    [T] HPCHANGE Witch of the Woods: 72 → 0  (-98) **KO**
+    [T] ACTION P2 Lucky Constantine[back_left]: swap ↔ Frederic the Beastslayer
+Lucky Constantine and Frederic the Beastslayer swap positions.
+[Queued] Witch-Hunter Gretel: Strike → Lucky Constantine
+[Queued] Matchstick Liesl: Cauterize → Lucky Constantine
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Lucky Constantine
+Witch-Hunter Gretel uses Strike on Lucky Constantine.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=55
+    [T]   atk=80 def=40 raw=110.00 ceil=110
+    [T]   FINAL_DMG=110
+  Lucky Constantine takes 110 damage.
+    [T] HPCHANGE Lucky Constantine: 215 → 105  (-110)
+  Lucky Constantine gains burn for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Cauterize → Lucky Constantine
+Matchstick Liesl uses Cauterize on Lucky Constantine.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[back_left] → Lucky Constantine[front]
+    [T]   power=40
+    [T]   atk=50 def=40 raw=50.00 ceil=50
+    [T]   FINAL_DMG=50
+  Lucky Constantine takes 50 damage.
+    [T] HPCHANGE Lucky Constantine: 105 → 55  (-50)
+  Lucky Constantine gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 statuses=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=55/215 statuses=[burn(2r), no_heal(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+Lucky Constantine burns for 22 damage.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+    [T] STATUS_TICK Lucky Constantine: burn → 1r left
+    [T] STATUS_TICK Lucky Constantine: no_heal → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Lucky Constantine spd=75  →  P2 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=215/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine[front] HP=33/215 ATK=70(base=70) DEF=40(base=40) SPD=75(base=75)
+    [T]     statuses=[burn(1r), no_heal(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Lucky Constantine: Feline Gambit → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Hawkshot → Witch-Hunter Gretel
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+    [T] ACTION P2 Lucky Constantine[front]: Feline Gambit → Witch-Hunter Gretel
+Lucky Constantine uses Feline Gambit on Witch-Hunter Gretel.
+    [T] DMGCALC [Feline Gambit] Lucky Constantine[front] → Witch-Hunter Gretel[front]
+    [T]   power=45
+    [T]   atk=70 def=45 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Witch-Hunter Gretel takes 70 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 215 → 145  (-70)
+  Witch-Hunter Gretel gains expose for 2 rounds.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Hawkshot → Witch-Hunter Gretel
+Robin, Hooded Avenger uses Hawkshot on Witch-Hunter Gretel.
+    [T] DMGCALC [Hawkshot] Robin, Hooded Avenger[back_right] → Witch-Hunter Gretel[front]
+    [T]   power=40
+    [T]   atk=77 def=45 raw=68.44 ceil=69
+    [T]   FINAL_DMG=83
+  Witch-Hunter Gretel takes 83 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 145 → 62  (-83)
+    [T] ACTION P2 Frederic the Beastslayer[back_left]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_left] → Witch-Hunter Gretel[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=57
+  Witch-Hunter Gretel takes 57 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 62 → 5  (-57)
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+[Queued] Witch-Hunter Gretel: Intimidate → Lucky Constantine
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Intimidate → Lucky Constantine
+Witch-Hunter Gretel uses Intimidate on Lucky Constantine.
+    [T] DMGCALC [Intimidate] Witch-Hunter Gretel[front] → Lucky Constantine[front]
+    [T]   power=45
+    [T]   atk=80 def=40 raw=90.00 ceil=90
+    [T]   FINAL_DMG=111
+  Lucky Constantine takes 111 damage.
+Holy Diadem activates! Lucky Constantine survives at 1 HP.
+  Lucky Constantine gains weaken for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Witch-Hunter Gretel[front] HP=60/215 statuses=[expose(2r), burn_immune(2r)]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[back_left] HP=200/200 statuses=[-]
+    [T]   P2 Lucky Constantine[front] HP=1/215 statuses=[burn(1r), no_heal(1r), weaken(2r)]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+    [T] STATUS_TICK Witch-Hunter Gretel: expose → 1r left
+    [T] STATUS_TICK Witch-Hunter Gretel: burn_immune → 1r left
+Lucky Constantine burns for 22 damage.
+Frederic the Beastslayer moves to frontline.
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Witch-Hunter Gretel spd=60  vs  P2 FL=Frederic the Beastslayer spd=60  →  P1 acts first  [TIE → prev_loser used]
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel[front] HP=60/215 ATK=80(base=80) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[expose(1r), burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Matchstick Liesl[back_left] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=200/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Witch-Hunter Gretel: Strike → Frederic the Beastslayer
+[Queued] Matchstick Liesl: Heal → Witch-Hunter Gretel
+    [T] ACTION P1 Witch-Hunter Gretel[front]: Strike → Frederic the Beastslayer
+Witch-Hunter Gretel uses Strike on Frederic the Beastslayer.
+    [T] DMGCALC [Strike] Witch-Hunter Gretel[front] → Frederic the Beastslayer[front]
+    [T]   power=55
+    [T]   atk=80 def=45 raw=97.78 ceil=98
+    [T]   FINAL_DMG=108
+  Frederic the Beastslayer takes 108 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 92  (-108)
+  Frederic the Beastslayer gains burn for 2 rounds.
+    [T] ACTION P1 Matchstick Liesl[back_left]: Heal → Witch-Hunter Gretel
+Matchstick Liesl uses Heal on Witch-Hunter Gretel.
+  Matchstick Liesl heals Witch-Hunter Gretel for 55 HP.
+  Purifying Flame: Witch-Hunter Gretel will Burn their next target.
+  Matchstick Liesl must recharge next turn.
+[Queued] Frederic the Beastslayer: Hunter's Mark → Witch-Hunter Gretel
+[Queued] Robin, Hooded Avenger: Snipe Shot → Witch-Hunter Gretel
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Witch-Hunter Gretel
+Frederic the Beastslayer uses Hunter's Mark on Witch-Hunter Gretel.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Witch-Hunter Gretel[front]
+    [T]   power=50
+    [T]   atk=75 def=45 raw=83.33 ceil=84
+    [T]   FINAL_DMG=132
+  Witch-Hunter Gretel takes 132 damage.
+    [T] HPCHANGE Witch-Hunter Gretel: 115 → 0  (-132) **KO**
+  Witch-Hunter Gretel is Marked — takes +10 damage next round.
+  Frederic the Beastslayer must recharge next turn.
+Matchstick Liesl moves to frontline.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Witch-Hunter Gretel
+Robin, Hooded Avenger's target is no longer legal — Snipe Shot fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=92/200 statuses=[burn(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=210/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=72/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[burn(1r)]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Robin, Hooded Avenger
+[Queued] Robin, Hooded Avenger: Snipe Shot → Matchstick Liesl
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Robin, Hooded Avenger
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: Snipe Shot → Matchstick Liesl
+Robin, Hooded Avenger uses Snipe Shot on Matchstick Liesl.
+    [T] DMGCALC [Snipe Shot] Robin, Hooded Avenger[back_right] → Matchstick Liesl[front]
+    [T]   power=40
+    [T]   atk=77 def=50 raw=61.60 ceil=62
+    [T]   FINAL_DMG=62
+  Matchstick Liesl takes 62 damage.
+    [T] HPCHANGE Matchstick Liesl: 210 → 148  (-62)
+  Robin, Hooded Avenger must recharge next turn.
+[Queued] Matchstick Liesl: Skip
+    [T] ACTION P1 Matchstick Liesl[front]: skip/recharge
+Matchstick Liesl recharges.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=148/210 statuses=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=72/200 statuses=[burn(1r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 statuses=[-]
+Frederic the Beastslayer burns for 20 damage.
+    [T] STATUS_TICK Frederic the Beastslayer: burn → 0r left
+    [T] STATUS_EXPIRED Frederic the Beastslayer: burn
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=148/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=52/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=185/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Hunter's Mark → Matchstick Liesl
+[Queued] Robin, Hooded Avenger: Swap with Frederic the Beastslayer
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hunter's Mark → Matchstick Liesl
+Frederic the Beastslayer uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=75 def=50 raw=75.00 ceil=75
+    [T]   FINAL_DMG=90
+  Matchstick Liesl takes 90 damage.
+    [T] HPCHANGE Matchstick Liesl: 148 → 58  (-90)
+  Matchstick Liesl is Marked — takes +10 damage next round.
+    [T] ACTION P2 Robin, Hooded Avenger[back_right]: swap ↔ Frederic the Beastslayer
+Robin, Hooded Avenger recharges.
+[Queued] Matchstick Liesl: Cleansing Inferno
+    [T] ACTION P1 Matchstick Liesl[front]: Cleansing Inferno → spread/auto
+Matchstick Liesl uses Cleansing Inferno.
+Matchstick Liesl uses Cleansing Inferno (spread).
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Frederic the Beastslayer[front] (spread)
+    [T]   power=60
+    [T]   atk=50 def=45 raw=66.67 ceil=67
+    [T]   FINAL_DMG=37
+  Frederic the Beastslayer takes 37 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 52 → 15  (-37)
+  Matchstick Liesl heals 22 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Frederic the Beastslayer gains burn for 2 rounds.
+  Extra vamp vs Burned: Matchstick Liesl heals 12.
+    [T] DMGCALC [Cleansing Inferno] Matchstick Liesl[front] → Robin, Hooded Avenger[back_right] (spread)
+    [T]   power=60
+    [T]   atk=50 def=40 raw=75.00 ceil=75
+    [T]   FINAL_DMG=38
+  Robin, Hooded Avenger takes 38 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 185 → 147  (-38)
+  Matchstick Liesl heals 22 HP.
+  Purifying Flame: Matchstick Liesl will Burn their next target.
+  Robin, Hooded Avenger gains burn for 2 rounds.
+  Extra vamp vs Burned: Matchstick Liesl heals 12.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=126/210 statuses=[burn_immune(2r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer[front] HP=15/200 statuses=[burn(2r)]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[back_right] HP=147/185 statuses=[burn(2r)]
+    [T] STATUS_TICK Matchstick Liesl: burn_immune → 1r left
+Frederic the Beastslayer burns for 20 damage.
+Robin, Hooded Avenger burns for 19 damage.
+Robin, Hooded Avenger moves to frontline.
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 1r left
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=126/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[burn_immune(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=128/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[burn(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Kingmaker → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Kingmaker → Matchstick Liesl
+Robin, Hooded Avenger uses Kingmaker on Matchstick Liesl.
+    [T] DMGCALC [Kingmaker] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=70
+    [T]   atk=70 def=50 raw=98.00 ceil=98
+    [T]   FINAL_DMG=108
+  Matchstick Liesl takes 108 damage.
+    [T] HPCHANGE Matchstick Liesl: 126 → 18  (-108)
+[Queued] Matchstick Liesl: Cauterize → Robin, Hooded Avenger
+    [T] ACTION P1 Matchstick Liesl[front]: Cauterize → Robin, Hooded Avenger
+Matchstick Liesl uses Cauterize on Robin, Hooded Avenger.
+    [T] DMGCALC [Cauterize] Matchstick Liesl[front] → Robin, Hooded Avenger[front]
+    [T]   power=50
+    [T]   atk=50 def=40 raw=62.50 ceil=63
+    [T]   FINAL_DMG=63
+  Robin, Hooded Avenger takes 63 damage.
+    [T] HPCHANGE Robin, Hooded Avenger: 128 → 65  (-63)
+  Robin, Hooded Avenger gains no_heal for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=18/210 statuses=[burn_immune(1r)]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=65/185 statuses=[burn(1r), no_heal(2r)]
+    [T] STATUS_TICK Matchstick Liesl: burn_immune → 0r left
+    [T] STATUS_EXPIRED Matchstick Liesl: burn_immune
+Robin, Hooded Avenger burns for 19 damage.
+    [T] STATUS_TICK Robin, Hooded Avenger: burn → 0r left
+    [T] STATUS_TICK Robin, Hooded Avenger: no_heal → 1r left
+    [T] STATUS_EXPIRED Robin, Hooded Avenger: burn
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Matchstick Liesl spd=50  vs  P2 FL=Robin, Hooded Avenger spd=65  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Witch-Hunter Gretel [KO]
+    [T]   P1 Matchstick Liesl[front] HP=18/210 ATK=50(base=50) DEF=50(base=50) SPD=50(base=50)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Witch of the Woods [KO]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T]   P2 Lucky Constantine [KO]
+    [T]   P2 Robin, Hooded Avenger[front] HP=46/185 ATK=70(base=70) DEF=40(base=40) SPD=65(base=65)
+    [T]     statuses=[no_heal(1r)]  buffs=[-]  debuffs=[-]
+[Queued] Robin, Hooded Avenger: Hunter's Mark → Matchstick Liesl
+    [T] ACTION P2 Robin, Hooded Avenger[front]: Hunter's Mark → Matchstick Liesl
+Robin, Hooded Avenger uses Hunter's Mark on Matchstick Liesl.
+    [T] DMGCALC [Hunter's Mark] Robin, Hooded Avenger[front] → Matchstick Liesl[front]
+    [T]   power=50
+    [T]   atk=70 def=50 raw=70.00 ceil=70
+    [T]   FINAL_DMG=70
+  Matchstick Liesl takes 70 damage.
+    [T] HPCHANGE Matchstick Liesl: 18 → 0  (-70) **KO**
+  Matchstick Liesl is Marked — takes +10 damage next round.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P2 WINS (Round 7)
+────────────────────────────────────────────────────────────
+Player 2 wins!

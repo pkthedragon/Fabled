@@ -1,0 +1,892 @@
+Battle 146
+Player 1 Team: Reflection Punish
+Player 2 Team: Burn-Root Hunter
+Winner: P1
+
+======================================================================
+FABLED BATTLE LOG  —  2026-03-14 18:49:05
+======================================================================
+
+
+────────────────────────────────────────────────────────────
+BATTLE 146
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+TEAM COMPOSITIONS
+────────────────────────────────────────────────────────────
+Player 1: Reflection Punish
+  [front] Lady of Reflections (Warden)  HP=255  ATK=40  DEF=75  SPD=32
+    Talent: Reflecting Pool
+    Sig:    Drown in the Loch  (passive=False)
+    Basics: Condemn, Stalwart
+    Item:   Spiked Mail
+  [back_left] Reynard, Lupine Trickster (Rogue)  HP=205  ATK=65  DEF=45  SPD=75
+    Talent: Cunning Dodge
+    Sig:    Feign Weakness  (passive=False)
+    Basics: Riposte, Fleetfooted
+    Item:   Holy Diadem
+  [back_right] Sir Roland (Warden)  HP=265  ATK=40  DEF=80  SPD=30
+    Talent: Silver Aegis
+    Sig:    Banner of Command  (passive=True)
+    Basics: Shield Bash, Armored
+    Item:   Crafty Shield
+Player 2: Burn-Root Hunter
+  [front] Witch of the Woods (Mage)  HP=180  ATK=75  DEF=35  SPD=65
+    Talent: Double Double
+    Sig:    Toil and Trouble  (passive=False)
+    Basics: Fire Blast, Freezing Gale
+    Item:   Misericorde
+  [back_left] Briar Rose (Ranger)  HP=195  ATK=60  DEF=45  SPD=60
+    Talent: Curse of Sleeping
+    Sig:    Creeping Doubt  (passive=False)
+    Basics: Hunter's Mark, Trapping Blow
+    Item:   Family Seal
+  [back_right] Frederic the Beastslayer (Ranger)  HP=200  ATK=65  DEF=45  SPD=60
+    Talent: Heedless Pride
+    Sig:    Hero's Charge  (passive=False)
+    Basics: Hunter's Mark, Hunter's Badge
+    Item:   Family Seal
+
+────────────────────────────────────────────────────────────
+BATTLE START
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+ROUND 1
+────────────────────────────────────────────────────────────
+Round 1 — P2 has initiative.
+P1 receives a free formation swap.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 1 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[back_left] HP=205/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_right] HP=265/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+Lady of Reflections and Sir Roland swap positions.
+  Silver Aegis ready for Sir Roland.
+  Banner of Command: Lady of Reflections is Guarded.
+[Queued] Witch of the Woods: Freezing Gale → Reynard, Lupine Trickster
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sir Roland
+[Queued] Briar Rose: Creeping Doubt → Reynard, Lupine Trickster
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Reynard, Lupine Trickster
+Witch of the Woods uses Freezing Gale on Reynard, Lupine Trickster.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Reynard, Lupine Trickster[back_left]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=50
+  Reynard, Lupine Trickster takes 50 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 205 → 155  (-50)
+  Reynard, Lupine Trickster gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Sir Roland
+Frederic the Beastslayer uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Sir Roland[front]
+    [T]   power=25
+    [T]   atk=70 def=85 raw=20.59 ceil=21
+Silver Aegis! Sir Roland takes 75% less damage.
+    [T]   FINAL_DMG=4
+  Sir Roland takes 4 damage.
+    [T] HPCHANGE Sir Roland: 265 → 261  (-4)
+  Sir Roland is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Reynard, Lupine Trickster
+Briar Rose uses Creeping Doubt on Reynard, Lupine Trickster.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Reynard, Lupine Trickster[back_left]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=64
+  Reynard, Lupine Trickster takes 64 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 155 → 91  (-64)
+[Queued] Sir Roland: Swap with Reynard, Lupine Trickster
+[Queued] Lady of Reflections: Drown in the Loch → Witch of the Woods
+[Queued] Reynard, Lupine Trickster: Feign Weakness → Reynard, Lupine Trickster
+    [T] ACTION P1 Sir Roland[front]: swap ↔ Reynard, Lupine Trickster
+Sir Roland and Reynard, Lupine Trickster swap positions.
+  Cunning Dodge refreshed for Reynard, Lupine Trickster.
+  Banner of Command: Reynard, Lupine Trickster is Guarded.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Witch of the Woods
+Lady of Reflections uses Drown in the Loch on Witch of the Woods.
+  Witch of the Woods takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Feign Weakness → Reynard, Lupine Trickster
+Reynard, Lupine Trickster uses Feign Weakness on Reynard, Lupine Trickster.
+    [T] DMGCALC [Feign Weakness] Reynard, Lupine Trickster[front] → Reynard, Lupine Trickster[front]
+    [T]   power=50
+    [T]   atk=65 def=45 raw=72.22 ceil=73
+Cunning Dodge! Reynard, Lupine Trickster takes reduced damage.
+    [T]   FINAL_DMG=30
+  Reynard, Lupine Trickster takes 30 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 91 → 61  (-30)
+  Reynard, Lupine Trickster will retaliate with 45 power next round.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 1
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R1):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=61/205 statuses=[root(2r), guard(2r)]
+    [T]   P1 Sir Roland[back_left] HP=261/265 statuses=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: root → 1r left
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Reynard, Lupine Trickster loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 2
+────────────────────────────────────────────────────────────
+Round 2 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 2 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=61/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=261/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Swap with Sir Roland
+[Queued] Lady of Reflections: Drown in the Loch → Witch of the Woods
+[Queued] Sir Roland: Item Sir Roland
+Reynard, Lupine Trickster cannot act.
+    [T] ACTION P1 Lady of Reflections[back_right]: Drown in the Loch → Witch of the Woods
+Lady of Reflections uses Drown in the Loch on Witch of the Woods.
+  Witch of the Woods takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_left]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+[Queued] Witch of the Woods: Freezing Gale → Sir Roland
+[Queued] Frederic the Beastslayer: Hunter's Mark → Reynard, Lupine Trickster
+[Queued] Briar Rose: Creeping Doubt → Reynard, Lupine Trickster
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Sir Roland
+Witch of the Woods uses Freezing Gale on Sir Roland.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Sir Roland[back_left]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=67
+  Sir Roland takes 67 damage.
+    [T] HPCHANGE Sir Roland: 261 → 194  (-67)
+  Sir Roland gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Reynard, Lupine Trickster
+Frederic the Beastslayer uses Hunter's Mark on Reynard, Lupine Trickster.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Reynard, Lupine Trickster[front]
+    [T]   power=25
+    [T]   atk=70 def=45 raw=38.89 ceil=39
+    [T]   FINAL_DMG=23
+  Reynard, Lupine Trickster takes 23 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 61 → 38  (-23)
+  Reynard, Lupine Trickster is Marked — takes +10 damage next round.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Reynard, Lupine Trickster
+Briar Rose uses Creeping Doubt on Reynard, Lupine Trickster.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Reynard, Lupine Trickster[front]
+    [T]   power=40
+    [T]   atk=60 def=45 raw=53.33 ceil=54
+    [T]   FINAL_DMG=44
+  Reynard, Lupine Trickster takes 44 damage.
+Holy Diadem activates! Reynard, Lupine Trickster survives at 1 HP.
+  Reynard, Lupine Trickster is immune to Root (Curse of Sleeping).
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 2
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R2):
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=1/205 statuses=[guard(1r)]
+    [T]   P1 Sir Roland[back_left] HP=194/265 statuses=[guard(2r), root(2r)]
+    [T]   P2 Witch of the Woods[front] HP=180/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Reynard, Lupine Trickster: guard → 0r left
+    [T] STATUS_EXPIRED Reynard, Lupine Trickster: guard
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Sir Roland loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 3
+────────────────────────────────────────────────────────────
+Round 3 — P1 has initiative.
+    [T] INITIATIVE: P1 FL=Reynard, Lupine Trickster spd=75  vs  P2 FL=Witch of the Woods spd=65  →  P1 acts first
+    [T] ROUND 3 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[back_right] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster[front] HP=1/205 ATK=65(base=65) DEF=45(base=45) SPD=75(base=75)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Sir Roland[back_left] HP=194/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=180/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Reynard, Lupine Trickster: Riposte → Witch of the Woods
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Item Reynard, Lupine Trickster
+    [T] ACTION P1 Reynard, Lupine Trickster[front]: Riposte → Witch of the Woods
+Reynard, Lupine Trickster uses Riposte on Witch of the Woods.
+    [T] DMGCALC [Riposte] Reynard, Lupine Trickster[front] → Witch of the Woods[front]
+    [T]   power=45
+    [T]   atk=65 def=35 raw=83.57 ceil=84
+    [T]   FINAL_DMG=91
+  Witch of the Woods takes 91 damage.
+    [T] HPCHANGE Witch of the Woods: 180 → 89  (-91)
+  Reynard, Lupine Trickster takes 50% less damage this round (Riposte).
+    [T] ACTION P1 Lady of Reflections[back_right]: swap ↔ Sir Roland
+Lady of Reflections and Sir Roland swap positions.
+  Banner of Command: Lady of Reflections is Guarded.
+Sir Roland cannot act.
+[Queued] Witch of the Woods: Freezing Gale → Reynard, Lupine Trickster
+[Queued] Frederic the Beastslayer: Hunter's Mark → Reynard, Lupine Trickster
+[Queued] Briar Rose: Creeping Doubt → Reynard, Lupine Trickster
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Reynard, Lupine Trickster
+Witch of the Woods uses Freezing Gale on Reynard, Lupine Trickster.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Reynard, Lupine Trickster[front]
+    [T]   power=65
+    [T]   atk=75 def=45 raw=108.33 ceil=109
+    [T]   FINAL_DMG=44
+  Reynard, Lupine Trickster takes 44 damage.
+    [T] HPCHANGE Reynard, Lupine Trickster: 1 → 0  (-44) **KO**
+  Reynard, Lupine Trickster is immune to Root (Curse of Sleeping).
+  Witch of the Woods must recharge next turn.
+Lady of Reflections moves to frontline.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Reynard, Lupine Trickster
+Frederic the Beastslayer's target is no longer legal — Hunter's Mark fizzles.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Reynard, Lupine Trickster
+Briar Rose's target is no longer legal — Creeping Doubt fizzles.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 3
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R3):
+    [T]   P1 Lady of Reflections[front] HP=255/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=194/265 statuses=[guard(1r)]
+    [T]   P2 Witch of the Woods[front] HP=89/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 4
+────────────────────────────────────────────────────────────
+Round 4 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 4 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=255/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=194/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=89/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=195/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hero's Charge → Sir Roland
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P2 Witch of the Woods[front]: swap ↔ Frederic the Beastslayer
+Witch of the Woods recharges.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Sir Roland
+Frederic the Beastslayer uses Hero's Charge on Sir Roland.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Sir Roland[back_right]
+    [T]   power=30
+    [T]   atk=70 def=85 raw=24.71 ceil=25
+    [T]   FINAL_DMG=35
+  Sir Roland takes 35 damage.
+    [T] HPCHANGE Sir Roland: 194 → 159  (-35)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+  Frederic the Beastslayer must recharge next turn.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=75 raw=32.00 ceil=32
+    [T]   FINAL_DMG=26
+  Lady of Reflections takes 26 damage.
+    [T] HPCHANGE Lady of Reflections: 255 → 229  (-26)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Reflecting Pool: Briar Rose takes 6 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+[Queued] Lady of Reflections: Drown in the Loch → Witch of the Woods
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Witch of the Woods
+Lady of Reflections uses Drown in the Loch on Witch of the Woods.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=40 def=35 raw=45.71 ceil=46
+    [T]   FINAL_DMG=46
+  Witch of the Woods takes 46 damage.
+    [T] HPCHANGE Witch of the Woods: 89 → 43  (-46)
+  Witch of the Woods takes +7 damage from all sources for 2 rounds.
+    [T] ACTION P1 Sir Roland[back_right]: item [Crafty Shield] → Sir Roland
+Sir Roland uses Crafty Shield.
+  Sir Roland is Guarded.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 4
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R4):
+    [T]   P1 Lady of Reflections[front] HP=229/255 statuses=[guard(1r), root(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=159/265 statuses=[guard(2r)]
+    [T]   P2 Witch of the Woods[front] HP=43/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=179/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] STATUS_TICK Sir Roland: guard → 1r left
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Lady of Reflections loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 5
+────────────────────────────────────────────────────────────
+Round 5 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 5 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=229/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=159/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[guard(1r)]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=43/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=179/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Sir Roland
+[Queued] Frederic the Beastslayer: Swap with Witch of the Woods
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Sir Roland
+Witch of the Woods uses Freezing Gale on Sir Roland.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Sir Roland[back_right]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=57
+  Sir Roland takes 57 damage.
+    [T] HPCHANGE Sir Roland: 159 → 102  (-57)
+  Double Double! Lady of Reflections gains guard.
+  Sir Roland gains root for 2 rounds.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Witch of the Woods
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Briar Rose[back_left]: skip/recharge
+Briar Rose recharges.
+[Queued] Lady of Reflections: Swap with Sir Roland
+[Queued] Sir Roland: Shield Bash → Witch of the Woods
+Lady of Reflections cannot act.
+    [T] ACTION P1 Sir Roland[back_right]: Shield Bash → Witch of the Woods
+Sir Roland uses Shield Bash on Witch of the Woods.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 5
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R5):
+    [T]   P1 Lady of Reflections[front] HP=229/255 statuses=[guard(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=102/265 statuses=[guard(1r), root(2r)]
+    [T]   P2 Witch of the Woods[front] HP=43/180 statuses=[-]
+    [T]   P2 Briar Rose[back_left] HP=179/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 1r left
+    [T] STATUS_TICK Sir Roland: guard → 0r left
+    [T] STATUS_TICK Sir Roland: root → 1r left
+    [T] STATUS_EXPIRED Sir Roland: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+  Curse of Sleeping: Sir Roland loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 6
+────────────────────────────────────────────────────────────
+Round 6 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Witch of the Woods spd=65  →  P2 acts first
+    [T] ROUND 6 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=229/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[guard(1r)]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=102/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods[front] HP=43/180 ATK=75(base=75) DEF=35(base=35) SPD=65(base=65)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Briar Rose[back_left] HP=179/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Witch of the Woods: Freezing Gale → Sir Roland
+[Queued] Frederic the Beastslayer: Hero's Charge → Sir Roland
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P2 Witch of the Woods[front]: Freezing Gale → Sir Roland
+Witch of the Woods uses Freezing Gale on Sir Roland.
+    [T] DMGCALC [Freezing Gale] Witch of the Woods[front] → Sir Roland[back_right]
+    [T]   power=65
+    [T]   atk=75 def=85 raw=57.35 ceil=58
+    [T]   FINAL_DMG=58
+  Sir Roland takes 58 damage.
+    [T] HPCHANGE Sir Roland: 102 → 44  (-58)
+  Sir Roland is immune to Root (Curse of Sleeping).
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hero's Charge → Sir Roland
+Frederic the Beastslayer uses Hero's Charge on Sir Roland.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[back_right] → Sir Roland[back_right]
+    [T]   power=30
+    [T]   atk=70 def=85 raw=24.71 ceil=25
+    [T]   FINAL_DMG=35
+  Sir Roland takes 35 damage.
+    [T] HPCHANGE Sir Roland: 44 → 9  (-35)
+  Frederic the Beastslayer gains +12 Speed for 2 rounds.
+    [T] ACTION P2 Briar Rose[back_left]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_left] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=75 raw=32.00 ceil=32
+    [T]   FINAL_DMG=26
+  Lady of Reflections takes 26 damage.
+    [T] HPCHANGE Lady of Reflections: 229 → 203  (-26)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Reflecting Pool: Briar Rose takes 6 reflected damage.
+  Lady of Reflections is immune to Root (Curse of Sleeping).
+[Queued] Lady of Reflections: Drown in the Loch → Witch of the Woods
+[Queued] Sir Roland: Item Sir Roland
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Witch of the Woods
+Lady of Reflections uses Drown in the Loch on Witch of the Woods.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Witch of the Woods[front]
+    [T]   power=40
+    [T]   atk=40 def=35 raw=45.71 ceil=46
+    [T]   FINAL_DMG=46
+  Witch of the Woods takes 46 damage.
+    [T] HPCHANGE Witch of the Woods: 43 → 0  (-46) **KO**
+  Witch of the Woods takes +7 damage from all sources for 2 rounds.
+Briar Rose moves to frontline.
+Sir Roland cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 6
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R6):
+    [T]   P1 Lady of Reflections[front] HP=203/255 statuses=[guard(1r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=9/265 statuses=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=163/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: guard → 0r left
+    [T] STATUS_EXPIRED Lady of Reflections: guard
+    [T] BUFF_EXPIRED Sir Roland: defense+5
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 7
+────────────────────────────────────────────────────────────
+Round 7 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 7 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=203/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland[back_right] HP=9/265 ATK=40(base=40) DEF=85(base=80) SPD=30(base=30)
+    [T]     statuses=[-]  buffs=[defense+5(1r)]  debuffs=[-]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=163/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=72(base=60)
+    [T]     statuses=[-]  buffs=[speed+12(1r), attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Hunter's Mark → Lady of Reflections
+[Queued] Frederic the Beastslayer: Hunter's Mark → Sir Roland
+    [T] ACTION P2 Briar Rose[front]: Hunter's Mark → Lady of Reflections
+Briar Rose uses Hunter's Mark on Lady of Reflections.
+    [T] DMGCALC [Hunter's Mark] Briar Rose[front] → Lady of Reflections[front]
+    [T]   power=50
+    [T]   atk=60 def=75 raw=40.00 ceil=40
+    [T]   FINAL_DMG=30
+  Lady of Reflections takes 30 damage.
+    [T] HPCHANGE Lady of Reflections: 203 → 173  (-30)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Reflecting Pool: Briar Rose takes 3 reflected damage.
+  Lady of Reflections is Marked — takes +10 damage next round.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: Hunter's Mark → Sir Roland
+Frederic the Beastslayer uses Hunter's Mark on Sir Roland.
+    [T] DMGCALC [Hunter's Mark] Frederic the Beastslayer[back_right] → Sir Roland[back_right]
+    [T]   power=25
+    [T]   atk=70 def=85 raw=20.59 ceil=21
+    [T]   FINAL_DMG=21
+  Sir Roland takes 21 damage.
+    [T] HPCHANGE Sir Roland: 9 → 0  (-21) **KO**
+  Sir Roland is Marked — takes +10 damage next round.
+[Queued] Lady of Reflections: Drown in the Loch → Briar Rose
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Briar Rose
+Lady of Reflections uses Drown in the Loch on Briar Rose.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Briar Rose[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=36
+  Briar Rose takes 36 damage.
+    [T] HPCHANGE Briar Rose: 150 → 114  (-36)
+  Briar Rose takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 7
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R7):
+    [T]   P1 Lady of Reflections[front] HP=173/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=114/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: speed+12
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 8
+────────────────────────────────────────────────────────────
+Round 8 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 8 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=173/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=114/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=200/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Swap with Frederic the Beastslayer
+[Queued] Frederic the Beastslayer: Hero's Charge → Lady of Reflections
+    [T] ACTION P2 Briar Rose[front]: swap ↔ Frederic the Beastslayer
+Briar Rose and Frederic the Beastslayer swap positions.
+    [T] ACTION P2 Frederic the Beastslayer[front]: Hero's Charge → Lady of Reflections
+  Frederic the Beastslayer retargets to Frederic the Beastslayer after swapping to front.
+Frederic the Beastslayer uses Hero's Charge on Frederic the Beastslayer.
+    [T] DMGCALC [Hero's Charge] Frederic the Beastslayer[front] → Frederic the Beastslayer[front]
+    [T]   power=60
+    [T]   atk=70 def=45 raw=93.33 ceil=94
+    [T]   FINAL_DMG=104
+  Frederic the Beastslayer takes 104 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 200 → 96  (-104)
+  Frederic the Beastslayer must recharge next turn.
+[Queued] Lady of Reflections: Drown in the Loch → Frederic the Beastslayer
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Frederic the Beastslayer
+Lady of Reflections uses Drown in the Loch on Frederic the Beastslayer.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 96 → 56  (-40)
+  Frederic the Beastslayer takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 8
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R8):
+    [T]   P1 Lady of Reflections[front] HP=173/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[back_right] HP=114/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=56/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+5
+
+────────────────────────────────────────────────────────────
+ROUND 9
+────────────────────────────────────────────────────────────
+Round 9 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 9 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=173/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[back_right] HP=114/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=56/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Briar Rose
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Briar Rose
+Frederic the Beastslayer recharges.
+    [T] ACTION P2 Briar Rose[back_right]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[back_right] → Lady of Reflections[front]
+    [T]   power=40
+    [T]   atk=60 def=75 raw=32.00 ceil=32
+    [T]   FINAL_DMG=32
+  Lady of Reflections takes 32 damage.
+    [T] HPCHANGE Lady of Reflections: 173 → 141  (-32)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Reflecting Pool: Briar Rose takes 7 reflected damage.
+  Lady of Reflections gains root for 2 rounds.
+  Briar Rose must recharge next turn.
+[Queued] Lady of Reflections: Drown in the Loch → Frederic the Beastslayer
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Frederic the Beastslayer
+Lady of Reflections uses Drown in the Loch on Frederic the Beastslayer.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=47
+  Frederic the Beastslayer takes 47 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 56 → 9  (-47)
+  Frederic the Beastslayer takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 9
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R9):
+    [T]   P1 Lady of Reflections[front] HP=141/255 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[back_right] HP=97/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=9/200 statuses=[-]
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+  Curse of Sleeping: Lady of Reflections loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 10
+────────────────────────────────────────────────────────────
+Round 10 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Frederic the Beastslayer spd=60  →  P2 acts first
+    [T] ROUND 10 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=141/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[back_right] HP=97/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[front] HP=9/200 ATK=75(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+10(1r)]  debuffs=[-]
+[Queued] Frederic the Beastslayer: Swap with Briar Rose
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Frederic the Beastslayer[front]: swap ↔ Briar Rose
+Frederic the Beastslayer and Briar Rose swap positions.
+    [T] ACTION P2 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+[Queued] Lady of Reflections: Drown in the Loch → Briar Rose
+Lady of Reflections cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 10
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R10):
+    [T]   P1 Lady of Reflections[front] HP=141/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=97/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=9/200 statuses=[-]
+    [T] BUFF_EXPIRED Frederic the Beastslayer: attack+10
+
+────────────────────────────────────────────────────────────
+ROUND 11
+────────────────────────────────────────────────────────────
+Round 11 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 11 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=141/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=97/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer[back_right] HP=9/200 ATK=70(base=65) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[attack+5(1r)]  debuffs=[-]
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+[Queued] Frederic the Beastslayer: Swap with Briar Rose
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Lady of Reflections[front]
+    [T]   power=55
+    [T]   atk=60 def=75 raw=44.00 ceil=44
+    [T]   FINAL_DMG=44
+  Lady of Reflections takes 44 damage.
+    [T] HPCHANGE Lady of Reflections: 141 → 97  (-44)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Reflecting Pool: Briar Rose takes 5 reflected damage.
+    [T] ACTION P2 Frederic the Beastslayer[back_right]: swap ↔ Briar Rose
+Frederic the Beastslayer and Briar Rose swap positions.
+[Queued] Lady of Reflections: Drown in the Loch → Frederic the Beastslayer
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Frederic the Beastslayer
+Lady of Reflections uses Drown in the Loch on Frederic the Beastslayer.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Frederic the Beastslayer[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=40
+  Frederic the Beastslayer takes 40 damage.
+    [T] HPCHANGE Frederic the Beastslayer: 9 → 0  (-40) **KO**
+  Frederic the Beastslayer takes +7 damage from all sources for 2 rounds.
+Briar Rose moves to frontline.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 11
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R11):
+    [T]   P1 Lady of Reflections[front] HP=97/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=82/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 12
+────────────────────────────────────────────────────────────
+Round 12 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 12 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=97/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=82/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Falling Kingdom → Briar Rose
+    [T] ACTION P2 Briar Rose[front]: Falling Kingdom → Briar Rose
+Briar Rose uses Falling Kingdom on Briar Rose.
+  Lady of Reflections gains root for 2 rounds.
+[Queued] Lady of Reflections: Drown in the Loch → Briar Rose
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Briar Rose
+Lady of Reflections uses Drown in the Loch on Briar Rose.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Briar Rose[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=36
+  Briar Rose takes 36 damage.
+    [T] HPCHANGE Briar Rose: 82 → 46  (-36)
+  Briar Rose takes +7 damage from all sources for 2 rounds.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 12
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R12):
+    [T]   P1 Lady of Reflections[front] HP=97/255 statuses=[root(2r)]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=46/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+    [T] STATUS_TICK Lady of Reflections: root → 1r left
+  Curse of Sleeping: Lady of Reflections loses Root — cannot act or be Rooted this round.
+
+────────────────────────────────────────────────────────────
+ROUND 13
+────────────────────────────────────────────────────────────
+Round 13 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 13 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=97/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=46/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Creeping Doubt → Lady of Reflections
+    [T] ACTION P2 Briar Rose[front]: Creeping Doubt → Lady of Reflections
+Briar Rose uses Creeping Doubt on Lady of Reflections.
+    [T] DMGCALC [Creeping Doubt] Briar Rose[front] → Lady of Reflections[front]
+    [T]   power=55
+    [T]   atk=60 def=75 raw=44.00 ceil=44
+    [T]   FINAL_DMG=44
+  Lady of Reflections takes 44 damage.
+    [T] HPCHANGE Lady of Reflections: 97 → 53  (-44)
+  Spiked Mail! Briar Rose takes 10 damage.
+  Reflecting Pool: Briar Rose takes 5 reflected damage.
+  Briar Rose must recharge next turn.
+[Queued] Lady of Reflections: Drown in the Loch → Briar Rose
+Lady of Reflections cannot act.
+--- End of Round ---
+
+────────────────────────────────────────────────────────────
+END OF ROUND 13
+────────────────────────────────────────────────────────────
+    [T] PRE-END STATE (R13):
+    [T]   P1 Lady of Reflections[front] HP=53/255 statuses=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=31/195 statuses=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+
+────────────────────────────────────────────────────────────
+ROUND 14
+────────────────────────────────────────────────────────────
+Round 14 — P2 has initiative.
+    [T] INITIATIVE: P1 FL=Lady of Reflections spd=32  vs  P2 FL=Briar Rose spd=60  →  P2 acts first
+    [T] ROUND 14 STATE SNAPSHOT:
+    [T]   P1 Lady of Reflections[front] HP=53/255 ATK=40(base=40) DEF=75(base=75) SPD=32(base=32)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P1 Reynard, Lupine Trickster [KO]
+    [T]   P1 Sir Roland [KO]
+    [T]   P2 Witch of the Woods [KO]
+    [T]   P2 Briar Rose[front] HP=31/195 ATK=60(base=60) DEF=45(base=45) SPD=60(base=60)
+    [T]     statuses=[-]  buffs=[-]  debuffs=[-]
+    [T]   P2 Frederic the Beastslayer [KO]
+[Queued] Briar Rose: Skip
+    [T] ACTION P2 Briar Rose[front]: skip/recharge
+Briar Rose recharges.
+[Queued] Lady of Reflections: Drown in the Loch → Briar Rose
+    [T] ACTION P1 Lady of Reflections[front]: Drown in the Loch → Briar Rose
+Lady of Reflections uses Drown in the Loch on Briar Rose.
+    [T] DMGCALC [Drown in the Loch] Lady of Reflections[front] → Briar Rose[front]
+    [T]   power=40
+    [T]   atk=40 def=45 raw=35.56 ceil=36
+    [T]   FINAL_DMG=36
+  Briar Rose takes 36 damage.
+    [T] HPCHANGE Briar Rose: 31 → 0  (-36) **KO**
+  Briar Rose takes +7 damage from all sources for 2 rounds.
+
+────────────────────────────────────────────────────────────
+BATTLE OVER — P1 WINS (Round 14)
+────────────────────────────────────────────────────────────
+Player 1 wins!
