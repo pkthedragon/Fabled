@@ -529,6 +529,8 @@ class Game:
             "buffs": [{"stat": b.stat, "amount": b.amount, "duration": b.duration} for b in u.buffs],
             "debuffs": [{"stat": d.stat, "amount": d.amount, "duration": d.duration} for d in u.debuffs],
             "acted": u.acted, "must_recharge": u.must_recharge, "twist_used": u.twist_used,
+            "recharge_pending": getattr(u, "recharge_pending", False),
+            "recharge_exposed": getattr(u, "recharge_exposed", False),
             "item_uses_left": u.item_uses_left, "ranged_uses": u.ranged_uses,
             "ability_charges": dict(u.ability_charges), "max_hp_bonus": u.max_hp_bonus,
             "extra_actions_next": u.extra_actions_next, "extra_actions_now": u.extra_actions_now,
@@ -545,6 +547,8 @@ class Game:
         u.buffs = [StatMod(stat=b["stat"], amount=b["amount"], duration=b["duration"]) for b in d["buffs"]]
         u.debuffs = [StatMod(stat=db["stat"], amount=db["amount"], duration=db["duration"]) for db in d["debuffs"]]
         u.acted = d["acted"]; u.must_recharge = d["must_recharge"]; u.twist_used = d["twist_used"]
+        u.recharge_pending = d.get("recharge_pending", False)
+        u.recharge_exposed = d.get("recharge_exposed", False)
         u.item_uses_left = d["item_uses_left"]; u.ranged_uses = d["ranged_uses"]
         u.ability_charges = d["ability_charges"]; u.max_hp_bonus = d["max_hp_bonus"]
         u.extra_actions_next = d["extra_actions_next"]; u.extra_actions_now = d["extra_actions_now"]
@@ -2880,6 +2884,10 @@ class Game:
                     return
 
                 if atype == "skip":
+                    self._maybe_show_tutorial(
+                        "ranged_recharge_skip",
+                        "After using three abilities, or two while ranged for mixed adventurers, adventurers become idle for a full round. While idle, they can be targeted by melee adventurers and must use their action to recharge.",
+                    )
                     self._set_queued(actor, {"type": "skip"})
                     self._on_action_queued()
                     return
@@ -2930,18 +2938,19 @@ class Game:
                             "While in the backline, ranged adventurers can only target the enemy "
                             "across from them and the frontline. In the frontline however, they "
                             "can target any enemy. Be careful though, after three abilities, "
-                            "they must recharge for one round.")
+                            "they become idle and must spend their next turn recharging.")
                     elif role == "melee":
                         self._maybe_show_tutorial(
                             "target_melee",
-                            "Melee adventurers can only target the frontline, and most melee "
-                            "abilities deal no damage from the backline.")
+                            "Melee adventurers can only target the frontline, unless "
+                            "the target is idle, and most melee abilities deal no "
+                            "damage from the backline.")
                     elif role in ("noble", "warlock"):
                         self._maybe_show_tutorial(
                             "target_mixed",
                             "Mixed adventurers are melee while in the frontline and ranged while "
                             "in the backline. They only increment ranged recharge when using "
-                            "abilities from the backline.")
+                            "abilities from the backline, and recharge after two abilities.")
                     return
 
                 if atype == "item":

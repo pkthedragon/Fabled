@@ -517,8 +517,11 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
     # Recharge indicator
     if unit.must_recharge:
         draw_text(surf, "RECHARGE", 13, YELLOW, x, y)
-    elif hasattr(unit, 'ranged_uses') and (unit.role == "ranged" or (unit.role == "warlock" and unit.slot != SLOT_FRONT)):
-        limit = 3
+    elif hasattr(unit, 'ranged_uses') and (
+        unit.role == "ranged"
+        or (unit.role in ("warlock", "noble") and unit.slot != SLOT_FRONT)
+    ):
+        limit = 2 if unit.role in ("warlock", "noble") and unit.slot != SLOT_FRONT else 3
         draw_text(surf, f"uses {unit.ranged_uses}/{limit}", 12, TEXT_MUTED, x, y)
 
 
@@ -2003,18 +2006,18 @@ SPECIAL_DESCRIPTIONS: dict = {
     # Basic – Warden
     "slam_bonus_if_guarded":           "+15 power if user is Guarded",
     "slam_back_guard":                 "Guards user for 2 rounds",
-    "stalwart_front":                  "user takes -10 damage from abilities",
-    "stalwart_back":                   "frontline ally takes -10 damage from abilities",
+    "stalwart_front":                  "user takes -12 damage from abilities",
+    "stalwart_back":                   "frontline ally takes -12 damage from abilities",
     "protection_front":                "allies have +12 Defense",
     "protection_back":                 "allies have +7 Defense",
     # Basic – Mage
-    "arcane_wave_self_debuff":         "self: -10 Atk, -10 Def for 2 rounds",
+    "arcane_wave_self_debuff":         "self: -10 Atk for 2 rounds",
     # Basic – Ranger
     "trapping_blow_root_weakened":     "Roots Weakened targets for 2 rounds",
     "hunters_mark_dot":                "target takes +10 damage from all abilities next round",
     # Basic – Cleric
     "medic_front":                     "healing effects cure status conditions and debuffs",
-    "medic_back":                      "healing effects cure status conditions",
+    "medic_back":                      "healing effects cure the last inflicted status condition or debuff",
     # Risa
     "crimson_fury_recoil":             "after dealing damage, Risa takes recoil equal to 30% of damage dealt",
     "wolfs_pursuit_retarget":          "if target swaps, follow them with Wolf's Pursuit",
@@ -2035,7 +2038,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     # Hunold
     "hypnotic_aura_front":             "Shocked enemies' abilities are redirected to Hunold's back-left",
     "hypnotic_aura_back":              "Shocked enemies' abilities are redirected to Hunold's frontline",
-    "devils_due":                      "Hunold uses one of his own abilities with spread, ignoring melee restriction and spread penalty",
+    "devils_due":                      "Hunold uses one of his abilities as spread, ignoring melee restriction and spread damage penalty",
     # Reynard
     "feign_weakness_retaliate_45":     "retaliate 45 power vs incoming attackers next round",
     "feign_weakness_retaliate_40":     "retaliate 45 power vs incoming attackers next round",
@@ -2048,8 +2051,8 @@ SPECIAL_DESCRIPTIONS: dict = {
     "taunt_front_ranged":              "Taunt front-most ranged enemy for 2 rounds",
     "banner_of_command":               "Guard ally for 2 rounds whenever they swap",
     # Porcus
-    "nbth_self_reduce":                "Porcus takes 50% less damage this round",
-    "nbth_ally_reduce":                "frontline ally takes 40% less damage this round",
+    "nbth_self_reduce":                "Bricklayer is doubled and triggers on all incoming abilities next round",
+    "nbth_ally_reduce":                "Bricklayer triggers on all incoming abilities next round",
     "porcine_honor_self":              "Guard Porcus for 1 round at the start of each round",
     "porcine_honor_ally":              "Guard frontline ally for 1 round at the start of each round",
     "sturdy_home_front":               "all allies have +10 Defense",
@@ -2109,16 +2112,16 @@ SPECIAL_DESCRIPTIONS: dict = {
     "command_front":                 "enemies that attacked user last round take +7 damage from ally abilities",
     "command_back":                  "enemies that attacked allies last round take +7 damage from user's abilities",
     # Prince Charming (Noble)
-    "condescend_back":               "next ability against target has +7 power",
+    "condescend_back":               "next ability against target has +10 power",
     "gallant_charge_front":          "+15 power if Prince Charming was backline last round",
-    "chosen_one":                    "first ally swapped with becomes champion; attackers take +10 from next ability",
+    "chosen_one":                    "first ally swapped with becomes champion; attackers take +15 from next ability",
     "happily_ever_after":            "gain +15 to each KO ally's highest non-HP stat for 2 rounds",
     # Green Knight (Noble)
     "heros_bargain_back":            "swap target with enemy frontline",
-    "natural_order_front":           "+10 damage to targets that have not swapped for 2+ rounds",
+    "natural_order_front":           "+15 damage to targets that have not swapped for 2+ rounds",
     "natural_order_back":            "abilities vs unswapped targets do not increment ranged recharge",
-    "awaited_blow_front":            "retaliate for 35 power vs incoming attackers not across from Green Knight",
-    "awaited_blow_back":             "heal 35 HP at end of round",
+    "awaited_blow_front":            "retaliate for 40 power vs incoming attackers not across from Green Knight",
+    "awaited_blow_back":             "heal 40 HP at end of round",
     "fated_duel":                    "for 2 rounds, only Green Knight and the enemy across may act",
     # Rapunzel (Noble)
     "golden_snare_front":            "refresh Root duration on target",
@@ -2140,7 +2143,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     "cut_strings_back":              "spend 2 Malice to Spotlight target for 2 rounds",
     "become_real_front":             "at 3+ Malice: abilities gain +10 damage; immune to statuses",
     "become_real_back":              "at 3+ Malice: abilities do not increment ranged recharge",
-    "blue_faerie_boon":              "increase Malice cap by 6, gain 6 Malice, then heal 15 per Malice",
+    "blue_faerie_boon":              "heal 20 HP per Malice and increase Malice cap by 6 for this battle",
     # Rumpelstiltskin (Warlock)
     "straw_to_gold_front":           "steal ally's highest stat buff for 2r; +5 strength per Malice; return later",
     "straw_to_gold_back":            "convert an ally's highest stat debuff into a stat buff",

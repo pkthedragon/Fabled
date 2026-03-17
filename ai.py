@@ -14,6 +14,7 @@ from settings import SLOT_FRONT, SLOT_BACK_LEFT, SLOT_BACK_RIGHT, CLOCKWISE_ORDE
 from logic import (
     can_use_ability,
     determine_initiative,
+    get_recharge_limit,
     get_legal_item_targets,
     get_legal_targets,
     get_mode,
@@ -88,6 +89,14 @@ def is_melee_now(unit):
     return is_melee(unit)
 
 
+def is_recharge_locked(unit):
+    return unit.must_recharge or getattr(unit, "recharge_pending", False)
+
+
+def is_idle_target(unit):
+    return getattr(unit, "recharge_exposed", False)
+
+
 def has_not_acted_yet(unit):
     return (not unit.ko) and (not unit.acted)
 
@@ -150,7 +159,7 @@ def flat_damage_rider_bonus(target):
     if target.ability_charges.get("hunters_mark_active", 0) > 0:
         bonus += 10
     if target.ability_charges.get("drown_bonus_dur", 0) > 0:
-        bonus += 7
+        bonus += 10
     return bonus
 
 
@@ -158,20 +167,39 @@ def apply_damage_modifiers(dmg, source, target, battle):
     if dmg <= 0:
         return 0
     if source.has_status("weaken"):
-        dmg = math.ceil(dmg * 0.80)
+        dmg = math.ceil(dmg * 0.85)
     if source.defn.id == "little_jack" and target.max_hp > source.max_hp:
-        dmg = math.ceil(dmg * 1.20)
+        dmg = math.ceil(dmg * 1.15)
+    if source.defn.id == "frederic" and target.slot == SLOT_FRONT:
+        dmg = math.ceil(dmg * 1.15)
     if target.has_status("expose"):
-        dmg = math.ceil(dmg * 1.20)
+        dmg = math.ceil(dmg * 1.15)
+    if target.defn.id == "porcus_iii":
+        bricklayer_multiplier = max(1, target.ability_charges.get("bricklayer_all_active", 0))
+        bricklayer_on_all_hits = target.ability_charges.get("bricklayer_all_active", 0) > 0
+        threshold = math.ceil(target.max_hp * 0.20)
+        if bricklayer_on_all_hits or dmg >= threshold:
+            reduction = min(0.35 * bricklayer_multiplier, 0.95)
+            dmg = math.ceil(dmg * (1 - reduction))
     if target.has_status("guard"):
-        dmg = math.ceil(dmg * 0.80)
+        dmg = math.ceil(dmg * 0.85)
+    if target.defn.id == "frederic" and source.slot == SLOT_FRONT:
+        dmg = math.ceil(dmg * 1.07)
     dmg += flat_damage_rider_bonus(target)
     if source.defn.id == "robin_hooded_avenger" and target.slot != SLOT_FRONT:
-        dmg += 10
+        dmg += 7
     if source.defn.id == "lucky_constantine" and target.slot != SLOT_FRONT:
-        dmg = max(0, dmg - 10)
+        if getattr(target, "recharge_exposed", False):
+            dmg += 7
+        else:
+            dmg = max(0, dmg - 7)
+    if source.defn.id == "green_knight" and target.slot == source.slot:
+        dmg += 15
+    if source.defn.id == "green_knight" and source.sig.id == "natural_order" and source.slot == SLOT_FRONT:
+        if target.ability_charges.get("rounds_since_swap", 0) >= 2:
+            dmg += 15
     if source.defn.id == "snowkissed_aurora" and source.sig.id == "birdsong" and source.slot == SLOT_FRONT:
-        dmg += source.ability_charges.get("birdsong_birds", 0) * 10
+        dmg += source.ability_charges.get("birdsong_birds", 0) * 7
     if source.defn.id == "prince_charming" and target.ability_charges.get("chosen_one_mark", 0) > 0:
         dmg += 15
     return max(0, dmg)
@@ -203,7 +231,7 @@ def _estimate_power(actor, ability, target):
     if target.ability_charges.get("condescend_bonus", 0) > 0 and ability.id != "condescend":
         power += 10
     if ability.id == "nebulous_ides" and actor.slot != SLOT_FRONT and actor.ability_charges.get("swapped_this_round", 0) > 0:
-        power += 20
+        power += 15
     if ability.id == "wooden_wallop" and actor.slot == SLOT_FRONT:
         power += actor.ability_charges.get("malice", 0) * 5
     return power
@@ -241,11 +269,11 @@ def estimate_heal_value(actor, ability, target, battle):
     mode = get_mode(actor, ability)
     heal_amount = mode.heal + mode.heal_self + mode.heal_lowest
     if ability.id == "toxin_purge" and actor.slot == SLOT_FRONT:
-        heal_amount += 15 * sum(1 for status in target.statuses if status.duration > 0 and status.kind in RULEBOOK_DANGEROUS_STATUSES)
+        heal_amount += 12 * sum(1 for status in target.statuses if status.duration > 0 and status.kind in RULEBOOK_DANGEROUS_STATUSES)
     if heal_amount > 0 and actor.item.id == "heart_amulet":
         heal_amount += actor.item.flat_heal_bonus
     if heal_amount > 0 and actor.sig.id == "benefactor":
-        heal_amount = math.ceil(heal_amount * (1.25 if actor.slot == SLOT_FRONT else 1.15))
+        heal_amount = math.ceil(heal_amount * (1.35 if actor.slot == SLOT_FRONT else 1.20))
     if target.ability_charges.get("hunters_net_heal_dur", 0) > 0:
         heal_amount = math.ceil(heal_amount * 0.50)
     if heal_amount <= 0:
@@ -550,7 +578,7 @@ def target_access_score(actor, target, battle):
 
 
 def count_recharge_pressure(unit):
-    return max(0, 3 - unit.ranged_uses)
+    return max(0, get_recharge_limit(unit) - unit.ranged_uses)
 
 
 def ability_uses_until_recharge(unit):
@@ -660,7 +688,7 @@ def estimate_threat(unit, battle, viewer_player):
         score += 18.0
     if is_primary_carry(unit, battle.get_enemy(viewer_player)):
         score += 12.0
-    if is_recharge_sensitive(unit) and unit.must_recharge:
+    if is_recharge_sensitive(unit) and is_recharge_locked(unit):
         score -= 14.0
     return score
 
@@ -807,7 +835,7 @@ def evaluate_board_state_basic(battle, for_player):
     score += formation_safety_score(own_team, enemy_team, battle)
     score -= formation_safety_score(enemy_team, own_team, battle) * 0.7
     for unit in own_alive:
-        score -= 8.0 if unit.must_recharge else 0.0
+        score -= 8.0 if is_recharge_locked(unit) else 0.0
         score += sum(4.0 for s in unit.statuses if s.kind == "guard" and s.duration > 0)
         score -= sum(5.0 for s in unit.statuses if s.kind in RULEBOOK_DANGEROUS_STATUSES and s.duration > 0)
     for unit in enemy_alive:
@@ -883,8 +911,8 @@ def evaluate_next_round_state(battle, player_num):
     own = battle.get_team(player_num)
     enemy = battle.get_enemy(player_num)
     score += formation_safety_score(own, enemy, battle)
-    score -= sum(10.0 for unit in own.alive() if unit.must_recharge)
-    score += sum(8.0 for unit in enemy.alive() if unit.must_recharge)
+    score -= sum(10.0 for unit in own.alive() if is_recharge_locked(unit))
+    score += sum(8.0 for unit in enemy.alive() if is_recharge_locked(unit))
     for unit in own.alive():
         if unit.defn.id == "pinocchio" and unit.slot == SLOT_FRONT:
             malice = unit.ability_charges.get("malice", 0)
@@ -924,6 +952,8 @@ def score_partial_turn_sequence(state, player_num):
 def _build_candidates(battle, player_num, actor, is_extra, swap_used, swap_queued):
     team = battle.get_team(player_num)
     enemy = battle.get_enemy(player_num)
+    if actor.must_recharge:
+        return [{"type": "skip"}]
     candidates = []
     abilities = list(actor.basics) + [actor.sig]
     if len(team.alive()) == 1 and team.alive()[0] == actor:
@@ -1081,11 +1111,36 @@ def _hook_constantine(battle, player_num, actor, action, score):
     if target is not None:
         if target.has_status("expose"):
             score += 16.0
+        if target.slot != SLOT_FRONT and is_idle_target(target):
+            score += 18.0
         if target.slot != SLOT_FRONT and is_primary_carry(target, battle.get_enemy(player_num)):
             score += 8.0
     if action["ability"].id == "subterfuge" and action.get("swap_target") is not None:
         if is_primary_carry(action["swap_target"], battle.get_enemy(player_num)):
             score += 18.0
+    return score
+
+
+def _hook_rapunzel(battle, player_num, actor, action, score):
+    if action.get("type") != "ability":
+        return score
+    target = action.get("target")
+    if target is None:
+        return score
+    if actor.ability_charges.get("flowing_locks_ready", 0) > 0 or actor.ability_charges.get("severed_tether_active", 0) > 0:
+        normal_targets = get_legal_targets(
+            battle,
+            player_num,
+            actor,
+            action["ability"],
+            include_rapunzel_override=False,
+        )
+        if target not in normal_targets:
+            score += 18.0
+            if is_primary_carry(target, battle.get_enemy(player_num)):
+                score += 10.0
+            if target.hp / max(1, target.max_hp) < 0.45:
+                score += 10.0
     return score
 
 
@@ -1195,6 +1250,32 @@ def _hook_lady_of_reflections(battle, player_num, actor, action, score):
     return score
 
 
+def _hook_porcus(battle, player_num, actor, action, score):
+    if action.get("type") != "ability" or action["ability"].id != "not_by_the_hair":
+        return score
+    enemy_player = 2 if player_num == 1 else 1
+    incoming_attackers = 0
+    enemy_team = battle.get_enemy(player_num)
+    for enemy_unit in enemy_team.alive():
+        abilities = list(enemy_unit.basics) + [enemy_unit.sig]
+        if len(enemy_team.alive()) == 1 and enemy_team.alive()[0] == enemy_unit:
+            abilities = abilities + [enemy_unit.defn.twist]
+        for ability in abilities:
+            if ability.passive or not can_use_ability(enemy_unit, ability, enemy_team):
+                continue
+            if actor not in get_legal_targets(battle, enemy_player, enemy_unit, ability):
+                continue
+            if estimate_damage(enemy_unit, ability, actor, battle) <= 0:
+                continue
+            incoming_attackers += 1
+            break
+    score += 12.0 if actor.slot == SLOT_FRONT else 6.0
+    score += incoming_attackers * (12.0 if actor.slot == SLOT_FRONT else 8.0)
+    if actor.hp / max(1, actor.max_hp) < 0.65:
+        score += 14.0
+    return score
+
+
 def _apply_char_hooks(battle, player_num, actor, action, score):
     hook = _CHAR_HOOKS.get(actor.defn.id)
     if hook:
@@ -1213,12 +1294,14 @@ _CHAR_HOOKS = {
     "hunold_the_piper": _hook_hunold,
     "briar_rose": _hook_briar_rose,
     "robin_hooded_avenger": _hook_robin,
+    "rapunzel": _hook_rapunzel,
     "pinocchio": _hook_pinocchio,
     "rumpelstiltskin": _hook_rumpelstiltskin,
     "witch_of_the_woods": _hook_witch,
     "matchstick_liesl": _hook_matchstick_liesl,
     "risa_redcloak": _hook_risa,
     "lady_of_reflections": _hook_lady_of_reflections,
+    "porcus_iii": _hook_porcus,
 }
 
 

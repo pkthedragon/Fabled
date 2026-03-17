@@ -190,6 +190,8 @@ class CombatantState:
 
     # Ranged recharge
     ranged_uses: int = 0     # uses since last recharge
+    recharge_pending: bool = False
+    recharge_exposed: bool = False
     must_recharge: bool = False
 
     # Item tracking
@@ -288,7 +290,7 @@ class CombatantState:
                 base += malice * 5
         if self.defn.id == "rumpelstiltskin":
             if stat == "speed":
-                base += malice * 5
+                base += malice * 3
 
         return max(1, base + self.best_buff(stat) - self.best_debuff(stat))
 

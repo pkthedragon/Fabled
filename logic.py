@@ -81,6 +81,14 @@ def is_melee(unit: CombatantState) -> bool:
     return unit.role == "melee"
 
 
+def is_recharge_exposed(unit: CombatantState) -> bool:
+    return getattr(unit, "recharge_exposed", False)
+
+
+def get_recharge_limit(unit: CombatantState) -> int:
+    return 2 if unit.defn.cls in ("Warlock", "Noble") else 3
+
+
 # Rulebook-defined status conditions (STATUS CONDITIONS section).
 RULEBOOK_STATUS_CONDITIONS = {
     "burn", "root", "shock", "weaken", "expose", "guard", "spotlight",
@@ -371,6 +379,8 @@ def get_legal_targets(
     acting_player: int,
     actor: CombatantState,
     ability: Ability,
+    include_rapunzel_override: bool = True,
+    ignore_melee_targeting_restriction: bool = False,
 ) -> List[CombatantState]:
     """
     Returns all legal target CombatantState objects for the given ability.
@@ -389,7 +399,7 @@ def get_legal_targets(
         "heros_charge_ignore_pride_front", "riposte_bl", "struck_midnight_untargetable",
         "rabbit_hole_extra_action", "stitch_extra_action_now", "devils_due",
         "final_deception", "redemption", "unfettered",
-        "nbth_self_reduce", "shimmering_valor_front", "shimmering_valor_back",
+        "nbth_self_reduce", "nbth_ally_reduce", "shimmering_valor_front", "shimmering_valor_back",
         "falling_kingdom", "feign_weakness_retaliate_45", "feign_weakness_retaliate_40", "last_laugh",
         "crumb_trail_drop", "blue_faerie_boon", "turn_to_foam", "misappropriate_front",
         "fated_duel", "severed_tether", "happily_ever_after", "deathlike_slumber",
@@ -451,6 +461,14 @@ def get_legal_targets(
 
     melee_unit = is_melee(actor)
     ranged_unit = is_ranged(actor)
+    rapunzel_all_access = (
+        include_rapunzel_override
+        and actor.defn.id == "rapunzel"
+        and (
+            actor.ability_charges.get("flowing_locks_ready", 0) > 0
+            or actor.ability_charges.get("severed_tether_active", 0) > 0
+        )
+    )
 
     # Shadowstep (Constantine): melee can target Exposed backline
     shadowstep = _has_talent(actor, "lucky_constantine")
@@ -460,7 +478,9 @@ def get_legal_targets(
         if e.slot == SLOT_FRONT:
             legal.append(e)
         elif e.slot in (SLOT_BACK_LEFT, SLOT_BACK_RIGHT):
-            if ranged_unit:
+            if rapunzel_all_access:
+                legal.append(e)
+            elif ranged_unit:
                 # Ranged from frontline: can target all
                 if actor.slot == SLOT_FRONT:
                     legal.append(e)
@@ -471,14 +491,15 @@ def get_legal_targets(
                     legal.append(e)
                 # (frontline already caught above)
             elif melee_unit:
-                # Melee cannot target backline normally
-                if e.has_status("spotlight"):
+                # Melee can only reach idle or otherwise exposed backliners unless
+                # a special effect explicitly ignores melee targeting restrictions.
+                if ignore_melee_targeting_restriction:
+                    legal.append(e)
+                elif is_recharge_exposed(e):
+                    legal.append(e)
+                elif e.has_status("spotlight"):
                     legal.append(e)
                 elif shadowstep and e.has_status("expose"):
-                    legal.append(e)
-                elif actor.defn.id == "rapunzel" and actor.ability_charges.get("flowing_locks_ready", 0) > 0:
-                    legal.append(e)
-                elif actor.ability_charges.get("severed_tether_active", 0) > 0:
                     legal.append(e)
 
     # Taunt: taunted actor must target the unit with Knight's Challenge, bypassing
@@ -520,7 +541,7 @@ def get_legal_item_targets(
 ) -> List[CombatantState]:
     """Return legal item targets based on item effect type."""
     item = actor.item
-    if item.passive or actor.item_uses_left <= 0:
+    if actor.must_recharge or item.passive or actor.item_uses_left <= 0:
         return []
 
     team = battle.get_team(acting_player)
@@ -574,8 +595,7 @@ def can_use_ability(
             return False
         if actor.twist_used:
             return False
-    # Ranged recharge
-    if is_ranged(actor) and actor.must_recharge:
+    if actor.must_recharge:
         return False
     if ability.id == "summons" and actor.ability_charges.get("summons_cd", 0) > 0:
         return False
@@ -594,6 +614,7 @@ def compute_damage(
     acting_player: int,
     battle: BattleState,
     is_spread: bool = False,
+    ignore_spread_nerf: bool = False,
     ignore_pride: bool = False,
     is_retaliation: bool = False,
     consume_triggers: bool = True,
@@ -656,15 +677,11 @@ def compute_damage(
     if ability.id == "lower_guard" and actor.slot == SLOT_FRONT and target.debuffs:
         power += 15
 
-    # Condescend BL rider: next ability against target has +7 power
+    # Condescend BL rider: next ability against target has +10 power
     if target.ability_charges.get("condescend_bonus", 0) > 0 and ability.id != "condescend":
-        power += 7
+        power += 10
         if consume_triggers:
             target.ability_charges["condescend_bonus"] = 0
-
-    # Natural Order FL: +10 if target has not swapped for 2+ rounds
-    if _has_signature_effect(actor, "natural_order") and actor.slot == SLOT_FRONT and target.ability_charges.get("rounds_since_swap", 0) >= 2:
-        power += 10
 
     # Spinning Wheel FL: +5 damage per unique stat buff among all other adventurers
     if _has_signature_effect(actor, "spinning_wheel") and actor.slot == SLOT_FRONT:
@@ -748,9 +765,12 @@ def compute_damage(
 
     # Bricklayer (Porcus): if single hit ≥ 20% max HP, reduce by 35% and weaken attacker
     if _has_talent(target, "porcus_iii"):
+        bricklayer_multiplier = max(1, target.ability_charges.get("bricklayer_all_active", 0))
+        bricklayer_on_all_hits = target.ability_charges.get("bricklayer_all_active", 0) > 0
         threshold = math.ceil(target.max_hp * 0.20)
-        if dmg >= threshold:
-            dmg = math.ceil(dmg * 0.65)
+        if bricklayer_on_all_hits or dmg >= threshold:
+            reduction = min(0.35 * bricklayer_multiplier, 0.95)
+            dmg = math.ceil(dmg * (1 - reduction))
             if actor.add_status("weaken", 2):
                 battle.log_add(f"Bricklayer! {actor.name} is Weakened.")
 
@@ -774,13 +794,18 @@ def compute_damage(
     if actor.defn.id == "snowkissed_aurora" and _has_signature_effect(actor, "birdsong") and actor.slot == SLOT_FRONT:
         dmg += actor.ability_charges.get("birdsong_birds", 0) * 7
 
-    # Challenge Accepted (Green Knight): +10 to enemy across from him
+    # Challenge Accepted (Green Knight): +15 to enemy across from him
     if _has_talent(actor, "green_knight") and actor.slot == target.slot:
-        dmg += 10
+        dmg += 15
 
-    # Chosen One: attackers who damaged champion take +10 from Prince's next ability
+    # Natural Order FL: +15 flat damage to targets who have not swapped for 2+ rounds.
+    if actor.defn.id == "green_knight" and _has_signature_effect(actor, "natural_order") and actor.slot == SLOT_FRONT:
+        if target.ability_charges.get("rounds_since_swap", 0) >= 2:
+            dmg += 15
+
+    # Chosen One: attackers who damaged champion take +15 from Prince's next ability
     if actor.defn.id == "prince_charming" and target.ability_charges.get("chosen_one_mark", 0) > 0:
-        dmg += 10
+        dmg += 15
         if consume_triggers:
             target.ability_charges["chosen_one_mark"] = 0
 
@@ -801,16 +826,19 @@ def compute_damage(
             target.ability_charges["cunning_dodge"] = 0
             battle.log_add(f"Cunning Dodge! {target.name} takes reduced damage.")
 
-    # Shadowstep (Constantine): -12 damage to backline
+    # Shadowstep (Constantine): -7 to backline, or +7 if the target is idle.
     if _has_talent(actor, "lucky_constantine") \
             and target.slot in (SLOT_BACK_LEFT, SLOT_BACK_RIGHT):
-        dmg = max(0, dmg - 12)
+        if is_recharge_exposed(target):
+            dmg += 7
+        else:
+            dmg = max(0, dmg - 7)
 
     if _has_signature_effect(actor, "become_real") and actor.slot == SLOT_FRONT and actor.ability_charges.get("malice", 0) >= 3:
         dmg += 10
 
-    # Spread: 50% damage
-    if is_spread:
+    # Spread: 50% damage unless a special effect overrides the nerf.
+    if is_spread and not ignore_spread_nerf:
         # Spread Fortune (Robin): FL halves the nerf (75% instead of 50%); BL targets all (handled in get_legal_targets)
         if _has_signature_effect(actor, "spread_fortune") and actor.slot == SLOT_FRONT:
             dmg = math.ceil(dmg * 0.75)  # halved nerf: 75% instead of 50%
@@ -835,7 +863,7 @@ def compute_damage(
     if target.ability_charges.get("drown_bonus_dur", 0) > 0:
         dmg += 10
 
-    # Stalwart passive basic: FL carrier takes -10; BL carrier protects frontline ally
+    # Stalwart passive basic: FL carrier takes -12; BL carrier protects frontline ally
     stalwart_protects = False
     defending_team = battle.get_enemy(acting_player)
     for ally in defending_team.alive():
@@ -846,7 +874,7 @@ def compute_damage(
                 stalwart_protects = True
             break
     if stalwart_protects:
-        dmg = max(0, dmg - 10)
+        dmg = max(0, dmg - 12)
 
     # Hot Mitts passive FL: +15% damage vs already-Burned enemies (or Burn them after, below)
     if _has_signature_effect(actor, "hot_mitts") and actor.slot == SLOT_FRONT and target.has_status("burn"):
@@ -1056,7 +1084,7 @@ def deal_damage(
     if not is_retaliation and dmg > 0 and _has_signature_effect(target, "awaited_blow") and target.slot == SLOT_FRONT and actor.slot != target.slot and not target.ko:
         retaliate_ability = Ability(
             id="awaited_blow_retaliation", name="Awaited Blow", category="signature", passive=False,
-            frontline=AbilityMode(power=35), backline=AbilityMode(power=35)
+            frontline=AbilityMode(power=40), backline=AbilityMode(power=40)
         )
         retaliate_mode = retaliate_ability.frontline
         retaliate_player = 2 if acting_player == 1 else 1
@@ -1443,6 +1471,7 @@ def execute_ability(
     acting_player: int,
     battle: BattleState,
     is_spread: bool = False,
+    ignore_spread_nerf: bool = False,
     ignore_pride: bool = False,
     action_context: dict | None = None,
 ):
@@ -1458,20 +1487,32 @@ def execute_ability(
         if target.ability_charges.get("rounds_since_swap", 0) >= 2:
             actor.ability_charges["natural_order_skip_recharge"] = 1
 
-    # Mesmerizing (Prince Charming talent): enemies that target his allies get -7 Atk for 2 rounds.
+    # Mesmerizing (Prince Charming talent): enemies that target his allies get -10 Atk for 2 rounds.
     prince = next((u for u in enemy.alive() if u.defn.id == "prince_charming" and u.slot == SLOT_FRONT), None)
     if prince and target is not None and target in enemy.members and target != prince:
-        apply_stat_debuff(actor, "attack", 7, 2, battle)
+        apply_stat_debuff(actor, "attack", 10, 2, battle)
 
-    # Flowing Locks consumption: using melee backline access spends the one-time charge
-    if actor.defn.id == "rapunzel" and target is not None and actor.slot == SLOT_FRONT and target.slot != SLOT_FRONT:
-        if actor.ability_charges.get("severed_tether_active", 0) <= 0 and actor.ability_charges.get("flowing_locks_ready", 0) > 0:
+    # Flowing Locks is spent only when Rapunzel uses a target that needed the override.
+    if actor.defn.id == "rapunzel" and target is not None:
+        legal_without_flow = get_legal_targets(
+            battle,
+            acting_player,
+            actor,
+            ability,
+            include_rapunzel_override=False,
+        )
+        if (
+            target not in legal_without_flow
+            and actor.ability_charges.get("severed_tether_active", 0) <= 0
+            and actor.ability_charges.get("flowing_locks_ready", 0) > 0
+        ):
             actor.ability_charges["flowing_locks_ready"] = 0
 
     # ── Damage ────────────────────────────────────────────────────────────────
     if mode.power > 0:
         dmg = compute_damage(actor, target, ability, mode, acting_player, battle,
-                             is_spread=is_spread, ignore_pride=ignore_pride)
+                             is_spread=is_spread, ignore_spread_nerf=ignore_spread_nerf,
+                             ignore_pride=ignore_pride)
         damage_dealt = dmg
         battle.log_add(f"  {target.name} takes {dmg} damage.")
         deal_damage(actor, target, dmg, ability, mode, acting_player, battle)
@@ -1586,9 +1627,17 @@ def execute_spread_ability(
     acting_player: int,
     battle: BattleState,
     ignore_pride: bool = False,
+    ignore_melee_targeting_restriction: bool = False,
+    ignore_spread_nerf: bool = False,
 ):
     """Execute a spread ability against all legal targets."""
-    targets = get_legal_targets(battle, acting_player, actor, ability)
+    targets = get_legal_targets(
+        battle,
+        acting_player,
+        actor,
+        ability,
+        ignore_melee_targeting_restriction=ignore_melee_targeting_restriction,
+    )
     if not targets:
         battle.log_add(f"{actor.name} uses {ability.name} — no targets.")
         return
@@ -1596,7 +1645,8 @@ def execute_spread_ability(
     for t in targets:
         if not t.ko:
             execute_ability(actor, ability, t, acting_player, battle,
-                            is_spread=True, ignore_pride=ignore_pride)
+                            is_spread=True, ignore_spread_nerf=ignore_spread_nerf,
+                            ignore_pride=ignore_pride)
             check_and_promote(battle)
             if check_winner(battle):
                 return
@@ -1664,14 +1714,12 @@ def apply_special(
 
     # ── Not By The Hair: damage reduction ────────────────────────────────────
     elif key == "nbth_self_reduce":
-        actor.dmg_reduction = 0.50
-        battle.log_add(f"  {actor.name} takes 50% less damage this round.")
+        actor.ability_charges["bricklayer_all_pending"] = 2
+        battle.log_add(f"  {actor.name}'s Bricklayer is doubled and will trigger on all incoming abilities next round.")
 
     elif key == "nbth_ally_reduce":
-        front = team.frontline()
-        if front and front != actor:
-            front.dmg_reduction = 0.40
-            battle.log_add(f"  {front.name} takes 40% less damage this round.")
+        actor.ability_charges["bricklayer_all_pending"] = 1
+        battle.log_add(f"  {actor.name}'s Bricklayer will trigger on all incoming abilities next round.")
 
     # ── Unbreakable Defense: clear statuses + double defense ─────────────────
     elif key == "unfettered":
@@ -1776,8 +1824,7 @@ def apply_special(
     # ── Arcane Wave: self atk/def debuff ─────────────────────────────────────
     elif key == "arcane_wave_self_debuff":
         actor.add_debuff("attack",  10, 2)
-        actor.add_debuff("defense", 10, 2)
-        battle.log_add(f"  {actor.name} has -10 Atk and -10 Def for 2 rounds.")
+        battle.log_add(f"  {actor.name} has -10 Atk for 2 rounds.")
 
     # ── Slam: bonus if guarded, or backline guard self ────────────────────────
     elif key == "slam_bonus_if_guarded":
@@ -2021,16 +2068,45 @@ def apply_special(
     elif key in ("hypnotic_aura_front", "hypnotic_aura_back"):
         pass  # handled in get_legal_targets / resolve_queued_action
 
-    # ── Devil's Due: make one ability spread this round ───────────────────────
+    # ── Devil's Due: use an ability as spread, bypassing melee restriction and
+    # spread damage nerf. Since the UI only selects the twist itself, pick the
+    # strongest enemy-facing active from Hunold's current kit.
     elif key == "devils_due":
-        # Pick the highest-power non-passive ability from actor's kit
-        candidates = [a for a in (actor.basics + [actor.sig])
-                      if not a.passive and get_mode(actor, a).power > 0]
+        def _devils_due_score(candidate: Ability) -> tuple[int, int]:
+            c_mode = get_mode(actor, candidate)
+            status_count = sum(1 for kind in (c_mode.status, c_mode.status2, c_mode.status3) if kind)
+            debuff_score = 12 if any((c_mode.atk_debuff, c_mode.spd_debuff, c_mode.def_debuff)) else 0
+            return (
+                c_mode.power + status_count * 20 + debuff_score,
+                1 if candidate.category == "signature" else 0,
+            )
+
+        candidates = [
+            a for a in (actor.basics + [actor.sig])
+            if not a.passive
+            and not get_mode(actor, a).unavailable
+            and (
+                get_mode(actor, a).power > 0
+                or get_mode(actor, a).status
+                or get_mode(actor, a).status2
+                or get_mode(actor, a).status3
+                or get_mode(actor, a).atk_debuff
+                or get_mode(actor, a).spd_debuff
+                or get_mode(actor, a).def_debuff
+            )
+        ]
         if candidates:
-            best = max(candidates, key=lambda a: get_mode(actor, a).power)
-            actor.ability_charges["devils_due_spread"] = best.id
+            best = max(candidates, key=_devils_due_score)
             battle.log_add(
-                f"  Devil's Due! {best.name} is now Spread this round.")
+                f"  Devil's Due! {actor.name} uses {best.name} as a full-power spread ability.")
+            execute_spread_ability(
+                actor,
+                best,
+                acting_player,
+                battle,
+                ignore_melee_targeting_restriction=True,
+                ignore_spread_nerf=True,
+            )
 
     # ── Noble basics / signatures ───────────────────────────────────────────
     elif key == "summons_swap":
@@ -2141,8 +2217,7 @@ def apply_special(
 
     elif key == "blue_faerie_boon":
         actor.ability_charges["malice_cap"] = 12
-        _gain_malice(actor, 6, battle, ability.name)
-        do_heal(actor, actor.ability_charges.get("malice", 0) * 15, actor, battle)
+        do_heal(actor, actor.ability_charges.get("malice", 0) * 20, actor, battle)
 
     elif key == "straw_to_gold_front":
         ally = target
@@ -2364,8 +2439,8 @@ def _track_ranged_use_once(actor: CombatantState, ability: Ability, battle: Batt
         actor.ability_charges["natural_order_skip_recharge"] = 0
         return
     actor.ranged_uses += 1
-    if actor.ranged_uses >= 3:
-        actor.must_recharge = True
+    if actor.ranged_uses >= get_recharge_limit(actor) and not actor.recharge_pending and not actor.must_recharge:
+        actor.recharge_pending = True
         battle.log_add(f"  {actor.name} must recharge next turn.")
 
 
@@ -2413,6 +2488,11 @@ def resolve_queued_action(
 
     action = actor.queued
     if action is None:
+        if actor.must_recharge:
+            actor.ranged_uses = 0
+            actor.must_recharge = False
+            actor.recharge_pending = False
+            battle.log_add(f"{actor.name} recharges.")
         actor.acted = True
         return
 
@@ -2441,10 +2521,11 @@ def resolve_queued_action(
             f"ACTION P{acting_player} {actor.name}[{actor.slot}]: skip/recharge"
         )
 
-    # If unit must recharge, force a recharge regardless of chosen action
-    if actor.must_recharge and atype in ("swap", "item"):
+    # Recharge is a forced skipped turn regardless of the queued action.
+    if actor.must_recharge and atype != "skip":
         actor.ranged_uses = 0
         actor.must_recharge = False
+        actor.recharge_pending = False
         battle.log_add(f"{actor.name} recharges.")
         actor.acted = True
         return
@@ -2453,6 +2534,7 @@ def resolve_queued_action(
         if actor.must_recharge:
             actor.ranged_uses = 0
             actor.must_recharge = False
+            actor.recharge_pending = False
             battle.log_add(f"{actor.name} recharges.")
         else:
             battle.log_add(f"{actor.name} skips.")
@@ -2692,9 +2774,9 @@ def end_round(battle: BattleState):
             if _has_signature_effect(unit, "midnight_dour") and unit.slot != SLOT_FRONT:
                 do_heal(unit, 40, unit, battle)
 
-            # Awaited Blow BL: heal 35 HP at end of round
+            # Awaited Blow BL: heal 40 HP at end of round
             if _has_signature_effect(unit, "awaited_blow") and unit.slot != SLOT_FRONT:
-                do_heal(unit, 35, unit, battle)
+                do_heal(unit, 40, unit, battle)
 
             # Redemption: heal 50 HP for 2 rounds
             if unit.ability_charges.get("redemption_heal", 0) > 0:
@@ -2820,6 +2902,12 @@ def end_round(battle: BattleState):
 
             unit.ability_charges["swapped_this_round"] = 0
 
+            if unit.ability_charges.get("bricklayer_all_active", 0) > 0:
+                unit.ability_charges["bricklayer_all_active"] = 0
+            if unit.ability_charges.get("bricklayer_all_pending", 0) > 0:
+                unit.ability_charges["bricklayer_all_active"] = unit.ability_charges["bricklayer_all_pending"]
+                unit.ability_charges["bricklayer_all_pending"] = 0
+
             # Growing Pains (Pinocchio): gain Malice when ending round in frontline
             if _has_talent(unit, "pinocchio") and unit.slot == SLOT_FRONT:
                 _gain_malice(unit, 1, battle, "Growing Pains")
@@ -2845,11 +2933,17 @@ def end_round(battle: BattleState):
 
             # Reset per-round flags
             unit.acted = False
+            unit.recharge_exposed = False
             # Don't clear Shimmering Valor's multi-round reduction
             if unit.valor_rounds == 0:
                 unit.dmg_reduction = 0.0
             unit.retaliate_power = 0
             unit.retaliate_speed_steal = 0
+
+            if unit.recharge_pending:
+                unit.must_recharge = True
+                unit.recharge_exposed = True
+                unit.recharge_pending = False
 
             # Move extra_actions_next to extra_actions_now
             if unit.extra_actions_next > 0:

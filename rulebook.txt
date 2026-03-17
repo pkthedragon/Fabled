@@ -19,7 +19,6 @@ Status Conditions
 Stat Buffs and Debuffs
 Winning the Game
 
-
 Appendix A - Adventurers
 Appendix B - Basic Abilities
 Appendix C - Items
@@ -34,7 +33,6 @@ A Signature Ability chosen from three adventurer-specific options, which can eit
 Two Basic Abilities chosen from their class pool, which can either be actions or passive effects.
 A Twist Ability unique to each adventurer, which is an action only usable as a last stand.
 An Item chosen from player inventory, which can either be actions or passive effects.
-
 
 Adventurers also have four stats:
 HP, or how much health the adventurer has.
@@ -57,11 +55,11 @@ Warlocks, disruptors that punish enemy action and inaction.
 BATTLE FORMATION
 Each team uses a triangle formation with a backline behind a frontline. Both frontlines face each other with their backlines behind them.
 Player A
-Backline Left		Backline Right
+Backline Left        Backline Right
          Frontline
 Player B
-	         Frontline
-Backline Left		Backline Right
+             Frontline
+Backline Left        Backline Right
 Formation Rules
 One adventurer must always be in the frontline, and up to two adventurers can be in the backline
 If the frontline adventurer is knocked out, the leftmost backline adventurer moves forward.
@@ -80,13 +78,13 @@ If an adventurer cannot select an action, they are skipped during action executi
 Abilities often have different effects when used from the frontline as opposed to the backline. Additionally, an ability with power is considered an attack and can deal damage.
 TARGETING RULES
 The targeting range of abilities changes if the adventurer is ranged or melee and if they are frontline or backline.
-Melee adventurers cannot target backline enemies.
+Melee adventurers cannot target backline enemies who aren't idle.
 Ranged adventurers can target all enemies while in the frontline, but can only target frontline enemies and the backline enemy across from them while in the backline.
 Spread abilities affect all legal targets, but deal 50% damage.
 RANGED RECHARGE
-Ranged adventurers must recharge for one round after using three abilities by skipping their action that round.
+Ranged adventurers become idle for one round after using three abilities, or two for mixed adventurers, and must recharge by skipping their action that round. While idle, they can be targeted by melee abilities.
 MIXED CLASSES
-Warlocks and Nobles are unique in that they are ranged in the backline and melee in the frontline. This means that their targeting rules will change based on their position, and when using an ability in the backline, it counts towards ranged recharge.
+Warlocks and Nobles are unique in that they are ranged in the backline and melee in the frontline. This means that their targeting rules will change based on their position, and when using an ability in the backline, it counts towards ranged recharge. However, they recharge after just two ability uses while ranged.
 DAMAGE CALCULATION
 Damage uses the following formula:
 Damage = Power x (Attack / Defense), rounded up
@@ -107,9 +105,9 @@ Victory is achieved when all enemy adventurers are knocked out. The battle ends 
 APPENDIX A - ADVENTURERS
 Risa Redcloak
 Class: Fighter
-HP: 248
-Attack: 71
-Defense: 64
+HP: 288
+Attack: 76
+Defense: 74
 Speed: 42
 Talent: Red and Wolf
 While below 50% max HP, Risa has +12 Attack, +12 Speed, and her abilities have 15% vamp.
@@ -131,9 +129,9 @@ Active
 
 Little Jack
 Class: Fighter
-HP: 220
-Attack: 82
-Defense: 49
+HP: 260
+Attack: 87
+Defense: 59
 Speed: 74
 Talent: Giant Slayer
 Jack deals 15% bonus damage to enemies with higher max HP.
@@ -147,7 +145,7 @@ Frontline: Jack ignores 20% of enemy Defense.
 Backline: Jack ignores 20% of enemy Attack.
 Signature Ability 3: Magic Growth
 Active
-Frontline: 60 power, Roots target for 2 rounds.
+Frontline: 65 power, Roots target for 2 rounds.
 Backline: Root target for 2 rounds, Jack's next ability has +15 power.
 Twist Ability: Fell the Beanstalk
 Active
@@ -155,9 +153,9 @@ Active
 
 Witch-Hunter Gretel
 Class: Fighter
-HP: 228
-Attack: 75
-Defense: 54
+HP: 268
+Attack: 80
+Defense: 64
 Speed: 63
 Talent: Sugar Rush
 When Gretel knocks out an enemy, she has +15 attack and +15 speed for 2 rounds.
@@ -179,19 +177,19 @@ Active
 
 Lucky Constantine
 Class: Rogue
-HP: 214
-Attack: 64
+HP: 244
+Attack: 74
 Defense: 41
 Speed: 101
 Talent: Shadowstep
-Constantine ignores melee targeting restrictions against Exposed targets, but deals -12 damage to backline enemies.
+Constantine ignores melee targeting restrictions against Exposed targets, but deals -7 damage to backline enemies, or +7 if they are idle.
 Signature Ability 1: Feline Gambit
 Active
-Frontline: 50 power, Exposes target for 2 rounds.
+Frontline: 65 power, Exposes target for 2 rounds.
 Backline: Exposes target for 2 rounds.
 Signature Ability 2: Subterfuge
 Active
-Frontline: 50 power, swap target and enemy.
+Frontline: 55 power, swap target and enemy.
 Backline: Swap target and enemy.
 Signature Ability 3: Nine Lives
 Passive
@@ -202,8 +200,8 @@ Exposes all enemies and steals 5 Attack from each for 2 rounds.
 
 Hunold the Piper
 Class: Rogue
-HP: 232
-Attack: 64
+HP: 262
+Attack: 74
 Defense: 53
 Speed: 76
 Talent: Electrifying Trance
@@ -226,8 +224,8 @@ Hunold uses an ability. That ability becomes spread and ignores melee targeting 
 
 Reynard, Lupine Trickster
 Class: Rogue
-HP: 210
-Attack: 75
+HP: 240
+Attack: 85
 Defense: 45
 Speed: 90
 Talent: Cunning Dodge
@@ -250,7 +248,7 @@ Reynard retaliates for 70 power against and steals 12 speed from incoming attack
 
 Sir Roland
 Class: Warden
-HP: 282
+HP: 302
 Attack: 43
 Defense: 80
 Speed: 20
@@ -273,7 +271,7 @@ Roland heals 120 HP. Guard Roland for 2 rounds.
 
 Porcus III
 Class: Warden
-HP: 298
+HP: 318
 Attack: 37
 Defense: 82
 Speed: 13
@@ -281,8 +279,8 @@ Talent: Bricklayer
 If an incoming ability would deal 20% max HP or more to Porcus, reduce damage by 35% and Weaken attacker for 2 rounds.
 Signature Ability 1: Not By The Hair
 Active
-Frontline: Porcus takes 50% less damage this round.
-Backline: Frontline ally takes 40% less damage this round.
+Frontline: Bricklayer's effect is doubled and activates on all incoming abilities next round.
+Backline: Bricklayer activates on all incoming abilities next round.
 Signature Ability 2: Porcine Honor
 Passive
 Frontline: Guard Porcus for 1 round at beginning of round.
@@ -293,11 +291,11 @@ Frontline: Allies get +10 defense.
 Backline: Frontline ally gets +12 defense.
 Twist Ability: Unfettered
 Active
-Remove Porcus' status conditions, for 2 rounds, his attack and speed are equal to his defense stat and his defense is equal to his attack stat
+Remove Porcus' status conditions, for 2 rounds, his attack and speed are equal to his defense stat and his defense is equal to his attack stat.
 
 Lady of Reflections
 Class: Warden
-HP: 266
+HP: 316
 Attack: 46
 Defense: 68
 Speed: 40
@@ -338,7 +336,7 @@ Signature Ability 3: Fae Blessing
 Active
 Frontline: Guard Ella for 2 turns, Ella has +12 attack and +12 speed for 2 turns.
 Backline: Heals ally for 50 HP, ignores Two Lives use restriction.
-Twist Ability: Struck Midnight
+Twist Ability: Clock Struck Twelve
 Active
 Burns enemies for two turns. Ella cannot act and cannot be targeted until end of next round.
 
@@ -423,11 +421,11 @@ Talent: Heedless Pride
 Frederic deals 15% bonus damage to the enemy frontline and takes 7% bonus damage from the enemy frontline.
 Signature Ability 1: Hero's Charge
 Active
-Frontline: 60 power, Frederic ignores Heedless Pride bonus damage from frontline enemies this round.
+Frontline: 55 power, Frederic ignores Heedless Pride bonus damage from frontline enemies this round.
 Backline: 20 power, Frederic has +15 speed for 2 rounds.
 Signature Ability 2: On the Hunt
 Active
-Frontline: 55 power, Frederic has +12 attack for 2 rounds.
+Frontline: 50 power, Frederic has +12 attack for 2 rounds.
 Backline: 20 power, Expose target for 2 rounds.
 Signature Ability 3: Jovial Shot
 Active
@@ -523,7 +521,7 @@ Backline: Remove the last inflicted status from Aurora or an ally.
 Signature Ability 2: Dictate of Nature
 Active
 Frontline: 45 power, the adventurer in the party with the lowest health heals 35 HP.
-Backline: 25 power, the adventurer in the party with the lowest health heals 20 HP.
+Backline: 30 power, the adventurer in the party with the lowest health heals 20 HP.
 Signature Ability 3: Birdsong
 Passive
 Frontline: Whenever Innocent Heart triggers, attract a bird that adds +7 damage to Aurora's abilities, up to 3.
@@ -535,22 +533,22 @@ For 2 rounds, Innocent Heart's stat boosts are doubled and stack. Cure Aurora's 
 Prince Charming
 Class: Noble
 HP: 245
-Attack: 60
-Defense: 55
+Attack: 55
+Defense: 70
 Speed: 40
 Talent: Mesmerizing
-While Prince Charming is frontline, enemies that target allies get -7 attack for 2 rounds.
+While Prince Charming is frontline, enemies that target allies get -10 attack for 2 rounds.
 Signature Ability 1: Condescend
 Active
-Frontline: 50 power, target has -7 defense for 2 rounds.
-Backline: 35 power, next ability against the target has +7 power.
+Frontline: 50 power, target has -10 defense for 2 rounds.
+Backline: 35 power, next ability against the target has +10 power.
 Signature Ability 2: Gallant Charge
 Active
 Frontline: 60 power, +15 power if Prince Charming was backline last round.
 Backline: 30 power, Prince Charming has +12 speed next round.
 Signature Ability 3: Chosen One
 Passive
-Frontline & Backline: The first adventurer Prince Charming swaps with becomes his champion. When an enemy damages his champion, they take +10 damage from his next ability.
+Frontline & Backline: The first adventurer Prince Charming swaps with becomes his champion. When an enemy damages his champion, they take +15 damage from his next ability.
 Twist Ability: Happily Ever After
 Active
 70 power, Prince Charming has +15 of each knocked out ally's highest non-HP stat for 2 rounds.
@@ -558,23 +556,23 @@ Active
 Green Knight
 Class: Noble
 HP: 266
-Attack: 55
-Defense: 64
+Attack: 60
+Defense: 65
 Speed: 20
 Talent: Challenge Accepted
-The Green Knight deals +10 damage to the target across from him.
+The Green Knight deals +15 damage to the target across from him.
 Signature Ability 1: Hero's Bargain
 Active
 Frontline: 50 power, Roots target for 2 rounds.
 Backline: 40 power, swap target with frontline enemy.
 Signature Ability 2: Natural Order
 Passive
-Frontline: The Green Knight deals +10 damage to targets who have not swapped for 2 or more rounds.
+Frontline: The Green Knight deals +15 damage to targets who have not swapped for 2 or more rounds.
 Backline: The Green Knight's abilities do not increment ranged recharge against targets who have not swapped for 2 or more rounds.
 Signature Ability 3: Awaited Blow
 Passive
-Frontline: The Green Knight retaliates for 35 power against incoming attackers not across from him.
-Backline: The Green Knight heals 35 HP at the end of round.
+Frontline: The Green Knight retaliates for 40 power against incoming attackers not across from him.
+Backline: The Green Knight heals 40 HP at the end of round.
 Twist Ability: Fated Duel
 Active
 For 2 rounds, only the Green Knight and the enemy across from him may act.
@@ -582,11 +580,11 @@ For 2 rounds, only the Green Knight and the enemy across from him may act.
 Rapunzel the Golden
 Class: Noble
 HP: 258
-Attack: 67
+Attack: 68
 Defense: 60
 Speed: 30
 Talent: Flowing Locks
-Rapunzel ignores melee targeting restrictions once per battle. Refreshes when she ends the round in the backline.
+Rapunzel ignores all targeting restrictions once per battle. Refreshes when she ends the round in the backline.
 Signature Ability 1: Golden Snare
 Active
 Frontline: 60 power, refresh Root duration on target.
@@ -606,9 +604,9 @@ Flowing Locks is always active for 2 rounds. Rapunzel has -10 defense, +20 attac
 Pinocchio, Cursed Puppet
 Class: Warlock
 HP: 220
-Attack: 58
-Defense: 46
-Speed: 81
+Attack: 53
+Defense: 40
+Speed: 82
 Talent: Growing Pains
 When Pinocchio ends the round in the frontline, he gains 1 Malice, up to 6. Pinocchio has +5 attack and +5 defense for each Malice.
 Signature Ability 1: Wooden Wallop
@@ -625,16 +623,16 @@ Frontline: If Pinocchio has at least 3 Malice, his abilities gain +10 damage and
 Backline: If Pinocchio has at least 3 Malice, his abilities do not increment ranged recharge.
 Twist Ability: Blue Faerie's Boon
 Active
-Pinocchio can gain up to 6 more Malice. He gains 6 Malice, then heals 15 HP for each Malice.
+Pinocchio heals 20 HP for each Malice. He can gain up to 6 more Malice this battle.
 
 Rumpelstiltskin
 Class: Warlock
 HP: 230
-Attack: 67
+Attack: 62
 Defense: 49
 Speed: 79
 Talent: Art of the Deal
-Whenever another adventurer gains a stat buff, Rumpelstiltskin gains 1 Malice, up to 6. Rumpelstiltskin has +5 speed for each Malice.
+Whenever another adventurer gains a stat buff, Rumpelstiltskin gains 1 Malice, up to 6. Rumpelstiltskin has +3 speed for each Malice.
 Signature Ability 1: Name the Price
 Active
 Frontline: 65 power, target has +7 attack for 2 rounds.
@@ -678,41 +676,41 @@ APPENDIX B - BASIC ABILITIES
 FIGHTER
 Strike
 Active
-Frontline: 55 power
+Frontline: 60 power
 Backline: n/a
 Rend
 Active
-Frontline: 45 power, +20 power against enemies below 50% HP
+Frontline: 50 power, +15 power against enemies below 50% HP
 Backline: The user's ability against the target next round gets +10 power
 Feint
 Active
-Frontline: 45 power, user gains +12 Speed for 2 rounds
+Frontline: 50 power, user gains +12 Speed for 2 rounds
 Backline: User gains +12 Speed for 2 rounds
 Cleave
 Active
-Frontline: 45 power, ignores 15% Defense
+Frontline: 50 power, ignores 15% Defense
 Backline: The user's ability against the target next round ignores 10% Defense
 Intimidate
 Active
-Frontline: 50 power, Weaken for 2 rounds
+Frontline: 55 power, Weaken for 2 rounds
 Backline: Weaken for 2 rounds
 
 ROGUE
 Sneak Attack
 Active
-Frontline: 50 power, +10 Power if target has not acted this round
+Frontline: 50 power, +15 Power if target has not acted this round
 Backline: Target has -10 Speed next round
 Riposte
 Active
-Frontline: 45 power, user takes 50% less damage this round
+Frontline: 50 power, user takes 50% less damage this round
 Backline: User takes 50% less damage this round
 Post Bounty
 Active
-Frontline: 40 power, Expose for 2 rounds
+Frontline: 50 power, Expose for 2 rounds
 Backline: Expose for 2 rounds
 Sucker Punch
 Active
-Frontline: 45 power, +15 Power if the target is Exposed or Weakened
+Frontline: 50 power, +15 Power if the target is Exposed or Weakened
 Backline: Weaken for 2 rounds
 Fleetfooted
 Passive
