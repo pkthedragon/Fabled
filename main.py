@@ -3032,7 +3032,7 @@ class Game:
                     return
 
                 if atype == "item":
-                    artifact = btn_action.get("artifact")
+                    artifact = action_dict.get("artifact")
                     targets = get_legal_item_targets(
                         self.battle, self.selecting_player, actor, artifact=artifact)
                     if not targets:

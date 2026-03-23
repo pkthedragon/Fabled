@@ -1385,6 +1385,8 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
     # ── Party slots — fixed at the bottom of the left panel (outside scroll clip) ──
     slot_labels = ["Front", "Back Left", "Back Right"]
     draw_text(surf, "Your Party:", 18, TEXT_DIM, ROSTER_X, HEIGHT - 95)
+    draw_text(surf, f"Shared Artifacts: {len(team_artifacts)}/3", 16, TEXT_DIM,
+              ROSTER_X + 650, HEIGHT - 94, right=True)
     for i in range(3):
         x = ROSTER_X + i * 220
         rect = pygame.Rect(x, HEIGHT - 73, 210, 50)
@@ -1411,8 +1413,7 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             _sy = HEIGHT - 73 + 37
             _has_sig = "signature" in p
             _has_basics = len(p.get("basics", [])) == 2
-            _has_artifacts = len(team_artifacts) == 3
-            for _lbl, _ok in (("Sig", _has_sig), ("Basics", _has_basics), ("Arts", _has_artifacts)):
+            for _lbl, _ok in (("Sig", _has_sig), ("Basics", _has_basics)):
                 _mark = "✓" if _ok else "○"
                 _col = (80, 210, 80) if _ok else TEXT_MUTED
                 _s = _f10.render(f"{_lbl}{_mark}", True, _col)
@@ -1564,7 +1565,7 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                 pygame.draw.line(surf, BORDER, (_dx, _dy), (_dx + _detail_max_w, _dy), 1)
                 _dy += 7
             if _dy + 14 <= _bottom_limit:
-                draw_text(surf, "Artifacts", 13, CYAN, _dx, _dy)
+                draw_text(surf, "Party Artifacts", 13, CYAN, _dx, _dy)
                 _dy += 16
             if team_artifacts:
                 for _artifact in team_artifacts:
@@ -1605,21 +1606,32 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
     if defn is not None:
         dx, dy = DETAIL_X + 14, DETAIL_Y + 12
 
-        draw_text(surf, defn.name, 24, TEXT, dx, dy)
-        dy += 30
-        _dcr = draw_text(surf, f"{cls_label(defn.cls)}  —  {defn.talent_name}",
-                         16, YELLOW, dx, dy)
-        if status_rects_out is not None:
-            status_rects_out.append((_dcr, defn.cls))
-        dy += 20
-        for line in _wrap_text(defn.talent_text, 13, DETAIL_W - 28):
-            _draw_rich_line(surf, line, 13, TEXT_DIM, dx, dy, status_rects_out)
-            dy += 16
-        dy += 4
-        draw_text(surf,
-                  f"HP {defn.hp}   ATK {defn.attack}   DEF {defn.defense}   SPD {defn.speed}",
-                  15, TEXT, dx, dy)
-        dy += 26
+        if sub_phase == "pick_item":
+            draw_text(surf, "Party Artifacts", 24, TEXT, dx, dy)
+            dy += 30
+            for line in _wrap_text(
+                "Artifacts are shared by the whole party and are not equipped by individual adventurers.",
+                13, DETAIL_W - 28,
+            ):
+                _draw_rich_line(surf, line, 13, TEXT_DIM, dx, dy, status_rects_out)
+                dy += 16
+            dy += 10
+        else:
+            draw_text(surf, defn.name, 24, TEXT, dx, dy)
+            dy += 30
+            _dcr = draw_text(surf, f"{cls_label(defn.cls)}  —  {defn.talent_name}",
+                             16, YELLOW, dx, dy)
+            if status_rects_out is not None:
+                status_rects_out.append((_dcr, defn.cls))
+            dy += 20
+            for line in _wrap_text(defn.talent_text, 13, DETAIL_W - 28):
+                _draw_rich_line(surf, line, 13, TEXT_DIM, dx, dy, status_rects_out)
+                dy += 16
+            dy += 4
+            draw_text(surf,
+                      f"HP {defn.hp}   ATK {defn.attack}   DEF {defn.defense}   SPD {defn.speed}",
+                      15, TEXT, dx, dy)
+            dy += 26
 
         if sub_phase == "pick_adventurers":
             # ── Signatures preview ───────────────────────────────────────────
@@ -2002,6 +2014,8 @@ SPECIAL_DESCRIPTIONS: dict = {
     "protection_back":                 "allies have +7 Defense",
     # Basic – Mage
     "arcane_wave_self_debuff":         "self: -10 Atk for 2 rounds",
+    "ominous_gale_back":               "refresh the duration of target's last inflicted status",
+    "breakthrough_front":              "for 2 rounds: user's abilities become spread",
     # Basic – Ranger
     "sucker_punch_front":              "+15 power if target is Exposed or Shocked",
     "trapping_blow_root_spotlight":    "Roots Spotlighted targets for 2 rounds",
@@ -2162,6 +2176,12 @@ SPECIAL_DESCRIPTIONS: dict = {
     "faustian_bargain_front":        "on swap to frontline, spend 1 Malice to gain bottled talent for 2r",
     "faustian_bargain_back":         "on KO, bottle target's talent and gain +12 Spd for 2 rounds",
     "foam_prison":                   "block target frontline's twist for 2 rounds, then copy and use that twist",
+    # Dragon Head abilities
+    "sovereign_edict_front":         "if target has 2+ statuses, ignore Guard and defense buffs",
+    "sovereign_edict_back":          "Spotlight target for 2 rounds",
+    "cataclysm_front":               "+10 damage per status on target",
+    "cataclysm_back":                "refresh all of target's status durations",
+    "dark_aura_passive":             "end of round: spend 2 Malice to Weaken all enemies",
     # Items
     "smoke_bomb_swap":                 "user switches positions with an ally",
     "ancient_hourglass":               "user cannot act or be targeted next round (once per battle)",
@@ -2207,7 +2227,7 @@ def _mode_detail_lines(mode) -> list:
     if mode.bonus_if_target_acted: bonuses.append(f"+{mode.bonus_if_target_acted} if target acted")
     if mode.bonus_vs_higher_hp:   bonuses.append(f"+{mode.bonus_vs_higher_hp} vs higher maxHP")
     if mode.bonus_vs_backline:    bonuses.append(f"+{mode.bonus_vs_backline} vs backline")
-    if mode.bonus_vs_statused:    bonuses.append(f"+{mode.bonus_vs_statused} vs Exposed/Weakened")
+    if mode.bonus_vs_statused:    bonuses.append(f"+{mode.bonus_vs_statused} vs statused target")
     if bonuses:
         parts.append("  ".join(bonuses))
     if mode.double_vamp_no_base:
@@ -2465,6 +2485,27 @@ def draw_top_bar(surf, battle: BattleState, phase_label: str):
     pygame.draw.rect(surf, PANEL, bar)
     pygame.draw.line(surf, BORDER, (0, 55), (WIDTH, 55), 1)
 
+    def _fit_text(text: str, size: int, max_width: int) -> str:
+        f = font(size)
+        if f.size(text)[0] <= max_width:
+            return text
+        trimmed = text
+        ellipsis = "..."
+        while trimmed and f.size(trimmed + ellipsis)[0] > max_width:
+            trimmed = trimmed[:-1]
+        return (trimmed + ellipsis) if trimmed else ellipsis
+
+    def _artifact_summary(team: TeamState) -> str:
+        if not team.artifacts:
+            return "none"
+        parts = []
+        for state in team.artifacts:
+            label = state.artifact.name
+            if state.cooldown_remaining > 0:
+                label += f" ({state.cooldown_remaining})"
+            parts.append(label)
+        return ", ".join(parts)
+
     # Left: game title and round info
     draw_text(surf, "FABLED", 22, TEXT, 14, 14)
     draw_text(surf, f"Round {battle.round_num}", 20, YELLOW, 120, 17)
@@ -2476,6 +2517,11 @@ def draw_top_bar(surf, battle: BattleState, phase_label: str):
 
     # Right: phase label — right-aligned so it never overlaps the centre text
     draw_text(surf, phase_label, 16, TEXT_DIM, WIDTH - 10, 19, right=True)
+
+    p1_artifacts = _fit_text(f"P1 Artifacts: {_artifact_summary(battle.team1)}", 11, WIDTH // 2 - 24)
+    p2_artifacts = _fit_text(f"P2 Artifacts: {_artifact_summary(battle.team2)}", 11, WIDTH // 2 - 24)
+    draw_text(surf, p1_artifacts, 11, GREEN, 14, 38)
+    draw_text(surf, p2_artifacts, 11, BLUE, WIDTH - 10, 38, right=True)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
