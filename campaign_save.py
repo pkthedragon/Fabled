@@ -44,6 +44,7 @@ def save_campaign(profile: CampaignProfile) -> None:
         "basics_tier":       profile.basics_tier,
         "unlocked_classes":  list(profile.unlocked_classes),
         "unlocked_items":    list(profile.unlocked_items),
+        "unlocked_artifacts": list(profile.unlocked_artifacts),
         "default_sigs":      dict(profile.default_sigs),
         "twists_unlocked":   profile.twists_unlocked,
         "quest_cleared":     {str(k): v for k, v in profile.quest_cleared.items()},
@@ -74,8 +75,9 @@ def load_campaign() -> CampaignProfile:
         profile.basics_tier              = int(data.get("basics_tier", profile.basics_tier))
         profile.unlocked_classes         = set(data.get("unlocked_classes", list(profile.unlocked_classes)))
         profile.unlocked_items           = set(data.get("unlocked_items", list(profile.unlocked_items)))
+        profile.unlocked_artifacts       = set(data.get("unlocked_artifacts", list(profile.unlocked_artifacts)))
         profile.default_sigs             = dict(data.get("default_sigs", {}))
-        profile.twists_unlocked          = bool(data.get("twists_unlocked", False))
+        profile.twists_unlocked          = bool(data.get("twists_unlocked", True))
         profile.quest_cleared            = {int(k): v for k, v in data.get("quest_cleared", {}).items()}
         profile.highest_quest_cleared    = int(data.get("highest_quest_cleared", -1))
         profile.campaign_complete        = bool(data.get("campaign_complete", False))
@@ -85,6 +87,29 @@ def load_campaign() -> CampaignProfile:
         profile.tutorials_enabled        = bool(data.get("tutorials_enabled", True))
         profile.fast_resolution          = bool(data.get("fast_resolution", False))
         profile.new_unlocks              = set(data.get("new_unlocks", []))
+
+        if not profile.unlocked_artifacts:
+            legacy_map = {
+                "health_potion": "holy_grail",
+                "healing_tonic": "holy_grail",
+                "crafty_shield": "red_hood",
+                "lightning_boots": "winged_sandals",
+                "main_gauche": "achilles_spear",
+                "iron_buckler": "golden_fleece",
+                "smoke_bomb": "magic_mirror",
+                "hunters_net": "nettle_smock",
+                "ancient_hourglass": "cracked_stopwatch",
+                "family_seal": "excalibur",
+                "holy_diadem": "enchanted_lamp",
+                "vampire_fang": "selkies_skin",
+                "spiked_mail": "red_hood",
+                "arcane_focus": "godmothers_wand",
+                "heart_amulet": "bluebeards_key",
+                "misericorde": "misericorde_artifact",
+            }
+            migrated = {legacy_map[item_id] for item_id in profile.unlocked_items if item_id in legacy_map}
+            if migrated:
+                profile.unlocked_artifacts = migrated
         return profile
     except (json.JSONDecodeError, KeyError, ValueError):
         # Corrupt save – start fresh

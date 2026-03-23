@@ -10,16 +10,27 @@ from typing import List, Optional, Tuple
 
 import battle_log
 from models import (
-    BattleState, TeamState, CombatantState, Ability, AbilityMode, Item
+    BattleState, TeamState, CombatantState, Ability, AbilityMode, Item,
+    Artifact, ArtifactState,
 )
 from settings import SLOT_FRONT, SLOT_BACK_LEFT, SLOT_BACK_RIGHT, CLOCKWISE_ORDER
-from data import CLASS_BASICS
+from data import CLASS_BASICS, ARTIFACTS_BY_ID, LEGACY_ITEM_TO_ARTIFACT_ID
+
+
+NO_ITEM = Item(
+    id="no_item",
+    name="—",
+    passive=True,
+    description="No item.",
+    uses=99,
+)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TEAM / COMBATANT CONSTRUCTION
 # ─────────────────────────────────────────────────────────────────────────────
 
-def make_combatant(defn, slot, sig, basics, item) -> CombatantState:
+def make_combatant(defn, slot, sig, basics, item=None) -> CombatantState:
+    item = item or NO_ITEM
     c = CombatantState(
         defn=defn, slot=slot, hp=defn.hp,
         sig=sig, basics=basics, item=item,
@@ -31,9 +42,6 @@ def make_combatant(defn, slot, sig, basics, item) -> CombatantState:
     # Initialise Cunning Dodge flag
     if defn.id == "reynard":
         c.ability_charges["cunning_dodge"] = 1
-    # Initialise Holy Diadem
-    if item.id == "holy_diadem":
-        c.ability_charges["holy_diadem"] = 1
     if defn.cls == "Warlock":
         c.ability_charges["malice"] = 0
         c.ability_charges["malice_cap"] = 6
@@ -42,23 +50,33 @@ def make_combatant(defn, slot, sig, basics, item) -> CombatantState:
     return c
 
 
-def create_team(player_name: str, picks: list) -> TeamState:
+def create_team(player_name: str, picks: list, artifacts: Optional[list] = None) -> TeamState:
     """
     picks = [
       {"definition": AdventurerDef, "signature": Ability,
-       "basics": [Ability, Ability], "item": Item},
+       "basics": [Ability, Ability]},
       ...   (3 entries)
     ]
     First pick is assigned to frontline; second/third to back_left / back_right.
     """
     slots = [SLOT_FRONT, SLOT_BACK_LEFT, SLOT_BACK_RIGHT]
     members = []
+    if artifacts is None and picks:
+        artifacts = picks[0].get("team_artifacts", [])
     for i, p in enumerate(picks):
         members.append(make_combatant(
             p["definition"], slots[i],
-            p["signature"], p["basics"], p["item"],
+            p["signature"], p["basics"], p.get("item"),
         ))
-    return TeamState(player_name=player_name, members=members)
+    artifact_states = [
+        ArtifactState(artifact=artifact)
+        for artifact in (artifacts or [])
+    ]
+    return TeamState(
+        player_name=player_name,
+        members=members,
+        artifacts=artifact_states,
+    )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -86,7 +104,9 @@ def is_recharge_exposed(unit: CombatantState) -> bool:
 
 
 def get_recharge_limit(unit: CombatantState) -> int:
-    return 2 if unit.defn.cls in ("Warlock", "Noble") else 3
+    if unit.has_status("shock"):
+        return 2
+    return 2 if unit.defn.cls in ("Warlock", "Noble") and unit.slot != SLOT_FRONT else 3
 
 
 # Rulebook-defined status conditions (STATUS CONDITIONS section).
@@ -184,6 +204,67 @@ def get_adjacent_right(team: TeamState, unit: CombatantState) -> Optional[Combat
     return ordered[idx + 1]
 
 
+def team_for_unit(battle: BattleState, unit: CombatantState) -> Optional[TeamState]:
+    if unit in battle.team1.members:
+        return battle.team1
+    if unit in battle.team2.members:
+        return battle.team2
+    return None
+
+
+def enemy_team_for_unit(battle: BattleState, unit: CombatantState) -> Optional[TeamState]:
+    team = team_for_unit(battle, unit)
+    if team is None:
+        return None
+    return battle.team2 if team == battle.team1 else battle.team1
+
+
+def ready_active_artifacts(team: TeamState) -> List[ArtifactState]:
+    return [
+        state for state in team.artifacts
+        if not state.artifact.reactive and state.cooldown_remaining <= 0
+    ]
+
+
+def ready_reactive_artifact(team: TeamState, artifact_id: str) -> Optional[ArtifactState]:
+    state = team.artifact_state(artifact_id)
+    if state is None or not state.artifact.reactive or state.cooldown_remaining > 0:
+        return None
+    return state
+
+
+def consume_artifact(state: ArtifactState):
+    state.used_this_battle = True
+    state.cooldown_remaining = state.artifact.cooldown
+
+
+def _twist_lock_duration(ability: Ability) -> int:
+    ongoing_twists = {
+        "stomach_of_the_wolf",
+        "castle_on_cloud_nine",
+        "all_seeing",
+        "mass_hysteria",
+        "smoke_and_mirrors",
+        "purehearted_stand",
+        "journey_to_avalon",
+        "struck_midnight",
+        "stitch_in_time",
+        "vile_sabbath",
+        "falling_kingdom",
+        "raze_the_village",
+        "lawless",
+        "redemption",
+        "deathlike_slumber",
+        "happily_ever_after",
+        "fated_duel",
+        "severed_tether",
+        "blue_faerie_boon",
+        "devils_nursery",
+        "foam_prison",
+    }
+    return 2 if ability.id in ongoing_twists else 0
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # INITIATIVE
 # ─────────────────────────────────────────────────────────────────────────────
@@ -207,7 +288,18 @@ def determine_initiative(battle: BattleState):
     mh1 = f" (adj from {raw_spd1})" if raw_spd1 != spd1 else ""
     mh2 = f" (adj from {raw_spd2})" if raw_spd2 != spd2 else ""
 
-    if spd1 > spd2:
+    all_seeing_1 = any(u.ability_charges.get("all_seeing_dur", 0) > 0 for u in battle.team1.alive())
+    all_seeing_2 = any(u.ability_charges.get("all_seeing_dur", 0) > 0 for u in battle.team2.alive())
+
+    if all_seeing_1 and not all_seeing_2:
+        battle.init_player = 1
+        battle.prev_loser = 2
+        battle.init_reason = f"P1 keeps initiative because All-Seeing is active."
+    elif all_seeing_2 and not all_seeing_1:
+        battle.init_player = 2
+        battle.prev_loser = 1
+        battle.init_reason = f"P2 keeps initiative because All-Seeing is active."
+    elif spd1 > spd2:
         battle.init_player = 1
         battle.prev_loser  = 2
         battle.init_reason = f"{n1} SPD {spd1}{mh1} > {n2} SPD {spd2}{mh2} — P1 acts first"
@@ -308,18 +400,9 @@ def apply_passive_stats(team: TeamState, battle: BattleState):
                         if front.add_status("guard", 1):
                             battle.log_add(f"{front.name} is Guarded by Porcine Honor.")
 
-            # Sturdy Home: bonus defense to allies (not the carrier)
+            # Sturdy Fortress is handled by Bricklayer's trigger in compute_damage().
             if ab.id == "sturdy_home":
-                bonus = 10 if unit.slot == SLOT_FRONT else 12
-                if unit.slot == SLOT_FRONT:
-                    for ally in team.alive():
-                        if ally != unit:
-                            ally.add_buff("defense", bonus, 1)
-                else:
-                    # Backline mode only affects the current frontline ally.
-                    front = team.frontline()
-                    if front and front != unit:
-                        front.add_buff("defense", bonus, 1)
+                pass
 
             # Protection: allies +defense (not the carrier)
             if ab.id == "protection":
@@ -340,9 +423,25 @@ def apply_passive_stats(team: TeamState, battle: BattleState):
                         foe.add_debuff("attack", 12, 1)
 
         # Red and Wolf (Risa talent): below 50% HP
-        if unit.defn.id == "risa_redcloak" and unit.hp < unit.max_hp * 0.5:
+        if unit.defn.id == "risa_redcloak" and (
+            unit.hp < unit.max_hp * 0.5 or unit.ability_charges.get("stomach_of_the_wolf_dur", 0) > 0
+        ):
             unit.add_buff("attack", 12, 1)
             unit.add_buff("speed",  12, 1)
+
+        if unit.ability_charges.get("smoke_and_mirrors_dur", 0) > 0:
+            unit.retaliate_power = 70
+            unit.retaliate_speed_steal = 12
+
+        if unit.ability_charges.get("journey_to_avalon_dur", 0) > 0:
+            for ally in team.alive():
+                if ally == unit:
+                    continue
+                existing = next((s for s in ally.statuses if s.kind == "reflecting_pool"), None)
+                if existing is not None:
+                    existing.duration = max(existing.duration, 1)
+                else:
+                    ally.add_status("reflecting_pool", 1)
 
         # Crawling Abode (Witch talent): +10 spd if enemy frontline is statused
         if unit.sig.id == "crawling_abode" or any(
@@ -357,7 +456,7 @@ def apply_passive_stats(team: TeamState, battle: BattleState):
         # Two Lives: set untargetable flag
         unit.untargetable = (
             unit.defn.id == "ashen_ella" and unit.slot != SLOT_FRONT
-        )
+        ) or unit.ability_charges.get("cracked_stopwatch_dur", 0) > 0
 
         # Fleetfooted: refresh "first incoming ability" flag each round
         if any(b.id == "fleetfooted" for b in unit.basics):
@@ -398,22 +497,25 @@ def get_legal_targets(
     _SELF_SPECIALS = {
         "heros_charge_ignore_pride_front", "riposte_bl", "struck_midnight_untargetable",
         "rabbit_hole_extra_action", "stitch_extra_action_now", "devils_due",
-        "final_deception", "redemption", "unfettered",
+        "stomach_of_the_wolf", "castle_on_cloud_nine", "into_the_oven", "all_seeing",
+        "mass_hysteria", "smoke_and_mirrors", "purehearted_stand",
+        "redemption", "unfettered",
         "nbth_self_reduce", "nbth_ally_reduce", "shimmering_valor_front", "shimmering_valor_back",
         "falling_kingdom", "feign_weakness_retaliate_45", "feign_weakness_retaliate_40", "last_laugh",
-        "crumb_trail_drop", "blue_faerie_boon", "turn_to_foam", "misappropriate_front",
-        "fated_duel", "severed_tether", "happily_ever_after", "deathlike_slumber",
-        "blood_pact_front",
+        "crumb_trail_drop", "blue_faerie_boon", "misappropriate_front",
+        "journey_to_avalon", "fated_duel", "severed_tether", "deathlike_slumber",
+        "blood_pact_front", "vile_sabbath", "raze_the_village", "lawless",
+        "cleansing_inferno", "devils_nursery",
     }
     # Specials that explicitly target allies.
     _ALLY_SPECIALS = {
         "rabbit_hole_swap", "cinder_blessing_avg",
-        "straw_to_gold_front", "straw_to_gold_back", "summons_swap",
+        "straw_to_gold_front", "straw_to_gold_back", "summons_swap_cleanse", "happily_ever_after",
     }
     # Specials that require an enemy target despite having no power/status fields.
     _ENEMY_SPECIALS = {
         "blood_hunt_hp_avg", "taunt_front_ranged", "subterfuge_swap",
-        "cutpurse_swap_frontline", "heros_bargain_back",
+        "cutpurse_swap_frontline", "heros_bargain_back", "foam_prison",
     }
 
     # ── Self-targeting abilities ──────────────────────────────────────────────
@@ -428,7 +530,7 @@ def get_legal_targets(
     has_ally_effect = any((
         mode.heal > 0, mode.heal_lowest > 0, mode.guard_target,
         mode.guard_all_allies, mode.guard_frontline_ally,
-        ability.id in ("toxin_purge", "cinder_blessing", "lakes_gift", "bless", "journey_to_avalon"),
+        ability.id in ("toxin_purge", "cinder_blessing", "lakes_gift", "bless", "happily_ever_after"),
         mode.special in _ALLY_SPECIALS,
     ))
     has_enemy_effect = any((
@@ -443,10 +545,9 @@ def get_legal_targets(
     if (mode.power == 0 and (
             mode.heal > 0 or mode.heal_lowest > 0
             or mode.guard_target or mode.guard_self
-            or ability.id in ("toxin_purge", "cinder_blessing", "lakes_gift", "bless")
+            or ability.id in ("toxin_purge", "cinder_blessing", "lakes_gift", "bless", "happily_ever_after")
     )) or mode.special in _ALLY_SPECIALS:
-        # Journey to Avalon can target KO'd allies (revive)
-        if ability.id == "journey_to_avalon":
+        if ability.id == "happily_ever_after":
             return [m for m in team.members if m != actor]
         # Pure heal targets allies only (not self); self-heal uses heal_self field
         if mode.heal > 0 and not mode.heal_self:
@@ -469,6 +570,11 @@ def get_legal_targets(
             or actor.ability_charges.get("severed_tether_active", 0) > 0
         )
     )
+    lawless_all_access = actor.ability_charges.get("lawless_dur", 0) > 0
+
+    if ability.id == "foam_prison":
+        front = enemy_team.frontline()
+        return [front] if front and not front.untargetable else []
 
     # Shadowstep (Constantine): melee can target Exposed backline
     shadowstep = _has_talent(actor, "lucky_constantine")
@@ -478,7 +584,7 @@ def get_legal_targets(
         if e.slot == SLOT_FRONT:
             legal.append(e)
         elif e.slot in (SLOT_BACK_LEFT, SLOT_BACK_RIGHT):
-            if rapunzel_all_access:
+            if rapunzel_all_access or lawless_all_access:
                 legal.append(e)
             elif ranged_unit:
                 # Ranged from frontline: can target all
@@ -512,7 +618,7 @@ def get_legal_targets(
 
     # Hypnotic Aura: Shocked actors are redirected based on Hunold's position
     # FL Hunold → redirect to his back_left; BL Hunold → redirect to his frontline
-    if actor.has_status("shock"):
+    if actor.has_status("shock") and actor.ability_charges.get("lawless_dur", 0) <= 0 and not mode.cant_redirect:
         hunold = next(
             (m for m in enemy_team.alive() if m.sig.id == "hypnotic_aura"), None
         )
@@ -538,37 +644,32 @@ def get_legal_item_targets(
     battle: BattleState,
     acting_player: int,
     actor: CombatantState,
+    artifact: Artifact = None,
+    primary_target: CombatantState = None,
 ) -> List[CombatantState]:
-    """Return legal item targets based on item effect type."""
-    item = actor.item
-    if actor.must_recharge or item.passive or actor.item_uses_left <= 0:
+    """Return legal artifact targets for the selected artifact action."""
+    if actor.must_recharge or artifact is None or artifact.reactive:
         return []
 
     team = battle.get_team(acting_player)
     enemy_team = battle.get_enemy(acting_player)
+    everyone = [u for u in battle.team1.alive() + battle.team2.alive() if not u.untargetable]
 
-    # Explicit self-only actives (stat buffs / hourglass-like effects)
-    if item.atk_buff or item.spd_buff or item.def_buff or item.special == "ancient_hourglass":
-        return [actor]
+    if artifact.id == "magic_mirror":
+        if primary_target is None:
+            return list(team.alive())
+        return [u for u in team.alive() if u != primary_target]
 
-    # Self-only heal items
-    if item.heal > 0 and item.heal_self_only:
-        return [actor]
+    if artifact.id == "melusines_knife":
+        return [u for u in enemy_team.alive() if not u.untargetable]
 
-    # Ally-targeting items
-    if item.heal > 0 or item.guard:
-        return list(team.alive())
+    if artifact.id in {"holy_grail", "divine_apple", "winged_sandals", "achilles_spear", "golden_fleece"}:
+        return everyone
 
-    # Swap item targets an ally (not self)
-    if item.special == "smoke_bomb_swap":
-        return [u for u in team.alive() if u != actor]
+    if artifact.id in {"cracked_stopwatch", "last_prism", "nettle_smock"}:
+        return everyone
 
-    # Offensive status items (e.g., Hunter's Net)
-    if item.status and not item.guard:
-        return [e for e in enemy_team.alive() if not e.untargetable]
-
-    # Fallback to self
-    return [actor]
+    return everyone
 
 
 def can_use_ability(
@@ -589,11 +690,14 @@ def can_use_ability(
     if actor.defn.id == "ashen_ella" and actor.slot != SLOT_FRONT:
         if "ella_ignore_two_lives" not in mode.special:
             return False
-    # Twist: only when last alive
     if ability.category == "twist":
-        if len(team.alive()) != 1 or team.alive()[0] != actor:
+        if actor.ability_charges.get("foam_prison_block_dur", 0) > 0:
             return False
         if actor.twist_used:
+            return False
+        if team.twists_used >= team.twist_allowance:
+            return False
+        if team.active_twist_lock > 0:
             return False
     if actor.must_recharge:
         return False
@@ -637,16 +741,21 @@ def compute_damage(
         power += mode.bonus_vs_higher_hp
     if mode.bonus_vs_backline and target.slot != SLOT_FRONT:
         power += mode.bonus_vs_backline
-    if mode.bonus_vs_statused and (target.has_status("expose") or target.has_status("weaken")):
+    if mode.bonus_vs_statused and any(status.duration > 0 for status in target.statuses):
         power += mode.bonus_vs_statused
+
+    if mode.special == "sucker_punch_front" and (target.has_status("expose") or target.has_status("shock")):
+        power += 15
+
+    if mode.special == "creeping_doubt_front" and target.has_status("root"):
+        power += 15
 
     # Slam FL: +15 power if user is Guarded
     if ability.id == "slam" and actor.slot == SLOT_FRONT and actor.has_status("guard"):
         power += 15
 
-    # Magic Growth backline: Jack's next ability had +15 power flag
-    if actor.ability_charges.get("magic_growth_bonus", 0) > 0 \
-            and ability.id != "magic_growth":
+    # Beanstalk Crash backline: Jack's next ability gets +15 power.
+    if actor.ability_charges.get("magic_growth_bonus", 0) > 0:
         power += 15
         if consume_triggers:
             actor.ability_charges["magic_growth_bonus"] = 0
@@ -725,6 +834,8 @@ def compute_damage(
     # Def ignore
     if mode.def_ignore_pct:
         defense = max(1, math.ceil(defense * (1 - mode.def_ignore_pct / 100)))
+    if actor.ability_charges.get("castle_on_cloud_nine_dur", 0) > 0:
+        defense = max(1, math.ceil(defense * 0.50))
     # Cleave BL: consume mark for 10% Defense ignore on this actor's next ability vs that target
     cleave_key = f"cleave_bonus_{target.defn.id}"
     if actor.ability_charges.get(cleave_key, 0) > 0:
@@ -764,21 +875,51 @@ def compute_damage(
         dmg = math.ceil(dmg * 1.15)
 
     # Bricklayer (Porcus): if single hit ≥ 20% max HP, reduce by 35% and weaken attacker
+    bricklayer_unit = None
     if _has_talent(target, "porcus_iii"):
-        bricklayer_multiplier = max(1, target.ability_charges.get("bricklayer_all_active", 0))
-        bricklayer_on_all_hits = target.ability_charges.get("bricklayer_all_active", 0) > 0
+        bricklayer_unit = target
+    else:
+        defending_team = battle.get_enemy(acting_player)
+        proxy = next(
+            (
+                ally for ally in defending_team.alive()
+                if ally.defn.id == "porcus_iii"
+                and _has_signature_effect(ally, "sturdy_home")
+                and ally.slot != SLOT_FRONT
+                and target.slot == SLOT_FRONT
+            ),
+            None,
+        )
+        if proxy is not None:
+            bricklayer_unit = proxy
+
+    if bricklayer_unit is not None:
+        bricklayer_multiplier = max(1, bricklayer_unit.ability_charges.get("bricklayer_all_active", 0))
+        bricklayer_on_all_hits = bricklayer_unit.ability_charges.get("bricklayer_all_active", 0) > 0
         threshold = math.ceil(target.max_hp * 0.20)
         if bricklayer_on_all_hits or dmg >= threshold:
             reduction = min(0.35 * bricklayer_multiplier, 0.95)
             dmg = math.ceil(dmg * (1 - reduction))
             if actor.add_status("weaken", 2):
                 battle.log_add(f"Bricklayer! {actor.name} is Weakened.")
+            if (
+                bricklayer_unit == target
+                and _has_signature_effect(bricklayer_unit, "sturdy_home")
+                and bricklayer_unit.slot == SLOT_FRONT
+            ):
+                bricklayer_unit.add_buff("attack", 20, 2)
+                battle.log_add(f"  Sturdy Fortress! {bricklayer_unit.name} gains +20 Attack for 2 rounds.")
 
     if not mode.ignore_guard and not _sovereign_edict_override and target.has_status("guard"):
         dmg = math.ceil(dmg * 0.85)
 
     # Heedless Pride (Frederic): takes 7% more from enemy frontline
-    if _has_talent(target, "frederic") and actor.slot == SLOT_FRONT and not ignore_pride:
+    if (
+        _has_talent(target, "frederic")
+        and actor.slot == SLOT_FRONT
+        and not ignore_pride
+        and target.ability_charges.get("raze_the_village_dur", 0) <= 0
+    ):
         dmg = math.ceil(dmg * 1.07)
 
     # Electrifying Trance (Hunold): shocked enemies take +12 dmg
@@ -859,8 +1000,14 @@ def compute_damage(
 
     # Delayed / sustained flat damage riders from specific abilities.
     if target.ability_charges.get("hunters_mark_active", 0) > 0:
-        dmg += 10
+        dmg += 12
     if target.ability_charges.get("drown_bonus_dur", 0) > 0:
+        dmg += 10
+    if target.ability_charges.get("misericorde_artifact_dur", 0) > 0:
+        dmg += 10
+    if ability.category == "signature" and actor.ability_charges.get("excalibur_dur", 0) > 0:
+        dmg += 10
+    if actor.slot != SLOT_FRONT and actor.ability_charges.get("godmothers_wand_dur", 0) > 0:
         dmg += 10
 
     # Stalwart passive basic: FL carrier takes -12; BL carrier protects frontline ally
@@ -891,11 +1038,17 @@ def compute_damage(
     if target.dmg_reduction > 0:
         dmg = math.ceil(dmg * (1 - target.dmg_reduction))
 
+    if any(u.ability_charges.get("into_the_oven_dur", 0) > 0 for u in battle.get_team(acting_player).alive()):
+        dmg += 10
+
     # Silver Aegis (Roland): 65% less damage from first incoming ability after swapping frontline
     if target.defn.id == "sir_roland" \
             and target.ability_charges.get("silver_aegis", 0) > 0:
         dmg = math.ceil(dmg * 0.35)
         target.ability_charges["silver_aegis"] = 0
+        battle.log_add(f"Silver Aegis! {target.name} takes 65% less damage.")
+    elif target.defn.id == "sir_roland" and target.ability_charges.get("purehearted_stand_dur", 0) > 0:
+        dmg = math.ceil(dmg * 0.35)
         battle.log_add(f"Silver Aegis! {target.name} takes 65% less damage.")
 
     # Stolen Voices (Asha): enemy signature damage reduced by Malice while she is frontline
@@ -968,6 +1121,22 @@ def deal_damage(
     if target.ko:
         return
 
+    defending_player = 2 if acting_player == 1 else 1
+    defending_team = battle.get_team(defending_player)
+
+    enchanted_lamp = ready_reactive_artifact(defending_team, "enchanted_lamp")
+    if (
+        enchanted_lamp is not None
+        and target.hp == target.max_hp
+        and dmg >= target.hp
+    ):
+        dmg = 0
+        target.dmg_reduction = 1.0
+        target.hp = 1
+        consume_artifact(enchanted_lamp)
+        battle.log_add(f"Enchanted Lamp activates! {target.name} survives at 1 HP.")
+        return
+
     # Holy Diadem: survive fatal damage at 1 HP once per battle; no damage this round
     if target.item.id == "holy_diadem" \
             and target.ability_charges.get("holy_diadem", 0) > 0 \
@@ -979,11 +1148,27 @@ def deal_damage(
         target.hp = 1
         return
 
+    if target.ability_charges.get("deathlike_slumber_dur", 0) > 0 and dmg > 0:
+        redirected_allies = [ally for ally in defending_team.alive() if ally != target]
+        if redirected_allies:
+            split = math.ceil(dmg / len(redirected_allies))
+            battle.log_add(f"  Deathlike Slumber redirects {dmg} damage away from {target.name}.")
+            for ally in redirected_allies:
+                removed = list(ally.statuses)
+                ally.statuses.clear()
+                for status in removed:
+                    if is_rulebook_status_condition(status.kind):
+                        _trigger_innocent_heart(ally, status.kind, battle)
+                old_ally_hp = ally.hp
+                ally.hp = max(0, ally.hp - split)
+                if ally.hp == 0:
+                    ally.ko = True
+                battle.log_add(f"  {ally.name} absorbs {old_ally_hp - ally.hp} damage.")
+            dmg = 0
+
     _hp_before = target.hp
     target.hp -= dmg
     # Command / Chosen One attacker marks
-    defending_player = 2 if acting_player == 1 else 1
-    defending_team = battle.get_team(defending_player)
     for u in defending_team.alive():
         has_command = _has_signature_effect(u, "command") or any(b.id == "command" for b in u.basics)
         if has_command:
@@ -1002,16 +1187,55 @@ def deal_damage(
         + (" **KO**" if target.ko else "")
     )
 
-    if actor.has_status("shock") and dmg > 0:
-        recoil = max(1, math.ceil(dmg * 0.15))
-        actor.hp = max(0, actor.hp - recoil)
-        if actor.hp == 0:
-            actor.ko = True
-        battle.log_add(f"  Shock recoil: {actor.name} takes {recoil} damage.")
+    acting_team = battle.get_team(acting_player)
+    liesl = next(
+        (
+            unit for unit in acting_team.alive()
+            if unit.defn.id == "matchstick_liesl"
+            and unit.ability_charges.get("cleansing_inferno_dur", 0) > 0
+        ),
+        None,
+    )
+    if liesl is not None and dmg > 0 and acting_team.alive():
+        lowest = min(acting_team.alive(), key=lambda unit: unit.hp)
+        do_heal(lowest, dmg, liesl, battle, action_desc=f"Cleansing Inferno heals {lowest.name}")
+
+    if target.ko:
+        avalon_lady = next(
+            (
+                unit for unit in defending_team.alive()
+                if unit.defn.id == "lady_of_reflections"
+                and unit != target
+                and unit.ability_charges.get("journey_to_avalon_dur", 0) > 0
+            ),
+            None,
+        )
+        if avalon_lady is not None:
+            avalon_lady.hp = 0
+            avalon_lady.ko = True
+            target.ko = False
+            target.hp = math.ceil(target.max_hp * 0.60)
+            refresh_status_effect(target, "reflecting_pool", 2, battle)
+            battle.log_add(
+                f"  Journey to Avalon! {avalon_lady.name} is sacrificed and {target.name} returns at {target.hp} HP."
+            )
 
     # Cursed Armor basic: gain 1 Malice when damaged by enemy ability
     if dmg > 0 and any(b.id == "cursed_armor" for b in target.basics):
         _gain_malice(target, 1, battle, "Cursed Armor")
+
+    selkies_skin = ready_reactive_artifact(defending_team, "selkies_skin")
+    if (
+        selkies_skin is not None
+        and _hp_before > math.ceil(target.max_hp / 2)
+        and 0 < target.hp <= math.ceil(target.max_hp / 2)
+    ):
+        target.ability_charges["selkies_skin_dur"] = max(
+            target.ability_charges.get("selkies_skin_dur", 0),
+            2,
+        )
+        consume_artifact(selkies_skin)
+        battle.log_add(f"  Selkie's Skin grants {target.name} 10% vamp for 2 rounds.")
 
     # ── Vamp ──────────────────────────────────────────────────────────────────
     vamp_ratio = mode.vamp
@@ -1026,6 +1250,8 @@ def deal_damage(
         # Add Vampire Fang item vamp
         if actor.item.id == "vampire_fang":
             vamp_ratio += actor.item.vamp
+        if actor.ability_charges.get("selkies_skin_dur", 0) > 0:
+            vamp_ratio += 0.10
 
     if vamp_ratio > 0 and dmg > 0:
         healed = math.ceil(dmg * vamp_ratio)
@@ -1078,6 +1304,11 @@ def deal_damage(
         if adj and status and is_rulebook_status_condition(status):
             if adj.add_status(status, 2):
                 battle.log_add(f"  Double Double! {adj.name} gains {status}.")
+        if actor.ability_charges.get("vile_sabbath_dur", 0) > 0:
+            for active_status in target.statuses:
+                if active_status.duration > 0 and is_rulebook_status_condition(active_status.kind):
+                    active_status.duration += 1
+            battle.log_add(f"  Vile Sabbath refreshes {target.name}'s status durations.")
 
 
     # ── Awaited Blow FL: retaliate vs incoming attackers not across from Green Knight ─
@@ -1110,6 +1341,14 @@ def deal_damage(
         target.ability_charges["nine_lives"] -= 1
         charges = target.ability_charges["nine_lives"]
         battle.log_add(f"  Nine Lives! {target.name} survives at 1 HP. ({charges} left)")
+
+    if target.ko:
+        ko_count = sum(1 for ally in defending_team.members if ally.ko)
+        durandal = ready_reactive_artifact(defending_team, "durandal")
+        if durandal is not None and ko_count >= 2:
+            defending_team.twist_allowance += durandal.artifact.allow_extra_twist
+            consume_artifact(durandal)
+            battle.log_add(f"  Durandal grants {defending_team.player_name} another Twist use.")
 
     # ── Sugar Rush (Gretel talent) ─────────────────────────────────────────────
     if _has_talent(actor, "gretel") and target.ko:
@@ -1187,8 +1426,11 @@ def deal_damage(
 
 def _get_talent_vamp(actor: CombatantState) -> float:
     """Talent-based vamp ratio for the actor."""
-    if _has_talent(actor, "risa_redcloak") and actor.hp < actor.max_hp * 0.5:
-        return 0.15
+    if _has_talent(actor, "risa_redcloak"):
+        if actor.ability_charges.get("stomach_of_the_wolf_dur", 0) > 0:
+            return 0.30
+        if actor.hp < actor.max_hp * 0.5:
+            return 0.15
     return 0.0
 
 
@@ -1208,9 +1450,18 @@ def do_heal(
     if target.hp >= target.max_hp:
         return
 
+    healer_team = team_for_unit(battle, healer)
+
     # Heart Amulet
     if healer.item.id == "heart_amulet":
         amount += healer.item.flat_heal_bonus
+
+    if healer_team is not None and target in healer_team.members:
+        bluebeards_key = ready_reactive_artifact(healer_team, "bluebeards_key")
+        if bluebeards_key is not None:
+            amount += bluebeards_key.artifact.heal_bonus
+            consume_artifact(bluebeards_key)
+            battle.log_add("  Bluebeard's Key adds +20 healing.")
 
     # Benefactor (Aldric signature passive): heal 35%/20% more
     if _has_signature_effect(healer, "benefactor"):
@@ -1232,6 +1483,11 @@ def do_heal(
     if actual > 0 and _has_talent(healer, "aldric_lost_lamb"):
         if target.add_status("guard", 2):
             battle.log_add(f"  All-Caring: {target.name} is Guarded for 2 rounds.")
+        if healer.ability_charges.get("redemption_dur", 0) > 0 and healer_team is not None:
+            front = healer_team.frontline()
+            if front is not None and front != target and not target.ko and target in healer_team.alive():
+                do_swap(target, front, healer_team, battle)
+                battle.log_add(f"  Redemption: {target.name} swaps with {front.name}.")
 
     # Purifying Flame (Liesl talent): Burn immunity + mark to Burn on next attack
     if _has_talent(healer, "matchstick_liesl"):
@@ -1259,11 +1515,20 @@ def do_heal(
             battle.log_add(f"  Medic: {target.name} cleansed of rulebook status conditions.")
 
 
+def _rulebook_status_count(unit: CombatantState) -> int:
+    return sum(
+        1 for status in unit.statuses
+        if status.duration > 0 and is_rulebook_status_condition(status.kind)
+    )
+
+
 def apply_status_effect(
     target: CombatantState,
     kind: str,
     duration: int,
     battle: BattleState,
+    source: CombatantState = None,
+    source_team: TeamState = None,
 ):
     if not kind or duration <= 0:
         return False
@@ -1279,8 +1544,25 @@ def apply_status_effect(
     if kind == "root" and target.ability_charges.get("briar_root_immune", 0) > 0:
         battle.log_add(f"  {target.name} is immune to Root (Curse of Sleeping).")
         return False
+    acting_team = source_team or (team_for_unit(battle, source) if source is not None else None)
+    if acting_team is not None:
+        cursed_needle = ready_reactive_artifact(acting_team, "cursed_needle")
+        if cursed_needle is not None:
+            duration += 1
+            consume_artifact(cursed_needle)
+            battle.log_add("  Cursed Needle extends the status by 1 round.")
+    pre_status_count = _rulebook_status_count(target)
     if target.add_status(kind, duration):
         battle.log_add(f"  {target.name} gains {kind} for {duration} rounds.")
+        if acting_team is not None:
+            misericorde = ready_reactive_artifact(acting_team, "misericorde_artifact")
+            if misericorde is not None and pre_status_count == 1 and _rulebook_status_count(target) >= 2:
+                target.ability_charges["misericorde_artifact_dur"] = max(
+                    target.ability_charges.get("misericorde_artifact_dur", 0),
+                    2,
+                )
+                consume_artifact(misericorde)
+                battle.log_add(f"  Misericorde marks {target.name} for +10 damage for 2 rounds.")
         return True
     return False
 
@@ -1290,6 +1572,8 @@ def refresh_status_effect(
     kind: str,
     duration: int,
     battle: BattleState,
+    source: CombatantState = None,
+    source_team: TeamState = None,
 ):
     if not kind or duration <= 0:
         return False
@@ -1298,7 +1582,7 @@ def refresh_status_effect(
             status.duration = max(status.duration, duration)
             battle.log_add(f"  {target.name}'s {kind} is refreshed to {status.duration} rounds.")
             return True
-    return apply_status_effect(target, kind, duration, battle)
+    return apply_status_effect(target, kind, duration, battle, source=source, source_team=source_team)
 
 
 def apply_stat_buff(unit, stat, amount, duration, battle, label=""):
@@ -1328,6 +1612,7 @@ def apply_stat_debuff(unit, stat, amount, duration, battle):
 def do_swap(unit_a: CombatantState, unit_b: CombatantState,
              team: TeamState, battle: BattleState):
     """Swap two units' slots."""
+    old_slots = {unit_a: unit_a.slot, unit_b: unit_b.slot}
     unit_a.slot, unit_b.slot = unit_b.slot, unit_a.slot
     battle.log_add(f"{unit_a.name} and {unit_b.name} swap positions.")
 
@@ -1343,6 +1628,36 @@ def do_swap(unit_a: CombatantState, unit_b: CombatantState,
         if u.defn.id == "sir_roland" and u.slot == SLOT_FRONT:
             u.ability_charges["silver_aegis"] = 1
             battle.log_add(f"  Silver Aegis ready for {u.name}.")
+
+    excalibur = ready_reactive_artifact(team, "excalibur")
+    if excalibur is not None:
+        promoted = next((u for u in (unit_a, unit_b) if old_slots[u] != SLOT_FRONT and u.slot == SLOT_FRONT), None)
+        if promoted is not None:
+            promoted.ability_charges["excalibur_dur"] = max(
+                promoted.ability_charges.get("excalibur_dur", 0),
+                2,
+            )
+            consume_artifact(excalibur)
+            battle.log_add(f"  Excalibur empowers {promoted.name}'s signature abilities.")
+
+    red_hood = ready_reactive_artifact(team, "red_hood")
+    if red_hood is not None:
+        promoted = next((u for u in (unit_a, unit_b) if old_slots[u] != SLOT_FRONT and u.slot == SLOT_FRONT), None)
+        if promoted is not None:
+            if promoted.add_status("guard", 2):
+                battle.log_add(f"  Red Hood Guards {promoted.name} for 2 rounds.")
+            consume_artifact(red_hood)
+
+    godmothers_wand = ready_reactive_artifact(team, "godmothers_wand")
+    if godmothers_wand is not None:
+        retreated = next((u for u in (unit_a, unit_b) if old_slots[u] == SLOT_FRONT and u.slot != SLOT_FRONT), None)
+        if retreated is not None:
+            retreated.ability_charges["godmothers_wand_dur"] = max(
+                retreated.ability_charges.get("godmothers_wand_dur", 0),
+                2,
+            )
+            consume_artifact(godmothers_wand)
+            battle.log_add(f"  Godmother's Wand empowers {retreated.name}'s backline abilities.")
 
     # Track swap recency for Noble/Natural Order
     for u in (unit_a, unit_b):
@@ -1520,16 +1835,16 @@ def execute_ability(
     # ── Purifying Flame: on next attack, Burn the target ─────────────────────
     if mode.power > 0 and not target.ko \
             and actor.ability_charges.get("purifying_flame", 0) > 0:
-        apply_status_effect(target, "burn", 2, battle)
+        apply_status_effect(target, "burn", 2, battle, source=actor)
         actor.ability_charges["purifying_flame"] = 0
 
     # ── Hot Mitts: FL burns target if not already burned; BL always burns ────
     if mode.power > 0 and actor.sig.id == "hot_mitts" and not target.ko:
         if actor.slot == SLOT_FRONT:
             if not target.has_status("burn"):    # "or" condition: burn OR +15% (FL)
-                apply_status_effect(target, "burn", 2, battle)
+                apply_status_effect(target, "burn", 2, battle, source=actor)
         else:
-            apply_status_effect(target, "burn", 2, battle)  # BL always burns
+            apply_status_effect(target, "burn", 2, battle, source=actor)  # BL always burns
 
     # ── Heal to target ────────────────────────────────────────────────────────
     if mode.heal > 0 and not is_spread:
@@ -1550,15 +1865,15 @@ def execute_ability(
 
     # ── Status on target ──────────────────────────────────────────────────────
     if mode.status:
-        apply_status_effect(target, mode.status, mode.status_dur, battle)
+        apply_status_effect(target, mode.status, mode.status_dur, battle, source=actor)
     if mode.status2:
-        apply_status_effect(target, mode.status2, mode.status2_dur, battle)
+        apply_status_effect(target, mode.status2, mode.status2_dur, battle, source=actor)
     if mode.status3:
-        apply_status_effect(target, mode.status3, mode.status3_dur, battle)
+        apply_status_effect(target, mode.status3, mode.status3_dur, battle, source=actor)
 
     # ── Status on self ────────────────────────────────────────────────────────
     if mode.self_status:
-        apply_status_effect(actor, mode.self_status, mode.self_status_dur, battle)
+        apply_status_effect(actor, mode.self_status, mode.self_status_dur, battle, source=actor)
 
     # ── Guard effects ─────────────────────────────────────────────────────────
     if mode.guard_self:
@@ -1618,7 +1933,16 @@ def execute_ability(
 
     # ── Mark twist used ───────────────────────────────────────────────────────
     if ability.category == "twist":
+        team.twists_used += 1
         actor.twist_used = True
+        team.active_twist_lock = max(team.active_twist_lock, _twist_lock_duration(ability))
+        goose_quill = ready_reactive_artifact(team, "goose_quill")
+        if goose_quill is not None:
+            apply_stat_buff(actor, "attack", 12, 2, battle)
+            apply_stat_buff(actor, "defense", 12, 2, battle)
+            apply_stat_buff(actor, "speed", 12, 2, battle)
+            consume_artifact(goose_quill)
+            battle.log_add(f"  Goose Quill empowers {actor.name}'s twist.")
 
 
 def execute_spread_ability(
@@ -1704,10 +2028,41 @@ def apply_special(
                 actor.ko = True
             battle.log_add(f"  Crimson Fury recoil: {actor.name} takes {recoil} damage.")
 
-    # ── Final Deception: expose all + steal 5 atk each ───────────────────────
+    # ── Party-lock twists from the rewritten rulebook ─────────────────────────
+    elif key == "stomach_of_the_wolf":
+        actor.ability_charges["stomach_of_the_wolf_dur"] = 2
+        battle.log_add(f"  {actor.name}'s Red and Wolf is always active and doubled for 2 rounds.")
+
+    elif key == "castle_on_cloud_nine":
+        actor.ability_charges["castle_on_cloud_nine_dur"] = 2
+        battle.log_add(f"  {actor.name}'s abilities cleave half of the target's Defense for 2 rounds.")
+
+    elif key == "into_the_oven":
+        actor.ability_charges["into_the_oven_dur"] = 2
+        battle.log_add(f"  Enemies take +10 damage from all sources for 2 rounds.")
+
+    elif key == "all_seeing":
+        actor.ability_charges["all_seeing_dur"] = 2
+        for e in enemy.alive():
+            apply_status_effect(e, "expose", 2, battle, source=actor)
+        battle.log_add(f"  {actor.name} cannot lose initiative for 2 rounds.")
+
+    elif key == "mass_hysteria":
+        actor.ability_charges["mass_hysteria_dur"] = 2
+        battle.log_add(f"  {actor.name}'s abilities become full-power spread for 2 rounds.")
+
+    elif key == "smoke_and_mirrors":
+        actor.ability_charges["smoke_and_mirrors_dur"] = 2
+        battle.log_add(f"  {actor.name} will retaliate with 70 power and steal 12 Speed for 2 rounds.")
+
+    elif key == "purehearted_stand":
+        actor.ability_charges["purehearted_stand_dur"] = 2
+        battle.log_add(f"  Silver Aegis is always active for 2 rounds.")
+
+    # ── Legacy Final Deception fallback ───────────────────────────────────────
     elif key == "final_deception":
         for e in enemy.alive():
-            apply_status_effect(e, "expose", 2, battle)
+            apply_status_effect(e, "expose", 2, battle, source=actor)
             e.add_debuff("attack", 5, 2)
             actor.add_buff("attack", 5, 2)
         battle.log_add(f"  {actor.name} steals Attack from all enemies.")
@@ -1723,10 +2078,8 @@ def apply_special(
 
     # ── Unbreakable Defense: clear statuses + double defense ─────────────────
     elif key == "unfettered":
-        actor.clear_statuses()
-        actor.ability_charges["unfettered_dur"] = 2
-        battle.log_add(
-            f"  {actor.name}'s Attack and Speed now use Defense, and Defense uses Attack, for 2 rounds.")
+        apply_stat_debuff(actor, "defense", 50, 2, battle)
+        battle.log_add(f"  {actor.name} loses 50 Defense for 2 rounds.")
 
     # ── Shimmering Valor frontline: damage reduction for 3 rounds ─────────────
     elif key == "shimmering_valor_front":
@@ -1762,22 +2115,10 @@ def apply_special(
                             battle.log_add(f"  {e.name} is Taunted for 2 rounds.")
                         break
 
-    # ── Journey to Avalon: self KO + revive chosen ally ───────────────────────
+    # ── Journey to Avalon: teamwide Reflecting Pool + delayed sacrifice ───────
     elif key == "journey_to_avalon":
-        # Self KO
-        actor.hp = 0
-        actor.ko = True
-        battle.log_add(f"  {actor.name} sacrifices herself (Journey to Avalon).")
-        # Revive/buff target ally with Reflecting Pool
-        if target and target in team.members and target != actor:
-            was_ko = target.ko
-            if was_ko:
-                target.ko = False
-                target.hp = math.ceil(target.max_hp * 0.60)
-                battle.log_add(f"  {target.name} revived at {target.hp} HP.")
-            if target.add_status("reflecting_pool", 2):
-                battle.log_add(f"  {target.name} gains Reflecting Pool for 2 rounds.")
-        check_and_promote(battle)
+        actor.ability_charges["journey_to_avalon_dur"] = 2
+        battle.log_add(f"  {actor.name}'s allies gain Reflecting Pool for 2 rounds.")
 
     # ── Cinder Blessing frontline: HP averaging with ally ────────────────────
     elif key == "cinder_blessing_avg":
@@ -1826,6 +2167,15 @@ def apply_special(
         actor.add_debuff("attack",  10, 2)
         battle.log_add(f"  {actor.name} has -10 Atk for 2 rounds.")
 
+    elif key == "ominous_gale_back":
+        if target.last_status_inflicted and target.has_status(target.last_status_inflicted):
+            refresh_status_effect(target, target.last_status_inflicted, 2, battle)
+            battle.log_add(f"  {target.name}'s last status is refreshed.")
+
+    elif key == "breakthrough_front":
+        actor.ability_charges["breakthrough_dur"] = 2
+        battle.log_add(f"  {actor.name}'s abilities become spread for 2 rounds.")
+
     # ── Slam: bonus if guarded, or backline guard self ────────────────────────
     elif key == "slam_bonus_if_guarded":
         pass  # handled in compute_damage
@@ -1853,6 +2203,20 @@ def apply_special(
     elif key == "stitch_extra_action_now":
         actor.extra_actions_now += 1
         battle.log_add(f"  {actor.name} has an extra action this round!")
+
+    elif key == "tempus_fugit_back":
+        pass  # recharge exemption is handled in resolve_queued_action
+
+    elif key == "thorn_snare_back":
+        if target.has_status("root"):
+            apply_status_effect(target, "spotlight", 2, battle, source=actor)
+
+    elif key == "summons_swap_cleanse":
+        if target and target != actor:
+            do_swap(actor, target, team, battle)
+            target.buffs.clear()
+            target.debuffs.clear()
+            battle.log_add(f"  Summons clears {target.name}'s stat buffs and debuffs.")
 
     # ── Cutpurse backline: swap Reynard with frontline ally ──────────────────
     elif key == "cutpurse_swap_frontline":
@@ -1884,6 +2248,10 @@ def apply_special(
         battle.log_add(f"  Rulebook status durations extended on {target.name}.")
 
     # ── Vile Sabbath: reapply last status and refresh rulebook statuses ──────
+    elif key == "vile_sabbath":
+        actor.ability_charges["vile_sabbath_dur"] = 2
+        battle.log_add(f"  Double Double now refreshes status durations for 2 rounds.")
+
     elif key == "vile_sabbath_reapply":
         if target.last_status_inflicted and is_rulebook_status_condition(target.last_status_inflicted):
             refresh_status_effect(target, target.last_status_inflicted, 2, battle)
@@ -1909,23 +2277,37 @@ def apply_special(
         pass  # handled via ignore_pride flag in execute_turn
 
     # ── Slay the Beast: ignore pride ─────────────────────────────────────────
+    elif key == "raze_the_village":
+        actor.ability_charges["raze_the_village_dur"] = 2
+        for e in enemy.alive():
+            apply_status_effect(e, "spotlight", 2, battle, source=actor)
+        battle.log_add(f"  All enemies are Spotlighted for 2 rounds.")
+
+    elif key == "lawless":
+        actor.ability_charges["lawless_dur"] = 2
+        battle.log_add(f"  {actor.name}'s abilities ignore targeting restrictions and cannot be redirected for 2 rounds.")
+
     elif key == "slay_ignore_pride":
-        pass  # caller must set ignore_pride=True
+        pass  # legacy fallback
 
     # ── Hunter's Mark: +10 incoming damage next round only ───────────────────
     elif key == "hunters_mark_dot":
         target.ability_charges["hunters_mark_pending"] = 1
-        battle.log_add(f"  {target.name} is Marked — takes +10 damage next round.")
+        battle.log_add(f"  {target.name} is Marked — takes +12 damage next round.")
 
-    # ── Trapping Blow FL: root target if they are Weakened ───────────────────
+    # ── Trapping Blow FL: root target if they are Spotlighted ─────────────────
+    elif key == "trapping_blow_root_spotlight":
+        if target.has_status("spotlight") and apply_status_effect(target, "root", 2, battle, source=actor):
+            battle.log_add(f"  {target.name} is Rooted by Trapping Blow (was Spotlighted)!")
+
     elif key == "trapping_blow_root_weakened":
-        if target.has_status("weaken") and apply_status_effect(target, "root", 2, battle):
+        if target.has_status("weaken") and apply_status_effect(target, "root", 2, battle, source=actor):
             battle.log_add(f"  {target.name} is Rooted by Trapping Blow (was Weakened)!")
 
-    # ── Dying Dance FL: Shock Weakened targets for 2 rounds ─────────────────
+    # ── Dying Dance FL: Shock Spotlighted targets for 2 rounds ───────────────
     elif key == "dying_dance_front":
-        if target.has_status("weaken") and apply_status_effect(target, "shock", 2, battle):
-            battle.log_add(f"  {target.name} is Shocked by Dying Dance (was Weakened)!")
+        if target.has_status("spotlight") and apply_status_effect(target, "shock", 2, battle, source=actor):
+            battle.log_add(f"  {target.name} is Shocked by Dying Dance (was Spotlighted)!")
 
     # ── Drown in the Loch: flat +7 incoming damage for 2 rounds ──────────────
     elif key == "drown_dmg_bonus":
@@ -1937,13 +2319,17 @@ def apply_special(
     # ── Struck Midnight: Ella can't act/target next round ─────────────────────
     elif key == "struck_midnight_untargetable":
         for foe in enemy.alive():
-            apply_status_effect(foe, "burn", 2, battle)
+            apply_status_effect(foe, "burn", 2, battle, source=actor)
         actor.untargetable = True
         actor.cant_act = True
         actor.ability_charges["struck_midnight"] = 2
-        battle.log_add(f"  {actor.name} retreats — untargetable until end of next round.")
+        battle.log_add(f"  {actor.name} retreats — untargetable for 2 rounds.")
 
-    # ── Cleansing Inferno: 60% vamp vs Burned ────────────────────────────────
+    # ── Cleansing Inferno: enemy HP loss heals the lowest-health ally ────────
+    elif key == "cleansing_inferno":
+        actor.ability_charges["cleansing_inferno_dur"] = 2
+        battle.log_add(f"  Enemy HP loss will heal the lowest-health ally for 2 rounds.")
+
     elif key == "cleansing_inferno_burn_boost":
         if target.has_status("burn"):
             dealt = 0
@@ -1956,20 +2342,15 @@ def apply_special(
 
     # ── Falling Kingdom ───────────────────────────────────────────────────────
     elif key == "falling_kingdom":
+        actor.ability_charges["falling_kingdom_dur"] = 2
         for e in enemy.alive():
-            if e.has_status("root"):
-                refresh_status_effect(e, "root", 2, battle)
-                apply_status_effect(e, "weaken", 2, battle)
-                battle.log_add(f"  {e.name}'s Root refreshed + Weakened.")
-            else:
-                apply_status_effect(e, "root", 2, battle)
+            apply_status_effect(e, "root", 2, battle, source=actor)
 
     # ── Deathlike Slumber ──────────────────────────────────────────────────────
     elif key == "deathlike_slumber":
-        actor.clear_statuses()
-        battle.log_add(f"  {actor.name} cures all statuses.")
-        actor.ability_charges["deathlike_doubled"] = 2
-        battle.log_add(f"  Innocent Heart's effect is doubled for 2 rounds.")
+        actor.ability_charges["deathlike_slumber_dur"] = 2
+        actor.cant_act = True
+        battle.log_add(f"  Damage to {actor.name} is divided among allies for 2 rounds.")
 
     # ── Lake's Gift: grant Reflecting Pool effect to ally ─────────────────────
     elif key == "lakes_gift_pool_front":
@@ -1984,10 +2365,8 @@ def apply_special(
 
     # ── Redemption ────────────────────────────────────────────────────────────
     elif key == "redemption":
-        actor.max_hp_bonus += 150
-        actor.ability_charges["redemption_heal"] = 2
-        battle.log_add(
-            f"  {actor.name} gains +150 max HP and will heal 50 HP at end of round for 2 rounds.")
+        actor.ability_charges["redemption_dur"] = 2
+        battle.log_add(f"  All-Caring can now swap healed allies for 2 rounds.")
 
     # ── Hot Mitts: FL burn handled in execute_ability; BL bonus in compute_damage ─
     elif key in ("hot_mitts_front", "hot_mitts_back"):
@@ -2061,7 +2440,7 @@ def apply_special(
         adj = get_adjacent_right(enemy, target)
         if adj and not adj.ko and target.last_status_inflicted and is_rulebook_status_condition(target.last_status_inflicted):
             status = target.last_status_inflicted
-            apply_status_effect(adj, status, 2, battle)
+            apply_status_effect(adj, status, 2, battle, source=actor)
             battle.log_add(f"  Toil and Trouble! {adj.name} gains {status}.")
 
     # ── Hypnotic Aura: targeting restriction handled in get_legal_targets ─────
@@ -2109,11 +2488,6 @@ def apply_special(
             )
 
     # ── Noble basics / signatures ───────────────────────────────────────────
-    elif key == "summons_swap":
-        if target and target != actor:
-            do_swap(actor, target, team, battle)
-            actor.ability_charges["summons_cd"] = 2
-
     elif key == "condescend_back":
         target.ability_charges["condescend_bonus"] = 1
 
@@ -2130,20 +2504,19 @@ def apply_special(
         if target.has_status("root"):
             refresh_status_effect(target, "root", 2, battle)
         else:
-            apply_status_effect(target, "root", 2, battle)
+            apply_status_effect(target, "root", 2, battle, source=actor)
 
     elif key == "severed_tether":
         actor.ability_charges["severed_tether_active"] = 2
-        apply_stat_buff(actor, "attack", 20, 2, battle)
-        apply_stat_buff(actor, "speed", 20, 2, battle)
-        apply_stat_debuff(actor, "defense", 10, 2, battle)
+        apply_stat_debuff(actor, "defense", 15, 2, battle)
 
     elif key == "happily_ever_after":
-        team_all = battle.get_team(acting_player).members
-        for ally in team_all:
-            if ally.ko and ally != actor:
-                best = max((ally.defn.attack, "attack"), (ally.defn.defense, "defense"), (ally.defn.speed, "speed"))[1]
-                apply_stat_buff(actor, best, 15, 2, battle)
+        if target and target != actor:
+            actor.ability_charges["happily_ever_after_dur"] = 2
+            actor.ability_charges["happily_ever_after_partner"] = target
+            target.ability_charges["happily_ever_after_dur"] = 2
+            target.ability_charges["happily_ever_after_partner"] = actor
+            battle.log_add(f"  {actor.name} and {target.name} can use each other's abilities for 2 rounds.")
 
     elif key == "fated_duel":
         enemy_front = enemy.frontline()
@@ -2195,11 +2568,11 @@ def apply_special(
 
     elif key == "warlock_spend1_weaken":
         if _spend_malice(actor, 1, battle, ability.name):
-            apply_status_effect(target, "weaken", 2, battle)
+            apply_status_effect(target, "weaken", 2, battle, source=actor)
 
     elif key == "warlock_spend1_expose":
         if _spend_malice(actor, 1, battle, ability.name):
-            apply_status_effect(target, "expose", 2, battle)
+            apply_status_effect(target, "expose", 2, battle, source=actor)
 
     elif key == "blood_pact_front":
         actor.hp = max(1, actor.hp - 45)
@@ -2213,11 +2586,11 @@ def apply_special(
 
     elif key == "cut_strings_back":
         if _spend_malice(actor, 2, battle, "Cut the Strings"):
-            apply_status_effect(target, "spotlight", 2, battle)
+            apply_status_effect(target, "spotlight", 2, battle, source=actor)
 
     elif key == "blue_faerie_boon":
         actor.ability_charges["malice_cap"] = 12
-        do_heal(actor, actor.ability_charges.get("malice", 0) * 20, actor, battle)
+        _gain_malice(actor, 6, battle, "Blue Faerie's Boon")
 
     elif key == "straw_to_gold_front":
         ally = target
@@ -2272,6 +2645,15 @@ def apply_special(
                     apply_stat_buff(actor, b.stat, b.amount + bonus, b.duration, battle)
             e.buffs = []
 
+    elif key == "devils_nursery":
+        actor.ability_charges["devils_nursery_dur"] = 2
+        for e in enemy.alive():
+            for b in e.buffs:
+                if b.duration > 0:
+                    apply_stat_buff(actor, b.stat, b.amount, b.duration, battle)
+            e.buffs = []
+        battle.log_add(f"  {actor.name} steals and refreshes all enemy stat buffs.")
+
     elif key == "misappropriate_front":
         if _spend_malice(actor, 1, battle, ability.name):
             efl = enemy.frontline()
@@ -2299,6 +2681,28 @@ def apply_special(
             if d.duration > 0:
                 d.duration = max(d.duration, 2)
         battle.log_add(f"  {target.name}'s stat debuffs are refreshed.")
+
+    elif key == "foam_prison":
+        actor.ability_charges["foam_prison_dur"] = 2
+        if target is not None:
+            target.ability_charges["foam_prison_block_dur"] = 2
+            battle.log_add(f"  {target.name} cannot use twists for 2 rounds.")
+            copied_twist = Ability(
+                id=target.defn.twist.id,
+                name=target.defn.twist.name,
+                category="signature",
+                passive=target.defn.twist.passive,
+                frontline=target.defn.twist.frontline,
+                backline=target.defn.twist.backline,
+            )
+            legal = get_legal_targets(battle, acting_player, actor, copied_twist)
+            if get_mode(actor, copied_twist).spread:
+                execute_spread_ability(actor, copied_twist, acting_player, battle)
+            elif legal:
+                preferred = target if target in legal else (actor if actor in legal else legal[0])
+                execute_ability(actor, copied_twist, preferred, acting_player, battle)
+            else:
+                battle.log_add(f"  Foam Prison copies {copied_twist.name}.")
 
     elif key == "turn_to_foam":
         _gain_malice(actor, 3, battle, ability.name)
@@ -2336,8 +2740,7 @@ def _trigger_innocent_heart(unit: CombatantState, kind: str,
         None
     )
     if aurora:
-        doubled = aurora.ability_charges.get("deathlike_doubled", 0) > 0
-        def_bonus  = 14 if doubled else 7
+        def_bonus = 7
         unit.add_buff("defense", def_bonus, 2)
         battle.log_add(
             f"  Innocent Heart: {unit.name} +{def_bonus} Def.")
@@ -2374,55 +2777,67 @@ def execute_item(
     target: CombatantState,
     acting_player: int,
     battle: BattleState,
+    artifact: Artifact = None,
+    secondary_target: CombatantState = None,
 ):
-    item = actor.item
     team = battle.get_team(acting_player)
-    enemy = battle.get_enemy(acting_player)
-
-    if item.once_per_battle and actor.item_uses_left <= 0:
-        battle.log_add(f"  {actor.name}'s {item.name} already used.")
-        return
-    if actor.item_uses_left <= 0:
-        battle.log_add(f"  {actor.name}'s {item.name} is exhausted.")
+    artifact_state = team.artifact_state(artifact.id) if artifact is not None else None
+    if artifact_state is None:
+        battle.log_add(f"  {actor.name} has no artifact ready.")
         return
 
-    actor.item_uses_left -= 1
-    battle.log_add(f"{actor.name} uses {item.name}.")
+    battle.log_add(f"{actor.name} uses {artifact_state.artifact.name}.")
 
-    if item.heal > 0:
-        do_heal(target, item.heal, actor, battle,
+    if artifact_state.artifact.heal > 0:
+        do_heal(target, artifact_state.artifact.heal, actor, battle,
                 action_desc=f"{actor.name} heals {target.name}")
 
-    if item.guard:
-        if target.add_status("guard", item.status_dur):
+    if artifact_state.artifact.cleanse:
+        removed = list(target.statuses)
+        for status in removed:
+            target.remove_status(status.kind)
+            _trigger_innocent_heart(target, status.kind, battle)
+        if removed:
+            battle.log_add(f"  {target.name}'s status conditions are removed.")
+
+    if artifact_state.artifact.guard:
+        if target.add_status("guard", artifact_state.artifact.status_dur):
             battle.log_add(f"  {target.name} is Guarded.")
 
-    if item.atk_buff:
-        apply_stat_buff(actor, "attack", item.atk_buff, item.atk_buff_dur, battle)
+    if artifact_state.artifact.atk_buff:
+        apply_stat_buff(target, "attack", artifact_state.artifact.atk_buff, artifact_state.artifact.atk_buff_dur, battle)
 
-    if item.spd_buff:
-        apply_stat_buff(actor, "speed", item.spd_buff, item.spd_buff_dur, battle)
+    if artifact_state.artifact.spd_buff:
+        apply_stat_buff(target, "speed", artifact_state.artifact.spd_buff, artifact_state.artifact.spd_buff_dur, battle)
 
-    if item.def_buff:
-        apply_stat_buff(actor, "defense", item.def_buff, item.def_buff_dur, battle)
+    if artifact_state.artifact.def_buff:
+        apply_stat_buff(target, "defense", artifact_state.artifact.def_buff, artifact_state.artifact.def_buff_dur, battle)
 
-    if item.status and not item.guard:
-        apply_status_effect(target, item.status, item.status_dur, battle)
-        if item.special == "hunters_net":
-            target.ability_charges["hunters_net_heal_dur"] = item.status_dur
-            battle.log_add(f"  {target.name}'s healing is halved for {item.status_dur} rounds.")
+    if artifact_state.artifact.atk_debuff:
+        apply_stat_debuff(target, "attack", artifact_state.artifact.atk_debuff, artifact_state.artifact.atk_debuff_dur, battle)
 
-    if item.special == "smoke_bomb_swap":
-        # Swap actor with a chosen ally (target must be an ally)
-        if target != actor and target in team.alive():
-            do_swap(actor, target, team, battle)
-        battle.log_add(f"  Smoke Bomb: swaps with {target.name}.")
+    if artifact_state.artifact.spd_debuff:
+        apply_stat_debuff(target, "speed", artifact_state.artifact.spd_debuff, artifact_state.artifact.spd_debuff_dur, battle)
 
-    if item.special == "ancient_hourglass":
-        actor.untargetable = True
-        actor.cant_act     = True
-        actor.ability_charges["hourglass"] = 1
-        battle.log_add(f"  Ancient Hourglass — untargetable next round.")
+    if artifact_state.artifact.def_debuff:
+        apply_stat_debuff(target, "defense", artifact_state.artifact.def_debuff, artifact_state.artifact.def_debuff_dur, battle)
+
+    if artifact_state.artifact.status:
+        apply_status_effect(target, artifact_state.artifact.status, artifact_state.artifact.status_dur, battle, source=actor, source_team=team)
+        if artifact_state.artifact.id == "nettle_smock":
+            target.ability_charges["hunters_net_heal_dur"] = artifact_state.artifact.status_dur
+            battle.log_add(f"  {target.name}'s healing is halved for {artifact_state.artifact.status_dur} rounds.")
+
+    if artifact_state.artifact.id == "magic_mirror":
+        if secondary_target is not None and target != secondary_target and target in team.alive() and secondary_target in team.alive():
+            do_swap(target, secondary_target, team, battle)
+            battle.log_add(f"  Magic Mirror swaps {target.name} and {secondary_target.name}.")
+
+    if artifact_state.artifact.id == "cracked_stopwatch":
+        target.ability_charges["cracked_stopwatch_pending"] = 1
+        battle.log_add(f"  Cracked Stopwatch will freeze {target.name} next round.")
+
+    consume_artifact(artifact_state)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2431,7 +2846,9 @@ def execute_item(
 
 def _track_ranged_use_once(actor: CombatantState, ability: Ability, battle: BattleState):
     """Ranged recharge counter: increment exactly once per ability cast."""
-    if not is_ranged(actor) or ability.passive:
+    if ability.passive:
+        return
+    if not is_ranged(actor) and not actor.has_status("shock"):
         return
     if _has_signature_effect(actor, "become_real") and actor.slot != SLOT_FRONT             and actor.ability_charges.get("malice", 0) >= 3:
         return
@@ -2456,9 +2873,15 @@ def describe_action(action: Optional[dict]) -> str:
         target = action.get("target")
         return f"Swap with {target.name}" if target else "Swap"
     if atype == "item":
+        artifact = action.get("artifact")
         target = action.get("target")
         target_text = target.name if target else "self"
-        return f"Item {target_text}"
+        text = artifact.name if artifact else "Artifact"
+        if target is not None:
+            text += f" → {target_text}"
+        if action.get("swap_target") is not None:
+            text += f" ↔ {action['swap_target'].name}"
+        return text
     if atype == "ability":
         ability = action.get("ability")
         ability_name = ability.name if ability else "Ability"
@@ -2512,9 +2935,10 @@ def resolve_queued_action(
         )
     elif atype == "item":
         _tname = action["target"].name if action.get("target") else "self"
+        _artifact = action.get("artifact")
         battle.log_tech(
             f"ACTION P{acting_player} {actor.name}[{actor.slot}]:"
-            f" item [{actor.item.name}] → {_tname}"
+            f" artifact [{_artifact.name if _artifact else 'artifact'}] → {_tname}"
         )
     elif atype == "skip":
         battle.log_tech(
@@ -2565,6 +2989,9 @@ def resolve_queued_action(
         ability = action["ability"]
         target  = action.get("target")
         mode    = get_mode(actor, ability)
+        mass_hysteria_active = actor.ability_charges.get("mass_hysteria_dur", 0) > 0 and ability.category != "twist"
+        breakthrough_active = actor.ability_charges.get("breakthrough_dur", 0) > 0 and ability.id != "breakthrough"
+        forced_spread = mass_hysteria_active or breakthrough_active
 
         # Stolen Voices (Asha): gain Malice when enemy uses signature while Asha is backline.
         if ability.category == "signature":
@@ -2581,11 +3008,17 @@ def resolve_queued_action(
         # Defensive legality guard: queued targets may become invalid due to
         # stale UI state, swaps, or handcrafted test actions. Re-validate here
         # so rules enforcement doesn't depend solely on selection-time checks.
-        legal_targets = get_legal_targets(battle, acting_player, actor, ability)
+        legal_targets = get_legal_targets(
+            battle,
+            acting_player,
+            actor,
+            ability,
+            ignore_melee_targeting_restriction=mass_hysteria_active,
+        )
         queued_from_slot = action.get("queued_from_slot")
         slot_changed_since_queue = queued_from_slot is not None and queued_from_slot != actor.slot
 
-        if not mode.spread and (target is None or target not in legal_targets):
+        if not (mode.spread or forced_spread) and (target is None or target not in legal_targets):
             if slot_changed_since_queue and legal_targets:
                 enemy_front = battle.get_enemy(acting_player).frontline()
                 fallback_target = enemy_front if enemy_front in legal_targets else legal_targets[0]
@@ -2622,7 +3055,7 @@ def resolve_queued_action(
                     action["target"] = target
 
         # Hypnotic Aura: Shocked actors redirected by Hunold's position
-        if target is not None and actor.has_status("shock") and not mode.spread:
+        if target is not None and actor.has_status("shock") and not (mode.spread or forced_spread) and actor.ability_charges.get("lawless_dur", 0) <= 0 and not mode.cant_redirect:
             enemy_team = battle.get_enemy(acting_player)
             hunold = next(
                 (m for m in enemy_team.alive() if m.sig.id == "hypnotic_aura"), None
@@ -2638,19 +3071,29 @@ def resolve_queued_action(
                     target = redirect
                     action["target"] = target
 
-        _pride_abilities = {"heros_charge", "slay_the_beast"}
-        if mode.spread:
+        _pride_abilities = {"heros_charge"}
+        skip_recharge_track = (
+            ability.id == "tempus_fugit"
+            and actor.slot != SLOT_FRONT
+            and target is not None
+            and target.get_stat("speed") < actor.get_stat("speed")
+        )
+        if mode.spread or forced_spread:
             battle.log_add(f"{actor.name} uses {ability.name}.")
             ignore_pride = action.get("ignore_pride", False) or ability.id in _pride_abilities
             execute_spread_ability(actor, ability, acting_player, battle,
-                                   ignore_pride=ignore_pride)
-            _track_ranged_use_once(actor, ability, battle)
+                                   ignore_pride=ignore_pride,
+                                   ignore_melee_targeting_restriction=mass_hysteria_active or actor.ability_charges.get("lawless_dur", 0) > 0,
+                                   ignore_spread_nerf=mass_hysteria_active)
+            if not skip_recharge_track:
+                _track_ranged_use_once(actor, ability, battle)
         elif target and not target.ko:
             battle.log_add(f"{actor.name} uses {ability.name} on {target.name}.")
             ignore_pride = action.get("ignore_pride", False) or ability.id in _pride_abilities
             execute_ability(actor, ability, target, acting_player, battle,
                             ignore_pride=ignore_pride, action_context=action)
-            _track_ranged_use_once(actor, ability, battle)
+            if not skip_recharge_track:
+                _track_ranged_use_once(actor, ability, battle)
         else:
             battle.log_add(f"{actor.name}'s target is gone — {ability.name} fizzles.")
 
@@ -2659,13 +3102,39 @@ def resolve_queued_action(
         return
 
     if atype == "item":
+        artifact = action.get("artifact")
         target = action.get("target", actor)
-        legal_targets = get_legal_item_targets(battle, acting_player, actor)
+        secondary_target = action.get("swap_target")
+        legal_targets = get_legal_item_targets(
+            battle,
+            acting_player,
+            actor,
+            artifact=artifact,
+        )
         if target not in legal_targets:
-            battle.log_add(f"{actor.name}'s item target is no longer legal — item fizzles.")
+            battle.log_add(f"{actor.name}'s artifact target is no longer legal — artifact fizzles.")
             actor.acted = True
             return
-        execute_item(actor, target, acting_player, battle)
+        if artifact and artifact.id == "magic_mirror":
+            legal_swap_targets = get_legal_item_targets(
+                battle,
+                acting_player,
+                actor,
+                artifact=artifact,
+                primary_target=target,
+            )
+            if secondary_target not in legal_swap_targets:
+                battle.log_add(f"{actor.name} must choose a second ally for Magic Mirror.")
+                actor.acted = True
+                return
+        execute_item(
+            actor,
+            target,
+            acting_player,
+            battle,
+            artifact=artifact,
+            secondary_target=secondary_target,
+        )
         actor.acted = True
         return
 
@@ -2721,6 +3190,13 @@ def end_round(battle: BattleState):
     for team in (battle.team1, battle.team2):
         acting_p = 1 if team == battle.team1 else 2
 
+        for artifact_state in team.artifacts:
+            if artifact_state.cooldown_remaining > 0:
+                artifact_state.cooldown_remaining -= 1
+
+        if team.active_twist_lock > 0:
+            team.active_twist_lock -= 1
+
         for unit in list(team.alive()):
             # Burn damage
             if unit.has_status("burn"):
@@ -2730,6 +3206,18 @@ def end_round(battle: BattleState):
                     unit.hp = 0
                     unit.ko = True
                 battle.log_add(f"{unit.name} burns for {burn_dmg} damage.")
+                opposing_team = battle.team2 if team == battle.team1 else battle.team1
+                liesl = next(
+                    (
+                        ally for ally in opposing_team.alive()
+                        if ally.defn.id == "matchstick_liesl"
+                        and ally.ability_charges.get("cleansing_inferno_dur", 0) > 0
+                    ),
+                    None,
+                )
+                if liesl is not None and opposing_team.alive():
+                    lowest = min(opposing_team.alive(), key=lambda ally: ally.hp)
+                    do_heal(lowest, burn_dmg, liesl, battle, action_desc=f"Cleansing Inferno heals {lowest.name}")
 
             # Ability-charge riders tick below (Hunter's Mark / Drown in the Loch).
 
@@ -2777,11 +3265,6 @@ def end_round(battle: BattleState):
             # Awaited Blow BL: heal 40 HP at end of round
             if _has_signature_effect(unit, "awaited_blow") and unit.slot != SLOT_FRONT:
                 do_heal(unit, 40, unit, battle)
-
-            # Redemption: heal 50 HP for 2 rounds
-            if unit.ability_charges.get("redemption_heal", 0) > 0:
-                do_heal(unit, 50, unit, battle)
-                unit.ability_charges["redemption_heal"] -= 1
 
             # Ancient Hourglass: clear flag after one round
             if unit.ability_charges.get("hourglass", 0) > 0:
@@ -2882,14 +3365,20 @@ def end_round(battle: BattleState):
                     for k in ("straw_return_target", "straw_return_stat", "straw_return_amount", "straw_return_dur", "straw_return_orig_dur"):
                         unit.ability_charges.pop(k, None)
 
-            # Deathlike Slumber: decrement doubled Innocent Heart counter
-            if unit.ability_charges.get("deathlike_doubled", 0) > 0:
-                unit.ability_charges["deathlike_doubled"] -= 1
-            if unit.ability_charges.get("unfettered_dur", 0) > 0:
-                unit.ability_charges["unfettered_dur"] -= 1
-
             if unit.ability_charges.get("hunters_net_heal_dur", 0) > 0:
                 unit.ability_charges["hunters_net_heal_dur"] -= 1
+
+            for key in (
+                "selkies_skin_dur",
+                "excalibur_dur",
+                "godmothers_wand_dur",
+                "misericorde_artifact_dur",
+            ):
+                if unit.ability_charges.get(key, 0) > 0:
+                    unit.ability_charges[key] -= 1
+
+            if unit.ability_charges.get("cracked_stopwatch_dur", 0) > 0:
+                unit.ability_charges["cracked_stopwatch_dur"] -= 1
 
             if unit.ability_charges.get("hunters_mark_pending", 0) > 0:
                 unit.ability_charges["hunters_mark_pending"] -= 1
@@ -2900,6 +3389,36 @@ def end_round(battle: BattleState):
             if unit.ability_charges.get("drown_bonus_dur", 0) > 0:
                 unit.ability_charges["drown_bonus_dur"] -= 1
 
+            for key in (
+                "stomach_of_the_wolf_dur",
+                "castle_on_cloud_nine_dur",
+                "into_the_oven_dur",
+                "all_seeing_dur",
+                "mass_hysteria_dur",
+                "smoke_and_mirrors_dur",
+                "purehearted_stand_dur",
+                "journey_to_avalon_dur",
+                "breakthrough_dur",
+                "vile_sabbath_dur",
+                "falling_kingdom_dur",
+                "raze_the_village_dur",
+                "lawless_dur",
+                "redemption_dur",
+                "cleansing_inferno_dur",
+                "deathlike_slumber_dur",
+                "happily_ever_after_dur",
+                "devils_nursery_dur",
+                "foam_prison_dur",
+                "foam_prison_block_dur",
+            ):
+                if unit.ability_charges.get(key, 0) > 0:
+                    unit.ability_charges[key] -= 1
+
+            if unit.ability_charges.get("deathlike_slumber_dur", 0) <= 0 and unit.defn.id == "snowkissed_aurora":
+                unit.cant_act = False
+            if unit.ability_charges.get("happily_ever_after_dur", 0) <= 0:
+                unit.ability_charges.pop("happily_ever_after_partner", None)
+
             unit.ability_charges["swapped_this_round"] = 0
 
             if unit.ability_charges.get("bricklayer_all_active", 0) > 0:
@@ -2907,6 +3426,9 @@ def end_round(battle: BattleState):
             if unit.ability_charges.get("bricklayer_all_pending", 0) > 0:
                 unit.ability_charges["bricklayer_all_active"] = unit.ability_charges["bricklayer_all_pending"]
                 unit.ability_charges["bricklayer_all_pending"] = 0
+            if unit.ability_charges.get("cracked_stopwatch_pending", 0) > 0:
+                unit.ability_charges["cracked_stopwatch_pending"] = 0
+                unit.ability_charges["cracked_stopwatch_dur"] = 1
 
             # Growing Pains (Pinocchio): gain Malice when ending round in frontline
             if _has_talent(unit, "pinocchio") and unit.slot == SLOT_FRONT:
@@ -2994,16 +3516,18 @@ def apply_round_start_effects(battle: BattleState):
         if not rooted:
             continue
         target = min(rooted, key=lambda u: u.hp)
-        # Strip Root
-        target.remove_status("root")
-        _trigger_innocent_heart(target, "root", battle)
-        # Can't act this round
         target.ability_charges["briar_cant_act"] = 1
-        # Can't be Rooted next round
-        target.ability_charges["briar_root_immune"] = 2
-        battle.log_add(
-            f"  Curse of Sleeping: {target.name} loses Root — cannot act or be Rooted this round."
-        )
+        if briar.ability_charges.get("falling_kingdom_dur", 0) > 0:
+            battle.log_add(
+                f"  Curse of Sleeping: {target.name} cannot act while remaining Rooted."
+            )
+        else:
+            target.remove_status("root")
+            _trigger_innocent_heart(target, "root", battle)
+            target.ability_charges["briar_root_immune"] = 2
+            battle.log_add(
+                f"  Curse of Sleeping: {target.name} loses Root — cannot act or be Rooted this round."
+            )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -3013,6 +3537,8 @@ def apply_round_start_effects(battle: BattleState):
 def can_act_this_round(unit: CombatantState, battle: BattleState = None, acting_player: int = None) -> bool:
     """Returns whether a unit is currently allowed to act."""
     if unit.cant_act:
+        return False
+    if unit.ability_charges.get("cracked_stopwatch_dur", 0) > 0:
         return False
     # Curse of Sleeping: unit can't act the round it loses Root to Briar Rose.
     if unit.ability_charges.get("briar_cant_act", 0) > 0:
@@ -3065,10 +3591,17 @@ def apply_quest_rewards(profile, quest_id: int, notify: bool = True):
         profile.basics_tier = max(profile.basics_tier, new_basics_tier)
 
     # ── Unlock items ───────────────────────────────────────────────────────────
+    artifact_ids = list(rewards.get("artifacts", []))
     for item_id in rewards.get("items", []):
-        if notify and item_id not in profile.unlocked_items:
-            profile.new_unlocks.add("items")
-        profile.unlocked_items.add(item_id)
+        artifact_id = LEGACY_ITEM_TO_ARTIFACT_ID.get(item_id)
+        if artifact_id is not None:
+            artifact_ids.append(artifact_id)
+    for artifact_id in artifact_ids:
+        if artifact_id not in ARTIFACTS_BY_ID:
+            continue
+        if notify and artifact_id not in profile.unlocked_artifacts:
+            profile.new_unlocks.add("artifacts")
+        profile.unlocked_artifacts.add(artifact_id)
 
     # ── Unlock classes ─────────────────────────────────────────────────────────
     for cls_name in rewards.get("classes", []):
@@ -3077,8 +3610,7 @@ def apply_quest_rewards(profile, quest_id: int, notify: bool = True):
         profile.unlocked_classes.add(cls_name)
 
     # ── Unlock twists ──────────────────────────────────────────────────────────
-    if rewards.get("twists"):
-        profile.twists_unlocked = True
+    profile.twists_unlocked = True
 
     # ── Campaign completion flags ─────────────────────────────────────────────
     if rewards.get("ranked_glory"):

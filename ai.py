@@ -21,6 +21,7 @@ from logic import (
     get_subterfuge_swap_targets,
     is_melee,
     is_ranged,
+    ready_active_artifacts,
     resolve_queued_action,
 )
 
@@ -407,7 +408,7 @@ def composition_plan_bonus(battle, player_num, actor, action):
 
         if target is not None and has_root_shell and target.has_status("root") and estimate_damage(actor, ability, target, battle) > 0:
             score += 10.0
-        if target is not None and has_root_shell and aid in {"heros_bargain", "golden_snare", "bring_down", "creeping_doubt", "thorn_snare", "edict", "freezing_gale", "trapping_blow"}:
+        if target is not None and has_root_shell and aid in {"heros_bargain", "golden_snare", "bring_down", "creeping_doubt", "thorn_snare", "edict", "ominous_gale", "trapping_blow"}:
             already_rooted = any(enemy.has_status("root") for enemy in enemy_team.alive())
             if already_rooted and not target.has_status("root") and estimate_ko_chance_or_certainty(actor, ability, target, battle) < 1.0:
                 score -= 6.0
@@ -508,17 +509,37 @@ def estimate_status_value(status_kind, source, target, battle):
     return value
 
 
-def estimate_item_value(actor, item, target, battle):
+def estimate_item_value(actor, item, target, battle, secondary_target=None):
     value = 0.0
+    if item is None:
+        return -5.0
     if item.heal > 0 and target is not None:
-        heal_amount = item.heal + (item.flat_heal_bonus if actor.item.id == "heart_amulet" else 0)
+        heal_amount = item.heal
         value += min(heal_amount, max(0, target.max_hp - target.hp)) * 1.4
+    if getattr(item, "cleanse", False) and target is not None:
+        value += 10.0 * sum(1 for status in target.statuses if status.duration > 0)
     if item.guard and target is not None:
         value += estimate_guard_value(target)
+    if getattr(item, "atk_buff", 0) and target is not None:
+        value += max(0, item.atk_buff) * 0.9
+    if getattr(item, "def_buff", 0) and target is not None:
+        value += max(0, item.def_buff) * 0.7
+    if getattr(item, "spd_buff", 0) and target is not None:
+        value += max(0, item.spd_buff) * 0.7
+    if getattr(item, "atk_debuff", 0) and target is not None:
+        value += max(0, item.atk_debuff) * 0.8
+    if getattr(item, "def_debuff", 0) and target is not None:
+        value += max(0, item.def_debuff) * 0.8
+    if getattr(item, "spd_debuff", 0) and target is not None:
+        value += max(0, item.spd_debuff) * 0.8
     if item.status and target is not None:
         value += estimate_status_value(item.status, actor, target, battle)
-        if item.special == "hunters_net" and is_primary_support(target, battle.get_enemy(1 if actor in battle.team1.members else 2)):
+        if item.special == "nettle_smock" and is_primary_support(target, battle.get_enemy(1 if actor in battle.team1.members else 2)):
             value += 8.0
+    if item.special == "magic_mirror" and target is not None and secondary_target is not None:
+        value += estimate_swap_value(target, secondary_target, battle)
+    if item.special == "cracked_stopwatch" and target is not None:
+        value += 10.0 if target in battle.get_enemy(1 if actor in battle.team1.members else 2).alive() else 4.0
     value -= 5.0
     return value
 
@@ -737,7 +758,7 @@ def motif_deny_before_action(before, after, player_num, actor, action):
 
 
 def motif_guard_save(before, after, player_num, actor, action):
-    if action.get("type") == "item" and actor.item.guard and action.get("target") is not None:
+    if action.get("type") == "item" and action.get("artifact") and action["artifact"].guard and action.get("target") is not None:
         return estimate_guard_value(action["target"])
     if action.get("type") == "ability":
         mode = get_mode(actor, action["ability"])
@@ -888,7 +909,7 @@ def evaluate_immediate_resolution(before, after, player_num, actor, action):
         score += estimate_swap_value(actor, action["target"], before)
         score += composition_plan_bonus(before, player_num, actor, action)
     elif action.get("type") == "item":
-        score += estimate_item_value(actor, actor.item, action.get("target"), before)
+        score += estimate_item_value(actor, action.get("artifact"), action.get("target"), before, action.get("swap_target"))
         score += composition_plan_bonus(before, player_num, actor, action)
     elif action.get("type") == "skip":
         score -= 12.0
@@ -955,9 +976,7 @@ def _build_candidates(battle, player_num, actor, is_extra, swap_used, swap_queue
     if actor.must_recharge:
         return [{"type": "skip"}]
     candidates = []
-    abilities = list(actor.basics) + [actor.sig]
-    if len(team.alive()) == 1 and team.alive()[0] == actor:
-        abilities.append(actor.defn.twist)
+    abilities = actor.all_active_abilities()
 
     for ability in abilities:
         if not can_use_ability(actor, ability, team):
@@ -984,8 +1003,27 @@ def _build_candidates(battle, player_num, actor, is_extra, swap_used, swap_queue
         for ally in [unit for unit in team.alive() if unit != actor]:
             candidates.append({"type": "swap", "target": ally})
 
-    for target in get_legal_item_targets(battle, player_num, actor):
-        candidates.append({"type": "item", "target": target})
+    for artifact_state in ready_active_artifacts(team):
+        artifact = artifact_state.artifact
+        targets = get_legal_item_targets(battle, player_num, actor, artifact=artifact)
+        if artifact.id == "magic_mirror":
+            for target in targets:
+                for swap_target in get_legal_item_targets(
+                    battle,
+                    player_num,
+                    actor,
+                    artifact=artifact,
+                    primary_target=target,
+                ):
+                    candidates.append({
+                        "type": "item",
+                        "artifact": artifact,
+                        "target": target,
+                        "swap_target": swap_target,
+                    })
+        else:
+            for target in targets:
+                candidates.append({"type": "item", "artifact": artifact, "target": target})
 
     candidates.append({"type": "skip"})
     return candidates
@@ -1020,7 +1058,7 @@ def fast_pre_score(action, battle, player_num, actor):
         score += estimate_swap_value(actor, action["target"], battle)
         score += composition_plan_bonus(battle, player_num, actor, action)
     elif action.get("type") == "item":
-        score += estimate_item_value(actor, actor.item, target, battle)
+        score += estimate_item_value(actor, action.get("artifact"), target, battle, action.get("swap_target"))
         score += composition_plan_bonus(battle, player_num, actor, action)
     else:
         score -= 12.0

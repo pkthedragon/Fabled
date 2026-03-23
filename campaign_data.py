@@ -371,63 +371,63 @@ MISSION_TABLE: Dict[int, MissionDef] = {
         name="The Bandit Road",
         quest_range=(1, 4),
         level_range=(1, 4),
-        description="A piece of the Dragon Jewel was spotted in a caravan on the High Road, more commonly, and alarmingly, known as the Bandit Road. Be swift before it falls into the wrong hands!",
+        description="A prized relic was spotted in a caravan on the High Road, more commonly, and alarmingly, known as the Bandit Road. Be swift before it falls into the wrong hands!",
     ),
     2: MissionDef(
         mission_id=2,
         name="The Shadow Court",
         quest_range=(5, 7),
         level_range=(5, 7),
-        description="You hear whispers that the High Court has possession of a piece of the Dragon Jewel. A difficult task, but you're no stranger to heists. Well, hiring a heist crew anyways.",
+        description="You hear whispers that the High Court has possession of a prized relic. A difficult task, but you're no stranger to heists. Well, hiring a heist crew anyways.",
     ),
     3: MissionDef(
         mission_id=3,
         name="The Sky Castle",
         quest_range=(8, 11),
         level_range=(8, 11),
-        description="A kid in the sticks seems to have a piece of the Dragon Jewel. Shouldn't be too hard to get it, but it's probably best to hire a party just in case.",
+        description="A kid in the sticks seems to have a rare relic. Shouldn't be too hard to get it, but it's probably best to hire a party just in case.",
     ),
     4: MissionDef(
         mission_id=4,
         name="The Great Hunt",
         quest_range=(12, 15),
         level_range=(12, 15),
-        description="A local lord is offering a piece of the Dragon Jewel in exchange for killing a dangerous wild beast. Seems like an easy task for some adventurers!",
+        description="A local lord is offering a rare relic in exchange for killing a dangerous wild beast. Seems like an easy task for some adventurers!",
     ),
     5: MissionDef(
         mission_id=5,
         name="The Fallen Keep",
         quest_range=(16, 18),
         level_range=(16, 18),
-        description="The map you bought from a shady traveler seems to indicate that piece of the Dragon Jewel is in an abandoned keep. Hopefully, it stays abandoned while you retrieve it.",
+        description="The map you bought from a shady traveler seems to indicate a rare relic is in an abandoned keep. Hopefully, it stays abandoned while you retrieve it.",
     ),
     6: MissionDef(
         mission_id=6,
         name="The Drowned Witch",
         quest_range=(19, 22),
         level_range=(19, 22),
-        description="You recieved a tip from a drunk fisherman that a witch under a lake had a piece of the Dragon Jewel. Fortunately, you'd never hire adventurers who couldn't swim.",
+        description="You recieved a tip from a drunk fisherman that a witch under a lake had a rare relic. Fortunately, you'd never hire adventurers who couldn't swim.",
     ),
     7: MissionDef(
         mission_id=7,
         name="The Cursed Woods",
         quest_range=(23, 26),
         level_range=(23, 26),
-        description="Of course, a piece of the Dragon Jewel had to be in the infamous Cursed Woods. Better that some adventurers deal with it; it's much too scary for you.",
+        description="Of course, a rare relic had to be in the infamous Cursed Woods. Better that some adventurers deal with it; it's much too scary for you.",
     ),
     8: MissionDef(
         mission_id=8,
         name="The Sunken Tower",
         quest_range=(27, 29),
         level_range=(27, 29),
-        description="You recieved a tip from a long-haired girl that the final piece of the Dragon Jewel is in the Sunken Tower. A trap? Probably.",
+        description="You recieved a tip from a long-haired girl that the final relic in this trail is in the Sunken Tower. A trap? Probably.",
     ),
     9: MissionDef(
         mission_id=9,
         name="The Dragon's Keepers",
         quest_range=(30, 30),
         level_range=(30, 30),
-        description="Maybe it wasn't a great idea to put the Dragon Jewel together. Looks like the adventurers on your payroll will have to clean up the mess.",
+        description="Maybe it wasn't a great idea to chase every legendary relic in the kingdom. Looks like the adventurers on your payroll will have to clean up the mess.",
     ),
     10: MissionDef(
         mission_id=10,
@@ -535,7 +535,7 @@ QUEST_TABLE: Dict[int, QuestDef] = {
         enemy_lineup=[
             {"unit_type": "pinocchio",          "sig_id": "wooden_wallop", "basic1_id": "dark_grasp", "basic2_id": "soul_gaze"},
             {"unit_type": "npc_shadow_warlock", "sig_id": "no_sig",        "basic1_id": "dark_grasp", "basic2_id": "soul_gaze"},
-            {"unit_type": "npc_shadow_mage",    "sig_id": "no_sig",        "basic1_id": "fire_blast", "basic2_id": "freezing_gale"},
+            {"unit_type": "npc_shadow_mage",    "sig_id": "no_sig",        "basic1_id": "fire_blast", "basic2_id": "ominous_gale"},
         ],
     ),
     7: QuestDef(
@@ -712,7 +712,7 @@ QUEST_TABLE: Dict[int, QuestDef] = {
         rewards={},
         enemy_lineup=[
             {"unit_type": "reynard",            "sig_id": "size_up",   "basic1_id": "sneak_attack", "basic2_id": "riposte"},
-            {"unit_type": "npc_shadow_mage",    "sig_id": "no_sig",    "basic1_id": "fire_blast",   "basic2_id": "freezing_gale"},
+            {"unit_type": "npc_shadow_mage",    "sig_id": "no_sig",    "basic1_id": "fire_blast",   "basic2_id": "ominous_gale"},
             {"unit_type": "npc_shadow_warlock", "sig_id": "no_sig",    "basic1_id": "dark_grasp",   "basic2_id": "soul_gaze"},
         ],
     ),
@@ -885,13 +885,14 @@ def build_quest_enemy_team(quest_id: int) -> list:
     Build and return a list of 3 pick dicts suitable for create_team().
     Each pick dict:
       {"definition": AdventurerDef, "signature": Ability,
-       "basics": [Ability, Ability], "item": Item}
+       "basics": [Ability, Ability], "team_artifacts": [Artifact, ...]}
     """
     quest = QUEST_TABLE.get(quest_id)
     if quest is None or quest.enemy_lineup is None:
         raise ValueError(f"No enemy lineup for quest {quest_id}")
 
     picks = []
+    legacy_item_ids = []
     for slot_data in quest.enemy_lineup:
         unit_type = slot_data["unit_type"]
         sig_id    = slot_data.get("sig_id", "no_sig")
@@ -910,26 +911,41 @@ def build_quest_enemy_team(quest_id: int) -> list:
         basic1 = _get_basic(b1_id)
         basic2 = _get_basic(b2_id)
 
-        # Item: dragon heads have items; apex have items; others use NO_ITEM
-        item = NO_ITEM
+        # Legacy NPC loadouts map onto party-level artifacts.
         if unit_type == "npc_dragon_noble":
-            item = _get_item("crafty_shield")
+            legacy_item_ids.append("crafty_shield")
         elif unit_type == "npc_dragon_mage":
-            item = _get_item("misericorde")
+            legacy_item_ids.append("misericorde")
         elif unit_type == "npc_dragon_warlock":
-            item = _get_item("vampire_fang")
+            legacy_item_ids.append("vampire_fang")
         elif unit_type == "npc_apex_fighter":
-            item = _get_item("main_gauche")
+            legacy_item_ids.append("main_gauche")
         elif unit_type == "npc_apex_cleric":
-            item = _get_item("heart_amulet")
+            legacy_item_ids.append("heart_amulet")
         elif unit_type == "npc_apex_warden":
-            item = _get_item("iron_buckler")
+            legacy_item_ids.append("iron_buckler")
 
         picks.append({
             "definition": defn,
             "signature": sig,
             "basics": [basic1, basic2],
-            "item": item,
         })
+
+    artifacts = []
+    seen = set()
+    for item_id in legacy_item_ids:
+        artifact_id = _data.LEGACY_ITEM_TO_ARTIFACT_ID.get(item_id)
+        artifact = _data.ARTIFACTS_BY_ID.get(artifact_id)
+        if artifact is not None and artifact.id not in seen:
+            artifacts.append(artifact)
+            seen.add(artifact.id)
+    for artifact in _data.ARTIFACTS:
+        if len(artifacts) >= 3:
+            break
+        if artifact.id not in seen:
+            artifacts.append(artifact)
+            seen.add(artifact.id)
+    for pick in picks:
+        pick["team_artifacts"] = list(artifacts[:3])
 
     return picks

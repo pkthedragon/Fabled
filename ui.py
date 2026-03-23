@@ -6,6 +6,7 @@ import re
 import pygame
 from settings import *
 from models import CombatantState, TeamState, BattleState
+from data import ARTIFACTS_BY_ID, LEGACY_ITEM_TO_ARTIFACT_ID
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -177,7 +178,7 @@ def draw_panel(surf, rect, title=None, title_size=20):
 STATUS_TOOLTIPS = {
     "burn":      "Burn: takes 8% max HP damage at end of each round.",
     "root":      "Root: cannot perform the Swap action.",
-    "shock":     "Shock: this adventurer takes 15% recoil on attacks.",
+    "shock":     "Shock: -15 Speed and this adventurer must recharge after two abilities.",
     "weaken":    "Weaken: deals 15% less damage.",
     "expose":    "Expose: takes 15% more damage.",
     "guard":     "Guard: takes 15% less damage.",
@@ -262,10 +263,10 @@ def draw_status_tooltip(surf, kind: str, tip_x: int, tip_y: int):
 
 
 INTRO_TEXTS = [
-    "Welcome to Fantasia! You're a wealthy, but cripplingly lazy, magnate with a fondness for collecting rare artifacts.",
-    "One such artifact, the Dragon Jewel, would be perfect for your collection. Unfortunately, the Dragon Jewel was shattered into nine pieces, scattered across the land, and you only have one.",
-    "Over the years, you've managed to track the shards down, but you're not really the adventuring type. You don't have deep pocketbooks for nothing though; there's plenty of adventurers in Fantasia looking to take on a dangerous quest for a quick buck.",
-    "No time to waste! Head to the Tavern to form a party and start gathering the shards. The Dragon Jewel will sitting pretty in your foyer in no time!",
+    "Welcome to Fantasia. You are a wealthy magnate with a fondness for collecting rare artifacts, but quests are for other people.",
+    "Fortunately, Fantasia is full of thrill-seeking adventurers willing to fight on your behalf if the pay is right.",
+    "You are not the only rich collector in the kingdom, so every battle is a race to claim the best finds before a rival does.",
+    "Head to the Tavern, hire a party, and start bringing rare artifacts home in your name.",
 ]
 
 
@@ -704,6 +705,7 @@ BUTTON_X = 1005
 
 def draw_action_menu(surf, mouse_pos, actor: CombatantState,
                      valid_abilities: list, swap_used: bool,
+                     active_artifacts: list = None,
                      state_label: str = "") -> list:
     """
     Draw the action selection menu for one actor.
@@ -745,20 +747,21 @@ def draw_action_menu(surf, mouse_pos, actor: CombatantState,
         buttons.append((rect, {"type": "ability", "ability": ability, "target": None}))
         y += btn_h + 4
 
-    # Item — hidden when unit must recharge (forced skip)
-    item = actor.item
-    if not item.passive and actor.item_uses_left > 0 and not actor.must_recharge:
+    # Active artifacts
+    for artifact in (active_artifacts or []):
+        if actor.must_recharge:
+            break
         y += 6
         item_btn_h = 52
         rect = pygame.Rect(BUTTON_X, y, BUTTON_W, item_btn_h)
         hov = rect.collidepoint(mouse_pos)
         fill = PANEL_HIGHLIGHT if hov else (30, 50, 40)
         draw_rect_border(surf, rect, fill, BORDER_ACTIVE)
-        draw_text(surf, f"Item: {item.name}", 15, TEXT, rect.x + 8, rect.y + 5)
-        desc_lines = _wrap_text(item.description, 12, BUTTON_W - 16)
+        draw_text(surf, f"Artifact: {artifact.name}", 15, TEXT, rect.x + 8, rect.y + 5)
+        desc_lines = _wrap_text(artifact.description, 12, BUTTON_W - 16)
         for _li, _ln in enumerate(desc_lines[:2]):
             draw_text(surf, _ln, 12, TEXT_DIM, rect.x + 12, rect.y + 24 + _li * 14)
-        buttons.append((rect, {"type": "item", "target": None}))
+        buttons.append((rect, {"type": "item", "artifact": artifact, "target": None}))
         y += item_btn_h + 4
 
     # Swap (once per turn; also blocked when unit must recharge)
@@ -850,10 +853,13 @@ def _queue_label(q) -> tuple:
             s += f" ↔ {q['swap_target'].name[:10]}"
         return s, TEXT
     if q["type"] == "item":
+        artifact = q.get("artifact")
         tgt = q.get("target")
-        s = "item"
+        s = artifact.name if artifact else "artifact"
         if tgt:
             s += f" → {tgt.name[:10]}"
+        if q.get("swap_target") is not None:
+            s += f" ↔ {q['swap_target'].name[:10]}"
         return s, GREEN
     return "?", TEXT_MUTED
 
@@ -1051,7 +1057,7 @@ def draw_practice_menu(surf, mouse_pos) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
     draw_text(surf, "Training", 48, TEXT, cx, 80, center=True)
-    draw_text(surf, "Play with full access to all adventurers, basics, and items.",
+    draw_text(surf, "Play with full access to all adventurers, basics, and artifacts.",
               18, TEXT_DIM, cx, 145, center=True)
 
     vs_ai_btn  = pygame.Rect(cx - 150, 220, 300, 62)
@@ -1103,6 +1109,7 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
                           rect.x + 10, rect.y + 8)
 
                 members = team.get("members", [])
+                artifact_names = [artifact_id.replace("_", " ").title() for artifact_id in team.get("artifact_ids", [])]
                 member_col_w = (slot_w - 110) // 3
                 for mi, m in enumerate(members[:3]):
                     mx = rect.x + 10 + mi * member_col_w
@@ -1114,8 +1121,11 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
                     basics = m.get("basics", [])
                     basics_str = ", ".join(b.replace("_", " ").title() for b in basics[:2])
                     draw_text(surf, basics_str[:22], 11, TEXT_DIM, mx, my + 30)
-                    item_name = m.get("item_id", "").replace("_", " ").title()
-                    draw_text(surf, item_name[:18], 11, TEXT_DIM, mx, my + 44)
+                    if mi == 0 and artifact_names:
+                        artifact_str = ", ".join(artifact_names[:2])
+                        if len(artifact_names) > 2:
+                            artifact_str += "…"
+                        draw_text(surf, artifact_str[:22], 11, TEXT_DIM, mx, my + 44)
 
                 edit_btn_rect   = pygame.Rect(rect.right - 95, rect.y + 10, 85, 26)
                 rename_btn_rect = pygame.Rect(rect.right - 95, rect.y + 42, 85, 26)
@@ -1280,6 +1290,7 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
         "scroll_viewport": None,
         "enemy_cards": [],
     }
+    team_artifacts = list(team_picks[0].get("team_artifacts", [])) if team_picks else []
 
     # Always 3-column scrollable grid, sorted by class.
     roster_cols = ROSTER_COLS
@@ -1337,12 +1348,6 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                         _bname = _bname[:20] + "…"
                     draw_text(surf, _bname, 11, TEXT_DIM, ex + 6, edy)
                     edy += 13
-                ep_item = ep.get("item")
-                if ep_item:
-                    _iname = ep_item.name
-                    if font(11).size(_iname)[0] > enemy_card_w - 14:
-                        _iname = _iname[:20] + "…"
-                    draw_text(surf, _iname, 11, (140, 190, 140), ex + 6, edy)
         # clicks["roster"] stays empty in pre_battle_mode
     else:
         roster = sorted(roster, key=lambda d: (d.cls, d.name))
@@ -1406,8 +1411,8 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             _sy = HEIGHT - 73 + 37
             _has_sig = "signature" in p
             _has_basics = len(p.get("basics", [])) == 2
-            _has_item = "item" in p
-            for _lbl, _ok in (("Sig", _has_sig), ("Basics", _has_basics), ("Item", _has_item)):
+            _has_artifacts = len(team_artifacts) == 3
+            for _lbl, _ok in (("Sig", _has_sig), ("Basics", _has_basics), ("Arts", _has_artifacts)):
                 _mark = "✓" if _ok else "○"
                 _col = (80, 210, 80) if _ok else TEXT_MUTED
                 _s = _f10.render(f"{_lbl}{_mark}", True, _col)
@@ -1554,29 +1559,31 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
                     _dy += 15
             _dy += 2
 
-            # ── Item ──────────────────────────────────────────────────────────
+            # ── Artifacts ─────────────────────────────────────────────────────
             if _dy + 14 <= _bottom_limit:
                 pygame.draw.line(surf, BORDER, (_dx, _dy), (_dx + _detail_max_w, _dy), 1)
                 _dy += 7
             if _dy + 14 <= _bottom_limit:
-                draw_text(surf, "Item", 13, CYAN, _dx, _dy)
+                draw_text(surf, "Artifacts", 13, CYAN, _dx, _dy)
                 _dy += 16
-            _pm_item = _pm.get("item")
-            if _pm_item and _dy + 13 <= _bottom_limit:
-                draw_text(surf, _pm_item.name, 13, (140, 190, 140), _dx + 6, _dy)
-                _dy += 14
-                if _dy + 12 <= _bottom_limit:
-                    _itype = "Passive" if _pm_item.passive else "Active"
-                    _icol  = TYPE_PASSIVE_COL if _pm_item.passive else TYPE_ACTIVE_COL
-                    draw_text(surf, _itype, 12, _icol, _dx + 10, _dy)
-                    _dy += 13
-                if _pm_item.description:
-                    for _line in _wrap_text(_pm_item.description, 12, _detail_max_w - 10):
+            if team_artifacts:
+                for _artifact in team_artifacts:
+                    if _dy + 13 > _bottom_limit:
+                        break
+                    draw_text(surf, _artifact.name, 13, (140, 190, 140), _dx + 6, _dy)
+                    _dy += 14
+                    if _dy + 12 <= _bottom_limit:
+                        _atype = "Reactive" if _artifact.reactive else "Active"
+                        _acol = TYPE_PASSIVE_COL if _artifact.reactive else TYPE_ACTIVE_COL
+                        draw_text(surf, _atype, 12, _acol, _dx + 10, _dy)
+                        _dy += 13
+                    for _line in _wrap_text(_artifact.description, 12, _detail_max_w - 10):
                         if _dy + 12 > _bottom_limit:
                             break
                         _draw_rich_line(surf, _line, 12, TEXT_DIM, _dx + 10, _dy, status_rects_out)
                         _dy += 13
-            elif not _pm_item and _dy + 13 <= _bottom_limit:
+                    _dy += 2
+            elif _dy + 13 <= _bottom_limit:
                 draw_text(surf, "  None", 13, TEXT_MUTED, _dx + 6, _dy)
 
         # Edit Sets button — bottom of detail panel
@@ -1794,23 +1801,18 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             _draw_scroll_arrows(surf, view_rect, scroll, max_scroll)
 
         elif sub_phase == "pick_item":
-            draw_text(surf, "Choose an Item:", 18, CYAN, dx, dy)
+            selected_artifacts = set(item_choice or [])
+            draw_text(surf, f"Choose 3 Artifacts ({len(selected_artifacts)}/3):", 18, CYAN, dx, dy)
             dy += 24
             inner_w = DETAIL_W - 44
-            # Compute taken item IDs from already-configured team members
-            taken_item_ids = set()
-            for _ti, _tp in enumerate(team_picks):
-                if _ti < current_adv_idx and "item" in _tp:
-                    taken_item_ids.add(_tp["item"].id)
             list_top = dy
             list_bottom = DETAIL_Y + DETAIL_H - 95
             view_rect = pygame.Rect(dx, list_top, DETAIL_W - 28, max(0, list_bottom - list_top))
             item_heights = []
             for i, item in enumerate(items):
-                sel_i = item_choice == i
+                sel_i = i in selected_artifacts
                 desc_lines = _wrap_text(item.description, 13, inner_w)
                 preview = desc_lines[: (3 if sel_i else 1)]
-                # name row (to y+20) + type label (to y+33) + description lines + padding + dy gap
                 item_heights.append(39 + len(preview) * 14)
             content_h = sum(item_heights)
             max_scroll = max(0, content_h - view_rect.height)
@@ -1820,37 +1822,25 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             prev_clip = surf.get_clip()
             surf.set_clip(view_rect)
             for i, item in enumerate(items):
-                sel_i = item_choice == i
-                is_taken = item.id in taken_item_ids
-                tag = "[passive]" if item.passive else "[active]"
+                sel_i = i in selected_artifacts
                 desc_lines = _wrap_text(item.description, 13, inner_w)
-                # Always show at least one description line for readability.
                 preview = desc_lines[: (3 if sel_i else 1)]
                 entry_h = 37 + len(preview) * 14
                 y_draw = dy - scroll
                 r = pygame.Rect(dx, y_draw, DETAIL_W - 28, entry_h)
                 if r.bottom >= view_rect.top and r.top <= view_rect.bottom:
-                    _itype_lbl = "Passive" if item.passive else "Active"
-                    _itype_col = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
-                    if is_taken:
-                        draw_rect_border(surf, r, (35, 35, 40), BORDER)
-                        draw_text(surf, f"{item.name}  [taken]", 14, TEXT_MUTED, dx + 8, y_draw + 4)
-                        draw_text(surf, _itype_lbl, 12, TEXT_MUTED, dx + 8, y_draw + 20)
-                        iy = y_draw + 33
-                        for line in preview:
-                            _draw_rich_line(surf, line, 13, TEXT_MUTED, dx + 14, iy, status_rects_out)
-                            iy += 14
-                    else:
-                        draw_rect_border(surf, r,
-                                         PANEL_HIGHLIGHT if sel_i else PANEL_ALT,
-                                         BORDER_ACTIVE if sel_i else BORDER)
-                        draw_text(surf, item.name, 14,
-                                  TEXT if sel_i else TEXT_DIM, dx + 8, y_draw + 4)
-                        draw_text(surf, _itype_lbl, 12, _itype_col, dx + 8, y_draw + 20)
-                        iy = y_draw + 33
-                        for line in preview:
-                            _draw_rich_line(surf, line, 13, TEXT_DIM if sel_i else TEXT_MUTED, dx + 14, iy, status_rects_out)
-                            iy += 14
+                    _itype_lbl = "Reactive" if item.reactive else "Active"
+                    _itype_col = TYPE_PASSIVE_COL if item.reactive else TYPE_ACTIVE_COL
+                    draw_rect_border(surf, r,
+                                     PANEL_HIGHLIGHT if sel_i else PANEL_ALT,
+                                     BORDER_ACTIVE if sel_i else BORDER)
+                    draw_text(surf, item.name, 14,
+                              TEXT if sel_i else TEXT_DIM, dx + 8, y_draw + 4)
+                    draw_text(surf, _itype_lbl, 12, _itype_col, dx + 8, y_draw + 20)
+                    iy = y_draw + 33
+                    for line in preview:
+                        _draw_rich_line(surf, line, 13, TEXT_DIM if sel_i else TEXT_MUTED, dx + 14, iy, status_rects_out)
+                        iy += 14
                     clicks["items"].append((r.copy(), i))
                 dy += entry_h + 2
             surf.set_clip(prev_clip)
@@ -1862,14 +1852,14 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
             "pick_adventurers": "Click a party slot below to edit their sets.",
             "pick_sig": "Select a Signature Ability, then confirm.",
             "pick_basics": "Select 2 Basic Abilities, then confirm.",
-            "pick_item": "Select an Item (optional), then confirm.",
+            "pick_item": "Select 3 Artifacts, then confirm.",
         }
     else:
         inst = {
             "pick_adventurers": "Click roster to add/remove members. Click a filled slot to edit their sets.",
             "pick_sig": "Select a Signature Ability, then confirm.",
             "pick_basics": "Select 2 Basic Abilities, then confirm.",
-            "pick_item": "Select an Item (optional), then confirm.",
+            "pick_item": "Select 3 Artifacts, then confirm.",
         }
     draw_text(surf, inst.get(sub_phase, ""), 15, TEXT_DIM,
               DETAIL_X + 14, DETAIL_Y + DETAIL_H - 80)
@@ -1889,12 +1879,12 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
         confirm_text = {
             "pick_sig": "Confirm Signature" if sig_choice is not None else "Pick a Signature",
             "pick_basics": "Confirm Basics" if len(basic_choices) == 2 else f"Need {2 - len(basic_choices)} more",
-            "pick_item": "Confirm Item" if item_choice is not None else "Skip Item →",
+            "pick_item": "Confirm Artifacts" if len(set(item_choice or [])) == 3 else f"Need {3 - len(set(item_choice or []))} more",
         }.get(sub_phase, "Confirm")
         can_confirm = {
             "pick_sig": sig_choice is not None,
             "pick_basics": len(basic_choices) == 2,
-            "pick_item": True,  # item is optional; always can confirm
+            "pick_item": len(set(item_choice or [])) == 3,
         }.get(sub_phase, False)
 
     confirm_rect = pygame.Rect(DETAIL_X + DETAIL_W - 230, DETAIL_Y + DETAIL_H - 55,
@@ -2013,8 +2003,10 @@ SPECIAL_DESCRIPTIONS: dict = {
     # Basic – Mage
     "arcane_wave_self_debuff":         "self: -10 Atk for 2 rounds",
     # Basic – Ranger
+    "sucker_punch_front":              "+15 power if target is Exposed or Shocked",
+    "trapping_blow_root_spotlight":    "Roots Spotlighted targets for 2 rounds",
     "trapping_blow_root_weakened":     "Roots Weakened targets for 2 rounds",
-    "hunters_mark_dot":                "target takes +10 damage from all abilities next round",
+    "hunters_mark_dot":                "target takes +12 damage from abilities next round",
     # Basic – Cleric
     "medic_front":                     "healing effects cure status conditions and debuffs",
     "medic_back":                      "healing effects cure the last inflicted status condition or debuff",
@@ -2022,26 +2014,32 @@ SPECIAL_DESCRIPTIONS: dict = {
     "crimson_fury_recoil":             "after dealing damage, Risa takes recoil equal to 30% of damage dealt",
     "wolfs_pursuit_retarget":          "if target swaps, follow them with Wolf's Pursuit",
     "blood_hunt_hp_avg":               "sets Risa and target HP to the average of both",
+    "stomach_of_the_wolf":             "for 2 rounds: Red and Wolf is always active and its vamp is doubled",
     # Jack
     "belligerence_ignore_atk":         "Jack ignores 20% of enemy Attack",
     "magic_growth_power_buff":         "Jack's next ability gains +15 power",
+    "castle_on_cloud_nine":            "for 2 rounds: abilities cleave half of the target's Defense",
     # Gretel
     "hot_mitts_front":                 "abilities Burn target (2r), or deal +15% damage to Burned targets",
     "hot_mitts_back":                  "abilities Burn target for 2 rounds",
     "crumb_trail_front":               "+20 power if an ally picked up a crumb this turn",
     "crumb_trail_drop":                "drop a crumb; allies who swap here heal 40 HP",
     "shove_over_next_atk_bonus":       "+15 power on next attack against this target",
+    "into_the_oven":                   "for 2 rounds: enemies take +10 damage from all sources",
     # Constantine
     "nine_lives":                      "up to 3x/battle: survive fatal damage at 1 HP (vs Exposed attackers)",
     "subterfuge_swap":                 "swap target and enemy after ability resolves",
+    "all_seeing":                      "for 2 rounds: cannot lose initiative; Expose all enemies",
     "final_deception":                 "Expose all enemies and steal 5 Atk from each for 2 rounds",
     # Hunold
     "hypnotic_aura_front":             "Shocked enemies' abilities are redirected to Hunold's back-left",
     "hypnotic_aura_back":              "Shocked enemies' abilities are redirected to Hunold's frontline",
+    "mass_hysteria":                   "for 2 rounds: abilities become spread and ignore melee restriction/spread penalty",
     "devils_due":                      "Hunold uses one of his abilities as spread, ignoring melee restriction and spread damage penalty",
     # Reynard
     "feign_weakness_retaliate_45":     "retaliate 45 power vs incoming attackers next round",
     "feign_weakness_retaliate_40":     "retaliate 45 power vs incoming attackers next round",
+    "smoke_and_mirrors":               "for 2 rounds: retaliate 70 power and steal 12 Speed from incoming attackers",
     "last_laugh":                      "retaliate 70 power + steal 12 Speed (2r) vs incoming attackers",
     "cutpurse_swap_frontline":         "swap Reynard with frontline ally",
     # Roland
@@ -2050,26 +2048,28 @@ SPECIAL_DESCRIPTIONS: dict = {
     "taunt_target":                    "Taunt target for 2 rounds (forced to target Roland)",
     "taunt_front_ranged":              "Taunt front-most ranged enemy for 2 rounds",
     "banner_of_command":               "Guard ally for 2 rounds whenever they swap",
+    "purehearted_stand":               "for 2 rounds: Silver Aegis is always active",
     # Porcus
     "nbth_self_reduce":                "Bricklayer is doubled and triggers on all incoming abilities next round",
     "nbth_ally_reduce":                "Bricklayer triggers on all incoming abilities next round",
     "porcine_honor_self":              "Guard Porcus for 1 round at the start of each round",
     "porcine_honor_ally":              "Guard frontline ally for 1 round at the start of each round",
-    "sturdy_home_front":               "all allies have +10 Defense",
-    "sturdy_home_back":                "frontline ally has +12 Defense",
-    "unfettered":                      "remove Porcus' statuses; for 2 rounds Attack/Speed use Defense, and Defense uses Attack",
+    "sturdy_home_front":               "when Bricklayer triggers, Porcus gains +20 Attack for 2 rounds",
+    "sturdy_home_back":                "frontline ally gets the effects of Bricklayer",
+    "unfettered":                      "for 2 rounds: +100 Attack, -50 Defense, +100 Speed",
     # Lady
     "postmortem_passage":              "when ally is KO'd, they fire a 55-power attack at attacker",
     "drown_dmg_bonus":                 "target takes +10 damage from all sources for 2 rounds",
     "lakes_gift_pool_front":           "ally gains Reflecting Pool (2r) and +12 Atk (2r)",
     "lakes_gift_pool_back":            "ally gains Reflecting Pool (2r)",
-    "journey_to_avalon":               "Lady is KO'd; revive one ally at 60% HP with Reflecting Pool (2r)",
+    "journey_to_avalon":               "for 2 rounds: allies gain Reflecting Pool; if an ally is KO'd, the Lady is sacrificed to revive them at 60% HP",
     # Ella
-    "dying_dance_front":               "Shocks Weakened targets for 2 rounds",
-    "midnight_dour_swap":              "when reduced to ≤50% HP, Ella swaps with an ally (once per round)",
+    "dying_dance_front":               "Shocks Spotlighted targets for 2 rounds",
+    "midnight_dour_swap":              "when reduced to <=50% HP, Ella swaps with an ally (once per round)",
     "ella_ignore_two_lives":           "ignores Two Lives backline restriction",
-    "struck_midnight_untargetable":    "Ella cannot act or be targeted until end of next round",
+    "struck_midnight_untargetable":    "Burn all enemies; Ella cannot act or be targeted for 2 rounds",
     # March Hare
+    "tempus_fugit_back":               "ignores ranged recharge if target is slower",
     "rabbit_hole_extra_action":        "March Hare gains an extra action next round",
     "rabbit_hole_swap":                "March Hare swaps with an ally",
     "nebulous_ides_back":              "+15 power if March Hare swapped this round",
@@ -2078,44 +2078,47 @@ SPECIAL_DESCRIPTIONS: dict = {
     "toil_spread_status_right":        "spreads target's last status to enemy adjacent to their right",
     "cauldron_extend_status":          "increases target's status duration by 1 round",
     "crawling_abode":                  "+10 spd if frontline enemy is statused; 2+ statuses deal +10 dmg",
-    "vile_sabbath_reapply":            "reapply last inflicted statuses to targets and refresh durations",
+    "vile_sabbath":                    "for 2 rounds: Double Double also refreshes the target's status durations",
     # Briar Rose
+    "thorn_snare_back":                "Spotlights Rooted targets for 2 rounds",
+    "creeping_doubt_front":            "+15 power against Rooted targets",
     "garden_of_thorns_attack":         "enemies who attack Briar are Rooted for 2 rounds",
     "garden_of_thorns_swap":           "enemies that swap are Rooted for 2 rounds",
-    "falling_kingdom":                 "refresh Root on Rooted foes (Weaken 2r); Root all others for 2r",
+    "falling_kingdom":                 "for 2 rounds: Curse of Sleeping no longer removes or restricts Root; Root all enemies for 2 rounds",
     # Frederic
     "heros_charge_ignore_pride_front": "ignore Heedless Pride incoming bonus damage this round",
-    "slay_ignore_pride":               "ignore Heedless Pride incoming bonus damage this round",
+    "raze_the_village":                "for 2 rounds: ignore Heedless Pride incoming bonus damage; Spotlight all enemies",
     # Robin
     "spread_fortune_front":            "spread ability damage penalty is halved",
     "spread_fortune_back":             "spread abilities target all enemies",
     "bring_down_steal_atk":            "steal 7 Atk from target for 2r (if target is backline)",
+    "lawless":                         "for 2 rounds: abilities cannot be redirected and ignore targeting restrictions",
     # Aldric
     "benefactor_front":                "healing effects restore 35% more HP",
     "benefactor_back":                 "healing effects restore 20% more HP",
     "sanctuary_front":                 "allies heal 1/8 max HP each round",
     "sanctuary_back":                  "frontline ally heals 1/8 max HP each round",
     "repentance_front":                "next ability against target has 25% vamp (triggers All-Caring)",
-    "redemption":                      "+150 max HP; Aldric heals 50 HP at end of round for 2 rounds",
+    "redemption":                      "for 2 rounds: All-Caring can swap healed allies with an ally",
     # Liesl
     "cinder_blessing_avg":             "sets Liesl and ally HP to the average of both",
     "flame_of_renewal":                "when Liesl is KO'd, allies heal 1/2 max HP + Purifying Flame",
-    "cleansing_inferno_burn_boost":    "gains an extra 35% vamp against Burned targets",
+    "cleansing_inferno":               "for 2 rounds: whenever an enemy loses HP, the lowest-HP ally heals that amount",
     # Aurora
     "toxin_purge_all":                 "remove all status conditions from Aurora or an ally; heal 12 per removed",
     "toxin_purge_last":                "remove last inflicted status from Aurora or an ally",
     "birdsong_front":                  "when Innocent Heart triggers, gain a bird; Aurora abilities deal +7 damage per bird (up to x3)",
     "birdsong_back":                   "end of round: cure Aurora if she has a bird, plus one more ally per additional bird clockwise",
-    "deathlike_slumber":               "for 2 rounds, Innocent Heart's stat boosts are doubled and stack; cure Aurora's statuses",
+    "deathlike_slumber":               "for 2 rounds: Aurora cannot act; damage to her is divided among allies and removes their statuses",
     # Noble basics
-    "summons_swap":                  "swap with an ally (cannot be used on consecutive turns)",
+    "summons_swap_cleanse":          "swap with an ally and remove that ally's stat buffs and debuffs",
     "command_front":                 "enemies that attacked user last round take +7 damage from ally abilities",
     "command_back":                  "enemies that attacked allies last round take +7 damage from user's abilities",
     # Prince Charming (Noble)
     "condescend_back":               "next ability against target has +10 power",
     "gallant_charge_front":          "+15 power if Prince Charming was backline last round",
     "chosen_one":                    "first ally swapped with becomes champion; attackers take +15 from next ability",
-    "happily_ever_after":            "gain +15 to each KO ally's highest non-HP stat for 2 rounds",
+    "happily_ever_after":            "for 2 rounds: Prince Charming and target ally can use each other's abilities",
     # Green Knight (Noble)
     "heros_bargain_back":            "swap target with enemy frontline",
     "natural_order_front":           "+15 damage to targets that have not swapped for 2+ rounds",
@@ -2128,7 +2131,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     "lower_guard_front":             "+15 power if target has a stat debuff",
     "ivory_tower_front":             "ranged enemies have -12 defense",
     "ivory_tower_back":              "melee enemies have -12 attack",
-    "severed_tether":                "Flowing Locks always active 2r; -10 def, +20 atk, +20 speed (2r)",
+    "severed_tether":                "Flowing Locks always active 2r; -15 def, +30 atk, +30 speed (2r)",
     # Warlock basics
     "warlock_gain_malice_1":          "gain 1 Malice",
     "warlock_spend1_weaken":         "spend 1 Malice to Weaken target for 2 rounds",
@@ -2143,7 +2146,7 @@ SPECIAL_DESCRIPTIONS: dict = {
     "cut_strings_back":              "spend 2 Malice to Spotlight target for 2 rounds",
     "become_real_front":             "at 3+ Malice: abilities gain +10 damage; immune to statuses",
     "become_real_back":              "at 3+ Malice: abilities do not increment ranged recharge",
-    "blue_faerie_boon":              "heal 20 HP per Malice and increase Malice cap by 6 for this battle",
+    "blue_faerie_boon":              "gain 6 Malice, up to 12",
     # Rumpelstiltskin (Warlock)
     "straw_to_gold_front":           "steal ally's highest stat buff for 2r; +5 strength per Malice; return later",
     "straw_to_gold_back":            "convert an ally's highest stat debuff into a stat buff",
@@ -2151,14 +2154,14 @@ SPECIAL_DESCRIPTIONS: dict = {
     "name_the_price_back":           "spend 2 Malice to nullify target's stat buffs for 2 rounds",
     "spinning_wheel_front":          "+5 ability damage per unique stat buff among all adventurers",
     "spinning_wheel_back":           "when an ally loses a stat buff, spend 2 Malice to refresh it",
-    "thieve_the_first_born":         "steal all enemy stat buffs, refresh them, +5 value each per Malice",
+    "devils_nursery":                "for 2 rounds: stat buffs gain +5 per Malice; steal and refresh all enemy stat buffs",
     # Sea Wench Asha (Warlock)
     "misappropriate_front":          "spend 1 Malice to use enemy frontline signature (or gain passive for 2r)",
     "abyssal_call_front":            "spend 1 Malice: target gets -12 Def for 2 rounds",
     "abyssal_call_back":             "refresh target's existing stat debuffs",
     "faustian_bargain_front":        "on swap to frontline, spend 1 Malice to gain bottled talent for 2r",
     "faustian_bargain_back":         "on KO, bottle target's talent and gain +12 Spd for 2 rounds",
-    "turn_to_foam":                  "gain 3 Malice, then consume all: enemies get -7 Def per Malice (2r)",
+    "foam_prison":                   "block target frontline's twist for 2 rounds, then copy and use that twist",
     # Items
     "smoke_bomb_swap":                 "user switches positions with an ally",
     "ancient_hourglass":               "user cannot act or be targeted next round (once per battle)",
@@ -2279,7 +2282,7 @@ def draw_combatant_detail(surf, unit: CombatantState,
                            status_rects_out: list = None) -> pygame.Rect:
     """
     Draw the full detail card for a combatant during the battle screen.
-    Shows: stats, talent, signature, basics, item.
+    Shows: stats, talent, signature, basics, and twist.
     Returns the close-button rect.
     """
     r = rect or BATTLE_DETAIL_RECT
@@ -2380,29 +2383,55 @@ def draw_combatant_detail(surf, unit: CombatantState,
                     y += 12
         y += 2
 
-    # ── Item ─────────────────────────────────────────────────────────────────
     pygame.draw.line(surf, BORDER, (x, y), (x + w, y), 1)
     y += 5
-    item = unit.item
-    draw_text(surf, f"Item: {item.name}", 14, GREEN, x, y)
-    y += 16
-    # Type label + usage state
-    if item.passive:
-        _it_type = "Passive"
-        _it_col  = TYPE_PASSIVE_COL
-    else:
-        _it_type = "Active"
-        _it_col  = TYPE_ACTIVE_COL
-    _it_state = ""
-    if item.once_per_battle:
-        _it_state = "  [used]" if unit.item_uses_left <= 0 else "  [once per battle]"
-    draw_text(surf, _it_type + _it_state, 12, _it_col, x + 8, y)
+    twist = unit.defn.twist
+    draw_text(surf, "Twist  -  " + twist.name, 14, ORANGE, x, y)
+    y += 17
+    draw_text(surf, "Active", 12, TYPE_ACTIVE_COL, x + 8, y)
     y += 14
-    for line in _wrap_text(item.description, 13, w - 8):
-        if y + 14 > r.bottom - 4:
-            break
-        _draw_rich_line(surf, line, 13, TEXT_DIM, x + 8, y, status_rects_out)
-        y += 15
+    if _fl_bl_same(twist):
+        lines = _mode_detail_lines(twist.frontline)
+        _draw_rich_line(surf, f"FL & BL: {lines[0]}", 12, TEXT_DIM, x + 8, y, status_rects_out)
+        y += 14
+        for extra in lines[1:]:
+            if y + 13 > r.bottom - 4:
+                break
+            _draw_rich_line(surf, f"         {extra}", 12, TEXT_MUTED, x + 8, y, status_rects_out)
+            y += 13
+    else:
+        for prefix, mode in (("FL", twist.frontline), ("BL", twist.backline)):
+            lines = _mode_detail_lines(mode)
+            _draw_rich_line(surf, f"{prefix}: {lines[0]}", 12, TEXT_DIM, x + 8, y, status_rects_out)
+            y += 14
+            for extra in lines[1:]:
+                if y + 13 > r.bottom - 4:
+                    break
+                _draw_rich_line(surf, f"      {extra}", 12, TEXT_MUTED, x + 8, y, status_rects_out)
+                y += 13
+
+    item = unit.item
+    if item.id != "no_item":
+        pygame.draw.line(surf, BORDER, (x, y), (x + w, y), 1)
+        y += 5
+        draw_text(surf, f"Legacy Item: {item.name}", 14, GREEN, x, y)
+        y += 16
+        if item.passive:
+            _it_type = "Passive"
+            _it_col  = TYPE_PASSIVE_COL
+        else:
+            _it_type = "Active"
+            _it_col  = TYPE_ACTIVE_COL
+        _it_state = ""
+        if item.once_per_battle:
+            _it_state = "  [used]" if unit.item_uses_left <= 0 else "  [once per battle]"
+        draw_text(surf, _it_type + _it_state, 12, _it_col, x + 8, y)
+        y += 14
+        for line in _wrap_text(item.description, 13, w - 8):
+            if y + 14 > r.bottom - 4:
+                break
+            _draw_rich_line(surf, line, 13, TEXT_DIM, x + 8, y, status_rects_out)
+            y += 15
 
     return close_rect
 
@@ -2603,16 +2632,13 @@ def draw_quest_select(surf, mission, quests: list, mouse_pos, profile) -> dict:
                       18, TEXT if not cleared else GREEN, rect.x + 14, rect.y + 10)
             # Reward summary
             reward_parts = []
-            for item_id in quest.rewards.get("items", []):
-                reward_parts.append(item_id.replace("_", " ").title())
+            reward_parts.extend(_reward_artifact_names(quest.rewards))
             for entry in quest.rewards.get("recruit", []):
                 reward_parts.append(f"Recruit {entry[0].replace('_', ' ').title()}")
             if quest.rewards.get("sig_tier"):
                 reward_parts.append(f"Sig Tier {quest.rewards['sig_tier']}")
             if quest.rewards.get("basics_tier"):
                 reward_parts.append(f"Basics Tier {quest.rewards['basics_tier']}")
-            if quest.rewards.get("twists"):
-                reward_parts.append("Unlock Twists")
             if quest.rewards.get("campaign_complete"):
                 reward_parts.append("Campaign Complete!")
             reward_str = "Rewards: " + (", ".join(reward_parts) if reward_parts else "None")
@@ -2688,9 +2714,9 @@ def draw_pre_quest(surf, quest_def, mission, quest_pos: int, total_quests: int,
         b1, b2 = pick["basics"][0], pick["basics"][1]
         draw_text(surf, f"Sig: {sig.name}", 13, CYAN, rect.x + 10, rect.y + 90)
         draw_text(surf, f"Basics: {b1.name}, {b2.name}", 13, TEXT_DIM, rect.x + 10, rect.y + 110)
-        item = pick["item"]
-        if item.id != "no_item":
-            draw_text(surf, f"Item: {item.name}", 13, ORANGE, rect.x + 10, rect.y + 130)
+        team_artifacts = pick.get("team_artifacts", [])
+        if i == 0 and team_artifacts:
+            draw_text(surf, f"Artifacts: {', '.join(artifact.name for artifact in team_artifacts[:2])}", 13, ORANGE, rect.x + 10, rect.y + 130)
         if defn.talent_name and defn.talent_name != "—":
             draw_text(surf, f"Talent: {defn.talent_name}", 12, PURPLE, rect.x + 10, rect.y + 152)
 
@@ -2701,20 +2727,17 @@ def draw_pre_quest(surf, quest_def, mission, quest_pos: int, total_quests: int,
 
     rewards  = quest_def.rewards or {}
     parts    = []
-    for item_id in rewards.get("items", []):
-        parts.append(item_id.replace("_", " ").title())
+    parts.extend(_reward_artifact_names(rewards))
     for entry in rewards.get("recruit", []):
         parts.append(f"Recruit {entry[0].replace('_', ' ').title()}")
     if rewards.get("sig_tier"):
         parts.append(f"Signature Tier {rewards['sig_tier']} unlocked")
     if rewards.get("basics_tier"):
         parts.append(f"Basics Tier {rewards['basics_tier']} unlocked")
-    if rewards.get("twists"):
-        parts.append("Twist abilities unlocked for all!")
     if rewards.get("campaign_complete"):
         parts.append("Campaign Complete! Ranked Glory unlocked!")
     if not parts:
-        parts = ["No item rewards"]
+        parts = ["No artifact rewards"]
 
     reward_text = "  |  ".join(parts)
     draw_text(surf, reward_text[:100], 16, YELLOW, cx, reward_y, center=True)
@@ -2735,16 +2758,13 @@ def draw_post_quest(surf, quest_def, won: bool, rewards: dict, mouse_pos) -> dic
         # Show rewards
         draw_text(surf, "Rewards Gained:", 22, TEXT_DIM, cx, cy - 30, center=True)
         parts = []
-        for item_id in rewards.get("items", []):
-            parts.append(item_id.replace("_", " ").title())
+        parts.extend(_reward_artifact_names(rewards))
         for entry in rewards.get("recruit", []):
             parts.append(f"Recruit {entry[0].replace('_', ' ').title()}")
         if rewards.get("sig_tier"):
             parts.append(f"Signature Tier {rewards['sig_tier']}")
         if rewards.get("basics_tier"):
             parts.append(f"Basics Tier {rewards['basics_tier']}")
-        if rewards.get("twists"):
-            parts.append("Twists Unlocked!")
         if rewards.get("ranked_glory"):
             parts.append("Ranked Glory Unlocked!")
         if rewards.get("campaign_complete"):
@@ -2796,13 +2816,28 @@ def _adv_damage_type(defn) -> str:
     return "mixed"
 
 
+def _reward_artifact_names(rewards: dict) -> list[str]:
+    names = []
+    seen = set()
+    for artifact_id in rewards.get("artifacts", []):
+        if artifact_id in ARTIFACTS_BY_ID and artifact_id not in seen:
+            names.append(ARTIFACTS_BY_ID[artifact_id].name)
+            seen.add(artifact_id)
+    for item_id in rewards.get("items", []):
+        artifact_id = LEGACY_ITEM_TO_ARTIFACT_ID.get(item_id)
+        if artifact_id in ARTIFACTS_BY_ID and artifact_id not in seen:
+            names.append(ARTIFACTS_BY_ID[artifact_id].name)
+            seen.add(artifact_id)
+    return names
+
+
 def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                  scroll: int, profile, roster: list,
                  class_basics: dict, items: list,
                  status_rects_out: list = None,
                  filters: dict = None) -> dict:
     """
-    Catalog screen — Adventurers / Basic Abilities / Items tabs.
+    Catalog screen — Adventurers / Basic Abilities / Artifacts tabs.
     filters: dict of active filter sets for the current tab, e.g.
              {"classes": {"Fighter"}, "damage_types": set()}
     Returns click dict with keys: back_btn, tab_btns, list_btns, scroll_max,
@@ -2817,7 +2852,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     draw_text(surf, "Guidebook", 40, TEXT, cx, 28, center=True)
 
     # ── Tabs ─────────────────────────────────────────────────────────────────
-    tab_labels = [("adventurers", "Adventurers"), ("basics", "Basic Abilities"), ("items", "Items")]
+    tab_labels = [("adventurers", "Adventurers"), ("basics", "Basic Abilities"), ("artifacts", "Artifacts")]
     tab_w, tab_h = 200, 38
     tabs_x = cx - (len(tab_labels) * tab_w + (len(tab_labels) - 1) * 8) // 2
     tab_y = 65
@@ -2845,10 +2880,10 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     # ── Build lists (unfiltered) ──────────────────────────────────────────────
     recruited = getattr(profile, "recruited", set())
     sig_tier = getattr(profile, "sig_tier", 3)
-    twists_unlocked = getattr(profile, "twists_unlocked", False)
+    twists_unlocked = True
     unlocked_classes = getattr(profile, "unlocked_classes", set())
     basics_tier = getattr(profile, "basics_tier", 5)
-    unlocked_items = getattr(profile, "unlocked_items", set())
+    unlocked_artifacts = getattr(profile, "unlocked_artifacts", set())
 
     # Build basics-to-class map always (used by detail panel and filtering)
     _basics_cls_map = {}
@@ -2864,8 +2899,8 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
             if cls in unlocked_classes:
                 pool.extend(abilities[:basics_tier])
         list_items = pool
-    else:  # items
-        list_items = [it for it in items if it.id in unlocked_items]
+    else:  # artifacts
+        list_items = [it for it in items if it.id in unlocked_artifacts]
 
     # ── Filter area ───────────────────────────────────────────────────────────
     _active_f = filters or {}
@@ -2912,10 +2947,10 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                 _draw_chip(lbl, r, val in _active_types)
                 filter_chips.append((r, "types", val))
         clear_all_btn = pygame.Rect(_fx + 3 * (_chip_w + _chip_gap), _fy3, _chip_w, _chip_h)
-    else:  # items
+    else:  # artifacts
         _active_types = _active_f.get("types", set())
         _fy_items = _fy + _row_h
-        for i, (lbl, val) in enumerate([("Active", "active"), ("Passive", "passive")]):
+        for i, (lbl, val) in enumerate([("Active", "active"), ("Reactive", "reactive")]):
             r = pygame.Rect(_fx + i * (_chip_w + _chip_gap), _fy_items, _chip_w, _chip_h)
             _draw_chip(lbl, r, val in _active_types)
             filter_chips.append((r, "types", val))
@@ -2939,9 +2974,9 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
             list_items = [x for x in list_items if _basics_cls_map.get(x.id) in _active_f["classes"]]
         if _active_f.get("types"):
             list_items = [x for x in list_items if ("passive" if x.passive else "active") in _active_f["types"]]
-    else:  # items
+    else:  # artifacts
         if _active_f.get("types"):
-            list_items = [x for x in list_items if ("passive" if x.passive else "active") in _active_f["types"]]
+            list_items = [x for x in list_items if ("reactive" if x.reactive else "active") in _active_f["types"]]
 
     # ── Draw list (left panel, below filter area) ─────────────────────────────
     actual_list_y = LIST_Y + FILTER_H
@@ -2995,8 +3030,8 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                     status_rects_out.append((_bcls_rect, _item_cls))
                 draw_text(surf, _btype, 12, _bcol, r.x + 8, r.y + 34)
             else:
-                _itype = "Passive" if item.passive else "Active"
-                _icol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
+                _itype = "Reactive" if item.reactive else "Active"
+                _icol = TYPE_PASSIVE_COL if item.reactive else TYPE_ACTIVE_COL
                 draw_text(surf, item.name, 15, TEXT, r.x + 8, r.y + 4)
                 draw_text(surf, _itype, 12, _icol, r.x + 8, r.y + 20)
                 draw_text(surf, item.description[:44] + ("…" if len(item.description) > 44 else ""),
@@ -3107,11 +3142,11 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
                         dy = _dline(surf, wl, 13, TEXT_DIM, dx, dy, indent=12, rich=True)
                 dy += 4
 
-        else:  # items
+        else:  # artifacts
             draw_text(surf, item.name, 26, TEXT, dx, dy)
             dy += 34
-            _itype = "Passive" if item.passive else "Active"
-            _icol = TYPE_PASSIVE_COL if item.passive else TYPE_ACTIVE_COL
+            _itype = "Reactive" if item.reactive else "Active"
+            _icol = TYPE_PASSIVE_COL if item.reactive else TYPE_ACTIVE_COL
             dy = _dline(surf, _itype, 14, _icol, dx, dy)
             for line in _wrap_text(item.description, 14, dw):
                 dy = _dline(surf, line, 14, TEXT_DIM, dx, dy, rich=True)
@@ -3120,7 +3155,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
         hint = {
             "adventurers": "Click an adventurer to view details.",
             "basics": "Click a basic ability to view details.",
-            "items": "Click an item to view details.",
+            "artifacts": "Click an artifact to view details.",
         }.get(active_tab, "")
         draw_text(surf, hint, 18, TEXT_MUTED,
                   DETAIL_PX + DETAIL_PW // 2, DETAIL_PY + DETAIL_PH // 2, center=True)
@@ -3139,13 +3174,24 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
 def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos, status_rects_out: list = None) -> dict:
     """Screen shown after team pick, before battle — lets player swap slot positions.
 
-    picks: list of 3 dicts (definition, signature, basics, item)
+    picks: list of 3 dicts (definition, signature, basics, team_artifacts)
     Returns {"slot_btns": [(rect, idx)], "start_btn": rect, "back_btn": rect}
     """
     surf.fill(BG)
     draw_text(surf, "Formation Review", 38, TEXT, WIDTH // 2, 50, center=True)
     draw_text(surf, "Click two slots to swap their positions, then start the battle.",
               17, TEXT_DIM, WIDTH // 2, 96, center=True)
+    artifacts = list(picks[0].get("team_artifacts", [])) if picks else []
+    if artifacts:
+        draw_text(
+            surf,
+            "Artifacts: " + ", ".join(artifact.name for artifact in artifacts),
+            15,
+            TEXT_DIM,
+            WIDTH // 2,
+            120,
+            center=True,
+        )
 
     slot_labels = ["Front", "Back Left", "Back Right"]
     card_w, card_h = 330, 240
@@ -3167,7 +3213,6 @@ def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos, status_r
         defn = pick.get("definition")
         sig  = pick.get("signature")
         basics = pick.get("basics", [])
-        item = pick.get("item")
 
         dy = card_y + 10
         lbl_col = CYAN if is_sel else TEXT_MUTED
@@ -3188,8 +3233,6 @@ def draw_pre_battle_review(surf, picks: list, selected_slot, mouse_pos, status_r
             for b in basics:
                 draw_text(surf, f"Basic: {b.name}", 13, TEXT_DIM, x + 12, dy)
                 dy += 16
-            if item:
-                draw_text(surf, f"Item: {item.name}", 13, (160, 200, 160), x + 12, dy)
         else:
             draw_text(surf, "(empty)", 18, TEXT_MUTED, x + 12, dy)
 

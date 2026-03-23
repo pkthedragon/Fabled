@@ -4,7 +4,7 @@ Two-player pass-and-play on one device.
 
 Phase flow:
   menu
-  → team_select_p1  (sub-phases: pick_adventurers → pick_sig × 3 → pick_basics × 3 → pick_item × 3)
+  → team_select_p1  (sub-phases: pick_adventurers → pick_sig × 3 → pick_basics × 3 → pick_artifacts)
   → pass_to_p2
   → team_select_p2  (same sub-phases)
   → round_start
@@ -28,7 +28,13 @@ import ai as _ai
 from ai_team_pool import AI_TEAM_POOL
 from settings import *
 from models import BattleState, CampaignProfile
-from data import ROSTER, CLASS_BASICS, ITEMS
+from data import (
+    ROSTER,
+    CLASS_BASICS,
+    ARTIFACTS,
+    ARTIFACTS_BY_ID,
+    LEGACY_ITEM_TO_ARTIFACT_ID,
+)
 from logic import (
     create_team, start_new_round, determine_initiative,
     resolve_player_turn, resolve_queued_action, end_round,
@@ -40,6 +46,7 @@ from logic import (
     apply_round_start_effects,
     make_combatant,
     describe_action,
+    ready_active_artifacts,
 )
 do_end_round = end_round
 from ui import (
@@ -155,7 +162,7 @@ class Game:
         self._catalog_filters = {
             "adventurers": {"classes": set(), "damage_types": set()},
             "basics":      {"classes": set(), "types": set()},
-            "items":       {"types": set()},
+            "artifacts":   {"types": set()},
         }
 
         # Pre-battle review state
@@ -197,12 +204,13 @@ class Game:
         self.current_adv_idx = 0         # which adventurer in team_picks we're configuring
         self.sig_choice = None           # index in defn.sig_options
         self.basic_choices = []          # list of indices into CLASS_BASICS[cls]
-        self.item_choice = None          # index in ITEMS
+        self.item_choice = []            # selected artifact indices during team build
         self.team_slot_selected = None   # index 0-2 for reorder drag-by-click
-        self.team_select_scroll = 0      # detail list scroll offset for basics/items
+        self.team_select_scroll = 0      # detail list scroll offset for basics/artifacts
         self.battle_log_scroll = 0       # battle log scroll offset (0 = bottom)
         self.p1_picks = None
         self.p2_picks = None
+        self.team_artifacts = []
 
         # Action selection state
         self.selecting_player = 1
@@ -277,7 +285,7 @@ class Game:
                 {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "thunder_call"], "item": "misericorde"},
             ]},
             {"name": "Root Killbox", "usage": "Root once, then convert. Jack and Briar create the trap, Robin punishes it. Great into swap-reliant teams and mixed-class backlines.", "members": [
-                {"defn": "little_jack", "sig": "magic_growth", "basics": ["cleave", "feint"], "item": "family_seal"},
+                {"defn": "little_jack", "sig": "beanstalk_crash", "basics": ["cleave", "feint"], "item": "family_seal"},
                 {"defn": "briar_rose", "sig": "creeping_doubt", "basics": ["trapping_blow", "hunters_mark"], "item": "family_seal"},
                 {"defn": "robin_hooded_avenger", "sig": "snipe_shot", "basics": ["hunters_mark", "hawkshot"], "item": "arcane_focus"},
             ]},
@@ -397,7 +405,7 @@ class Game:
                 {"defn": "lucky_constantine", "sig": "feline_gambit", "basics": ["post_bounty", "sucker_punch"], "item": "holy_diadem"},
             ]},
             {"name": "Burn-Root Hunter", "usage": "Burn one target, root another, then collapse on whichever target is now easiest to kill. Strong into slower control teams.", "members": [
-                {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "freezing_gale"], "item": "misericorde"},
+                {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "ominous_gale"], "item": "misericorde"},
                 {"defn": "briar_rose", "sig": "creeping_doubt", "basics": ["hunters_mark", "trapping_blow"], "item": "family_seal"},
                 {"defn": "frederic", "sig": "heros_charge", "basics": ["hunters_mark", "hunters_badge"], "item": "family_seal"},
             ]},
@@ -498,28 +506,68 @@ class Game:
         if self._lan:
             self._lan.send(msg)
 
+    def _artifacts_from_picks(self, picks: list) -> list:
+        if not picks:
+            return []
+        return list(picks[0].get("team_artifacts", []))
+
+    def _normalize_artifacts(self, artifacts: list) -> list:
+        normalized = []
+        seen = set()
+        for artifact in artifacts or []:
+            if artifact is None or artifact.id in seen:
+                continue
+            normalized.append(artifact)
+            seen.add(artifact.id)
+        return normalized
+
+    def _legacy_items_to_artifacts(self, item_ids: list, *, fill_defaults: bool = True) -> list:
+        artifacts = []
+        for item_id in item_ids or []:
+            artifact_id = LEGACY_ITEM_TO_ARTIFACT_ID.get(item_id)
+            artifact = ARTIFACTS_BY_ID.get(artifact_id)
+            if artifact is not None:
+                artifacts.append(artifact)
+        artifacts = self._normalize_artifacts(artifacts)
+        if fill_defaults:
+            for artifact in ARTIFACTS:
+                if len(artifacts) >= 3:
+                    break
+                if artifact.id not in {a.id for a in artifacts}:
+                    artifacts.append(artifact)
+        return artifacts[:3]
+
+    def _attach_artifacts_to_picks(self, picks: list, artifacts: list) -> list:
+        attached = self._normalize_artifacts(list(artifacts or []))
+        for pick in picks:
+            pick["team_artifacts"] = list(attached)
+        return picks
+
     def _serialize_picks(self, picks: list) -> list:
+        artifact_ids = [artifact.id for artifact in self._artifacts_from_picks(picks)]
         result = []
         for p in picks:
             result.append({
                 "adv_id": p["definition"].id,
                 "sig_id": p["signature"].id,
                 "basics": [b.id for b in p["basics"]],
-                "item_id": p["item"].id,
+                "artifact_ids": list(artifact_ids),
             })
         return result
 
     def _deserialize_picks(self, data: list) -> list:
         roster_by_id = {d.id: d for d in ROSTER}
-        items_by_id = {i.id: i for i in ITEMS}
+        artifacts_by_id = {artifact.id: artifact for artifact in ARTIFACTS}
         picks = []
+        artifact_ids = data[0].get("artifact_ids", []) if data else []
         for m in data:
             defn = roster_by_id[m["adv_id"]]
             sig = next(a for a in defn.sig_options if a.id == m["sig_id"])
             basics_pool = CLASS_BASICS[defn.cls]
             basics = [next(a for a in basics_pool if a.id == bid) for bid in m["basics"]]
-            item = items_by_id[m["item_id"]]
-            picks.append({"definition": defn, "signature": sig, "basics": basics, "item": item})
+            picks.append({"definition": defn, "signature": sig, "basics": basics})
+        artifacts = [artifacts_by_id[artifact_id] for artifact_id in artifact_ids if artifact_id in artifacts_by_id]
+        self._attach_artifacts_to_picks(picks, artifacts)
         return picks
 
     def _serialize_unit(self, u) -> dict:
@@ -578,6 +626,9 @@ class Game:
             if target is not None:
                 d["target_slot_idx"] = team.members.index(target)
         elif atype == "item":
+            artifact = action.get("artifact")
+            if artifact is not None:
+                d["artifact_id"] = artifact.id
             target = action.get("target")
             if target is not None:
                 if target in team.members:
@@ -586,6 +637,9 @@ class Game:
                 else:
                     d["target_team"] = "enemy"
                     d["target_slot_idx"] = enemy.members.index(target)
+            swap_target = action.get("swap_target")
+            if swap_target is not None:
+                d["swap_target_slot_idx"] = team.members.index(swap_target)
         return d
 
     def _deserialize_action(self, data: dict, team, enemy) -> dict:
@@ -593,7 +647,7 @@ class Game:
         action = {"type": atype}
         if atype == "ability":
             actor = team.members[data["slot_idx"]]
-            all_abs = actor.basics + [actor.sig, actor.defn.twist]
+            all_abs = actor.all_active_abilities()
             ability = next((a for a in all_abs if a.id == data["ability_id"]), None)
             if ability:
                 action["ability"] = ability
@@ -606,9 +660,16 @@ class Game:
             if "target_slot_idx" in data:
                 action["target"] = team.members[data["target_slot_idx"]]
         elif atype == "item":
+            from data import ARTIFACTS
+            artifacts_by_id = {artifact.id: artifact for artifact in ARTIFACTS}
+            artifact_id = data.get("artifact_id")
+            if artifact_id in artifacts_by_id:
+                action["artifact"] = artifacts_by_id[artifact_id]
             if "target_slot_idx" in data:
                 t_team = team if data.get("target_team") == "own" else enemy
                 action["target"] = t_team.members[data["target_slot_idx"]]
+            if "swap_target_slot_idx" in data:
+                action["swap_target"] = team.members[data["swap_target_slot_idx"]]
         return action
 
     def _lan_send_state(self, *, phase: str, extra: dict = None):
@@ -848,22 +909,21 @@ class Game:
 
     def _build_ai_pick(self, entry):
         by_id = {d.id: d for d in ROSTER}
-        items_by_id = {i.id: i for i in ITEMS}
         defn = by_id[entry["defn"]]
         sig = next(a for a in defn.sig_options if a.id == entry["sig"])
         basics_pool = CLASS_BASICS[defn.cls]
         basics = [next(a for a in basics_pool if a.id == bid) for bid in entry["basics"]]
-        item = items_by_id[entry["item"]]
         return {
             "definition": defn,
             "signature": sig,
             "basics": basics,
-            "item": item,
         }
 
     def _generate_ai_team(self):
         comp = random.choice(self._ai_team_pool)
         picks = [self._build_ai_pick(e) for e in comp["members"]]
+        artifacts = self._legacy_items_to_artifacts([entry.get("item") for entry in comp["members"]])
+        self._attach_artifacts_to_picks(picks, artifacts)
         return comp["name"], picks
 
     def _ai_pick_extra_swap(self, player_num):
@@ -1046,8 +1106,8 @@ class Game:
             self._maybe_show_tutorial(
                 "action_selection",
                 "Each adventurer can select one action each turn: using an ability, "
-                "using an item, or swapping. You can only swap once per round, though "
-                "abilities and items that let you swap ignore that limit.")
+                "using an artifact, or swapping. You can only swap once per round, though "
+                "abilities and artifacts that let you swap ignore that limit.")
             if self._tutorial_pending:
                 self._tk_btn_label = "__tutorial__"
 
@@ -1643,7 +1703,7 @@ class Game:
                     else:
                         self._detail_unit = make_combatant(
                             defn, SLOT_FRONT,
-                            pick["signature"], pick["basics"], pick["item"],
+                            pick["signature"], pick["basics"], pick.get("item"),
                         )
                     return
 
@@ -1871,8 +1931,6 @@ class Game:
                         self.team_picks[self.current_adv_idx]["signature"] = bk["signature"]
                     if bk.get("basics"):
                         self.team_picks[self.current_adv_idx]["basics"] = bk["basics"]
-                    if bk.get("item"):
-                        self.team_picks[self.current_adv_idx]["item"] = bk["item"]
                     self._edit_sets_backup = None
                 self.sub_phase = "pick_adventurers"
                 self.team_select_scroll = 0
@@ -1882,105 +1940,112 @@ class Game:
             self.sub_phase = "pick_sig"
             self.team_select_scroll = 0
         elif sp == "pick_item":
-            self.team_picks[self.current_adv_idx].pop("basics", None)
-            self.basic_choices = []
-            self.sub_phase = "pick_basics"
+            self.sub_phase = "pick_adventurers"
             self.team_select_scroll = 0
 
     def _parse_team_import(self, text: str, allow_all: bool):
         """Parse a team import string. Returns (picks_list, error_string).
         picks_list is None on any validation error.
-        allow_all=True: practice/single_player mode (full ROSTER/ITEMS/CLASS_BASICS).
+        allow_all=True: practice/single_player mode (full ROSTER/ARTIFACTS/CLASS_BASICS).
         allow_all=False: use campaign/teambuilder restricted lists.
         """
         # Determine the active pools
         if allow_all:
             active_roster     = ROSTER
-            active_items      = ITEMS
+            active_artifacts  = ARTIFACTS
             active_cls_basics = CLASS_BASICS
         else:
             active_roster     = getattr(self, "_campaign_roster", ROSTER)
-            active_items      = getattr(self, "_campaign_items", ITEMS)
+            active_artifacts  = getattr(self, "_campaign_artifacts", ARTIFACTS)
             active_cls_basics = getattr(self, "_campaign_basics", CLASS_BASICS)
 
         # Build case-insensitive lookup dicts
         roster_by_name = {d.name.lower(): d for d in active_roster}
-        items_by_name  = {it.name.lower(): it for it in active_items}
+        artifacts_by_name = {artifact.name.lower(): artifact for artifact in active_artifacts}
 
         # Normalize lines
         raw_lines = [l.rstrip() for l in text.splitlines()]
         lines = [l for l in raw_lines if l.strip()]
 
-        # Need exactly 12 non-empty lines: 4 per member * 3 members
-        if len(lines) != 12:
-            return (None, "Can't upload this.")
-
         picks = []
-        used_item_ids = set()
+        artifacts = []
 
-        for block_start in range(0, 12, 4):
-            block = lines[block_start: block_start + 4]
-            # Line 0: "Adventurer @ Item"
-            if " @ " not in block[0]:
-                return (None, "Can't upload this.")
-            adv_part, item_part = block[0].split(" @ ", 1)
-            adv_name  = adv_part.strip().lower()
-            item_name = item_part.strip().lower()
-
-            # Lines 1-3: "- AbilityName"
+        def _parse_member(block):
+            if len(block) != 4:
+                return None
+            adv_name = block[0].strip().lower()
+            if not adv_name:
+                return None
             ability_names = []
             for raw in block[1:4]:
                 s = raw.strip()
                 if not s.startswith("- "):
-                    return (None, "Can't upload this.")
+                    return None
                 ability_names.append(s[2:].strip().lower())
 
-            # Look up adventurer
             defn = roster_by_name.get(adv_name)
             if defn is None:
-                return (None, "Can't upload this.")
+                return None
 
-            # Look up item
-            item = items_by_name.get(item_name)
-            if item is None:
-                return (None, "Can't upload this.")
-
-            # No duplicate items
-            if item.id in used_item_ids:
-                return (None, "Can't upload this.")
-            used_item_ids.add(item.id)
-
-            # Look up signature (case-insensitive, within allowed sigs)
             if allow_all:
                 avail_sigs = defn.sig_options
             else:
-                sig_tier = (
-                    self.campaign_profile.sig_tier
-                    if self.campaign_profile else 3
-                )
+                sig_tier = self.campaign_profile.sig_tier if self.campaign_profile else 3
                 avail_sigs = defn.sig_options[:sig_tier]
-            sig_by_name = {s.name.lower(): s for s in avail_sigs}
-            sig = sig_by_name.get(ability_names[0])
+            sig = {s.name.lower(): s for s in avail_sigs}.get(ability_names[0])
             if sig is None:
-                return (None, "Can't upload this.")
+                return None
 
-            # Look up basics (2 basics for this class)
             cls_pool = active_cls_basics.get(defn.cls, [])
             basics_by_name = {b.name.lower(): b for b in cls_pool}
             basic1 = basics_by_name.get(ability_names[1])
             basic2 = basics_by_name.get(ability_names[2])
-            if basic1 is None or basic2 is None:
-                return (None, "Can't upload this.")
-            if basic1 is basic2:
-                return (None, "Can't upload this.")
+            if basic1 is None or basic2 is None or basic1 is basic2:
+                return None
 
-            picks.append({
+            return {
                 "definition": defn,
-                "signature":  sig,
-                "basics":     [basic1, basic2],
-                "item":       item,
-            })
+                "signature": sig,
+                "basics": [basic1, basic2],
+            }
 
+        if len(lines) == 13 and lines[-1].lower().startswith("artifacts:"):
+            member_lines = lines[:-1]
+            artifacts_line = lines[-1].split(":", 1)[1]
+            artifact_names = [part.strip().lower() for part in artifacts_line.split(",") if part.strip()]
+            if len(artifact_names) != 3:
+                return (None, "Can't upload this.")
+            seen = set()
+            for name in artifact_names:
+                artifact = artifacts_by_name.get(name)
+                if artifact is None or artifact.id in seen:
+                    return (None, "Can't upload this.")
+                artifacts.append(artifact)
+                seen.add(artifact.id)
+            if len(member_lines) != 12:
+                return (None, "Can't upload this.")
+            for block_start in range(0, 12, 4):
+                parsed = _parse_member(member_lines[block_start:block_start + 4])
+                if parsed is None:
+                    return (None, "Can't upload this.")
+                picks.append(parsed)
+        elif len(lines) == 12 and all(" @ " in lines[idx] for idx in range(0, 12, 4)):
+            legacy_item_ids = []
+            for block_start in range(0, 12, 4):
+                block = list(lines[block_start:block_start + 4])
+                adv_part, item_part = block[0].split(" @ ", 1)
+                parsed = _parse_member([adv_part, block[1], block[2], block[3]])
+                if parsed is None:
+                    return (None, "Can't upload this.")
+                picks.append(parsed)
+                legacy_item_ids.append(item_part.strip().lower().replace(" ", "_").replace("'", ""))
+            artifacts = self._legacy_items_to_artifacts(legacy_item_ids)
+        else:
+            return (None, "Can't upload this.")
+
+        if len(picks) != 3:
+            return (None, "Can't upload this.")
+        self._attach_artifacts_to_picks(picks, artifacts)
         return (picks, "")
 
     def _start_team_select(self, player_num):
@@ -1991,11 +2056,12 @@ class Game:
         self.current_adv_idx = 0
         self.sig_choice = None
         self.basic_choices = []
-        self.item_choice = None
+        self.item_choice = []
         self.team_slot_selected = None
         self.team_select_scroll = 0
         self._editing_single_member = False
         self._focused_slot = None
+        self.team_artifacts = []
         self.phase = "team_select"
         self._maybe_show_tutorial("party_editor", "Select three adventurers to form a party!")
 
@@ -2007,11 +2073,11 @@ class Game:
         # Determine active roster for campaign / teambuilder vs normal mode
         if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
             active_roster     = self._campaign_roster
-            active_items      = self._campaign_items
+            active_items      = self._campaign_artifacts
             active_cls_basics = self._campaign_basics
         else:
             active_roster     = ROSTER
-            active_items      = ITEMS
+            active_items      = ARTIFACTS
             active_cls_basics = CLASS_BASICS
 
         _in_pbe = (self.phase == "pre_battle_edit")
@@ -2077,14 +2143,12 @@ class Game:
                 self._edit_sets_backup = {
                     "signature": self.team_picks[idx].get("signature"),
                     "basics":    list(self.team_picks[idx].get("basics", [])),
-                    "item":      self.team_picks[idx].get("item"),
                 }
                 self.team_picks[idx].pop("signature", None)
                 self.team_picks[idx].pop("basics", None)
-                self.team_picks[idx].pop("item", None)
                 self.sig_choice = None
                 self.basic_choices = []
-                self.item_choice = None
+                self.item_choice = []
                 self.sub_phase = "pick_sig"
                 self.team_select_scroll = 0
             return
@@ -2127,7 +2191,14 @@ class Game:
                                 for pk in picks))
                 if _team_valid(self.team_picks):
                     self.team_slot_selected = None
-                    if _in_pbe:
+                    if len(self.team_artifacts) < 3:
+                        self.sub_phase = "pick_item"
+                        self.item_choice = [
+                            idx for idx, artifact in enumerate(active_items)
+                            if artifact.id in {a.id for a in self.team_artifacts}
+                        ]
+                        self.team_select_scroll = 0
+                    elif _in_pbe:
                         self._confirm_pre_battle_edit()
                     else:
                         self._finish_team_select()
@@ -2178,8 +2249,12 @@ class Game:
             if confirm and confirm.collidepoint(pos) and len(self.basic_choices) == 2:
                 self.team_picks[self.current_adv_idx]["basics"] = \
                     [pool[i] for i in self.basic_choices]
-                self.sub_phase = "pick_item"
-                self.item_choice = None
+                if self._editing_single_member:
+                    self._editing_single_member = False
+                    self._finish_team_select()
+                else:
+                    self._editing_from_roster = False
+                    self.sub_phase = "pick_adventurers"
                 self.team_select_scroll = 0
 
         elif self.sub_phase == "pick_item":
@@ -2189,30 +2264,20 @@ class Game:
                 return
             for rect, idx in clicks.get("items", []):
                 if rect.collidepoint(pos):
-                    # Reject items already used by other team members
-                    taken_ids = {p["item"].id for i, p in enumerate(self.team_picks)
-                                 if "item" in p and i != self.current_adv_idx}
-                    if active_items[idx].id in taken_ids:
-                        return  # item already taken by another team member
-                    self.item_choice = idx
+                    if idx in self.item_choice:
+                        self.item_choice.remove(idx)
+                    elif len(self.item_choice) < 3:
+                        self.item_choice.append(idx)
                     return
             confirm = clicks.get("confirm")
-            if confirm and confirm.collidepoint(pos):
-                # Item is optional — save if one is selected, otherwise clear it
-                if self.item_choice is not None:
-                    self.team_picks[self.current_adv_idx]["item"] = \
-                        active_items[self.item_choice]
+            if confirm and confirm.collidepoint(pos) and len(self.item_choice) == 3:
+                self.team_artifacts = [active_items[idx] for idx in self.item_choice[:3]]
+                self._attach_artifacts_to_picks(self.team_picks, self.team_artifacts)
+                if _in_pbe:
+                    self._confirm_pre_battle_edit()
                 else:
-                    self.team_picks[self.current_adv_idx].pop("item", None)
-                if self._editing_single_member:
-                    # Only editing this one member's sets — save and return.
-                    self._editing_single_member = False
                     self._finish_team_select()
-                else:
-                    # Always return to pick_adventurers after item (new flow)
-                    self._editing_from_roster = False
-                    self.sub_phase = "pick_adventurers"
-                    self.team_select_scroll = 0
+                self.team_select_scroll = 0
 
         # Enemy card click in pre_battle_edit — toggle detail panel
         if _in_pbe:
@@ -2224,18 +2289,26 @@ class Game:
                     else:
                         self._detail_unit = make_combatant(
                             defn, SLOT_FRONT,
-                            pick["signature"], pick["basics"], pick["item"],
+                            pick["signature"], pick["basics"], pick.get("item"),
                         )
                     return
 
     def _ensure_picks_have_items(self, picks):
-        """Ensure each pick has an item (use first available as fallback)."""
-        fallback = ITEMS[0] if ITEMS else None
-        if fallback is None:
+        """Ensure a team has three artifacts attached."""
+        if not picks:
             return
-        for p in picks:
-            if "item" not in p:
-                p["item"] = fallback
+        existing = self._artifacts_from_picks(picks)
+        if len(existing) >= 3:
+            self._attach_artifacts_to_picks(picks, existing[:3])
+            return
+        pool = list(ARTIFACTS)
+        artifacts = list(existing)
+        for artifact in pool:
+            if len(artifacts) >= 3:
+                break
+            if artifact.id not in {a.id for a in artifacts}:
+                artifacts.append(artifact)
+        self._attach_artifacts_to_picks(picks, artifacts[:3])
 
     def _enter_pre_battle_edit(self, p1_picks, enemy_picks, back_phase):
         """Transition to the pre-battle team editor."""
@@ -2246,7 +2319,7 @@ class Game:
         self.current_adv_idx = 0
         self.sig_choice = None
         self.basic_choices = []
-        self.item_choice = None
+        self.item_choice = []
         self.team_select_scroll = 0
         self.roster_selected = None
         self.team_slot_selected = None
@@ -2289,6 +2362,7 @@ class Game:
         self._start_battle()
 
     def _finish_team_select(self):
+        self._attach_artifacts_to_picks(self.team_picks, self.team_artifacts)
         if self.game_mode == "teambuilder":
             self._save_built_team_to_slot()
             self.phase = "teambuilder"
@@ -2341,7 +2415,7 @@ class Game:
         self.game_mode = "teambuilder"
         profile = self.campaign_profile
         self._campaign_roster = [d for d in ROSTER if d.id in profile.recruited]
-        self._campaign_items = [it for it in ITEMS if it.id in profile.unlocked_items]
+        self._campaign_artifacts = [it for it in ARTIFACTS if it.id in profile.unlocked_artifacts]
         self._campaign_basics = {
             cls_name: basics_list[:profile.basics_tier]
             for cls_name, basics_list in CLASS_BASICS.items()
@@ -2351,15 +2425,17 @@ class Game:
         existing = self._resolve_saved_team(slot_idx)
         if existing is not None:
             self.team_picks = existing
+            self.team_artifacts = self._artifacts_from_picks(existing)
         else:
             self.team_picks = []
+            self.team_artifacts = []
         self.building_player = 1
         self.sub_phase = "pick_adventurers"
         self.roster_selected = self.team_picks[0]["definition"] if self.team_picks else None
         self.current_adv_idx = 0
         self.sig_choice = None
         self.basic_choices = []
-        self.item_choice = None
+        self.item_choice = []
         self.team_slot_selected = None
         self.team_select_scroll = 0
         self._editing_from_roster = False
@@ -2374,7 +2450,7 @@ class Game:
         self.game_mode = "teambuilder"
         profile = self.campaign_profile
         self._campaign_roster = [d for d in ROSTER if d.id in profile.recruited]
-        self._campaign_items = [it for it in ITEMS if it.id in profile.unlocked_items]
+        self._campaign_artifacts = [it for it in ARTIFACTS if it.id in profile.unlocked_artifacts]
         self._campaign_basics = {
             cls_name: basics_list[:profile.basics_tier]
             for cls_name, basics_list in CLASS_BASICS.items()
@@ -2388,6 +2464,7 @@ class Game:
             self._start_team_select(1)
             return
         self.team_picks = existing
+        self.team_artifacts = self._artifacts_from_picks(existing)
         self.building_player = 1
         self.current_adv_idx = member_idx
         # Clear only this member's set choices so the user picks fresh.
@@ -2396,7 +2473,7 @@ class Game:
         self.team_picks[member_idx].pop("item", None)
         self.sig_choice = None
         self.basic_choices = []
-        self.item_choice = None
+        self.item_choice = []
         self.roster_selected = None
         self.team_slot_selected = None
         self.team_select_scroll = 0
@@ -2415,10 +2492,6 @@ class Game:
                 "sig_id":  p["signature"].id,
                 "basics":  [b.id for b in p["basics"]],
             }
-            if "item" in p:
-                entry["item_id"] = p["item"].id
-            else:
-                entry["item_id"] = ""
             members.append(entry)
         # Preserve existing name if the team already has one.
         teams = self.campaign_profile.saved_teams
@@ -2426,7 +2499,11 @@ class Game:
         if slot < len(teams) and teams[slot] is not None:
             existing_name = teams[slot].get("name")
         team_name = existing_name if existing_name else f"Party {slot + 1}"
-        entry = {"name": team_name, "members": members}
+        entry = {
+            "name": team_name,
+            "members": members,
+            "artifact_ids": [artifact.id for artifact in self.team_artifacts],
+        }
         while len(self.campaign_profile.saved_teams) <= slot:
             self.campaign_profile.saved_teams.append(None)
         self.campaign_profile.saved_teams[slot] = entry
@@ -2478,7 +2555,7 @@ class Game:
             return None
         team_data = teams[slot_idx]
         roster_by_id = {d.id: d for d in ROSTER}
-        items_by_id  = {i.id: i for i in ITEMS}
+        artifacts_by_id = {artifact.id: artifact for artifact in ARTIFACTS}
         picks = []
         for m in team_data.get("members", []):
             defn = roster_by_id.get(m.get("adv_id"))
@@ -2492,14 +2569,10 @@ class Game:
             basics = [basics_by_id.get(bid) for bid in m.get("basics", [])]
             if any(b is None for b in basics) or len(basics) != 2:
                 return None
-            item_id = m.get("item_id")
-            item = items_by_id.get(item_id) if item_id else None
-            # Fall back to first available item if none set (item is optional in teambuilder)
-            if item is None and ITEMS:
-                item = ITEMS[0]
-            if item is None:
-                return None
-            picks.append({"definition": defn, "signature": sig, "basics": basics, "item": item})
+            picks.append({"definition": defn, "signature": sig, "basics": basics})
+        artifact_ids = team_data.get("artifact_ids", [])
+        artifacts = [artifacts_by_id[artifact_id] for artifact_id in artifact_ids if artifact_id in artifacts_by_id]
+        self._attach_artifacts_to_picks(picks, artifacts)
         return picks if len(picks) == 3 else None
 
     def _start_campaign_battle_with_team(self, slot_idx: int):
@@ -2552,8 +2625,10 @@ class Game:
                 battle_log.log(
                     f"    Basics: {', '.join(b.name for b in pick['basics'])}"
                 )
+            artifacts = self._artifacts_from_picks(picks)
+            if artifacts:
                 battle_log.log(
-                    f"    Item:   {pick['item'].name}"
+                    f"    Artifacts: {', '.join(artifact.name for artifact in artifacts)}"
                 )
         battle_log.section("BATTLE START")
 
@@ -2769,7 +2844,10 @@ class Game:
             if atype == "item":
                 t = action_dict.get("target")
                 tname = t.name if t else "self"
-                desc = f"{actor.item.name} → {tname}"
+                artifact = action_dict.get("artifact")
+                desc = f"{artifact.name if artifact else 'Artifact'} → {tname}"
+                if action_dict.get("swap_target") is not None:
+                    desc += f" ↔ {action_dict['swap_target'].name}"
             else:
                 desc = describe_action(action_dict)
             self.battle.log_noshow(f"[Queued] {actor.name}: {desc}")
@@ -2954,16 +3032,17 @@ class Game:
                     return
 
                 if atype == "item":
+                    artifact = btn_action.get("artifact")
                     targets = get_legal_item_targets(
-                        self.battle, self.selecting_player, actor)
+                        self.battle, self.selecting_player, actor, artifact=artifact)
                     if not targets:
-                        self.battle.log_add(f"{actor.name} cannot use {actor.item.name}.")
+                        self.battle.log_add(f"{actor.name} cannot use {artifact.name}.")
                         return
                     if len(targets) == 1:
-                        self._set_queued(actor, {"type": "item", "target": targets[0]})
+                        self._set_queued(actor, {"type": "item", "artifact": artifact, "target": targets[0]})
                         self._on_action_queued()
                         return
-                    self.pending_action = {"type": "item", "target": None}
+                    self.pending_action = {"type": "item", "artifact": artifact, "target": None}
                     self.selection_sub = "pick_target"
                     return
 
@@ -3018,8 +3097,18 @@ class Game:
                     return
 
         elif atype == "item":
-            targets = get_legal_item_targets(
-                self.battle, self.selecting_player, actor)
+            artifact = self.pending_action.get("artifact")
+            primary = self.pending_action.get("target")
+            if artifact and artifact.id == "magic_mirror" and primary is not None:
+                targets = get_legal_item_targets(
+                    self.battle, self.selecting_player, actor,
+                    artifact=artifact, primary_target=primary,
+                )
+            else:
+                targets = get_legal_item_targets(
+                    self.battle, self.selecting_player, actor,
+                    artifact=artifact,
+                )
             if not targets:
                 return
             all_rects = {}
@@ -3027,7 +3116,13 @@ class Game:
             all_rects.update({u: SLOT_RECTS_P2.get(u.slot) for u in self.battle.team2.alive()})
             for unit, rect in all_rects.items():
                 if rect and rect.collidepoint(pos) and unit in targets:
-                    self._set_queued(actor, {"type": "item", "target": unit})
+                    if artifact and artifact.id == "magic_mirror" and primary is None:
+                        self.pending_action["target"] = unit
+                        return
+                    action = {"type": "item", "artifact": artifact, "target": primary or unit}
+                    if artifact and artifact.id == "magic_mirror":
+                        action["swap_target"] = unit
+                    self._set_queued(actor, action)
                     self._on_action_queued()
                     return
 
@@ -3224,7 +3319,7 @@ class Game:
                 profile=profile,
                 roster=ROSTER,
                 class_basics=CLASS_BASICS,
-                items=ITEMS,
+                items=ARTIFACTS,
                 status_rects_out=_catalog_desc_hover,
                 filters=self._catalog_filters.get(self._catalog_tab, {}),
             )
@@ -3250,10 +3345,10 @@ class Game:
             _PRE_BATTLE_DETAIL_RECT = pygame.Rect(700, 80, 680, 760)
             # Use campaign-filtered roster/items when in campaign mode
             if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
-                active_items      = self._campaign_items
+                active_items      = self._campaign_artifacts
                 active_cls_basics = self._campaign_basics
             else:
-                active_items      = ITEMS
+                active_items      = ARTIFACTS
                 active_cls_basics = CLASS_BASICS
 
             _sig_tier = (
@@ -3281,11 +3376,7 @@ class Game:
                 scroll_offset=self.team_select_scroll,
                 team_slot_selected=self.team_slot_selected,
                 sig_tier=_sig_tier,
-                twists_unlocked=(
-                    self.campaign_profile.twists_unlocked
-                    if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
-                    else True
-                ),
+                twists_unlocked=True,
                 status_rects_out=_team_desc_hover,
                 confirm_label=_confirm_lbl,
                 pre_battle_mode=True,
@@ -3318,11 +3409,11 @@ class Game:
             # Use campaign-filtered roster/items when in campaign/teambuilder mode
             if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
                 active_roster     = self._campaign_roster
-                active_items      = self._campaign_items
+                active_items      = self._campaign_artifacts
                 active_cls_basics = self._campaign_basics
             else:
                 active_roster     = ROSTER
-                active_items      = ITEMS
+                active_items      = ARTIFACTS
                 active_cls_basics = CLASS_BASICS
 
             # roster_selected is a defn object (or None)
@@ -3358,11 +3449,7 @@ class Game:
                 scroll_offset=self.team_select_scroll,
                 team_slot_selected=self.team_slot_selected,
                 sig_tier=_sig_tier,
-                twists_unlocked=(
-                    self.campaign_profile.twists_unlocked
-                    if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
-                    else True
-                ),
+                twists_unlocked=True,
                 status_rects_out=_team_desc_hover,
                 confirm_label=_confirm_label,
                 focused_slot=self._focused_slot,
@@ -3734,7 +3821,13 @@ class Game:
             elif self.pending_action["type"] == "swap":
                 valid_targets = [u for u in team.alive() if u != actor]
             elif self.pending_action["type"] == "item":
-                valid_targets = team.alive()
+                valid_targets = get_legal_item_targets(
+                    self.battle,
+                    self.selecting_player,
+                    actor,
+                    artifact=self.pending_action.get("artifact"),
+                    primary_target=self.pending_action.get("target"),
+                )
 
         _status_hover = []
         draw_formation(surf, self.battle,
@@ -3766,16 +3859,10 @@ class Game:
         # Action buttons (drawn first so panel background is laid down)
         if self.selection_sub == "pick_action":
             abilities = actor.all_active_abilities(is_last)
-            _twists_ok = (
-                self.game_mode not in ("campaign", "teambuilder")
-                or not self.campaign_profile
-                or self.campaign_profile.twists_unlocked
-            )
-            valid_abs = [a for a in abilities
-                         if can_use_ability(actor, a, team)
-                         and (_twists_ok or a.category != "twist")]
+            valid_abs = [a for a in abilities if can_use_ability(actor, a, team)]
             btns = draw_action_menu(
                 surf, mouse_pos, actor, valid_abs,
+                active_artifacts=[state.artifact for state in ready_active_artifacts(team)],
                 swap_used=self.battle.swap_used_this_turn or self._swap_queued_this_turn(),
                 state_label=f"Slot: {SLOT_LABELS.get(actor.slot, actor.slot)}"
             )
@@ -4102,7 +4189,7 @@ def main():
     g._last_teambuilder_btns = {}
     g._last_story_team_btns = {}
     g._campaign_roster    = list(ROSTER)
-    g._campaign_items     = list(ITEMS)
+    g._campaign_artifacts = list(ARTIFACTS)
     g._campaign_basics    = dict(CLASS_BASICS)
     g._campaign_enemy_picks = []
     g._extra_swap_player   = 1

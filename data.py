@@ -3,7 +3,7 @@ data.py – all static game content, encoded directly from the Fabled rulebook.
 AbilityMode fields that cannot be expressed as data are captured in `special`
 strings and handled by ID in logic.py.
 """
-from models import AbilityMode, Ability, Item, AdventurerDef
+from models import AbilityMode, Ability, Item, Artifact, AdventurerDef
 
 # helper alias for "not available from this slot"
 _NA = AbilityMode(unavailable=True)
@@ -65,8 +65,8 @@ POST_BOUNTY = Ability(
 
 SUCKER_PUNCH = Ability(
     id="sucker_punch", name="Sucker Punch", category="basic", passive=False,
-    frontline=AbilityMode(power=50, bonus_vs_statused=15),
-    backline=AbilityMode(status="weaken", status_dur=2),
+    frontline=AbilityMode(power=50, special="sucker_punch_front"),
+    backline=AbilityMode(status="shock", status_dur=2),
 )
 
 FLEETFOOTED = Ability(
@@ -119,53 +119,53 @@ THUNDER_CALL = Ability(
     backline=AbilityMode(power=30, status="shock", status_dur=2),
 )
 
-FREEZING_GALE = Ability(
-    id="freezing_gale", name="Freezing Gale", category="basic", passive=False,
-    frontline=AbilityMode(power=45, status="root", status_dur=2),
-    backline=AbilityMode(power=30, status="root", status_dur=2),
+OMINOUS_GALE = Ability(
+    id="ominous_gale", name="Ominous Gale", category="basic", passive=False,
+    frontline=AbilityMode(power=45, bonus_vs_statused=15),
+    backline=AbilityMode(power=30, special="ominous_gale_back"),
 )
 
 ARCANE_WAVE = Ability(
     id="arcane_wave", name="Arcane Wave", category="basic", passive=False,
-    frontline=AbilityMode(power=60, special="arcane_wave_self_debuff"),
+    frontline=AbilityMode(power=70, special="arcane_wave_self_debuff"),
     backline=AbilityMode(power=40),
 )
 
 BREAKTHROUGH = Ability(
     id="breakthrough", name="Breakthrough", category="basic", passive=False,
-    frontline=AbilityMode(atk_buff=12, atk_buff_dur=2),
-    backline=AbilityMode(atk_buff=12, atk_buff_dur=2, self_status="spotlight", self_status_dur=2),
+    frontline=AbilityMode(atk_buff=12, atk_buff_dur=2, special="breakthrough_front"),
+    backline=AbilityMode(atk_buff=12, atk_buff_dur=2),
 )
 
 # ── RANGER ────────────────────────────────────────────────────────────────────
 HAWKSHOT = Ability(
     id="hawkshot", name="Hawkshot", category="basic", passive=False,
-    frontline=AbilityMode(power=45, cant_redirect=True),
-    backline=AbilityMode(power=35, cant_redirect=True),
+    frontline=AbilityMode(power=50, cant_redirect=True),
+    backline=AbilityMode(power=40, cant_redirect=True),
 )
 
 VOLLEY = Ability(
     id="volley", name="Volley", category="basic", passive=False,
-    frontline=AbilityMode(power=45, spread=True),
-    backline=AbilityMode(power=35, spread=True),
+    frontline=AbilityMode(power=50, spread=True),
+    backline=AbilityMode(power=40, spread=True),
 )
 
 TRAPPING_BLOW = Ability(
     id="trapping_blow", name="Trapping Blow", category="basic", passive=False,
-    frontline=AbilityMode(power=40, special="trapping_blow_root_weakened"),
-    backline=AbilityMode(power=30, status="weaken", status_dur=2),
+    frontline=AbilityMode(power=45, special="trapping_blow_root_spotlight"),
+    backline=AbilityMode(power=30, status="spotlight", status_dur=2),
 )
 
 HUNTERS_MARK = Ability(
     id="hunters_mark", name="Hunter's Mark", category="basic", passive=False,
-    frontline=AbilityMode(power=40, special="hunters_mark_dot"),
+    frontline=AbilityMode(power=45, special="hunters_mark_dot"),
     backline=AbilityMode(power=30, special="hunters_mark_dot"),
 )
 
 HUNTERS_BADGE = Ability(
     id="hunters_badge", name="Hunter's Badge", category="basic", passive=True,
-    frontline=AbilityMode(atk_buff=10),
-    backline=AbilityMode(atk_buff=7),
+    frontline=AbilityMode(atk_buff=12),
+    backline=AbilityMode(atk_buff=10),
 )
 
 # ── CLERIC ────────────────────────────────────────────────────────────────────
@@ -222,8 +222,8 @@ DECREE = Ability(
 
 SUMMONS = Ability(
     id="summons", name="Summons", category="basic", passive=False,
-    frontline=AbilityMode(special="summons_swap"),
-    backline=AbilityMode(special="summons_swap"),
+    frontline=AbilityMode(special="summons_swap_cleanse"),
+    backline=AbilityMode(special="summons_swap_cleanse"),
 )
 
 COMMAND = Ability(
@@ -268,7 +268,7 @@ CLASS_BASICS = {
     "Fighter": [STRIKE, REND, FEINT, CLEAVE, INTIMIDATE],
     "Rogue":   [SNEAK_ATTACK, RIPOSTE, POST_BOUNTY, SUCKER_PUNCH, FLEETFOOTED],
     "Warden":  [SHIELD_BASH, CONDEMN, SLAM, ARMORED, STALWART],
-    "Mage":    [FIRE_BLAST, THUNDER_CALL, FREEZING_GALE, ARCANE_WAVE, BREAKTHROUGH],
+    "Mage":    [FIRE_BLAST, THUNDER_CALL, OMINOUS_GALE, ARCANE_WAVE, BREAKTHROUGH],
     "Ranger":  [HAWKSHOT, VOLLEY, HUNTERS_MARK, TRAPPING_BLOW, HUNTERS_BADGE],
     "Cleric":  [HEAL, BLESS, SMITE, MEDIC, PROTECTION],
     "Noble":   [IMPOSE, EDICT, DECREE, SUMMONS, COMMAND],
@@ -362,6 +362,134 @@ ITEMS = [
 ]
 
 
+HOLY_GRAIL = Artifact(
+    id="holy_grail", name="Holy Grail", reactive=False, cooldown=1,
+    description="Heals target adventurer 45 HP.", heal=45,
+)
+DIVINE_APPLE = Artifact(
+    id="divine_apple", name="Divine Apple", reactive=False, cooldown=1,
+    description="Removes target adventurer's status conditions.", cleanse=True,
+)
+WINGED_SANDALS = Artifact(
+    id="winged_sandals", name="Winged Sandals", reactive=False, cooldown=2,
+    description="Target adventurer has +15 Speed for 2 rounds.",
+    spd_buff=15, spd_buff_dur=2,
+)
+ACHILLES_SPEAR = Artifact(
+    id="achilles_spear", name="Achilles' Spear", reactive=False, cooldown=2,
+    description="Target adventurer has +15 Attack for 2 rounds.",
+    atk_buff=15, atk_buff_dur=2,
+)
+GOLDEN_FLEECE = Artifact(
+    id="golden_fleece", name="Golden Fleece", reactive=False, cooldown=2,
+    description="Target adventurer has +15 Defense for 2 rounds.",
+    def_buff=15, def_buff_dur=2,
+)
+MAGIC_MIRROR = Artifact(
+    id="magic_mirror", name="Magic Mirror", reactive=False, cooldown=1,
+    description="Swap two target ally adventurers.", special="magic_mirror",
+)
+CRACKED_STOPWATCH = Artifact(
+    id="cracked_stopwatch", name="Cracked Stopwatch", reactive=False, cooldown=12,
+    description="Target adventurer cannot act but cannot be targeted next round.",
+    special="cracked_stopwatch",
+)
+MELUSINES_KNIFE = Artifact(
+    id="melusines_knife", name="Melusine's Knife", reactive=False, cooldown=2,
+    description="Target enemy adventurer has -10 Defense for 2 rounds.",
+    def_debuff=10, def_debuff_dur=2,
+)
+LAST_PRISM = Artifact(
+    id="last_prism", name="Last Prism", reactive=False, cooldown=2,
+    description="Spotlights target adventurer for 2 rounds.",
+    status="spotlight", status_dur=2,
+)
+NETTLE_SMOCK = Artifact(
+    id="nettle_smock", name="Nettle Smock", reactive=False, cooldown=2,
+    description="Roots target adventurer for 2 rounds. They heal 50% less for the duration.",
+    status="root", status_dur=2, special="nettle_smock",
+)
+EXCALIBUR = Artifact(
+    id="excalibur", name="Excalibur", reactive=True, cooldown=2,
+    description="When an ally adventurer swaps to frontline, their signature abilities deal +10 damage for 2 rounds.",
+    flat_damage_bonus=10, special="excalibur",
+)
+GODMOTHERS_WAND = Artifact(
+    id="godmothers_wand", name="Godmother's Wand", reactive=True, cooldown=2,
+    description="When an ally adventurer swaps from frontline to backline, their abilities used from the backline deal +10 damage for 2 rounds.",
+    flat_damage_bonus=10, special="godmothers_wand",
+)
+MISERICORDE_ARTIFACT = Artifact(
+    id="misericorde_artifact", name="Misericorde", reactive=True, cooldown=2,
+    description="Whenever an enemy gets a second status condition, they take +10 damage for 2 rounds.",
+    flat_damage_bonus=10, special="misericorde_artifact",
+)
+ENCHANTED_LAMP = Artifact(
+    id="enchanted_lamp", name="Enchanted Lamp", reactive=True, cooldown=999,
+    description="When an ally adventurer gets OHKOd, they survive at 1 HP and take no damage that round.",
+    special="enchanted_lamp",
+)
+SELKIES_SKIN = Artifact(
+    id="selkies_skin", name="Selkie's Skin", reactive=True, cooldown=2,
+    description="When an ally adventurer is knocked below 50% max HP, their abilities have 10% vamp for 2 rounds.",
+    vamp=0.10, special="selkies_skin",
+)
+GOOSE_QUILL = Artifact(
+    id="goose_quill", name="Goose Quill", reactive=True, cooldown=2,
+    description="When an ally adventurer uses a Twist Ability, they have +12 Attack, +12 Defense, and +12 Speed for 2 rounds.",
+    special="goose_quill",
+)
+RED_HOOD = Artifact(
+    id="red_hood", name="Red Hood", reactive=True, cooldown=2,
+    description="When an ally adventurer swaps to frontline, Guard them for 2 rounds.",
+    guard=True, status="guard", status_dur=2, special="red_hood",
+)
+CURSED_NEEDLE = Artifact(
+    id="cursed_needle", name="Cursed Needle", reactive=True, cooldown=3,
+    description="When inflicting a status condition, extend its duration by 1 round.",
+    special="cursed_needle",
+)
+BLUEBEARDS_KEY = Artifact(
+    id="bluebeards_key", name="Bluebeard's Key", reactive=True, cooldown=1,
+    description="When healing an ally adventurer's HP, heal an additional +20 HP.",
+    heal_bonus=20, special="bluebeards_key",
+)
+DURANDAL = Artifact(
+    id="durandal", name="Durandal", reactive=True, cooldown=999,
+    description="When a second ally adventurer is knocked out, their party may use another Twist Ability.",
+    allow_extra_twist=1, special="durandal",
+)
+
+ARTIFACTS = [
+    HOLY_GRAIL, DIVINE_APPLE, WINGED_SANDALS, ACHILLES_SPEAR, GOLDEN_FLEECE,
+    MAGIC_MIRROR, CRACKED_STOPWATCH, MELUSINES_KNIFE, LAST_PRISM, NETTLE_SMOCK,
+    EXCALIBUR, GODMOTHERS_WAND, MISERICORDE_ARTIFACT, ENCHANTED_LAMP,
+    SELKIES_SKIN, GOOSE_QUILL, RED_HOOD, CURSED_NEEDLE, BLUEBEARDS_KEY,
+    DURANDAL,
+]
+
+ARTIFACTS_BY_ID = {artifact.id: artifact for artifact in ARTIFACTS}
+
+LEGACY_ITEM_TO_ARTIFACT_ID = {
+    "health_potion": "holy_grail",
+    "healing_tonic": "holy_grail",
+    "crafty_shield": "red_hood",
+    "lightning_boots": "winged_sandals",
+    "main_gauche": "achilles_spear",
+    "iron_buckler": "golden_fleece",
+    "smoke_bomb": "magic_mirror",
+    "hunters_net": "nettle_smock",
+    "ancient_hourglass": "cracked_stopwatch",
+    "family_seal": "excalibur",
+    "holy_diadem": "enchanted_lamp",
+    "vampire_fang": "selkies_skin",
+    "spiked_mail": "red_hood",
+    "arcane_focus": "godmothers_wand",
+    "heart_amulet": "bluebeards_key",
+    "misericorde": "misericorde_artifact",
+}
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 #  ADVENTURER ABILITIES + DEFINITIONS  (Appendix A)
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -383,12 +511,10 @@ RISA_S3 = Ability(
     backline=AbilityMode(special="blood_hunt_hp_avg"),
 )
 RISA_T = Ability(
-    id="grandmothers_vengeance", name="Grandmother's Vengeance",
+    id="stomach_of_the_wolf", name="Stomach of the Wolf",
     category="twist", passive=False,
-    frontline=AbilityMode(power=65, vamp=1.0, atk_buff=12, atk_buff_dur=2,
-                          spd_buff=12, spd_buff_dur=2),
-    backline=AbilityMode(power=65, vamp=1.0, atk_buff=12, atk_buff_dur=2,
-                         spd_buff=12, spd_buff_dur=2),
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="stomach_of_the_wolf"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="stomach_of_the_wolf"),
 )
 RISA = AdventurerDef(
     id="risa_redcloak", name="Risa Redcloak", cls="Fighter",
@@ -410,14 +536,14 @@ JACK_S2 = Ability(
     backline=AbilityMode(special="belligerence_ignore_atk"),
 )
 JACK_S3 = Ability(
-    id="magic_growth", name="Magic Growth", category="signature", passive=False,
+    id="beanstalk_crash", name="Beanstalk Crash", category="signature", passive=False,
     frontline=AbilityMode(power=65, status="root", status_dur=2),
     backline=AbilityMode(status="root", status_dur=2, special="magic_growth_power_buff"),
 )
 JACK_T = Ability(
-    id="fell_the_beanstalk", name="Fell the Beanstalk", category="twist", passive=False,
-    frontline=AbilityMode(power=85, def_ignore_pct=20, status="expose", status_dur=2),
-    backline=AbilityMode(power=85, def_ignore_pct=20, status="expose", status_dur=2),
+    id="castle_on_cloud_nine", name="Castle on Cloud Nine", category="twist", passive=False,
+    frontline=AbilityMode(def_buff=20, def_buff_dur=2, special="castle_on_cloud_nine"),
+    backline=AbilityMode(def_buff=20, def_buff_dur=2, special="castle_on_cloud_nine"),
 )
 LITTLE_JACK = AdventurerDef(
     id="little_jack", name="Little Jack", cls="Fighter",
@@ -446,12 +572,8 @@ GRETEL_S3 = Ability(
 )
 GRETEL_T = Ability(
     id="into_the_oven", name="Into the Oven", category="twist", passive=False,
-    frontline=AbilityMode(power=70, status="burn", status_dur=2,
-                          status2="weaken", status2_dur=2,
-                          status3="root", status3_dur=2),
-    backline=AbilityMode(power=70, status="burn", status_dur=2,
-                         status2="weaken", status2_dur=2,
-                         status3="root", status3_dur=2),
+    frontline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="into_the_oven"),
+    backline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="into_the_oven"),
 )
 GRETEL = AdventurerDef(
     id="gretel", name="Witch-Hunter Gretel", cls="Fighter",
@@ -469,7 +591,7 @@ CONSTANTINE_S1 = Ability(
 )
 CONSTANTINE_S2 = Ability(
     id="feline_gambit", name="Feline Gambit", category="signature", passive=False,
-    frontline=AbilityMode(power=65, status="expose", status_dur=2),
+    frontline=AbilityMode(power=65, bonus_vs_backline=15),
     backline=AbilityMode(status="expose", status_dur=2),
 )
 CONSTANTINE_S3 = Ability(
@@ -478,9 +600,9 @@ CONSTANTINE_S3 = Ability(
     backline=AbilityMode(special="nine_lives"),
 )
 CONSTANTINE_T = Ability(
-    id="final_deception", name="Final Deception", category="twist", passive=False,
-    frontline=AbilityMode(special="final_deception"),
-    backline=AbilityMode(special="final_deception"),
+    id="all_seeing", name="All-Seeing", category="twist", passive=False,
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="all_seeing"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="all_seeing"),
 )
 CONSTANTINE = AdventurerDef(
     id="lucky_constantine", name="Lucky Constantine", cls="Rogue",
@@ -499,7 +621,7 @@ HUNOLD_S1 = Ability(
 HUNOLD_S2 = Ability(
     id="dying_dance", name="Dying Dance", category="signature", passive=False,
     frontline=AbilityMode(power=65, special="dying_dance_front"),
-    backline=AbilityMode(status="weaken", status_dur=2),
+    backline=AbilityMode(status="spotlight", status_dur=2),
 )
 HUNOLD_S3 = Ability(
     id="hypnotic_aura", name="Hypnotic Aura", category="signature", passive=True,
@@ -507,9 +629,9 @@ HUNOLD_S3 = Ability(
     backline=AbilityMode(special="hypnotic_aura_back"),
 )
 HUNOLD_T = Ability(
-    id="devils_due", name="Devil's Due", category="twist", passive=False,
-    frontline=AbilityMode(special="devils_due"),
-    backline=AbilityMode(special="devils_due"),
+    id="mass_hysteria", name="Mass Hysteria", category="twist", passive=False,
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="mass_hysteria"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="mass_hysteria"),
 )
 HUNOLD = AdventurerDef(
     id="hunold_the_piper", name="Hunold the Piper", cls="Rogue",
@@ -527,7 +649,7 @@ REYNARD_S1 = Ability(
 )
 REYNARD_S2 = Ability(
     id="size_up", name="Size Up", category="signature", passive=False,
-    frontline=AbilityMode(power=55, status="weaken", status_dur=2),
+    frontline=AbilityMode(power=55, status="spotlight", status_dur=2),
     backline=AbilityMode(power=40, status="expose", status_dur=2),
 )
 REYNARD_S3 = Ability(
@@ -537,9 +659,9 @@ REYNARD_S3 = Ability(
     backline=AbilityMode(special="cutpurse_swap_frontline"),
 )
 REYNARD_T = Ability(
-    id="last_laugh", name="Last Laugh", category="twist", passive=False,
-    frontline=AbilityMode(special="last_laugh"),
-    backline=AbilityMode(special="last_laugh"),
+    id="smoke_and_mirrors", name="Smoke and Mirrors", category="twist", passive=False,
+    frontline=AbilityMode(def_buff=20, def_buff_dur=2, special="smoke_and_mirrors"),
+    backline=AbilityMode(def_buff=20, def_buff_dur=2, special="smoke_and_mirrors"),
 )
 REYNARD = AdventurerDef(
     id="reynard", name="Reynard, Lupine Trickster", cls="Rogue",
@@ -567,8 +689,8 @@ ROLAND_S3 = Ability(
 )
 ROLAND_T = Ability(
     id="purehearted_stand", name="Purehearted Stand", category="twist", passive=False,
-    frontline=AbilityMode(heal_self=120, guard_self=True),
-    backline=AbilityMode(heal_self=120, guard_self=True),
+    frontline=AbilityMode(heal_self=120, atk_buff=20, atk_buff_dur=2, special="purehearted_stand"),
+    backline=AbilityMode(heal_self=120, atk_buff=20, atk_buff_dur=2, special="purehearted_stand"),
 )
 ROLAND = AdventurerDef(
     id="sir_roland", name="Sir Roland", cls="Warden",
@@ -590,14 +712,14 @@ PORCUS_S2 = Ability(
     backline=AbilityMode(special="porcine_honor_ally"),
 )
 PORCUS_S3 = Ability(
-    id="sturdy_home", name="Sturdy Home", category="signature", passive=True,
+    id="sturdy_home", name="Sturdy Fortress", category="signature", passive=True,
     frontline=AbilityMode(special="sturdy_home_front"),
     backline=AbilityMode(special="sturdy_home_back"),
 )
 PORCUS_T = Ability(
     id="unfettered", name="Unfettered", category="twist", passive=False,
-    frontline=AbilityMode(special="unfettered"),
-    backline=AbilityMode(special="unfettered"),
+    frontline=AbilityMode(atk_buff=100, atk_buff_dur=2, spd_buff=100, spd_buff_dur=2, special="unfettered"),
+    backline=AbilityMode(atk_buff=100, atk_buff_dur=2, spd_buff=100, spd_buff_dur=2, special="unfettered"),
 )
 PORCUS = AdventurerDef(
     id="porcus_iii", name="Porcus III", cls="Warden",
@@ -625,8 +747,8 @@ LADY_S3 = Ability(
 )
 LADY_T = Ability(
     id="journey_to_avalon", name="Journey to Avalon", category="twist", passive=False,
-    frontline=AbilityMode(special="journey_to_avalon"),
-    backline=AbilityMode(special="journey_to_avalon"),
+    frontline=AbilityMode(def_buff=20, def_buff_dur=2, special="journey_to_avalon"),
+    backline=AbilityMode(def_buff=20, def_buff_dur=2, special="journey_to_avalon"),
 )
 LADY = AdventurerDef(
     id="lady_of_reflections", name="Lady of Reflections", cls="Warden",
@@ -656,8 +778,8 @@ ELLA_S3 = Ability(
 )
 ELLA_T = Ability(
     id="struck_midnight", name="Clock Struck Twelve", category="twist", passive=False,
-    frontline=AbilityMode(special="struck_midnight_untargetable"),
-    backline=AbilityMode(special="struck_midnight_untargetable"),
+    frontline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="struck_midnight_untargetable"),
+    backline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="struck_midnight_untargetable"),
 )
 ELLA = AdventurerDef(
     id="ashen_ella", name="Ashen Ella", cls="Mage",
@@ -670,8 +792,8 @@ ELLA = AdventurerDef(
 # ── MARCH HARE (Mage) ─────────────────────────────────────────────────────────
 HARE_S1 = Ability(
     id="tempus_fugit", name="Tempus Fugit", category="signature", passive=False,
-    frontline=AbilityMode(power=60, spd_debuff=15, spd_debuff_dur=2),
-    backline=AbilityMode(power=35, spd_debuff=12, spd_debuff_dur=2),
+    frontline=AbilityMode(power=60, status="shock", status_dur=2),
+    backline=AbilityMode(power=35, special="tempus_fugit_back"),
 )
 HARE_S2 = Ability(
     id="rabbit_hole", name="Rabbit Hole", category="signature", passive=False,
@@ -685,8 +807,8 @@ HARE_S3 = Ability(
 )
 HARE_T = Ability(
     id="stitch_in_time", name="Stitch In Time", category="twist", passive=False,
-    frontline=AbilityMode(spd_buff=15, spd_buff_dur=2, special="stitch_extra_action_now"),
-    backline=AbilityMode(spd_buff=15, spd_buff_dur=2, special="stitch_extra_action_now"),
+    frontline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="stitch_extra_action_now"),
+    backline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="stitch_extra_action_now"),
 )
 MARCH_HARE = AdventurerDef(
     id="march_hare", name="March Hare", cls="Mage",
@@ -714,8 +836,8 @@ WITCH_S3 = Ability(
 )
 WITCH_T = Ability(
     id="vile_sabbath", name="Vile Sabbath", category="twist", passive=False,
-    frontline=AbilityMode(power=75, spread=True, special="vile_sabbath_reapply"),
-    backline=AbilityMode(power=75, spread=True, special="vile_sabbath_reapply"),
+    frontline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="vile_sabbath"),
+    backline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="vile_sabbath"),
 )
 WITCH = AdventurerDef(
     id="witch_of_the_woods", name="Witch of the Woods", cls="Mage",
@@ -728,12 +850,12 @@ WITCH = AdventurerDef(
 # ── BRIAR ROSE (Ranger) ───────────────────────────────────────────────────────
 BRIAR_S1 = Ability(
     id="thorn_snare", name="Thorn Snare", category="signature", passive=False,
-    frontline=AbilityMode(status="root", status_dur=2, spread=True),
-    backline=AbilityMode(status="root", status_dur=2),
+    frontline=AbilityMode(power=50, status="root", status_dur=2, spread=True),
+    backline=AbilityMode(power=35, special="thorn_snare_back"),
 )
 BRIAR_S2 = Ability(
     id="creeping_doubt", name="Creeping Doubt", category="signature", passive=False,
-    frontline=AbilityMode(power=55, bonus_vs_rooted=30),
+    frontline=AbilityMode(power=55, special="creeping_doubt_front"),
     backline=AbilityMode(power=30, status="root", status_dur=2),
 )
 BRIAR_S3 = Ability(
@@ -743,8 +865,8 @@ BRIAR_S3 = Ability(
 )
 BRIAR_T = Ability(
     id="falling_kingdom", name="Falling Kingdom", category="twist", passive=False,
-    frontline=AbilityMode(special="falling_kingdom"),
-    backline=AbilityMode(special="falling_kingdom"),
+    frontline=AbilityMode(def_buff=20, def_buff_dur=2, special="falling_kingdom"),
+    backline=AbilityMode(def_buff=20, def_buff_dur=2, special="falling_kingdom"),
 )
 BRIAR_ROSE = AdventurerDef(
     id="briar_rose", name="Briar Rose", cls="Ranger",
@@ -763,7 +885,7 @@ FRED_S1 = Ability(
 FRED_S2 = Ability(
     id="on_the_hunt", name="On the Hunt", category="signature", passive=False,
     frontline=AbilityMode(power=50, atk_buff=12, atk_buff_dur=2),
-    backline=AbilityMode(power=20, status="expose", status_dur=2),
+    backline=AbilityMode(power=20, status="spotlight", status_dur=2),
 )
 FRED_S3 = Ability(
     id="jovial_shot", name="Jovial Shot", category="signature", passive=False,
@@ -771,11 +893,9 @@ FRED_S3 = Ability(
     backline=AbilityMode(heal_self=80, self_status="weaken", self_status_dur=2),
 )
 FRED_T = Ability(
-    id="slay_the_beast", name="Slay the Beast", category="twist", passive=False,
-    frontline=AbilityMode(power=70, bonus_vs_higher_hp=20,
-                          special="slay_ignore_pride"),
-    backline=AbilityMode(power=70, bonus_vs_higher_hp=20,
-                         special="slay_ignore_pride"),
+    id="raze_the_village", name="Raze the Village", category="twist", passive=False,
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="raze_the_village"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="raze_the_village"),
 )
 FREDERIC = AdventurerDef(
     id="frederic", name="Frederic the Beastslayer", cls="Ranger",
@@ -802,11 +922,9 @@ ROBIN_S3 = Ability(
     backline=AbilityMode(power=30, status="root", status_dur=2),
 )
 ROBIN_T = Ability(
-    id="kingmaker", name="Kingmaker", category="twist", passive=False,
-    frontline=AbilityMode(power=65, ignore_guard=True, cant_redirect=True,
-                          bonus_vs_backline=15),
-    backline=AbilityMode(power=65, ignore_guard=True, cant_redirect=True,
-                         bonus_vs_backline=15),
+    id="lawless", name="Lawless", category="twist", passive=False,
+    frontline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="lawless"),
+    backline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="lawless"),
 )
 ROBIN = AdventurerDef(
     id="robin_hooded_avenger", name="Robin, Hooded Avenger", cls="Ranger",
@@ -834,8 +952,8 @@ ALDRIC_S3 = Ability(
 )
 ALDRIC_T = Ability(
     id="redemption", name="Redemption", category="twist", passive=False,
-    frontline=AbilityMode(special="redemption"),
-    backline=AbilityMode(special="redemption"),
+    frontline=AbilityMode(def_buff=20, def_buff_dur=2, special="redemption"),
+    backline=AbilityMode(def_buff=20, def_buff_dur=2, special="redemption"),
 )
 ALDRIC = AdventurerDef(
     id="aldric_lost_lamb", name="Aldric, Lost Lamb", cls="Cleric",
@@ -863,10 +981,8 @@ LIESL_S3 = Ability(
 )
 LIESL_T = Ability(
     id="cleansing_inferno", name="Cleansing Inferno", category="twist", passive=False,
-    frontline=AbilityMode(power=70, spread=True, vamp=0.35,
-                          special="cleansing_inferno_burn_boost"),
-    backline=AbilityMode(power=70, spread=True, vamp=0.35,
-                         special="cleansing_inferno_burn_boost"),
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="cleansing_inferno"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="cleansing_inferno"),
 )
 LIESL = AdventurerDef(
     id="matchstick_liesl", name="Matchstick Liesl", cls="Cleric",
@@ -894,8 +1010,8 @@ AURORA_S3 = Ability(
 )
 AURORA_T = Ability(
     id="deathlike_slumber", name="Deathlike Slumber", category="twist", passive=False,
-    frontline=AbilityMode(special="deathlike_slumber"),
-    backline=AbilityMode(special="deathlike_slumber"),
+    frontline=AbilityMode(def_buff=20, def_buff_dur=2, special="deathlike_slumber"),
+    backline=AbilityMode(def_buff=20, def_buff_dur=2, special="deathlike_slumber"),
 )
 AURORA = AdventurerDef(
     id="snowkissed_aurora", name="Snowkissed Aurora", cls="Cleric",
@@ -925,8 +1041,8 @@ PRINCE_S3 = Ability(
 )
 PRINCE_T = Ability(
     id="happily_ever_after", name="Happily Ever After", category="twist", passive=False,
-    frontline=AbilityMode(power=70, special="happily_ever_after"),
-    backline=AbilityMode(power=70, special="happily_ever_after"),
+    frontline=AbilityMode(def_buff=20, def_buff_dur=2, special="happily_ever_after"),
+    backline=AbilityMode(def_buff=20, def_buff_dur=2, special="happily_ever_after"),
 )
 PRINCE = AdventurerDef(
     id="prince_charming", name="Prince Charming", cls="Noble",
@@ -954,8 +1070,8 @@ GREEN_S3 = Ability(
 )
 GREEN_T = Ability(
     id="fated_duel", name="Fated Duel", category="twist", passive=False,
-    frontline=AbilityMode(special="fated_duel"),
-    backline=AbilityMode(special="fated_duel"),
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="fated_duel"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="fated_duel"),
 )
 GREEN_KNIGHT = AdventurerDef(
     id="green_knight", name="Green Knight", cls="Noble",
@@ -983,8 +1099,8 @@ RAPUNZEL_S3 = Ability(
 )
 RAPUNZEL_T = Ability(
     id="severed_tether", name="Severed Tether", category="twist", passive=False,
-    frontline=AbilityMode(special="severed_tether"),
-    backline=AbilityMode(special="severed_tether"),
+    frontline=AbilityMode(atk_buff=30, atk_buff_dur=2, spd_buff=30, spd_buff_dur=2, special="severed_tether"),
+    backline=AbilityMode(atk_buff=30, atk_buff_dur=2, spd_buff=30, spd_buff_dur=2, special="severed_tether"),
 )
 RAPUNZEL = AdventurerDef(
     id="rapunzel", name="Rapunzel the Golden", cls="Noble",
@@ -1012,8 +1128,8 @@ PINOCCHIO_S3 = Ability(
 )
 PINOCCHIO_T = Ability(
     id="blue_faerie_boon", name="Blue Faerie's Boon", category="twist", passive=False,
-    frontline=AbilityMode(special="blue_faerie_boon"),
-    backline=AbilityMode(special="blue_faerie_boon"),
+    frontline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="blue_faerie_boon"),
+    backline=AbilityMode(spd_buff=20, spd_buff_dur=2, special="blue_faerie_boon"),
 )
 PINOCCHIO = AdventurerDef(
     id="pinocchio", name="Pinocchio, Cursed Puppet", cls="Warlock",
@@ -1040,9 +1156,9 @@ RUMPEL_S3 = Ability(
     backline=AbilityMode(special="spinning_wheel_back"),
 )
 RUMPEL_T = Ability(
-    id="thieve_the_first_born", name="Thieve the First-Born", category="twist", passive=False,
-    frontline=AbilityMode(power=65, special="thieve_the_first_born"),
-    backline=AbilityMode(power=65, special="thieve_the_first_born"),
+    id="devils_nursery", name="Devil's Nursery", category="twist", passive=False,
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="devils_nursery"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="devils_nursery"),
 )
 RUMPEL = AdventurerDef(
     id="rumpelstiltskin", name="Rumpelstiltskin", cls="Warlock",
@@ -1069,9 +1185,9 @@ ASHA_S3 = Ability(
     backline=AbilityMode(special="faustian_bargain_back"),
 )
 ASHA_T = Ability(
-    id="turn_to_foam", name="Turn to Foam", category="twist", passive=False,
-    frontline=AbilityMode(special="turn_to_foam"),
-    backline=AbilityMode(special="turn_to_foam"),
+    id="foam_prison", name="Foam Prison", category="twist", passive=False,
+    frontline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="foam_prison"),
+    backline=AbilityMode(atk_buff=20, atk_buff_dur=2, special="foam_prison"),
 )
 ASHA = AdventurerDef(
     id="sea_wench_asha", name="Sea Wench Asha", cls="Warlock",

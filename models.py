@@ -127,6 +127,46 @@ class Item:
     special: str = ""
 
 
+@dataclass
+class Artifact:
+    id: str
+    name: str
+    reactive: bool
+    cooldown: int
+    description: str = ""
+
+    heal: int = 0
+    cleanse: bool = False
+    status: str = ""
+    status_dur: int = 0
+    guard: bool = False
+    atk_buff: int = 0
+    atk_buff_dur: int = 0
+    spd_buff: int = 0
+    spd_buff_dur: int = 0
+    def_buff: int = 0
+    def_buff_dur: int = 0
+    atk_debuff: int = 0
+    atk_debuff_dur: int = 0
+    spd_debuff: int = 0
+    spd_debuff_dur: int = 0
+    def_debuff: int = 0
+    def_debuff_dur: int = 0
+
+    flat_damage_bonus: int = 0
+    heal_bonus: int = 0
+    vamp: float = 0.0
+    allow_extra_twist: int = 0
+    special: str = ""
+
+
+@dataclass
+class ArtifactState:
+    artifact: Artifact
+    cooldown_remaining: int = 0
+    used_this_battle: bool = False
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # STATUS / BUFF INSTANCES
 # ─────────────────────────────────────────────────────────────────────────────
@@ -292,7 +332,14 @@ class CombatantState:
             if stat == "speed":
                 base += malice * 3
 
-        return max(1, base + self.best_buff(stat) - self.best_debuff(stat))
+        if stat == "speed" and self.has_status("shock"):
+            base -= 15
+
+        best_buff = self.best_buff(stat)
+        if self.defn.id == "rumpelstiltskin" and self.ability_charges.get("devils_nursery_dur", 0) > 0 and best_buff > 0:
+            best_buff += malice * 5
+
+        return max(1, base + best_buff - self.best_debuff(stat))
 
     def add_buff(self, stat: str, amount: int, duration: int) -> bool:
         """Apply a buff. Returns True if newly applied, False if already present (refreshed)."""
@@ -313,11 +360,24 @@ class CombatantState:
         return True
 
     # ── Ability list ──────────────────────────────────────────────────────
-    def all_active_abilities(self, is_last_alive: bool) -> List[Ability]:
+    def all_active_abilities(self, is_last_alive: bool = False) -> List[Ability]:
         result = [a for a in self.basics if not a.passive]
         if not self.sig.passive:
             result.append(self.sig)
-        if is_last_alive and not self.twist_used:
+        partner = self.ability_charges.get("happily_ever_after_partner")
+        if self.ability_charges.get("happily_ever_after_dur", 0) > 0 and partner is not None:
+            seen = {ability.id for ability in result}
+            if not partner.sig.passive and partner.sig.id not in seen:
+                result.append(partner.sig)
+                seen.add(partner.sig.id)
+            for ability in partner.basics:
+                if not ability.passive and ability.id not in seen:
+                    result.append(ability)
+                    seen.add(ability.id)
+            if not partner.twist_used and partner.defn.twist.id not in seen:
+                result.append(partner.defn.twist)
+                seen.add(partner.defn.twist.id)
+        if not self.twist_used:
             result.append(self.defn.twist)
         return result
 
@@ -329,6 +389,10 @@ class CombatantState:
 class TeamState:
     player_name: str
     members: List[CombatantState]
+    artifacts: List[ArtifactState] = field(default_factory=list)
+    twist_allowance: int = 1
+    twists_used: int = 0
+    active_twist_lock: int = 0
 
     def get_slot(self, slot: str) -> Optional[CombatantState]:
         for m in self.members:
@@ -344,6 +408,9 @@ class TeamState:
 
     def frontline(self) -> Optional[CombatantState]:
         return self.get_slot("front")
+
+    def artifact_state(self, artifact_id: str) -> Optional[ArtifactState]:
+        return next((state for state in self.artifacts if state.artifact.id == artifact_id), None)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -405,8 +472,11 @@ class CampaignProfile:
     unlocked_items: "Set[str]" = field(default_factory=lambda: {
         "health_potion", "healing_tonic", "family_seal"
     })
+    unlocked_artifacts: "Set[str]" = field(default_factory=lambda: {
+        "holy_grail", "winged_sandals", "achilles_spear"
+    })
     default_sigs: "Dict[str, str]" = field(default_factory=dict)  # adv_id -> sig_id
-    twists_unlocked: bool = False
+    twists_unlocked: bool = True
     quest_cleared: "Dict[int, bool]" = field(default_factory=dict)
     highest_quest_cleared: int = -1
     campaign_complete: bool = False

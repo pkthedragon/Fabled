@@ -20,7 +20,7 @@ AI_TEAM_POOL = [
         {"defn": "matchstick_liesl", "sig": "cauterize", "basics": ["smite", "heal"], "item": "heart_amulet"},
     ]},
     {"name": "Rooted Breakdown", "usage": "Stack Root and Weaken, then focus one unit until it drops.", "members": [
-        {"defn": "little_jack", "sig": "magic_growth", "basics": ["cleave", "intimidate"], "item": "hunters_net"},
+        {"defn": "little_jack", "sig": "beanstalk_crash", "basics": ["cleave", "intimidate"], "item": "hunters_net"},
         {"defn": "robin_hooded_avenger", "sig": "bring_down", "basics": ["hawkshot", "hunters_mark"], "item": "family_seal"},
         {"defn": "hunold_the_piper", "sig": "dying_dance", "basics": ["post_bounty", "sucker_punch"], "item": "misericorde"},
     ]},
@@ -32,7 +32,7 @@ AI_TEAM_POOL = [
     {"name": "Burned Reprieve", "usage": "Burn everything and win the attrition war.", "members": [
         {"defn": "gretel", "sig": "hot_mitts", "basics": ["strike", "intimidate"], "item": "misericorde"},
         {"defn": "matchstick_liesl", "sig": "flame_of_renewal", "basics": ["heal", "bless"], "item": "holy_diadem"},
-        {"defn": "witch_of_the_woods", "sig": "crawling_abode", "basics": ["fire_blast", "freezing_gale"], "item": "arcane_focus"},
+        {"defn": "witch_of_the_woods", "sig": "crawling_abode", "basics": ["fire_blast", "ominous_gale"], "item": "arcane_focus"},
     ]},
     {"name": "Crumb Tide", "usage": "Use crumbs and swaps to keep pressure units alive while Asha scales.", "members": [
         {"defn": "gretel", "sig": "crumb_trail", "basics": ["rend", "feint"], "item": "health_potion"},
@@ -176,7 +176,7 @@ AI_TEAM_POOL = [
     ]},
     {"name": "Foxfire Tempo", "usage": "Use speed theft and extra actions to keep the enemy behind.", "members": [
         {"defn": "reynard", "sig": "cutpurse", "basics": ["sneak_attack", "sucker_punch"], "item": "lightning_boots"},
-        {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "freezing_gale"], "item": "misericorde"},
+        {"defn": "witch_of_the_woods", "sig": "toil_and_trouble", "basics": ["fire_blast", "ominous_gale"], "item": "misericorde"},
         {"defn": "march_hare", "sig": "rabbit_hole", "basics": ["arcane_wave", "thunder_call"], "item": "ancient_hourglass"},
     ]},
     {"name": "Iron Chapel", "usage": "Slow, defensive shell that forces the enemy to attack into bad numbers.", "members": [
