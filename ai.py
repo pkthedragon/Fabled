@@ -31,6 +31,12 @@ MAX_SIMULATED_CANDIDATES = 30
 TOP_LEVEL_CANDIDATES = 5
 BEAM_WIDTH = 4
 AI_PROFILE_SETTINGS = {
+    "analysis": {
+        "top_level_candidates": 2,
+        "beam_width": 1,
+        "end_of_turn_weight": 0.55,
+        "next_round_weight": 0.35,
+    },
     "quick": {
         "top_level_candidates": 5,
         "beam_width": 4,

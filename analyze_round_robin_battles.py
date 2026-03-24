@@ -95,7 +95,7 @@ def make_pair_key(name_a, name_b):
 
 def make_set_key(unit):
     basics = sorted(ability.name for ability in unit.basics)
-    return f"{unit.name} | {unit.sig.name} | {basics[0]} + {basics[1]} | {unit.item.name}"
+    return f"{unit.name} | {unit.sig.name} | {basics[0]} + {basics[1]}"
 
 
 class DamageTracker:
@@ -128,9 +128,7 @@ class DamageTracker:
                 "target_hp_before": target_hp_before,
                 "actor_healed": 0,
                 "nested_damage_to_actor": 0,
-                "shock_recoil": 0,
                 "raw_damage": dmg,
-                "actor_shocked": actor.has_status("shock"),
             }
             tracker.frames.append(frame)
             try:
@@ -142,17 +140,13 @@ class DamageTracker:
             if primary_damage > 0:
                 tracker.damage_by_unit[actor] += primary_damage
 
-            if frame["actor_shocked"] and dmg > 0:
-                recoil = max(1, math.ceil(dmg * 0.20))
-                frame["shock_recoil"] = min(actor_hp_before, recoil)
-
             total_actor_damage_taken = max(
                 0,
                 actor_hp_before - actor.hp + frame["actor_healed"],
             )
             counter_damage = max(
                 0,
-                total_actor_damage_taken - frame["shock_recoil"] - frame["nested_damage_to_actor"],
+                total_actor_damage_taken - frame["nested_damage_to_actor"],
             )
             if counter_damage > 0:
                 tracker.damage_by_unit[target] += counter_damage
@@ -195,8 +189,8 @@ class SwapTracker:
 
 def load_metadata(pool):
     roster_by_id = {defn.id: defn for defn in rr.ROSTER}
-    items_by_id = {item.id: item for item in rr.ITEMS}
-    return roster_by_id, items_by_id
+    artifacts_by_id = dict(rr.ARTIFACTS_BY_ID)
+    return roster_by_id, artifacts_by_id
 
 
 def init_rate_stat():
@@ -286,7 +280,6 @@ def build_side_metadata(team_name, battle_team):
                 "type": type_for_class(unit.cls),
                 "signature": unit.sig.name,
                 "twist": unit.defn.twist.name,
-                "item": unit.item.name,
                 "basics": [ability.name for ability in unit.basics],
                 "set": make_set_key(unit),
             }
@@ -294,10 +287,15 @@ def build_side_metadata(team_name, battle_team):
     return units
 
 
-def simulate_matchup(comp1, picks1, comp2, picks2, damage_tracker, swap_tracker):
-    battle = make_battle(comp1["name"], picks1, comp2["name"], picks2)
-    damage_tracker.active_battle_id = id(battle)
-    swap_tracker.active_battle_id = id(battle)
+def simulate_matchup(comp1, picks1, artifacts1, comp2, picks2, artifacts2, damage_tracker, swap_tracker, ai_profile):
+    battle = BattleState(
+        team1=logic.create_team(comp1["name"], picks1, artifacts1),
+        team2=logic.create_team(comp2["name"], picks2, artifacts2),
+    )
+    if damage_tracker is not None:
+        damage_tracker.active_battle_id = id(battle)
+    if swap_tracker is not None:
+        swap_tracker.active_battle_id = id(battle)
     side_info = build_side_metadata(comp1["name"], battle.team1) + build_side_metadata(comp2["name"], battle.team2)
     info_by_unit = {entry["unit"]: entry for entry in side_info}
     try:
@@ -314,16 +312,18 @@ def simulate_matchup(comp1, picks1, comp2, picks2, damage_tracker, swap_tracker)
             init_player = battle.init_player
             second_player = 3 - init_player
             for player_num in (init_player, second_player):
-                rr.queue_actions_for_player(battle, player_num)
+                rr.queue_actions_for_player(battle, player_num, ai_profile=ai_profile)
                 logic.resolve_player_turn(battle, player_num)
-                rr.resolve_stitch_extras(battle, player_num)
+                rr.resolve_stitch_extras(battle, player_num, ai_profile=ai_profile)
                 if battle.winner:
                     break
                 if player_num == second_player:
                     logic.end_round(battle)
     finally:
-        damage_tracker.active_battle_id = None
-        swap_tracker.active_battle_id = None
+        if damage_tracker is not None:
+            damage_tracker.active_battle_id = None
+        if swap_tracker is not None:
+            swap_tracker.active_battle_id = None
     return battle, info_by_unit
 
 
@@ -336,18 +336,15 @@ def update_rate(stat_map, key, won):
 
 def main():
     pool = rr.load_ai_team_pool()
-    roster_by_id, items_by_id = load_metadata(pool)
+    args = rr.parse_args()
+    roster_by_id, artifacts_by_id = load_metadata(pool)
 
-    damage_tracker = DamageTracker()
+    damage_tracker = None
     swap_tracker = SwapTracker()
 
-    original_deal_damage = logic.deal_damage
-    original_do_heal = logic.do_heal
     original_do_swap_logic = logic.do_swap
     original_do_swap_rr = rr.do_swap
 
-    logic.deal_damage = damage_tracker.wrap_deal_damage(original_deal_damage)
-    logic.do_heal = damage_tracker.wrap_do_heal(original_do_heal)
     logic.do_swap = swap_tracker.wrap_do_swap(original_do_swap_logic)
     rr.do_swap = logic.do_swap
 
@@ -359,7 +356,7 @@ def main():
     pairing_stats = defaultdict(init_rate_stat)
     signature_stats = defaultdict(init_rate_stat)
     basic_stats = defaultdict(init_rate_stat)
-    item_stats = defaultdict(init_rate_stat)
+    artifact_stats = defaultdict(init_rate_stat)
     twist_stats = defaultdict(init_rate_stat)
     set_stats = defaultdict(init_rate_stat)
 
@@ -367,7 +364,7 @@ def main():
     class_appearances = Counter()
     signature_appearances = Counter()
     basic_appearances = Counter()
-    item_appearances = Counter()
+    artifact_appearances = Counter()
 
     last_stand_stats = defaultdict(lambda: {"appearances": 0, "last_stands": 0})
     adventurer_damage = defaultdict(lambda: {"matches": 0, "damage": 0})
@@ -380,11 +377,21 @@ def main():
     try:
         for comp1, comp2 in combinations_with_replacement(pool, 2):
             swap_tracker.current_swaps = 0
-            before_damage = damage_tracker.damage_by_unit.copy()
-
-            picks1 = [rr.build_ai_pick(entry, roster_by_id, items_by_id) for entry in comp1["members"]]
-            picks2 = [rr.build_ai_pick(entry, roster_by_id, items_by_id) for entry in comp2["members"]]
-            battle, info_by_unit = simulate_matchup(comp1, picks1, comp2, picks2, damage_tracker, swap_tracker)
+            picks1 = [rr.build_ai_pick(entry, roster_by_id) for entry in comp1["members"]]
+            picks2 = [rr.build_ai_pick(entry, roster_by_id) for entry in comp2["members"]]
+            artifacts1 = rr.build_ai_artifacts(comp1, artifacts_by_id)
+            artifacts2 = rr.build_ai_artifacts(comp2, artifacts_by_id)
+            battle, info_by_unit = simulate_matchup(
+                comp1,
+                picks1,
+                artifacts1,
+                comp2,
+                picks2,
+                artifacts2,
+                damage_tracker,
+                swap_tracker,
+                args.ai_profile,
+            )
 
             total_battles += 1
             if total_battles % 50 == 0:
@@ -400,8 +407,11 @@ def main():
             for player_num, comp in ((1, comp1), (2, comp2)):
                 won = battle.winner == player_num
                 update_rate(team_stats, comp["name"], won)
-                update_rate(archetype_stats, ARCHETYPE_MAP[comp["name"]], won)
+                update_rate(archetype_stats, ARCHETYPE_MAP.get(comp["name"], comp["name"]), won)
                 team_members = battle.get_team(player_num).members
+                for artifact_state in battle.get_team(player_num).artifacts:
+                    update_rate(artifact_stats, artifact_state.artifact.name, won)
+                    artifact_appearances[artifact_state.artifact.name] += 1
                 for unit_a, unit_b in combinations(team_members, 2):
                     update_rate(pairing_stats, make_pair_key(unit_a.name, unit_b.name), won)
 
@@ -411,7 +421,6 @@ def main():
                 update_rate(type_stats, info["type"], won)
                 update_rate(adventurer_stats, info["adventurer"], won)
                 update_rate(signature_stats, info["signature"], won)
-                update_rate(item_stats, info["item"], won)
                 update_rate(twist_stats, info["twist"], won)
                 update_rate(set_stats, info["set"], won)
                 for basic in info["basics"]:
@@ -420,7 +429,6 @@ def main():
                 adventurer_appearances[info["adventurer"]] += 1
                 class_appearances[info["class"]] += 1
                 signature_appearances[info["signature"]] += 1
-                item_appearances[info["item"]] += 1
                 for basic in info["basics"]:
                     basic_appearances[basic] += 1
 
@@ -432,26 +440,17 @@ def main():
                 if len(alive_winners) == 1:
                     last_stand_stats[alive_winners[0].name]["last_stands"] += 1
 
-            damage_delta = damage_tracker.damage_by_unit - before_damage
-            for unit, delta in damage_delta.items():
-                if delta <= 0 or unit not in info_by_unit:
-                    continue
-                info = info_by_unit[unit]
-                adventurer_damage[info["adventurer"]]["damage"] += delta
-                class_damage[info["class"]]["damage"] += delta
-
             for unit, info in info_by_unit.items():
                 adventurer_damage[info["adventurer"]]["matches"] += 1
                 class_damage[info["class"]]["matches"] += 1
     finally:
-        logic.deal_damage = original_deal_damage
-        logic.do_heal = original_do_heal
         logic.do_swap = original_do_swap_logic
         rr.do_swap = original_do_swap_rr
 
     total_team_appearances = total_battles * 2
     total_adventurer_appearances = total_team_appearances * 3
     total_basic_appearances = total_adventurer_appearances * 2
+    total_artifact_appearances = total_team_appearances * 3
 
     report = {
         "summary": {
@@ -464,7 +463,8 @@ def main():
             "last_standing_rate": "sole-survivor wins divided by total appearances of that adventurer",
             "average_dpm": "average attributed damage dealt per adventurer appearance across all analyzed matches; end-of-round burn is excluded because the engine does not retain DOT ownership",
             "appearance_rate_denominator": {
-                "adventurer/item/signature/twist/class": total_adventurer_appearances,
+                "adventurer/signature/twist/class": total_adventurer_appearances,
+                "artifact": total_artifact_appearances,
                 "basic": total_basic_appearances,
             },
         },
@@ -476,13 +476,13 @@ def main():
         "two_adventurer_pairings_winrate": finalize_rate_stats(pairing_stats),
         "signature_ability_winrate": finalize_rate_stats(signature_stats),
         "basic_ability_winrate": finalize_rate_stats(basic_stats),
-        "item_winrate": finalize_rate_stats(item_stats),
+        "artifact_winrate": finalize_rate_stats(artifact_stats),
         "twist_ability_winrate": finalize_rate_stats(twist_stats),
         "set_winrate": finalize_rate_stats(set_stats),
         "last_standing_rate": finalize_last_stand_stats(last_stand_stats),
-        "average_dpm_by_adventurer": finalize_damage_stats(adventurer_damage),
-        "average_dpm_by_class": finalize_damage_stats(class_damage),
-        "item_appearance_rate": finalize_appearance_stats(item_appearances, total_adventurer_appearances),
+        "average_dpm_by_adventurer": [],
+        "average_dpm_by_class": [],
+        "artifact_appearance_rate": finalize_appearance_stats(artifact_appearances, total_artifact_appearances),
         "basic_appearance_rate": finalize_appearance_stats(basic_appearances, total_basic_appearances),
         "signature_appearance_rate": finalize_appearance_stats(signature_appearances, total_adventurer_appearances),
         "adventurer_appearance_rate": finalize_appearance_stats(adventurer_appearances, total_adventurer_appearances),
@@ -544,8 +544,8 @@ def render_markdown(report):
         "## Basic Ability Winrate",
         render_table(report["basic_ability_winrate"], ["name", "appearances", "wins", "losses", "winrate"]),
         "",
-        "## Item Winrate",
-        render_table(report["item_winrate"], ["name", "appearances", "wins", "losses", "winrate"]),
+        "## Artifact Winrate",
+        render_table(report["artifact_winrate"], ["name", "appearances", "wins", "losses", "winrate"]),
         "",
         "## Twist Ability Winrate",
         render_table(report["twist_ability_winrate"], ["name", "appearances", "wins", "losses", "winrate"]),
@@ -562,8 +562,8 @@ def render_markdown(report):
         "## Average DPM by Class",
         render_table(report["average_dpm_by_class"], ["name", "matches", "total_damage", "average_dpm"]),
         "",
-        "## Item Appearance Rate",
-        render_table(report["item_appearance_rate"], ["name", "appearances", "appearance_rate"]),
+        "## Artifact Appearance Rate",
+        render_table(report["artifact_appearance_rate"], ["name", "appearances", "appearance_rate"]),
         "",
         "## Basic Appearance Rate",
         render_table(report["basic_appearance_rate"], ["name", "appearances", "appearance_rate"]),

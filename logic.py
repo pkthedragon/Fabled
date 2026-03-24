@@ -2713,6 +2713,9 @@ def apply_special(
                 frontline=target.defn.twist.frontline,
                 backline=target.defn.twist.backline,
             )
+            if copied_twist.id == ability.id:
+                battle.log_add(f"  Foam Prison cannot copy itself from {target.name}.")
+                return
             legal = get_legal_targets(battle, acting_player, actor, copied_twist)
             if get_mode(actor, copied_twist).spread:
                 execute_spread_ability(actor, copied_twist, acting_player, battle)

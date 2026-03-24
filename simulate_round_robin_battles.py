@@ -1,4 +1,5 @@
 import argparse
+import io
 import math
 from collections import Counter, defaultdict
 from itertools import combinations, combinations_with_replacement
@@ -8,7 +9,7 @@ import ai
 import battle_log
 import logic
 from ai_team_pool import AI_TEAM_POOL
-from data import CLASS_BASICS, ITEMS, ROSTER
+from data import ARTIFACTS_BY_ID, CLASS_BASICS, LEGACY_ITEM_TO_ARTIFACT_ID, ROSTER
 from logic import (
     apply_passive_stats,
     apply_round_start_effects,
@@ -44,18 +45,35 @@ def load_ai_team_pool():
     return AI_TEAM_POOL
 
 
-def build_ai_pick(entry, roster_by_id, items_by_id):
+def build_ai_pick(entry, roster_by_id):
     defn = roster_by_id[entry["defn"]]
     sig = next(ability for ability in defn.sig_options if ability.id == entry["sig"])
     basics_pool = CLASS_BASICS[defn.cls]
     basics = [next(ability for ability in basics_pool if ability.id == bid) for bid in entry["basics"]]
-    item = items_by_id[entry["item"]]
     return {
         "definition": defn,
         "signature": sig,
         "basics": basics,
-        "item": item,
     }
+
+
+def build_ai_artifacts(comp, artifacts_by_id):
+    if "artifacts" in comp:
+        artifact_ids = comp.get("artifacts", [])
+    else:
+        artifact_ids = [
+            LEGACY_ITEM_TO_ARTIFACT_ID.get(entry.get("item"))
+            for entry in comp.get("members", [])
+        ]
+    artifacts = []
+    seen = set()
+    for artifact_id in artifact_ids:
+        artifact = artifacts_by_id.get(artifact_id)
+        if artifact is None or artifact.id in seen:
+            continue
+        artifacts.append(artifact)
+        seen.add(artifact.id)
+    return artifacts[:3]
 
 
 def type_for_class(cls_name):
@@ -75,7 +93,7 @@ def make_pair_key(name_a, name_b):
 
 def make_set_key(unit):
     basics = sorted(ability.name for ability in unit.basics)
-    return f"{unit.name} | {unit.sig.name} | {basics[0]} + {basics[1]} | {unit.item.name}"
+    return f"{unit.name} | {unit.sig.name} | {basics[0]} + {basics[1]}"
 
 
 def init_rate_stat():
@@ -164,7 +182,6 @@ def build_side_metadata(team_name, battle_team):
                 "type": type_for_class(unit.cls),
                 "signature": unit.sig.name,
                 "twist": unit.defn.twist.name,
-                "item": unit.item.name,
                 "basics": [ability.name for ability in unit.basics],
                 "set": make_set_key(unit),
             }
@@ -201,9 +218,7 @@ class DamageTracker:
                 "target_hp_before": target_hp_before,
                 "actor_healed": 0,
                 "nested_damage_to_actor": 0,
-                "shock_recoil": 0,
                 "raw_damage": dmg,
-                "actor_shocked": actor.has_status("shock"),
             }
             tracker.frames.append(frame)
             try:
@@ -215,12 +230,8 @@ class DamageTracker:
             if primary_damage > 0:
                 tracker.damage_by_unit[actor] += primary_damage
 
-            if frame["actor_shocked"] and dmg > 0:
-                recoil = max(1, math.ceil(dmg * 0.20))
-                frame["shock_recoil"] = min(actor_hp_before, recoil)
-
             total_actor_damage_taken = max(0, actor_hp_before - actor.hp + frame["actor_healed"])
-            counter_damage = max(0, total_actor_damage_taken - frame["shock_recoil"] - frame["nested_damage_to_actor"])
+            counter_damage = max(0, total_actor_damage_taken - frame["nested_damage_to_actor"])
             if counter_damage > 0:
                 tracker.damage_by_unit[target] += counter_damage
 
@@ -269,7 +280,7 @@ def clear_team_queues(team):
         unit.queued2 = None
 
 
-def queue_actions_for_player(battle, player_num):
+def queue_actions_for_player(battle, player_num, ai_profile="quick"):
     team = battle.get_team(player_num)
     clear_team_queues(team)
     battle.swap_used_this_turn = False
@@ -292,6 +303,7 @@ def queue_actions_for_player(battle, player_num):
             is_extra=is_extra,
             swap_used=battle.swap_used_this_turn,
             swap_queued=queued_swap_exists(team),
+            profile=ai_profile,
         )
         if not action:
             action = {"type": "skip"}
@@ -303,7 +315,7 @@ def queue_actions_for_player(battle, player_num):
         battle.log_noshow(f"[Queued] {actor.name}: {describe_action(action)}")
 
 
-def resolve_stitch_extras(battle, player_num):
+def resolve_stitch_extras(battle, player_num, ai_profile="quick"):
     while not battle.winner:
         extras = [
             unit for unit in battle.get_team(player_num).alive()
@@ -319,6 +331,7 @@ def resolve_stitch_extras(battle, player_num):
                 is_extra=True,
                 swap_used=battle.swap_used_this_turn,
                 swap_queued=queued_swap_exists(battle.get_team(player_num)),
+                profile=ai_profile,
             )
             if not action:
                 action = {"type": "skip"}
@@ -354,8 +367,11 @@ def apply_round_one_extra_swap(battle):
         battle.log_add(f"P{player_num} passed on free swap.")
 
 
-def write_team_section(label, comp_name, picks):
+def write_team_section(label, comp_name, picks, artifacts):
     battle_log.log(f"{label}: {comp_name}")
+    battle_log.log(
+        f"  Artifacts: {', '.join(artifact.name for artifact in artifacts) if artifacts else 'None'}"
+    )
     for idx, pick in enumerate(picks):
         defn = pick["definition"]
         slot_label = ["front", "back_left", "back_right"][idx]
@@ -366,55 +382,73 @@ def write_team_section(label, comp_name, picks):
         battle_log.log(f"    Talent: {defn.talent_name}")
         battle_log.log(f"    Sig:    {pick['signature'].name}  (passive={pick['signature'].passive})")
         battle_log.log(f"    Basics: {', '.join(ability.name for ability in pick['basics'])}")
-        battle_log.log(f"    Item:   {pick['item'].name}")
 
 
-def simulate_battle(battle_num, comp1, picks1, comp2, picks2, damage_tracker=None, swap_tracker=None):
-    battle_log.init()
+def simulate_battle(
+    battle_num,
+    comp1,
+    picks1,
+    artifacts1,
+    comp2,
+    picks2,
+    artifacts2,
+    damage_tracker=None,
+    swap_tracker=None,
+    ai_profile="quick",
+):
+    original_log_file = battle_log._f
+    battle_log._f = io.StringIO()
+    battle_log._w("=" * 70)
+    battle_log._w("FABLED BATTLE LOG")
+    battle_log._w("=" * 70)
+    battle_log._w("")
     battle_log.section(f"BATTLE {battle_num}")
     battle_log.section("TEAM COMPOSITIONS")
-    write_team_section("Player 1", comp1, picks1)
-    write_team_section("Player 2", comp2, picks2)
+    write_team_section("Player 1", comp1, picks1, artifacts1)
+    write_team_section("Player 2", comp2, picks2, artifacts2)
     battle_log.section("BATTLE START")
 
-    battle = BattleState(
-        team1=create_team(comp1, picks1),
-        team2=create_team(comp2, picks2),
-    )
-    if damage_tracker is not None:
-        damage_tracker.active_battle_id = id(battle)
-    if swap_tracker is not None:
-        swap_tracker.active_battle_id = id(battle)
-    side_info = build_side_metadata(comp1, battle.team1) + build_side_metadata(comp2, battle.team2)
-    info_by_unit = {entry["unit"]: entry for entry in side_info}
+    try:
+        battle = BattleState(
+            team1=create_team(comp1, picks1, artifacts1),
+            team2=create_team(comp2, picks2, artifacts2),
+        )
+        if damage_tracker is not None:
+            damage_tracker.active_battle_id = id(battle)
+        if swap_tracker is not None:
+            swap_tracker.active_battle_id = id(battle)
+        side_info = build_side_metadata(comp1, battle.team1) + build_side_metadata(comp2, battle.team2)
+        info_by_unit = {entry["unit"]: entry for entry in side_info}
 
-    safety = 0
-    while not battle.winner and safety < ROUND_LIMIT:
-        safety += 1
-        apply_passive_stats(battle.team1, battle)
-        apply_passive_stats(battle.team2, battle)
-        apply_round_start_effects(battle)
-        determine_initiative(battle)
-        if battle.round_num == 1:
-            apply_round_one_extra_swap(battle)
+        safety = 0
+        while not battle.winner and safety < ROUND_LIMIT:
+            safety += 1
+            apply_passive_stats(battle.team1, battle)
+            apply_passive_stats(battle.team2, battle)
+            apply_round_start_effects(battle)
+            determine_initiative(battle)
+            if battle.round_num == 1:
+                apply_round_one_extra_swap(battle)
 
-        init_player = battle.init_player
-        second_player = 3 - init_player
-        for player_num in (init_player, second_player):
-            queue_actions_for_player(battle, player_num)
-            resolve_player_turn(battle, player_num)
-            resolve_stitch_extras(battle, player_num)
-            if battle.winner:
-                break
-            if player_num == second_player:
-                battle.log_add("--- End of Round ---")
-                end_round(battle)
+            init_player = battle.init_player
+            second_player = 3 - init_player
+            for player_num in (init_player, second_player):
+                queue_actions_for_player(battle, player_num, ai_profile=ai_profile)
+                resolve_player_turn(battle, player_num)
+                resolve_stitch_extras(battle, player_num, ai_profile=ai_profile)
+                if battle.winner:
+                    break
+                if player_num == second_player:
+                    battle.log_add("--- End of Round ---")
+                    end_round(battle)
 
-    if not battle.winner:
-        battle.log_add("Battle aborted after safety limit.")
-    battle_log.close()
-    log_text = Path(battle_log._log_path()).read_text(encoding="utf-8", errors="replace")
-    return battle, info_by_unit, log_text
+        if not battle.winner:
+            battle.log_add("Battle aborted after safety limit.")
+        log_text = battle_log._f.getvalue()
+        return battle, info_by_unit, log_text
+    finally:
+        battle_log.close()
+        battle_log._f = original_log_file
 
 
 def battle_batch_output_path(batch_num):
@@ -501,8 +535,8 @@ def render_stats_report(report):
         "Last Adventurer Standing Rate by Class",
         render_table(report["last_standing_by_class"], ["name", "appearances", "last_stands", "last_standing_rate"]),
         "",
-        "Item Winrate",
-        render_table(report["item_winrate"], ["name", "appearances", "wins", "losses", "winrate"]),
+        "Artifact Winrate",
+        render_table(report["artifact_winrate"], ["name", "appearances", "wins", "losses", "winrate"]),
         "",
         "Top 10 Adventurer Pairings by Winrate",
         render_table(report["top_adventurer_pairings"], ["name", "appearances", "wins", "losses", "winrate"]),
@@ -526,6 +560,12 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Simulate every AI team against every AI team once, including self-matchups."
     )
+    parser.add_argument(
+        "--ai-profile",
+        choices=("analysis", "quick", "ranked"),
+        default="quick",
+        help="AI decision profile to use during simulation.",
+    )
     return parser.parse_args()
 
 
@@ -546,7 +586,7 @@ def build_report(
     basic_stats,
     twist_stats,
     type_stats,
-    item_stats,
+    artifact_stats,
     pairing_stats,
     set_stats,
     archetype_stats,
@@ -569,7 +609,7 @@ def build_report(
         "damage_type_winrate": finalize_rate_stats(type_stats),
         "last_standing_by_adventurer": finalize_last_stand_stats(last_stand_adventurer),
         "last_standing_by_class": finalize_last_stand_stats(last_stand_class),
-        "item_winrate": finalize_rate_stats(item_stats),
+        "artifact_winrate": finalize_rate_stats(artifact_stats),
         "top_adventurer_pairings": finalize_rate_stats(pairing_stats, limit=10),
         "top_adventurer_sets": finalize_rate_stats(set_stats, limit=10),
         "top_archetypes": finalize_rate_stats(archetype_stats, limit=10),
@@ -579,10 +619,10 @@ def build_report(
 
 
 def main():
-    parse_args()
+    args = parse_args()
     pool = load_ai_team_pool()
     roster_by_id = {defn.id: defn for defn in ROSTER}
-    items_by_id = {item.id: item for item in ITEMS}
+    artifacts_by_id = dict(ARTIFACTS_BY_ID)
     prepare_output_dir()
 
     damage_tracker = DamageTracker()
@@ -605,7 +645,7 @@ def main():
     basic_stats = defaultdict(init_rate_stat)
     twist_stats = defaultdict(init_rate_stat)
     type_stats = defaultdict(init_rate_stat)
-    item_stats = defaultdict(init_rate_stat)
+    artifact_stats = defaultdict(init_rate_stat)
     pairing_stats = defaultdict(init_rate_stat)
     set_stats = defaultdict(init_rate_stat)
     archetype_stats = defaultdict(init_rate_stat)
@@ -620,8 +660,10 @@ def main():
 
     try:
         for battle_num, (comp1, comp2) in enumerate(combinations_with_replacement(pool, 2), start=1):
-            picks1 = [build_ai_pick(entry, roster_by_id, items_by_id) for entry in comp1["members"]]
-            picks2 = [build_ai_pick(entry, roster_by_id, items_by_id) for entry in comp2["members"]]
+            picks1 = [build_ai_pick(entry, roster_by_id) for entry in comp1["members"]]
+            picks2 = [build_ai_pick(entry, roster_by_id) for entry in comp2["members"]]
+            artifacts1 = build_ai_artifacts(comp1, artifacts_by_id)
+            artifacts2 = build_ai_artifacts(comp2, artifacts_by_id)
 
             swap_tracker.current_swaps = 0
             before_damage = damage_tracker.damage_by_unit.copy()
@@ -629,10 +671,13 @@ def main():
                 battle_num,
                 comp1["name"],
                 picks1,
+                artifacts1,
                 comp2["name"],
                 picks2,
+                artifacts2,
                 damage_tracker=damage_tracker,
                 swap_tracker=swap_tracker,
+                ai_profile=args.ai_profile,
             )
             damage_tracker.active_battle_id = None
             swap_tracker.active_battle_id = None
@@ -656,6 +701,8 @@ def main():
                 won = battle.winner == player_num
                 update_rate(archetype_stats, comp["name"], won)
                 team_members = battle.get_team(player_num).members
+                for artifact_state in battle.get_team(player_num).artifacts:
+                    update_rate(artifact_stats, artifact_state.artifact.name, won)
                 for unit_a, unit_b in combinations(team_members, 2):
                     update_rate(pairing_stats, make_pair_key(unit_a.name, unit_b.name), won)
 
@@ -664,7 +711,6 @@ def main():
                 update_rate(class_stats, info["class"], won)
                 update_rate(adventurer_stats, info["adventurer"], won)
                 update_rate(signature_stats, info["signature"], won)
-                update_rate(item_stats, info["item"], won)
                 update_rate(twist_stats, info["twist"], won)
                 update_rate(type_stats, info["type"], won)
                 update_rate(set_stats, info["set"], won)
@@ -707,7 +753,7 @@ def main():
         basic_stats=basic_stats,
         twist_stats=twist_stats,
         type_stats=type_stats,
-        item_stats=item_stats,
+        artifact_stats=artifact_stats,
         pairing_stats=pairing_stats,
         set_stats=set_stats,
         archetype_stats=archetype_stats,

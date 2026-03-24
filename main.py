@@ -200,6 +200,7 @@ class Game:
 
         # Tutorial popup state
         self._tutorial_pending: str = None
+        self._swallow_mouse_up_after_tutorial: bool = False
         self._practice_tutorials_seen: "Set[str]" = set()
 
         # Intro story popup state
@@ -541,6 +542,16 @@ class Game:
                 return
             self._practice_tutorials_seen.add(key)
         self._tutorial_pending = text
+
+    def _dismiss_tutorial_popup(self) -> bool:
+        """Close the active tutorial popup and release any paused tutorial ticker."""
+        if not self._tutorial_pending:
+            return False
+        self._tutorial_pending = None
+        if self._tk_btn_label == "__tutorial__":
+            self._tk_btn_label = None
+            self._tk_btn_rect = None
+        return True
 
     def _maybe_inject_battle_tutorials(self) -> list:
         """Return ticker steps for any first-time battle tutorials that should now fire."""
@@ -2050,12 +2061,20 @@ class Game:
                 if e.type == pygame.MOUSEWHEEL:
                     self._handle_mousewheel(e)
                 if e.type == pygame.MOUSEBUTTONDOWN and e.button == 1:
+                    if self._dismiss_tutorial_popup():
+                        self._swallow_mouse_up_after_tutorial = True
+                        self._reset_team_drag()
+                        continue
                     evt_pos = self._to_logical(e.pos)
                     if self.phase in ("team_select", "pre_battle_edit"):
                         self._handle_team_select_mouse_down(evt_pos)
                     else:
                         self.handle_click(evt_pos)
                 if e.type == pygame.MOUSEBUTTONUP and e.button == 1:
+                    if self._swallow_mouse_up_after_tutorial:
+                        self._swallow_mouse_up_after_tutorial = False
+                        self._reset_team_drag()
+                        continue
                     evt_pos = self._to_logical(e.pos)
                     if self.phase in ("team_select", "pre_battle_edit"):
                         self._handle_team_select_mouse_up(evt_pos)
@@ -2107,11 +2126,7 @@ class Game:
                 self.phase = "menu"
             return
 
-        if self._tutorial_pending:
-            self._tutorial_pending = None
-            if self._tk_btn_label == "__tutorial__":
-                self._tk_btn_label = None
-                self._tk_btn_rect = None
+        if self._dismiss_tutorial_popup():
             return
 
         p = self.phase
@@ -5242,11 +5257,7 @@ class Game:
 _orig_handle_click = Game.handle_click
 
 def _patched_handle_click(self, pos):
-    if self._tutorial_pending:
-        self._tutorial_pending = None
-        if self._tk_btn_label == "__tutorial__":
-            self._tk_btn_label = None
-            self._tk_btn_rect = None
+    if self._dismiss_tutorial_popup():
         return
     if self.phase == "battle":
         if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
