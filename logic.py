@@ -2882,6 +2882,15 @@ def _track_ranged_use_once(actor: CombatantState, ability: Ability, battle: Batt
         battle.log_add(f"  {actor.name} must recharge next turn.")
 
 
+def _resolve_recharge_turn(actor: CombatantState, battle: BattleState):
+    """Consume the unit's forced recharge turn."""
+    actor.ranged_uses = 0
+    actor.must_recharge = False
+    actor.recharge_pending = False
+    battle.log_add(f"{actor.name} recharges.")
+    actor.acted = True
+
+
 def describe_action(action: Optional[dict]) -> str:
     """Human-readable summary of a queued/resolved action."""
     if action is None:
@@ -2925,6 +2934,9 @@ def resolve_queued_action(
     """Resolve the queued action for one actor."""
     if actor.ko:
         return
+    if actor.must_recharge:
+        _resolve_recharge_turn(actor, battle)
+        return
     if not can_act_this_round(actor, battle, acting_player):
         battle.log_add(f"{actor.name} cannot act.")
         actor.acted = True
@@ -2932,11 +2944,6 @@ def resolve_queued_action(
 
     action = actor.queued
     if action is None:
-        if actor.must_recharge:
-            actor.ranged_uses = 0
-            actor.must_recharge = False
-            actor.recharge_pending = False
-            battle.log_add(f"{actor.name} recharges.")
         actor.acted = True
         return
 
@@ -2966,23 +2973,8 @@ def resolve_queued_action(
             f"ACTION P{acting_player} {actor.name}[{actor.slot}]: skip/recharge"
         )
 
-    # Recharge is a forced skipped turn regardless of the queued action.
-    if actor.must_recharge and atype != "skip":
-        actor.ranged_uses = 0
-        actor.must_recharge = False
-        actor.recharge_pending = False
-        battle.log_add(f"{actor.name} recharges.")
-        actor.acted = True
-        return
-
     if atype == "skip":
-        if actor.must_recharge:
-            actor.ranged_uses = 0
-            actor.must_recharge = False
-            actor.recharge_pending = False
-            battle.log_add(f"{actor.name} recharges.")
-        else:
-            battle.log_add(f"{actor.name} skips.")
+        battle.log_add(f"{actor.name} skips.")
         actor.acted = True
         return
 

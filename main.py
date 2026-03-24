@@ -60,6 +60,7 @@ from ui import (
     draw_campaign_mission_select, draw_quest_select,
     draw_pre_quest, draw_post_quest, draw_campaign_complete,
     draw_practice_menu, draw_teambuilder, draw_story_team_select,
+    draw_estate_menu, draw_training_menu,
     draw_settings_screen, draw_rename_overlay,
     draw_guild_screen, draw_embassy_screen, draw_market_closed,
     draw_catalog,
@@ -159,6 +160,19 @@ class Game:
         self._editing_from_roster: bool = False    # True when editing sets jumped from pick_adventurers
         self._focused_slot: int = None             # slot shown in detail panel (not yet editing)
         self._edit_sets_backup: dict = None        # backup of sig/basics/item before Edit Sets
+        self._team_drag_source: tuple | None = None
+        self._team_drag_defn = None
+        self._team_drag_slot: int | None = None
+        self._team_drag_active: bool = False
+        self._team_drag_hover_slot: int | None = None
+        self._team_drag_hover_remove: bool = False
+        self._team_drag_start_pos: tuple[int, int] | None = None
+        self._team_mouse_down_target: tuple | None = None
+        self._team_last_click_target: tuple | None = None
+        self._team_last_click_time: int = 0
+        self._team_member_prompt_slot: int | None = None
+        self._team_artifact_focus = None
+        self.team_artifact_scroll: int = 0
 
         # Import modal state
         self._import_modal_open: bool = False
@@ -167,9 +181,14 @@ class Game:
         self._last_import_modal_clicks: dict = {}
         self._story_team_idx: int = None
         self._last_practice_btns = None
+        self._last_estate_btns = None
+        self._last_training_btns = None
         self._last_teambuilder_btns = None
         self._last_story_team_btns = None
         self._teambuilder_return_phase = "menu"  # where back_btn in teambuilder leads
+        self._catalog_return_phase = "menu"
+        self._lan_return_phase = "training_menu"
+        self._campaign_back_phase = "menu"
 
         # Rename overlay state (drawn on top of teambuilder)
         self._renaming_team_slot: int = None
@@ -580,6 +599,8 @@ class Game:
     def _current_party_adventurer_ids(self, picks: list | None = None) -> list:
         ids = []
         for pick in picks or []:
+            if not pick:
+                continue
             defn = pick.get("definition")
             if defn and defn.id not in ids:
                 ids.append(defn.id)
@@ -591,12 +612,272 @@ class Game:
     def _current_guild_artifact_ids(self) -> list:
         return [artifact_id for artifact_id in ARTIFACT_PRICES]
 
+    def _enter_camelot(self):
+        self.game_mode = "campaign"
+        self.ai_player = 2
+        self.campaign_mission_id = 1
+        self._campaign_back_phase = "menu"
+        self.phase = "campaign_quest_select"
+
     def _team_select_focus_defn(self):
-        if self.sub_phase == "pick_adventurers" and self._focused_slot is not None and self._focused_slot < len(self.team_picks):
-            return self.team_picks[self._focused_slot].get("definition")
-        if self.sub_phase != "pick_adventurers" and self.team_picks and self.current_adv_idx < len(self.team_picks):
-            return self.team_picks[self.current_adv_idx].get("definition")
+        if self._focused_slot is not None and self._focused_slot < len(self.team_picks):
+            pick = self.team_picks[self._focused_slot]
+            if pick:
+                return pick.get("definition")
+        if self.current_adv_idx is not None and self.current_adv_idx < len(self.team_picks):
+            pick = self.team_picks[self.current_adv_idx]
+            if pick:
+                return pick.get("definition")
         return self.roster_selected
+
+    def _active_team_builder_pools(self):
+        if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and hasattr(self, "_campaign_roster"):
+            return self._campaign_roster, self._campaign_artifacts, self._campaign_basics
+        return ROSTER, ARTIFACTS, CLASS_BASICS
+
+    def _clone_team_pick(self, pick):
+        if not pick:
+            return None
+        cloned = {"definition": pick.get("definition")}
+        if pick.get("signature") is not None:
+            cloned["signature"] = pick.get("signature")
+        if "basics" in pick:
+            cloned["basics"] = list(pick.get("basics", []))
+        if "team_artifacts" in pick:
+            cloned["team_artifacts"] = list(pick.get("team_artifacts", []))
+        return cloned
+
+    def _normalize_builder_picks(self, picks):
+        slots = [None, None, None]
+        for idx, pick in enumerate((picks or [])[:3]):
+            slots[idx] = self._clone_team_pick(pick)
+        return slots
+
+    def _reset_team_builder_ui_state(self):
+        self.roster_selected = None
+        self.current_adv_idx = 0
+        self.sig_choice = None
+        self.basic_choices = []
+        self.item_choice = []
+        self.team_slot_selected = None
+        self.team_select_scroll = 0
+        self.team_artifact_scroll = 0
+        self._editing_from_roster = False
+        self._editing_single_member = False
+        self._focused_slot = None
+        self._team_drag_source = None
+        self._team_drag_defn = None
+        self._team_drag_slot = None
+        self._team_drag_active = False
+        self._team_drag_hover_slot = None
+        self._team_drag_hover_remove = False
+        self._team_drag_start_pos = None
+        self._team_mouse_down_target = None
+        self._team_member_prompt_slot = None
+        self._team_artifact_focus = None
+        self._detail_unit = None
+
+    def _available_signatures_for_defn(self, defn):
+        if defn is None:
+            return []
+        if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and self.campaign_profile:
+            return defn.sig_options[:unlocked_signature_count(self._adventurer_level(defn.id))]
+        return list(defn.sig_options)
+
+    def _available_basics_for_defn(self, defn):
+        _, _, active_cls_basics = self._active_team_builder_pools()
+        if defn is None:
+            return []
+        return list(active_cls_basics.get(defn.cls, []))
+
+    def _pick_has_valid_set(self, pick):
+        if not pick:
+            return False
+        defn = pick.get("definition")
+        if defn is None:
+            return False
+        sig = pick.get("signature")
+        basics = list(pick.get("basics", []))
+        available_sigs = {ability.id for ability in self._available_signatures_for_defn(defn)}
+        available_basics = {ability.id for ability in self._available_basics_for_defn(defn)}
+        if sig is None or sig.id not in available_sigs:
+            return False
+        if len(basics) != 2:
+            return False
+        basic_ids = [ability.id for ability in basics]
+        if len(set(basic_ids)) != 2:
+            return False
+        return all(ability_id in available_basics for ability_id in basic_ids)
+
+    def _team_builder_ready(self):
+        return len(self.team_picks) == 3 and all(self._pick_has_valid_set(pick) for pick in self.team_picks)
+
+    def _builder_slot_fill_count(self):
+        return sum(1 for pick in self.team_picks if pick)
+
+    def _builder_ready_count(self):
+        return sum(1 for pick in self.team_picks if self._pick_has_valid_set(pick))
+
+    def _builder_find_slot_for_defn(self, defn):
+        if defn is None:
+            return None
+        for idx, pick in enumerate(self.team_picks):
+            if pick and pick.get("definition") == defn:
+                return idx
+        return None
+
+    def _builder_set_focus(self, slot_idx):
+        self._team_member_prompt_slot = None
+        self._detail_unit = None
+        self._focused_slot = slot_idx if slot_idx is not None and 0 <= slot_idx < len(self.team_picks) else None
+        if self._focused_slot is None:
+            self.current_adv_idx = 0
+            self.sig_choice = None
+            self.basic_choices = []
+            return
+        pick = self.team_picks[self._focused_slot]
+        if not pick:
+            self.current_adv_idx = self._focused_slot
+            self.sig_choice = None
+            self.basic_choices = []
+            return
+        defn = pick.get("definition")
+        sigs = self._available_signatures_for_defn(defn)
+        basics = self._available_basics_for_defn(defn)
+        self.current_adv_idx = self._focused_slot
+        sig = pick.get("signature")
+        self.sig_choice = next((idx for idx, ability in enumerate(sigs) if sig and ability.id == sig.id), None)
+        picked_basic_ids = [ability.id for ability in pick.get("basics", [])]
+        self.basic_choices = [
+            idx for idx, ability in enumerate(basics)
+            if ability.id in picked_basic_ids
+        ]
+
+    def _builder_remove_slot(self, slot_idx):
+        if slot_idx is None or not (0 <= slot_idx < len(self.team_picks)):
+            return
+        self.team_picks[slot_idx] = None
+        if self._focused_slot == slot_idx:
+            self._builder_set_focus(None)
+        elif self._focused_slot is not None and self._focused_slot >= len(self.team_picks):
+            self._builder_set_focus(None)
+        self._team_member_prompt_slot = None
+
+    def _builder_move_pick(self, from_idx, to_idx):
+        if from_idx is None or to_idx is None:
+            return
+        if from_idx == to_idx:
+            self._builder_set_focus(to_idx)
+            return
+        self.team_picks[from_idx], self.team_picks[to_idx] = self.team_picks[to_idx], self.team_picks[from_idx]
+        if self._focused_slot == from_idx:
+            self._builder_set_focus(to_idx)
+        elif self._focused_slot == to_idx:
+            self._builder_set_focus(from_idx)
+        self._team_member_prompt_slot = None
+
+    def _builder_add_roster_defn_to_slot(self, defn, slot_idx):
+        if defn is None or slot_idx is None or not (0 <= slot_idx < len(self.team_picks)):
+            return
+        existing_idx = self._builder_find_slot_for_defn(defn)
+        if existing_idx is not None:
+            if existing_idx != slot_idx:
+                self._builder_move_pick(existing_idx, slot_idx)
+            else:
+                self._builder_set_focus(slot_idx)
+            return
+        if self.team_picks[slot_idx] is not None:
+            self._builder_set_focus(slot_idx)
+            return
+        self.team_picks[slot_idx] = {"definition": defn}
+        self._builder_set_focus(slot_idx)
+        if self._builder_slot_fill_count() == 3:
+            self._maybe_show_tutorial("party_built", "Now, set each adventurer's abilities and artifacts.")
+
+    def _builder_open_detail_for_pick(self, slot_idx):
+        if slot_idx is None or not (0 <= slot_idx < len(self.team_picks)):
+            return
+        pick = self.team_picks[slot_idx]
+        if not pick:
+            return
+        defn = pick.get("definition")
+        if defn is None:
+            return
+        sig = pick.get("signature") or (self._available_signatures_for_defn(defn) or defn.sig_options)[0]
+        basics_pool = self._available_basics_for_defn(defn) or CLASS_BASICS.get(defn.cls, [])
+        basics = list(pick.get("basics", []))
+        if len(basics) < 2:
+            for ability in basics_pool:
+                if ability.id not in {ab.id for ab in basics}:
+                    basics.append(ability)
+                if len(basics) >= 2:
+                    break
+        self._detail_unit = make_combatant(defn, SLOT_FRONT, sig, basics[:2], None)
+
+    def _builder_open_detail_for_roster(self, defn):
+        if defn is None:
+            return
+        sigs = self._available_signatures_for_defn(defn) or list(defn.sig_options)
+        basics = self._available_basics_for_defn(defn) or CLASS_BASICS.get(defn.cls, [])
+        self._detail_unit = make_combatant(defn, SLOT_FRONT, sigs[0], basics[:2], None)
+
+    def _builder_toggle_basic_choice(self, basic_idx):
+        if self._focused_slot is None or not (0 <= self._focused_slot < len(self.team_picks)):
+            return
+        pick = self.team_picks[self._focused_slot]
+        if not pick:
+            return
+        basics = self._available_basics_for_defn(pick.get("definition"))
+        if not (0 <= basic_idx < len(basics)):
+            return
+        if basic_idx in self.basic_choices:
+            self.basic_choices.remove(basic_idx)
+        elif len(self.basic_choices) < 2:
+            self.basic_choices.append(basic_idx)
+        else:
+            return
+        pick["basics"] = [basics[idx] for idx in self.basic_choices[:2]]
+
+    def _builder_set_signature_choice(self, sig_idx):
+        if self._focused_slot is None or not (0 <= self._focused_slot < len(self.team_picks)):
+            return
+        pick = self.team_picks[self._focused_slot]
+        if not pick:
+            return
+        sigs = self._available_signatures_for_defn(pick.get("definition"))
+        if not (0 <= sig_idx < len(sigs)):
+            return
+        self.sig_choice = sig_idx
+        pick["signature"] = sigs[sig_idx]
+
+    def _builder_toggle_artifact(self, artifact):
+        if artifact is None:
+            return
+        current_ids = [entry.id for entry in self.team_artifacts]
+        if artifact.id in current_ids:
+            self.team_artifacts = [entry for entry in self.team_artifacts if entry.id != artifact.id]
+        elif len(self.team_artifacts) < 3:
+            self.team_artifacts.append(artifact)
+        self._team_artifact_focus = artifact
+        self._attach_artifacts_to_picks(self.team_picks, self.team_artifacts)
+
+    def _builder_remove_artifact(self, artifact):
+        if artifact is None:
+            return
+        self.team_artifacts = [entry for entry in self.team_artifacts if entry.id != artifact.id]
+        if self._team_artifact_focus and self._team_artifact_focus.id == artifact.id:
+            self._team_artifact_focus = self.team_artifacts[0] if self.team_artifacts else None
+        self._attach_artifacts_to_picks(self.team_picks, self.team_artifacts)
+
+    def _reset_team_drag(self):
+        self._team_drag_source = None
+        self._team_drag_defn = None
+        self._team_drag_slot = None
+        self._team_drag_active = False
+        self._team_drag_hover_slot = None
+        self._team_drag_hover_remove = False
+        self._team_drag_start_pos = None
+        self._team_mouse_down_target = None
 
     def _append_progress_lines(self, lines: list, text: str):
         if text and text not in lines:
@@ -783,7 +1064,10 @@ class Game:
     def _artifacts_from_picks(self, picks: list) -> list:
         if not picks:
             return []
-        return list(picks[0].get("team_artifacts", []))
+        for pick in picks:
+            if pick:
+                return list(pick.get("team_artifacts", []))
+        return []
 
     def _normalize_artifacts(self, artifacts: list) -> list:
         normalized = []
@@ -814,7 +1098,8 @@ class Game:
     def _attach_artifacts_to_picks(self, picks: list, artifacts: list) -> list:
         attached = self._normalize_artifacts(list(artifacts or []))
         for pick in picks:
-            pick["team_artifacts"] = list(attached)
+            if pick:
+                pick["team_artifacts"] = list(attached)
         return picks
 
     def _serialize_picks(self, picks: list) -> list:
@@ -1724,7 +2009,18 @@ class Game:
                 if e.type == pygame.MOUSEWHEEL:
                     self._handle_mousewheel(e)
                 if e.type == pygame.MOUSEBUTTONDOWN and e.button == 1:
-                    self.handle_click(mouse_pos)
+                    evt_pos = self._to_logical(e.pos)
+                    if self.phase in ("team_select", "pre_battle_edit"):
+                        self._handle_team_select_mouse_down(evt_pos)
+                    else:
+                        self.handle_click(evt_pos)
+                if e.type == pygame.MOUSEBUTTONUP and e.button == 1:
+                    evt_pos = self._to_logical(e.pos)
+                    if self.phase in ("team_select", "pre_battle_edit"):
+                        self._handle_team_select_mouse_up(evt_pos)
+                if e.type == pygame.MOUSEMOTION and self.phase in ("team_select", "pre_battle_edit"):
+                    evt_pos = self._to_logical(e.pos)
+                    self._handle_team_select_mouse_motion(evt_pos, e.buttons)
 
             self._lan_tick()
             self._maybe_auto_progress()
@@ -1781,28 +2077,33 @@ class Game:
 
         if p == "menu":
             btns = self._last_menu_btns or {}
-            if btns.get("story_btn") and btns["story_btn"].collidepoint(pos):
-                self.phase = "campaign_mission_select"
-            elif btns.get("practice_btn") and btns["practice_btn"].collidepoint(pos):
-                self.phase = "practice_menu"
-            elif btns.get("teambuilder_btn") and btns["teambuilder_btn"].collidepoint(pos):
-                self._teambuilder_return_phase = "menu"
-                self.phase = "teambuilder"
-            elif btns.get("catalog_btn") and btns["catalog_btn"].collidepoint(pos):
-                self._catalog_tab = "adventurers"
-                self._catalog_selected = None
-                self._catalog_scroll = 0
-                self.phase = "catalog"
-                if self.campaign_profile:
-                    self.campaign_profile.new_unlocks.discard("adventurers")
-                    save_campaign(self.campaign_profile)
+            if btns.get("camelot_btn") and btns["camelot_btn"].collidepoint(pos):
+                self._enter_camelot()
+            elif (
+                btns.get("fantasia_btn") and btns["fantasia_btn"].collidepoint(pos)
+                and self.campaign_profile and self.campaign_profile.quick_play_unlocked
+            ):
+                self.game_mode = "single_player"
+                if hasattr(self, "_campaign_roster"):
+                    del self._campaign_roster
+                self._start_team_select(1)
+            elif (
+                btns.get("brightheart_btn") and btns["brightheart_btn"].collidepoint(pos)
+                and self._ranked_unlocked()
+            ):
+                self.game_mode = "ranked"
+                if hasattr(self, "_campaign_roster"):
+                    del self._campaign_roster
+                self._start_team_select(1)
+            elif btns.get("estate_btn") and btns["estate_btn"].collidepoint(pos):
+                self.phase = "estate_menu"
             elif btns.get("guild_btn") and btns["guild_btn"].collidepoint(pos):
                 self._guild_tab = "adventurers"
                 self.phase = "guild"
-            elif btns.get("embassy_btn") and btns["embassy_btn"].collidepoint(pos):
-                self.phase = "embassy"
             elif btns.get("market_btn") and btns["market_btn"].collidepoint(pos):
                 self.phase = "market_closed"
+            elif btns.get("embassy_btn") and btns["embassy_btn"].collidepoint(pos):
+                self.phase = "embassy"
             elif btns.get("settings_btn") and btns["settings_btn"].collidepoint(pos):
                 self._confirm_reset = False
                 self.phase = "settings"
@@ -1812,7 +2113,7 @@ class Game:
         elif p == "catalog":
             btns = self._last_catalog_btns or {}
             if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
-                self.phase = "menu"
+                self.phase = self._catalog_return_phase
                 return
             for rect, key in btns.get("tab_btns", []):
                 if rect.collidepoint(pos):
@@ -1844,29 +2145,38 @@ class Game:
                     self._catalog_selected = idx
                     return
 
-        elif p == "practice_menu":
-            btns = self._last_practice_btns or {}
-            if (
-                btns.get("quick_btn") and btns["quick_btn"].collidepoint(pos)
-                and self.campaign_profile and self.campaign_profile.quick_play_unlocked
-            ):
-                self.game_mode = "single_player"
-                if hasattr(self, "_campaign_roster"):
-                    del self._campaign_roster
-                self._start_team_select(1)
-            elif (
-                btns.get("ranked_btn") and btns["ranked_btn"].collidepoint(pos)
-                and self._ranked_unlocked()
-            ):
-                self.game_mode = "ranked"
-                if hasattr(self, "_campaign_roster"):
-                    del self._campaign_roster
-                self._start_team_select(1)
-            elif btns.get("vs_pvp_btn") and btns["vs_pvp_btn"].collidepoint(pos):
-                self.game_mode = "pvp"
-                self._start_team_select(1)
+        elif p == "estate_menu":
+            btns = self._last_estate_btns or {}
+            if btns.get("parties_btn") and btns["parties_btn"].collidepoint(pos):
+                self._teambuilder_return_phase = "estate_menu"
+                self.phase = "teambuilder"
+            elif btns.get("guidebook_btn") and btns["guidebook_btn"].collidepoint(pos):
+                self._catalog_tab = "adventurers"
+                self._catalog_selected = None
+                self._catalog_scroll = 0
+                self._catalog_return_phase = "estate_menu"
+                self.phase = "catalog"
+                if self.campaign_profile:
+                    self.campaign_profile.new_unlocks.discard("adventurers")
+                    save_campaign(self.campaign_profile)
+            elif btns.get("training_btn") and btns["training_btn"].collidepoint(pos):
+                self.phase = "training_menu"
             elif btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
                 self.phase = "menu"
+
+        elif p == "training_menu":
+            btns = self._last_training_btns or {}
+            if btns.get("local_btn") and btns["local_btn"].collidepoint(pos):
+                self.game_mode = "pvp"
+                self._start_team_select(1)
+            elif btns.get("lan_btn") and btns["lan_btn"].collidepoint(pos):
+                self._lan_return_phase = "training_menu"
+                self._lan_role = None
+                self._lan_status = ""
+                self._lan = None
+                self.phase = "lan_lobby"
+            elif btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                self.phase = "estate_menu"
 
         elif p == "guild":
             btns = self._last_guild_btns or {}
@@ -1915,7 +2225,7 @@ class Game:
                 self._lan_role = None
                 self._lan_status = ""
                 self.game_mode = "pvp"
-                self.phase = "practice_menu"
+                self.phase = self._lan_return_phase
                 return
             if self._lan_role is None:
                 if btns.get("host_btn") and btns["host_btn"].collidepoint(pos):
@@ -2056,7 +2366,7 @@ class Game:
             btns = self._last_campaign_btns or {}
             back_btn = btns.get("back_btn")
             if back_btn and back_btn.collidepoint(pos):
-                self.phase = "campaign_mission_select"
+                self.phase = self._campaign_back_phase
                 return
             for rect, quest_id in btns.get("quest_btns", []):
                 if rect.collidepoint(pos):
@@ -2118,13 +2428,19 @@ class Game:
             btns = self._last_campaign_btns or {}
             cont_btn = btns.get("continue_btn")
             if cont_btn and cont_btn.collidepoint(pos):
-                if self._campaign_won_quest:
+                if self.campaign_quest_id <= 4:
+                    if self._campaign_won_quest and self.campaign_quest_id >= 4:
+                        self.phase = "menu"
+                    else:
+                        self.campaign_mission_id = 1
+                        self.phase = "campaign_quest_select"
+                elif self._campaign_won_quest:
                     if self.campaign_profile.campaign_complete:
                         self.phase = "campaign_complete"
                     else:
-                        self.phase = "campaign_mission_select"
+                        self.phase = "menu"
                 else:
-                    self.phase = "campaign_mission_select"
+                    self.phase = self._campaign_back_phase
 
         elif p == "campaign_complete":
             btns = self._last_campaign_btns or {}
@@ -2275,16 +2591,20 @@ class Game:
             return
         if self.phase not in ("team_select", "pre_battle_edit"):
             return
-        if self.sub_phase not in ("pick_adventurers", "pick_basics", "pick_item"):
-            return
         clicks = getattr(self, "_last_team_clicks", None) or {}
-        max_scroll = clicks.get("scroll_max", 0)
-        if max_scroll <= 0:
-            self.team_select_scroll = 0
-            return
+        mouse_pos = self._to_logical(pygame.mouse.get_pos())
+        roster_view = clicks.get("roster_viewport")
+        artifact_view = clicks.get("artifact_viewport")
         step = 40
-        self.team_select_scroll -= e.y * step
-        self.team_select_scroll = max(0, min(self.team_select_scroll, max_scroll))
+        if roster_view and roster_view.collidepoint(mouse_pos):
+            max_scroll = clicks.get("roster_scroll_max", 0)
+            self.team_select_scroll -= e.y * step
+            self.team_select_scroll = max(0, min(self.team_select_scroll, max_scroll))
+            return
+        if artifact_view and artifact_view.collidepoint(mouse_pos):
+            max_scroll = clicks.get("artifact_scroll_max", 0)
+            self.team_artifact_scroll -= e.y * step
+            self.team_artifact_scroll = max(0, min(self.team_artifact_scroll, max_scroll))
 
     # ─────────────────────────────────────────────────────────────────────────
     # TEAM SELECTION
@@ -2292,45 +2612,25 @@ class Game:
 
     def _do_team_select_back(self):
         """Shared back-navigation logic for team_select, used by Back button and ESC."""
-        sp = self.sub_phase
-        if sp == "pick_adventurers":
-            if self.phase == "pre_battle_edit":
-                # Back from pick_adventurers in pre_battle_edit goes to back_phase
-                if self._pbe_back_phase:
-                    self.phase = self._pbe_back_phase
-                return
-            # Leave team select entirely.
-            if self.game_mode == "teambuilder":
-                self.phase = "teambuilder"
-            else:
-                self.phase = "menu"
-        elif sp == "pick_sig":
-            # In the new flow, Back from pick_sig always returns to pick_adventurers
-            if self._editing_single_member:
-                # Cancel single-member edit and return to teambuilder.
-                self._editing_single_member = False
-                self.phase = "teambuilder"
-            else:
-                self._editing_from_roster = False
-                self._focused_slot = self.current_adv_idx  # restore focus to the member we were editing
-                # Restore sets backup if available (user backed out without changing anything)
-                if self._edit_sets_backup is not None:
-                    bk = self._edit_sets_backup
-                    if bk.get("signature"):
-                        self.team_picks[self.current_adv_idx]["signature"] = bk["signature"]
-                    if bk.get("basics"):
-                        self.team_picks[self.current_adv_idx]["basics"] = bk["basics"]
-                    self._edit_sets_backup = None
-                self.sub_phase = "pick_adventurers"
-                self.team_select_scroll = 0
-        elif sp == "pick_basics":
-            self.team_picks[self.current_adv_idx].pop("signature", None)
-            self.sig_choice = None
-            self.sub_phase = "pick_sig"
-            self.team_select_scroll = 0
-        elif sp == "pick_item":
-            self.sub_phase = "pick_adventurers"
-            self.team_select_scroll = 0
+        if self._detail_unit is not None:
+            self._detail_unit = None
+            return
+        if self._import_modal_open:
+            self._import_modal_open = False
+            self._import_modal_text = ""
+            self._import_modal_error = ""
+            return
+        if self._team_member_prompt_slot is not None:
+            self._team_member_prompt_slot = None
+            return
+        if self.phase == "pre_battle_edit":
+            if self._pbe_back_phase:
+                self.phase = self._pbe_back_phase
+            return
+        if self.game_mode == "teambuilder":
+            self.phase = "teambuilder"
+        else:
+            self.phase = "menu"
 
     def _parse_team_import(self, text: str, allow_all: bool):
         """Parse a team import string. Returns (picks_list, error_string).
@@ -2441,17 +2741,9 @@ class Game:
             self._refresh_profile_filters()
         self.building_player = player_num
         self.sub_phase = "pick_adventurers"
-        self.roster_selected = None
-        self.team_picks = []
-        self.current_adv_idx = 0
-        self.sig_choice = None
-        self.basic_choices = []
-        self.item_choice = []
-        self.team_slot_selected = None
-        self.team_select_scroll = 0
-        self._editing_single_member = False
-        self._focused_slot = None
+        self.team_picks = self._normalize_builder_picks([])
         self.team_artifacts = []
+        self._reset_team_builder_ui_state()
         self.phase = "team_select"
         self._maybe_show_tutorial("party_editor", "Select three adventurers to form a party!")
 
@@ -2682,50 +2974,242 @@ class Game:
                         )
                     return
 
+    def _team_drag_target_at_pos(self, pos):
+        clicks = self._last_team_clicks or {}
+        for rect, defn in clicks.get("roster_cards", []):
+            if rect.collidepoint(pos):
+                return ("roster_card", defn)
+        for rect, idx in clicks.get("party_slots", []):
+            if rect.collidepoint(pos):
+                return ("party_slot", idx)
+        return None
+
+    def _handle_team_select_mouse_down(self, pos):
+        if self.phase not in ("team_select", "pre_battle_edit"):
+            return
+        self._team_drag_start_pos = pos
+        self._team_mouse_down_target = self._team_drag_target_at_pos(pos)
+        self._team_member_prompt_slot = None
+        if self._detail_unit is not None and self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+            return
+        if self._import_modal_open:
+            return
+        if self._team_mouse_down_target is None:
+            self._reset_team_drag()
+            return
+        kind, payload = self._team_mouse_down_target
+        if kind == "roster_card":
+            self._team_drag_source = ("roster", payload)
+            self._team_drag_defn = payload
+            self._team_drag_slot = None
+        elif kind == "party_slot" and self.team_picks[payload]:
+            self._team_drag_source = ("party", payload)
+            self._team_drag_defn = self.team_picks[payload].get("definition")
+            self._team_drag_slot = payload
+        else:
+            self._reset_team_drag()
+            self._team_mouse_down_target = ("party_slot", payload)
+
+    def _handle_team_select_mouse_motion(self, pos, buttons):
+        if self.phase not in ("team_select", "pre_battle_edit"):
+            return
+        if not self._team_drag_source or not self._team_drag_start_pos:
+            return
+        if not buttons or not buttons[0]:
+            return
+        if not self._team_drag_active:
+            dx = pos[0] - self._team_drag_start_pos[0]
+            dy = pos[1] - self._team_drag_start_pos[1]
+            if (dx * dx + dy * dy) < 64:
+                return
+            self._team_drag_active = True
+        target = self._team_drag_target_at_pos(pos)
+        self._team_drag_hover_slot = target[1] if target and target[0] == "party_slot" else None
+        clicks = self._last_team_clicks or {}
+        remove_zone = clicks.get("roster_drop_zone")
+        self._team_drag_hover_remove = (
+            self.phase == "team_select"
+            and self._team_drag_source[0] == "party"
+            and remove_zone is not None
+            and remove_zone.collidepoint(pos)
+        )
+
+    def _handle_team_select_mouse_up(self, pos):
+        if self.phase not in ("team_select", "pre_battle_edit"):
+            self._reset_team_drag()
+            return
+        clicks = self._last_team_clicks or {}
+
+        if self._detail_unit is not None and self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+            self._detail_unit = None
+            self._reset_team_drag()
+            return
+
+        if self._import_modal_open:
+            modal_clicks = getattr(self, "_last_import_modal_clicks", {}) or {}
+            cancel = modal_clicks.get("cancel")
+            confirm = modal_clicks.get("confirm")
+            if cancel and cancel.collidepoint(pos):
+                self._import_modal_open = False
+                self._import_modal_text = ""
+                self._import_modal_error = ""
+            elif confirm and confirm.collidepoint(pos):
+                allow_all = self.game_mode not in ("campaign", "teambuilder")
+                picks, err = self._parse_team_import(self._import_modal_text, allow_all)
+                if picks is not None:
+                    self.team_picks = self._normalize_builder_picks(picks)
+                    self.team_artifacts = self._artifacts_from_picks(picks)
+                    self._attach_artifacts_to_picks(self.team_picks, self.team_artifacts)
+                    self.roster_selected = next((pick["definition"] for pick in self.team_picks if pick), None)
+                    self._builder_set_focus(next((idx for idx, pick in enumerate(self.team_picks) if pick), None))
+                    self._import_modal_open = False
+                    self._import_modal_text = ""
+                    self._import_modal_error = ""
+                else:
+                    self._import_modal_error = err
+            self._reset_team_drag()
+            return
+
+        if self._team_member_prompt_slot is not None:
+            slot_idx = self._team_member_prompt_slot
+            change_btn = clicks.get("prompt_change")
+            detail_btn = clicks.get("prompt_details")
+            prompt_rect = clicks.get("member_prompt_rect")
+            if change_btn and change_btn.collidepoint(pos):
+                self._builder_set_focus(slot_idx)
+                self._team_member_prompt_slot = None
+                self._reset_team_drag()
+                return
+            if detail_btn and detail_btn.collidepoint(pos):
+                self._builder_open_detail_for_pick(slot_idx)
+                self._team_member_prompt_slot = None
+                self._reset_team_drag()
+                return
+            if prompt_rect is None or not prompt_rect.collidepoint(pos):
+                self._team_member_prompt_slot = None
+
+        if self._team_drag_active and self._team_drag_source:
+            source_kind, source_payload = self._team_drag_source
+            drop_target = self._team_drag_target_at_pos(pos)
+            if source_kind == "roster" and drop_target and drop_target[0] == "party_slot":
+                self._builder_add_roster_defn_to_slot(source_payload, drop_target[1])
+            elif source_kind == "party":
+                if drop_target and drop_target[0] == "party_slot":
+                    self._builder_move_pick(source_payload, drop_target[1])
+                elif self.phase == "team_select":
+                    remove_zone = clicks.get("roster_drop_zone")
+                    if remove_zone and remove_zone.collidepoint(pos):
+                        self._builder_remove_slot(source_payload)
+            self._reset_team_drag()
+            return
+
+        target = self._team_drag_target_at_pos(pos)
+        if target == self._team_mouse_down_target and target is not None:
+            now = pygame.time.get_ticks()
+            is_double = (
+                self._team_last_click_target == target
+                and now - self._team_last_click_time <= 350
+            )
+            self._team_last_click_target = target
+            self._team_last_click_time = now
+
+            if target[0] == "roster_card":
+                defn = target[1]
+                self.roster_selected = defn
+                self._builder_set_focus(None)
+                if is_double:
+                    self._builder_open_detail_for_roster(defn)
+            elif target[0] == "party_slot":
+                slot_idx = target[1]
+                self.roster_selected = None
+                self._builder_set_focus(slot_idx)
+                if is_double and self.team_picks[slot_idx]:
+                    self._team_member_prompt_slot = slot_idx
+            self._reset_team_drag()
+            return
+
+        for rect, idx in clicks.get("sig_buttons", []):
+            if rect.collidepoint(pos):
+                self._builder_set_signature_choice(idx)
+                self._reset_team_drag()
+                return
+        for rect, idx in clicks.get("basic_buttons", []):
+            if rect.collidepoint(pos):
+                self._builder_toggle_basic_choice(idx)
+                self._reset_team_drag()
+                return
+        for rect, artifact in clicks.get("artifact_entries", []):
+            if rect.collidepoint(pos):
+                if artifact.id not in {entry.id for entry in self.team_artifacts} and len(self.team_artifacts) < 3:
+                    self.team_artifacts.append(artifact)
+                    self._attach_artifacts_to_picks(self.team_picks, self.team_artifacts)
+                self._team_artifact_focus = artifact
+                self._reset_team_drag()
+                return
+        for rect, artifact in clicks.get("artifact_selected", []):
+            if rect.collidepoint(pos):
+                self._team_artifact_focus = artifact
+                self._reset_team_drag()
+                return
+        for rect, artifact in clicks.get("artifact_remove", []):
+            if rect.collidepoint(pos):
+                self._builder_remove_artifact(artifact)
+                self._reset_team_drag()
+                return
+
+        import_btn = clicks.get("import_btn")
+        if self.phase == "team_select" and import_btn and import_btn.collidepoint(pos):
+            self._import_modal_open = True
+            self._import_modal_text = ""
+            self._import_modal_error = ""
+            self._reset_team_drag()
+            return
+
+        confirm = clicks.get("confirm")
+        if confirm and confirm.collidepoint(pos) and self._team_builder_ready():
+            self._attach_artifacts_to_picks(self.team_picks, self.team_artifacts)
+            if self.phase == "pre_battle_edit":
+                self._confirm_pre_battle_edit()
+            else:
+                self._finish_team_select()
+            self._reset_team_drag()
+            return
+
+        back = clicks.get("back")
+        if back and back.collidepoint(pos):
+            self._do_team_select_back()
+            self._reset_team_drag()
+            return
+
+        self._reset_team_drag()
+
+    def _handle_team_select_click(self, pos):
+        """Fallback for any legacy code path that still sends a single click directly."""
+        self._handle_team_select_mouse_down(pos)
+        self._handle_team_select_mouse_up(pos)
+
     def _ensure_picks_have_items(self, picks):
-        """Ensure a team has three artifacts attached."""
+        """Normalize and attach the shared party artifacts without auto-filling extras."""
         if not picks:
             return
         existing = self._artifacts_from_picks(picks)
-        if len(existing) >= 3:
-            self._attach_artifacts_to_picks(picks, existing[:3])
-            return
-        pool = list(ARTIFACTS)
-        artifacts = list(existing)
-        for artifact in pool:
-            if len(artifacts) >= 3:
-                break
-            if artifact.id not in {a.id for a in artifacts}:
-                artifacts.append(artifact)
-        self._attach_artifacts_to_picks(picks, artifacts[:3])
+        self._attach_artifacts_to_picks(picks, existing[:3])
 
     def _enter_pre_battle_edit(self, p1_picks, enemy_picks, back_phase):
         """Transition to the pre-battle team editor."""
-        self.team_picks = list(p1_picks)
+        self.team_picks = self._normalize_builder_picks(p1_picks)
+        self.team_artifacts = self._artifacts_from_picks(self.team_picks)
         self._pbe_enemy_picks = list(enemy_picks) if enemy_picks else []
         self._pbe_back_phase = back_phase
         self.sub_phase = "pick_adventurers"
-        self.current_adv_idx = 0
-        self.sig_choice = None
-        self.basic_choices = []
-        self.item_choice = []
-        self.team_select_scroll = 0
-        self.roster_selected = None
-        self.team_slot_selected = None
-        self._editing_from_roster = False
-        self._editing_single_member = False
-        self._focused_slot = None
+        self._reset_team_builder_ui_state()
         self._lan_pbe_local_ready = False
         self._lan_pbe_opponent_ready = False
         self.phase = "pre_battle_edit"
 
     def _confirm_pre_battle_edit(self):
         """Player confirmed their formation in pre-battle edit."""
-        def _team_valid(picks):
-            return (len(picks) == 3 and
-                    all("signature" in pk and len(pk.get("basics", [])) == 2
-                        for pk in picks))
-        if not _team_valid(self.team_picks):
+        if not self._team_builder_ready():
             return
         # Store picks for the appropriate player
         if self.game_mode == "lan_client":
@@ -2808,22 +3292,14 @@ class Game:
         # Load existing team picks if available, otherwise start fresh
         existing = self._resolve_saved_team(slot_idx)
         if existing is not None:
-            self.team_picks = existing
+            self.team_picks = self._normalize_builder_picks(existing)
             self.team_artifacts = self._artifacts_from_picks(existing)
         else:
-            self.team_picks = []
+            self.team_picks = self._normalize_builder_picks([])
             self.team_artifacts = []
         self.building_player = 1
         self.sub_phase = "pick_adventurers"
-        self.roster_selected = self.team_picks[0]["definition"] if self.team_picks else None
-        self.current_adv_idx = 0
-        self.sig_choice = None
-        self.basic_choices = []
-        self.item_choice = []
-        self.team_slot_selected = None
-        self.team_select_scroll = 0
-        self._editing_from_roster = False
-        self._editing_single_member = False
+        self._reset_team_builder_ui_state()
         self.phase = "team_select"
         self._maybe_show_tutorial("party_editor", "Select three adventurers to form a party!")
 
@@ -2840,21 +3316,13 @@ class Game:
             self._editing_single_member = False
             self._start_team_select(1)
             return
-        self.team_picks = existing
+        self.team_picks = self._normalize_builder_picks(existing)
         self.team_artifacts = self._artifacts_from_picks(existing)
         self.building_player = 1
-        self.current_adv_idx = member_idx
-        # Clear only this member's set choices so the user picks fresh.
-        self.team_picks[member_idx].pop("signature", None)
-        self.team_picks[member_idx].pop("basics", None)
-        self.team_picks[member_idx].pop("item", None)
-        self.sig_choice = None
-        self.basic_choices = []
-        self.item_choice = []
-        self.roster_selected = None
-        self.team_slot_selected = None
-        self.team_select_scroll = 0
-        self.sub_phase = "pick_sig"
+        self._reset_team_builder_ui_state()
+        self._editing_single_member = True
+        self._builder_set_focus(member_idx)
+        self.sub_phase = "pick_adventurers"
         self.phase = "team_select"
 
     def _save_built_team_to_slot(self):
@@ -3304,12 +3772,40 @@ class Game:
                 return
         # Nothing to go back to — no-op
 
+    def _reopen_queued_selection(self, unit, is_extra: bool | None = None):
+        """Re-open a previously queued action so it can be changed before lock-in."""
+        if not self.battle or unit is None or unit.ko:
+            return False
+        team = self.battle.get_team(self.selecting_player)
+        if unit not in team.members:
+            return False
+        if is_extra is None:
+            if unit.queued is not None:
+                is_extra = False
+            elif unit.queued2 is not None:
+                is_extra = True
+            else:
+                return False
+        queued_action = unit.queued2 if is_extra else unit.queued
+        if queued_action is None:
+            return False
+        if is_extra:
+            unit.queued2 = None
+        else:
+            unit.queued = None
+        self.current_actor = unit
+        self.current_is_extra = bool(is_extra)
+        self.pending_action = None
+        self.selection_sub = "pick_action"
+        self._battle_overlay = None
+        return True
+
     def _queued_action_tag(self, unit, is_extra: bool) -> tuple[str, tuple]:
         q = unit.queued2 if is_extra else unit.queued
         if q is None:
             return ("Waiting", TEXT_MUTED)
         if q["type"] == "skip":
-            return ("Skip", TEXT_MUTED)
+            return ("Recharge" if unit.must_recharge else "Skip", TEXT_MUTED)
         if q["type"] == "swap":
             return ("Swap", CYAN)
         if q["type"] == "item":
@@ -3327,7 +3823,7 @@ class Game:
             if unit.ko:
                 continue
             tag, color = self._queued_action_tag(unit, is_extra)
-            units.append((unit, tag, color))
+            units.append((unit, is_extra, tag, color))
         return units
 
     def _queued_artifact_ids(self, *, exclude_actor=None) -> set[str]:
@@ -3368,8 +3864,6 @@ class Game:
         return []
 
     def _build_action_groups(self, actor, team, is_last):
-        abilities = actor.all_active_abilities(is_last)
-        valid_abs = [ability for ability in abilities if can_use_ability(actor, ability, team)]
         groups = {
             "basics": [],
             "signature": [],
@@ -3378,16 +3872,18 @@ class Game:
             "utility": [],
         }
 
-        for ability in valid_abs:
-            label = ability.name
-            if ability.category == "basic":
-                groups["basics"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
-            elif ability.category == "signature":
-                groups["signature"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
-            elif ability.category == "twist":
-                groups["twist"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
-
         if not actor.must_recharge:
+            abilities = actor.all_active_abilities(is_last)
+            valid_abs = [ability for ability in abilities if can_use_ability(actor, ability, team)]
+            for ability in valid_abs:
+                label = ability.name
+                if ability.category == "basic":
+                    groups["basics"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
+                elif ability.category == "signature":
+                    groups["signature"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
+                elif ability.category == "twist":
+                    groups["twist"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
+
             reserved_artifacts = self._queued_artifact_ids(exclude_actor=actor)
             for artifact_state in ready_active_artifacts(team):
                 artifact = artifact_state.artifact
@@ -3406,18 +3902,20 @@ class Game:
         if self._is_lan() and self.selecting_player != self._lan_my_player():
             return ("Opponent is choosing actions", "Their queue will resolve after they lock in.")
         if self.selection_sub == "review_queue":
-            return ("Queue ready", "Review the order below, then lock actions when you’re ready.")
+            return ("Queue ready", "Click a queued chip or friendly adventurer to revise anything, then lock actions when you’re ready.")
         actor = self.current_actor
         if actor is None:
             return ("Waiting for next adventurer", "")
         prefix = "Extra action" if self.current_is_extra else "Queueing action"
         if self.selection_sub == "pick_target":
             if (self.pending_action and self.pending_action.get("type") == "ability"
-                    and self.pending_action.get("ability").id == "subterfuge"
-                    and self.pending_action.get("substep") == "subterfuge_swap_target"):
+                        and self.pending_action.get("ability").id == "subterfuge"
+                        and self.pending_action.get("substep") == "subterfuge_swap_target"):
                 return (f"{prefix}: {actor.name}", "Choose the second target for Subterfuge.")
             return (f"{prefix}: {actor.name}", "Click a highlighted target in the arena.")
-        return (f"{prefix}: {actor.name}", "Follow the queue order below, then choose from basics, signature, twist, artifacts, or utility.")
+        if actor.must_recharge:
+            return (f"{prefix}: {actor.name}", "This adventurer must recharge this round. You can still click a queued chip or friendly adventurer to revise earlier choices.")
+        return (f"{prefix}: {actor.name}", "Follow the queue order below, then choose from basics, signature, twist, artifacts, or utility. Click a queued chip or friendly adventurer to revise earlier choices.")
 
     def _handle_battle_strip_click(self, pos):
         buttons = self._last_battle_strip_btns or {}
@@ -3427,6 +3925,10 @@ class Game:
         if buttons.get("artifacts") and buttons["artifacts"].collidepoint(pos):
             self._battle_overlay = None if self._battle_overlay == "artifacts" else "artifacts"
             return True
+        for rect, unit, is_extra in buttons.get("queue", []):
+            if rect.collidepoint(pos):
+                self._reopen_queued_selection(unit, is_extra)
+                return True
         if buttons.get("clear") and buttons["clear"].collidepoint(pos):
             self._battle_overlay = None
             self._restart_selection()
@@ -3480,15 +3982,17 @@ class Game:
                 return
 
         if ARENA_RECT.collidepoint(pos):
+            unit = self._unit_at_pos(pos)
             if self.selection_sub == "pick_target":
-                before = self.pending_action
-                self._handle_pick_target(pos)
-                if self.pending_action is before:
-                    unit = self._unit_at_pos(pos)
-                    if unit:
-                        self._detail_unit = None if self._detail_unit is unit else unit
+                if self._handle_pick_target(pos):
+                    return
+                if unit and self._reopen_queued_selection(unit):
+                    return
+                if unit:
+                    self._detail_unit = None if self._detail_unit is unit else unit
             else:
-                unit = self._unit_at_pos(pos)
+                if unit and self._reopen_queued_selection(unit):
+                    return
                 if unit:
                     self._detail_unit = None if self._detail_unit is unit else unit
             return
@@ -3509,6 +4013,10 @@ class Game:
 
                 if atype == "back":
                     self._go_back_one_selection()
+                    return
+
+                if actor.must_recharge and atype != "skip":
+                    self.battle.log_add(f"{actor.name} must recharge this round.")
                     return
 
                 if atype == "skip":
@@ -3601,14 +4109,14 @@ class Game:
 
     def _handle_pick_target(self, pos):
         if not self.pending_action:
-            return
+            return False
 
         actor = self.current_actor
         if actor is None:
             self.pending_action = None
             self.selection_sub = "pick_action"
             self._advance_selection()
-            return
+            return True
         atype = self.pending_action["type"]
 
         if atype == "swap":
@@ -3621,7 +4129,7 @@ class Game:
                     if unit and unit != actor:
                         self._set_queued(actor, {"type": "swap", "target": unit})
                         self._on_action_queued()
-                        return
+                        return True
 
         elif atype == "ability":
             ability = self.pending_action["ability"]
@@ -3645,14 +4153,14 @@ class Game:
                     if ability.id == "subterfuge" and substep != "subterfuge_swap_target":
                         self.pending_action["target"] = unit
                         self.pending_action["substep"] = "subterfuge_swap_target"
-                        return
+                        return True
                     action = {"type": "ability", "ability": ability, "target": unit}
                     if ability.id == "subterfuge":
                         action["target"] = self.pending_action.get("target")
                         action["swap_target"] = unit
                     self._set_queued(actor, action)
                     self._on_action_queued()
-                    return
+                    return True
 
         elif atype == "item":
             artifact = self.pending_action.get("artifact")
@@ -3668,7 +4176,7 @@ class Game:
                     artifact=artifact,
                 )
             if not targets:
-                return
+                return False
             all_rects = {}
             all_rects.update({u: SLOT_RECTS_P1.get(u.slot) for u in self.battle.team1.alive()})
             all_rects.update({u: SLOT_RECTS_P2.get(u.slot) for u in self.battle.team2.alive()})
@@ -3676,16 +4184,17 @@ class Game:
                 if rect and rect.collidepoint(pos) and unit in targets:
                     if artifact and artifact.id == "magic_mirror" and primary is None:
                         self.pending_action["target"] = unit
-                        return
+                        return True
                     action = {"type": "item", "artifact": artifact, "target": primary or unit}
                     if artifact and artifact.id == "magic_mirror":
                         action["swap_target"] = unit
                     self._set_queued(actor, action)
                     self._on_action_queued()
-                    return
+                    return True
 
         # Cancel: click anywhere else goes back to pick_action
         # (handled by absence of match above)
+        return False
 
     # ─────────────────────────────────────────────────────────────────────────
     # RESOLUTION
@@ -3861,15 +4370,15 @@ class Game:
                 ranked_unlocked=self._ranked_unlocked() if self.campaign_profile else False,
             )
 
-        elif p == "practice_menu":
-            btns = draw_practice_menu(
+        elif p == "estate_menu":
+            self._last_estate_btns = draw_estate_menu(
                 surf,
                 mouse_pos,
-                quick_play_unlocked=bool(self.campaign_profile and self.campaign_profile.quick_play_unlocked),
-                ranked_unlocked=self._ranked_unlocked() if self.campaign_profile else False,
-                player_rank_name=rank_name_from_rating(self.campaign_profile.ranked_rating) if self.campaign_profile else "Margrave",
+                new_catalog_unlocks=bool(self.campaign_profile and self.campaign_profile.new_unlocks),
             )
-            self._last_practice_btns = btns
+
+        elif p == "training_menu":
+            self._last_training_btns = draw_training_menu(surf, mouse_pos)
 
         elif p == "teambuilder":
             profile = self.campaign_profile or CampaignProfile()
@@ -3995,11 +4504,18 @@ class Game:
                 pre_battle_mode=True,
                 enemy_picks=self._pbe_enemy_picks,
                 focused_slot=self._focused_slot,
+                artifact_focus=self._team_artifact_focus,
+                drag_info={
+                    "active": self._team_drag_active,
+                    "hover_slot": self._team_drag_hover_slot,
+                    "hover_remove": self._team_drag_hover_remove,
+                    "defn": self._team_drag_defn,
+                },
+                member_prompt_slot=self._team_member_prompt_slot,
+                artifact_scroll=self.team_artifact_scroll,
             )
-            self.team_select_scroll = min(
-                self.team_select_scroll,
-                clicks.get("scroll_max", 0),
-            )
+            self.team_select_scroll = min(self.team_select_scroll, clicks.get("roster_scroll_max", 0))
+            self.team_artifact_scroll = min(self.team_artifact_scroll, clicks.get("artifact_scroll_max", 0))
             self._last_team_clicks = clicks
             for _r, _kind in _team_desc_hover:
                 if _r.collidepoint(mouse_pos):
@@ -4068,11 +4584,18 @@ class Game:
                 status_rects_out=_team_desc_hover,
                 confirm_label=_confirm_label,
                 focused_slot=self._focused_slot,
+                artifact_focus=self._team_artifact_focus,
+                drag_info={
+                    "active": self._team_drag_active,
+                    "hover_slot": self._team_drag_hover_slot,
+                    "hover_remove": self._team_drag_hover_remove,
+                    "defn": self._team_drag_defn,
+                },
+                member_prompt_slot=self._team_member_prompt_slot,
+                artifact_scroll=self.team_artifact_scroll,
             )
-            self.team_select_scroll = min(
-                self.team_select_scroll,
-                clicks.get("scroll_max", 0),
-            )
+            self.team_select_scroll = min(self.team_select_scroll, clicks.get("roster_scroll_max", 0))
+            self.team_artifact_scroll = min(self.team_artifact_scroll, clicks.get("artifact_scroll_max", 0))
             self._last_team_clicks = clicks
             for _r, _kind in _team_desc_hover:
                 if _r.collidepoint(mouse_pos):
@@ -4758,13 +5281,13 @@ def main():
     # Init last-used button caches to avoid AttributeError on first frame
     _dummy = pygame.Rect(0,0,1,1)
     g._last_menu_btns   = {
-        "story_btn": _dummy,
-        "practice_btn": _dummy,
-        "teambuilder_btn": _dummy,
-        "catalog_btn": _dummy,
+        "camelot_btn": _dummy,
+        "fantasia_btn": _dummy,
+        "brightheart_btn": _dummy,
+        "estate_btn": _dummy,
         "guild_btn": _dummy,
-        "embassy_btn": _dummy,
         "market_btn": _dummy,
+        "embassy_btn": _dummy,
         "settings_btn": _dummy,
         "exit_btn": _dummy,
     }
@@ -4774,6 +5297,8 @@ def main():
     g._last_result_btns = (pygame.Rect(0,0,1,1), pygame.Rect(0,0,1,1))
     g._last_campaign_btns = {}
     g._last_practice_btns = {}
+    g._last_estate_btns = {}
+    g._last_training_btns = {}
     g._last_teambuilder_btns = {}
     g._last_story_team_btns = {}
     g._campaign_roster    = list(ROSTER)

@@ -1057,6 +1057,7 @@ def draw_battle_strip(
     buttons = {
         "log": None,
         "artifacts": None,
+        "queue": [],
         "clear": None,
         "lock": None,
         "continue": None,
@@ -1081,23 +1082,30 @@ def draw_battle_strip(
         draw_text(surf, "Queue", 13, TEXT_MUTED, queue_row.x, queue_row.y)
         chip_x = queue_row.x + 50
         chip_y = queue_row.y + 2
-        for unit, tag, color in queue_units:
-            label = short_name(unit.name)
+        for entry in queue_units:
+            if len(entry) >= 4:
+                unit, is_extra, tag, color = entry[:4]
+            else:
+                unit, tag, color = entry
+                is_extra = False
+            label = short_name(unit.name) + (" +" if is_extra else "")
             if tag:
                 label += f" · {tag}"
             chip_w = min(170, max(104, font(13).size(label)[0] + 18))
             chip = pygame.Rect(chip_x, chip_y, chip_w, 28)
-            fill = (68, 60, 24) if unit is current_actor else (40, 44, 58)
-            border = (232, 204, 84) if unit is current_actor else BORDER
+            is_current_chip = unit is current_actor and bool(is_extra) == bool(current_is_extra)
+            fill = (68, 60, 24) if is_current_chip else (40, 44, 58)
+            border = (232, 204, 84) if is_current_chip else BORDER
             if color == GREEN:
                 fill = (28, 54, 36)
                 border = (88, 182, 112)
             elif color == TEXT_MUTED:
                 fill = (36, 38, 48)
             draw_rect_border(surf, chip, fill, border, 1)
-            draw_text(surf, label, 13, TEXT if unit is current_actor else color,
+            draw_text(surf, label, 13, TEXT if is_current_chip else color,
                       chip.centerx, chip.centery, center=True)
-            if current_is_extra and unit is current_actor:
+            buttons["queue"].append((chip, unit, bool(is_extra)))
+            if is_extra and is_current_chip:
                 draw_text(surf, "+", 14, YELLOW, chip.right - 14, chip.y + 6)
             chip_x += chip_w + 8
             if chip_x > queue_row.right - 120:
@@ -1220,30 +1228,59 @@ def draw_main_menu(surf, mouse_pos, profile, player_level=1, new_catalog_unlocks
             center=True,
         )
 
-    story_btn       = pygame.Rect(cx - 130, 300, 260, 52)
-    practice_btn    = pygame.Rect(cx - 130, 363, 260, 52)
-    teambuilder_btn = pygame.Rect(cx - 130, 426, 260, 52)
-    catalog_btn     = pygame.Rect(cx - 130, 489, 260, 52)
-    guild_btn       = pygame.Rect(cx - 300, 570, 180, 44)
-    embassy_btn     = pygame.Rect(cx - 90, 570, 180, 44)
-    market_btn      = pygame.Rect(cx + 120, 570, 180, 44)
+    def _draw_primary_option(rect, title, subtitle, *, normal, hover, enabled=True):
+        draw_button(surf, rect, title, mouse_pos, size=22, normal=normal, hover=hover, border=BORDER_ACTIVE, disabled=not enabled)
+        draw_text(surf, subtitle, 13, TEXT_DIM if enabled else TEXT_MUTED, rect.centerx, rect.bottom + 16, center=True)
 
-    draw_button(surf, story_btn, "Quests", mouse_pos, size=22,
-                normal=(40, 90, 50), hover=(55, 120, 65), border=BORDER_ACTIVE)
-    draw_button(surf, practice_btn, "Play", mouse_pos, size=22,
-                normal=BLUE_DARK, hover=BLUE)
-    draw_button(surf, teambuilder_btn, "Tavern", mouse_pos, size=22,
-                normal=(75, 45, 120), hover=(105, 65, 165), border=BORDER_ACTIVE)
-    draw_button(surf, catalog_btn, "Guidebook", mouse_pos, size=22,
-                normal=(55, 75, 80), hover=(75, 105, 115), border=BORDER_ACTIVE)
+    camelot_btn    = pygame.Rect(cx - 170, 300, 340, 52)
+    fantasia_btn   = pygame.Rect(cx - 170, 370, 340, 52)
+    bright_btn     = pygame.Rect(cx - 170, 440, 340, 52)
+    estate_btn     = pygame.Rect(cx - 170, 510, 340, 52)
+    guild_btn      = pygame.Rect(cx - 300, 610, 180, 44)
+    market_btn     = pygame.Rect(cx - 90, 610, 180, 44)
+    embassy_btn    = pygame.Rect(cx + 120, 610, 180, 44)
+
+    _draw_primary_option(
+        camelot_btn,
+        "Camelot",
+        "Tutorial campaign with four quests.",
+        normal=(40, 90, 50),
+        hover=(55, 120, 65),
+        enabled=True,
+    )
+    _draw_primary_option(
+        fantasia_btn,
+        "Fantasia",
+        "Quick Play",
+        normal=BLUE_DARK,
+        hover=BLUE,
+        enabled=quick_play_unlocked,
+    )
+    _draw_primary_option(
+        bright_btn,
+        "Brightheart",
+        "Ranked ladder",
+        normal=(90, 60, 30),
+        hover=(125, 85, 45),
+        enabled=ranked_unlocked,
+    )
+    _draw_primary_option(
+        estate_btn,
+        "The Estate",
+        "Parties, guidebook, and training.",
+        normal=(75, 45, 120),
+        hover=(105, 65, 165),
+        enabled=True,
+    )
+
     draw_button(surf, guild_btn, "Guild", mouse_pos, size=18,
                 normal=(55, 90, 55), hover=(75, 125, 75), border=BORDER_ACTIVE)
-    draw_button(surf, embassy_btn, "Embassy", mouse_pos, size=18,
-                normal=(80, 60, 30), hover=(110, 85, 45), border=BORDER_ACTIVE)
     draw_button(surf, market_btn, "Market", mouse_pos, size=18,
                 normal=(55, 55, 55), hover=(75, 75, 75), border=BORDER_ACTIVE)
+    draw_button(surf, embassy_btn, "Embassy", mouse_pos, size=18,
+                normal=(80, 60, 30), hover=(110, 85, 45), border=BORDER_ACTIVE)
     if new_catalog_unlocks:
-        bx, by = catalog_btn.right, catalog_btn.top
+        bx, by = estate_btn.right, estate_btn.top
         pygame.draw.circle(surf, (190, 130, 30), (bx, by), 11)
         draw_text(surf, "!", 14, TEXT, bx - 3, by - 9)
 
@@ -1258,15 +1295,73 @@ def draw_main_menu(surf, mouse_pos, profile, player_level=1, new_catalog_unlocks
     draw_text(surf, "✕", 20, RED if e_hov else TEXT_DIM,  exit_btn.x + 10,     exit_btn.y + 9)
 
     return {
-        "story_btn": story_btn,
-        "practice_btn": practice_btn,
-        "teambuilder_btn": teambuilder_btn,
-        "catalog_btn": catalog_btn,
+        "camelot_btn": camelot_btn,
+        "fantasia_btn": fantasia_btn,
+        "brightheart_btn": bright_btn,
+        "estate_btn": estate_btn,
         "guild_btn": guild_btn,
-        "embassy_btn": embassy_btn,
         "market_btn": market_btn,
+        "embassy_btn": embassy_btn,
         "settings_btn": settings_btn,
         "exit_btn": exit_btn,
+    }
+
+
+def draw_estate_menu(surf, mouse_pos, new_catalog_unlocks=False) -> dict:
+    surf.fill(BG)
+    cx = WIDTH // 2
+    draw_text(surf, "The Estate", 48, TEXT, cx, 80, center=True)
+    draw_text(surf, "Manage your parties, study the guidebook, or head to training.", 18, TEXT_DIM, cx, 145, center=True)
+
+    parties_btn = pygame.Rect(cx - 170, 235, 340, 62)
+    guidebook_btn = pygame.Rect(cx - 170, 319, 340, 62)
+    training_btn = pygame.Rect(cx - 170, 403, 340, 62)
+    back_btn = pygame.Rect(20, 20, 100, 36)
+
+    draw_button(surf, parties_btn, "Parties", mouse_pos, size=22,
+                normal=(75, 45, 120), hover=(105, 65, 165), border=BORDER_ACTIVE)
+    draw_button(surf, guidebook_btn, "Guidebook", mouse_pos, size=22,
+                normal=(55, 75, 80), hover=(75, 105, 115), border=BORDER_ACTIVE)
+    draw_button(surf, training_btn, "Training", mouse_pos, size=22,
+                normal=BLUE_DARK, hover=BLUE, border=BORDER_ACTIVE)
+    draw_button(surf, back_btn, "Back", mouse_pos, size=16)
+
+    if new_catalog_unlocks:
+        pygame.draw.circle(surf, (190, 130, 30), (guidebook_btn.right, guidebook_btn.top), 11)
+        draw_text(surf, "!", 14, TEXT, guidebook_btn.right - 3, guidebook_btn.top - 9)
+
+    draw_text(surf, "Training uses the full local collection and ignores progression locks.", 15, TEXT_MUTED, cx, 500, center=True)
+
+    return {
+        "parties_btn": parties_btn,
+        "guidebook_btn": guidebook_btn,
+        "training_btn": training_btn,
+        "back_btn": back_btn,
+    }
+
+
+def draw_training_menu(surf, mouse_pos) -> dict:
+    surf.fill(BG)
+    cx = WIDTH // 2
+    draw_text(surf, "Training", 48, TEXT, cx, 80, center=True)
+    draw_text(surf, "Both modes use every adventurer and artifact in this local build.", 18, TEXT_DIM, cx, 145, center=True)
+
+    local_btn = pygame.Rect(cx - 170, 250, 340, 62)
+    lan_btn = pygame.Rect(cx - 170, 334, 340, 62)
+    back_btn = pygame.Rect(20, 20, 100, 36)
+
+    draw_button(surf, local_btn, "Local Play", mouse_pos, size=22,
+                normal=(55, 70, 120), hover=(72, 95, 160), border=BORDER_ACTIVE)
+    draw_button(surf, lan_btn, "LAN Mode", mouse_pos, size=22,
+                normal=BLUE_DARK, hover=BLUE, border=BORDER_ACTIVE)
+    draw_button(surf, back_btn, "Back", mouse_pos, size=16)
+
+    draw_text(surf, "Local Play is same-device pass-and-play. LAN Mode is for two PCs on the same network.", 15, TEXT_MUTED, cx, 430, center=True)
+
+    return {
+        "local_btn": local_btn,
+        "lan_btn": lan_btn,
+        "back_btn": back_btn,
     }
 
 
@@ -2430,6 +2525,321 @@ def draw_team_select_screen(surf, player_name: str, roster: list,
         back_rect = pygame.Rect(DETAIL_X + 14, DETAIL_Y + DETAIL_H - 55, 160, 44)
         draw_button(surf, back_rect, "← Back", mouse_pos, size=16)
         clicks["back"] = back_rect
+
+    return clicks
+
+
+def draw_team_select_screen(surf, player_name: str, roster: list,
+                              selected_idx: int, team_picks: list,
+                              sub_phase: str, current_adv_idx: int,
+                              sig_choice: int, basic_choices: list,
+                              item_choice: int, items: list,
+                              class_basics: dict,
+                              mouse_pos,
+                              scroll_offset: int = 0,
+                              team_slot_selected=None,
+                              sig_tier: int = 3,
+                              twists_unlocked: bool = False,
+                              status_rects_out: list = None,
+                              confirm_label: str = "Ready",
+                              pre_battle_mode: bool = False,
+                              enemy_picks: list = None,
+                              focused_slot: int = None,
+                              artifact_focus=None,
+                              drag_info: dict | None = None,
+                              member_prompt_slot: int | None = None,
+                              artifact_scroll: int = 0) -> dict:
+    surf.fill(BG)
+    clicks = {
+        "roster_cards": [],
+        "party_slots": [],
+        "sig_buttons": [],
+        "basic_buttons": [],
+        "artifact_entries": [],
+        "artifact_selected": [],
+        "artifact_remove": [],
+        "confirm": None,
+        "back": None,
+        "import_btn": None,
+        "prompt_change": None,
+        "prompt_details": None,
+        "member_prompt_rect": None,
+        "roster_viewport": None,
+        "roster_scroll_max": 0,
+        "artifact_viewport": None,
+        "artifact_scroll_max": 0,
+        "roster_drop_zone": None,
+    }
+    drag_info = drag_info or {}
+    slot_labels = ["Back Left", "Back Right", "Frontline"]
+    slot_short = ["BL", "BR", "FL"]
+    team_artifacts = []
+    for pick in team_picks or []:
+        if pick:
+            team_artifacts = list(pick.get("team_artifacts", []))
+            break
+    if not team_artifacts:
+        team_artifacts = list(item_choice or [])
+    title = "Pre-Battle Setup" if pre_battle_mode else f"{player_name} - Build Party"
+    draw_text(surf, title, 30, TEXT, WIDTH // 2, 28, center=True)
+
+    left_rect = None
+    if not pre_battle_mode:
+        left_rect = pygame.Rect(24, 74, 392, 794)
+        clicks["roster_drop_zone"] = left_rect
+        draw_panel(surf, left_rect)
+        draw_text(surf, "Adventurer Roster", 22, TEXT, left_rect.x + 18, left_rect.y + 16)
+        draw_text(
+            surf,
+            "Drag into a party slot. Double-click for details.",
+            14,
+            TEXT_DIM,
+            left_rect.x + 18,
+            left_rect.y + 46,
+        )
+        roster_view = pygame.Rect(left_rect.x + 14, left_rect.y + 80, left_rect.w - 28, left_rect.h - 110)
+        clicks["roster_viewport"] = roster_view
+        sorted_roster = sorted(roster, key=lambda d: (d.cls, d.name))
+        card_h = 86
+        content_h = len(sorted_roster) * (card_h + 10)
+        max_scroll = max(0, content_h - roster_view.h)
+        scroll = max(0, min(scroll_offset, max_scroll))
+        clicks["roster_scroll_max"] = max_scroll
+        prev_clip = surf.get_clip()
+        surf.set_clip(roster_view)
+        for idx, defn in enumerate(sorted_roster):
+            y = roster_view.y + idx * (card_h + 10) - scroll
+            rect = pygame.Rect(roster_view.x, y, roster_view.w, card_h)
+            if rect.bottom < roster_view.y or rect.top > roster_view.bottom:
+                continue
+            in_team = any(pick and pick.get("definition") == defn for pick in team_picks)
+            selected = selected_idx is defn
+            draw_adventurer_card(surf, rect, defn, selected, in_team, mouse_pos, status_rects_out)
+            clicks["roster_cards"].append((rect, defn))
+        surf.set_clip(prev_clip)
+        _draw_scroll_arrows(surf, roster_view, scroll, max_scroll)
+        if drag_info.get("active") and drag_info.get("hover_remove"):
+            pygame.draw.rect(surf, RED, left_rect, 3, border_radius=10)
+            draw_text(surf, "Release here to remove from party", 15, RED, left_rect.centerx, left_rect.bottom - 26, center=True)
+
+    right_rect = pygame.Rect(448, 74, 928, 794) if not pre_battle_mode else pygame.Rect(220, 74, 960, 794)
+    draw_panel(surf, right_rect)
+    header_y = right_rect.y + 14
+    draw_text(surf, "Party Formation", 22, TEXT, right_rect.x + 20, header_y)
+    fill_count = sum(1 for pick in team_picks if pick)
+    ready_count = sum(1 for pick in team_picks if pick and "signature" in pick and len(pick.get("basics", [])) == 2)
+    draw_text(surf, f"Party {fill_count}/3   Sets {ready_count}/3   Artifacts {len(team_artifacts)}/3", 15, TEXT_DIM, right_rect.right - 20, header_y + 4, right=True)
+
+    party_rect = pygame.Rect(right_rect.x + 18, right_rect.y + 52, right_rect.w - 36, 232)
+    editor_rect = pygame.Rect(right_rect.x + 18, party_rect.bottom + 14, right_rect.w - 36, 310)
+    artifact_rect = pygame.Rect(right_rect.x + 18, editor_rect.bottom + 14, right_rect.w - 36, right_rect.bottom - (editor_rect.bottom + 32))
+
+    draw_rect_border(surf, party_rect, PANEL_ALT, BORDER)
+    draw_rect_border(surf, editor_rect, PANEL_ALT, BORDER)
+    draw_rect_border(surf, artifact_rect, PANEL_ALT, BORDER)
+
+    party_slots = [
+        pygame.Rect(party_rect.centerx - 255, party_rect.y + 20, 210, 92),
+        pygame.Rect(party_rect.centerx + 45, party_rect.y + 20, 210, 92),
+        pygame.Rect(party_rect.centerx - 105, party_rect.y + 126, 210, 92),
+    ]
+    for idx, rect in enumerate(party_slots):
+        pick = team_picks[idx] if idx < len(team_picks) else None
+        hovered_drop = drag_info.get("active") and drag_info.get("hover_slot") == idx
+        is_focused = focused_slot == idx
+        fill = PANEL_HIGHLIGHT if hovered_drop else PANEL
+        border = BORDER_ACTIVE if (hovered_drop or is_focused) else BORDER
+        if pick and pick.get("definition"):
+            defn = pick["definition"]
+            fill = tuple(min(255, c + 12) for c in CLASS_COLORS.get(defn.cls, PANEL_ALT))
+        draw_rect_border(surf, rect, fill, border)
+        clicks["party_slots"].append((rect, idx))
+        draw_text(surf, slot_labels[idx], 13, TEXT_MUTED, rect.x + 10, rect.y + 8)
+        if pick and pick.get("definition"):
+            defn = pick["definition"]
+            draw_text(surf, defn.name, 18, TEXT, rect.x + 10, rect.y + 30)
+            draw_text(surf, cls_label(defn.cls), 13, CLASS_TEXT_COLORS.get(defn.cls, TEXT_MUTED), rect.x + 10, rect.y + 52)
+            sig_ready = "signature" in pick
+            basics_ready = len(pick.get("basics", [])) == 2
+            draw_text(surf, f"Sig {'OK' if sig_ready else '--'}", 12, GREEN if sig_ready else TEXT_MUTED, rect.x + 10, rect.y + 70)
+            draw_text(surf, f"Basics {len(pick.get('basics', []))}/2", 12, GREEN if basics_ready else TEXT_MUTED, rect.right - 10, rect.y + 70, right=True)
+        else:
+            draw_text(surf, "Drop Adventurer Here", 18, TEXT_MUTED, rect.centerx, rect.y + 34, center=True)
+            draw_text(surf, slot_short[idx], 12, TEXT_DIM, rect.centerx, rect.y + 60, center=True)
+
+    if drag_info.get("active"):
+        arrow_pts = [
+            (party_rect.centerx, party_rect.y + 95),
+            (party_rect.centerx - 12, party_rect.y + 110),
+            (party_rect.centerx + 12, party_rect.y + 110),
+        ]
+        pygame.draw.polygon(surf, TEXT_DIM, arrow_pts)
+
+    editor_dx = editor_rect.x + 18
+    editor_dy = editor_rect.y + 16
+    focus_pick = team_picks[focused_slot] if focused_slot is not None and focused_slot < len(team_picks) else None
+    if focus_pick and focus_pick.get("definition"):
+        defn = focus_pick["definition"]
+        draw_text(surf, f"{slot_labels[focused_slot]} Set", 20, TEXT, editor_dx, editor_dy)
+        editor_dy += 28
+        draw_text(surf, defn.name, 22, TEXT, editor_dx, editor_dy)
+        draw_text(surf, cls_label(defn.cls), 14, CLASS_TEXT_COLORS.get(defn.cls, TEXT_MUTED), editor_dx + 250, editor_dy + 4)
+        editor_dy += 28
+        draw_text(surf, f"HP {defn.hp}   ATK {defn.attack}   DEF {defn.defense}   SPD {defn.speed}", 14, TEXT_DIM, editor_dx, editor_dy)
+        editor_dy += 24
+        draw_text(surf, "Signature", 15, CYAN, editor_dx, editor_dy)
+        editor_dy += 20
+        sigs = defn.sig_options[:sig_tier]
+        sig_w = (editor_rect.w - 56 - 16) // 3
+        for idx, sig in enumerate(sigs):
+            rect = pygame.Rect(editor_dx + idx * (sig_w + 8), editor_dy, sig_w, 84)
+            selected = sig_choice == idx or ("signature" in focus_pick and focus_pick["signature"].id == sig.id)
+            draw_rect_border(surf, rect, PANEL_HIGHLIGHT if selected else PANEL, BORDER_ACTIVE if selected else BORDER)
+            draw_text(surf, sig.name, 14, TEXT, rect.x + 8, rect.y + 8)
+            summary = _mode_summary(sig.frontline)
+            for line_idx, line in enumerate(_wrap_text(summary, 12, rect.w - 16)[:3]):
+                _draw_rich_line(surf, line, 12, TEXT_DIM, rect.x + 8, rect.y + 28 + line_idx * 13, status_rects_out)
+            clicks["sig_buttons"].append((rect, idx))
+        editor_dy += 98
+        draw_text(surf, "Basics (pick 2)", 15, CYAN, editor_dx, editor_dy)
+        editor_dy += 20
+        basics = class_basics.get(defn.cls, [])
+        basic_w = (editor_rect.w - 56 - 12) // 2
+        for idx, basic in enumerate(basics):
+            row = idx // 2
+            col = idx % 2
+            rect = pygame.Rect(editor_dx + col * (basic_w + 12), editor_dy + row * 72, basic_w, 62)
+            selected = idx in (basic_choices or [])
+            draw_rect_border(surf, rect, PANEL_HIGHLIGHT if selected else PANEL, BORDER_ACTIVE if selected else BORDER)
+            draw_text(surf, basic.name, 14, TEXT, rect.x + 8, rect.y + 8)
+            summary = _mode_summary(basic.frontline)
+            for line_idx, line in enumerate(_wrap_text(summary, 12, rect.w - 16)[:2]):
+                _draw_rich_line(surf, line, 12, TEXT_DIM, rect.x + 8, rect.y + 28 + line_idx * 13, status_rects_out)
+            clicks["basic_buttons"].append((rect, idx))
+        status_y = editor_rect.bottom - 26
+        set_ready = ("signature" in focus_pick) and len(focus_pick.get("basics", [])) == 2
+        status_text = "Set locked in." if set_ready else "Choose 1 signature and 2 basics to finish this set."
+        draw_text(surf, status_text, 14, GREEN if set_ready else TEXT_DIM, editor_dx, status_y)
+    elif focused_slot is not None:
+        draw_text(surf, slot_labels[focused_slot], 20, TEXT, editor_dx, editor_dy)
+        editor_dy += 32
+        draw_text(surf, "Drop an adventurer into this slot to begin.", 16, TEXT_MUTED, editor_dx, editor_dy)
+    elif selected_idx is not None and not pre_battle_mode:
+        defn = selected_idx
+        draw_text(surf, defn.name, 22, TEXT, editor_dx, editor_dy)
+        editor_dy += 28
+        draw_text(surf, f"{cls_label(defn.cls)} - {defn.talent_name}", 15, YELLOW, editor_dx, editor_dy)
+        editor_dy += 22
+        for line in _wrap_text(defn.talent_text, 13, editor_rect.w - 36)[:6]:
+            _draw_rich_line(surf, line, 13, TEXT_DIM, editor_dx, editor_dy, status_rects_out)
+            editor_dy += 16
+        draw_text(surf, "Double-click this adventurer for the full detail card.", 14, CYAN, editor_dx, editor_rect.bottom - 26)
+    else:
+        draw_text(surf, "Build Your Party", 22, TEXT, editor_dx, editor_dy)
+        editor_dy += 30
+        info_lines = [
+            "Drag adventurers from the roster into the formation triangle.",
+            "Drag a party member onto another slot to swap positions.",
+            "Drag a party member back to the roster to remove them.",
+            "Double-click roster cards for details, or party members for the set/details prompt.",
+        ]
+        for line in info_lines:
+            draw_text(surf, line, 15, TEXT_DIM, editor_dx, editor_dy)
+            editor_dy += 22
+
+    art_dx = artifact_rect.x + 18
+    art_dy = artifact_rect.y + 14
+    draw_text(surf, "Party Artifacts", 20, TEXT, art_dx, art_dy)
+    draw_text(surf, "Up to 3 shared artifacts. Click the list to add, click a selected artifact to inspect it.", 13, TEXT_DIM, art_dx, art_dy + 24)
+    tray_y = art_dy + 50
+    for idx in range(3):
+        rect = pygame.Rect(art_dx + idx * 176, tray_y, 164, 54)
+        artifact = team_artifacts[idx] if idx < len(team_artifacts) else None
+        draw_rect_border(surf, rect, PANEL, BORDER_ACTIVE if artifact_focus and artifact and artifact_focus.id == artifact.id else BORDER)
+        if artifact:
+            draw_text(surf, artifact.name, 14, TEXT, rect.x + 8, rect.y + 8)
+            draw_text(surf, "Reactive" if artifact.reactive else "Active", 12, TYPE_PASSIVE_COL if artifact.reactive else TYPE_ACTIVE_COL, rect.x + 8, rect.y + 28)
+            clicks["artifact_selected"].append((rect, artifact))
+            remove_rect = pygame.Rect(rect.right - 24, rect.y + 6, 18, 18)
+            pygame.draw.rect(surf, RED_DARK, remove_rect, border_radius=4)
+            draw_text(surf, "x", 12, RED, remove_rect.centerx, remove_rect.y + 1, center=True)
+            clicks["artifact_remove"].append((remove_rect, artifact))
+        else:
+            draw_text(surf, "Empty", 14, TEXT_MUTED, rect.centerx, rect.y + 18, center=True)
+    list_rect = pygame.Rect(art_dx, artifact_rect.y + 118, 320, artifact_rect.h - 132)
+    desc_rect = pygame.Rect(list_rect.right + 18, artifact_rect.y + 118, artifact_rect.right - (list_rect.right + 34), artifact_rect.h - 132)
+    draw_rect_border(surf, list_rect, PANEL, BORDER)
+    draw_rect_border(surf, desc_rect, PANEL, BORDER)
+    clicks["artifact_viewport"] = list_rect
+    art_content_h = len(items) * 42
+    art_scroll_max = max(0, art_content_h - list_rect.h)
+    art_scroll = max(0, min(artifact_scroll, art_scroll_max))
+    clicks["artifact_scroll_max"] = art_scroll_max
+    prev_clip = surf.get_clip()
+    surf.set_clip(list_rect)
+    for idx, artifact in enumerate(items):
+        y = list_rect.y + idx * 42 - art_scroll
+        rect = pygame.Rect(list_rect.x + 6, y, list_rect.w - 12, 36)
+        if rect.bottom < list_rect.y or rect.top > list_rect.bottom:
+            continue
+        selected = artifact.id in {entry.id for entry in team_artifacts}
+        draw_rect_border(surf, rect, PANEL_HIGHLIGHT if selected else PANEL_ALT, BORDER_ACTIVE if selected else BORDER)
+        draw_text(surf, artifact.name, 13, TEXT, rect.x + 8, rect.y + 7)
+        tag = "Selected" if selected else "Click to Add"
+        color = GREEN if selected else TEXT_DIM
+        draw_text(surf, tag, 12, color, rect.right - 8, rect.y + 8, right=True)
+        clicks["artifact_entries"].append((rect, artifact))
+    surf.set_clip(prev_clip)
+    _draw_scroll_arrows(surf, list_rect, art_scroll, art_scroll_max)
+    focused_artifact = artifact_focus or (team_artifacts[0] if team_artifacts else None)
+    if focused_artifact:
+        draw_text(surf, focused_artifact.name, 18, TEXT, desc_rect.x + 12, desc_rect.y + 10)
+        draw_text(surf, f"Cooldown: {focused_artifact.cooldown}", 13, TEXT_DIM, desc_rect.x + 12, desc_rect.y + 34)
+        draw_text(surf, "Reactive" if focused_artifact.reactive else "Active", 13, TYPE_PASSIVE_COL if focused_artifact.reactive else TYPE_ACTIVE_COL, desc_rect.x + 12, desc_rect.y + 54)
+        dy = desc_rect.y + 78
+        for line in _wrap_text(focused_artifact.description, 13, desc_rect.w - 24):
+            _draw_rich_line(surf, line, 13, TEXT_DIM, desc_rect.x + 12, dy, status_rects_out)
+            dy += 16
+    else:
+        draw_text(surf, "Select an artifact to read what it does.", 15, TEXT_MUTED, desc_rect.x + 12, desc_rect.y + 16)
+
+    back_rect = pygame.Rect(right_rect.x + 18, right_rect.bottom - 58, 160, 42)
+    draw_button(surf, back_rect, "Back", mouse_pos, size=18)
+    clicks["back"] = back_rect
+    can_confirm = all(pick and "signature" in pick and len(pick.get("basics", [])) == 2 for pick in team_picks)
+    if can_confirm:
+        confirm_rect = pygame.Rect(right_rect.right - 220, right_rect.bottom - 58, 200, 42)
+        draw_button(surf, confirm_rect, confirm_label, mouse_pos, normal=BLUE_DARK, hover=BLUE, size=18)
+        clicks["confirm"] = confirm_rect
+    else:
+        draw_text(surf, "Finish all three sets to continue.", 14, TEXT_DIM, right_rect.right - 20, right_rect.bottom - 48, right=True)
+
+    if not pre_battle_mode:
+        import_rect = pygame.Rect(left_rect.x + 14, left_rect.bottom - 48, left_rect.w - 28, 36)
+        draw_button(surf, import_rect, "Import Party", mouse_pos, normal=PANEL, hover=PANEL_HIGHLIGHT, border=BORDER_ACTIVE, size=16)
+        clicks["import_btn"] = import_rect
+
+    if member_prompt_slot is not None and 0 <= member_prompt_slot < len(team_picks) and team_picks[member_prompt_slot]:
+        anchor = party_slots[member_prompt_slot]
+        prompt_rect = pygame.Rect(min(anchor.centerx - 120, right_rect.right - 256), min(anchor.bottom + 10, right_rect.bottom - 126), 240, 108)
+        draw_rect_border(surf, prompt_rect, PANEL, BORDER_ACTIVE)
+        draw_text(surf, "Party Member", 16, TEXT, prompt_rect.centerx, prompt_rect.y + 10, center=True)
+        change_rect = pygame.Rect(prompt_rect.x + 18, prompt_rect.y + 40, prompt_rect.w - 36, 24)
+        detail_rect = pygame.Rect(prompt_rect.x + 18, prompt_rect.y + 72, prompt_rect.w - 36, 24)
+        draw_button(surf, change_rect, "Change Set", mouse_pos, normal=(45, 72, 96), hover=(62, 102, 136), size=15)
+        draw_button(surf, detail_rect, "View Details", mouse_pos, normal=PANEL_ALT, hover=PANEL_HIGHLIGHT, size=15)
+        clicks["member_prompt_rect"] = prompt_rect
+        clicks["prompt_change"] = change_rect
+        clicks["prompt_details"] = detail_rect
+
+    if drag_info.get("active") and drag_info.get("defn") is not None:
+        ghost = pygame.Rect(mouse_pos[0] - 110, mouse_pos[1] - 36, 220, 72)
+        ghost_surf = pygame.Surface((ghost.w, ghost.h), pygame.SRCALPHA)
+        ghost_surf.fill((18, 24, 34, 220))
+        surf.blit(ghost_surf, ghost.topleft)
+        pygame.draw.rect(surf, BORDER_ACTIVE, ghost, 2, border_radius=8)
+        draw_text(surf, drag_info["defn"].name, 16, TEXT, ghost.x + 10, ghost.y + 10)
+        draw_text(surf, cls_label(drag_info["defn"].cls), 13, CLASS_TEXT_COLORS.get(drag_info["defn"].cls, TEXT_MUTED), ghost.x + 10, ghost.y + 34)
 
     return clicks
 
