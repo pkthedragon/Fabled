@@ -1230,7 +1230,6 @@ def draw_main_menu(surf, mouse_pos, profile, player_level=1, new_catalog_unlocks
 
     def _draw_primary_option(rect, title, subtitle, *, normal, hover, enabled=True):
         draw_button(surf, rect, title, mouse_pos, size=22, normal=normal, hover=hover, border=BORDER_ACTIVE, disabled=not enabled)
-        draw_text(surf, subtitle, 13, TEXT_DIM if enabled else TEXT_MUTED, rect.centerx, rect.bottom + 16, center=True)
 
     camelot_btn    = pygame.Rect(cx - 170, 300, 340, 52)
     fantasia_btn   = pygame.Rect(cx - 170, 370, 340, 52)
@@ -1497,7 +1496,7 @@ def draw_practice_menu(surf, mouse_pos, quick_play_unlocked=False, ranked_unlock
 def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile, max_slots: int = 1) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
-    draw_text(surf, "Tavern", 48, TEXT, cx, 40, center=True)
+    draw_text(surf, "Parties", 48, TEXT, cx, 40, center=True)
     draw_text(surf, f"Saved party slots unlocked: {max_slots}/6",
               18, TEXT_DIM, cx, 95, center=True)
 
@@ -1603,10 +1602,10 @@ def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def, max_sl
     valid_teams = [(i, t) for i, t in enumerate(saved_teams[:max_slots]) if t is not None]
 
     if not valid_teams:
-        draw_text(surf, "No parties saved. Build a party in the Tavern first.",
+        draw_text(surf, "No parties saved. Build a party in Parties first.",
                   20, RED, cx, 250, center=True)
         teambuilder_btn = pygame.Rect(cx - 140, 310, 280, 55)
-        draw_button(surf, teambuilder_btn, "Go to Tavern", mouse_pos, size=20,
+        draw_button(surf, teambuilder_btn, "Go to Parties", mouse_pos, size=20,
                     normal=(40, 90, 50), hover=(55, 120, 65))
     else:
         card_w = 700
