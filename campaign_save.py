@@ -42,6 +42,7 @@ def _migrate_legacy_save() -> str:
 def _normalize_profile(profile: CampaignProfile) -> CampaignProfile:
     profile.recruited |= set(STARTER_ADVENTURERS)
     profile.unlocked_artifacts |= set(STARTER_ARTIFACTS)
+    profile.unlocked_items = set()
     profile.quick_play_unlocked = bool(profile.quick_play_unlocked or profile.tutorial_complete)
     profile.highest_quest_cleared = max(int(profile.highest_quest_cleared), 0)
     profile.player_exp = max(0, int(profile.player_exp))

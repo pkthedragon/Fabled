@@ -333,7 +333,7 @@ HOLY_DIADEM = Item(
 )
 VAMPIRE_FANG = Item(
     id="vampire_fang", name="Vampire Fang", passive=True,
-    description="User's abilities have 7% vamp.", vamp=0.07,
+    description="User's abilities have 7% lifesteal.", vamp=0.07,
 )
 SPIKED_MAIL = Item(
     id="spiked_mail", name="Spiked Mail", passive=True,
@@ -431,7 +431,7 @@ ENCHANTED_LAMP = Artifact(
 )
 SELKIES_SKIN = Artifact(
     id="selkies_skin", name="Selkie's Skin", reactive=True, cooldown=2,
-    description="When an ally adventurer is knocked below 50% max HP, their abilities have 10% vamp for 2 rounds.",
+    description="When an ally adventurer is knocked below 50% max HP, their abilities have 10% lifesteal for 2 rounds.",
     vamp=0.10, special="selkies_skin",
 )
 GOOSE_QUILL = Artifact(
@@ -520,7 +520,7 @@ RISA = AdventurerDef(
     id="risa_redcloak", name="Risa Redcloak", cls="Fighter",
     hp=288, attack=76, defense=74, speed=42,
     talent_name="Red and Wolf",
-    talent_text="While below 50% max HP, Risa has +12 Attack, +12 Speed, and her abilities have 15% vamp.",
+    talent_text="While below 50% max HP, Risa has +12 Attack, +12 Speed, and her abilities have 15% lifesteal.",
     sig_options=[RISA_S1, RISA_S2, RISA_S3], twist=RISA_T,
 )
 

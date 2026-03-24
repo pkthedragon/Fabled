@@ -29,8 +29,8 @@ class AbilityMode:
     bonus_vs_statused: int = 0     # +flat bonus if target has any status condition
 
     # Lifesteal
-    vamp: float = 0.0              # heal for X% of damage dealt
-    double_vamp_no_base: bool = False  # 2× base vamp but no own base vamp
+    vamp: float = 0.0              # heal for X% of damage dealt as lifesteal
+    double_vamp_no_base: bool = False  # 2× base lifesteal but no own base lifesteal
 
     # Healing (targets an ally or self)
     heal: int = 0                  # flat HP healed to target ally
@@ -115,7 +115,7 @@ class Item:
     def_buff: int = 0
     def_buff_dur: int = 0
     # Passive effects (always on)
-    vamp: float = 0.0         # 10% vamp on abilities
+    vamp: float = 0.0         # 10% lifesteal on abilities
     flat_vs_statused: int = 0 # +10 damage to statused targets
     reflect_pct: float = 0.0  # reflect X% of incoming damage
     flat_heal_bonus: int = 0  # +15 to healing effects
@@ -469,14 +469,12 @@ class CampaignProfile:
     unlocked_classes: "Set[str]" = field(default_factory=lambda: {
         "Fighter", "Ranger", "Warden"
     })
-    unlocked_items: "Set[str]" = field(default_factory=lambda: {
-        "healing_tonic"
-    })
+    unlocked_items: "Set[str]" = field(default_factory=set)
     unlocked_artifacts: "Set[str]" = field(default_factory=lambda: {
         "divine_apple"
     })
     default_sigs: "Dict[str, str]" = field(default_factory=dict)  # adv_id -> sig_id
-    twists_unlocked: bool = True
+    twists_unlocked: bool = False
     quest_cleared: "Dict[int, bool]" = field(default_factory=dict)
     highest_quest_cleared: int = 0
     campaign_complete: bool = False

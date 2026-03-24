@@ -20,12 +20,13 @@ Phase flow:
 """
 import sys
 import random
+import re
 import pygame
 
 import battle_log
 import net
 import ai as _ai
-from ai_team_pool import AI_TEAM_POOL
+from ai_team_pool import AI_TEAM_POOL, RANKED_AI_TEAM_META
 from settings import *
 from models import BattleState, CampaignProfile
 from data import (
@@ -65,7 +66,7 @@ from ui import (
     draw_guild_screen, draw_embassy_screen, draw_market_closed,
     draw_catalog,
     draw_pvp_mode_select, draw_lan_lobby,
-    draw_status_tooltip, draw_import_modal, draw_tutorial_popup, draw_intro_popup,
+    draw_status_tooltip, draw_artifact_tooltip, draw_import_modal, draw_tutorial_popup, draw_intro_popup,
     _wrap_text,
     SLOT_RECTS_P1, SLOT_RECTS_P2, LOG_RECT, ACTION_PANEL_RECT, BATTLE_DETAIL_RECT,
     BATTLE_STRIP_RECT, ARENA_RECT,
@@ -137,6 +138,7 @@ class Game:
         self.game_mode = "pvp"  # "pvp" | "single_player" | "campaign"
         self.ai_player = 2
         self.ai_comp_name = None
+        self._ai_decision_profile = "quick"
 
         # Campaign state
         self.campaign_profile: CampaignProfile = load_campaign()
@@ -153,6 +155,7 @@ class Game:
         self._last_guild_btns = None
         self._last_embassy_btns = None
         self._last_market_btns = None
+        self._menu_level_card_open: bool = False
 
         # New teambuilder / story-team state
         self._editing_team_slot: int = None
@@ -221,7 +224,7 @@ class Game:
         self._last_catalog_btns = None
         self._catalog_filters = {
             "adventurers": {"classes": set(), "damage_types": set()},
-            "basics":      {"classes": set(), "types": set()},
+            "classes":     {},
             "artifacts":   {"types": set()},
         }
 
@@ -615,6 +618,7 @@ class Game:
     def _enter_camelot(self):
         self.game_mode = "campaign"
         self.ai_player = 2
+        self._ai_decision_profile = "quick"
         self.campaign_mission_id = 1
         self._campaign_back_phase = "menu"
         self.phase = "campaign_quest_select"
@@ -896,11 +900,10 @@ class Game:
         after_level = self._player_level()
         after_slots = saved_team_slot_count(after_level)
         after_vouchers = after_level // 5
-        self._append_progress_lines(lines, f"Player EXP +{amount}")
         if after_level > before_level:
-            self._append_progress_lines(lines, f"Player Level {after_level}")
+            self._append_progress_lines(lines, f"Player Level Up: {after_level}")
         if after_slots > before_slots:
-            self._append_progress_lines(lines, f"Saved Team Slots +{after_slots - before_slots}")
+            self._append_progress_lines(lines, f"Saved Party Slots +{after_slots - before_slots}")
         if after_vouchers > before_vouchers:
             gained = after_vouchers - before_vouchers
             profile.guild_vouchers += gained
@@ -917,10 +920,8 @@ class Game:
         before_level = class_level_from_points(before_points)
         profile.class_points[class_name] = before_points + amount
         after_level = class_level_from_points(profile.class_points[class_name])
-        suffix = f" ({source})" if source else ""
-        self._append_progress_lines(lines, f"{class_name} Class Points +{amount}{suffix}")
         if after_level > before_level:
-            self._append_progress_lines(lines, f"{class_name} Class Level {after_level}")
+            self._append_progress_lines(lines, f"{class_name} Class Level Up: {after_level}")
             if after_level >= 5:
                 self._append_progress_lines(lines, f"{class_name} Sigil and Title Unlocked")
 
@@ -934,7 +935,7 @@ class Game:
         profile.adventurer_quest_clears[adv_id] = before_clears + 1
         after_level = adventurer_level_from_clears(profile.adventurer_quest_clears[adv_id])
         if after_level > before_level:
-            self._append_progress_lines(lines, f"{defn.name} Level {after_level}")
+            self._append_progress_lines(lines, f"{defn.name} Level Up: {after_level}")
             if after_level >= 4 and before_level < 4:
                 self._append_progress_lines(lines, f"{defn.name} Twist Unlocked")
             if after_level >= 5 and before_level < 5:
@@ -1013,10 +1014,10 @@ class Game:
         profile = self.campaign_profile
         lines = []
         party_ids = self._current_party_adventurer_ids(self.p1_picks)
-        self._grant_party_progress_local(party_ids, lines)
         gold_amount = QUICK_PLAY_WIN_GOLD if won else QUICK_PLAY_LOSS_GOLD
         profile.gold += gold_amount
         self._append_progress_lines(lines, f"Gold +{gold_amount}")
+        self._grant_party_progress_local(party_ids, lines)
         self._refresh_profile_filters()
         save_campaign(profile)
         self._last_result_details = lines
@@ -1026,7 +1027,6 @@ class Game:
         profile = self.campaign_profile
         lines = []
         party_ids = self._current_party_adventurer_ids(self.p1_picks)
-        self._grant_party_progress_local(party_ids, lines)
         gold_amount = RANKED_WIN_GOLD if won else RANKED_LOSS_GOLD
         renown_delta = RANKED_WIN_RENOWN if won else RANKED_LOSS_RENOWN
         old_rating = profile.ranked_rating
@@ -1042,6 +1042,7 @@ class Game:
         self._append_progress_lines(lines, f"Gold +{gold_amount}")
         self._append_progress_lines(lines, f"Renown {renown_delta:+d}")
         self._append_progress_lines(lines, f"Rating {old_rating} -> {profile.ranked_rating}")
+        self._grant_party_progress_local(party_ids, lines)
         self._refresh_profile_filters()
         save_campaign(profile)
         self._last_result_details = lines
@@ -1095,6 +1096,21 @@ class Game:
                     artifacts.append(artifact)
         return artifacts[:3]
 
+    def _artifact_ids_to_artifacts(self, artifact_ids: list, *, fill_defaults: bool = False) -> list:
+        artifacts = [
+            ARTIFACTS_BY_ID[artifact_id]
+            for artifact_id in (artifact_ids or [])
+            if artifact_id in ARTIFACTS_BY_ID
+        ]
+        artifacts = self._normalize_artifacts(artifacts)
+        if fill_defaults:
+            for artifact in ARTIFACTS:
+                if len(artifacts) >= 3:
+                    break
+                if artifact.id not in {a.id for a in artifacts}:
+                    artifacts.append(artifact)
+        return artifacts[:3]
+
     def _attach_artifacts_to_picks(self, picks: list, artifacts: list) -> list:
         attached = self._normalize_artifacts(list(artifacts or []))
         for pick in picks:
@@ -1125,7 +1141,7 @@ class Game:
             basics_pool = CLASS_BASICS[defn.cls]
             basics = [next(a for a in basics_pool if a.id == bid) for bid in m["basics"]]
             picks.append({"definition": defn, "signature": sig, "basics": basics})
-        artifacts = [artifacts_by_id[artifact_id] for artifact_id in artifact_ids if artifact_id in artifacts_by_id]
+        artifacts = self._artifact_ids_to_artifacts(artifact_ids)
         self._attach_artifacts_to_picks(picks, artifacts)
         return picks
 
@@ -1504,26 +1520,50 @@ class Game:
     def _ai_rating_for_index(self, idx: int) -> int:
         return min(1850, 850 + idx * 25)
 
+    def _ranked_team_meta(self, idx: int, comp: dict) -> dict:
+        fallback = {
+            "rating": self._ai_rating_for_index(idx),
+            "weight": 1.0,
+        }
+        meta = dict(fallback)
+        meta.update(RANKED_AI_TEAM_META.get(comp["name"], {}))
+        meta["rating"] = max(0, min(2000, int(meta["rating"])))
+        meta["weight"] = max(0.1, float(meta["weight"]))
+        return meta
+
+    def _ranked_team_selection_weight(self, rating: int, base_weight: float, target_rating: int) -> float:
+        diff = abs(rating - target_rating)
+        closeness = max(0.15, 1.0 - (diff / 450.0))
+        return max(0.05, base_weight * closeness)
+
     def _generate_ai_team(self, target_rating: int | None = None):
         if target_rating is None:
             comp = random.choice(self._ai_team_pool)
             matched_rating = None
         else:
             weighted = [
-                (comp, self._ai_rating_for_index(idx))
+                (comp, self._ranked_team_meta(idx, comp))
                 for idx, comp in enumerate(self._ai_team_pool)
             ]
-            comp = None
-            matched_rating = None
+            candidates = None
             for window in (50, 100, 150):
-                candidates = [(entry, rating) for entry, rating in weighted if abs(rating - target_rating) <= window]
-                if candidates:
-                    comp, matched_rating = random.choice(candidates)
+                in_window = [(entry, meta) for entry, meta in weighted if abs(meta["rating"] - target_rating) <= window]
+                if in_window:
+                    candidates = in_window
                     break
-            if comp is None:
-                comp, matched_rating = min(weighted, key=lambda pair: abs(pair[1] - target_rating))
+            if candidates is None:
+                candidates = weighted
+            weights = [
+                self._ranked_team_selection_weight(meta["rating"], meta["weight"], target_rating)
+                for _, meta in candidates
+            ]
+            comp, meta = random.choices(candidates, weights=weights, k=1)[0]
+            matched_rating = meta["rating"]
         picks = [self._build_ai_pick(e) for e in comp["members"]]
-        artifacts = self._legacy_items_to_artifacts([entry.get("item") for entry in comp["members"]])
+        if "artifacts" in comp:
+            artifacts = self._artifact_ids_to_artifacts(comp.get("artifacts", []))
+        else:
+            artifacts = self._legacy_items_to_artifacts([entry.get("item") for entry in comp["members"]])
         self._attach_artifacts_to_picks(picks, artifacts)
         return comp["name"], picks, matched_rating
 
@@ -1552,6 +1592,7 @@ class Game:
             self.current_is_extra,
             self.battle.swap_used_this_turn,
             self._swap_queued_this_turn(),
+            profile=self._ai_decision_profile,
         )
         self._set_queued(actor, best_action)
         return True
@@ -2077,12 +2118,22 @@ class Game:
 
         if p == "menu":
             btns = self._last_menu_btns or {}
-            if btns.get("camelot_btn") and btns["camelot_btn"].collidepoint(pos):
+            if btns.get("level_btn") and btns["level_btn"].collidepoint(pos):
+                self._menu_level_card_open = not self._menu_level_card_open
+            elif btns.get("level_card_close") and btns["level_card_close"] and btns["level_card_close"].collidepoint(pos):
+                self._menu_level_card_open = False
+            elif btns.get("gold_btn") and btns["gold_btn"].collidepoint(pos):
+                self._menu_level_card_open = False
+                self._guild_tab = "adventurers"
+                self.phase = "guild"
+            elif btns.get("camelot_btn") and btns["camelot_btn"].collidepoint(pos):
+                self._menu_level_card_open = False
                 self._enter_camelot()
             elif (
                 btns.get("fantasia_btn") and btns["fantasia_btn"].collidepoint(pos)
                 and self.campaign_profile and self.campaign_profile.quick_play_unlocked
             ):
+                self._menu_level_card_open = False
                 self.game_mode = "single_player"
                 if hasattr(self, "_campaign_roster"):
                     del self._campaign_roster
@@ -2091,24 +2142,34 @@ class Game:
                 btns.get("brightheart_btn") and btns["brightheart_btn"].collidepoint(pos)
                 and self._ranked_unlocked()
             ):
+                self._menu_level_card_open = False
                 self.game_mode = "ranked"
                 if hasattr(self, "_campaign_roster"):
                     del self._campaign_roster
                 self._start_team_select(1)
             elif btns.get("estate_btn") and btns["estate_btn"].collidepoint(pos):
+                self._menu_level_card_open = False
                 self.phase = "estate_menu"
             elif btns.get("guild_btn") and btns["guild_btn"].collidepoint(pos):
+                self._menu_level_card_open = False
                 self._guild_tab = "adventurers"
                 self.phase = "guild"
             elif btns.get("market_btn") and btns["market_btn"].collidepoint(pos):
+                self._menu_level_card_open = False
                 self.phase = "market_closed"
             elif btns.get("embassy_btn") and btns["embassy_btn"].collidepoint(pos):
+                self._menu_level_card_open = False
                 self.phase = "embassy"
             elif btns.get("settings_btn") and btns["settings_btn"].collidepoint(pos):
+                self._menu_level_card_open = False
                 self._confirm_reset = False
                 self.phase = "settings"
             elif btns.get("exit_btn") and btns["exit_btn"].collidepoint(pos):
                 pygame.quit(); sys.exit()
+            elif self._menu_level_card_open:
+                card_rect = btns.get("level_card_rect")
+                if card_rect and not card_rect.collidepoint(pos):
+                    self._menu_level_card_open = False
 
         elif p == "catalog":
             btns = self._last_catalog_btns or {}
@@ -2648,97 +2709,110 @@ class Game:
             active_artifacts  = getattr(self, "_campaign_artifacts", ARTIFACTS)
             active_cls_basics = getattr(self, "_campaign_basics", CLASS_BASICS)
 
-        # Build case-insensitive lookup dicts
-        roster_by_name = {d.name.lower(): d for d in active_roster}
-        artifacts_by_name = {artifact.name.lower(): artifact for artifact in active_artifacts}
+        def _norm(s: str) -> str:
+            return re.sub(r"[^a-z0-9]+", "", (s or "").lower())
+
+        # Build relaxed lookup dicts so capitalization and spaces do not matter.
+        roster_by_name = {_norm(d.name): d for d in active_roster}
+        artifacts_by_name = {_norm(artifact.name): artifact for artifact in active_artifacts}
 
         # Normalize lines
         raw_lines = [l.rstrip() for l in text.splitlines()]
         lines = [l for l in raw_lines if l.strip()]
 
-        picks = []
-        artifacts = []
+        def _parse_bullet_name(raw: str):
+            s = raw.strip()
+            if s.startswith("-"):
+                s = s[1:].strip()
+            return s
 
-        def _parse_member(block):
-            if len(block) != 4:
-                return None
-            adv_name = block[0].strip().lower()
-            if not adv_name:
-                return None
-            ability_names = []
-            for raw in block[1:4]:
-                s = raw.strip()
-                if not s.startswith("- "):
-                    return None
-                ability_names.append(s[2:].strip().lower())
+        def _available_sigs(defn):
+            if allow_all:
+                return defn.sig_options
+            return defn.sig_options[:unlocked_signature_count(self._adventurer_level(defn.id))]
 
-            defn = roster_by_name.get(adv_name)
+        def _parse_member_header_sig(block):
+            if len(block) != 3 or "@" not in block[0]:
+                return None
+            adv_part, sig_part = block[0].split("@", 1)
+            defn = roster_by_name.get(_norm(adv_part))
             if defn is None:
                 return None
-
-            if allow_all:
-                avail_sigs = defn.sig_options
-            else:
-                avail_sigs = defn.sig_options[:unlocked_signature_count(self._adventurer_level(defn.id))]
-            sig = {s.name.lower(): s for s in avail_sigs}.get(ability_names[0])
+            sig = {_norm(s.name): s for s in _available_sigs(defn)}.get(_norm(sig_part))
             if sig is None:
                 return None
-
             cls_pool = active_cls_basics.get(defn.cls, [])
-            basics_by_name = {b.name.lower(): b for b in cls_pool}
-            basic1 = basics_by_name.get(ability_names[1])
-            basic2 = basics_by_name.get(ability_names[2])
+            basics_by_name = {_norm(b.name): b for b in cls_pool}
+            basic_names = [_norm(_parse_bullet_name(raw)) for raw in block[1:3]]
+            basic1 = basics_by_name.get(basic_names[0])
+            basic2 = basics_by_name.get(basic_names[1])
             if basic1 is None or basic2 is None or basic1 is basic2:
                 return None
-
             return {
                 "definition": defn,
                 "signature": sig,
                 "basics": [basic1, basic2],
             }
 
-        if len(lines) == 13 and lines[-1].lower().startswith("artifacts:"):
-            member_lines = lines[:-1]
-            artifacts_line = lines[-1].split(":", 1)[1]
-            artifact_names = [part.strip().lower() for part in artifacts_line.split(",") if part.strip()]
-            if len(artifact_names) != 3:
-                return (None, "Can't upload this.")
+        def _parse_artifact_names(name_lines):
+            parsed_artifacts = []
             seen = set()
-            for name in artifact_names:
-                artifact = artifacts_by_name.get(name)
+            for raw in name_lines:
+                key = _norm(_parse_bullet_name(raw))
+                artifact = artifacts_by_name.get(key)
                 if artifact is None or artifact.id in seen:
-                    return (None, "Can't upload this.")
-                artifacts.append(artifact)
+                    return None
+                parsed_artifacts.append(artifact)
                 seen.add(artifact.id)
-            if len(member_lines) != 12:
-                return (None, "Can't upload this.")
-            for block_start in range(0, 12, 4):
-                parsed = _parse_member(member_lines[block_start:block_start + 4])
-                if parsed is None:
-                    return (None, "Can't upload this.")
-                picks.append(parsed)
-        elif len(lines) == 12 and all(" @ " in lines[idx] for idx in range(0, 12, 4)):
-            legacy_item_ids = []
-            for block_start in range(0, 12, 4):
-                block = list(lines[block_start:block_start + 4])
-                adv_part, item_part = block[0].split(" @ ", 1)
-                parsed = _parse_member([adv_part, block[1], block[2], block[3]])
-                if parsed is None:
-                    return (None, "Can't upload this.")
-                picks.append(parsed)
-                legacy_item_ids.append(item_part.strip().lower().replace(" ", "_").replace("'", ""))
-            artifacts = self._legacy_items_to_artifacts(legacy_item_ids)
-        else:
-            return (None, "Can't upload this.")
+            return parsed_artifacts if len(parsed_artifacts) == 3 else None
 
-        if len(picks) != 3:
-            return (None, "Can't upload this.")
-        self._attach_artifacts_to_picks(picks, artifacts)
-        return (picks, "")
+        def _try_parse(import_lines):
+            picks = []
+
+            artifact_header_idx = next(
+                (i for i, line in enumerate(import_lines) if _norm(line.split(":", 1)[0]) == "artifacts"),
+                None,
+            )
+            if artifact_header_idx is not None:
+                header = import_lines[artifact_header_idx]
+                member_lines = import_lines[:artifact_header_idx]
+                artifact_lines = import_lines[artifact_header_idx + 1:]
+                if ":" in header and header.split(":", 1)[1].strip():
+                    return (None, "Can't upload this.")
+                artifacts = _parse_artifact_names(artifact_lines)
+                if artifacts is None or len(member_lines) != 9 or len(artifact_lines) != 3:
+                    return (None, "Can't upload this.")
+
+                if all("@" in member_lines[i] for i in range(0, 9, 3)):
+                    for block_start in range(0, 9, 3):
+                        parsed = _parse_member_header_sig(member_lines[block_start:block_start + 3])
+                        if parsed is None:
+                            return (None, "Can't upload this.")
+                        picks.append(parsed)
+                else:
+                    return (None, "Can't upload this.")
+            else:
+                return (None, "Can't upload this.")
+
+            if len(picks) != 3:
+                return (None, "Can't upload this.")
+            self._attach_artifacts_to_picks(picks, artifacts)
+            return (picks, "")
+
+        parsed_picks, err = _try_parse(lines)
+        if parsed_picks is not None:
+            return (parsed_picks, err)
+
+        # Allow an optional first-line party name in the new import format.
+        if lines and "@" not in lines[0] and not lines[0].lstrip().startswith("-") and _norm(lines[0]) != "artifacts":
+            return _try_parse(lines[1:])
+
+        return (None, "Can't upload this.")
 
     def _start_team_select(self, player_num):
         if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked"):
             self._refresh_profile_filters()
+        self._ai_decision_profile = "ranked" if self.game_mode == "ranked" else "quick"
         self.building_player = player_num
         self.sub_phase = "pick_adventurers"
         self.team_picks = self._normalize_builder_picks([])
@@ -4368,6 +4442,7 @@ class Game:
                 new_catalog_unlocks=_new_cat,
                 quick_play_unlocked=bool(self.campaign_profile and self.campaign_profile.quick_play_unlocked),
                 ranked_unlocked=self._ranked_unlocked() if self.campaign_profile else False,
+                level_card_open=self._menu_level_card_open,
             )
 
         elif p == "estate_menu":
@@ -4390,6 +4465,7 @@ class Game:
                 max_slots=self._saved_team_slot_count(),
             )
             self._last_teambuilder_btns = btns
+            self._draw_screen_tooltips(surf, mouse_pos, artifact_hover=btns.get("artifact_hover", []))
             # Rename overlay drawn on top when active
             if self._renaming_team_slot is not None:
                 overlay_btns = draw_rename_overlay(surf, mouse_pos, self._rename_text)
@@ -4409,6 +4485,7 @@ class Game:
                 ADVENTURER_PRICES,
                 ARTIFACT_PRICES,
             )
+            self._draw_screen_tooltips(surf, mouse_pos, artifact_hover=self._last_guild_btns.get("artifact_hover", []))
 
         elif p == "embassy":
             profile = self.campaign_profile or CampaignProfile()
@@ -4438,10 +4515,12 @@ class Game:
                 filters=self._catalog_filters.get(self._catalog_tab, {}),
             )
             self._last_catalog_btns = btns
-            for _r, _kind in _catalog_desc_hover:
-                if _r.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                    break
+            self._draw_screen_tooltips(
+                surf,
+                mouse_pos,
+                status_hover=_catalog_desc_hover,
+                artifact_hover=btns.get("artifact_hover", []),
+            )
 
         elif p == "settings":
             btns = draw_settings_screen(surf, mouse_pos, self._confirm_reset,
@@ -4460,6 +4539,7 @@ class Game:
                 max_slots=self._saved_team_slot_count(),
             )
             self._last_story_team_btns = btns
+            self._draw_screen_tooltips(surf, mouse_pos, artifact_hover=btns.get("artifact_hover", []))
 
         elif p == "pre_battle_edit":
             _PRE_BATTLE_DETAIL_RECT = pygame.Rect(700, 80, 680, 760)
@@ -4517,20 +4597,19 @@ class Game:
             self.team_select_scroll = min(self.team_select_scroll, clicks.get("roster_scroll_max", 0))
             self.team_artifact_scroll = min(self.team_artifact_scroll, clicks.get("artifact_scroll_max", 0))
             self._last_team_clicks = clicks
-            for _r, _kind in _team_desc_hover:
-                if _r.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                    break
+            self._draw_screen_tooltips(
+                surf,
+                mouse_pos,
+                status_hover=_team_desc_hover,
+                artifact_hover=clicks.get("artifact_hover", []),
+            )
             if self._detail_unit is not None:
                 _dh = []
                 close_btn = draw_combatant_detail(surf, self._detail_unit,
                                                   rect=_PRE_BATTLE_DETAIL_RECT,
                                                   status_rects_out=_dh)
                 self._detail_close_btn = close_btn
-                for _r, _kind in _dh:
-                    if _r.collidepoint(mouse_pos):
-                        draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                        break
+                self._draw_screen_tooltips(surf, mouse_pos, status_hover=_dh)
             else:
                 self._detail_close_btn = None
 
@@ -4597,10 +4676,12 @@ class Game:
             self.team_select_scroll = min(self.team_select_scroll, clicks.get("roster_scroll_max", 0))
             self.team_artifact_scroll = min(self.team_artifact_scroll, clicks.get("artifact_scroll_max", 0))
             self._last_team_clicks = clicks
-            for _r, _kind in _team_desc_hover:
-                if _r.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                    break
+            self._draw_screen_tooltips(
+                surf,
+                mouse_pos,
+                status_hover=_team_desc_hover,
+                artifact_hover=clicks.get("artifact_hover", []),
+            )
             # Draw import modal on top if open
             if self._import_modal_open:
                 _modal_clicks = draw_import_modal(
@@ -4686,18 +4767,17 @@ class Game:
                     status_rects_out=_pq_hover,
                 )
                 self._last_campaign_btns = btns
-                for _r, _kind in _pq_hover:
-                    if _r.collidepoint(mouse_pos):
-                        draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                        break
+                self._draw_screen_tooltips(
+                    surf,
+                    mouse_pos,
+                    status_hover=_pq_hover,
+                    artifact_hover=btns.get("artifact_hover", []),
+                )
                 if self._detail_unit is not None:
                     _dh = []
                     close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
                     self._detail_close_btn = close_btn
-                    for _r, _kind in _dh:
-                        if _r.collidepoint(mouse_pos):
-                            draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                            break
+                    self._draw_screen_tooltips(surf, mouse_pos, status_hover=_dh)
                 else:
                     self._detail_close_btn = None
 
@@ -4818,15 +4898,22 @@ class Game:
                     _who(int(pnum)))
         return "Ready?", "" if sp else "Next Player"
 
-    def _draw_battle_overlays_and_tooltips(self, surf, mouse_pos, status_hover):
+    def _draw_screen_tooltips(self, surf, mouse_pos, *, status_hover=None, artifact_hover=None):
+        for rect, artifact in artifact_hover or []:
+            if rect.collidepoint(mouse_pos):
+                draw_artifact_tooltip(surf, artifact, mouse_pos[0], mouse_pos[1])
+                return
+        for rect, kind in status_hover or []:
+            if rect.collidepoint(mouse_pos):
+                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                return
+
+    def _draw_battle_overlays_and_tooltips(self, surf, mouse_pos, status_hover, artifact_hover=None):
         if self._detail_unit is not None:
             _dh = []
             close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
             self._detail_close_btn = close_btn
-            for rect, kind in _dh:
-                if rect.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
-                    break
+            self._draw_screen_tooltips(surf, mouse_pos, status_hover=_dh)
         else:
             self._detail_close_btn = None
 
@@ -4839,11 +4926,11 @@ class Game:
             overlay_btns = draw_artifact_overlay(surf, self.battle, mouse_pos)
         self._last_battle_overlay_btns = overlay_btns
 
-        if self._battle_overlay is None:
-            for rect, kind in status_hover:
-                if rect.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
-                    break
+        overlay_artifact_hover = overlay_btns.get("artifact_hover", []) if isinstance(overlay_btns, dict) else []
+        if self._battle_overlay == "artifacts":
+            self._draw_screen_tooltips(surf, mouse_pos, artifact_hover=overlay_artifact_hover)
+        elif self._battle_overlay is None:
+            self._draw_screen_tooltips(surf, mouse_pos, status_hover=status_hover, artifact_hover=artifact_hover)
 
     def _draw_battle_scene(
         self,
@@ -4896,7 +4983,12 @@ class Game:
             waiting_label=waiting_label,
         )
         self._last_action_buttons = self._last_battle_strip_btns.get("actions", [])
-        self._draw_battle_overlays_and_tooltips(surf, mouse_pos, _status_hover)
+        self._draw_battle_overlays_and_tooltips(
+            surf,
+            mouse_pos,
+            _status_hover,
+            self._last_battle_strip_btns.get("artifact_hover", []),
+        )
 
     def _draw_battle(self, surf, mouse_pos):
         info = self._tk_msg or f"Round {self.battle.round_num} — P{self.battle.init_player} has initiative."
@@ -5285,6 +5377,10 @@ def main():
         "fantasia_btn": _dummy,
         "brightheart_btn": _dummy,
         "estate_btn": _dummy,
+        "level_btn": _dummy,
+        "gold_btn": _dummy,
+        "level_card_rect": _dummy,
+        "level_card_close": _dummy,
         "guild_btn": _dummy,
         "market_btn": _dummy,
         "embassy_btn": _dummy,

@@ -19,6 +19,7 @@ from logic import (
     get_legal_targets,
     get_mode,
     get_subterfuge_swap_targets,
+    is_rulebook_status_condition,
     is_melee,
     is_ranged,
     ready_active_artifacts,
@@ -29,12 +30,30 @@ from logic import (
 MAX_SIMULATED_CANDIDATES = 30
 TOP_LEVEL_CANDIDATES = 5
 BEAM_WIDTH = 4
+AI_PROFILE_SETTINGS = {
+    "quick": {
+        "top_level_candidates": 5,
+        "beam_width": 4,
+        "end_of_turn_weight": 0.85,
+        "next_round_weight": 0.70,
+    },
+    "ranked": {
+        "top_level_candidates": 7,
+        "beam_width": 5,
+        "end_of_turn_weight": 0.95,
+        "next_round_weight": 0.78,
+    },
+}
 RULEBOOK_DANGEROUS_STATUSES = {"burn", "root", "shock", "weaken", "expose", "spotlight"}
 CONTROL_STATUSES = {"root", "spotlight", "taunt"}
 
 
 def top_n(items, n, key):
     return sorted(items, key=key, reverse=True)[:n]
+
+
+def _ai_profile(profile):
+    return AI_PROFILE_SETTINGS.get(profile, AI_PROFILE_SETTINGS["quick"])
 
 
 def _unit_key(unit):
@@ -1110,18 +1129,25 @@ def beam_plan_remaining_turn(sim_battle, player_num, remaining_allies, beam_widt
     return max(score_partial_turn_sequence(state, player_num) + acc for state, acc in beams)
 
 
-def score_action_context(before, after, player_num, actor, action):
+def score_action_context(before, after, player_num, actor, action, profile="quick"):
+    settings = _ai_profile(profile)
     remaining_allies = _remaining_allies_to_act(before, player_num, actor)
     immediate_score = evaluate_immediate_resolution(before, after, player_num, actor, action)
-    end_of_turn_score = beam_plan_remaining_turn(after, player_num, remaining_allies, beam_width=BEAM_WIDTH, depth=len(remaining_allies))
+    end_of_turn_score = beam_plan_remaining_turn(
+        after,
+        player_num,
+        remaining_allies,
+        beam_width=settings["beam_width"],
+        depth=len(remaining_allies),
+    )
     next_round_score = evaluate_next_round_state(after, player_num)
     motif_score = tactical_motif_score(before, after, player_num, actor, action)
     adapter_score = character_adapter_score(after, player_num, actor, action)
     penalty = risk_penalty(before, after, player_num, actor, action)
     return (
         immediate_score
-        + end_of_turn_score * 0.85
-        + next_round_score * 0.70
+        + end_of_turn_score * settings["end_of_turn_weight"]
+        + next_round_score * settings["next_round_weight"]
         + motif_score
         + adapter_score
         - penalty
@@ -1371,15 +1397,17 @@ def _recharge_bonus(battle, player_num, actor, action):
     return score_recharge_tempo(actor, action, battle)
 
 
-def pick_action(battle, player_num, actor, is_extra, swap_used, swap_queued):
+def pick_action(battle, player_num, actor, is_extra, swap_used, swap_queued, profile="quick"):
+    settings = _ai_profile(profile)
     candidates = generate_ranked_candidates(battle, player_num, actor, is_extra, swap_used, swap_queued)
-    shortlisted = candidates if len(candidates) <= TOP_LEVEL_CANDIDATES else candidates[:TOP_LEVEL_CANDIDATES]
+    limit = settings["top_level_candidates"]
+    shortlisted = candidates if len(candidates) <= limit else candidates[:limit]
     best_action = {"type": "skip"}
     best_score = -float("inf")
 
     for action in shortlisted:
         after = simulate_single_action(battle, player_num, actor, action)
-        total = score_action_context(battle, after, player_num, actor, action)
+        total = score_action_context(battle, after, player_num, actor, action, profile=profile)
         total += _initiative_bonus(battle, player_num, actor, action)
         total += _recharge_bonus(battle, player_num, actor, action)
         if total > best_score:

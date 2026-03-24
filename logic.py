@@ -1135,7 +1135,7 @@ def deal_damage(
     battle: BattleState,
     is_retaliation: bool = False,
 ):
-    """Apply damage to target with all on-hit effects (KO, vamp, Spiked Mail, reflect)."""
+    """Apply damage to target with all on-hit effects (KO, lifesteal, Spiked Mail, reflect)."""
     if target.ko:
         return
 
@@ -1253,19 +1253,19 @@ def deal_damage(
             2,
         )
         consume_artifact(selkies_skin)
-        battle.log_add(f"  Selkie's Skin grants {target.name} 10% vamp for 2 rounds.")
+        battle.log_add(f"  Selkie's Skin grants {target.name} 10% lifesteal for 2 rounds.")
 
-    # ── Vamp ──────────────────────────────────────────────────────────────────
+    # ── Lifesteal ─────────────────────────────────────────────────────────────
     vamp_ratio = mode.vamp
-    # Double vamp (Blood Hunt frontline): uses 2× current base vamp, no own base
+    # Double lifesteal (Blood Hunt frontline): uses 2× current base lifesteal, no own base
     if mode.double_vamp_no_base:
-        # Use only the talent-based vamp (Red and Wolf: 15%) doubled
+        # Use only the talent-based lifesteal (Red and Wolf: 15%) doubled
         talent_vamp = _get_talent_vamp(actor)
         vamp_ratio = talent_vamp * 2.0
     else:
-        # Add talent vamp on top
+    # Add talent lifesteal on top
         vamp_ratio += _get_talent_vamp(actor)
-        # Add Vampire Fang item vamp
+    # Add Vampire Fang item lifesteal
         if actor.item.id == "vampire_fang":
             vamp_ratio += actor.item.vamp
         if actor.ability_charges.get("selkies_skin_dur", 0) > 0:
@@ -1275,7 +1275,7 @@ def deal_damage(
         healed = math.ceil(dmg * vamp_ratio)
         do_heal(actor, healed, actor, battle)
 
-    # Repentance frontline: the next ability against the target gains 25% vamp from Aldric.
+    # Repentance frontline: the next ability against the target gains 25% lifesteal from Aldric.
     if target.ability_charges.get("repentance_bonus", 0) > 0:
         target.ability_charges["repentance_bonus"] = 0
         if dmg > 0:
@@ -1285,7 +1285,7 @@ def deal_damage(
             )
             healed = math.ceil(dmg * 0.25)
             do_heal(actor, healed, aldric, battle)
-            battle.log_add(f"  Repentance: {actor.name} gains 25% vamp against {target.name}.")
+        battle.log_add(f"  Repentance: {actor.name} gains 25% lifesteal against {target.name}.")
 
     # ── Spiked Mail ───────────────────────────────────────────────────────────
     if target.item.id == "spiked_mail" and dmg > 0 and not target.ko:
@@ -1443,7 +1443,7 @@ def deal_damage(
 
 
 def _get_talent_vamp(actor: CombatantState) -> float:
-    """Talent-based vamp ratio for the actor."""
+    """Talent-based lifesteal ratio for the actor."""
     if _has_talent(actor, "risa_redcloak"):
         if actor.ability_charges.get("stomach_of_the_wolf_dur", 0) > 0:
             return 0.30
@@ -2356,7 +2356,7 @@ def apply_special(
             if dealt > 0:
                 bonus_vamp = math.ceil(dealt * 0.35)
                 actor.hp = min(actor.max_hp, actor.hp + bonus_vamp)
-                battle.log_add(f"  Extra vamp vs Burned: {actor.name} heals {bonus_vamp}.")
+                battle.log_add(f"  Extra lifesteal vs Burned: {actor.name} heals {bonus_vamp}.")
 
     # ── Falling Kingdom ───────────────────────────────────────────────────────
     elif key == "falling_kingdom":
@@ -3584,17 +3584,16 @@ def _grant_player_exp(profile, amount: int, summary: dict):
     after_slots = saved_team_slot_count(after_level)
     after_vouchers = voucher_count_for_level(after_level)
     summary["player_exp"] += amount
-    summary["lines"].append(f"Player EXP +{amount}")
     if after_level > before_level:
-        summary["lines"].append(f"Player Level {after_level}")
+        summary["level_lines"].append(f"Player Level Up: {after_level}")
     if after_slots > before_slots:
-        summary["lines"].append(f"Saved Team Slots +{after_slots - before_slots}")
+        summary["unlock_lines"].append(f"Saved Party Slots +{after_slots - before_slots}")
     if after_vouchers > before_vouchers:
         gained = after_vouchers - before_vouchers
         profile.guild_vouchers += gained
-        summary["lines"].append(f"Guild Recruitment Voucher +{gained}")
+        summary["unlock_lines"].append(f"Guild Recruitment Voucher +{gained}")
     if not before_player_sigil and player_sigil_unlocked(after_level):
-        summary["lines"].append("Player Sigil Unlocked")
+        summary["unlock_lines"].append("Player Sigil Unlocked")
 
 
 def _grant_gold(profile, amount: int, summary: dict):
@@ -3604,9 +3603,9 @@ def _grant_gold(profile, amount: int, summary: dict):
     profile.gold = max(0, profile.gold + amount)
     summary["gold"] += amount
     if amount > 0:
-        summary["lines"].append(f"Gold +{amount}")
+        summary["reward_lines"].append(f"Gold +{amount}")
     else:
-        summary["lines"].append(f"Gold {amount}")
+        summary["reward_lines"].append(f"Gold {amount}")
 
 
 def _grant_artifact(profile, artifact_id: str, summary: dict, notify: bool = True):
@@ -3616,7 +3615,8 @@ def _grant_artifact(profile, artifact_id: str, summary: dict, notify: bool = Tru
     profile.unlocked_artifacts.add(artifact_id)
     if notify:
         profile.new_unlocks.add("artifacts")
-    summary["lines"].append(f"Artifact Unlocked: {artifact.name}")
+    summary["artifacts"].append(artifact.name)
+    summary["reward_lines"].append(f"Artifact Gained: {artifact.name}")
     return True
 
 
@@ -3628,12 +3628,10 @@ def _grant_class_points(profile, class_name: str, amount: int, summary: dict, so
     before_level = class_level_from_points(before_points)
     profile.class_points[class_name] = before_points + amount
     after_level = class_level_from_points(profile.class_points[class_name])
-    suffix = f" ({source})" if source else ""
-    summary["lines"].append(f"{class_name} Class Points +{amount}{suffix}")
     if after_level > before_level:
-        summary["lines"].append(f"{class_name} Class Level {after_level}")
+        summary["level_lines"].append(f"{class_name} Class Level Up: {after_level}")
         if after_level == 5 and class_sigil_unlocked(after_level):
-            summary["lines"].append(f"{class_name} Sigil and Title Unlocked")
+            summary["unlock_lines"].append(f"{class_name} Sigil and Title Unlocked")
 
 
 def _grant_adventurer(profile, adv_id: str, sig_id: str, summary: dict, notify: bool = True):
@@ -3646,7 +3644,8 @@ def _grant_adventurer(profile, adv_id: str, sig_id: str, summary: dict, notify: 
         profile.default_sigs[adv_id] = sig_id
     if notify:
         profile.new_unlocks.add("adventurers")
-    summary["lines"].append(f"Adventurer Unlocked: {defn.name}")
+    summary["adventurers"].append(defn.name)
+    summary["reward_lines"].append(f"Adventurer Gained: {defn.name}")
     _grant_player_exp(profile, 60, summary)
     _grant_class_points(profile, defn.cls, 1, summary, source=f"{defn.name} unlocked")
     return True
@@ -3661,11 +3660,21 @@ def _grant_adventurer_progress(profile, adv_id: str, summary: dict):
     profile.adventurer_quest_clears[adv_id] = before_clears + 1
     after_level = adventurer_level_from_clears(profile.adventurer_quest_clears[adv_id])
     if after_level > before_level:
-        summary["lines"].append(f"{defn.name} Level {after_level}")
+        summary["level_lines"].append(f"{defn.name} Level Up: {after_level}")
         if after_level == 4:
-            summary["lines"].append(f"{defn.name} Twist Unlocked")
+            summary["unlock_lines"].append(f"{defn.name} Twist Unlocked")
         if after_level == 5 and adventurer_sigil_unlocked(after_level):
-            summary["lines"].append(f"{defn.name} Sigil and Music Unlocked")
+            summary["unlock_lines"].append(f"{defn.name} Sigil and Music Unlocked")
+
+
+def _finalize_reward_summary(summary: dict):
+    lines = []
+    for bucket in ("reward_lines", "level_lines", "unlock_lines"):
+        for line in summary.get(bucket, []):
+            if line and line not in lines:
+                lines.append(line)
+    summary["lines"] = lines
+    return summary
 
 
 def build_quest_reward_preview(profile, quest_id: int) -> List[str]:
@@ -3674,32 +3683,30 @@ def build_quest_reward_preview(profile, quest_id: int) -> List[str]:
     quest = QUEST_TABLE.get(quest_id)
     if quest is None:
         return []
+    first_clear = not profile.quest_cleared.get(quest_id, False)
     if getattr(quest, "is_tutorial", False):
-        lines = [
-            "Player EXP +100",
-            "Party adventurers gain 1 Adventurer Level",
-            "Used classes gain 1 Class Point",
-            "Gold +0 (tutorial quest)",
-        ]
+        if not first_clear:
+            return ["No new rewards"]
+        lines = []
         for artifact_id in quest.rewards.get("artifacts", []):
             artifact = ARTIFACTS_BY_ID.get(artifact_id)
             if artifact is not None:
-                lines.append(f"Artifact: {artifact.name}")
+                lines.append(f"Artifact Gained: {artifact.name}")
+        recruits = []
         for adv_id, _sig_id in quest.rewards.get("recruit", []):
             defn = ROSTER_BY_ID.get(adv_id)
             if defn is not None:
-                lines.append(f"Adventurer: {defn.name}")
-        return lines or ["Tutorial progression rewards"]
+                recruits.append(defn.name)
+        if recruits:
+            for recruit_name in recruits:
+                lines.append(f"Adventurer Gained: {recruit_name}")
+        return lines or ["No new rewards"]
 
-    preview = [
-        "Player EXP +100",
-        "Party adventurers gain 1 Adventurer Level",
-        "Used classes gain 1 Class Point",
-    ]
+    preview = []
     projected_level = player_level_from_exp(profile.player_exp)
     projected_counter = profile.non_tutorial_quests_completed + 1
     if projected_level >= 5 and projected_counter % 3 == 0 and random_artifact_reward_pool(profile.unlocked_artifacts):
-        preview.append("Random artifact instead of gold")
+        preview.append("Artifact Gained: Random Unowned Artifact")
     else:
         preview.append(f"Gold +{getattr(quest, 'gold_reward', NON_TUTORIAL_QUEST_GOLD)}")
     return preview
@@ -3714,6 +3721,11 @@ def apply_quest_rewards(profile, quest_id: int, party_adventurer_ids: Optional[L
         "quest_id": quest_id,
         "player_exp": 0,
         "gold": 0,
+        "adventurers": [],
+        "artifacts": [],
+        "reward_lines": [],
+        "level_lines": [],
+        "unlock_lines": [],
         "lines": [],
     }
     if quest is None:
@@ -3747,9 +3759,9 @@ def apply_quest_rewards(profile, quest_id: int, party_adventurer_ids: Optional[L
             if quest_id == 4:
                 profile.tutorial_complete = True
                 profile.quick_play_unlocked = True
-                summary["lines"].append("Quick Play Unlocked")
+                summary["unlock_lines"].append("Quick Play Unlocked")
         else:
-            summary["lines"].append("Tutorial cleared again")
+            summary["unlock_lines"].append("Tutorial cleared again")
     else:
         profile.non_tutorial_quests_completed += 1
         reward_given = False
@@ -3763,4 +3775,4 @@ def apply_quest_rewards(profile, quest_id: int, party_adventurer_ids: Optional[L
     if first_clear:
         profile.quest_cleared[quest_id] = True
         profile.highest_quest_cleared = max(profile.highest_quest_cleared, quest_id)
-    return summary
+    return _finalize_reward_summary(summary)
