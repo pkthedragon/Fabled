@@ -7,6 +7,13 @@ import pygame
 from settings import *
 from models import CombatantState, TeamState, BattleState
 from data import ARTIFACTS_BY_ID, LEGACY_ITEM_TO_ARTIFACT_ID
+from progression import (
+    adventurer_level_from_clears,
+    class_basics_unlocked_count,
+    class_level_from_points,
+    twist_unlocked,
+    unlocked_signature_count,
+)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -530,33 +537,35 @@ def draw_unit_box(surf, rect, unit: CombatantState, selected=False,
 # FORMATION LAYOUT  (battle screen)
 # ─────────────────────────────────────────────────────────────────────────────
 #
-# Hourglass / two-triangles formation:
+# Side-facing battle layout:
 #
-#   P2  BL ──────────────── BR   (wide — "base" of P2 triangle)
-#            P2 FRONT            (narrow center — tip of P2 triangle)
-#            P1 FRONT            (narrow center — tip of P1 triangle)
-#   P1  BL ──────────────── BR   (wide — "base" of P1 triangle)
-#
-# Panel regions:
-#   Left ~570px: formation
-#   Right: log (x=580) + action panel (x=995)
+#   P1 team on the left, facing right.
+#   P2 team on the right, facing left.
+#   Frontliners meet in the middle; backliners sit behind them.
 
-UNIT_W = 170
-UNIT_H = 155
+BATTLE_STRIP_H = 184
+BATTLE_STRIP_RECT = pygame.Rect(0, HEIGHT - BATTLE_STRIP_H, WIDTH, BATTLE_STRIP_H)
+ARENA_RECT = pygame.Rect(0, 0, WIDTH, BATTLE_STRIP_RECT.top)
 
-_FORM_LEFT  = 10   # x of back-left units
-_FORM_RIGHT = 390  # x of back-right units
-_FORM_MID   = 200  # x of frontline units (centered in formation area)
+UNIT_W = 184
+UNIT_H = 150
 
-# P2 (opponent): backlines at top (aligned with log/action panel), frontline below
-P2_BL_RECT    = pygame.Rect(_FORM_LEFT,  80,  UNIT_W, UNIT_H)
-P2_BR_RECT    = pygame.Rect(_FORM_RIGHT, 80,  UNIT_W, UNIT_H)
-P2_FRONT_RECT = pygame.Rect(_FORM_MID,  245, UNIT_W, UNIT_H)
+_BACK_TOP_Y = 126
+_BACK_BOTTOM_Y = 398
+_FRONT_Y = 260
 
-# P1 (player): frontline at top of P1 area, backlines below
-P1_FRONT_RECT = pygame.Rect(_FORM_MID,  410, UNIT_W, UNIT_H)
-P1_BL_RECT    = pygame.Rect(_FORM_LEFT, 575, UNIT_W, UNIT_H)
-P1_BR_RECT    = pygame.Rect(_FORM_RIGHT,575, UNIT_W, UNIT_H)
+_P1_BACK_X = 104
+_P1_FRONT_X = 414
+_P2_FRONT_X = WIDTH - _P1_FRONT_X - UNIT_W
+_P2_BACK_X = WIDTH - _P1_BACK_X - UNIT_W
+
+P1_FRONT_RECT = pygame.Rect(_P1_FRONT_X, _FRONT_Y, UNIT_W, UNIT_H)
+P1_BL_RECT    = pygame.Rect(_P1_BACK_X, _BACK_TOP_Y, UNIT_W, UNIT_H)
+P1_BR_RECT    = pygame.Rect(_P1_BACK_X, _BACK_BOTTOM_Y, UNIT_W, UNIT_H)
+
+P2_FRONT_RECT = pygame.Rect(_P2_FRONT_X, _FRONT_Y, UNIT_W, UNIT_H)
+P2_BL_RECT    = pygame.Rect(_P2_BACK_X, _BACK_TOP_Y, UNIT_W, UNIT_H)
+P2_BR_RECT    = pygame.Rect(_P2_BACK_X, _BACK_BOTTOM_Y, UNIT_W, UNIT_H)
 
 SLOT_RECTS_P1 = {
     SLOT_FRONT:      P1_FRONT_RECT,
@@ -569,8 +578,7 @@ SLOT_RECTS_P2 = {
     SLOT_BACK_RIGHT: P2_BR_RECT,
 }
 
-# Horizontal centre of the formation area for labels
-_FORM_CX = (_FORM_LEFT + _FORM_RIGHT + UNIT_W) // 2
+ARENA_CENTER_X = WIDTH // 2
 
 
 def draw_formation(surf, battle: BattleState,
@@ -578,23 +586,41 @@ def draw_formation(surf, battle: BattleState,
                    mouse_pos=(0, 0),
                    acting_player=None,
                    status_rects_out=None):
-    """Draw both teams in hourglass formation."""
+    """Draw both teams in the rotated side-facing arena formation."""
     valid_targets = valid_targets or []
 
-    # Team labels flanking the formation
-    draw_text(surf, battle.team2.player_name, 16, BLUE,  _FORM_CX, 68, center=True)
-    draw_text(surf, battle.team1.player_name, 16, GREEN, _FORM_CX, P1_BL_RECT.bottom + 8, center=True)
+    arena = ARENA_RECT.inflate(-32, -26)
+    pygame.draw.rect(surf, (24, 26, 34), arena, border_radius=18)
+    pygame.draw.rect(surf, (52, 56, 72), arena, 2, border_radius=18)
 
-    # Thin dividing line between the two frontlines
-    mid_y = (P2_FRONT_RECT.bottom + P1_FRONT_RECT.top) // 2
-    pygame.draw.line(surf, BORDER, (0, mid_y), (570, mid_y), 1)
+    lane_rect = pygame.Rect(ARENA_CENTER_X - 105, arena.y + 44, 210, arena.height - 88)
+    glow = pygame.Surface((lane_rect.width, lane_rect.height), pygame.SRCALPHA)
+    pygame.draw.ellipse(glow, (75, 95, 135, 45), glow.get_rect())
+    surf.blit(glow, lane_rect.topleft)
+    pygame.draw.line(surf, (90, 96, 118), (ARENA_CENTER_X, arena.y + 42),
+                     (ARENA_CENTER_X, arena.bottom - 42), 2)
+    pygame.draw.line(surf, (58, 62, 78), (lane_rect.left, arena.y + 72),
+                     (lane_rect.left, arena.bottom - 72), 1)
+    pygame.draw.line(surf, (58, 62, 78), (lane_rect.right, arena.y + 72),
+                     (lane_rect.right, arena.bottom - 72), 1)
+
+    draw_text(surf, battle.team1.player_name, 18, GREEN,
+              P1_FRONT_RECT.centerx, 34, center=True)
+    draw_text(surf, "Facing Right", 13, TEXT_MUTED,
+              P1_FRONT_RECT.centerx, 58, center=True)
+    draw_text(surf, battle.team2.player_name, 18, BLUE,
+              P2_FRONT_RECT.centerx, 34, center=True)
+    draw_text(surf, "Facing Left", 13, TEXT_MUTED,
+              P2_FRONT_RECT.centerx, 58, center=True)
 
     for slot, rect in SLOT_RECTS_P2.items():
         unit = battle.team2.get_slot(slot)
+        actual_unit = (next((m for m in battle.team2.members if m.slot == slot and not m.ko), None)
+                       or next((m for m in battle.team2.members if m.slot == slot), None))
         is_tgt = unit in valid_targets if valid_targets else False
         is_sel = (unit == selected_unit and acting_player == 2)
-        has_q  = (unit is not None and not unit.ko and unit.queued is not None)
-        draw_unit_box(surf, rect, unit, selected=is_sel, is_target=is_tgt,
+        has_q  = (actual_unit is not None and not actual_unit.ko and actual_unit.queued is not None)
+        draw_unit_box(surf, rect, actual_unit, selected=is_sel, is_target=is_tgt,
                       has_queued=has_q, is_enemy=True, mouse_pos=mouse_pos,
                       status_rects_out=status_rects_out)
 
@@ -616,6 +642,45 @@ def formation_rect_for(unit: CombatantState, acting_player: int):
     """Return the pygame.Rect for a given unit's position on screen."""
     rects = SLOT_RECTS_P1 if acting_player == 1 else SLOT_RECTS_P2
     return rects.get(unit.slot)
+
+
+ACTION_GROUP_STYLES = {
+    "basics": {
+        "label": "Basics",
+        "header": (90, 162, 140),
+        "normal": (36, 54, 50),
+        "hover": (52, 78, 70),
+        "border": (92, 162, 142),
+    },
+    "signature": {
+        "label": "Signature",
+        "header": CYAN,
+        "normal": (34, 46, 62),
+        "hover": (52, 72, 96),
+        "border": (98, 154, 208),
+    },
+    "twist": {
+        "label": "Twist",
+        "header": (232, 150, 78),
+        "normal": (66, 42, 26),
+        "hover": (96, 58, 34),
+        "border": (235, 157, 82),
+    },
+    "artifacts": {
+        "label": "Artifacts",
+        "header": (208, 198, 110),
+        "normal": (56, 50, 28),
+        "hover": (84, 72, 40),
+        "border": (188, 176, 88),
+    },
+    "utility": {
+        "label": "Utility",
+        "header": (160, 160, 176),
+        "normal": (46, 46, 56),
+        "hover": (66, 66, 82),
+        "border": (128, 128, 150),
+    },
+}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -650,8 +715,11 @@ def _log_color(line: str) -> tuple:
     return TEXT_DIM
 
 
-def draw_log(surf, log: list, rect=LOG_RECT, scroll_offset: int = 0):
-    draw_panel(surf, rect, "Battle Log", 16)
+def draw_log(surf, log: list, rect=LOG_RECT, scroll_offset: int = 0, title: str | None = "Battle Log"):
+    if title:
+        draw_panel(surf, rect, title, 16)
+    else:
+        draw_rect_border(surf, rect, PANEL, BORDER, 1)
     line_h = 15
     max_w = rect.width - 18   # usable text width in pixels
 
@@ -890,6 +958,216 @@ def draw_queued_summary(surf, team: TeamState, y_start: int, acting_player: int,
             y += 16
 
 
+def draw_battle_overlay(scrim_surf, panel_rect, title, mouse_pos):
+    overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+    overlay.fill((0, 0, 0, 165))
+    scrim_surf.blit(overlay, (0, 0))
+    draw_rect_border(scrim_surf, panel_rect, (30, 32, 44), BORDER_ACTIVE, 2)
+    draw_text(scrim_surf, title, 24, TEXT, panel_rect.x + 18, panel_rect.y + 14)
+    close_rect = pygame.Rect(panel_rect.right - 42, panel_rect.y + 12, 26, 26)
+    draw_rect_border(scrim_surf, close_rect, (74, 42, 42), RED_DARK)
+    draw_text(scrim_surf, "×", 18, TEXT, close_rect.centerx, close_rect.centery, center=True)
+    return close_rect
+
+
+def draw_battle_log_overlay(surf, log: list, mouse_pos, scroll_offset: int = 0):
+    panel_rect = pygame.Rect(160, 74, WIDTH - 320, HEIGHT - 148)
+    close_rect = draw_battle_overlay(surf, panel_rect, "Battle Log", mouse_pos)
+    inner = panel_rect.inflate(-26, -62)
+    draw_log(surf, log, rect=inner, scroll_offset=scroll_offset, title=None)
+    return {"close": close_rect, "panel": panel_rect}
+
+
+def draw_artifact_overlay(surf, battle: BattleState, mouse_pos):
+    panel_rect = pygame.Rect(130, 92, WIDTH - 260, HEIGHT - 184)
+    close_rect = draw_battle_overlay(surf, panel_rect, "Artifacts", mouse_pos)
+    inner = panel_rect.inflate(-28, -66)
+    col_w = (inner.width - 18) // 2
+    team_panels = [
+        (battle.team1, pygame.Rect(inner.x, inner.y, col_w, inner.height)),
+        (battle.team2, pygame.Rect(inner.x + col_w + 18, inner.y, col_w, inner.height)),
+    ]
+    for team, rect in team_panels:
+        draw_rect_border(surf, rect, (24, 26, 36), BORDER, 1)
+        accent = GREEN if team is battle.team1 else BLUE
+        draw_text(surf, team.player_name, 18, accent, rect.x + 14, rect.y + 12)
+        y = rect.y + 42
+        if not team.artifacts:
+            draw_text(surf, "No artifacts equipped.", 15, TEXT_MUTED, rect.x + 14, y)
+            continue
+        for state in team.artifacts:
+            card = pygame.Rect(rect.x + 12, y, rect.width - 24, 94)
+            draw_rect_border(surf, card, (36, 40, 52), BORDER_ACTIVE if state.cooldown_remaining == 0 else BORDER, 1)
+            draw_text(surf, state.artifact.name, 17, TEXT, card.x + 12, card.y + 10)
+            if state.artifact.reactive:
+                cd_text = f"Reactive  |  CD {state.artifact.cooldown}"
+            else:
+                cd_text = f"Active  |  CD {state.artifact.cooldown}"
+            if state.used_this_battle and state.artifact.cooldown >= 900:
+                cd_text += "  |  Spent this battle"
+            elif state.cooldown_remaining > 0:
+                cd_text += f"  |  Ready in {state.cooldown_remaining}"
+            else:
+                cd_text += "  |  Ready"
+            draw_text(surf, cd_text, 12, YELLOW if state.cooldown_remaining > 0 else TEXT_DIM,
+                      card.x + 12, card.y + 32)
+            desc_lines = _wrap_text(state.artifact.description, 13, card.width - 24)
+            for idx, line in enumerate(desc_lines[:3]):
+                draw_text(surf, line, 13, TEXT_DIM, card.x + 12, card.y + 50 + idx * 14)
+            y += 104
+    return {"close": close_rect, "panel": panel_rect}
+
+
+def _draw_strip_button(surf, rect, label, mouse_pos, normal, hover, border=BORDER_ACTIVE,
+                       text_color=TEXT, size=16, disabled=False):
+    return draw_button(
+        surf, rect, label, mouse_pos,
+        normal=normal, hover=hover, border=border,
+        text_color=text_color, size=size, disabled=disabled
+    )
+
+
+def draw_battle_strip(
+    surf,
+    mouse_pos,
+    battle: BattleState,
+    *,
+    mode: str = "view",
+    prompt: str = "",
+    subprompt: str = "",
+    action_groups: list | None = None,
+    queue_units: list | None = None,
+    current_actor: CombatantState | None = None,
+    current_is_extra: bool = False,
+    show_review: bool = False,
+    can_clear: bool = False,
+    can_lock: bool = False,
+    continue_label: str | None = None,
+    continue_disabled: bool = False,
+    waiting_label: str = "",
+):
+    strip = BATTLE_STRIP_RECT
+    pygame.draw.rect(surf, (18, 20, 28), strip)
+    pygame.draw.line(surf, BORDER_ACTIVE, (0, strip.y), (WIDTH, strip.y), 2)
+
+    left_rect = pygame.Rect(strip.x + 18, strip.y + 16, 188, strip.height - 32)
+    main_rect = pygame.Rect(left_rect.right + 18, strip.y + 16, 924, strip.height - 32)
+    right_rect = pygame.Rect(main_rect.right + 18, strip.y + 16, strip.right - main_rect.right - 36, strip.height - 32)
+
+    buttons = {
+        "log": None,
+        "artifacts": None,
+        "clear": None,
+        "lock": None,
+        "continue": None,
+        "actions": [],
+    }
+
+    draw_rect_border(surf, left_rect, (28, 30, 40), BORDER, 1)
+    draw_text(surf, f"Round {battle.round_num}", 18, YELLOW, left_rect.x + 14, left_rect.y + 12)
+    draw_text(surf, f"Init P{battle.init_player}", 14, CYAN, left_rect.x + 14, left_rect.y + 38)
+    buttons["log"] = pygame.Rect(left_rect.x + 14, left_rect.y + 72, left_rect.width - 28, 38)
+    buttons["artifacts"] = pygame.Rect(left_rect.x + 14, left_rect.y + 118, left_rect.width - 28, 38)
+    _draw_strip_button(surf, buttons["log"], "Battle Log", mouse_pos,
+                       normal=(38, 48, 64), hover=(56, 70, 92))
+    _draw_strip_button(surf, buttons["artifacts"], "Artifacts", mouse_pos,
+                       normal=(66, 58, 34), hover=(90, 78, 44))
+
+    draw_rect_border(surf, main_rect, (24, 26, 36), BORDER, 1)
+    queue_row = pygame.Rect(main_rect.x + 12, main_rect.y + 10, main_rect.width - 24, 42)
+    content_top = queue_row.bottom + 10
+
+    if queue_units:
+        draw_text(surf, "Queue", 13, TEXT_MUTED, queue_row.x, queue_row.y)
+        chip_x = queue_row.x + 50
+        chip_y = queue_row.y + 2
+        for unit, tag, color in queue_units:
+            label = short_name(unit.name)
+            if tag:
+                label += f" · {tag}"
+            chip_w = min(170, max(104, font(13).size(label)[0] + 18))
+            chip = pygame.Rect(chip_x, chip_y, chip_w, 28)
+            fill = (68, 60, 24) if unit is current_actor else (40, 44, 58)
+            border = (232, 204, 84) if unit is current_actor else BORDER
+            if color == GREEN:
+                fill = (28, 54, 36)
+                border = (88, 182, 112)
+            elif color == TEXT_MUTED:
+                fill = (36, 38, 48)
+            draw_rect_border(surf, chip, fill, border, 1)
+            draw_text(surf, label, 13, TEXT if unit is current_actor else color,
+                      chip.centerx, chip.centery, center=True)
+            if current_is_extra and unit is current_actor:
+                draw_text(surf, "+", 14, YELLOW, chip.right - 14, chip.y + 6)
+            chip_x += chip_w + 8
+            if chip_x > queue_row.right - 120:
+                break
+
+    if prompt:
+        draw_text(surf, prompt, 20, CYAN if mode == "queue" else TEXT, main_rect.x + 14, content_top)
+    if subprompt:
+        draw_text(surf, subprompt, 13, TEXT_MUTED, main_rect.x + 14, content_top + 26)
+
+    if mode == "queue":
+        if action_groups:
+            columns = [
+                ("basics", pygame.Rect(main_rect.x + 12, content_top + 52, 215, 86)),
+                ("signature", pygame.Rect(main_rect.x + 237, content_top + 52, 165, 86)),
+                ("twist", pygame.Rect(main_rect.x + 412, content_top + 52, 165, 86)),
+                ("artifacts", pygame.Rect(main_rect.x + 587, content_top + 52, 190, 86)),
+                ("utility", pygame.Rect(main_rect.x + 787, content_top + 52, 113, 86)),
+            ]
+            group_map = {group["key"]: group for group in action_groups}
+            for key, rect in columns:
+                style = ACTION_GROUP_STYLES[key]
+                draw_rect_border(surf, rect, (30, 32, 42), style["border"], 1)
+                draw_text(surf, style["label"], 13, style["header"], rect.x + 10, rect.y + 8)
+                actions = group_map.get(key, {}).get("actions", [])
+                if not actions:
+                    draw_text(surf, "No action", 12, TEXT_MUTED, rect.x + 10, rect.y + 38)
+                    continue
+                btn_y = rect.y + 28
+                btn_h = 22 if len(actions) >= 3 else 26
+                gap = 6 if len(actions) >= 3 else 8
+                for action in actions[:3]:
+                    btn_rect = pygame.Rect(rect.x + 8, btn_y, rect.width - 16, btn_h)
+                    label = action["label"]
+                    if font(13).size(label)[0] > btn_rect.width - 10:
+                        label = label[: max(4, len(label) - 3)] + "…"
+                    _draw_strip_button(
+                        surf, btn_rect, label, mouse_pos,
+                        normal=style["normal"], hover=style["hover"],
+                        border=style["border"], size=13
+                    )
+                    buttons["actions"].append((btn_rect, action["action"]))
+                    btn_y += btn_h + gap
+        elif show_review:
+            review_rect = pygame.Rect(main_rect.x + 18, content_top + 58, main_rect.width - 36, 74)
+            draw_rect_border(surf, review_rect, (32, 36, 50), (86, 110, 156), 1)
+            draw_text(surf, "All actions are queued.", 18, TEXT, review_rect.x + 16, review_rect.y + 18)
+            draw_text(surf, "Use Clear Queue to adjust anything, or Lock Actions to begin resolution.",
+                      13, TEXT_MUTED, review_rect.x + 16, review_rect.y + 44)
+    elif waiting_label:
+        draw_text(surf, waiting_label, 18, TEXT_MUTED, main_rect.x + 14, content_top + 54)
+
+    draw_rect_border(surf, right_rect, (28, 30, 40), BORDER, 1)
+    if can_clear:
+        buttons["clear"] = pygame.Rect(right_rect.x + 12, right_rect.y + 26, right_rect.width - 24, 40)
+        _draw_strip_button(surf, buttons["clear"], "Clear Queue", mouse_pos,
+                           normal=(70, 34, 34), hover=(96, 46, 46))
+    if can_lock:
+        buttons["lock"] = pygame.Rect(right_rect.x + 12, right_rect.y + 78, right_rect.width - 24, 52)
+        _draw_strip_button(surf, buttons["lock"], "Lock Actions", mouse_pos,
+                           normal=(42, 92, 58), hover=(58, 122, 78), size=18)
+    if continue_label:
+        buttons["continue"] = pygame.Rect(right_rect.x + 12, right_rect.y + 78, right_rect.width - 24, 52)
+        _draw_strip_button(
+            surf, buttons["continue"], continue_label, mouse_pos,
+            normal=BLUE_DARK, hover=BLUE, size=17, disabled=continue_disabled
+        )
+    return buttons
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # PASS SCREEN
 # ─────────────────────────────────────────────────────────────────────────────
@@ -922,25 +1200,48 @@ def draw_pass_screen(surf, player_name: str, message: str,
 # MAIN MENU
 # ─────────────────────────────────────────────────────────────────────────────
 
-def draw_main_menu(surf, mouse_pos, player_level=0, new_catalog_unlocks=False):
+def draw_main_menu(surf, mouse_pos, profile, player_level=1, new_catalog_unlocks=False,
+                   quick_play_unlocked=False, ranked_unlocked=False):
     surf.fill(BG)
     cx = WIDTH // 2
     draw_text(surf, "FABLED", 80, TEXT, cx, 130, center=True)
-    draw_text(surf, f"Level {player_level}", 22, TEXT_DIM, cx, 220, center=True)
+    draw_text(surf, f"Level {player_level}", 22, TEXT_DIM, cx, 205, center=True)
+    draw_text(surf, f"Gold {getattr(profile, 'gold', 0)}", 18, YELLOW, cx - 230, 245, center=True)
+    draw_text(surf, f"Renown {getattr(profile, 'brighthollow_renown', 500)}", 18, CYAN, cx, 245, center=True)
+    draw_text(surf, f"{getattr(profile, 'guild_vouchers', 0)} Voucher(s)", 18, GREEN, cx + 220, 245, center=True)
+    if profile is not None:
+        draw_text(
+            surf,
+            f"Ranked: {'Unlocked' if ranked_unlocked else 'Locked'}  |  Quick Play: {'Unlocked' if quick_play_unlocked else 'Locked'}",
+            16,
+            TEXT_DIM,
+            cx,
+            272,
+            center=True,
+        )
 
-    story_btn       = pygame.Rect(cx - 130, 285, 260, 52)
-    practice_btn    = pygame.Rect(cx - 130, 348, 260, 52)
-    teambuilder_btn = pygame.Rect(cx - 130, 411, 260, 52)
-    catalog_btn     = pygame.Rect(cx - 130, 474, 260, 52)
+    story_btn       = pygame.Rect(cx - 130, 300, 260, 52)
+    practice_btn    = pygame.Rect(cx - 130, 363, 260, 52)
+    teambuilder_btn = pygame.Rect(cx - 130, 426, 260, 52)
+    catalog_btn     = pygame.Rect(cx - 130, 489, 260, 52)
+    guild_btn       = pygame.Rect(cx - 300, 570, 180, 44)
+    embassy_btn     = pygame.Rect(cx - 90, 570, 180, 44)
+    market_btn      = pygame.Rect(cx + 120, 570, 180, 44)
 
     draw_button(surf, story_btn, "Quests", mouse_pos, size=22,
                 normal=(40, 90, 50), hover=(55, 120, 65), border=BORDER_ACTIVE)
-    draw_button(surf, practice_btn, "Training", mouse_pos, size=22,
+    draw_button(surf, practice_btn, "Play", mouse_pos, size=22,
                 normal=BLUE_DARK, hover=BLUE)
     draw_button(surf, teambuilder_btn, "Tavern", mouse_pos, size=22,
                 normal=(75, 45, 120), hover=(105, 65, 165), border=BORDER_ACTIVE)
     draw_button(surf, catalog_btn, "Guidebook", mouse_pos, size=22,
                 normal=(55, 75, 80), hover=(75, 105, 115), border=BORDER_ACTIVE)
+    draw_button(surf, guild_btn, "Guild", mouse_pos, size=18,
+                normal=(55, 90, 55), hover=(75, 125, 75), border=BORDER_ACTIVE)
+    draw_button(surf, embassy_btn, "Embassy", mouse_pos, size=18,
+                normal=(80, 60, 30), hover=(110, 85, 45), border=BORDER_ACTIVE)
+    draw_button(surf, market_btn, "Market", mouse_pos, size=18,
+                normal=(55, 55, 55), hover=(75, 75, 75), border=BORDER_ACTIVE)
     if new_catalog_unlocks:
         bx, by = catalog_btn.right, catalog_btn.top
         pygame.draw.circle(surf, (190, 130, 30), (bx, by), 11)
@@ -956,7 +1257,17 @@ def draw_main_menu(surf, mouse_pos, player_level=0, new_catalog_unlocks=False):
     draw_text(surf, "⚙", 22, TEXT if s_hov else TEXT_DIM, settings_btn.x + 8, settings_btn.y + 8)
     draw_text(surf, "✕", 20, RED if e_hov else TEXT_DIM,  exit_btn.x + 10,     exit_btn.y + 9)
 
-    return story_btn, practice_btn, teambuilder_btn, catalog_btn, settings_btn, exit_btn
+    return {
+        "story_btn": story_btn,
+        "practice_btn": practice_btn,
+        "teambuilder_btn": teambuilder_btn,
+        "catalog_btn": catalog_btn,
+        "guild_btn": guild_btn,
+        "embassy_btn": embassy_btn,
+        "market_btn": market_btn,
+        "settings_btn": settings_btn,
+        "exit_btn": exit_btn,
+    }
 
 
 def draw_settings_screen(surf, mouse_pos, confirm_reset: bool = False,
@@ -1053,31 +1364,46 @@ def draw_rename_overlay(surf, mouse_pos, current_text: str) -> dict:
     return {"confirm_btn": confirm_btn, "cancel_btn": cancel_btn}
 
 
-def draw_practice_menu(surf, mouse_pos) -> dict:
+def draw_practice_menu(surf, mouse_pos, quick_play_unlocked=False, ranked_unlocked=False,
+                       player_rank_name="Margrave") -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
-    draw_text(surf, "Training", 48, TEXT, cx, 80, center=True)
-    draw_text(surf, "Play with full access to all adventurers, basics, and artifacts.",
+    draw_text(surf, "Play", 48, TEXT, cx, 80, center=True)
+    draw_text(surf, "Quick Play and Ranked use your local collection and progression.",
               18, TEXT_DIM, cx, 145, center=True)
 
-    vs_ai_btn  = pygame.Rect(cx - 150, 220, 300, 62)
-    vs_pvp_btn = pygame.Rect(cx - 150, 298, 300, 62)
+    quick_btn  = pygame.Rect(cx - 170, 215, 340, 62)
+    ranked_btn = pygame.Rect(cx - 170, 293, 340, 62)
+    vs_pvp_btn = pygame.Rect(cx - 170, 371, 340, 62)
     back_btn   = pygame.Rect(20, 20, 100, 36)
 
-    draw_button(surf, vs_ai_btn,  "vs AI",       mouse_pos, size=22,
-                normal=BLUE_DARK, hover=BLUE)
-    draw_button(surf, vs_pvp_btn, "vs Player",   mouse_pos, size=22,
+    draw_button(surf, quick_btn, "Quick Play", mouse_pos, size=22,
+                normal=BLUE_DARK, hover=BLUE, disabled=not quick_play_unlocked)
+    draw_button(surf, ranked_btn, f"Ranked ({player_rank_name})", mouse_pos, size=22,
+                normal=(90, 60, 30), hover=(125, 85, 45), border=BORDER_ACTIVE,
+                disabled=not ranked_unlocked)
+    draw_button(surf, vs_pvp_btn, "Local Versus", mouse_pos, size=22,
                 normal=(55, 70, 120), hover=(72, 95, 160), border=BORDER_ACTIVE)
     draw_button(surf, back_btn,   "Back",         mouse_pos, size=16)
+    if not quick_play_unlocked:
+        draw_text(surf, "Complete Camelot to unlock Quick Play.", 16, TEXT_MUTED, cx, 452, center=True)
+    elif not ranked_unlocked:
+        draw_text(surf, "Ranked unlocks after the player, class, and adventurer sigil milestones are complete.",
+                  16, TEXT_MUTED, cx, 452, center=True)
 
-    return {"vs_ai_btn": vs_ai_btn, "vs_pvp_btn": vs_pvp_btn, "back_btn": back_btn}
+    return {
+        "quick_btn": quick_btn,
+        "ranked_btn": ranked_btn,
+        "vs_pvp_btn": vs_pvp_btn,
+        "back_btn": back_btn,
+    }
 
 
-def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
+def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile, max_slots: int = 1) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
     draw_text(surf, "Tavern", 48, TEXT, cx, 40, center=True)
-    draw_text(surf, "Build up to 6 parties using your unlocked adventurers.",
+    draw_text(surf, f"Saved party slots unlocked: {max_slots}/6",
               18, TEXT_DIM, cx, 95, center=True)
 
     back_btn = pygame.Rect(20, 20, 100, 36)
@@ -1102,7 +1428,13 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
                 slot_w, slot_h
             )
 
-            if idx < len(saved_teams) and saved_teams[idx] is not None:
+            if idx >= max_slots:
+                draw_rect_border(surf, rect, PANEL, BORDER)
+                draw_text(surf, f"Slot {idx + 1} Locked", 18, TEXT_MUTED,
+                          rect.centerx, rect.centery - 12, center=True)
+                draw_text(surf, f"Unlocks at Player Level {idx * 2 + 1}",
+                          14, TEXT_DIM, rect.centerx, rect.centery + 18, center=True)
+            elif idx < len(saved_teams) and saved_teams[idx] is not None:
                 team = saved_teams[idx]
                 draw_rect_border(surf, rect, PANEL_ALT, BORDER_ACTIVE)
                 draw_text(surf, team.get("name", f"Party {idx+1}"), 18, TEXT,
@@ -1110,10 +1442,15 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
 
                 members = team.get("members", [])
                 artifact_names = [artifact_id.replace("_", " ").title() for artifact_id in team.get("artifact_ids", [])]
+                artifact_label = ", ".join(artifact_names[:3]) if artifact_names else "None"
+                if len(artifact_names) > 3:
+                    artifact_label += "..."
+                draw_text(surf, f"Party Artifacts: {artifact_label}", 11, ORANGE,
+                          rect.x + 10, rect.y + 28)
                 member_col_w = (slot_w - 110) // 3
                 for mi, m in enumerate(members[:3]):
                     mx = rect.x + 10 + mi * member_col_w
-                    my = rect.y + 34
+                    my = rect.y + 52
                     adv_name = m.get("adv_id", "?").replace("_", " ").title()
                     draw_text(surf, adv_name, 14, TEXT, mx, my)
                     sig_name = m.get("sig_id", "").replace("_", " ").title()
@@ -1121,7 +1458,7 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
                     basics = m.get("basics", [])
                     basics_str = ", ".join(b.replace("_", " ").title() for b in basics[:2])
                     draw_text(surf, basics_str[:22], 11, TEXT_DIM, mx, my + 30)
-                    if mi == 0 and artifact_names:
+                    if False and mi == 0 and artifact_names:
                         artifact_str = ", ".join(artifact_names[:2])
                         if len(artifact_names) > 2:
                             artifact_str += "…"
@@ -1156,7 +1493,7 @@ def draw_teambuilder(surf, saved_teams: list, mouse_pos, profile) -> dict:
     }
 
 
-def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def) -> dict:
+def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def, max_slots: int = 1) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
     draw_text(surf, "Select Your Party", 40, TEXT, cx, 50, center=True)
@@ -1168,7 +1505,7 @@ def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def) -> dic
     team_btns = []
     teambuilder_btn = None
 
-    valid_teams = [(i, t) for i, t in enumerate(saved_teams) if t is not None]
+    valid_teams = [(i, t) for i, t in enumerate(saved_teams[:max_slots]) if t is not None]
 
     if not valid_teams:
         draw_text(surf, "No parties saved. Build a party in the Tavern first.",
@@ -1195,9 +1532,184 @@ def draw_story_team_select(surf, saved_teams: list, mouse_pos, quest_def) -> dic
                 for m in members
             )
             draw_text(surf, member_str, 14, TEXT_DIM, rect.x + 14, rect.y + 44)
+            artifact_names = [artifact_id.replace("_", " ").title() for artifact_id in team.get("artifact_ids", [])]
+            draw_text(
+                surf,
+                f"Artifacts: {', '.join(artifact_names[:3]) if artifact_names else 'None'}",
+                13,
+                ORANGE,
+                rect.x + 14,
+                rect.y + 70,
+            )
             team_btns.append((rect, slot_idx))
 
     return {"team_btns": team_btns, "back_btn": back_btn, "teambuilder_btn": teambuilder_btn}
+
+
+def draw_guild_screen(surf, mouse_pos, profile, guild_tab: str,
+                      adventurers: list, artifacts: list,
+                      adventurer_prices: dict, artifact_prices: dict) -> dict:
+    surf.fill(BG)
+    cx = WIDTH // 2
+    draw_text(surf, "Guild", 48, TEXT, cx, 42, center=True)
+    draw_text(surf, "Hire adventurers and purchase artifacts with gold.", 18, TEXT_DIM, cx, 88, center=True)
+    draw_text(
+        surf,
+        f"Gold {getattr(profile, 'gold', 0)}  |  Vouchers {getattr(profile, 'guild_vouchers', 0)}",
+        18,
+        YELLOW,
+        cx,
+        114,
+        center=True,
+    )
+    draw_text(surf, "Starter and Camelot rewards are not sold here.", 14, TEXT_MUTED, cx, 138, center=True)
+
+    back_btn = pygame.Rect(20, 20, 100, 36)
+    adv_tab_btn = pygame.Rect(cx - 180, 164, 170, 40)
+    art_tab_btn = pygame.Rect(cx + 10, 164, 170, 40)
+    draw_button(surf, back_btn, "Back", mouse_pos, size=16)
+    draw_button(
+        surf, adv_tab_btn, "Adventurers", mouse_pos, size=18,
+        normal=(55, 90, 55) if guild_tab == "adventurers" else PANEL,
+        hover=(75, 125, 75), border=BORDER_ACTIVE,
+    )
+    draw_button(
+        surf, art_tab_btn, "Artifacts", mouse_pos, size=18,
+        normal=(80, 60, 30) if guild_tab == "artifacts" else PANEL,
+        hover=(110, 85, 45), border=BORDER_ACTIVE,
+    )
+
+    tab_btns = [("adventurers", adv_tab_btn), ("artifacts", art_tab_btn)]
+    buy_adventurer_btns = []
+    voucher_btns = []
+    buy_artifact_btns = []
+
+    card_w = 640
+    card_h = 62
+    pad = 10
+    start_x = cx - card_w - 10
+    start_y = 224
+
+    if guild_tab == "adventurers":
+        for idx, defn in enumerate(adventurers):
+            col = idx % 2
+            row = idx // 2
+            rect = pygame.Rect(start_x + col * (card_w + 20), start_y + row * (card_h + pad), card_w, card_h)
+            draw_rect_border(
+                surf,
+                rect,
+                CLASS_COLORS.get(defn.cls, PANEL_ALT),
+                BORDER_ACTIVE if rect.collidepoint(mouse_pos) else BORDER,
+            )
+            draw_text(surf, defn.name, 17, TEXT, rect.x + 12, rect.y + 9)
+            draw_text(surf, cls_label(defn.cls), 13, CLASS_TEXT_COLORS.get(defn.cls, TEXT_DIM), rect.x + 12, rect.y + 32)
+
+            owned = defn.id in getattr(profile, "recruited", set())
+            price = adventurer_prices.get(defn.id, 0)
+            buy_btn = pygame.Rect(rect.right - 126, rect.y + 10, 116, 18)
+            voucher_btn = pygame.Rect(rect.right - 126, rect.y + 34, 116, 18)
+
+            if owned:
+                draw_text(surf, "Owned", 16, GREEN, rect.right - 22, rect.y + 20, right=True)
+            else:
+                draw_button(
+                    surf, buy_btn, f"Buy {price}g", mouse_pos, size=13,
+                    normal=BLUE_DARK, hover=BLUE,
+                    disabled=getattr(profile, "gold", 0) < price,
+                )
+                buy_adventurer_btns.append((buy_btn, defn.id))
+                can_voucher = getattr(profile, "guild_vouchers", 0) > 0
+                draw_button(
+                    surf, voucher_btn, "Use Voucher", mouse_pos, size=13,
+                    normal=(55, 90, 55), hover=(75, 125, 75),
+                    disabled=not can_voucher,
+                )
+                voucher_btns.append((voucher_btn, defn.id))
+    else:
+        for idx, artifact in enumerate(artifacts):
+            col = idx % 2
+            row = idx // 2
+            rect = pygame.Rect(start_x + col * (card_w + 20), start_y + row * (card_h + pad), card_w, card_h)
+            draw_rect_border(surf, rect, PANEL_ALT, BORDER_ACTIVE if rect.collidepoint(mouse_pos) else BORDER)
+            draw_text(surf, artifact.name, 17, TEXT, rect.x + 12, rect.y + 9)
+            draw_text(surf, artifact.description[:68], 12, TEXT_DIM, rect.x + 12, rect.y + 32)
+
+            owned = artifact.id in getattr(profile, "unlocked_artifacts", set())
+            price = artifact_prices.get(artifact.id, 0)
+            buy_btn = pygame.Rect(rect.right - 126, rect.y + 18, 116, 24)
+            if owned:
+                draw_text(surf, "Owned", 16, GREEN, rect.right - 22, rect.y + 22, right=True)
+            else:
+                draw_button(
+                    surf, buy_btn, f"Buy {price}g", mouse_pos, size=13,
+                    normal=BLUE_DARK, hover=BLUE,
+                    disabled=getattr(profile, "gold", 0) < price,
+                )
+                buy_artifact_btns.append((buy_btn, artifact.id))
+
+    return {
+        "back_btn": back_btn,
+        "tab_btns": tab_btns,
+        "buy_adventurer_btns": buy_adventurer_btns,
+        "voucher_btns": voucher_btns,
+        "buy_artifact_btns": buy_artifact_btns,
+    }
+
+
+def draw_embassy_screen(surf, mouse_pos, profile, exchange_rate: int, offers: tuple = (1, 5, 10, 20)) -> dict:
+    surf.fill(BG)
+    cx = WIDTH // 2
+    draw_text(surf, "Embassy", 48, TEXT, cx, 56, center=True)
+    draw_text(surf, f"Exchange rate: $1 -> {exchange_rate} gold", 22, YELLOW, cx, 118, center=True)
+    draw_text(surf, "Local-only for now: this simulates premium currency purchases on your machine.", 16, TEXT_DIM, cx, 150, center=True)
+    draw_text(
+        surf,
+        f"Current Gold {getattr(profile, 'gold', 0)}  |  Lifetime Embassy Spend ${getattr(profile, 'premium_dollars_spent', 0)}",
+        16,
+        CYAN,
+        cx,
+        178,
+        center=True,
+    )
+
+    back_btn = pygame.Rect(20, 20, 100, 36)
+    draw_button(surf, back_btn, "Back", mouse_pos, size=16)
+
+    offer_btns = []
+    card_y = 250
+    card_w = 250
+    card_h = 96
+    pad = 24
+    start_x = cx - (2 * card_w + pad) // 2
+    for idx, dollars in enumerate(offers):
+        col = idx % 2
+        row = idx // 2
+        rect = pygame.Rect(start_x + col * (card_w + pad), card_y + row * (card_h + pad), card_w, card_h)
+        draw_rect_border(surf, rect, PANEL_ALT, BORDER_ACTIVE if rect.collidepoint(mouse_pos) else BORDER)
+        draw_text(surf, f"${dollars}", 28, TEXT, rect.centerx, rect.y + 18, center=True)
+        draw_text(surf, f"{dollars * exchange_rate} gold", 18, YELLOW, rect.centerx, rect.y + 52, center=True)
+        offer_btns.append((rect, dollars))
+
+    return {"back_btn": back_btn, "offer_btns": offer_btns}
+
+
+def draw_market_closed(surf, mouse_pos) -> dict:
+    surf.fill(BG)
+    cx = WIDTH // 2
+    draw_text(surf, "Market", 48, TEXT, cx, 90, center=True)
+    draw_text(surf, "Closed", 42, YELLOW, cx, 220, center=True)
+    draw_text(
+        surf,
+        "Cosmetic and feature purchases are not implemented in this local build yet.",
+        18,
+        TEXT_DIM,
+        cx,
+        285,
+        center=True,
+    )
+    back_btn = pygame.Rect(cx - 120, 360, 240, 52)
+    draw_button(surf, back_btn, "Back", mouse_pos, size=20)
+    return {"back_btn": back_btn}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2294,7 +2806,7 @@ def _wrap_text(text: str, size: int, max_width: int) -> list:
 # COMBATANT DETAIL PANEL  (battle-screen info view)
 # ─────────────────────────────────────────────────────────────────────────────
 
-BATTLE_DETAIL_RECT = pygame.Rect(20, 375, 550, 465)
+BATTLE_DETAIL_RECT = pygame.Rect(450, 86, 500, 620)
 
 
 def draw_combatant_detail(surf, unit: CombatantState,
@@ -2430,29 +2942,6 @@ def draw_combatant_detail(surf, unit: CombatantState,
                 _draw_rich_line(surf, f"      {extra}", 12, TEXT_MUTED, x + 8, y, status_rects_out)
                 y += 13
 
-    item = unit.item
-    if item.id != "no_item":
-        pygame.draw.line(surf, BORDER, (x, y), (x + w, y), 1)
-        y += 5
-        draw_text(surf, f"Legacy Item: {item.name}", 14, GREEN, x, y)
-        y += 16
-        if item.passive:
-            _it_type = "Passive"
-            _it_col  = TYPE_PASSIVE_COL
-        else:
-            _it_type = "Active"
-            _it_col  = TYPE_ACTIVE_COL
-        _it_state = ""
-        if item.once_per_battle:
-            _it_state = "  [used]" if unit.item_uses_left <= 0 else "  [once per battle]"
-        draw_text(surf, _it_type + _it_state, 12, _it_col, x + 8, y)
-        y += 14
-        for line in _wrap_text(item.description, 13, w - 8):
-            if y + 14 > r.bottom - 4:
-                break
-            _draw_rich_line(surf, line, 13, TEXT_DIM, x + 8, y, status_rects_out)
-            y += 15
-
     return close_rect
 
 
@@ -2460,7 +2949,7 @@ def draw_combatant_detail(surf, unit: CombatantState,
 # RESULT SCREEN
 # ─────────────────────────────────────────────────────────────────────────────
 
-def draw_result_screen(surf, battle: BattleState, mouse_pos):
+def draw_result_screen(surf, battle: BattleState, mouse_pos, subtitle: str = "", detail_lines: list | None = None):
     surf.fill(BG)
     cx, cy = WIDTH // 2, HEIGHT // 2
     winner_name = battle.get_team(battle.winner).player_name if battle.winner else "?"
@@ -2468,9 +2957,15 @@ def draw_result_screen(surf, battle: BattleState, mouse_pos):
     draw_text(surf, f"{winner_name} wins!", 36, TEXT, cx, cy - 40, center=True)
     draw_text(surf, f"Battle lasted {battle.round_num} rounds.", 22, TEXT_DIM,
               cx, cy + 20, center=True)
+    if subtitle:
+        draw_text(surf, subtitle, 18, CYAN, cx, cy + 52, center=True)
+    y = cy + 84
+    for line in (detail_lines or [])[:8]:
+        draw_text(surf, line, 16, TEXT, cx, y, center=True)
+        y += 22
 
-    menu_btn   = pygame.Rect(cx - 160, cy + 90, 150, 52)
-    rematch_btn = pygame.Rect(cx + 10,  cy + 90, 150, 52)
+    menu_btn   = pygame.Rect(cx - 160, HEIGHT - 100, 150, 52)
+    rematch_btn = pygame.Rect(cx + 10,  HEIGHT - 100, 150, 52)
     draw_button(surf, menu_btn,    "Main Menu",  mouse_pos, size=20)
     draw_button(surf, rematch_btn, "Quit",       mouse_pos, size=20)
     return menu_btn, rematch_btn
@@ -2621,7 +3116,7 @@ def draw_campaign_mission_select(surf, missions: list, mouse_pos, profile) -> di
     return {"mission_btns": mission_btns, "back_btn": back_btn}
 
 
-def draw_quest_select(surf, mission, quests: list, mouse_pos, profile) -> dict:
+def draw_quest_select(surf, mission, quests: list, mouse_pos, profile, reward_preview_map: dict | None = None) -> dict:
     """Show quests within a mission.  Returns click rects."""
     surf.fill(BG)
     cx = WIDTH // 2
@@ -2676,17 +3171,7 @@ def draw_quest_select(surf, mission, quests: list, mouse_pos, profile) -> dict:
             #   f"  —  {quest.key_preview}"
             draw_text(surf, f"Encounter {quest.quest_id}",
                       18, TEXT if not cleared else GREEN, rect.x + 14, rect.y + 10)
-            # Reward summary
-            reward_parts = []
-            reward_parts.extend(_reward_artifact_names(quest.rewards))
-            for entry in quest.rewards.get("recruit", []):
-                reward_parts.append(f"Recruit {entry[0].replace('_', ' ').title()}")
-            if quest.rewards.get("sig_tier"):
-                reward_parts.append(f"Sig Tier {quest.rewards['sig_tier']}")
-            if quest.rewards.get("basics_tier"):
-                reward_parts.append(f"Basics Tier {quest.rewards['basics_tier']}")
-            if quest.rewards.get("campaign_complete"):
-                reward_parts.append("Campaign Complete!")
+            reward_parts = list((reward_preview_map or {}).get(quest.quest_id, []))
             reward_str = "Rewards: " + (", ".join(reward_parts) if reward_parts else "None")
             draw_text(surf, reward_str[:90], 13, YELLOW if reward_parts else TEXT_MUTED,
                       rect.x + 14, rect.y + 38)
@@ -2704,7 +3189,8 @@ def draw_quest_select(surf, mission, quests: list, mouse_pos, profile) -> dict:
 
 
 def draw_pre_quest(surf, quest_def, mission, quest_pos: int, total_quests: int,
-                   enemy_picks: list, mouse_pos, status_rects_out: list = None) -> dict:
+                   enemy_picks: list, mouse_pos, reward_preview_lines: list | None = None,
+                   status_rects_out: list = None) -> dict:
     """Show pre-battle screen with enemy lineup and reward preview."""
     surf.fill(BG)
     cx = WIDTH // 2
@@ -2771,27 +3257,15 @@ def draw_pre_quest(surf, quest_def, mission, quest_pos: int, total_quests: int,
     draw_text(surf, "Rewards for Victory:", 18, TEXT_DIM, cx, reward_y, center=True)
     reward_y += 28
 
-    rewards  = quest_def.rewards or {}
-    parts    = []
-    parts.extend(_reward_artifact_names(rewards))
-    for entry in rewards.get("recruit", []):
-        parts.append(f"Recruit {entry[0].replace('_', ' ').title()}")
-    if rewards.get("sig_tier"):
-        parts.append(f"Signature Tier {rewards['sig_tier']} unlocked")
-    if rewards.get("basics_tier"):
-        parts.append(f"Basics Tier {rewards['basics_tier']} unlocked")
-    if rewards.get("campaign_complete"):
-        parts.append("Campaign Complete! Ranked Glory unlocked!")
-    if not parts:
-        parts = ["No artifact rewards"]
-
-    reward_text = "  |  ".join(parts)
-    draw_text(surf, reward_text[:100], 16, YELLOW, cx, reward_y, center=True)
+    parts = reward_preview_lines or ["No rewards preview available"]
+    for idx, line in enumerate(parts[:4]):
+        draw_text(surf, line, 16, YELLOW if idx == 0 else TEXT, cx, reward_y + idx * 22, center=True)
 
     return {"start_btn": start_btn, "back_btn": back_btn, "enemy_cards": enemy_cards}
 
 
-def draw_post_quest(surf, quest_def, won: bool, rewards: dict, mouse_pos) -> dict:
+def draw_post_quest(surf, quest_def, won: bool, rewards: dict, mouse_pos,
+                    detail_lines: list | None = None, subtitle: str = "") -> dict:
     """Show post-battle rewards screen."""
     surf.fill(BG)
     cx, cy = WIDTH // 2, HEIGHT // 2
@@ -2800,21 +3274,12 @@ def draw_post_quest(surf, quest_def, won: bool, rewards: dict, mouse_pos) -> dic
         draw_text(surf, "VICTORY!", 72, YELLOW, cx, cy - 170, center=True)
         draw_text(surf, f"Encounter {quest_def.quest_id} Cleared!", 34, GREEN,
                   cx, cy - 85, center=True)
+        if subtitle:
+            draw_text(surf, subtitle, 18, CYAN, cx, cy - 52, center=True)
 
         # Show rewards
         draw_text(surf, "Rewards Gained:", 22, TEXT_DIM, cx, cy - 30, center=True)
-        parts = []
-        parts.extend(_reward_artifact_names(rewards))
-        for entry in rewards.get("recruit", []):
-            parts.append(f"Recruit {entry[0].replace('_', ' ').title()}")
-        if rewards.get("sig_tier"):
-            parts.append(f"Signature Tier {rewards['sig_tier']}")
-        if rewards.get("basics_tier"):
-            parts.append(f"Basics Tier {rewards['basics_tier']}")
-        if rewards.get("ranked_glory"):
-            parts.append("Ranked Glory Unlocked!")
-        if rewards.get("campaign_complete"):
-            parts.append("Campaign Complete!")
+        parts = list(detail_lines or [])
         if not parts:
             parts = ["Progress saved"]
 
@@ -2841,7 +3306,7 @@ def draw_campaign_complete(surf, mouse_pos) -> dict:
     draw_text(surf, "CAMPAIGN COMPLETE!", 64, YELLOW, cx, cy - 180, center=True)
     draw_text(surf, "You have defeated the Dragon and saved the realm!", 28, TEXT,
               cx, cy - 90, center=True)
-    draw_text(surf, "Ranked Glory is now unlocked in the main menu.", 22, GREEN,
+    draw_text(surf, "Your progress has been saved to your local account.", 22, GREEN,
               cx, cy - 40, center=True)
     draw_text(surf, "Thank you for playing FABLED.", 20, TEXT_DIM, cx, cy + 10, center=True)
 
@@ -2925,11 +3390,9 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
 
     # ── Build lists (unfiltered) ──────────────────────────────────────────────
     recruited = getattr(profile, "recruited", set())
-    sig_tier = getattr(profile, "sig_tier", 3)
-    twists_unlocked = True
-    unlocked_classes = getattr(profile, "unlocked_classes", set())
-    basics_tier = getattr(profile, "basics_tier", 5)
     unlocked_artifacts = getattr(profile, "unlocked_artifacts", set())
+    adventurer_clears = getattr(profile, "adventurer_quest_clears", {})
+    class_points = getattr(profile, "class_points", {})
 
     # Build basics-to-class map always (used by detail panel and filtering)
     _basics_cls_map = {}
@@ -2942,8 +3405,8 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
     elif active_tab == "basics":
         pool = []
         for cls, abilities in class_basics.items():
-            if cls in unlocked_classes:
-                pool.extend(abilities[:basics_tier])
+            unlocked_count = class_basics_unlocked_count(class_level_from_points(class_points.get(cls, 0)))
+            pool.extend(abilities[:unlocked_count])
         list_items = pool
     else:  # artifacts
         list_items = [it for it in items if it.id in unlocked_artifacts]
@@ -3137,7 +3600,8 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
             dy = _dsep(surf, dy + 2)
 
             # Signature abilities
-            avail_sigs = item.sig_options[:sig_tier]
+            adv_level = adventurer_level_from_clears(adventurer_clears.get(item.id, 0))
+            avail_sigs = item.sig_options[:unlocked_signature_count(adv_level)]
             dy = _dline(surf, f"Signatures  ({len(avail_sigs)} of {len(item.sig_options)} unlocked):",
                         15, CYAN, dx, dy)
             dy += 2
@@ -3155,7 +3619,7 @@ def draw_catalog(surf, mouse_pos, active_tab: str, selected_idx,
             dy = _dsep(surf, dy + 2)
 
             # Twist
-            if twists_unlocked:
+            if twist_unlocked(adv_level):
                 twist = item.twist
                 dy = _dline(surf, f"Twist: {twist.name}", 15, ORANGE, dx, dy)
                 for prefix, mode in (("FL", twist.frontline), ("BL", twist.backline)):

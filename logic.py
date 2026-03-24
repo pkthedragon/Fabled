@@ -6,6 +6,7 @@ Implements all core mechanics from the rulebook:
 Special-cased ability effects are handled by ability ID in apply_special().
 """
 import math
+import random
 from typing import List, Optional, Tuple
 
 import battle_log
@@ -14,7 +15,21 @@ from models import (
     Artifact, ArtifactState,
 )
 from settings import SLOT_FRONT, SLOT_BACK_LEFT, SLOT_BACK_RIGHT, CLOCKWISE_ORDER
-from data import CLASS_BASICS, ARTIFACTS_BY_ID, LEGACY_ITEM_TO_ARTIFACT_ID
+from data import CLASS_BASICS, ARTIFACTS_BY_ID, LEGACY_ITEM_TO_ARTIFACT_ID, ROSTER
+from economy import NON_TUTORIAL_QUEST_GOLD, random_artifact_reward_pool
+from progression import (
+    adventurer_level_from_clears,
+    adventurer_sigil_unlocked,
+    class_level_from_points,
+    class_sigil_unlocked,
+    player_level_from_exp,
+    player_sigil_unlocked,
+    saved_team_slot_count,
+    voucher_count_for_level,
+)
+
+
+ROSTER_BY_ID = {defn.id: defn for defn in ROSTER}
 
 
 NO_ITEM = Item(
@@ -652,6 +667,9 @@ def get_legal_item_targets(
         return []
 
     team = battle.get_team(acting_player)
+    artifact_state = team.artifact_state(artifact.id)
+    if artifact_state is None or artifact_state.cooldown_remaining > 0:
+        return []
     enemy_team = battle.get_enemy(acting_player)
     everyone = [u for u in battle.team1.alive() + battle.team2.alive() if not u.untargetable]
 
@@ -2785,6 +2803,9 @@ def execute_item(
     if artifact_state is None:
         battle.log_add(f"  {actor.name} has no artifact ready.")
         return
+    if artifact_state.cooldown_remaining > 0:
+        battle.log_add(f"  {artifact_state.artifact.name} is still on cooldown.")
+        return
 
     battle.log_add(f"{actor.name} uses {artifact_state.artifact.name}.")
 
@@ -3191,7 +3212,10 @@ def end_round(battle: BattleState):
         acting_p = 1 if team == battle.team1 else 2
 
         for artifact_state in team.artifacts:
-            if artifact_state.cooldown_remaining > 0:
+            if (
+                artifact_state.cooldown_remaining > 0
+                and not (artifact_state.used_this_battle and artifact_state.artifact.cooldown >= 900)
+            ):
                 artifact_state.cooldown_remaining -= 1
 
         if team.active_twist_lock > 0:
@@ -3555,69 +3579,196 @@ def can_act_this_round(unit: CombatantState, battle: BattleState = None, acting_
 # CAMPAIGN REWARD APPLICATION
 # ─────────────────────────────────────────────────────────────────────────────
 
-def apply_quest_rewards(profile, quest_id: int, notify: bool = True):
-    """Apply rewards for clearing quest_id to profile.  Idempotent.
-    notify=False suppresses new_unlocks badges (used for bootstrap/starter calls)."""
+def _grant_player_exp(profile, amount: int, summary: dict):
+    amount = max(0, int(amount))
+    if amount <= 0:
+        return
+    before_level = player_level_from_exp(profile.player_exp)
+    before_slots = saved_team_slot_count(before_level)
+    before_vouchers = voucher_count_for_level(before_level)
+    before_player_sigil = player_sigil_unlocked(before_level)
+    profile.player_exp += amount
+    after_level = player_level_from_exp(profile.player_exp)
+    after_slots = saved_team_slot_count(after_level)
+    after_vouchers = voucher_count_for_level(after_level)
+    summary["player_exp"] += amount
+    summary["lines"].append(f"Player EXP +{amount}")
+    if after_level > before_level:
+        summary["lines"].append(f"Player Level {after_level}")
+    if after_slots > before_slots:
+        summary["lines"].append(f"Saved Team Slots +{after_slots - before_slots}")
+    if after_vouchers > before_vouchers:
+        gained = after_vouchers - before_vouchers
+        profile.guild_vouchers += gained
+        summary["lines"].append(f"Guild Recruitment Voucher +{gained}")
+    if not before_player_sigil and player_sigil_unlocked(after_level):
+        summary["lines"].append("Player Sigil Unlocked")
+
+
+def _grant_gold(profile, amount: int, summary: dict):
+    amount = int(amount)
+    if amount == 0:
+        return
+    profile.gold = max(0, profile.gold + amount)
+    summary["gold"] += amount
+    if amount > 0:
+        summary["lines"].append(f"Gold +{amount}")
+    else:
+        summary["lines"].append(f"Gold {amount}")
+
+
+def _grant_artifact(profile, artifact_id: str, summary: dict, notify: bool = True):
+    artifact = ARTIFACTS_BY_ID.get(artifact_id)
+    if artifact is None or artifact_id in profile.unlocked_artifacts:
+        return False
+    profile.unlocked_artifacts.add(artifact_id)
+    if notify:
+        profile.new_unlocks.add("artifacts")
+    summary["lines"].append(f"Artifact Unlocked: {artifact.name}")
+    return True
+
+
+def _grant_class_points(profile, class_name: str, amount: int, summary: dict, source: str = ""):
+    amount = max(0, int(amount))
+    if amount <= 0:
+        return
+    before_points = profile.class_points.get(class_name, 0)
+    before_level = class_level_from_points(before_points)
+    profile.class_points[class_name] = before_points + amount
+    after_level = class_level_from_points(profile.class_points[class_name])
+    suffix = f" ({source})" if source else ""
+    summary["lines"].append(f"{class_name} Class Points +{amount}{suffix}")
+    if after_level > before_level:
+        summary["lines"].append(f"{class_name} Class Level {after_level}")
+        if after_level == 5 and class_sigil_unlocked(after_level):
+            summary["lines"].append(f"{class_name} Sigil and Title Unlocked")
+
+
+def _grant_adventurer(profile, adv_id: str, sig_id: str, summary: dict, notify: bool = True):
+    defn = ROSTER_BY_ID.get(adv_id)
+    if defn is None or adv_id in profile.recruited:
+        return False
+    profile.recruited.add(adv_id)
+    profile.unlocked_classes.add(defn.cls)
+    if adv_id not in profile.default_sigs:
+        profile.default_sigs[adv_id] = sig_id
+    if notify:
+        profile.new_unlocks.add("adventurers")
+    summary["lines"].append(f"Adventurer Unlocked: {defn.name}")
+    _grant_player_exp(profile, 60, summary)
+    _grant_class_points(profile, defn.cls, 1, summary, source=f"{defn.name} unlocked")
+    return True
+
+
+def _grant_adventurer_progress(profile, adv_id: str, summary: dict):
+    defn = ROSTER_BY_ID.get(adv_id)
+    if defn is None:
+        return
+    before_clears = profile.adventurer_quest_clears.get(adv_id, 0)
+    before_level = adventurer_level_from_clears(before_clears)
+    profile.adventurer_quest_clears[adv_id] = before_clears + 1
+    after_level = adventurer_level_from_clears(profile.adventurer_quest_clears[adv_id])
+    if after_level > before_level:
+        summary["lines"].append(f"{defn.name} Level {after_level}")
+        if after_level == 4:
+            summary["lines"].append(f"{defn.name} Twist Unlocked")
+        if after_level == 5 and adventurer_sigil_unlocked(after_level):
+            summary["lines"].append(f"{defn.name} Sigil and Music Unlocked")
+
+
+def build_quest_reward_preview(profile, quest_id: int) -> List[str]:
     from campaign_data import QUEST_TABLE
 
     quest = QUEST_TABLE.get(quest_id)
     if quest is None:
-        return
+        return []
+    if getattr(quest, "is_tutorial", False):
+        lines = [
+            "Player EXP +100",
+            "Party adventurers gain 1 Adventurer Level",
+            "Used classes gain 1 Class Point",
+            "Gold +0 (tutorial quest)",
+        ]
+        for artifact_id in quest.rewards.get("artifacts", []):
+            artifact = ARTIFACTS_BY_ID.get(artifact_id)
+            if artifact is not None:
+                lines.append(f"Artifact: {artifact.name}")
+        for adv_id, _sig_id in quest.rewards.get("recruit", []):
+            defn = ROSTER_BY_ID.get(adv_id)
+            if defn is not None:
+                lines.append(f"Adventurer: {defn.name}")
+        return lines or ["Tutorial progression rewards"]
+
+    preview = [
+        "Player EXP +100",
+        "Party adventurers gain 1 Adventurer Level",
+        "Used classes gain 1 Class Point",
+    ]
+    projected_level = player_level_from_exp(profile.player_exp)
+    projected_counter = profile.non_tutorial_quests_completed + 1
+    if projected_level >= 5 and projected_counter % 3 == 0 and random_artifact_reward_pool(profile.unlocked_artifacts):
+        preview.append("Random artifact instead of gold")
+    else:
+        preview.append(f"Gold +{getattr(quest, 'gold_reward', NON_TUTORIAL_QUEST_GOLD)}")
+    return preview
+
+
+def apply_quest_rewards(profile, quest_id: int, party_adventurer_ids: Optional[List[str]] = None, notify: bool = True):
+    """Apply quest rewards and progression. Returns a summary dict for UI display."""
+    from campaign_data import QUEST_TABLE
+
+    quest = QUEST_TABLE.get(quest_id)
+    summary = {
+        "quest_id": quest_id,
+        "player_exp": 0,
+        "gold": 0,
+        "lines": [],
+    }
+    if quest is None:
+        return summary
+
+    first_clear = not profile.quest_cleared.get(quest_id, False)
+    party_ids = []
+    for adv_id in party_adventurer_ids or []:
+        if adv_id and adv_id not in party_ids:
+            party_ids.append(adv_id)
+
+    if party_ids:
+        _grant_player_exp(profile, 100, summary)
+        for adv_id in party_ids:
+            _grant_adventurer_progress(profile, adv_id, summary)
+        used_classes = []
+        for adv_id in party_ids:
+            defn = ROSTER_BY_ID.get(adv_id)
+            if defn and defn.cls not in used_classes:
+                used_classes.append(defn.cls)
+        for class_name in used_classes:
+            _grant_class_points(profile, class_name, 1, summary)
 
     rewards = quest.rewards or {}
+    if getattr(quest, "is_tutorial", False):
+        if first_clear:
+            for artifact_id in rewards.get("artifacts", []):
+                _grant_artifact(profile, artifact_id, summary, notify=notify)
+            for adv_id, sig_id in rewards.get("recruit", []):
+                _grant_adventurer(profile, adv_id, sig_id, summary, notify=notify)
+            if quest_id == 4:
+                profile.tutorial_complete = True
+                profile.quick_play_unlocked = True
+                summary["lines"].append("Quick Play Unlocked")
+        else:
+            summary["lines"].append("Tutorial cleared again")
+    else:
+        profile.non_tutorial_quests_completed += 1
+        reward_given = False
+        if player_level_from_exp(profile.player_exp) >= 5 and profile.non_tutorial_quests_completed % 3 == 0:
+            pool = random_artifact_reward_pool(profile.unlocked_artifacts)
+            if pool:
+                reward_given = _grant_artifact(profile, random.choice(pool), summary, notify=notify)
+        if not reward_given:
+            _grant_gold(profile, getattr(quest, "gold_reward", NON_TUTORIAL_QUEST_GOLD), summary)
 
-    # ── Recruit new adventurers ────────────────────────────────────────────────
-    for entry in rewards.get("recruit", []):
-        adv_id, sig_id = entry
-        if notify and adv_id not in profile.recruited:
-            profile.new_unlocks.add("adventurers")
-        profile.recruited.add(adv_id)
-        # Set default sig only if not already chosen by the player
-        if adv_id not in profile.default_sigs:
-            profile.default_sigs[adv_id] = sig_id
-
-    # ── Unlock signature tier ──────────────────────────────────────────────────
-    new_sig_tier = rewards.get("sig_tier")
-    if new_sig_tier is not None:
-        if notify and new_sig_tier > profile.sig_tier:
-            profile.new_unlocks.add("basics")
-        profile.sig_tier = max(profile.sig_tier, new_sig_tier)
-
-    # ── Unlock basics tier ─────────────────────────────────────────────────────
-    new_basics_tier = rewards.get("basics_tier")
-    if new_basics_tier is not None:
-        if notify and new_basics_tier > profile.basics_tier:
-            profile.new_unlocks.add("basics")
-        profile.basics_tier = max(profile.basics_tier, new_basics_tier)
-
-    # ── Unlock items ───────────────────────────────────────────────────────────
-    artifact_ids = list(rewards.get("artifacts", []))
-    for item_id in rewards.get("items", []):
-        artifact_id = LEGACY_ITEM_TO_ARTIFACT_ID.get(item_id)
-        if artifact_id is not None:
-            artifact_ids.append(artifact_id)
-    for artifact_id in artifact_ids:
-        if artifact_id not in ARTIFACTS_BY_ID:
-            continue
-        if notify and artifact_id not in profile.unlocked_artifacts:
-            profile.new_unlocks.add("artifacts")
-        profile.unlocked_artifacts.add(artifact_id)
-
-    # ── Unlock classes ─────────────────────────────────────────────────────────
-    for cls_name in rewards.get("classes", []):
-        if notify and cls_name not in profile.unlocked_classes:
-            profile.new_unlocks.add("basics")
-        profile.unlocked_classes.add(cls_name)
-
-    # ── Unlock twists ──────────────────────────────────────────────────────────
-    profile.twists_unlocked = True
-
-    # ── Campaign completion flags ─────────────────────────────────────────────
-    if rewards.get("ranked_glory"):
-        profile.ranked_glory_unlocked = True
-    if rewards.get("campaign_complete"):
-        profile.campaign_complete = True
-
-    # ── Record this quest as cleared ──────────────────────────────────────────
-    profile.quest_cleared[quest_id] = True
-    profile.highest_quest_cleared = max(profile.highest_quest_cleared, quest_id)
+    if first_clear:
+        profile.quest_cleared[quest_id] = True
+        profile.highest_quest_cleared = max(profile.highest_quest_cleared, quest_id)
+    return summary

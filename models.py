@@ -460,25 +460,25 @@ class BattleState:
 
 @dataclass
 class CampaignProfile:
-    """Tracks player progress through the main story campaign."""
+    """Tracks local account progression, ownership, and campaign state."""
     recruited: "Set[str]" = field(default_factory=lambda: {
-        "risa_redcloak", "robin_hooded_avenger", "aldric_lost_lamb"
+        "risa_redcloak", "robin_hooded_avenger", "sir_roland"
     })
     sig_tier: int = 1                    # 1, 2, or 3 – max signature tier unlocked
     basics_tier: int = 2                 # max basics tier (1–5)
     unlocked_classes: "Set[str]" = field(default_factory=lambda: {
-        "Fighter", "Ranger", "Cleric"
+        "Fighter", "Ranger", "Warden"
     })
     unlocked_items: "Set[str]" = field(default_factory=lambda: {
-        "health_potion", "healing_tonic", "family_seal"
+        "healing_tonic"
     })
     unlocked_artifacts: "Set[str]" = field(default_factory=lambda: {
-        "holy_grail", "winged_sandals", "achilles_spear"
+        "divine_apple"
     })
     default_sigs: "Dict[str, str]" = field(default_factory=dict)  # adv_id -> sig_id
     twists_unlocked: bool = True
     quest_cleared: "Dict[int, bool]" = field(default_factory=dict)
-    highest_quest_cleared: int = -1
+    highest_quest_cleared: int = 0
     campaign_complete: bool = False
     ranked_glory_unlocked: bool = False
     tutorial_seen: "Set[str]" = field(default_factory=set)
@@ -486,3 +486,15 @@ class CampaignProfile:
     saved_teams: List[dict] = field(default_factory=list)
     fast_resolution: bool = False   # skip per-action step-through; resolve all at once
     new_unlocks: "Set[str]" = field(default_factory=set)  # catalog tabs with unseen unlocks
+    player_exp: int = 0
+    gold: int = 0
+    guild_vouchers: int = 0
+    brighthollow_renown: int = 500
+    ranked_rating: int = 1000
+    ranked_games_played: int = 0
+    non_tutorial_quests_completed: int = 0
+    adventurer_quest_clears: "Dict[str, int]" = field(default_factory=dict)
+    class_points: "Dict[str, int]" = field(default_factory=dict)
+    tutorial_complete: bool = False
+    quick_play_unlocked: bool = False
+    premium_dollars_spent: int = 0

@@ -43,6 +43,7 @@ from logic import (
     get_legal_item_targets,
     get_subterfuge_swap_targets,
     apply_quest_rewards,
+    build_quest_reward_preview,
     apply_round_start_effects,
     make_combatant,
     describe_action,
@@ -55,18 +56,52 @@ from ui import (
     draw_formation, draw_log, draw_action_menu, draw_target_prompt,
     draw_top_bar, draw_result_screen, draw_queued_summary,
     draw_combatant_detail,
+    draw_battle_strip, draw_battle_log_overlay, draw_artifact_overlay,
     draw_campaign_mission_select, draw_quest_select,
     draw_pre_quest, draw_post_quest, draw_campaign_complete,
     draw_practice_menu, draw_teambuilder, draw_story_team_select,
     draw_settings_screen, draw_rename_overlay,
+    draw_guild_screen, draw_embassy_screen, draw_market_closed,
     draw_catalog,
     draw_pvp_mode_select, draw_lan_lobby,
     draw_status_tooltip, draw_import_modal, draw_tutorial_popup, draw_intro_popup,
     _wrap_text,
     SLOT_RECTS_P1, SLOT_RECTS_P2, LOG_RECT, ACTION_PANEL_RECT, BATTLE_DETAIL_RECT,
+    BATTLE_STRIP_RECT, ARENA_RECT,
 )
 from campaign_data import QUEST_TABLE, MISSION_TABLE, build_quest_enemy_team
 from campaign_save import save_campaign, load_campaign, get_campaign_save_path
+from progression import (
+    adventurer_level_from_clears,
+    all_adventurer_sigils_unlocked,
+    all_class_sigils_unlocked,
+    class_basics_unlocked_count,
+    class_level_from_points,
+    player_level_from_exp,
+    player_sigil_unlocked,
+    rank_name_from_rating,
+    saved_team_slot_count,
+    unlocked_signature_count,
+    twist_unlocked,
+    apply_ranked_result,
+)
+from economy import (
+    ADVENTURER_PRICES,
+    ARTIFACT_PRICES,
+    EMBASSY_GOLD_PER_DOLLAR,
+    QUICK_PLAY_LOSS_GOLD,
+    QUICK_PLAY_WIN_GOLD,
+    RANKED_LOSS_GOLD,
+    RANKED_LOSS_RENOWN,
+    RANKED_WIN_GOLD,
+    RANKED_WIN_RENOWN,
+    STARTER_ADVENTURERS,
+    STARTER_ARTIFACTS,
+    TUTORIAL_ADVENTURERS,
+    TUTORIAL_ARTIFACTS,
+    embassy_gold_for_dollars,
+    random_artifact_reward_pool,
+)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -104,13 +139,19 @@ class Game:
 
         # Campaign state
         self.campaign_profile: CampaignProfile = load_campaign()
-        if not self.campaign_profile.quest_cleared.get(0):
-            apply_quest_rewards(self.campaign_profile, 0, notify=False)
-            save_campaign(self.campaign_profile)
+        self._refresh_profile_filters()
         self.campaign_quest_id: int = 0
         self.campaign_mission_id: int = 1
         self._last_campaign_btns = None
         self._campaign_won_quest = False
+        self._last_reward_summary: dict = {}
+        self._last_result_details: list = []
+        self._last_result_subtitle: str = ""
+        self._guild_tab: str = "adventurers"
+        self._guild_scroll: int = 0
+        self._last_guild_btns = None
+        self._last_embassy_btns = None
+        self._last_market_btns = None
 
         # New teambuilder / story-team state
         self._editing_team_slot: int = None
@@ -246,6 +287,9 @@ class Game:
         # Detail panel
         self._detail_unit = None            # unit whose card is currently shown
         self._detail_close_btn = None       # close button rect for the detail panel
+        self._battle_overlay = None         # None | "log" | "artifacts"
+        self._last_battle_strip_btns = {}
+        self._last_battle_overlay_btns = {}
 
         # Curated AI draft pool (meta-style lineups)
         self._ai_team_pool = [
@@ -453,7 +497,7 @@ class Game:
         self._ai_team_pool = AI_TEAM_POOL
 
     def _is_single_player(self):
-        return self.game_mode in ("single_player", "campaign")
+        return self.game_mode in ("single_player", "campaign", "ranked")
 
     def _tutorials_allowed(self):
         """Tutorial popups are allowed in solo flows, including the tavern editor."""
@@ -491,6 +535,236 @@ class Game:
         if "stat_mod" not in seen and any(u.buffs or u.debuffs for u in all_units):
             steps.append({"k": "stat_mod_tutorial"})
         return steps
+
+    def _player_level(self) -> int:
+        profile = self.campaign_profile or CampaignProfile()
+        return player_level_from_exp(profile.player_exp)
+
+    def _saved_team_slot_count(self) -> int:
+        return saved_team_slot_count(self._player_level())
+
+    def _adventurer_level(self, adv_id: str) -> int:
+        profile = self.campaign_profile or CampaignProfile()
+        return adventurer_level_from_clears(profile.adventurer_quest_clears.get(adv_id, 0))
+
+    def _class_level(self, class_name: str) -> int:
+        profile = self.campaign_profile or CampaignProfile()
+        return class_level_from_points(profile.class_points.get(class_name, 0))
+
+    def _build_owned_basics(self) -> dict:
+        profile = self.campaign_profile or CampaignProfile()
+        basics = {}
+        for class_name, ability_list in CLASS_BASICS.items():
+            count = class_basics_unlocked_count(self._class_level(class_name))
+            basics[class_name] = ability_list[:count]
+        profile.unlocked_classes = {class_name for class_name, ability_list in basics.items() if ability_list}
+        return basics
+
+    def _refresh_profile_filters(self):
+        profile = self.campaign_profile or CampaignProfile()
+        self._campaign_roster = [defn for defn in ROSTER if defn.id in profile.recruited]
+        self._campaign_artifacts = [artifact for artifact in ARTIFACTS if artifact.id in profile.unlocked_artifacts]
+        self._campaign_basics = self._build_owned_basics()
+
+    def _ranked_unlocked(self) -> bool:
+        profile = self.campaign_profile or CampaignProfile()
+        if not player_sigil_unlocked(self._player_level()):
+            return False
+        if not all_class_sigils_unlocked(profile.class_points, CLASS_BASICS.keys()):
+            return False
+        roster_ids = [defn.id for defn in ROSTER]
+        if not set(roster_ids).issubset(profile.recruited):
+            return False
+        return all_adventurer_sigils_unlocked(profile.adventurer_quest_clears, roster_ids)
+
+    def _current_party_adventurer_ids(self, picks: list | None = None) -> list:
+        ids = []
+        for pick in picks or []:
+            defn = pick.get("definition")
+            if defn and defn.id not in ids:
+                ids.append(defn.id)
+        return ids
+
+    def _current_guild_adventurer_ids(self) -> list:
+        return [adv_id for adv_id in ADVENTURER_PRICES]
+
+    def _current_guild_artifact_ids(self) -> list:
+        return [artifact_id for artifact_id in ARTIFACT_PRICES]
+
+    def _team_select_focus_defn(self):
+        if self.sub_phase == "pick_adventurers" and self._focused_slot is not None and self._focused_slot < len(self.team_picks):
+            return self.team_picks[self._focused_slot].get("definition")
+        if self.sub_phase != "pick_adventurers" and self.team_picks and self.current_adv_idx < len(self.team_picks):
+            return self.team_picks[self.current_adv_idx].get("definition")
+        return self.roster_selected
+
+    def _append_progress_lines(self, lines: list, text: str):
+        if text and text not in lines:
+            lines.append(text)
+
+    def _grant_player_exp_local(self, amount: int, lines: list):
+        profile = self.campaign_profile
+        amount = max(0, int(amount))
+        if amount <= 0:
+            return
+        before_level = self._player_level()
+        before_slots = saved_team_slot_count(before_level)
+        before_vouchers = before_level // 5
+        before_player_sigil = player_sigil_unlocked(before_level)
+        profile.player_exp += amount
+        after_level = self._player_level()
+        after_slots = saved_team_slot_count(after_level)
+        after_vouchers = after_level // 5
+        self._append_progress_lines(lines, f"Player EXP +{amount}")
+        if after_level > before_level:
+            self._append_progress_lines(lines, f"Player Level {after_level}")
+        if after_slots > before_slots:
+            self._append_progress_lines(lines, f"Saved Team Slots +{after_slots - before_slots}")
+        if after_vouchers > before_vouchers:
+            gained = after_vouchers - before_vouchers
+            profile.guild_vouchers += gained
+            self._append_progress_lines(lines, f"Guild Recruitment Voucher +{gained}")
+        if not before_player_sigil and player_sigil_unlocked(after_level):
+            self._append_progress_lines(lines, "Player Sigil Unlocked")
+
+    def _grant_class_points_local(self, class_name: str, amount: int, lines: list, source: str = ""):
+        profile = self.campaign_profile
+        amount = max(0, int(amount))
+        if amount <= 0:
+            return
+        before_points = profile.class_points.get(class_name, 0)
+        before_level = class_level_from_points(before_points)
+        profile.class_points[class_name] = before_points + amount
+        after_level = class_level_from_points(profile.class_points[class_name])
+        suffix = f" ({source})" if source else ""
+        self._append_progress_lines(lines, f"{class_name} Class Points +{amount}{suffix}")
+        if after_level > before_level:
+            self._append_progress_lines(lines, f"{class_name} Class Level {after_level}")
+            if after_level >= 5:
+                self._append_progress_lines(lines, f"{class_name} Sigil and Title Unlocked")
+
+    def _grant_adventurer_progress_local(self, adv_id: str, lines: list):
+        profile = self.campaign_profile
+        defn = next((entry for entry in ROSTER if entry.id == adv_id), None)
+        if defn is None:
+            return
+        before_clears = profile.adventurer_quest_clears.get(adv_id, 0)
+        before_level = adventurer_level_from_clears(before_clears)
+        profile.adventurer_quest_clears[adv_id] = before_clears + 1
+        after_level = adventurer_level_from_clears(profile.adventurer_quest_clears[adv_id])
+        if after_level > before_level:
+            self._append_progress_lines(lines, f"{defn.name} Level {after_level}")
+            if after_level >= 4 and before_level < 4:
+                self._append_progress_lines(lines, f"{defn.name} Twist Unlocked")
+            if after_level >= 5 and before_level < 5:
+                self._append_progress_lines(lines, f"{defn.name} Sigil and Music Unlocked")
+
+    def _grant_party_progress_local(self, party_ids: list, lines: list):
+        self._grant_player_exp_local(100, lines)
+        used_classes = []
+        for adv_id in party_ids:
+            self._grant_adventurer_progress_local(adv_id, lines)
+            defn = next((entry for entry in ROSTER if entry.id == adv_id), None)
+            if defn and defn.cls not in used_classes:
+                used_classes.append(defn.cls)
+        for class_name in used_classes:
+            self._grant_class_points_local(class_name, 1, lines)
+
+    def _hire_adventurer(self, adv_id: str, use_voucher: bool = False) -> list:
+        profile = self.campaign_profile
+        lines = []
+        defn = next((entry for entry in ROSTER if entry.id == adv_id), None)
+        if defn is None or adv_id in profile.recruited:
+            return lines
+        if use_voucher:
+            if profile.guild_vouchers <= 0:
+                return lines
+            profile.guild_vouchers -= 1
+            self._append_progress_lines(lines, "Guild Recruitment Voucher -1")
+        else:
+            price = ADVENTURER_PRICES.get(adv_id)
+            if price is None or profile.gold < price:
+                return lines
+            profile.gold -= price
+            self._append_progress_lines(lines, f"Gold -{price}")
+        profile.recruited.add(adv_id)
+        profile.default_sigs.setdefault(adv_id, defn.sig_options[0].id)
+        self._append_progress_lines(lines, f"Adventurer Unlocked: {defn.name}")
+        self._grant_player_exp_local(60, lines)
+        self._grant_class_points_local(defn.cls, 1, lines, source=f"{defn.name} unlocked")
+        profile.new_unlocks.add("adventurers")
+        self._refresh_profile_filters()
+        save_campaign(profile)
+        return lines
+
+    def _buy_artifact(self, artifact_id: str) -> list:
+        profile = self.campaign_profile
+        lines = []
+        if artifact_id in profile.unlocked_artifacts:
+            return lines
+        price = ARTIFACT_PRICES.get(artifact_id)
+        artifact = ARTIFACTS_BY_ID.get(artifact_id)
+        if price is None or artifact is None or profile.gold < price:
+            return lines
+        profile.gold -= price
+        profile.unlocked_artifacts.add(artifact_id)
+        profile.new_unlocks.add("artifacts")
+        self._append_progress_lines(lines, f"Gold -{price}")
+        self._append_progress_lines(lines, f"Artifact Unlocked: {artifact.name}")
+        self._refresh_profile_filters()
+        save_campaign(profile)
+        return lines
+
+    def _buy_embassy_gold(self, dollars: int) -> list:
+        profile = self.campaign_profile
+        lines = []
+        dollars = max(0, int(dollars))
+        if dollars <= 0:
+            return lines
+        gold = embassy_gold_for_dollars(dollars)
+        profile.premium_dollars_spent += dollars
+        profile.gold += gold
+        self._append_progress_lines(lines, f"Embassy: ${dollars} -> {gold} gold")
+        save_campaign(profile)
+        return lines
+
+    def _apply_quick_play_rewards(self, won: bool):
+        profile = self.campaign_profile
+        lines = []
+        party_ids = self._current_party_adventurer_ids(self.p1_picks)
+        self._grant_party_progress_local(party_ids, lines)
+        gold_amount = QUICK_PLAY_WIN_GOLD if won else QUICK_PLAY_LOSS_GOLD
+        profile.gold += gold_amount
+        self._append_progress_lines(lines, f"Gold +{gold_amount}")
+        self._refresh_profile_filters()
+        save_campaign(profile)
+        self._last_result_details = lines
+        self._last_result_subtitle = "Quick Play rewards"
+
+    def _apply_ranked_rewards(self, won: bool):
+        profile = self.campaign_profile
+        lines = []
+        party_ids = self._current_party_adventurer_ids(self.p1_picks)
+        self._grant_party_progress_local(party_ids, lines)
+        gold_amount = RANKED_WIN_GOLD if won else RANKED_LOSS_GOLD
+        renown_delta = RANKED_WIN_RENOWN if won else RANKED_LOSS_RENOWN
+        old_rating = profile.ranked_rating
+        opp_rating = getattr(self, "_ranked_ai_rating", old_rating)
+        profile.ranked_rating, profile.ranked_games_played = apply_ranked_result(
+            profile.ranked_rating,
+            profile.ranked_games_played,
+            opp_rating,
+            won,
+        )
+        profile.gold += gold_amount
+        profile.brighthollow_renown = max(0, profile.brighthollow_renown + renown_delta)
+        self._append_progress_lines(lines, f"Gold +{gold_amount}")
+        self._append_progress_lines(lines, f"Renown {renown_delta:+d}")
+        self._append_progress_lines(lines, f"Rating {old_rating} -> {profile.ranked_rating}")
+        self._refresh_profile_filters()
+        save_campaign(profile)
+        self._last_result_details = lines
+        self._last_result_subtitle = f"Ranked - {rank_name_from_rating(profile.ranked_rating)}"
 
     # ─────────────────────────────────────────────────────────────────────────
     # LAN HELPERS
@@ -588,6 +862,16 @@ class Game:
             "last_status_inflicted": getattr(u, "last_status_inflicted", ""),
         }
 
+    def _serialize_artifact_states(self, team) -> list:
+        return [
+            {
+                "id": state.artifact.id,
+                "cooldown_remaining": state.cooldown_remaining,
+                "used_this_battle": state.used_this_battle,
+            }
+            for state in getattr(team, "artifacts", [])
+        ]
+
     def _apply_unit_state(self, u, d: dict):
         from models import StatusInstance, StatMod
         u.hp = d["hp"]; u.ko = d["ko"]; u.slot = d["slot"]
@@ -604,6 +888,15 @@ class Game:
         u.untargetable = d["untargetable"]; u.cant_act = d["cant_act"]
         u.dmg_reduction = d["dmg_reduction"]
         u.last_status_inflicted = d.get("last_status_inflicted", "")
+
+    def _apply_artifact_states(self, team, data: list):
+        states_by_id = {state.artifact.id: state for state in getattr(team, "artifacts", [])}
+        for artifact_data in data or []:
+            state = states_by_id.get(artifact_data.get("id"))
+            if state is None:
+                continue
+            state.cooldown_remaining = artifact_data.get("cooldown_remaining", state.cooldown_remaining)
+            state.used_this_battle = artifact_data.get("used_this_battle", state.used_this_battle)
 
     def _serialize_action(self, action: dict, slot_idx: int, team, enemy, is_extra: bool) -> dict:
         atype = action.get("type", "skip")
@@ -688,6 +981,8 @@ class Game:
             "log": list(self.battle.log),
             "team1": [self._serialize_unit(u) for u in self.battle.team1.members],
             "team2": [self._serialize_unit(u) for u in self.battle.team2.members],
+            "team1_artifacts": self._serialize_artifact_states(self.battle.team1),
+            "team2_artifacts": self._serialize_artifact_states(self.battle.team2),
         }
         if extra:
             msg.update(extra)
@@ -836,6 +1131,8 @@ class Game:
             for i, udata in enumerate(msg.get("team2", [])):
                 if i < len(self.battle.team2.members):
                     self._apply_unit_state(self.battle.team2.members[i], udata)
+            self._apply_artifact_states(self.battle.team1, msg.get("team1_artifacts", []))
+            self._apply_artifact_states(self.battle.team2, msg.get("team2_artifacts", []))
             # Update metadata
             self.battle.round_num = msg.get("round_num", self.battle.round_num)
             self.battle.winner = msg.get("winner", self.battle.winner)
@@ -919,12 +1216,31 @@ class Game:
             "basics": basics,
         }
 
-    def _generate_ai_team(self):
-        comp = random.choice(self._ai_team_pool)
+    def _ai_rating_for_index(self, idx: int) -> int:
+        return min(1850, 850 + idx * 25)
+
+    def _generate_ai_team(self, target_rating: int | None = None):
+        if target_rating is None:
+            comp = random.choice(self._ai_team_pool)
+            matched_rating = None
+        else:
+            weighted = [
+                (comp, self._ai_rating_for_index(idx))
+                for idx, comp in enumerate(self._ai_team_pool)
+            ]
+            comp = None
+            matched_rating = None
+            for window in (50, 100, 150):
+                candidates = [(entry, rating) for entry, rating in weighted if abs(rating - target_rating) <= window]
+                if candidates:
+                    comp, matched_rating = random.choice(candidates)
+                    break
+            if comp is None:
+                comp, matched_rating = min(weighted, key=lambda pair: abs(pair[1] - target_rating))
         picks = [self._build_ai_pick(e) for e in comp["members"]]
         artifacts = self._legacy_items_to_artifacts([entry.get("item") for entry in comp["members"]])
         self._attach_artifacts_to_picks(picks, artifacts)
-        return comp["name"], picks
+        return comp["name"], picks, matched_rating
 
     def _ai_pick_extra_swap(self, player_num):
         team = self.battle.get_team(player_num)
@@ -955,17 +1271,43 @@ class Game:
         self._set_queued(actor, best_action)
         return True
 
+    def _finalize_battle_result(self):
+        self._detail_unit = None
+        self._battle_overlay = None
+        self._last_result_details = []
+        self._last_result_subtitle = ""
+        if self.game_mode == "campaign":
+            self._campaign_won_quest = (self.battle.winner == 1)
+            if self._campaign_won_quest:
+                summary = apply_quest_rewards(
+                    self.campaign_profile,
+                    self.campaign_quest_id,
+                    party_adventurer_ids=self._current_party_adventurer_ids(self.p1_picks),
+                )
+                self._last_reward_summary = summary
+                self._last_result_details = summary.get("lines", [])
+                self._last_result_subtitle = "Camelot" if self.campaign_quest_id <= 4 else "Quest rewards"
+                self._refresh_profile_filters()
+                save_campaign(self.campaign_profile)
+            else:
+                self._last_reward_summary = {}
+                self._last_result_details = ["No rewards - try again."]
+            self.phase = "campaign_post_quest"
+            return
+        if self.game_mode == "single_player":
+            self._apply_quick_play_rewards(self.battle.winner == 1)
+        elif self.game_mode == "ranked":
+            self._apply_ranked_rewards(self.battle.winner == 1)
+        self.phase = "result"
+
     def _auto_continue_resolve_done(self):
         self._detail_unit = None
+        self._battle_overlay = None
         if self.battle.winner:
             battle_log.close()
             if self.game_mode == "lan_host":
                 self._lan_send_state(phase="result")
-            if self.game_mode == "campaign":
-                self._campaign_won_quest = (self.battle.winner == 1)
-                self.phase = "campaign_post_quest"
-            else:
-                self.phase = "result"
+            self._finalize_battle_result()
         elif self._init_player_resolved:
             second = 3 - self.battle.init_player
             self._enter_action_selection(second)
@@ -1023,6 +1365,8 @@ class Game:
                     if not self._ai_queue_current_actor_action():
                         self._set_queued(self.current_actor, {"type": "skip"})
                     self._on_action_queued()
+                if self.phase == "select_actions" and self.selection_sub == "review_queue":
+                    self._finish_selection()
                 progressed = True
                 continue
 
@@ -1276,6 +1620,8 @@ class Game:
             if not self._ai_queue_current_actor_action():
                 self._set_queued(self.current_actor, {"type": "skip"})
             self._on_action_queued()
+        if self.phase == "select_actions" and self.selection_sub == "review_queue":
+            self._finish_selection()
         # _finish_selection sets phase = "battle"; ensure we're back
         self.phase = "battle"
 
@@ -1355,11 +1701,7 @@ class Game:
         battle_log.close()
         if self._is_lan() and self.game_mode == "lan_host":
             self._lan_send_state(phase="result")
-        if self.game_mode == "campaign":
-            self._campaign_won_quest = (self.battle.winner == 1)
-            self.phase = "campaign_post_quest"
-        else:
-            self.phase = "result"
+        self._finalize_battle_result()
 
     # ─────────────────────────────────────────────────────────────────────────
     def _to_logical(self, screen_pos):
@@ -1438,15 +1780,15 @@ class Game:
         p = self.phase
 
         if p == "menu":
-            story_btn, practice_btn, teambuilder_btn, catalog_btn, settings_btn, exit_btn = self._last_menu_btns
-            if story_btn.collidepoint(pos):
+            btns = self._last_menu_btns or {}
+            if btns.get("story_btn") and btns["story_btn"].collidepoint(pos):
                 self.phase = "campaign_mission_select"
-            elif practice_btn.collidepoint(pos):
+            elif btns.get("practice_btn") and btns["practice_btn"].collidepoint(pos):
                 self.phase = "practice_menu"
-            elif teambuilder_btn.collidepoint(pos):
+            elif btns.get("teambuilder_btn") and btns["teambuilder_btn"].collidepoint(pos):
                 self._teambuilder_return_phase = "menu"
                 self.phase = "teambuilder"
-            elif catalog_btn.collidepoint(pos):
+            elif btns.get("catalog_btn") and btns["catalog_btn"].collidepoint(pos):
                 self._catalog_tab = "adventurers"
                 self._catalog_selected = None
                 self._catalog_scroll = 0
@@ -1454,10 +1796,17 @@ class Game:
                 if self.campaign_profile:
                     self.campaign_profile.new_unlocks.discard("adventurers")
                     save_campaign(self.campaign_profile)
-            elif settings_btn.collidepoint(pos):
+            elif btns.get("guild_btn") and btns["guild_btn"].collidepoint(pos):
+                self._guild_tab = "adventurers"
+                self.phase = "guild"
+            elif btns.get("embassy_btn") and btns["embassy_btn"].collidepoint(pos):
+                self.phase = "embassy"
+            elif btns.get("market_btn") and btns["market_btn"].collidepoint(pos):
+                self.phase = "market_closed"
+            elif btns.get("settings_btn") and btns["settings_btn"].collidepoint(pos):
                 self._confirm_reset = False
                 self.phase = "settings"
-            elif exit_btn.collidepoint(pos):
+            elif btns.get("exit_btn") and btns["exit_btn"].collidepoint(pos):
                 pygame.quit(); sys.exit()
 
         elif p == "catalog":
@@ -1497,22 +1846,65 @@ class Game:
 
         elif p == "practice_menu":
             btns = self._last_practice_btns or {}
-            if btns.get("vs_ai_btn") and btns["vs_ai_btn"].collidepoint(pos):
+            if (
+                btns.get("quick_btn") and btns["quick_btn"].collidepoint(pos)
+                and self.campaign_profile and self.campaign_profile.quick_play_unlocked
+            ):
                 self.game_mode = "single_player"
+                if hasattr(self, "_campaign_roster"):
+                    del self._campaign_roster
+                self._start_team_select(1)
+            elif (
+                btns.get("ranked_btn") and btns["ranked_btn"].collidepoint(pos)
+                and self._ranked_unlocked()
+            ):
+                self.game_mode = "ranked"
                 if hasattr(self, "_campaign_roster"):
                     del self._campaign_roster
                 self._start_team_select(1)
             elif btns.get("vs_pvp_btn") and btns["vs_pvp_btn"].collidepoint(pos):
                 self.game_mode = "pvp"
-                self._lan_role = None
-                self._lan = None
-                self._lan_p1_ready = False
-                self._lan_p2_ready = False
-                self._lan_status = ""
-                self._lan_ip_input = ""
-                self.phase = "lan_lobby"
+                self._start_team_select(1)
             elif btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
                 self.phase = "menu"
+
+        elif p == "guild":
+            btns = self._last_guild_btns or {}
+            if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                self.phase = "menu"
+                return
+            for tab_key, rect in btns.get("tab_btns", []):
+                if rect.collidepoint(pos):
+                    self._guild_tab = tab_key
+                    return
+            for rect, adv_id in btns.get("buy_adventurer_btns", []):
+                if rect.collidepoint(pos):
+                    self._last_result_details = self._hire_adventurer(adv_id, use_voucher=False)
+                    return
+            for rect, adv_id in btns.get("voucher_btns", []):
+                if rect.collidepoint(pos):
+                    self._last_result_details = self._hire_adventurer(adv_id, use_voucher=True)
+                    return
+            for rect, artifact_id in btns.get("buy_artifact_btns", []):
+                if rect.collidepoint(pos):
+                    self._last_result_details = self._buy_artifact(artifact_id)
+                    return
+
+        elif p == "embassy":
+            btns = self._last_embassy_btns or {}
+            if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                self.phase = "menu"
+                return
+            for rect, dollars in btns.get("offer_btns", []):
+                if rect.collidepoint(pos):
+                    self._last_result_details = self._buy_embassy_gold(dollars)
+                    return
+
+        elif p == "market_closed":
+            btns = self._last_market_btns or {}
+            if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                self.phase = "menu"
+                return
 
         elif p == "lan_lobby":
             btns = self._last_lan_lobby_btns or {}
@@ -1564,7 +1956,7 @@ class Game:
             for rect, slot_idx in btns.get("delete_btns", []):
                 if rect.collidepoint(pos):
                     if 0 <= slot_idx < len(self.campaign_profile.saved_teams):
-                        self.campaign_profile.saved_teams.pop(slot_idx)
+                        self.campaign_profile.saved_teams[slot_idx] = None
                         save_campaign(self.campaign_profile)
                     return
             for rect, slot_idx in btns.get("rename_btns", []):
@@ -1687,7 +2079,7 @@ class Game:
             if start_btn and start_btn.collidepoint(pos):
                 self._detail_unit = None
                 teams = self.campaign_profile.saved_teams if self.campaign_profile else []
-                valid_teams = [t for t in teams if t is not None]
+                valid_teams = [t for t in teams[:self._saved_team_slot_count()] if t is not None]
                 if valid_teams:
                     self.phase = "story_team_select"
                 else:
@@ -1727,8 +2119,6 @@ class Game:
             cont_btn = btns.get("continue_btn")
             if cont_btn and cont_btn.collidepoint(pos):
                 if self._campaign_won_quest:
-                    apply_quest_rewards(self.campaign_profile, self.campaign_quest_id)
-                    save_campaign(self.campaign_profile)
                     if self.campaign_profile.campaign_complete:
                         self.phase = "campaign_complete"
                     else:
@@ -1873,8 +2263,7 @@ class Game:
         )
 
     def _handle_mousewheel(self, e):
-        # Battle log scroll: works anywhere on screen during battle
-        if self._is_in_battle():
+        if self._is_in_battle() and self._battle_overlay == "log":
             self.battle_log_scroll = max(0, self.battle_log_scroll + e.y * 3)
             return
         if self.phase == "catalog":
@@ -1990,8 +2379,7 @@ class Game:
             if allow_all:
                 avail_sigs = defn.sig_options
             else:
-                sig_tier = self.campaign_profile.sig_tier if self.campaign_profile else 3
-                avail_sigs = defn.sig_options[:sig_tier]
+                avail_sigs = defn.sig_options[:unlocked_signature_count(self._adventurer_level(defn.id))]
             sig = {s.name.lower(): s for s in avail_sigs}.get(ability_names[0])
             if sig is None:
                 return None
@@ -2049,6 +2437,8 @@ class Game:
         return (picks, "")
 
     def _start_team_select(self, player_num):
+        if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked"):
+            self._refresh_profile_filters()
         self.building_player = player_num
         self.sub_phase = "pick_adventurers"
         self.roster_selected = None
@@ -2071,7 +2461,7 @@ class Game:
             return
 
         # Determine active roster for campaign / teambuilder vs normal mode
-        if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
+        if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and hasattr(self, "_campaign_roster"):
             active_roster     = self._campaign_roster
             active_items      = self._campaign_artifacts
             active_cls_basics = self._campaign_basics
@@ -2215,9 +2605,8 @@ class Game:
             confirm = clicks.get("confirm")
             if confirm and confirm.collidepoint(pos) and self.sig_choice is not None:
                 defn = self.team_picks[self.current_adv_idx]["definition"]
-                # In campaign/teambuilder mode, only allow sigs up to profile.sig_tier
-                if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile:
-                    available_sigs = defn.sig_options[:self.campaign_profile.sig_tier]
+                if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and self.campaign_profile:
+                    available_sigs = defn.sig_options[:unlocked_signature_count(self._adventurer_level(defn.id))]
                 else:
                     available_sigs = defn.sig_options
                 if self.sig_choice < len(available_sigs):
@@ -2397,12 +2786,13 @@ class Game:
         if self.building_player == 1:
             self.p1_picks = list(self.team_picks)
             self._ensure_picks_have_items(self.p1_picks)
-            if self.game_mode == "single_player":
-                self.ai_comp_name, self.p2_picks = self._generate_ai_team()
+            if self.game_mode in ("single_player", "ranked"):
+                target_rating = self.campaign_profile.ranked_rating if self.game_mode == "ranked" else None
+                self.ai_comp_name, self.p2_picks, self._ranked_ai_rating = self._generate_ai_team(target_rating)
                 self._enter_pre_battle_edit(self.p1_picks, self.p2_picks, "team_select")
                 return
             else:
-                # pvp — pass to player 2
+                # pvp - pass to player 2
                 self.phase = "pass_to_team_p2"
         else:
             self.p2_picks = list(self.team_picks)
@@ -2414,13 +2804,7 @@ class Game:
         self._editing_team_slot = slot_idx
         self.game_mode = "teambuilder"
         profile = self.campaign_profile
-        self._campaign_roster = [d for d in ROSTER if d.id in profile.recruited]
-        self._campaign_artifacts = [it for it in ARTIFACTS if it.id in profile.unlocked_artifacts]
-        self._campaign_basics = {
-            cls_name: basics_list[:profile.basics_tier]
-            for cls_name, basics_list in CLASS_BASICS.items()
-            if cls_name in profile.unlocked_classes
-        }
+        self._refresh_profile_filters()
         # Load existing team picks if available, otherwise start fresh
         existing = self._resolve_saved_team(slot_idx)
         if existing is not None:
@@ -2448,14 +2832,7 @@ class Game:
         self._editing_team_slot = slot_idx
         self._editing_single_member = True
         self.game_mode = "teambuilder"
-        profile = self.campaign_profile
-        self._campaign_roster = [d for d in ROSTER if d.id in profile.recruited]
-        self._campaign_artifacts = [it for it in ARTIFACTS if it.id in profile.unlocked_artifacts]
-        self._campaign_basics = {
-            cls_name: basics_list[:profile.basics_tier]
-            for cls_name, basics_list in CLASS_BASICS.items()
-            if cls_name in profile.unlocked_classes
-        }
+        self._refresh_profile_filters()
         # Pre-load the existing team picks so the other two members are preserved.
         existing = self._resolve_saved_team(slot_idx)
         if existing is None:
@@ -2542,8 +2919,7 @@ class Game:
         if os.path.exists(save_path):
             os.remove(save_path)
         self.campaign_profile = load_campaign()
-        # Re-apply starter quest rewards (no badge for starting gear)
-        apply_quest_rewards(self.campaign_profile, 0, notify=False)
+        self._refresh_profile_filters()
         save_campaign(self.campaign_profile)
         self._confirm_reset = False
         self.phase = "menu"
@@ -2639,6 +3015,7 @@ class Game:
         apply_passive_stats(team1, self.battle)
         apply_passive_stats(team2, self.battle)
         self.phase = "battle"
+        self._battle_overlay = None
         # LAN clients are driven entirely by host state_updates — they never run the ticker.
         if self.game_mode == "lan_client":
             self._tk = []
@@ -2650,6 +3027,7 @@ class Game:
 
     def _enter_round_start(self):
         """Begin a new round: check for extra swap phase or go straight to action selection."""
+        self._battle_overlay = None
         # Apply start-of-round effects (e.g. Briar Rose Curse of Sleeping)
         apply_round_start_effects(self.battle)
         # Check if round 1 extra swap applies
@@ -2666,6 +3044,7 @@ class Game:
             self._enter_action_selection(self.battle.init_player)
 
     def _enter_action_selection(self, player_num):
+        self._battle_overlay = None
         self.selecting_player = player_num
         team = self.battle.get_team(player_num)
         # Build ordered list of (unit, is_extra) tuples.
@@ -2793,8 +3172,6 @@ class Game:
 
     def _advance_selection(self):
         """Move to the next unqueued actor (or extra-action slot), or finish."""
-        # Count how many non-extra actors have already been queued this selection phase
-        n_queued = sum(1 for (u, ie) in self.selection_order if not ie and u.queued is not None)
         for (unit, is_extra) in self.selection_order:
             if unit.ko:
                 continue
@@ -2805,8 +3182,10 @@ class Game:
                 self.pending_action = None
                 self.selection_sub = "pick_action"
                 return
-        # All units have actions queued → done with this player
-        self._finish_selection()
+        # All units have actions queued — wait for explicit lock-in unless this is an extra-action phase.
+        self.current_actor = None
+        self.pending_action = None
+        self.selection_sub = "review_queue"
 
     def _on_action_queued(self):
         """Called after an action has been stored. Routes to resolve or next slot."""
@@ -2871,7 +3250,10 @@ class Game:
         # In the new flow, each player selects then immediately resolves.
         # init player → resolve init → (review) → second player selects → resolve second → end round
         self._resolving_player = self.selecting_player
+        self._battle_overlay = None
         self.phase = "battle"
+        if self.game_mode == "lan_host":
+            self._lan_send_state(phase="battle")
 
     def _unit_at_pos(self, pos):
         """Return the CombatantState whose formation box contains pos, or None."""
@@ -2892,6 +3274,8 @@ class Game:
             unit.queued2 = None
         self.battle.swap_used_this_turn = False
         self.current_is_extra = False
+        self.pending_action = None
+        self._battle_overlay = None
         self._advance_selection()
 
     def _go_back_one_selection(self):
@@ -2920,36 +3304,202 @@ class Game:
                 return
         # Nothing to go back to — no-op
 
+    def _queued_action_tag(self, unit, is_extra: bool) -> tuple[str, tuple]:
+        q = unit.queued2 if is_extra else unit.queued
+        if q is None:
+            return ("Waiting", TEXT_MUTED)
+        if q["type"] == "skip":
+            return ("Skip", TEXT_MUTED)
+        if q["type"] == "swap":
+            return ("Swap", CYAN)
+        if q["type"] == "item":
+            return ("Artifact", GREEN)
+        ability = q.get("ability")
+        if ability is not None and ability.category == "twist":
+            return ("Twist", ORANGE)
+        if ability is not None and ability.category == "signature":
+            return ("Signature", CYAN)
+        return ("Ready", GREEN)
+
+    def _queue_units_for_strip(self):
+        units = []
+        for unit, is_extra in self.selection_order:
+            if unit.ko:
+                continue
+            tag, color = self._queued_action_tag(unit, is_extra)
+            units.append((unit, tag, color))
+        return units
+
+    def _queued_artifact_ids(self, *, exclude_actor=None) -> set[str]:
+        if not self.battle:
+            return set()
+        team = self.battle.get_team(self.selecting_player)
+        queued_ids = set()
+        for unit in team.members:
+            if unit == exclude_actor:
+                continue
+            for action in (unit.queued, unit.queued2):
+                if action and action.get("type") == "item" and action.get("artifact") is not None:
+                    queued_ids.add(action["artifact"].id)
+        return queued_ids
+
+    def _current_valid_targets(self):
+        actor = self.current_actor
+        if not self.battle or not actor or self.selection_sub != "pick_target" or not self.pending_action:
+            return []
+        team = self.battle.get_team(self.selecting_player)
+        if self.pending_action["type"] == "ability":
+            ability = self.pending_action["ability"]
+            if self.pending_action.get("substep") == "subterfuge_swap_target":
+                return get_subterfuge_swap_targets(
+                    self.battle, self.selecting_player, self.pending_action.get("target")
+                )
+            return get_legal_targets(self.battle, self.selecting_player, actor, ability)
+        if self.pending_action["type"] == "swap":
+            return [unit for unit in team.alive() if unit != actor]
+        if self.pending_action["type"] == "item":
+            return get_legal_item_targets(
+                self.battle,
+                self.selecting_player,
+                actor,
+                artifact=self.pending_action.get("artifact"),
+                primary_target=self.pending_action.get("target"),
+            )
+        return []
+
+    def _build_action_groups(self, actor, team, is_last):
+        abilities = actor.all_active_abilities(is_last)
+        valid_abs = [ability for ability in abilities if can_use_ability(actor, ability, team)]
+        groups = {
+            "basics": [],
+            "signature": [],
+            "twist": [],
+            "artifacts": [],
+            "utility": [],
+        }
+
+        for ability in valid_abs:
+            label = ability.name
+            if ability.category == "basic":
+                groups["basics"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
+            elif ability.category == "signature":
+                groups["signature"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
+            elif ability.category == "twist":
+                groups["twist"].append({"label": label, "action": {"type": "ability", "ability": ability, "target": None}})
+
+        if not actor.must_recharge:
+            reserved_artifacts = self._queued_artifact_ids(exclude_actor=actor)
+            for artifact_state in ready_active_artifacts(team):
+                artifact = artifact_state.artifact
+                if artifact.id in reserved_artifacts:
+                    continue
+                groups["artifacts"].append({"label": artifact.name, "action": {"type": "item", "artifact": artifact, "target": None}})
+
+        swap_disabled = self.battle.swap_used_this_turn or self._swap_queued_this_turn() or actor.has_status("root") or actor.must_recharge
+        if not swap_disabled:
+            groups["utility"].append({"label": "Swap", "action": {"type": "swap", "target": None}})
+        groups["utility"].append({"label": "Recharge" if actor.must_recharge else "Skip", "action": {"type": "skip"}})
+        groups["utility"].append({"label": "Back", "action": {"type": "back"}})
+        return [{"key": key, "actions": groups[key]} for key in ("basics", "signature", "twist", "artifacts", "utility")]
+
+    def _selection_prompt(self):
+        if self._is_lan() and self.selecting_player != self._lan_my_player():
+            return ("Opponent is choosing actions", "Their queue will resolve after they lock in.")
+        if self.selection_sub == "review_queue":
+            return ("Queue ready", "Review the order below, then lock actions when you’re ready.")
+        actor = self.current_actor
+        if actor is None:
+            return ("Waiting for next adventurer", "")
+        prefix = "Extra action" if self.current_is_extra else "Queueing action"
+        if self.selection_sub == "pick_target":
+            if (self.pending_action and self.pending_action.get("type") == "ability"
+                    and self.pending_action.get("ability").id == "subterfuge"
+                    and self.pending_action.get("substep") == "subterfuge_swap_target"):
+                return (f"{prefix}: {actor.name}", "Choose the second target for Subterfuge.")
+            return (f"{prefix}: {actor.name}", "Click a highlighted target in the arena.")
+        return (f"{prefix}: {actor.name}", "Follow the queue order below, then choose from basics, signature, twist, artifacts, or utility.")
+
+    def _handle_battle_strip_click(self, pos):
+        buttons = self._last_battle_strip_btns or {}
+        if buttons.get("log") and buttons["log"].collidepoint(pos):
+            self._battle_overlay = None if self._battle_overlay == "log" else "log"
+            return True
+        if buttons.get("artifacts") and buttons["artifacts"].collidepoint(pos):
+            self._battle_overlay = None if self._battle_overlay == "artifacts" else "artifacts"
+            return True
+        if buttons.get("clear") and buttons["clear"].collidepoint(pos):
+            self._battle_overlay = None
+            self._restart_selection()
+            return True
+        if buttons.get("lock") and buttons["lock"].collidepoint(pos):
+            self._battle_overlay = None
+            self._finish_selection()
+            return True
+        if buttons.get("continue") and buttons["continue"].collidepoint(pos):
+            if self.phase == "actions_resolving":
+                self.phase = "resolving"
+                self._do_single_resolution(self._resolving_player)
+            elif self.phase == "battle_start":
+                self._enter_round_start()
+                if self.game_mode == "lan_host":
+                    self._lan_send_state(phase=self.phase)
+            elif self.phase == "end_of_round":
+                self._enter_round_start()
+                if self.game_mode == "lan_host":
+                    self._lan_send_state(phase=self.phase)
+            elif self.phase == "action_result":
+                self._resolve_next_step()
+            elif self.phase == "resolve_done":
+                self._auto_continue_resolve_done()
+            elif self.phase == "battle":
+                self._tk_btn_label = None
+                self._tk_btn_rect = None
+                if self._is_lan() and self.game_mode == "lan_host":
+                    self._lan_send_state(phase="battle")
+            return True
+        for rect, action_dict in buttons.get("actions", []):
+            if rect.collidepoint(pos):
+                self._handle_pick_action(pos)
+                return True
+        return False
+
     def _handle_action_select_click(self, pos):
-        # ── Close the detail panel ───────────────────────────────────────────
         if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
             self._detail_unit = None
             return
 
-        # ── Clear-queue button ───────────────────────────────────────────────
-        if getattr(self, '_last_clear_btn', None) and \
-                self._last_clear_btn.collidepoint(pos):
-            self._restart_selection()
+        overlay_btns = self._last_battle_overlay_btns or {}
+        if overlay_btns.get("close") and overlay_btns["close"].collidepoint(pos):
+            self._battle_overlay = None
+            return
+        if self._battle_overlay:
             return
 
-        # ── Formation area (x < 570) → target pick or detail card ──────────
-        if pos[0] < 570:
+        if pos[1] >= BATTLE_STRIP_RECT.y:
+            if self._handle_battle_strip_click(pos):
+                return
+
+        if ARENA_RECT.collidepoint(pos):
             if self.selection_sub == "pick_target":
+                before = self.pending_action
                 self._handle_pick_target(pos)
+                if self.pending_action is before:
+                    unit = self._unit_at_pos(pos)
+                    if unit:
+                        self._detail_unit = None if self._detail_unit is unit else unit
             else:
                 unit = self._unit_at_pos(pos)
                 if unit:
                     self._detail_unit = None if self._detail_unit is unit else unit
             return
 
-        # ── Right side: action or target selection ───────────────────────────
-        if self.selection_sub == "pick_action":
-            self._handle_pick_action(pos)
-        elif self.selection_sub == "pick_target":
-            self._handle_pick_target(pos)
-
     def _handle_pick_action(self, pos):
         actor = self.current_actor
+        if actor is None:
+            self.pending_action = None
+            self.selection_sub = "pick_action"
+            self._advance_selection()
+            return
         team  = self.battle.get_team(self.selecting_player)
         is_last = len(team.alive()) == 1 and team.alive()[0] == actor
 
@@ -3033,6 +3583,9 @@ class Game:
 
                 if atype == "item":
                     artifact = action_dict.get("artifact")
+                    if artifact is not None and artifact.id in self._queued_artifact_ids(exclude_actor=actor):
+                        self.battle.log_add(f"{artifact.name} is already queued for this turn.")
+                        return
                     targets = get_legal_item_targets(
                         self.battle, self.selecting_player, actor, artifact=artifact)
                     if not targets:
@@ -3051,6 +3604,11 @@ class Game:
             return
 
         actor = self.current_actor
+        if actor is None:
+            self.pending_action = None
+            self.selection_sub = "pick_action"
+            self._advance_selection()
+            return
         atype = self.pending_action["type"]
 
         if atype == "swap":
@@ -3139,6 +3697,7 @@ class Game:
 
     def _begin_step_resolution(self, player_num):
         """Resolve player_num's queued actions. Steps through one at a time unless fast_resolution."""
+        self._battle_overlay = None
         self._action_step_player = player_num
         self.battle.log_add(f"─── P{player_num} Actions ───")
 
@@ -3290,23 +3849,69 @@ class Game:
         p = self.phase
 
         if p == "menu":
-            player_level = max(0, self.campaign_profile.highest_quest_cleared) if self.campaign_profile else 0
+            player_level = self._player_level() if self.campaign_profile else 1
             _new_cat = bool(self.campaign_profile and self.campaign_profile.new_unlocks)
-            s, pr, tb, cat, st, e = draw_main_menu(surf, mouse_pos, player_level, new_catalog_unlocks=_new_cat)
-            self._last_menu_btns = (s, pr, tb, cat, st, e)
+            self._last_menu_btns = draw_main_menu(
+                surf,
+                mouse_pos,
+                self.campaign_profile,
+                player_level=player_level,
+                new_catalog_unlocks=_new_cat,
+                quick_play_unlocked=bool(self.campaign_profile and self.campaign_profile.quick_play_unlocked),
+                ranked_unlocked=self._ranked_unlocked() if self.campaign_profile else False,
+            )
 
         elif p == "practice_menu":
-            btns = draw_practice_menu(surf, mouse_pos)
+            btns = draw_practice_menu(
+                surf,
+                mouse_pos,
+                quick_play_unlocked=bool(self.campaign_profile and self.campaign_profile.quick_play_unlocked),
+                ranked_unlocked=self._ranked_unlocked() if self.campaign_profile else False,
+                player_rank_name=rank_name_from_rating(self.campaign_profile.ranked_rating) if self.campaign_profile else "Margrave",
+            )
             self._last_practice_btns = btns
 
         elif p == "teambuilder":
             profile = self.campaign_profile or CampaignProfile()
-            btns = draw_teambuilder(surf, profile.saved_teams, mouse_pos, profile)
+            btns = draw_teambuilder(
+                surf,
+                profile.saved_teams,
+                mouse_pos,
+                profile,
+                max_slots=self._saved_team_slot_count(),
+            )
             self._last_teambuilder_btns = btns
             # Rename overlay drawn on top when active
             if self._renaming_team_slot is not None:
                 overlay_btns = draw_rename_overlay(surf, mouse_pos, self._rename_text)
                 self._last_rename_overlay_btns = overlay_btns
+
+        elif p == "guild":
+            profile = self.campaign_profile or CampaignProfile()
+            guild_adventurers = [defn for defn in ROSTER if defn.id in self._current_guild_adventurer_ids()]
+            guild_artifacts = [artifact for artifact in ARTIFACTS if artifact.id in self._current_guild_artifact_ids()]
+            self._last_guild_btns = draw_guild_screen(
+                surf,
+                mouse_pos,
+                profile,
+                self._guild_tab,
+                guild_adventurers,
+                guild_artifacts,
+                ADVENTURER_PRICES,
+                ARTIFACT_PRICES,
+            )
+
+        elif p == "embassy":
+            profile = self.campaign_profile or CampaignProfile()
+            self._last_embassy_btns = draw_embassy_screen(
+                surf,
+                mouse_pos,
+                profile,
+                EMBASSY_GOLD_PER_DOLLAR,
+            )
+
+        elif p == "market_closed":
+            self._last_market_btns = draw_market_closed(surf, mouse_pos)
 
         elif p == "catalog":
             profile = self.campaign_profile or CampaignProfile()
@@ -3338,24 +3943,32 @@ class Game:
         elif p == "story_team_select":
             quest = QUEST_TABLE.get(self.campaign_quest_id)
             profile = self.campaign_profile or CampaignProfile()
-            btns = draw_story_team_select(surf, profile.saved_teams, mouse_pos, quest)
+            btns = draw_story_team_select(
+                surf,
+                profile.saved_teams,
+                mouse_pos,
+                quest,
+                max_slots=self._saved_team_slot_count(),
+            )
             self._last_story_team_btns = btns
 
         elif p == "pre_battle_edit":
             _PRE_BATTLE_DETAIL_RECT = pygame.Rect(700, 80, 680, 760)
             # Use campaign-filtered roster/items when in campaign mode
-            if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
+            if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and hasattr(self, "_campaign_roster"):
                 active_items      = self._campaign_artifacts
                 active_cls_basics = self._campaign_basics
             else:
                 active_items      = ARTIFACTS
                 active_cls_basics = CLASS_BASICS
 
-            _sig_tier = (
-                self.campaign_profile.sig_tier
-                if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
-                else 3
-            )
+            _focus_defn = self._team_select_focus_defn()
+            if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and self.campaign_profile and _focus_defn is not None:
+                _sig_tier = unlocked_signature_count(self._adventurer_level(_focus_defn.id))
+                _twists_unlocked = twist_unlocked(self._adventurer_level(_focus_defn.id))
+            else:
+                _sig_tier = 3
+                _twists_unlocked = True
             _lan_wait = self._is_lan() and self._lan_pbe_local_ready
             _confirm_lbl = "Waiting for opponent…" if _lan_wait else "Ready for Battle →"
             _team_desc_hover = []
@@ -3376,7 +3989,7 @@ class Game:
                 scroll_offset=self.team_select_scroll,
                 team_slot_selected=self.team_slot_selected,
                 sig_tier=_sig_tier,
-                twists_unlocked=True,
+                twists_unlocked=_twists_unlocked,
                 status_rects_out=_team_desc_hover,
                 confirm_label=_confirm_lbl,
                 pre_battle_mode=True,
@@ -3407,7 +4020,7 @@ class Game:
 
         elif p == "team_select":
             # Use campaign-filtered roster/items when in campaign/teambuilder mode
-            if self.game_mode in ("campaign", "teambuilder") and hasattr(self, "_campaign_roster"):
+            if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and hasattr(self, "_campaign_roster"):
                 active_roster     = self._campaign_roster
                 active_items      = self._campaign_artifacts
                 active_cls_basics = self._campaign_basics
@@ -3419,11 +4032,13 @@ class Game:
             # roster_selected is a defn object (or None)
             sel_idx = self.roster_selected
 
-            _sig_tier = (
-                self.campaign_profile.sig_tier
-                if self.game_mode in ("campaign", "teambuilder") and self.campaign_profile
-                else 3
-            )
+            _focus_defn = self._team_select_focus_defn()
+            if self.game_mode in ("campaign", "teambuilder", "single_player", "ranked") and self.campaign_profile and _focus_defn is not None:
+                _sig_tier = unlocked_signature_count(self._adventurer_level(_focus_defn.id))
+                _twists_unlocked = twist_unlocked(self._adventurer_level(_focus_defn.id))
+            else:
+                _sig_tier = 3
+                _twists_unlocked = True
             if self._editing_single_member and self.team_picks and self.current_adv_idx < len(self.team_picks):
                 _adv_name = self.team_picks[self.current_adv_idx].get("definition")
                 _adv_name = _adv_name.name if _adv_name else f"Member {self.current_adv_idx + 1}"
@@ -3449,7 +4064,7 @@ class Game:
                 scroll_offset=self.team_select_scroll,
                 team_slot_selected=self.team_slot_selected,
                 sig_tier=_sig_tier,
-                twists_unlocked=True,
+                twists_unlocked=_twists_unlocked,
                 status_rects_out=_team_desc_hover,
                 confirm_label=_confirm_label,
                 focused_slot=self._focused_slot,
@@ -3496,7 +4111,13 @@ class Game:
             self._draw_resolving(surf, mouse_pos)
 
         elif p == "result":
-            a, b = draw_result_screen(surf, self.battle, mouse_pos)
+            a, b = draw_result_screen(
+                surf,
+                self.battle,
+                mouse_pos,
+                subtitle=self._last_result_subtitle,
+                detail_lines=self._last_result_details,
+            )
             self._last_result_btns = (a, b)
 
         elif p == "campaign_mission_select":
@@ -3512,7 +4133,8 @@ class Game:
                 first_q, last_q = mission.quest_range
                 quests = [QUEST_TABLE[qid] for qid in range(first_q, last_q + 1)
                           if qid in QUEST_TABLE and QUEST_TABLE[qid].enemy_lineup is not None]
-                btns = draw_quest_select(surf, mission, quests, mouse_pos, profile)
+                preview_map = {quest.quest_id: build_quest_reward_preview(profile, quest.quest_id) for quest in quests}
+                btns = draw_quest_select(surf, mission, quests, mouse_pos, profile, reward_preview_map=preview_map)
                 self._last_campaign_btns = btns
 
         elif p == "campaign_pre_quest":
@@ -3527,8 +4149,19 @@ class Game:
                     quest_pos, total_quests = 1, 1
                     mission = None
                 enemy_picks = build_quest_enemy_team(self.campaign_quest_id)
+                reward_preview = build_quest_reward_preview(self.campaign_profile or CampaignProfile(), self.campaign_quest_id)
                 _pq_hover = []
-                btns = draw_pre_quest(surf, quest, mission, quest_pos, total_quests, enemy_picks, mouse_pos, status_rects_out=_pq_hover)
+                btns = draw_pre_quest(
+                    surf,
+                    quest,
+                    mission,
+                    quest_pos,
+                    total_quests,
+                    enemy_picks,
+                    mouse_pos,
+                    reward_preview_lines=reward_preview,
+                    status_rects_out=_pq_hover,
+                )
                 self._last_campaign_btns = btns
                 for _r, _kind in _pq_hover:
                     if _r.collidepoint(mouse_pos):
@@ -3553,6 +4186,8 @@ class Game:
                     won=self._campaign_won_quest,
                     rewards=quest.rewards if self._campaign_won_quest else {},
                     mouse_pos=mouse_pos,
+                    detail_lines=self._last_result_details,
+                    subtitle=self._last_result_subtitle,
                 )
                 self._last_campaign_btns = btns
 
@@ -3573,22 +4208,13 @@ class Game:
 
         elif p in ("lan_waiting", "lan_waiting_teams"):
             if self.battle:
-                surf.fill(BG)
-                draw_top_bar(surf, self.battle, "Waiting for opponent...")
-                draw_formation(surf, self.battle, mouse_pos=mouse_pos)
-                draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-                draw_text(surf, "Waiting for opponent...", 24, TEXT_DIM,
-                          WIDTH // 2, HEIGHT - 70, center=True)
-                if self._detail_unit is not None:
-                    _dh = []
-                    close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
-                    self._detail_close_btn = close_btn
-                    for _r, _kind in _dh:
-                        if _r.collidepoint(mouse_pos):
-                            draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                            break
-                else:
-                    self._detail_close_btn = None
+                self._draw_battle_scene(
+                    surf,
+                    mouse_pos,
+                    strip_mode="view",
+                    prompt="Waiting for opponent...",
+                    subprompt="The arena will update when their state arrives.",
+                )
             else:
                 surf.fill(BG)
                 draw_text(surf, "Waiting for opponent...", 28, TEXT_DIM,
@@ -3669,38 +4295,107 @@ class Game:
                     _who(int(pnum)))
         return "Ready?", "" if sp else "Next Player"
 
-    def _draw_battle(self, surf, mouse_pos):
-        """Main battle view: always shows formation + log + bottom ticker."""
+    def _draw_battle_overlays_and_tooltips(self, surf, mouse_pos, status_hover):
+        if self._detail_unit is not None:
+            _dh = []
+            close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
+            self._detail_close_btn = close_btn
+            for rect, kind in _dh:
+                if rect.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                    break
+        else:
+            self._detail_close_btn = None
+
+        overlay_btns = {}
+        if self._battle_overlay == "log":
+            overlay_btns = draw_battle_log_overlay(
+                surf, self.battle.log, mouse_pos, scroll_offset=self.battle_log_scroll
+            )
+        elif self._battle_overlay == "artifacts":
+            overlay_btns = draw_artifact_overlay(surf, self.battle, mouse_pos)
+        self._last_battle_overlay_btns = overlay_btns
+
+        if self._battle_overlay is None:
+            for rect, kind in status_hover:
+                if rect.collidepoint(mouse_pos):
+                    draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
+                    break
+
+    def _draw_battle_scene(
+        self,
+        surf,
+        mouse_pos,
+        *,
+        strip_mode: str,
+        prompt: str = "",
+        subprompt: str = "",
+        selected_unit=None,
+        valid_targets=None,
+        queue_units=None,
+        action_groups=None,
+        show_review: bool = False,
+        can_clear: bool = False,
+        can_lock: bool = False,
+        continue_label: str | None = None,
+        continue_disabled: bool = False,
+        waiting_label: str = "",
+    ):
         surf.fill(BG)
         if not self.battle:
             return
-        init = self.battle.init_player
-        rnd  = self.battle.round_num
-        draw_top_bar(surf, self.battle, f"Round {rnd}  —  P{init} has initiative")
         _status_hover = []
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos, status_rects_out=_status_hover)
-        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
+        draw_formation(
+            surf,
+            self.battle,
+            selected_unit=selected_unit,
+            valid_targets=valid_targets,
+            mouse_pos=mouse_pos,
+            acting_player=self.selecting_player if self.phase in ("select_actions",) or self.phase.startswith("extra_action_p") else None,
+            status_rects_out=_status_hover,
+        )
+        self._last_battle_strip_btns = draw_battle_strip(
+            surf,
+            mouse_pos,
+            self.battle,
+            mode=strip_mode,
+            prompt=prompt,
+            subprompt=subprompt,
+            action_groups=action_groups,
+            queue_units=queue_units,
+            current_actor=self.current_actor,
+            current_is_extra=self.current_is_extra,
+            show_review=show_review,
+            can_clear=can_clear,
+            can_lock=can_lock,
+            continue_label=continue_label,
+            continue_disabled=continue_disabled,
+            waiting_label=waiting_label,
+        )
+        self._last_action_buttons = self._last_battle_strip_btns.get("actions", [])
+        self._draw_battle_overlays_and_tooltips(surf, mouse_pos, _status_hover)
 
-        # Bottom bar: message text
-        if self._tk_msg:
-            draw_text(surf, self._tk_msg, 20, YELLOW, WIDTH // 2, HEIGHT - 68, center=True)
+    def _draw_battle(self, surf, mouse_pos):
+        info = self._tk_msg or f"Round {self.battle.round_num} — P{self.battle.init_player} has initiative."
+        self._draw_battle_scene(
+            surf,
+            mouse_pos,
+            strip_mode="resolve" if self._tk_msg else "view",
+            prompt=info,
+            subprompt="Watch the arena. Use the strip to open the log or artifact view.",
+            continue_label=self._tk_btn_label if self._tk_btn_label and self._tk_btn_label != "__tutorial__" else None,
+        )
 
-        # Pass button
         if self._tk_btn_label and self._tk_btn_label != "__tutorial__":
-            btn_rect = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 50, 260, 40)
-            draw_button(surf, btn_rect, self._tk_btn_label, mouse_pos, size=18,
-                        normal=BLUE_DARK, hover=BLUE)
-            self._tk_btn_rect = btn_rect
+            self._tk_btn_rect = self._last_battle_strip_btns.get("continue")
         else:
             self._tk_btn_rect = None
 
-        # Centered overlay box for round-start / initiative announcement
         if self._tk_overlay_msg:
             raw_lines = self._tk_overlay_msg.split("\n")
             box_w = 960
             text_max_w = box_w - 48
-            # Expand each raw line using word-wrap (first line larger font)
-            display_lines = []  # (text, size, color)
+            display_lines = []
             for i, raw in enumerate(raw_lines):
                 if i == 0:
                     display_lines.append((raw, 26, (230, 230, 255)))
@@ -3711,7 +4406,7 @@ class Game:
             line_h = 32
             box_h = 36 + line_h * len(display_lines)
             bx = WIDTH // 2 - box_w // 2
-            by = HEIGHT // 2 - box_h // 2
+            by = ARENA_RECT.centery - box_h // 2
             overlay_surf = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
             overlay_surf.fill((10, 10, 30, 210))
             surf.blit(overlay_surf, (bx, by))
@@ -3721,276 +4416,130 @@ class Game:
                 draw_text(surf, text, size, col, WIDTH // 2, text_y, center=True)
                 text_y += line_h
 
-        # Status tooltip
-        for r, kind in _status_hover:
-            if r.collidepoint(mouse_pos):
-                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
-                break
-
     def _draw_extra_swap(self, surf, mouse_pos):
-        surf.fill(BG)
         player = self._extra_swap_player
-        draw_top_bar(surf, self.battle,
-                     f"Round 1 Extra Swap — Player {player}")
-        _status_hover = []
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos,
-                       status_rects_out=_status_hover)
-        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-
-        # LAN: only interactive for the player whose swap it is
         if self._is_lan() and self._extra_swap_player != self._lan_my_player():
-            draw_text(surf, "Waiting for opponent's formation swap...", 22, TEXT_DIM,
-                      WIDTH // 2, HEIGHT - 70, center=True)
+            self._draw_battle_scene(
+                surf,
+                mouse_pos,
+                strip_mode="view",
+                prompt="Waiting for opponent's formation swap.",
+                subprompt="The arena will update when they finish.",
+            )
             return
 
-        draw_text(surf, "Click TWO allies to swap them, or skip.", 20, YELLOW,
-                  WIDTH // 2, HEIGHT - 80, center=True)
+        subprompt = "Click two allies to swap them."
         if hasattr(self, '_extra_swap_pending') and self._extra_swap_pending:
-            draw_text(surf, f"Selected: {self._extra_swap_pending.name}",
-                      18, CYAN, WIDTH // 2, HEIGHT - 54, center=True)
-
-        skip_btn = pygame.Rect(WIDTH // 2 - 90, HEIGHT - 48, 180, 40)
-        draw_button(surf, skip_btn, "Skip Swap", mouse_pos, size=18)
-        self._extra_swap_skip_btn = skip_btn
-
-        # Status tooltip — drawn last
-        for r, kind in _status_hover:
-            if r.collidepoint(mouse_pos):
-                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
-                break
+            subprompt = f"Selected {self._extra_swap_pending.name}. Click a second ally to finish."
+        self._draw_battle_scene(
+            surf,
+            mouse_pos,
+            strip_mode="resolve",
+            prompt="Round 1 extra swap",
+            subprompt=subprompt,
+            continue_label="Skip Swap",
+        )
+        self._extra_swap_skip_btn = self._last_battle_strip_btns.get("continue")
 
     def _draw_select_actions(self, surf, mouse_pos):
-        surf.fill(BG)
         if not self.battle:
             return
 
-        # LAN: show waiting overlay when it's the opponent's turn
         if self._is_lan() and self.selecting_player != self._lan_my_player():
-            draw_top_bar(surf, self.battle, f"Waiting for P{self.selecting_player}...")
-            _lan_sh = []
-            draw_formation(surf, self.battle, mouse_pos=mouse_pos, status_rects_out=_lan_sh)
-            draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-            draw_text(surf, "Waiting for opponent to pick their actions...",
-                      22, TEXT_DIM, WIDTH // 2, HEIGHT - 70, center=True)
-            if self._detail_unit is not None:
-                _dh = []
-                close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
-                self._detail_close_btn = close_btn
-                for _r, _kind in _dh:
-                    if _r.collidepoint(mouse_pos):
-                        draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                        break
-            else:
-                self._detail_close_btn = None
-            for r, kind in _lan_sh:
-                if r.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
-                    break
+            self._draw_battle_scene(
+                surf,
+                mouse_pos,
+                strip_mode="view",
+                prompt="Opponent is choosing actions",
+                subprompt="Their queue will resolve after they lock in.",
+            )
             return
 
-        if not self.current_actor:
-            return
-
+        team = self.battle.get_team(self.selecting_player)
         actor = self.current_actor
-        team  = self.battle.get_team(self.selecting_player)
-        is_last = len(team.alive()) == 1 and team.alive()[0] == actor
-
-        rnd = self.battle.round_num
-        init = self.battle.init_player
-        ai_turn = self._is_single_player() and self._is_ai_player(self.selecting_player)
-        if self.selecting_player == init:
-            ctx = f"Round {rnd} — Initiative  |  P{self.selecting_player} Selecting Actions"
-        else:
-            ctx = f"Round {rnd} — Responding  |  P{self.selecting_player} Selecting Actions"
-        draw_top_bar(surf, self.battle, ctx)
-
-        # Formation (left)
-        valid_targets = []
-        if self.selection_sub == "pick_target" and self.pending_action:
-            if self.pending_action["type"] == "ability":
-                ability = self.pending_action["ability"]
-                if self.pending_action.get("substep") == "subterfuge_swap_target":
-                    valid_targets = get_subterfuge_swap_targets(
-                        self.battle,
-                        self.selecting_player,
-                        self.pending_action.get("target"),
-                    )
-                else:
-                    valid_targets = get_legal_targets(
-                        self.battle, self.selecting_player, actor, ability)
-            elif self.pending_action["type"] == "swap":
-                valid_targets = [u for u in team.alive() if u != actor]
-            elif self.pending_action["type"] == "item":
-                valid_targets = get_legal_item_targets(
-                    self.battle,
-                    self.selecting_player,
-                    actor,
-                    artifact=self.pending_action.get("artifact"),
-                    primary_target=self.pending_action.get("target"),
-                )
-
-        _status_hover = []
-        draw_formation(surf, self.battle,
-                       selected_unit=actor,
-                       valid_targets=valid_targets,
-                       mouse_pos=mouse_pos,
-                       acting_player=self.selecting_player,
-                       status_rects_out=_status_hover)
-
-        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-
-        # Detail panel — drawn below formations when a unit is inspected
-        if self._detail_unit is not None:
-            _dh = []
-            close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
-            self._detail_close_btn = close_btn
-            for _r, _kind in _dh:
-                if _r.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                    break
-        else:
-            self._detail_close_btn = None
-
-        # Hint: click any unit to view details
-        if self._detail_unit is None:
-            draw_text(surf, "Click any unit to inspect", 13, TEXT_MUTED,
-                      20, BATTLE_DETAIL_RECT.y + 6)
-
-        # Action buttons (drawn first so panel background is laid down)
-        if self.selection_sub == "pick_action":
-            abilities = actor.all_active_abilities(is_last)
-            valid_abs = [a for a in abilities if can_use_ability(actor, a, team)]
-            btns = draw_action_menu(
-                surf, mouse_pos, actor, valid_abs,
-                active_artifacts=[state.artifact for state in ready_active_artifacts(team)],
-                swap_used=self.battle.swap_used_this_turn or self._swap_queued_this_turn(),
-                state_label=f"Slot: {SLOT_LABELS.get(actor.slot, actor.slot)}"
-            )
-            self._last_action_buttons = btns
-
-        # Queued summary — drawn after action menu so it renders on top
-        # x and panel_w match ACTION_PANEL_RECT exactly
-        draw_queued_summary(surf, team, 700, self.selecting_player,
-                            x=ACTION_PANEL_RECT.x, panel_w=ACTION_PANEL_RECT.width)
-
-        # Clear Queue button (only in main selection phase, not extra-action phase)
-        if self.phase == "select_actions":
-            team_has_queued = any(
-                u.queued is not None or u.queued2 is not None
-                for u in team.members if not u.ko
-            )
-            clear_rect = pygame.Rect(995, 840, 190, 34)
-            draw_button(surf, clear_rect, "Clear Queue", mouse_pos, size=15,
-                        normal=(55, 30, 30), hover=(80, 40, 40),
-                        disabled=not team_has_queued)
-            self._last_clear_btn = clear_rect if team_has_queued else None
-        else:
-            self._last_clear_btn = None
-
-        # Bottom status text
-        if ai_turn:
-            draw_text(surf, f"P{self.selecting_player} is choosing their actions...",
-                      20, TEXT_DIM, WIDTH // 2, HEIGHT - 36, center=True)
-        elif self.selection_sub == "pick_action":
-            prefix = "EXTRA ACTION — " if self.current_is_extra else ""
-            draw_text(surf, f"{prefix}Assigning: {actor.name}", 22, CYAN,
-                      WIDTH // 2, HEIGHT - 36, center=True)
-        elif self.selection_sub == "pick_target":
-            prompt = "Click a valid target (highlighted)"
-            if (self.pending_action and self.pending_action.get("type") == "ability"
-                    and self.pending_action.get("ability").id == "subterfuge"
-                    and self.pending_action.get("substep") == "subterfuge_swap_target"):
-                prompt = "Subterfuge: choose who swaps with the first target"
-            draw_text(surf, prompt, 22, YELLOW,
-                      WIDTH // 2, HEIGHT - 36, center=True)
-            draw_text(surf, "(Click elsewhere or press ESC to cancel; ESC again to concede)", 16,
-                      TEXT_MUTED, WIDTH // 2, HEIGHT - 16, center=True)
-            self._last_action_buttons = []
-
-        # Status tooltip — drawn last so it appears on top of everything
-        for r, kind in _status_hover:
-            if r.collidepoint(mouse_pos):
-                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
-                break
+        is_last = bool(actor and len(team.alive()) == 1 and team.alive()[0] == actor)
+        action_groups = []
+        if actor is not None and self.selection_sub == "pick_action":
+            action_groups = self._build_action_groups(actor, team, is_last)
+        prompt, subprompt = self._selection_prompt()
+        self._draw_battle_scene(
+            surf,
+            mouse_pos,
+            strip_mode="queue",
+            prompt=prompt,
+            subprompt=subprompt,
+            selected_unit=actor,
+            valid_targets=self._current_valid_targets(),
+            queue_units=self._queue_units_for_strip(),
+            action_groups=action_groups,
+            show_review=bool(self.selection_sub == "review_queue"),
+            can_clear=bool(self.phase == "select_actions"),
+            can_lock=bool(self.phase == "select_actions" and self.selection_sub == "review_queue"),
+        )
+        self._last_clear_btn = self._last_battle_strip_btns.get("clear")
 
     def _draw_actions_resolving(self, surf, mouse_pos):
-        surf.fill(BG)
         if not self.battle:
             return
         rp = self._resolving_player
-        draw_top_bar(surf, self.battle, f"P{rp} — Actions Selected")
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
-        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-        draw_text(surf, "Actions Selected", 34, (200, 200, 80),
-                  WIDTH // 2, HEIGHT - 90, center=True)
-        cont_btn = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 60, 260, 44)
-        draw_button(surf, cont_btn, "Resolve Actions →", mouse_pos, size=18,
-                    normal=BLUE_DARK, hover=BLUE)
-        self._last_actions_resolving_btn = cont_btn
+        self._draw_battle_scene(
+            surf,
+            mouse_pos,
+            strip_mode="resolve",
+            prompt=f"P{rp} locked in.",
+            subprompt="Resolve the queued actions when ready.",
+            continue_label="Resolve Actions →",
+        )
+        self._last_actions_resolving_btn = self._last_battle_strip_btns.get("continue")
 
     def _draw_battle_start(self, surf, mouse_pos):
-        surf.fill(BG)
         if not self.battle:
             return
-        t1 = self.battle.team1.player_name
-        t2 = self.battle.team2.player_name
-        draw_top_bar(surf, self.battle, f"{t1}  vs  {t2}")
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
-        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
         init = self.battle.init_player
         reason = getattr(self.battle, "init_reason", "")
         esp = self.battle.r1_extra_swap_player
-        # Stack text lines above the button, anchored from the bottom up
-        btn_top = HEIGHT - 50
-        cont_btn = pygame.Rect(WIDTH // 2 - 130, btn_top, 260, 40)
-        y = btn_top - 22
-        if esp:
-            draw_text(surf, f"P{esp} receives a free formation swap before actions.", 15, CYAN,
-                      WIDTH // 2, y, center=True)
-            y -= 22
-        if reason:
-            draw_text(surf, reason, 15, TEXT_DIM, WIDTH // 2, y, center=True)
-            y -= 28
-        draw_text(surf, f"Round 1 — P{init} has initiative!", 22, YELLOW,
-                  WIDTH // 2, y, center=True)
         if self.game_mode == "lan_client":
-            draw_text(surf, "Waiting for host...", 18, TEXT_DIM, WIDTH // 2, btn_top + 10, center=True)
-            self._last_battle_start_btn = pygame.Rect(0, 0, 0, 0)  # non-clickable
+            continue_label = None
+            subprompt = "Waiting for host..."
         else:
-            draw_button(surf, cont_btn, "Begin Round 1 →", mouse_pos, size=18,
-                        normal=BLUE_DARK, hover=BLUE)
-            self._last_battle_start_btn = cont_btn
+            continue_label = "Begin Round 1 →"
+            subprompt = reason
+        if esp:
+            subprompt = (subprompt + "  " if subprompt else "") + f"P{esp} gets a free swap first."
+        self._draw_battle_scene(
+            surf,
+            mouse_pos,
+            strip_mode="resolve",
+            prompt=f"Round 1 — P{init} has initiative!",
+            subprompt=subprompt,
+            continue_label=continue_label,
+        )
+        self._last_battle_start_btn = self._last_battle_strip_btns.get("continue")
 
     def _draw_end_of_round(self, surf, mouse_pos):
-        surf.fill(BG)
         if not self.battle:
             return
         next_rnd = self.battle.round_num
         init = self.battle.init_player
         reason = getattr(self.battle, "init_reason", "")
         esp = self.battle.r1_extra_swap_player
-        draw_top_bar(surf, self.battle, f"Round {next_rnd}")
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos)
-        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-        btn_top = HEIGHT - 50
-        cont_btn = pygame.Rect(WIDTH // 2 - 130, btn_top, 260, 40)
-        y = btn_top - 22
-        if esp:
-            draw_text(surf, f"P{esp} receives a free formation swap before actions.", 15, CYAN,
-                      WIDTH // 2, y, center=True)
-            y -= 22
-        if reason:
-            draw_text(surf, reason, 15, TEXT_DIM, WIDTH // 2, y, center=True)
-            y -= 28
-        draw_text(surf, f"Round {next_rnd} — P{init} has initiative!", 22, YELLOW,
-                  WIDTH // 2, y, center=True)
         if self.game_mode == "lan_client":
-            draw_text(surf, "Waiting for host...", 18, TEXT_DIM, WIDTH // 2, btn_top + 10, center=True)
-            self._last_eor_btn = pygame.Rect(0, 0, 0, 0)  # non-clickable
+            continue_label = None
+            subprompt = "Waiting for host..."
         else:
-            draw_button(surf, cont_btn, f"Begin Round {next_rnd} →", mouse_pos, size=18,
-                        normal=BLUE_DARK, hover=BLUE)
-            self._last_eor_btn = cont_btn
+            continue_label = f"Begin Round {next_rnd} →"
+            subprompt = reason
+        if esp:
+            subprompt = (subprompt + "  " if subprompt else "") + f"P{esp} gets a free swap first."
+        self._draw_battle_scene(
+            surf,
+            mouse_pos,
+            strip_mode="resolve",
+            prompt=f"Round {next_rnd} — P{init} has initiative!",
+            subprompt=subprompt,
+            continue_label=continue_label,
+        )
+        self._last_eor_btn = self._last_battle_strip_btns.get("continue")
 
     def _draw_initiative_result(self, surf, mouse_pos):
         surf.fill(BG)
@@ -4016,43 +4565,10 @@ class Game:
             self._last_init_result_btn = cont_btn
 
     def _draw_resolving(self, surf, mouse_pos):
-        surf.fill(BG)
         if not self.battle:
             return
         rp = self._resolving_player
         init_done = self._init_player_resolved
-
-        if self.phase == "action_result":
-            actor = self._action_step_unit
-            actor_name = actor.name if actor else "?"
-            lbl = f"{actor_name} acted — review, then continue"
-        elif self.phase == "resolve_done" and init_done:
-            lbl = f"P{rp} acted — review, then pass to P{3 - (rp or 1)}"
-        elif self.phase == "resolve_done":
-            lbl = "Round complete — Continue when ready"
-        else:
-            lbl = f"P{rp} Acting — Both Watch" if rp else "Resolution"
-
-        draw_top_bar(surf, self.battle, lbl)
-        _status_hover = []
-        draw_formation(surf, self.battle, mouse_pos=mouse_pos,
-                       status_rects_out=_status_hover)
-        draw_log(surf, self.battle.log, scroll_offset=self.battle_log_scroll)
-
-        # Detail panel
-        if self._detail_unit is not None:
-            _dh = []
-            close_btn = draw_combatant_detail(surf, self._detail_unit, status_rects_out=_dh)
-            self._detail_close_btn = close_btn
-            for _r, _kind in _dh:
-                if _r.collidepoint(mouse_pos):
-                    draw_status_tooltip(surf, _kind, mouse_pos[0], mouse_pos[1])
-                    break
-        else:
-            self._detail_close_btn = None
-            draw_text(surf, "Click any unit to inspect", 13, TEXT_MUTED,
-                      20, BATTLE_DETAIL_RECT.y + 6)
-
         if self.phase == "action_result":
             actor = self._action_step_unit
             actor_name = actor.name if actor else "?"
@@ -4061,16 +4577,16 @@ class Game:
                 msg = new_entries[0][:60]  # show the primary action result (first new line)
             else:
                 msg = f"{actor_name} acted."
-            draw_text(surf, msg, 18, GREEN, WIDTH // 2, HEIGHT - 90, center=True)
-            if self.game_mode == "lan_client":
-                self._last_resolve_btn = None
-                draw_text(surf, "Waiting for host to continue...", 16, TEXT_MUTED,
-                          WIDTH // 2, HEIGHT - 56, center=True)
-                return
-            cont_btn = pygame.Rect(WIDTH // 2 - 100, HEIGHT - 60, 200, 44)
-            draw_button(surf, cont_btn, "Next Action →", mouse_pos, size=18,
-                        normal=BLUE_DARK, hover=BLUE)
-            self._last_resolve_btn = cont_btn
+            continue_label = None if self.game_mode == "lan_client" else "Next Action →"
+            subprompt = "Waiting for host to continue..." if self.game_mode == "lan_client" else "Review the result, then continue."
+            self._draw_battle_scene(
+                surf,
+                mouse_pos,
+                strip_mode="resolve",
+                prompt=msg,
+                subprompt=subprompt,
+                continue_label=continue_label,
+            )
         elif self.phase == "resolve_done":
             sp = self._is_single_player()
             if init_done:
@@ -4083,22 +4599,25 @@ class Game:
             else:
                 btn_label = "Continue → Next Round"
                 msg = "Round complete! Click Continue for the next round."
-            draw_text(surf, msg, 20, GREEN, WIDTH // 2, HEIGHT - 90, center=True)
-            if self.game_mode == "lan_client":
-                self._last_resolve_btn = None
-                draw_text(surf, "Waiting for host to continue...", 16, TEXT_MUTED,
-                          WIDTH // 2, HEIGHT - 56, center=True)
-                return
-            cont_btn = pygame.Rect(WIDTH // 2 - 130, HEIGHT - 60, 260, 44)
-            draw_button(surf, cont_btn, btn_label, mouse_pos, size=18,
-                        normal=BLUE_DARK, hover=BLUE)
-            self._last_resolve_btn = cont_btn
-
-        # Status tooltip — drawn last
-        for r, kind in _status_hover:
-            if r.collidepoint(mouse_pos):
-                draw_status_tooltip(surf, kind, mouse_pos[0], mouse_pos[1])
-                break
+            continue_label = None if self.game_mode == "lan_client" else btn_label
+            subprompt = "Waiting for host to continue..." if self.game_mode == "lan_client" else "Use the log or artifacts view while you review."
+            self._draw_battle_scene(
+                surf,
+                mouse_pos,
+                strip_mode="resolve",
+                prompt=msg,
+                subprompt=subprompt,
+                continue_label=continue_label,
+            )
+        else:
+            self._draw_battle_scene(
+                surf,
+                mouse_pos,
+                strip_mode="resolve",
+                prompt=f"P{rp} is resolving actions." if rp else "Resolution",
+                subprompt="Battle text only appears here while effects resolve.",
+            )
+        self._last_resolve_btn = self._last_battle_strip_btns.get("continue")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -4115,57 +4634,115 @@ def _patched_handle_click(self, pos):
             self._tk_btn_rect = None
         return
     if self.phase == "battle":
-        btn = getattr(self, "_tk_btn_rect", None)
-        if btn and btn.collidepoint(pos):
-            self._tk_btn_label = None
-            self._tk_btn_rect  = None
-            # For LAN host: send state update when passing
-            if self._is_lan() and self.game_mode == "lan_host":
-                self._lan_send_state(phase="battle")
+        if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+            self._detail_unit = None
+            return
+        overlay_btns = self._last_battle_overlay_btns or {}
+        if overlay_btns.get("close") and overlay_btns["close"].collidepoint(pos):
+            self._battle_overlay = None
+            return
+        if self._battle_overlay:
+            return
+        if pos[1] >= BATTLE_STRIP_RECT.y and self._handle_battle_strip_click(pos):
+            return
+        if ARENA_RECT.collidepoint(pos):
+            unit = self._unit_at_pos(pos)
+            if unit:
+                self._detail_unit = None if self._detail_unit is unit else unit
         return
     if self.phase == "actions_resolving":
-        btn = getattr(self, "_last_actions_resolving_btn", None)
-        if btn and btn.collidepoint(pos):
-            self.phase = "resolving"
-            self._do_single_resolution(self._resolving_player)
+        if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+            self._detail_unit = None
+            return
+        overlay_btns = self._last_battle_overlay_btns or {}
+        if overlay_btns.get("close") and overlay_btns["close"].collidepoint(pos):
+            self._battle_overlay = None
+            return
+        if self._battle_overlay:
+            return
+        if pos[1] >= BATTLE_STRIP_RECT.y:
+            self._handle_battle_strip_click(pos)
+            return
+        if ARENA_RECT.collidepoint(pos):
+            unit = self._unit_at_pos(pos)
+            if unit:
+                self._detail_unit = None if self._detail_unit is unit else unit
         return
     if self.phase == "battle_start":
-        btn = getattr(self, "_last_battle_start_btn", None)
-        if btn and btn.collidepoint(pos):
-            self._enter_round_start()
-            if self.game_mode == "lan_host":
-                self._lan_send_state(phase=self.phase)
+        if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+            self._detail_unit = None
+            return
+        overlay_btns = self._last_battle_overlay_btns or {}
+        if overlay_btns.get("close") and overlay_btns["close"].collidepoint(pos):
+            self._battle_overlay = None
+            return
+        if self._battle_overlay:
+            return
+        if pos[1] >= BATTLE_STRIP_RECT.y:
+            self._handle_battle_strip_click(pos)
+            return
+        if ARENA_RECT.collidepoint(pos):
+            unit = self._unit_at_pos(pos)
+            if unit:
+                self._detail_unit = None if self._detail_unit is unit else unit
         return
     if self.phase == "end_of_round":
-        btn = getattr(self, "_last_eor_btn", None)
-        if btn and btn.collidepoint(pos):
-            self._enter_round_start()
-            if self.game_mode == "lan_host":
-                self._lan_send_state(phase=self.phase)
+        if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+            self._detail_unit = None
+            return
+        overlay_btns = self._last_battle_overlay_btns or {}
+        if overlay_btns.get("close") and overlay_btns["close"].collidepoint(pos):
+            self._battle_overlay = None
+            return
+        if self._battle_overlay:
+            return
+        if pos[1] >= BATTLE_STRIP_RECT.y:
+            self._handle_battle_strip_click(pos)
+            return
+        if ARENA_RECT.collidepoint(pos):
+            unit = self._unit_at_pos(pos)
+            if unit:
+                self._detail_unit = None if self._detail_unit is unit else unit
         return
     if self.phase.startswith("extra_swap_p"):
+        if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
+            self._detail_unit = None
+            return
+        overlay_btns = self._last_battle_overlay_btns or {}
+        if overlay_btns.get("close") and overlay_btns["close"].collidepoint(pos):
+            self._battle_overlay = None
+            return
+        if self._battle_overlay:
+            return
+        if pos[1] >= BATTLE_STRIP_RECT.y:
+            btn = getattr(self, "_extra_swap_skip_btn", None)
+            if btn and btn.collidepoint(pos):
+                self._handle_extra_swap_click(pos)
+                return
+            if self._handle_battle_strip_click(pos):
+                return
         self._handle_extra_swap_click(pos)
         return
     if self.phase.startswith("extra_action_p"):
         self._handle_action_select_click(pos)
         return
     if self.phase in ("resolving", "resolve_done", "action_result"):
-        # Close detail panel
         if self._detail_close_btn and self._detail_close_btn.collidepoint(pos):
             self._detail_unit = None
             return
-        # Formation click → inspect unit
-        if pos[0] < 570:
+        overlay_btns = self._last_battle_overlay_btns or {}
+        if overlay_btns.get("close") and overlay_btns["close"].collidepoint(pos):
+            self._battle_overlay = None
+            return
+        if self._battle_overlay:
+            return
+        if pos[1] >= BATTLE_STRIP_RECT.y:
+            self._handle_battle_strip_click(pos)
+            return
+        if ARENA_RECT.collidepoint(pos):
             unit = self._unit_at_pos(pos)
             if unit:
                 self._detail_unit = None if self._detail_unit is unit else unit
-            return
-        btn = getattr(self, "_last_resolve_btn", None)
-        if btn and btn.collidepoint(pos):
-            if self.phase == "action_result":
-                self._resolve_next_step()
-            else:
-                self._auto_continue_resolve_done()
         return
     _orig_handle_click(self, pos)
 
@@ -4179,7 +4756,18 @@ Game.handle_click = _patched_handle_click
 def main():
     g = Game()
     # Init last-used button caches to avoid AttributeError on first frame
-    g._last_menu_btns   = (pygame.Rect(0,0,1,1),) * 5
+    _dummy = pygame.Rect(0,0,1,1)
+    g._last_menu_btns   = {
+        "story_btn": _dummy,
+        "practice_btn": _dummy,
+        "teambuilder_btn": _dummy,
+        "catalog_btn": _dummy,
+        "guild_btn": _dummy,
+        "embassy_btn": _dummy,
+        "market_btn": _dummy,
+        "settings_btn": _dummy,
+        "exit_btn": _dummy,
+    }
     g._last_pass_btn    = None
     g._last_team_clicks = {}
     g._last_action_buttons = []
@@ -4199,6 +4787,8 @@ def main():
     g._last_actions_resolving_btn = pygame.Rect(0,0,1,1)
     g._last_clear_btn      = None
     g._detail_close_btn    = None
+    g._last_battle_strip_btns = {}
+    g._last_battle_overlay_btns = {}
     g._resolving_player    = None
     g._init_player_resolved = False
     g._tk_btn_rect         = None

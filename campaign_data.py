@@ -342,6 +342,10 @@ class QuestDef:
     rewards: Dict                             # keys: "recruit", "sig_tier", "basics_tier",
                                               #        "items", "classes", "twists",
                                               #        "ranked_glory", "campaign_complete"
+    name: str = ""
+    location: str = "Fantasia"
+    is_tutorial: bool = False
+    gold_reward: int = 100
     enemy_lineup: Optional[List[Dict]] = None # list of 3 slot dicts; None for quest 0
 
 
@@ -368,10 +372,10 @@ MISSION_TABLE: Dict[int, MissionDef] = {
     ),
     1: MissionDef(
         mission_id=1,
-        name="The Bandit Road",
+        name="Camelot",
         quest_range=(1, 4),
         level_range=(1, 4),
-        description="A prized relic was spotted in a caravan on the High Road, more commonly, and alarmingly, known as the Bandit Road. Be swift before it falls into the wrong hands!",
+        description="A four-part tutorial campaign that teaches combat fundamentals while building the starting roster.",
     ),
     2: MissionDef(
         mission_id=2,
@@ -468,52 +472,72 @@ QUEST_TABLE: Dict[int, QuestDef] = {
     1: QuestDef(
         quest_id=1,
         mission_id=1,
-        key_preview="A knight blocks the road",
-        rewards={"sig_tier": 2},
+        key_preview="Battle against three lackeys",
+        rewards={"artifacts": ["holy_grail"]},
+        name="Quest 1",
+        location="Camelot",
+        is_tutorial=True,
+        gold_reward=0,
         enemy_lineup=[
-            {"unit_type": "sir_roland",        "sig_id": "shimmering_valor", "basic1_id": "shield_bash", "basic2_id": "condemn"},
-            {"unit_type": "npc_knight_warden", "sig_id": "no_sig",           "basic1_id": "shield_bash", "basic2_id": "condemn"},
-            {"unit_type": "npc_holy_cleric",   "sig_id": "no_sig",           "basic1_id": "heal",        "basic2_id": "bless"},
+            {"unit_type": "npc_trained_fighter", "sig_id": "no_sig", "basic1_id": "strike", "basic2_id": "rend"},
+            {"unit_type": "npc_rogue_bandit", "sig_id": "no_sig", "basic1_id": "sneak_attack", "basic2_id": "riposte"},
+            {"unit_type": "npc_holy_cleric", "sig_id": "no_sig", "basic1_id": "heal", "basic2_id": "smite"},
         ],
     ),
     2: QuestDef(
         quest_id=2,
         mission_id=1,
-        key_preview="Bandits ambush the road",
-        rewards={"basics_tier": 3},
+        key_preview="Battle against Ella, Hunold, and Aldric",
+        rewards={
+            "recruit": [
+                ("ashen_ella", "crowstorm"),
+                ("hunold_the_piper", "haunting_rhythm"),
+                ("aldric_lost_lamb", "benefactor"),
+            ],
+        },
+        name="Quest 2",
+        location="Camelot",
+        is_tutorial=True,
+        gold_reward=0,
         enemy_lineup=[
-            {"unit_type": "hunold_the_piper",  "sig_id": "haunting_rhythm", "basic1_id": "sneak_attack", "basic2_id": "post_bounty"},
-            {"unit_type": "npc_rogue_bandit",  "sig_id": "no_sig",          "basic1_id": "sneak_attack", "basic2_id": "riposte"},
-            {"unit_type": "npc_ranger_bandit", "sig_id": "no_sig",          "basic1_id": "hawkshot",     "basic2_id": "volley"},
+            {"unit_type": "ashen_ella", "sig_id": "crowstorm", "basic1_id": "fire_blast", "basic2_id": "thunder_call"},
+            {"unit_type": "hunold_the_piper", "sig_id": "haunting_rhythm", "basic1_id": "sneak_attack", "basic2_id": "post_bounty"},
+            {"unit_type": "aldric_lost_lamb", "sig_id": "benefactor", "basic1_id": "heal", "basic2_id": "bless"},
         ],
     ),
     3: QuestDef(
         quest_id=3,
         mission_id=1,
-        key_preview="A mage guards the crossing",
-        rewards={"items": ["crafty_shield"]},
+        key_preview="Battle against a lackey, Pinocchio, and Prince Charming",
+        rewards={
+            "recruit": [
+                ("pinocchio", "wooden_wallop"),
+                ("prince_charming", "condescend"),
+            ],
+        },
+        name="Quest 3",
+        location="Camelot",
+        is_tutorial=True,
+        gold_reward=0,
         enemy_lineup=[
-            {"unit_type": "ashen_ella",        "sig_id": "midnight_dour",  "basic1_id": "fire_blast",   "basic2_id": "thunder_call"},
-            {"unit_type": "npc_mage_acolyte",  "sig_id": "no_sig",         "basic1_id": "fire_blast",   "basic2_id": "thunder_call"},
-            {"unit_type": "npc_trained_fighter","sig_id": "no_sig",        "basic1_id": "strike",       "basic2_id": "rend"},
+            {"unit_type": "npc_trained_fighter", "sig_id": "no_sig", "basic1_id": "strike", "basic2_id": "feint"},
+            {"unit_type": "pinocchio", "sig_id": "wooden_wallop", "basic1_id": "dark_grasp", "basic2_id": "soul_gaze"},
+            {"unit_type": "prince_charming", "sig_id": "condescend", "basic1_id": "impose", "basic2_id": "decree"},
         ],
     ),
     4: QuestDef(
         quest_id=4,
         mission_id=1,
-        key_preview="The bandit lords unite",
-        rewards={
-            "recruit": [
-                ("sir_roland", "shimmering_valor"),
-                ("hunold_the_piper", "haunting_rhythm"),
-                ("ashen_ella", "crowstorm"),
-            ],
-            "classes": ["Rogue", "Warden", "Mage"],
-        },
+        key_preview="Battle against two lackeys and Lady of the Lake",
+        rewards={"artifacts": ["excalibur"]},
+        name="Quest 4",
+        location="Camelot",
+        is_tutorial=True,
+        gold_reward=0,
         enemy_lineup=[
-            {"unit_type": "sir_roland",       "sig_id": "shimmering_valor", "basic1_id": "shield_bash", "basic2_id": "condemn"},
-            {"unit_type": "hunold_the_piper", "sig_id": "haunting_rhythm",  "basic1_id": "sneak_attack","basic2_id": "post_bounty"},
-            {"unit_type": "ashen_ella",       "sig_id": "midnight_dour",    "basic1_id": "fire_blast",  "basic2_id": "thunder_call"},
+            {"unit_type": "npc_knight_warden", "sig_id": "no_sig", "basic1_id": "shield_bash", "basic2_id": "condemn"},
+            {"unit_type": "npc_holy_cleric", "sig_id": "no_sig", "basic1_id": "heal", "basic2_id": "bless"},
+            {"unit_type": "lady_of_reflections", "sig_id": "drown_in_the_loch", "basic1_id": "shield_bash", "basic2_id": "condemn"},
         ],
     ),
     5: QuestDef(

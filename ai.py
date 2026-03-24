@@ -1003,8 +1003,17 @@ def _build_candidates(battle, player_num, actor, is_extra, swap_used, swap_queue
         for ally in [unit for unit in team.alive() if unit != actor]:
             candidates.append({"type": "swap", "target": ally})
 
+    queued_artifact_ids = {
+        action["artifact"].id
+        for unit in team.members
+        for action in (unit.queued, unit.queued2)
+        if action and action.get("type") == "item" and action.get("artifact") is not None
+    }
+
     for artifact_state in ready_active_artifacts(team):
         artifact = artifact_state.artifact
+        if artifact.id in queued_artifact_ids:
+            continue
         targets = get_legal_item_targets(battle, player_num, actor, artifact=artifact)
         if artifact.id == "magic_mirror":
             for target in targets:
