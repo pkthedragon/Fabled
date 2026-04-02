@@ -50,6 +50,7 @@ class StorybookMode:
         self.route = "main_menu"
         self.previous_route = "main_menu"
         self.last_buttons = {}
+        self.last_mouse_pos = (0, 0)
 
         self.player_note_lines = [
             "Inventory opens the owned artifact ledger.",
@@ -81,8 +82,11 @@ class StorybookMode:
         self.quest_offer_ids: list[str] = []
         self.quest_focus_id: str | None = None
         self.quest_selected_ids: list[str] = []
+        self.quest_draft_detail_scroll = 0
         self.quest_setup_state: dict | None = None
         self.quest_loadout_index = 0
+        self.quest_loadout_detail_scroll = 0
+        self.quest_loadout_summary_scroll = 0
         self.loadout_drag: dict | None = None
         self.loadout_drag_pos = None
         self.quest_player_seat = 1
@@ -107,6 +111,7 @@ class StorybookMode:
         self.bout_ready_2 = True
         self.bout_pool_ids: list[str] = []
         self.bout_focus_id: str | None = None
+        self.bout_draft_detail_scroll = 0
         self.bout_team1_ids: list[str] = []
         self.bout_team2_ids: list[str] = []
         self.bout_current_player = 1
@@ -114,6 +119,8 @@ class StorybookMode:
         self.bout_ai_seat = 2
         self.bout_setup_state: dict | None = None
         self.bout_loadout_index = 0
+        self.bout_loadout_detail_scroll = 0
+        self.bout_loadout_summary_scroll = 0
         self.bout_remote_glory = ensure_storybook_glory(getattr(self.profile, "ranked_rating", 500), getattr(self.profile, "ranked_games_played", 0))
         self.bout_local_ready = False
         self.bout_remote_ready = False
@@ -443,8 +450,32 @@ class StorybookMode:
         clamped = max(0, min(index, max(0, total - 1)))
         if current_route == "quest_loadout":
             self.quest_loadout_index = clamped
+            self.quest_loadout_detail_scroll = 0
         elif current_route == "bout_loadout":
             self.bout_loadout_index = clamped
+            self.bout_loadout_detail_scroll = 0
+
+    def _current_loadout_detail_scroll(self, route: str | None = None) -> int:
+        current_route = route or self.route
+        return self.quest_loadout_detail_scroll if current_route == "quest_loadout" else self.bout_loadout_detail_scroll
+
+    def _current_loadout_summary_scroll(self, route: str | None = None) -> int:
+        current_route = route or self.route
+        return self.quest_loadout_summary_scroll if current_route == "quest_loadout" else self.bout_loadout_summary_scroll
+
+    def _set_current_loadout_detail_scroll(self, value: int, route: str | None = None):
+        current_route = route or self.route
+        if current_route == "quest_loadout":
+            self.quest_loadout_detail_scroll = max(0, value)
+        elif current_route == "bout_loadout":
+            self.bout_loadout_detail_scroll = max(0, value)
+
+    def _set_current_loadout_summary_scroll(self, value: int, route: str | None = None):
+        current_route = route or self.route
+        if current_route == "quest_loadout":
+            self.quest_loadout_summary_scroll = max(0, value)
+        elif current_route == "bout_loadout":
+            self.bout_loadout_summary_scroll = max(0, value)
 
     def _loadout_locked(self, route: str | None = None) -> bool:
         current_route = route or self.route
@@ -489,6 +520,7 @@ class StorybookMode:
         return "Quest Duel" if self.lan_context == "quest" else "Bout Match"
 
     def draw(self, surf, mouse_pos):
+        self.last_mouse_pos = mouse_pos
         self._normalize_profile()
         self._poll_nonbattle_lan()
         if self.route == "battle" and hasattr(self.battle_controller, "poll_network"):
@@ -532,7 +564,14 @@ class StorybookMode:
         elif self.route == "quests_menu":
             self.last_buttons = sbui.draw_quests_menu(surf, mouse_pos, self._quest_mode_summaries())
         elif self.route == "quest_draft":
-            self.last_buttons = sbui.draw_quest_draft(surf, mouse_pos, self.quest_offer_ids, self.quest_focus_id, self.quest_selected_ids)
+            self.last_buttons = sbui.draw_quest_draft(
+                surf,
+                mouse_pos,
+                self.quest_offer_ids,
+                self.quest_focus_id,
+                self.quest_selected_ids,
+                detail_scroll=self.quest_draft_detail_scroll,
+            )
         elif self.route == "quest_loadout":
             self.last_buttons = sbui.draw_quest_loadout(
                 surf,
@@ -542,6 +581,8 @@ class StorybookMode:
                 player_team_num=self.quest_player_seat,
                 waiting_note=self._quest_loadout_waiting_note(),
                 drag_state=self.loadout_drag if self.route == "quest_loadout" else None,
+                detail_scroll=self.quest_loadout_detail_scroll,
+                summary_scroll=self.quest_loadout_summary_scroll,
             )
         elif self.route == "bouts_menu":
             self.last_buttons = sbui.draw_bouts_menu(surf, mouse_pos)
@@ -566,6 +607,7 @@ class StorybookMode:
                 self.bout_team2_ids,
                 self.bout_current_player,
                 player_seat=self.bout_player_seat,
+                detail_scroll=self.bout_draft_detail_scroll,
             )
         elif self.route == "bout_loadout":
             self.last_buttons = sbui.draw_bout_loadout(
@@ -576,6 +618,8 @@ class StorybookMode:
                 player_team_num=self.bout_player_seat,
                 waiting_note=self._bout_loadout_waiting_note(),
                 drag_state=self.loadout_drag if self.route == "bout_loadout" else None,
+                detail_scroll=self.bout_loadout_detail_scroll,
+                summary_scroll=self.bout_loadout_summary_scroll,
             )
         elif self.route == "catalog":
             self.last_buttons = sbui.draw_catalog(surf, mouse_pos, self.catalog_section_index, self.catalog_entry_index, self.catalog_scroll)
@@ -759,6 +803,7 @@ class StorybookMode:
                 for rect, adventurer_id in btns.get("cards", []):
                     if rect.collidepoint(pos):
                         self.quest_focus_id = adventurer_id
+                        self.quest_draft_detail_scroll = 0
                         return None
             return None
 
@@ -844,6 +889,7 @@ class StorybookMode:
             for rect, adventurer_id in btns.get("pool", []):
                 if rect.collidepoint(pos):
                     self.bout_focus_id = adventurer_id
+                    self.bout_draft_detail_scroll = 0
                     return None
             return None
 
@@ -1065,6 +1111,33 @@ class StorybookMode:
         return None
 
     def handle_mousewheel(self, event):
+        if self.route == "quest_draft":
+            btns = self.last_buttons or {}
+            viewport = btns.get("detail_viewport")
+            if viewport is not None and viewport.collidepoint(self.last_mouse_pos):
+                max_scroll = btns.get("detail_scroll_max", 0)
+                self.quest_draft_detail_scroll = max(0, min(max_scroll, self.quest_draft_detail_scroll - (event.y * 28)))
+                return None
+        if self.route == "bout_draft":
+            btns = self.last_buttons or {}
+            viewport = btns.get("detail_viewport")
+            if viewport is not None and viewport.collidepoint(self.last_mouse_pos):
+                max_scroll = btns.get("detail_scroll_max", 0)
+                self.bout_draft_detail_scroll = max(0, min(max_scroll, self.bout_draft_detail_scroll - (event.y * 28)))
+                return None
+        if self.route in {"quest_loadout", "bout_loadout"}:
+            mouse_pos = self.last_mouse_pos
+            btns = self.last_buttons or {}
+            detail_viewport = btns.get("detail_viewport")
+            summary_viewport = btns.get("summary_viewport")
+            if detail_viewport is not None and detail_viewport.collidepoint(mouse_pos):
+                max_scroll = btns.get("detail_scroll_max", 0)
+                self._set_current_loadout_detail_scroll(min(max_scroll, max(0, self._current_loadout_detail_scroll() - (event.y * 28))))
+                return None
+            if summary_viewport is not None and summary_viewport.collidepoint(mouse_pos):
+                max_scroll = btns.get("summary_scroll_max", 0)
+                self._set_current_loadout_summary_scroll(min(max_scroll, max(0, self._current_loadout_summary_scroll() - (event.y * 28))))
+                return None
         if self.route == "catalog":
             section_name = ["Adventurers", "Class Skills", "Artifacts"][self.catalog_section_index]
             total = len(catalog_entries(section_name))
@@ -1427,6 +1500,7 @@ class StorybookMode:
         self.quest_offer_ids = draft_offer(6)
         self.quest_focus_id = self.quest_offer_ids[0]
         self.quest_selected_ids = []
+        self.quest_draft_detail_scroll = 0
         self.quest_setup_state = None
         self.quest_local_ready = False
         self.quest_remote_ready = False
@@ -1458,6 +1532,8 @@ class StorybookMode:
             )
         self.quest_loadout_index = 0
         self._clear_loadout_drag()
+        self.quest_loadout_detail_scroll = 0
+        self.quest_loadout_summary_scroll = 0
         self.quest_local_ready = False
         self.quest_remote_ready = False
         self.route = "quest_loadout"
@@ -1547,6 +1623,7 @@ class StorybookMode:
         self.bout_ai_seat = 1 if self.bout_player_seat == 2 else 2
         self.bout_current_player = 1
         self.bout_focus_id = self.bout_pool_ids[0]
+        self.bout_draft_detail_scroll = 0
         self.route = "bout_draft"
         self._run_ai_bout_turns()
         self._focus_next_available_bout_pick()
@@ -1575,6 +1652,7 @@ class StorybookMode:
         available = self._available_bout_ids()
         if available:
             self.bout_focus_id = available[0]
+            self.bout_draft_detail_scroll = 0
 
     def _run_ai_bout_turns(self):
         while self.bout_current_player == self.bout_ai_seat and not self._draft_complete():
@@ -1626,6 +1704,8 @@ class StorybookMode:
         self.bout_remote_ready = False
         self.bout_loadout_index = 0
         self._clear_loadout_drag()
+        self.bout_loadout_detail_scroll = 0
+        self.bout_loadout_summary_scroll = 0
         if self.bout_opponent_mode == "ai":
             player_ids = tuple(self._seat_ids(self.bout_player_seat))
             ai_ids = tuple(self._seat_ids(self.bout_ai_seat))

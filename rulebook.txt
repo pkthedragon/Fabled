@@ -1,8 +1,9 @@
 FABLED
 Official Rulebook
 You are a magnate in the kingdom of Fantasia, home of the mystical and magical.
-As an aficionado for rare artifacts, you would love to add more items to your collection. However, embarking on a quest is out of the question for an inexperienced loafer such as yourself.
-Fortunately, Fantasia is host to many thrill-seeking adventurers who love nothing more than taking on dangerous quests, and you have the pocketbook to hire the best of the best. Be warned though, you are not the only wealthy collector after these rare artifacts. Your adventurers will need good teamwork and moxie to fight off other parties on the path to bringing you glory.
+As an aficionado of rare artifacts, you would love to add more items to your collection. However, embarking on a quest is out of the question for an inexperienced loafer such as yourself.
+
+Fortunately, Fantasia is host to many thrill-seeking adventurers who love nothing more than taking on dangerous quests, and you have the pocketbook to hire the best of the best. Be warned though, you are not the only wealthy collector after these rare artifacts. Your adventurers will need good teamwork and moxie to fight off other parties on the path to 
 
 INTRODUCTION
 Fabled is a tactical turn-based combat game focused on positioning, ability timing, and party construction. Players build parties of three adventurers to battle with and take turns using abilities or shifting positions. The battle is won when the final enemy adventurer is defeated.
@@ -16,7 +17,7 @@ Two Signature Weapons.
 An Ultimate Spell.
 Adventurers also have four stats:
 HP, or how much health the adventurer has.
-Attack, which affects how much damage the adventurer deals with abilities.
+Attack, which affects how much damage the adventurer deals with Strikes.
 Defense, which affects how much damage the adventurer takes from abilities.
 Speed, which affects initiative.
 In addition, adventurers have the following chosen attributes:
@@ -31,20 +32,20 @@ Weapons determine the strength of an adventurer's Strike, and can come with Skil
 Adventurers have two Signature Weapons. Before the battle, they choose one to become their primary weapon and one to become their secondary weapon. Only the primary weapon's Skills and Spells are active.
 Classes
 The six classes are:
-Wardens, tanks and position manipulators.
-Fighters, Melee damage dealers.
-Mages, Magic damage dealers.
-Rangers, Ranged damage dealers.
-Clerics, healers and enchanters.
-Rogues, disruptors and speedsters.
+Wardens: Tanks and position manipulators.
+Fighters: Melee damage dealers.
+Mages: Magic damage dealers.
+Rangers: Ranged damage dealers.
+Clerics: Healers and enchanters.
+Rogues: Disruptors and speedsters.
 Classes determine which Class Skill an adventurer can choose from.
 Artifacts
 Artifacts raise a specific stat and give a Spell to the adventurer that holds them. The player can only have one of each artifact.
-Artifacts can have Reactive Spells, which are not actions but go on cooldown once triggered. Triggering a Reactive Spell counts as casting a Spell.
+Artifacts can have Reactive Spells, which are not actions but go on cooldown once triggered. A Reactive Spell being Triggered counts as casting the spell.
 An adventurer can only hold artifacts they are able to attune to, which is determined by their class.
 
 BATTLING
-Battles consist of rounds in which each adventurer acts at least once.
+Battles consist of rounds in which every adventurer acts at least once.
 Battle Formation
 Each party uses a triangle formation with a backline behind a frontline. Both frontlines face each other with their backlines behind them.
 Player A Backline Left                Player A Backline Right
@@ -53,28 +54,28 @@ Player B Frontline
 Player B Backline Left                Player B Backline Right
 Formation Rules
 Backline adventurers have -30 Speed.
-One adventurer must always be in the frontline, and up to two adventurers can be in the backline
+One adventurer must always be in the frontline, and up to two adventurers can be in the backline.
 If the frontline adventurer is knocked out, the leftmost backline adventurer moves forward.
-Round Structure
+Round Order
 Initiative Check
 Each adventurer's Speed is checked to determine initiative order.
 Start of Round Effects
 Start of Round effects are resolved in initiative order.
 Action Selection
-Players queue one action for each adventurer in their party.
-Action Resolving
-Each adventurer's queue action is resolved in initiative order.
+Players select one action for each adventurer in their party.
+Resolve Actions
+Each adventurer's selected action is resolved in initiative order.
 Bonus Action Selection
-Players queue one bonus action for each adventurer in their party who has one.
-Bonus Action Resolving
-Each adventurer's queued bonus action is resolved in initiative order.
+Players select one bonus action for each adventurer in their party who has one.
+Resolve Bonus Actions
+Each adventurer's selected bonus action is resolved in initiative order.
 End of Round Effects
 End of Round and "Each Round" effects are resolved in initiative order.
 Action Types
 An adventurer may choose one of five actions:
 Strike with their primary weapon.
 Spellcast.
-Switch weapons.
+Switch their primary and secondary weapons .
 Swap positions with an ally adventurer.
 Skip action.
 Strike
@@ -82,7 +83,7 @@ To Strike, an adventurer attacks a target with their primary weapon. There are t
 Melee
 Melee weapons can only be used in the frontline, and can only target frontline enemies.
 Ranged
-Ranged weapons can target enemies directly across/facing the attacker and the enemy frontline. They use up Ammo with each Strike, and once all Ammo is used up, they cannot be used to Strike.
+Ranged weapons can target either the enemy frontline, or a backline enemy directly across from the attacker.  They use up Ammo with each Strike, and once all Ammo is used up, they cannot be used to Strike.
 Magic
 Magic weapons can target enemies directly across/facing the attacker and the enemy frontline. Striking with a Magic weapon counts as casting a Spell, and they have a cooldown.
 Damage uses the following formula:
@@ -92,28 +93,28 @@ Spread Strikes damage all legal targets, but the damage is halved.
 Spell
 To Spellcast, an adventurer uses a Spell they have access to. Spells that target enemies can target enemies directly across the attacker and the enemy frontline. Spells that target allies can target any ally. Once a spell is used, it goes on cooldown.
 Switch
-To Switch, an adventurer switches their primary and secondary weapon. All cooldowns relating to either weapon are removed, and ranged weapons fully reload Ammo.
+To Switch, an adventurer switches their primary and secondary weapon. All cooldowns relating to either weapon are reset, and Ranged weapons fully reload Ammo.
 Swap
-To Swap, an adventurer swaps positions with an ally. The ally that didn't select Swap as their action hasn't not resolved their action yet, they resolve it from their new position.
+To Swap, an adventurer swaps positions with an ally. If the ally that didn't select Swap as their action hasn't resolved their action yet, they resolve it from their new position.
 Skip
 To Skip, an adventurer skips their action.
 Ultimate Spell
 Whenever an adventurer Strikes or uses a Spell, they fill up the Ultimate Meter by +1 or +2 respectively. Once the Meter is full at +10, one adventurer can use their Ultimate Spell, which depletes the meter.
 
 CONDITIONS
-Status conditions of the same type do not stack, but status conditions of the different type do.
+Status conditions of the same type do not stack, but an adventurer can have multiple different status conditions at one time.
 Burn: Burned adventurers take 8% max HP damage each round.
 Root: Rooted adventurers cannot use the Swap Positions action.
 Shock: Shocked adventurers have -15 speed and their Strikes have 15% recoil.
 Weaken: Weakened adventurers deal 15% less damage.
 Expose: Exposed adventurers take 15% more damage.
 Guard: Guarded adventurers take 15% less damage.
-Spotlight: Spotlighted adventurers can be targeted by Melee abilities in the backline.
-Taunt: Taunted adventurers can only target the inflictor.
+Spotlight: Spotlighted adventurers can be targeted by Melee Strikes in the backline.
+Taunt: Taunted adventurers can only target whoever taunted them.
 Stat bonuses and penalties do not stack. Stat calculation uses the highest stat bonus and the highest stat penalty an adventurer has.
 
-WINNING THE GAME
-Victory is achieved when all enemy adventurers are knocked out. The battle ends immediately when the final adventurer on one side is defeated.
+ENDING THE GAME
+The game ends immediately upon reaching one of two conditions: the player that casts their 7th Ultimate Spell will immediately win the game, and the player loses the game immediately when all of their party's adventurers are knocked out.
 
 APPENDIX A — ADVENTURERS
 Red Blanchette
@@ -128,13 +129,13 @@ Magic
 Cooldown: 2 rounds
 Strike: 40 Power. Marks the target for 2 rounds.
 Skill: Wolf's Pursuit
-Whenever a Marked enemy swaps, Red Strikes them.
+When a Marked enemy swaps, Red Strikes them.
 Signature Weapon: Enchanted Shackles
 Melee
 Strike: 70 Power, 25% Recoil
 Spell: Blood Transfusion
 Cooldown: 2 rounds
-Average Red and target enemy's HP and set both HP to that amount.
+Average Red and target enemy's HP and set both Adventurers' HPs to that amount.
 Ultimate Spell: Wolf Unchained
 For 2 rounds, Red and Wolf is always active and its effects are doubled.
 
@@ -423,7 +424,7 @@ Innate Skill: Protective Soul
 The first ally The Good Beast swaps with becomes his guest, and has +15 Defense.
 Signature Weapon: Rosebush Sword
 Melee
-Strike: 65 Power, +15 Power if the target Striked The Good Beast's guest last turn.
+Strike: 65 Power, +15 Power if the target Striked The Good Beast's guest last round.
 Spell: Crystal Ball
 Cooldown: 2 rounds
 Spotlights the last enemy who Striked The Good Beast's guest for 2 rounds.
@@ -542,6 +543,92 @@ Strike: Has the Power and effects of the last Strike that damaged Asha.
 Ultimate Spell: Foam Prison
 Asha steals target enemy's Ultimate Spell for 2 rounds and uses it.
 
+Destitute Vasilisa
+HP: 248
+Attack: 50
+Defense: 60
+Speed: 64
+Innate Skill: Mother's Presence
+Whenever Vasilisa or an ally are targeted by a Spell, Guard them for 2 rounds.
+Signature Weapon: Guiding Doll
+Magic
+Cooldown: 1 round
+Strike: 65 Power. The next ally Strike against the target deals +25 damage and has 25% Lifesteal, affected by Vasilisa's healing effect bonuses.
+Signature Weapon: Skull Lantern
+Magic
+Cooldown: 1 round
+Strike: 60 Power, +15 Power if Vasilisa or an ally are Guarded.
+Skill: Guiding Light
+Vasilisa's Spells targeting enemies Spotlight the target for 2 rounds.
+Ultimate Spell: Witch's Blessing
+For 2 rounds, Strikes against enemies have 25% Lifesteal.
+
+Ali Baba
+HP: 234
+Attack: 56
+Defense: 46
+Speed: 90
+Innate Skill: Open Sesame
+Ali Baba ignores stat bonuses and penalties.
+Signature Weapon: Thief's Dagger
+Melee
+Strike: 60 Power. Ali Baba can cast the target's Artifact's Spell as a Bonus Action this round.
+Spell: Seal the Cave
+Cooldown: 2 rounds
+Increase target enemy's cooldowns by 1 round each.
+Signature Weapon: Jar of Oil
+Magic
+Cooldown: 1 round
+Strike: 70 Power. Burns the target for 2 rounds.
+Skill: No Escape
+Enemy Adventurers cannot cast their Artifact's Spell if they are Burned or have a cooldown affected by Seal the Cave.
+Ultimate Spell: Forty Thieves
+For 2 rounds, enemies do not reload Ammo when they Switch weapons.
+
+Maui, Sun-Thief
+HP: 300
+Attack: 64
+Defense: 72
+Speed: 30
+Innate Skill: Conquer Death
+Maui survives fatal damage at 1 HP once per battle.
+Signature Weapon: Whale-Jaw Hook
+Melee
+Strike: 65 Power, Exposes the target for 2 rounds.
+Spell: Swallow the Sun
+Cooldown: 2 rounds
+Maui and his allies have +15 Defense for 2 rounds.
+Signature Weapon: Ancestral Warclub
+Melee
+Strike: 70 Power.
+Skill: Shapeshifter
+Maui uses Defense instead of Attack when dealing damage.
+Ultimate Spell: Raise the Sky
+Refresh Conquer Death. Double Maui's Defense for 2 rounds.
+
+Kama the Honeyed
+HP: 240
+Attack: 62
+Defense: 52
+Speed: 74
+Innate Skill: Target of Affection
+Enemies directly across Kama take +10 damage from ally Strikes.
+Signature Weapon: Sugarcane Bow
+Ranged
+3 Ammo
+Strike: 55 Power, Spotlight the target for 2 rounds.
+Skill: Flower Arrows
+Sugarcane Bow does not reload by Switching weapons. 
+Signature Weapon: The Stinger
+Ranged
+3 Ammo
+Strike: 45 Power. If the target is Spotlighted, Shocks them for 2 rounds and picks up a flower arrow.
+Spell: Suka's Eyes
+Cooldown: 2 rounds
+Spotlights all enemies for 2 rounds.
+Ultimate Spell: Gaze of Love
+For 2 rounds, enemies are Spotlighted and Ranged Strikes do not consume Ammo against Spotlighted targets.
+
 APPENDIX B — CLASS SKILLS
 FIGHTER
 Martial
@@ -592,10 +679,10 @@ Protector
 Allies have +10 Defense.
 
 APPENDIX C — ARTIFACTS
-Holy Grail
+Wishing Table
 Attunement: Cleric, Fighter, Warden
 +10 Defense
-Spell: Healing Salve
+Spell: Table-Be-Set
 Cooldown: 1 round
 Target adventurer restores 40 HP and cleanses their newest status condition.
 Winged Sandals
@@ -712,7 +799,7 @@ Attunement: Cleric
 Spell: Reprieve
 Cooldown: 2 rounds
 Target ally restores 30 HP and is Guarded for 2 rounds.
-Iron Rosary
+Holy Grail
 Attunement: Cleric
 +15 Defense
 Spell: Purge
@@ -743,3 +830,33 @@ Attunement: Fighter, Ranger
 Spell: Grave Tiding
 Cooldown: 1 round
 Reaction: When the user deals fatal damage, they heal equal to 50% of the damage dealt.
+Cornucopia
+Attunement: Ranger, Warden
++15 Speed
+Spell: Horn of Plenty
+Cooldown: 1 round
+Reaction: When the user Swaps positions with an ally, both restore 25  HP.
+All-Mill
+Attunement: Ranger, Warden
++10 Defense
+Spell: Boundless
+Cooldown: 2 rounds.
+The user gains Root Immunity and +10 Speed for 2 rounds.
+Paradox Rings
+Attunement: Mage, Warden
++15 Speed
+Spell: Infinity
+Cooldown: 2 rounds
+Reaction: When the user casts a Spell that targets an ally, they Swap positions.
+Jade Rabbit
+Attunement: Mage, Ranger
++5 Speed
+Spell: Elixir of Life
+Cooldown: 2 rounds
+The user's next Strike has 10% Lifesteal, does not consume Ammo, and does not go on cooldown.
+Swan Cloak
+Attunement: Rogue
++5 Defense
+Spell: Featherweight
+Cooldown: 2 rounds
+Reaction: When the user is targeted by a Melee Strike, they first Swap Positions.

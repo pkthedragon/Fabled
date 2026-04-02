@@ -8,10 +8,51 @@ import os
 
 from economy import STARTER_ADVENTURERS
 from models import CampaignProfile
+from quests_ruleset_data import ADVENTURERS_BY_ID, ARTIFACTS_BY_ID
 
 
 SAVE_VERSION = 2
 LEGACY_SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "campaign_save.json")
+
+_KNOWN_ADVENTURER_IDS = set(ADVENTURERS_BY_ID.keys())
+_KNOWN_ARTIFACT_IDS = set(ARTIFACTS_BY_ID.keys())
+
+_LEGACY_ADVENTURER_ID_MAP = {
+    "risa_redcloak": "red_blanchette",
+    "gretel": "witch_hunter_gretel",
+    "matchstick_liesl": "matchbox_liesl",
+    "green_knight": "the_green_knight",
+    "rapunzel": "rapunzel_the_golden",
+    "pinocchio": "pinocchio_cursed_puppet",
+}
+
+_LEGACY_ARTIFACT_ID_MAP = {
+    "misericorde_artifact": "misericorde",
+    "cursed_needle": "cursed_spindle",
+    "melusines_knife": "naiads_knife",
+    "cracked_stopwatch": "arcane_hourglass",
+    "godmothers_wand": "glass_slipper",
+}
+
+
+def _normalize_adventurer_ids(raw_ids) -> set[str]:
+    normalized: set[str] = set()
+    for value in raw_ids or []:
+        adventurer_id = str(value)
+        mapped = _LEGACY_ADVENTURER_ID_MAP.get(adventurer_id, adventurer_id)
+        if mapped in _KNOWN_ADVENTURER_IDS:
+            normalized.add(mapped)
+    return normalized
+
+
+def _normalize_artifact_ids(raw_ids) -> set[str]:
+    normalized: set[str] = set()
+    for value in raw_ids or []:
+        artifact_id = str(value)
+        mapped = _LEGACY_ARTIFACT_ID_MAP.get(artifact_id, artifact_id)
+        if mapped in _KNOWN_ARTIFACT_IDS:
+            normalized.add(mapped)
+    return normalized
 
 
 def _normalize_friends(raw_friends) -> list[dict[str, str]]:
@@ -58,8 +99,15 @@ def _migrate_legacy_save() -> str:
 
 
 def _normalize_profile(profile: CampaignProfile) -> CampaignProfile:
+    profile.recruited = _normalize_adventurer_ids(profile.recruited)
     profile.recruited |= set(STARTER_ADVENTURERS)
     profile.unlocked_items = set()
+    profile.unlocked_artifacts = _normalize_artifact_ids(profile.unlocked_artifacts)
+    profile.default_sigs = {
+        _LEGACY_ADVENTURER_ID_MAP.get(str(adventurer_id), str(adventurer_id)): str(sig_id)
+        for adventurer_id, sig_id in dict(profile.default_sigs).items()
+        if _LEGACY_ADVENTURER_ID_MAP.get(str(adventurer_id), str(adventurer_id)) in _KNOWN_ADVENTURER_IDS
+    }
     profile.quick_play_unlocked = bool(profile.quick_play_unlocked or profile.tutorial_complete)
     profile.highest_quest_cleared = max(int(profile.highest_quest_cleared), 0)
     profile.player_exp = max(0, int(profile.player_exp))
@@ -178,6 +226,7 @@ def _load_legacy_profile(data: dict) -> CampaignProfile:
     profile.fast_resolution = bool(data.get("fast_resolution", profile.fast_resolution))
     profile.new_unlocks = set(data.get("new_unlocks", []))
 
+    profile.recruited = _normalize_adventurer_ids(profile.recruited)
     cleared_nonzero = sum(1 for quest_id, cleared in profile.quest_cleared.items() if quest_id > 0 and cleared)
     recruited_bonus = max(0, len(profile.recruited - STARTER_ADVENTURERS)) * 60
     profile.player_exp = max(0, cleared_nonzero * 100 + recruited_bonus)

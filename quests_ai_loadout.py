@@ -159,6 +159,7 @@ def _local_build_score(
     primary_weapon_id: str,
     artifact_id: Optional[str],
     *,
+    team_ids: tuple[str, ...],
     team_need_tags: set[str],
     enemy_ids: tuple[str, ...],
 ) -> float:
@@ -175,6 +176,22 @@ def _local_build_score(
         value += 6
     if slot == SLOT_BACK_LEFT and "frontline_pivot" in profile.role_tags:
         value += 6
+
+    # Encourage March Hare spell-loop loadouts when shock setup exists in the team.
+    if adventurer_id == "march_hare":
+        team_has_other_shock = any(
+            teammate_id != adventurer_id and "shock_engine" in ADVENTURER_AI[teammate_id].role_tags
+            for teammate_id in team_ids
+        )
+        if primary_weapon_id == "cracked_stopwatch":
+            value += 10
+            if team_has_other_shock:
+                value += 8
+            if slot != SLOT_FRONT:
+                value += 4
+        elif primary_weapon_id == "stitch_in_time" and team_has_other_shock:
+            value += 3
+
     return value
 
 
@@ -226,6 +243,7 @@ def generate_member_builds(
                         skill_id,
                         weapon_id,
                         artifact_id,
+                        team_ids=team_ids,
                         team_need_tags=team_need_tags,
                         enemy_ids=enemy_ids,
                     )

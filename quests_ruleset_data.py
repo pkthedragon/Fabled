@@ -115,13 +115,13 @@ CLASS_SKILLS_BY_ID = {
 ARTIFACTS = [
     artifact(
         "holy_grail",
-        "Holy Grail",
+        "Wishing Table",
         ("Cleric", "Fighter", "Warden"),
         "defense",
         10,
         active(
             "healing_salve",
-            "Healing Salve",
+            "Table-Be-Set",
             target="ally",
             heal=40,
             cooldown=1,
@@ -429,7 +429,7 @@ ARTIFACTS.extend([
     ),
     artifact(
         "iron_rosary",
-        "Iron Rosary",
+        "Holy Grail",
         ("Cleric",),
         "defense",
         15,
@@ -500,6 +500,85 @@ ARTIFACTS.extend([
             cooldown=1,
             description="Heal for 50% of damage dealt after a fatal hit.",
             special="grave_tiding",
+        ),
+        reactive=True,
+    ),
+    artifact(
+        "cornucopia",
+        "Cornucopia",
+        ("Ranger", "Warden"),
+        "speed",
+        15,
+        active(
+            "horn_of_plenty",
+            "Horn of Plenty",
+            target="self",
+            cooldown=1,
+            description="When the user Swaps with an ally, both restore 25 HP.",
+            special="horn_of_plenty",
+        ),
+        reactive=True,
+    ),
+    artifact(
+        "all_mill",
+        "All-Mill",
+        ("Ranger", "Warden"),
+        "defense",
+        10,
+        active(
+            "boundless",
+            "Boundless",
+            target="self",
+            cooldown=2,
+            self_statuses=(status("root_immunity", 2),),
+            self_buffs=(stat("speed", 10, 2),),
+            description="Gain Root Immunity and +10 Speed for 2 rounds.",
+        ),
+    ),
+    artifact(
+        "paradox_rings",
+        "Paradox Rings",
+        ("Mage", "Warden"),
+        "speed",
+        15,
+        active(
+            "infinity",
+            "Infinity",
+            target="self",
+            cooldown=2,
+            description="When the user casts an ally-target Spell, they Swap positions.",
+            special="infinity",
+        ),
+        reactive=True,
+    ),
+    artifact(
+        "jade_rabbit",
+        "Jade Rabbit",
+        ("Mage", "Ranger"),
+        "speed",
+        5,
+        active(
+            "elixir_of_life",
+            "Elixir of Life",
+            target="self",
+            cooldown=2,
+            description="Next Strike gains lifesteal, no ammo cost, and no cooldown.",
+            special="elixir_of_life",
+        ),
+    ),
+    artifact(
+        "swan_cloak",
+        "Swan Cloak",
+        ("Rogue",),
+        "defense",
+        5,
+        active(
+            "featherweight",
+            "Featherweight",
+            target="self",
+            cooldown=2,
+            description="When targeted by a Melee Strike, Swap positions first.",
+            special="featherweight",
         ),
         reactive=True,
     ),
@@ -1329,6 +1408,206 @@ ASHA = AdventurerDef(
 )
 
 
+VASILISA = AdventurerDef(
+    id="destitute_vasilisa",
+    name="Destitute Vasilisa",
+    hp=248,
+    attack=50,
+    defense=60,
+    speed=64,
+    innate=passive("mothers_presence", "Mother's Presence", "Whenever Vasilisa or an ally is targeted by a Spell, Guard them for 2 rounds.", special="mothers_presence"),
+    signature_weapons=(
+        weapon(
+            "guiding_doll",
+            "Guiding Doll",
+            "magic",
+            active(
+                "guiding_doll_strike",
+                "Strike",
+                power=65,
+                cooldown=1,
+                counts_as_spell=True,
+                description="The next ally Strike against this target gains +25 power and 25% lifesteal.",
+                special="guiding_doll",
+            ),
+        ),
+        weapon(
+            "skull_lantern",
+            "Skull Lantern",
+            "magic",
+            active(
+                "skull_lantern_strike",
+                "Strike",
+                power=60,
+                cooldown=1,
+                counts_as_spell=True,
+                description="Gain +15 power if Vasilisa or an ally is Guarded.",
+                special="skull_lantern",
+            ),
+            passive_skills=(passive("guiding_light", "Guiding Light", "Vasilisa's enemy-targeted Spells Spotlight for 2 rounds.", special="guiding_light"),),
+        ),
+    ),
+    ultimate=active(
+        "witchs_blessing",
+        "Witch's Blessing",
+        target="none",
+        description="For 2 rounds, Strikes against enemies have 25% lifesteal.",
+        special="witchs_blessing",
+    ),
+)
+
+
+ALI_BABA = AdventurerDef(
+    id="ali_baba",
+    name="Ali Baba",
+    hp=234,
+    attack=56,
+    defense=46,
+    speed=90,
+    innate=passive("open_sesame", "Open Sesame", "Ali Baba ignores stat bonuses and penalties.", special="open_sesame"),
+    signature_weapons=(
+        weapon(
+            "thiefs_dagger",
+            "Thief's Dagger",
+            "melee",
+            active(
+                "thiefs_dagger_strike",
+                "Strike",
+                power=60,
+                description="Ali Baba can cast the target's Artifact Spell as a bonus action this round.",
+                special="thiefs_dagger",
+            ),
+            spells=(
+                active(
+                    "seal_the_cave",
+                    "Seal the Cave",
+                    target="enemy",
+                    cooldown=2,
+                    description="Increase the target's cooldowns by 1 round each.",
+                    special="seal_the_cave",
+                ),
+            ),
+        ),
+        weapon(
+            "jar_of_oil",
+            "Jar of Oil",
+            "magic",
+            active(
+                "jar_of_oil_strike",
+                "Strike",
+                power=70,
+                cooldown=1,
+                counts_as_spell=True,
+                target_statuses=(status("burn", 2),),
+            ),
+            passive_skills=(passive("no_escape", "No Escape", "Enemy Adventurers cannot cast their Artifact Spell while Burned or if Seal the Cave affected one of their cooldowns.", special="no_escape"),),
+        ),
+    ),
+    ultimate=active(
+        "forty_thieves",
+        "Forty Thieves",
+        target="none",
+        description="For 2 rounds, enemies do not reload Ammo when they Switch weapons.",
+        special="forty_thieves",
+    ),
+)
+
+
+MAUI = AdventurerDef(
+    id="maui_sunthief",
+    name="Maui, Sun-Thief",
+    hp=300,
+    attack=64,
+    defense=72,
+    speed=30,
+    innate=passive("conquer_death", "Conquer Death", "Maui survives fatal damage at 1 HP once per battle.", special="conquer_death"),
+    signature_weapons=(
+        weapon(
+            "whale_jaw_hook",
+            "Whale-Jaw Hook",
+            "melee",
+            active("whale_jaw_hook_strike", "Strike", power=65, target_statuses=(status("expose", 2),)),
+            spells=(
+                active(
+                    "swallow_the_sun",
+                    "Swallow the Sun",
+                    target="self",
+                    cooldown=2,
+                    description="Maui and allies gain +15 Defense for 2 rounds.",
+                    special="swallow_the_sun",
+                ),
+            ),
+        ),
+        weapon(
+            "ancestral_warclub",
+            "Ancestral Warclub",
+            "melee",
+            active("ancestral_warclub_strike", "Strike", power=70),
+            passive_skills=(passive("shapeshifter", "Shapeshifter", "Maui uses Defense instead of Attack when dealing damage.", special="shapeshifter"),),
+        ),
+    ),
+    ultimate=active(
+        "raise_the_sky",
+        "Raise the Sky",
+        target="self",
+        description="Refresh Conquer Death and double Maui's Defense for 2 rounds.",
+        special="raise_the_sky",
+    ),
+)
+
+
+KAMA = AdventurerDef(
+    id="kama_the_honeyed",
+    name="Kama the Honeyed",
+    hp=240,
+    attack=62,
+    defense=52,
+    speed=74,
+    innate=passive("target_of_affection", "Target of Affection", "Enemies directly across Kama take +10 damage from ally Strikes.", special="target_of_affection"),
+    signature_weapons=(
+        weapon(
+            "sugarcane_bow",
+            "Sugarcane Bow",
+            "ranged",
+            active("sugarcane_bow_strike", "Strike", power=55, ammo_cost=1, target_statuses=(status("spotlight", 2),)),
+            ammo=3,
+            passive_skills=(passive("flower_arrows", "Flower Arrows", "Sugarcane Bow does not reload when Switching from it.", special="flower_arrows"),),
+        ),
+        weapon(
+            "the_stinger",
+            "The Stinger",
+            "ranged",
+            active(
+                "the_stinger_strike",
+                "Strike",
+                power=45,
+                ammo_cost=1,
+                description="If the target is Spotlighted, Shock them and pick up a flower arrow.",
+                special="the_stinger",
+            ),
+            ammo=3,
+            spells=(
+                active(
+                    "sukas_eyes",
+                    "Suka's Eyes",
+                    target="none",
+                    cooldown=2,
+                    description="Spotlight all enemies for 2 rounds.",
+                    special="sukas_eyes",
+                ),
+            ),
+        ),
+    ),
+    ultimate=active(
+        "gaze_of_love",
+        "Gaze of Love",
+        target="none",
+        description="For 2 rounds, enemies are Spotlighted and ranged Strikes do not consume Ammo against Spotlighted targets.",
+        special="gaze_of_love",
+    ),
+)
+
+
 ADVENTURERS = [
     RED,
     JACK,
@@ -1350,6 +1629,10 @@ ADVENTURERS = [
     PINOCCHIO,
     RUMPEL,
     ASHA,
+    VASILISA,
+    ALI_BABA,
+    MAUI,
+    KAMA,
 ]
 
 

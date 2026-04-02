@@ -165,6 +165,8 @@ class CombatantState:
 
     def get_stat(self, stat: str) -> int:
         base = getattr(self.defn, stat)
+        if self.defn.id == "ali_baba":
+            return max(1, base)
         if self.artifact is not None and self.artifact.stat == stat:
             base += self.artifact.amount
         if self.markers.get("guest_of_beast", 0) and stat == "defense":
@@ -184,6 +186,8 @@ class CombatantState:
         if self.class_skill.id == "protector" and stat == "defense":
             base += 10
         total = base + self.best_buff(stat) - self.best_debuff(stat)
+        if self.defn.id == "maui_sunthief" and stat == "defense" and self.markers.get("raise_the_sky_rounds", 0) > 0:
+            total *= 2
         return max(1, total)
 
     def add_buff(self, stat: str, amount: int, duration: int):

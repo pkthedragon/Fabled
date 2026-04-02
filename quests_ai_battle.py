@@ -86,9 +86,12 @@ def _team_bonus_swap_available(team) -> bool:
     return team.markers.get("bonus_swap_rounds", 0) > 0 and team.markers.get("bonus_swap_used", 0) <= 0
 
 
-def _rough_damage(actor, target, effect, *, weapon=None) -> int:
+def _rough_damage(battle, actor, target, effect, *, weapon=None) -> int:
     if effect.power <= 0 or target is None or target.ko:
         return 0
+    attack_stat = "attack"
+    if actor.defn.id == "maui_sunthief" and actor.primary_weapon.id == "ancestral_warclub":
+        attack_stat = "defense"
     power = effect.power
     if weapon is not None:
         if weapon.kind == "melee" and actor.class_skill.id == "martial":
@@ -103,7 +106,13 @@ def _rough_damage(actor, target, effect, *, weapon=None) -> int:
         power = int((power * 0.85) + 0.999)
     if target.has_status("expose"):
         power = int((power * 1.15) + 0.999)
-    return max(1, int((power * (actor.get_stat("attack") / max(1, target.get_stat("defense")))) + 0.999))
+    damage = max(1, int((power * (actor.get_stat(attack_stat) / max(1, target.get_stat("defense")))) + 0.999))
+    actor_team = team_for_actor(battle, actor)
+    target_team = battle.team1 if actor_team is battle.team2 else battle.team2
+    if actor_team is not target_team:
+        if any(ally.defn.id == "kama_the_honeyed" and ally is not actor and ally.slot == target.slot for ally in actor_team.alive()):
+            damage += 10
+    return damage
 
 
 def _effect_usable(actor, effect) -> bool:
@@ -119,9 +128,18 @@ def _effect_usable(actor, effect) -> bool:
 def _active_spells_for_phase(actor, *, bonus: bool) -> list:
     if not bonus:
         return [effect for effect in actor.active_spells() if _effect_usable(actor, effect)]
-    if actor.markers.get("spell_bonus_rounds", 0) <= 0:
-        return []
-    return [effect for effect in actor.active_spells() if _effect_usable(actor, effect)]
+    effects = []
+    if actor.markers.get("spell_bonus_rounds", 0) > 0:
+        effects.extend(effect for effect in actor.active_spells() if _effect_usable(actor, effect))
+    bonus_effect = actor.markers.get("artifact_bonus_spell_effect")
+    if (
+        actor.markers.get("artifact_bonus_spell_rounds", 0) > 0
+        and bonus_effect is not None
+        and _effect_usable(actor, bonus_effect)
+        and all(existing.id != bonus_effect.id for existing in effects)
+    ):
+        effects.append(bonus_effect)
+    return effects
 
 
 def _allies(actor, battle):
@@ -150,16 +168,16 @@ def _estimate_team_damage_to_target(battle, team_num: int, target) -> float:
         best = 0.0
         strike_targets = get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
         if target in strike_targets:
-            best = max(best, _rough_damage(actor, target, actor.primary_weapon.strike, weapon=actor.primary_weapon))
+            best = max(best, _rough_damage(battle, actor, target, actor.primary_weapon.strike, weapon=actor.primary_weapon))
         for effect in _active_spells_for_phase(actor, bonus=False):
             if effect.target != "enemy":
                 continue
             if target in get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon):
-                best = max(best, _rough_damage(actor, target, effect, weapon=actor.primary_weapon))
+                best = max(best, _rough_damage(battle, actor, target, effect, weapon=actor.primary_weapon))
         if team_for_actor(battle, actor).ultimate_meter >= 10:
             effect = actor.defn.ultimate
             if effect.target == "enemy" and target in get_legal_targets(battle, actor, effect=effect):
-                best = max(best, _rough_damage(actor, target, effect, weapon=actor.primary_weapon))
+                best = max(best, _rough_damage(battle, actor, target, effect, weapon=actor.primary_weapon))
         total += best
     return total
 
@@ -244,6 +262,14 @@ def available_action_specs(battle, actor, *, bonus: bool = False) -> list[Action
                 specs.append(ActionSpec(kind="swap", target_ref=_unit_ref(battle, ally), bonus=True))
         if actor.markers.get("vanguard_ready", 0) > 0:
             specs.append(ActionSpec(kind="vanguard", bonus=True))
+        if actor.markers.get("spell_bonus_rounds", 0) > 0 and team.ultimate_meter >= 10:
+            effect = actor.defn.ultimate
+            targets = get_legal_targets(battle, actor, effect=effect)
+            if effect.target in {"none", "self"}:
+                specs.append(ActionSpec(kind="ultimate", effect_id=effect.id, bonus=True))
+            else:
+                for target in targets:
+                    specs.append(ActionSpec(kind="ultimate", effect_id=effect.id, target_ref=_unit_ref(battle, target), bonus=True))
         for effect in _active_spells_for_phase(actor, bonus=True):
             targets = get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon)
             if effect.target in {"none", "self"}:
@@ -287,6 +313,9 @@ def _effect_by_id(actor, effect_id: str):
     for effect in actor.active_spells():
         if effect.id == effect_id:
             return effect
+    bonus_effect = actor.markers.get("artifact_bonus_spell_effect")
+    if bonus_effect is not None and actor.markers.get("artifact_bonus_spell_rounds", 0) > 0 and bonus_effect.id == effect_id:
+        return bonus_effect
     raise KeyError(f"{actor.name} cannot access effect {effect_id}.")
 
 
@@ -340,7 +369,7 @@ def _team_units_in_order(battle, team_num: int) -> list:
     for unit in battle.initiative_order:
         if unit.ko:
             continue
-        if player_num_for_actor(battle, unit) == team_num and unit not in ordered:
+        if player_num_for_actor(battle, unit) == team_num and not any(existing is unit for existing in ordered):
             ordered.append(unit)
     return ordered
 
@@ -492,6 +521,19 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
             status_kinds = {status.kind for status in effect.target_statuses}
             if {"shock", "root", "expose", "spotlight"} & status_kinds:
                 bias += 4.0
+
+    # March Hare's Cracked Stopwatch line is a key bonus-spell enabler; value it explicitly.
+    if (
+        spec.kind == "strike"
+        and actor.defn.id == "march_hare"
+        and actor.primary_weapon.id == "cracked_stopwatch"
+        and target is not None
+        and target.has_status("shock")
+    ):
+        bias += 12.0
+    if spec.bonus and spec.kind == "spell" and actor.defn.id == "march_hare" and actor.markers.get("spell_bonus_rounds", 0) > 0:
+        bias += 6.0
+
     return bias
 
 

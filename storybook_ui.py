@@ -719,7 +719,7 @@ def draw_quests_menu(surf, mouse_pos, mode_summaries: list[dict] | None = None):
     return btns
 
 
-def draw_quest_draft(surf, mouse_pos, offer_ids, focused_id, selected_ids):
+def draw_quest_draft(surf, mouse_pos, offer_ids, focused_id, selected_ids, *, detail_scroll: int = 0):
     draw_background(surf)
     progress = f"Pick {len(selected_ids) + 1} of 3"
     btns = draw_top_bar(
@@ -748,9 +748,8 @@ def draw_quest_draft(surf, mouse_pos, offer_ids, focused_id, selected_ids):
             small=True,
         ), adventurer_id))
     party_rect = pygame.Rect(248, 650, 456, 186)
-    detail_rect = pygame.Rect(742, 578, 610, 258)
+    detail_rect = pygame.Rect(930, 104, 422, 732)
     draw_beveled_panel(surf, party_rect, title="Selected Party")
-    draw_beveled_panel(surf, detail_rect, title="Focused Adventurer")
     slot_buttons = []
     for index in range(3):
         rect = pygame.Rect(party_rect.x + 18 + index * 144, party_rect.y + 54, 126, 110)
@@ -761,20 +760,10 @@ def draw_quest_draft(surf, mouse_pos, offer_ids, focused_id, selected_ids):
         else:
             draw_beveled_panel(surf, rect, fill_top=SURFACE, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
             draw_text(surf, "Available", font_label(11, bold=True), TEXT_MUTE, rect.center, center=True)
-    focused = ADVENTURERS_BY_ID[focused_id]
-    draw_text(surf, focused.name, font_headline(28, bold=True), TEXT, (detail_rect.x + 22, detail_rect.y + 52))
-    tag_x = detail_rect.x + 22
-    for role in role_tags_for_adventurer(focused):
-        chip_rect = pygame.Rect(tag_x, detail_rect.y + 88, 82, 22)
-        draw_chip(surf, chip_rect, role.upper(), ROLE_COLORS.get(role, GOLD_BRIGHT))
-        tag_x += 90
-    draw_text(surf, f"HP {focused.hp}   ATK {focused.attack}   DEF {focused.defense}   SPD {focused.speed}", font_label(13, bold=True), TEXT_SOFT, (detail_rect.x + 22, detail_rect.y + 126))
-    draw_text(surf, focused.innate.name, font_label(12, bold=True), GOLD_BRIGHT, (detail_rect.x + 22, detail_rect.y + 160))
-    draw_text(surf, focused.innate.description, font_body(16), TEXT_SOFT, (detail_rect.x + 22, detail_rect.y + 182))
-    draw_text(surf, f"Weapons: {focused.signature_weapons[0].name} / {focused.signature_weapons[1].name}", font_body(16, bold=True), TEXT_SOFT, (detail_rect.x + 22, detail_rect.y + 212))
-    draw_text(surf, f"Ultimate: {focused.ultimate.name}", font_body(16, bold=True), TEXT_SOFT, (detail_rect.x + 22, detail_rect.y + 236))
     pick_btn = pygame.Rect(detail_rect.right - 198, detail_rect.bottom - 52, 176, 36)
     continue_btn = pygame.Rect(party_rect.x + 18, party_rect.bottom - 46, party_rect.width - 36, 32)
+    focused = ADVENTURERS_BY_ID[focused_id]
+    detail_viewport, detail_scroll_max = _draw_draft_detail_panel(surf, detail_rect, mouse_pos, focused, footer_rect=pick_btn, scroll=detail_scroll)
     draw_primary_button(surf, pick_btn, mouse_pos, "Pick Adventurer", disabled=focused_id in selected_ids or len(selected_ids) >= 3)
     draw_secondary_button(surf, continue_btn, mouse_pos, "Continue To Loadouts", active=len(selected_ids) == 3)
     btns["back"] = btns.pop("left")
@@ -782,6 +771,8 @@ def draw_quest_draft(surf, mouse_pos, offer_ids, focused_id, selected_ids):
     btns["party_slots"] = slot_buttons
     btns["pick"] = pick_btn
     btns["continue"] = continue_btn
+    btns["detail_viewport"] = detail_viewport
+    btns["detail_scroll_max"] = detail_scroll_max
     return btns
 
 
@@ -859,6 +850,63 @@ def _draw_wrapped_lines(surf, lines, x, y, width, *, font, color, line_height):
     return offset
 
 
+def _visible_button_entries(entries, viewport):
+    return [entry for entry in entries if entry[0] is not None and entry[0].colliderect(viewport)]
+
+
+def _draw_scroll_hint(surf, viewport, scroll, scroll_max):
+    if scroll_max <= 0:
+        return
+    track = pygame.Rect(viewport.right - 6, viewport.y + 4, 4, viewport.height - 8)
+    pygame.draw.rect(surf, SURFACE_HIGH, track, border_radius=2)
+    thumb_h = max(28, int(track.height * (viewport.height / (viewport.height + scroll_max))))
+    ratio = 0 if scroll_max <= 0 else scroll / scroll_max
+    thumb_y = track.y + int((track.height - thumb_h) * ratio)
+    thumb = pygame.Rect(track.x, thumb_y, track.width, thumb_h)
+    pygame.draw.rect(surf, GOLD_BRIGHT, thumb, border_radius=2)
+
+
+def _draw_draft_detail_panel(surf, rect, mouse_pos, adventurer, *, footer_rect=None, scroll: int = 0):
+    draw_beveled_panel(surf, rect, title="Focused Adventurer")
+    viewport_bottom = footer_rect.y - 10 if footer_rect is not None else rect.bottom - 12
+    viewport = pygame.Rect(rect.x + 12, rect.y + 42, rect.width - 24, max(80, viewport_bottom - (rect.y + 42)))
+    old_clip = surf.get_clip()
+    surf.set_clip(viewport)
+
+    y = rect.y + 52 - scroll
+    draw_text(surf, adventurer.name, font_headline(28, bold=True), TEXT, (rect.x + 22, y))
+    y += 34
+    tag_x = rect.x + 22
+    for role in role_tags_for_adventurer(adventurer):
+        chip_rect = pygame.Rect(tag_x, y, 82, 22)
+        draw_chip(surf, chip_rect, role.upper(), ROLE_COLORS.get(role, GOLD_BRIGHT))
+        tag_x += 90
+    y += 38
+    draw_text(surf, f"HP {adventurer.hp} | ATK {adventurer.attack} | DEF {adventurer.defense} | SPD {adventurer.speed}", font_label(13, bold=True), TEXT_SOFT, (rect.x + 22, y))
+    y += 34
+    draw_text(surf, adventurer.innate.name, font_label(12, bold=True), GOLD_BRIGHT, (rect.x + 22, y))
+    y += 22
+    y += _draw_wrapped_lines(surf, [adventurer.innate.description], rect.x + 22, y, rect.width - 44, font=font_body(16), color=TEXT_SOFT, line_height=20)
+    y += 14
+    draw_text(surf, "Signature Weapons", font_label(12, bold=True), TEXT_MUTE, (rect.x + 22, y))
+    y += 22
+    for weapon in adventurer.signature_weapons:
+        draw_text(surf, weapon.name, font_body(17, bold=True), TEXT, (rect.x + 22, y))
+        y += 22
+        y += _draw_wrapped_lines(surf, _weapon_detail_lines(weapon), rect.x + 36, y, rect.width - 58, font=font_body(14), color=TEXT_SOFT, line_height=18)
+        y += 10
+    draw_text(surf, f"Ultimate: {adventurer.ultimate.name}", font_body(17, bold=True), TEXT, (rect.x + 22, y))
+    y += 24
+    y += _draw_wrapped_lines(surf, [_effect_text(adventurer.ultimate)], rect.x + 22, y, rect.width - 44, font=font_body(15), color=TEXT_SOFT, line_height=18)
+    # Keep a little extra tail room so the final lines can be comfortably
+    # scrolled above the footer button and not feel clipped at the edge.
+    content_bottom = y + 10
+    scroll_max = max(0, (content_bottom + 48) - viewport.bottom)
+    surf.set_clip(old_clip)
+    _draw_scroll_hint(surf, viewport, scroll, scroll_max)
+    return viewport, scroll_max
+
+
 def _draw_loadout_formation_panel(surf, rect, mouse_pos, members, selected_index, *, drag_index=None, drag_hover_slot=None):
     draw_beveled_panel(surf, rect, title="Formation")
     draw_text(surf, "Drag an adventurer to another slot to swap positions.", font_body(16), TEXT_SOFT, (rect.x + 20, rect.y + 56))
@@ -904,7 +952,7 @@ def _draw_loadout_formation_panel(surf, rect, mouse_pos, members, selected_index
     return formation_members, formation_slots
 
 
-def _draw_loadout_detail_panel(surf, rect, mouse_pos, members, selected_index, *, allowed_artifact_ids=None):
+def _draw_loadout_detail_panel(surf, rect, mouse_pos, members, selected_index, *, allowed_artifact_ids=None, scroll: int = 0):
     draw_beveled_panel(surf, rect, title="Adventurer Detail")
     buttons = {
         "weapon_prev": None,
@@ -912,11 +960,16 @@ def _draw_loadout_detail_panel(surf, rect, mouse_pos, members, selected_index, *
         "classes": [],
         "skills": [],
         "artifacts": [],
+        "viewport": pygame.Rect(rect.x + 12, rect.y + 42, rect.width - 24, rect.height - 54),
+        "scroll_max": 0,
     }
     if not members:
         draw_text(surf, "Select an adventurer to begin.", font_headline(24, bold=True), TEXT, (rect.x + 24, rect.y + 72))
         return buttons
 
+    viewport = buttons["viewport"]
+    old_clip = surf.get_clip()
+    surf.set_clip(viewport)
     selected_index = max(0, min(selected_index, len(members) - 1))
     member = members[selected_index]
     adventurer = ADVENTURERS_BY_ID[member["adventurer_id"]]
@@ -931,12 +984,13 @@ def _draw_loadout_detail_panel(surf, rect, mouse_pos, members, selected_index, *
         if index != selected_index and other.get("artifact_id") is not None
     }
 
-    draw_text(surf, adventurer.name, font_headline(30, bold=True), TEXT, (rect.x + 22, rect.y + 54))
-    draw_text(surf, f"{SLOT_LABELS[member['slot']]} | HP {adventurer.hp} | ATK {adventurer.attack} | DEF {adventurer.defense} | SPD {adventurer.speed}", font_body(16, bold=True), TEXT_SOFT, (rect.x + 22, rect.y + 92))
-    draw_text(surf, adventurer.innate.name, font_label(11, bold=True), GOLD_BRIGHT, (rect.x + 22, rect.y + 124))
-    _draw_wrapped_lines(surf, [adventurer.innate.description], rect.x + 22, rect.y + 146, rect.width - 44, font=font_body(15), color=TEXT_SOFT, line_height=20)
+    y0 = rect.y + 54 - scroll
+    draw_text(surf, adventurer.name, font_headline(30, bold=True), TEXT, (rect.x + 22, y0))
+    draw_text(surf, f"{SLOT_LABELS[member['slot']]} | HP {adventurer.hp} | ATK {adventurer.attack} | DEF {adventurer.defense} | SPD {adventurer.speed}", font_body(16, bold=True), TEXT_SOFT, (rect.x + 22, y0 + 38))
+    draw_text(surf, adventurer.innate.name, font_label(11, bold=True), GOLD_BRIGHT, (rect.x + 22, y0 + 70))
+    innate_height = _draw_wrapped_lines(surf, [adventurer.innate.description], rect.x + 22, y0 + 92, rect.width - 44, font=font_body(15), color=TEXT_SOFT, line_height=20)
 
-    weapon_panel = pygame.Rect(rect.x + 22, rect.y + 204, rect.width - 44, 144)
+    weapon_panel = pygame.Rect(rect.x + 22, y0 + 92 + innate_height + 16, rect.width - 44, 150)
     draw_beveled_panel(surf, weapon_panel, title="Primary Weapon")
     prev_rect = pygame.Rect(weapon_panel.x + 10, weapon_panel.y + 48, 34, 34)
     next_rect = pygame.Rect(weapon_panel.right - 44, weapon_panel.y + 48, 34, 34)
@@ -976,7 +1030,7 @@ def _draw_loadout_detail_panel(surf, rect, mouse_pos, members, selected_index, *
             hovered_skill = skill
     buttons["skills"] = skill_buttons
     skill_preview = hovered_skill or current_skill
-    skill_detail_rect = pygame.Rect(rect.x + 22, skill_label_y + 74, rect.width - 44, 68)
+    skill_detail_rect = pygame.Rect(rect.x + 22, skill_label_y + 74, rect.width - 44, 76)
     draw_beveled_panel(surf, skill_detail_rect, fill_top=SURFACE_HIGH, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
     draw_text(surf, skill_preview.name, font_body(17, bold=True), GOLD_BRIGHT, (skill_detail_rect.x + 14, skill_detail_rect.y + 14))
     _draw_wrapped_lines(surf, [skill_preview.description], skill_detail_rect.x + 14, skill_detail_rect.y + 38, skill_detail_rect.width - 28, font=font_body(14), color=TEXT_SOFT, line_height=18)
@@ -999,17 +1053,31 @@ def _draw_loadout_detail_panel(surf, rect, mouse_pos, members, selected_index, *
             hovered_artifact = artifact
     buttons["artifacts"] = artifact_buttons
     artifact_preview = hovered_artifact or current_artifact or (ARTIFACTS_BY_ID[artifact_ids[0]] if artifact_ids else None)
-    artifact_detail_rect = pygame.Rect(rect.x + 22, rect.bottom - 116, rect.width - 44, 94)
+    artifact_rows = max(1, (len(artifact_ids) + 1) // 2)
+    artifact_list_bottom = artifact_label_y + 18 + artifact_rows * 38
+    artifact_detail_rect = pygame.Rect(rect.x + 22, artifact_list_bottom + 12, rect.width - 44, 104)
     draw_beveled_panel(surf, artifact_detail_rect, fill_top=SURFACE_HIGH, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
     preview_name = artifact_preview.name if artifact_preview is not None else "No artifact available"
     draw_text(surf, preview_name, font_body(17, bold=True), GOLD_BRIGHT if artifact_preview is not None else TEXT_MUTE, (artifact_detail_rect.x + 14, artifact_detail_rect.y + 12))
     _draw_wrapped_lines(surf, _artifact_detail_lines(artifact_preview), artifact_detail_rect.x + 14, artifact_detail_rect.y + 36, artifact_detail_rect.width - 28, font=font_body(13), color=TEXT_SOFT, line_height=16)
+    content_bottom = artifact_detail_rect.bottom + 18
+    buttons["scroll_max"] = max(0, content_bottom - viewport.bottom)
+    surf.set_clip(old_clip)
+    _draw_scroll_hint(surf, viewport, scroll, buttons["scroll_max"])
+    buttons["weapon_prev"] = buttons["weapon_prev"] if buttons["weapon_prev"].colliderect(viewport) else None
+    buttons["weapon_next"] = buttons["weapon_next"] if buttons["weapon_next"].colliderect(viewport) else None
+    buttons["classes"] = _visible_button_entries(buttons["classes"], viewport)
+    buttons["skills"] = _visible_button_entries(buttons["skills"], viewport)
+    buttons["artifacts"] = _visible_button_entries(buttons["artifacts"], viewport)
     return buttons
 
 
-def _draw_loadout_summary_panel(surf, rect, summary_blocks, waiting_note, mouse_pos, confirm_label, confirm_disabled):
+def _draw_loadout_summary_panel(surf, rect, summary_blocks, waiting_note, mouse_pos, confirm_label, confirm_disabled, *, scroll: int = 0):
     draw_beveled_panel(surf, rect, title="Loadout Summary")
-    y = rect.y + 60
+    viewport = pygame.Rect(rect.x + 12, rect.y + 42, rect.width - 24, rect.height - 124)
+    old_clip = surf.get_clip()
+    surf.set_clip(viewport)
+    y = rect.y + 60 - scroll
     for title, lines in summary_blocks:
         draw_text(surf, title, font_label(11, bold=True), TEXT_MUTE, (rect.x + 18, y))
         y += 24
@@ -1018,15 +1086,20 @@ def _draw_loadout_summary_panel(surf, rect, summary_blocks, waiting_note, mouse_
             y += 6
         y += 8
     if waiting_note:
-        wait_rect = pygame.Rect(rect.x + 18, rect.bottom - 174, rect.width - 36, 76)
+        wait_rect = pygame.Rect(rect.x + 18, y + 8, rect.width - 36, 76)
         draw_beveled_panel(surf, wait_rect, fill_top=SURFACE_HIGH, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
         _draw_wrapped_lines(surf, [waiting_note], wait_rect.x + 12, wait_rect.y + 12, wait_rect.width - 24, font=font_body(14), color=GOLD_BRIGHT, line_height=18)
+        y = wait_rect.bottom + 12
+    content_bottom = y
+    scroll_max = max(0, content_bottom - viewport.bottom)
+    surf.set_clip(old_clip)
+    _draw_scroll_hint(surf, viewport, scroll, scroll_max)
     confirm_rect = pygame.Rect(rect.x + 18, rect.bottom - 72, rect.width - 36, 44)
     draw_primary_button(surf, confirm_rect, mouse_pos, confirm_label, disabled=confirm_disabled)
-    return confirm_rect
+    return confirm_rect, viewport, scroll_max
 
 
-def draw_quest_loadout(surf, mouse_pos, setup_state, selected_index, *, player_team_num: int = 1, waiting_note: str = "", drag_state: dict | None = None):
+def draw_quest_loadout(surf, mouse_pos, setup_state, selected_index, *, player_team_num: int = 1, waiting_note: str = "", drag_state: dict | None = None, detail_scroll: int = 0, summary_scroll: int = 0):
     draw_background(surf)
     btns = draw_top_bar(
         surf,
@@ -1058,13 +1131,14 @@ def draw_quest_loadout(surf, mouse_pos, setup_state, selected_index, *, player_t
         members,
         selected_index,
         allowed_artifact_ids=None if allowed_raw is None else set(allowed_raw),
+        scroll=detail_scroll,
     )
     summary_blocks = [
         ("Role Summary", [quest_role_summary(members)]),
         ("Warnings", quest_warnings(members)),
         ("Quick Notes", recommendation_notes(members)),
     ]
-    confirm_btn = _draw_loadout_summary_panel(surf, right_rect, summary_blocks, waiting_note, mouse_pos, "Confirm Loadouts", len(members) != 3)
+    confirm_btn, summary_viewport, summary_scroll_max = _draw_loadout_summary_panel(surf, right_rect, summary_blocks, waiting_note, mouse_pos, "Confirm Loadouts", len(members) != 3, scroll=summary_scroll)
     btns["back"] = btns.pop("left")
     btns["formation_members"] = formation_members
     btns["formation_slots"] = formation_slots
@@ -1074,6 +1148,10 @@ def draw_quest_loadout(surf, mouse_pos, setup_state, selected_index, *, player_t
     btns["skills"] = detail_buttons["skills"]
     btns["artifacts"] = detail_buttons["artifacts"]
     btns["confirm"] = confirm_btn
+    btns["detail_viewport"] = detail_buttons["viewport"]
+    btns["detail_scroll_max"] = detail_buttons["scroll_max"]
+    btns["summary_viewport"] = summary_viewport
+    btns["summary_scroll_max"] = summary_scroll_max
     return btns
 
 
@@ -1133,7 +1211,7 @@ def draw_bout_lobby(surf, mouse_pos, p1_ready: bool, p2_ready: bool, *, player_s
     return btns
 
 
-def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids, current_player, *, player_seat: int = 1):
+def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids, current_player, *, player_seat: int = 1, detail_scroll: int = 0):
     draw_background(surf)
     btns = draw_top_bar(
         surf,
@@ -1153,10 +1231,9 @@ def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids,
         pick_pool.append((draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=focused_id == adventurer_id, unavailable=unavailable, small=True), adventurer_id))
     side_panel = pygame.Rect(26, 118, 320, 534)
     enemy_panel = pygame.Rect(1054, 118, 320, 534)
-    detail_rect = pygame.Rect(264, 670, 872, 184)
+    detail_rect = pygame.Rect(264, 668, 872, 186)
     draw_beveled_panel(surf, side_panel, title="Player 1 • You" if player_seat == 1 else "Player 1 • AI Rival")
     draw_beveled_panel(surf, enemy_panel, title="Player 2 • You" if player_seat == 2 else "Player 2 • AI Rival")
-    draw_beveled_panel(surf, detail_rect, title="Focused Adventurer")
     for index in range(3):
         rect = pygame.Rect(side_panel.x + 18, side_panel.y + 54 + index * 154, side_panel.width - 36, 128)
         if index < len(team1_ids):
@@ -1171,20 +1248,20 @@ def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids,
         else:
             draw_beveled_panel(surf, rect, fill_top=SURFACE, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
             draw_text(surf, "Open Slot", font_label(12, bold=True), TEXT_MUTE, rect.center, center=True)
-    focused = ADVENTURERS_BY_ID[focused_id]
-    draw_text(surf, focused.name, font_headline(28, bold=True), TEXT, (detail_rect.x + 22, detail_rect.y + 52))
-    draw_text(surf, ", ".join(role_tags_for_adventurer(focused)), font_label(12, bold=True), GOLD_BRIGHT, (detail_rect.x + 22, detail_rect.y + 88))
-    draw_text(surf, f"Weapons: {focused.signature_weapons[0].name} / {focused.signature_weapons[1].name}", font_body(17, bold=True), TEXT_SOFT, (detail_rect.x + 22, detail_rect.y + 122))
     draft_btn = pygame.Rect(detail_rect.right - 198, detail_rect.bottom - 50, 176, 36)
     can_pick = focused_id not in team1_ids and focused_id not in team2_ids and len(team1_ids) + len(team2_ids) < 6
+    focused = ADVENTURERS_BY_ID[focused_id]
+    detail_viewport, detail_scroll_max = _draw_draft_detail_panel(surf, detail_rect, mouse_pos, focused, footer_rect=draft_btn, scroll=detail_scroll)
     draw_primary_button(surf, draft_btn, mouse_pos, "Draft Pick", disabled=not can_pick or current_player != player_seat)
     btns["back"] = btns.pop("left")
     btns["pool"] = pick_pool
     btns["draft"] = draft_btn
+    btns["detail_viewport"] = detail_viewport
+    btns["detail_scroll_max"] = detail_scroll_max
     return btns
 
 
-def draw_bout_loadout(surf, mouse_pos, setup_state, selected_index, *, player_team_num: int = 1, waiting_note: str = "", drag_state: dict | None = None):
+def draw_bout_loadout(surf, mouse_pos, setup_state, selected_index, *, player_team_num: int = 1, waiting_note: str = "", drag_state: dict | None = None, detail_scroll: int = 0, summary_scroll: int = 0):
     draw_background(surf)
     btns = draw_top_bar(
         surf,
@@ -1217,6 +1294,7 @@ def draw_bout_loadout(surf, mouse_pos, setup_state, selected_index, *, player_te
         members,
         selected_index,
         allowed_artifact_ids=None if allowed_raw is None else set(allowed_raw),
+        scroll=detail_scroll,
     )
     opponent_lines = [f"{SLOT_LABELS[member['slot']]}: {ADVENTURERS_BY_ID[member['adventurer_id']].name}" for member in enemy_members]
     pressure_line = "Second seat gets the round-one bonus swap." if player_team_num == 2 else "The rival holds the round-one bonus swap if they drafted second."
@@ -1225,7 +1303,7 @@ def draw_bout_loadout(surf, mouse_pos, setup_state, selected_index, *, player_te
         ("Rival Roster", opponent_lines or ["The opposing side is not locked yet."]),
         ("Notes", recommendation_notes(members)[:2]),
     ]
-    confirm_btn = _draw_loadout_summary_panel(surf, right_rect, summary_blocks, waiting_note, mouse_pos, "Confirm Bout Loadouts", len(members) != 3)
+    confirm_btn, summary_viewport, summary_scroll_max = _draw_loadout_summary_panel(surf, right_rect, summary_blocks, waiting_note, mouse_pos, "Confirm Bout Loadouts", len(members) != 3, scroll=summary_scroll)
     btns["back"] = btns.pop("left")
     btns["formation_members"] = formation_members
     btns["formation_slots"] = formation_slots
@@ -1235,6 +1313,10 @@ def draw_bout_loadout(surf, mouse_pos, setup_state, selected_index, *, player_te
     btns["skills"] = detail_buttons["skills"]
     btns["artifacts"] = detail_buttons["artifacts"]
     btns["confirm"] = confirm_btn
+    btns["detail_viewport"] = detail_buttons["viewport"]
+    btns["detail_scroll_max"] = detail_buttons["scroll_max"]
+    btns["summary_viewport"] = summary_viewport
+    btns["summary_scroll_max"] = summary_scroll_max
     return btns
 
 

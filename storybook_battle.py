@@ -136,9 +136,20 @@ class StoryBattleController:
         return spells
 
     def available_bonus_spells(self, actor) -> list:
-        if actor is None or actor.markers.get("spell_bonus_rounds", 0) <= 0:
+        if actor is None:
             return []
-        return [effect for effect in actor.active_spells() if self._effect_usable(actor, effect)]
+        spells = []
+        if actor.markers.get("spell_bonus_rounds", 0) > 0:
+            spells.extend(effect for effect in actor.active_spells() if self._effect_usable(actor, effect))
+        bonus_effect = actor.markers.get("artifact_bonus_spell_effect")
+        if (
+            actor.markers.get("artifact_bonus_spell_rounds", 0) > 0
+            and bonus_effect is not None
+            and self._effect_usable(actor, bonus_effect)
+            and all(effect.id != bonus_effect.id for effect in spells)
+        ):
+            spells.append(bonus_effect)
+        return spells
 
     def available_actions(self, actor=None) -> list[PendingChoice]:
         actor = actor or self.active_actor
