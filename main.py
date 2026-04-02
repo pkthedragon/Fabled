@@ -2102,6 +2102,22 @@ class Game:
         ly = (screen_pos[1] - oy) / self._scale
         return (int(lx), int(ly))
 
+    @staticmethod
+    def _clamp_logical_pos(pos):
+        return (
+            max(0, min(WIDTH - 1, int(pos[0]))),
+            max(0, min(HEIGHT - 1, int(pos[1]))),
+        )
+
+    def _logical_rect_to_screen(self, rect):
+        ox, oy = self._canvas_offset
+        return pygame.Rect(
+            ox + round(rect.x * self._scale),
+            oy + round(rect.y * self._scale),
+            max(1, round(rect.width * self._scale)),
+            max(1, round(rect.height * self._scale)),
+        )
+
     def _iter_button_rects(self, value):
         if isinstance(value, pygame.Rect):
             yield value
@@ -2117,15 +2133,27 @@ class Game:
                 yield from self._iter_button_rects(child)
 
     def _storybook_input_pos(self, screen_pos):
-        logical_pos = self._to_logical(screen_pos)
-        raw_pos = (int(screen_pos[0]), int(screen_pos[1]))
         button_rects = list(self._iter_button_rects(getattr(self.storybook, "last_buttons", {})))
+        logical_pos = self._clamp_logical_pos(self._to_logical(screen_pos))
+        raw_pos = self._clamp_logical_pos((int(screen_pos[0]), int(screen_pos[1])))
         if not button_rects:
             return logical_pos
-        raw_hits = any(rect.collidepoint(raw_pos) for rect in button_rects)
-        logical_hits = any(rect.collidepoint(logical_pos) for rect in button_rects)
-        if raw_hits and not logical_hits:
+        if any(rect.collidepoint(logical_pos) for rect in button_rects):
+            return logical_pos
+        if any(rect.collidepoint(raw_pos) for rect in button_rects):
             return raw_pos
+        sx, sy = int(screen_pos[0]), int(screen_pos[1])
+        for rect in button_rects:
+            screen_rect = self._logical_rect_to_screen(rect)
+            if not screen_rect.collidepoint((sx, sy)):
+                continue
+            rel_x = 0.5 if screen_rect.width <= 1 else (sx - screen_rect.x) / screen_rect.width
+            rel_y = 0.5 if screen_rect.height <= 1 else (sy - screen_rect.y) / screen_rect.height
+            mapped = (
+                rect.x + rel_x * rect.width,
+                rect.y + rel_y * rect.height,
+            )
+            return self._clamp_logical_pos(mapped)
         return logical_pos
 
     def _event_input_pos(self, screen_pos):
@@ -2153,6 +2181,8 @@ class Game:
                     evt_pos = self._event_input_pos(e.pos)
                     if self.phase in ("team_select", "pre_battle_edit"):
                         self._handle_team_select_mouse_down(evt_pos)
+                    elif self.phase == "storybook" and self.storybook.handle_mouse_down(evt_pos):
+                        continue
                     else:
                         self.handle_click(evt_pos)
                 if e.type == pygame.MOUSEBUTTONUP and e.button == 1:
@@ -2163,9 +2193,14 @@ class Game:
                     evt_pos = self._event_input_pos(e.pos)
                     if self.phase in ("team_select", "pre_battle_edit"):
                         self._handle_team_select_mouse_up(evt_pos)
-                if e.type == pygame.MOUSEMOTION and self.phase in ("team_select", "pre_battle_edit"):
+                    elif self.phase == "storybook":
+                        self.storybook.handle_mouse_up(evt_pos)
+                if e.type == pygame.MOUSEMOTION:
                     evt_pos = self._event_input_pos(e.pos)
-                    self._handle_team_select_mouse_motion(evt_pos, e.buttons)
+                    if self.phase in ("team_select", "pre_battle_edit"):
+                        self._handle_team_select_mouse_motion(evt_pos, e.buttons)
+                    elif self.phase == "storybook":
+                        self.storybook.handle_mousemotion(evt_pos, e.buttons)
 
             self._lan_tick()
             self._maybe_auto_progress()

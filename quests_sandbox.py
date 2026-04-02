@@ -171,6 +171,20 @@ def cycle_member_slot(setup_state: dict, team_num: int, member_index: int) -> bo
     return True
 
 
+def set_member_slot(setup_state: dict, team_num: int, member_index: int, slot: str) -> bool:
+    team = setup_state[_team_key(team_num)]
+    if not (0 <= member_index < len(team)) or slot not in SLOT_ORDER:
+        return False
+    current_slot = team[member_index]["slot"]
+    if current_slot == slot:
+        return True
+    occupant_index = _member_by_slot(team, slot)
+    team[member_index]["slot"] = slot
+    if occupant_index is not None and occupant_index != member_index:
+        team[occupant_index]["slot"] = current_slot
+    return True
+
+
 def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> bool:
     team = setup_state[_team_key(team_num)]
     if not (0 <= member_index < len(team)):
@@ -182,6 +196,23 @@ def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> b
     member["class_skill_id"] = CLASS_SKILLS[class_name][0].id
     artifacts = compatible_artifact_ids(class_name, _allowed_artifact_ids_for_team(setup_state, team_num))
     if member["artifact_id"] not in artifacts:
+        member["artifact_id"] = artifacts[0] if artifacts else None
+    _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
+    return True
+
+
+def set_member_class(setup_state: dict, team_num: int, member_index: int, class_name: str) -> bool:
+    team = setup_state[_team_key(team_num)]
+    if not (0 <= member_index < len(team)) or class_name not in CLASS_SKILLS:
+        return False
+    member = team[member_index]
+    member["class_name"] = class_name
+    available_skills = CLASS_SKILLS[class_name]
+    current_skill = member.get("class_skill_id")
+    if current_skill not in {skill.id for skill in available_skills}:
+        member["class_skill_id"] = available_skills[0].id
+    artifacts = compatible_artifact_ids(class_name, _allowed_artifact_ids_for_team(setup_state, team_num))
+    if member.get("artifact_id") not in artifacts:
         member["artifact_id"] = artifacts[0] if artifacts else None
     _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
     return True
@@ -201,6 +232,18 @@ def cycle_member_skill(setup_state: dict, team_num: int, member_index: int) -> b
     return True
 
 
+def set_member_skill(setup_state: dict, team_num: int, member_index: int, skill_id: str) -> bool:
+    team = setup_state[_team_key(team_num)]
+    if not (0 <= member_index < len(team)):
+        return False
+    member = team[member_index]
+    skills = CLASS_SKILLS[member["class_name"]]
+    if skill_id not in {skill.id for skill in skills}:
+        return False
+    member["class_skill_id"] = skill_id
+    return True
+
+
 def cycle_member_weapon(setup_state: dict, team_num: int, member_index: int) -> bool:
     team = setup_state[_team_key(team_num)]
     if not (0 <= member_index < len(team)):
@@ -211,6 +254,19 @@ def cycle_member_weapon(setup_state: dict, team_num: int, member_index: int) -> 
     current_weapon = member["primary_weapon_id"] or weapon_ids[0]
     current_index = weapon_ids.index(current_weapon)
     member["primary_weapon_id"] = weapon_ids[(current_index + 1) % len(weapon_ids)]
+    return True
+
+
+def set_member_weapon(setup_state: dict, team_num: int, member_index: int, weapon_id: str) -> bool:
+    team = setup_state[_team_key(team_num)]
+    if not (0 <= member_index < len(team)):
+        return False
+    member = team[member_index]
+    adventurer = next(adventurer for adventurer in ADVENTURERS if adventurer.id == member["adventurer_id"])
+    weapon_ids = [weapon.id for weapon in adventurer.signature_weapons]
+    if weapon_id not in weapon_ids:
+        return False
+    member["primary_weapon_id"] = weapon_id
     return True
 
 
@@ -235,6 +291,29 @@ def cycle_member_artifact(setup_state: dict, team_num: int, member_index: int) -
         if candidate not in used_by_others:
             member["artifact_id"] = candidate
             return True
+    return True
+
+
+def set_member_artifact(setup_state: dict, team_num: int, member_index: int, artifact_id: str | None) -> bool:
+    team = setup_state[_team_key(team_num)]
+    if not (0 <= member_index < len(team)):
+        return False
+    member = team[member_index]
+    allowed_artifact_ids = _allowed_artifact_ids_for_team(setup_state, team_num)
+    valid_ids = compatible_artifact_ids(member["class_name"], allowed_artifact_ids)
+    if artifact_id is None:
+        member["artifact_id"] = None
+        return True
+    if artifact_id not in valid_ids:
+        return False
+    used_by_others = {
+        other.get("artifact_id")
+        for index, other in enumerate(team)
+        if index != member_index and other.get("artifact_id") is not None
+    }
+    if artifact_id in used_by_others:
+        return False
+    member["artifact_id"] = artifact_id
     return True
 
 

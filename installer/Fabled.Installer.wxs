@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package
+    Name="Fabled"
+    Manufacturer="Fabled"
+    Language="1033"
+    Version="$(var.ProductVersion)"
+    UpgradeCode="0CF0E34C-0B08-46B0-9C5D-4AF4676DBE14"
+    InstallerVersion="500"
+    Scope="perMachine"
+    Compressed="yes">
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Fabled is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="Fabled" />
+    </StandardDirectory>
+
+    <Feature Id="MainFeature" Title="Fabled" Level="1" ConfigurableDirectory="INSTALLFOLDER">
+      <ComponentGroupRef Id="ApplicationComponents" />
+    </Feature>
+  </Package>
+
+  <Fragment>
+    <ComponentGroup Id="ApplicationComponents" Directory="INSTALLFOLDER">
+      <Component
+        Id="MainExecutableComponent"
+        Bitness="always64"
+        Guid="AC6E43C3-0D69-4D53-82A4-2842059C0F8B">
+        <File
+          Id="FabledExecutableFile"
+          Source="$(var.SourceExe)"
+          KeyPath="yes"
+          Checksum="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+</Wix>

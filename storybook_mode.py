@@ -10,7 +10,16 @@ from quests_ai_bout import choose_bout_pick
 from quests_ai_loadout import solve_team_loadout
 from quests_ai_quest import choose_quest_party
 from quests_ruleset_data import ARTIFACTS, ARTIFACTS_BY_ID
-from quests_sandbox import build_battle_from_setup, create_setup_from_team_ids, cycle_member_field, setup_is_ready
+from quests_sandbox import (
+    build_battle_from_setup,
+    create_setup_from_team_ids,
+    cycle_member_weapon,
+    set_member_artifact,
+    set_member_class,
+    set_member_skill,
+    set_member_slot,
+    setup_is_ready,
+)
 from storybook_battle import StoryBattleController, StoryLanBattleController
 from storybook_content import BOUT_MODES, COSMETIC_CATEGORIES, STORY_QUESTS, catalog_entries, draft_offer, shop_items_for_tab, shop_tab_note
 from storybook_lan import StoryLanSession, deserialize_setup_state, friend_host_available, serialize_member, serialize_setup_state
@@ -20,7 +29,9 @@ from storybook_ranked import (
     effective_matchmaking_rating,
     ensure_storybook_glory,
     find_ai_match_profile,
+    log_quest_ai_match,
     pressure_label,
+    protected_rank_name,
     rank_name,
     target_team_score_for_glory,
     update_glory_after_match,
@@ -72,12 +83,18 @@ class StorybookMode:
         self.quest_selected_ids: list[str] = []
         self.quest_setup_state: dict | None = None
         self.quest_loadout_index = 0
+        self.loadout_drag: dict | None = None
+        self.loadout_drag_pos = None
         self.quest_player_seat = 1
         self.quest_run_active = False
         self.quest_run_wins = 0
         self.quest_run_consecutive_losses = 0
         self.quest_run_opponent_glories: list[int] = []
         self.quest_player_team: list[dict] | None = None
+        self.quest_runs = {
+            "ai": self._empty_quest_run_state(),
+            "lan": self._empty_quest_run_state(),
+        }
         self.quest_remote_team: list[dict] | None = None
         self.quest_remote_glory = ensure_storybook_glory(getattr(self.profile, "ranked_rating", 500), getattr(self.profile, "ranked_games_played", 0))
         self.quest_local_ready = False
@@ -96,6 +113,7 @@ class StorybookMode:
         self.bout_player_seat = 1
         self.bout_ai_seat = 2
         self.bout_setup_state: dict | None = None
+        self.bout_loadout_index = 0
         self.bout_remote_glory = ensure_storybook_glory(getattr(self.profile, "ranked_rating", 500), getattr(self.profile, "ranked_games_played", 0))
         self.bout_local_ready = False
         self.bout_remote_ready = False
@@ -135,6 +153,18 @@ class StorybookMode:
             self._load_selected_friend_into_editor()
         self._reset_shop_focus()
 
+    @staticmethod
+    def _empty_quest_run_state():
+        return {
+            "active": False,
+            "wins": 0,
+            "losses": 0,
+            "opponent_glories": [],
+            "team": None,
+            "party_id": None,
+            "match_count": 0,
+        }
+
     def _normalize_profile(self):
         if getattr(self.profile, "gold", 0) <= 0 and getattr(self.profile, "player_exp", 0) <= 0:
             self.profile.gold = 1200
@@ -142,7 +172,10 @@ class StorybookMode:
             getattr(self.profile, "ranked_rating", 500),
             getattr(self.profile, "ranked_games_played", 0),
         )
-        self.profile.storybook_rank_label = rank_name(self.profile.ranked_rating)
+        self.profile.storybook_rank_label = protected_rank_name(
+            self.profile.ranked_rating,
+            getattr(self.profile, "storybook_rank_label", None),
+        )
         self.profile.unlocked_artifacts = {
             artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID
         }
@@ -154,7 +187,10 @@ class StorybookMode:
         self._sync_friend_selection()
 
     def _persist_profile(self):
-        self.profile.storybook_rank_label = rank_name(self.profile.ranked_rating)
+        self.profile.storybook_rank_label = protected_rank_name(
+            self.profile.ranked_rating,
+            getattr(self.profile, "storybook_rank_label", None),
+        )
         self.profile.storybook_cosmetic_unlocks = set(self.shop_owned_cosmetics)
         save_campaign(self.profile)
 
@@ -311,26 +347,53 @@ class StorybookMode:
 
     def _glory_text(self) -> str:
         glory = ensure_storybook_glory(self.profile.ranked_rating, getattr(self.profile, "ranked_games_played", 0))
-        return f"{rank_name(glory)} | {glory} Glory"
+        return f"{getattr(self.profile, 'storybook_rank_label', protected_rank_name(glory, None))} | {glory} Glory"
 
-    def _quest_avg_opponent_glory(self) -> int:
-        if not self.quest_run_opponent_glories:
+    def _quest_run_state(self, mode: str | None = None) -> dict:
+        return self.quest_runs[mode or self.quest_opponent_mode]
+
+    @staticmethod
+    def _quest_party_lines_for(team: list[dict] | None) -> list[str]:
+        if not team:
+            return ["No current streak"]
+        return [member["adventurer_id"].replace("_", " ").title() for member in team[:3]]
+
+    def _reset_quest_run_state(self, mode: str):
+        self.quest_runs[mode] = self._empty_quest_run_state()
+        if mode == self.quest_opponent_mode:
+            self.quest_run_active = False
+            self.quest_run_wins = 0
+            self.quest_run_consecutive_losses = 0
+            self.quest_run_opponent_glories = []
+            self.quest_player_team = None
+
+    def _quest_avg_opponent_glory(self, mode: str | None = None) -> int:
+        state = self._quest_run_state(mode)
+        if not state["opponent_glories"]:
             return 0
-        return round(sum(self.quest_run_opponent_glories) / len(self.quest_run_opponent_glories))
+        return round(sum(state["opponent_glories"]) / len(state["opponent_glories"]))
 
-    def _quest_run_summary(self) -> dict:
-        party_lines = ["No active party"]
-        if self.quest_player_team:
-            party_lines = [member["adventurer_id"].replace("_", " ").title() for member in self.quest_player_team]
-        return {
-            "streak_text": f"{self.quest_run_wins} Wins" if self.quest_run_active else "Fresh Run",
-            "loss_text": f"{self.quest_run_consecutive_losses} / 3",
-            "pressure": pressure_label(self.profile.ranked_rating, self.quest_run_wins, self.quest_run_consecutive_losses, self._quest_avg_opponent_glory()),
-            "party_lines": party_lines,
-            "next_gold": quest_win_gold(self.quest_run_wins),
-            "exp_reward": QUEST_WIN_EXP,
-            "can_continue": self.quest_run_active and self.quest_opponent_mode == "ai",
-        }
+    def _quest_mode_summaries(self) -> list[dict]:
+        summaries = []
+        for mode in ("ai", "lan"):
+            state = self._quest_run_state(mode)
+            summaries.append(
+                {
+                    "mode": mode,
+                    "label": "Vs AI" if mode == "ai" else "LAN",
+                    "active": bool(state["active"]),
+                    "streak_text": f"{state['wins']} Wins" if state["active"] else "No active streak",
+                    "loss_text": f"{state['losses']} / 3" if state["active"] else "0 / 3",
+                    "pressure": pressure_label(
+                        self.profile.ranked_rating,
+                        state["wins"],
+                        state["losses"],
+                        self._quest_avg_opponent_glory(mode),
+                    ),
+                    "party_lines": self._quest_party_lines_for(state["team"] if state["active"] else None),
+                }
+            )
+        return summaries
 
     def _quest_loadout_waiting_note(self) -> str:
         if self.quest_opponent_mode != "lan":
@@ -340,6 +403,66 @@ class StorybookMode:
         if self.quest_remote_ready and not self.quest_local_ready:
             return "The remote commander is ready. Lock your own loadout to begin."
         return "Both commanders draft from the same six, then confirm loadouts independently."
+
+    def _bout_loadout_waiting_note(self) -> str:
+        if self.bout_opponent_mode != "lan":
+            return ""
+        if self.bout_local_ready and not self.bout_remote_ready:
+            return "Loadout locked. Waiting for the remote commander to finish."
+        if self.bout_remote_ready and not self.bout_local_ready:
+            return "The remote commander is ready. Lock your own loadout to begin."
+        return "Both duelists confirm their own formation and loadouts before the bout starts."
+
+    def _clear_loadout_drag(self):
+        self.loadout_drag = None
+        self.loadout_drag_pos = None
+
+    def _current_loadout_setup(self, route: str | None = None):
+        current_route = route or self.route
+        if current_route == "quest_loadout":
+            return self.quest_setup_state
+        if current_route == "bout_loadout":
+            return self.bout_setup_state
+        return None
+
+    def _current_loadout_team_num(self, route: str | None = None) -> int:
+        current_route = route or self.route
+        return self.quest_player_seat if current_route == "quest_loadout" else self.bout_player_seat
+
+    def _current_loadout_index(self, route: str | None = None) -> int:
+        current_route = route or self.route
+        return self.quest_loadout_index if current_route == "quest_loadout" else self.bout_loadout_index
+
+    def _set_current_loadout_index(self, index: int, route: str | None = None):
+        current_route = route or self.route
+        setup_state = self._current_loadout_setup(current_route)
+        if setup_state is None:
+            return
+        team_num = self._current_loadout_team_num(current_route)
+        total = len(setup_state.get(f"team{team_num}", []))
+        clamped = max(0, min(index, max(0, total - 1)))
+        if current_route == "quest_loadout":
+            self.quest_loadout_index = clamped
+        elif current_route == "bout_loadout":
+            self.bout_loadout_index = clamped
+
+    def _loadout_locked(self, route: str | None = None) -> bool:
+        current_route = route or self.route
+        if current_route == "quest_loadout":
+            return self.quest_local_ready
+        if current_route == "bout_loadout":
+            return self.bout_local_ready
+        return True
+
+    def _loadout_drop_slot(self, pos):
+        btns = self.last_buttons or {}
+        for rect, slot in btns.get("formation_slots", []):
+            if rect.collidepoint(pos):
+                return slot
+        for rect, _index, slot in btns.get("formation_members", []):
+            if rect.collidepoint(pos):
+                return slot
+        return None
 
     def _bout_lobby_status(self) -> list[str]:
         if self.bout_opponent_mode == "ai":
@@ -407,7 +530,7 @@ class StorybookMode:
                 self.shop_owned_cosmetics,
             )
         elif self.route == "quests_menu":
-            self.last_buttons = sbui.draw_quests_menu(surf, mouse_pos, self.quest_index, self.quest_opponent_mode, self._quest_run_summary())
+            self.last_buttons = sbui.draw_quests_menu(surf, mouse_pos, self._quest_mode_summaries())
         elif self.route == "quest_draft":
             self.last_buttons = sbui.draw_quest_draft(surf, mouse_pos, self.quest_offer_ids, self.quest_focus_id, self.quest_selected_ids)
         elif self.route == "quest_loadout":
@@ -418,9 +541,10 @@ class StorybookMode:
                 self.quest_loadout_index,
                 player_team_num=self.quest_player_seat,
                 waiting_note=self._quest_loadout_waiting_note(),
+                drag_state=self.loadout_drag if self.route == "quest_loadout" else None,
             )
         elif self.route == "bouts_menu":
-            self.last_buttons = sbui.draw_bouts_menu(surf, mouse_pos, self.bout_mode_index, self.bout_opponent_mode, self._glory_text())
+            self.last_buttons = sbui.draw_bouts_menu(surf, mouse_pos)
         elif self.route == "bout_lobby":
             self._sync_bout_ready_flags()
             self.last_buttons = sbui.draw_bout_lobby(
@@ -448,7 +572,10 @@ class StorybookMode:
                 surf,
                 mouse_pos,
                 self.bout_setup_state,
+                self.bout_loadout_index,
                 player_team_num=self.bout_player_seat,
+                waiting_note=self._bout_loadout_waiting_note(),
+                drag_state=self.loadout_drag if self.route == "bout_loadout" else None,
             )
         elif self.route == "catalog":
             self.last_buttons = sbui.draw_catalog(surf, mouse_pos, self.catalog_section_index, self.catalog_entry_index, self.catalog_scroll)
@@ -607,32 +734,18 @@ class StorybookMode:
             if self._hit(btns.get("back"), pos):
                 self.route = "guild_hall"
                 return None
-            if self._hit(btns.get("mode_ai"), pos):
+            if self._hit(btns.get("vs_ai"), pos):
                 self.quest_opponent_mode = "ai"
-                return None
-            if self._hit(btns.get("mode_lan"), pos):
-                self.quest_opponent_mode = "lan"
-                return None
-            if self._hit(btns.get("start"), pos):
-                if self.quest_opponent_mode == "ai":
-                    if self.quest_run_active:
-                        self._launch_next_quest_battle()
-                    else:
-                        self._start_quest_draft()
+                state = self._quest_run_state("ai")
+                if state["active"] and state["team"] is not None:
+                    self._launch_next_quest_battle()
                 else:
-                    self._open_lan_setup("quest")
-                return None
-            if self._hit(btns.get("new_run"), pos):
-                if self.quest_opponent_mode == "ai":
-                    self.quest_run_active = False
                     self._start_quest_draft()
-                else:
-                    self._open_lan_setup("quest")
                 return None
-            for rect, index in btns.get("quest_list", []):
-                if rect.collidepoint(pos):
-                    self.quest_index = index
-                    return None
+            if self._hit(btns.get("vs_lan"), pos):
+                self.quest_opponent_mode = "lan"
+                self._open_lan_setup("quest")
+                return None
             return None
 
         if route == "quest_draft":
@@ -651,9 +764,11 @@ class StorybookMode:
 
         if route == "quest_loadout":
             if self._hit(btns.get("back"), pos):
+                self._clear_loadout_drag()
                 self.route = "quest_draft"
                 return None
             if self._hit(btns.get("confirm"), pos):
+                self._clear_loadout_drag()
                 if self.quest_opponent_mode == "ai":
                     self._start_quest_run()
                 else:
@@ -661,13 +776,24 @@ class StorybookMode:
                 return None
             if self.quest_local_ready:
                 return None
-            for rect, index in btns.get("selectors", []):
+            for rect, index, _slot in btns.get("formation_members", []):
                 if rect.collidepoint(pos):
                     self.quest_loadout_index = index
                     return None
-            for rect, field_name in btns.get("fields", []):
+            if self._hit(btns.get("weapon_prev"), pos) or self._hit(btns.get("weapon_next"), pos):
+                cycle_member_weapon(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index)
+                return None
+            for rect, class_name in btns.get("classes", []):
                 if rect.collidepoint(pos):
-                    cycle_member_field(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index, field_name)
+                    set_member_class(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index, class_name)
+                    return None
+            for rect, skill_id in btns.get("skills", []):
+                if rect.collidepoint(pos):
+                    set_member_skill(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index, skill_id)
+                    return None
+            for rect, artifact_id, locked in btns.get("artifacts", []):
+                if rect.collidepoint(pos) and not locked:
+                    set_member_artifact(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index, artifact_id)
                     return None
             return None
 
@@ -675,25 +801,17 @@ class StorybookMode:
             if self._hit(btns.get("back"), pos):
                 self.route = "guild_hall"
                 return None
-            if self._hit(btns.get("mode_ai"), pos):
+            if self._hit(btns.get("vs_ai"), pos):
                 self.bout_opponent_mode = "ai"
+                self.bout_ready_1 = False
+                self.bout_ready_2 = True
+                self.bout_player_seat = 1
+                self.route = "bout_lobby"
                 return None
-            if self._hit(btns.get("mode_lan"), pos):
+            if self._hit(btns.get("vs_lan"), pos):
                 self.bout_opponent_mode = "lan"
+                self._open_lan_setup("bout")
                 return None
-            if self._hit(btns.get("enter"), pos):
-                if self.bout_opponent_mode == "ai":
-                    self.bout_ready_1 = False
-                    self.bout_ready_2 = True
-                    self.bout_player_seat = 1
-                    self.route = "bout_lobby"
-                else:
-                    self._open_lan_setup("bout")
-                return None
-            for rect, index in btns.get("modes", []):
-                if rect.collidepoint(pos):
-                    self.bout_mode_index = index
-                    return None
             return None
 
         if route == "bout_lobby":
@@ -731,9 +849,11 @@ class StorybookMode:
 
         if route == "bout_loadout":
             if self._hit(btns.get("back"), pos):
+                self._clear_loadout_drag()
                 self.route = "bout_draft"
                 return None
             if self._hit(btns.get("confirm"), pos):
+                self._clear_loadout_drag()
                 if self.bout_opponent_mode == "ai":
                     self._start_bout_battle()
                 else:
@@ -741,9 +861,24 @@ class StorybookMode:
                 return None
             if self.bout_local_ready:
                 return None
-            for rect, team_num, member_index, field_name in btns.get("fields", []):
-                if rect.collidepoint(pos) and team_num == self.bout_player_seat:
-                    cycle_member_field(self.bout_setup_state, team_num, member_index, field_name)
+            for rect, index, _slot in btns.get("formation_members", []):
+                if rect.collidepoint(pos):
+                    self.bout_loadout_index = index
+                    return None
+            if self._hit(btns.get("weapon_prev"), pos) or self._hit(btns.get("weapon_next"), pos):
+                cycle_member_weapon(self.bout_setup_state, self.bout_player_seat, self.bout_loadout_index)
+                return None
+            for rect, class_name in btns.get("classes", []):
+                if rect.collidepoint(pos):
+                    set_member_class(self.bout_setup_state, self.bout_player_seat, self.bout_loadout_index, class_name)
+                    return None
+            for rect, skill_id in btns.get("skills", []):
+                if rect.collidepoint(pos):
+                    set_member_skill(self.bout_setup_state, self.bout_player_seat, self.bout_loadout_index, skill_id)
+                    return None
+            for rect, artifact_id, locked in btns.get("artifacts", []):
+                if rect.collidepoint(pos) and not locked:
+                    set_member_artifact(self.bout_setup_state, self.bout_player_seat, self.bout_loadout_index, artifact_id)
                     return None
             return None
 
@@ -877,12 +1012,14 @@ class StorybookMode:
             elif self.route == "quest_draft":
                 self.route = "quests_menu"
             elif self.route == "quest_loadout":
+                self._clear_loadout_drag()
                 self.route = "quest_draft"
             elif self.route == "bout_lobby":
                 self.route = "bouts_menu"
             elif self.route == "bout_draft":
                 self.route = "bout_lobby"
             elif self.route == "bout_loadout":
+                self._clear_loadout_drag()
                 self.route = "bout_draft"
             elif self.route == "battle" and self.battle_controller is not None:
                 if self.battle_controller.phase in {"action_target", "bonus_target"}:
@@ -941,6 +1078,46 @@ class StorybookMode:
                 self.shop_item_scroll = max(0, min(max_scroll, self.shop_item_scroll - (event.y * 2)))
             return None
         return None
+
+    def handle_mouse_down(self, pos):
+        if self.route not in {"quest_loadout", "bout_loadout"} or self._loadout_locked():
+            return False
+        for rect, member_index, slot in (self.last_buttons or {}).get("formation_members", []):
+            if rect.collidepoint(pos):
+                self._set_current_loadout_index(member_index)
+                self.loadout_drag = {
+                    "route": self.route,
+                    "member_index": member_index,
+                    "origin_slot": slot,
+                    "hover_slot": slot,
+                }
+                self.loadout_drag_pos = pos
+                return True
+        return False
+
+    def handle_mousemotion(self, pos, buttons):
+        if self.loadout_drag is None or not buttons[0]:
+            return False
+        self.loadout_drag_pos = pos
+        self.loadout_drag["hover_slot"] = self._loadout_drop_slot(pos)
+        return True
+
+    def handle_mouse_up(self, pos):
+        if self.loadout_drag is None:
+            return False
+        drag = dict(self.loadout_drag)
+        self._clear_loadout_drag()
+        if drag.get("route") != self.route or self._loadout_locked():
+            return True
+        target_slot = self._loadout_drop_slot(pos)
+        if target_slot is None:
+            return True
+        setup_state = self._current_loadout_setup()
+        if setup_state is None:
+            return True
+        set_member_slot(setup_state, self._current_loadout_team_num(), drag["member_index"], target_slot)
+        self._set_current_loadout_index(drag["member_index"])
+        return True
 
     def _reset_shop_focus(self):
         items = shop_items_for_tab(self.shops_tab)
@@ -1061,24 +1238,56 @@ class StorybookMode:
         )
         self.profile.ranked_rating = new_glory
         self.profile.ranked_games_played = getattr(self.profile, "ranked_games_played", 0) + 1
-        self.profile.storybook_rank_label = rank_name(new_glory)
+        self.profile.storybook_rank_label = protected_rank_name(
+            new_glory,
+            getattr(self.profile, "storybook_rank_label", None),
+        )
         self._persist_profile()
         return f"Glory {old_glory} -> {new_glory} ({delta:+d})"
 
     def _finalize_quest_result(self, lines: list[str]) -> list[str]:
-        glory_line = self._apply_glory_result(did_win=self.result_victory, run_wins_before=self.quest_run_wins)
-        if self.current_battle_opponent_glory > 0:
-            self.quest_run_opponent_glories.append(self.current_battle_opponent_glory)
+        run_state = self._quest_run_state()
+        run_mode = self.quest_opponent_mode
+        run_wins_before = run_state["wins"]
+        run_losses_before = run_state["losses"]
+        glory_before = self.profile.ranked_rating
+        avg_opponent_glory_before = self._quest_avg_opponent_glory("ai")
+        party_snapshot = copy.deepcopy(run_state["team"]) if run_state["team"] is not None else None
+        if run_mode == "ai":
+            glory_line = self._apply_glory_result(did_win=self.result_victory, run_wins_before=run_wins_before)
+        else:
+            glory_line = "Glory is only adjusted in Quest Vs AI."
         if self.result_victory:
-            gold_reward = quest_win_gold(self.quest_run_wins)
-            self.quest_run_wins += 1
-            self.quest_run_consecutive_losses = 0
-            self.story_quest_best = max(self.story_quest_best, self.quest_run_wins)
+            if self.current_battle_opponent_glory > 0 and run_mode == "ai":
+                run_state["opponent_glories"].append(self.current_battle_opponent_glory)
+            gold_reward = quest_win_gold(run_state["wins"])
+            run_state["wins"] += 1
+            run_state["losses"] = 0
+            run_state["active"] = True
+            run_state["match_count"] += 1
+            self.quest_run_wins = run_state["wins"]
+            self.quest_run_consecutive_losses = run_state["losses"]
+            self.quest_run_opponent_glories = list(run_state["opponent_glories"])
+            self.story_quest_best = max(self.story_quest_best, run_state["wins"])
             self.profile.gold += gold_reward
             level_lines = self._apply_exp_gain(QUEST_WIN_EXP)
+            if run_mode == "ai":
+                log_quest_ai_match(
+                    {
+                        "did_win": True,
+                        "glory_before": glory_before,
+                        "glory_after": self.profile.ranked_rating,
+                        "opponent_glory": self.current_battle_opponent_glory,
+                        "run_wins_before": run_wins_before,
+                        "run_losses_before": run_losses_before,
+                        "party_ids": [member["adventurer_id"] for member in party_snapshot or []],
+                        "offer_ids": list(self.quest_offer_ids),
+                        "avg_opponent_glory_before": avg_opponent_glory_before,
+                    }
+                )
             self._persist_profile()
             return [
-                f"Quest streak: {self.quest_run_wins}",
+                f"Quest streak: {run_state['wins']}",
                 "Consecutive losses: 0/3",
                 f"Rewards earned: +{gold_reward} Gold, +{QUEST_WIN_EXP} EXP",
                 *level_lines,
@@ -1086,17 +1295,36 @@ class StorybookMode:
                 *lines,
             ]
 
-        self.quest_run_consecutive_losses += 1
+        run_state["losses"] += 1
+        run_state["match_count"] += 1
+        self.quest_run_wins = run_state["wins"]
+        self.quest_run_consecutive_losses = run_state["losses"]
+        self.quest_run_opponent_glories = list(run_state["opponent_glories"])
         summary = [
-            f"Quest streak: {self.quest_run_wins}",
-            f"Consecutive losses: {self.quest_run_consecutive_losses}/3",
+            f"Quest streak: {run_state['wins']}",
+            f"Consecutive losses: {run_state['losses']}/3",
             glory_line,
         ]
-        if self.quest_run_consecutive_losses >= 3 or self.quest_opponent_mode == "lan":
-            self.quest_run_active = False
+        if run_mode == "ai":
+            log_quest_ai_match(
+                {
+                    "did_win": False,
+                    "glory_before": glory_before,
+                    "glory_after": self.profile.ranked_rating,
+                    "opponent_glory": self.current_battle_opponent_glory,
+                    "run_wins_before": run_wins_before,
+                    "run_losses_before": run_losses_before,
+                    "party_ids": [member["adventurer_id"] for member in party_snapshot or []],
+                    "offer_ids": list(self.quest_offer_ids),
+                    "avg_opponent_glory_before": avg_opponent_glory_before,
+                }
+            )
+        if run_state["losses"] >= 3:
             summary.append("This quest run is over.")
+            self._reset_quest_run_state(run_mode)
         else:
-            summary.append("Continue sends the same party into another Glory-matched battle.")
+            self.quest_run_active = True
+            summary.append("This quest streak remains active from the quest menu.")
         self._persist_profile()
         return summary + lines
 
@@ -1116,15 +1344,13 @@ class StorybookMode:
         if self.result_victory:
             summary.append(f"Rewards earned: +{BOUT_WIN_GOLD} Gold, +{BOUT_WIN_EXP} EXP")
             summary.extend(level_lines)
-        if mode["id"] == "ranked":
-            summary.append(self._apply_glory_result(did_win=self.result_victory, run_wins_before=0))
         self._persist_profile()
         seat_note = "You drafted second and carried the round-one bonus swap." if self.bout_player_seat == 2 else "Your opponent drafted second and opened with the bonus swap advantage."
         return summary + [seat_note] + lines
 
     def _continue_from_results(self):
         if self.result_kind == "quest":
-            if self.quest_run_active and self.quest_opponent_mode == "ai":
+            if self._quest_run_state().get("active") and self.quest_opponent_mode == "ai":
                 self._launch_next_quest_battle()
             else:
                 self.route = "quests_menu"
@@ -1159,8 +1385,8 @@ class StorybookMode:
 
     def _abandon_battle(self):
         if self.current_battle_result_kind == "quest":
-            if self.quest_opponent_mode == "ai":
-                self.quest_run_active = False
+            self._quest_run_state()["active"] = False
+            self.quest_run_active = False
             self.route = "quests_menu"
         elif self.current_battle_result_kind == "bout":
             self.route = "bouts_menu"
@@ -1196,7 +1422,7 @@ class StorybookMode:
         return difficulty, best_choice
 
     def _start_quest_draft(self):
-        self.quest_run_active = False
+        self._clear_loadout_drag()
         self.quest_player_seat = 1
         self.quest_offer_ids = draft_offer(6)
         self.quest_focus_id = self.quest_offer_ids[0]
@@ -1231,6 +1457,7 @@ class StorybookMode:
                 team2_allowed_artifact_ids=player_artifacts,
             )
         self.quest_loadout_index = 0
+        self._clear_loadout_drag()
         self.quest_local_ready = False
         self.quest_remote_ready = False
         self.route = "quest_loadout"
@@ -1238,7 +1465,15 @@ class StorybookMode:
     def _start_quest_run(self):
         if self.quest_setup_state is None or len(self.quest_setup_state["team1"]) != 3:
             return
-        self.quest_player_team = copy.deepcopy(self.quest_setup_state["team1"])
+        run_state = self._quest_run_state()
+        run_state["team"] = copy.deepcopy(self.quest_setup_state[f"team{self.quest_player_seat}"])
+        run_state["party_id"] = "|".join(member["adventurer_id"] for member in run_state["team"])
+        run_state["match_count"] = 0
+        run_state["active"] = True
+        run_state["wins"] = 0
+        run_state["losses"] = 0
+        run_state["opponent_glories"] = []
+        self.quest_player_team = copy.deepcopy(run_state["team"])
         self.quest_run_active = True
         self.quest_run_wins = 0
         self.quest_run_consecutive_losses = 0
@@ -1246,21 +1481,28 @@ class StorybookMode:
         self._launch_next_quest_battle()
 
     def _launch_next_quest_battle(self):
-        if self.quest_player_team is None:
+        run_state = self._quest_run_state("ai")
+        if run_state["team"] is None:
             return
         match_profile = find_ai_match_profile(
             self.profile.ranked_rating,
-            self.quest_run_wins,
-            self.quest_run_consecutive_losses,
-            avg_opponent_glory=self._quest_avg_opponent_glory(),
+            run_state["wins"],
+            run_state["losses"],
+            avg_opponent_glory=self._quest_avg_opponent_glory("ai"),
             rng=self.rng,
         )
         difficulty, enemy_choice = self._generate_quest_ai_choice(match_profile.glory)
+        player_ids = [member["adventurer_id"] for member in run_state["team"]]
         setup_state = {
-            "offer_ids": list(dict.fromkeys(self.quest_selected_ids + list(enemy_choice.team_ids))),
-            "team1": copy.deepcopy(self.quest_player_team),
+            "offer_ids": list(dict.fromkeys(player_ids + list(enemy_choice.team_ids))),
+            "team1": copy.deepcopy(run_state["team"]),
             "team2": self._team_from_loadout(enemy_choice.loadout),
         }
+        self.quest_player_team = copy.deepcopy(run_state["team"])
+        self.quest_run_active = bool(run_state["active"])
+        self.quest_run_wins = run_state["wins"]
+        self.quest_run_consecutive_losses = run_state["losses"]
+        self.quest_run_opponent_glories = list(run_state["opponent_glories"])
         self.quest_setup_state = setup_state
         self._start_battle(
             setup_state,
@@ -1382,6 +1624,8 @@ class StorybookMode:
         )
         self.bout_local_ready = False
         self.bout_remote_ready = False
+        self.bout_loadout_index = 0
+        self._clear_loadout_drag()
         if self.bout_opponent_mode == "ai":
             player_ids = tuple(self._seat_ids(self.bout_player_seat))
             ai_ids = tuple(self._seat_ids(self.bout_ai_seat))
@@ -1511,6 +1755,15 @@ class StorybookMode:
             return
         self.quest_local_ready = True
         local_team = copy.deepcopy(self.quest_setup_state[f"team{self.quest_player_seat}"])
+        run_state = self._quest_run_state("lan")
+        run_state["team"] = copy.deepcopy(local_team)
+        run_state["party_id"] = "|".join(member["adventurer_id"] for member in local_team)
+        run_state["match_count"] = 0 if not run_state["active"] else run_state["match_count"]
+        if not run_state["active"]:
+            run_state["wins"] = 0
+            run_state["losses"] = 0
+            run_state["opponent_glories"] = []
+            run_state["active"] = True
         if self.lan_session.is_host:
             self.quest_player_team = local_team
             if self.quest_remote_ready and self.quest_remote_team is not None:
@@ -1537,7 +1790,7 @@ class StorybookMode:
         payload["type"] = "quest_battle_setup"
         payload["host_glory"] = self.profile.ranked_rating
         self.lan_session.send(payload)
-        self.quest_run_active = False
+        self.quest_run_active = self._quest_run_state("lan")["active"]
         self._start_battle(
             setup_state,
             "quest",

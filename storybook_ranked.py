@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
+import json
 import math
+import os
 import random
 
 
@@ -22,6 +25,20 @@ RANKS = (
     ("King", 1600),
     ("Emperor", 1800),
 )
+
+RANK_FLOORS = {
+    "Squire": 0,
+    "Knight": 175,
+    "Baron": 375,
+    "Viscount": 575,
+    "Earl": 775,
+    "Margrave": 975,
+    "Duke": 1175,
+    "Prince": 1375,
+    "King": 1575,
+    "Emperor": 1800,
+}
+RANK_INDEX = {name: index for index, (name, _threshold) in enumerate(RANKS)}
 
 STREAK_BONUS = {
     0: 0,
@@ -50,6 +67,10 @@ class MatchmakingProfile:
         )
 
 
+def is_provisional(matches_played: int) -> bool:
+    return max(0, int(matches_played)) < PROVISIONAL_MATCHES
+
+
 def clamp_glory(glory: float | int) -> int:
     return max(MIN_GLORY, min(MAX_GLORY, int(round(glory))))
 
@@ -67,6 +88,21 @@ def rank_name(glory: int) -> str:
         if glory >= threshold:
             current = name
     return current
+
+
+def protected_rank_name(glory: int, previous_rank: str | None = None) -> str:
+    natural = rank_name(glory)
+    if previous_rank not in RANK_INDEX:
+        return natural
+    if RANK_INDEX[natural] >= RANK_INDEX[previous_rank]:
+        return natural
+    current_index = RANK_INDEX[previous_rank]
+    while current_index > 0:
+        current_name = RANKS[current_index][0]
+        if glory >= RANK_FLOORS[current_name]:
+            return current_name
+        current_index -= 1
+    return RANKS[0][0]
 
 
 def streak_bonus(run_wins: int) -> int:
@@ -130,6 +166,21 @@ def update_glory_after_match(
     base_delta = k_factor(player_glory, matches_played) * (result - expected)
     final_delta = round(base_delta * run_depth_multiplier(run_wins_before_match))
     return clamp_glory(player_glory + final_delta), final_delta
+
+
+def _saved_games_dir() -> str:
+    home = os.path.expanduser("~")
+    saved_games = os.path.join(home, "Saved Games", "Fabled")
+    os.makedirs(saved_games, exist_ok=True)
+    return saved_games
+
+
+def log_quest_ai_match(payload: dict) -> None:
+    path = os.path.join(_saved_games_dir(), "quest_ai_glory_log.jsonl")
+    record = dict(payload)
+    record["timestamp"] = datetime.now().isoformat(timespec="seconds")
+    with open(path, "a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, separators=(",", ":")) + "\n")
 
 
 def match_quality_score(
