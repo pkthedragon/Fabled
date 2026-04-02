@@ -7,6 +7,12 @@ import pygame
 from settings import *
 from models import CombatantState, TeamState, BattleState
 from data import ARTIFACTS_BY_ID, LEGACY_ITEM_TO_ARTIFACT_ID
+from quests_ruleset_data import (
+    ADVENTURERS_BY_ID as QUESTS_ADVENTURERS_BY_ID,
+    ARTIFACTS_BY_ID as QUESTS_ARTIFACTS_BY_ID,
+    CLASS_SKILLS as QUESTS_CLASS_SKILLS,
+)
+from quests_sandbox import CLASS_ORDER as QUESTS_CLASS_ORDER, SLOT_ORDER as QUESTS_SLOT_ORDER, setup_is_ready
 from progression import (
     adventurer_level_from_clears,
     adventurer_sigil_unlocked,
@@ -1472,23 +1478,359 @@ def draw_training_menu(surf, mouse_pos) -> dict:
     surf.fill(BG)
     cx = WIDTH // 2
     draw_text(surf, "Training", 48, TEXT, cx, 80, center=True)
-    draw_text(surf, "Both modes use every adventurer and artifact in this local build.", 18, TEXT_DIM, cx, 145, center=True)
+    draw_text(surf, "All training modes use every adventurer and artifact in this local build.", 18, TEXT_DIM, cx, 145, center=True)
 
     local_btn = pygame.Rect(cx - 170, 250, 340, 62)
     lan_btn = pygame.Rect(cx - 170, 334, 340, 62)
+    quests_btn = pygame.Rect(cx - 170, 418, 340, 62)
     back_btn = pygame.Rect(20, 20, 100, 36)
 
     draw_button(surf, local_btn, "Local Play", mouse_pos, size=22,
                 normal=(55, 70, 120), hover=(72, 95, 160), border=BORDER_ACTIVE)
     draw_button(surf, lan_btn, "LAN Mode", mouse_pos, size=22,
                 normal=BLUE_DARK, hover=BLUE, border=BORDER_ACTIVE)
+    draw_button(surf, quests_btn, "Quests Sandbox", mouse_pos, size=22,
+                normal=(88, 58, 32), hover=(122, 80, 44), border=BORDER_ACTIVE)
     draw_button(surf, back_btn, "Back", mouse_pos, size=16)
 
-    draw_text(surf, "Local Play is same-device pass-and-play. LAN Mode is for two PCs on the same network.", 15, TEXT_MUTED, cx, 430, center=True)
+    draw_text(surf, "Local Play is same-device pass-and-play. LAN Mode is for two PCs on the same network.", 15, TEXT_MUTED, cx, 520, center=True)
+    draw_text(surf, "Quests Sandbox runs the restructuring prototype side-by-side with the legacy ruleset.", 15, TEXT_MUTED, cx, 546, center=True)
 
     return {
         "local_btn": local_btn,
         "lan_btn": lan_btn,
+        "quests_btn": quests_btn,
+        "back_btn": back_btn,
+    }
+
+
+def _quests_short(text, limit):
+    return text if len(text) <= limit else text[: limit - 3] + "..."
+
+
+def _draw_quests_setup_team_panel(surf, rect, mouse_pos, team_num, members):
+    slot_labels = {
+        SLOT_FRONT: "Front",
+        SLOT_BACK_LEFT: "Back Left",
+        SLOT_BACK_RIGHT: "Back Right",
+    }
+    draw_panel(surf, rect, f"Team {team_num} Loadout  |  {len(members)}/3", title_size=21)
+
+    field_btns = []
+    remove_btns = []
+    sorted_members = sorted(
+        list(enumerate(members)),
+        key=lambda item: QUESTS_SLOT_ORDER.index(item[1]["slot"]),
+    )
+
+    for row_index in range(3):
+        row_rect = pygame.Rect(rect.x + 12, rect.y + 42 + row_index * 106, rect.width - 24, 94)
+        if row_index >= len(sorted_members):
+            draw_rect_border(surf, row_rect, PANEL_ALT, BORDER)
+            draw_text(surf, "Open slot", 18, TEXT_MUTED, row_rect.x + 14, row_rect.y + 14)
+            draw_text(surf, "Assign an adventurer from the offer pool above.", 14, TEXT_MUTED, row_rect.x + 14, row_rect.y + 46)
+            continue
+
+        member_index, member = sorted_members[row_index]
+        adventurer = QUESTS_ADVENTURERS_BY_ID[member["adventurer_id"]]
+        class_name = member["class_name"]
+        skill = next(skill for skill in QUESTS_CLASS_SKILLS[class_name] if skill.id == member["class_skill_id"])
+        weapon = next(weapon for weapon in adventurer.signature_weapons if weapon.id == (member["primary_weapon_id"] or adventurer.signature_weapons[0].id))
+        artifact = QUESTS_ARTIFACTS_BY_ID.get(member["artifact_id"])
+
+        draw_rect_border(surf, row_rect, CLASS_COLORS.get(class_name, PANEL_ALT), BORDER_ACTIVE)
+        draw_text(surf, adventurer.name, 18, TEXT, row_rect.x + 12, row_rect.y + 8)
+        remove_rect = pygame.Rect(row_rect.right - 42, row_rect.y + 8, 28, 24)
+        draw_button(surf, remove_rect, "X", mouse_pos, size=14,
+                    normal=(88, 40, 40), hover=(122, 56, 56), border=(170, 70, 70))
+        remove_btns.append((remove_rect, team_num, member_index))
+
+        slot_rect = pygame.Rect(row_rect.x + 12, row_rect.y + 38, 104, 24)
+        class_rect = pygame.Rect(row_rect.x + 124, row_rect.y + 38, 124, 24)
+        weapon_rect = pygame.Rect(row_rect.x + 256, row_rect.y + 38, 186, 24)
+        skill_rect = pygame.Rect(row_rect.x + 12, row_rect.y + 66, 212, 22)
+        artifact_rect = pygame.Rect(row_rect.x + 232, row_rect.y + 66, 210, 22)
+
+        draw_button(surf, slot_rect, _quests_short(f"Slot: {slot_labels[member['slot']]}", 15), mouse_pos, size=13,
+                    normal=PANEL_ALT, hover=PANEL_HIGHLIGHT, border=BORDER)
+        draw_button(surf, class_rect, _quests_short(f"Class: {class_name}", 18), mouse_pos, size=13,
+                    normal=PANEL_ALT, hover=PANEL_HIGHLIGHT, border=BORDER)
+        draw_button(surf, weapon_rect, _quests_short(f"Wpn: {weapon.name}", 26), mouse_pos, size=13,
+                    normal=PANEL_ALT, hover=PANEL_HIGHLIGHT, border=BORDER)
+        draw_button(surf, skill_rect, _quests_short(f"Skill: {skill.name}", 28), mouse_pos, size=13,
+                    normal=PANEL_ALT, hover=PANEL_HIGHLIGHT, border=BORDER)
+        artifact_label = artifact.name if artifact is not None else "None"
+        draw_button(surf, artifact_rect, _quests_short(f"Artifact: {artifact_label}", 30), mouse_pos, size=13,
+                    normal=PANEL_ALT, hover=PANEL_HIGHLIGHT, border=BORDER)
+
+        field_btns.extend([
+            (slot_rect, team_num, member_index, "slot"),
+            (class_rect, team_num, member_index, "class"),
+            (weapon_rect, team_num, member_index, "weapon"),
+            (skill_rect, team_num, member_index, "skill"),
+            (artifact_rect, team_num, member_index, "artifact"),
+        ])
+
+    return field_btns, remove_btns
+
+
+def draw_quests_setup(surf, mouse_pos, setup_state):
+    surf.fill(BG)
+    draw_text(surf, "Quests Draft Sandbox", 48, TEXT, WIDTH // 2, 56, center=True)
+    draw_text(
+        surf,
+        "Distribute a six-adventurer draft across both teams, tune each loadout, then launch the new combat ruleset.",
+        18,
+        TEXT_DIM,
+        WIDTH // 2,
+        96,
+        center=True,
+    )
+
+    back_btn = pygame.Rect(20, 20, 100, 36)
+    draw_button(surf, back_btn, "Back", mouse_pos, size=16)
+
+    offer_panel = pygame.Rect(24, 126, 1352, 254)
+    team1_rect = pygame.Rect(24, 398, 470, 366)
+    center_rect = pygame.Rect(512, 398, 376, 366)
+    team2_rect = pygame.Rect(906, 398, 470, 366)
+
+    draw_panel(surf, offer_panel, "Offer Pool", title_size=21)
+    offer_team_btns = []
+
+    team_lookup = {}
+    for member in setup_state.get("team1", []):
+        team_lookup[member["adventurer_id"]] = 1
+    for member in setup_state.get("team2", []):
+        team_lookup[member["adventurer_id"]] = 2
+
+    card_w = 430
+    card_h = 90
+    x_positions = [offer_panel.x + 12, offer_panel.x + 460, offer_panel.x + 908]
+    y_positions = [offer_panel.y + 42, offer_panel.y + 142]
+
+    for index, adventurer_id in enumerate(setup_state.get("offer_ids", [])):
+        adventurer = QUESTS_ADVENTURERS_BY_ID[adventurer_id]
+        col = index % 3
+        row = index // 3
+        card_rect = pygame.Rect(x_positions[col], y_positions[row], card_w, card_h)
+        owner = team_lookup.get(adventurer_id)
+        border_col = BORDER_ACTIVE if owner else BORDER
+        fill_col = PANEL_HIGHLIGHT if owner else PANEL_ALT
+        draw_rect_border(surf, card_rect, fill_col, border_col)
+
+        draw_text(surf, adventurer.name, 18, TEXT, card_rect.x + 12, card_rect.y + 10)
+        draw_text(
+            surf,
+            f"HP {adventurer.hp}  ATK {adventurer.attack}  DEF {adventurer.defense}  SPD {adventurer.speed}",
+            13,
+            TEXT_DIM,
+            card_rect.x + 12,
+            card_rect.y + 34,
+        )
+        draw_text(
+            surf,
+            _quests_short(
+                f"Weapons: {adventurer.signature_weapons[0].name} / {adventurer.signature_weapons[1].name}",
+                50,
+            ),
+            13,
+            TEXT_MUTED,
+            card_rect.x + 12,
+            card_rect.y + 54,
+        )
+
+        p1_rect = pygame.Rect(card_rect.right - 136, card_rect.y + 10, 58, 28)
+        p2_rect = pygame.Rect(card_rect.right - 70, card_rect.y + 10, 58, 28)
+        draw_button(surf, p1_rect, "Team 1", mouse_pos, size=12,
+                    normal=(55, 70, 120), hover=(72, 95, 160), border=BORDER_ACTIVE)
+        draw_button(surf, p2_rect, "Team 2", mouse_pos, size=12,
+                    normal=(90, 60, 30), hover=(120, 82, 42), border=BORDER_ACTIVE)
+        offer_team_btns.append((p1_rect, adventurer_id, 1))
+        offer_team_btns.append((p2_rect, adventurer_id, 2))
+
+        owner_text = "Unassigned" if owner is None else f"Assigned to Team {owner}"
+        owner_color = TEXT_MUTED if owner is None else CYAN
+        draw_text(surf, owner_text, 12, owner_color, card_rect.right - 12, card_rect.bottom - 18, right=True)
+
+    team1_field_btns, team1_remove_btns = _draw_quests_setup_team_panel(
+        surf,
+        team1_rect,
+        mouse_pos,
+        1,
+        setup_state.get("team1", []),
+    )
+    team2_field_btns, team2_remove_btns = _draw_quests_setup_team_panel(
+        surf,
+        team2_rect,
+        mouse_pos,
+        2,
+        setup_state.get("team2", []),
+    )
+
+    draw_panel(surf, center_rect, "Launch", title_size=21)
+    ready = setup_is_ready(setup_state)
+    draw_text(surf, f"Team 1: {len(setup_state.get('team1', []))}/3", 18, TEXT, center_rect.x + 24, center_rect.y + 56)
+    draw_text(surf, f"Team 2: {len(setup_state.get('team2', []))}/3", 18, TEXT, center_rect.x + 24, center_rect.y + 86)
+    ready_text = "Battle ready" if ready else "Both teams need 3 adventurers and all 3 positions."
+    draw_text(surf, ready_text, 15, CYAN if ready else TEXT_MUTED, center_rect.x + 24, center_rect.y + 126)
+
+    draw_text(surf, "Controls", 18, TEXT, center_rect.x + 24, center_rect.y + 170)
+    draw_text(surf, "Offers assign adventurers to Team 1 or Team 2.", 14, TEXT_DIM, center_rect.x + 24, center_rect.y + 202)
+    draw_text(surf, "Loadout buttons cycle slot, class, skill, weapon, and artifact.", 14, TEXT_DIM, center_rect.x + 24, center_rect.y + 224)
+    draw_text(surf, "This keeps the sandbox isolated while we replace the live roster flow.", 14, TEXT_MUTED, center_rect.x + 24, center_rect.y + 246)
+
+    reroll_btn = pygame.Rect(center_rect.x + 24, center_rect.bottom - 106, center_rect.width - 48, 40)
+    start_btn = pygame.Rect(center_rect.x + 24, center_rect.bottom - 58, center_rect.width - 48, 46)
+    draw_button(surf, reroll_btn, "Reroll Offer", mouse_pos, size=18,
+                normal=(72, 62, 40), hover=(102, 86, 52), border=BORDER_ACTIVE)
+    draw_button(surf, start_btn, "Start Battle", mouse_pos, size=20,
+                normal=(48, 92, 58), hover=(64, 124, 76), border=BORDER_ACTIVE, disabled=not ready)
+
+    return {
+        "back_btn": back_btn,
+        "reroll_btn": reroll_btn,
+        "start_btn": start_btn,
+        "offer_team_btns": offer_team_btns,
+        "member_field_btns": team1_field_btns + team2_field_btns,
+        "member_remove_btns": team1_remove_btns + team2_remove_btns,
+    }
+
+
+def _draw_quests_team_panel(surf, rect, team):
+    slot_labels = {
+        SLOT_FRONT: "Front",
+        SLOT_BACK_LEFT: "Back Left",
+        SLOT_BACK_RIGHT: "Back Right",
+    }
+    draw_panel(surf, rect, f"{team.player_name}  |  Ultimate {team.ultimate_meter}/10", title_size=21)
+
+    for index, member in enumerate(team.members):
+        card_rect = pygame.Rect(rect.x + 12, rect.y + 42 + index * 84, rect.width - 24, 72)
+        base_fill = CLASS_COLORS.get(member.class_name, PANEL_ALT)
+        if member.ko:
+            base_fill = (44, 38, 38)
+        border_col = BORDER_ACTIVE if not member.ko else RED_DARK
+        draw_rect_border(surf, card_rect, base_fill, border_col)
+
+        hp_ratio = 0 if member.max_hp <= 0 else max(0.0, min(1.0, member.hp / member.max_hp))
+        hp_bar = pygame.Rect(card_rect.x + 12, card_rect.bottom - 18, card_rect.width - 24, 10)
+        pygame.draw.rect(surf, (26, 28, 36), hp_bar, border_radius=3)
+        if hp_ratio > 0:
+            fill_w = max(1, int(hp_bar.width * hp_ratio))
+            pygame.draw.rect(surf, (80, 180, 110), pygame.Rect(hp_bar.x, hp_bar.y, fill_w, hp_bar.height), border_radius=3)
+
+        class_col = CLASS_TEXT_COLORS.get(member.class_name, TEXT_DIM)
+        draw_text(surf, member.name, 18, TEXT, card_rect.x + 12, card_rect.y + 8)
+        draw_text(surf, f"{slot_labels.get(member.slot, member.slot)} | {member.class_name}", 13, class_col, card_rect.x + 12, card_rect.y + 32)
+        draw_text(surf, f"HP {member.hp}/{member.max_hp}", 13, TEXT_DIM, card_rect.right - 12, card_rect.y + 16, right=True)
+
+        ammo_text = "-"
+        if member.primary_weapon.ammo > 0:
+            ammo_text = f"{member.ammo_remaining.get(member.primary_weapon.id, member.primary_weapon.ammo)}/{member.primary_weapon.ammo}"
+        strike_cd = member.cooldowns.get(member.primary_weapon.strike.id, 0)
+        draw_text(
+            surf,
+            f"{member.primary_weapon.name}  |  Ammo {ammo_text}  |  Strike CD {strike_cd}",
+            13,
+            TEXT_DIM,
+            card_rect.x + 12,
+            card_rect.y + 48,
+        )
+
+        active_statuses = [status.kind for status in member.statuses if status.duration > 0]
+        if member.ko:
+            active_statuses = ["ko"]
+        status_text = ", ".join(active_statuses) if active_statuses else "ready"
+        if len(status_text) > 34:
+            status_text = status_text[:31] + "..."
+        draw_text(surf, status_text, 12, TEXT_MUTED, card_rect.right - 12, card_rect.y + 48, right=True)
+
+
+def draw_quests_sandbox(surf, mouse_pos, battle, mode_label="Autoplay"):
+    surf.fill(BG)
+    draw_text(surf, "Quests Sandbox", 48, TEXT, WIDTH // 2, 62, center=True)
+    draw_text(
+        surf,
+        "Custom battle viewer for the document-side ruleset. The current sandbox resolves rounds with lightweight autoplay heuristics.",
+        18,
+        TEXT_DIM,
+        WIDTH // 2,
+        104,
+        center=True,
+    )
+
+    left_rect = pygame.Rect(24, 140, 410, 308)
+    summary_rect = pygame.Rect(450, 140, 500, 308)
+    right_rect = pygame.Rect(966, 140, 410, 308)
+    log_rect = pygame.Rect(24, 468, 1352, 344)
+
+    if battle is not None:
+        _draw_quests_team_panel(surf, left_rect, battle.team1)
+        _draw_quests_team_panel(surf, right_rect, battle.team2)
+    else:
+        draw_panel(surf, left_rect, "Team 1", title_size=21)
+        draw_panel(surf, right_rect, "Team 2", title_size=21)
+
+    draw_panel(surf, summary_rect, "Battle State", title_size=21)
+    round_num = getattr(battle, "round_num", 1)
+    winner_text = "No winner yet"
+    if battle is not None and battle.winner is not None:
+        winner_team = battle.team1.player_name if battle.winner == 1 else battle.team2.player_name
+        winner_text = f"Winner: {winner_team}"
+
+    draw_text(surf, f"Round {round_num}", 26, TEXT, summary_rect.centerx, summary_rect.y + 58, center=True)
+    draw_text(surf, f"Resolve Mode: {mode_label}", 16, CYAN, summary_rect.centerx, summary_rect.y + 92, center=True)
+    draw_text(surf, winner_text, 16, YELLOW if battle is not None and battle.winner is not None else TEXT_DIM, summary_rect.centerx, summary_rect.y + 118, center=True)
+    draw_text(surf, "Initiative Preview", 16, TEXT, summary_rect.x + 18, summary_rect.y + 150)
+
+    initiative = battle.initiative_order if battle is not None else []
+    for index, unit in enumerate(initiative[:6]):
+        speed = unit.get_stat("speed")
+        label = f"{index + 1}. {unit.name} ({unit.slot})  SPD {speed}"
+        color = TEXT_MUTED if unit.ko else TEXT
+        draw_text(surf, label, 14, color, summary_rect.x + 22, summary_rect.y + 178 + index * 22)
+
+    next_btn = pygame.Rect(summary_rect.x + 24, summary_rect.bottom - 98, 210, 40)
+    auto_btn = pygame.Rect(summary_rect.right - 234, summary_rect.bottom - 98, 210, 40)
+    reset_btn = pygame.Rect(summary_rect.x + 24, summary_rect.bottom - 50, 210, 34)
+    back_btn = pygame.Rect(summary_rect.right - 234, summary_rect.bottom - 50, 210, 34)
+
+    draw_button(surf, next_btn, "Play Next Round", mouse_pos, size=18,
+                normal=(55, 70, 120), hover=(72, 95, 160), border=BORDER_ACTIVE)
+    draw_button(surf, auto_btn, "Auto Finish", mouse_pos, size=18,
+                normal=(80, 60, 30), hover=(110, 85, 45), border=BORDER_ACTIVE)
+    draw_button(surf, reset_btn, "Restart Battle", mouse_pos, size=16)
+    draw_button(surf, back_btn, "Back to Setup", mouse_pos, size=16)
+
+    draw_panel(surf, log_rect, "Battle Log", title_size=21)
+    log_lines = []
+    if battle is not None and battle.log:
+        for raw_line in battle.log[-10:]:
+            wrapped = _wrap_text(str(raw_line), font(15), log_rect.width - 28)
+            log_lines.extend(wrapped[:2])
+    else:
+        log_lines = ["No actions resolved yet."]
+
+    y = log_rect.y + 42
+    max_lines = 16
+    for line in log_lines[-max_lines:]:
+        draw_text(surf, line, 15, TEXT_DIM, log_rect.x + 14, y)
+        y += 18
+
+    draw_text(
+        surf,
+        "This screen is intentionally isolated from the live game loop while we replace the combat model underneath it.",
+        14,
+        TEXT_MUTED,
+        log_rect.x + 14,
+        log_rect.bottom - 26,
+    )
+
+    return {
+        "next_btn": next_btn,
+        "auto_btn": auto_btn,
+        "reset_btn": reset_btn,
         "back_btn": back_btn,
     }
 

@@ -14,6 +14,24 @@ SAVE_VERSION = 2
 LEGACY_SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "campaign_save.json")
 
 
+def _normalize_friends(raw_friends) -> list[dict[str, str]]:
+    friends: list[dict[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for entry in raw_friends or []:
+        if not isinstance(entry, dict):
+            continue
+        name = str(entry.get("name", "")).strip()[:32]
+        ip = str(entry.get("ip", "")).strip()[:64]
+        if not name or not ip:
+            continue
+        key = (name.lower(), ip)
+        if key in seen:
+            continue
+        seen.add(key)
+        friends.append({"name": name, "ip": ip})
+    return friends
+
+
 def _saved_games_dir() -> str:
     """Return Fabled's per-user save directory under Saved Games."""
     home = os.path.expanduser("~")
@@ -53,6 +71,7 @@ def _normalize_profile(profile: CampaignProfile) -> CampaignProfile:
     profile.ranked_games_played = max(0, int(profile.ranked_games_played))
     profile.non_tutorial_quests_completed = max(0, int(profile.non_tutorial_quests_completed))
     profile.premium_dollars_spent = max(0, int(profile.premium_dollars_spent))
+    profile.storybook_friends = _normalize_friends(getattr(profile, "storybook_friends", []))
     if profile.saved_teams is None:
         profile.saved_teams = []
     return profile
@@ -93,6 +112,7 @@ def save_campaign(profile: CampaignProfile) -> None:
         "tutorial_complete": profile.tutorial_complete,
         "quick_play_unlocked": profile.quick_play_unlocked,
         "premium_dollars_spent": profile.premium_dollars_spent,
+        "storybook_friends": profile.storybook_friends,
     }
     with open(save_path, "w", encoding="utf-8") as save_file:
         json.dump(data, save_file, indent=2)
@@ -129,6 +149,7 @@ def _load_modern_profile(data: dict) -> CampaignProfile:
     profile.tutorial_complete = bool(data.get("tutorial_complete", profile.tutorial_complete))
     profile.quick_play_unlocked = bool(data.get("quick_play_unlocked", profile.quick_play_unlocked))
     profile.premium_dollars_spent = int(data.get("premium_dollars_spent", profile.premium_dollars_spent))
+    profile.storybook_friends = _normalize_friends(data.get("storybook_friends", []))
     return _normalize_profile(profile)
 
 

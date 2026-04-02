@@ -496,3 +496,4 @@ class CampaignProfile:
     tutorial_complete: bool = False
     quick_play_unlocked: bool = False
     premium_dollars_spent: int = 0
+    storybook_friends: List[Dict[str, str]] = field(default_factory=list)

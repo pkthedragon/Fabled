@@ -27,6 +27,7 @@ import battle_log
 import net
 import ai as _ai
 from ai_team_pool import AI_TEAM_POOL, RANKED_AI_TEAM_META
+from storybook_mode import StorybookMode
 from settings import *
 from models import BattleState, CampaignProfile
 from data import (
@@ -51,6 +52,15 @@ from logic import (
     ready_active_artifacts,
 )
 do_end_round = end_round
+from quests_ruleset_demo import auto_finish_autoplay, play_autoplay_round
+from quests_sandbox import (
+    assign_offer_to_team,
+    build_battle_from_setup,
+    create_setup_state,
+    cycle_member_field,
+    remove_member_from_team,
+    setup_is_ready,
+)
 from ui import (
     font, draw_text, draw_button, draw_panel,
     draw_main_menu, draw_team_select_screen, draw_pass_screen,
@@ -62,6 +72,7 @@ from ui import (
     draw_pre_quest, draw_post_quest, draw_campaign_complete,
     draw_practice_menu, draw_teambuilder, draw_story_team_select,
     draw_estate_menu, draw_training_menu,
+    draw_quests_setup, draw_quests_sandbox,
     draw_settings_screen, draw_rename_overlay,
     draw_guild_screen, draw_embassy_screen, draw_market_closed,
     draw_catalog,
@@ -133,7 +144,7 @@ class Game:
         pygame.display.set_caption(TITLE)
         self.clock = pygame.time.Clock()
 
-        self.phase = "menu"
+        self.phase = "storybook"
         self.battle: BattleState = None
         self.game_mode = "pvp"  # "pvp" | "single_player" | "campaign"
         self.ai_player = 2
@@ -142,6 +153,7 @@ class Game:
 
         # Campaign state
         self.campaign_profile: CampaignProfile = load_campaign()
+        self.storybook = StorybookMode(self.campaign_profile)
         self._refresh_profile_filters()
         self.campaign_quest_id: int = 0
         self.campaign_mission_id: int = 1
@@ -186,12 +198,17 @@ class Game:
         self._last_practice_btns = None
         self._last_estate_btns = None
         self._last_training_btns = None
+        self._last_quests_setup_btns = None
+        self._last_quests_btns = None
         self._last_teambuilder_btns = None
         self._last_story_team_btns = None
         self._teambuilder_return_phase = "menu"  # where back_btn in teambuilder leads
         self._catalog_return_phase = "menu"
         self._lan_return_phase = "training_menu"
         self._campaign_back_phase = "menu"
+        self._quests_setup = None
+        self._quests_battle = None
+        self._quests_mode_label = "Autoplay"
 
         # Rename overlay state (drawn on top of teambuilder)
         self._renaming_team_slot: int = None
@@ -518,6 +535,43 @@ class Game:
             ]},
         ]
         self._ai_team_pool = AI_TEAM_POOL
+
+    def _reset_quests_setup(self):
+        self._quests_setup = create_setup_state()
+        self._quests_battle = None
+
+    def _enter_quests_setup(self):
+        if self._quests_setup is None:
+            self._reset_quests_setup()
+        self.phase = "quests_setup"
+
+    def _rebuild_quests_battle(self) -> bool:
+        if self._quests_setup is None or not setup_is_ready(self._quests_setup):
+            return False
+        self._quests_battle = build_battle_from_setup(self._quests_setup)
+        self._quests_mode_label = "Autoplay"
+        return True
+
+    def _start_quests_sandbox(self):
+        if self._rebuild_quests_battle():
+            self.phase = "quests_sandbox"
+
+    def _step_quests_sandbox(self):
+        if self._quests_battle is None and not self._rebuild_quests_battle():
+            return
+        if self._quests_battle.winner is not None:
+            return
+        play_autoplay_round(self._quests_battle)
+
+    def _auto_finish_quests_sandbox(self):
+        if self._quests_battle is None and not self._rebuild_quests_battle():
+            return
+        if self._quests_battle.winner is not None:
+            return
+        auto_finish_autoplay(self._quests_battle)
+
+    def _restart_quests_battle(self):
+        self._rebuild_quests_battle()
 
     def _is_single_player(self):
         return self.game_mode in ("single_player", "campaign", "ranked")
@@ -2131,6 +2185,13 @@ class Game:
 
         p = self.phase
 
+        if p == "storybook":
+            action = self.storybook.handle_click(pos)
+            if action == "quit":
+                pygame.quit()
+                sys.exit()
+            return
+
         if p == "menu":
             btns = self._last_menu_btns or {}
             if btns.get("level_btn") and btns["level_btn"].collidepoint(pos):
@@ -2251,8 +2312,43 @@ class Game:
                 self._lan_status = ""
                 self._lan = None
                 self.phase = "lan_lobby"
+            elif btns.get("quests_btn") and btns["quests_btn"].collidepoint(pos):
+                self._enter_quests_setup()
             elif btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
                 self.phase = "estate_menu"
+
+        elif p == "quests_setup":
+            btns = self._last_quests_setup_btns or {}
+            if btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                self.phase = "training_menu"
+            elif btns.get("reroll_btn") and btns["reroll_btn"].collidepoint(pos):
+                self._reset_quests_setup()
+            elif btns.get("start_btn") and btns["start_btn"].collidepoint(pos):
+                self._start_quests_sandbox()
+            else:
+                for rect, adventurer_id, team_num in btns.get("offer_team_btns", []):
+                    if rect.collidepoint(pos):
+                        assign_offer_to_team(self._quests_setup, adventurer_id, team_num)
+                        return
+                for rect, team_num, member_index, field_name in btns.get("member_field_btns", []):
+                    if rect.collidepoint(pos):
+                        cycle_member_field(self._quests_setup, team_num, member_index, field_name)
+                        return
+                for rect, team_num, member_index in btns.get("member_remove_btns", []):
+                    if rect.collidepoint(pos):
+                        remove_member_from_team(self._quests_setup, team_num, member_index)
+                        return
+
+        elif p == "quests_sandbox":
+            btns = self._last_quests_btns or {}
+            if btns.get("next_btn") and btns["next_btn"].collidepoint(pos):
+                self._step_quests_sandbox()
+            elif btns.get("auto_btn") and btns["auto_btn"].collidepoint(pos):
+                self._auto_finish_quests_sandbox()
+            elif btns.get("reset_btn") and btns["reset_btn"].collidepoint(pos):
+                self._restart_quests_battle()
+            elif btns.get("back_btn") and btns["back_btn"].collidepoint(pos):
+                self.phase = "quests_setup"
 
         elif p == "guild":
             btns = self._last_guild_btns or {}
@@ -2607,6 +2703,20 @@ class Game:
                     self._rename_text += ch
             return
 
+        if self.phase == "storybook":
+            action = self.storybook.handle_keydown(e)
+            if action == "quit":
+                pygame.quit()
+                sys.exit()
+            return
+
+        if self.phase == "quests_sandbox" and e.key in (pygame.K_SPACE, pygame.K_RETURN, pygame.K_KP_ENTER):
+            self._step_quests_sandbox()
+            return
+        if self.phase == "quests_setup" and e.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            self._start_quests_sandbox()
+            return
+
         if e.key != pygame.K_ESCAPE:
             return
 
@@ -2618,6 +2728,14 @@ class Game:
         # ESC exits the teambuilder screen.
         if self.phase == "teambuilder":
             self.phase = self._teambuilder_return_phase
+            return
+
+        if self.phase == "quests_setup":
+            self.phase = "training_menu"
+            return
+
+        if self.phase == "quests_sandbox":
+            self.phase = "quests_setup"
             return
 
         # ESC steps back through team-select sub-phases.
@@ -4446,6 +4564,10 @@ class Game:
         surf = self._canvas
         p = self.phase
 
+        if p == "storybook":
+            self.storybook.draw(surf, mouse_pos)
+            return
+
         if p == "menu":
             player_level = self._player_level() if self.campaign_profile else 1
             _new_cat = bool(self.campaign_profile and self.campaign_profile.new_unlocks)
@@ -4469,6 +4591,25 @@ class Game:
 
         elif p == "training_menu":
             self._last_training_btns = draw_training_menu(surf, mouse_pos)
+
+        elif p == "quests_setup":
+            if self._quests_setup is None:
+                self._reset_quests_setup()
+            self._last_quests_setup_btns = draw_quests_setup(
+                surf,
+                mouse_pos,
+                self._quests_setup,
+            )
+
+        elif p == "quests_sandbox":
+            if self._quests_battle is None and self._quests_setup is not None:
+                self._rebuild_quests_battle()
+            self._last_quests_btns = draw_quests_sandbox(
+                surf,
+                mouse_pos,
+                self._quests_battle,
+                self._quests_mode_label,
+            )
 
         elif p == "teambuilder":
             profile = self.campaign_profile or CampaignProfile()

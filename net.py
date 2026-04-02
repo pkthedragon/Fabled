@@ -4,7 +4,25 @@ import threading
 import queue
 import json
 
-LAN_PORT = 55555
+LAN_PORT = 55667
+LAN_PROBE_MESSAGE = b"FABLED_PROBE"
+LAN_PROBE_REPLY = b"FABLED_HERE"
+
+
+def probe_lan_host(host_ip: str, timeout: float = 0.2) -> bool:
+    host_ip = str(host_ip or "").strip()
+    if not host_ip:
+        return False
+    probe = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        probe.settimeout(timeout)
+        probe.sendto(LAN_PROBE_MESSAGE, (host_ip, LAN_PORT))
+        reply, _ = probe.recvfrom(64)
+        return reply == LAN_PROBE_REPLY
+    except Exception:
+        return False
+    finally:
+        probe.close()
 
 
 class _Connection:
@@ -65,10 +83,16 @@ class LANHost:
         self._server.bind(("", LAN_PORT))
         self._server.listen(1)
         self._server.settimeout(0.05)
+        self._probe_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self._probe_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self._probe_socket.bind(("", LAN_PORT))
+        self._probe_socket.settimeout(0.05)
         self._conn: _Connection = None
         self.connected = False
         self._t = threading.Thread(target=self._accept_loop, daemon=True)
+        self._probe_t = threading.Thread(target=self._probe_loop, daemon=True)
         self._t.start()
+        self._probe_t.start()
 
     def _accept_loop(self):
         while True:
@@ -77,6 +101,17 @@ class LANHost:
                 self._conn = _Connection(sock)
                 self.connected = True
                 return
+            except socket.timeout:
+                continue
+            except Exception:
+                return
+
+    def _probe_loop(self):
+        while True:
+            try:
+                payload, addr = self._probe_socket.recvfrom(64)
+                if payload == LAN_PROBE_MESSAGE:
+                    self._probe_socket.sendto(LAN_PROBE_REPLY, addr)
             except socket.timeout:
                 continue
             except Exception:
@@ -102,6 +137,10 @@ class LANHost:
     def close(self):
         try:
             self._server.close()
+        except Exception:
+            pass
+        try:
+            self._probe_socket.close()
         except Exception:
             pass
         if self._conn:
