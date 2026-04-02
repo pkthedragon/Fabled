@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 import os
 
-from economy import STARTER_ADVENTURERS, STARTER_ARTIFACTS
+from economy import STARTER_ADVENTURERS
 from models import CampaignProfile
 
 
@@ -59,7 +59,6 @@ def _migrate_legacy_save() -> str:
 
 def _normalize_profile(profile: CampaignProfile) -> CampaignProfile:
     profile.recruited |= set(STARTER_ADVENTURERS)
-    profile.unlocked_artifacts |= set(STARTER_ARTIFACTS)
     profile.unlocked_items = set()
     profile.quick_play_unlocked = bool(profile.quick_play_unlocked or profile.tutorial_complete)
     profile.highest_quest_cleared = max(int(profile.highest_quest_cleared), 0)
@@ -72,6 +71,8 @@ def _normalize_profile(profile: CampaignProfile) -> CampaignProfile:
     profile.non_tutorial_quests_completed = max(0, int(profile.non_tutorial_quests_completed))
     profile.premium_dollars_spent = max(0, int(profile.premium_dollars_spent))
     profile.storybook_friends = _normalize_friends(getattr(profile, "storybook_friends", []))
+    profile.storybook_weapon_unlocks = set(getattr(profile, "storybook_weapon_unlocks", set()))
+    profile.storybook_cosmetic_unlocks = set(getattr(profile, "storybook_cosmetic_unlocks", set()))
     if profile.saved_teams is None:
         profile.saved_teams = []
     return profile
@@ -113,6 +114,8 @@ def save_campaign(profile: CampaignProfile) -> None:
         "quick_play_unlocked": profile.quick_play_unlocked,
         "premium_dollars_spent": profile.premium_dollars_spent,
         "storybook_friends": profile.storybook_friends,
+        "storybook_weapon_unlocks": list(profile.storybook_weapon_unlocks),
+        "storybook_cosmetic_unlocks": list(profile.storybook_cosmetic_unlocks),
     }
     with open(save_path, "w", encoding="utf-8") as save_file:
         json.dump(data, save_file, indent=2)
@@ -150,6 +153,8 @@ def _load_modern_profile(data: dict) -> CampaignProfile:
     profile.quick_play_unlocked = bool(data.get("quick_play_unlocked", profile.quick_play_unlocked))
     profile.premium_dollars_spent = int(data.get("premium_dollars_spent", profile.premium_dollars_spent))
     profile.storybook_friends = _normalize_friends(data.get("storybook_friends", []))
+    profile.storybook_weapon_unlocks = set(data.get("storybook_weapon_unlocks", []))
+    profile.storybook_cosmetic_unlocks = set(data.get("storybook_cosmetic_unlocks", []))
     return _normalize_profile(profile)
 
 

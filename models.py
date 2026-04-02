@@ -470,9 +470,7 @@ class CampaignProfile:
         "Fighter", "Ranger", "Warden"
     })
     unlocked_items: "Set[str]" = field(default_factory=set)
-    unlocked_artifacts: "Set[str]" = field(default_factory=lambda: {
-        "divine_apple"
-    })
+    unlocked_artifacts: "Set[str]" = field(default_factory=set)
     default_sigs: "Dict[str, str]" = field(default_factory=dict)  # adv_id -> sig_id
     twists_unlocked: bool = False
     quest_cleared: "Dict[int, bool]" = field(default_factory=dict)
@@ -488,7 +486,7 @@ class CampaignProfile:
     gold: int = 0
     guild_vouchers: int = 0
     brighthollow_renown: int = 500
-    ranked_rating: int = 1000
+    ranked_rating: int = 500
     ranked_games_played: int = 0
     non_tutorial_quests_completed: int = 0
     adventurer_quest_clears: "Dict[str, int]" = field(default_factory=dict)
@@ -497,3 +495,5 @@ class CampaignProfile:
     quick_play_unlocked: bool = False
     premium_dollars_spent: int = 0
     storybook_friends: List[Dict[str, str]] = field(default_factory=list)
+    storybook_weapon_unlocks: "Set[str]" = field(default_factory=set)
+    storybook_cosmetic_unlocks: "Set[str]" = field(default_factory=set)

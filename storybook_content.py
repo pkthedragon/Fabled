@@ -102,8 +102,36 @@ CATALOG_SECTIONS = [
 ]
 
 
-SHOP_TABS = ["Armory", "Artifacts", "Wards"]
+SHOP_TABS = ["Artifacts"]
 COSMETIC_CATEGORIES = ["Hats", "Shirts", "Pants", "Socks", "Shoes"]
+
+ARTIFACT_SHOP_PRICES = {
+    "holy_grail": 500,
+    "winged_sandals": 450,
+    "lightning_helm": 500,
+    "golden_fleece": 400,
+    "arcane_hourglass": 850,
+    "naiads_knife": 450,
+    "last_prism": 550,
+    "misericorde": 425,
+    "selkies_skin": 600,
+    "red_hood": 450,
+    "enchanted_lamp": 700,
+    "magic_mirror": 800,
+    "nettle_smock": 575,
+    "goose_quill": 750,
+    "cursed_spindle": 650,
+    "bluebeards_key": 450,
+    "sun_gods_banner": 525,
+    "dire_wolf_spine": 350,
+    "soaring_crown": 425,
+    "fading_diadem": 400,
+    "iron_rosary": 550,
+    "dragons_horn": 475,
+    "bottled_clouds": 475,
+    "glass_slipper": 650,
+    "black_torch": 500,
+}
 
 
 def role_tags_for_adventurer(adventurer) -> list[str]:
@@ -279,36 +307,23 @@ def catalog_entries(section: str) -> list[dict]:
     return []
 
 
+def shop_tab_note(tab_name: str) -> str:
+    if tab_name == "Artifacts":
+        return "Artifacts are the only battle wares sold in this build."
+    return ""
+
+
 def shop_items_for_tab(tab_name: str) -> list[dict]:
     if tab_name == "Artifacts":
         return [
             {
                 "name": artifact.name,
+                "id": artifact.id,
                 "artifact_id": artifact.id,
                 "tag": "Relic",
-                "price": 400 + index * 120,
+                "price": ARTIFACT_SHOP_PRICES[artifact.id],
                 "subtitle": ", ".join(artifact.attunement),
             }
-            for index, artifact in enumerate(ARTIFACTS[:6])
+            for artifact in ARTIFACTS
         ]
-
-    if tab_name == "Wards":
-        return [
-            {"name": "Ward of Swiftness", "tag": "Ward", "price": 240, "subtitle": "Openers and scouting tempo."},
-            {"name": "Ward of Silence", "tag": "Ward", "price": 330, "subtitle": "Insurance versus burst spell turns."},
-            {"name": "Ward of Embers", "tag": "Ward", "price": 280, "subtitle": "Burn mitigation and attrition tech."},
-            {"name": "Ward of Echoes", "tag": "Ward", "price": 360, "subtitle": "Ultimate charge tuning for long fights."},
-        ]
-
-    items = []
-    for index, adventurer in enumerate(ADVENTURERS[:6]):
-        weapon = adventurer.signature_weapons[0]
-        items.append(
-            {
-                "name": weapon.name,
-                "tag": weapon.kind.title(),
-                "price": 300 + index * 175,
-                "subtitle": f"{adventurer.name} signature weapon",
-            }
-        )
-    return items
+    return []

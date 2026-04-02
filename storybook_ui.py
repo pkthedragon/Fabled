@@ -15,8 +15,10 @@ from storybook_content import (
     recommendation_notes,
     role_tags_for_adventurer,
     shop_items_for_tab,
+    shop_tab_note,
 )
 from quests_ruleset_data import ADVENTURERS_BY_ID, ARTIFACTS_BY_ID, CLASS_SKILLS
+from storybook_progression import QUEST_WIN_EXP, level_state, quest_win_gold
 
 
 SBG = (16, 18, 24)
@@ -327,12 +329,11 @@ def draw_main_menu(surf, mouse_pos, profile):
     draw_text(surf, "Guild Hall", font_headline(40, bold=True), TEXT, (guild_rect.centerx, guild_rect.y + 124), center=True)
     draw_text(surf, "Quests, bouts, catalog, and campaign planning.", font_body(18), TEXT_SOFT, (guild_rect.centerx, guild_rect.y + 170), center=True)
     draw_text(surf, "Shops", font_headline(40, bold=True), TEXT, (shops_rect.centerx, shops_rect.y + 124), center=True)
-    draw_text(surf, "Artifacts, armory wares, embassy channels, and cosmetics.", font_body(18), TEXT_SOFT, (shops_rect.centerx, shops_rect.y + 170), center=True)
+    draw_text(surf, "Artifacts, cosmetics, and embassy channels.", font_body(18), TEXT_SOFT, (shops_rect.centerx, shops_rect.y + 170), center=True)
     guild_btn = pygame.Rect(guild_rect.x + 26, guild_rect.bottom - 64, guild_rect.width - 52, 42)
     shops_btn = pygame.Rect(shops_rect.x + 26, shops_rect.bottom - 64, shops_rect.width - 52, 42)
     draw_primary_button(surf, guild_btn, mouse_pos, "Enter Guild Hall")
     draw_secondary_button(surf, shops_btn, mouse_pos, "Open Shops")
-    draw_text(surf, "Lumenforge", font_headline(14, bold=True), TEXT_MUTE, (WIDTH // 2, HEIGHT - 48), center=True)
     draw_text(surf, "v2.0.0 prototype", font_label(10, bold=True), GOLD_DIM, (WIDTH // 2, HEIGHT - 28), center=True)
     btns["player"] = btns.pop("left")
     btns["guild_hall"] = guild_btn
@@ -344,30 +345,36 @@ def draw_player_menu(surf, mouse_pos, profile, note_lines: list[str] | None = No
     draw_background(surf)
     btns = draw_top_bar(
         surf,
-        "Player Menu",
+        "",
         mouse_pos,
         left_icon="<",
         right_icons=(("settings", "S", False), ("quit", "X", True)),
-        subtitle="Account, friends, wardrobe, trophies, and standing",
     )
     portrait_rect = pygame.Rect(90, 120, 520, 620)
-    action_rect = pygame.Rect(700, 148, 520, 530)
-    draw_beveled_panel(surf, portrait_rect, title="Commander Profile")
-    draw_beveled_panel(surf, action_rect, title="Profile Links")
+    action_rect = pygame.Rect(700, 148, 520, 420)
+    draw_beveled_panel(surf, portrait_rect)
+    draw_beveled_panel(surf, action_rect)
     portrait = pygame.Rect(portrait_rect.x + 40, portrait_rect.y + 64, 200, 240)
     fill_gradient(surf, portrait, (70, 62, 34), (22, 24, 28))
     pygame.draw.rect(surf, GOLD_BRIGHT, portrait, 2, border_radius=12)
-    draw_text(surf, "CM", font_headline(72, bold=True), PARCHMENT, portrait.center, center=True)
-    draw_text(surf, "Commander", font_headline(34, bold=True), TEXT, (portrait_rect.x + 280, portrait_rect.y + 86))
     exp_value = getattr(profile, "player_exp", 0)
-    level_value = max(1, exp_value // 100 + 1)
+    level_info = level_state(exp_value)
     glory_value = getattr(profile, "ranked_rating", 500)
     rank_label = getattr(profile, "storybook_rank_label", "Baron")
-    draw_text(surf, f"Level {level_value} | {exp_value} EXP", font_body(20, bold=True), GOLD_BRIGHT, (portrait_rect.x + 280, portrait_rect.y + 138))
-    draw_text(surf, f"{rank_label} | {glory_value} Glory", font_body(20, bold=True), TEXT_SOFT, (portrait_rect.x + 280, portrait_rect.y + 170))
-    draw_text(surf, f"Gold {getattr(profile, 'gold', 0)}", font_body(18, bold=True), TEXT_SOFT, (portrait_rect.x + 280, portrait_rect.y + 226))
-    draw_meter(surf, pygame.Rect(portrait_rect.x + 40, portrait_rect.y + 352, 430, 16), exp_value % 100, 100, label="Experience", right_label="Next Level")
-    draw_text(surf, "This hub only tracks the three long-term account stats that matter in the current build: level, gold, and Glory.", font_body(18), TEXT_SOFT, (portrait_rect.x + 40, portrait_rect.y + 392))
+    level_line = f"Level {level_info.level} | {exp_value} EXP"
+    exp_progress = f"MAX" if level_info.at_cap else f"{level_info.current_level_exp} / {level_info.next_level_exp}"
+    meter_value = 1 if level_info.at_cap else level_info.current_level_exp
+    meter_max = 1 if level_info.at_cap else level_info.next_level_exp
+    draw_text(surf, level_line, font_body(20, bold=True), GOLD_BRIGHT, (portrait_rect.x + 280, portrait_rect.y + 132))
+    draw_text(surf, f"{rank_label} | {glory_value} Glory", font_body(20, bold=True), TEXT_SOFT, (portrait_rect.x + 280, portrait_rect.y + 166))
+    draw_text(surf, f"Gold {getattr(profile, 'gold', 0)}", font_body(18, bold=True), TEXT_SOFT, (portrait_rect.x + 280, portrait_rect.y + 208))
+    draw_meter(
+        surf,
+        pygame.Rect(portrait_rect.x + 40, portrait_rect.y + 352, 430, 16),
+        meter_value,
+        meter_max,
+        right_label=exp_progress,
+    )
     inventory_btn = pygame.Rect(action_rect.x + 60, action_rect.y + 74, action_rect.width - 120, 66)
     friends_btn = pygame.Rect(action_rect.x + 60, action_rect.y + 156, action_rect.width - 120, 66)
     closet_btn = pygame.Rect(action_rect.x + 60, action_rect.y + 238, action_rect.width - 120, 66)
@@ -376,10 +383,6 @@ def draw_player_menu(surf, mouse_pos, profile, note_lines: list[str] | None = No
     draw_secondary_button(surf, friends_btn, mouse_pos, "Friends")
     draw_secondary_button(surf, closet_btn, mouse_pos, "Closet")
     draw_secondary_button(surf, trophies_btn, mouse_pos, "Trophies")
-    detail_rect = pygame.Rect(action_rect.x + 48, action_rect.y + 406, action_rect.width - 96, 104)
-    draw_beveled_panel(surf, detail_rect, title="Profile Notes")
-    for index, line in enumerate((note_lines or [])[:4]):
-        draw_text(surf, line, font_body(16), TEXT_SOFT, (detail_rect.x + 18, detail_rect.y + 42 + index * 18))
     btns["back"] = btns.pop("left")
     btns["inventory"] = inventory_btn
     btns["friends"] = friends_btn
@@ -536,7 +539,7 @@ def draw_guild_hall(surf, mouse_pos):
     draw_text(surf, "Bouts", font_headline(34, bold=True), TEXT, (bouts_btn.centerx, bouts_btn.y + 72), center=True)
     draw_text(surf, "Shared pool draft with competitive setup.", font_body(18), TEXT_SOFT, (bouts_btn.centerx, bouts_btn.y + 118), center=True)
     draw_text(surf, "Catalog", font_headline(32, bold=True), TEXT, (catalog_btn.x + 40, catalog_btn.y + 36))
-    draw_text(surf, "Adventurers, weapons, class skills, conditions, and battle rules all live in one codex.", font_body(18), TEXT_SOFT, (catalog_btn.x + 40, catalog_btn.y + 76))
+    draw_text(surf, "Adventurers, class skills, and artifacts all live in one codex.", font_body(18), TEXT_SOFT, (catalog_btn.x + 40, catalog_btn.y + 76))
     draw_meter(surf, pygame.Rect(intel_panel.x + 24, intel_panel.y + 90, intel_panel.width - 48, 16), 84, 100, label="Guild Stability", right_label="84%")
     draw_meter(surf, pygame.Rect(intel_panel.x + 24, intel_panel.y + 148, intel_panel.width - 48, 16), 62, 100, label="Resource Flow", right_label="62%")
     draw_text(surf, "The current restructuring favors clean draft interfaces, visible formation risk, and battle-state clarity over spectacle.", font_body(18), TEXT_SOFT, (intel_panel.x + 24, intel_panel.y + 206))
@@ -552,6 +555,7 @@ def draw_shops(
     mouse_pos,
     active_tab: str,
     cosmetic_index: int,
+    item_scroll: int,
     profile=None,
     focus_kind: str | None = None,
     focus_value=None,
@@ -566,12 +570,15 @@ def draw_shops(
         mouse_pos,
         left_icon="<",
         right_icons=(("settings", "S", False), ("quit", "X", True)),
-        subtitle="Premium trade, customization, and embassy channels",
+        subtitle="Artifacts, cosmetics, and embassy channels",
     )
     tab_buttons = []
-    tab_x = WIDTH // 2 - 210
+    tab_width = 132
+    tab_gap = 12
+    tabs_total_width = len(SHOP_TABS) * tab_width + max(0, len(SHOP_TABS) - 1) * tab_gap
+    tab_x = WIDTH // 2 - tabs_total_width // 2
     for index, tab_name in enumerate(SHOP_TABS):
-        rect = pygame.Rect(tab_x + index * 144, 92, 132, 38)
+        rect = pygame.Rect(tab_x + index * (tab_width + tab_gap), 92, tab_width, 38)
         draw_secondary_button(surf, rect, mouse_pos, tab_name, active=tab_name == active_tab)
         tab_buttons.append((rect, tab_name))
     cosmetics_panel = pygame.Rect(150, 170, 220, 452)
@@ -590,12 +597,15 @@ def draw_shops(
         draw_secondary_button(surf, rect, mouse_pos, name, active=index == cosmetic_index)
         cosmetic_buttons.append((rect, index))
     items = shop_items_for_tab(active_tab)
+    max_scroll = max(0, len(items) - 6)
+    item_scroll = max(0, min(item_scroll, max_scroll))
+    visible_items = items[item_scroll:item_scroll + 6]
     item_buttons = []
-    for index, item in enumerate(items):
+    for index, item in enumerate(visible_items):
         row = index // 2
         col = index % 2
         rect = pygame.Rect(inventory_panel.x + 24 + col * 300, inventory_panel.y + 58 + row * 140, 276, 116)
-        selected = focus_kind == "item" and focus_value == item["name"]
+        selected = focus_kind == "item" and focus_value == item["id"]
         draw_beveled_panel(
             surf,
             rect,
@@ -607,9 +617,12 @@ def draw_shops(
         draw_text(surf, str(item["price"]), font_label(10, bold=True), GOLD_BRIGHT, (rect.right - 16, rect.y + 14), right=True)
         draw_text(surf, item["name"], font_headline(20, bold=True), TEXT, (rect.x + 16, rect.y + 42))
         draw_text(surf, item["subtitle"], font_body(15), TEXT_SOFT, (rect.x + 16, rect.y + 74))
-        item_buttons.append((rect, item["name"]))
+        item_buttons.append((rect, item["id"]))
 
-    selected_item = next((item for item in items if focus_kind == "item" and item["name"] == focus_value), items[0] if items else None)
+    if not visible_items:
+        draw_text(surf, shop_tab_note(active_tab), font_body(19), TEXT_SOFT, (inventory_panel.x + 26, inventory_panel.y + 76))
+
+    selected_item = next((item for item in items if focus_kind == "item" and item["id"] == focus_value), items[0] if items else None)
     buy_label = "Purchase"
     buy_disabled = False
     detail_lines = []
@@ -626,20 +639,29 @@ def draw_shops(
         ]
     elif focus_kind == "embassy":
         detail_title = "Embassy Charter"
-        buy_label = "Broker Favor"
+        buy_label = "Info Only"
+        buy_disabled = True
         detail_lines = [
-            "Commission a gold-funded embassy contract.",
-            "Embassy favors convert treasury into bespoke wardrobe bundles or curated wares.",
-            "The current desktop build keeps it simple: one charter buys a prestige package.",
+            "The embassy remains part of the final shell.",
+            "It does not sell battle items in the current build.",
+            "Use the left rail for cosmetics and the Artifacts tab for purchasable relics.",
         ]
     elif selected_item is not None:
         detail_title = selected_item["name"]
-        item_key = f"{active_tab}:{selected_item['name']}"
+        item_key = selected_item["id"]
         buy_disabled = item_key in owned_items
         detail_lines = [
             selected_item["subtitle"],
             f"Price: {selected_item['price']} Gold",
-            "Purchases are added to the commander collection and reflected on the Player Menu.",
+            "Purchases unlock immediately in the commander collection.",
+        ]
+    else:
+        buy_disabled = True
+        buy_label = "Unavailable"
+        detail_title = active_tab
+        detail_lines = [
+            shop_tab_note(active_tab),
+            "Only the Artifacts tab currently contains purchasable battle wares.",
         ]
 
     draw_text(surf, detail_title, font_headline(24, bold=True), TEXT, (embassy_panel.x + 18, embassy_panel.y + 56))
@@ -647,8 +669,12 @@ def draw_shops(
         draw_text(surf, line, font_body(16), TEXT_SOFT, (embassy_panel.x + 18, embassy_panel.y + 100 + index * 24))
     embassy_btn = pygame.Rect(embassy_panel.x + 20, embassy_panel.bottom - 116, embassy_panel.width - 40, 42)
     buy_btn = pygame.Rect(wealth_panel.x + 18, wealth_panel.bottom - 56, wealth_panel.width - 36, 38)
+    prev_rect = pygame.Rect(inventory_panel.x + 24, inventory_panel.bottom - 48, 124, 34)
+    next_rect = pygame.Rect(inventory_panel.right - 148, inventory_panel.bottom - 48, 124, 34)
     draw_secondary_button(surf, embassy_btn, mouse_pos, "View Embassy", active=focus_kind == "embassy")
     draw_primary_button(surf, buy_btn, mouse_pos, buy_label, disabled=buy_disabled)
+    draw_secondary_button(surf, prev_rect, mouse_pos, "Prev", active=item_scroll > 0)
+    draw_secondary_button(surf, next_rect, mouse_pos, "Next", active=item_scroll < max_scroll)
     draw_text(surf, "Gold", font_label(11, bold=True), TEXT_MUTE, (wealth_panel.x + 18, wealth_panel.y + 60))
     draw_text(surf, str(getattr(profile, "gold", 0) if profile is not None else 0), font_headline(24, bold=True), GOLD_BRIGHT, (wealth_panel.right - 18, wealth_panel.y + 58), right=True)
     draw_text(surf, "Spending Note", font_label(11, bold=True), TEXT_MUTE, (wealth_panel.x + 18, wealth_panel.y + 106))
@@ -660,6 +686,9 @@ def draw_shops(
     btns["items"] = item_buttons
     btns["embassy"] = embassy_btn
     btns["buy"] = buy_btn
+    btns["shop_prev"] = prev_rect
+    btns["shop_next"] = next_rect
+    btns["shop_scroll_max"] = max_scroll
     return btns
 
 
@@ -698,15 +727,22 @@ def draw_quests_menu(surf, mouse_pos, selected_index: int, opponent_mode: str, r
     draw_text(surf, "Threat Pattern", font_label(12, bold=True), TEXT_MUTE, (summary_rect.x + 22, summary_rect.y + 70))
     draw_text(surf, quest.threat, font_headline(24, bold=True), TEXT, (summary_rect.x + 22, summary_rect.y + 98))
     draw_meter(surf, pygame.Rect(summary_rect.x + 22, summary_rect.y + 172, summary_rect.width - 44, 16), selected_index + 2, 5, label="Difficulty", right_label=quest.difficulty)
-    draw_text(surf, "Gold Reward", font_label(11, bold=True), TEXT_MUTE, (summary_rect.x + 22, summary_rect.y + 232))
-    draw_text(surf, str(quest.reward_gold), font_headline(24, bold=True), GOLD_BRIGHT, (summary_rect.right - 22, summary_rect.y + 228), right=True)
-    draw_text(surf, "EXP Reward", font_label(11, bold=True), TEXT_MUTE, (summary_rect.x + 22, summary_rect.y + 274))
-    draw_text(surf, str(quest.reward_exp), font_headline(24, bold=True), TEXT_SOFT, (summary_rect.right - 22, summary_rect.y + 270), right=True)
+    summary = run_summary or {}
+    draw_text(surf, "Next Win Gold", font_label(11, bold=True), TEXT_MUTE, (summary_rect.x + 22, summary_rect.y + 232))
+    draw_text(
+        surf,
+        str(summary.get("next_gold", quest_win_gold(0))),
+        font_headline(24, bold=True),
+        GOLD_BRIGHT,
+        (summary_rect.right - 22, summary_rect.y + 228),
+        right=True,
+    )
+    draw_text(surf, "Quest Win EXP", font_label(11, bold=True), TEXT_MUTE, (summary_rect.x + 22, summary_rect.y + 274))
+    draw_text(surf, str(summary.get("exp_reward", QUEST_WIN_EXP)), font_headline(24, bold=True), TEXT_SOFT, (summary_rect.right - 22, summary_rect.y + 270), right=True)
     ai_rect = pygame.Rect(summary_rect.x + 22, summary_rect.y + 334, 128, 38)
     lan_rect = pygame.Rect(summary_rect.x + 160, summary_rect.y + 334, 128, 38)
     draw_secondary_button(surf, ai_rect, mouse_pos, "Vs AI", active=opponent_mode == "ai")
     draw_secondary_button(surf, lan_rect, mouse_pos, "Via LAN", active=opponent_mode == "lan")
-    summary = run_summary or {}
     draw_text(surf, f"Streak: {summary.get('streak_text', 'Fresh Run')}", font_body(18, bold=True), GOLD_BRIGHT, (summary_rect.x + 22, summary_rect.y + 394))
     draw_text(surf, f"Losses: {summary.get('loss_text', '0 / 3')}", font_body(16), TEXT_SOFT, (summary_rect.x + 22, summary_rect.y + 424))
     draw_text(surf, f"Pressure: {summary.get('pressure', 'Steady')}", font_body(16), TEXT_SOFT, (summary_rect.x + 22, summary_rect.y + 448))
@@ -1068,8 +1104,9 @@ def draw_catalog(surf, mouse_pos, section_index, entry_index, scroll: int = 0):
         draw_text(surf, line, font_body(18), TEXT_SOFT, (detail_rect.x + 24, detail_rect.y + 160 + row_index * 24))
     prev_rect = pygame.Rect(list_rect.x + 18, list_rect.bottom - 54, 124, 36)
     next_rect = pygame.Rect(list_rect.right - 142, list_rect.bottom - 54, 124, 36)
-    draw_secondary_button(surf, prev_rect, mouse_pos, "Prev", active=False)
-    draw_secondary_button(surf, next_rect, mouse_pos, "Next", active=False)
+    max_scroll = max(0, len(entries) - 10)
+    draw_secondary_button(surf, prev_rect, mouse_pos, "Prev", active=scroll > 0)
+    draw_secondary_button(surf, next_rect, mouse_pos, "Next", active=scroll < max_scroll)
     btns["back"] = btns.pop("left")
     btns["sections"] = section_buttons
     btns["entries"] = entry_buttons

@@ -2102,9 +2102,40 @@ class Game:
         ly = (screen_pos[1] - oy) / self._scale
         return (int(lx), int(ly))
 
+    def _iter_button_rects(self, value):
+        if isinstance(value, pygame.Rect):
+            yield value
+            return
+        if isinstance(value, dict):
+            for child in value.values():
+                yield from self._iter_button_rects(child)
+            return
+        if isinstance(value, (list, tuple)):
+            if len(value) == 4 and all(isinstance(part, (int, float)) for part in value):
+                return
+            for child in value:
+                yield from self._iter_button_rects(child)
+
+    def _storybook_input_pos(self, screen_pos):
+        logical_pos = self._to_logical(screen_pos)
+        raw_pos = (int(screen_pos[0]), int(screen_pos[1]))
+        button_rects = list(self._iter_button_rects(getattr(self.storybook, "last_buttons", {})))
+        if not button_rects:
+            return logical_pos
+        raw_hits = any(rect.collidepoint(raw_pos) for rect in button_rects)
+        logical_hits = any(rect.collidepoint(logical_pos) for rect in button_rects)
+        if raw_hits and not logical_hits:
+            return raw_pos
+        return logical_pos
+
+    def _event_input_pos(self, screen_pos):
+        if self.phase == "storybook":
+            return self._storybook_input_pos(screen_pos)
+        return self._to_logical(screen_pos)
+
     def run(self):
         while True:
-            mouse_pos = self._to_logical(pygame.mouse.get_pos())
+            mouse_pos = self._event_input_pos(pygame.mouse.get_pos())
             events = pygame.event.get()
             for e in events:
                 if e.type == pygame.QUIT:
@@ -2119,7 +2150,7 @@ class Game:
                         self._swallow_mouse_up_after_tutorial = True
                         self._reset_team_drag()
                         continue
-                    evt_pos = self._to_logical(e.pos)
+                    evt_pos = self._event_input_pos(e.pos)
                     if self.phase in ("team_select", "pre_battle_edit"):
                         self._handle_team_select_mouse_down(evt_pos)
                     else:
@@ -2129,11 +2160,11 @@ class Game:
                         self._swallow_mouse_up_after_tutorial = False
                         self._reset_team_drag()
                         continue
-                    evt_pos = self._to_logical(e.pos)
+                    evt_pos = self._event_input_pos(e.pos)
                     if self.phase in ("team_select", "pre_battle_edit"):
                         self._handle_team_select_mouse_up(evt_pos)
                 if e.type == pygame.MOUSEMOTION and self.phase in ("team_select", "pre_battle_edit"):
-                    evt_pos = self._to_logical(e.pos)
+                    evt_pos = self._event_input_pos(e.pos)
                     self._handle_team_select_mouse_motion(evt_pos, e.buttons)
 
             self._lan_tick()
@@ -2773,6 +2804,9 @@ class Game:
         )
 
     def _handle_mousewheel(self, e):
+        if self.phase == "storybook":
+            self.storybook.handle_mousewheel(e)
+            return
         if self._is_in_battle() and self._battle_overlay == "log":
             self.battle_log_scroll = max(0, self.battle_log_scroll + e.y * 3)
             return

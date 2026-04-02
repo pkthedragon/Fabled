@@ -11,6 +11,7 @@ from quests_ruleset_logic import create_battle, create_team, determine_initiativ
 
 SLOT_ORDER = (SLOT_FRONT, SLOT_BACK_LEFT, SLOT_BACK_RIGHT)
 CLASS_ORDER = tuple(CLASS_SKILLS.keys())
+ALL_ARTIFACT_IDS = {artifact.id for artifact in ARTIFACTS}
 
 
 def _team_key(team_num: int) -> str:
@@ -25,14 +26,25 @@ def _default_class_for_slot(slot: str) -> str:
     return "Cleric"
 
 
-def compatible_artifact_ids(class_name: str) -> list[str]:
-    return [artifact.id for artifact in ARTIFACTS if class_name in artifact.attunement]
+def _allowed_artifact_ids_for_team(setup_state: dict, team_num: int) -> set[str] | None:
+    raw_ids = setup_state.get(f"{_team_key(team_num)}_allowed_artifact_ids")
+    if raw_ids is None:
+        return None
+    return {artifact_id for artifact_id in raw_ids if artifact_id in ALL_ARTIFACT_IDS}
 
 
-def _normalize_team_artifacts(team: list[dict]):
+def compatible_artifact_ids(class_name: str, allowed_artifact_ids: set[str] | None = None) -> list[str]:
+    return [
+        artifact.id
+        for artifact in ARTIFACTS
+        if class_name in artifact.attunement and (allowed_artifact_ids is None or artifact.id in allowed_artifact_ids)
+    ]
+
+
+def _normalize_team_artifacts(team: list[dict], allowed_artifact_ids: set[str] | None = None):
     used: set[str] = set()
     for member in team:
-        artifact_ids = compatible_artifact_ids(member["class_name"])
+        artifact_ids = compatible_artifact_ids(member["class_name"], allowed_artifact_ids)
         if not artifact_ids:
             member["artifact_id"] = None
             continue
@@ -44,9 +56,9 @@ def _normalize_team_artifacts(team: list[dict]):
         used.add(chosen)
 
 
-def _build_member(adventurer_id: str, slot: str) -> dict:
+def _build_member(adventurer_id: str, slot: str, allowed_artifact_ids: set[str] | None = None) -> dict:
     class_name = _default_class_for_slot(slot)
-    artifacts = compatible_artifact_ids(class_name)
+    artifacts = compatible_artifact_ids(class_name, allowed_artifact_ids)
     return {
         "adventurer_id": adventurer_id,
         "slot": slot,
@@ -67,21 +79,31 @@ def create_setup_state(seed: Optional[int] = None) -> dict:
     }
 
 
-def build_default_team_from_ids(adventurer_ids: list[str]) -> list[dict]:
+def build_default_team_from_ids(adventurer_ids: list[str], allowed_artifact_ids: set[str] | None = None) -> list[dict]:
     members = []
     for index, adventurer_id in enumerate(adventurer_ids[: len(SLOT_ORDER)]):
-        members.append(_build_member(adventurer_id, SLOT_ORDER[index]))
+        members.append(_build_member(adventurer_id, SLOT_ORDER[index], allowed_artifact_ids))
     return members
 
 
-def create_setup_from_team_ids(team1_ids: list[str], team2_ids: list[str]) -> dict:
+def create_setup_from_team_ids(
+    team1_ids: list[str],
+    team2_ids: list[str],
+    *,
+    team1_allowed_artifact_ids: set[str] | None = None,
+    team2_allowed_artifact_ids: set[str] | None = None,
+) -> dict:
     setup = {
         "offer_ids": list(dict.fromkeys(team1_ids + team2_ids)),
-        "team1": build_default_team_from_ids(team1_ids),
-        "team2": build_default_team_from_ids(team2_ids),
+        "team1": build_default_team_from_ids(team1_ids, team1_allowed_artifact_ids),
+        "team2": build_default_team_from_ids(team2_ids, team2_allowed_artifact_ids),
     }
-    _normalize_team_artifacts(setup["team1"])
-    _normalize_team_artifacts(setup["team2"])
+    if team1_allowed_artifact_ids is not None:
+        setup["team1_allowed_artifact_ids"] = sorted(team1_allowed_artifact_ids)
+    if team2_allowed_artifact_ids is not None:
+        setup["team2_allowed_artifact_ids"] = sorted(team2_allowed_artifact_ids)
+    _normalize_team_artifacts(setup["team1"], team1_allowed_artifact_ids)
+    _normalize_team_artifacts(setup["team2"], team2_allowed_artifact_ids)
     return setup
 
 
@@ -120,10 +142,10 @@ def assign_offer_to_team(setup_state: dict, adventurer_id: str, team_num: int) -
     other_index = _find_member_index(other_team, adventurer_id)
     if other_index is not None:
         other_team.pop(other_index)
-        _normalize_team_artifacts(other_team)
+        _normalize_team_artifacts(other_team, _allowed_artifact_ids_for_team(setup_state, 2 if team_num == 1 else 1))
 
-    target_team.append(_build_member(adventurer_id, _next_available_slot(target_team)))
-    _normalize_team_artifacts(target_team)
+    target_team.append(_build_member(adventurer_id, _next_available_slot(target_team), _allowed_artifact_ids_for_team(setup_state, team_num)))
+    _normalize_team_artifacts(target_team, _allowed_artifact_ids_for_team(setup_state, team_num))
     return True
 
 
@@ -131,7 +153,7 @@ def remove_member_from_team(setup_state: dict, team_num: int, member_index: int)
     team = setup_state[_team_key(team_num)]
     if 0 <= member_index < len(team):
         team.pop(member_index)
-        _normalize_team_artifacts(team)
+        _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
         return True
     return False
 
@@ -158,10 +180,10 @@ def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> b
     class_name = CLASS_ORDER[(class_index + 1) % len(CLASS_ORDER)]
     member["class_name"] = class_name
     member["class_skill_id"] = CLASS_SKILLS[class_name][0].id
-    artifacts = compatible_artifact_ids(class_name)
+    artifacts = compatible_artifact_ids(class_name, _allowed_artifact_ids_for_team(setup_state, team_num))
     if member["artifact_id"] not in artifacts:
         member["artifact_id"] = artifacts[0] if artifacts else None
-    _normalize_team_artifacts(team)
+    _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
     return True
 
 
@@ -197,7 +219,7 @@ def cycle_member_artifact(setup_state: dict, team_num: int, member_index: int) -
     if not (0 <= member_index < len(team)):
         return False
     member = team[member_index]
-    artifact_ids = compatible_artifact_ids(member["class_name"])
+    artifact_ids = compatible_artifact_ids(member["class_name"], _allowed_artifact_ids_for_team(setup_state, team_num))
     if not artifact_ids:
         member["artifact_id"] = None
         return True

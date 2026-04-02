@@ -12,8 +12,9 @@ from quests_ai_quest import choose_quest_party
 from quests_ruleset_data import ARTIFACTS, ARTIFACTS_BY_ID
 from quests_sandbox import build_battle_from_setup, create_setup_from_team_ids, cycle_member_field, setup_is_ready
 from storybook_battle import StoryBattleController, StoryLanBattleController
-from storybook_content import BOUT_MODES, COSMETIC_CATEGORIES, STORY_QUESTS, catalog_entries, draft_offer, shop_items_for_tab
+from storybook_content import BOUT_MODES, COSMETIC_CATEGORIES, STORY_QUESTS, catalog_entries, draft_offer, shop_items_for_tab, shop_tab_note
 from storybook_lan import StoryLanSession, deserialize_setup_state, friend_host_available, serialize_member, serialize_setup_state
+from storybook_progression import ARTIFACT_PURCHASE_EXP, BOUT_WIN_EXP, BOUT_WIN_GOLD, QUEST_WIN_EXP, award_exp, quest_win_gold
 from storybook_ranked import (
     ai_difficulty_for_glory,
     effective_matchmaking_rating,
@@ -25,6 +26,9 @@ from storybook_ranked import (
     update_glory_after_match,
 )
 import storybook_ui as sbui
+
+
+ALL_ARTIFACT_IDS = {artifact.id for artifact in ARTIFACTS}
 
 
 class StorybookMode:
@@ -52,8 +56,9 @@ class StorybookMode:
             "Click a saved friend to test whether their Fabled LAN host is reachable.",
         ]
 
-        self.shops_tab = "Armory"
+        self.shops_tab = "Artifacts"
         self.shops_cosmetic_index = 0
+        self.shop_item_scroll = 0
         self.shop_focus_kind = "item"
         self.shop_focus_value = None
         self.shop_message = ""
@@ -138,16 +143,19 @@ class StorybookMode:
             getattr(self.profile, "ranked_games_played", 0),
         )
         self.profile.storybook_rank_label = rank_name(self.profile.ranked_rating)
-        valid_owned = {artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID}
-        if not valid_owned:
-            valid_owned = {artifact.id for artifact in ARTIFACTS[:3]}
-            self.profile.unlocked_artifacts.update(valid_owned)
+        self.profile.unlocked_artifacts = {
+            artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID
+        }
         if not hasattr(self.profile, "storybook_friends"):
             self.profile.storybook_friends = []
+        if not hasattr(self.profile, "storybook_cosmetic_unlocks"):
+            self.profile.storybook_cosmetic_unlocks = set()
+        self.shop_owned_cosmetics = set(getattr(self.profile, "storybook_cosmetic_unlocks", set()))
         self._sync_friend_selection()
 
     def _persist_profile(self):
         self.profile.storybook_rank_label = rank_name(self.profile.ranked_rating)
+        self.profile.storybook_cosmetic_unlocks = set(self.shop_owned_cosmetics)
         save_campaign(self.profile)
 
     def _friends(self) -> list[dict]:
@@ -274,14 +282,32 @@ class StorybookMode:
             ]
 
     def _owned_artifacts(self):
-        ids = sorted(artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID)
+        ids = sorted(self._owned_artifact_ids())
         return [ARTIFACTS_BY_ID[artifact_id] for artifact_id in ids]
 
+    def _owned_artifact_ids(self) -> set[str]:
+        return {artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID}
+
     def _owned_shop_item_keys(self) -> set[str]:
-        keys = set(self.shop_owned_items)
-        for artifact in self._owned_artifacts():
-            keys.add(f"Artifacts:{artifact.name}")
-        return keys
+        return set(self._owned_artifact_ids())
+
+    def _loadout_artifact_ids(self, *, allow_all: bool = False) -> set[str]:
+        if allow_all:
+            return set(ALL_ARTIFACT_IDS)
+        return set(self._owned_artifact_ids())
+
+    def _apply_exp_gain(self, gained_exp: int) -> list[str]:
+        if gained_exp <= 0:
+            return []
+        award = award_exp(getattr(self.profile, "player_exp", 0), gained_exp)
+        self.profile.player_exp = award.total_exp
+        if award.level_up_gold > 0:
+            self.profile.gold += award.level_up_gold
+        if not award.levels_gained:
+            return []
+        if len(award.levels_gained) == 1:
+            return [f"Reached Level {award.new_level}: +{award.level_up_gold} Gold"]
+        return [f"Reached Level {award.new_level}: +{award.level_up_gold} Gold across {len(award.levels_gained)} level-ups"]
 
     def _glory_text(self) -> str:
         glory = ensure_storybook_glory(self.profile.ranked_rating, getattr(self.profile, "ranked_games_played", 0))
@@ -301,6 +327,8 @@ class StorybookMode:
             "loss_text": f"{self.quest_run_consecutive_losses} / 3",
             "pressure": pressure_label(self.profile.ranked_rating, self.quest_run_wins, self.quest_run_consecutive_losses, self._quest_avg_opponent_glory()),
             "party_lines": party_lines,
+            "next_gold": quest_win_gold(self.quest_run_wins),
+            "exp_reward": QUEST_WIN_EXP,
             "can_continue": self.quest_run_active and self.quest_opponent_mode == "ai",
         }
 
@@ -370,6 +398,7 @@ class StorybookMode:
                 mouse_pos,
                 self.shops_tab,
                 self.shops_cosmetic_index,
+                self.shop_item_scroll,
                 self.profile,
                 self.shop_focus_kind,
                 self.shop_focus_value,
@@ -489,16 +518,6 @@ class StorybookMode:
                 elif not self.friend_edit_name and not self.friend_edit_ip:
                     self._new_friend_entry()
                 self.route = "friends"
-            elif self._hit(btns.get("closet"), pos):
-                self.player_note_lines = [
-                    "Closet is visible as part of the final IA, but it does not open a dedicated menu yet.",
-                    "Cosmetic ownership is still tracked through the shop ledger.",
-                ]
-            elif self._hit(btns.get("trophies"), pos):
-                self.player_note_lines = [
-                    "Trophies are not implemented as a separate screen in the current build.",
-                    "This button stays here so the finished menu layout remains intact.",
-                ]
             return None
 
         if route == "inventory":
@@ -556,6 +575,12 @@ class StorybookMode:
                     self.shops_tab = tab_name
                     self._reset_shop_focus()
                     return None
+            if self._hit(btns.get("shop_prev"), pos):
+                self.shop_item_scroll = max(0, self.shop_item_scroll - 6)
+                return None
+            if self._hit(btns.get("shop_next"), pos):
+                self.shop_item_scroll = min(btns.get("shop_scroll_max", 0), self.shop_item_scroll + 6)
+                return None
             for rect, index in btns.get("cosmetics", []):
                 if rect.collidepoint(pos):
                     self.shops_cosmetic_index = index
@@ -563,16 +588,16 @@ class StorybookMode:
                     self.shop_focus_value = COSMETIC_CATEGORIES[index]
                     self.shop_message = "Cosmetic bundles are commander-only unlocks."
                     return None
-            for rect, item_name in btns.get("items", []):
+            for rect, item_id in btns.get("items", []):
                 if rect.collidepoint(pos):
                     self.shop_focus_kind = "item"
-                    self.shop_focus_value = item_name
-                    self.shop_message = "Purchases use Gold and are reflected in your profile immediately."
+                    self.shop_focus_value = item_id
+                    self.shop_message = "Artifact purchases use Gold and unlock immediately on your profile."
                     return None
             if self._hit(btns.get("embassy"), pos):
                 self.shop_focus_kind = "embassy"
                 self.shop_focus_value = "Embassy Charter"
-                self.shop_message = "Embassy favors are gold-funded prestige purchases in the current build."
+                self.shop_message = "Embassy is informational here while artifact stock remains the only battle wares for sale."
                 return None
             if self._hit(btns.get("buy"), pos):
                 self._purchase_shop_focus()
@@ -884,13 +909,50 @@ class StorybookMode:
         if self.route == "bout_draft" and e.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
             self._draft_bout_focus()
             return None
+        if self.route == "catalog":
+            section_name = ["Adventurers", "Class Skills", "Artifacts"][self.catalog_section_index]
+            total = len(catalog_entries(section_name))
+            max_scroll = max(0, total - 10)
+            if e.key == pygame.K_UP:
+                self.catalog_scroll = max(0, self.catalog_scroll - 1)
+                return None
+            if e.key == pygame.K_DOWN:
+                self.catalog_scroll = min(max_scroll, self.catalog_scroll + 1)
+                return None
+            if e.key == pygame.K_PAGEUP:
+                self.catalog_scroll = max(0, self.catalog_scroll - 10)
+                return None
+            if e.key == pygame.K_PAGEDOWN:
+                self.catalog_scroll = min(max_scroll, self.catalog_scroll + 10)
+                return None
+        return None
+
+    def handle_mousewheel(self, event):
+        if self.route == "catalog":
+            section_name = ["Adventurers", "Class Skills", "Artifacts"][self.catalog_section_index]
+            total = len(catalog_entries(section_name))
+            max_scroll = max(0, total - 10)
+            self.catalog_scroll = max(0, min(max_scroll, self.catalog_scroll - event.y))
+            return None
+        if self.route == "shops":
+            items = shop_items_for_tab(self.shops_tab)
+            max_scroll = max(0, len(items) - 6)
+            if max_scroll > 0:
+                self.shop_item_scroll = max(0, min(max_scroll, self.shop_item_scroll - (event.y * 2)))
+            return None
         return None
 
     def _reset_shop_focus(self):
         items = shop_items_for_tab(self.shops_tab)
-        self.shop_focus_kind = "item"
-        self.shop_focus_value = items[0]["name"] if items else None
-        self.shop_message = "Select highlighted wares or the embassy charter to inspect them."
+        self.shop_item_scroll = 0
+        if items:
+            self.shop_focus_kind = "item"
+            self.shop_focus_value = items[0]["id"]
+            self.shop_message = "Artifacts are the only battle wares sold here. Cosmetics remain on the left rail."
+        else:
+            self.shop_focus_kind = None
+            self.shop_focus_value = None
+            self.shop_message = shop_tab_note(self.shops_tab)
 
     def _open_shops(self):
         self._reset_shop_focus()
@@ -898,11 +960,11 @@ class StorybookMode:
 
     def _purchase_shop_focus(self):
         if self.shop_focus_kind == "item":
-            item = next((entry for entry in shop_items_for_tab(self.shops_tab) if entry["name"] == self.shop_focus_value), None)
+            item = next((entry for entry in shop_items_for_tab(self.shops_tab) if entry["id"] == self.shop_focus_value), None)
             if item is None:
                 self.shop_message = "No wares are highlighted right now."
                 return
-            key = f"{self.shops_tab}:{item['name']}"
+            key = item["id"]
             if key in self._owned_shop_item_keys():
                 self.shop_message = f"{item['name']} is already in your collection."
                 return
@@ -910,11 +972,15 @@ class StorybookMode:
                 self.shop_message = f"You need {item['price'] - self.profile.gold} more Gold for {item['name']}."
                 return
             self.profile.gold -= item["price"]
-            if self.shops_tab == "Artifacts" and item.get("artifact_id"):
+            if item.get("artifact_id"):
                 self.profile.unlocked_artifacts.add(item["artifact_id"])
             else:
-                self.shop_owned_items.add(key)
-            self.shop_message = f"Purchased {item['name']} for {item['price']} Gold."
+                self.shop_message = "Only artifact stock is purchasable in the current build."
+                return
+            level_lines = self._apply_exp_gain(ARTIFACT_PURCHASE_EXP)
+            self.shop_message = f"Purchased {item['name']} for {item['price']} Gold and earned +{ARTIFACT_PURCHASE_EXP} EXP."
+            if level_lines:
+                self.shop_message = f"{self.shop_message} {level_lines[0]}"
             self._persist_profile()
             return
 
@@ -934,23 +1000,10 @@ class StorybookMode:
             return
 
         if self.shop_focus_kind == "embassy":
-            price = 450
-            if self.profile.gold < price:
-                self.shop_message = f"You need {price - self.profile.gold} more Gold for an embassy charter."
-                return
-            self.profile.gold -= price
-            unowned = [name for name in COSMETIC_CATEGORIES if name not in self.shop_owned_cosmetics]
-            if unowned:
-                reward = unowned[0]
-                self.shop_owned_cosmetics.add(reward)
-                self.shop_message = f"Embassy charter secured. The {reward} bundle is now unlocked."
-            else:
-                self.profile.player_exp += 60
-                self.shop_message = "Embassy charter secured. With every bundle owned, the favor becomes +60 EXP instead."
-            self._persist_profile()
+            self.shop_message = "Embassy is informational here. Only artifacts and cosmetics are sold in this build."
             return
 
-        self.shop_message = "Select an item, cosmetic bundle, or embassy charter first."
+        self.shop_message = "Select an artifact or cosmetic bundle first."
 
     def _handle_battle_click(self, pos):
         btns = self.last_buttons or {}
@@ -1013,21 +1066,22 @@ class StorybookMode:
         return f"Glory {old_glory} -> {new_glory} ({delta:+d})"
 
     def _finalize_quest_result(self, lines: list[str]) -> list[str]:
-        quest = STORY_QUESTS[self.quest_index]
         glory_line = self._apply_glory_result(did_win=self.result_victory, run_wins_before=self.quest_run_wins)
         if self.current_battle_opponent_glory > 0:
             self.quest_run_opponent_glories.append(self.current_battle_opponent_glory)
         if self.result_victory:
+            gold_reward = quest_win_gold(self.quest_run_wins)
             self.quest_run_wins += 1
             self.quest_run_consecutive_losses = 0
             self.story_quest_best = max(self.story_quest_best, self.quest_run_wins)
-            self.profile.gold += quest.reward_gold
-            self.profile.player_exp += quest.reward_exp
+            self.profile.gold += gold_reward
+            level_lines = self._apply_exp_gain(QUEST_WIN_EXP)
             self._persist_profile()
             return [
                 f"Quest streak: {self.quest_run_wins}",
                 "Consecutive losses: 0/3",
-                f"Rewards earned: +{quest.reward_gold} Gold, +{quest.reward_exp} EXP",
+                f"Rewards earned: +{gold_reward} Gold, +{QUEST_WIN_EXP} EXP",
+                *level_lines,
                 glory_line,
                 *lines,
             ]
@@ -1050,15 +1104,18 @@ class StorybookMode:
         mode = self._bout_mode()
         if self.result_victory:
             self.story_bout_wins += 1
-            self.profile.player_exp += 20
-            self.profile.gold += 120
+            self.profile.gold += BOUT_WIN_GOLD
+            level_lines = self._apply_exp_gain(BOUT_WIN_EXP)
         else:
             self.story_bout_losses += 1
-            self.profile.player_exp += 10
+            level_lines = []
         summary = [
             f"Mode: {mode['name']}",
             f"Bout record: {self.story_bout_wins}-{self.story_bout_losses}",
         ]
+        if self.result_victory:
+            summary.append(f"Rewards earned: +{BOUT_WIN_GOLD} Gold, +{BOUT_WIN_EXP} EXP")
+            summary.extend(level_lines)
         if mode["id"] == "ranked":
             summary.append(self._apply_glory_result(did_win=self.result_victory, run_wins_before=0))
         self._persist_profile()
@@ -1160,10 +1217,19 @@ class StorybookMode:
         if len(self.quest_selected_ids) != 3:
             return
         filler_ids = [adventurer_id for adventurer_id in self.quest_offer_ids if adventurer_id not in self.quest_selected_ids][:3]
+        player_artifacts = self._loadout_artifact_ids(allow_all=self.quest_opponent_mode == "lan")
         if self.quest_player_seat == 1:
-            self.quest_setup_state = create_setup_from_team_ids(self.quest_selected_ids, filler_ids)
+            self.quest_setup_state = create_setup_from_team_ids(
+                self.quest_selected_ids,
+                filler_ids,
+                team1_allowed_artifact_ids=player_artifacts,
+            )
         else:
-            self.quest_setup_state = create_setup_from_team_ids(filler_ids, self.quest_selected_ids)
+            self.quest_setup_state = create_setup_from_team_ids(
+                filler_ids,
+                self.quest_selected_ids,
+                team2_allowed_artifact_ids=player_artifacts,
+            )
         self.quest_loadout_index = 0
         self.quest_local_ready = False
         self.quest_remote_ready = False
@@ -1306,7 +1372,14 @@ class StorybookMode:
     def _enter_bout_loadout(self):
         if not self._draft_complete():
             return
-        self.bout_setup_state = create_setup_from_team_ids(self.bout_team1_ids, self.bout_team2_ids)
+        allow_all_artifacts = self.bout_opponent_mode == "lan"
+        player_artifacts = self._loadout_artifact_ids(allow_all=allow_all_artifacts)
+        self.bout_setup_state = create_setup_from_team_ids(
+            self.bout_team1_ids,
+            self.bout_team2_ids,
+            team1_allowed_artifact_ids=player_artifacts if self.bout_player_seat == 1 else None,
+            team2_allowed_artifact_ids=player_artifacts if self.bout_player_seat == 2 else None,
+        )
         self.bout_local_ready = False
         self.bout_remote_ready = False
         if self.bout_opponent_mode == "ai":
