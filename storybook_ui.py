@@ -659,8 +659,20 @@ def draw_main_menu(surf, mouse_pos, profile, *, has_current_quest=False):
 
     favorite_rect = pygame.Rect(profile_rect.x + 18, profile_rect.y + 240, profile_rect.width - 36, 60)
     draw_beveled_panel(surf, favorite_rect, title="Favorites")
-    draw_text(surf, f"Quest: {favorite_name}", font_body(15, bold=True), GOLD_BRIGHT, (favorite_rect.x + 16, favorite_rect.y + 34))
-    draw_text(surf, f"Training: {training_favorite_name}", font_body(13), TEXT_SOFT, (favorite_rect.right - 16, favorite_rect.y + 34), right=True)
+    draw_text(
+        surf,
+        _ellipsize_text(f"Quest: {favorite_name}", font_body(15, bold=True), favorite_rect.width - 32),
+        font_body(15, bold=True),
+        GOLD_BRIGHT,
+        (favorite_rect.x + 16, favorite_rect.y + 22),
+    )
+    draw_text(
+        surf,
+        _ellipsize_text(f"Training: {training_favorite_name}", font_body(13), favorite_rect.width - 32),
+        font_body(13),
+        TEXT_SOFT,
+        (favorite_rect.x + 16, favorite_rect.y + 40),
+    )
 
     tile_specs = [
         (guild_rect, "Guild Hall", "Start a Quest or view the catalog"),
@@ -719,9 +731,10 @@ def draw_player_menu(
     rank_label = getattr(profile, "storybook_rank_label", "Baron")
     detail_x = portrait.x + portrait.width + 26
     draw_text(surf, "Profile Stage", font_headline(20, bold=True), TEXT, (detail_x, portrait_rect.y + 72))
-    draw_text(surf, f"Outfit: {getattr(profile, 'storybook_equipped_outfit', '') or 'Default'}", font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 108))
-    draw_text(surf, f"Chair: {getattr(profile, 'storybook_equipped_chair', '') or 'Default'}", font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 132))
-    draw_text(surf, f"Icon: {getattr(profile, 'storybook_equipped_icon', '') or 'Default'}", font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 156))
+    detail_width = portrait_rect.right - detail_x - 18
+    draw_text(surf, _ellipsize_text(f"Outfit: {getattr(profile, 'storybook_equipped_outfit', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 108))
+    draw_text(surf, _ellipsize_text(f"Chair: {getattr(profile, 'storybook_equipped_chair', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 132))
+    draw_text(surf, _ellipsize_text(f"Icon: {getattr(profile, 'storybook_equipped_icon', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 156))
 
     level_line = f"Level {level_info.level} | {exp_value} EXP"
     exp_progress = f"MAX" if level_info.at_cap else f"{level_info.current_level_exp} / {level_info.next_level_exp}"
@@ -774,7 +787,7 @@ def draw_inventory_screen(surf, mouse_pos, owned_artifacts, selected_index: int 
         mouse_pos,
         left_icon="<",
         right_icons=(("settings", "S", False), ("quit", "X", True)),
-        subtitle="Owned artifacts and attunement details",
+        subtitle="Owned artifacts",
     )
     rail_rect = pygame.Rect(84, 112, 360, 708)
     detail_rect = pygame.Rect(478, 112, 812, 708)
@@ -793,14 +806,8 @@ def draw_inventory_screen(surf, mouse_pos, owned_artifacts, selected_index: int 
             entry_buttons.append((rect, index))
         selected = owned_artifacts[selected_index]
     if selected is not None:
-        draw_text(surf, selected.name, font_headline(34, bold=True), TEXT, (detail_rect.x + 28, detail_rect.y + 64))
-        draw_text(surf, f"Attunement: {', '.join(selected.attunement)}", font_label(12, bold=True), GOLD_BRIGHT, (detail_rect.x + 28, detail_rect.y + 112))
-        lines = [
-            f"Stat Bonus: +{selected.amount} {selected.stat.title()}",
-            f"{'Reactive Spell' if selected.reactive else 'Spell'}: {selected.spell.name}",
-            selected.spell.description or selected.spell.name,
-            selected.description or "No additional field note recorded.",
-        ]
+        draw_text(surf, _ellipsize_text(selected.name, font_headline(34, bold=True), detail_rect.width - 56), font_headline(34, bold=True), TEXT, (detail_rect.x + 28, detail_rect.y + 64))
+        lines = _artifact_detail_lines(selected)
         y = detail_rect.y + 164
         for block in lines:
             for line in _wrap_multiline_block(block, font_body(20), detail_rect.width - 56, limit=6):
@@ -972,7 +979,7 @@ def draw_training_grounds(surf, mouse_pos, *, training_favorite_id: str | None =
             tag_line="Training Favorite" if adventurer.id == selected.id else None,
         )
         card_buttons.append((rect, adventurer.id))
-    draw_text(surf, selected.name, font_headline(28, bold=True), TEXT, (detail_rect.x + 22, detail_rect.y + 60))
+    draw_text(surf, _ellipsize_text(selected.name, font_headline(28, bold=True), detail_rect.width - 44), font_headline(28, bold=True), TEXT, (detail_rect.x + 22, detail_rect.y + 60))
     draw_text(surf, f"Stats: HP {selected.hp} | ATK {selected.attack} | DEF {selected.defense} | SPD {selected.speed}", font_body(15), TEXT_SOFT, (detail_rect.x + 22, detail_rect.y + 102))
     draw_text(surf, f"Innate: {selected.innate.name}", font_body(15, bold=True), GOLD_BRIGHT, (detail_rect.x + 22, detail_rect.y + 138))
     for index, line in enumerate(_wrap_text_block(selected.innate.description, font_body(14), detail_rect.width - 44)[:5]):
@@ -981,15 +988,15 @@ def draw_training_grounds(surf, mouse_pos, *, training_favorite_id: str | None =
     for weapon_index, weapon in enumerate(selected.signature_weapons):
         block = pygame.Rect(detail_rect.x + 22, detail_rect.y + 320 + weapon_index * 118, detail_rect.width - 44, 98)
         draw_beveled_panel(surf, block, fill_top=SURFACE_HIGH, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
-        draw_text(surf, f"{weapon.name} - {weapon.kind.title()}", font_body(16, bold=True), GOLD_BRIGHT, (block.x + 14, block.y + 14))
+        draw_text(surf, _ellipsize_text(f"{weapon.name} - {weapon.kind.title()}", font_body(16, bold=True), block.width - 28), font_body(16, bold=True), GOLD_BRIGHT, (block.x + 14, block.y + 14))
         _draw_wrapped_lines(surf, [weapon.strike.description or f"{weapon.strike.power} Power Strike"], block.x + 14, block.y + 42, block.width - 28, font=font_body(13), color=TEXT_SOFT, line_height=16)
     draw_text(surf, "Ultimate", font_headline(22, bold=True), TEXT, (detail_rect.x + 22, detail_rect.bottom - 152))
-    draw_text(surf, selected.ultimate.name, font_body(16, bold=True), GOLD_BRIGHT, (detail_rect.x + 22, detail_rect.bottom - 118))
+    draw_text(surf, _ellipsize_text(selected.ultimate.name, font_body(16, bold=True), detail_rect.width - 44), font_body(16, bold=True), GOLD_BRIGHT, (detail_rect.x + 22, detail_rect.bottom - 118))
     for index, line in enumerate(_wrap_text_block(selected.ultimate.description or selected.ultimate.name, font_body(14), detail_rect.width - 44)[:4]):
         draw_text(surf, line, font_body(14), TEXT_SOFT, (detail_rect.x + 22, detail_rect.bottom - 90 + index * 18))
 
     draw_text(surf, "All artifacts available", font_body(15, bold=True), GOLD_BRIGHT, (options_rect.x + 18, options_rect.y + 66))
-    draw_text(surf, selected.name, font_headline(20, bold=True), TEXT, (options_rect.x + 18, options_rect.y + 112))
+    draw_text(surf, _ellipsize_text(selected.name, font_headline(20, bold=True), options_rect.width - 36), font_headline(20, bold=True), TEXT, (options_rect.x + 18, options_rect.y + 112))
     ai_btn = pygame.Rect(options_rect.x + 18, options_rect.y + 220, options_rect.width - 36, 58)
     lan_btn = pygame.Rect(options_rect.x + 18, options_rect.y + 294, options_rect.width - 36, 58)
     change_btn = pygame.Rect(options_rect.x + 18, options_rect.y + 372, options_rect.width - 36, 38)
@@ -1119,7 +1126,7 @@ def draw_market(
                 fill_bottom=SURFACE_LOW,
                 border=GOLD_BRIGHT if selected else GOLD_DIM,
             )
-            draw_text(surf, item["name"], font_headline(20, bold=True), TEXT, (rect.x + 16, rect.y + 18))
+            draw_text(surf, _ellipsize_text(item["name"], font_headline(20, bold=True), rect.width - 32), font_headline(20, bold=True), TEXT, (rect.x + 16, rect.y + 18))
             draw_text(surf, item["category"], font_label(10, bold=True), GOLD_BRIGHT, (rect.x + 16, rect.y + 48))
             draw_text(surf, str(item["price"]), font_label(10, bold=True), GOLD_BRIGHT, (rect.right - 16, rect.y + 18), right=True)
             state_label = "Equipped" if equipped else ("Owned" if owned else "For Sale")
@@ -1133,7 +1140,7 @@ def draw_market(
         if selected_item is not None:
             owned = selected_item["id"] in owned_cosmetics
             equipped = owned and selected_item["id"] == _market_equipped_id_for_item(profile, selected_item)
-            draw_text(surf, selected_item["name"], font_headline(30, bold=True), TEXT, (detail_rect.x + 24, detail_rect.y + 62))
+            draw_text(surf, _ellipsize_text(selected_item["name"], font_headline(30, bold=True), detail_rect.width - 48), font_headline(30, bold=True), TEXT, (detail_rect.x + 24, detail_rect.y + 62))
             draw_text(surf, selected_item["category"], font_label(11, bold=True), GOLD_BRIGHT, (detail_rect.x + 24, detail_rect.y + 104))
             draw_text(surf, f"Price: {selected_item['price']} Gold", font_body(18, bold=True), TEXT_SOFT, (detail_rect.x + 24, detail_rect.y + 146))
             if "adventurer_id" in selected_item:
@@ -1222,7 +1229,7 @@ def draw_closet(
     pygame.draw.rect(surf, GOLD_BRIGHT, mannequin, 2, border_radius=12)
     draw_text(surf, "PLAYER", font_label(12, bold=True), GOLD_BRIGHT, (mannequin.centerx, mannequin.y + 16), center=True)
     if selected_item is not None:
-        draw_text(surf, selected_item["name"], font_headline(26, bold=True), TEXT, (preview_rect.centerx, mannequin.bottom + 40), center=True)
+        draw_text(surf, _ellipsize_text(selected_item["name"], font_headline(26, bold=True), preview_rect.width - 52), font_headline(26, bold=True), TEXT, (preview_rect.centerx, mannequin.bottom + 40), center=True)
         draw_text(surf, selected_item["category"], font_body(16, bold=True), GOLD_BRIGHT, (preview_rect.centerx, mannequin.bottom + 78), center=True)
         equipped = profile is not None and selected_item["id"] == _market_equipped_id_for_item(profile, selected_item)
         draw_text(surf, "Equipped" if equipped else "Owned", font_body(15), JADE if equipped else TEXT_SOFT, (preview_rect.centerx, mannequin.bottom + 106), center=True)
@@ -1308,7 +1315,7 @@ def draw_favored_adventurer_select(
         card_buttons.append((rect, adventurer_id))
 
     if focused is not None:
-        draw_text(surf, focused.name, font_headline(30, bold=True), TEXT, (detail_rect.x + 24, detail_rect.y + 62))
+        draw_text(surf, _ellipsize_text(focused.name, font_headline(30, bold=True), detail_rect.width - 48), font_headline(30, bold=True), TEXT, (detail_rect.x + 24, detail_rect.y + 62))
         draw_text(
             surf,
             f"Stats: HP {focused.hp} | ATK {focused.attack} | DEF {focused.defense} | SPD {focused.speed}",
@@ -1323,11 +1330,11 @@ def draw_favored_adventurer_select(
         for weapon_index, weapon in enumerate(focused.signature_weapons):
             block = pygame.Rect(detail_rect.x + 24, detail_rect.y + 350 + weapon_index * 112, detail_rect.width - 48, 90)
             draw_beveled_panel(surf, block, fill_top=SURFACE_HIGH, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
-            draw_text(surf, f"{weapon.name} - {weapon.kind.title()}", font_body(16, bold=True), GOLD_BRIGHT, (block.x + 14, block.y + 12))
+            draw_text(surf, _ellipsize_text(f"{weapon.name} - {weapon.kind.title()}", font_body(16, bold=True), block.width - 28), font_body(16, bold=True), GOLD_BRIGHT, (block.x + 14, block.y + 12))
             detail_lines = _wrap_text_block(weapon.strike.description or f"{weapon.strike.power} Power Strike", font_body(13), block.width - 28)
             for line_index, line in enumerate(detail_lines[:3]):
                 draw_text(surf, line, font_body(13), TEXT_SOFT, (block.x + 14, block.y + 40 + line_index * 16))
-        draw_text(surf, f"Ultimate: {focused.ultimate.name}", font_body(16, bold=True), GOLD_BRIGHT, (detail_rect.x + 24, detail_rect.bottom - 126))
+        draw_text(surf, _ellipsize_text(f"Ultimate: {focused.ultimate.name}", font_body(16, bold=True), detail_rect.width - 48), font_body(16, bold=True), GOLD_BRIGHT, (detail_rect.x + 24, detail_rect.bottom - 126))
         for index, line in enumerate(_wrap_multiline_block(focused.ultimate.description or focused.ultimate.name, font_body(14), detail_rect.width - 48, limit=4)):
             draw_text(surf, line, font_body(14), TEXT_SOFT, (detail_rect.x + 24, detail_rect.bottom - 98 + index * 18))
 
@@ -1362,7 +1369,7 @@ def draw_party_picker(surf, mouse_pos, parties: list[dict], selected_index: int,
         party_buttons.append((rect, index))
     selected = parties[selected_index] if parties else None
     if selected is not None:
-        draw_text(surf, selected["name"], font_headline(34, bold=True), TEXT, (detail_rect.x + 24, detail_rect.y + 62))
+        draw_text(surf, _ellipsize_text(selected["name"], font_headline(34, bold=True), detail_rect.width - 48), font_headline(34, bold=True), TEXT, (detail_rect.x + 24, detail_rect.y + 62))
         draw_text(
             surf,
             f"Size: {len(selected['members'])} / 6 | Classes must be unique",
@@ -1563,7 +1570,7 @@ def draw_shops(
         )
         draw_text(surf, item["tag"], font_label(10, bold=True), GOLD_BRIGHT, (rect.x + 16, rect.y + 14))
         draw_text(surf, str(item["price"]), font_label(10, bold=True), GOLD_BRIGHT, (rect.right - 16, rect.y + 14), right=True)
-        draw_text(surf, item["name"], font_headline(20, bold=True), TEXT, (rect.x + 16, rect.y + 42))
+        draw_text(surf, _ellipsize_text(item["name"], font_headline(20, bold=True), rect.width - 32), font_headline(20, bold=True), TEXT, (rect.x + 16, rect.y + 42))
         draw_text(surf, item["subtitle"], font_body(15), TEXT_SOFT, (rect.x + 16, rect.y + 74))
         if item["id"] in owned_items:
             draw_text(surf, "Owned", font_label(10, bold=True), JADE, (rect.right - 16, rect.y + 42), right=True)
@@ -1581,19 +1588,18 @@ def draw_shops(
         detail_title = selected_item["name"]
         item_key = selected_item["id"]
         buy_disabled = item_key in owned_items
-        detail_lines = [
-            selected_item["subtitle"],
-            f"Price: {selected_item['price']} Gold",
-            "Purchases unlock immediately in the commander collection.",
-            "Artifact ownership never bypasses attunement rules during battle.",
-        ]
+        artifact = ARTIFACTS_BY_ID.get(str(selected_item.get("artifact_id", item_key)))
+        detail_lines = [f"Price: {selected_item['price']} Gold"]
+        if artifact is not None:
+            detail_lines.extend(_artifact_detail_lines(artifact))
+        else:
+            detail_lines.append(selected_item["subtitle"])
     else:
         buy_disabled = True
         buy_label = "Unavailable"
         detail_title = active_tab
         detail_lines = [
-            shop_tab_note(active_tab),
-            "The Armory only sells artifacts.",
+            "Select an artifact to inspect its effect and stat bonus.",
         ]
 
     for index, line in enumerate(_wrap_text_block(status_message or "Your treasury is ready for new relics.", font_body(15), info_panel.width - 40)[:6]):
@@ -1601,9 +1607,14 @@ def draw_shops(
     draw_text(surf, "Current Gold", font_label(11, bold=True), TEXT_MUTE, (info_panel.x + 20, info_panel.bottom - 102))
     draw_text(surf, str(getattr(profile, "gold", 0) if profile is not None else 0), font_headline(28, bold=True), GOLD_BRIGHT, (info_panel.x + 20, info_panel.bottom - 72))
 
-    draw_text(surf, detail_title, font_headline(24, bold=True), TEXT, (detail_panel.x + 18, detail_panel.y + 56))
-    for index, line in enumerate(detail_lines[:4]):
-        draw_text(surf, line, font_body(16), TEXT_SOFT, (detail_panel.x + 18, detail_panel.y + 100 + index * 24))
+    draw_text(surf, _ellipsize_text(detail_title, font_headline(24, bold=True), detail_panel.width - 36), font_headline(24, bold=True), TEXT, (detail_panel.x + 18, detail_panel.y + 56))
+    detail_y = detail_panel.y + 100
+    for block in detail_lines:
+        wrapped = _wrap_multiline_block(block, font_body(15), detail_panel.width - 36, limit=8)
+        for line in wrapped:
+            draw_text(surf, line, font_body(15), TEXT_SOFT, (detail_panel.x + 18, detail_y))
+            detail_y += 20
+        detail_y += 8
     buy_btn = pygame.Rect(detail_panel.x + 18, detail_panel.bottom - 56, detail_panel.width - 36, 38)
     draw_primary_button(surf, buy_btn, mouse_pos, buy_label, disabled=buy_disabled)
     btns["back"] = btns.pop("left")
@@ -1798,18 +1809,33 @@ def draw_quest_draft(
             (520, 654 if target_count > 3 else 615),
             center=True,
         )
-    party_rect = pygame.Rect(230, 660, 486, 176)
-    enemy_rect = pygame.Rect(726, 660, 176, 176)
+    party_rect = pygame.Rect(230, 642, 486, 194)
+    enemy_rect = pygame.Rect(726, 642, 176, 194)
     detail_rect = pygame.Rect(920, 96, 434, 740)
     draw_beveled_panel(surf, party_rect, title=selected_panel_title)
     draw_beveled_panel(surf, enemy_rect, title=side_panel_title)
     slot_buttons = []
     if target_count <= 3:
         for index in range(target_count):
-            rect = pygame.Rect(party_rect.x + 18 + index * 144, party_rect.y + 54, 126, 110)
+            rect = pygame.Rect(party_rect.x + 18 + index * 150, party_rect.y + 52, 132, 86)
             if index < len(selected_ids):
                 adventurer = ADVENTURERS_BY_ID[selected_ids[index]]
-                draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=True, small=True, tag_line="REMOVE")
+                hovered = rect.collidepoint(mouse_pos)
+                draw_beveled_panel(
+                    surf,
+                    rect,
+                    fill_top=SURFACE_HIGH if hovered else SURFACE,
+                    fill_bottom=SURFACE_LOW,
+                    border=GOLD_BRIGHT,
+                )
+                badge = pygame.Rect(rect.x + 10, rect.y + 10, 38, 26)
+                base, accent = _portrait_palette(adventurer)
+                fill_gradient(surf, badge, _lerp_color(base, accent, 0.25), SBG_DEEP)
+                pygame.draw.rect(surf, GOLD_DIM, badge, 1, border_radius=6)
+                initials = "".join(part[0] for part in adventurer.name.split()[:2]).upper()
+                draw_text(surf, initials, font_body(16, bold=True), PARCHMENT, badge.center, center=True)
+                draw_text(surf, _ellipsize_text(adventurer.name, font_body(13, bold=True), rect.width - 20), font_body(13, bold=True), TEXT, (rect.x + 10, rect.y + 40))
+                draw_text(surf, "REMOVE", font_label(10, bold=True), GOLD_BRIGHT, (rect.x + 10, rect.y + 58))
                 slot_buttons.append((rect, selected_ids[index]))
             else:
                 draw_beveled_panel(surf, rect, fill_top=SURFACE, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
@@ -1866,7 +1892,7 @@ def draw_quest_draft(
         draw_text(surf, "Unknown", font_label(11, bold=True), TEXT_MUTE, enemy_rect.center, center=True)
     pick_label = "Add To Party" if target_count > 3 else "Select Adventurer"
     pick_btn = pygame.Rect(detail_rect.right - 208, detail_rect.bottom - 52, 186, 36)
-    continue_btn = pygame.Rect(party_rect.x + 18, party_rect.bottom - 46, party_rect.width - 36, 32)
+    continue_btn = pygame.Rect(party_rect.x + 18, party_rect.bottom - 38, party_rect.width - 36, 30)
     import_btn = pygame.Rect(enemy_rect.x, enemy_rect.y - 42, enemy_rect.width, 32)
     focus_id = focused_id if focused_id in ADVENTURERS_BY_ID else (visible_offer_ids[0] if visible_offer_ids else None)
     focused = ADVENTURERS_BY_ID[focus_id] if focus_id is not None else ADVENTURERS_BY_ID[next(iter(ADVENTURERS_BY_ID))]
@@ -2078,7 +2104,7 @@ def _draw_draft_detail_panel(surf, rect, mouse_pos, adventurer, *, footer_rect=N
     surf.set_clip(viewport)
 
     y = rect.y + 52 - scroll
-    draw_text(surf, adventurer.name, font_headline(28, bold=True), TEXT, (rect.x + 22, y))
+    draw_text(surf, _ellipsize_text(adventurer.name, font_headline(28, bold=True), rect.width - 44), font_headline(28, bold=True), TEXT, (rect.x + 22, y))
     y += 34
     tag_x = rect.x + 22
     for kind in _adventurer_weapon_kinds(adventurer):
@@ -2108,7 +2134,7 @@ def _draw_draft_detail_panel(surf, rect, mouse_pos, adventurer, *, footer_rect=N
     draw_text(surf, "Signature Weapons", font_label(12, bold=True), TEXT_MUTE, (rect.x + 22, y))
     y += 22
     for weapon in adventurer.signature_weapons:
-        draw_text(surf, weapon.name, font_body(17, bold=True), TEXT, (rect.x + 22, y))
+        draw_text(surf, _ellipsize_text(weapon.name, font_body(17, bold=True), rect.width - 44), font_body(17, bold=True), TEXT, (rect.x + 22, y))
         y += 22
         y += _draw_wrapped_lines(surf, _weapon_detail_lines(weapon), rect.x + 36, y, rect.width - 58, font=font_body(14), color=TEXT_SOFT, line_height=18)
         y += 10
@@ -2222,7 +2248,7 @@ def _draw_loadout_detail_panel(
     }
 
     y0 = rect.y + 54 - scroll
-    draw_text(surf, adventurer.name, font_headline(30, bold=True), TEXT, (rect.x + 22, y0))
+    draw_text(surf, _ellipsize_text(adventurer.name, font_headline(30, bold=True), rect.width - 44), font_headline(30, bold=True), TEXT, (rect.x + 22, y0))
     label_text = header_label or SLOT_LABELS.get(member.get("slot"), "Unassigned")
     draw_text(
         surf,
@@ -2283,9 +2309,9 @@ def _draw_loadout_detail_panel(
         draw_secondary_button(surf, class_rect, mouse_pos, class_name, active=True)
     buttons["classes"] = class_buttons
     class_summary_y = class_y + 18 + class_rows * 42 + 4
-    draw_text(surf, CLASS_SUMMARIES.get(class_name, ""), font_body(14), TEXT_SOFT, (rect.x + 22, class_summary_y))
+    class_summary_height = _draw_wrapped_lines(surf, [CLASS_SUMMARIES.get(class_name, "")], rect.x + 22, class_summary_y, rect.width - 44, font=font_body(14), color=TEXT_SOFT, line_height=18)
 
-    skill_label_y = class_summary_y + 32
+    skill_label_y = class_summary_y + max(24, class_summary_height) + 8
     draw_text(surf, "Class Skill", font_label(11, bold=True), TEXT_MUTE, (rect.x + 22, skill_label_y))
     skill_buttons = []
     hovered_skill = None
@@ -2659,37 +2685,117 @@ def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids,
         right_icons=(("settings", "S", False), ("quit", "X", True)),
         subtitle=f"{'Your' if current_player == player_seat else 'AI Rival'} Pick - Player {current_player}",
     )
+    def draw_compact_pick_tile(rect, adventurer, *, drafted_label="DRAFTED"):
+        base, accent = _portrait_palette(adventurer)
+        draw_beveled_panel(
+            surf,
+            rect,
+            fill_top=_lerp_color(SURFACE_HIGH, base, 0.22),
+            fill_bottom=SURFACE_LOW,
+            border=GOLD_DIM,
+        )
+        banner_rect = pygame.Rect(rect.x + 8, rect.y + 8, rect.width - 16, 36)
+        fill_gradient(surf, banner_rect, _lerp_color(base, accent, 0.28), SBG_DEEP)
+        pygame.draw.rect(surf, (255, 255, 255, 24), banner_rect, 1, border_radius=8)
+        initials = "".join(part[0] for part in adventurer.name.split()[:2]).upper()
+        draw_text(surf, initials, font_headline(22, bold=True), PARCHMENT, banner_rect.center, center=True)
+        draw_text(
+            surf,
+            _ellipsize_text(adventurer.name, font_body(15, bold=True), rect.width - 18),
+            font_body(15, bold=True),
+            TEXT,
+            (rect.x + 10, rect.y + 52),
+        )
+        role_text = _ellipsize_text(", ".join(role_tags_for_adventurer(adventurer)[:2]), font_label(9, bold=True), rect.width - 18)
+        draw_text(surf, role_text, font_label(9, bold=True), GOLD_BRIGHT, (rect.x + 10, rect.y + 70))
+        draw_text(
+            surf,
+            f"HP {adventurer.hp}  ATK {adventurer.attack}  DEF {adventurer.defense}  SPD {adventurer.speed}",
+            font_label(9, bold=True),
+            TEXT_SOFT,
+            (rect.x + 10, rect.bottom - 18),
+        )
+        draw_text(surf, drafted_label, font_label(9, bold=True), TEXT_MUTE, (rect.right - 10, rect.y + 52), right=True)
+
     pick_pool = []
     for index, adventurer_id in enumerate(pool_ids):
         adventurer = ADVENTURERS_BY_ID[adventurer_id]
         row = index // 3
         col = index % 3
-        rect = pygame.Rect(382 + col * 214, 118 + row * 186, 194, 170)
+        rect = pygame.Rect(366 + col * 188, 110 + row * 174, 172, 156)
         unavailable = adventurer_id in team1_ids or adventurer_id in team2_ids
         pick_pool.append((draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=focused_id == adventurer_id, unavailable=unavailable, small=True), adventurer_id))
-    side_panel = pygame.Rect(26, 118, 320, 534)
-    enemy_panel = pygame.Rect(1054, 118, 320, 534)
-    detail_rect = pygame.Rect(264, 668, 872, 186)
+    side_panel = pygame.Rect(24, 104, 316, 478)
+    enemy_panel = pygame.Rect(1060, 104, 316, 478)
+    detail_rect = pygame.Rect(240, 612, 920, 244)
     draw_beveled_panel(surf, side_panel, title="Player 1 - You" if player_seat == 1 else "Player 1 - AI Rival")
     draw_beveled_panel(surf, enemy_panel, title="Player 2 - You" if player_seat == 2 else "Player 2 - AI Rival")
     for index in range(3):
-        rect = pygame.Rect(side_panel.x + 18, side_panel.y + 54 + index * 154, side_panel.width - 36, 128)
+        rect = pygame.Rect(side_panel.x + 18, side_panel.y + 54 + index * 124, side_panel.width - 36, 100)
         if index < len(team1_ids):
-            draw_adventurer_card(surf, rect, mouse_pos, ADVENTURERS_BY_ID[team1_ids[index]], selected=False, small=True, tag_line="DRAFTED")
+            draw_compact_pick_tile(rect, ADVENTURERS_BY_ID[team1_ids[index]])
         else:
             draw_beveled_panel(surf, rect, fill_top=SURFACE, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
             draw_text(surf, "Open Slot", font_label(12, bold=True), TEXT_MUTE, rect.center, center=True)
     for index in range(3):
-        rect = pygame.Rect(enemy_panel.x + 18, enemy_panel.y + 54 + index * 154, enemy_panel.width - 36, 128)
+        rect = pygame.Rect(enemy_panel.x + 18, enemy_panel.y + 54 + index * 124, enemy_panel.width - 36, 100)
         if index < len(team2_ids):
-            draw_adventurer_card(surf, rect, mouse_pos, ADVENTURERS_BY_ID[team2_ids[index]], selected=False, small=True, tag_line="DRAFTED")
+            draw_compact_pick_tile(rect, ADVENTURERS_BY_ID[team2_ids[index]])
         else:
             draw_beveled_panel(surf, rect, fill_top=SURFACE, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
             draw_text(surf, "Open Slot", font_label(12, bold=True), TEXT_MUTE, rect.center, center=True)
-    draft_btn = pygame.Rect(detail_rect.right - 198, detail_rect.bottom - 50, 176, 36)
+    draft_btn = pygame.Rect(detail_rect.right - 190, detail_rect.bottom - 44, 168, 32)
     can_pick = focused_id not in team1_ids and focused_id not in team2_ids and len(team1_ids) + len(team2_ids) < 6
     focused = ADVENTURERS_BY_ID[focused_id]
-    detail_viewport, detail_scroll_max = _draw_draft_detail_panel(surf, detail_rect, mouse_pos, focused, footer_rect=draft_btn, scroll=detail_scroll)
+    draw_beveled_panel(surf, detail_rect, title="Focused Adventurer")
+    detail_viewport = pygame.Rect(detail_rect.x + 18, detail_rect.y + 50, detail_rect.width - 214, detail_rect.height - 74)
+    detail_scroll_max = 0
+    old_clip = surf.get_clip()
+    surf.set_clip(detail_viewport)
+    y = detail_viewport.y
+    draw_text(
+        surf,
+        _ellipsize_text(focused.name, font_headline(26, bold=True), detail_viewport.width),
+        font_headline(26, bold=True),
+        TEXT,
+        (detail_viewport.x, y),
+    )
+    y += 34
+    tag_x = detail_viewport.x
+    for kind in _adventurer_weapon_kinds(focused):
+        label = kind.upper()
+        chip_width = max(66, font_label(10, bold=True).size(label)[0] + 16)
+        chip_rect = pygame.Rect(tag_x, y, chip_width, 20)
+        draw_chip(surf, chip_rect, label, _weapon_kind_color(kind))
+        tag_x += chip_width + 8
+    y += 28
+    draw_text(
+        surf,
+        f"HP {focused.hp} | ATK {focused.attack} | DEF {focused.defense} | SPD {focused.speed}",
+        font_label(12, bold=True),
+        TEXT_SOFT,
+        (detail_viewport.x, y),
+    )
+    y += 22
+    role_line = _ellipsize_text(", ".join(role_tags_for_adventurer(focused)), font_label(10, bold=True), detail_viewport.width)
+    draw_text(surf, role_line, font_label(10, bold=True), GOLD_BRIGHT, (detail_viewport.x, y))
+    y += 24
+    draw_text(surf, focused.innate.name, font_label(11, bold=True), GOLD_BRIGHT, (detail_viewport.x, y))
+    y += 18
+    wrapped_innate = _wrap_text_block(focused.innate.description, font_body(14), detail_viewport.width)[:3]
+    for line in wrapped_innate:
+        draw_text(surf, line, font_body(14), TEXT_SOFT, (detail_viewport.x, y))
+        y += 18
+    y += 8
+    weapon_names = " / ".join(weapon.name for weapon in focused.signature_weapons)
+    draw_text(
+        surf,
+        _ellipsize_text(f"Weapons: {weapon_names}", font_body(14, bold=True), detail_viewport.width),
+        font_body(14, bold=True),
+        TEXT_SOFT,
+        (detail_viewport.x, y),
+    )
+    surf.set_clip(old_clip)
     draw_primary_button(surf, draft_btn, mouse_pos, "Draft Pick", disabled=not can_pick or current_player != player_seat)
     btns["back"] = btns.pop("left")
     btns["pool"] = pick_pool
@@ -2969,12 +3075,12 @@ def draw_story_settings(surf, mouse_pos, tutorials_enabled: bool, fast_resolutio
 
 def _battle_slot_rects():
     return {
-        (1, SLOT_BACK_LEFT): pygame.Rect(246, 254, 220, 110),
-        (1, SLOT_FRONT): pygame.Rect(378, 398, 244, 126),
-        (1, SLOT_BACK_RIGHT): pygame.Rect(246, 552, 220, 110),
-        (2, SLOT_BACK_LEFT): pygame.Rect(930, 254, 220, 110),
-        (2, SLOT_FRONT): pygame.Rect(774, 398, 244, 126),
-        (2, SLOT_BACK_RIGHT): pygame.Rect(930, 552, 220, 110),
+        (1, SLOT_BACK_LEFT): pygame.Rect(258, 262, 198, 98),
+        (1, SLOT_FRONT): pygame.Rect(362, 398, 224, 116),
+        (1, SLOT_BACK_RIGHT): pygame.Rect(258, 534, 198, 98),
+        (2, SLOT_BACK_LEFT): pygame.Rect(944, 262, 198, 98),
+        (2, SLOT_FRONT): pygame.Rect(814, 398, 224, 116),
+        (2, SLOT_BACK_RIGHT): pygame.Rect(944, 534, 198, 98),
     }
 
 
@@ -2988,15 +3094,15 @@ def draw_battle_hud(surf, mouse_pos, controller):
         right_icons=(("settings", "S", False), ("quit", "X", True)),
         subtitle=f"Round {controller.battle.round_num} | {controller.active_team_label()}",
     )
-    log_rect = pygame.Rect(24, 176, 220, 484)
-    inspect_rect = pygame.Rect(1156, 176, 220, 484)
-    action_rect = pygame.Rect(250, 682, 878, 174)
-    resolve_rect = pygame.Rect(1142, 686, 234, 78)
+    log_rect = pygame.Rect(28, 176, 196, 484)
+    inspect_rect = pygame.Rect(1176, 176, 196, 484)
+    action_rect = pygame.Rect(224, 696, 938, 160)
+    resolve_rect = pygame.Rect(1178, 700, 194, 74)
     draw_beveled_panel(surf, log_rect, title="Battle Log")
     draw_beveled_panel(surf, inspect_rect, title="Inspect")
     draw_beveled_panel(surf, action_rect, title="Battle Plan")
-    draw_meter(surf, pygame.Rect(430, 648, 228, 16), controller.battle.team1.ultimate_meter, ULTIMATE_METER_MAX, label="Player Ultimate", right_label=f"{controller.battle.team1.ultimate_meter}/{ULTIMATE_METER_MAX}")
-    draw_meter(surf, pygame.Rect(710, 648, 228, 16), controller.battle.team2.ultimate_meter, ULTIMATE_METER_MAX, label="Enemy Ultimate", right_label=f"{controller.battle.team2.ultimate_meter}/{ULTIMATE_METER_MAX}", fill=SAPPHIRE)
+    draw_meter(surf, pygame.Rect(422, 652, 218, 14), controller.battle.team1.ultimate_meter, ULTIMATE_METER_MAX, label="Player Ultimate", right_label=f"{controller.battle.team1.ultimate_meter}/{ULTIMATE_METER_MAX}")
+    draw_meter(surf, pygame.Rect(760, 652, 218, 14), controller.battle.team2.ultimate_meter, ULTIMATE_METER_MAX, label="Enemy Ultimate", right_label=f"{controller.battle.team2.ultimate_meter}/{ULTIMATE_METER_MAX}", fill=SAPPHIRE)
 
     slot_buttons = []
     target_lookup = {id(unit) for unit in controller.legal_targets()}
@@ -3014,17 +3120,17 @@ def draw_battle_hud(surf, mouse_pos, controller):
         if unit is None:
             draw_text(surf, "Empty", font_label(12, bold=True), TEXT_MUTE, rect.center, center=True)
         else:
-            draw_text(surf, unit.name, font_headline(20, bold=True), TEXT, (rect.x + 14, rect.y + 30))
-            draw_text(surf, f"{unit.primary_weapon.name}", font_label(11, bold=True), GOLD_BRIGHT, (rect.x + 14, rect.y + 58))
-            draw_meter(surf, pygame.Rect(rect.x + 14, rect.y + 84, rect.width - 28, 12), unit.hp, unit.max_hp, fill=RUBY)
-            draw_text(surf, f"{unit.hp}/{unit.max_hp}", font_label(10, bold=True), TEXT_SOFT, (rect.right - 14, rect.y + 79), right=True)
+            draw_text(surf, _ellipsize_text(unit.name, font_headline(18, bold=True), rect.width - 28), font_headline(18, bold=True), TEXT, (rect.x + 14, rect.y + 28))
+            draw_text(surf, _ellipsize_text(f"{unit.primary_weapon.name}", font_label(10, bold=True), rect.width - 28), font_label(10, bold=True), GOLD_BRIGHT, (rect.x + 14, rect.y + 50))
+            draw_meter(surf, pygame.Rect(rect.x + 14, rect.y + 72, rect.width - 28, 11), unit.hp, unit.max_hp, fill=RUBY)
+            draw_text(surf, f"{unit.hp}/{unit.max_hp}", font_label(9, bold=True), TEXT_SOFT, (rect.right - 14, rect.y + 68), right=True)
             status_text = ", ".join(status.kind for status in unit.statuses[:3]) or "Ready"
             _draw_status_aware_line(
                 surf,
                 status_text,
                 rect.x + 14,
-                rect.bottom - 18,
-                font_obj=font_label(10, bold=True),
+                rect.bottom - 16,
+                font_obj=font_label(9, bold=True),
                 base_color=TEXT_SOFT,
                 mouse_pos=mouse_pos,
             )
@@ -3033,15 +3139,15 @@ def draw_battle_hud(surf, mouse_pos, controller):
     phase_bonus = controller.phase.startswith("bonus")
     phase_color = JADE if phase_bonus else GOLD_BRIGHT
     prompt = "Queue bonus actions." if phase_bonus else "Queue one action for each adventurer."
-    draw_text(surf, controller.active_team_label(), font_body(17, bold=True), TEXT, (action_rect.x + 22, action_rect.y + 44))
-    draw_text(surf, prompt, font_body(16), phase_color, (action_rect.x + 22, action_rect.y + 70))
+    draw_text(surf, controller.active_team_label(), font_body(17, bold=True), TEXT, (action_rect.x + 22, action_rect.y + 42))
+    draw_text(surf, prompt, font_body(15), phase_color, (action_rect.x + 22, action_rect.y + 64))
     queue_rows = controller.action_summary_rows(bonus=phase_bonus)
-    draw_text(surf, "Queued", font_label(11, bold=True), TEXT_MUTE, (action_rect.x + 548, action_rect.y + 46))
+    draw_text(surf, "Queued", font_label(11, bold=True), TEXT_MUTE, (action_rect.x + 546, action_rect.y + 42))
     for index, row in enumerate(queue_rows[:5]):
         label = f"P{row['team_num']} | {row['actor'].name}: {row['label']}"
-        wrapped = _wrap_text_block(label, font_label(10, bold=True), action_rect.width - 570)
+        wrapped = _wrap_text_block(label, font_label(10, bold=True), action_rect.width - 566)
         if wrapped:
-            draw_text(surf, wrapped[0], font_label(10, bold=True), TEXT_SOFT, (action_rect.x + 548, action_rect.y + 66 + index * 16))
+            draw_text(surf, wrapped[0], font_label(10, bold=True), TEXT_SOFT, (action_rect.x + 546, action_rect.y + 62 + index * 16))
 
     action_buttons = []
     spell_buttons = []
@@ -3050,20 +3156,20 @@ def draw_battle_hud(surf, mouse_pos, controller):
         for index, choice in enumerate(available):
             row = index // 5
             col = index % 5
-            button_y = action_rect.y + (136 if controller.spellbook_open else 104)
-            rect = pygame.Rect(action_rect.x + 22 + col * 100, button_y + row * 36, 92, 32)
+            button_y = action_rect.y + (124 if controller.spellbook_open else 96)
+            rect = pygame.Rect(action_rect.x + 20 + col * 92, button_y + row * 34, 84, 30)
             active = controller.pending_choice is not None and controller.pending_choice.kind == choice.kind
             draw_secondary_button(surf, rect, mouse_pos, choice.label, active=active)
             action_buttons.append((rect, choice.kind))
         if controller.spellbook_open:
             spells = controller.available_bonus_spells(controller.active_actor) if controller.phase.startswith("bonus") else controller.available_spells(controller.active_actor)
             for index, spell in enumerate(spells):
-                rect = pygame.Rect(action_rect.x + 22 + index * 124, action_rect.y + 102, 114, 24)
+                rect = pygame.Rect(action_rect.x + 20 + index * 118, action_rect.y + 94, 108, 24)
                 active = controller.pending_choice is not None and controller.pending_choice.effect_id == spell.id
                 draw_secondary_button(surf, rect, mouse_pos, spell.name, active=active)
                 spell_buttons.append((rect, spell.id))
         if controller.phase in {"action_target", "bonus_target"}:
-            draw_text(surf, "Choose a legal target on the battlefield.", font_body(15, bold=True), phase_color, (action_rect.right - 18, action_rect.y + 44), right=True)
+            draw_text(surf, "Choose a legal target.", font_body(14, bold=True), phase_color, (action_rect.right - 18, action_rect.y + 42), right=True)
 
     resolve_label = controller.resolve_button_label() if hasattr(controller, "resolve_button_label") else ("Resolve Bonus Phase" if controller.phase == "bonus_resolve_ready" else "Resolve Actions")
     draw_primary_button(surf, resolve_rect, mouse_pos, resolve_label, disabled=not controller.can_resolve())
@@ -3084,28 +3190,28 @@ def draw_battle_hud(surf, mouse_pos, controller):
     focus = controller.focus_unit
     if focus is not None:
         focus_class_name = getattr(focus, "class_name", None) or NO_CLASS_NAME
-        draw_text(surf, focus.name, font_headline(24, bold=True), TEXT, (inspect_rect.x + 16, inspect_rect.y + 52))
-        draw_text(surf, focus_class_name, font_label(11, bold=True), GOLD_BRIGHT, (inspect_rect.x + 16, inspect_rect.y + 88))
-        draw_meter(surf, pygame.Rect(inspect_rect.x + 16, inspect_rect.y + 126, inspect_rect.width - 32, 14), focus.hp, focus.max_hp, fill=RUBY, right_label=f"{focus.hp}/{focus.max_hp}")
-        draw_text(surf, f"ATK {focus.get_stat('attack')}  DEF {focus.get_stat('defense')}  SPD {focus.get_stat('speed')}", font_label(11, bold=True), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 154))
+        draw_text(surf, _ellipsize_text(focus.name, font_headline(24, bold=True), inspect_rect.width - 32), font_headline(24, bold=True), TEXT, (inspect_rect.x + 16, inspect_rect.y + 52))
+        draw_text(surf, focus_class_name, font_label(11, bold=True), GOLD_BRIGHT, (inspect_rect.x + 16, inspect_rect.y + 84))
+        draw_meter(surf, pygame.Rect(inspect_rect.x + 16, inspect_rect.y + 118, inspect_rect.width - 32, 14), focus.hp, focus.max_hp, fill=RUBY, right_label=f"{focus.hp}/{focus.max_hp}")
+        draw_text(surf, f"ATK {focus.get_stat('attack')}  DEF {focus.get_stat('defense')}  SPD {focus.get_stat('speed')}", font_label(10, bold=True), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 146))
         ammo_text = "-"
         if focus.primary_weapon.ammo > 0:
             ammo_text = f"{focus.ammo_remaining.get(focus.primary_weapon.id, focus.primary_weapon.ammo)}/{focus.primary_weapon.ammo}"
-        draw_text(surf, f"Innate: {focus.defn.innate.name}", font_label(10, bold=True), TEXT_MUTE, (inspect_rect.x + 16, inspect_rect.y + 188))
-        draw_text(surf, f"Weapon: {focus.primary_weapon.name}", font_body(15, bold=True), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 214))
-        draw_text(surf, f"Ammo {ammo_text}", font_label(10, bold=True), TEXT_MUTE, (inspect_rect.x + 16, inspect_rect.y + 240))
-        draw_text(surf, f"Skill: {getattr(focus.class_skill, 'name', 'None')}", font_body(14), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 270))
-        draw_text(surf, f"Ultimate: {focus.defn.ultimate.name}", font_body(14), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 298))
-        draw_text(surf, f"Artifact: {focus.artifact.name if focus.artifact is not None else 'None'}", font_body(14), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 326))
+        draw_text(surf, _ellipsize_text(f"Innate: {focus.defn.innate.name}", font_label(10, bold=True), inspect_rect.width - 32), font_label(10, bold=True), TEXT_MUTE, (inspect_rect.x + 16, inspect_rect.y + 176))
+        draw_text(surf, _ellipsize_text(f"Weapon: {focus.primary_weapon.name}", font_body(14, bold=True), inspect_rect.width - 32), font_body(14, bold=True), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 200))
+        draw_text(surf, f"Ammo {ammo_text}", font_label(10, bold=True), TEXT_MUTE, (inspect_rect.x + 16, inspect_rect.y + 224))
+        draw_text(surf, _ellipsize_text(f"Skill: {getattr(focus.class_skill, 'name', 'None')}", font_body(13), inspect_rect.width - 32), font_body(13), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 248))
+        draw_text(surf, _ellipsize_text(f"Ultimate: {focus.defn.ultimate.name}", font_body(13), inspect_rect.width - 32), font_body(13), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 274))
+        draw_text(surf, _ellipsize_text(f"Artifact: {focus.artifact.name if focus.artifact is not None else 'None'}", font_body(13), inspect_rect.width - 32), font_body(13), TEXT_SOFT, (inspect_rect.x + 16, inspect_rect.y + 300))
         _draw_wrapped_lines(
             surf,
             [f"Statuses: {', '.join(status.kind for status in focus.statuses) or 'None'}"],
             inspect_rect.x + 16,
-            inspect_rect.y + 360,
+            inspect_rect.y + 334,
             inspect_rect.width - 32,
-            font=font_body(14),
+            font=font_body(13),
             color=TEXT_SOFT,
-            line_height=18,
+            line_height=16,
         )
 
     btns["back"] = btns.pop("left")

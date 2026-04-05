@@ -1603,7 +1603,7 @@ class StorybookMode:
                 if rect.collidepoint(pos):
                     self.shop_focus_kind = "item"
                     self.shop_focus_value = item_id
-                    self.shop_message = "Armory purchases unlock immediately and remain subject to attunement rules."
+                    self.shop_message = ""
                     return None
             if self._hit(btns.get("buy"), pos):
                 self._purchase_shop_focus()

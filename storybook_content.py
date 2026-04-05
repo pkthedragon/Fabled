@@ -580,7 +580,7 @@ def catalog_entries(section: str, filters: dict | None = None, *, favorite_adven
 
 def shop_tab_note(tab_name: str) -> str:
     if tab_name == "Artifacts":
-        return "Artifacts are purchasable relics that unlock immediately in your collection."
+        return "Browse artifacts by stat bonus, attunement, and effect."
     return ""
 
 
