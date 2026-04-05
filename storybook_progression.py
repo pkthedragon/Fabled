@@ -102,4 +102,4 @@ def award_exp(total_exp: int, gained_exp: int) -> ExpAward:
 
 
 def quest_win_gold(run_wins_before_match: int) -> int:
-    return 100 + (10 * max(0, int(run_wins_before_match)))
+    return 100 + (10 * min(max(0, int(run_wins_before_match)), 10))

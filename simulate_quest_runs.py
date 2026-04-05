@@ -9,6 +9,7 @@ from settings import SLOT_BACK_LEFT, SLOT_BACK_RIGHT, SLOT_FRONT
 
 from quests_ai_battle import available_action_specs, queue_both_teams_for_phase
 from quests_ai_quest import choose_quest_party
+from quests_ai_quest_loadout import choose_blind_quest_roster_from_offer
 from quests_ai_runtime import build_battle_from_loadouts
 from quests_ruleset_data import ADVENTURERS
 from quests_ruleset_logic import end_round, resolve_action_phase, resolve_bonus_phase, start_round
@@ -269,7 +270,8 @@ def run_simulation(
 
     while total_battles < target_battles:
         run_index += 1
-        player_offer = [adventurer.id for adventurer in rng.sample(adventurer_pool, 6)]
+        player_offer9 = [adventurer.id for adventurer in rng.sample(adventurer_pool, 9)]
+        player_offer = list(choose_blind_quest_roster_from_offer(player_offer9, roster_size=6).offer_ids)
         player_choice = choose_quest_party(player_offer, difficulty=difficulty_player, rng=rng)
 
         run_battles = 0
@@ -281,8 +283,9 @@ def run_simulation(
         )
 
         while run_losses < 3:
-            opponent_offer = [adventurer.id for adventurer in rng.sample(adventurer_pool, 6)]
-            opponent_choice = choose_quest_party(opponent_offer, difficulty=difficulty_enemy, rng=rng)
+            opponent_offer9 = [adventurer.id for adventurer in rng.sample(adventurer_pool, 9)]
+            opponent_offer = list(choose_blind_quest_roster_from_offer(opponent_offer9, roster_size=6).offer_ids)
+            opponent_choice = choose_quest_party(opponent_offer, enemy_party_ids=player_offer, difficulty=difficulty_enemy, rng=rng)
 
             battle = build_battle_from_loadouts(
                 player_choice.loadout,

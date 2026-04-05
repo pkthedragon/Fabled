@@ -114,13 +114,45 @@ def _normalize_profile(profile: CampaignProfile) -> CampaignProfile:
     profile.gold = max(0, int(profile.gold))
     profile.guild_vouchers = max(0, int(profile.guild_vouchers))
     profile.brighthollow_renown = int(profile.brighthollow_renown)
-    profile.ranked_rating = max(0, min(2000, int(profile.ranked_rating)))
+    profile.ranked_rating = max(1, min(2000, int(profile.ranked_rating)))
     profile.ranked_games_played = max(0, int(profile.ranked_games_played))
+    profile.ranked_season_high_glory = max(1, min(2000, int(getattr(profile, "ranked_season_high_glory", profile.ranked_rating or 300))))
+    profile.ranked_total_wins = max(0, int(getattr(profile, "ranked_total_wins", 0)))
+    profile.ranked_total_losses = max(0, int(getattr(profile, "ranked_total_losses", 0)))
+    profile.ranked_best_quest_wins = max(0, int(getattr(profile, "ranked_best_quest_wins", 0)))
+    profile.ranked_current_quest_id = getattr(profile, "ranked_current_quest_id", None)
+    profile.ranked_season_id = max(1, int(getattr(profile, "ranked_season_id", 1)))
+    profile.ranked_floor_glory = max(1, min(2000, int(getattr(profile, "ranked_floor_glory", 200))))
     profile.non_tutorial_quests_completed = max(0, int(profile.non_tutorial_quests_completed))
     profile.premium_dollars_spent = max(0, int(profile.premium_dollars_spent))
     profile.storybook_friends = _normalize_friends(getattr(profile, "storybook_friends", []))
     profile.storybook_weapon_unlocks = set(getattr(profile, "storybook_weapon_unlocks", set()))
+    profile.storybook_adventurer_unlocks = _normalize_adventurer_ids(
+        getattr(profile, "storybook_adventurer_unlocks", set())
+    )
     profile.storybook_cosmetic_unlocks = set(getattr(profile, "storybook_cosmetic_unlocks", set()))
+    profile.storybook_equipped_outfit = str(getattr(profile, "storybook_equipped_outfit", ""))
+    profile.storybook_equipped_chair = str(getattr(profile, "storybook_equipped_chair", ""))
+    profile.storybook_equipped_icon = str(getattr(profile, "storybook_equipped_icon", ""))
+    profile.storybook_equipped_emote = str(getattr(profile, "storybook_equipped_emote", ""))
+    profile.storybook_equipped_dance = str(getattr(profile, "storybook_equipped_dance", ""))
+    profile.storybook_equipped_celebration = str(getattr(profile, "storybook_equipped_celebration", ""))
+    profile.storybook_equipped_battlefield_skin = str(getattr(profile, "storybook_equipped_battlefield_skin", ""))
+    profile.storybook_equipped_adventurer_skins = {
+        str(key): str(value)
+        for key, value in dict(getattr(profile, "storybook_equipped_adventurer_skins", {})).items()
+        if str(key) and str(value)
+    }
+    profile.storybook_quested_adventurers = _normalize_adventurer_ids(
+        getattr(profile, "storybook_quested_adventurers", {"little_jack"})
+    )
+    profile.storybook_quested_adventurers.add("little_jack")
+    favorite = str(getattr(profile, "storybook_favorite_adventurer", "little_jack"))
+    if favorite not in profile.storybook_quested_adventurers:
+        favorite = "little_jack"
+    profile.storybook_favorite_adventurer = favorite
+    training_favorite = str(getattr(profile, "storybook_training_favorite_adventurer", "little_jack"))
+    profile.storybook_training_favorite_adventurer = training_favorite if training_favorite in _KNOWN_ADVENTURER_IDS else "little_jack"
     if profile.saved_teams is None:
         profile.saved_teams = []
     return profile
@@ -155,6 +187,13 @@ def save_campaign(profile: CampaignProfile) -> None:
         "brighthollow_renown": profile.brighthollow_renown,
         "ranked_rating": profile.ranked_rating,
         "ranked_games_played": profile.ranked_games_played,
+        "ranked_season_high_glory": profile.ranked_season_high_glory,
+        "ranked_total_wins": profile.ranked_total_wins,
+        "ranked_total_losses": profile.ranked_total_losses,
+        "ranked_best_quest_wins": profile.ranked_best_quest_wins,
+        "ranked_current_quest_id": profile.ranked_current_quest_id,
+        "ranked_season_id": profile.ranked_season_id,
+        "ranked_floor_glory": profile.ranked_floor_glory,
         "non_tutorial_quests_completed": profile.non_tutorial_quests_completed,
         "adventurer_quest_clears": dict(profile.adventurer_quest_clears),
         "class_points": dict(profile.class_points),
@@ -163,7 +202,19 @@ def save_campaign(profile: CampaignProfile) -> None:
         "premium_dollars_spent": profile.premium_dollars_spent,
         "storybook_friends": profile.storybook_friends,
         "storybook_weapon_unlocks": list(profile.storybook_weapon_unlocks),
+        "storybook_adventurer_unlocks": list(profile.storybook_adventurer_unlocks),
         "storybook_cosmetic_unlocks": list(profile.storybook_cosmetic_unlocks),
+        "storybook_equipped_outfit": profile.storybook_equipped_outfit,
+        "storybook_equipped_chair": profile.storybook_equipped_chair,
+        "storybook_equipped_icon": profile.storybook_equipped_icon,
+        "storybook_equipped_emote": profile.storybook_equipped_emote,
+        "storybook_equipped_dance": profile.storybook_equipped_dance,
+        "storybook_equipped_celebration": profile.storybook_equipped_celebration,
+        "storybook_equipped_battlefield_skin": profile.storybook_equipped_battlefield_skin,
+        "storybook_equipped_adventurer_skins": dict(profile.storybook_equipped_adventurer_skins),
+        "storybook_quested_adventurers": list(profile.storybook_quested_adventurers),
+        "storybook_favorite_adventurer": profile.storybook_favorite_adventurer,
+        "storybook_training_favorite_adventurer": profile.storybook_training_favorite_adventurer,
     }
     with open(save_path, "w", encoding="utf-8") as save_file:
         json.dump(data, save_file, indent=2)
@@ -194,6 +245,13 @@ def _load_modern_profile(data: dict) -> CampaignProfile:
     profile.brighthollow_renown = int(data.get("brighthollow_renown", profile.brighthollow_renown))
     profile.ranked_rating = int(data.get("ranked_rating", profile.ranked_rating))
     profile.ranked_games_played = int(data.get("ranked_games_played", profile.ranked_games_played))
+    profile.ranked_season_high_glory = int(data.get("ranked_season_high_glory", profile.ranked_season_high_glory))
+    profile.ranked_total_wins = int(data.get("ranked_total_wins", profile.ranked_total_wins))
+    profile.ranked_total_losses = int(data.get("ranked_total_losses", profile.ranked_total_losses))
+    profile.ranked_best_quest_wins = int(data.get("ranked_best_quest_wins", profile.ranked_best_quest_wins))
+    profile.ranked_current_quest_id = data.get("ranked_current_quest_id", profile.ranked_current_quest_id)
+    profile.ranked_season_id = int(data.get("ranked_season_id", profile.ranked_season_id))
+    profile.ranked_floor_glory = int(data.get("ranked_floor_glory", profile.ranked_floor_glory))
     profile.non_tutorial_quests_completed = int(data.get("non_tutorial_quests_completed", profile.non_tutorial_quests_completed))
     profile.adventurer_quest_clears = {str(k): int(v) for k, v in data.get("adventurer_quest_clears", {}).items()}
     profile.class_points = {str(k): int(v) for k, v in data.get("class_points", {}).items()}
@@ -202,7 +260,27 @@ def _load_modern_profile(data: dict) -> CampaignProfile:
     profile.premium_dollars_spent = int(data.get("premium_dollars_spent", profile.premium_dollars_spent))
     profile.storybook_friends = _normalize_friends(data.get("storybook_friends", []))
     profile.storybook_weapon_unlocks = set(data.get("storybook_weapon_unlocks", []))
+    profile.storybook_adventurer_unlocks = set(data.get("storybook_adventurer_unlocks", []))
     profile.storybook_cosmetic_unlocks = set(data.get("storybook_cosmetic_unlocks", []))
+    profile.storybook_equipped_outfit = str(data.get("storybook_equipped_outfit", getattr(profile, "storybook_equipped_outfit", "")))
+    profile.storybook_equipped_chair = str(data.get("storybook_equipped_chair", getattr(profile, "storybook_equipped_chair", "")))
+    profile.storybook_equipped_icon = str(data.get("storybook_equipped_icon", getattr(profile, "storybook_equipped_icon", "")))
+    profile.storybook_equipped_emote = str(data.get("storybook_equipped_emote", getattr(profile, "storybook_equipped_emote", "")))
+    profile.storybook_equipped_dance = str(data.get("storybook_equipped_dance", getattr(profile, "storybook_equipped_dance", "")))
+    profile.storybook_equipped_celebration = str(data.get("storybook_equipped_celebration", getattr(profile, "storybook_equipped_celebration", "")))
+    profile.storybook_equipped_battlefield_skin = str(
+        data.get("storybook_equipped_battlefield_skin", getattr(profile, "storybook_equipped_battlefield_skin", ""))
+    )
+    profile.storybook_equipped_adventurer_skins = {
+        str(key): str(value)
+        for key, value in dict(data.get("storybook_equipped_adventurer_skins", {})).items()
+        if str(key) and str(value)
+    }
+    profile.storybook_quested_adventurers = set(data.get("storybook_quested_adventurers", ["little_jack"]))
+    profile.storybook_favorite_adventurer = str(data.get("storybook_favorite_adventurer", profile.storybook_favorite_adventurer))
+    profile.storybook_training_favorite_adventurer = str(
+        data.get("storybook_training_favorite_adventurer", getattr(profile, "storybook_training_favorite_adventurer", "little_jack"))
+    )
     return _normalize_profile(profile)
 
 

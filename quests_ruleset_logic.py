@@ -11,6 +11,9 @@ from quests_ruleset_data import (
     ARTIFACTS_BY_ID,
     CLASS_SKILLS,
     CLASS_SKILLS_BY_ID,
+    GOOSE_QUILL_RETAINED_METER,
+    ULTIMATE_METER_MAX,
+    ULTIMATE_WIN_COUNT,
 )
 from quests_ruleset_models import (
     ActiveEffect,
@@ -18,6 +21,7 @@ from quests_ruleset_models import (
     ArtifactDef,
     BattleState,
     CombatantState,
+    PassiveEffect,
     StatusInstance,
     TeamState,
     WeaponDef,
@@ -65,6 +69,12 @@ TIMED_MARKERS = {
     "wolf_unchained_rounds",
 }
 
+NO_CLASS_SKILL = PassiveEffect(
+    id="no_class_skill",
+    name="No Class",
+    description="No class is selected.",
+)
+
 
 def _other_player(player_num: int) -> int:
     return 2 if player_num == 1 else 1
@@ -98,7 +108,7 @@ def _is_targetable(actor: CombatantState, target: CombatantState) -> bool:
 
 
 def _initiative_speed(battle: BattleState, unit: CombatantState) -> int:
-    speed = unit.get_stat("speed")
+    speed = unit.get_stat("speed", battle)
     enemy_front = enemy_team_for_actor(battle, unit).frontline()
     if unit.slot == SLOT_FRONT and enemy_front is not None and enemy_front.defn.id == "march_hare":
         speed -= 10
@@ -127,10 +137,12 @@ def make_pick(
         raise KeyError(f"Unknown primary weapon for {adventurer_id}: {primary_weapon_id}")
     secondary_weapon = next(weapon for weapon in defn.signature_weapons if weapon.id != primary_weapon.id)
     class_skill = None
-    if class_skill_id is not None:
+    if class_skill_id is not None and class_skill_id in CLASS_SKILLS_BY_ID:
         class_skill = CLASS_SKILLS_BY_ID[class_skill_id]
-    else:
+    elif class_name in CLASS_SKILLS:
         class_skill = CLASS_SKILLS[class_name][0]
+    else:
+        class_skill = NO_CLASS_SKILL
     artifact = ARTIFACTS_BY_ID.get(artifact_id) if artifact_id else None
     return {
         "definition": defn,
@@ -208,7 +220,7 @@ def _intrinsic_bonus_swap(actor: CombatantState) -> bool:
 
 
 def _intrinsic_bonus_switch(actor: CombatantState) -> bool:
-    return actor.defn.id != "ashen_ella" and (actor.class_skill.id == "tactical" or actor.defn.id == "wayward_humbert")
+    return actor.defn.id != "ashen_ella" and actor.defn.id == "wayward_humbert"
 
 
 def _team_bonus_swap_available(actor: CombatantState, battle: BattleState) -> bool:
@@ -269,10 +281,10 @@ def _heal_unit(unit: CombatantState, amount: int, battle: BattleState, *, source
     return healed
 
 
-def _offense_stat(unit: CombatantState) -> int:
+def _offense_stat(unit: CombatantState, battle: Optional[BattleState] = None) -> int:
     if unit.defn.id == "maui_sunthief" and unit.primary_weapon.id == "ancestral_warclub":
-        return unit.get_stat("defense")
-    return unit.get_stat("attack")
+        return unit.get_stat("defense", battle)
+    return unit.get_stat("attack", battle)
 
 
 def _try_conquer_death(unit: CombatantState, battle: BattleState) -> bool:
@@ -302,6 +314,36 @@ def determine_initiative_order(battle: BattleState) -> List[CombatantState]:
             SLOT_PRIORITY[unit.slot],
         )
     )
+    for unit in list(order):
+        if unit.defn.id != "reynard_lupine_trickster":
+            continue
+        target_ref = unit.markers.get("glowing_trail_target")
+        if (
+            not isinstance(target_ref, tuple)
+            or len(target_ref) != 2
+            or target_ref[0] not in {1, 2}
+        ):
+            continue
+        target_team_num = int(target_ref[0])
+        target_id = str(target_ref[1])
+        target = next(
+            (
+                candidate
+                for candidate in order
+                if candidate is not unit
+                and player_num_for_actor(battle, candidate) == target_team_num
+                and candidate.defn.id == target_id
+            ),
+            None,
+        )
+        if target is None:
+            continue
+        unit_index = order.index(unit)
+        target_index = order.index(target)
+        if unit_index > target_index:
+            order.pop(unit_index)
+            target_index = order.index(target)
+            order.insert(target_index, unit)
     battle.initiative_order = order
     return order
 
@@ -314,6 +356,7 @@ def start_round(battle: BattleState) -> List[CombatantState]:
         if unit.class_skill.id == "fleetfooted":
             unit.markers["fleetfooted_ready"] = 1
         unit.markers["acted_this_round"] = 0
+        unit.markers["struck_this_round"] = 0
         unit.markers["swapped_this_round"] = 0
         unit.markers["spells_cast_this_round"] = 0
     battle.team1.markers["crumb_picked_round"] = 0
@@ -521,6 +564,10 @@ def do_swap(actor: CombatantState, ally: Optional[CombatantState], battle: Battl
     ally.markers["swapped_this_round"] = 1
     _sync_position_locked_weapon(actor)
     _sync_position_locked_weapon(ally)
+    if actor.class_skill.id == "tactical" and actor.defn.id != "ashen_ella":
+        do_switch(actor, battle)
+    if ally.class_skill.id == "tactical" and ally.defn.id != "ashen_ella":
+        do_switch(ally, battle)
     for participant, partner in ((actor, ally), (ally, actor)):
         if _artifact_ready(participant, "cornucopia"):
             _spend_reactive_artifact(participant, battle)
@@ -588,6 +635,8 @@ def _prepare_strike_effect(
 
     if effect.special == "stitch_in_time_strike" and actor.markers.get("swapped_this_round", 0) > 0:
         power += 20
+    if actor.markers.pop("blood_diamond_ready", 0):
+        power += 25
     if effect.special == "bonus_vs_backline_30" and target.slot != SLOT_FRONT:
         power += 30
     if effect.special == "across_bonus_15" and target.slot == actor.slot:
@@ -599,6 +648,9 @@ def _prepare_strike_effect(
             power += 15
     if effect.special == "wooden_club":
         power += actor.markers.get("malice", 0) * 5
+    if effect.special == "fang_bonus_vs_penalty":
+        if any(debuff.duration > 0 for debuff in target.debuffs):
+            power += 15
     if effect.special == "lightning_rod" and target.has_status("shock"):
         ammo_cost = 0
     if effect.special == "golden_fiddle" and target.has_status("shock"):
@@ -765,8 +817,9 @@ def resolve_strike(actor: CombatantState, target: Optional[CombatantState], batt
         actor.markers["shotgun_combusted"] = 1
     if actor.class_skill.id == "vanguard" and weapon.kind == "melee" and actor.slot == SLOT_FRONT and target is not None and target.slot == SLOT_FRONT:
         actor.markers["vanguard_ready"] = 1
-    _grant_meter(actor, battle, spell_like=weapon.kind == "magic")
+    _grant_meter(actor, battle, spell_like=weapon.kind == "magic", is_strike=True)
     actor.markers["acted_this_round"] = 1
+    actor.markers["struck_this_round"] = 1
 
 
 def resolve_spell(actor: CombatantState, effect: ActiveEffect, target: Optional[CombatantState], battle: BattleState):
@@ -837,7 +890,7 @@ def resolve_spell(actor: CombatantState, effect: ActiveEffect, target: Optional[
 
 def resolve_ultimate(actor: CombatantState, effect: ActiveEffect, target: Optional[CombatantState], battle: BattleState):
     team = team_for_actor(battle, actor)
-    if team.ultimate_meter < 10:
+    if team.ultimate_meter < ULTIMATE_METER_MAX:
         battle.log_add(f"{actor.name} cannot use {effect.name} yet.")
         return
     legal_targets = get_legal_targets(battle, actor, effect=effect)
@@ -848,16 +901,17 @@ def resolve_ultimate(actor: CombatantState, effect: ActiveEffect, target: Option
         target = actor
     if _artifact_ready(actor, "goose_quill"):
         _spend_reactive_artifact(actor, battle)
-        team.ultimate_meter = 5
+        team.ultimate_meter = GOOSE_QUILL_RETAINED_METER
     else:
         team.ultimate_meter = 0
     _resolve_effect(actor, effect, target, battle, source_kind="ultimate")
     battle.log_add(f"{actor.name} unleashes {effect.name}.")
     actor.markers["acted_this_round"] = 1
     team.markers["ultimates_cast"] = team.markers.get("ultimates_cast", 0) + 1
-    if team.markers["ultimates_cast"] >= 7:
+    if team.markers["ultimates_cast"] >= ULTIMATE_WIN_COUNT:
         battle.winner = player_num_for_actor(battle, actor)
-        battle.log_add(f"{team.player_name} wins by casting their 7th Ultimate Spell.")
+        suffix = "rd" if ULTIMATE_WIN_COUNT == 3 else "th"
+        battle.log_add(f"{team.player_name} wins by casting their {ULTIMATE_WIN_COUNT}{suffix} Ultimate Spell.")
 
 
 def get_legal_targets(
@@ -1003,11 +1057,26 @@ def _handle_post_damage_reactions(
             if not _try_conquer_death(source, battle):
                 source.ko = True
                 battle.log_add(f"{source.name} is knocked out.")
+    if (
+        damage > 0
+        and source_kind == "strike"
+        and _artifact_ready(target, "blood_diamond")
+        and target.hp <= math.ceil(target.max_hp * 0.5)
+        and target.hp + damage > math.ceil(target.max_hp * 0.5)
+    ):
+        _spend_reactive_artifact(target, battle)
+        target.markers["blood_diamond_ready"] = 1
+        battle.log_add(f"{target.name}'s Blood Diamond empowers their next Strike.")
     if damage > 0 and source_kind == "strike":
         target.markers["mirror_blade_effect"] = {
             "power": weapon.strike.power if weapon is not None else damage,
             "target_statuses": list(weapon.strike.target_statuses) if weapon is not None else [],
         }
+    if damage > 0 and source_kind == "strike" and _artifact_ready(source, "suspicious_eye") and source.slot == target.slot:
+        _spend_reactive_artifact(source, battle)
+        target.remove_status("spotlight")
+        target.add_status("spotlight", 2)
+        battle.log_add(f"{source.name}'s Suspicious Eye Spotlights {target.name}.")
     if target.hp <= 0 and target.defn.id == "lucky_constantine" and target.primary_weapon.id == "cat_o_nine" and source_kind == "strike" and source.has_status("expose"):
         charges = target.markers.get("nine_lives", 3)
         if charges > 0:
@@ -1023,7 +1092,7 @@ def _handle_post_damage_reactions(
         battle.log_add(f"{target.name}'s Dying Wish leaves them at 1 HP.")
         return True
     if damage > 0 and source_kind == "strike" and target.defn.id == "the_green_knight" and target.primary_weapon.id == "the_answer" and source.slot != target.slot:
-        retaliation = max(1, math.ceil(35 * (_offense_stat(target) / max(1, source.get_stat("defense")))))
+        retaliation = max(1, math.ceil(35 * (_offense_stat(target, battle) / max(1, source.get_stat("defense", battle)))))
         source.hp = max(0, source.hp - retaliation)
         battle.log_add(f"{target.name}'s Awaited Blow retaliates for {retaliation} damage.")
         if source.hp <= 0:
@@ -1044,7 +1113,7 @@ def _handle_post_damage_reactions(
         target_team = team_for_actor(battle, target)
         for ally in target_team.alive():
             if ally.defn.id == "lady_of_reflections" and ally.primary_weapon.id == "lantern_of_avalon" and ally is not target:
-                retaliation = max(1, math.ceil(50 * (_offense_stat(target) / max(1, source.get_stat("defense")))))
+                retaliation = max(1, math.ceil(50 * (_offense_stat(target, battle) / max(1, source.get_stat("defense", battle)))))
                 source.hp = max(0, source.hp - retaliation)
                 battle.log_add(f"Postmortem Passage retaliates for {retaliation} damage.")
                 if source.hp <= 0:
@@ -1080,6 +1149,14 @@ def _resolve_effect(
     for current_target in targets:
         if current_target is None or current_target.ko:
             continue
+        if source_kind in {"spell", "strike"}:
+            redirect_ref = current_target.markers.pop("dazzle_redirect_ref", None)
+            if redirect_ref is not None:
+                redirect_team = battle.team1 if redirect_ref[0] == 1 else battle.team2
+                redirect_target = next((unit for unit in redirect_team.alive() if unit.defn.id == redirect_ref[1]), None)
+                if redirect_target is not None and redirect_target is not current_target:
+                    battle.log_add(f"{current_target.name}'s Dazzle redirects the effect to {redirect_target.name}.")
+                    current_target = redirect_target
         if effect.special == "statused_only" and not current_target.statuses:
             battle.log_add(f"{effect.name} fails because {current_target.name} has no status condition.")
             continue
@@ -1142,6 +1219,9 @@ def _resolve_effect(
                 for stat_name in ("attack", "defense", "speed"):
                     current_target.add_debuff(stat_name, 10, 2)
                     actor.add_buff(stat_name, 10, 2)
+            if source_kind == "strike" and actor.markers.pop("king_of_thieves_ready", 0):
+                current_target.add_debuff("attack", 30, 2)
+                actor.add_buff("attack", 30, 2)
             if _handle_post_damage_reactions(actor, current_target, damage, battle, source_kind=source_kind, weapon=weapon):
                 continue
         _apply_nondamage_effects(actor, current_target, effect, battle, source_kind=source_kind)
@@ -1246,11 +1326,14 @@ def _apply_special(
         "ally_heal_from_damage",
         "cracked_stopwatch",
         "featherweight",
+        "fang_bonus_vs_penalty",
         "golden_fiddle",
         "guest_bonus",
         "horn_of_plenty",
         "infinity",
         "lightning_rod",
+        "last_stand",
+        "nebulous_ides",
         "bonus_vs_backline_30",
         "mirror_blade",
         "mortar_mortar",
@@ -1307,6 +1390,12 @@ def _apply_special(
             "heal_bonus": heal_bonus,
         }
         return
+    if special == "foxfire_bow" and target is not None:
+        actor.markers["glowing_trail_target"] = (
+            player_num_for_actor(battle, target),
+            target.defn.id,
+        )
+        return
     if special == "thiefs_dagger" and target is not None:
         if target.artifact is not None:
             actor.markers["artifact_bonus_spell_effect"] = target.artifact.spell
@@ -1349,6 +1438,9 @@ def _apply_special(
             enemy.remove_status("spotlight")
             enemy.add_status("spotlight", 2)
         return
+    if special == "king_of_thieves":
+        actor.markers["king_of_thieves_ready"] = 1
+        return
     if special == "raise_the_sky":
         actor.markers["conquer_death_used"] = 0
         actor.markers["raise_the_sky_rounds"] = 2
@@ -1356,6 +1448,12 @@ def _apply_special(
     if special == "cleanse_newest_status" and target is not None:
         if target.statuses:
             target.statuses.pop()
+        return
+    if special == "dazzle" and target is not None:
+        target.markers["dazzle_redirect_ref"] = (
+            player_num_for_actor(battle, actor),
+            actor.defn.id,
+        )
         return
     if special == "average_hp_with_target" and target is not None:
         shared_hp = math.ceil((actor.hp + target.hp) / 2)
@@ -1536,8 +1634,8 @@ def _apply_special(
         if guest is None or guest.ko:
             return
         for stat_name in ("attack", "defense", "speed"):
-            actor_value = actor.get_stat(stat_name)
-            guest_value = guest.get_stat(stat_name)
+            actor_value = actor.get_stat(stat_name, battle)
+            guest_value = guest.get_stat(stat_name, battle)
             high_value = max(actor_value, guest_value)
             if high_value > actor_value:
                 actor.add_buff(stat_name, high_value - actor_value, 2)
@@ -1622,8 +1720,8 @@ def compute_damage(
     battle: Optional[BattleState] = None,
     weapon: Optional[WeaponDef] = None,
 ) -> int:
-    attack = _offense_stat(actor)
-    defense = target.get_stat("defense")
+    attack = _offense_stat(actor, battle)
+    defense = target.get_stat("defense", battle)
     power = effect.power
     if effect.special == "multihit_9":
         single_hit = max(1, math.ceil(9 * (attack / max(1, defense))))
@@ -1646,6 +1744,8 @@ def compute_damage(
     if actor.defn.id == "little_jack" and target.max_hp > actor.max_hp:
         power += 15
     if actor.defn.id == "hunold_the_piper" and target.has_status("shock"):
+        power += 15
+    if actor.defn.id == "reynard_lupine_trickster" and target.markers.get("struck_last_round", 0) <= 0:
         power += 15
     if actor.markers.pop("ignore_defense_for_strike", 0):
         defense = 1
@@ -1686,12 +1786,12 @@ def source_kind_is_strike(weapon: WeaponDef) -> bool:
     return weapon is not None
 
 
-def _grant_meter(actor: CombatantState, battle: BattleState, *, spell_like: bool):
+def _grant_meter(actor: CombatantState, battle: BattleState, *, spell_like: bool, is_strike: bool = False):
     team = team_for_actor(battle, actor)
     amount = 2 if spell_like else 1
-    if not spell_like and actor.class_skill.id == "inevitable":
-        amount *= 2
-    team.ultimate_meter = min(10, team.ultimate_meter + amount)
+    if is_strike and actor.class_skill.id == "inevitable":
+        amount += 1
+    team.ultimate_meter = min(ULTIMATE_METER_MAX, team.ultimate_meter + amount)
 
 
 def end_round(battle: BattleState):
@@ -1703,6 +1803,7 @@ def end_round(battle: BattleState):
         team.markers.pop("bonus_swap_used", None)
         other_team = battle.team2 if team is battle.team1 else battle.team1
         for unit in list(team.alive()):
+            unit.markers["struck_last_round"] = 1 if unit.markers.get("struck_this_round", 0) > 0 else 0
             if unit.has_status("burn"):
                 burn_damage = math.ceil(unit.max_hp * 0.08)
                 unit.hp = max(0, unit.hp - burn_damage)

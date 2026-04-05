@@ -23,6 +23,7 @@ from quests_ruleset_logic import (
     start_round,
     team_for_actor,
 )
+from quests_ruleset_data import ULTIMATE_METER_MAX
 from storybook_lan import apply_phase_plan, serialize_phase_plan
 
 
@@ -119,7 +120,7 @@ class StoryBattleController:
     def _effect_usable(self, actor, effect) -> bool:
         if effect.id == actor.defn.ultimate.id:
             team = team_for_actor(self.battle, actor)
-            return team.ultimate_meter >= 10
+            return team.ultimate_meter >= ULTIMATE_METER_MAX
         if actor.cooldowns.get(effect.id, 0) > 0:
             return False
         if effect in actor.primary_weapon.spells and actor.primary_weapon.ammo > 0:
@@ -161,7 +162,7 @@ class StoryBattleController:
             team_bonus_swap = team.markers.get("bonus_swap_rounds", 0) > 0 and team.markers.get("bonus_swap_used", 0) <= 0
             if (actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight" or team_bonus_swap) and self._ally_targets(actor):
                 actions.append(PendingChoice("swap", "Bonus Swap", needs_target=True, bonus=True))
-            if (actor.class_skill.id == "tactical" or actor.defn.id == "wayward_humbert") and actor.defn.id != "ashen_ella":
+            if actor.defn.id == "wayward_humbert" and actor.defn.id != "ashen_ella":
                 actions.append(PendingChoice("switch", "Bonus Switch", bonus=True))
             if actor.markers.get("vanguard_ready", 0) > 0:
                 actions.append(PendingChoice("vanguard", "Vanguard", bonus=True))

@@ -73,7 +73,7 @@ DEFAULT_CLASS_SKILL_ORDER = {
 
 CLASS_SKILL_TAGS = {
     "martial": {"melee", "damage", "burst"},
-    "inevitable": {"strike_meter", "snowball"},
+    "inevitable": {"strike_meter", "ultimate", "tempo"},
     "vanguard": {"melee", "reach", "bonus_action", "aggression"},
     "covert": {"swap", "bonus_action", "mobility"},
     "fleetfooted": {"survival", "anti_burst"},
@@ -86,10 +86,10 @@ CLASS_SKILL_TAGS = {
     "archmage": {"switch", "spell_tempo"},
     "deadeye": {"ranged", "damage"},
     "armed": {"ranged", "ammo", "switch"},
-    "tactical": {"switch", "bonus_action"},
+    "tactical": {"switch", "swap", "tempo", "mobility", "resource"},
     "healer": {"healing", "sustain"},
     "medic": {"healing", "cleanse", "anti_status"},
-    "protector": {"team_defense", "support"},
+    "protector": {"team_defense", "support", "anti_burst"},
 }
 
 
@@ -124,6 +124,9 @@ ARTIFACT_TAGS = {
     "paradox_rings": {"swap", "spell_tempo", "mobility"},
     "jade_rabbit": {"lifesteal", "ammo", "tempo"},
     "swan_cloak": {"anti_burst", "swap", "mobility"},
+    "starskin_veil": {"redirect", "anti_burst", "support", "guard"},
+    "blood_diamond": {"burst", "damage", "low_hp", "counterpressure"},
+    "suspicious_eye": {"spotlight", "reach", "setup", "ranged"},
 }
 
 
@@ -617,6 +620,27 @@ ADVENTURER_AI = {
         front=56,
         back_left=82,
         back_right=84,
+    ),
+    "reynard_lupine_trickster": _profile(
+        base_power=82,
+        reliability=74,
+        complexity=68,
+        roles=("stat_manipulator", "tempo_engine", "backline_reach", "burst_finisher"),
+        shells=("debuff", "tempo", "burst"),
+        matchup=("fragile_backline", "slow_frontline"),
+        good_into=("fragile_backline", "slow_frontline"),
+        bad_into=("primary_tank",),
+        classes=("Rogue", "Ranger", "Fighter"),
+        skills={
+            "Rogue": ("assassin", "covert", "fleetfooted"),
+            "Ranger": ("deadeye", "tactical", "armed"),
+            "Fighter": ("vanguard", "martial", "inevitable"),
+        },
+        weapons=("foxfire_bow", "fang"),
+        artifacts=("naiads_knife", "dragons_horn", "glass_slipper", "lightning_helm"),
+        front=66,
+        back_left=82,
+        back_right=88,
     ),
 }
 

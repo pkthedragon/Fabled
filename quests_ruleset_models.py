@@ -146,10 +146,15 @@ class CombatantState:
     def add_status(self, kind: str, duration: int) -> bool:
         if kind == "root" and self.has_status("root_immunity"):
             return False
+        if kind == "root_immunity":
+            self.remove_status("root")
         if self.defn.id == "pinocchio_cursed_puppet" and self.markers.get("malice", 0) >= 3:
             return False
         for status in self.statuses:
             if status.kind == kind and status.duration > 0:
+                if duration > status.duration:
+                    status.duration = duration
+                    return True
                 return False
         self.statuses.append(StatusInstance(kind=kind, duration=duration))
         return True
@@ -163,7 +168,7 @@ class CombatantState:
     def best_debuff(self, stat: str) -> int:
         return max((debuff.amount for debuff in self.debuffs if debuff.stat == stat and debuff.duration > 0), default=0)
 
-    def get_stat(self, stat: str) -> int:
+    def get_stat(self, stat: str, battle: "BattleState | None" = None) -> int:
         base = getattr(self.defn, stat)
         if self.defn.id == "ali_baba":
             return max(1, base)
@@ -183,8 +188,15 @@ class CombatantState:
             base -= 15
         if self.class_skill.id == "bulwark" and stat == "defense" and self.slot == SLOT_FRONT:
             base += 15
-        if self.class_skill.id == "protector" and stat == "defense":
-            base += 10
+        if (
+            stat == "defense"
+            and battle is not None
+            and any(
+                ally is not self and not ally.ko and ally.class_skill.id == "protector"
+                for ally in (battle.team1.members if any(member is self for member in battle.team1.members) else battle.team2.members)
+            )
+        ):
+            base += 15
         total = base + self.best_buff(stat) - self.best_debuff(stat)
         if self.defn.id == "maui_sunthief" and stat == "defense" and self.markers.get("raise_the_sky_rounds", 0) > 0:
             total *= 2

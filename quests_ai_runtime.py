@@ -5,6 +5,7 @@ import random
 from quests_ai_battle import queue_both_teams_for_phase
 from quests_ai_bout import BoutDraftResult, draft_bout_teams
 from quests_ai_quest import QuestPartyChoice, choose_quest_party
+from quests_ai_quest_loadout import choose_blind_quest_roster_from_offer
 from quests_ruleset_data import ADVENTURERS
 from quests_ruleset_logic import create_battle, create_team, determine_initiative_order, end_round, make_pick, start_round
 
@@ -65,17 +66,23 @@ def play_ai_battle(battle, *, difficulty1: str = "hard", difficulty2: str = "har
 
 def run_ai_quest_battle(*, seed: int | None = None, difficulty1: str = "hard", difficulty2: str = "hard"):
     rng = random.Random(seed)
-    offer1 = [adventurer.id for adventurer in rng.sample(ADVENTURERS, 6)]
-    offer2 = [adventurer.id for adventurer in rng.sample(ADVENTURERS, 6)]
-    choice1: QuestPartyChoice = choose_quest_party(offer1, difficulty=difficulty1, rng=rng)
-    choice2: QuestPartyChoice = choose_quest_party(offer2, difficulty=difficulty2, rng=rng)
+    nine_offer1 = [adventurer.id for adventurer in rng.sample(ADVENTURERS, 9)]
+    nine_offer2 = [adventurer.id for adventurer in rng.sample(ADVENTURERS, 9)]
+    party1 = choose_blind_quest_roster_from_offer(nine_offer1, roster_size=6)
+    party2 = choose_blind_quest_roster_from_offer(nine_offer2, roster_size=6)
+    offer1 = list(party1.offer_ids)
+    offer2 = list(party2.offer_ids)
+    choice1: QuestPartyChoice = choose_quest_party(offer1, enemy_party_ids=offer2, difficulty=difficulty1, rng=rng)
+    choice2: QuestPartyChoice = choose_quest_party(offer2, enemy_party_ids=offer1, difficulty=difficulty2, rng=rng)
     battle = build_battle_from_loadouts(choice1.loadout, choice2.loadout, player_name_1="Quest AI A", player_name_2="Quest AI B")
     winner, rounds = play_ai_battle(battle, difficulty1=difficulty1, difficulty2=difficulty2, max_rounds=16, rng=rng)
     return {
         "winner": winner,
         "rounds": rounds,
-        "offer1": tuple(offer1),
-        "offer2": tuple(offer2),
+        "offer1": tuple(nine_offer1),
+        "offer2": tuple(nine_offer2),
+        "party1": tuple(offer1),
+        "party2": tuple(offer2),
         "team1_ids": choice1.team_ids,
         "team2_ids": choice2.team_ids,
         "battle": battle,

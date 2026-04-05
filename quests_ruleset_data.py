@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+from dataclasses import replace
+from pathlib import Path
+import re
+
 from quests_ruleset_models import (
     ActiveEffect,
     AdventurerDef,
@@ -71,10 +75,228 @@ def artifact(
     )
 
 
+_RULEBOOK_SECTION_SKIP_LINES = {"Magic", "Active", "Melee", "Ranged", "No Cooldown"}
+
+ULTIMATE_METER_MAX = 7
+ULTIMATE_WIN_COUNT = 3
+GOOSE_QUILL_RETAINED_METER = (ULTIMATE_METER_MAX + 1) // 2
+
+
+def _next_rulebook_description_line(lines: list[str], start_index: int) -> str:
+    index = start_index
+    while index < len(lines):
+        line = lines[index].strip()
+        if (
+            not line
+            or line in _RULEBOOK_SECTION_SKIP_LINES
+            or line.startswith("Cooldown:")
+            or re.match(r"^\d+ Ammo$", line)
+        ):
+            index += 1
+            continue
+        return line
+    return ""
+
+
+def _extract_rulebook_strike_description(strike_line: str) -> str:
+    text = strike_line.strip()
+    if text.startswith("Has the Power and effects"):
+        return text
+    power_match = re.search(r"\bpower\b", text, flags=re.IGNORECASE)
+    if power_match is None:
+        return text
+    rest = text[power_match.end():].strip()
+    if rest.startswith(".") or rest.startswith(","):
+        rest = rest[1:].strip()
+    return rest
+
+
+def _clean_strike_description(effect: ActiveEffect, description: str) -> str:
+    desc = description.strip()
+    if not desc:
+        return ""
+    if effect.recoil > 0 and desc.lower() == f"{int(effect.recoil * 100)}% recoil":
+        return ""
+    if effect.lifesteal > 0 and desc.lower() == f"{int(effect.lifesteal * 100)}% lifesteal":
+        return ""
+    if effect.spread and desc.lower() == "spread":
+        return ""
+    if effect.spread and desc.lower().startswith("spread. "):
+        return desc[8:].strip()
+    return desc
+
+
+def _normalize_rulebook_name(name: str) -> str:
+    return name.replace("’", "'").replace("`", "'").strip()
+
+
+def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
+    path = Path(__file__).with_name("rulebook.txt")
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    appendix_a = re.search(r"^APPENDIX A .*$", text, flags=re.MULTILINE)
+    appendix_b = re.search(r"^APPENDIX B .*$", text, flags=re.MULTILINE)
+    if appendix_a is None or appendix_b is None:
+        return {}
+    lines = [line.rstrip() for line in text[appendix_a.start() : appendix_b.start()].splitlines()]
+
+    records: dict[str, dict] = {}
+    index = 0
+    while index < len(lines):
+        line = lines[index].strip()
+        if line and index + 1 < len(lines) and lines[index + 1].startswith("HP:"):
+            name = line
+            record = {
+                "innate_desc": "",
+                "weapons": {},
+                "ultimate_name": "",
+                "ultimate_desc": "",
+            }
+            index += 2
+            while index < len(lines):
+                current = lines[index].strip()
+                if current and index + 1 < len(lines) and lines[index + 1].startswith("HP:"):
+                    index -= 1
+                    break
+                if current.startswith("Innate Skill:"):
+                    record["innate_desc"] = _next_rulebook_description_line(lines, index + 1)
+                elif current.startswith("Signature Weapon: "):
+                    weapon_name = current.split(": ", 1)[1]
+                    weapon_record = {
+                        "strike_desc": "",
+                        "passives_by_name": {},
+                        "passives_ordered": [],
+                        "spells_by_name": {},
+                        "spells_ordered": [],
+                    }
+                    index += 1
+                    while index < len(lines):
+                        inner = lines[index].strip()
+                        if (
+                            inner.startswith("Signature Weapon: ")
+                            or inner.startswith("Ultimate Spell: ")
+                            or (inner and index + 1 < len(lines) and lines[index + 1].startswith("HP:"))
+                        ):
+                            index -= 1
+                            break
+                        if inner.startswith("Strike: "):
+                            weapon_record["strike_desc"] = _extract_rulebook_strike_description(inner.split(": ", 1)[1])
+                        elif inner.startswith("Skill: ") or inner.startswith("Passive: "):
+                            skill_name = inner.split(": ", 1)[1].strip()
+                            next_desc = _next_rulebook_description_line(lines, index + 1)
+                            if (
+                                next_desc
+                                and not next_desc.startswith("Signature Weapon: ")
+                                and not next_desc.startswith("Ultimate Spell: ")
+                                and not next_desc.startswith("Skill: ")
+                                and not next_desc.startswith("Passive: ")
+                                and not next_desc.startswith("Spell: ")
+                            ):
+                                weapon_record["passives_by_name"][skill_name] = next_desc
+                                weapon_record["passives_ordered"].append(next_desc)
+                            else:
+                                weapon_record["passives_ordered"].append(skill_name)
+                        elif inner.startswith("Spell: "):
+                            spell_name = inner.split(": ", 1)[1].strip()
+                            spell_desc = _next_rulebook_description_line(lines, index + 1)
+                            if spell_desc:
+                                weapon_record["spells_by_name"][spell_name] = spell_desc
+                                weapon_record["spells_ordered"].append(spell_desc)
+                        index += 1
+                    record["weapons"][weapon_name] = weapon_record
+                elif current.startswith("Ultimate Spell: "):
+                    record["ultimate_name"] = current.split(": ", 1)[1]
+                    record["ultimate_desc"] = _next_rulebook_description_line(lines, index + 1)
+                index += 1
+            records[name] = record
+        index += 1
+    return records
+
+
+def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]) -> list[AdventurerDef]:
+    try:
+        parsed = _parse_rulebook_adventurer_descriptions()
+    except Exception:
+        return adventurers
+    if not parsed:
+        return adventurers
+
+    synced: list[AdventurerDef] = []
+    for adventurer in adventurers:
+        record = parsed.get(adventurer.name)
+        if record is None:
+            synced.append(adventurer)
+            continue
+
+        innate = adventurer.innate
+        if record["innate_desc"] and record["innate_desc"] != innate.description:
+            innate = replace(innate, description=record["innate_desc"])
+
+        weapons: list[WeaponDef] = []
+        for weapon in adventurer.signature_weapons:
+            weapon_record = record["weapons"].get(weapon.name, {})
+            strike = weapon.strike
+            strike_desc = weapon_record.get("strike_desc", None)
+            if strike_desc is not None:
+                cleaned = _clean_strike_description(strike, strike_desc)
+                if cleaned != strike.description:
+                    strike = replace(strike, description=cleaned)
+
+            passives = []
+            ordered_passive_descs = list(weapon_record.get("passives_ordered", []))
+            for passive_index, passive_effect in enumerate(weapon.passive_skills):
+                desc = weapon_record.get("passives_by_name", {}).get(passive_effect.name)
+                if desc is None and passive_index < len(ordered_passive_descs):
+                    desc = ordered_passive_descs[passive_index]
+                if desc is not None and desc != passive_effect.description:
+                    passives.append(replace(passive_effect, description=desc))
+                else:
+                    passives.append(passive_effect)
+
+            spells = []
+            ordered_spell_descs = list(weapon_record.get("spells_ordered", []))
+            for spell_index, spell_effect in enumerate(weapon.spells):
+                desc = weapon_record.get("spells_by_name", {}).get(spell_effect.name)
+                if desc is None and spell_index < len(ordered_spell_descs):
+                    desc = ordered_spell_descs[spell_index]
+                if desc is not None and desc != spell_effect.description:
+                    spells.append(replace(spell_effect, description=desc))
+                else:
+                    spells.append(spell_effect)
+
+            weapons.append(
+                replace(
+                    weapon,
+                    strike=strike,
+                    passive_skills=tuple(passives),
+                    spells=tuple(spells),
+                )
+            )
+
+        ultimate = adventurer.ultimate
+        if (
+            record["ultimate_desc"]
+            and _normalize_rulebook_name(record["ultimate_name"]) == _normalize_rulebook_name(adventurer.ultimate.name)
+            and record["ultimate_desc"] != adventurer.ultimate.description
+        ):
+            ultimate = replace(ultimate, description=record["ultimate_desc"])
+
+        synced.append(
+            replace(
+                adventurer,
+                innate=innate,
+                signature_weapons=tuple(weapons),
+                ultimate=ultimate,
+            )
+        )
+    return synced
+
+
 CLASS_SKILLS = {
     "Fighter": [
         passive("martial", "Martial", "Melee Strikes deal +15 damage."),
-        passive("inevitable", "Inevitable", "Strikes charge the ultimate meter twice as fast.", special="double_strike_meter"),
+        passive("inevitable", "Inevitable", "Strikes charge the Ultimate Meter +1.", special="bonus_strike_meter"),
         passive("vanguard", "Vanguard", "Can use a bonus action after a frontline melee Strike to prime the next Strike.", special="vanguard"),
     ],
     "Rogue": [
@@ -95,12 +317,12 @@ CLASS_SKILLS = {
     "Ranger": [
         passive("deadeye", "Deadeye", "Ranged Strikes deal +10 damage."),
         passive("armed", "Armed", "The first Ranged Strike after Switching does not consume Ammo.", special="armed"),
-        passive("tactical", "Tactical", "Can Switch weapons as a bonus action.", special="bonus_switch"),
+        passive("tactical", "Tactical", "Can Switch weapons when they Swap positions.", special="swap_switch"),
     ],
     "Cleric": [
         passive("healer", "Healer", "Healing effects restore an additional +15 HP."),
         passive("medic", "Medic", "Healing effects cleanse status conditions and stat penalties.", special="medic"),
-        passive("protector", "Protector", "Allies have +10 Defense."),
+        passive("protector", "Protector", "Allies have +15 Defense."),
     ],
 }
 
@@ -239,14 +461,14 @@ ARTIFACTS = [
     artifact(
         "selkies_skin",
         "Selkie's Skin",
-        ("Ranger", "Rogue"),
+        ("Mage", "Ranger", "Rogue"),
         "speed",
         10,
         active(
             "mistform",
             "Mistform",
             target="self",
-            cooldown=1,
+            cooldown=2,
             description="The next Strike this round deals 0 damage.",
             special="mistform",
         ),
@@ -490,7 +712,7 @@ ARTIFACTS.extend([
     artifact(
         "black_torch",
         "Black Torch",
-        ("Fighter", "Ranger"),
+        ("Fighter", "Ranger", "Rogue"),
         "attack",
         10,
         active(
@@ -582,6 +804,53 @@ ARTIFACTS.extend([
         ),
         reactive=True,
     ),
+    artifact(
+        "starskin_veil",
+        "Starskin Veil",
+        ("Cleric", "Warden"),
+        "defense",
+        15,
+        active(
+            "dazzle",
+            "Dazzle",
+            target="ally",
+            cooldown=2,
+            description="Redirect the target's next Spell or Strike to the user.",
+            special="dazzle",
+        ),
+    ),
+    artifact(
+        "blood_diamond",
+        "Blood Diamond",
+        ("Fighter",),
+        "attack",
+        5,
+        active(
+            "last_stand",
+            "Last Stand",
+            target="self",
+            cooldown=2,
+            description="When a Strike damages the user below 50% max HP, their next Strike deals +25 damage.",
+            special="last_stand",
+        ),
+        reactive=True,
+    ),
+    artifact(
+        "suspicious_eye",
+        "Suspicious Eye",
+        ("Ranger",),
+        "speed",
+        10,
+        active(
+            "nebulous_ides",
+            "Nebulous Ides",
+            target="self",
+            cooldown=2,
+            description="When the user Strikes an enemy directly across from them, Spotlight the target for 2 rounds.",
+            special="nebulous_ides",
+        ),
+        reactive=True,
+    ),
 ])
 
 
@@ -595,7 +864,7 @@ RED = AdventurerDef(
     attack=74,
     defense=72,
     speed=44,
-    innate=passive("red_and_wolf", "Red and Wolf", "Below 50% HP, gain Attack, Speed, and lifesteal.", special="red_and_wolf"),
+    innate=passive("red_and_wolf", "Red and Wolf", "While below 50% max HP, Red has +15 Attack, +15 Speed, and her Strikes have 15% Lifesteal.", special="red_and_wolf"),
     signature_weapons=(
         weapon(
             "stomach_splitter",
@@ -645,7 +914,7 @@ JACK = AdventurerDef(
     attack=82,
     defense=57,
     speed=68,
-    innate=passive("giant_slayer", "Giant Slayer", "Deal +15 bonus damage to higher max HP enemies.", special="giant_slayer"),
+    innate=passive("giant_slayer", "Giant Slayer", "Jack deals +15 bonus damage to enemies with higher max HP.", special="giant_slayer"),
     signature_weapons=(
         weapon(
             "skyfall",
@@ -688,7 +957,7 @@ GRETEL = AdventurerDef(
     attack=76,
     defense=66,
     speed=60,
-    innate=passive("sugar_rush", "Sugar Rush", "Gain Attack and Speed after a knockout.", special="sugar_rush"),
+    innate=passive("sugar_rush", "Sugar Rush", "When Gretel knocks out an enemy, she has +15 Attack and +15 Speed for 2 rounds.", special="sugar_rush"),
     signature_weapons=(
         weapon(
             "hot_mitts",
@@ -730,7 +999,7 @@ CONSTANTINE = AdventurerDef(
     attack=70,
     defense=44,
     speed=90,
-    innate=passive("shadowstep", "Shadowstep", "Ignore targeting restrictions against Exposed targets.", special="shadowstep"),
+    innate=passive("shadowstep", "Shadowstep", "Constantine ignores targeting restrictions against Exposed targets.", special="shadowstep"),
     signature_weapons=(
         weapon(
             "fortuna",
@@ -813,7 +1082,7 @@ ROLAND = AdventurerDef(
     attack=42,
     defense=82,
     speed=22,
-    innate=passive("silver_aegis", "Silver Aegis", "Take 60% less from the first ability after swapping to frontline.", special="silver_aegis"),
+    innate=passive("silver_aegis", "Silver Aegis", "Roland takes 60% less damage from the first incoming ability after swapping to frontline.", special="silver_aegis"),
     signature_weapons=(
         weapon(
             "pure_gold_lance",
@@ -866,7 +1135,7 @@ PORCUS = AdventurerDef(
     attack=40,
     defense=84,
     speed=16,
-    innate=passive("bricklayer", "Bricklayer", "Reduce huge Strike damage and Weaken the attacker.", special="bricklayer"),
+    innate=passive("bricklayer", "Bricklayer", "If a Strike would deal 20% max HP or more to Porcus, reduce damage by 35% and Weaken the attacker for 2 rounds.", special="bricklayer"),
     signature_weapons=(
         weapon(
             "crafty_wall",
@@ -909,7 +1178,7 @@ LADY = AdventurerDef(
     attack=48,
     defense=70,
     speed=42,
-    innate=passive("reflecting_pools", "Reflecting Pools", "Create reflective pools after Swapping.", special="reflecting_pools"),
+    innate=passive("reflecting_pools", "Reflecting Pools", "The Lady creates a Reflecting Pool for 2 rounds at her new position whenever she swaps. Strikes targeting Reflecting Pools reflect 25% of the damage onto the attacker, 50% if the Strike is Magic.", special="reflecting_pools"),
     signature_weapons=(
         weapon("excalibur_doc", "Excalibur", "melee", active("excalibur_doc_strike", "Strike", power=70)),
         weapon(
@@ -917,7 +1186,14 @@ LADY = AdventurerDef(
             "Lantern of Avalon",
             "magic",
             active("lantern_of_avalon_strike", "Strike", power=60, cooldown=1, counts_as_spell=True, special="self_swap_after_strike"),
-            passive_skills=(passive("postmortem_passage", "Postmortem Passage", "Fatal Strikes trigger an ally retaliation.", special="postmortem_passage"),),
+            passive_skills=(
+                passive(
+                    "postmortem_passage",
+                    "Postmortem Passage",
+                    "When a Strike deals fatal damage to an ally, they retaliate for 50 Power against the attacker.",
+                    special="postmortem_passage",
+                ),
+            ),
             spells=(
                 active(
                     "drown_in_the_loch",
@@ -934,7 +1210,7 @@ LADY = AdventurerDef(
         "lakes_gift",
         "Lake's Gift",
         target="self",
-        description="Create a Reflecting Pool and possibly revive a fallen ally.",
+        description="The Lady creates a Reflecting Pool for 2 rounds at her position. Then, if there's a fainted ally, she knocks herself out and revives the most recently fainted ally at her position at 50% HP. They get +15 Attack for 2 rounds.",
         special="lakes_gift",
     ),
 )
@@ -947,7 +1223,7 @@ ELLA = AdventurerDef(
     attack=78,
     defense=48,
     speed=82,
-    innate=passive("two_lives", "Two Lives", "Fixed weapon by position instead of Switching.", special="two_lives"),
+    innate=passive("two_lives", "Two Lives", "Ella cannot Switch weapons. Instead, she always has the Obsidian Slippers in the frontline and the Dusty Broom in the backline.", special="two_lives"),
     signature_weapons=(
         weapon(
             "obsidian_slippers",
@@ -989,7 +1265,7 @@ MARCH_HARE = AdventurerDef(
     attack=68,
     defense=44,
     speed=84,
-    innate=passive("on_time", "On Time!", "Enemy frontline loses 10 Speed while Hare is frontline.", special="on_time"),
+    innate=passive("on_time", "On Time!", "While the March Hare is frontline, the frontline enemy has -10 Speed.", special="on_time"),
     signature_weapons=(
         weapon(
             "stitch_in_time",
@@ -1047,7 +1323,7 @@ BRIAR = AdventurerDef(
     attack=56,
     defense=52,
     speed=80,
-    innate=passive("curse_of_sleeping", "Curse of Sleeping", "The lowest HP Rooted enemy cannot act each round.", special="curse_of_sleeping"),
+    innate=passive("curse_of_sleeping", "Curse of Sleeping", "The lowest HP Rooted enemy is unable to act each round but gains Root Immunity for 2 rounds at the end of round.", special="curse_of_sleeping"),
     signature_weapons=(
         weapon(
             "spindle_bow",
@@ -1092,7 +1368,7 @@ HUMBERT = AdventurerDef(
     attack=66,
     defense=56,
     speed=64,
-    innate=passive("shifty_allegiance", "Shifty Allegiance", "Can Switch weapons as a bonus action.", special="bonus_switch"),
+    innate=passive("shifty_allegiance", "Shifty Allegiance", "Humbert can Switch weapons as a Bonus Action.", special="bonus_switch"),
     signature_weapons=(
         weapon(
             "convicted_shotgun",
@@ -1128,7 +1404,7 @@ ROBIN = AdventurerDef(
     attack=66,
     defense=46,
     speed=81,
-    innate=passive("keen_eye", "Keen Eye", "Strikes cannot be redirected and ignore Guard.", special="keen_eye"),
+    innate=passive("keen_eye", "Keen Eye", "Robin's Strikes can't be redirected and ignore Guard.", special="keen_eye"),
     signature_weapons=(
         weapon(
             "the_flock",
@@ -1162,7 +1438,7 @@ LIESL = AdventurerDef(
     attack=54,
     defense=52,
     speed=70,
-    innate=passive("purifying_flame", "Purifying Flame", "Allies are Burn immune and Burn healing is mirrored.", special="purifying_flame"),
+    innate=passive("purifying_flame", "Purifying Flame", "Liesl and her allies are immune to Burn. Whenever an enemy takes damage from a Burn, heal Liesl's lowest HP ally equal to the amount.", special="purifying_flame"),
     signature_weapons=(
         weapon(
             "matchsticks",
@@ -1197,7 +1473,7 @@ GOOD_BEAST = AdventurerDef(
     attack=52,
     defense=60,
     speed=54,
-    innate=passive("protective_soul", "Protective Soul", "The first ally Swapped with becomes Beast's guest.", special="protective_soul"),
+    innate=passive("protective_soul", "Protective Soul", "The first ally The Good Beast swaps with becomes his guest, and has +15 Defense.", special="protective_soul"),
     signature_weapons=(
         weapon(
             "rosebush_sword",
@@ -1231,7 +1507,7 @@ GREEN_KNIGHT = AdventurerDef(
     attack=60,
     defense=65,
     speed=24,
-    innate=passive("challenge_accepted", "Challenge Accepted", "May Swap positions as a bonus action.", special="bonus_swap"),
+    innate=passive("challenge_accepted", "Challenge Accepted", "The Green Knight may Swap positions as a Bonus Action.", special="bonus_swap"),
     signature_weapons=(
         weapon(
             "the_search",
@@ -1265,7 +1541,7 @@ RAPUNZEL = AdventurerDef(
     attack=66,
     defense=64,
     speed=32,
-    innate=passive("flowing_locks", "Flowing Locks", "Can target one backline enemy with a Melee Strike once per battle.", special="flowing_locks"),
+    innate=passive("flowing_locks", "Flowing Locks", "Rapunzel can target a backline enemy with a Melee Strike once per battle. Refreshes when she casts a Spell.", special="flowing_locks"),
     signature_weapons=(
         weapon(
             "golden_snare",
@@ -1299,7 +1575,7 @@ PINOCCHIO = AdventurerDef(
     attack=50,
     defense=44,
     speed=76,
-    innate=passive("growing_pains", "Growing Pains", "Gain Malice when ending the round in the frontline.", special="growing_pains"),
+    innate=passive("growing_pains", "Growing Pains", "When Pinocchio ends the round in the frontline, he gains 1 Malice, up to 6. Pinocchio has +5 attack and +5 defense for each Malice.", special="growing_pains"),
     signature_weapons=(
         weapon(
             "wooden_club",
@@ -1333,7 +1609,7 @@ RUMPEL = AdventurerDef(
     attack=58,
     defense=52,
     speed=72,
-    innate=passive("art_of_the_deal", "Art of the Deal", "Copy the first ally stat bonus each round.", special="art_of_the_deal"),
+    innate=passive("art_of_the_deal", "Art of the Deal", "The first time another adventurer gains a stat bonus each round, Rumpelstiltskin also gains it.", special="art_of_the_deal"),
     signature_weapons=(
         weapon(
             "devils_contract",
@@ -1383,7 +1659,7 @@ ASHA = AdventurerDef(
     attack=68,
     defense=46,
     speed=78,
-    innate=passive("stolen_voices", "Stolen Voices", "Steal enemy nonattacking Spells for 2 rounds.", special="stolen_voices"),
+    innate=passive("stolen_voices", "Stolen Voices", "When an enemy uses a nonattacking Spell, Asha steals it for 2 rounds. She can use it for the duration.", special="stolen_voices"),
     signature_weapons=(
         weapon(
             "frost_scepter",
@@ -1415,7 +1691,7 @@ VASILISA = AdventurerDef(
     attack=50,
     defense=60,
     speed=64,
-    innate=passive("mothers_presence", "Mother's Presence", "Whenever Vasilisa or an ally is targeted by a Spell, Guard them for 2 rounds.", special="mothers_presence"),
+    innate=passive("mothers_presence", "Mother's Presence", "Whenever Vasilisa or an ally are targeted by a Spell, Guard them for 2 rounds.", special="mothers_presence"),
     signature_weapons=(
         weapon(
             "guiding_doll",
@@ -1608,6 +1884,76 @@ KAMA = AdventurerDef(
 )
 
 
+REYNARD = AdventurerDef(
+    id="reynard_lupine_trickster",
+    name="Reynard, Lupine Trickster",
+    hp=240,
+    attack=64,
+    defense=48,
+    speed=86,
+    innate=passive(
+        "opportunist",
+        "Opportunist",
+        "Reynard deals +15 damage to targets that did not Strike last round.",
+        special="opportunist",
+    ),
+    signature_weapons=(
+        weapon(
+            "foxfire_bow",
+            "Foxfire Bow",
+            "ranged",
+            active(
+                "foxfire_bow_strike",
+                "Strike",
+                power=45,
+                ammo_cost=1,
+                target_debuffs=(stat("defense", 10, 2),),
+                description="The target has -10 Defense for 2 rounds.",
+                special="foxfire_bow",
+            ),
+            ammo=3,
+            passive_skills=(
+                passive(
+                    "glowing_trail",
+                    "Glowing Trail",
+                    "Reynard acts the turn before the target of his Strike.",
+                    special="glowing_trail",
+                ),
+            ),
+        ),
+        weapon(
+            "fang",
+            "Fang",
+            "melee",
+            active(
+                "fang_strike",
+                "Strike",
+                power=65,
+                description="+15 Power if the target has a stat penalty.",
+                special="fang_bonus_vs_penalty",
+            ),
+            spells=(
+                active(
+                    "silver_tongue",
+                    "Silver Tongue",
+                    target="enemy",
+                    cooldown=2,
+                    target_statuses=(status("taunt", 2),),
+                    description="Taunt target enemy for 2 rounds.",
+                ),
+            ),
+        ),
+    ),
+    ultimate=active(
+        "king_of_thieves",
+        "King of Thieves",
+        target="self",
+        description="Reynard's next Strike steals 30 Attack from the target for 2 rounds.",
+        special="king_of_thieves",
+    ),
+)
+
+
 ADVENTURERS = [
     RED,
     JACK,
@@ -1633,7 +1979,9 @@ ADVENTURERS = [
     ALI_BABA,
     MAUI,
     KAMA,
+    REYNARD,
 ]
+ADVENTURERS = _sync_adventurer_descriptions_from_rulebook(ADVENTURERS)
 
 
 ADVENTURERS_BY_ID = {adventurer.id: adventurer for adventurer in ADVENTURERS}

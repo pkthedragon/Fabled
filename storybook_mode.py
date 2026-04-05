@@ -9,29 +9,36 @@ from campaign_save import save_campaign
 from quests_ai_bout import choose_bout_pick
 from quests_ai_loadout import solve_team_loadout
 from quests_ai_quest import choose_quest_party
-from quests_ruleset_data import ARTIFACTS, ARTIFACTS_BY_ID
+from quests_ai_quest_loadout import choose_blind_quest_roster_from_offer
+from quests_ruleset_data import ADVENTURERS_BY_ID, ARTIFACTS, ARTIFACTS_BY_ID, CLASS_SKILLS
 from quests_sandbox import (
+    NO_CLASS_NAME,
     build_battle_from_setup,
     create_setup_from_team_ids,
     cycle_member_weapon,
+    import_team_from_text,
     set_member_artifact,
     set_member_class,
     set_member_skill,
     set_member_slot,
+    set_member_weapon,
     setup_is_ready,
 )
 from storybook_battle import StoryBattleController, StoryLanBattleController
-from storybook_content import BOUT_MODES, COSMETIC_CATEGORIES, STORY_QUESTS, catalog_entries, draft_offer, shop_items_for_tab, shop_tab_note
+from storybook_content import CATALOG_SECTIONS, BOUT_MODES, CLOSET_TABS, COSMETIC_CATEGORIES, STORY_QUESTS, catalog_entries, catalog_filter_definitions, draft_offer, shop_items_for_tab, shop_tab_note
+from storybook_content import EMBASSY_PACKAGES, MARKET_TABS, market_items_for_tab, market_tab_note
 from storybook_lan import StoryLanSession, deserialize_setup_state, friend_host_available, serialize_member, serialize_setup_state
-from storybook_progression import ARTIFACT_PURCHASE_EXP, BOUT_WIN_EXP, BOUT_WIN_GOLD, QUEST_WIN_EXP, award_exp, quest_win_gold
+from storybook_progression import ARTIFACT_PURCHASE_EXP, BOUT_WIN_EXP, BOUT_WIN_GOLD, QUEST_WIN_EXP, award_exp
 from storybook_ranked import (
     ai_difficulty_for_glory,
-    effective_matchmaking_rating,
+    clamp_glory,
     ensure_storybook_glory,
     find_ai_match_profile,
+    get_encounter_gold,
+    get_rank_from_glory,
+    rank_floor_for_glory,
     log_quest_ai_match,
     pressure_label,
-    protected_rank_name,
     rank_name,
     target_team_score_for_glory,
     update_glory_after_match,
@@ -53,10 +60,9 @@ class StorybookMode:
         self.last_mouse_pos = (0, 0)
 
         self.player_note_lines = [
-            "Inventory opens the owned artifact ledger.",
-            "Friends stores manual name and IP entries for quicker LAN joins.",
-            "Closet and Trophies stay visible in the profile shell, but they do not open dedicated screens yet.",
-            "Glory drives visible rank while quest pressure changes the opponents you face.",
+            "Little Jack is always eligible as your quest favorite.",
+            "Other favorites unlock after they have joined one of your quests outside the Training Grounds.",
+            "Training Grounds uses a separate sandbox favorite and always opens the full roster.",
         ]
         self.inventory_focus_index = 0
         self.friend_selected_index = -1
@@ -76,24 +82,53 @@ class StorybookMode:
         self.shop_message = ""
         self.shop_owned_items: set[str] = set()
         self.shop_owned_cosmetics: set[str] = set()
+        self.market_tab = "Featured"
+        self.market_item_scroll = 0
+        self.market_focus_id: str | None = None
+        self.market_message = ""
+        self.closet_tab = "Outfits"
+        self.closet_item_scroll = 0
+        self.closet_focus_id: str | None = None
+        self.favorite_select_scroll = 0
+        self.favorite_select_focus_id: str | None = None
+        self.training_roster_scroll = 0
+        self.training_focus_id: str | None = None
 
         self.quest_index = 0
         self.quest_opponent_mode = "ai"
         self.quest_offer_ids: list[str] = []
         self.quest_focus_id: str | None = None
         self.quest_selected_ids: list[str] = []
+        self.quest_draft_mode = "encounter"
+        self.quest_draft_locked_id: str | None = None
+        self.quest_enemy_party_ids: list[str] = []
+        self.quest_enemy_selected_ids: list[str] = []
+        self.quest_enemy_setup_members: list[dict] = []
         self.quest_draft_detail_scroll = 0
         self.quest_setup_state: dict | None = None
         self.quest_loadout_index = 0
         self.quest_loadout_detail_scroll = 0
         self.quest_loadout_summary_scroll = 0
+        self.quest_party_loadout_state: dict | None = None
+        self.quest_party_loadout_index = 0
+        self.quest_party_loadout_detail_scroll = 0
         self.loadout_drag: dict | None = None
         self.loadout_drag_pos = None
         self.quest_player_seat = 1
         self.quest_run_active = False
         self.quest_run_wins = 0
-        self.quest_run_consecutive_losses = 0
+        self.quest_run_losses = 0
+        self.quest_run_current_win_streak = 0
+        self.quest_run_current_loss_streak = 0
         self.quest_run_opponent_glories: list[int] = []
+        self.quest_context = "ranked"
+        self.quest_draft_offer_scroll = 0
+        self.quest_team_import_open = False
+        self.quest_team_import_text = ""
+        self.quest_team_import_status_lines: list[str] = []
+        self.quest_imported_party_members: list[dict] = []
+        self.quest_imported_party_name = ""
+        self.prepared_quest_id: str | None = None
         self.quest_player_team: list[dict] | None = None
         self.quest_runs = {
             "ai": self._empty_quest_run_state(),
@@ -104,6 +139,10 @@ class StorybookMode:
         self.quest_local_ready = False
         self.quest_remote_ready = False
         self.story_quest_best = 0
+
+        self.training_mode = "ai"
+        self.guild_party_index = 0
+        self.guild_party_adventurer_scroll = 0
 
         self.bout_mode_index = 0
         self.bout_opponent_mode = "ai"
@@ -130,6 +169,14 @@ class StorybookMode:
         self.catalog_section_index = 0
         self.catalog_entry_index = 0
         self.catalog_scroll = 0
+        self.catalog_detail_scroll = 0
+        self.catalog_filters = {
+            section: {
+                definition["key"]: definition["options"][0][0]
+                for definition in catalog_filter_definitions(section)
+            }
+            for section in CATALOG_SECTIONS
+        }
 
         self.battle_controller = None
         self.current_battle_setup = None
@@ -164,45 +211,474 @@ class StorybookMode:
     def _empty_quest_run_state():
         return {
             "active": False,
+            "quest_id": None,
             "wins": 0,
             "losses": 0,
+            "current_win_streak": 0,
+            "current_loss_streak": 0,
             "opponent_glories": [],
             "team": None,
             "party_id": None,
             "match_count": 0,
+            "total_gold_earned": 0,
         }
 
     def _normalize_profile(self):
         if getattr(self.profile, "gold", 0) <= 0 and getattr(self.profile, "player_exp", 0) <= 0:
             self.profile.gold = 1200
         self.profile.ranked_rating = ensure_storybook_glory(
-            getattr(self.profile, "ranked_rating", 500),
+            getattr(self.profile, "ranked_rating", 300),
             getattr(self.profile, "ranked_games_played", 0),
         )
-        self.profile.storybook_rank_label = protected_rank_name(
+        self.profile.storybook_rank_label = get_rank_from_glory(self.profile.ranked_rating)
+        self.profile.ranked_season_high_glory = max(
+            getattr(self.profile, "ranked_season_high_glory", self.profile.ranked_rating),
             self.profile.ranked_rating,
-            getattr(self.profile, "storybook_rank_label", None),
         )
+        self.profile.ranked_floor_glory = rank_floor_for_glory(self.profile.ranked_rating)
         self.profile.unlocked_artifacts = {
             artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID
         }
+        self.profile.storybook_adventurer_unlocks = {
+            adventurer_id
+            for adventurer_id in getattr(self.profile, "storybook_adventurer_unlocks", set())
+            if adventurer_id in ADVENTURERS_BY_ID
+        }
+        if not hasattr(self.profile, "storybook_quested_adventurers"):
+            self.profile.storybook_quested_adventurers = {"little_jack"}
+        self.profile.storybook_quested_adventurers = {
+            adventurer_id
+            for adventurer_id in getattr(self.profile, "storybook_quested_adventurers", {"little_jack"})
+            if adventurer_id in ADVENTURERS_BY_ID
+        }
+        self.profile.storybook_quested_adventurers.add("little_jack")
+        if not hasattr(self.profile, "storybook_favorite_adventurer"):
+            self.profile.storybook_favorite_adventurer = "little_jack"
+        if self.profile.storybook_favorite_adventurer not in self.profile.storybook_quested_adventurers:
+            self.profile.storybook_favorite_adventurer = "little_jack"
+        if not hasattr(self.profile, "storybook_training_favorite_adventurer"):
+            self.profile.storybook_training_favorite_adventurer = "little_jack"
+        if self.profile.storybook_training_favorite_adventurer not in ADVENTURERS_BY_ID:
+            self.profile.storybook_training_favorite_adventurer = "little_jack"
         if not hasattr(self.profile, "storybook_friends"):
             self.profile.storybook_friends = []
         if not hasattr(self.profile, "storybook_cosmetic_unlocks"):
             self.profile.storybook_cosmetic_unlocks = set()
+        if not hasattr(self.profile, "storybook_equipped_outfit"):
+            self.profile.storybook_equipped_outfit = ""
+        if not hasattr(self.profile, "storybook_equipped_chair"):
+            self.profile.storybook_equipped_chair = ""
+        if not hasattr(self.profile, "storybook_equipped_icon"):
+            self.profile.storybook_equipped_icon = ""
+        if not hasattr(self.profile, "storybook_equipped_emote"):
+            self.profile.storybook_equipped_emote = ""
+        if not hasattr(self.profile, "storybook_equipped_dance"):
+            self.profile.storybook_equipped_dance = ""
+        if not hasattr(self.profile, "storybook_equipped_celebration"):
+            self.profile.storybook_equipped_celebration = ""
+        if not hasattr(self.profile, "storybook_equipped_battlefield_skin"):
+            self.profile.storybook_equipped_battlefield_skin = ""
+        if not hasattr(self.profile, "storybook_equipped_adventurer_skins"):
+            self.profile.storybook_equipped_adventurer_skins = {}
+        if not hasattr(self.profile, "saved_teams"):
+            self.profile.saved_teams = []
         self.shop_owned_cosmetics = set(getattr(self.profile, "storybook_cosmetic_unlocks", set()))
+        if self.training_focus_id not in ADVENTURERS_BY_ID:
+            self.training_focus_id = self._training_favorite_adventurer_id()
+        self._normalize_guild_parties()
         self._sync_friend_selection()
 
-    def _persist_profile(self):
-        self.profile.storybook_rank_label = protected_rank_name(
-            self.profile.ranked_rating,
-            getattr(self.profile, "storybook_rank_label", None),
-        )
+    def _favorite_pool_ids(self) -> list[str]:
+        pool = {
+            adventurer_id
+            for adventurer_id in getattr(self.profile, "storybook_quested_adventurers", {"little_jack"})
+            if adventurer_id in ADVENTURERS_BY_ID
+        }
+        pool.add("little_jack")
+        return sorted(pool, key=lambda adventurer_id: ADVENTURERS_BY_ID[adventurer_id].name)
+
+    def _favorite_adventurer_id(self) -> str:
+        favorite = getattr(self.profile, "storybook_favorite_adventurer", "little_jack")
+        if favorite not in self._favorite_pool_ids():
+            return "little_jack"
+        return favorite
+
+    def _set_favorite_adventurer(self, adventurer_id: str):
+        if adventurer_id not in self._favorite_pool_ids():
+            return
+        self.profile.storybook_favorite_adventurer = adventurer_id
+        self._persist_profile()
+
+    def _cycle_favorite_adventurer(self, direction: int):
+        pool = self._favorite_pool_ids()
+        if not pool:
+            return
+        current = self._favorite_adventurer_id()
+        if current not in pool:
+            self._set_favorite_adventurer(pool[0])
+            return
+        index = pool.index(current)
+        self._set_favorite_adventurer(pool[(index + direction) % len(pool)])
+
+    def _training_favorite_pool_ids(self) -> list[str]:
+        return sorted(ADVENTURERS_BY_ID.keys(), key=lambda adventurer_id: ADVENTURERS_BY_ID[adventurer_id].name)
+
+    def _training_favorite_adventurer_id(self) -> str:
+        favorite = getattr(self.profile, "storybook_training_favorite_adventurer", "little_jack")
+        if favorite not in ADVENTURERS_BY_ID:
+            return "little_jack"
+        return favorite
+
+    def _set_training_favorite_adventurer(self, adventurer_id: str):
+        if adventurer_id not in ADVENTURERS_BY_ID:
+            return
+        self.profile.storybook_training_favorite_adventurer = adventurer_id
+        self._persist_profile()
+
+    def _cycle_training_favorite_adventurer(self, direction: int):
+        pool = self._training_favorite_pool_ids()
+        if not pool:
+            return
+        current = self._training_favorite_adventurer_id()
+        index = pool.index(current) if current in pool else 0
+        self._set_training_favorite_adventurer(pool[(index + direction) % len(pool)])
+
+    def _record_quested_adventurers(self, adventurer_ids: list[str] | set[str] | tuple[str, ...]):
+        quested = {
+            adventurer_id
+            for adventurer_id in adventurer_ids
+            if adventurer_id in ADVENTURERS_BY_ID
+        }
+        if not quested:
+            return
+        if not hasattr(self.profile, "storybook_quested_adventurers"):
+            self.profile.storybook_quested_adventurers = {"little_jack"}
+        self.profile.storybook_quested_adventurers.update(quested)
+        self.profile.storybook_quested_adventurers.add("little_jack")
+
+    def _market_items(self, tab_name: str | None = None) -> list[dict]:
+        return market_items_for_tab(tab_name or self.market_tab)
+
+    def _reset_market_focus(self):
+        items = self._market_items()
+        self.market_item_scroll = 0
+        if self.market_tab == "Embassy":
+            self.market_focus_id = EMBASSY_PACKAGES[0]["id"] if EMBASSY_PACKAGES else None
+        else:
+            self.market_focus_id = items[0]["id"] if items else None
+        self.market_message = market_tab_note(self.market_tab)
+
+    def _open_market(self):
+        self.previous_route = self.route
+        self._reset_market_focus()
+        self.route = "market"
+
+    def _open_armory(self):
+        self.previous_route = self.route
+        self.shops_tab = "Artifacts"
+        self._reset_shop_focus()
+        self.route = "armory"
+
+    def _closet_items(self, tab_name: str | None = None) -> list[dict]:
+        target_tab = tab_name or self.closet_tab
+        if target_tab not in CLOSET_TABS:
+            return []
+        return self._market_items(target_tab)
+
+    def _reset_closet_focus(self):
+        items = [item for item in self._closet_items() if item["id"] in self.shop_owned_cosmetics]
+        self.closet_item_scroll = 0
+        self.closet_focus_id = items[0]["id"] if items else None
+
+    def _open_closet(self):
+        self.previous_route = self.route
+        if self.closet_tab not in CLOSET_TABS:
+            self.closet_tab = CLOSET_TABS[0]
+        self._reset_closet_focus()
+        self.route = "closet"
+
+    def _open_favorite_select(self):
+        self.previous_route = self.route
+        self.favorite_select_scroll = 0
+        self.favorite_select_focus_id = self._favorite_adventurer_id()
+        self.route = "favored_adventurer_select"
+
+    @staticmethod
+    def _market_slot_for(item: dict) -> str:
+        return str(item.get("slot", ""))
+
+    def _equipped_market_item_id(self, item: dict) -> str:
+        slot = self._market_slot_for(item)
+        if slot == "outfit":
+            return getattr(self.profile, "storybook_equipped_outfit", "")
+        if slot == "chair":
+            return getattr(self.profile, "storybook_equipped_chair", "")
+        if slot == "icon":
+            return getattr(self.profile, "storybook_equipped_icon", "")
+        if slot == "emote":
+            return getattr(self.profile, "storybook_equipped_emote", "")
+        if slot == "dance":
+            return getattr(self.profile, "storybook_equipped_dance", "")
+        if slot == "celebration":
+            return getattr(self.profile, "storybook_equipped_celebration", "")
+        if slot == "battlefield_skin":
+            return getattr(self.profile, "storybook_equipped_battlefield_skin", "")
+        if slot == "adventurer_skin":
+            adventurer_id = str(item.get("adventurer_id", ""))
+            return dict(getattr(self.profile, "storybook_equipped_adventurer_skins", {})).get(adventurer_id, "")
+        return ""
+
+    def _set_equipped_market_item(self, item: dict):
+        item_id = str(item.get("id", ""))
+        if not item_id or item_id not in self.shop_owned_cosmetics:
+            return
+        slot = self._market_slot_for(item)
+        if slot == "outfit":
+            self.profile.storybook_equipped_outfit = item_id
+        elif slot == "chair":
+            self.profile.storybook_equipped_chair = item_id
+        elif slot == "icon":
+            self.profile.storybook_equipped_icon = item_id
+        elif slot == "emote":
+            self.profile.storybook_equipped_emote = item_id
+        elif slot == "dance":
+            self.profile.storybook_equipped_dance = item_id
+        elif slot == "celebration":
+            self.profile.storybook_equipped_celebration = item_id
+        elif slot == "battlefield_skin":
+            self.profile.storybook_equipped_battlefield_skin = item_id
+        elif slot == "adventurer_skin":
+            adventurer_id = str(item.get("adventurer_id", ""))
+            if adventurer_id:
+                equipped = dict(getattr(self.profile, "storybook_equipped_adventurer_skins", {}))
+                equipped[adventurer_id] = item_id
+                self.profile.storybook_equipped_adventurer_skins = equipped
+        self.market_message = f"Equipped {item['name']}."
+        self._persist_profile()
+
+    def _purchase_market_focus(self):
+        if self.market_tab == "Embassy":
+            package = next((entry for entry in EMBASSY_PACKAGES if entry["id"] == self.market_focus_id), None)
+            if package is None:
+                self.market_message = "Select a package first."
+                return
+            granted_gold = int(package["gold"]) + int(package.get("bonus_gold", 0))
+            self.profile.gold += granted_gold
+            self.profile.premium_dollars_spent = int(getattr(self.profile, "premium_dollars_spent", 0)) + int(package["usd"])
+            self.market_message = f"Embassy exchanged ${package['usd']} into {granted_gold} Gold."
+            self._persist_profile()
+            return
+        item = next((entry for entry in self._market_items() if entry["id"] == self.market_focus_id), None)
+        if item is None:
+            self.market_message = "Select a market item first."
+            return
+        item_id = str(item["id"])
+        if item_id in self.shop_owned_cosmetics:
+            self._set_equipped_market_item(item)
+            return
+        price = int(item["price"])
+        if self.profile.gold < price:
+            self.market_message = f"You need {price - self.profile.gold} more Gold for {item['name']}."
+            return
+        self.profile.gold -= price
+        self.shop_owned_cosmetics.add(item_id)
         self.profile.storybook_cosmetic_unlocks = set(self.shop_owned_cosmetics)
+        self._set_equipped_market_item(item)
+        self.market_message = f"Purchased {item['name']} for {price} Gold."
+        self._persist_profile()
+
+    def _set_training_focus(self, adventurer_id: str):
+        if adventurer_id not in ADVENTURERS_BY_ID:
+            return
+        self.training_focus_id = adventurer_id
+        self._set_training_favorite_adventurer(adventurer_id)
+
+    def _catalog_section_name(self) -> str:
+        if not CATALOG_SECTIONS:
+            return "Adventurers"
+        self.catalog_section_index = max(0, min(self.catalog_section_index, len(CATALOG_SECTIONS) - 1))
+        return CATALOG_SECTIONS[self.catalog_section_index]
+
+    def _catalog_filters_for_section(self, section_name: str | None = None) -> dict[str, str]:
+        section_name = section_name or self._catalog_section_name()
+        filters = dict(self.catalog_filters.get(section_name, {}))
+        normalized: dict[str, str] = {}
+        for definition in catalog_filter_definitions(section_name):
+            options = [str(value) for value, _label in definition["options"]]
+            current = str(filters.get(definition["key"], options[0]))
+            normalized[definition["key"]] = current if current in options else options[0]
+        self.catalog_filters[section_name] = normalized
+        return normalized
+
+    def _catalog_entries_for_section(self, section_name: str | None = None) -> list[dict]:
+        section_name = section_name or self._catalog_section_name()
+        return catalog_entries(
+            section_name,
+            self._catalog_filters_for_section(section_name),
+            favorite_adventurer_id=self._favorite_adventurer_id(),
+        )
+
+    def _reset_catalog_navigation(self):
+        self.catalog_entry_index = 0
+        self.catalog_scroll = 0
+        self.catalog_detail_scroll = 0
+
+    def _cycle_catalog_filter(self, key: str, direction: int):
+        section_name = self._catalog_section_name()
+        filters = self._catalog_filters_for_section(section_name)
+        for definition in catalog_filter_definitions(section_name):
+            if definition["key"] != key:
+                continue
+            values = [str(value) for value, _label in definition["options"]]
+            if not values:
+                return
+            current = filters.get(key, values[0])
+            index = values.index(current) if current in values else 0
+            filters[key] = values[(index + direction) % len(values)]
+            self.catalog_filters[section_name] = filters
+            self._reset_catalog_navigation()
+            return
+
+    def _persist_profile(self):
+        self.profile.storybook_rank_label = get_rank_from_glory(self.profile.ranked_rating)
+        self.profile.ranked_season_high_glory = max(
+            getattr(self.profile, "ranked_season_high_glory", self.profile.ranked_rating),
+            self.profile.ranked_rating,
+        )
+        self.profile.ranked_floor_glory = rank_floor_for_glory(self.profile.ranked_rating)
+        self.profile.storybook_cosmetic_unlocks = set(self.shop_owned_cosmetics)
+        self.profile.storybook_adventurer_unlocks = {
+            adventurer_id
+            for adventurer_id in getattr(self.profile, "storybook_adventurer_unlocks", set())
+            if adventurer_id in ADVENTURERS_BY_ID
+        }
+        self.profile.saved_teams = self._guild_parties_serialized()
         save_campaign(self.profile)
 
     def _friends(self) -> list[dict]:
         return list(getattr(self.profile, "storybook_friends", []))
+
+    def _guild_parties(self) -> list[dict]:
+        return list(getattr(self, "_storybook_guild_parties", []))
+
+    def _guild_parties_serialized(self) -> list[dict]:
+        return copy.deepcopy(self._guild_parties())
+
+    def _normalize_guild_parties(self):
+        normalized: list[dict] = []
+        raw_parties = list(getattr(self.profile, "saved_teams", []))
+        for index, raw in enumerate(raw_parties):
+            if not isinstance(raw, dict):
+                continue
+            name = str(raw.get("name", "")).strip() or f"Party {index + 1}"
+            raw_members = raw.get("members", [])
+            if not isinstance(raw_members, list):
+                continue
+            members: list[dict] = []
+            used_classes: set[str] = set()
+            for entry in raw_members[:6]:
+                if not isinstance(entry, dict):
+                    continue
+                adventurer_id = str(entry.get("adventurer_id", ""))
+                if adventurer_id not in ADVENTURERS_BY_ID:
+                    continue
+                class_name = str(entry.get("class_name", ""))
+                if class_name not in CLASS_SKILLS or class_name in used_classes:
+                    class_name = next((cls for cls in CLASS_SKILLS if cls not in used_classes), "Fighter")
+                used_classes.add(class_name)
+                members.append({"adventurer_id": adventurer_id, "class_name": class_name})
+            if len(members) >= 3:
+                used_ids = {member["adventurer_id"] for member in members}
+                while len(members) < 6:
+                    next_class = next((cls for cls in CLASS_SKILLS if cls not in {m["class_name"] for m in members}), None)
+                    next_adv = next((aid for aid in ADVENTURERS_BY_ID if aid not in used_ids), None)
+                    if next_class is None or next_adv is None:
+                        break
+                    members.append({"adventurer_id": next_adv, "class_name": next_class})
+                    used_ids.add(next_adv)
+                normalized.append({"name": name, "members": members})
+        if not normalized:
+            starter_ids = [member for member in getattr(self.profile, "recruited", set()) if member in ADVENTURERS_BY_ID]
+            if len(starter_ids) < 6:
+                starter_ids = list(ADVENTURERS_BY_ID.keys())[:6]
+            members = []
+            for index, adventurer_id in enumerate(starter_ids[:6]):
+                class_name = list(CLASS_SKILLS.keys())[index % len(CLASS_SKILLS)]
+                members.append({"adventurer_id": adventurer_id, "class_name": class_name})
+            normalized.append({"name": "Guild Party 1", "members": members})
+        self._storybook_guild_parties = normalized
+        self.guild_party_index = max(0, min(self.guild_party_index, len(normalized) - 1))
+
+    def _guild_party_members(self, party_index: int | None = None) -> list[dict]:
+        parties = self._guild_parties()
+        if not parties:
+            return []
+        index = self.guild_party_index if party_index is None else party_index
+        index = max(0, min(index, len(parties) - 1))
+        return parties[index]["members"]
+
+    def _add_guild_party(self):
+        parties = self._guild_parties()
+        new_index = len(parties) + 1
+        starter_pool = [adventurer_id for adventurer_id in ADVENTURERS_BY_ID if adventurer_id not in {m["adventurer_id"] for p in parties for m in p["members"]}]
+        if len(starter_pool) < 6:
+            starter_pool = list(ADVENTURERS_BY_ID.keys())
+        members = []
+        for index, adventurer_id in enumerate(starter_pool[:6]):
+            class_name = list(CLASS_SKILLS.keys())[index % len(CLASS_SKILLS)]
+            members.append({"adventurer_id": adventurer_id, "class_name": class_name})
+        parties.append({"name": f"Guild Party {new_index}", "members": members})
+        self._storybook_guild_parties = parties
+        self.guild_party_index = len(parties) - 1
+        self._persist_profile()
+
+    def _delete_guild_party(self):
+        parties = self._guild_parties()
+        if len(parties) <= 1:
+            return
+        parties.pop(self.guild_party_index)
+        self._storybook_guild_parties = parties
+        self.guild_party_index = max(0, min(self.guild_party_index, len(parties) - 1))
+        self._persist_profile()
+
+    def _cycle_party_member_class(self, member_index: int):
+        members = self._guild_party_members()
+        if not (0 <= member_index < len(members)):
+            return
+        used = {member["class_name"] for index, member in enumerate(members) if index != member_index}
+        class_order = list(CLASS_SKILLS.keys())
+        current = members[member_index]["class_name"]
+        current_index = class_order.index(current) if current in class_order else 0
+        for offset in range(1, len(class_order) + 1):
+            candidate = class_order[(current_index + offset) % len(class_order)]
+            if candidate not in used:
+                members[member_index]["class_name"] = candidate
+                self._persist_profile()
+                return
+
+    def _remove_party_member(self, member_index: int):
+        members = self._guild_party_members()
+        if not (0 <= member_index < len(members)):
+            return
+        if len(members) <= 3:
+            return
+        members.pop(member_index)
+        self._persist_profile()
+
+    def _add_party_member(self, adventurer_id: str):
+        if adventurer_id not in ADVENTURERS_BY_ID:
+            return
+        members = self._guild_party_members()
+        if len(members) >= 6:
+            return
+        if any(member["adventurer_id"] == adventurer_id for member in members):
+            return
+        used_classes = {member["class_name"] for member in members}
+        class_name = next((cls for cls in CLASS_SKILLS if cls not in used_classes), None)
+        if class_name is None:
+            return
+        members.append({"adventurer_id": adventurer_id, "class_name": class_name})
+        self._persist_profile()
 
     def _sync_friend_selection(self):
         friends = self._friends()
@@ -339,6 +815,56 @@ class StorybookMode:
             return set(ALL_ARTIFACT_IDS)
         return set(self._owned_artifact_ids())
 
+    def _default_party_loadout_member(self, adventurer_id: str) -> dict:
+        adventurer = ADVENTURERS_BY_ID[adventurer_id]
+        primary_weapon_id = adventurer.signature_weapons[0].id if adventurer.signature_weapons else None
+        return {
+            "adventurer_id": adventurer_id,
+            "class_name": NO_CLASS_NAME,
+            "class_skill_id": None,
+            "primary_weapon_id": primary_weapon_id,
+            "artifact_id": None,
+        }
+
+    def _normalize_quest_party_team(self, team: list[dict] | None) -> list[dict]:
+        if not team:
+            return []
+        normalized: list[dict] = []
+        used_classes: set[str] = set()
+        used_artifacts: set[str] = set()
+        used_adventurers: set[str] = set()
+        for raw_member in list(team)[:6]:
+            adventurer_id = raw_member.get("adventurer_id")
+            if adventurer_id not in ADVENTURERS_BY_ID or adventurer_id in used_adventurers:
+                continue
+            used_adventurers.add(adventurer_id)
+            member = self._default_party_loadout_member(adventurer_id)
+            class_name = raw_member.get("class_name", NO_CLASS_NAME)
+            if class_name not in CLASS_SKILLS or class_name in used_classes:
+                class_name = NO_CLASS_NAME
+            if class_name != NO_CLASS_NAME:
+                used_classes.add(class_name)
+            member["class_name"] = class_name
+            if class_name != NO_CLASS_NAME:
+                valid_skill_ids = {skill.id for skill in CLASS_SKILLS[class_name]}
+                skill_id = raw_member.get("class_skill_id")
+                member["class_skill_id"] = skill_id if skill_id in valid_skill_ids else CLASS_SKILLS[class_name][0].id
+            weapon_ids = {weapon.id for weapon in ADVENTURERS_BY_ID[adventurer_id].signature_weapons}
+            weapon_id = raw_member.get("primary_weapon_id")
+            if weapon_id in weapon_ids:
+                member["primary_weapon_id"] = weapon_id
+            artifact_id = raw_member.get("artifact_id")
+            if (
+                artifact_id in ARTIFACTS_BY_ID
+                and artifact_id not in used_artifacts
+                and class_name != NO_CLASS_NAME
+                and class_name in ARTIFACTS_BY_ID[artifact_id].attunement
+            ):
+                member["artifact_id"] = artifact_id
+                used_artifacts.add(artifact_id)
+            normalized.append(member)
+        return normalized
+
     def _apply_exp_gain(self, gained_exp: int) -> list[str]:
         if gained_exp <= 0:
             return []
@@ -354,7 +880,7 @@ class StorybookMode:
 
     def _glory_text(self) -> str:
         glory = ensure_storybook_glory(self.profile.ranked_rating, getattr(self.profile, "ranked_games_played", 0))
-        return f"{getattr(self.profile, 'storybook_rank_label', protected_rank_name(glory, None))} | {glory} Glory"
+        return f"{getattr(self.profile, 'storybook_rank_label', get_rank_from_glory(glory))} | {glory} Glory"
 
     def _quest_run_state(self, mode: str | None = None) -> dict:
         return self.quest_runs[mode or self.quest_opponent_mode]
@@ -370,9 +896,54 @@ class StorybookMode:
         if mode == self.quest_opponent_mode:
             self.quest_run_active = False
             self.quest_run_wins = 0
-            self.quest_run_consecutive_losses = 0
+            self.quest_run_losses = 0
+            self.quest_run_current_win_streak = 0
+            self.quest_run_current_loss_streak = 0
             self.quest_run_opponent_glories = []
             self.quest_player_team = None
+        if mode == "ai":
+            self.profile.ranked_current_quest_id = None
+            self.prepared_quest_id = None
+            self.quest_offer_ids = []
+            self.quest_enemy_party_ids = []
+            self.quest_enemy_selected_ids = []
+            self.quest_enemy_setup_members = []
+            self.quest_selected_ids = []
+            self.quest_draft_mode = "encounter"
+            self.quest_draft_locked_id = None
+            self.quest_setup_state = None
+            self.quest_party_loadout_state = None
+
+    def _forfeit_current_quest(self):
+        run_state = self._quest_run_state("ai")
+        if not run_state.get("active"):
+            return
+        remaining_losses = max(0, 3 - int(run_state.get("losses", 0)))
+        glory_penalty = remaining_losses * 10
+        current_glory = ensure_storybook_glory(
+            getattr(self.profile, "ranked_rating", 500),
+            getattr(self.profile, "ranked_games_played", 0),
+        )
+        self.profile.ranked_rating = clamp_glory(current_glory - glory_penalty)
+        self.profile.storybook_rank_label = get_rank_from_glory(self.profile.ranked_rating)
+        self._reset_quest_run_state("ai")
+        self._persist_profile()
+        self.route = "quests_menu"
+
+    def _route_after_lan_setup(self) -> str:
+        if self.lan_context == "training":
+            return "training_grounds"
+        if self.lan_context == "quest":
+            return "guild_hall"
+        return "bouts_menu"
+
+    def _route_after_quest_draft_back(self) -> str:
+        if self.quest_context == "training":
+            return "training_grounds"
+        return "quests_menu"
+
+    def _quest_draft_target_count(self) -> int:
+        return 6 if self.quest_draft_mode == "party_builder" else 3
 
     def _quest_avg_opponent_glory(self, mode: str | None = None) -> int:
         state = self._quest_run_state(mode)
@@ -393,8 +964,8 @@ class StorybookMode:
                     "loss_text": f"{state['losses']} / 3" if state["active"] else "0 / 3",
                     "pressure": pressure_label(
                         self.profile.ranked_rating,
-                        state["wins"],
-                        state["losses"],
+                        state["current_win_streak"],
+                        state["current_loss_streak"],
                         self._quest_avg_opponent_glory(mode),
                     ),
                     "party_lines": self._quest_party_lines_for(state["team"] if state["active"] else None),
@@ -403,6 +974,8 @@ class StorybookMode:
         return summaries
 
     def _quest_loadout_waiting_note(self) -> str:
+        if self.quest_context == "ranked":
+            return "Loadouts are already locked from the six-member party screen. Finalize formation only here."
         if self.quest_opponent_mode != "lan":
             return ""
         if self.quest_local_ready and not self.quest_remote_ready:
@@ -410,6 +983,120 @@ class StorybookMode:
         if self.quest_remote_ready and not self.quest_local_ready:
             return "The remote commander is ready. Lock your own loadout to begin."
         return "Both commanders draft from the same six, then confirm loadouts independently."
+
+    def _enter_quest_party_loadout(self):
+        run_state = self._quest_run_state("ai")
+        team = self._normalize_quest_party_team(run_state.get("team"))
+        run_state["team"] = team
+        if not run_state.get("active") or len(team) != 6:
+            return
+        self.quest_party_loadout_state = {
+            "team1": run_state["team"],
+            "team2": [],
+            "team1_allowed_artifact_ids": sorted(self._loadout_artifact_ids(allow_all=False)),
+        }
+        self.quest_party_loadout_index = 0
+        self.quest_party_loadout_detail_scroll = 0
+        self.route = "quest_party_loadout"
+
+    def _open_quest_team_import(self):
+        self.quest_team_import_open = True
+        if not self.quest_team_import_status_lines:
+            self.quest_team_import_status_lines = [
+                "Paste a six-member team block, then press Import.",
+                "Formatting is flexible: capitalization and spacing do not need to match exactly.",
+            ]
+
+    def _close_quest_team_import(self):
+        self.quest_team_import_open = False
+
+    def _set_quest_team_import_status(self, lines: list[str]):
+        self.quest_team_import_status_lines = list(lines[:3])
+
+    def _append_quest_team_import_text(self, chunk: str):
+        if not chunk:
+            return
+        normalized = chunk.replace("\r\n", "\n").replace("\r", "\n")
+        max_len = 24000
+        if len(self.quest_team_import_text) >= max_len:
+            return
+        self.quest_team_import_text += normalized[: max_len - len(self.quest_team_import_text)]
+
+    def _paste_quest_team_import_from_clipboard(self):
+        try:
+            if not pygame.scrap.get_init():
+                pygame.scrap.init()
+            clip = pygame.scrap.get(pygame.SCRAP_TEXT)
+            if clip is None:
+                self._set_quest_team_import_status(["Clipboard is empty or unavailable."])
+                return
+            if isinstance(clip, bytes):
+                text = clip.decode("utf-8", errors="ignore")
+            else:
+                text = str(clip)
+            text = text.replace("\x00", "")
+            if not text.strip():
+                self._set_quest_team_import_status(["Clipboard did not contain readable team text."])
+                return
+            self._append_quest_team_import_text(text)
+            self._set_quest_team_import_status(["Pasted from clipboard. Press Import to validate and apply."])
+        except Exception:
+            self._set_quest_team_import_status(["Clipboard paste failed on this platform. You can still type the team text manually."])
+
+    def _extract_import_team_name(self, text: str) -> str:
+        for raw in text.replace("\r\n", "\n").replace("\r", "\n").split("\n"):
+            line = raw.strip()
+            if not line:
+                continue
+            if "@" in line:
+                return ""
+            return line[:48]
+        return ""
+
+    def _apply_quest_team_import(self):
+        members, errors = import_team_from_text(self.quest_team_import_text, expected_members=6)
+        if errors:
+            self._set_quest_team_import_status(errors)
+            return
+        self.quest_imported_party_members = copy.deepcopy(members)
+        self.quest_imported_party_name = self._extract_import_team_name(self.quest_team_import_text)
+        self.quest_offer_ids = [member["adventurer_id"] for member in members]
+        self.quest_selected_ids = [adventurer_id for adventurer_id in self.quest_selected_ids if adventurer_id in self.quest_offer_ids][:3]
+        self.quest_focus_id = self.quest_offer_ids[0] if self.quest_offer_ids else None
+        self.quest_draft_offer_scroll = 0
+        self.quest_draft_detail_scroll = 0
+        label = self.quest_imported_party_name or "Imported team"
+        self._set_quest_team_import_status(
+            [
+                f"{label} imported successfully.",
+                "Only legal teams can be imported; this team passed validation.",
+            ]
+        )
+        self._close_quest_team_import()
+
+    def _prefill_quest_loadout_from_import(self):
+        if self.quest_setup_state is None or not self.quest_imported_party_members:
+            return
+        imported_by_adventurer = {
+            member["adventurer_id"]: member
+            for member in self.quest_imported_party_members
+        }
+        team_num = self.quest_player_seat
+        team_key = f"team{team_num}"
+        team_members = list(self.quest_setup_state.get(team_key, []))
+        for index, member in enumerate(team_members):
+            imported = imported_by_adventurer.get(member["adventurer_id"])
+            if imported is None:
+                continue
+            set_member_class(self.quest_setup_state, team_num, index, imported["class_name"])
+        team_members = list(self.quest_setup_state.get(team_key, []))
+        for index, member in enumerate(team_members):
+            imported = imported_by_adventurer.get(member["adventurer_id"])
+            if imported is None:
+                continue
+            set_member_skill(self.quest_setup_state, team_num, index, imported["class_skill_id"])
+            set_member_weapon(self.quest_setup_state, team_num, index, imported["primary_weapon_id"])
+            set_member_artifact(self.quest_setup_state, team_num, index, imported["artifact_id"])
 
     def _bout_loadout_waiting_note(self) -> str:
         if self.bout_opponent_mode != "lan":
@@ -523,14 +1210,39 @@ class StorybookMode:
         self.last_mouse_pos = mouse_pos
         self._normalize_profile()
         self._poll_nonbattle_lan()
+        sbui.set_profile_context(self.profile)
+        sbui.begin_status_hover_frame()
         if self.route == "battle" and hasattr(self.battle_controller, "poll_network"):
             self.battle_controller.poll_network()
             self._check_battle_results()
 
         if self.route == "main_menu":
-            self.last_buttons = sbui.draw_main_menu(surf, mouse_pos, self.profile)
+            self.last_buttons = sbui.draw_main_menu(
+                surf,
+                mouse_pos,
+                self.profile,
+                has_current_quest=self._quest_run_state("ai").get("active", False),
+            )
         elif self.route == "player_menu":
-            self.last_buttons = sbui.draw_player_menu(surf, mouse_pos, self.profile, self.player_note_lines)
+            self.last_buttons = sbui.draw_player_menu(
+                surf,
+                mouse_pos,
+                self.profile,
+                self.player_note_lines,
+                favorite_adventurer_id=self._favorite_adventurer_id(),
+                favorite_pool_ids=self._favorite_pool_ids(),
+            )
+        elif self.route == "market":
+            self.last_buttons = sbui.draw_market(
+                surf,
+                mouse_pos,
+                self.market_tab,
+                self.market_item_scroll,
+                self.profile,
+                self.market_focus_id,
+                self.market_message,
+                self.shop_owned_cosmetics,
+            )
         elif self.route == "inventory":
             self.last_buttons = sbui.draw_inventory_screen(surf, mouse_pos, self._owned_artifacts(), self.inventory_focus_index)
         elif self.route == "friends":
@@ -546,8 +1258,12 @@ class StorybookMode:
                 self.lan_session.join_ip,
             )
         elif self.route == "guild_hall":
-            self.last_buttons = sbui.draw_guild_hall(surf, mouse_pos)
-        elif self.route == "shops":
+            self.last_buttons = sbui.draw_guild_hall(
+                surf,
+                mouse_pos,
+                has_current_quest=self._quest_run_state("ai").get("active", False),
+            )
+        elif self.route in {"shops", "armory"}:
             self.last_buttons = sbui.draw_shops(
                 surf,
                 mouse_pos,
@@ -561,9 +1277,77 @@ class StorybookMode:
                 self._owned_shop_item_keys(),
                 self.shop_owned_cosmetics,
             )
+        elif self.route == "closet":
+            self.last_buttons = sbui.draw_closet(
+                surf,
+                mouse_pos,
+                self.closet_tab,
+                self._closet_items(),
+                self.closet_focus_id,
+                self.shop_owned_cosmetics,
+                self.profile,
+                item_scroll=self.closet_item_scroll,
+            )
+        elif self.route == "favored_adventurer_select":
+            self.last_buttons = sbui.draw_favored_adventurer_select(
+                surf,
+                mouse_pos,
+                self._favorite_pool_ids(),
+                self.favorite_select_focus_id,
+                self._favorite_adventurer_id(),
+                scroll=self.favorite_select_scroll,
+            )
         elif self.route == "quests_menu":
-            self.last_buttons = sbui.draw_quests_menu(surf, mouse_pos, self._quest_mode_summaries())
+            run_state = self._quest_run_state("ai")
+            run_state["team"] = self._normalize_quest_party_team(run_state.get("team"))
+            party_ids = [member["adventurer_id"] for member in (run_state.get("team") or [])]
+            self.last_buttons = sbui.draw_quests_menu(
+                surf,
+                mouse_pos,
+                run_active=bool(run_state.get("active")),
+                quest_wins=int(run_state.get("wins", 0)),
+                quest_losses=int(run_state.get("losses", 0)),
+                current_win_streak=int(run_state.get("current_win_streak", 0)),
+                current_loss_streak=int(run_state.get("current_loss_streak", 0)),
+                party_ids=party_ids,
+                enemy_party_ids=list(self.quest_enemy_party_ids),
+            )
+        elif self.route == "quest_party_loadout":
+            self.last_buttons = sbui.draw_quest_party_loadout(
+                surf,
+                mouse_pos,
+                self.quest_party_loadout_state or {"team1": []},
+                self.quest_party_loadout_index,
+                detail_scroll=self.quest_party_loadout_detail_scroll,
+            )
+        elif self.route == "training_grounds":
+            self.last_buttons = sbui.draw_training_grounds(
+                surf,
+                mouse_pos,
+                training_favorite_id=self._training_favorite_adventurer_id(),
+                roster_scroll=self.training_roster_scroll,
+            )
+        elif self.route in {"ranked_party_select", "guild_parties"}:
+            self.route = "guild_hall"
+            self.last_buttons = sbui.draw_guild_hall(
+                surf,
+                mouse_pos,
+                has_current_quest=self._quest_run_state("ai").get("active", False),
+            )
         elif self.route == "quest_draft":
+            draft_title = "Start Quest" if self.quest_draft_mode == "party_builder" else "Encounter Prep"
+            draft_continue = "Continue To Party Loadouts" if self.quest_draft_mode == "party_builder" else "Continue To Loadouts"
+            selected_panel_title = "Quest Party" if self.quest_draft_mode == "party_builder" else "Encounter Team"
+            side_panel_title = "Quest Rules" if self.quest_draft_mode == "party_builder" else "Enemy Party"
+            side_panel_lines = (
+                [
+                    "Favorite locked in.",
+                    "Choose 5 more from this pool of 9.",
+                    "Then set loadouts for all 6.",
+                ]
+                if self.quest_draft_mode == "party_builder"
+                else None
+            )
             self.last_buttons = sbui.draw_quest_draft(
                 surf,
                 mouse_pos,
@@ -571,6 +1355,18 @@ class StorybookMode:
                 self.quest_focus_id,
                 self.quest_selected_ids,
                 detail_scroll=self.quest_draft_detail_scroll,
+                title=draft_title,
+                enemy_party_ids=self.quest_enemy_party_ids if self.quest_draft_mode != "party_builder" else None,
+                card_scroll=self.quest_draft_offer_scroll,
+                allow_text_import=self.quest_context == "training" and self.quest_opponent_mode == "ai",
+                import_open=self.quest_team_import_open,
+                import_text=self.quest_team_import_text,
+                import_status_lines=self.quest_team_import_status_lines,
+                target_count=self._quest_draft_target_count(),
+                continue_label=draft_continue,
+                selected_panel_title=selected_panel_title,
+                side_panel_title=side_panel_title,
+                side_panel_lines=side_panel_lines,
             )
         elif self.route == "quest_loadout":
             self.last_buttons = sbui.draw_quest_loadout(
@@ -583,6 +1379,7 @@ class StorybookMode:
                 drag_state=self.loadout_drag if self.route == "quest_loadout" else None,
                 detail_scroll=self.quest_loadout_detail_scroll,
                 summary_scroll=self.quest_loadout_summary_scroll,
+                editable_loadout=self.quest_context != "ranked",
             )
         elif self.route == "bouts_menu":
             self.last_buttons = sbui.draw_bouts_menu(surf, mouse_pos)
@@ -622,7 +1419,17 @@ class StorybookMode:
                 summary_scroll=self.bout_loadout_summary_scroll,
             )
         elif self.route == "catalog":
-            self.last_buttons = sbui.draw_catalog(surf, mouse_pos, self.catalog_section_index, self.catalog_entry_index, self.catalog_scroll)
+            section_name = self._catalog_section_name()
+            self.last_buttons = sbui.draw_catalog(
+                surf,
+                mouse_pos,
+                self.catalog_section_index,
+                self.catalog_entry_index,
+                self._catalog_filters_for_section(section_name),
+                scroll=self.catalog_scroll,
+                detail_scroll=self.catalog_detail_scroll,
+                favorite_adventurer_id=self._favorite_adventurer_id(),
+            )
         elif self.route == "lan_setup":
             self.last_buttons = sbui.draw_lan_setup(
                 surf,
@@ -655,7 +1462,13 @@ class StorybookMode:
             )
         else:
             self.route = "main_menu"
-            self.last_buttons = sbui.draw_main_menu(surf, mouse_pos, self.profile)
+            self.last_buttons = sbui.draw_main_menu(
+                surf,
+                mouse_pos,
+                self.profile,
+                has_current_quest=self._quest_run_state("ai").get("active", False),
+            )
+        sbui.draw_status_hover_tooltip(surf)
 
     def handle_click(self, pos):
         route = self.route
@@ -669,19 +1482,21 @@ class StorybookMode:
             return None
 
         if route == "main_menu":
-            if self._hit(btns.get("player"), pos):
+            if self._hit(btns.get("profile"), pos):
                 self.route = "player_menu"
             elif self._hit(btns.get("guild_hall"), pos):
                 self.route = "guild_hall"
-            elif self._hit(btns.get("shops"), pos):
-                self._open_shops()
+            elif self._hit(btns.get("market"), pos):
+                self._open_market()
             return None
 
         if route == "player_menu":
             if self._hit(btns.get("back"), pos):
                 self.route = "main_menu"
-            elif self._hit(btns.get("inventory"), pos):
-                self.route = "inventory"
+            elif self._hit(btns.get("favorite_card"), pos):
+                self._open_favorite_select()
+            elif self._hit(btns.get("closet"), pos):
+                self._open_closet()
             elif self._hit(btns.get("friends"), pos):
                 self._sync_friend_selection()
                 if self.friend_selected_index >= 0:
@@ -729,82 +1544,217 @@ class StorybookMode:
         if route == "guild_hall":
             if self._hit(btns.get("back"), pos):
                 self.route = "main_menu"
-            elif self._hit(btns.get("quests"), pos):
-                self.route = "quests_menu"
-            elif self._hit(btns.get("bouts"), pos):
-                self.route = "bouts_menu"
+            elif self._hit(btns.get("current_quest"), pos):
+                if self._quest_run_state("ai").get("active"):
+                    self._prepare_next_quest_encounter(route_if_ready="quests_menu")
+                else:
+                    self._start_ranked_quest_from_favorite()
+            elif self._hit(btns.get("training_grounds"), pos):
+                self.route = "training_grounds"
             elif self._hit(btns.get("catalog"), pos):
                 self.route = "catalog"
+            elif self._hit(btns.get("shops"), pos):
+                self.shops_tab = "Artifacts"
+                self._open_armory()
             return None
 
-        if route == "shops":
+        if route == "ranked_party_select":
+            self.route = "guild_hall"
+            return None
+
+        if route == "training_grounds":
             if self._hit(btns.get("back"), pos):
-                self.route = "main_menu"
+                self.route = "guild_hall"
+                return None
+            for rect, adventurer_id in btns.get("training_cards", []):
+                if rect.collidepoint(pos):
+                    self._set_training_focus(adventurer_id)
+                    return None
+            if self._hit(btns.get("training_focus"), pos):
+                self._set_training_focus(self._training_favorite_adventurer_id())
+                return None
+            if self._hit(btns.get("vs_ai"), pos):
+                self.training_mode = "ai"
+                self.quest_opponent_mode = "ai"
+                self._start_training_builder()
+                return None
+            if self._hit(btns.get("vs_lan"), pos):
+                self.training_mode = "lan"
+                self.quest_context = "training"
+                self.quest_opponent_mode = "lan"
+                self._open_lan_setup("training")
+                return None
+            return None
+
+        if route == "guild_parties":
+            self.route = "guild_hall"
+            return None
+
+        if route in {"shops", "armory"}:
+            if self._hit(btns.get("back"), pos):
+                self.route = self.previous_route if self.previous_route not in {"shops", "armory"} else "main_menu"
                 return None
             for rect, tab_name in btns.get("tabs", []):
                 if rect.collidepoint(pos):
                     self.shops_tab = tab_name
                     self._reset_shop_focus()
                     return None
-            if self._hit(btns.get("shop_prev"), pos):
-                self.shop_item_scroll = max(0, self.shop_item_scroll - 6)
-                return None
-            if self._hit(btns.get("shop_next"), pos):
-                self.shop_item_scroll = min(btns.get("shop_scroll_max", 0), self.shop_item_scroll + 6)
-                return None
-            for rect, index in btns.get("cosmetics", []):
-                if rect.collidepoint(pos):
-                    self.shops_cosmetic_index = index
-                    self.shop_focus_kind = "cosmetic"
-                    self.shop_focus_value = COSMETIC_CATEGORIES[index]
-                    self.shop_message = "Cosmetic bundles are commander-only unlocks."
-                    return None
             for rect, item_id in btns.get("items", []):
                 if rect.collidepoint(pos):
                     self.shop_focus_kind = "item"
                     self.shop_focus_value = item_id
-                    self.shop_message = "Artifact purchases use Gold and unlock immediately on your profile."
+                    self.shop_message = "Armory purchases unlock immediately and remain subject to attunement rules."
                     return None
-            if self._hit(btns.get("embassy"), pos):
-                self.shop_focus_kind = "embassy"
-                self.shop_focus_value = "Embassy Charter"
-                self.shop_message = "Embassy is informational here while artifact stock remains the only battle wares for sale."
-                return None
             if self._hit(btns.get("buy"), pos):
                 self._purchase_shop_focus()
+            return None
+
+        if route == "market":
+            if self._hit(btns.get("back"), pos):
+                self.route = self.previous_route if self.previous_route != "market" else "main_menu"
+                return None
+            for rect, tab_name in btns.get("tabs", []):
+                if rect.collidepoint(pos):
+                    self.market_tab = tab_name
+                    self._reset_market_focus()
+                    return None
+            for rect, item_id in btns.get("items", []):
+                if rect.collidepoint(pos):
+                    self.market_focus_id = item_id
+                    return None
+            for rect, package_id in btns.get("packages", []):
+                if rect.collidepoint(pos):
+                    self.market_focus_id = package_id
+                    return None
+            if self._hit(btns.get("buy"), pos):
+                self._purchase_market_focus()
+                return None
+            return None
+
+        if route == "closet":
+            if self._hit(btns.get("back"), pos):
+                self.route = "player_menu"
+                return None
+            for rect, tab_name in btns.get("categories", []):
+                if rect.collidepoint(pos):
+                    self.closet_tab = tab_name
+                    self._reset_closet_focus()
+                    return None
+            for rect, item_id, _index in btns.get("items", []):
+                if rect.collidepoint(pos):
+                    self.closet_focus_id = item_id
+                    return None
+            if self._hit(btns.get("equip"), pos):
+                item = next((entry for entry in self._closet_items() if entry["id"] == self.closet_focus_id), None)
+                if item is not None and item["id"] in self.shop_owned_cosmetics:
+                    self._set_equipped_market_item(item)
+                return None
+            return None
+
+        if route == "favored_adventurer_select":
+            if self._hit(btns.get("back"), pos):
+                self.route = "player_menu"
+                return None
+            for rect, adventurer_id in btns.get("cards", []):
+                if rect.collidepoint(pos):
+                    self.favorite_select_focus_id = adventurer_id
+                    return None
+            if self._hit(btns.get("confirm"), pos) and self.favorite_select_focus_id:
+                self._set_favorite_adventurer(self.favorite_select_focus_id)
+                self.route = "player_menu"
+                return None
             return None
 
         if route == "quests_menu":
             if self._hit(btns.get("back"), pos):
                 self.route = "guild_hall"
                 return None
-            if self._hit(btns.get("vs_ai"), pos):
-                self.quest_opponent_mode = "ai"
-                state = self._quest_run_state("ai")
-                if state["active"] and state["team"] is not None:
-                    self._launch_next_quest_battle()
-                else:
-                    self._start_quest_draft()
+            if self._hit(btns.get("forfeit"), pos):
+                self._forfeit_current_quest()
                 return None
-            if self._hit(btns.get("vs_lan"), pos):
-                self.quest_opponent_mode = "lan"
-                self._open_lan_setup("quest")
+            if self._hit(btns.get("edit_loadouts"), pos):
+                state = self._quest_run_state("ai")
+                if state.get("active") and state.get("team") is not None:
+                    self._enter_quest_party_loadout()
+                return None
+            if self._hit(btns.get("advance"), pos):
+                state = self._quest_run_state("ai")
+                if state.get("active") and state.get("team") is not None:
+                    self._prepare_next_quest_encounter(route_if_ready="quest_draft")
+                else:
+                    self._start_ranked_quest_from_favorite()
                 return None
             return None
 
-        if route == "quest_draft":
-            if self._hit(btns.get("back"), pos):
+        if route == "quest_party_loadout":
+            if self._hit(btns.get("back"), pos) or self._hit(btns.get("done"), pos):
                 self.route = "quests_menu"
-            elif self._hit(btns.get("pick"), pos):
+                return None
+            for rect, index in btns.get("members", []):
+                if rect.collidepoint(pos):
+                    self.quest_party_loadout_index = index
+                    self.quest_party_loadout_detail_scroll = 0
+                    return None
+            if self._hit(btns.get("weapon_prev"), pos) or self._hit(btns.get("weapon_next"), pos):
+                cycle_member_weapon(self.quest_party_loadout_state, 1, self.quest_party_loadout_index)
+                return None
+            for rect, class_name in btns.get("classes", []):
+                if rect.collidepoint(pos):
+                    set_member_class(self.quest_party_loadout_state, 1, self.quest_party_loadout_index, class_name)
+                    return None
+            for rect, skill_id in btns.get("skills", []):
+                if rect.collidepoint(pos):
+                    set_member_skill(self.quest_party_loadout_state, 1, self.quest_party_loadout_index, skill_id)
+                    return None
+            for rect, artifact_id, locked in btns.get("artifacts", []):
+                if rect.collidepoint(pos) and not locked:
+                    set_member_artifact(self.quest_party_loadout_state, 1, self.quest_party_loadout_index, artifact_id)
+                    return None
+            return None
+
+        if route == "quest_draft":
+            if self.quest_team_import_open:
+                if self._hit(btns.get("import_cancel"), pos):
+                    self._close_quest_team_import()
+                    return None
+                if self._hit(btns.get("import_apply"), pos):
+                    self._apply_quest_team_import()
+                    return None
+                if self._hit(btns.get("import_clear"), pos):
+                    self.quest_team_import_text = ""
+                    self._set_quest_team_import_status(["Import text cleared."])
+                    return None
+                if self._hit(btns.get("import_paste"), pos):
+                    self._paste_quest_team_import_from_clipboard()
+                    return None
+                # Keep modal open and swallow clicks while importing.
+                return None
+            if self._hit(btns.get("import_team"), pos):
+                self._open_quest_team_import()
+                return None
+            if self._hit(btns.get("back"), pos):
+                self.route = self._route_after_quest_draft_back()
+                return None
+            if self._hit(btns.get("pick"), pos):
                 self._pick_quest_focus()
-            elif self._hit(btns.get("continue"), pos) and len(self.quest_selected_ids) == 3:
-                self._enter_quest_loadout()
-            else:
-                for rect, adventurer_id in btns.get("cards", []):
+                return None
+            if self._hit(btns.get("continue"), pos) and len(self.quest_selected_ids) == self._quest_draft_target_count():
+                if self.quest_draft_mode == "party_builder":
+                    self._confirm_ranked_quest_party()
+                else:
+                    self._enter_quest_loadout()
+                return None
+            if any(rect.collidepoint(pos) for rect, _ in btns.get("party_slots", [])):
+                for rect, adventurer_id in btns.get("party_slots", []):
                     if rect.collidepoint(pos):
-                        self.quest_focus_id = adventurer_id
+                        self._remove_quest_selected_adventurer(adventurer_id)
                         self.quest_draft_detail_scroll = 0
                         return None
+            for rect, adventurer_id in btns.get("cards", []):
+                if rect.collidepoint(pos):
+                    self.quest_focus_id = adventurer_id
+                    self.quest_draft_detail_scroll = 0
+                    return None
             return None
 
         if route == "quest_loadout":
@@ -815,7 +1765,7 @@ class StorybookMode:
             if self._hit(btns.get("confirm"), pos):
                 self._clear_loadout_drag()
                 if self.quest_opponent_mode == "ai":
-                    self._start_quest_run()
+                    self._start_quest_encounter()
                 else:
                     self._confirm_lan_quest_loadout()
                 return None
@@ -825,6 +1775,8 @@ class StorybookMode:
                 if rect.collidepoint(pos):
                     self.quest_loadout_index = index
                     return None
+            if self.quest_context == "ranked":
+                return None
             if self._hit(btns.get("weapon_prev"), pos) or self._hit(btns.get("weapon_next"), pos):
                 cycle_member_weapon(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index)
                 return None
@@ -932,30 +1884,26 @@ class StorybookMode:
             if self._hit(btns.get("back"), pos):
                 self.route = "guild_hall"
                 return None
-            if self._hit(btns.get("prev_page"), pos):
-                self.catalog_scroll = max(0, self.catalog_scroll - 10)
-                return None
-            if self._hit(btns.get("next_page"), pos):
-                section_name = ["Adventurers", "Class Skills", "Artifacts"][self.catalog_section_index]
-                total = len(catalog_entries(section_name))
-                self.catalog_scroll = min(max(0, total - 10), self.catalog_scroll + 10)
-                return None
             for rect, index in btns.get("sections", []):
                 if rect.collidepoint(pos):
                     self.catalog_section_index = index
-                    self.catalog_entry_index = 0
-                    self.catalog_scroll = 0
+                    self._reset_catalog_navigation()
+                    return None
+            for rect, key, direction in btns.get("filters", []):
+                if rect.collidepoint(pos):
+                    self._cycle_catalog_filter(key, direction)
                     return None
             for rect, index in btns.get("entries", []):
                 if rect.collidepoint(pos):
                     self.catalog_entry_index = index
+                    self.catalog_detail_scroll = 0
                     return None
             return None
 
         if route == "lan_setup":
             if self._hit(btns.get("back"), pos):
                 self._close_lan()
-                self.route = "quests_menu" if self.lan_context == "quest" else "bouts_menu"
+                self.route = self._route_after_lan_setup()
                 return None
             if self._hit(btns.get("host"), pos):
                 self.lan_session.host_match()
@@ -1043,19 +1991,47 @@ class StorybookMode:
                     self.lan_session.join_ip += e.unicode
                 return None
 
+        if self.route == "quest_draft" and self.quest_team_import_open:
+            if e.key == pygame.K_ESCAPE:
+                self._close_quest_team_import()
+                return None
+            if e.key == pygame.K_v and (e.mod & pygame.KMOD_CTRL):
+                self._paste_quest_team_import_from_clipboard()
+                return None
+            if e.key in (pygame.K_RETURN, pygame.K_KP_ENTER) and (e.mod & pygame.KMOD_CTRL):
+                self._apply_quest_team_import()
+                return None
+            if e.key == pygame.K_BACKSPACE:
+                self.quest_team_import_text = self.quest_team_import_text[:-1]
+                return None
+            if e.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+                self._append_quest_team_import_text("\n")
+                return None
+            if e.key == pygame.K_TAB:
+                self._append_quest_team_import_text("    ")
+                return None
+            if e.unicode and e.unicode.isprintable():
+                self._append_quest_team_import_text(e.unicode)
+                return None
+            return None
+
         if e.key == pygame.K_ESCAPE:
-            if self.route in {"player_menu", "shops", "settings"}:
-                self.route = self.previous_route if self.route == "settings" else "main_menu"
-            elif self.route in {"inventory", "friends"}:
-                self.route = "player_menu"
-            elif self.route in {"quests_menu", "bouts_menu", "catalog"}:
+            if self.route == "settings":
+                self.route = self.previous_route
+            elif self.route in {"player_menu", "market"}:
+                self.route = "main_menu"
+            elif self.route in {"armory", "shops", "catalog", "training_grounds", "quests_menu", "bouts_menu"}:
                 self.route = "guild_hall"
+            elif self.route in {"inventory", "friends", "closet", "favored_adventurer_select"}:
+                self.route = "player_menu"
             elif self.route == "guild_hall":
                 self.route = "main_menu"
             elif self.route == "lan_setup":
                 self._close_lan()
-                self.route = "quests_menu" if self.lan_context == "quest" else "bouts_menu"
+                self.route = self._route_after_lan_setup()
             elif self.route == "quest_draft":
+                self.route = self._route_after_quest_draft_back()
+            elif self.route == "quest_party_loadout":
                 self.route = "quests_menu"
             elif self.route == "quest_loadout":
                 self._clear_loadout_drag()
@@ -1083,8 +2059,11 @@ class StorybookMode:
             return None
 
         if self.route == "quest_draft" and e.key in (pygame.K_RETURN, pygame.K_KP_ENTER):
-            if len(self.quest_selected_ids) == 3:
-                self._enter_quest_loadout()
+            if len(self.quest_selected_ids) == self._quest_draft_target_count():
+                if self.quest_draft_mode == "party_builder":
+                    self._confirm_ranked_quest_party()
+                else:
+                    self._enter_quest_loadout()
             else:
                 self._pick_quest_focus()
             return None
@@ -1093,9 +2072,9 @@ class StorybookMode:
             self._draft_bout_focus()
             return None
         if self.route == "catalog":
-            section_name = ["Adventurers", "Class Skills", "Artifacts"][self.catalog_section_index]
-            total = len(catalog_entries(section_name))
-            max_scroll = max(0, total - 10)
+            total = len(self._catalog_entries_for_section())
+            page_size = max(1, (self.last_buttons or {}).get("entry_page_size", 8))
+            max_scroll = max(0, total - page_size)
             if e.key == pygame.K_UP:
                 self.catalog_scroll = max(0, self.catalog_scroll - 1)
                 return None
@@ -1103,27 +2082,42 @@ class StorybookMode:
                 self.catalog_scroll = min(max_scroll, self.catalog_scroll + 1)
                 return None
             if e.key == pygame.K_PAGEUP:
-                self.catalog_scroll = max(0, self.catalog_scroll - 10)
+                self.catalog_scroll = max(0, self.catalog_scroll - page_size)
                 return None
             if e.key == pygame.K_PAGEDOWN:
-                self.catalog_scroll = min(max_scroll, self.catalog_scroll + 10)
+                self.catalog_scroll = min(max_scroll, self.catalog_scroll + page_size)
                 return None
         return None
 
     def handle_mousewheel(self, event):
         if self.route == "quest_draft":
+            if self.quest_team_import_open:
+                return None
             btns = self.last_buttons or {}
             viewport = btns.get("detail_viewport")
             if viewport is not None and viewport.collidepoint(self.last_mouse_pos):
                 max_scroll = btns.get("detail_scroll_max", 0)
                 self.quest_draft_detail_scroll = max(0, min(max_scroll, self.quest_draft_detail_scroll - (event.y * 28)))
                 return None
+            max_scroll = btns.get("offer_scroll_max", 0)
+            page_size = max(1, btns.get("offer_page_size", 6))
+            if max_scroll > 0:
+                step = max(1, min(3, page_size // 3))
+                self.quest_draft_offer_scroll = max(0, min(max_scroll, self.quest_draft_offer_scroll - (event.y * step)))
+            return None
         if self.route == "bout_draft":
             btns = self.last_buttons or {}
             viewport = btns.get("detail_viewport")
             if viewport is not None and viewport.collidepoint(self.last_mouse_pos):
                 max_scroll = btns.get("detail_scroll_max", 0)
                 self.bout_draft_detail_scroll = max(0, min(max_scroll, self.bout_draft_detail_scroll - (event.y * 28)))
+                return None
+        if self.route == "quest_party_loadout":
+            btns = self.last_buttons or {}
+            viewport = btns.get("detail_viewport")
+            if viewport is not None and viewport.collidepoint(self.last_mouse_pos):
+                max_scroll = btns.get("detail_scroll_max", 0)
+                self.quest_party_loadout_detail_scroll = max(0, min(max_scroll, self.quest_party_loadout_detail_scroll - (event.y * 28)))
                 return None
         if self.route in {"quest_loadout", "bout_loadout"}:
             mouse_pos = self.last_mouse_pos
@@ -1139,16 +2133,45 @@ class StorybookMode:
                 self._set_current_loadout_summary_scroll(min(max_scroll, max(0, self._current_loadout_summary_scroll() - (event.y * 28))))
                 return None
         if self.route == "catalog":
-            section_name = ["Adventurers", "Class Skills", "Artifacts"][self.catalog_section_index]
-            total = len(catalog_entries(section_name))
-            max_scroll = max(0, total - 10)
-            self.catalog_scroll = max(0, min(max_scroll, self.catalog_scroll - event.y))
+            btns = self.last_buttons or {}
+            detail_viewport = btns.get("detail_viewport")
+            if detail_viewport is not None and detail_viewport.collidepoint(self.last_mouse_pos):
+                max_scroll = btns.get("detail_scroll_max", 0)
+                self.catalog_detail_scroll = max(0, min(max_scroll, self.catalog_detail_scroll - (event.y * 28)))
+                return None
+            entries_viewport = btns.get("entries_viewport")
+            if entries_viewport is not None and entries_viewport.collidepoint(self.last_mouse_pos):
+                max_scroll = btns.get("entry_scroll_max", 0)
+                self.catalog_scroll = max(0, min(max_scroll, self.catalog_scroll - event.y))
+                return None
             return None
-        if self.route == "shops":
+        if self.route in {"shops", "armory"}:
             items = shop_items_for_tab(self.shops_tab)
             max_scroll = max(0, len(items) - 6)
             if max_scroll > 0:
                 self.shop_item_scroll = max(0, min(max_scroll, self.shop_item_scroll - (event.y * 2)))
+            return None
+        if self.route == "market":
+            if self.market_tab == "Embassy":
+                return None
+            max_scroll = max(0, len(self._market_items()) - 6)
+            if max_scroll > 0:
+                self.market_item_scroll = max(0, min(max_scroll, self.market_item_scroll - (event.y * 2)))
+            return None
+        if self.route == "closet":
+            max_scroll = max(0, len([item for item in self._closet_items() if item["id"] in self.shop_owned_cosmetics]) - 8)
+            if max_scroll > 0:
+                self.closet_item_scroll = max(0, min(max_scroll, self.closet_item_scroll - (event.y * 2)))
+            return None
+        if self.route == "training_grounds":
+            max_scroll = max(0, len(ADVENTURERS_BY_ID) - 8)
+            if max_scroll > 0:
+                self.training_roster_scroll = max(0, min(max_scroll, self.training_roster_scroll - (event.y * 2)))
+            return None
+        if self.route == "favored_adventurer_select":
+            max_scroll = max(0, len(self._favorite_pool_ids()) - 9)
+            if max_scroll > 0:
+                self.favorite_select_scroll = max(0, min(max_scroll, self.favorite_select_scroll - (event.y * 2)))
             return None
         return None
 
@@ -1198,13 +2221,14 @@ class StorybookMode:
         if items:
             self.shop_focus_kind = "item"
             self.shop_focus_value = items[0]["id"]
-            self.shop_message = "Artifacts are the only battle wares sold here. Cosmetics remain on the left rail."
+            self.shop_message = shop_tab_note(self.shops_tab)
         else:
             self.shop_focus_kind = None
             self.shop_focus_value = None
             self.shop_message = shop_tab_note(self.shops_tab)
 
     def _open_shops(self):
+        self.previous_route = self.route
         self._reset_shop_focus()
         self.route = "shops"
 
@@ -1225,7 +2249,7 @@ class StorybookMode:
             if item.get("artifact_id"):
                 self.profile.unlocked_artifacts.add(item["artifact_id"])
             else:
-                self.shop_message = "Only artifact stock is purchasable in the current build."
+                self.shop_message = "This stock card is not purchasable in the current build."
                 return
             level_lines = self._apply_exp_gain(ARTIFACT_PURCHASE_EXP)
             self.shop_message = f"Purchased {item['name']} for {item['price']} Gold and earned +{ARTIFACT_PURCHASE_EXP} EXP."
@@ -1250,7 +2274,7 @@ class StorybookMode:
             return
 
         if self.shop_focus_kind == "embassy":
-            self.shop_message = "Embassy is informational here. Only artifacts and cosmetics are sold in this build."
+            self.shop_message = "Embassy is informational here. Artifacts and cosmetics are sold in this build."
             return
 
         self.shop_message = "Select an artifact or cosmetic bundle first."
@@ -1300,51 +2324,89 @@ class StorybookMode:
         self.result_lines = lines
         self.route = "results"
 
-    def _apply_glory_result(self, *, did_win: bool, run_wins_before: int) -> str:
+    def _sync_quest_run_cache(self, state: dict):
+        state["team"] = self._normalize_quest_party_team(state.get("team"))
+        self.quest_run_active = bool(state["active"])
+        self.quest_run_wins = int(state["wins"])
+        self.quest_run_losses = int(state["losses"])
+        self.quest_run_current_win_streak = int(state["current_win_streak"])
+        self.quest_run_current_loss_streak = int(state["current_loss_streak"])
+        self.quest_run_opponent_glories = list(state["opponent_glories"])
+        self.quest_player_team = copy.deepcopy(state["team"]) if state["team"] is not None else None
+
+    def _apply_glory_result(
+        self,
+        *,
+        did_win: bool,
+        current_win_streak_before: int,
+        current_loss_streak_before: int,
+    ) -> str:
         old_glory = self.profile.ranked_rating
         new_glory, delta = update_glory_after_match(
             self.profile.ranked_rating,
             self.current_battle_opponent_glory,
             did_win=did_win,
-            matches_played=getattr(self.profile, "ranked_games_played", 0),
-            run_wins_before_match=run_wins_before,
+            current_win_streak_before_match=current_win_streak_before,
+            current_loss_streak_before_match=current_loss_streak_before,
+            floor_glory=1,
         )
         self.profile.ranked_rating = new_glory
         self.profile.ranked_games_played = getattr(self.profile, "ranked_games_played", 0) + 1
-        self.profile.storybook_rank_label = protected_rank_name(
+        self.profile.storybook_rank_label = get_rank_from_glory(new_glory)
+        self.profile.ranked_floor_glory = rank_floor_for_glory(new_glory)
+        self.profile.ranked_season_high_glory = max(
+            getattr(self.profile, "ranked_season_high_glory", new_glory),
             new_glory,
-            getattr(self.profile, "storybook_rank_label", None),
         )
-        self._persist_profile()
         return f"Glory {old_glory} -> {new_glory} ({delta:+d})"
 
     def _finalize_quest_result(self, lines: list[str]) -> list[str]:
-        run_state = self._quest_run_state()
+        run_state = self._quest_run_state(self.quest_opponent_mode)
         run_mode = self.quest_opponent_mode
         run_wins_before = run_state["wins"]
         run_losses_before = run_state["losses"]
+        win_streak_before = run_state["current_win_streak"]
+        loss_streak_before = run_state["current_loss_streak"]
         glory_before = self.profile.ranked_rating
         avg_opponent_glory_before = self._quest_avg_opponent_glory("ai")
         party_snapshot = copy.deepcopy(run_state["team"]) if run_state["team"] is not None else None
-        if run_mode == "ai":
-            glory_line = self._apply_glory_result(did_win=self.result_victory, run_wins_before=run_wins_before)
+        ranked_ai = self.quest_context == "ranked" and run_mode == "ai"
+
+        if ranked_ai:
+            glory_line = self._apply_glory_result(
+                did_win=self.result_victory,
+                current_win_streak_before=win_streak_before,
+                current_loss_streak_before=loss_streak_before,
+            )
         else:
-            glory_line = "Glory is only adjusted in Quest Vs AI."
+            glory_line = "Glory is unchanged in training or LAN encounters."
+
+        if ranked_ai and run_mode == "ai" and self.current_battle_opponent_glory > 0:
+            run_state["opponent_glories"].append(self.current_battle_opponent_glory)
+            if len(run_state["opponent_glories"]) > 20:
+                run_state["opponent_glories"] = run_state["opponent_glories"][-20:]
+
         if self.result_victory:
-            if self.current_battle_opponent_glory > 0 and run_mode == "ai":
-                run_state["opponent_glories"].append(self.current_battle_opponent_glory)
-            gold_reward = quest_win_gold(run_state["wins"])
-            run_state["wins"] += 1
-            run_state["losses"] = 0
-            run_state["active"] = True
-            run_state["match_count"] += 1
-            self.quest_run_wins = run_state["wins"]
-            self.quest_run_consecutive_losses = run_state["losses"]
-            self.quest_run_opponent_glories = list(run_state["opponent_glories"])
-            self.story_quest_best = max(self.story_quest_best, run_state["wins"])
-            self.profile.gold += gold_reward
+            gold_reward = get_encounter_gold(win_streak_before) if ranked_ai else 0
+            if ranked_ai:
+                run_state["wins"] += 1
+                run_state["current_win_streak"] += 1
+                run_state["current_loss_streak"] = 0
+                run_state["active"] = True
+                run_state["match_count"] += 1
+                run_state["total_gold_earned"] += gold_reward
+                self.profile.ranked_total_wins = max(0, int(getattr(self.profile, "ranked_total_wins", 0))) + 1
+                self.profile.ranked_best_quest_wins = max(
+                    getattr(self.profile, "ranked_best_quest_wins", 0),
+                    run_state["wins"],
+                )
+                self.story_quest_best = max(self.story_quest_best, run_state["wins"])
+                if run_state.get("quest_id"):
+                    self.profile.ranked_current_quest_id = run_state["quest_id"]
+            if gold_reward > 0:
+                self.profile.gold += gold_reward
             level_lines = self._apply_exp_gain(QUEST_WIN_EXP)
-            if run_mode == "ai":
+            if ranked_ai:
                 log_quest_ai_match(
                     {
                         "did_win": True,
@@ -1353,32 +2415,50 @@ class StorybookMode:
                         "opponent_glory": self.current_battle_opponent_glory,
                         "run_wins_before": run_wins_before,
                         "run_losses_before": run_losses_before,
+                        "win_streak_before": win_streak_before,
+                        "loss_streak_before": loss_streak_before,
                         "party_ids": [member["adventurer_id"] for member in party_snapshot or []],
                         "offer_ids": list(self.quest_offer_ids),
                         "avg_opponent_glory_before": avg_opponent_glory_before,
                     }
                 )
+            if ranked_ai:
+                self._sync_quest_run_cache(run_state)
+            summary = []
+            if ranked_ai:
+                summary.extend(
+                    [
+                        f"Quest Record: {run_state['wins']}W-{run_state['losses']}L",
+                        f"Winstreak: {run_state['current_win_streak']} | Lossstreak: 0",
+                    ]
+                )
+            else:
+                summary.append("Training Encounter Complete")
+            reward_line = f"Encounter rewards: +{QUEST_WIN_EXP} EXP"
+            if gold_reward > 0:
+                reward_line = f"Encounter rewards: +{gold_reward} Gold, +{QUEST_WIN_EXP} EXP"
             self._persist_profile()
-            return [
-                f"Quest streak: {run_state['wins']}",
-                "Consecutive losses: 0/3",
-                f"Rewards earned: +{gold_reward} Gold, +{QUEST_WIN_EXP} EXP",
-                *level_lines,
-                glory_line,
-                *lines,
-            ]
+            return [*summary, reward_line, *level_lines, glory_line, *lines]
 
-        run_state["losses"] += 1
-        run_state["match_count"] += 1
-        self.quest_run_wins = run_state["wins"]
-        self.quest_run_consecutive_losses = run_state["losses"]
-        self.quest_run_opponent_glories = list(run_state["opponent_glories"])
-        summary = [
-            f"Quest streak: {run_state['wins']}",
-            f"Consecutive losses: {run_state['losses']}/3",
-            glory_line,
-        ]
-        if run_mode == "ai":
+        if ranked_ai:
+            run_state["losses"] += 1
+            run_state["current_loss_streak"] += 1
+            run_state["current_win_streak"] = 0
+            run_state["match_count"] += 1
+            self.profile.ranked_total_losses = max(0, int(getattr(self.profile, "ranked_total_losses", 0))) + 1
+
+        summary = []
+        if ranked_ai:
+            summary.extend(
+                [
+                    f"Quest Record: {run_state['wins']}W-{run_state['losses']}L",
+                    f"Winstreak: 0 | Lossstreak: {run_state['current_loss_streak']}",
+                ]
+            )
+        else:
+            summary.append("Training Encounter Lost")
+
+        if ranked_ai:
             log_quest_ai_match(
                 {
                     "did_win": False,
@@ -1387,19 +2467,32 @@ class StorybookMode:
                     "opponent_glory": self.current_battle_opponent_glory,
                     "run_wins_before": run_wins_before,
                     "run_losses_before": run_losses_before,
+                    "win_streak_before": win_streak_before,
+                    "loss_streak_before": loss_streak_before,
                     "party_ids": [member["adventurer_id"] for member in party_snapshot or []],
                     "offer_ids": list(self.quest_offer_ids),
                     "avg_opponent_glory_before": avg_opponent_glory_before,
                 }
             )
-        if run_state["losses"] >= 3:
-            summary.append("This quest run is over.")
+        if ranked_ai and run_state["losses"] >= 3:
+            final_wins = run_state["wins"]
+            total_gold = run_state["total_gold_earned"]
+            quest_finish_bonus = 300 if final_wins >= 10 else 150 if final_wins >= 5 else 0
+            if quest_finish_bonus > 0:
+                self.profile.gold += quest_finish_bonus
+                total_gold += quest_finish_bonus
+                summary.append(f"Quest completion bonus: +{quest_finish_bonus} Gold")
+            summary.append(f"Quest complete: {final_wins} wins before 3 losses.")
+            summary.append(f"Total quest Gold earned: {total_gold}")
             self._reset_quest_run_state(run_mode)
+        elif ranked_ai:
+            run_state["active"] = True
+            self._sync_quest_run_cache(run_state)
+            summary.append("Quest remains active. Continue to the next encounter.")
         else:
-            self.quest_run_active = True
-            summary.append("This quest streak remains active from the quest menu.")
+            summary.append("Return to Training Grounds to queue another encounter.")
         self._persist_profile()
-        return summary + lines
+        return [*summary, glory_line, *lines]
 
     def _finalize_bout_result(self, lines: list[str]) -> list[str]:
         mode = self._bout_mode()
@@ -1423,10 +2516,12 @@ class StorybookMode:
 
     def _continue_from_results(self):
         if self.result_kind == "quest":
-            if self._quest_run_state().get("active") and self.quest_opponent_mode == "ai":
-                self._launch_next_quest_battle()
+            if self.quest_context == "ranked" and self.quest_opponent_mode == "ai" and self._quest_run_state("ai").get("active"):
+                self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
+            elif self.quest_context == "training":
+                self.route = "training_grounds"
             else:
-                self.route = "quests_menu"
+                self.route = "guild_hall"
         else:
             if self.bout_opponent_mode == "lan":
                 self.route = "bouts_menu"
@@ -1437,7 +2532,12 @@ class StorybookMode:
 
     def _return_from_results(self):
         if self.result_kind == "quest":
-            self.route = "quests_menu"
+            if self.quest_context == "training":
+                self.route = "training_grounds"
+            elif self.quest_context == "ranked" and self.quest_opponent_mode == "ai" and self._quest_run_state("ai").get("active"):
+                self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
+            else:
+                self.route = "guild_hall"
         else:
             self.route = "bouts_menu"
 
@@ -1458,9 +2558,10 @@ class StorybookMode:
 
     def _abandon_battle(self):
         if self.current_battle_result_kind == "quest":
-            self._quest_run_state()["active"] = False
-            self.quest_run_active = False
-            self.route = "quests_menu"
+            if self.quest_context == "ranked" and self.quest_opponent_mode == "ai":
+                self._reset_quest_run_state("ai")
+                self._persist_profile()
+            self.route = "training_grounds" if self.quest_context == "training" else "guild_hall"
         elif self.current_battle_result_kind == "bout":
             self.route = "bouts_menu"
         else:
@@ -1496,40 +2597,116 @@ class StorybookMode:
 
     def _start_quest_draft(self):
         self._clear_loadout_drag()
+        self.quest_context = "ranked"
         self.quest_player_seat = 1
+        self.quest_draft_mode = "encounter"
+        self.quest_draft_locked_id = None
         self.quest_offer_ids = draft_offer(6)
         self.quest_focus_id = self.quest_offer_ids[0]
         self.quest_selected_ids = []
+        self.quest_enemy_party_ids = []
+        self.quest_enemy_selected_ids = []
+        self.quest_enemy_setup_members = []
         self.quest_draft_detail_scroll = 0
+        self.quest_draft_offer_scroll = 0
         self.quest_setup_state = None
         self.quest_local_ready = False
         self.quest_remote_ready = False
+        self.quest_team_import_open = False
+        self.quest_team_import_text = ""
+        self.quest_team_import_status_lines = []
+        self.quest_imported_party_members = []
+        self.quest_imported_party_name = ""
         self.route = "quest_draft"
 
     def _pick_quest_focus(self):
         if self.quest_focus_id is None or self.quest_focus_id in self.quest_selected_ids:
             return
-        if len(self.quest_selected_ids) >= 3:
+        if len(self.quest_selected_ids) >= self._quest_draft_target_count():
             return
         self.quest_selected_ids.append(self.quest_focus_id)
+
+    def _remove_quest_selected_adventurer(self, adventurer_id: str):
+        if adventurer_id not in self.quest_selected_ids:
+            return
+        if self.quest_draft_mode == "party_builder" and adventurer_id == self.quest_draft_locked_id:
+            return
+        self.quest_selected_ids = [selected_id for selected_id in self.quest_selected_ids if selected_id != adventurer_id]
+        self.quest_focus_id = adventurer_id
+
+    def _confirm_ranked_quest_party(self):
+        if self.quest_draft_mode != "party_builder" or len(self.quest_selected_ids) != 6:
+            return
+        favorite_id = self.quest_draft_locked_id or self._favorite_adventurer_id()
+        run_state = self._quest_run_state("ai")
+        quest_id = f"quest-{self.rng.randint(100000, 999999)}"
+        run_state["active"] = True
+        run_state["quest_id"] = quest_id
+        run_state["wins"] = 0
+        run_state["losses"] = 0
+        run_state["current_win_streak"] = 0
+        run_state["current_loss_streak"] = 0
+        run_state["opponent_glories"] = []
+        run_state["team"] = [self._default_party_loadout_member(adventurer_id) for adventurer_id in self.quest_selected_ids]
+        run_state["party_id"] = f"Favorite:{favorite_id}"
+        run_state["match_count"] = 0
+        run_state["total_gold_earned"] = 0
+        self.profile.ranked_current_quest_id = quest_id
+        self.quest_draft_mode = "encounter"
+        self.quest_draft_locked_id = None
+        self._record_quested_adventurers(self.quest_selected_ids)
+        self._sync_quest_run_cache(run_state)
+        self._persist_profile()
+        self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
+        self._enter_quest_party_loadout()
 
     def _enter_quest_loadout(self):
         if len(self.quest_selected_ids) != 3:
             return
-        filler_ids = [adventurer_id for adventurer_id in self.quest_offer_ids if adventurer_id not in self.quest_selected_ids][:3]
-        player_artifacts = self._loadout_artifact_ids(allow_all=self.quest_opponent_mode == "lan")
-        if self.quest_player_seat == 1:
-            self.quest_setup_state = create_setup_from_team_ids(
-                self.quest_selected_ids,
-                filler_ids,
-                team1_allowed_artifact_ids=player_artifacts,
-            )
-        else:
-            self.quest_setup_state = create_setup_from_team_ids(
-                filler_ids,
-                self.quest_selected_ids,
-                team2_allowed_artifact_ids=player_artifacts,
-            )
+        run_state = self._quest_run_state("ai")
+        run_state["team"] = self._normalize_quest_party_team(run_state.get("team"))
+        enemy_ids = self.quest_enemy_selected_ids[:3]
+        if len(enemy_ids) < 3:
+            enemy_ids = [adventurer_id for adventurer_id in self.quest_offer_ids if adventurer_id not in self.quest_selected_ids][:3]
+        allow_all = self.quest_context == "training" or self.quest_opponent_mode == "lan"
+        player_artifacts = self._loadout_artifact_ids(allow_all=allow_all)
+        self.quest_setup_state = create_setup_from_team_ids(
+            self.quest_selected_ids,
+            enemy_ids,
+            team1_allowed_artifact_ids=player_artifacts if self.quest_player_seat == 1 else None,
+            team2_allowed_artifact_ids=player_artifacts if self.quest_player_seat == 2 else None,
+        )
+        if self.quest_enemy_setup_members:
+            enemy_key = f"team{2 if self.quest_player_seat == 1 else 1}"
+            self.quest_setup_state[enemy_key] = copy.deepcopy(self.quest_enemy_setup_members)
+        if self.quest_context == "ranked":
+            player_key = f"team{self.quest_player_seat}"
+            saved_by_id = {
+                member["adventurer_id"]: member
+                for member in run_state.get("team", [])
+            }
+            for index, member in enumerate(self.quest_setup_state[player_key]):
+                saved = saved_by_id.get(member["adventurer_id"])
+                if saved is None:
+                    continue
+                saved_class = saved.get("class_name", NO_CLASS_NAME)
+                set_member_class(self.quest_setup_state, self.quest_player_seat, index, saved_class)
+                set_member_weapon(
+                    self.quest_setup_state,
+                    self.quest_player_seat,
+                    index,
+                    saved.get("primary_weapon_id") or member["primary_weapon_id"],
+                )
+                saved_skill = saved.get("class_skill_id")
+                if saved_skill:
+                    set_member_skill(self.quest_setup_state, self.quest_player_seat, index, saved_skill)
+                set_member_artifact(
+                    self.quest_setup_state,
+                    self.quest_player_seat,
+                    index,
+                    saved.get("artifact_id"),
+                )
+        self._prefill_quest_loadout_from_import()
         self.quest_loadout_index = 0
         self._clear_loadout_drag()
         self.quest_loadout_detail_scroll = 0
@@ -1538,57 +2715,185 @@ class StorybookMode:
         self.quest_remote_ready = False
         self.route = "quest_loadout"
 
-    def _start_quest_run(self):
-        if self.quest_setup_state is None or len(self.quest_setup_state["team1"]) != 3:
+    def _start_ranked_quest_from_guild_party(self, party_index: int):
+        parties = self._guild_parties()
+        if not parties:
             return
-        run_state = self._quest_run_state()
-        run_state["team"] = copy.deepcopy(self.quest_setup_state[f"team{self.quest_player_seat}"])
-        run_state["party_id"] = "|".join(member["adventurer_id"] for member in run_state["team"])
-        run_state["match_count"] = 0
+        party_index = max(0, min(party_index, len(parties) - 1))
+        party = parties[party_index]
+        if len(party["members"]) < 6:
+            return
+        run_state = self._quest_run_state("ai")
+        quest_id = f"quest-{self.rng.randint(100000, 999999)}"
         run_state["active"] = True
+        run_state["quest_id"] = quest_id
         run_state["wins"] = 0
         run_state["losses"] = 0
+        run_state["current_win_streak"] = 0
+        run_state["current_loss_streak"] = 0
         run_state["opponent_glories"] = []
-        self.quest_player_team = copy.deepcopy(run_state["team"])
-        self.quest_run_active = True
-        self.quest_run_wins = 0
-        self.quest_run_consecutive_losses = 0
-        self.quest_run_opponent_glories = []
-        self._launch_next_quest_battle()
+        run_state["team"] = self._normalize_quest_party_team(copy.deepcopy(party["members"]))
+        run_state["party_id"] = party["name"]
+        run_state["match_count"] = 0
+        run_state["total_gold_earned"] = 0
+        self.profile.ranked_current_quest_id = quest_id
+        self.quest_context = "ranked"
+        self.quest_opponent_mode = "ai"
+        self._record_quested_adventurers([member["adventurer_id"] for member in run_state["team"]])
+        self._sync_quest_run_cache(run_state)
+        self._persist_profile()
+        self._prepare_next_quest_encounter()
 
-    def _launch_next_quest_battle(self):
-        run_state = self._quest_run_state("ai")
-        if run_state["team"] is None:
+    def _start_ranked_quest_from_favorite(self):
+        favorite_id = self._favorite_adventurer_id()
+        candidate_pool = [adventurer_id for adventurer_id in ADVENTURERS_BY_ID if adventurer_id != favorite_id]
+        if len(candidate_pool) < 8:
             return
+        self._reset_quest_run_state("ai")
+        self.prepared_quest_id = None
+        self.quest_context = "ranked"
+        self.quest_opponent_mode = "ai"
+        self.quest_player_seat = 1
+        self.quest_draft_mode = "party_builder"
+        self.quest_draft_locked_id = favorite_id
+        self.quest_offer_ids = [favorite_id] + self.rng.sample(candidate_pool, 8)
+        self.quest_focus_id = favorite_id
+        self.quest_selected_ids = [favorite_id]
+        self.quest_enemy_party_ids = []
+        self.quest_enemy_selected_ids = []
+        self.quest_enemy_setup_members = []
+        self.quest_draft_detail_scroll = 0
+        self.quest_draft_offer_scroll = 0
+        self.quest_setup_state = None
+        self.quest_local_ready = False
+        self.quest_remote_ready = False
+        self.quest_team_import_open = False
+        self.quest_team_import_text = ""
+        self.quest_team_import_status_lines = []
+        self.quest_imported_party_members = []
+        self.quest_imported_party_name = ""
+        self.route = "quest_draft"
+
+    def _start_training_builder(self):
+        self._clear_loadout_drag()
+        self.quest_context = "training"
+        self.quest_opponent_mode = "ai"
+        self.quest_player_seat = 1
+        self.quest_draft_mode = "encounter"
+        self.quest_draft_locked_id = None
+        training_favorite_id = self._training_favorite_adventurer_id()
+        self.quest_offer_ids = list(ADVENTURERS_BY_ID.keys())
+        if training_favorite_id in self.quest_offer_ids:
+            self.quest_offer_ids.remove(training_favorite_id)
+            self.quest_offer_ids.insert(0, training_favorite_id)
+        self.quest_focus_id = training_favorite_id if training_favorite_id in ADVENTURERS_BY_ID else (self.quest_offer_ids[0] if self.quest_offer_ids else None)
+        self.quest_selected_ids = []
+        self.quest_draft_offer_scroll = 0
+        self.quest_enemy_party_ids = draft_offer(6, seed=self.rng.randint(0, 999999))
+        training_enemy_choice = choose_quest_party(
+            self.quest_enemy_party_ids,
+            enemy_party_ids=self.quest_offer_ids,
+            difficulty="normal",
+            rng=self.rng,
+        )
+        self.quest_enemy_selected_ids = list(training_enemy_choice.team_ids)
+        self.quest_enemy_setup_members = self._team_from_loadout(training_enemy_choice.loadout)
+        self.current_battle_opponent_glory = self.profile.ranked_rating
+        self.current_battle_ai_difficulties = {2: "normal"}
+        self.current_battle_enemy_name = "Training Rival"
+        self.quest_draft_detail_scroll = 0
+        self.quest_team_import_open = False
+        self.quest_team_import_status_lines = []
+        self.quest_imported_party_members = []
+        self.quest_imported_party_name = ""
+        self.route = "quest_draft"
+
+    def _prepare_next_quest_encounter(self, *, force_new: bool = False, route_if_ready: str = "quest_draft"):
+        run_state = self._quest_run_state("ai")
+        run_state["team"] = self._normalize_quest_party_team(run_state.get("team"))
+        if not run_state.get("active") or run_state["team"] is None:
+            self.route = "guild_hall"
+            return
+        if run_state.get("quest_id") is None:
+            run_state["quest_id"] = f"quest-{self.rng.randint(100000, 999999)}"
+        self.profile.ranked_current_quest_id = run_state["quest_id"]
+        self.quest_context = "ranked"
+        self.quest_opponent_mode = "ai"
+        self.quest_player_seat = 1
+        self.quest_draft_mode = "encounter"
+        self.quest_draft_locked_id = None
+        player_party_ids = [member["adventurer_id"] for member in run_state["team"]]
+        self._record_quested_adventurers(player_party_ids)
+        has_prepared_encounter = (
+            not force_new
+            and self.prepared_quest_id == run_state["quest_id"]
+            and self.quest_offer_ids == list(player_party_ids)
+            and len(self.quest_enemy_party_ids) == 6
+            and len(self.quest_enemy_selected_ids) == 3
+            and len(self.quest_enemy_setup_members) == 3
+        )
+        if has_prepared_encounter:
+            self._sync_quest_run_cache(run_state)
+            self.route = route_if_ready
+            return
+        self.quest_offer_ids = list(player_party_ids)
         match_profile = find_ai_match_profile(
             self.profile.ranked_rating,
-            run_state["wins"],
-            run_state["losses"],
+            run_state["current_win_streak"],
+            run_state["current_loss_streak"],
             avg_opponent_glory=self._quest_avg_opponent_glory("ai"),
             rng=self.rng,
         )
-        difficulty, enemy_choice = self._generate_quest_ai_choice(match_profile.glory)
-        player_ids = [member["adventurer_id"] for member in run_state["team"]]
-        setup_state = {
-            "offer_ids": list(dict.fromkeys(player_ids + list(enemy_choice.team_ids))),
-            "team1": copy.deepcopy(run_state["team"]),
-            "team2": self._team_from_loadout(enemy_choice.loadout),
-        }
-        self.quest_player_team = copy.deepcopy(run_state["team"])
-        self.quest_run_active = bool(run_state["active"])
-        self.quest_run_wins = run_state["wins"]
-        self.quest_run_consecutive_losses = run_state["losses"]
-        self.quest_run_opponent_glories = list(run_state["opponent_glories"])
-        self.quest_setup_state = setup_state
+        difficulty = ai_difficulty_for_glory(match_profile.glory)
+        enemy_offer = draft_offer(9, seed=self.rng.randint(0, 999999))
+        enemy_package = choose_blind_quest_roster_from_offer(enemy_offer, roster_size=6)
+        enemy_party_ids = list(enemy_package.offer_ids)
+        enemy_choice = choose_quest_party(
+            enemy_party_ids,
+            enemy_party_ids=player_party_ids,
+            difficulty=difficulty,
+            rng=self.rng,
+        )
+        self.quest_enemy_party_ids = enemy_party_ids
+        self.quest_enemy_selected_ids = list(enemy_choice.team_ids)
+        self.quest_enemy_setup_members = self._team_from_loadout(enemy_choice.loadout)
+        self.quest_focus_id = self.quest_offer_ids[0] if self.quest_offer_ids else None
+        self.quest_selected_ids = []
+        self.quest_draft_detail_scroll = 0
+        self.quest_draft_offer_scroll = 0
+        self.quest_setup_state = None
+        self.quest_party_loadout_state = None
+        self.quest_team_import_open = False
+        self.quest_team_import_text = ""
+        self.quest_team_import_status_lines = []
+        self.quest_imported_party_members = []
+        self.quest_imported_party_name = ""
+        self.current_battle_opponent_glory = match_profile.glory
+        self.current_battle_enemy_name = f"{rank_name(match_profile.glory)} Rival"
+        self.current_battle_ai_difficulties = {2: difficulty}
+        self.prepared_quest_id = run_state["quest_id"]
+        self._sync_quest_run_cache(run_state)
+        self.route = route_if_ready
+
+    def _start_quest_encounter(self):
+        if self.quest_setup_state is None or not setup_is_ready(self.quest_setup_state):
+            return
+        difficulty = self.current_battle_ai_difficulties.get(2, "normal")
+        if self.quest_context == "training":
+            enemy_name = "Training Rival"
+            opponent_glory = self.profile.ranked_rating
+        else:
+            enemy_name = self.current_battle_enemy_name or "Ranked Rival"
+            opponent_glory = self.current_battle_opponent_glory
         self._start_battle(
-            setup_state,
+            self.quest_setup_state,
             "quest",
             human_team_num=1,
             ai_difficulties={2: difficulty},
             second_picker=0,
             player_name="You",
-            enemy_name=f"{rank_name(match_profile.glory)} Rival",
-            opponent_glory=match_profile.glory,
+            enemy_name=enemy_name,
+            opponent_glory=opponent_glory,
         )
 
     def _bout_mode(self) -> dict:
@@ -1807,19 +3112,25 @@ class StorybookMode:
         self.bout_remote_ready = False
 
     def _begin_lan_context(self):
-        if self.lan_context == "quest":
+        if self.lan_context in {"quest", "training"}:
             self.quest_player_seat = 1 if self.lan_session.is_host else 2
+            self.quest_opponent_mode = "lan"
+            self.quest_context = "training" if self.lan_context == "training" else "ranked"
             if self.lan_session.is_host:
-                self.quest_offer_ids = draft_offer(6)
+                self.quest_offer_ids = list(ADVENTURERS_BY_ID.keys()) if self.lan_context == "training" else draft_offer(6)
                 self.lan_session.send(
                     {
                         "type": "quest_start",
                         "offer_ids": self.quest_offer_ids,
                         "host_glory": self.profile.ranked_rating,
+                        "quest_context": self.quest_context,
                     }
                 )
+                self.quest_draft_mode = "encounter"
+                self.quest_draft_locked_id = None
                 self.quest_focus_id = self.quest_offer_ids[0]
                 self.quest_selected_ids = []
+                self.quest_draft_offer_scroll = 0
                 self.route = "quest_draft"
         else:
             self.bout_player_seat = 1 if self.lan_session.is_host else 2
@@ -1835,15 +3146,18 @@ class StorybookMode:
             return
         self.quest_local_ready = True
         local_team = copy.deepcopy(self.quest_setup_state[f"team{self.quest_player_seat}"])
-        run_state = self._quest_run_state("lan")
-        run_state["team"] = copy.deepcopy(local_team)
-        run_state["party_id"] = "|".join(member["adventurer_id"] for member in local_team)
-        run_state["match_count"] = 0 if not run_state["active"] else run_state["match_count"]
-        if not run_state["active"]:
-            run_state["wins"] = 0
-            run_state["losses"] = 0
-            run_state["opponent_glories"] = []
-            run_state["active"] = True
+        if self.quest_context == "ranked":
+            run_state = self._quest_run_state("lan")
+            run_state["team"] = copy.deepcopy(local_team)
+            run_state["party_id"] = "|".join(member["adventurer_id"] for member in local_team)
+            run_state["match_count"] = 0 if not run_state["active"] else run_state["match_count"]
+            if not run_state["active"]:
+                run_state["wins"] = 0
+                run_state["losses"] = 0
+                run_state["current_win_streak"] = 0
+                run_state["current_loss_streak"] = 0
+                run_state["opponent_glories"] = []
+                run_state["active"] = True
         if self.lan_session.is_host:
             self.quest_player_team = local_team
             if self.quest_remote_ready and self.quest_remote_team is not None:
@@ -1870,7 +3184,7 @@ class StorybookMode:
         payload["type"] = "quest_battle_setup"
         payload["host_glory"] = self.profile.ranked_rating
         self.lan_session.send(payload)
-        self.quest_run_active = self._quest_run_state("lan")["active"]
+        self.quest_run_active = self._quest_run_state("lan")["active"] if self.quest_context == "ranked" else False
         self._start_battle(
             setup_state,
             "quest",
@@ -1956,9 +3270,14 @@ class StorybookMode:
                 continue
             if message_type == "quest_start":
                 self.quest_player_seat = 2
+                self.quest_draft_mode = "encounter"
+                self.quest_draft_locked_id = None
                 self.quest_offer_ids = list(message.get("offer_ids", []))
                 self.quest_focus_id = self.quest_offer_ids[0] if self.quest_offer_ids else None
                 self.quest_selected_ids = []
+                self.quest_draft_offer_scroll = 0
+                self.quest_context = str(message.get("quest_context", "ranked"))
+                self.quest_opponent_mode = "lan"
                 self.route = "quest_draft"
                 continue
             if message_type == "quest_loadout" and self.lan_session.is_host:

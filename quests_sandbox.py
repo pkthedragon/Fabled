@@ -1,17 +1,163 @@
 from __future__ import annotations
 
 import random
+import re
 from typing import Optional
 
 from settings import SLOT_BACK_LEFT, SLOT_BACK_RIGHT, SLOT_FRONT
 
-from quests_ruleset_data import ADVENTURERS, ARTIFACTS, CLASS_SKILLS
+from quests_ruleset_data import ADVENTURERS, ADVENTURERS_BY_ID, ARTIFACTS, ARTIFACTS_BY_ID, CLASS_SKILLS
 from quests_ruleset_logic import create_battle, create_team, determine_initiative_order, make_pick
 
 
 SLOT_ORDER = (SLOT_FRONT, SLOT_BACK_LEFT, SLOT_BACK_RIGHT)
-CLASS_ORDER = tuple(CLASS_SKILLS.keys())
+NO_CLASS_NAME = "None"
+CLASS_ORDER = (NO_CLASS_NAME,) + tuple(CLASS_SKILLS.keys())
 ALL_ARTIFACT_IDS = {artifact.id for artifact in ARTIFACTS}
+
+
+def _normalize_lookup_key(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(text).strip().lower())
+
+
+_ADVENTURER_NAME_TO_ID = {_normalize_lookup_key(adventurer.name): adventurer.id for adventurer in ADVENTURERS}
+_CLASS_NAME_MAP = {_normalize_lookup_key(class_name): class_name for class_name in CLASS_ORDER}
+_ARTIFACT_NAME_TO_ID = {_normalize_lookup_key(artifact.name): artifact.id for artifact in ARTIFACTS}
+
+
+def _weapon_lookup_for_adventurer(adventurer_id: str) -> dict[str, str]:
+    adventurer = ADVENTURERS_BY_ID.get(adventurer_id)
+    if adventurer is None:
+        return {}
+    lookup: dict[str, str] = {}
+    for weapon in adventurer.signature_weapons:
+        lookup[_normalize_lookup_key(weapon.name)] = weapon.id
+        lookup[_normalize_lookup_key(weapon.id)] = weapon.id
+    return lookup
+
+
+def import_team_from_text(text: str, *, expected_members: int = 6) -> tuple[list[dict], list[str]]:
+    lines = str(text or "").replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    parsed_members: list[dict] = []
+    current: dict | None = None
+
+    for raw_line in lines:
+        line = raw_line.strip()
+        if not line:
+            continue
+        header_match = re.match(r"^(.*?)\s*@\s*(.+)$", line)
+        if header_match:
+            if current is not None:
+                parsed_members.append(current)
+            current = {
+                "adventurer_name": header_match.group(1).strip(),
+                "weapon_name": header_match.group(2).strip(),
+                "class_name_raw": "",
+                "class_skill_raw": "",
+                "artifact_name_raw": "",
+            }
+            continue
+        if current is None:
+            # Team names and free text before the first member block are ignored.
+            continue
+        class_match = re.match(r"^class\s*:\s*(.+)$", line, flags=re.IGNORECASE)
+        if class_match:
+            current["class_name_raw"] = class_match.group(1).strip()
+            continue
+        artifact_match = re.match(r"^artifact\s*:\s*(.+)$", line, flags=re.IGNORECASE)
+        if artifact_match:
+            current["artifact_name_raw"] = artifact_match.group(1).strip()
+            continue
+        skill_match = re.match(r"^(?:[-*]\s*|class\s*skill\s*:\s*)(.+)$", line, flags=re.IGNORECASE)
+        if skill_match:
+            current["class_skill_raw"] = skill_match.group(1).strip()
+            continue
+        if not current["class_skill_raw"] and ":" not in line:
+            # Allow plain skill lines without a leading bullet.
+            current["class_skill_raw"] = line
+            continue
+    if current is not None:
+        parsed_members.append(current)
+
+    if not parsed_members:
+        return [], ["No team members were found. Use lines like 'Name @ Weapon' followed by Class/Skill/Artifact lines."]
+    if len(parsed_members) != expected_members:
+        return [], [f"Team import requires exactly {expected_members} members; found {len(parsed_members)}."]
+
+    resolved_members: list[dict] = []
+    errors: list[str] = []
+    used_adventurers: set[str] = set()
+    used_classes: set[str] = set()
+    used_artifacts: set[str] = set()
+
+    for member in parsed_members:
+        adventurer_key = _normalize_lookup_key(member["adventurer_name"])
+        adventurer_id = _ADVENTURER_NAME_TO_ID.get(adventurer_key)
+        if adventurer_id is None:
+            errors.append(f"Unknown adventurer: {member['adventurer_name']}.")
+            continue
+        if adventurer_id in used_adventurers:
+            errors.append(f"Duplicate adventurer: {member['adventurer_name']}.")
+            continue
+        used_adventurers.add(adventurer_id)
+
+        weapon_lookup = _weapon_lookup_for_adventurer(adventurer_id)
+        weapon_id = weapon_lookup.get(_normalize_lookup_key(member["weapon_name"]))
+        if weapon_id is None:
+            errors.append(f"Invalid weapon '{member['weapon_name']}' for {member['adventurer_name']}.")
+            continue
+
+        class_name = _CLASS_NAME_MAP.get(_normalize_lookup_key(member["class_name_raw"]))
+        if class_name is None:
+            errors.append(f"Invalid class for {member['adventurer_name']}: {member['class_name_raw'] or '(missing)'}")
+            continue
+        if class_name != NO_CLASS_NAME and class_name in used_classes:
+            errors.append(f"Duplicate class '{class_name}' is not allowed in one party.")
+            continue
+        if class_name != NO_CLASS_NAME:
+            used_classes.add(class_name)
+
+        class_skill_id = None
+        if class_name != NO_CLASS_NAME:
+            skill_lookup: dict[str, str] = {}
+            for skill in CLASS_SKILLS[class_name]:
+                skill_lookup[_normalize_lookup_key(skill.name)] = skill.id
+                skill_lookup[_normalize_lookup_key(skill.id)] = skill.id
+            class_skill_id = skill_lookup.get(_normalize_lookup_key(member["class_skill_raw"]))
+            if class_skill_id is None:
+                errors.append(
+                    f"Invalid class skill for {member['adventurer_name']} ({class_name}): {member['class_skill_raw'] or '(missing)'}"
+                )
+                continue
+
+        artifact_id = _ARTIFACT_NAME_TO_ID.get(_normalize_lookup_key(member["artifact_name_raw"]))
+        if artifact_id is None:
+            errors.append(f"Invalid artifact for {member['adventurer_name']}: {member['artifact_name_raw'] or '(missing)'}")
+            continue
+        if artifact_id in used_artifacts:
+            errors.append(f"Duplicate artifact is not allowed: {member['artifact_name_raw']}.")
+            continue
+        artifact_def = ARTIFACTS_BY_ID.get(artifact_id)
+        if artifact_def is None or class_name not in artifact_def.attunement:
+            errors.append(f"Artifact '{member['artifact_name_raw']}' cannot be attuned by class {class_name}.")
+            continue
+        used_artifacts.add(artifact_id)
+
+        resolved_members.append(
+            {
+                "adventurer_id": adventurer_id,
+                "class_name": class_name,
+                "class_skill_id": class_skill_id,
+                "primary_weapon_id": weapon_id,
+                "artifact_id": artifact_id,
+            }
+        )
+
+    if errors:
+        return [], errors
+    if len(resolved_members) != expected_members:
+        return [], [f"Team import requires exactly {expected_members} legal members."]
+    return resolved_members, []
 
 
 def _team_key(team_num: int) -> str:
@@ -34,6 +180,8 @@ def _allowed_artifact_ids_for_team(setup_state: dict, team_num: int) -> set[str]
 
 
 def compatible_artifact_ids(class_name: str, allowed_artifact_ids: set[str] | None = None) -> list[str]:
+    if class_name == NO_CLASS_NAME:
+        return []
     return [
         artifact.id
         for artifact in ARTIFACTS
@@ -47,6 +195,8 @@ def _normalize_team_artifacts(team: list[dict], allowed_artifact_ids: set[str] |
         artifact_ids = compatible_artifact_ids(member["class_name"], allowed_artifact_ids)
         if not artifact_ids:
             member["artifact_id"] = None
+            continue
+        if member.get("artifact_id") is None:
             continue
         if member.get("artifact_id") in artifact_ids and member["artifact_id"] not in used:
             chosen = member["artifact_id"]
@@ -190,12 +340,30 @@ def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> b
     if not (0 <= member_index < len(team)):
         return False
     member = team[member_index]
+    used_classes = {
+        other["class_name"]
+        for index, other in enumerate(team)
+        if index != member_index
+    }
     class_index = CLASS_ORDER.index(member["class_name"])
-    class_name = CLASS_ORDER[(class_index + 1) % len(CLASS_ORDER)]
+    class_name = member["class_name"]
+    for offset in range(1, len(CLASS_ORDER) + 1):
+        candidate = CLASS_ORDER[(class_index + offset) % len(CLASS_ORDER)]
+        if candidate == NO_CLASS_NAME or candidate not in used_classes:
+            class_name = candidate
+            break
+    if class_name != NO_CLASS_NAME and class_name in used_classes:
+        return False
     member["class_name"] = class_name
+    if class_name == NO_CLASS_NAME:
+        member["class_skill_id"] = None
+        member["artifact_id"] = None
+        return True
     member["class_skill_id"] = CLASS_SKILLS[class_name][0].id
     artifacts = compatible_artifact_ids(class_name, _allowed_artifact_ids_for_team(setup_state, team_num))
-    if member["artifact_id"] not in artifacts:
+    if member.get("artifact_id") is None:
+        member["artifact_id"] = None
+    elif member["artifact_id"] not in artifacts:
         member["artifact_id"] = artifacts[0] if artifacts else None
     _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
     return True
@@ -203,16 +371,24 @@ def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> b
 
 def set_member_class(setup_state: dict, team_num: int, member_index: int, class_name: str) -> bool:
     team = setup_state[_team_key(team_num)]
-    if not (0 <= member_index < len(team)) or class_name not in CLASS_SKILLS:
+    if not (0 <= member_index < len(team)) or class_name not in CLASS_ORDER:
+        return False
+    if class_name != NO_CLASS_NAME and any(other["class_name"] == class_name for index, other in enumerate(team) if index != member_index):
         return False
     member = team[member_index]
     member["class_name"] = class_name
+    if class_name == NO_CLASS_NAME:
+        member["class_skill_id"] = None
+        member["artifact_id"] = None
+        return True
     available_skills = CLASS_SKILLS[class_name]
     current_skill = member.get("class_skill_id")
     if current_skill not in {skill.id for skill in available_skills}:
         member["class_skill_id"] = available_skills[0].id
     artifacts = compatible_artifact_ids(class_name, _allowed_artifact_ids_for_team(setup_state, team_num))
-    if member.get("artifact_id") not in artifacts:
+    if member.get("artifact_id") is None:
+        member["artifact_id"] = None
+    elif member.get("artifact_id") not in artifacts:
         member["artifact_id"] = artifacts[0] if artifacts else None
     _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
     return True
@@ -223,6 +399,9 @@ def cycle_member_skill(setup_state: dict, team_num: int, member_index: int) -> b
     if not (0 <= member_index < len(team)):
         return False
     member = team[member_index]
+    if member["class_name"] == NO_CLASS_NAME:
+        member["class_skill_id"] = None
+        return True
     skills = CLASS_SKILLS[member["class_name"]]
     current_index = next(
         (index for index, skill in enumerate(skills) if skill.id == member["class_skill_id"]),
@@ -232,11 +411,16 @@ def cycle_member_skill(setup_state: dict, team_num: int, member_index: int) -> b
     return True
 
 
-def set_member_skill(setup_state: dict, team_num: int, member_index: int, skill_id: str) -> bool:
+def set_member_skill(setup_state: dict, team_num: int, member_index: int, skill_id: str | None) -> bool:
     team = setup_state[_team_key(team_num)]
     if not (0 <= member_index < len(team)):
         return False
     member = team[member_index]
+    if member["class_name"] == NO_CLASS_NAME:
+        member["class_skill_id"] = None
+        return skill_id in {None, ""}
+    if skill_id is None:
+        return False
     skills = CLASS_SKILLS[member["class_name"]]
     if skill_id not in {skill.id for skill in skills}:
         return False
@@ -333,7 +517,12 @@ def cycle_member_field(setup_state: dict, team_num: int, member_index: int, fiel
 
 def team_is_ready(setup_state: dict, team_num: int) -> bool:
     team = setup_state[_team_key(team_num)]
-    return len(team) == 3 and {member["slot"] for member in team} == set(SLOT_ORDER)
+    non_empty_classes = [member["class_name"] for member in team if member.get("class_name") not in {None, "", NO_CLASS_NAME}]
+    return (
+        len(team) == 3
+        and {member["slot"] for member in team} == set(SLOT_ORDER)
+        and len(set(non_empty_classes)) == len(non_empty_classes)
+    )
 
 
 def setup_is_ready(setup_state: dict) -> bool:

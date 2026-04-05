@@ -1,4 +1,4 @@
-FABLED
+﻿FABLED
 Official Rulebook
 You are a magnate in the kingdom of Fantasia, home of the mystical and magical.
 As an aficionado of rare artifacts, you would love to add more items to your collection. However, embarking on a quest is out of the question for an inexperienced loafer such as yourself.
@@ -6,10 +6,10 @@ As an aficionado of rare artifacts, you would love to add more items to your col
 Fortunately, Fantasia is host to many thrill-seeking adventurers who love nothing more than taking on dangerous quests, and you have the pocketbook to hire the best of the best. Be warned though, you are not the only wealthy collector after these rare artifacts. Your adventurers will need good teamwork and moxie to fight off other parties on the path to 
 
 INTRODUCTION
-Fabled is a tactical turn-based combat game focused on positioning, ability timing, and party construction. Players build parties of three adventurers to battle with and take turns using abilities or shifting positions. The battle is won when the final enemy adventurer is defeated.
+Fabled is a tactical turn-based combat game focused on positioning, ability timing, and party optimization. Players use parties of six random adventurers and choose three to take to encounters to take turns attacking enemies. The encounter is won when the final enemy adventurer is defeated or a player's third Ultimate Spell has been cast.
 
-CREATING A PARTY
-Players are shown six unique adventurers. From these, players choose three adventurers to form their party.
+PARTIES
+Players use a party of six adventurers with set loadouts per quest. Only three adventurers are brought to any given encounter.
 Adventurers
 Adventurers have the following attributes:
 An Innate Skill.
@@ -20,16 +20,16 @@ HP, or how much health the adventurer has.
 Attack, which affects how much damage the adventurer deals with Strikes.
 Defense, which affects how much damage the adventurer takes from abilities.
 Speed, which affects initiative.
-In addition, adventurers have the following chosen attributes:
+In addition, adventurers have the following chosen attributes (their loadout):
 Primary Weapon.
 A Class, and Class Skill.
 An Artifact.
 Skills and Spells
-Skills are passive effects that always take place during a battle. Spells are active effects that use up an action during battle.
+Skills are passive effects and Spells are effects that use up an action. 
 A variety of sources give adventurers access to Skills and Spells, and there is no limit to how many of either an adventurer can have.
 Weapons
-Weapons determine the strength of an adventurer's Strike, and can come with Skills and/or Spells. They can be Melee, Ranged, or Magic, and their classification determines their usage in battle.
-Adventurers have two Signature Weapons. Before the battle, they choose one to become their primary weapon and one to become their secondary weapon. Only the primary weapon's Skills and Spells are active.
+Weapons determine the strength of an adventurer's Strike, and can come with Skills and/or Spells. They can be Melee, Ranged, or Magic, and their classification determines their usage in encounters.
+Adventurers have two Signature Weapons. Before the encounter, they choose one to become their primary weapon and one to become their secondary weapon. Only the primary weapon's Skills and Spells are active.
 Classes
 The six classes are:
 Wardens: Tanks and position manipulators.
@@ -38,20 +38,22 @@ Mages: Magic damage dealers.
 Rangers: Ranged damage dealers.
 Clerics: Healers and enchanters.
 Rogues: Disruptors and speedsters.
-Classes determine which Class Skill an adventurer can choose from.
+Classes determine which Class Skill an adventurer can choose from and which Artifacts they are able to attune to.
+A party can only have one of each Class among its adventurers.
 Artifacts
 Artifacts raise a specific stat and give a Spell to the adventurer that holds them. The player can only have one of each artifact.
 Artifacts can have Reactive Spells, which are not actions but go on cooldown once triggered. A Reactive Spell being Triggered counts as casting the spell.
-An adventurer can only hold artifacts they are able to attune to, which is determined by their class.
+Each Artifact has one or more classes that are able to attune to it. If an Artifact is not attuned, its Spell cannot be used.
+Adventurers do not need to hold an Artifact.
 
-BATTLING
-Battles consist of rounds in which every adventurer acts at least once.
-Battle Formation
+ENCOUNTERS
+Encounters consist of rounds in which every adventurer acts at least once.
+Encounter Formation
 Each party uses a triangle formation with a backline behind a frontline. Both frontlines face each other with their backlines behind them.
-Player A Backline Left                Player A Backline Right
+Player A Backline Left				Player A Backline Right
 Player A Frontline
 Player B Frontline
-Player B Backline Left                Player B Backline Right
+Player B Backline Left				Player B Backline Right
 Formation Rules
 Backline adventurers have -30 Speed.
 One adventurer must always be in the frontline, and up to two adventurers can be in the backline.
@@ -99,8 +101,7 @@ To Swap, an adventurer swaps positions with an ally. If the ally that didn't sel
 Skip
 To Skip, an adventurer skips their action.
 Ultimate Spell
-Whenever an adventurer Strikes or uses a Spell, they fill up the Ultimate Meter by +1 or +2 respectively. Once the Meter is full at +10, one adventurer can use their Ultimate Spell, which depletes the meter.
-
+Whenever an adventurer Strikes or uses a Spell, they fill up the Ultimate Meter by +1 or +2 respectively. Once the Meter is full at +7, one adventurer can use their Ultimate Spell, which depletes the meter.
 CONDITIONS
 Status conditions of the same type do not stack, but an adventurer can have multiple different status conditions at one time.
 Burn: Burned adventurers take 8% max HP damage each round.
@@ -112,10 +113,44 @@ Guard: Guarded adventurers take 15% less damage.
 Spotlight: Spotlighted adventurers can be targeted by Melee Strikes in the backline.
 Taunt: Taunted adventurers can only target whoever taunted them.
 Stat bonuses and penalties do not stack. Stat calculation uses the highest stat bonus and the highest stat penalty an adventurer has.
-
 ENDING THE GAME
-The game ends immediately upon reaching one of two conditions: the player that casts their 7th Ultimate Spell will immediately win the game, and the player loses the game immediately when all of their party's adventurers are knocked out.
+The game ends immediately upon reaching one of two conditions: the player that casts their 3rd Ultimate Spell will immediately win the game, and the player loses the game immediately when all of their party's adventurers are knocked out.
 
+QUESTS
+Quests are competitive runs in which the player continues facing encounters with a chosen party until they've lost three encounters.
+Players can pick one favored adventurer they've quested with previously. When starting a Quest, players are shown a pool of nine random adventurers including their favorite, and must create a party of six and set their loadouts.
+Encounters
+Before starting an encounter, players can alter their party's loadouts. Then before the encounter begins, players see the opponent's party before deciding which three adventurers to bring and what their positions are.
+Winning an encounter gives the player Exp, Gold, and Glory, but losing an encounter only takes Glory.
+Gold
+Gold gain increases with current Quest winstreak. The formula is: 
+100 + (10 × current winstreak before win)
+Once a player's Quest ends, they get 150 Gold if they won at least five encounters, increased to 300 if they won at least ten.
+Glory
+Glory affects the player's rank.
+Glory gain increases with current Quest winstreak. The formula is:
+GloryGain = round(BaseChange + WinstreakBonus), clamps from 8 to 30
+BaseChange = 28 × (ActualScore - ExpectedScore)
+ActualScore is simply 1 on a win or 0 on a loss.
+ExpectedScore is calculated using this formula:
+ExpectedScore = 1 / (1 + 10^((OpponentGlory - PlayerGlory) / 400))
+WinstreakBonus = min(current quest winstreak before win, 5) × 2
+Glory loss increases with current Quest lossstreak. The formula is:
+GloryLoss = 10 × current quest lossstreak after loss
+Ranks
+Squire: 1–199 Glory
+Knight: 200–399 Glory
+Baron: 400–599 Glory
+Viscount: 600–799 Glory
+Earl: 800–999 Glory
+Margrave: 1000–1199 Glory
+Duke: 1200–1399 Glory
+Prince: 1400–1599 Glory
+King: 1600–1799 Glory
+Emperor: 1800–2000 Glory
+Matchmaking
+Matchmaking uses a player’s Match Rating rather than Glory alone. The formula is:
+Match Rating = Glory + (20 × current winstreak) - (15 × current lossstreak)
 APPENDIX A — ADVENTURERS
 Red Blanchette
 HP: 300
@@ -196,7 +231,7 @@ Signature Weapon: Cat'O'Nine
 Melee
 Strike: 9 Power. Hits 9 times. Is not affected by Strike bonuses.
 Skill: Nine Lives
-Up to 3 times per battle, Constantine survives Strikes from Exposed attackers at 1 HP.
+Up to 3 times per encounter, Constantine survives Strikes from Exposed attackers at 1 HP.
 Ultimate Spell: Eyes Everywhere
 For 2 rounds, enemies are Exposed and Constantine's Strikes steal 5 Defense for 2 rounds.
 
@@ -217,6 +252,7 @@ Cooldown: 1 round
 Strike: 70 Power. If the target is Shocked, Roots and Spotlights them for 2 rounds and does not go on cooldown.
 Ultimate Spell: Mass Hysteria
 For 2 rounds, Hunold's Strikes are Spread and ignore targeting restrictions and the spread damage penalty.
+
 
 Sir Roland
 HP: 314
@@ -271,7 +307,7 @@ Innate Skill: Reflecting Pools
 The Lady creates a Reflecting Pool for 2 rounds at her new position whenever she swaps. Strikes targeting Reflecting Pools reflect 25% of the damage onto the attacker, 50% if the Strike is Magic.
 Signature Weapon: Excalibur
 Melee
-Strike: 70 Power.
+Strike: 70 Power. 
 Spell: Drown in the Loch
 Cooldown: 2 rounds
 The target takes +15 damage from all sources for 2 rounds.
@@ -326,6 +362,7 @@ Cooldown: 2 rounds
 The March Hare gets an extra Action next round for each Spell he cast this round.
 Ultimate Spell: Tea Party
 For 2 rounds, the March Hare's and his allies' Spells do not go on cooldown.
+
 
 Briar Rose
 HP: 236
@@ -437,7 +474,6 @@ The Good Beast's guests restore +10 HP from all sources.
 Ultimate Spell: Happily Ever After
 Magic
 For 2 rounds, The Good Beast and his guest have the higher of the two's Attack, Defense, and Speed.
-
 The Green Knight
 HP: 278
 Attack: 60
@@ -456,14 +492,13 @@ Passive: Awaited Blow
 The Green Knight retaliates for 35 Power against incoming attackers not across from him.
 Ultimate Spell: Fated Duel
 For 2 rounds, only the Green Knight and the enemy across from him can act.
-
 Rapunzel the Golden
 HP: 270
 Attack: 66
 Defense: 64
 Speed: 32
 Innate Skill: Flowing Locks
-Rapunzel can target a backline enemy with a Melee Strike once per battle. Refreshes when she casts a Spell.
+Rapunzel can target a backline enemy with a Melee Strike once per encounter. Refreshes when she casts a Spell.
 Signature Weapon: Golden Snare
 Melee
 Strike: 65 Power. Root the target for 2 rounds.
@@ -479,7 +514,6 @@ Target ally restores 60 HP.
 Ultimate Spell: Severed Tether
 Active
 For 2 rounds, Rapunzel has -15 defense, +30 attack, and +30 speed and Flowing Locks is always active.
-
 Pinocchio, Cursed Puppet
 HP: 232
 Attack: 50
@@ -524,7 +558,6 @@ Copy the target's stat penalties for 2 rounds and reverse them for the duration.
 Ultimate Spell: Devil’s Nursery
 Active
 For 2 rounds, whenever Rumpelstiltskin gains a stat bonus it gets +10, and whenever he inflicts a stat penalty, it gets -10.
-
 Sea Wench Asha
 HP: 234
 Attack: 68
@@ -542,7 +575,6 @@ No Cooldown
 Strike: Has the Power and effects of the last Strike that damaged Asha.
 Ultimate Spell: Foam Prison
 Asha steals target enemy's Ultimate Spell for 2 rounds and uses it.
-
 Destitute Vasilisa
 HP: 248
 Attack: 50
@@ -591,7 +623,7 @@ Attack: 64
 Defense: 72
 Speed: 30
 Innate Skill: Conquer Death
-Maui survives fatal damage at 1 HP once per battle.
+Maui survives fatal damage at 1 HP once per encounter.
 Signature Weapon: Whale-Jaw Hook
 Melee
 Strike: 65 Power, Exposes the target for 2 rounds.
@@ -616,7 +648,7 @@ Enemies directly across Kama take +10 damage from ally Strikes.
 Signature Weapon: Sugarcane Bow
 Ranged
 3 Ammo
-Strike: 55 Power, Spotlight the target for 2 rounds.
+Strike: 55 Power. Spotlight the target for 2 rounds.
 Skill: Flower Arrows
 Sugarcane Bow does not reload by Switching weapons. 
 Signature Weapon: The Stinger
@@ -625,18 +657,40 @@ Ranged
 Strike: 45 Power. If the target is Spotlighted, Shocks them for 2 rounds and picks up a flower arrow.
 Spell: Suka's Eyes
 Cooldown: 2 rounds
-Spotlights all enemies for 2 rounds.
+Suka Spotlights all enemies for 2 rounds.
 Ultimate Spell: Gaze of Love
 For 2 rounds, enemies are Spotlighted and Ranged Strikes do not consume Ammo against Spotlighted targets.
 
+Reynard, Lupine Trickster
+HP: 240
+Attack: 64
+Defense: 48
+Speed: 86
+Innate Skill: Opportunist
+Reynard deals +15 damage to targets that did not Strike last round.
+Signature Weapon: Foxfire Bow
+Ranged
+3 Ammo
+Strike: 45 Power. The target has -10 Defense for 2 rounds.
+Skill: Glowing Trail
+Reynard acts the turn before the target of his Strike. 
+Signature Weapon: Fang
+Melee
+Strike: 65 Power, +15 Power if the target has a stat penalty.
+Spell: Silver Tongue
+Cooldown: 2 rounds
+Reynard Taunts target enemy for 2 rounds.
+Ultimate Spell: King of Thieves
+Reynard's next Strike steals 30 Attack from the target for 2 rounds.
 APPENDIX B — CLASS SKILLS
 FIGHTER
 Martial
 The Adventurer's Melee Strikes deal +15 damage.
 Inevitable
-The Adventurer's Strikes charge the Ultimate Meter twice as fast.
+The Adventurer's Strikes charge the Ultimate Meter +1.
 Vanguard
 The Adventurer can use a Bonus Action to keep momentum after using a Melee Strike against a frontline enemy. If they do, their next Strike ignores targeting restrictions.
+
 
 ROGUE
 Covert
@@ -646,6 +700,7 @@ The first incoming Strike each round deals 15% less damage.
 Assassin
 The Adventurer ignores targeting restrictions against enemies who did not Strike or Swap Positions.
 
+
 WARDEN
 Stalwart
 The Adventurer cannot be forced to Swap positions.
@@ -654,13 +709,14 @@ The Adventurer has +15 Defense while in the frontline.
 Vigilant
 The Adventurer is Guarded for 2 rounds when they Swap positions.
 
+
 MAGE
 Arcane
 The Adventurer's Magic Strikes deal +10 damage.
 Overflow
-The Adventurer's Magic Strikes do not go on cooldown in the frontline.
+The Adventurer's Magic Strikes do not go on cooldown in the frontline. 
 Archmage
-The first Spell the Adventurer casts after Switching weapons does not go on cooldown.
+The first Spell the Adventurer casts after Switching weapons does not go on cooldown. 
 
 RANGER
 Deadeye
@@ -668,7 +724,8 @@ The Adventurer's Ranged Strikes deal +10 damage.
 Armed
 The Adventurer's first Ranged Strike after Switching weapons does not consume Ammo.
 Tactical
-The Adventurer can Switch Weapons as a Bonus Action.
+The Adventurer can Switch Weapons when they Swap positions. 
+
 
 CLERIC
 Healer
@@ -676,7 +733,7 @@ The Adventurer's healing effects restore an additional +15 HP.
 Medic
 The Adventurer's healing effects cleanse status conditions and stat penalties.
 Protector
-Allies have +10 Defense.
+Allies have +15 Defense.
 
 APPENDIX C — ARTIFACTS
 Wishing Table
@@ -728,10 +785,10 @@ Spell: Mercy Stroke
 Cooldown: 2 rounds
 The user deals 30 damage to target enemy with a status condition.
 Selkie’s Skin
-Attunement: Ranger, Rogue
+Attunement: Mage, Ranger, Rogue
 +10 Speed
 Spell: Mistform
-Cooldown: 1 round.
+Cooldown: 2 rounds
 The next Strike against the user this round deals 0 damage.
 Red Hood
 Attunement: Cleric, Fighter, Ranger
@@ -825,7 +882,7 @@ Cooldown: 2 rounds
 The user Swaps positions with an ally and the next Spell they cast does not go on cooldown.
 
 Black Torch
-Attunement: Fighter, Ranger
+Attunement: Fighter, Ranger, Rogue
 +10 Attack
 Spell: Grave Tiding
 Cooldown: 1 round
@@ -860,3 +917,21 @@ Attunement: Rogue
 Spell: Featherweight
 Cooldown: 2 rounds
 Reaction: When the user is targeted by a Melee Strike, they first Swap Positions.
+Starskin Veil
+Attunement: Cleric, Warden
++15 Defense
+Spell: Dazzle
+Cooldown: 2 rounds
+Redirect the target's next Spell or Strike to the user.
+Blood Diamond
+Attunement: Fighter
++5 Attack
+Spell: Last Stand
+Cooldown: 2 rounds
+Reaction: When a Strike damages the user below 50% max HP, their next Strike deals +25 damage.
+Suspicious Eye
+Attunement: Ranger
++10 Speed
+Spell: Nebulous Ides
+Cooldown: 2 rounds
+Reaction: When the user Strikes an enemy directly across from them, Spotlight the target for 2 rounds.

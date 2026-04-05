@@ -284,6 +284,7 @@ imported by:
  &#8226;   <a href="#quests_ai_bout">quests_ai_bout</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
  &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#quests_ai_tables">quests_ai_tables</a>
  &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
  &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
@@ -1598,6 +1599,7 @@ imported by:
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#quests_ai_tables">quests_ai_tables</a>
  &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#shutil">shutil</a>
@@ -1794,7 +1796,9 @@ imported by:
  &#8226;   <a href="#quests_ai_bout">quests_ai_bout</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
  &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
+ &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#quests_ruleset_logic">quests_ruleset_logic</a>
  &#8226;   <a href="#quests_ruleset_models">quests_ruleset_models</a>
  &#8226;   <a href="#storybook_battle">storybook_battle</a>
@@ -4994,6 +4998,7 @@ imported by:
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#tempfile">tempfile</a>
@@ -5839,6 +5844,7 @@ imported by:
  &#8226;   <a href="#quests_ai_bout">quests_ai_bout</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
  &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#reprlib">reprlib</a>
  &#8226;   <a href="#statistics">statistics</a>
@@ -6367,6 +6373,7 @@ imported by:
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#pathlib._abc">pathlib._abc</a>
  &#8226;   <a href="#pathlib._local">pathlib._local</a>
+ &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#zipfile._path">zipfile._path</a>
 
   </div>
@@ -7479,6 +7486,7 @@ imports:
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#itertools">itertools</a>
  &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
+ &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#quests_ruleset_logic">quests_ruleset_logic</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#settings">settings</a>
@@ -7535,6 +7543,7 @@ imports:
 imported by:
     <a href="#quests_ai_bout">quests_ai_bout</a>
  &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#storybook_mode">storybook_mode</a>
 
   </div>
@@ -7550,7 +7559,12 @@ imports:
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#itertools">itertools</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
+ &#8226;   <a href="#quests_ai_tables">quests_ai_tables</a>
+ &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
+ &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#random">random</a>
+ &#8226;   <a href="#settings">settings</a>
 
   </div>
   <div class="import">
@@ -7562,11 +7576,38 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="quests_ai_quest_loadout"></a>
+  <a target="code" href="///C:/Users/prana/OneDrive/Desktop/GitHub/Fabled/quests_ai_quest_loadout.py" type="text/plain"><tt>quests_ai_quest_loadout</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#__future__">__future__</a>
+ &#8226;   <a href="#dataclasses">dataclasses</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_tables">quests_ai_tables</a>
+ &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
+ &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
+ &#8226;   <a href="#settings">settings</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#storybook_mode">storybook_mode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="quests_ai_tables"></a>
   <a target="code" href="///C:/Users/prana/OneDrive/Desktop/GitHub/Fabled/quests_ai_tables.py" type="text/plain"><tt>quests_ai_tables</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#__future__">__future__</a>
+ &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
 
   </div>
@@ -7574,6 +7615,8 @@ imports:
 imported by:
     <a href="#quests_ai_bout">quests_ai_bout</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
 
   </div>
 
@@ -7594,7 +7637,10 @@ imported by:
     <a href="#quests_ai_battle">quests_ai_battle</a>
  &#8226;   <a href="#quests_ai_bout">quests_ai_bout</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#quests_ai_tables">quests_ai_tables</a>
+ &#8226;   <a href="#storybook_content">storybook_content</a>
 
   </div>
 
@@ -7606,15 +7652,22 @@ imported by:
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#__future__">__future__</a>
+ &#8226;   <a href="#dataclasses">dataclasses</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
  &#8226;   <a href="#quests_ruleset_models">quests_ruleset_models</a>
+ &#8226;   <a href="#re">re</a>
 
   </div>
   <div class="import">
 imported by:
     <a href="#campaign_save">campaign_save</a>
+ &#8226;   <a href="#quests_ai_battle">quests_ai_battle</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#quests_ruleset_logic">quests_ruleset_logic</a>
  &#8226;   <a href="#quests_sandbox">quests_sandbox</a>
+ &#8226;   <a href="#storybook_battle">storybook_battle</a>
  &#8226;   <a href="#storybook_content">storybook_content</a>
  &#8226;   <a href="#storybook_mode">storybook_mode</a>
  &#8226;   <a href="#storybook_ui">storybook_ui</a>
@@ -7678,6 +7731,7 @@ imports:
  &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#quests_ruleset_logic">quests_ruleset_logic</a>
  &#8226;   <a href="#random">random</a>
+ &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#settings">settings</a>
  &#8226;   <a href="#typing">typing</a>
 
@@ -7829,6 +7883,8 @@ imported by:
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#posixpath">posixpath</a>
  &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
+ &#8226;   <a href="#quests_sandbox">quests_sandbox</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#re._casefix">re._casefix</a>
  &#8226;   <a href="#re._compiler">re._compiler</a>
@@ -7837,6 +7893,7 @@ imported by:
  &#8226;   <a href="#sre_compile">sre_compile</a>
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
+ &#8226;   <a href="#storybook_ui">storybook_ui</a>
  &#8226;   <a href="#string">string</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#textwrap">textwrap</a>
@@ -8007,6 +8064,8 @@ imported by:
     <a href="#main.py">main.py</a>
  &#8226;   <a href="#quests_ai_battle">quests_ai_battle</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
  &#8226;   <a href="#quests_ruleset_logic">quests_ruleset_logic</a>
  &#8226;   <a href="#quests_ruleset_models">quests_ruleset_models</a>
@@ -8208,6 +8267,7 @@ imports:
     <a href="#__future__">__future__</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#quests_ai_battle">quests_ai_battle</a>
+ &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#quests_ruleset_logic">quests_ruleset_logic</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#settings">settings</a>
@@ -8230,6 +8290,7 @@ imported by:
 imports:
     <a href="#__future__">__future__</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
+ &#8226;   <a href="#quests_ai_tags">quests_ai_tags</a>
  &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#random">random</a>
 
@@ -8275,6 +8336,7 @@ imports:
  &#8226;   <a href="#quests_ai_bout">quests_ai_bout</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
  &#8226;   <a href="#quests_ai_quest">quests_ai_quest</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#quests_sandbox">quests_sandbox</a>
  &#8226;   <a href="#random">random</a>
@@ -8343,6 +8405,7 @@ imports:
  &#8226;   <a href="#pygame">pygame</a>
  &#8226;   <a href="#quests_ruleset_data">quests_ruleset_data</a>
  &#8226;   <a href="#quests_sandbox">quests_sandbox</a>
+ &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#settings">settings</a>
  &#8226;   <a href="#storybook_content">storybook_content</a>
  &#8226;   <a href="#storybook_progression">storybook_progression</a>
@@ -8867,6 +8930,7 @@ imported by:
  &#8226;   <a href="#pygame.transform">pygame.transform</a>
  &#8226;   <a href="#quests_ai_battle">quests_ai_battle</a>
  &#8226;   <a href="#quests_ai_loadout">quests_ai_loadout</a>
+ &#8226;   <a href="#quests_ai_quest_loadout">quests_ai_quest_loadout</a>
  &#8226;   <a href="#quests_ruleset_logic">quests_ruleset_logic</a>
  &#8226;   <a href="#quests_ruleset_models">quests_ruleset_models</a>
  &#8226;   <a href="#quests_sandbox">quests_sandbox</a>

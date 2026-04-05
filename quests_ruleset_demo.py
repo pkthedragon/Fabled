@@ -1,3 +1,4 @@
+from quests_ruleset_data import ULTIMATE_METER_MAX
 from quests_ruleset_logic import (
     create_battle,
     create_team,
@@ -38,7 +39,7 @@ def build_demo_battle():
 def print_snapshot(battle, title):
     print(f"\n== {title} ==")
     for team in (battle.team1, battle.team2):
-        print(f"{team.player_name} | Ultimate {team.ultimate_meter}/10")
+        print(f"{team.player_name} | Ultimate {team.ultimate_meter}/{ULTIMATE_METER_MAX}")
         for unit in team.members:
             status_text = ", ".join(f"{status.kind}:{status.duration}" for status in unit.statuses) or "-"
             ko_text = " KO" if unit.ko else ""
@@ -93,7 +94,7 @@ def queue_round_two(battle):
 def queue_round_three(battle):
     jack = battle.team1.frontline()
     if jack is not None:
-        battle.team1.ultimate_meter = 10
+        battle.team1.ultimate_meter = ULTIMATE_METER_MAX
         queue_ultimate(jack, jack)
 
 
@@ -158,7 +159,7 @@ def queue_autoplay_round(battle):
             return
 
         team = battle.team1 if actor in battle.team1.members else battle.team2
-        if team.ultimate_meter >= 10:
+        if team.ultimate_meter >= ULTIMATE_METER_MAX:
             effect = actor.defn.ultimate
             target = _choose_target(actor, battle, effect)
             if effect.target in ("self", "none") or target is not None:
