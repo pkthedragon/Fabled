@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from settings import SLOT_BACK_LEFT, SLOT_BACK_RIGHT, SLOT_FRONT
+from quests_ruleset_data import CLASS_SKILLS
 
 
 @dataclass(frozen=True)
@@ -62,34 +63,28 @@ def _profile(
 
 
 DEFAULT_CLASS_SKILL_ORDER = {
-    "Fighter": ("martial", "vanguard", "inevitable"),
-    "Rogue": ("covert", "fleetfooted", "assassin"),
-    "Warden": ("bulwark", "vigilant", "stalwart"),
-    "Mage": ("arcane", "overflow", "archmage"),
-    "Ranger": ("deadeye", "tactical", "armed"),
-    "Cleric": ("healer", "medic", "protector"),
+    "Fighter": ("martial", "inevitable"),
+    "Rogue": ("covert", "assassin"),
+    "Warden": ("bulwark", "vigilant"),
+    "Mage": ("arcane", "archmage"),
+    "Ranger": ("deadeye", "armed"),
+    "Cleric": ("healer", "medic"),
 }
 
 
 CLASS_SKILL_TAGS = {
     "martial": {"melee", "damage", "burst"},
-    "inevitable": {"strike_meter", "ultimate", "tempo"},
-    "vanguard": {"melee", "reach", "bonus_action", "aggression"},
+    "inevitable": {"melee", "strike_meter", "ultimate", "tempo"},
     "covert": {"swap", "bonus_action", "mobility"},
-    "fleetfooted": {"survival", "anti_burst"},
     "assassin": {"reach", "punish_idle"},
-    "stalwart": {"anti_displacement", "frontline"},
     "bulwark": {"frontline", "durability"},
     "vigilant": {"swap", "guard", "durability"},
     "arcane": {"magic", "damage"},
-    "overflow": {"magic", "frontline", "tempo"},
     "archmage": {"switch", "spell_tempo"},
     "deadeye": {"ranged", "damage"},
     "armed": {"ranged", "ammo", "switch"},
-    "tactical": {"switch", "swap", "tempo", "mobility", "resource"},
     "healer": {"healing", "sustain"},
     "medic": {"healing", "cleanse", "anti_status"},
-    "protector": {"team_defense", "support", "anti_burst"},
 }
 
 
@@ -127,6 +122,11 @@ ARTIFACT_TAGS = {
     "starskin_veil": {"redirect", "anti_burst", "support", "guard"},
     "blood_diamond": {"burst", "damage", "low_hp", "counterpressure"},
     "suspicious_eye": {"spotlight", "reach", "setup", "ranged"},
+    "philosophers_stone": {"anti_status", "rescue", "sustain"},
+    "seeking_yarn": {"ammo", "reach", "tempo", "lane"},
+    "tarnhelm": {"death_insurance", "anti_burst", "rescue"},
+    "walking_abode": {"root", "anti_heal", "control"},
+    "nebula_mail": {"ultimate", "anti_burst", "frontline"},
 }
 
 
@@ -642,6 +642,145 @@ ADVENTURER_AI = {
         back_left=82,
         back_right=88,
     ),
+    "scheherazade_dawns_ransom": _profile(
+        base_power=84,
+        reliability=86,
+        complexity=70,
+        roles=("anti_caster", "healer", "death_insurance", "control_anchor"),
+        shells=("protect", "spell", "tempo"),
+        matchup=("spell_heavy", "ultimate_race", "burst_focus"),
+        good_into=("spell_heavy", "ultimate_race", "burst_focus"),
+        bad_into=("backline_pressure",),
+        classes=("Cleric", "Mage", "Warden"),
+        skills={
+            "Cleric": ("healer", "medic"),
+            "Mage": ("archmage", "arcane"),
+            "Warden": ("bulwark", "vigilant"),
+        },
+        weapons=("lamp_of_infinity", "tome_of_ancients"),
+        artifacts=("philosophers_stone", "magic_mirror", "goose_quill", "iron_rosary"),
+        front=74,
+        back_left=78,
+        back_right=76,
+    ),
+    "storyweaver_anansi": _profile(
+        base_power=81,
+        reliability=70,
+        complexity=82,
+        roles=("root_enabler", "anti_caster", "backline_reach", "tempo_engine"),
+        shells=("root", "tempo", "reach"),
+        matchup=("spell_heavy", "fragile_backline", "swap_heavy"),
+        good_into=("spell_heavy", "fragile_backline", "swap_heavy"),
+        bad_into=("burst_focus",),
+        classes=("Ranger", "Rogue", "Mage"),
+        skills={
+            "Ranger": ("deadeye", "armed"),
+            "Rogue": ("covert", "assassin"),
+            "Mage": ("arcane", "archmage"),
+        },
+        weapons=("the_pen", "the_sword"),
+        artifacts=("seeking_yarn", "soaring_crown", "walking_abode", "glass_slipper"),
+        front=68,
+        back_left=86,
+        back_right=84,
+    ),
+    "odysseus_the_nobody": _profile(
+        base_power=83,
+        reliability=76,
+        complexity=78,
+        roles=("weapon_switch_user", "frontline_pivot", "backline_reach", "burst_finisher"),
+        shells=("tempo", "reach", "burst"),
+        matchup=("fragile_backline", "single_anchor", "slow_frontline"),
+        good_into=("fragile_backline", "slow_frontline"),
+        bad_into=("root_heavy",),
+        classes=("Fighter", "Ranger", "Rogue"),
+        skills={
+            "Fighter": ("martial", "inevitable"),
+            "Ranger": ("armed", "deadeye"),
+            "Rogue": ("covert", "assassin"),
+        },
+        weapons=("olivewood_spear", "beggars_greatbow"),
+        artifacts=("seeking_yarn", "dragons_horn", "naiads_knife", "winged_sandals"),
+        front=80,
+        back_left=74,
+        back_right=70,
+    ),
+    "witch_of_the_east": _profile(
+        base_power=80,
+        reliability=72,
+        complexity=79,
+        roles=("swap_engine", "control_anchor", "magic_carry", "stat_manipulator"),
+        shells=("tempo", "control", "swap"),
+        matchup=("slow_frontline", "fragile_backline", "melee_heavy"),
+        good_into=("slow_frontline", "melee_heavy"),
+        bad_into=("backline_pressure",),
+        classes=("Mage", "Rogue", "Fighter"),
+        skills={
+            "Mage": ("arcane", "archmage"),
+            "Rogue": ("covert", "assassin"),
+            "Fighter": ("martial", "inevitable"),
+        },
+        weapons=("zephyr", "comet"),
+        artifacts=("winged_sandals", "paradox_rings", "lightning_helm", "walking_abode"),
+        front=72,
+        back_left=82,
+        back_right=78,
+    ),
+    "tam_lin_thornbound": _profile(
+        base_power=86,
+        reliability=88,
+        complexity=63,
+        roles=("primary_tank", "anti_burst", "taunt", "burn_enabler"),
+        shells=("protect", "burn", "frontline"),
+        matchup=("swap_heavy", "burst_focus", "melee_heavy"),
+        good_into=("swap_heavy", "burst_focus"),
+        bad_into=("anti_guard",),
+        classes=("Warden", "Fighter", "Cleric"),
+        skills={
+            "Warden": ("bulwark", "vigilant"),
+            "Fighter": ("martial", "inevitable"),
+            "Cleric": ("medic", "healer"),
+        },
+        weapons=("butterfly_knife", "beam_of_light"),
+        artifacts=("tarnhelm", "sun_gods_banner", "nebula_mail", "golden_fleece"),
+        front=92,
+        back_left=74,
+        back_right=42,
+    ),
+}
+
+
+def _normalize_profile(profile: AdventurerAIProfile) -> AdventurerAIProfile:
+    legal_classes = tuple(class_name for class_name in profile.preferred_classes if class_name in CLASS_SKILLS)
+    normalized_skills: dict[str, tuple[str, ...]] = {}
+    for class_name in legal_classes:
+        legal_skill_ids = tuple(skill.id for skill in CLASS_SKILLS[class_name])
+        preferred = profile.preferred_skills.get(class_name, ())
+        ordered = []
+        for skill_id in preferred + DEFAULT_CLASS_SKILL_ORDER[class_name] + legal_skill_ids:
+            if skill_id in legal_skill_ids and skill_id not in ordered:
+                ordered.append(skill_id)
+        normalized_skills[class_name] = tuple(ordered)
+    return AdventurerAIProfile(
+        base_power=profile.base_power,
+        reliability=profile.reliability,
+        complexity=profile.complexity,
+        role_tags=profile.role_tags,
+        shell_tags=profile.shell_tags,
+        matchup_tags=profile.matchup_tags,
+        good_into=profile.good_into,
+        bad_into=profile.bad_into,
+        preferred_classes=legal_classes,
+        preferred_skills=normalized_skills,
+        preferred_weapons=profile.preferred_weapons,
+        preferred_artifacts=profile.preferred_artifacts,
+        position_scores=profile.position_scores,
+    )
+
+
+ADVENTURER_AI = {
+    adventurer_id: _normalize_profile(profile)
+    for adventurer_id, profile in ADVENTURER_AI.items()
 }
 
 

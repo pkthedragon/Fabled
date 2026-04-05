@@ -189,14 +189,8 @@ def _build_tags(
     if class_skill_id == "medic":
         tags.add("anti_status")
         tags.add("cleanse")
-    if class_skill_id == "protector":
-        tags.add("guard")
     if class_skill_id == "healer":
         tags.add("healing")
-    if class_skill_id == "tactical":
-        tags.add("switch")
-        tags.add("resource")
-        tags.add("swap")
     if class_skill_id == "archmage":
         tags.add("spell_tempo")
         tags.add("resource")
@@ -206,9 +200,6 @@ def _build_tags(
     if class_skill_id == "covert":
         tags.add("swap")
         tags.add("mobility")
-    if class_skill_id == "vanguard":
-        tags.add("reach")
-        tags.add("bonus_action")
     return tags
 
 
@@ -452,7 +443,12 @@ def _candidate_classes(adventurer_id: str) -> tuple[str, ...]:
 def _candidate_skill_ids(class_name: str, adventurer_id: str) -> tuple[str, ...]:
     profile = ADVENTURER_AI[adventurer_id]
     preferred = profile.preferred_skills.get(class_name, DEFAULT_CLASS_SKILL_ORDER[class_name])
-    return tuple(preferred[:3])
+    legal_ids = tuple(skill.id for skill in CLASS_SKILLS[class_name])
+    ordered = []
+    for skill_id in tuple(preferred) + legal_ids:
+        if skill_id in legal_ids and skill_id not in ordered:
+            ordered.append(skill_id)
+    return tuple(ordered)
 
 
 def _candidate_artifacts(class_name: str, adventurer_id: str, team_need_tags: set[str], enemy_ids: tuple[str, ...]) -> tuple[Optional[str], ...]:

@@ -129,7 +129,15 @@ def serialize_phase_plan(battle, team_num: int, *, bonus: bool = False) -> list[
         effect = action.get("effect")
         if effect is not None:
             payload["effect_id"] = effect.id
-        if target is not None:
+        target_side = action.get("target_side")
+        target_slot = action.get("target_slot")
+        if target_side is not None:
+            payload["target_side"] = target_side
+        if target_slot is not None:
+            payload["target_slot"] = target_slot
+        if action.get("target_team_num") is not None:
+            payload["target_team_num"] = action.get("target_team_num")
+        if target is not None and target_side is None:
             payload["target_team"] = player_num_for_actor(battle, target)
             payload["target_id"] = target.defn.id
         actions.append(payload)
@@ -143,7 +151,16 @@ def apply_phase_plan(battle, actions: list[dict], *, bonus: bool = False):
             continue
         action_type = payload.get("type", "skip")
         target = None
-        if payload.get("target_team") is not None and payload.get("target_id") is not None:
+        if payload.get("target_side") in {"ally", "enemy", "any"} and payload.get("target_slot") is not None:
+            if payload["target_side"] == "ally":
+                target_team_num = player_num_for_actor(battle, actor)
+            elif payload["target_side"] == "enemy":
+                target_team_num = 2 if player_num_for_actor(battle, actor) == 1 else 1
+            else:
+                target_team_num = int(payload.get("target_team_num", 0))
+            target_team = battle.team1 if target_team_num == 1 else battle.team2
+            target = target_team.get_slot(payload["target_slot"])
+        elif payload.get("target_team") is not None and payload.get("target_id") is not None:
             target = _find_actor(battle, int(payload["target_team"]), payload["target_id"])
         if action_type == "strike":
             queue_strike(actor, target)
@@ -153,13 +170,13 @@ def apply_phase_plan(battle, actions: list[dict], *, bonus: bool = False):
                 if bonus:
                     queue_bonus_action(actor, {"type": "spell", "effect": effect, "target": target})
                 else:
-                    queue_spell(actor, effect, target)
+                    queue_spell(actor, effect, target, battle)
         elif action_type == "ultimate":
             effect = actor.defn.ultimate
             if bonus:
                 queue_bonus_action(actor, {"type": "ultimate", "effect": effect, "target": target})
             else:
-                queue_ultimate(actor, target)
+                queue_ultimate(actor, target, battle)
         elif action_type == "switch":
             if bonus:
                 queue_bonus_action(actor, {"type": "switch"})
@@ -170,8 +187,6 @@ def apply_phase_plan(battle, actions: list[dict], *, bonus: bool = False):
                 queue_bonus_action(actor, {"type": "swap", "target": target})
             else:
                 queue_swap(actor, target)
-        elif action_type == "vanguard":
-            queue_bonus_action(actor, {"type": "vanguard"})
         else:
             if bonus:
                 queue_bonus_action(actor, {"type": "skip"})

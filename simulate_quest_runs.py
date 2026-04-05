@@ -408,7 +408,7 @@ def run_simulation(
             f"  {kind}: uses={uses} / opportunities={opportunities} ({pct:.2f}%) [{status}]"
         )
     summary_lines.append("Bonus phase coverage:")
-    bonus_kinds = ("spell", "switch", "swap", "skip", "ultimate", "vanguard")
+    bonus_kinds = ("spell", "switch", "swap", "skip", "ultimate")
     for kind in bonus_kinds:
         opportunities = bonus_phase_opportunities.get(kind, 0)
         uses = bonus_phase_uses.get(kind, 0)

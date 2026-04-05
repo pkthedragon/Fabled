@@ -37,22 +37,16 @@ BLIND_CLASS_PRIOR = {
 
 
 BLIND_SKILL_PRIOR = {
-    "tactical": 10.5,
     "deadeye": 11.0,
     "medic": 10.0,
-    "fleetfooted": 9.0,
     "assassin": 8.0,
-    "vanguard": 6.0,
     "archmage": 5.5,
     "arcane": 5.0,
     "healer": 4.0,
-    "stalwart": 4.0,
     "bulwark": -1.0,
     "martial": -2.0,
     "armed": -2.0,
     "covert": -3.0,
-    "protector": -2.5,
-    "overflow": -8.0,
     "vigilant": -9.0,
     "inevitable": 1.0,
 }
@@ -91,6 +85,11 @@ BLIND_ARTIFACT_PRIOR = {
     "starskin_veil": 7.0,
     "blood_diamond": 3.0,
     "suspicious_eye": 7.0,
+    "philosophers_stone": 8.0,
+    "seeking_yarn": 6.0,
+    "tarnhelm": 6.0,
+    "walking_abode": 5.0,
+    "nebula_mail": 5.0,
 }
 
 
@@ -115,6 +114,11 @@ BLIND_ADVENTURER_PRIOR = {
     "march_hare": -6.0,
     "ashen_ella": -6.0,
     "lucky_constantine": -6.0,
+    "scheherazade_dawns_ransom": 12.0,
+    "storyweaver_anansi": 11.0,
+    "odysseus_the_nobody": 12.0,
+    "witch_of_the_east": 10.0,
+    "tam_lin_thornbound": 13.0,
 }
 
 
@@ -132,6 +136,11 @@ BLIND_WEAPON_PRIORITY = {
     "kama_the_honeyed": ("sugarcane_bow", "the_stinger"),
     "sea_wench_asha": ("frost_scepter", "mirror_blade"),
     "matchbox_liesl": ("eternal_torch", "matchsticks"),
+    "scheherazade_dawns_ransom": ("lamp_of_infinity", "tome_of_ancients"),
+    "storyweaver_anansi": ("the_pen", "the_sword"),
+    "odysseus_the_nobody": ("olivewood_spear", "beggars_greatbow"),
+    "witch_of_the_east": ("zephyr", "comet"),
+    "tam_lin_thornbound": ("butterfly_knife", "beam_of_light"),
 }
 
 
@@ -160,16 +169,21 @@ BLIND_CLASS_OPTIONS = {
     "ashen_ella": ("Mage", "Rogue"),
     "pinocchio_cursed_puppet": ("Fighter", "Rogue", "Mage"),
     "rumpelstiltskin": ("Mage", "Ranger", "Rogue"),
+    "scheherazade_dawns_ransom": ("Cleric", "Mage", "Warden"),
+    "storyweaver_anansi": ("Ranger", "Rogue", "Mage"),
+    "odysseus_the_nobody": ("Fighter", "Ranger", "Rogue"),
+    "witch_of_the_east": ("Mage", "Rogue", "Fighter"),
+    "tam_lin_thornbound": ("Warden", "Fighter", "Cleric"),
 }
 
 
 BLIND_SKILL_ORDER = {
-    "Ranger": ("tactical", "deadeye", "armed"),
-    "Fighter": ("vanguard", "martial", "inevitable"),
-    "Rogue": ("assassin", "fleetfooted", "covert"),
-    "Cleric": ("medic", "healer", "protector"),
-    "Warden": ("stalwart", "bulwark", "vigilant"),
-    "Mage": ("arcane", "archmage", "overflow"),
+    "Ranger": ("deadeye", "armed"),
+    "Fighter": ("martial", "inevitable"),
+    "Rogue": ("assassin", "covert"),
+    "Cleric": ("medic", "healer"),
+    "Warden": ("bulwark", "vigilant"),
+    "Mage": ("arcane", "archmage"),
 }
 
 
@@ -188,11 +202,11 @@ ROLE_ARTIFACT_HINTS = {
     "backline_reach": {"soaring_crown", "dragons_horn", "bottled_clouds", "suspicious_eye"},
     "ranged_pressure": {"soaring_crown", "dragons_horn", "jade_rabbit", "suspicious_eye"},
     "magic_carry": {"paradox_rings", "magic_mirror", "last_prism", "goose_quill"},
-    "healer": {"fading_diadem", "holy_grail", "sun_gods_banner", "winged_sandals", "starskin_veil"},
-    "guard_support": {"fading_diadem", "holy_grail", "sun_gods_banner", "starskin_veil"},
+    "healer": {"fading_diadem", "holy_grail", "iron_rosary", "sun_gods_banner", "winged_sandals", "starskin_veil", "philosophers_stone"},
+    "guard_support": {"fading_diadem", "holy_grail", "iron_rosary", "sun_gods_banner", "starskin_veil"},
     "primary_tank": {"sun_gods_banner", "all_mill", "golden_fleece", "nettle_smock", "starskin_veil"},
     "burst_finisher": {"dire_wolf_spine", "naiads_knife", "dragons_horn", "red_hood", "blood_diamond"},
-    "tempo_engine": {"winged_sandals", "paradox_rings", "goose_quill", "jade_rabbit"},
+    "tempo_engine": {"winged_sandals", "paradox_rings", "goose_quill", "jade_rabbit", "seeking_yarn", "nebula_mail"},
     "anti_caster": {"magic_mirror", "enchanted_lamp", "bluebeards_key"},
 }
 
@@ -314,7 +328,12 @@ def _class_claim_value(adventurer_id: str, class_name: str, party_ids: tuple[str
 def _skill_order_for_class(adventurer_id: str, class_name: str) -> tuple[str, ...]:
     profile = ADVENTURER_AI[adventurer_id]
     preferred = profile.preferred_skills.get(class_name, ())
-    return _ordered_unique(BLIND_SKILL_ORDER[class_name] + preferred + tuple(CLASS_SKILLS[class_name]))
+    legal_ids = tuple(skill.id for skill in CLASS_SKILLS[class_name])
+    return tuple(
+        skill_id
+        for skill_id in _ordered_unique(BLIND_SKILL_ORDER[class_name] + preferred + legal_ids)
+        if skill_id in legal_ids
+    )
 
 
 def _artifact_prior(artifact_id: Optional[str]) -> float:
@@ -351,18 +370,9 @@ def _base_blind_tags(
         tags.add("sustain")
     if class_name == "Warden":
         tags.add("frontline")
-    if class_skill_id == "tactical":
-        tags.add("tempo")
-        tags.add("resource")
-        tags.add("swap")
     if class_skill_id == "medic":
         tags.add("cleanse")
         tags.add("anti_status")
-    if class_skill_id == "vanguard":
-        tags.add("bonus_action")
-        tags.add("reach")
-    if class_skill_id == "fleetfooted":
-        tags.add("anti_burst")
     return tuple(sorted(tags))
 
 
@@ -404,8 +414,6 @@ def _skill_blind_value(adventurer_id: str, class_name: str, class_skill_id: str,
         value += 2.0
     if "anti_status" in tags and {"healer", "guard_support"} & set(profile.role_tags):
         value += 2.0
-    if class_skill_id == "overflow":
-        value -= 4.0
     if class_skill_id == "vigilant":
         value -= 3.0
     return value
@@ -438,7 +446,7 @@ def _artifact_blind_value(adventurer_id: str, class_name: str, primary_weapon_id
         value += 3.0
     if class_name == "Mage" and artifact_id in {"paradox_rings", "magic_mirror", "last_prism"}:
         value += 2.5
-    if class_name == "Cleric" and artifact_id in {"fading_diadem", "holy_grail"}:
+    if class_name == "Cleric" and artifact_id in {"fading_diadem", "holy_grail", "iron_rosary", "philosophers_stone"}:
         value += 2.5
     if class_name == "Warden" and artifact_id in {"sun_gods_banner", "all_mill"}:
         value += 2.5

@@ -91,6 +91,31 @@ class RoundAnalysis:
     pivot_needed: bool
 
 
+def _ref_slot(battle, ref: tuple[int, str] | None) -> Optional[str]:
+    if ref is None:
+        return None
+    unit = _find_unit(battle, ref)
+    return None if unit is None or unit.ko else unit.slot
+
+
+def _same_target_slot(battle, left_ref: tuple[int, str] | None, right_ref: tuple[int, str] | None) -> bool:
+    if left_ref is None or right_ref is None:
+        return False
+    if left_ref[0] != right_ref[0]:
+        return False
+    left_slot = _ref_slot(battle, left_ref)
+    right_slot = _ref_slot(battle, right_ref)
+    return left_slot is not None and left_slot == right_slot
+
+
+def _ref_matches_any_slot(
+    battle,
+    ref: tuple[int, str] | None,
+    refs: tuple[tuple[int, str], ...] | list[tuple[int, str]],
+) -> bool:
+    return any(_same_target_slot(battle, ref, other_ref) for other_ref in refs)
+
+
 def _unit_ref(battle, unit) -> tuple[int, str]:
     return (player_num_for_actor(battle, unit), unit.defn.id)
 
@@ -118,15 +143,25 @@ def _rough_damage(battle, actor, target, effect, *, weapon=None) -> int:
             power += 10
         elif weapon.kind == "ranged" and actor.class_skill.id == "deadeye":
             power += 10
+        if actor.defn.id == "odysseus_the_nobody" and weapon.id == "olivewood_spear" and target.slot == actor.slot:
+            power += 15
     if actor.has_status("weaken"):
         power = int((power * 0.85) + 0.999)
+    actor_team = team_for_actor(battle, actor)
+    target_team = battle.team1 if actor_team is battle.team2 else battle.team2
+    if weapon is not None and target_team.frontline() is not None:
+        enemy_front = target_team.frontline()
+        if enemy_front.defn.id == "scheherazade_dawns_ransom" and enemy_front.primary_weapon.id == "tome_of_ancients":
+            power = max(0, power - 10)
     if target.has_status("guard") and actor.defn.id != "robin_hooded_avenger":
         power = int((power * 0.85) + 0.999)
     if target.has_status("expose"):
         power = int((power * 1.15) + 0.999)
     damage = max(1, int((power * (actor.get_stat(attack_stat) / max(1, target.get_stat("defense")))) + 0.999))
-    actor_team = team_for_actor(battle, actor)
-    target_team = battle.team1 if actor_team is battle.team2 else battle.team2
+    if target.markers.get("bargain_rounds", 0) > 0 and weapon is not None:
+        damage += 10
+    if target.has_status("root") and target.markers.get("silken_prose_rounds", 0) > 0 and weapon is not None:
+        damage += 8
     if actor_team is not target_team:
         if any(ally.defn.id == "kama_the_honeyed" and ally is not actor and ally.slot == target.slot for ally in actor_team.alive()):
             damage += 10
@@ -316,14 +351,12 @@ def available_action_specs(battle, actor, *, bonus: bool = False) -> list[Action
     specs: list[ActionSpec] = []
     team = team_for_actor(battle, actor)
     if bonus:
-        if actor.defn.id == "wayward_humbert":
+        if actor.defn.id == "wayward_humbert" or actor.markers.get("bonus_switch_rounds", 0) > 0:
             if actor.defn.id != "ashen_ella":
                 specs.append(ActionSpec(kind="switch", bonus=True))
         if actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight" or _team_bonus_swap_available(team):
             for ally in _allies(actor, battle):
                 specs.append(ActionSpec(kind="swap", target_ref=_unit_ref(battle, ally), bonus=True))
-        if actor.markers.get("vanguard_ready", 0) > 0:
-            specs.append(ActionSpec(kind="vanguard", bonus=True))
         if actor.markers.get("spell_bonus_rounds", 0) > 0 and team.ultimate_meter >= ULTIMATE_METER_MAX:
             effect = actor.defn.ultimate
             targets = get_legal_targets(battle, actor, effect=effect)
@@ -394,14 +427,14 @@ def _queue_spec(actor, battle, spec: ActionSpec):
         if spec.bonus:
             queue_bonus_action(actor, {"type": "spell", "effect": effect, "target": target})
         else:
-            queue_spell(actor, effect, target)
+            queue_spell(actor, effect, target, battle)
         return
     if spec.kind == "ultimate":
         effect = actor.defn.ultimate
         if spec.bonus:
             queue_bonus_action(actor, {"type": "ultimate", "effect": effect, "target": target})
         else:
-            queue_ultimate(actor, target)
+            queue_ultimate(actor, target, battle)
         return
     if spec.kind == "switch":
         if spec.bonus:
@@ -414,9 +447,6 @@ def _queue_spec(actor, battle, spec: ActionSpec):
             queue_bonus_action(actor, {"type": "swap", "target": target})
         else:
             queue_swap(actor, target)
-        return
-    if spec.kind == "vanguard":
-        queue_bonus_action(actor, {"type": "vanguard"})
         return
     if spec.bonus:
         queue_bonus_action(actor, {"type": "skip"})
@@ -464,8 +494,6 @@ def _marker_state_score(unit) -> float:
         value += 6.0
     if unit.markers.get("next_spell_no_cooldown", 0) > 0:
         value += 4.0
-    if unit.markers.get("vanguard_ready", 0) > 0:
-        value += 5.0
     if unit.markers.get("mistform_ready", 0) > 0:
         value += 6.0
     if unit.markers.get("blood_diamond_ready", 0) > 0:
@@ -576,6 +604,11 @@ def evaluate_battle_state(battle, team_num: int) -> float:
 
 def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec: ActionSpec) -> float:
     base_value = evaluate_battle_state(battle, team_num)
+    own_before = battle.get_team(team_num)
+    enemy_before = battle.get_enemy(team_num)
+    own_alive_before = sum(1 for unit in own_before.members if not unit.ko)
+    enemy_alive_before = sum(1 for unit in enemy_before.members if not unit.ko)
+    enemy_front_before = enemy_before.frontline()
     sim = copy.deepcopy(battle)
     actor = _find_unit(sim, actor_ref)
     if actor is None or actor.ko:
@@ -585,6 +618,20 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
     action = materialized.queued_bonus_action if spec.bonus else materialized.queued_action
     resolve_action(materialized, action, sim, is_bonus=spec.bonus)
     delta = evaluate_battle_state(sim, team_num) - base_value
+    own_after = sim.get_team(team_num)
+    enemy_after = sim.get_enemy(team_num)
+    own_alive_after = sum(1 for unit in own_after.members if not unit.ko)
+    enemy_alive_after = sum(1 for unit in enemy_after.members if not unit.ko)
+    enemy_kos = enemy_alive_before - enemy_alive_after
+    own_losses = own_alive_before - own_alive_after
+    if enemy_kos > 0:
+        delta += enemy_kos * 26.0
+    if own_losses > 0:
+        delta -= own_losses * 28.0
+    if enemy_front_before is not None:
+        sim_enemy_front_before = _find_unit(sim, _unit_ref(battle, enemy_front_before))
+        if sim_enemy_front_before is not None and sim_enemy_front_before.ko:
+            delta += 8.0
     real_actor = _find_unit(battle, actor_ref)
     target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
     effect = None
@@ -613,9 +660,9 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
         if effect.target == "enemy":
             rough = _rough_damage(battle, real_actor, target, effect, weapon=real_actor.primary_weapon)
             if rough >= target.hp:
-                delta += 14.0
+                delta += 24.0
                 if target.slot == SLOT_FRONT:
-                    delta += 6.0
+                    delta += 10.0
             elif rough >= target.hp * 0.6:
                 delta += 6.0
             if target.hp <= max(55, int(target.max_hp * 0.28)):
@@ -660,10 +707,10 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
     if analysis.plan_kind == "kill":
         if spec.kind == "ultimate":
             bias += 14.0
-        if spec.kind in {"strike", "spell", "ultimate"} and spec.target_ref in analysis.killable_enemy_refs:
-            bias += 10.0
-        elif spec.kind in {"strike", "spell", "ultimate"} and spec.target_ref == analysis.priority_target_ref:
-            bias += 6.0
+        if spec.kind in {"strike", "spell", "ultimate"} and _ref_matches_any_slot(battle, spec.target_ref, analysis.killable_enemy_refs):
+            bias += 18.0
+        elif spec.kind in {"strike", "spell", "ultimate"} and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
+            bias += 8.0
     elif analysis.plan_kind == "stabilize":
         if spec.kind == "swap" and target is not None:
             bias += max(0.0, 4.0 + _formation_delta(battle, actor, target))
@@ -673,7 +720,7 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
                 bias += 12.0
             if effect.special == "dazzle":
                 bias += 11.0
-        if spec.kind in {"strike", "spell", "ultimate"} and spec.target_ref == analysis.priority_target_ref:
+        if spec.kind in {"strike", "spell", "ultimate"} and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
             bias += 4.0
     elif analysis.plan_kind == "setup":
         if spec.kind == "switch":
@@ -693,13 +740,11 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
     elif analysis.plan_kind == "ultimate":
         if spec.kind == "ultimate":
             bias += 16.0
-        elif spec.kind in {"strike", "spell"} and spec.target_ref == analysis.priority_target_ref:
+        elif spec.kind in {"strike", "spell"} and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
             bias += 4.0
     else:
         if spec.kind == "switch":
             bias += 2.0
-        if spec.kind == "vanguard":
-            bias += 6.0
         if spec.kind == "spell" and spec.effect_id is not None:
             effect = _effect_by_id(actor, spec.effect_id)
             status_kinds = {status.kind for status in effect.target_statuses}
@@ -707,8 +752,8 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
                 bias += 4.0
 
     if analysis.race_kind == "ko":
-        if spec.kind in {"strike", "spell", "ultimate"} and spec.target_ref == analysis.priority_target_ref:
-            bias += 3.0
+        if spec.kind in {"strike", "spell", "ultimate"} and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
+            bias += 6.0
         if spec.kind == "skip":
             bias -= 2.0
     elif analysis.race_kind == "ultimate":
@@ -719,7 +764,7 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
         elif spec.kind == "switch":
             bias += 1.5
     elif analysis.race_kind == "deny_ultimate":
-        if spec.kind in {"strike", "spell", "ultimate"} and spec.target_ref == analysis.priority_target_ref:
+        if spec.kind in {"strike", "spell", "ultimate"} and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
             bias += 4.0
         if spec.kind == "swap" and target is not None:
             bias += max(0.0, 2.0 + _formation_delta(battle, actor, target))
@@ -768,7 +813,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
             elif analysis.plan_kind in {"kill", "ultimate"}:
                 bias += 4.0
         if spec.kind == "strike" and actor.primary_weapon.id == "skyfall" and target is not None:
-            if spec.target_ref == analysis.priority_target_ref:
+            if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 5.0
             if target.has_status("expose"):
                 bias += 3.0
@@ -798,7 +843,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
     if actor.defn.id == "destitute_vasilisa":
         if spec.kind == "strike" and actor.primary_weapon.id == "guiding_doll" and target is not None:
             bias += 6.0
-            if spec.target_ref == analysis.priority_target_ref:
+            if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 4.0
             ally_followups = 0
             for ally in team.alive():
@@ -879,7 +924,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
 
     if actor.defn.id == "sir_roland":
         if spec.kind == "spell" and spec.effect_id == "knights_challenge":
-            if spec.target_ref == analysis.priority_target_ref:
+            if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 5.0
             if target is not None and target.slot == SLOT_FRONT:
                 bias += 2.5
@@ -912,7 +957,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
 
     if actor.defn.id == "rapunzel_the_golden":
         if spec.kind == "spell" and spec.effect_id == "lower_guard" and target is not None:
-            if target.has_status("root") or spec.target_ref == analysis.priority_target_ref:
+            if target.has_status("root") or _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 8.0
         if spec.kind == "spell" and spec.effect_id == "sanctuary" and target is not None:
             if target.hp / max(1, target.max_hp) <= 0.55:
@@ -937,12 +982,12 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
         if spec.kind == "strike" and actor.primary_weapon.id == "foxfire_bow" and target is not None:
             if all(debuff.stat != "defense" or debuff.duration <= 0 for debuff in target.debuffs):
                 bias += 4.5
-            if spec.target_ref == analysis.priority_target_ref:
+            if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 2.0
         if spec.kind == "strike" and actor.primary_weapon.id == "fang" and target is not None:
             if any(debuff.duration > 0 for debuff in target.debuffs):
                 bias += 5.0
-        if spec.kind == "spell" and spec.effect_id == "silver_tongue" and spec.target_ref == analysis.priority_target_ref:
+        if spec.kind == "spell" and spec.effect_id == "silver_tongue" and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
             bias += 5.0
         if spec.kind == "ultimate":
             bias += 6.0
@@ -956,6 +1001,10 @@ def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec,
     setup = 0.0
     ultimate = 0.0
     focus = 0.0
+    kills = 0.0
+    trades = 0.0
+    front_break = 0.0
+    priority_kill = 0.0
     focused_enemy_targets: list[tuple[int, str]] = []
     for actor, spec in zip(actors, combo):
         target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
@@ -987,12 +1036,10 @@ def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec,
             setup += 1.0
         elif spec.kind == "switch":
             setup += 1.4
-        elif spec.kind == "vanguard":
-            offense += 1.6
         elif spec.kind == "skip":
             offense -= 0.8
             defense -= 0.8
-        if spec.target_ref == analysis.priority_target_ref and spec.kind in {"strike", "spell", "ultimate"}:
+        if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref) and spec.kind in {"strike", "spell", "ultimate"}:
             focus += 1.5
         if spec.target_ref is not None and spec.target_ref[0] != team_num and spec.kind in {"strike", "spell", "ultimate"}:
             focused_enemy_targets.append(spec.target_ref)
@@ -1000,7 +1047,8 @@ def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec,
             defense += 0.5
         if target is not None and target.hp <= max(40, int(target.max_hp * 0.28)):
             offense += 0.8
-    if len(focused_enemy_targets) >= 2 and len(set(focused_enemy_targets)) == 1:
+    focused_enemy_slots = {(ref[0], _ref_slot(battle, ref)) for ref in focused_enemy_targets if _ref_slot(battle, ref) is not None}
+    if len(focused_enemy_targets) >= 2 and len(focused_enemy_slots) == 1:
         focus += 2.0
     return {
         "offense": offense,
@@ -1008,24 +1056,52 @@ def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec,
         "setup": setup,
         "ultimate": ultimate,
         "focus": focus,
+        "kills": kills,
+        "trades": trades,
+        "front_break": front_break,
+        "priority_kill": priority_kill,
     }
 
 
 def _profile_score(metrics: dict[str, float], profile: str) -> float:
     if profile == "aggressive":
-        return metrics["offense"] * 1.25 + metrics["focus"] * 1.2 + metrics["ultimate"] * 0.35
+        return (
+            metrics["offense"] * 1.25
+            + metrics["focus"] * 1.2
+            + metrics["ultimate"] * 0.35
+            + metrics["kills"] * 11.0
+            + metrics["front_break"] * 4.5
+            + metrics["priority_kill"] * 6.0
+            - metrics["trades"] * 7.0
+        )
     if profile == "defensive":
-        return metrics["defense"] * 1.35 + metrics["setup"] * 0.3 - metrics["offense"] * 0.1
+        return metrics["defense"] * 1.35 + metrics["setup"] * 0.3 - metrics["offense"] * 0.1 - metrics["trades"] * 3.5
     if profile == "setup":
-        return metrics["setup"] * 1.35 + metrics["focus"] * 0.45
+        return metrics["setup"] * 1.35 + metrics["focus"] * 0.45 + metrics["kills"] * 1.5 - metrics["trades"] * 4.0
     if profile == "ultimate":
-        return metrics["ultimate"] * 1.5 + metrics["offense"] * 0.4
-    return metrics["offense"] + metrics["defense"] + metrics["setup"] + metrics["focus"] + metrics["ultimate"]
+        return (
+            metrics["ultimate"] * 1.5
+            + metrics["offense"] * 0.4
+            + metrics["kills"] * 6.0
+            + metrics["priority_kill"] * 3.5
+            - metrics["trades"] * 5.0
+        )
+    return (
+        metrics["offense"]
+        + metrics["defense"]
+        + metrics["setup"]
+        + metrics["focus"]
+        + metrics["ultimate"]
+        + metrics["kills"] * 8.0
+        + metrics["front_break"] * 3.0
+        + metrics["priority_kill"] * 4.0
+        - metrics["trades"] * 5.0
+    )
 
 
 def _profile_weights_for_plan(plan_kind: str) -> dict[str, float]:
     if plan_kind == "kill":
-        return {"base": 0.30, "aggressive": 0.35, "setup": 0.10, "defensive": 0.05, "ultimate": 0.20}
+        return {"base": 0.22, "aggressive": 0.48, "setup": 0.04, "defensive": 0.04, "ultimate": 0.22}
     if plan_kind == "stabilize":
         return {"base": 0.30, "aggressive": 0.10, "setup": 0.15, "defensive": 0.35, "ultimate": 0.10}
     if plan_kind == "setup":
@@ -1062,7 +1138,7 @@ def _top_local_specs(battle, actor, *, bonus: bool, difficulty: str, analysis: R
     keep = LOCAL_KEEP.get(difficulty, 4)
     diverse: list[ActionSpec] = []
     seen_specs: set[ActionSpec] = set()
-    for kind in ("ultimate", "spell", "swap", "switch", "strike", "vanguard", "skip"):
+    for kind in ("ultimate", "spell", "swap", "switch", "strike", "skip"):
         best_of_kind = next((spec for _score, spec in scored if spec.kind == kind), None)
         if best_of_kind is not None and best_of_kind not in seen_specs:
             diverse.append(best_of_kind)
@@ -1110,6 +1186,11 @@ def _rank_team_plan_candidates(
     candidate_sets: list[tuple[float, dict[tuple[int, str], ActionSpec], dict[str, float]]] = []
     for combo in product(*choice_lists):
         specs_by_ref = dict(zip(keys, combo))
+        enemy_before = battle.get_enemy(team_num)
+        own_before = battle.get_team(team_num)
+        enemy_alive_before = sum(1 for unit in enemy_before.members if not unit.ko)
+        own_alive_before = sum(1 for unit in own_before.members if not unit.ko)
+        enemy_front_before = enemy_before.frontline()
         sim = copy.deepcopy(battle)
         _queue_team_plan(sim, team_num, specs_by_ref, bonus=bonus)
         if bonus:
@@ -1118,6 +1199,28 @@ def _rank_team_plan_candidates(
             resolve_action_phase(sim)
         score = evaluate_battle_state(sim, team_num) - base_value
         metrics = _combo_metrics(battle, team_num, actors, combo, analysis)
+        sim_enemy = sim.get_enemy(team_num)
+        sim_own = sim.get_team(team_num)
+        enemy_kos = enemy_alive_before - sum(1 for unit in sim_enemy.members if not unit.ko)
+        own_losses = own_alive_before - sum(1 for unit in sim_own.members if not unit.ko)
+        priority_kill = 0.0
+        if analysis.priority_target_ref is not None:
+            sim_priority = _find_unit(sim, analysis.priority_target_ref)
+            if sim_priority is not None and sim_priority.ko:
+                priority_kill = 1.0
+        front_break = 0.0
+        if enemy_front_before is not None:
+            sim_enemy_front_before = _find_unit(sim, _unit_ref(battle, enemy_front_before))
+            if sim_enemy_front_before is not None and sim_enemy_front_before.ko:
+                front_break = 1.0
+        metrics["kills"] = float(enemy_kos)
+        metrics["trades"] = float(own_losses)
+        metrics["priority_kill"] = priority_kill
+        metrics["front_break"] = front_break
+        score += enemy_kos * 34.0
+        score += priority_kill * 10.0
+        score += front_break * 8.0
+        score -= own_losses * 38.0
         score += metrics["focus"] * 1.2
         score += metrics["ultimate"] * 0.25
         candidate_sets.append((score, specs_by_ref, metrics))

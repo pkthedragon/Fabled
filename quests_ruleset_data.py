@@ -148,12 +148,23 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
         if line and index + 1 < len(lines) and lines[index + 1].startswith("HP:"):
             name = line
             record = {
+                "hp": 0,
+                "attack": 0,
+                "defense": 0,
+                "speed": 0,
                 "innate_desc": "",
                 "weapons": {},
                 "ultimate_name": "",
                 "ultimate_desc": "",
             }
-            index += 2
+            try:
+                record["hp"] = int(lines[index + 1].split(":", 1)[1].strip())
+                record["attack"] = int(lines[index + 2].split(":", 1)[1].strip())
+                record["defense"] = int(lines[index + 3].split(":", 1)[1].strip())
+                record["speed"] = int(lines[index + 4].split(":", 1)[1].strip())
+            except Exception:
+                pass
+            index += 5
             while index < len(lines):
                 current = lines[index].strip()
                 if current and index + 1 < len(lines) and lines[index + 1].startswith("HP:"):
@@ -229,6 +240,8 @@ def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]
             synced.append(adventurer)
             continue
 
+        updated = adventurer
+
         innate = adventurer.innate
         if record["innate_desc"] and record["innate_desc"] != innate.description:
             innate = replace(innate, description=record["innate_desc"])
@@ -274,17 +287,15 @@ def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]
                 )
             )
 
-        ultimate = adventurer.ultimate
-        if (
-            record["ultimate_desc"]
-            and _normalize_rulebook_name(record["ultimate_name"]) == _normalize_rulebook_name(adventurer.ultimate.name)
-            and record["ultimate_desc"] != adventurer.ultimate.description
-        ):
+        ultimate = updated.ultimate
+        if record["ultimate_name"] and _normalize_rulebook_name(record["ultimate_name"]) != _normalize_rulebook_name(ultimate.name):
+            ultimate = replace(ultimate, name=record["ultimate_name"])
+        if record["ultimate_desc"] and record["ultimate_desc"] != ultimate.description:
             ultimate = replace(ultimate, description=record["ultimate_desc"])
 
         synced.append(
             replace(
-                adventurer,
+                updated,
                 innate=innate,
                 signature_weapons=tuple(weapons),
                 ultimate=ultimate,
@@ -296,33 +307,27 @@ def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]
 CLASS_SKILLS = {
     "Fighter": [
         passive("martial", "Martial", "Melee Strikes deal +15 damage."),
-        passive("inevitable", "Inevitable", "Strikes charge the Ultimate Meter +1.", special="bonus_strike_meter"),
-        passive("vanguard", "Vanguard", "Can use a bonus action after a frontline melee Strike to prime the next Strike.", special="vanguard"),
+        passive("inevitable", "Inevitable", "Melee Strikes charge the Ultimate Meter +1.", special="bonus_melee_strike_meter"),
     ],
     "Rogue": [
         passive("covert", "Covert", "Can Swap positions as a bonus action.", special="bonus_swap"),
-        passive("fleetfooted", "Fleetfooted", "The first incoming Strike each round deals 15% less damage.", special="fleetfooted"),
         passive("assassin", "Assassin", "Ignore targeting restrictions against enemies who did not Strike or Swap.", special="assassin"),
     ],
     "Warden": [
-        passive("stalwart", "Stalwart", "Cannot be forced to Swap positions.", special="stalwart"),
         passive("bulwark", "Bulwark", "Gain +15 Defense while in the frontline."),
         passive("vigilant", "Vigilant", "Become Guarded for 2 rounds when you Swap positions.", special="vigilant"),
     ],
     "Mage": [
         passive("arcane", "Arcane", "Magic Strikes deal +10 damage."),
-        passive("overflow", "Overflow", "Magic Strikes do not go on cooldown in the frontline.", special="overflow"),
         passive("archmage", "Archmage", "The first Spell after Switching weapons does not go on cooldown.", special="archmage"),
     ],
     "Ranger": [
         passive("deadeye", "Deadeye", "Ranged Strikes deal +10 damage."),
         passive("armed", "Armed", "The first Ranged Strike after Switching does not consume Ammo.", special="armed"),
-        passive("tactical", "Tactical", "Can Switch weapons when they Swap positions.", special="swap_switch"),
     ],
     "Cleric": [
         passive("healer", "Healer", "Healing effects restore an additional +15 HP."),
         passive("medic", "Medic", "Healing effects cleanse status conditions and stat penalties.", special="medic"),
-        passive("protector", "Protector", "Allies have +15 Defense."),
     ],
 }
 
@@ -460,7 +465,7 @@ ARTIFACTS = [
     ),
     artifact(
         "selkies_skin",
-        "Selkie's Skin",
+        "Selkie’s Skin",
         ("Mage", "Ranger", "Rogue"),
         "speed",
         10,
@@ -575,7 +580,7 @@ ARTIFACTS = [
 ARTIFACTS.extend([
     artifact(
         "bluebeards_key",
-        "Bluebeard's Key",
+        "Bluebeard’s Key",
         ("Rogue", "Warden"),
         "defense",
         10,
@@ -846,10 +851,88 @@ ARTIFACTS.extend([
             "Nebulous Ides",
             target="self",
             cooldown=2,
-            description="When the user Strikes an enemy directly across from them, Spotlight the target for 2 rounds.",
+            description="When the user Strikes an enemy in their lane, Spotlight the target for 2 rounds.",
             special="nebulous_ides",
         ),
         reactive=True,
+    ),
+    artifact(
+        "philosophers_stone",
+        "Philosopher's Stone",
+        ("Cleric", "Mage"),
+        "defense",
+        15,
+        active(
+            "transmutation",
+            "Transmutation",
+            target="self",
+            cooldown=2,
+            description="When an enemy inflicts a status condition on the user, cleanse it and restore 40 HP.",
+            special="transmutation",
+        ),
+        reactive=True,
+    ),
+    artifact(
+        "seeking_yarn",
+        "Seeking Yarn",
+        ("Ranger", "Rogue"),
+        "speed",
+        15,
+        active(
+            "lead",
+            "Lead",
+            target="self",
+            cooldown=2,
+            description="For 2 rounds, the user's Strikes against enemies in their lane do not consume Ammo.",
+            special="seeking_yarn",
+        ),
+    ),
+    artifact(
+        "tarnhelm",
+        "Tarnhelm",
+        ("Fighter", "Warden"),
+        "attack",
+        10,
+        active(
+            "feign_death",
+            "Feign Death",
+            target="self",
+            cooldown=6,
+            description="When the user takes fatal damage, they survive at 1 HP.",
+            special="tarnhelm",
+        ),
+        reactive=True,
+    ),
+    artifact(
+        "walking_abode",
+        "Walking Abode",
+        ("Cleric", "Mage", "Ranger"),
+        "speed",
+        5,
+        active(
+            "consume",
+            "Consume",
+            target="enemy",
+            cooldown=2,
+            target_statuses=(status("root", 2),),
+            description="Root target enemy for 2 rounds and halve their healing for the duration.",
+            special="walking_abode",
+        ),
+    ),
+    artifact(
+        "nebula_mail",
+        "Nebula Mail",
+        ("Fighter", "Rogue", "Warden"),
+        "attack",
+        10,
+        active(
+            "event_horizon",
+            "Event Horizon",
+            target="self",
+            cooldown=2,
+            description="For 2 rounds, when the user takes damage from a Strike, charge the Ultimate Meter +1.",
+            special="event_horizon",
+        ),
     ),
 ])
 
@@ -860,10 +943,10 @@ ARTIFACTS_BY_ID = {artifact_def.id: artifact_def for artifact_def in ARTIFACTS}
 RED = AdventurerDef(
     id="red_blanchette",
     name="Red Blanchette",
-    hp=300,
-    attack=74,
-    defense=72,
-    speed=44,
+    hp=312,
+    attack=72,
+    defense=78,
+    speed=42,
     innate=passive("red_and_wolf", "Red and Wolf", "While below 50% max HP, Red has +15 Attack, +15 Speed, and her Strikes have 15% Lifesteal.", special="red_and_wolf"),
     signature_weapons=(
         weapon(
@@ -996,8 +1079,8 @@ CONSTANTINE = AdventurerDef(
     id="lucky_constantine",
     name="Lucky Constantine",
     hp=248,
-    attack=70,
-    defense=44,
+    attack=75,
+    defense=48,
     speed=90,
     innate=passive("shadowstep", "Shadowstep", "Constantine ignores targeting restrictions against Exposed targets.", special="shadowstep"),
     signature_weapons=(
@@ -1037,10 +1120,10 @@ CONSTANTINE = AdventurerDef(
 HUNOLD = AdventurerDef(
     id="hunold_the_piper",
     name="Hunold the Piper",
-    hp=266,
-    attack=70,
-    defense=56,
-    speed=70,
+    hp=258,
+    attack=66,
+    defense=54,
+    speed=68,
     innate=passive("electrifying_trance", "Electrifying Trance", "Shocked enemies take +15 damage.", special="electrifying_trance"),
     signature_weapons=(
         weapon(
@@ -1319,10 +1402,10 @@ MARCH_HARE = AdventurerDef(
 BRIAR = AdventurerDef(
     id="briar_rose",
     name="Briar Rose",
-    hp=236,
-    attack=56,
-    defense=52,
-    speed=80,
+    hp=228,
+    attack=54,
+    defense=46,
+    speed=76,
     innate=passive("curse_of_sleeping", "Curse of Sleeping", "The lowest HP Rooted enemy is unable to act each round but gains Root Immunity for 2 rounds at the end of round.", special="curse_of_sleeping"),
     signature_weapons=(
         weapon(
@@ -1401,9 +1484,9 @@ ROBIN = AdventurerDef(
     id="robin_hooded_avenger",
     name="Robin, Hooded Avenger",
     hp=232,
-    attack=66,
+    attack=70,
     defense=46,
-    speed=81,
+    speed=80,
     innate=passive("keen_eye", "Keen Eye", "Robin's Strikes can't be redirected and ignore Guard.", special="keen_eye"),
     signature_weapons=(
         weapon(
@@ -1434,10 +1517,10 @@ ROBIN = AdventurerDef(
 LIESL = AdventurerDef(
     id="matchbox_liesl",
     name="Matchbox Liesl",
-    hp=252,
-    attack=54,
-    defense=52,
-    speed=70,
+    hp=256,
+    attack=58,
+    defense=54,
+    speed=72,
     innate=passive("purifying_flame", "Purifying Flame", "Liesl and her allies are immune to Burn. Whenever an enemy takes damage from a Burn, heal Liesl's lowest HP ally equal to the amount.", special="purifying_flame"),
     signature_weapons=(
         weapon(
@@ -1469,10 +1552,10 @@ LIESL = AdventurerDef(
 GOOD_BEAST = AdventurerDef(
     id="the_good_beast",
     name="The Good Beast",
-    hp=272,
-    attack=52,
-    defense=60,
-    speed=54,
+    hp=290,
+    attack=62,
+    defense=68,
+    speed=50,
     innate=passive("protective_soul", "Protective Soul", "The first ally The Good Beast swaps with becomes his guest, and has +15 Defense.", special="protective_soul"),
     signature_weapons=(
         weapon(
@@ -1513,7 +1596,7 @@ GREEN_KNIGHT = AdventurerDef(
             "the_search",
             "The Search",
             "ranged",
-            active("the_search_strike", "Strike", power=50, ammo_cost=1, description="+15 power against targets across from the Green Knight.", special="across_bonus_15"),
+            active("the_search_strike", "Strike", power=50, ammo_cost=1, description="+15 Power against targets in the Green Knight's lane.", special="lane_bonus_15"),
             ammo=3,
         ),
         weapon(
@@ -1521,14 +1604,14 @@ GREEN_KNIGHT = AdventurerDef(
             "The Answer",
             "melee",
             active("the_answer_strike", "Strike", power=70),
-            passive_skills=(passive("awaited_blow", "Awaited Blow", "Retaliate against attackers not across from the Knight.", special="awaited_blow"),),
+            passive_skills=(passive("awaited_blow", "Awaited Blow", "The Green Knight retaliates for 35 Power against incoming attackers not in his lane.", special="awaited_blow"),),
         ),
     ),
     ultimate=active(
         "fated_duel",
         "Fated Duel",
         target="enemy",
-        description="Only the Green Knight and the enemy across from him can act for 2 rounds.",
+        description="For 2 rounds, only those in the Green Knight's lane can act.",
         special="fated_duel",
     ),
 )
@@ -1537,11 +1620,11 @@ GREEN_KNIGHT = AdventurerDef(
 RAPUNZEL = AdventurerDef(
     id="rapunzel_the_golden",
     name="Rapunzel the Golden",
-    hp=270,
-    attack=66,
-    defense=64,
-    speed=32,
-    innate=passive("flowing_locks", "Flowing Locks", "Rapunzel can target a backline enemy with a Melee Strike once per battle. Refreshes when she casts a Spell.", special="flowing_locks"),
+    hp=262,
+    attack=64,
+    defense=60,
+    speed=34,
+    innate=passive("flowing_locks", "Flowing Locks", "Rapunzel can target a backline enemy with a Melee Strike once per encounter. Refreshes when she casts a Spell.", special="flowing_locks"),
     signature_weapons=(
         weapon(
             "golden_snare",
@@ -1735,12 +1818,12 @@ VASILISA = AdventurerDef(
 
 ALI_BABA = AdventurerDef(
     id="ali_baba",
-    name="Ali Baba",
+    name="Ali Baba, Bandit King",
     hp=234,
     attack=56,
     defense=46,
     speed=90,
-    innate=passive("open_sesame", "Open Sesame", "Ali Baba ignores stat bonuses and penalties.", special="open_sesame"),
+    innate=passive("open_sesame", "Open Sesame", "Ali Baba ignores stat bonuses and penalties (both his and his enemies).", special="open_sesame"),
     signature_weapons=(
         weapon(
             "thiefs_dagger",
@@ -1792,11 +1875,11 @@ ALI_BABA = AdventurerDef(
 MAUI = AdventurerDef(
     id="maui_sunthief",
     name="Maui, Sun-Thief",
-    hp=300,
-    attack=64,
-    defense=72,
-    speed=30,
-    innate=passive("conquer_death", "Conquer Death", "Maui survives fatal damage at 1 HP once per battle.", special="conquer_death"),
+    hp=308,
+    attack=60,
+    defense=78,
+    speed=32,
+    innate=passive("conquer_death", "Conquer Death", "Maui survives fatal damage at 1 HP once per encounter.", special="conquer_death"),
     signature_weapons=(
         weapon(
             "whale_jaw_hook",
@@ -1826,7 +1909,7 @@ MAUI = AdventurerDef(
         "raise_the_sky",
         "Raise the Sky",
         target="self",
-        description="Refresh Conquer Death and double Maui's Defense for 2 rounds.",
+        description="Reset Conquer Death. Double Maui's Defense for 2 rounds.",
         special="raise_the_sky",
     ),
 )
@@ -1839,7 +1922,7 @@ KAMA = AdventurerDef(
     attack=62,
     defense=52,
     speed=74,
-    innate=passive("target_of_affection", "Target of Affection", "Enemies directly across Kama take +10 damage from ally Strikes.", special="target_of_affection"),
+    innate=passive("target_of_affection", "Target of Affection", "Enemies in Kama's lane take +10 damage from ally Strikes.", special="target_of_affection"),
     signature_weapons=(
         weapon(
             "sugarcane_bow",
@@ -1847,7 +1930,7 @@ KAMA = AdventurerDef(
             "ranged",
             active("sugarcane_bow_strike", "Strike", power=55, ammo_cost=1, target_statuses=(status("spotlight", 2),)),
             ammo=3,
-            passive_skills=(passive("flower_arrows", "Flower Arrows", "Sugarcane Bow does not reload when Switching from it.", special="flower_arrows"),),
+            passive_skills=(passive("flower_arrows", "Flower Arrows", "Sugarcane Bow does not reload by Switching weapons. Other effects can pick up flower arrows to reload 1 Ammo.", special="flower_arrows"),),
         ),
         weapon(
             "the_stinger",
@@ -1889,8 +1972,8 @@ REYNARD = AdventurerDef(
     name="Reynard, Lupine Trickster",
     hp=240,
     attack=64,
-    defense=48,
-    speed=86,
+    defense=50,
+    speed=88,
     innate=passive(
         "opportunist",
         "Opportunist",
@@ -1954,6 +2037,341 @@ REYNARD = AdventurerDef(
 )
 
 
+SCHEHERAZADE = AdventurerDef(
+    id="scheherazade_dawns_ransom",
+    name="Scheherazade, Dawn's Ransom",
+    hp=250,
+    attack=52,
+    defense=62,
+    speed=66,
+    innate=passive(
+        "thousand_and_one_nights",
+        "Thousand and One Nights",
+        "When an enemy casts a Spell, if they cast a Spell this round, it has a +1 round cooldown.",
+        special="thousand_and_one_nights",
+    ),
+    signature_weapons=(
+        weapon(
+            "tome_of_ancients",
+            "Tome of Ancients",
+            "magic",
+            active(
+                "tome_of_ancients_strike",
+                "Strike",
+                power=60,
+                cooldown=1,
+                counts_as_spell=True,
+                target_debuffs=(stat("speed", 10, 2),),
+            ),
+            passive_skills=(
+                passive(
+                    "stay_the_blade",
+                    "Stay the Blade",
+                    "While Scheherezade is frontline, enemy Strikes deal -10 damage.",
+                    special="stay_the_blade",
+                ),
+            ),
+        ),
+        weapon(
+            "lamp_of_infinity",
+            "Lamp of Infinity",
+            "magic",
+            active(
+                "lamp_of_infinity_strike",
+                "Strike",
+                power=60,
+                cooldown=1,
+                counts_as_spell=True,
+                description="The ally to the right of Scheherezade restores 40 HP.",
+                special="lamp_of_infinity",
+            ),
+            passive_skills=(
+                passive(
+                    "evermore",
+                    "Evermore",
+                    "The first time each encounter Scheherezade or an ally would take fatal damage, they survive at 1 HP.",
+                    special="evermore",
+                ),
+            ),
+        ),
+    ),
+    ultimate=active(
+        "daybreak",
+        "Daybreak",
+        target="none",
+        description="Clear the enemy Ultimate Meter. For 2 rounds, the enemy Ultimate Meter cannot be raised.",
+        special="daybreak",
+    ),
+)
+
+
+ANANSI = AdventurerDef(
+    id="storyweaver_anansi",
+    name="Storyweaver Anansi",
+    hp=236,
+    attack=62,
+    defense=48,
+    speed=88,
+    innate=passive(
+        "tangled_plots",
+        "Tangled Plots",
+        "While Anansi is frontline, enemies cannot cast Reactive Spells.",
+        special="tangled_plots",
+    ),
+    signature_weapons=(
+        weapon(
+            "the_pen",
+            "The Pen",
+            "ranged",
+            active(
+                "the_pen_strike",
+                "Strike",
+                power=35,
+                ammo_cost=1,
+                target_statuses=(status("root", 2),),
+            ),
+            ammo=8,
+            spells=(
+                active(
+                    "silken_prose",
+                    "Silken Prose",
+                    target="enemy",
+                    cooldown=2,
+                    description="For 2 rounds, Strikes deal +8 damage to target Rooted enemy.",
+                    special="silken_prose",
+                ),
+            ),
+        ),
+        weapon(
+            "the_sword",
+            "The Sword",
+            "melee",
+            active(
+                "the_sword_strike",
+                "Strike",
+                power=65,
+                description="Can target backline enemies that cast an Artifact's Spell last round.",
+                special="anansi_sword",
+            ),
+            passive_skills=(
+                passive(
+                    "the_twist",
+                    "The Twist!",
+                    "When Anansi Switches to The Sword, they get +15 Attack and -15 Speed for 2 rounds.",
+                    special="the_twist",
+                ),
+            ),
+        ),
+    ),
+    ultimate=active(
+        "web_of_centuries",
+        "Web of Centuries",
+        target="self",
+        description="For 2 rounds, Anansi can cast any Adventurer's Spell.",
+        special="web_of_centuries",
+    ),
+)
+
+
+ODYSSEUS = AdventurerDef(
+    id="odysseus_the_nobody",
+    name="Odysseus the Nobody",
+    hp=276,
+    attack=70,
+    defense=62,
+    speed=56,
+    innate=passive(
+        "cunning_retreat",
+        "Cunning Retreat",
+        "When Odysseus Swaps positions, he gets +15 Attack for 2 rounds.",
+        special="cunning_retreat",
+    ),
+    signature_weapons=(
+        weapon(
+            "olivewood_spear",
+            "Olivewood Spear",
+            "melee",
+            active(
+                "olivewood_spear_strike",
+                "Strike",
+                power=65,
+                description="+15 Power against targets in Odysseus' lane.",
+                special="lane_bonus_15",
+            ),
+            spells=(
+                active(
+                    "eye_piercer",
+                    "Eye Piercer",
+                    target="self",
+                    cooldown=2,
+                    description="Odysseus' next Strike ignores targeting restrictions.",
+                    special="next_strike_ignore_targeting",
+                ),
+            ),
+        ),
+        weapon(
+            "beggars_greatbow",
+            "Beggar's Greatbow",
+            "ranged",
+            active(
+                "beggars_greatbow_strike",
+                "Strike",
+                power=55,
+                ammo_cost=1,
+                description="Puts an arrow in the target.",
+                special="beggars_greatbow",
+            ),
+            ammo=3,
+            passive_skills=(
+                passive(
+                    "barbed_arrows",
+                    "Barbed Arrows",
+                    "Beggar's Greatbow does not reload by Switching weapons. When Odysseus Switches weapons, his next Melee Strike deals +5 damage for each arrow in the target and fully reloads Beggar's Greatbow.",
+                    special="barbed_arrows",
+                ),
+            ),
+        ),
+    ),
+    ultimate=active(
+        "trojan_horse",
+        "Trojan Horse",
+        target="self",
+        description="Odysseus Swaps positions and takes 0 damage from Strikes this round. For 2 rounds, Odysseus can Switch Weapons as a Bonus Action.",
+        special="trojan_horse",
+    ),
+)
+
+
+WITCH_OF_THE_EAST = AdventurerDef(
+    id="witch_of_the_east",
+    name="Witch of the East",
+    hp=244,
+    attack=50,
+    defense=58,
+    speed=74,
+    innate=passive(
+        "headwinds",
+        "Headwinds",
+        "The Witch of the East creates an air current in her lane for 2 rounds when she Swaps positions and at the start of an encounter.",
+        special="headwinds",
+    ),
+    signature_weapons=(
+        weapon(
+            "zephyr",
+            "Zephyr",
+            "magic",
+            active(
+                "zephyr_strike",
+                "Strike",
+                power=55,
+                cooldown=1,
+                counts_as_spell=True,
+                description="Swaps target with the enemy to their left.",
+                special="zephyr",
+            ),
+            passive_skills=(
+                passive(
+                    "heavy_gale",
+                    "Heavy Gale",
+                    "Enemies in an air current have -15 Attack.",
+                    special="heavy_gale",
+                ),
+            ),
+        ),
+        weapon(
+            "comet",
+            "Comet",
+            "melee",
+            active(
+                "comet_strike",
+                "Strike",
+                power=60,
+                description="The target takes +15 damage from the next Magic Strike.",
+                special="comet",
+            ),
+            passive_skills=(
+                passive(
+                    "unroof",
+                    "Unroof",
+                    "The Witch of the East has +15 Speed while in an air current.",
+                    special="unroof",
+                ),
+            ),
+        ),
+    ),
+    ultimate=active(
+        "dream_twister",
+        "Dream Twister",
+        target="none",
+        description="Create an air current in each lane. Allies have +15 Speed for 2 rounds.",
+        special="dream_twister",
+    ),
+)
+
+
+TAM_LIN = AdventurerDef(
+    id="tam_lin_thornbound",
+    name="Tam Lin, Thornbound",
+    hp=292,
+    attack=58,
+    defense=76,
+    speed=34,
+    innate=passive(
+        "faeries_ransom",
+        "Faerie's Ransom",
+        "The first time each round an enemy would inflict a status condition on Tam Lin, cleanse it and he has +15 Defense for 2 rounds.",
+        special="faeries_ransom",
+    ),
+    signature_weapons=(
+        weapon(
+            "butterfly_knife",
+            "Butterfly Knife",
+            "melee",
+            active(
+                "butterfly_knife_strike",
+                "Strike",
+                power=65,
+                target_statuses=(status("taunt", 2),),
+            ),
+            passive_skills=(
+                passive(
+                    "bargain",
+                    "Bargain",
+                    "Enemies in Tam Lin's lane who Swap positions take +10 damage from Strikes for 2 rounds.",
+                    special="bargain",
+                ),
+            ),
+        ),
+        weapon(
+            "beam_of_light",
+            "Beam of Light",
+            "melee",
+            active(
+                "beam_of_light_strike",
+                "Strike",
+                power=65,
+                target_statuses=(status("burn", 2),),
+            ),
+            passive_skills=(
+                passive(
+                    "holy_water",
+                    "Holy Water",
+                    "Allies have the effects of Faerie's Ransom.",
+                    special="holy_water",
+                ),
+            ),
+        ),
+    ),
+    ultimate=active(
+        "polymorph",
+        "Polymorph",
+        target="any",
+        description="Target Adventurer becomes a beast for 2 rounds and can't swap and has +15 Attack, +15 Defense, +15 Speed, and their Strikes have 30% recoil.",
+        special="polymorph",
+    ),
+)
+
+
 ADVENTURERS = [
     RED,
     JACK,
@@ -1980,6 +2398,11 @@ ADVENTURERS = [
     MAUI,
     KAMA,
     REYNARD,
+    SCHEHERAZADE,
+    ANANSI,
+    ODYSSEUS,
+    WITCH_OF_THE_EAST,
+    TAM_LIN,
 ]
 ADVENTURERS = _sync_adventurer_descriptions_from_rulebook(ADVENTURERS)
 
@@ -1991,3 +2414,9 @@ WEAPONS_BY_ID = {
     for weapon_def in adventurer.signature_weapons
 }
 ULTIMATES_BY_ID = {adventurer.ultimate.id: adventurer.ultimate for adventurer in ADVENTURERS}
+ALL_ADVENTURER_SPELLS = tuple(
+    spell
+    for adventurer in ADVENTURERS
+    for weapon_def in adventurer.signature_weapons
+    for spell in weapon_def.spells
+)

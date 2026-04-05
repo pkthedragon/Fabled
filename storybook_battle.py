@@ -4,7 +4,7 @@ import random
 from dataclasses import dataclass, field
 from typing import Optional
 
-from settings import SLOT_FRONT
+from settings import SLOT_FRONT, SLOT_LABELS
 
 from quests_ai_battle import queue_team_plan
 from quests_ruleset_logic import (
@@ -162,10 +162,8 @@ class StoryBattleController:
             team_bonus_swap = team.markers.get("bonus_swap_rounds", 0) > 0 and team.markers.get("bonus_swap_used", 0) <= 0
             if (actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight" or team_bonus_swap) and self._ally_targets(actor):
                 actions.append(PendingChoice("swap", "Bonus Swap", needs_target=True, bonus=True))
-            if actor.defn.id == "wayward_humbert" and actor.defn.id != "ashen_ella":
+            if actor.defn.id != "ashen_ella" and (actor.defn.id == "wayward_humbert" or actor.markers.get("bonus_switch_rounds", 0) > 0):
                 actions.append(PendingChoice("switch", "Bonus Switch", bonus=True))
-            if actor.markers.get("vanguard_ready", 0) > 0:
-                actions.append(PendingChoice("vanguard", "Vanguard", bonus=True))
             if self.available_bonus_spells(actor):
                 actions.append(PendingChoice("spellbook", "Bonus Spell", bonus=True))
             actions.append(PendingChoice("skip", "Skip Bonus", bonus=True))
@@ -189,22 +187,24 @@ class StoryBattleController:
         if action is None:
             return "Unqueued"
         action_type = action.get("type", "skip")
+        target_slot = action.get("target_slot")
+        target_slot_label = SLOT_LABELS.get(target_slot, target_slot.title() if isinstance(target_slot, str) else "")
         if action_type == "strike":
-            target = action.get("target")
-            return f"Strike {target.name if target is not None else ''}".strip()
+            return f"Strike {target_slot_label}".strip()
         if action_type == "spell":
             effect = action.get("effect")
+            if target_slot_label and effect is not None and getattr(effect, "target", "") in {"enemy", "ally", "any"}:
+                return f"{effect.name} {target_slot_label}"
             return effect.name if effect is not None else "Spell"
         if action_type == "ultimate":
             effect = action.get("effect")
+            if target_slot_label and effect is not None and getattr(effect, "target", "") in {"enemy", "ally", "any"}:
+                return f"{effect.name} {target_slot_label}"
             return effect.name if effect is not None else "Ultimate"
         if action_type == "swap":
-            target = action.get("target")
-            return f"Swap {target.name if target is not None else ''}".strip()
+            return f"Swap {target_slot_label}".strip()
         if action_type == "switch":
             return "Switch"
-        if action_type == "vanguard":
-            return "Vanguard"
         return "Skip"
 
     def select_action(self, kind: str):
@@ -242,7 +242,7 @@ class StoryBattleController:
         if effect is None:
             return
         kind = "ultimate" if effect.id == self.active_actor.defn.ultimate.id else "spell"
-        self.pending_choice = PendingChoice(kind, effect.name, effect_id=effect.id, needs_target=effect.target in {"enemy", "ally"}, bonus=self.phase.startswith("bonus"))
+        self.pending_choice = PendingChoice(kind, effect.name, effect_id=effect.id, needs_target=effect.target in {"enemy", "ally", "any"}, bonus=self.phase.startswith("bonus"))
         self.target_candidates = []
         self.spellbook_open = False
         if effect.target in {"none", "self"}:
@@ -278,13 +278,13 @@ class StoryBattleController:
             if choice.bonus:
                 queue_bonus_action(actor, {"type": "spell", "effect": effect, "target": target})
             else:
-                queue_spell(actor, effect, target)
+                queue_spell(actor, effect, target, self.battle)
         elif choice.kind == "ultimate":
             effect = actor.defn.ultimate
             if choice.bonus:
                 queue_bonus_action(actor, {"type": "ultimate", "effect": effect, "target": target if effect.target != "self" else actor})
             else:
-                queue_ultimate(actor, target if effect.target != "self" else actor)
+                queue_ultimate(actor, target if effect.target != "self" else actor, self.battle)
         elif choice.kind == "switch":
             if choice.bonus:
                 queue_bonus_action(actor, {"type": "switch"})
@@ -295,8 +295,6 @@ class StoryBattleController:
                 queue_bonus_action(actor, {"type": "swap", "target": target})
             else:
                 queue_swap(actor, target)
-        elif choice.kind == "vanguard":
-            queue_bonus_action(actor, {"type": "vanguard"})
         else:
             if choice.bonus:
                 queue_bonus_action(actor, {"type": "skip"})

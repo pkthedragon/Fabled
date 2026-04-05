@@ -637,8 +637,12 @@ def draw_main_menu(surf, mouse_pos, profile, *, has_current_quest=False):
     )
     draw_text(
         surf,
-        f"{getattr(profile, 'storybook_rank_label', 'Squire')} | {getattr(profile, 'ranked_rating', 300)} Glory",
-        font_body(16),
+        _ellipsize_text(
+            f"{getattr(profile, 'storybook_rank_label', 'Squire')} | {getattr(profile, 'ranked_rating', 300)} Glory",
+            font_body(15),
+            profile_rect.right - (profile_rect.x + 144) - 18,
+        ),
+        font_body(15),
         TEXT_SOFT,
         (profile_rect.x + 144, profile_rect.y + 126),
     )
@@ -657,21 +661,22 @@ def draw_main_menu(surf, mouse_pos, profile, *, has_current_quest=False):
         right_label="MAX" if level_info.at_cap else f"{level_info.current_level_exp}/{level_info.next_level_exp}",
     )
 
-    favorite_rect = pygame.Rect(profile_rect.x + 18, profile_rect.y + 240, profile_rect.width - 36, 60)
+    favorite_rect = pygame.Rect(profile_rect.x + 18, profile_rect.y + 236, profile_rect.width - 36, 72)
     draw_beveled_panel(surf, favorite_rect, title="Favorites")
+    favorite_label_width = favorite_rect.width - 32
     draw_text(
         surf,
-        _ellipsize_text(f"Quest: {favorite_name}", font_body(15, bold=True), favorite_rect.width - 32),
+        _ellipsize_text(f"Quest: {favorite_name}", font_body(15, bold=True), favorite_label_width),
         font_body(15, bold=True),
         GOLD_BRIGHT,
-        (favorite_rect.x + 16, favorite_rect.y + 22),
+        (favorite_rect.x + 16, favorite_rect.y + 30),
     )
     draw_text(
         surf,
-        _ellipsize_text(f"Training: {training_favorite_name}", font_body(13), favorite_rect.width - 32),
+        _ellipsize_text(f"Training: {training_favorite_name}", font_body(13), favorite_label_width),
         font_body(13),
         TEXT_SOFT,
-        (favorite_rect.x + 16, favorite_rect.y + 40),
+        (favorite_rect.x + 16, favorite_rect.y + 50),
     )
 
     tile_specs = [
@@ -1031,19 +1036,30 @@ def draw_market(
         right_icons=(("settings", "S", False), ("quit", "X", True)),
         subtitle="Cosmetics, profile style, and Embassy exchange.",
     )
-    tabs_rect = pygame.Rect(44, 86, WIDTH - 88, 62)
-    list_rect = pygame.Rect(54, 170, 734, 644)
-    detail_rect = pygame.Rect(816, 170, 486, 644)
-    draw_beveled_panel(surf, tabs_rect, title="Categories")
+    tabs_rect = pygame.Rect(44, 86, WIDTH - 88, 102)
+    list_rect = pygame.Rect(54, 210, 734, 604)
+    detail_rect = pygame.Rect(816, 210, 486, 604)
+    draw_beveled_panel(surf, tabs_rect)
     draw_beveled_panel(surf, list_rect, title=active_tab)
     draw_beveled_panel(surf, detail_rect, title="Preview")
 
     tab_buttons = []
-    tab_width = 102
-    tab_gap = 8
+    columns = 5
+    tab_gap_x = 10
+    tab_gap_y = 10
+    tab_width = (tabs_rect.width - 32 - tab_gap_x * (columns - 1)) // columns
+    tab_height = 28
     start_x = tabs_rect.x + 16
+    start_y = tabs_rect.y + 18
     for index, tab_name in enumerate(MARKET_TABS):
-        rect = pygame.Rect(start_x + index * (tab_width + tab_gap), tabs_rect.y + 18, tab_width, 30)
+        row = index // columns
+        col = index % columns
+        rect = pygame.Rect(
+            start_x + col * (tab_width + tab_gap_x),
+            start_y + row * (tab_height + tab_gap_y),
+            tab_width,
+            tab_height,
+        )
         draw_secondary_button(surf, rect, mouse_pos, tab_name, active=tab_name == active_tab)
         tab_buttons.append((rect, tab_name))
 

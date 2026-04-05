@@ -36,6 +36,7 @@ MAX_BATTLE_ROUNDS = 40
 PLAYER_DIFFICULTY = "ranked"
 MAX_WORKERS = max(1, min(8, (os.cpu_count() or 4) - 1 if (os.cpu_count() or 4) > 1 else 1))
 PARTY_CHOICE_RETRIES = 4
+FULL_BATTLE_LOGS = False
 
 
 NO_ARTIFACT_LABEL = "No Artifact"
@@ -435,8 +436,8 @@ def _choose_party_with_retries(
     ) from last_error
 
 
-def _simulate_favorite_run(task: tuple[str, int, int]) -> dict:
-    favorite_id, favorite_index, run_index = task
+def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
+    favorite_id, favorite_index, run_index, full_battle_logs = task
     _ensure_hooks_installed()
 
     seed = 100_000 + favorite_index * 1_000 + run_index
@@ -579,9 +580,15 @@ def _simulate_favorite_run(task: tuple[str, int, int]) -> dict:
                     + (" -> ".join(_adventurer_name(adventurer_id) for adventurer_id in telemetry.death_order) if telemetry.death_order else "none")
                 ),
                 f"  Glory: {glory_before} -> {current_glory} ({glory_delta:+d}) | Gold gained: {encounter_gold}",
-                "",
             ]
         )
+        if full_battle_logs:
+            encounter_lines.append("  Full Battle Log:")
+            if battle.log:
+                encounter_lines.extend(f"    {line}" for line in battle.log)
+            else:
+                encounter_lines.append("    (no battle log lines recorded)")
+        encounter_lines.append("")
 
     completion_bonus = 300 if wins >= 10 else 150 if wins >= 5 else 0
     total_gold += completion_bonus
@@ -728,6 +735,7 @@ def main() -> int:
     parser.add_argument("--max-workers", type=int, default=MAX_WORKERS)
     parser.add_argument("--favorite", action="append", dest="favorites", default=[])
     parser.add_argument("--report-dir", type=str, default="")
+    parser.add_argument("--full-battle-logs", action="store_true")
     args = parser.parse_args()
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -741,7 +749,7 @@ def main() -> int:
         favorite_ids = [adventurer.id for adventurer in ADVENTURERS]
     for favorite_index, favorite_id in enumerate(favorite_ids):
         for run_index in range(args.runs_per_favorite):
-            tasks.append((favorite_id, favorite_index, run_index))
+            tasks.append((favorite_id, favorite_index, run_index, bool(args.full_battle_logs)))
 
     favorite_runs: dict[str, list[dict]] = defaultdict(list)
     total = _empty_partial()

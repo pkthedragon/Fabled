@@ -182,20 +182,19 @@ class CombatantState:
                 base += bonus
         if self.defn.id == "pinocchio_cursed_puppet" and stat in {"attack", "defense"}:
             base += self.markers.get("malice", 0) * 5
+        if (
+            battle is not None
+            and self.defn.id == "witch_of_the_east"
+            and stat == "speed"
+            and isinstance(battle.markers.get("air_currents"), dict)
+            and battle.markers["air_currents"].get(self.slot, 0) > 0
+        ):
+            base += 15
         if stat == "speed" and self.slot in BACKLINE_SLOTS:
             base -= 30
         if stat == "speed" and self.has_status("shock"):
             base -= 15
         if self.class_skill.id == "bulwark" and stat == "defense" and self.slot == SLOT_FRONT:
-            base += 15
-        if (
-            stat == "defense"
-            and battle is not None
-            and any(
-                ally is not self and not ally.ko and ally.class_skill.id == "protector"
-                for ally in (battle.team1.members if any(member is self for member in battle.team1.members) else battle.team2.members)
-            )
-        ):
             base += 15
         total = base + self.best_buff(stat) - self.best_debuff(stat)
         if self.defn.id == "maui_sunthief" and stat == "defense" and self.markers.get("raise_the_sky_rounds", 0) > 0:
@@ -221,6 +220,9 @@ class CombatantState:
         if self.artifact is not None and not self.artifact.reactive:
             spells.append(self.artifact.spell)
         for effect in self.markers.get("stolen_spells", []):
+            if effect not in spells:
+                spells.append(effect)
+        for effect in self.markers.get("granted_spells", []):
             if effect not in spells:
                 spells.append(effect)
         return spells
@@ -254,6 +256,7 @@ class BattleState:
     initiative_order: List[CombatantState] = field(default_factory=list)
     winner: Optional[int] = None
     log: List[str] = field(default_factory=list)
+    markers: Dict[str, Any] = field(default_factory=dict)
 
     def get_team(self, player_num: int) -> TeamState:
         return self.team1 if player_num == 1 else self.team2
