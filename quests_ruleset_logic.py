@@ -725,7 +725,10 @@ def resolve_action(actor: CombatantState, action: dict, battle: BattleState, *, 
                 battle.log_add(f"{actor.name} has no bonus Spell available.")
                 return
     if action_type == "skip":
-        battle.log_add(f"{actor.name} skips.")
+        if is_bonus:
+            battle.log_add(f"{actor.name} takes no bonus action.")
+        else:
+            battle.log_add(f"{actor.name} skips.")
         return
     if action_type == "switch":
         do_switch(actor, battle)

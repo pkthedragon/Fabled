@@ -17,6 +17,7 @@ from quests_ai_tags import (
     skill_preference_score,
     weapon_preference_score,
 )
+from quests_ai_preset_loadouts import presets_for
 from quests_ruleset_data import ADVENTURERS_BY_ID, CLASS_SKILLS
 
 
@@ -149,7 +150,7 @@ BLIND_CLASS_OPTIONS = {
     "rapunzel_the_golden": ("Fighter", "Warden"),
     "destitute_vasilisa": ("Mage", "Cleric", "Warden"),
     "reynard_lupine_trickster": ("Rogue", "Ranger", "Cleric"),
-    "little_jack": ("Fighter", "Warden", "Ranger"),
+    "little_jack": ("Mage", "Fighter", "Warden"),
     "ali_baba": ("Rogue", "Mage"),
     "kama_the_honeyed": ("Ranger", "Rogue", "Mage"),
     "porcus_iii": ("Warden", "Ranger"),
@@ -261,6 +262,55 @@ def _sorted_ids(adventurer_ids: tuple[str, ...] | list[str]) -> tuple[str, ...]:
 def _weapon_def(adventurer_id: str, weapon_id: str):
     adventurer = ADVENTURERS_BY_ID[adventurer_id]
     return next(item for item in adventurer.signature_weapons if item.id == weapon_id)
+
+
+def _weapon_class_alignment_value(adventurer_id: str, class_name: str, weapon_id: str) -> float:
+    weapon = _weapon_def(adventurer_id, weapon_id)
+    value = 0.0
+    if weapon.kind == "magic":
+        if class_name == "Mage":
+            value += 8.0
+        elif class_name == "Cleric":
+            value += 3.0
+        elif class_name == "Rogue":
+            value += 1.5
+        elif class_name in {"Fighter", "Warden"}:
+            value -= 4.0
+    elif weapon.kind == "ranged":
+        if class_name == "Ranger":
+            value += 6.0
+        elif class_name == "Rogue":
+            value += 2.5
+        elif class_name == "Mage":
+            value += 1.0
+        elif class_name in {"Fighter", "Warden"}:
+            value -= 2.5
+    elif weapon.kind == "melee":
+        if class_name == "Fighter":
+            value += 6.0
+        elif class_name == "Warden":
+            value += 3.5
+        elif class_name == "Rogue":
+            value += 1.5
+        elif class_name == "Mage":
+            value -= 5.0
+    if adventurer_id == "little_jack" and weapon_id == "giants_harp":
+        if class_name == "Mage":
+            value += 12.0
+        elif class_name == "Fighter":
+            value -= 8.0
+        elif class_name == "Warden":
+            value -= 6.0
+    if adventurer_id == "little_jack" and weapon_id == "skyfall":
+        if class_name == "Fighter":
+            value += 5.0
+        elif class_name == "Mage":
+            value -= 5.0
+    return value
+
+
+def _preset_rank_bonus(rank: int) -> float:
+    return max(0.0, 8.0 - rank * 1.75)
 
 
 def _class_options_for(adventurer_id: str) -> tuple[str, ...]:
@@ -532,6 +582,7 @@ def _build_role_coherence(adventurer_id: str, class_name: str, class_skill_id: s
         value += 2.5
     if weapon.kind == "melee" and ("melee" in skill_tags or class_name == "Fighter"):
         value += 2.5
+    value += _weapon_class_alignment_value(adventurer_id, class_name, primary_weapon_id)
     if "anti_burst" in artifact_tags and "fragile" in roles:
         value += 2.0
     if "sustain" in artifact_tags and {"healer", "guard_support", "carry_support"} & roles:
@@ -570,6 +621,39 @@ def generate_plausible_blind_builds(
     *,
     expanded: bool = False,
 ) -> tuple[QuestBlindBuild, ...]:
+    preset_rows = presets_for(adventurer_id)
+    if preset_rows:
+        builds: list[QuestBlindBuild] = []
+        for preset in preset_rows:
+            score = _blind_build_score(
+                adventurer_id,
+                preset.class_name,
+                preset.class_skill_id,
+                preset.primary_weapon_id,
+                preset.artifact_id,
+                party_ids,
+            )
+            score += _preset_rank_bonus(preset.rank)
+            builds.append(
+                QuestBlindBuild(
+                    adventurer_id=adventurer_id,
+                    class_name=preset.class_name,
+                    class_skill_id=preset.class_skill_id,
+                    primary_weapon_id=preset.primary_weapon_id,
+                    artifact_id=preset.artifact_id,
+                    score=score,
+                    blind_tags=_base_blind_tags(
+                        adventurer_id,
+                        preset.class_name,
+                        preset.class_skill_id,
+                        preset.primary_weapon_id,
+                        preset.artifact_id,
+                    ),
+                )
+            )
+        builds.sort(key=lambda build: build.score, reverse=True)
+        return tuple(builds if expanded else builds[:5])
+
     classes = _class_options_for(adventurer_id)
     if not expanded:
         classes = classes[:5]
@@ -1064,10 +1148,24 @@ def _choose_blind_quest_roster_from_offer_cached(
     best_package: QuestLoadoutPackage | None = None
     best_score = float("-inf")
     for roster_ids in narrowed:
-        package = assign_blind_quest_loadouts(roster_ids)
+        try:
+            package = assign_blind_quest_loadouts(roster_ids)
+        except ValueError:
+            continue
         if package.score > best_score:
             best_score = package.score
             best_package = package
+    if best_package is None:
+        for roster_ids, _score in candidate_rosters:
+            if roster_ids in narrowed:
+                continue
+            try:
+                package = assign_blind_quest_loadouts(roster_ids)
+            except ValueError:
+                continue
+            if package.score > best_score:
+                best_score = package.score
+                best_package = package
     if best_package is None:
         raise ValueError(f"Quest roster choice could not solve an offer of {len(offered)} adventurers.")
     return best_package

@@ -26,6 +26,7 @@ from quests_ai_tags import (
     skill_preference_score,
     weapon_preference_score,
 )
+from quests_ai_preset_loadouts import presets_for
 from quests_ruleset_data import ADVENTURERS_BY_ID, ARTIFACTS, CLASS_SKILLS
 
 
@@ -114,6 +115,55 @@ def _class_fit_score(adventurer_id: str, class_name: str, slot: str) -> int:
 def _weapon_def(adventurer_id: str, weapon_id: str):
     adventurer = ADVENTURERS_BY_ID[adventurer_id]
     return next(item for item in adventurer.signature_weapons if item.id == weapon_id)
+
+
+def _weapon_class_alignment_value(adventurer_id: str, class_name: str, weapon_id: str) -> float:
+    weapon = _weapon_def(adventurer_id, weapon_id)
+    value = 0.0
+    if weapon.kind == "magic":
+        if class_name == "Mage":
+            value += 8.0
+        elif class_name == "Cleric":
+            value += 3.0
+        elif class_name == "Rogue":
+            value += 1.5
+        elif class_name in {"Fighter", "Warden"}:
+            value -= 4.0
+    elif weapon.kind == "ranged":
+        if class_name == "Ranger":
+            value += 6.0
+        elif class_name == "Rogue":
+            value += 2.5
+        elif class_name == "Mage":
+            value += 1.0
+        elif class_name in {"Fighter", "Warden"}:
+            value -= 2.5
+    elif weapon.kind == "melee":
+        if class_name == "Fighter":
+            value += 6.0
+        elif class_name == "Warden":
+            value += 3.5
+        elif class_name == "Rogue":
+            value += 1.5
+        elif class_name == "Mage":
+            value -= 5.0
+    if adventurer_id == "little_jack" and weapon_id == "giants_harp":
+        if class_name == "Mage":
+            value += 12.0
+        elif class_name == "Fighter":
+            value -= 8.0
+        elif class_name == "Warden":
+            value -= 6.0
+    if adventurer_id == "little_jack" and weapon_id == "skyfall":
+        if class_name == "Fighter":
+            value += 5.0
+        elif class_name == "Mage":
+            value -= 5.0
+    return value
+
+
+def _preset_rank_bonus(rank: int) -> float:
+    return max(0.0, 6.0 - rank * 1.25)
 
 
 def _weapon_fit_score(adventurer_id: str, weapon_id: str, slot: str) -> int:
@@ -394,6 +444,7 @@ def _local_build_score(
     self_efficiency += _class_fit_score(adventurer_id, class_name, slot)
     self_efficiency += _skill_fit_score(adventurer_id, class_name, class_skill_id, slot, primary_weapon_id)
     self_efficiency += _weapon_fit_score(adventurer_id, primary_weapon_id, slot)
+    self_efficiency += _weapon_class_alignment_value(adventurer_id, class_name, primary_weapon_id)
     self_efficiency += _artifact_fit_score(adventurer_id, artifact_id, team_need_tags=team_need_tags, enemy_ids=enemy_ids)
     team_fit = _team_fit_score(adventurer_id, build_tags, team_ids=team_ids, team_need_tags=team_need_tags)
     matchup_fit = _matchup_fit_score(
@@ -470,6 +521,37 @@ def generate_member_builds(
     enemy_ids: tuple[str, ...],
     max_builds: int = 8,
 ) -> tuple[MemberBuild, ...]:
+    preset_rows = presets_for(adventurer_id)
+    if preset_rows:
+        team_need_tags = _team_need_tags(team_ids)
+        candidates: list[MemberBuild] = []
+        for preset in preset_rows:
+            score = _local_build_score(
+                adventurer_id,
+                slot,
+                preset.class_name,
+                preset.class_skill_id,
+                preset.primary_weapon_id,
+                preset.artifact_id,
+                team_ids=team_ids,
+                team_need_tags=team_need_tags,
+                enemy_ids=enemy_ids,
+            )
+            score += _preset_rank_bonus(preset.rank)
+            candidates.append(
+                MemberBuild(
+                    adventurer_id=adventurer_id,
+                    slot=slot,
+                    class_name=preset.class_name,
+                    class_skill_id=preset.class_skill_id,
+                    primary_weapon_id=preset.primary_weapon_id,
+                    artifact_id=preset.artifact_id,
+                    score=score,
+                )
+            )
+        candidates.sort(key=lambda item: item.score, reverse=True)
+        return tuple(candidates[:max_builds])
+
     profile = ADVENTURER_AI[adventurer_id]
     team_need_tags = _team_need_tags(team_ids)
     candidates: list[MemberBuild] = []

@@ -268,7 +268,10 @@ def _ensure_hooks_installed() -> None:
         blocked = actor.markers.get("cant_act_rounds", 0) > 0 or qrl._fated_duel_blocks(actor, battle)
         action_type = action.get("type")
         if not blocked and action_type in {"strike", "spell", "switch", "swap", "skip", "ultimate"}:
-            telemetry.action_counts[action_type] += 1
+            action_counter_key = "bonus_skip" if is_bonus and action_type == "skip" else action_type
+            telemetry.action_counts[action_counter_key] += 1
+            if is_bonus and action_type != "skip":
+                telemetry.action_counts["bonus_used"] += 1
             if action_type == "ultimate":
                 team_num = qrl.player_num_for_actor(battle, actor)
                 telemetry.ultimate_casts.append((team_num, actor.defn.ultimate.name))
@@ -407,6 +410,35 @@ def _enemy_average_glory(opponent_glories: list[int]) -> int:
     return int(round(sum(opponent_glories) / len(opponent_glories)))
 
 
+def _sample_solvable_roster_package(
+    all_ids: list[str],
+    rng: random.Random,
+    *,
+    locked_ids: tuple[str, ...] = (),
+    offer_size: int = 9,
+    roster_size: int = 6,
+    max_attempts: int = 64,
+):
+    locked = tuple(locked_ids)
+    locked_set = set(locked)
+    pool = [adventurer_id for adventurer_id in all_ids if adventurer_id not in locked_set]
+    if len(locked) > offer_size:
+        raise ValueError("Locked adventurers exceed the offer size.")
+    if len(pool) + len(locked) < offer_size:
+        raise ValueError("Not enough adventurers available to sample a solvable offer.")
+    last_error: Exception | None = None
+    for _ in range(max_attempts):
+        offer_ids = list(locked) + rng.sample(pool, offer_size - len(locked))
+        try:
+            package = choose_blind_quest_roster_from_offer(offer_ids, roster_size=roster_size, locked_ids=locked)
+            return offer_ids, package
+        except ValueError as exc:
+            last_error = exc
+    raise ValueError(
+        f"Could not sample a solvable quest offer after {max_attempts} attempts."
+    ) from last_error
+
+
 def _choose_party_with_retries(
     offer_ids: list[str] | tuple[str, ...],
     *,
@@ -436,16 +468,29 @@ def _choose_party_with_retries(
     ) from last_error
 
 
-def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
-    favorite_id, favorite_index, run_index, full_battle_logs = task
+def _simulate_favorite_run(task: tuple) -> dict:
+    if len(task) == 4:
+        favorite_id, favorite_index, run_index, full_battle_logs = task
+        encounter_cap = None
+        seed_offset = 0
+    elif len(task) == 5:
+        favorite_id, favorite_index, run_index, full_battle_logs, extra = task
+        if isinstance(extra, dict):
+            encounter_cap = extra.get("encounter_cap")
+            seed_offset = int(extra.get("seed_offset", 0))
+        else:
+            encounter_cap = extra
+            seed_offset = 0
+    elif len(task) == 6:
+        favorite_id, favorite_index, run_index, full_battle_logs, encounter_cap, seed_offset = task
+    else:
+        raise ValueError(f"Unexpected task payload: {task!r}")
     _ensure_hooks_installed()
 
-    seed = 100_000 + favorite_index * 1_000 + run_index
+    seed = 100_000 + seed_offset + favorite_index * 1_000 + run_index
     rng = random.Random(seed)
     all_ids = [adventurer.id for adventurer in ADVENTURERS]
-    party_pool = [adventurer_id for adventurer_id in all_ids if adventurer_id != favorite_id]
-    offered_ids = [favorite_id] + rng.sample(party_pool, 8)
-    party_package = choose_blind_quest_roster_from_offer(offered_ids, roster_size=6, locked_ids=(favorite_id,))
+    offered_ids, party_package = _sample_solvable_roster_package(all_ids, rng, locked_ids=(favorite_id,))
     party_ids = list(party_package.offer_ids)
 
     current_glory = STARTING_GLORY
@@ -460,8 +505,13 @@ def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
     partial = _empty_partial()
     encounter_lines: list[str] = []
     tiebreak_count = 0
+    forfeited = False
+    forfeit_glory_penalty = 0
 
     while losses < MAX_QUEST_LOSSES:
+        if encounter_cap is not None and encounter_index >= encounter_cap:
+            forfeited = True
+            break
         encounter_index += 1
         match_profile = find_ai_match_profile(
             current_glory,
@@ -471,8 +521,7 @@ def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
             rng=rng,
         )
         enemy_glory = match_profile.glory
-        enemy_offer = rng.sample(all_ids, 9)
-        enemy_package = choose_blind_quest_roster_from_offer(enemy_offer, roster_size=6)
+        enemy_offer, enemy_package = _sample_solvable_roster_package(all_ids, rng)
         enemy_party_ids = list(enemy_package.offer_ids)
         enemy_difficulty = "ranked"
 
@@ -573,6 +622,8 @@ def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
                     f"switches={telemetry.action_counts['switch']}, "
                     f"swaps={telemetry.action_counts['swap']}, "
                     f"skips={telemetry.action_counts['skip']}, "
+                    f"bonus used={telemetry.action_counts['bonus_used']}, "
+                    f"bonus passes={telemetry.action_counts['bonus_skip']}, "
                     f"ultimates={telemetry.action_counts['ultimate']}"
                 ),
                 (
@@ -590,8 +641,14 @@ def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
                 encounter_lines.append("    (no battle log lines recorded)")
         encounter_lines.append("")
 
-    completion_bonus = 300 if wins >= 10 else 150 if wins >= 5 else 0
-    total_gold += completion_bonus
+    completion_bonus = 0
+    if forfeited:
+        remaining_losses = max(0, MAX_QUEST_LOSSES - losses)
+        forfeit_glory_penalty = remaining_losses * 10
+        current_glory = max(floor_glory, current_glory - forfeit_glory_penalty)
+    else:
+        completion_bonus = 300 if wins >= 10 else 150 if wins >= 5 else 0
+        total_gold += completion_bonus
 
     partial["quest_runs"] += 1
     partial["quest_encounters_total"] += encounter_index
@@ -608,6 +665,8 @@ def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
         "total_gold": total_gold,
         "completion_bonus": completion_bonus,
         "tiebreak_count": tiebreak_count,
+        "forfeited": forfeited,
+        "forfeit_glory_penalty": forfeit_glory_penalty,
     }
 
     run_lines = [
@@ -615,9 +674,10 @@ def _simulate_favorite_run(task: tuple[str, int, int, bool]) -> dict:
         f"Seed: {seed}",
         f"Favorite: {_adventurer_name(favorite_id)}",
         f"Starting party: {', '.join(_adventurer_name(adventurer_id) for adventurer_id in party_ids)}",
-        f"Final record: {wins}W-{losses}L across {encounter_index} encounters",
+        f"Final record: {wins}W-{losses}L across {encounter_index} encounters" + (" [FORFEITED]" if forfeited else ""),
         f"Final Glory: {current_glory}",
-        f"Total Gold earned: {total_gold} (completion bonus {completion_bonus})",
+        f"Total Gold earned: {total_gold}" + (f" (completion bonus {completion_bonus})" if not forfeited else ""),
+        *( [f"Quest forfeited: -{forfeit_glory_penalty} Glory"] if forfeited else [] ),
         f"Tiebreaked encounters: {tiebreak_count}",
         "",
         *encounter_lines,
@@ -676,6 +736,8 @@ def _write_global_statistics(report_dir: Path, total: dict, best_party: dict) ->
         f"Average weapon switches per encounter: {(action_counts['switch'] / encounters):.2f}" if encounters else "Average weapon switches per encounter: n/a",
         f"Average position swaps per encounter: {(action_counts['swap'] / encounters):.2f}" if encounters else "Average position swaps per encounter: n/a",
         f"Average skips per encounter: {(action_counts['skip'] / encounters):.2f}" if encounters else "Average skips per encounter: n/a",
+        f"Average bonus actions used per encounter: {(action_counts['bonus_used'] / encounters):.2f}" if encounters else "Average bonus actions used per encounter: n/a",
+        f"Average bonus passes per encounter: {(action_counts['bonus_skip'] / encounters):.2f}" if encounters else "Average bonus passes per encounter: n/a",
         f"Average ultimate spells cast per encounter: {(action_counts['ultimate'] / encounters):.2f}" if encounters else "Average ultimate spells cast per encounter: n/a",
         f"Average quest run length: {(total['quest_encounters_total'] / total['quest_runs']):.2f} encounters" if total["quest_runs"] else "Average quest run length: n/a",
         "",
@@ -736,7 +798,13 @@ def main() -> int:
     parser.add_argument("--favorite", action="append", dest="favorites", default=[])
     parser.add_argument("--report-dir", type=str, default="")
     parser.add_argument("--full-battle-logs", action="store_true")
+    parser.add_argument("--max-total-encounters", type=int, default=0)
+    parser.add_argument("--seed-offset", type=int, default=0)
     args = parser.parse_args()
+
+    if args.max_total_encounters and args.max_workers > 1:
+        print("Encounter-capped runs use single-worker mode for exact stopping.", flush=True)
+        args.max_workers = 1
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     report_dir = Path(args.report_dir) if args.report_dir else (Path.cwd() / f"favorite_quest_reports_{timestamp}")
@@ -749,16 +817,29 @@ def main() -> int:
         favorite_ids = [adventurer.id for adventurer in ADVENTURERS]
     for favorite_index, favorite_id in enumerate(favorite_ids):
         for run_index in range(args.runs_per_favorite):
-            tasks.append((favorite_id, favorite_index, run_index, bool(args.full_battle_logs)))
+            tasks.append((favorite_id, favorite_index, run_index, bool(args.full_battle_logs), {"seed_offset": args.seed_offset}))
 
     favorite_runs: dict[str, list[dict]] = defaultdict(list)
     total = _empty_partial()
     best_party_summary = None
+    simulation_stopped_early = False
+    stop_reason = ""
 
     completed = 0
     if args.max_workers <= 1:
         results_iter = map(_simulate_favorite_run, tasks)
-        for result in results_iter:
+        for task in tasks:
+            task_payload = task
+            if args.max_total_encounters:
+                remaining_encounters = args.max_total_encounters - total["encounters"]
+                if remaining_encounters <= 0:
+                    simulation_stopped_early = True
+                    stop_reason = f"Encounter cap reached at {total['encounters']} encounters."
+                    break
+                payload_dict = dict(task[-1]) if len(task) >= 5 and isinstance(task[-1], dict) else {}
+                payload_dict["encounter_cap"] = remaining_encounters
+                task_payload = task[:4] + (payload_dict,)
+            result = _simulate_favorite_run(task_payload)
             favorite_id = result["favorite_id"]
             favorite_runs[favorite_id].append(result)
             _merge_partial(total, result["partial"])
@@ -778,6 +859,16 @@ def main() -> int:
             completed += 1
             print(_progress_line(summary), flush=True)
             print(f"Completed {completed}/{len(tasks)} quest runs...", flush=True)
+            _write_favorite_file(report_dir, favorite_id, favorite_runs[favorite_id])
+            if best_party_summary is not None:
+                _write_global_statistics(report_dir, total, best_party_summary)
+            if args.max_total_encounters and total["encounters"] >= args.max_total_encounters:
+                simulation_stopped_early = True
+                stop_reason = (
+                    f"Encounter cap reached at {total['encounters']} encounters during "
+                    f"{_adventurer_name(summary['favorite_id'])} run {summary['run_index'] + 1}."
+                )
+                break
     else:
         with ProcessPoolExecutor(max_workers=args.max_workers) as executor:
             future_map = {executor.submit(_simulate_favorite_run, task): task for task in tasks}
@@ -809,10 +900,14 @@ def main() -> int:
                 if completed % 10 == 0 or completed == len(tasks):
                     print(f"Completed {completed}/{len(tasks)} quest runs...", flush=True)
 
-    for favorite_id in favorite_ids:
+    written_favorites = [favorite_id for favorite_id in favorite_ids if favorite_runs[favorite_id]]
+    for favorite_id in written_favorites:
         _write_favorite_file(report_dir, favorite_id, favorite_runs[favorite_id])
 
     _write_global_statistics(report_dir, total, best_party_summary)
+    if simulation_stopped_early:
+        (report_dir / "_simulation_stop.txt").write_text(stop_reason + "\n", encoding="utf-8")
+        print(stop_reason, flush=True)
     print(f"Reports written to: {report_dir}", flush=True)
     return 0
 
