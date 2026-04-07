@@ -1,8 +1,4 @@
 from __future__ import annotations
 
-# Storybook-era default roster ownership for new and migrated profiles.
-STARTER_ADVENTURERS = {
-    "red_blanchette",
-    "robin_hooded_avenger",
-    "sir_roland",
-}
+# All adventurers are available via the draft system; no starter roster restrictions.
+STARTER_ADVENTURERS: set[str] = set()

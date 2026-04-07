@@ -9,7 +9,6 @@ from storybook_content import (
     CATALOG_SECTIONS,
     CLOSET_TABS,
     COSMETIC_CATEGORIES,
-    EMBASSY_PACKAGES,
     MARKET_TABS,
     SHOP_TABS,
     STORY_QUESTS,
@@ -457,9 +456,9 @@ def draw_top_bar(surf, title, mouse_pos, *, left_icon=None, right_icons=(), subt
     profile = CURRENT_PROFILE
     if profile is not None:
         level_info = level_state(getattr(profile, "player_exp", 0))
-        glory_value = getattr(profile, "ranked_rating", 300)
+        reputation_value = getattr(profile, "reputation", 300)
         gold_value = getattr(profile, "gold", 0)
-        stat_text = f"Gold {gold_value}   Glory {glory_value}   Lv {level_info.level}"
+        stat_text = f"Gold {gold_value}   Rep {reputation_value}   Lv {level_info.level}"
         draw_text(surf, stat_text, font_label(11, bold=True), TEXT_SOFT, (WIDTH - 176, 31), right=True)
     x = WIDTH - 20
     for key, label, danger in reversed(list(right_icons)):
@@ -627,7 +626,7 @@ def draw_main_menu(surf, mouse_pos, profile, *, has_current_quest=False):
     fill_gradient(surf, avatar_rect, GOLD_DIM, SBG_DEEP)
     pygame.draw.rect(surf, GOLD_BRIGHT, avatar_rect, 1, border_radius=10)
     draw_text(surf, "PM", font_headline(32, bold=True), PARCHMENT, avatar_rect.center, center=True)
-    draw_text(surf, "Magnate Profile", font_headline(22, bold=True), TEXT, (profile_rect.x + 144, profile_rect.y + 56))
+    draw_text(surf, "Guild Profile", font_headline(22, bold=True), TEXT, (profile_rect.x + 152, profile_rect.y + 56))
     draw_text(
         surf,
         f"Level {level_info.level}",
@@ -638,7 +637,7 @@ def draw_main_menu(surf, mouse_pos, profile, *, has_current_quest=False):
     draw_text(
         surf,
         _ellipsize_text(
-            f"{getattr(profile, 'storybook_rank_label', 'Squire')} | {getattr(profile, 'ranked_rating', 300)} Glory",
+            f"{getattr(profile, 'storybook_rank_label', 'Squire')} | {getattr(profile, 'reputation', 300)} Rep",
             font_body(15),
             profile_rect.right - (profile_rect.x + 144) - 18,
         ),
@@ -656,9 +655,9 @@ def draw_main_menu(surf, mouse_pos, profile, *, has_current_quest=False):
     draw_meter(
         surf,
         pygame.Rect(profile_rect.x + 22, profile_rect.y + 210, profile_rect.width - 44, 14),
-        1 if level_info.at_cap else level_info.current_level_exp,
-        1 if level_info.at_cap else max(1, level_info.next_level_exp),
-        right_label="MAX" if level_info.at_cap else f"{level_info.current_level_exp}/{level_info.next_level_exp}",
+        level_info.current_level_exp,
+        max(1, level_info.next_level_exp),
+        right_label=f"{level_info.current_level_exp}/{level_info.next_level_exp}",
     )
 
     favorite_rect = pygame.Rect(profile_rect.x + 18, profile_rect.y + 236, profile_rect.width - 36, 72)
@@ -732,7 +731,7 @@ def draw_player_menu(
     draw_text(surf, "YOU", font_label(12, bold=True), GOLD_BRIGHT, (portrait.centerx, portrait.y + 14), center=True)
     exp_value = getattr(profile, "player_exp", 0)
     level_info = level_state(exp_value)
-    glory_value = getattr(profile, "ranked_rating", 500)
+    glory_value = getattr(profile, "reputation", 300)
     rank_label = getattr(profile, "storybook_rank_label", "Baron")
     detail_x = portrait.x + portrait.width + 26
     draw_text(surf, "Profile Stage", font_headline(20, bold=True), TEXT, (detail_x, portrait_rect.y + 72))
@@ -742,11 +741,11 @@ def draw_player_menu(
     draw_text(surf, _ellipsize_text(f"Icon: {getattr(profile, 'storybook_equipped_icon', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 156))
 
     level_line = f"Level {level_info.level} | {exp_value} EXP"
-    exp_progress = f"MAX" if level_info.at_cap else f"{level_info.current_level_exp} / {level_info.next_level_exp}"
-    meter_value = 1 if level_info.at_cap else level_info.current_level_exp
-    meter_max = 1 if level_info.at_cap else level_info.next_level_exp
+    exp_progress = f"{level_info.current_level_exp} / {level_info.next_level_exp}"
+    meter_value = level_info.current_level_exp
+    meter_max = level_info.next_level_exp
     draw_text(surf, level_line, font_body(20, bold=True), GOLD_BRIGHT, (stats_rect.x + 24, stats_rect.y + 74))
-    draw_text(surf, f"{rank_label} | {glory_value} Glory", font_body(20, bold=True), TEXT_SOFT, (stats_rect.x + 24, stats_rect.y + 108))
+    draw_text(surf, f"{rank_label} | {glory_value} Rep", font_body(20, bold=True), TEXT_SOFT, (stats_rect.x + 24, stats_rect.y + 108))
     draw_text(surf, f"Gold {getattr(profile, 'gold', 0)}", font_body(18, bold=True), TEXT_SOFT, (stats_rect.x + 24, stats_rect.y + 140))
     draw_meter(
         surf,
@@ -1068,60 +1067,8 @@ def draw_market(
     package_buttons = []
     buy_rect = pygame.Rect(detail_rect.x + 24, detail_rect.bottom - 56, detail_rect.width - 48, 38)
 
-    if active_tab == "Embassy":
-        selected_package = next((package for package in EMBASSY_PACKAGES if package["id"] == focus_id), EMBASSY_PACKAGES[0])
-        for index, package in enumerate(EMBASSY_PACKAGES):
-            rect = pygame.Rect(list_rect.x + 24, list_rect.y + 58 + index * 140, list_rect.width - 48, 112)
-            selected = package["id"] == selected_package["id"]
-            draw_beveled_panel(
-                surf,
-                rect,
-                fill_top=SURFACE_HIGH if selected else SURFACE,
-                fill_bottom=SURFACE_LOW,
-                border=GOLD_BRIGHT if selected else GOLD_DIM,
-            )
-            draw_text(surf, f"${package['usd']}", font_headline(30, bold=True), GOLD_BRIGHT, (rect.x + 18, rect.y + 18))
-            draw_text(
-                surf,
-                f"{package['gold'] + package.get('bonus_gold', 0)} Gold",
-                font_headline(24, bold=True),
-                TEXT,
-                (rect.x + 160, rect.y + 18),
-            )
-            bonus_gold = int(package.get("bonus_gold", 0))
-            bonus_line = f"Bonus Gold: {bonus_gold}" if bonus_gold else "No bonus Gold on this exchange."
-            draw_text(surf, bonus_line, font_body(16), TEXT_SOFT, (rect.x + 160, rect.y + 54))
-            package_buttons.append((rect, package["id"]))
-
-        draw_text(surf, "Embassy", font_headline(32, bold=True), TEXT, (detail_rect.x + 24, detail_rect.y + 62))
-        draw_text(surf, "Convert USD into Gold packages for the market.", font_body(17), TEXT_SOFT, (detail_rect.x + 24, detail_rect.y + 108))
-        draw_text(surf, f"Selected Package: ${selected_package['usd']}", font_body(18, bold=True), GOLD_BRIGHT, (detail_rect.x + 24, detail_rect.y + 160))
-        draw_text(
-            surf,
-            f"Gold Granted: {selected_package['gold'] + selected_package.get('bonus_gold', 0)}",
-            font_body(18, bold=True),
-            TEXT_SOFT,
-            (detail_rect.x + 24, detail_rect.y + 194),
-        )
-        draw_text(surf, f"Current Gold: {getattr(profile, 'gold', 0)}", font_body(16), TEXT_SOFT, (detail_rect.x + 24, detail_rect.y + 240))
-        draw_text(
-            surf,
-            f"After Exchange: {getattr(profile, 'gold', 0) + selected_package['gold'] + selected_package.get('bonus_gold', 0)}",
-            font_body(16),
-            TEXT_SOFT,
-            (detail_rect.x + 24, detail_rect.y + 268),
-        )
-        draw_text(
-            surf,
-            f"Lifetime Embassy Spend: ${int(getattr(profile, 'premium_dollars_spent', 0))}",
-            font_body(16),
-            TEXT_SOFT,
-            (detail_rect.x + 24, detail_rect.y + 302),
-        )
-        for index, line in enumerate(_wrap_text_block(status_message or market_tab_note(active_tab), font_body(15), detail_rect.width - 48)[:6]):
-            draw_text(surf, line, font_body(15), TEXT_SOFT, (detail_rect.x + 24, detail_rect.y + 366 + index * 20))
-        draw_primary_button(surf, buy_rect, mouse_pos, "Exchange")
-        btns["market_scroll_max"] = 0
+    if False:  # Embassy tab removed
+        pass
     else:
         items = market_items_for_tab(active_tab)
         max_scroll = max(0, len(items) - 6)
@@ -1722,7 +1669,7 @@ def draw_quests_menu(
             "You can still retune those loadouts before every encounter.",
         ]
     if run_active:
-        prep_lines.append(f"Forfeit Quest costs {max(0, 3 - quest_losses) * 10} Glory right now.")
+        prep_lines.append(f"Forfeit Quest costs {max(0, 3 - quest_losses) * 10} Reputation right now.")
     for index, line in enumerate(prep_lines):
         draw_text(
             surf,

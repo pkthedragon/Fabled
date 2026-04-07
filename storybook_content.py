@@ -70,28 +70,16 @@ STORY_QUESTS = [
 
 BOUT_MODES = [
     {
-        "id": "local",
-        "name": "Local PvP",
-        "subtitle": "Flexible duel shell for AI rivals or a LAN challenger.",
-        "note": "Best for testing tactical reads and formation discipline without ladder pressure.",
+        "id": "random",
+        "name": "Random Bout",
+        "subtitle": "Pick from a random shared pool of nine adventurers.",
+        "note": "Both players draft from the same pool. Adapt your picks to what your opponent leaves.",
     },
     {
-        "id": "online",
-        "name": "Online PvP",
-        "subtitle": "Hidden-loadout duel pacing with the same mirrored prep flow.",
-        "note": "Works against AI or a LAN opponent inside the current desktop build.",
-    },
-    {
-        "id": "friendly",
-        "name": "Friendly Match",
-        "subtitle": "Quick draft with no ladder pressure.",
-        "note": "Use this when you want to practice picks from the shared pool of nine.",
-    },
-    {
-        "id": "ranked",
-        "name": "Ranked Bout",
-        "subtitle": "Structured duel with Glory at stake.",
-        "note": "Drafting is identical; only matchmaking pressure and post-match Glory change.",
+        "id": "focused",
+        "name": "Focused Bout",
+        "subtitle": "Select from your full roster, then build your loadout.",
+        "note": "Bring the team you know. No pool restrictions — full roster selection before battle.",
     },
 ]
 
@@ -108,107 +96,91 @@ COSMETIC_CATEGORIES = ["Hats", "Shirts", "Pants", "Socks", "Shoes"]
 CLOSET_TABS = [
     "Outfits",
     "Chairs",
-    "Icons",
     "Emotes",
-    "Dances",
-    "Celebrations",
     "Adventurer Skins",
-    "Battlefield Skins",
 ]
 MARKET_TABS = [
     "Featured",
     "Outfits",
     "Chairs",
     "Adventurer Skins",
-    "Battlefield Skins",
-    "Icons",
     "Emotes",
-    "Dances",
-    "Celebrations",
-    "Embassy",
 ]
 
 MARKET_ITEMS = []
 
-EMBASSY_PACKAGES = [
-    {"id": "embassy_5", "usd": 5, "gold": 500, "bonus_gold": 0},
-    {"id": "embassy_10", "usd": 10, "gold": 1100, "bonus_gold": 100},
-    {"id": "embassy_20", "usd": 20, "gold": 2300, "bonus_gold": 300},
+# ---------------------------------------------------------------------------
+# Employee skill definitions
+# ---------------------------------------------------------------------------
+
+ASSISTANT_SKILLS = [
+    {
+        "id": "scribe",
+        "name": "Scribe",
+        "description": "Records each quest encounter outcome. At quest-end, adds +50 Gold per win in the completed run.",
+    },
+    {
+        "id": "strategist",
+        "name": "Strategist",
+        "description": "At the start of each ranked quest encounter, reveals the opponent's first pick adventurer.",
+    },
+    {
+        "id": "archivist",
+        "name": "Archivist",
+        "description": "Unlocks a second draft offer slot each quest encounter (choose from 2 extra adventurers per pick).",
+    },
+    {
+        "id": "quartermaster",
+        "name": "Quartermaster",
+        "description": "The artifact pool for each quest run gains one additional randomly drawn artifact at the start.",
+    },
+    {
+        "id": "liaison",
+        "name": "Liaison",
+        "description": "Reduces the Reputation penalty for forfeiting a quest by 5.",
+    },
 ]
 
-ADVENTURER_SHOP_PRICES = {
-    "porcus_iii": 1600,
-    "kama_the_honeyed": 1600,
-    "reynard_lupine_trickster": 1600,
-    "the_green_knight": 1700,
-    "destitute_vasilisa": 1700,
-    "matchbox_liesl": 1700,
-    "the_good_beast": 1800,
-    "maui_sunthief": 1800,
-    "rapunzel_the_golden": 1800,
-    "red_blanchette": 1800,
-    "witch_hunter_gretel": 1900,
-    "hunold_the_piper": 1900,
-    "briar_rose": 1900,
-    "robin_hooded_avenger": 1900,
-    "wayward_humbert": 2000,
-    "sea_wench_asha": 2000,
-    "lady_of_reflections": 2000,
-    "ali_baba": 2000,
-    "sir_roland": 2100,
-    "lucky_constantine": 2100,
-    "ashen_ella": 2100,
-    "pinocchio_cursed_puppet": 2100,
-    "march_hare": 2200,
-    "little_jack": 2200,
-    "rumpelstiltskin": 2200,
+BARTENDER_SKILLS = [
+    {
+        "id": "house_brew",
+        "name": "House Brew",
+        "description": "After each bout win, grants +30 bonus Gold on top of the standard reward.",
+    },
+    {
+        "id": "last_round",
+        "name": "Last Round",
+        "description": "In a best-of-three bout, if the player is down 0–1, the next match awards double Gold on a win.",
+    },
+    {
+        "id": "regulars",
+        "name": "Regulars",
+        "description": "Tracking a win streak in bouts: every 3rd consecutive win grants a free draft re-roll.",
+    },
+    {
+        "id": "tab_keeper",
+        "name": "Tab Keeper",
+        "description": "Reduces Gold spent on cosmetic market purchases by 10%.",
+    },
+    {
+        "id": "strong_pour",
+        "name": "Strong Pour",
+        "description": "The AI opponent in any bout begins the match with one fewer draft pick.",
+    },
+]
+
+SERVER_SKILLS = [
+    {
+        "id": "daily_special",
+        "name": "Daily Special",
+        "description": "Each day, the server selects a Favorite Adventurer. Using that adventurer in a quest or bout grants +1 additional artifact in their loadout pool.",
+    },
+]
+
+ALL_EMPLOYEE_SKILLS = {
+    skill["id"]: skill
+    for skill in ASSISTANT_SKILLS + BARTENDER_SKILLS + SERVER_SKILLS
 }
-
-ARTIFACT_SHOP_PRICES = {
-    "all_mill": 550,
-    "swan_cloak": 550,
-    "fading_diadem": 600,
-    "jade_rabbit": 600,
-    "holy_grail": 650,
-    "golden_fleece": 650,
-    "misericorde": 650,
-    "bluebeards_key": 650,
-    "dragons_horn": 650,
-    "bottled_clouds": 650,
-    "winged_sandals": 700,
-    "selkies_skin": 700,
-    "nettle_smock": 700,
-    "black_torch": 700,
-    "dire_wolf_spine": 800,
-    "cornucopia": 800,
-    "red_hood": 850,
-    "cursed_spindle": 850,
-    "lightning_helm": 900,
-    "naiads_knife": 900,
-    "sun_gods_banner": 900,
-    "soaring_crown": 900,
-    "paradox_rings": 900,
-    "last_prism": 950,
-    "enchanted_lamp": 950,
-    "iron_rosary": 950,
-    "glass_slipper": 950,
-    "starskin_veil": 950,
-    "blood_diamond": 800,
-    "suspicious_eye": 850,
-    "magic_mirror": 1000,
-    "goose_quill": 1000,
-    "arcane_hourglass": 1150,
-}
-
-
-def adventurer_shop_price(adventurer) -> int:
-    # Prevent hard crashes if a new adventurer is added before this table is updated.
-    return ADVENTURER_SHOP_PRICES.get(adventurer.id, 1800)
-
-
-def artifact_shop_price(artifact) -> int:
-    # Prevent hard crashes if a new artifact is added before this table is updated.
-    return ARTIFACT_SHOP_PRICES.get(artifact.id, 500)
 
 
 ROLE_PRIORITY = ("Tank", "Carry", "Support", "Control", "Skirmish")
@@ -579,49 +551,23 @@ def catalog_entries(section: str, filters: dict | None = None, *, favorite_adven
 
 
 def shop_tab_note(tab_name: str) -> str:
-    if tab_name == "Artifacts":
-        return "Browse artifacts by stat bonus, attunement, and effect."
     return ""
 
 
 def shop_items_for_tab(tab_name: str) -> list[dict]:
-    if tab_name == "Artifacts":
-        artifacts_by_id = {artifact.id: artifact for artifact in ARTIFACTS}
-        items = []
-        for artifact_id in ARTIFACT_SHOP_PRICES:
-            artifact = artifacts_by_id.get(artifact_id)
-            if artifact is None:
-                continue
-            items.append(
-                {
-                    "name": artifact.name,
-                    "id": artifact.id,
-                    "artifact_id": artifact.id,
-                    "tag": "Relic",
-                    "price": artifact_shop_price(artifact),
-                    "subtitle": ", ".join(artifact.attunement),
-                }
-            )
-        return items
     return []
 
 
 def market_items_for_tab(tab_name: str) -> list[dict]:
-    if tab_name == "Embassy":
-        return []
     if tab_name == "Featured":
         featured_ids = {
             "outfit_gilded_regent",
             "chair_sunwood_throne",
             "skin_jack_cloudbreaker",
-            "field_moonlit_dais",
-            "icon_wolf_sigil",
             "emote_royal_bow",
-            "dance_starlit_waltz",
-            "celebration_lantern_burst",
         }
         return [item for item in MARKET_ITEMS if item["id"] in featured_ids]
-    return [item for item in MARKET_ITEMS if item["category"] == tab_name]
+    return [item for item in MARKET_ITEMS if item.get("category") == tab_name]
 
 
 def market_tab_note(tab_name: str) -> str:
@@ -630,12 +576,7 @@ def market_tab_note(tab_name: str) -> str:
         "Outfits": "Player wardrobe pieces for your profile showcase.",
         "Chairs": "Seating flourishes for the player profile stage.",
         "Adventurer Skins": "Alternative looks for individual adventurers.",
-        "Battlefield Skins": "Arena themes that restyle the battle backdrop.",
-        "Icons": "Profile portrait emblems.",
         "Emotes": "Short expressive flourishes.",
-        "Dances": "Longer lobby showcase animations.",
-        "Celebrations": "Victory flourishes and finishers.",
-        "Embassy": "Exchange USD packages into Gold for purchases.",
     }
     return notes.get(tab_name, "")
 

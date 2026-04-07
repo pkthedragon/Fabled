@@ -3,33 +3,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 
-MAX_LEVEL = 20
-QUEST_WIN_EXP = 25
-BOUT_WIN_EXP = 35
-ARTIFACT_PURCHASE_EXP = 15
-BOUT_WIN_GOLD = 150
-
-LEVEL_EXP_REQUIREMENTS = {
-    1: 100,
-    2: 120,
-    3: 140,
-    4: 160,
-    5: 180,
-    6: 200,
-    7: 220,
-    8: 240,
-    9: 260,
-    10: 280,
-    11: 300,
-    12: 320,
-    13: 340,
-    14: 360,
-    15: 380,
-    16: 400,
-    17: 420,
-    18: 440,
-    19: 460,
-}
+def exp_to_next_level(level: int) -> int:
+    """EXP required to advance from `level` to `level + 1`. Formula: level × 100."""
+    return max(1, int(level)) * 100
 
 
 @dataclass(frozen=True)
@@ -38,10 +14,6 @@ class LevelState:
     total_exp: int
     current_level_exp: int
     next_level_exp: int
-
-    @property
-    def at_cap(self) -> bool:
-        return self.level >= MAX_LEVEL
 
 
 @dataclass(frozen=True)
@@ -53,14 +25,10 @@ class ExpAward:
     levels_gained: tuple[int, ...]
 
 
-def exp_to_next_level(level: int) -> int:
-    return LEVEL_EXP_REQUIREMENTS.get(level, 0)
-
-
 def level_state(total_exp: int) -> LevelState:
     remaining = max(0, int(total_exp))
     level = 1
-    while level < MAX_LEVEL:
+    while True:
         needed = exp_to_next_level(level)
         if remaining < needed:
             return LevelState(
@@ -71,12 +39,6 @@ def level_state(total_exp: int) -> LevelState:
             )
         remaining -= needed
         level += 1
-    return LevelState(
-        level=MAX_LEVEL,
-        total_exp=max(0, int(total_exp)),
-        current_level_exp=0,
-        next_level_exp=0,
-    )
 
 
 def level_for_exp(total_exp: int) -> int:
@@ -84,7 +46,8 @@ def level_for_exp(total_exp: int) -> int:
 
 
 def level_up_gold(level_reached: int) -> int:
-    return 500 if level_reached % 5 == 0 else 100
+    """Gold awarded upon reaching a new level. Formula: 50 + (10 × new_level)."""
+    return 50 + (10 * max(1, int(level_reached)))
 
 
 def award_exp(total_exp: int, gained_exp: int) -> ExpAward:
@@ -99,7 +62,3 @@ def award_exp(total_exp: int, gained_exp: int) -> ExpAward:
         level_up_gold=sum(level_up_gold(level) for level in levels_gained),
         levels_gained=levels_gained,
     )
-
-
-def quest_win_gold(run_wins_before_match: int) -> int:
-    return 100 + (10 * min(max(0, int(run_wins_before_match)), 10))

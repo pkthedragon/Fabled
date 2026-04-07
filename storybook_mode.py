@@ -26,22 +26,21 @@ from quests_sandbox import (
 )
 from storybook_battle import StoryBattleController, StoryLanBattleController
 from storybook_content import CATALOG_SECTIONS, BOUT_MODES, CLOSET_TABS, COSMETIC_CATEGORIES, STORY_QUESTS, catalog_entries, catalog_filter_definitions, draft_offer, shop_items_for_tab, shop_tab_note
-from storybook_content import EMBASSY_PACKAGES, MARKET_TABS, market_items_for_tab, market_tab_note
+from storybook_content import MARKET_TABS, market_items_for_tab, market_tab_note
 from storybook_lan import StoryLanSession, deserialize_setup_state, friend_host_available, serialize_member, serialize_setup_state
-from storybook_progression import ARTIFACT_PURCHASE_EXP, BOUT_WIN_EXP, BOUT_WIN_GOLD, QUEST_WIN_EXP, award_exp
+from storybook_progression import award_exp
 from storybook_ranked import (
-    ai_difficulty_for_glory,
-    clamp_glory,
-    ensure_storybook_glory,
+    ai_difficulty_for_reputation,
+    clamp_reputation,
+    ensure_storybook_reputation,
     find_ai_match_profile,
-    get_encounter_gold,
-    get_rank_from_glory,
-    rank_floor_for_glory,
+    get_rank_from_reputation,
+    rank_floor_for_reputation,
     log_quest_ai_match,
     pressure_label,
     rank_name,
-    target_team_score_for_glory,
-    update_glory_after_match,
+    target_team_score_for_reputation,
+    update_reputation_after_match,
 )
 import storybook_ui as sbui
 
@@ -135,7 +134,7 @@ class StorybookMode:
             "lan": self._empty_quest_run_state(),
         }
         self.quest_remote_team: list[dict] | None = None
-        self.quest_remote_glory = ensure_storybook_glory(getattr(self.profile, "ranked_rating", 500), getattr(self.profile, "ranked_games_played", 0))
+        self.quest_remote_glory = ensure_storybook_reputation(getattr(self.profile, "reputation", 300), getattr(self.profile, "ranked_games_played", 0))
         self.quest_local_ready = False
         self.quest_remote_ready = False
         self.story_quest_best = 0
@@ -160,7 +159,7 @@ class StorybookMode:
         self.bout_loadout_index = 0
         self.bout_loadout_detail_scroll = 0
         self.bout_loadout_summary_scroll = 0
-        self.bout_remote_glory = ensure_storybook_glory(getattr(self.profile, "ranked_rating", 500), getattr(self.profile, "ranked_games_played", 0))
+        self.bout_remote_glory = ensure_storybook_reputation(getattr(self.profile, "reputation", 300), getattr(self.profile, "ranked_games_played", 0))
         self.bout_local_ready = False
         self.bout_remote_ready = False
         self.story_bout_wins = 0
@@ -186,7 +185,7 @@ class StorybookMode:
         self.current_battle_player_name = "You"
         self.current_battle_enemy_name = "AI Rival"
         self.current_battle_result_kind = "quest"
-        self.current_battle_opponent_glory = ensure_storybook_glory(getattr(self.profile, "ranked_rating", 500), getattr(self.profile, "ranked_games_played", 0))
+        self.current_battle_opponent_glory = ensure_storybook_reputation(getattr(self.profile, "reputation", 300), getattr(self.profile, "ranked_games_played", 0))
 
         self.result_kind = "quest"
         self.result_lines: list[str] = []
@@ -226,19 +225,16 @@ class StorybookMode:
     def _normalize_profile(self):
         if getattr(self.profile, "gold", 0) <= 0 and getattr(self.profile, "player_exp", 0) <= 0:
             self.profile.gold = 1200
-        self.profile.ranked_rating = ensure_storybook_glory(
-            getattr(self.profile, "ranked_rating", 300),
+        self.profile.reputation = ensure_storybook_reputation(
+            getattr(self.profile, "reputation", 300),
             getattr(self.profile, "ranked_games_played", 0),
         )
-        self.profile.storybook_rank_label = get_rank_from_glory(self.profile.ranked_rating)
-        self.profile.ranked_season_high_glory = max(
-            getattr(self.profile, "ranked_season_high_glory", self.profile.ranked_rating),
-            self.profile.ranked_rating,
+        self.profile.storybook_rank_label = get_rank_from_reputation(self.profile.reputation)
+        self.profile.season_high_reputation = max(
+            getattr(self.profile, "season_high_reputation", self.profile.reputation),
+            self.profile.reputation,
         )
-        self.profile.ranked_floor_glory = rank_floor_for_glory(self.profile.ranked_rating)
-        self.profile.unlocked_artifacts = {
-            artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID
-        }
+        self.profile.floor_reputation = rank_floor_for_reputation(self.profile.reputation)
         self.profile.storybook_adventurer_unlocks = {
             adventurer_id
             for adventurer_id in getattr(self.profile, "storybook_adventurer_unlocks", set())
@@ -362,10 +358,7 @@ class StorybookMode:
     def _reset_market_focus(self):
         items = self._market_items()
         self.market_item_scroll = 0
-        if self.market_tab == "Embassy":
-            self.market_focus_id = EMBASSY_PACKAGES[0]["id"] if EMBASSY_PACKAGES else None
-        else:
-            self.market_focus_id = items[0]["id"] if items else None
+        self.market_focus_id = items[0]["id"] if items else None
         self.market_message = market_tab_note(self.market_tab)
 
     def _open_market(self):
@@ -457,17 +450,6 @@ class StorybookMode:
         self._persist_profile()
 
     def _purchase_market_focus(self):
-        if self.market_tab == "Embassy":
-            package = next((entry for entry in EMBASSY_PACKAGES if entry["id"] == self.market_focus_id), None)
-            if package is None:
-                self.market_message = "Select a package first."
-                return
-            granted_gold = int(package["gold"]) + int(package.get("bonus_gold", 0))
-            self.profile.gold += granted_gold
-            self.profile.premium_dollars_spent = int(getattr(self.profile, "premium_dollars_spent", 0)) + int(package["usd"])
-            self.market_message = f"Embassy exchanged ${package['usd']} into {granted_gold} Gold."
-            self._persist_profile()
-            return
         item = next((entry for entry in self._market_items() if entry["id"] == self.market_focus_id), None)
         if item is None:
             self.market_message = "Select a market item first."
@@ -540,12 +522,12 @@ class StorybookMode:
             return
 
     def _persist_profile(self):
-        self.profile.storybook_rank_label = get_rank_from_glory(self.profile.ranked_rating)
-        self.profile.ranked_season_high_glory = max(
-            getattr(self.profile, "ranked_season_high_glory", self.profile.ranked_rating),
-            self.profile.ranked_rating,
+        self.profile.storybook_rank_label = get_rank_from_reputation(self.profile.reputation)
+        self.profile.season_high_reputation = max(
+            getattr(self.profile, "season_high_reputation", self.profile.reputation),
+            self.profile.reputation,
         )
-        self.profile.ranked_floor_glory = rank_floor_for_glory(self.profile.ranked_rating)
+        self.profile.floor_reputation = rank_floor_for_reputation(self.profile.reputation)
         self.profile.storybook_cosmetic_unlocks = set(self.shop_owned_cosmetics)
         self.profile.storybook_adventurer_unlocks = {
             adventurer_id
@@ -878,9 +860,9 @@ class StorybookMode:
             return [f"Reached Level {award.new_level}: +{award.level_up_gold} Gold"]
         return [f"Reached Level {award.new_level}: +{award.level_up_gold} Gold across {len(award.levels_gained)} level-ups"]
 
-    def _glory_text(self) -> str:
-        glory = ensure_storybook_glory(self.profile.ranked_rating, getattr(self.profile, "ranked_games_played", 0))
-        return f"{getattr(self.profile, 'storybook_rank_label', get_rank_from_glory(glory))} | {glory} Glory"
+    def _reputation_text(self) -> str:
+        reputation = ensure_storybook_reputation(self.profile.reputation, getattr(self.profile, "ranked_games_played", 0))
+        return f"{getattr(self.profile, 'storybook_rank_label', get_rank_from_reputation(reputation))} | {reputation} Reputation"
 
     def _quest_run_state(self, mode: str | None = None) -> dict:
         return self.quest_runs[mode or self.quest_opponent_mode]
@@ -919,13 +901,13 @@ class StorybookMode:
         if not run_state.get("active"):
             return
         remaining_losses = max(0, 3 - int(run_state.get("losses", 0)))
-        glory_penalty = remaining_losses * 10
-        current_glory = ensure_storybook_glory(
-            getattr(self.profile, "ranked_rating", 500),
+        reputation_penalty = remaining_losses * 10
+        current_reputation = ensure_storybook_reputation(
+            getattr(self.profile, "reputation", 300),
             getattr(self.profile, "ranked_games_played", 0),
         )
-        self.profile.ranked_rating = clamp_glory(current_glory - glory_penalty)
-        self.profile.storybook_rank_label = get_rank_from_glory(self.profile.ranked_rating)
+        self.profile.reputation = clamp_reputation(current_reputation - reputation_penalty)
+        self.profile.storybook_rank_label = get_rank_from_reputation(self.profile.reputation)
         self._reset_quest_run_state("ai")
         self._persist_profile()
         self.route = "quests_menu"
@@ -963,7 +945,7 @@ class StorybookMode:
                     "streak_text": f"{state['wins']} Wins" if state["active"] else "No active streak",
                     "loss_text": f"{state['losses']} / 3" if state["active"] else "0 / 3",
                     "pressure": pressure_label(
-                        self.profile.ranked_rating,
+                        self.profile.reputation,
                         state["current_win_streak"],
                         state["current_loss_streak"],
                         self._quest_avg_opponent_glory(mode),
@@ -2247,12 +2229,12 @@ class StorybookMode:
                 return
             self.profile.gold -= item["price"]
             if item.get("artifact_id"):
-                self.profile.unlocked_artifacts.add(item["artifact_id"])
+                pass  # Artifacts no longer unlocked individually; they enter the run pool via draft
             else:
                 self.shop_message = "This stock card is not purchasable in the current build."
                 return
-            level_lines = self._apply_exp_gain(ARTIFACT_PURCHASE_EXP)
-            self.shop_message = f"Purchased {item['name']} for {item['price']} Gold and earned +{ARTIFACT_PURCHASE_EXP} EXP."
+            level_lines = self._apply_exp_gain(0)
+            self.shop_message = f"Purchased {item['name']} for {item['price']} Gold."
             if level_lines:
                 self.shop_message = f"{self.shop_message} {level_lines[0]}"
             self._persist_profile()
@@ -2334,31 +2316,31 @@ class StorybookMode:
         self.quest_run_opponent_glories = list(state["opponent_glories"])
         self.quest_player_team = copy.deepcopy(state["team"]) if state["team"] is not None else None
 
-    def _apply_glory_result(
+    def _apply_reputation_result(
         self,
         *,
         did_win: bool,
         current_win_streak_before: int,
         current_loss_streak_before: int,
     ) -> str:
-        old_glory = self.profile.ranked_rating
-        new_glory, delta = update_glory_after_match(
-            self.profile.ranked_rating,
+        old_reputation = self.profile.reputation
+        new_reputation, delta = update_reputation_after_match(
+            self.profile.reputation,
             self.current_battle_opponent_glory,
             did_win=did_win,
             current_win_streak_before_match=current_win_streak_before,
             current_loss_streak_before_match=current_loss_streak_before,
-            floor_glory=1,
+            floor_reputation=1,
         )
-        self.profile.ranked_rating = new_glory
+        self.profile.reputation = new_reputation
         self.profile.ranked_games_played = getattr(self.profile, "ranked_games_played", 0) + 1
-        self.profile.storybook_rank_label = get_rank_from_glory(new_glory)
-        self.profile.ranked_floor_glory = rank_floor_for_glory(new_glory)
-        self.profile.ranked_season_high_glory = max(
-            getattr(self.profile, "ranked_season_high_glory", new_glory),
-            new_glory,
+        self.profile.storybook_rank_label = get_rank_from_reputation(new_reputation)
+        self.profile.floor_reputation = rank_floor_for_reputation(new_reputation)
+        self.profile.season_high_reputation = max(
+            getattr(self.profile, "season_high_reputation", new_reputation),
+            new_reputation,
         )
-        return f"Glory {old_glory} -> {new_glory} ({delta:+d})"
+        return f"Reputation {old_reputation} -> {new_reputation} ({delta:+d})"
 
     def _finalize_quest_result(self, lines: list[str]) -> list[str]:
         run_state = self._quest_run_state(self.quest_opponent_mode)
@@ -2367,19 +2349,19 @@ class StorybookMode:
         run_losses_before = run_state["losses"]
         win_streak_before = run_state["current_win_streak"]
         loss_streak_before = run_state["current_loss_streak"]
-        glory_before = self.profile.ranked_rating
+        reputation_before = self.profile.reputation
         avg_opponent_glory_before = self._quest_avg_opponent_glory("ai")
         party_snapshot = copy.deepcopy(run_state["team"]) if run_state["team"] is not None else None
         ranked_ai = self.quest_context == "ranked" and run_mode == "ai"
 
         if ranked_ai:
-            glory_line = self._apply_glory_result(
+            reputation_line = self._apply_reputation_result(
                 did_win=self.result_victory,
                 current_win_streak_before=win_streak_before,
                 current_loss_streak_before=loss_streak_before,
             )
         else:
-            glory_line = "Glory is unchanged in training or LAN encounters."
+            reputation_line = "Reputation is unchanged in training or LAN encounters."
 
         if ranked_ai and run_mode == "ai" and self.current_battle_opponent_glory > 0:
             run_state["opponent_glories"].append(self.current_battle_opponent_glory)
@@ -2387,7 +2369,7 @@ class StorybookMode:
                 run_state["opponent_glories"] = run_state["opponent_glories"][-20:]
 
         if self.result_victory:
-            gold_reward = get_encounter_gold(win_streak_before) if ranked_ai else 0
+            gold_reward = 0
             if ranked_ai:
                 run_state["wins"] += 1
                 run_state["current_win_streak"] += 1
@@ -2405,13 +2387,13 @@ class StorybookMode:
                     self.profile.ranked_current_quest_id = run_state["quest_id"]
             if gold_reward > 0:
                 self.profile.gold += gold_reward
-            level_lines = self._apply_exp_gain(QUEST_WIN_EXP)
+            level_lines = self._apply_exp_gain(0)
             if ranked_ai:
                 log_quest_ai_match(
                     {
                         "did_win": True,
-                        "glory_before": glory_before,
-                        "glory_after": self.profile.ranked_rating,
+                        "reputation_before": reputation_before,
+                        "reputation_after": self.profile.reputation,
                         "opponent_glory": self.current_battle_opponent_glory,
                         "run_wins_before": run_wins_before,
                         "run_losses_before": run_losses_before,
@@ -2434,11 +2416,9 @@ class StorybookMode:
                 )
             else:
                 summary.append("Training Encounter Complete")
-            reward_line = f"Encounter rewards: +{QUEST_WIN_EXP} EXP"
-            if gold_reward > 0:
-                reward_line = f"Encounter rewards: +{gold_reward} Gold, +{QUEST_WIN_EXP} EXP"
+            reward_line = "Encounter complete."
             self._persist_profile()
-            return [*summary, reward_line, *level_lines, glory_line, *lines]
+            return [*summary, reward_line, *level_lines, reputation_line, *lines]
 
         if ranked_ai:
             run_state["losses"] += 1
@@ -2462,8 +2442,8 @@ class StorybookMode:
             log_quest_ai_match(
                 {
                     "did_win": False,
-                    "glory_before": glory_before,
-                    "glory_after": self.profile.ranked_rating,
+                    "reputation_before": reputation_before,
+                    "reputation_after": self.profile.reputation,
                     "opponent_glory": self.current_battle_opponent_glory,
                     "run_wins_before": run_wins_before,
                     "run_losses_before": run_losses_before,
@@ -2492,14 +2472,13 @@ class StorybookMode:
         else:
             summary.append("Return to Training Grounds to queue another encounter.")
         self._persist_profile()
-        return [*summary, glory_line, *lines]
+        return [*summary, reputation_line, *lines]
 
     def _finalize_bout_result(self, lines: list[str]) -> list[str]:
         mode = self._bout_mode()
         if self.result_victory:
             self.story_bout_wins += 1
-            self.profile.gold += BOUT_WIN_GOLD
-            level_lines = self._apply_exp_gain(BOUT_WIN_EXP)
+            level_lines = self._apply_exp_gain(0)
         else:
             self.story_bout_losses += 1
             level_lines = []
@@ -2508,7 +2487,7 @@ class StorybookMode:
             f"Bout record: {self.story_bout_wins}-{self.story_bout_losses}",
         ]
         if self.result_victory:
-            summary.append(f"Rewards earned: +{BOUT_WIN_GOLD} Gold, +{BOUT_WIN_EXP} EXP")
+            summary.append("Bout complete.")
             summary.extend(level_lines)
         self._persist_profile()
         seat_note = "You drafted second and carried the round-one bonus swap." if self.bout_player_seat == 2 else "Your opponent drafted second and opened with the bonus swap advantage."
@@ -2581,9 +2560,9 @@ class StorybookMode:
     def _team_from_loadout(self, loadout) -> list[dict]:
         return [self._member_dict_from_build(member) for member in loadout.members]
 
-    def _generate_quest_ai_choice(self, target_glory: int):
-        difficulty = ai_difficulty_for_glory(target_glory)
-        target_score = target_team_score_for_glory(target_glory)
+    def _generate_quest_ai_choice(self, target_reputation: int):
+        difficulty = ai_difficulty_for_reputation(target_reputation)
+        target_score = target_team_score_for_reputation(target_reputation)
         best_choice = None
         best_gap = None
         for _ in range(7):
@@ -2798,7 +2777,7 @@ class StorybookMode:
         )
         self.quest_enemy_selected_ids = list(training_enemy_choice.team_ids)
         self.quest_enemy_setup_members = self._team_from_loadout(training_enemy_choice.loadout)
-        self.current_battle_opponent_glory = self.profile.ranked_rating
+        self.current_battle_opponent_glory = self.profile.reputation
         self.current_battle_ai_difficulties = {2: "normal"}
         self.current_battle_enemy_name = "Training Rival"
         self.quest_draft_detail_scroll = 0
@@ -2838,13 +2817,13 @@ class StorybookMode:
             return
         self.quest_offer_ids = list(player_party_ids)
         match_profile = find_ai_match_profile(
-            self.profile.ranked_rating,
+            self.profile.reputation,
             run_state["current_win_streak"],
             run_state["current_loss_streak"],
-            avg_opponent_glory=self._quest_avg_opponent_glory("ai"),
+            avg_opponent_reputation=self._quest_avg_opponent_glory("ai"),
             rng=self.rng,
         )
-        difficulty = ai_difficulty_for_glory(match_profile.glory)
+        difficulty = ai_difficulty_for_reputation(match_profile.reputation)
         enemy_offer = draft_offer(9, seed=self.rng.randint(0, 999999))
         enemy_package = choose_blind_quest_roster_from_offer(enemy_offer, roster_size=6)
         enemy_party_ids = list(enemy_package.offer_ids)
@@ -2868,8 +2847,8 @@ class StorybookMode:
         self.quest_team_import_status_lines = []
         self.quest_imported_party_members = []
         self.quest_imported_party_name = ""
-        self.current_battle_opponent_glory = match_profile.glory
-        self.current_battle_enemy_name = f"{rank_name(match_profile.glory)} Rival"
+        self.current_battle_opponent_glory = match_profile.reputation
+        self.current_battle_enemy_name = f"{rank_name(match_profile.reputation)} Rival"
         self.current_battle_ai_difficulties = {2: difficulty}
         self.prepared_quest_id = run_state["quest_id"]
         self._sync_quest_run_cache(run_state)
@@ -2881,7 +2860,7 @@ class StorybookMode:
         difficulty = self.current_battle_ai_difficulties.get(2, "normal")
         if self.quest_context == "training":
             enemy_name = "Training Rival"
-            opponent_glory = self.profile.ranked_rating
+            opponent_glory = self.profile.reputation
         else:
             enemy_name = self.current_battle_enemy_name or "Ranked Rival"
             opponent_glory = self.current_battle_opponent_glory
@@ -2903,22 +2882,16 @@ class StorybookMode:
         if self.bout_opponent_mode == "lan":
             return "LAN Rival"
         return {
-            "local": "Practice Rival",
-            "online": "Phantom Duelist",
-            "friendly": "Guild Sparring Partner",
-            "ranked": "Ranked Challenger",
+            "random": "Draft Rival",
+            "focused": "Roster Challenger",
         }.get(self._bout_mode()["id"], "AI Rival")
 
     def _bout_ai_difficulty(self) -> str:
         mode_id = self._bout_mode()["id"]
-        if mode_id == "ranked":
-            return ai_difficulty_for_glory(self.profile.ranked_rating)
         return {
-            "local": "normal",
-            "online": "hard",
-            "friendly": "normal",
-            "ranked": "ranked",
-        }.get(mode_id, "hard")
+            "random": "normal",
+            "focused": "hard",
+        }.get(mode_id, "normal")
 
     def _start_bout_draft(self):
         self.bout_pool_ids = draft_offer(9)
@@ -3034,7 +3007,7 @@ class StorybookMode:
             second_picker=2,
             player_name="You",
             enemy_name=self._bout_opponent_name(),
-            opponent_glory=self.profile.ranked_rating,
+            opponent_glory=self.profile.reputation,
         )
 
     def _start_battle(
@@ -3122,7 +3095,7 @@ class StorybookMode:
                     {
                         "type": "quest_start",
                         "offer_ids": self.quest_offer_ids,
-                        "host_glory": self.profile.ranked_rating,
+                        "host_reputation": self.profile.reputation,
                         "quest_context": self.quest_context,
                     }
                 )
@@ -3138,7 +3111,7 @@ class StorybookMode:
             self.bout_remote_ready = False
             self._sync_bout_ready_flags()
             if self.lan_session.is_host:
-                self.lan_session.send({"type": "bout_lobby", "host_glory": self.profile.ranked_rating})
+                self.lan_session.send({"type": "bout_lobby", "host_reputation": self.profile.reputation})
             self.route = "bout_lobby"
 
     def _confirm_lan_quest_loadout(self):
@@ -3167,7 +3140,7 @@ class StorybookMode:
                 {
                     "type": "quest_loadout",
                     "members": [serialize_member(member) for member in local_team],
-                    "client_glory": self.profile.ranked_rating,
+                    "client_reputation": self.profile.reputation,
                 }
             )
 
@@ -3182,7 +3155,7 @@ class StorybookMode:
         self.quest_setup_state = setup_state
         payload = serialize_setup_state(setup_state)
         payload["type"] = "quest_battle_setup"
-        payload["host_glory"] = self.profile.ranked_rating
+        payload["host_reputation"] = self.profile.reputation
         self.lan_session.send(payload)
         self.quest_run_active = self._quest_run_state("lan")["active"] if self.quest_context == "ranked" else False
         self._start_battle(
@@ -3203,7 +3176,7 @@ class StorybookMode:
         self.bout_team2_ids = []
         self.bout_current_player = 1
         self.bout_focus_id = self.bout_pool_ids[0]
-        self.lan_session.send({"type": "bout_start", "pool_ids": self.bout_pool_ids, "host_glory": self.profile.ranked_rating})
+        self.lan_session.send({"type": "bout_start", "pool_ids": self.bout_pool_ids, "host_reputation": self.profile.reputation})
         self.route = "bout_draft"
 
     def _draft_lan_bout_focus(self):
@@ -3236,14 +3209,14 @@ class StorybookMode:
                 {
                     "type": "bout_loadout",
                     "members": [serialize_member(member) for member in local_team],
-                    "client_glory": self.profile.ranked_rating,
+                    "client_reputation": self.profile.reputation,
                 }
             )
 
     def _start_lan_bout_battle(self):
         payload = serialize_setup_state(self.bout_setup_state)
         payload["type"] = "bout_battle_setup"
-        payload["host_glory"] = self.profile.ranked_rating
+        payload["host_reputation"] = self.profile.reputation
         self.lan_session.send(payload)
         self._start_battle(
             self.bout_setup_state,
@@ -3282,7 +3255,7 @@ class StorybookMode:
                 continue
             if message_type == "quest_loadout" and self.lan_session.is_host:
                 self.quest_remote_team = [dict(member) for member in message.get("members", [])]
-                self.quest_remote_glory = int(message.get("client_glory", self.profile.ranked_rating))
+                self.quest_remote_glory = int(message.get("client_reputation", self.profile.reputation))
                 self.quest_remote_ready = True
                 if self.quest_local_ready and self.quest_player_team is not None:
                     self._start_lan_quest_battle()
@@ -3297,7 +3270,7 @@ class StorybookMode:
                     second_picker=0,
                     player_name="You",
                     enemy_name="LAN Rival",
-                    opponent_glory=int(message.get("host_glory", self.profile.ranked_rating)),
+                    opponent_glory=int(message.get("host_reputation", self.profile.reputation)),
                     use_lan=True,
                 )
                 continue
@@ -3342,7 +3315,7 @@ class StorybookMode:
                 continue
             if message_type == "bout_loadout" and self.lan_session.is_host:
                 self.bout_setup_state["team2"] = [dict(member) for member in message.get("members", [])]
-                self.bout_remote_glory = int(message.get("client_glory", self.profile.ranked_rating))
+                self.bout_remote_glory = int(message.get("client_reputation", self.profile.reputation))
                 self.bout_remote_ready = True
                 self._sync_bout_ready_flags()
                 if self.bout_local_ready:
@@ -3358,7 +3331,7 @@ class StorybookMode:
                     second_picker=2,
                     player_name="You",
                     enemy_name="LAN Rival",
-                    opponent_glory=int(message.get("host_glory", self.profile.ranked_rating)),
+                    opponent_glory=int(message.get("host_reputation", self.profile.reputation)),
                     use_lan=True,
                 )
 

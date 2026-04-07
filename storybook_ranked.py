@@ -8,9 +8,9 @@ import os
 import random
 
 
-STARTING_GLORY = 300
-MIN_GLORY = 1
-MAX_GLORY = 2000
+STARTING_REPUTATION = 300
+MIN_REPUTATION = 1
+MAX_REPUTATION = 2000
 
 RANKS = (
     ("Squire", 1),
@@ -29,123 +29,118 @@ RANK_INDEX = {name: index for index, (name, _threshold) in enumerate(RANKS)}
 
 @dataclass(frozen=True)
 class MatchmakingProfile:
-    glory: int
+    reputation: int
     run_wins: int
     run_losses: int
 
     @property
     def emr(self) -> int:
         return get_match_rating(
-            self.glory,
+            self.reputation,
             self.run_wins,
             self.run_losses,
         )
 
 
-def clamp_glory(glory: float | int) -> int:
-    return max(MIN_GLORY, min(MAX_GLORY, int(round(glory))))
+def clamp_reputation(reputation: float | int) -> int:
+    return max(MIN_REPUTATION, min(MAX_REPUTATION, int(round(reputation))))
 
 
-def ensure_storybook_glory(current_glory: int, games_played: int) -> int:
-    if games_played <= 0 and current_glory in {0, 500, 1000}:
-        return STARTING_GLORY
-    return clamp_glory(current_glory)
+def ensure_storybook_reputation(current_reputation: int, games_played: int) -> int:
+    if games_played <= 0 and current_reputation in {0, 500, 1000}:
+        return STARTING_REPUTATION
+    return clamp_reputation(current_reputation)
 
 
-def get_rank_from_glory(glory: int) -> str:
-    glory = clamp_glory(glory)
-    if glory < 200:
+def get_rank_from_reputation(reputation: int) -> str:
+    reputation = clamp_reputation(reputation)
+    if reputation < 200:
         return "Squire"
-    if glory < 400:
+    if reputation < 400:
         return "Knight"
-    if glory < 600:
+    if reputation < 600:
         return "Baron"
-    if glory < 800:
+    if reputation < 800:
         return "Viscount"
-    if glory < 1000:
+    if reputation < 1000:
         return "Earl"
-    if glory < 1200:
+    if reputation < 1200:
         return "Margrave"
-    if glory < 1400:
+    if reputation < 1400:
         return "Duke"
-    if glory < 1600:
+    if reputation < 1600:
         return "Prince"
-    if glory < 1800:
+    if reputation < 1800:
         return "King"
     return "Emperor"
 
 
-def rank_name(glory: int) -> str:
-    return get_rank_from_glory(glory)
+def rank_name(reputation: int) -> str:
+    return get_rank_from_reputation(reputation)
 
 
-def rank_floor_for_glory(glory: int) -> int:
-    rank = get_rank_from_glory(glory)
+def rank_floor_for_reputation(reputation: int) -> int:
+    rank = get_rank_from_reputation(reputation)
     for name, threshold in RANKS:
         if name == rank:
             return threshold
-    return MIN_GLORY
+    return MIN_REPUTATION
 
 
-def protected_rank_name(glory: int, previous_rank: str | None = None) -> str:
-    natural = get_rank_from_glory(glory)
+def protected_rank_name(reputation: int, previous_rank: str | None = None) -> str:
+    natural = get_rank_from_reputation(reputation)
     if previous_rank not in RANK_INDEX:
         return natural
     return previous_rank if RANK_INDEX[natural] < RANK_INDEX[previous_rank] else natural
 
 
-def get_encounter_gold(current_win_streak_before_win: int) -> int:
-    streak_bonus = max(0, int(current_win_streak_before_win)) * 10
-    return 100 + streak_bonus
+def get_expected_score(player_reputation: int, opponent_reputation: int) -> float:
+    return 1.0 / (1.0 + math.pow(10.0, (opponent_reputation - player_reputation) / 400.0))
 
 
-def get_expected_score(player_glory: int, opponent_glory: int) -> float:
-    return 1.0 / (1.0 + math.pow(10.0, (opponent_glory - player_glory) / 400.0))
+def get_match_rating(reputation: int, current_win_streak: int, current_loss_streak: int) -> int:
+    return int(reputation + (max(0, int(current_win_streak)) * 20) - (max(0, int(current_loss_streak)) * 15))
 
 
-def get_match_rating(glory: int, current_win_streak: int, current_loss_streak: int) -> int:
-    return int(glory + (max(0, int(current_win_streak)) * 20) - (max(0, int(current_loss_streak)) * 15))
-
-
-def get_glory_delta(
-    player_glory: int,
-    opponent_glory: int,
+def get_reputation_delta(
+    player_reputation: int,
+    opponent_reputation: int,
     *,
     did_win: bool,
     current_win_streak_before_match: int,
     current_loss_streak_before_match: int,
 ) -> int:
     k_factor = 28
-    expected = get_expected_score(player_glory, opponent_glory)
+    expected = get_expected_score(player_reputation, opponent_reputation)
     actual = 1.0 if did_win else 0.0
     base_change = k_factor * (actual - expected)
     if did_win:
         win_bonus = min(max(0, int(current_win_streak_before_match)), 5) * 2
         delta = round(base_change + win_bonus)
         return max(8, min(30, delta))
-    # Rulebook quest loss formula: 10 x current lossstreak after loss.
-    return -10 * max(0, int(current_loss_streak_before_match) + 1)
+    # Flat -10 Reputation per loss.
+    return -10
 
 
-def update_glory_after_match(
-    player_glory: int,
-    opponent_glory: int,
+def update_reputation_after_match(
+    player_reputation: int,
+    opponent_reputation: int,
     *,
     did_win: bool,
     current_win_streak_before_match: int,
     current_loss_streak_before_match: int,
-    floor_glory: int = MIN_GLORY,
+    floor_reputation: int = MIN_REPUTATION,
 ) -> tuple[int, int]:
-    delta = get_glory_delta(
-        player_glory,
-        opponent_glory,
+    delta = get_reputation_delta(
+        player_reputation,
+        opponent_reputation,
         did_win=did_win,
         current_win_streak_before_match=current_win_streak_before_match,
         current_loss_streak_before_match=current_loss_streak_before_match,
     )
-    new_glory = clamp_glory(player_glory + delta)
-    new_glory = max(min(MAX_GLORY, int(floor_glory)), new_glory)
-    return new_glory, delta
+    new_reputation = clamp_reputation(player_reputation + delta)
+    new_reputation = max(min(MAX_REPUTATION, int(floor_reputation)), new_reputation)
+    return new_reputation, delta
 
 
 def _saved_games_dir() -> str:
@@ -156,7 +151,7 @@ def _saved_games_dir() -> str:
 
 
 def log_quest_ai_match(payload: dict) -> None:
-    path = os.path.join(_saved_games_dir(), "quest_ai_glory_log.jsonl")
+    path = os.path.join(_saved_games_dir(), "quest_ai_reputation_log.jsonl")
     record = dict(payload)
     record["timestamp"] = datetime.now().isoformat(timespec="seconds")
     with open(path, "a", encoding="utf-8") as handle:
@@ -164,34 +159,33 @@ def log_quest_ai_match(payload: dict) -> None:
 
 
 def effective_matchmaking_rating(
-    account_glory: int,
+    account_reputation: int,
     run_wins: int,
     run_losses: int,
-    avg_opponent_glory: int = 0,
+    avg_opponent_reputation: int = 0,
 ) -> int:
-    # avg_opponent_glory kept for backward compatibility with older callsites.
-    _ = avg_opponent_glory
-    return get_match_rating(account_glory, run_wins, run_losses)
+    _ = avg_opponent_reputation
+    return get_match_rating(account_reputation, run_wins, run_losses)
 
 
 def match_quality_score(
-    a_glory: int,
+    a_reputation: int,
     a_run_wins: int,
     a_run_losses: int,
-    b_glory: int,
+    b_reputation: int,
     b_run_wins: int,
     b_run_losses: int,
     *,
-    a_avg_glory: int = 0,
-    b_avg_glory: int = 0,
+    a_avg_reputation: int = 0,
+    b_avg_reputation: int = 0,
 ) -> float:
-    _ = (a_avg_glory, b_avg_glory)
-    a_emr = get_match_rating(a_glory, a_run_wins, a_run_losses)
-    b_emr = get_match_rating(b_glory, b_run_wins, b_run_losses)
+    _ = (a_avg_reputation, b_avg_reputation)
+    a_emr = get_match_rating(a_reputation, a_run_wins, a_run_losses)
+    b_emr = get_match_rating(b_reputation, b_run_wins, b_run_losses)
     return (
         1000.0
         - abs(a_emr - b_emr) * 3.0
-        - abs(a_glory - b_glory) * 1.5
+        - abs(a_reputation - b_reputation) * 1.5
         - abs(a_run_wins - b_run_wins) * 12.0
         - abs(a_run_losses - b_run_losses) * 10.0
     )
@@ -208,25 +202,25 @@ def _preferred_loss_bucket(run_losses: int) -> range:
 
 
 def find_ai_match_profile(
-    account_glory: int,
+    account_reputation: int,
     run_wins: int,
     run_losses: int,
     *,
-    avg_opponent_glory: int = 0,
+    avg_opponent_reputation: int = 0,
     rng: random.Random | None = None,
 ) -> MatchmakingProfile:
     rng = rng or random.Random()
-    player_emr = get_match_rating(account_glory, run_wins, run_losses)
+    player_emr = get_match_rating(account_reputation, run_wins, run_losses)
     win_bucket = list(_preferred_win_bucket(run_wins))
     loss_bucket = list(_preferred_loss_bucket(run_losses))
     candidates: list[MatchmakingProfile] = []
     for delta in range(-250, 251, 25):
-        glory = clamp_glory(player_emr + delta)
+        reputation = clamp_reputation(player_emr + delta)
         for opponent_wins in win_bucket:
             for opponent_losses in loss_bucket:
                 candidates.append(
                     MatchmakingProfile(
-                        glory=glory,
+                        reputation=reputation,
                         run_wins=opponent_wins,
                         run_losses=opponent_losses,
                     )
@@ -245,10 +239,10 @@ def find_ai_match_profile(
             continue
         in_window.sort(
             key=lambda candidate: match_quality_score(
-                account_glory,
+                account_reputation,
                 run_wins,
                 run_losses,
-                candidate.glory,
+                candidate.reputation,
                 candidate.run_wins,
                 candidate.run_losses,
             ),
@@ -256,27 +250,27 @@ def find_ai_match_profile(
         )
         top_band = in_window[: min(3, len(in_window))]
         return rng.choice(top_band)
-    return MatchmakingProfile(glory=player_emr, run_wins=run_wins, run_losses=run_losses)
+    return MatchmakingProfile(reputation=player_emr, run_wins=run_wins, run_losses=run_losses)
 
 
-def ai_difficulty_for_glory(glory: int) -> str:
-    if glory < 450:
+def ai_difficulty_for_reputation(reputation: int) -> str:
+    if reputation < 450:
         return "easy"
-    if glory < 900:
+    if reputation < 900:
         return "normal"
-    if glory < 1500:
+    if reputation < 1500:
         return "hard"
     return "ranked"
 
 
-def target_team_score_for_glory(glory: int) -> float:
-    glory = clamp_glory(glory)
-    return 635.0 + (glory / 2000.0) * 120.0
+def target_team_score_for_reputation(reputation: int) -> float:
+    reputation = clamp_reputation(reputation)
+    return 635.0 + (reputation / 2000.0) * 120.0
 
 
-def pressure_label(player_glory: int, run_wins: int, run_losses: int, avg_opponent_glory: int = 0) -> str:
-    _ = avg_opponent_glory
-    emr = get_match_rating(player_glory, run_wins, run_losses)
+def pressure_label(player_reputation: int, run_wins: int, run_losses: int, avg_opponent_reputation: int = 0) -> str:
+    _ = avg_opponent_reputation
+    emr = get_match_rating(player_reputation, run_wins, run_losses)
     if emr >= 1500:
         return "Elite"
     if emr >= 1000:
