@@ -1,9 +1,9 @@
 ﻿FABLED
 Official Rulebook
-You are a magnate in the kingdom of Fantasia, home of the mystical and magical.
-As an aficionado of rare artifacts, you would love to add more items to your collection. However, embarking on a quest is out of the question for an inexperienced loafer such as yourself.
+You just inherited a guild in the kingdom of Fantasia, home of the mystical and magical.
+However, the guild has a rather poor reputation, and it’s up to you to turn your family’s fortunes around.
 
-Fortunately, Fantasia is host to many thrill-seeking adventurers who love nothing more than taking on dangerous quests, and you have the pocketbook to hire the best of the best. Be warned though, you are not the only wealthy collector after these rare artifacts. Your adventurers will need good teamwork and moxie to fight off other parties on the path to 
+Luckily, adventurers with prestige too poor for other guilds still frequent your establishment, and you know how to get the best out of even the most motley crews. Form parties and send them on quests to build up your reputation and get some capital. It’s only a matter of time before you own the greatest guild in Fantasia!
 
 INTRODUCTION
 Fabled is a tactical turn-based combat game focused on positioning, ability timing, and party optimization. Players use parties of six random adventurers and choose three to take to encounters to take turns attacking enemies. The encounter is won when the final enemy adventurer is defeated or a player's third Ultimate Spell has been cast.
@@ -38,7 +38,7 @@ Mages: Magic damage dealers.
 Rangers: Ranged damage dealers.
 Clerics: Healers and enchanters.
 Rogues: Disruptors and speedsters.
-Classes determine an adventurer's Class Skill.
+Classes determine which Class Skills adventurers can choose from, which provides a passive effect and raises max HP.
 A party can only have one of each Class among its adventurers.
 Artifacts
 Artifacts raise a specific stat and give a Spell to the adventurer that holds them. The player can only have one of each artifact.
@@ -55,7 +55,7 @@ Player A Frontline
 Player B Frontline
 Player B Backline Left				Player B Backline Right
 Formation Rules
-Backline adventurers have -30 Speed.
+Backline adventurers have -50 Speed.
 One adventurer must always be in the frontline, and up to two adventurers can be in the backline.
 If the frontline adventurer is knocked out, the leftmost backline adventurer moves forward.
 Each of the three columns of play is considered a "lane".
@@ -98,16 +98,16 @@ To Spellcast, an adventurer uses a Spell they have access to. Spells that target
 Switch
 To Switch, an adventurer switches their primary and secondary weapon. All cooldowns relating to either weapon are reset, and Ranged weapons fully reload Ammo.
 Swap
-To Swap, an adventurer swaps positions with an ally. If the ally that didn't select Swap as their action hasn't resolved their action yet, they resolve it from their new position.
+To Swap, an adventurer swaps positions with a target ally. If the ally that didn't select Swap as their action hasn't resolved their action yet, they resolve it from their new position. Players may only select the Swap action once per round, though other effects can still Swap adventurer positions.
 Skip
 To Skip, an adventurer skips their action.
 Ultimate Spell
-Whenever an adventurer Strikes or uses a Spell, they fill up the Ultimate Meter by +1 or +2 respectively. Once the Meter is full at +7, one adventurer can use their Ultimate Spell, which depletes the meter.
+Whenever an adventurer Strikes, they fill up their party's Ultimate Meter by +1, or +2 if the Strike is melee. Once the Meter is full at +7, an adventurer can use their Ultimate Spell, which depletes the meter.
 CONDITIONS
 Status conditions of the same type do not stack, but an adventurer can have multiple different status conditions at one time.
 Burn: Burned adventurers take 8% max HP damage each round.
 Root: Rooted adventurers cannot use the Swap Positions action.
-Shock: Shocked adventurers have -15 speed and their Strikes have 15% recoil.
+Shock: Shocked adventurers have -25 speed and their Strikes have 15% recoil.
 Weaken: Weakened adventurers deal 15% less damage.
 Expose: Exposed adventurers take 15% more damage.
 Guard: Guarded adventurers take 15% less damage.
@@ -154,21 +154,21 @@ Matchmaking uses a player’s Match Rating rather than Glory alone. The formula 
 Match Rating = Glory + (20 × current winstreak) - (15 × current lossstreak)
 APPENDIX A — ADVENTURERS
 Red Blanchette
-HP: 312
-Attack: 72
-Defense: 78
-Speed: 42
+HP: 390
+Attack: 90
+Defense: 100
+Speed: 70
 Innate Skill: Red and Wolf
-While below 50% max HP, Red has +15 Attack, +15 Speed, and her Strikes have 15% Lifesteal.
+While below 50% max HP, Red has +25 Attack, +25 Speed, and her Strikes have 25% Lifesteal.
 Signature Weapon: Stomach Splitter
 Magic
 Cooldown: 2 rounds
-Strike: 40 Power. Marks the target for 2 rounds.
+Strike: 80 Power. Marks the target for 2 rounds.
 Skill: Wolf's Pursuit
 When a Marked enemy swaps, Red Strikes them.
 Signature Weapon: Enchanted Shackles
 Melee
-Strike: 70 Power, 25% Recoil
+Strike: 115 Power, 25% Recoil
 Spell: Blood Transfusion
 Cooldown: 2 rounds
 Average Red and target enemy's HP and set both Adventurers' HPs to that amount.
@@ -176,164 +176,164 @@ Ultimate Spell: Wolf Unchained
 For 2 rounds, Red and Wolf is always active and its effects are doubled.
 
 Little Jack
-HP: 258
-Attack: 82
-Defense: 57
-Speed: 68
+HP: 265
+Attack: 85
+Defense: 60
+Speed: 115
 Innate Skill: Giant Slayer
-Jack deals +15 bonus damage to enemies with higher max HP.
+Jack's Strikes deal +25 damage to enemies with higher max HP.
 Signature Weapon: Skyfall
 Melee
-Strike: 80 Power
+Strike: 150 Power
 Spell: Cloudburst
 Cooldown: 1 round
 Jack's next Strike ignores targeting restrictions.
 Signature Weapon: Giant's Harp
 Magic
 Cooldown: 1 round
-Strike: 65 Power
+Strike: 100 Power
 Passive: Belligerence
 Jack ignores 20% of the enemy's Defense.
 Ultimate Spell: Fell the Beanstalk
 Jack's next Strike ignores 100% of the enemy's Defense.
 
 Witch-Hunter Gretel
-HP: 278
-Attack: 76
-Defense: 66
-Speed: 60
+HP: 350
+Attack: 95
+Defense: 80
+Speed: 100
 Innate Skill: Sugar Rush
-When Gretel knocks out an enemy, she has +15 Attack and +15 Speed for 2 rounds.
+When Gretel knocks out an enemy, she has +25 Attack and +25 Speed for 2 rounds.
 Signature Weapon: Hot Mitts
 Melee
-Strike: 65 Power, +15 Power if the target is Burned, otherwise Burns the target for 2 rounds.
+Strike: 100 Power, +50 Power if the target is Burned, otherwise Burns the target for 2 rounds.
 Signature Weapon: Crumb Shot
 Ranged
 3 Ammo
-Strike: 50 Power. +50 Power if an ally picked up a crumb this round, otherwise drops a crumb on Gretel's position.
-Passive: Allies can pick up crumbs Gretel has dropped by swapping to that position, restoring +50 HP.
+Strike: 65 Power. +65 Power if an ally picked up a crumb this round, otherwise drops a crumb on Gretel's position.
+Passive: Allies can pick up crumbs Gretel has dropped by swapping to that position, restoring +65 HP.
 Ultimate Spell: In The Oven
-For 2 rounds, enemy Adventurers take +15 damage from all sources and Gretel and ally Adventurers restore +15 HP from all sources.
+For 2 rounds, enemy Adventurers take +25 damage from all sources and Gretel and ally Adventurers restore +25 HP from all sources.
 
 Lucky Constantine
-HP: 248
-Attack: 75
-Defense: 48
-Speed: 90
+HP: 310
+Attack: 95
+Defense: 60
+Speed: 150
 Innate Skill: Shadowstep
 Constantine ignores targeting restrictions against Exposed targets.
 Signature Weapon: Fortuna
 Melee
-Strike: 65 Power. Swaps target with the lowest health enemy.
+Strike: 105 Power. Swaps the target with the lowest health enemy.
 Spell: Consensia
 Cooldown: 2 rounds
 Exposes target enemy for 2 rounds.
 Signature Weapon: Cat'O'Nine
 Melee
-Strike: 9 Power. Hits 9 times. Is not affected by Strike bonuses.
+Strike: 9 Power. Hits 9 times. Is not affected by Strike Damage bonuses.
 Skill: Nine Lives
 Up to 3 times per encounter, Constantine survives Strikes from Exposed attackers at 1 HP.
 Ultimate Spell: Eyes Everywhere
-For 2 rounds, enemies are Exposed and Constantine's Strikes steal 5 Defense for 2 rounds.
+For 2 rounds, enemies are Exposed and Constantine's Strikes steal 25 Defense for 2 rounds.
 
 Hunold the Piper
-HP: 258
-Attack: 66
-Defense: 54
-Speed: 68
+HP: 320
+Attack: 80
+Defense: 70
+Speed: 115
 Innate Skill: Electrifying Trance
-Shocked enemies take +15 damage.
+Shocked enemies take +25 damage.
 Signature Weapon: Lightning Rod
 Ranged
 3 Ammo
-Strike: 45 Power. Shocks the target for 2 rounds. Does not consume Ammo against Shocked targets.
+Strike: 65 Power. Shocks the target for 2 rounds. Does not consume Ammo against Shocked targets.
 Signature Weapon: Golden Fiddle
 Magic
 Cooldown: 1 round
-Strike: 70 Power. If the target is Shocked, Roots and Spotlights them for 2 rounds and does not go on cooldown.
+Strike: 85 Power. If the target is Shocked, Roots and Spotlights them for 2 rounds and does not go on cooldown.
 Ultimate Spell: Mass Hysteria
 For 2 rounds, Hunold's Strikes are Spread and ignore targeting restrictions and the spread damage penalty.
 
 
 Sir Roland
-HP: 314
-Attack: 42
-Defense: 82
-Speed: 22
+HP: 390
+Attack: 50
+Defense: 100
+Speed: 35
 Innate Skill: Silver Aegis
 Roland takes 60% less damage from the first incoming ability after swapping to frontline.
 Signature Weapon: Pure Gold Lance
 Melee
-Strike: 65 Power. Exposes the target for 2 rounds.
+Strike: 105 Power. Exposes the target for 2 rounds.
 Spell: Knight's Challenge
 Cooldown: 2 rounds
 Taunt target enemy for 2 rounds.
 Signature Weapon: Pure Silver Shield
 Melee
-Strike: 60 Power. Guards Roland for 2 rounds.
+Strike: 95 Power. Guards Roland for 2 rounds.
 Skill: Banner of Command
 Guard allies for 2 rounds when they Swap positions.
 Spell: Shimmering Valor
 Cooldown: 2 rounds
-Roland cleanses his Guard and restores 40 HP + 20 HP per Guard turn remaining.
+Roland cleanses his Guard and restores 65 HP + 35 HP per Guard turn remaining.
 Ultimate Spell: Final Stand
 Roland restores 150 HP. For 2 rounds, Silver Aegis is always active.
 
 Porcus III
-HP: 324
-Attack: 40
-Defense: 84
-Speed: 16
+HP: 405
+Attack: 50
+Defense: 105
+Speed: 25
 Innate Skill: Bricklayer
 If a Strike would deal 20% max HP or more to Porcus, reduce damage by 35% and Weaken the attacker for 2 rounds.
 Signature Weapon: Crafty Wall
 Melee
-Strike: 65 Power. Bricklayer reduces all damage next round.
+Strike: 100 Power. Bricklayer reduces all damage next round.
 Spell: Not By The Hair
 Cooldown: 1 round
-Bricklayer activates on all Strikes this round. Goes first regardless of turn order.
+Bricklayer activates on all Strikes this round. Goes first in turn order.
 Signature Weapon: Mortar Mortar
 Ranged
 3 Ammo
-Strike: 45 Power. Weakens the target for 2 rounds. Does not consume Ammo if Bricklayer activated this turn.
+Strike: 65 Power. Weakens the target for 2 rounds. Does not consume Ammo if Bricklayer activated this turn.
 Ultimate Spell: Unfettered
 For 2 rounds, Porcus has +100 attack, -50 defense, and +100 speed.
 
 Lady of Reflections
-HP: 308
-Attack: 48
-Defense: 70
-Speed: 42
+HP: 385
+Attack: 50
+Defense: 105
+Speed: 70
 Innate Skill: Reflecting Pools
 The Lady creates a Reflecting Pool for 2 rounds at her new position whenever she swaps. Strikes targeting Reflecting Pools reflect 25% of the damage onto the attacker, 50% if the Strike is Magic.
 Signature Weapon: Excalibur
 Melee
-Strike: 70 Power. 
+Strike: 115 Power. 
 Spell: Drown in the Loch
 Cooldown: 2 rounds
-The target takes +15 damage from all sources for 2 rounds.
+The target takes +25 damage from all sources for 2 rounds.
 Signature Weapon: Lantern of Avalon
 Magic
 Cooldown: 1 round
-Strike: 60 Power. The Lady Swaps positions.
+Strike: 85 Power. The Lady Swaps positions.
 Skill: Postmortem Passage
-When a Strike deals fatal damage to an ally, they retaliate for 50 Power against the attacker.
+When a Strike deals fatal damage to an ally, they retaliate for 85 Power against the attacker.
 Ultimate Spell: Lake's Gift
-The Lady creates a Reflecting Pool for 2 rounds at her position. Then, if there's a fainted ally, she knocks herself out and revives the most recently fainted ally at her position at 50% HP. They get +15 Attack for 2 rounds.
+The Lady creates a Reflecting Pool for 2 rounds at her position. Then, if there's a fainted ally, she knocks herself out and revives the most recently fainted ally at her position at 50% HP. They get +25 Attack for 2 rounds.
 
 Ashen Ella
-HP: 226
-Attack: 78
-Defense: 48
-Speed: 82
+HP: 280
+Attack: 100
+Defense: 90
+Speed: 135
 Innate Skill: Two Lives
 Ella cannot Switch weapons. Instead, she always has the Obsidian Slippers in the frontline and the Dusty Broom in the backline.
 Signature Weapon: Obsidian Slippers
 Magic
 Cooldown: 1 round
-Strike: 70 Power, Spread. Burns targets for 2 rounds.
+Strike: 100 Power, Spread. Burns targets for 2 rounds.
 Skill: Struck Midnight
-When a Strike leaves Ella at 50% HP or less, she Swaps positions and heals 40 HP.
+When a Strike leaves Ella at 50% HP or less, she Swaps positions and heals 70 HP.
 Signature Weapon: Dusty Broom
 Melee
 Strike: 10 Power
@@ -344,232 +344,232 @@ Magic
 For 2 rounds, Ella cannot Switch weapons, she is untargetable, and her Magic Strikes deal +8% max HP damage and do not go on cooldown.
 
 March Hare
-HP: 224
-Attack: 68
-Defense: 44
-Speed: 84
-Innate Skill: On Time!
-While the March Hare is frontline, the frontline enemy has -10 Speed.
+HP: 280
+Attack: 85
+Defense: 55
+Speed: 140
+Innate Skill: Erratic
+When the March Hare Swaps positions, he Switches weapons.
 Signature Weapon: Stitch in Time
 Magic
 Cooldown: 1 round
-Strike: 60 Power, +20 Power if March Hare Swapped positions this round. Shocks the target for 2 rounds.
+Strike: 40 Power, +40 Power for each Spell the March Hare cast this round (includes this one). Shocks the target for 2 rounds.
 Signature Weapon: Cracked Stopwatch
 Magic
-No Cooldown
-Strike: 20 Power. If the target is Shocked, the March Hare can cast a Spell as a Bonus Action this round.
+Cooldown: 1 round
+Strike: 50 Power. If the target is Shocked, the March Hare gets an extra Action next round.
 Spell: Rabbit Hole
-Cooldown: 2 rounds
-The March Hare gets an extra Action next round for each Spell he cast this round.
+No Cooldown
+The March Hare Swaps positions. His next Spell does not go on cooldown.
 Ultimate Spell: Tea Party
-For 2 rounds, the March Hare's and his allies' Spells do not go on cooldown.
+The March Hare and his allies each get an extra Action next round.
+
 
 
 Briar Rose
-HP: 228
-Attack: 54
-Defense: 46
-Speed: 76
+HP: 285
+Attack: 70
+Defense: 60
+Speed: 125
 Innate Skill: Curse of Sleeping
 The lowest HP Rooted enemy is unable to act each round but gains Root Immunity for 2 rounds at the end of round.
 Signature Weapon: Spindle Bow
 Ranged
 3 Ammo
-Strike: 40 Power, +20 Power if the target is Rooted.
+Strike: 60 Power, +30 Power if the target is Rooted.
 Spell: Vine Snare
 Cooldown: 2 rounds
 Briar's next Strike removes Root Immunity and does not consume Ammo.
 Signature Weapon: Thorn Snare
 Ranged
 1 Ammo
-Strike: 70 Power, Spread. Roots targets for 2 rounds.
+Strike: 80 Power, Spread. Roots targets for 2 rounds.
 Passive: Drowsiness
 Root enemies who Swap for 2 rounds.
 Ultimate Spell: Falling Kingdom
 Root all enemies. For 2 rounds, Curse of Sleeping does not grant Root Immunity.
 
 Wayward Humbert
-HP: 246
-Attack: 66
-Defense: 56
-Speed: 64
+HP: 310
+Attack: 80
+Defense: 70
+Speed: 105
 Innate Skill: Shifty Allegiance
 Humbert can Switch weapons as a Bonus Action.
 Signature Weapon: Convicted Shotgun
 Ranged
 2 Ammo
-Strike: 55 Power
+Strike: 70 Power
 Passive: Trigger Finger
-Humbert's weapon combusts after it Strikes, gaining +25 Power but 50% Recoil and 2x Ammo use until repaired
+Humbert's weapon combusts after it Strikes, gaining +35 Power but 50% Recoil and 2x Ammo use until repaired
 Signature Weapon: Pallid Musket
 Ranged
 4 Ammo
-Strike: 40 Power. Repair Humbert's secondary weapon.
+Strike: 55 Power. Repair Humbert's secondary weapon.
 Spell: Liquid Courage
 Cooldown: 2 rounds
-Humbert restores 40 HP.
+Humbert restores 65 HP.
 Ultimate Spell: Jovial Shot
 Humbert fully restores HP. His next combusted Strike has 2x damage and 2x Recoil.
 
 Robin, Hooded Avenger
-HP: 232
-Attack: 70
-Defense: 46
-Speed: 80
+HP: 290
+Attack: 90
+Defense: 60
+Speed: 135
 Innate Skill: Keen Eye
 Robin's Strikes can't be redirected and ignore Guard.
 Signature Weapon: The Flock
 Ranged
 3 Ammo
-Strike: 45 Power, Spread. Spotlights targets for 2 rounds.
+Strike: 55 Power, Spread. Spotlights targets for 2 rounds.
 Spell: Spread Fortune
 Cooldown: 2 rounds
 Robin ignores the spread damage nerf for 2 rounds.
 Signature Weapon: Kingmaker
 Melee
-Strike: 60 Power, +30 Power against backline targets.
+Strike: 110 Power, +55 Power against backline targets.
 Ultimate Spell: Disenfranchise
-For 2 rounds, Robin's Strikes steal 10 Attack, Defense, and Speed from its targets.
+For 2 rounds, Robin's Strikes steal 25 Attack, Defense, and Speed from its targets.
 
 Matchbox Liesl
-HP: 256
-Attack: 58
-Defense: 54
-Speed: 72
+HP: 320
+Attack: 70
+Defense: 70
+Speed: 120
 Innate Skill: Purifying Flame
 Liesl and her allies are immune to Burn. Whenever an enemy takes damage from a Burn, Liesl's lowest HP ally restores HP equal to the amount.
 Signature Weapon: Matchsticks
 Ranged
-6 Ammo
+60 Ammo
 Strike: 40 Power. Burn the target for 2 rounds.
 Skill: Cauterize
 Burned enemies cannot heal.
 Signature Weapon: Eternal Torch
 Magic
 Cooldown: 1 round
-Strike: 60 Power, 30% Lifesteal
+Strike: 85 Power, 30% Lifesteal
 Skill: Flame of Renewal
 When Liesl is knocked out, allies restore 50% max HP.
 Ultimate Spell: Cleansing Inferno
 For 2 rounds, whenever Liesl or an ally restores HP, each of their allies restore that much HP, and whenever an enemy takes damage from a Burn, each other enemy takes that much damage.
 
 The Good Beast
-HP: 290
-Attack: 62
-Defense: 68
-Speed: 50
+HP: 360
+Attack: 80
+Defense: 85
+Speed: 85
 Innate Skill: Protective Soul
-The first ally The Good Beast swaps with becomes his guest, and has +15 Defense.
+The first ally The Good Beast swaps with becomes his guest, and has +25 Defense.
 Signature Weapon: Rosebush Sword
 Melee
-Strike: 65 Power, +15 Power if the target Striked The Good Beast's guest last round.
+Strike: 110 Power, +55 Power if the target Striked The Good Beast's guest last round.
 Spell: Crystal Ball
 Cooldown: 2 rounds
 Spotlights the last enemy who Striked The Good Beast's guest for 2 rounds.
 Signature Weapon: Dinner Bell
 Magic
 Cooldown: 1 Round
-Strike: 70 Power, can target allies but not damage them. Allies restore HP equal to half the damage they would have taken.
+Strike: 90 Power, can target allies but not damage them. Allies restore HP equal to half the damage they would have taken.
 Skill: Hospitality
-The Good Beast's guests restore +10 HP from all sources.
+The Good Beast's guests restore +25 HP from all sources.
 Ultimate Spell: Happily Ever After
 Magic
 For 2 rounds, The Good Beast and his guest have the higher of the two's Attack, Defense, and Speed.
 The Green Knight
-HP: 278
-Attack: 60
-Defense: 65
-Speed: 24
+HP: 350
+Attack: 75
+Defense: 80
+Speed: 40
 Innate Skill: Challenge Accepted
 The Green Knight may Swap positions as a Bonus Action.
 Signature Weapon: The Search
 Ranged
 3 Ammo
-Strike: 50 Power, +15 Power against targets in the Green Knight's lane.
+Strike: 70 Power, +15 Power against targets in the Green Knight's lane.
 Signature Weapon: The Answer
 Melee
-Strike: 70 Power
+Strike: 115 Power
 Passive: Awaited Blow
-The Green Knight retaliates for 35 Power against incoming attackers not in his lane.
+The Green Knight retaliates for 65 Power against incoming attackers not in his lane.
 Ultimate Spell: Fated Duel
 For 2 rounds, only those in the Green Knight's lane can act.
 Rapunzel the Golden
-HP: 262
-Attack: 64
-Defense: 60
-Speed: 34
+HP: 330
+Attack: 80
+Defense: 75
+Speed: 55
 Innate Skill: Flowing Locks
 Rapunzel can target a backline enemy with a Melee Strike once per encounter. Refreshes when she casts a Spell.
 Signature Weapon: Golden Snare
 Melee
-Strike: 65 Power. Root the target for 2 rounds.
+Strike: 100 Power. Root the target for 2 rounds.
 Spell: Lower Guard
 Cooldown: 2 rounds
 Refresh target enemy's Root duration and Expose them for 2 rounds.
 Signature Weapon: Ivory Tower
 Melee
-Strike: 65 Power. Weakens the target for 2 rounds.
+Strike: 95 Power. Weakens the target for 2 rounds.
 Spell: Sanctuary
 Cooldown: 1 round
-Target ally restores 60 HP.
+Target ally restores 100 HP.
 Ultimate Spell: Severed Tether
 Active
-For 2 rounds, Rapunzel has -15 defense, +30 attack, and +30 speed and Flowing Locks is always active.
+For 2 rounds, Rapunzel has -25 defense, +50 attack, and +50 speed and Flowing Locks is always active.
 Pinocchio, Cursed Puppet
-HP: 232
-Attack: 50
-Defense: 44
-Speed: 76
+HP: 290
+Attack: 80
+Defense: 75
+Speed: 125
 Innate Skill: Growing Pains
-When Pinocchio ends the round in the frontline, he gains 1 Malice, up to 6. Pinocchio has +5 attack and +5 defense for each Malice.
+When Pinocchio ends the round in the frontline, he gains 1 Malice, up to 6. Pinocchio has +15 attack and +15 defense for each Malice.
 Signature Weapon: Wooden Club
 Melee
-Strike: 45 power, +5 power per Malice.
+Strike: 70 power, +10 power per Malice.
 Spell: Bloodstain
 No Cooldown
-Pinocchio loses 40 HP and gains 2 Malice.
+Pinocchio loses 65 HP and gains 2 Malice.
 Signature Weapon: String Cutter
 Magic
 Cooldown: 1 round
-Strike: 60 Power, 20% Lifesteal.
+Strike: 85 Power, 20% Lifesteal.
 Skill: Become Real
 If Pinocchio has at least 3 Malice, his Spells do not go on cooldown and he is immune to status conditions.
 Ultimate Spell: Blue Faerie's Boon
 Active
-For 2 rounds, Pinocchio has +20 speed and gains 6 Malice, up to 12.
-
+For 2 rounds, Pinocchio has +25 speed and gains 6 Malice, up to 12.
 Rumpelstiltskin
-HP: 240
-Attack: 58
-Defense: 52
-Speed: 72
+HP: 300
+Attack: 70
+Defense: 65
+Speed: 120
 Innate Skill: Art of the Deal
-The first time another Adventurer gains a stat bonus each round, Rumpelstiltskin also gains it.
+The first time another Adventurer (ally or enemy) gains a stat bonus each round, Rumpelstiltskin also gains it.
 Signature Weapon: Devil's Contract
 Magic
 Cooldown: 2 rounds
-Strike: 100 Power, the target has +10 Attack, +10 Defense, and +10 Speed for 2 rounds.
+Strike: 100 Power, the target has +25 Attack, +25 Defense, and +25 Speed for 2 rounds.
 Signature Weapon: Spinning Wheel
 Ranged
 3 Ammo
-Strike: 45 Power. The first strike gives the target -10 Attack for 2 rounds, the second gives -10 Defense, and the third+ gives -10 Speed.
+Strike: 75 Power. Does not consume Ammo if Rumpelstiltskin has a stat bonus.
 Spell: Straw to Gold
 Cooldown: 2 rounds
-Rumpelstiltskin has a copy of the target's stat penalties for 2 rounds and reverses them for the duration.
+Rumpelstiltskin reverses target ally's stat penalty and steals it for 2 rounds, doubling it for the duration.
 Ultimate Spell: Double Down
 Active
-For 2 rounds, whenever Rumpelstiltskin gains a stat bonus it gets +10, and whenever he inflicts a stat penalty, it gets -10.
+For 2 rounds, whenever Rumpelstiltskin gains a stat bonus it gets +25, and whenever he inflicts a stat penalty, it gets -25.
 Sea Wench Asha
-HP: 234
-Attack: 68
-Defense: 46
-Speed: 78
+HP: 290
+Attack: 85
+Defense: 60
+Speed: 130
 Innate Skill: Stolen Voices
 When an enemy uses a nonattacking Spell, Asha steals it for 2 rounds. She can use it for the duration.
 Signature Weapon: Frost Scepter
 Magic
 Cooldown: 1 round
-Strike: 65 Power. The target can't Strike next turn.
+Strike: 90 Power. The target can't Strike next turn.
 Signature Weapon: Mirror Blade
 Magic
 No Cooldown
@@ -577,85 +577,84 @@ Strike: Has the Power and effects of the last Strike that damaged Asha.
 Ultimate Spell: Foam Prison
 Asha steals target enemy's Ultimate Spell for 2 rounds and uses it.
 Destitute Vasilisa
-HP: 248
-Attack: 50
+HP: 310
+Attack: 85
 Defense: 60
-Speed: 64
+Speed: 105
 Innate Skill: Mother's Presence
 Whenever Vasilisa or an ally are targeted by a Spell, Guard them for 2 rounds.
 Signature Weapon: Guiding Doll
 Magic
 Cooldown: 1 round
-Strike: 65 Power. The next ally Strike against the target deals +25 damage and has 25% Lifesteal, affected by Vasilisa's healing effect bonuses.
+Strike: 85 Power. The next ally Strike against the target deals +40 damage and has 25% Lifesteal, affected by Vasilisa's healing effect bonuses.
 Signature Weapon: Skull Lantern
 Magic
 Cooldown: 1 round
-Strike: 60 Power, +15 Power if Vasilisa or an ally are Guarded.
+Strike: 80 Power, +40 Power if Vasilisa or an ally are Guarded.
 Skill: Guiding Light
 Vasilisa's Spells targeting enemies Spotlight the target for 2 rounds.
 Ultimate Spell: Witch's Blessing
 For 2 rounds, Strikes against enemies have 25% Lifesteal.
-
 Ali Baba, Bandit King
-HP: 234
-Attack: 56
-Defense: 46
-Speed: 90
+HP: 290
+Attack: 70
+Defense: 60
+Speed: 145
 Innate Skill: Open Sesame
 Ali Baba ignores stat bonuses and penalties (both his and his enemies).
 Signature Weapon: Thief's Dagger
 Melee
-Strike: 60 Power. Ali Baba can cast the target's Artifact's Spell as a Bonus Action this round.
+Strike: 105 Power. Ali Baba can cast the target's Artifact's Spell as a Bonus Action this round.
 Spell: Seal the Cave
 Cooldown: 2 rounds
 Increase target enemy's cooldowns by 1 round each.
 Signature Weapon: Jar of Oil
 Magic
 Cooldown: 1 round
-Strike: 70 Power. Burns the target for 2 rounds.
+Strike: 90 Power. Burns the target for 2 rounds.
 Skill: No Escape
 Enemy Adventurers cannot cast their Artifact's Spell if they are Burned or have a cooldown affected by Seal the Cave.
 Ultimate Spell: Forty Thieves
 For 2 rounds, enemies do not reload Ammo when they Switch weapons.
 
 Maui, Sun-Thief
-HP: 308
-Attack: 60
-Defense: 78
-Speed: 32
+HP: 385
+Attack: 75
+Defense: 100
+Speed: 55
 Innate Skill: Conquer Death
 Maui survives fatal damage at 1 HP once per encounter.
 Signature Weapon: Whale-Jaw Hook
 Melee
-Strike: 65 Power, Exposes the target for 2 rounds.
+Strike: 105 Power, Exposes the target for 2 rounds.
 Spell: Swallow the Sun
 Cooldown: 2 rounds
-Maui and his allies have +15 Defense for 2 rounds.
+Maui and his allies have +25 Defense for 2 rounds.
 Signature Weapon: Ancestral Warclub
 Melee
-Strike: 70 Power.
+Strike: 115 Power.
 Skill: Shapeshifter
 Maui uses Defense instead of Attack when dealing damage.
 Ultimate Spell: Raise the Sky
 Reset Conquer Death. Double Maui's Defense for 2 rounds.
 
 Kama the Honeyed
-HP: 240
-Attack: 62
-Defense: 52
-Speed: 74
+HP: 300
+Attack: 80
+Defense: 65
+Speed: 125
 Innate Skill: Target of Affection
-Enemies in Kama's lane take +10 damage from ally Strikes.
+Enemies in Kama's lane take +25 damage from ally Strikes.
 Signature Weapon: Sugarcane Bow
 Ranged
 3 Ammo
-Strike: 55 Power. Spotlight the target for 2 rounds.
+Strike: 65 Power. Spotlight the target for 2 rounds.
 Skill: Flower Arrows
 Sugarcane Bow does not reload by Switching weapons. Other effects can pick up flower arrows to reload 1 Ammo.
 Signature Weapon: The Stinger
 Ranged
 3 Ammo
-Strike: 45 Power. If the target is Spotlighted, Shocks them for 2 rounds and picks up a flower arrow.
+Strike: 60 Power. If the target is Spotlighted, Shocks them for 2 rounds and picks up a flower arrow.
 Spell: Suka's Eyes
 Cooldown: 2 rounds
 Suka Spotlights all enemies for 2 rounds.
@@ -663,190 +662,206 @@ Ultimate Spell: Gaze of Love
 For 2 rounds, enemies are Spotlighted and Ranged Strikes do not consume Ammo against Spotlighted targets.
 
 Reynard, Lupine Trickster
-HP: 240
-Attack: 64
-Defense: 50
-Speed: 88
+HP: 300
+Attack: 80
+Defense: 65
+Speed: 140
 Innate Skill: Opportunist
-Reynard deals +15 damage to targets that did not Strike last round.
+Reynard deals +25 damage to targets that did not Strike last round.
 Signature Weapon: Foxfire Bow
 Ranged
 3 Ammo
-Strike: 45 Power. The target has -10 Defense for 2 rounds.
+Strike: 65 Power. The target has -25 Defense for 2 rounds.
 Skill: Glowing Trail
-Reynard acts the turn before the target of his Strike. 
+Reynard always acts first when he Strikes each round. 
 Signature Weapon: Fang
 Melee
-Strike: 65 Power, +15 Power if the target has a stat penalty.
+Strike: 100 Power, +50 Power if the target has a stat penalty.
 Spell: Silver Tongue
 Cooldown: 2 rounds
 Reynard Taunts target enemy for 2 rounds.
 Ultimate Spell: King of Thieves
-Reynard's next Strike steals 30 Attack from the target for 2 rounds.
+Reynard's next Strike steals 50 Attack from the target for 2 rounds.
+
 Scheherazade, Dawn's Ransom
-HP: 250
-Attack: 52
-Defense: 62
-Speed: 66
+HP: 310
+Attack: 65
+Defense: 80
+Speed: 110
 Innate Skill: Thousand and One Nights
 When an enemy casts a Spell, if they cast a Spell this round, it has a +1 round cooldown.
 Signature Weapon: Tome of Ancients
 Magic
 Cooldown: 1 round
-Strike: 60 Power. The target has -10 Speed for 2 rounds.
+Strike: 80 Power. The target has -25 Speed for 2 rounds.
 Skill: Stay the Blade
-While Scheherezade is frontline, enemy Strikes deal -10 damage.
+While Scheherezade is frontline, enemy Strikes deal -25 damage.
 Signature Weapon: Lamp of Infinity
 Magic
 Cooldown: 1 round
-Strike: 60 Power. The ally to the right of Scheherezade restores 40 HP.
+Strike: 75 Power. The ally to the right of Scheherezade restores 65 HP.
 Skill: Evermore
 The first time each encounter Scheherezade or an ally would take fatal damage, they survive at 1 HP.
 Ultimate Spell: Daybreak
 Clear the enemy Ultimate Meter. For 2 rounds, the enemy Ultimate Meter cannot be raised.
+
 Storyweaver Anansi
-HP: 236
-Attack: 62
-Defense: 48
-Speed: 88
+HP: 295
+Attack: 80
+Defense: 60
+Speed: 140
 Innate Skill: Tangled Plots
 While Anansi is frontline, enemies cannot cast Reactive Spells.
 Signature Weapon: The Pen
 Ranged
 8 Ammo
-Strike: 35 Power. Roots the target for 2 rounds.
+Strike: 55 Power. Roots the target for 2 rounds.
 Spell: Silken Prose
 Cooldown: 2 rounds
-For 2 rounds, Strikes deal +8 damage to target Rooted enemy.
+For 2 rounds, Strikes deal +8 damage to Rooted enemies.
 Signature Weapon: The Sword
 Melee
-Strike: 65 Power. Can target backline enemies that cast an Artifact's Spell last round.
+Strike: 105 Power. Can target backline enemies that cast an Artifact's Spell last round.
 Skill: The Twist!
-When Anansi Switches to The Sword, they get +15 Attack and -15 Speed for 2 rounds.
+When Anansi Switches to The Sword, they get +25 Attack and -25 Speed for 2 rounds.
 Ultimate Spell: Web of Centuries
 For 2 rounds, Anansi can cast any Adventurer's Spell.
+
 Odysseus the Nobody
-HP: 276
-Attack: 70
-Defense: 62
-Speed: 56
+HP: 345
+Attack: 90
+Defense: 80
+Speed: 95
 Innate Skill: Cunning Retreat
-When Odysseus Swaps positions, he gets +15 Attack for 2 rounds.
+When Odysseus Swaps positions, he gets +25 Attack for 2 rounds.
 Signature Weapon: Olivewood Spear
 Melee
-Strike: 65 Power, +15 Power against targets in Odysseus' lane.
+Strike: 100 Power, +50 Power against targets in Odysseus' lane.
 Spell: Eye Piercer
 Cooldown: 2 rounds
 Odysseus' next Strike ignores targeting restrictions.
 Signature Weapon: Beggar's Greatbow
 Ranged
 3 Ammo
-Strike: 55 Power. Puts an arrow in the target.
+Strike: 70 Power. Puts an arrow in the target.
 Skill: Barbed Arrows
-Olive Spears does not reload by Switching weapons. When Odysseus Switches weapons, his next Melee Strike deals +5 damage for each arrow in the target and fully reloads Beggar's Greatbow.
+Beggar's Greatbow does not reload by Switching weapons. When Odysseus Switches weapons, his next Melee Strike deals +25 damage for each arrow in the target and fully reloads Beggar's Greatbow.
 Ultimate Spell: Trojan Horse
 Odysseus Swaps positions and takes 0 damage from Strikes this round. For 2 rounds, Odysseus can Switch Weapons as a Bonus Action.
 Witch of the East
-HP: 244
-Attack: 50
-Defense: 58
-Speed: 74
+HP: 305
+Attack: 60
+Defense: 70
+Speed: 125
 Innate Skill: Headwinds
 The Witch of the East creates an air current in her lane for 2 rounds when she Swaps positions and at the start of an encounter.
 Signature Weapon: Zephyr
 Magic
 Cooldown: 1 round
-Strike: 55 Power. Swaps target with the enemy to their left.
+Strike: 80 Power. Swaps the target with the enemy to their left.
 Skill: Heavy Gale
-Enemies in an air current have -15 Attack.
+Enemies in an air current have -25 Attack.
 Signature Weapon: Comet
 Melee
-Strike: 60 Power. The target takes +15 damage from the next Magic Strike.
+Strike: 105 Power. The target takes +25 damage from the next Magic Strike.
 Skill: Unroof
-The Witch of the East has +15 Speed while in an air current.
+The Witch of the East and her allies have +25 Speed while in an air current.
 Ultimate Spell: Dream Twister
-Create an air current in each lane. Allies have +15 Speed for 2 rounds.
+Create an air current in each lane for 2 rounds.
 Tam Lin, Thornbound
-HP: 292
-Attack: 58
-Defense: 76
-Speed: 34
+HP: 365
+Attack: 60
+Defense: 70
+Speed: 55
 Innate Skill: Faerie's Ransom
-The first time each round an enemy would inflict a status condition on Tam Lin, cleanse it and he has +15 Defense for 2 rounds.
+The first time each round an enemy would inflict a status condition on Tam Lin, cleanse it and he has +25 Defense for 2 rounds.
 Signature Weapon: Butterfly Knife
 Melee
-Strike: 65 Power. Taunt the target for 2 rounds.
+Strike: 100 Power. Taunt the target for 2 rounds.
 Skill: Bargain
-Enemies in Tam Lin's lane who Swap positions take +10 damage from Strikes for 2 rounds.
+Enemies in Tam Lin's lane who Swap positions take +25 damage from Strikes for 2 rounds.
 Signature Weapon: Beam of Light
 Melee
-Strike: 65 Power. Burns the target for 2 rounds.
+Strike: 100 Power. Burns the target for 2 rounds.
 Skill: Holy Water
 Allies have the effects of Faerie's Ransom.
 Ultimate Spell: Polymorph
-Target Adventurer becomes a beast for 2 rounds and can't swap and has +15 Attack, +15 Defense, +15 Speed, and their Strikes have 30% recoil.
+Target Adventurer becomes a beast for 2 rounds and can't swap and has +25 Attack, +25 Defense, +25 Speed, and their Strikes have 30% recoil (can be the user).
 APPENDIX B — CLASS SKILLS
 FIGHTER
 Martial
-The Adventurer's Melee Strikes deal +15 damage.
-Inevitable
-The Adventurer's Melee Strikes charge the Ultimate Meter +1.
++25 HP
+The Adventurer's Melee Strikes deal +25 damage.
+Vanguard
++50 HP
+The Adventurer's Melee Strikes deal 15 damage to each enemy behind the target.
 ROGUE
 Covert
++25 HP
 The Adventurer can Swap positions as a Bonus Action.
 Assassin
++ 25 HP
 The Adventurer ignores targeting restrictions against enemies who did not Strike or Swap Positions.
 WARDEN
 Bulwark
-The Adventurer has +15 Defense while in the frontline.
++50 HP
+The Adventurer has +15 Defense while in the frontline, +5 otherwise.
 Vigilant
-The Adventurer is Guarded for 2 rounds when they Swap positions.
++50 HP
+The Adventurer is Guarded for 2 rounds when they Swap positions or Skip.
 MAGE
 Arcane
-The Adventurer's Magic Strikes deal +10 damage.
++15
+The Adventurer's Spells charge the Ultimate Meter +1.
 Archmage
-The first Spell the Adventurer casts after Switching weapons does not go on cooldown.
++25
+The Adventurer's Magic Strikes do not go on cooldown in the frontline.
+
 RANGER
 Deadeye
-The Adventurer's Ranged Strikes deal +10 damage.
++15
+The Adventurer's Ranged Strikes deal +5 damage.
 Armed
++15
 The Adventurer's first Ranged Strike after Switching weapons does not consume Ammo.
 CLERIC
 Healer
++25
 The Adventurer's healing effects restore an additional +15 HP.
 Medic
++50
 The Adventurer's healing effects cleanse status conditions and stat penalties.
 
 APPENDIX C — ARTIFACTS
 Wishing Table
 Attunement: Cleric, Fighter, Warden
-+10 Defense
++15 Defense
 Spell: Table-Be-Set
 Cooldown: 1 round
-Target adventurer restores 40 HP and cleanses their newest status condition.
+Target adventurer restores 65 HP and cleanses their newest status condition (can be the user).
 Winged Sandals
 Attunement: Ranger, Rogue, Warden
-+10 Speed
++15 Speed
 Spell: The Swiftness
 Cooldown: 2 rounds
-The user Swaps positions with an ally and gets +15 Speed for 2 rounds.
+The user Swaps positions with an ally and gets +25 Speed for 2 rounds.
 Lightning Helm
 Attunement: Fighter, Mage, Rogue
-+10 Attack
++15 Attack
 Spell: Thunderclap
 Cooldown: 2 rounds
-The user's next Strike deals +10 damage and Shocks the target for 2 rounds.
+The user's next Strike deals +25 damage and Shocks the target for 2 rounds.
 Golden Fleece
 Attunement: Cleric, Fighter, Warden
-+10 Defense
++15 Defense
 Spell: Restoration
 Cooldown: 2 rounds
 The user restores 25 HP and gets +10 Attack for 2 rounds.
 Arcane Hourglass
 Attunement: Mage
-+15 Defense
++25 Defense
 Spell: Time Stop
-Cooldown: 6 rounds
+Cooldown: 1 encounter
 The user is untargetable but cannot act for 1 round.
 Naiad's Knife
 Attunement: Fighter, Rogue
@@ -859,16 +874,16 @@ Attunement: Mage
 +15 Attack
 Spell: Chroma
 Cooldown: 1 round
-The user's next Magic Strike deals +15 damage.
+The user's next Magic Strike deals +25 damage.
 Misericorde
 Attunement: Cleric, Fighter, Rogue
 +15 Attack
 Spell: Mercy Stroke
 Cooldown: 2 rounds
-The user deals 30 damage to target enemy with a status condition.
+The user deals 50 damage to target enemy with a status condition.
 Selkie’s Skin
 Attunement: Mage, Ranger, Rogue
-+10 Speed
++15 Speed
 Spell: Mistform
 Cooldown: 2 rounds
 The next Strike against the user this round deals 0 damage.
@@ -880,38 +895,38 @@ Cooldown: 1 round
 The user's next Strike has 30% Lifesteal
 Enchanted Lamp
 Attunement: Cleric, Rogue
-+15 Speed
++25 Speed
 Spell: Dying Wish
-Cooldown: 6 rounds
+Cooldown: 1 encounter
 Reaction: If the user would take fatal damage from above 50% max HP, they survive at 1 HP.
 Magic Mirror
 Attunement: Cleric, Mage
-+5 Speed
++15 Speed
 Spell: Reflection
 Cooldown: 5 rounds
 Reaction: The user reflects a Spell targeted at them towards the caster.
 
 Nettle Smock
 Attunement: Fighter, Warden
-+10 Defense
++15 Defense
 Spell: Thornmail
 Cooldown: 2 rounds
 Reaction: The user reflects 20% of the damage from a Strike onto the attacker and cuts their healing by 50% for 2 rounds.
 Goose Quill
 Attunement: Cleric, Mage, Warden
-+5 Speed
++25 Speed
 Spell: Make History
 Cooldown: 6 rounds
 Reaction: When the user casts an Ultimate Spell, it only uses up half of the Ultimate Meter.
 Cursed Spindle
 Attunement: Cleric, Mage, Rogue
-+5 Attack
++15 Attack
 Spell: Plague
 Cooldown: 3 rounds
 Reaction: When the user inflicts a status condition, extend its duration by 1 round.
 Bluebeard’s Key
 Attunement: Rogue, Warden
-+10 Defense
++15 Defense
 Spell: Unseal
 Cooldown: 2 rounds
 Target enemy loses Guard and Defense stat bonuses and cannot gain either for 2 rounds.
@@ -923,18 +938,19 @@ Cooldown: 2 rounds
 The user and the lowest HP ally behind them are Guarded for 2 rounds.
 Dire-Wolf Spine
 Attunement: Fighter
-+10 Attack
++15 Attack
 Spell: Rend
+Cooldown: 2 rounds
 The user's next Melee Strike deals +10 damage and Weakens the target for 2 rounds.
 Soaring Crown
 Attunement: Ranger
-+10 Speed
++15 Speed
 Spell: Hawk's Eye
 Cooldown: 2 rounds
 The user's next Ranged Strike ignores targeting restrictions and does not consume Ammo.
 Fading Diadem
 Attunement: Cleric
-+10 Defense
++15 Defense
 Spell: Reprieve
 Cooldown: 2 rounds
 Target ally restores 30 HP and is Guarded for 2 rounds.
@@ -943,29 +959,29 @@ Attunement: Cleric
 +15 Defense
 Spell: Purge
 Cooldown: 1 round
-Cleanse target adventurer's status conditions. They get +5 Defense per condition cleansed for 2 rounds.
+Cleanse target adventurer's status conditions (can be the user). They get +5 Defense per condition cleansed for 2 rounds.
 Dragon's Horn
 Attunement: Fighter, Ranger
-+10 Attack
++15 Attack
 Spell: Sky Assault
 Cooldown: 2 rounds
-The user's next Strike deals +10 damage and Spotlights the target for 2 rounds.
+The user's next Strike deals +10 damage, can target backline enemies in the user's lane, and Spotlights the target for 2 rounds.
 Bottled Clouds
 Attunement: Mage, Ranger
-+10 Attack
++15 Attack
 Spell: Clear Skies
 Cooldown: 2 rounds
-The user's next Strike deals +10 damage and is spread.
+The user's next Strike deals +10 damage and is Spread.
 Glass Slipper
 Attunement: Mage, Rogue
-+10 Speed
++15 Speed
 Spell: Midnight Waltz
 Cooldown: 2 rounds
 The user Swaps positions with an ally and the next Spell they cast does not go on cooldown.
 
 Black Torch
 Attunement: Fighter, Ranger, Rogue
-+10 Attack
++15 Attack
 Spell: Grave Tiding
 Cooldown: 1 round
 Reaction: When the user deals fatal damage, they heal equal to 50% of the damage dealt.
@@ -977,7 +993,7 @@ Cooldown: 1 round
 Reaction: When the user Swaps positions with an ally, both restore 25  HP.
 All-Mill
 Attunement: Ranger, Warden
-+10 Defense
++15 Defense
 Spell: Boundless
 Cooldown: 2 rounds.
 The user gains Root Immunity and +10 Speed for 2 rounds.
@@ -989,16 +1005,16 @@ Cooldown: 2 rounds
 Reaction: When the user casts a Spell that targets an ally, they Swap positions.
 Jade Rabbit
 Attunement: Mage, Ranger
-+5 Speed
++15 Speed
 Spell: Elixir of Life
 Cooldown: 2 rounds
 The user's next Strike has 10% Lifesteal, does not consume Ammo, and does not go on cooldown.
 Swan Cloak
 Attunement: Rogue
-+5 Defense
++15 Defense
 Spell: Featherweight
 Cooldown: 2 rounds
-Reaction: When the user is targeted by a Melee Strike, they first Swap Positions.
+Reaction: When the user is targeted by a Melee Strike, they first Swap positions.
 Starskin Veil
 Attunement: Cleric, Warden
 +15 Defense
@@ -1007,18 +1023,16 @@ Cooldown: 2 rounds
 Redirect the target's next Spell or Strike to the user.
 Blood Diamond
 Attunement: Fighter
-+5 Attack
++15 Attack
 Spell: Last Stand
 Cooldown: 2 rounds
 Reaction: When a Strike damages the user below 50% max HP, their next Strike deals +25 damage.
 Suspicious Eye
 Attunement: Ranger
-+10 Speed
++15 Speed
 Spell: Nebulous Ides
 Cooldown: 2 rounds
 Reaction: When the user Strikes an enemy in their lane, Spotlight the target for 2 rounds.
-
-
 Philosopher's Stone
 Attunement: Cleric, Mage
 +15 Defense
@@ -1033,21 +1047,20 @@ Cooldown: 2 rounds
 For 2 rounds, the user's Strikes against enemies in their lane do not consume Ammo.
 Tarnhelm
 Attunement: Fighter, Warden
-+10 Attack
++25 Attack
 Spell: Feign Death
-Cooldown: 6 rounds.
+Cooldown: 1 encounter
 Reaction: When the user takes fatal damage, they survive at 1 HP.
 
 Walking Abode
 Attunement: Cleric, Mage, Ranger
-+5 Speed
++15 Speed
 Spell: Consume
 Cooldown: 2 rounds
 Root target enemy for 2 rounds and halve their healing for the duration.
 Nebula Mail
 Attunement: Fighter, Rogue, Warden
-+10 Attack
++25 Attack
 Spell: Event Horizon
 Cooldown: 2 rounds
 For 2 rounds, when the user takes damage from a Strike, charge the Ultimate Meter +1.
-

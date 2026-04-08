@@ -140,8 +140,6 @@ class StoryBattleController:
         if actor is None:
             return []
         spells = []
-        if actor.markers.get("spell_bonus_rounds", 0) > 0:
-            spells.extend(effect for effect in actor.active_spells() if self._effect_usable(actor, effect))
         bonus_effect = actor.markers.get("artifact_bonus_spell_effect")
         if (
             actor.markers.get("artifact_bonus_spell_rounds", 0) > 0
@@ -159,8 +157,20 @@ class StoryBattleController:
         if self.phase.startswith("bonus"):
             actions = []
             team = team_for_actor(self.battle, actor)
+            team_swap_taken = (
+                team.markers.get("swap_action_selected", 0) > 0
+                or any(
+                    m is not actor and not m.ko
+                    and (
+                        (m.queued_action is not None and m.queued_action.get("type") == "swap")
+                        or (m.queued_bonus_action is not None and m.queued_bonus_action.get("type") == "swap")
+                    )
+                    for m in team.members
+                )
+            )
             team_bonus_swap = team.markers.get("bonus_swap_rounds", 0) > 0 and team.markers.get("bonus_swap_used", 0) <= 0
-            if (actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight" or team_bonus_swap) and self._ally_targets(actor):
+            is_intrinsic_swapper = actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight"
+            if (is_intrinsic_swapper or (team_bonus_swap and not team_swap_taken)) and self._ally_targets(actor):
                 actions.append(PendingChoice("swap", "Bonus Swap", needs_target=True, bonus=True))
             if actor.defn.id != "ashen_ella" and (actor.defn.id == "wayward_humbert" or actor.markers.get("bonus_switch_rounds", 0) > 0):
                 actions.append(PendingChoice("switch", "Bonus Switch", bonus=True))
@@ -177,7 +187,13 @@ class StoryBattleController:
             actions.append(PendingChoice("spellbook", "Spellcast"))
         if actor.defn.id != "ashen_ella":
             actions.append(PendingChoice("switch", "Switch"))
-        if self._ally_targets(actor):
+        own_team = team_for_actor(self.battle, actor)
+        team_swap_queued = any(
+            m is not actor and not m.ko
+            and m.queued_action is not None and m.queued_action.get("type") == "swap"
+            for m in own_team.members
+        )
+        if self._ally_targets(actor) and not team_swap_queued:
             actions.append(PendingChoice("swap", "Swap", needs_target=True))
         actions.append(PendingChoice("skip", "Skip"))
         return actions

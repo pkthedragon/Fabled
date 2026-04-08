@@ -64,12 +64,32 @@ OPPONENT_PACKAGE_KEEP = {
 }
 
 
-DEEP_LOOKAHEAD_KEEP = {
-    "easy": 0,
-    "normal": 2,
-    "hard": 3,
-    "ranked": 3,
+
+DISRUPTIVE_EFFECT_SPECIALS = {
+    "artifact_swap_with_ally",
+    "cant_strike_next_turn",
+    "midnight_waltz",
+    "self_swap_after_strike",
+    "swap_target_with_enemy",
+    "trojan_horse",
+    "zephyr",
 }
+
+
+INVALID_PLAN_LOG_WEIGHTS: tuple[tuple[str, float], ...] = (
+    (" queued Strike failed because ", 34.0),
+    (" queued Swap failed because ", 24.0),
+    (" cannot Strike right now because ", 34.0),
+    (" cannot Strike right now.", 34.0),
+    (" is on cooldown.", 30.0),
+    (" is out of ammo.", 30.0),
+    (" has no legal Strike on that target.", 26.0),
+    (" cannot Swap.", 22.0),
+    (" is Rooted and cannot Swap.", 22.0),
+    (" cannot Swap while Polymorphed.", 22.0),
+    (" has no legal target.", 20.0),
+    (" cannot cast Spells from the backline.", 22.0),
+)
 
 
 @dataclass(frozen=True)
@@ -138,13 +158,11 @@ def _rough_damage(battle, actor, target, effect, *, weapon=None) -> int:
     power = effect.power
     if weapon is not None:
         if weapon.kind == "melee" and actor.class_skill.id == "martial":
-            power += 15
-        elif weapon.kind == "magic" and actor.class_skill.id == "arcane":
-            power += 10
+            power += 25
         elif weapon.kind == "ranged" and actor.class_skill.id == "deadeye":
-            power += 10
+            power += 5
         if actor.defn.id == "odysseus_the_nobody" and weapon.id == "olivewood_spear" and target.slot == actor.slot:
-            power += 15
+            power += 50
     if actor.has_status("weaken"):
         power = int((power * 0.85) + 0.999)
     actor_team = team_for_actor(battle, actor)
@@ -152,19 +170,19 @@ def _rough_damage(battle, actor, target, effect, *, weapon=None) -> int:
     if weapon is not None and target_team.frontline() is not None:
         enemy_front = target_team.frontline()
         if enemy_front.defn.id == "scheherazade_dawns_ransom" and enemy_front.primary_weapon.id == "tome_of_ancients":
-            power = max(0, power - 10)
+            power = max(0, power - 25)
     if target.has_status("guard") and actor.defn.id != "robin_hooded_avenger":
         power = int((power * 0.85) + 0.999)
     if target.has_status("expose"):
         power = int((power * 1.15) + 0.999)
     damage = max(1, int((power * (actor.get_stat(attack_stat) / max(1, target.get_stat("defense")))) + 0.999))
     if target.markers.get("bargain_rounds", 0) > 0 and weapon is not None:
-        damage += 10
+        damage += 25
     if target.has_status("root") and target.markers.get("silken_prose_rounds", 0) > 0 and weapon is not None:
         damage += 8
     if actor_team is not target_team:
         if any(ally.defn.id == "kama_the_honeyed" and ally is not actor and ally.slot == target.slot for ally in actor_team.alive()):
-            damage += 10
+            damage += 25
     return damage
 
 
@@ -178,12 +196,194 @@ def _effect_usable(actor, effect) -> bool:
     return True
 
 
+def _failure_weight_for_line(line: str) -> float:
+    for fragment, weight in INVALID_PLAN_LOG_WEIGHTS:
+        if fragment in line:
+            return weight
+    if " failed because " in line:
+        return 20.0
+    if " cannot access " in line:
+        return 20.0
+    return 0.0
+
+
+def _enemy_team_for_actor(battle, actor):
+    actor_team = team_for_actor(battle, actor)
+    return battle.team1 if actor_team is battle.team2 else battle.team2
+
+
+def _fated_duel_blocks(actor, battle) -> bool:
+    active_lanes = battle.markers.get("fated_duel_lanes", {})
+    return bool(active_lanes) and actor.slot not in active_lanes
+
+
+def _has_seal_the_cave_cooldown(actor) -> bool:
+    tracked = actor.markers.get("sealed_cave_effects")
+    if not isinstance(tracked, set):
+        return False
+    return any(actor.cooldowns.get(effect_id, 0) > 0 for effect_id in tracked)
+
+
+def _actor_forced_to_skip(actor, battle) -> bool:
+    return actor.ko or actor.markers.get("cant_act_rounds", 0) > 0 or _fated_duel_blocks(actor, battle)
+
+
+def _can_attempt_strike(actor) -> bool:
+    weapon = actor.primary_weapon
+    if actor.markers.get("cant_strike_rounds", 0) > 0:
+        return False
+    if actor.cooldowns.get(weapon.strike.id, 0) > 0:
+        return False
+    if weapon.ammo > 0 and actor.ammo_remaining.get(weapon.id, weapon.ammo) <= 0:
+        return False
+    return True
+
+
+def _can_cast_effect(battle, actor, effect) -> bool:
+    if actor.defn.id == "ashen_ella" and actor.slot != SLOT_FRONT:
+        return False
+    if effect.id == actor.defn.ultimate.id:
+        return True
+    if effect not in actor.active_spells():
+        bonus_effect = actor.markers.get("artifact_bonus_spell_effect")
+        if not (
+            actor.markers.get("artifact_bonus_spell_rounds", 0) > 0
+            and bonus_effect is not None
+            and bonus_effect.id == effect.id
+        ):
+            return False
+    if not _effect_usable(actor, effect):
+        return False
+    if (
+        actor.artifact is not None
+        and effect.id == actor.artifact.spell.id
+        and (actor.has_status("burn") or _has_seal_the_cave_cooldown(actor))
+    ):
+        enemy_team = _enemy_team_for_actor(battle, actor)
+        if any(enemy.defn.id == "ali_baba" and enemy.primary_weapon.id == "jar_of_oil" for enemy in enemy_team.alive()):
+            return False
+    return True
+
+
+def _can_switch(actor, *, bonus: bool) -> bool:
+    if actor.defn.id == "ashen_ella":
+        return False
+    if not bonus:
+        return True
+    return actor.defn.id == "wayward_humbert" or actor.markers.get("bonus_switch_rounds", 0) > 0
+
+
+def _can_swap(battle, actor, target, *, bonus: bool) -> bool:
+    if target is None or target is actor or target.ko:
+        return False
+    if team_for_actor(battle, target) != team_for_actor(battle, actor):
+        return False
+    if actor.has_status("root"):
+        return False
+    if actor.markers.get("polymorph_rounds", 0) > 0 or target.markers.get("polymorph_rounds", 0) > 0:
+        return False
+    # Only one Swap action may be selected per round per team
+    if team_for_actor(battle, actor).markers.get("swap_action_selected", 0) > 0:
+        return False
+    if not bonus:
+        return True
+    intrinsic_bonus_swap = actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight"
+    return intrinsic_bonus_swap or _team_bonus_swap_available(team_for_actor(battle, actor))
+
+
+def _legal_targets_for_spec(battle, actor, spec: ActionSpec):
+    if spec.kind == "strike":
+        return get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
+    if spec.kind == "ultimate":
+        return get_legal_targets(battle, actor, effect=actor.defn.ultimate)
+    if spec.kind == "spell" and spec.effect_id is not None:
+        try:
+            effect = _effect_by_id(actor, spec.effect_id)
+        except KeyError:
+            return []
+        return get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon)
+    return []
+
+
+def _spec_effect(actor, spec: ActionSpec):
+    if spec.kind == "strike":
+        return actor.primary_weapon.strike
+    if spec.kind == "spell" and spec.effect_id is not None:
+        try:
+            return _effect_by_id(actor, spec.effect_id)
+        except KeyError:
+            return None
+    if spec.kind == "ultimate":
+        return actor.defn.ultimate
+    return None
+
+
+def _spec_is_legal(battle, actor, spec: ActionSpec) -> bool:
+    if actor is None or actor.ko:
+        return False
+    if spec.kind == "skip":
+        return True
+    if _actor_forced_to_skip(actor, battle):
+        return False
+    if spec.kind == "switch":
+        return _can_switch(actor, bonus=spec.bonus)
+    if spec.kind == "swap":
+        target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
+        return _can_swap(battle, actor, target, bonus=spec.bonus)
+    if spec.kind == "strike":
+        if not _can_attempt_strike(actor):
+            return False
+        target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
+        return any(candidate is target for candidate in _legal_targets_for_spec(battle, actor, spec))
+    if spec.kind == "ultimate":
+        team = team_for_actor(battle, actor)
+        if team.ultimate_meter < ULTIMATE_METER_MAX:
+            return False
+        if spec.bonus:
+            return False
+        effect = actor.defn.ultimate
+        if effect.target in {"none", "self"}:
+            return True
+        target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
+        return any(candidate is target for candidate in _legal_targets_for_spec(battle, actor, spec))
+    if spec.kind == "spell":
+        if spec.effect_id is None:
+            return False
+        try:
+            effect = _effect_by_id(actor, spec.effect_id)
+        except KeyError:
+            return False
+        if spec.bonus:
+            bonus_effect = actor.markers.get("artifact_bonus_spell_effect")
+            has_artifact_bonus = (
+                actor.markers.get("artifact_bonus_spell_rounds", 0) > 0
+                and bonus_effect is not None
+                and bonus_effect.id == effect.id
+            )
+            if not has_artifact_bonus:
+                return False
+        if not _can_cast_effect(battle, actor, effect):
+            return False
+        if effect.target in {"none", "self"}:
+            return True
+        target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
+        return any(candidate is target for candidate in _legal_targets_for_spec(battle, actor, spec))
+    return False
+
+
+def _sanitize_spec(battle, actor, spec: ActionSpec | None, *, bonus: bool) -> ActionSpec:
+    if spec is not None and _spec_is_legal(battle, actor, spec):
+        return spec
+    for candidate in available_action_specs(battle, actor, bonus=bonus):
+        if _spec_is_legal(battle, actor, candidate):
+            return candidate
+    return ActionSpec(kind="skip", bonus=bonus)
+
+
 def _active_spells_for_phase(actor, *, bonus: bool) -> list:
     if not bonus:
         return [effect for effect in actor.active_spells() if _effect_usable(actor, effect)]
     effects = []
-    if actor.markers.get("spell_bonus_rounds", 0) > 0:
-        effects.extend(effect for effect in actor.active_spells() if _effect_usable(actor, effect))
     bonus_effect = actor.markers.get("artifact_bonus_spell_effect")
     if (
         actor.markers.get("artifact_bonus_spell_rounds", 0) > 0
@@ -213,6 +413,35 @@ def _threat_value(unit) -> float:
     if unit.slot == SLOT_FRONT:
         value += 6
     return value
+
+
+def _runtime_threat_bonus(battle, enemy_unit, own_team_num: int) -> float:
+    """Dynamic threat bonus based on current combat leverage, not just static role tags."""
+    bonus = 0.0
+    # Enemy snowballing via attack/speed buffs
+    if any(buff.stat in {"attack", "speed"} and buff.duration > 0 for buff in enemy_unit.buffs):
+        bonus += 4.0
+    # Active power multiplier markers
+    if enemy_unit.markers.get("jovial_shot_ready", 0) > 0:
+        bonus += 6.0
+    if enemy_unit.markers.get("rabbit_hole_extra_rounds", 0) > 0:
+        bonus += 6.0
+    # Enemy has applied combo-enabling statuses to our team
+    own_team = battle.get_team(own_team_num)
+    combo_count = sum(
+        1 for ally in own_team.alive()
+        if ally.has_status("expose") or ally.has_status("shock") or ally.has_status("spotlight")
+    )
+    if combo_count >= 2:
+        bonus += 5.0
+    elif combo_count == 1:
+        bonus += 2.0
+    # Reactive artifact ready — approaching them is costly
+    if _reactive_artifact_ready(enemy_unit):
+        bonus += 4.0
+    if enemy_unit.markers.get("dazzle_redirect_ref") is not None:
+        bonus += 3.0
+    return bonus
 
 
 def _access_count(battle, team_num: int, target) -> int:
@@ -253,6 +482,27 @@ def _estimate_team_damage_to_target(battle, team_num: int, target) -> float:
     return total
 
 
+def _ally_will_ko_target(battle, team_num: int, actor, target) -> bool:
+    """Returns True if an ally acting before actor in initiative order will KO target."""
+    if target is None or target.ko:
+        return False
+    actor_idx = _initiative_index(battle, actor)
+    for ally in battle.get_team(team_num).alive():
+        if ally is actor:
+            continue
+        if _initiative_index(battle, ally) >= actor_idx:
+            continue  # acts after us, won't pre-empt
+        rough = _rough_damage(battle, ally, target, ally.primary_weapon.strike, weapon=ally.primary_weapon)
+        if rough >= target.hp:
+            return True
+        for effect in _active_spells_for_phase(ally, bonus=False):
+            if effect.target != "enemy":
+                continue
+            if _rough_damage(battle, ally, target, effect, weapon=ally.primary_weapon) >= target.hp:
+                return True
+    return False
+
+
 def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
     own = battle.get_team(team_num)
     enemy = battle.get_enemy(team_num)
@@ -278,7 +528,7 @@ def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
             focus_bonus += 2.0
         if enemy_unit.hp <= max(50, int(enemy_unit.max_hp * 0.32)):
             focus_bonus += 9.0
-        priority = estimated * 0.35 + _threat_value(enemy_unit) + collapse + focus_bonus
+        priority = estimated * 0.35 + _threat_value(enemy_unit) + _runtime_threat_bonus(battle, enemy_unit, team_num) + collapse + focus_bonus
         if priority > best_priority:
             best_priority = priority
             priority_target_ref = target_ref
@@ -318,6 +568,12 @@ def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
         race_kind = "ultimate"
     elif enemy_ultimates >= max(1, ULTIMATE_WIN_COUNT - 1) and enemy.ultimate_meter >= max(4, ULTIMATE_METER_MAX - 2):
         race_kind = "deny_ultimate"
+    # Late-game escalation: after round 10, ultimate win condition becomes dominant
+    if battle.round_num > 10 and race_kind not in {"ko"}:
+        if enemy_ultimates >= max(1, ULTIMATE_WIN_COUNT - 1) or (enemy_ultimates > own_ultimates and battle.round_num > 14):
+            race_kind = "deny_ultimate"
+        elif own.ultimate_meter >= ULTIMATE_METER_MAX // 2 and race_kind == "hybrid":
+            race_kind = "ultimate"
 
     plan_kind = "tempo"
     if own.ultimate_meter >= ULTIMATE_METER_MAX and (killable or (vulnerable is not None and vulnerable.hp / max(1, vulnerable.max_hp) <= 0.35)):
@@ -348,36 +604,38 @@ def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
 def available_action_specs(battle, actor, *, bonus: bool = False) -> list[ActionSpec]:
     if actor.ko:
         return []
+    if _actor_forced_to_skip(actor, battle):
+        return [ActionSpec(kind="skip", bonus=bonus)]
     specs: list[ActionSpec] = []
     team = team_for_actor(battle, actor)
     if bonus:
-        if actor.defn.id == "wayward_humbert" or actor.markers.get("bonus_switch_rounds", 0) > 0:
-            if actor.defn.id != "ashen_ella":
-                specs.append(ActionSpec(kind="switch", bonus=True))
+        if _can_switch(actor, bonus=True):
+            specs.append(ActionSpec(kind="switch", bonus=True))
         if actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight" or _team_bonus_swap_available(team):
             for ally in _allies(actor, battle):
-                specs.append(ActionSpec(kind="swap", target_ref=_unit_ref(battle, ally), bonus=True))
-        if actor.markers.get("spell_bonus_rounds", 0) > 0 and team.ultimate_meter >= ULTIMATE_METER_MAX:
-            effect = actor.defn.ultimate
-            targets = get_legal_targets(battle, actor, effect=effect)
-            if effect.target in {"none", "self"}:
-                specs.append(ActionSpec(kind="ultimate", effect_id=effect.id, bonus=True))
-            else:
-                for target in targets:
-                    specs.append(ActionSpec(kind="ultimate", effect_id=effect.id, target_ref=_unit_ref(battle, target), bonus=True))
+                spec = ActionSpec(kind="swap", target_ref=_unit_ref(battle, ally), bonus=True)
+                if _spec_is_legal(battle, actor, spec):
+                    specs.append(spec)
         for effect in _active_spells_for_phase(actor, bonus=True):
             targets = get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon)
             if effect.target in {"none", "self"}:
-                specs.append(ActionSpec(kind="spell", effect_id=effect.id, bonus=True))
+                spec = ActionSpec(kind="spell", effect_id=effect.id, bonus=True)
+                if _spec_is_legal(battle, actor, spec):
+                    specs.append(spec)
             else:
                 for target in targets:
-                    specs.append(ActionSpec(kind="spell", effect_id=effect.id, target_ref=_unit_ref(battle, target), bonus=True))
+                    spec = ActionSpec(kind="spell", effect_id=effect.id, target_ref=_unit_ref(battle, target), bonus=True)
+                    if _spec_is_legal(battle, actor, spec):
+                        specs.append(spec)
         specs.append(ActionSpec(kind="skip", bonus=True))
         return specs
 
-    strike_targets = get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
-    for target in strike_targets:
-        specs.append(ActionSpec(kind="strike", target_ref=_unit_ref(battle, target)))
+    if _can_attempt_strike(actor):
+        strike_targets = get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
+        for target in strike_targets:
+            spec = ActionSpec(kind="strike", target_ref=_unit_ref(battle, target))
+            if _spec_is_legal(battle, actor, spec):
+                specs.append(spec)
     team_meter = team.ultimate_meter
     if team_meter >= ULTIMATE_METER_MAX:
         effect = actor.defn.ultimate
@@ -390,14 +648,20 @@ def available_action_specs(battle, actor, *, bonus: bool = False) -> list[Action
     for effect in _active_spells_for_phase(actor, bonus=False):
         targets = get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon)
         if effect.target in {"none", "self"}:
-            specs.append(ActionSpec(kind="spell", effect_id=effect.id))
+            spec = ActionSpec(kind="spell", effect_id=effect.id)
+            if _spec_is_legal(battle, actor, spec):
+                specs.append(spec)
         else:
             for target in targets:
-                specs.append(ActionSpec(kind="spell", effect_id=effect.id, target_ref=_unit_ref(battle, target)))
-    if actor.defn.id != "ashen_ella":
+                spec = ActionSpec(kind="spell", effect_id=effect.id, target_ref=_unit_ref(battle, target))
+                if _spec_is_legal(battle, actor, spec):
+                    specs.append(spec)
+    if _can_switch(actor, bonus=False):
         specs.append(ActionSpec(kind="switch"))
     for ally in _allies(actor, battle):
-        specs.append(ActionSpec(kind="swap", target_ref=_unit_ref(battle, ally)))
+        spec = ActionSpec(kind="swap", target_ref=_unit_ref(battle, ally))
+        if _spec_is_legal(battle, actor, spec):
+            specs.append(spec)
     specs.append(ActionSpec(kind="skip"))
     return specs
 
@@ -490,8 +754,6 @@ def _marker_state_score(unit) -> float:
         value -= 7.0
     if unit.markers.get("untargetable_rounds", 0) > 0:
         value += 10.0
-    if unit.markers.get("spell_bonus_rounds", 0) > 0:
-        value += 6.0
     if unit.markers.get("next_spell_no_cooldown", 0) > 0:
         value += 4.0
     if unit.markers.get("mistform_ready", 0) > 0:
@@ -506,8 +768,6 @@ def _marker_state_score(unit) -> float:
         value += 4.0
     if unit.markers.get("rabbit_hole_extra_rounds", 0) > 0:
         value += 7.0
-    if unit.markers.get("tea_party_rounds", 0) > 0:
-        value += 6.0
     return value
 
 
@@ -596,10 +856,134 @@ def evaluate_battle_state(battle, team_num: int) -> float:
     if back_left is not None:
         value += ADVENTURER_AI[back_left.defn.id].position_scores[SLOT_BACK_LEFT] * 0.08
     meter_weight = 50.0 / ULTIMATE_METER_MAX
+    if battle.round_num > 10:
+        meter_weight *= min(2.5, 1.0 + (battle.round_num - 10) / 8.0)
     value += own.ultimate_meter * meter_weight
     value -= enemy.ultimate_meter * meter_weight
+    if battle.round_num > 10:
+        own_casts = own.markers.get("ultimates_cast", 0)
+        enemy_casts = enemy.markers.get("ultimates_cast", 0)
+        cast_weight = 25.0 * min(2.0, (battle.round_num - 10) / 8.0)
+        value += (own_casts - enemy_casts) * cast_weight
     value += _lethal_pressure_score(battle, team_num)
     return value
+
+
+def _plan_failure_penalty(log_lines: list[str]) -> tuple[float, float]:
+    penalty = 0.0
+    failures = 0.0
+    for line in log_lines:
+        weight = _failure_weight_for_line(line)
+        if weight > 0:
+            penalty += weight
+            failures += 1.0
+    return penalty, failures
+
+
+def _initiative_index(battle, actor) -> int:
+    if not battle.initiative_order:
+        determine_initiative_order(battle)
+    for index, unit in enumerate(battle.initiative_order):
+        if unit is actor:
+            return index
+    return len(battle.initiative_order)
+
+
+def _actor_failure_weight(log_lines: list[str], actor_name: str) -> float:
+    best = 0.0
+    actor_prefixes = (
+        f"{actor_name}'s queued ",
+        f"{actor_name} cannot ",
+        f"{actor_name} has no ",
+    )
+    for line in log_lines:
+        if not line.startswith(actor_prefixes):
+            continue
+        best = max(best, _failure_weight_for_line(line))
+    return best
+
+
+def _relevant_enemy_disruption_specs(battle, enemy, actor, own_spec: ActionSpec) -> list[ActionSpec]:
+    actor_ref = _unit_ref(battle, actor)
+    own_target_ref = own_spec.target_ref
+    enemy_team_num = player_num_for_actor(battle, enemy)
+    actor_team_num = player_num_for_actor(battle, actor)
+    relevant: list[ActionSpec] = []
+    for spec in available_action_specs(battle, enemy, bonus=False):
+        if spec.kind in {"skip", "switch"}:
+            continue
+        if spec.kind == "swap":
+            if own_target_ref is None or own_target_ref[0] != enemy_team_num:
+                continue
+            moved_refs = {_unit_ref(battle, enemy)}
+            if spec.target_ref is not None:
+                moved_refs.add(spec.target_ref)
+            if own_target_ref in moved_refs:
+                relevant.append(spec)
+            continue
+        effect = _spec_effect(enemy, spec)
+        if effect is None:
+            continue
+        target_ref = spec.target_ref
+        status_kinds = {status.kind for status in effect.target_statuses}
+        if effect.special in {"zephyr", "swap_target_with_enemy"} and target_ref is not None and target_ref[0] == actor_team_num:
+            relevant.append(spec)
+            continue
+        if effect.special in {"artifact_swap_with_ally", "midnight_waltz"} and own_target_ref is not None and own_target_ref[0] == enemy_team_num:
+            if own_target_ref in {_unit_ref(battle, enemy), target_ref}:
+                relevant.append(spec)
+                continue
+        if effect.special in {"self_swap_after_strike", "trojan_horse"} and own_target_ref is not None and own_target_ref == _unit_ref(battle, enemy):
+            relevant.append(spec)
+            continue
+        if effect.special == "cant_strike_next_turn" and own_spec.kind == "strike" and target_ref == actor_ref:
+            relevant.append(spec)
+            continue
+        if "taunt" in status_kinds and target_ref == actor_ref and own_spec.target_ref is not None and own_spec.target_ref[0] != actor_team_num:
+            relevant.append(spec)
+            continue
+        if effect.special in DISRUPTIVE_EFFECT_SPECIALS and target_ref is not None and target_ref[0] == actor_team_num:
+            relevant.append(spec)
+    return relevant
+
+
+def _pre_resolution_enemy_risk(battle, team_num: int, actor_ref: tuple[int, str], spec: ActionSpec) -> float:
+    if spec.bonus or spec.kind not in {"strike", "spell", "ultimate"}:
+        return 0.0
+    actor = _find_unit(battle, actor_ref)
+    if actor is None or actor.ko:
+        return 0.0
+    actor_index = _initiative_index(battle, actor)
+    total_risk = 0.0
+    for enemy in battle.initiative_order[:actor_index]:
+        if enemy.ko or player_num_for_actor(battle, enemy) == team_num:
+            continue
+        enemy_risk = 0.0
+        for enemy_spec in _relevant_enemy_disruption_specs(battle, enemy, actor, spec):
+            sim = copy.deepcopy(battle)
+            sim_enemy = _find_unit(sim, _unit_ref(battle, enemy))
+            sim_actor = _find_unit(sim, actor_ref)
+            if sim_enemy is None or sim_actor is None or sim_actor.ko:
+                continue
+            _queue_spec(sim_enemy, sim, enemy_spec)
+            enemy_action = sim_enemy.queued_bonus_action if enemy_spec.bonus else sim_enemy.queued_action
+            resolve_action(sim_enemy, enemy_action, sim, is_bonus=enemy_spec.bonus)
+            sim_actor = _find_unit(sim, actor_ref)
+            if sim_actor is None or sim_actor.ko:
+                enemy_risk = max(enemy_risk, 18.0)
+                continue
+            log_start = len(sim.log)
+            _queue_spec(sim_actor, sim, spec)
+            own_action = sim_actor.queued_bonus_action if spec.bonus else sim_actor.queued_action
+            resolve_action(sim_actor, own_action, sim, is_bonus=spec.bonus)
+            failure_weight = _actor_failure_weight(sim.log[log_start:], sim_actor.name)
+            if failure_weight > 0:
+                enemy_risk = max(enemy_risk, failure_weight * 0.4)
+                continue
+            if spec.kind == "strike" and actor.primary_weapon.kind == "melee" and sim_actor.slot != actor.slot:
+                enemy_risk = max(enemy_risk, 12.0)
+        total_risk += enemy_risk
+    return min(total_risk, 18.0)
 
 
 def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec: ActionSpec) -> float:
@@ -634,14 +1018,7 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
             delta += 8.0
     real_actor = _find_unit(battle, actor_ref)
     target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
-    effect = None
-    if real_actor is not None:
-        if spec.kind == "strike":
-            effect = real_actor.primary_weapon.strike
-        elif spec.kind == "spell" and spec.effect_id is not None:
-            effect = _effect_by_id(real_actor, spec.effect_id)
-        elif spec.kind == "ultimate":
-            effect = real_actor.defn.ultimate
+    effect = _spec_effect(real_actor, spec) if real_actor is not None else None
     if spec.kind == "skip":
         delta -= 3.0
     elif spec.kind == "switch":
@@ -663,19 +1040,56 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
                 delta += 24.0
                 if target.slot == SLOT_FRONT:
                     delta += 10.0
+                # Initiative-aware KO securing: first-mover gets extra bonus
+                if _initiative_index(battle, real_actor) < _initiative_index(battle, target):
+                    delta += 8.0
+                # Focus-fire overkill redirect: a faster ally will already secure this kill
+                if _ally_will_ko_target(battle, team_num, real_actor, target):
+                    delta -= 22.0
             elif rough >= target.hp * 0.6:
                 delta += 6.0
             if target.hp <= max(55, int(target.max_hp * 0.28)):
                 delta += 6.0
             if target.has_status("expose") or target.has_status("root") or target.has_status("shock") or target.has_status("spotlight"):
                 delta += 3.0
+            # Redundant debuff suppression (non-stacking: only best debuff applies)
+            for debuff_spec in effect.target_debuffs:
+                if target.best_debuff(debuff_spec.stat) >= debuff_spec.amount:
+                    delta -= 1.5
+            # Reactive artifact awareness: penalty for striking units that will negate/counter
+            if rough < target.hp:
+                if target.markers.get("mistform_ready", 0) > 0 and spec.kind == "strike":
+                    delta -= 10.0
+                elif _reactive_artifact_ready(target):
+                    delta -= 4.0
+                if target.markers.get("vine_snare_ready", 0) > 0 and spec.kind == "strike":
+                    delta -= 3.0
         elif effect.target in {"ally", "self"}:
             resolved_target = target if effect.target == "ally" else real_actor
             if effect.heal > 0 and resolved_target is not None:
                 hp_ratio = resolved_target.hp / max(1, resolved_target.max_hp)
                 delta += effect.heal * (0.08 if hp_ratio > 0.5 else 0.16)
+                # Wasted heal suppression: target already near full HP
+                if hp_ratio > 0.85:
+                    delta -= 3.0
             if any(status.kind == "guard" for status in effect.target_statuses):
                 delta += 8.0
+                # Wasted guard suppression: target already guarded
+                if resolved_target is not None and resolved_target.has_status("guard"):
+                    delta -= 7.0
+            # Redundant status suppression (wasted application)
+            for status_spec in effect.target_statuses:
+                if resolved_target is not None and resolved_target.has_status(status_spec.kind):
+                    existing = next((s for s in resolved_target.statuses if s.kind == status_spec.kind), None)
+                    if existing is not None and existing.duration >= status_spec.duration:
+                        delta -= 3.0
+            # Non-stacking buff awareness (only best buff applies to stat calculation)
+            for buff_spec in effect.self_buffs:
+                if real_actor.best_buff(buff_spec.stat) >= buff_spec.amount:
+                    delta -= 2.0
+            for buff_spec in effect.target_buffs:
+                if resolved_target is not None and resolved_target.best_buff(buff_spec.stat) >= buff_spec.amount:
+                    delta -= 2.0
             if effect.special == "dazzle" and resolved_target is not None:
                 threatened = _estimate_team_damage_to_target(battle, 2 if team_num == 1 else 1, resolved_target)
                 delta += 5.0
@@ -688,6 +1102,8 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
                 for kind in ("burn", "root", "shock", "weaken", "expose", "spotlight", "taunt")
             ):
                 delta += 4.0
+    if real_actor is not None:
+        delta -= _pre_resolution_enemy_risk(battle, team_num, actor_ref, spec)
     return delta
 
 
@@ -704,11 +1120,31 @@ def _formation_delta(battle, actor, target) -> float:
 def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> float:
     bias = 0.0
     target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
+
+    # Low-HP desperation: universal per-actor urgency (red-zone analog)
+    actor_hp_ratio = actor.hp / max(1, actor.max_hp)
+    if actor_hp_ratio <= 0.20:
+        if spec.kind == "swap":
+            bias += 9.0
+        elif spec.kind == "switch":
+            bias += 4.0
+        elif spec.kind in {"strike", "spell", "ultimate"}:
+            if _ref_matches_any_slot(battle, spec.target_ref, analysis.killable_enemy_refs):
+                bias += 4.0  # go out swinging for a confirmed kill
+            else:
+                bias -= 2.0  # deprioritize chip damage at critical HP
+    elif actor_hp_ratio <= 0.35:
+        if spec.kind == "swap":
+            bias += 4.0
+
     if analysis.plan_kind == "kill":
         if spec.kind == "ultimate":
             bias += 14.0
         if spec.kind in {"strike", "spell", "ultimate"} and _ref_matches_any_slot(battle, spec.target_ref, analysis.killable_enemy_refs):
             bias += 18.0
+            # Initiative-aware kill securing: bonus for acting before the target can react
+            if target is not None and _initiative_index(battle, actor) < _initiative_index(battle, target):
+                bias += 6.0
         elif spec.kind in {"strike", "spell", "ultimate"} and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
             bias += 8.0
     elif analysis.plan_kind == "stabilize":
@@ -728,8 +1164,15 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
         if spec.kind == "spell" and spec.effect_id is not None:
             effect = _effect_by_id(actor, spec.effect_id)
             status_kinds = {status.kind for status in effect.target_statuses}
-            if {"shock", "root", "expose", "spotlight", "taunt"} & status_kinds:
-                bias += 9.0
+            new_statuses = {"shock", "root", "expose", "spotlight", "taunt"} & status_kinds
+            if new_statuses:
+                # Don't boost if target already has all these statuses at full duration (wasted action)
+                already_applied = target is not None and all(
+                    target.has_status(k) and any(s.kind == k and s.duration >= 2 for s in target.statuses)
+                    for k in new_statuses
+                )
+                if not already_applied:
+                    bias += 9.0
         if spec.kind == "swap" and target is not None:
             bias += max(0.0, _formation_delta(battle, actor, target))
     elif analysis.plan_kind == "pivot":
@@ -748,8 +1191,14 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
         if spec.kind == "spell" and spec.effect_id is not None:
             effect = _effect_by_id(actor, spec.effect_id)
             status_kinds = {status.kind for status in effect.target_statuses}
-            if {"shock", "root", "expose", "spotlight"} & status_kinds:
-                bias += 4.0
+            new_statuses = {"shock", "root", "expose", "spotlight"} & status_kinds
+            if new_statuses:
+                already_applied = target is not None and all(
+                    target.has_status(k) and any(s.kind == k and s.duration >= 2 for s in target.statuses)
+                    for k in new_statuses
+                )
+                if not already_applied:
+                    bias += 4.0
 
     if analysis.race_kind == "ko":
         if spec.kind in {"strike", "spell", "ultimate"} and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
@@ -769,7 +1218,7 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
         if spec.kind == "swap" and target is not None:
             bias += max(0.0, 2.0 + _formation_delta(battle, actor, target))
 
-    # March Hare's Cracked Stopwatch line is a key bonus-spell enabler; value it explicitly.
+    # March Hare's Cracked Stopwatch line is a key extra-action enabler; value it explicitly.
     if (
         spec.kind == "strike"
         and actor.defn.id == "march_hare"
@@ -778,8 +1227,31 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
         and target.has_status("shock")
     ):
         bias += 12.0
-    if spec.bonus and spec.kind == "spell" and actor.defn.id == "march_hare" and actor.markers.get("spell_bonus_rounds", 0) > 0:
-        bias += 6.0
+
+    # Late-game ultimate urgency: scales with round count beyond round 10
+    if battle.round_num > 10:
+        own_team_lg = team_for_actor(battle, actor)
+        enemy_team_lg = _enemy_team_for_actor(battle, actor)
+        own_casts = own_team_lg.markers.get("ultimates_cast", 0)
+        enemy_casts = enemy_team_lg.markers.get("ultimates_cast", 0)
+        late_scale = min(1.8, (battle.round_num - 10) / 6.0)
+        # Full meter in late game: strongly prefer firing it
+        if own_team_lg.ultimate_meter >= ULTIMATE_METER_MAX and spec.kind == "ultimate":
+            bias += 7.0 * late_scale
+        # Enemy close to win or ahead: rush ultimates
+        if enemy_casts >= max(1, ULTIMATE_WIN_COUNT - 1):
+            if spec.kind == "ultimate":
+                bias += 5.0 * late_scale
+            elif spec.kind in {"strike", "spell"}:
+                bias += 1.5 * late_scale
+        # Behind on ultimate count: value meter-building and discourage skipping
+        if own_casts < enemy_casts:
+            if spec.kind == "ultimate":
+                bias += 6.0 * late_scale
+            elif spec.kind in {"strike", "spell"}:
+                bias += 1.0 * late_scale
+            elif spec.kind == "skip":
+                bias -= 3.0 * late_scale
 
     bias += _character_specific_bias(battle, actor, spec, analysis)
     return bias
@@ -803,6 +1275,15 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
                 bias += 5.0
             if target.hp / max(1, target.max_hp) <= 0.6:
                 bias += 4.0
+
+    if (
+        spec.kind == "strike"
+        and actor.class_skill.id == "vanguard"
+        and target is not None
+        and target.slot == SLOT_FRONT
+    ):
+        splash_targets = sum(1 for enemy in enemy_team.alive() if enemy.slot != SLOT_FRONT)
+        bias += splash_targets * 3.5
 
     if actor.defn.id == "little_jack":
         if spec.kind == "spell" and spec.effect_id == "cloudburst":
@@ -995,6 +1476,70 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
     return bias
 
 
+def _friendly_melee_swap_penalty(battle, actors: list, combo: tuple[ActionSpec, ...]) -> float:
+    if not battle.initiative_order:
+        determine_initiative_order(battle)
+    initiative = {_unit_ref(battle, unit): index for index, unit in enumerate(battle.initiative_order)}
+    specs_by_ref = {_unit_ref(battle, actor): spec for actor, spec in zip(actors, combo)}
+    penalty = 0.0
+    for swap_actor, swap_spec in zip(actors, combo):
+        if swap_spec.kind != "swap" or swap_spec.target_ref is None:
+            continue
+        ally = _find_unit(battle, swap_spec.target_ref)
+        if ally is None or ally.ko:
+            continue
+        swap_index = initiative.get(_unit_ref(battle, swap_actor), 999)
+        for moved_actor, new_slot in ((swap_actor, ally.slot), (ally, swap_actor.slot)):
+            moved_ref = _unit_ref(battle, moved_actor)
+            moved_spec = specs_by_ref.get(moved_ref)
+            if moved_spec is None or moved_spec.kind != "strike":
+                continue
+            if initiative.get(moved_ref, -1) <= swap_index:
+                continue
+            if moved_actor.primary_weapon.kind == "melee" and new_slot != SLOT_FRONT:
+                penalty += 4.0
+    return penalty
+
+
+def _combo_overkill_penalty(
+    battle,
+    team_num: int,
+    actors: list,
+    combo: tuple[ActionSpec, ...],
+    analysis: RoundAnalysis,
+) -> float:
+    damage_by_target: dict[tuple[int, str], list[float]] = {}
+    for actor, spec in zip(actors, combo):
+        if spec.kind not in {"strike", "spell", "ultimate"} or spec.target_ref is None or spec.target_ref[0] == team_num:
+            continue
+        target = _find_unit(battle, spec.target_ref)
+        effect = _spec_effect(actor, spec)
+        if target is None or target.ko or effect is None or effect.power <= 0:
+            continue
+        damage = _rough_damage(battle, actor, target, effect, weapon=actor.primary_weapon)
+        if damage <= 0:
+            continue
+        damage_by_target.setdefault(spec.target_ref, []).append(float(damage))
+    penalty = 0.0
+    for target_ref, damages in damage_by_target.items():
+        if len(damages) < 2:
+            continue
+        target = _find_unit(battle, target_ref)
+        if target is None or target.ko:
+            continue
+        total_damage = sum(damages)
+        overflow = total_damage - target.hp
+        local_penalty = 0.0
+        if overflow > 0:
+            local_penalty += min(6.0, (overflow / max(1, target.hp)) * 3.5 + (len(damages) - 1) * 0.6)
+        elif total_damage >= target.hp * 0.85 and len(damage_by_target) == 1:
+            local_penalty += 0.75
+        if _same_target_slot(battle, target_ref, analysis.priority_target_ref):
+            local_penalty *= 0.8
+        penalty += local_penalty
+    return penalty
+
+
 def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec, ...], analysis: RoundAnalysis) -> dict[str, float]:
     offense = 0.0
     defense = 0.0
@@ -1005,6 +1550,8 @@ def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec,
     trades = 0.0
     front_break = 0.0
     priority_kill = 0.0
+    self_sabotage = 0.0
+    overkill = 0.0
     focused_enemy_targets: list[tuple[int, str]] = []
     for actor, spec in zip(actors, combo):
         target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
@@ -1050,6 +1597,8 @@ def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec,
     focused_enemy_slots = {(ref[0], _ref_slot(battle, ref)) for ref in focused_enemy_targets if _ref_slot(battle, ref) is not None}
     if len(focused_enemy_targets) >= 2 and len(focused_enemy_slots) == 1:
         focus += 2.0
+    self_sabotage += _friendly_melee_swap_penalty(battle, actors, combo)
+    overkill += _combo_overkill_penalty(battle, team_num, actors, combo, analysis)
     return {
         "offense": offense,
         "defense": defense,
@@ -1060,6 +1609,8 @@ def _combo_metrics(battle, team_num: int, actors: list, combo: tuple[ActionSpec,
         "trades": trades,
         "front_break": front_break,
         "priority_kill": priority_kill,
+        "self_sabotage": self_sabotage,
+        "overkill": overkill,
     }
 
 
@@ -1073,11 +1624,27 @@ def _profile_score(metrics: dict[str, float], profile: str) -> float:
             + metrics["front_break"] * 4.5
             + metrics["priority_kill"] * 6.0
             - metrics["trades"] * 7.0
+            - metrics["overkill"] * 2.8
+            - metrics["self_sabotage"] * 10.0
         )
     if profile == "defensive":
-        return metrics["defense"] * 1.35 + metrics["setup"] * 0.3 - metrics["offense"] * 0.1 - metrics["trades"] * 3.5
+        return (
+            metrics["defense"] * 1.35
+            + metrics["setup"] * 0.3
+            - metrics["offense"] * 0.1
+            - metrics["trades"] * 3.5
+            - metrics["overkill"] * 1.2
+            - metrics["self_sabotage"] * 8.0
+        )
     if profile == "setup":
-        return metrics["setup"] * 1.35 + metrics["focus"] * 0.45 + metrics["kills"] * 1.5 - metrics["trades"] * 4.0
+        return (
+            metrics["setup"] * 1.35
+            + metrics["focus"] * 0.45
+            + metrics["kills"] * 1.5
+            - metrics["trades"] * 4.0
+            - metrics["overkill"] * 1.8
+            - metrics["self_sabotage"] * 8.0
+        )
     if profile == "ultimate":
         return (
             metrics["ultimate"] * 1.5
@@ -1085,6 +1652,8 @@ def _profile_score(metrics: dict[str, float], profile: str) -> float:
             + metrics["kills"] * 6.0
             + metrics["priority_kill"] * 3.5
             - metrics["trades"] * 5.0
+            - metrics["overkill"] * 1.6
+            - metrics["self_sabotage"] * 9.0
         )
     return (
         metrics["offense"]
@@ -1096,6 +1665,8 @@ def _profile_score(metrics: dict[str, float], profile: str) -> float:
         + metrics["front_break"] * 3.0
         + metrics["priority_kill"] * 4.0
         - metrics["trades"] * 5.0
+        - metrics["overkill"] * 2.0
+        - metrics["self_sabotage"] * 9.0
     )
 
 
@@ -1131,6 +1702,8 @@ def _top_local_specs(battle, actor, *, bonus: bool, difficulty: str, analysis: R
     actor_ref = _unit_ref(battle, actor)
     scored = []
     for spec in available_action_specs(battle, actor, bonus=bonus):
+        if not _spec_is_legal(battle, actor, spec):
+            continue
         score = _simulate_spec_delta(battle, player_num_for_actor(battle, actor), actor_ref, spec)
         score += _plan_bias(battle, actor, spec, analysis)
         scored.append((score, spec))
@@ -1150,6 +1723,26 @@ def _top_local_specs(battle, actor, *, bonus: bool, difficulty: str, analysis: R
         seen_specs.add(spec)
         if len(diverse) >= keep + 1:
             break
+    # Always pin the best attack on each killable enemy — ensures kill routes are never pruned
+    # by LOCAL_KEEP before the team combo evaluator can see them
+    if analysis.killable_enemy_refs and not bonus:
+        for killable_ref in analysis.killable_enemy_refs:
+            killable_unit = _find_unit(battle, killable_ref)
+            if killable_unit is None or killable_unit.ko:
+                continue
+            best_kill_spec = next(
+                (
+                    spec
+                    for _score, spec in scored
+                    if spec.kind in {"strike", "spell", "ultimate"}
+                    and _same_target_slot(battle, spec.target_ref, killable_ref)
+                    and spec not in seen_specs
+                ),
+                None,
+            )
+            if best_kill_spec is not None:
+                diverse.append(best_kill_spec)
+                seen_specs.add(best_kill_spec)
     if not any(item.kind == "skip" for item in diverse):
         skip_spec = next((item[1] for item in scored if item[1].kind == "skip"), ActionSpec(kind="skip", bonus=bonus))
         diverse.append(skip_spec)
@@ -1160,9 +1753,7 @@ def _queue_team_plan(sim_battle, team_num: int, specs_by_ref: dict[tuple[int, st
     for actor in _team_units_in_order(sim_battle, team_num):
         actor.queued_action = None
         actor.queued_bonus_action = None
-        spec = specs_by_ref.get(_unit_ref(sim_battle, actor))
-        if spec is None:
-            spec = ActionSpec(kind="skip", bonus=bonus)
+        spec = _sanitize_spec(sim_battle, actor, specs_by_ref.get(_unit_ref(sim_battle, actor)), bonus=bonus)
         _queue_spec(actor, sim_battle, spec)
 
 
@@ -1192,6 +1783,7 @@ def _rank_team_plan_candidates(
         own_alive_before = sum(1 for unit in own_before.members if not unit.ko)
         enemy_front_before = enemy_before.frontline()
         sim = copy.deepcopy(battle)
+        log_start = len(sim.log)
         _queue_team_plan(sim, team_num, specs_by_ref, bonus=bonus)
         if bonus:
             resolve_bonus_phase(sim)
@@ -1199,6 +1791,9 @@ def _rank_team_plan_candidates(
             resolve_action_phase(sim)
         score = evaluate_battle_state(sim, team_num) - base_value
         metrics = _combo_metrics(battle, team_num, actors, combo, analysis)
+        failure_penalty, failure_count = _plan_failure_penalty(sim.log[log_start:])
+        score -= failure_penalty
+        metrics["self_sabotage"] = failure_count
         sim_enemy = sim.get_enemy(team_num)
         sim_own = sim.get_team(team_num)
         enemy_kos = enemy_alive_before - sum(1 for unit in sim_enemy.members if not unit.ko)
@@ -1276,31 +1871,72 @@ def _select_likely_plan_packages(
     return [(weight / total_weight, specs_by_ref) for weight, specs_by_ref in selected]
 
 
-def _expected_enemy_reply_penalty(sim_battle, team_num: int, difficulty: str, rng: random.Random) -> float:
-    _ = rng
-    enemy_team = 2 if team_num == 1 else 1
-    if difficulty in {"easy", "normal", "hard"}:
-        predictor_difficulty = "normal"
-    else:
-        predictor_difficulty = "hard"
-    analysis, enemy_candidates = _rank_team_plan_candidates(
-        sim_battle,
-        enemy_team,
-        bonus=False,
-        difficulty=predictor_difficulty,
+def _get_enemy_plans(
+    battle,
+    team_num: int,
+    difficulty: str,
+) -> list[tuple[float, dict[tuple[int, str], ActionSpec]]]:
+    """Generate weighted enemy plan candidates for simultaneous simulation.
+    Full enumeration when exactly 1 enemy is alive (every legal action considered).
+    Beam-searched candidates for 2–3 alive enemies.
+    """
+    enemy_team_num = 2 if team_num == 1 else 1
+    alive_enemies = battle.get_team(enemy_team_num).alive()
+    if not alive_enemies:
+        return []
+
+    # Full enumeration: sole remaining enemy — try every legal action
+    if len(alive_enemies) == 1:
+        enemy_actor = alive_enemies[0]
+        enemy_ref = _unit_ref(battle, enemy_actor)
+        all_specs = [
+            spec for spec in available_action_specs(battle, enemy_actor, bonus=False)
+            if _spec_is_legal(battle, enemy_actor, spec)
+        ]
+        if not all_specs:
+            return []
+        w = 1.0 / len(all_specs)
+        return [(w, {enemy_ref: spec}) for spec in all_specs]
+
+    # Beam-searched candidates for 2–3 alive enemies (LOCAL_KEEP × actors → TEAM_KEEP plans)
+    predictor_difficulty = "normal" if difficulty in {"easy", "normal", "hard"} else "hard"
+    _analysis, enemy_candidates = _rank_team_plan_candidates(
+        battle, enemy_team_num, bonus=False, difficulty=predictor_difficulty,
     )
-    packages = _select_likely_plan_packages(enemy_candidates, analysis, predictor_difficulty)
-    if not packages:
-        return 0.0
-    base_value = evaluate_battle_state(sim_battle, team_num)
-    expected_penalty = 0.0
-    for weight, specs_by_ref in packages:
-        reply_sim = copy.deepcopy(sim_battle)
-        _queue_team_plan(reply_sim, enemy_team, specs_by_ref, bonus=False)
-        resolve_action_phase(reply_sim)
-        post_reply = evaluate_battle_state(reply_sim, team_num)
-        expected_penalty += weight * max(0.0, base_value - post_reply)
-    return expected_penalty
+    if not enemy_candidates:
+        return []
+    w = 1.0 / len(enemy_candidates)
+    return [(w, specs_by_ref) for _score, specs_by_ref, _metrics in enemy_candidates]
+
+
+def _simultaneous_plan_score(
+    battle,
+    team_num: int,
+    own_specs_by_ref: dict[tuple[int, str], ActionSpec],
+    enemy_plans: list[tuple[float, dict[tuple[int, str], ActionSpec]]],
+    *,
+    difficulty: str = "hard",
+) -> float:
+    """Score an own plan by simulating it simultaneously with each enemy plan.
+    Both teams are queued together and resolved in true initiative order.
+    Returns a blended expected-value / minimax score.
+    """
+    enemy_team_num = 2 if team_num == 1 else 1
+    weighted_scores: list[tuple[float, float]] = []
+    for weight, enemy_specs_by_ref in enemy_plans:
+        sim = copy.deepcopy(battle)
+        _queue_team_plan(sim, team_num, own_specs_by_ref, bonus=False)
+        _queue_team_plan(sim, enemy_team_num, enemy_specs_by_ref, bonus=False)
+        resolve_action_phase(sim)
+        weighted_scores.append((weight, evaluate_battle_state(sim, team_num)))
+    if not weighted_scores:
+        return evaluate_battle_state(battle, team_num)
+    total_weight = sum(w for w, _ in weighted_scores)
+    expected = sum(w * s for w, s in weighted_scores) / max(total_weight, 1e-9)
+    worst = min(s for _, s in weighted_scores)
+    # Hard/ranked: blend a conservative minimax component to avoid catastrophic misplays
+    minimax_weight = 0.30 if difficulty in {"hard", "ranked"} else 0.0
+    return expected * (1.0 - minimax_weight) + worst * minimax_weight
 
 
 def choose_team_plan(
@@ -1310,38 +1946,45 @@ def choose_team_plan(
     bonus: bool = False,
     difficulty: str = "hard",
     rng: random.Random | None = None,
-    lookahead_depth: int = 0,
 ) -> dict[tuple[int, str], ActionSpec]:
     rng = rng or random.Random()
     analysis, ranked_candidates = _rank_team_plan_candidates(
-        battle,
-        team_num,
-        bonus=bonus,
-        difficulty=difficulty,
+        battle, team_num, bonus=bonus, difficulty=difficulty,
     )
     if not ranked_candidates:
         return {}
 
-    trimmed = ranked_candidates
+    # Build enemy plan set once — reused across all own candidate evaluations.
+    # For bonus phase there is no concurrent enemy action to model.
+    enemy_plans: list[tuple[float, dict[tuple[int, str], ActionSpec]]] = []
+    if not bonus:
+        enemy_plans = _get_enemy_plans(battle, team_num, difficulty)
+
+    base_value = evaluate_battle_state(battle, team_num)
     rescored: list[tuple[float, dict[tuple[int, str], ActionSpec]]] = []
-    deep_keep = min(DEEP_LOOKAHEAD_KEEP.get(difficulty, 3), len(trimmed))
-    evaluate_replies = analysis.plan_kind in {"kill", "ultimate", "stabilize"}
-    for index, (score, specs_by_ref, metrics) in enumerate(trimmed):
-        deep_score = score
+    for score, specs_by_ref, metrics in ranked_candidates:
+        # Profile/race adjustments
+        profile_adj = 0.0
         if analysis.plan_kind in {"kill", "ultimate"}:
-            deep_score += _profile_score(metrics, "aggressive") * 0.15
+            profile_adj += _profile_score(metrics, "aggressive") * 0.15
         elif analysis.plan_kind == "stabilize":
-            deep_score += _profile_score(metrics, "defensive") * 0.18
+            profile_adj += _profile_score(metrics, "defensive") * 0.18
         elif analysis.plan_kind in {"setup", "pivot"}:
-            deep_score += _profile_score(metrics, "setup") * 0.16
-        deep_score += _race_profile_adjustment(analysis, metrics)
-        if evaluate_replies and index < deep_keep and not bonus and lookahead_depth <= 0:
-            sim = copy.deepcopy(battle)
-            _queue_team_plan(sim, team_num, specs_by_ref, bonus=False)
-            resolve_action_phase(sim)
-            if sim.winner is None:
-                deep_score -= _expected_enemy_reply_penalty(sim, team_num, difficulty, rng) * 0.40
-        rescored.append((deep_score, specs_by_ref))
+            profile_adj += _profile_score(metrics, "setup") * 0.16
+        profile_adj += _race_profile_adjustment(analysis, metrics)
+
+        if enemy_plans:
+            # Simultaneous simulation: both teams queued and resolved in initiative order
+            sim_score = _simultaneous_plan_score(
+                battle, team_num, specs_by_ref, enemy_plans, difficulty=difficulty,
+            )
+            final_score = (sim_score - base_value) + profile_adj
+        else:
+            # Bonus phase: no concurrent enemy actions — use isolated own-team score
+            final_score = score + profile_adj
+
+        rescored.append((final_score, specs_by_ref))
+
     rescored.sort(key=lambda item: item[0], reverse=True)
     top_score = rescored[0][0]
     threshold = 6.0 if difficulty in {"easy", "normal"} else 4.0
@@ -1353,10 +1996,13 @@ def choose_team_plan(
 
 def queue_team_plan(battle, team_num: int, *, bonus: bool = False, difficulty: str = "hard", rng: random.Random | None = None) -> dict[tuple[int, str], ActionSpec]:
     plan = choose_team_plan(battle, team_num, bonus=bonus, difficulty=difficulty, rng=rng)
+    sanitized_plan: dict[tuple[int, str], ActionSpec] = {}
     for actor in _team_units_in_order(battle, team_num):
-        spec = plan.get(_unit_ref(battle, actor), ActionSpec(kind="skip", bonus=bonus))
+        ref = _unit_ref(battle, actor)
+        spec = _sanitize_spec(battle, actor, plan.get(ref), bonus=bonus)
+        sanitized_plan[ref] = spec
         _queue_spec(actor, battle, spec)
-    return plan
+    return sanitized_plan
 
 
 def queue_both_teams_for_phase(battle, *, bonus: bool = False, difficulty1: str = "hard", difficulty2: str = "hard", rng: random.Random | None = None):

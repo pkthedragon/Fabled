@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime
@@ -30,6 +30,7 @@ from quests_ruleset_logic import (
     get_legal_targets,
     queue_strike,
     resolve_action,
+    resolve_action_phase,
     resolve_spell,
     resolve_strike,
     resolve_ultimate,
@@ -38,7 +39,7 @@ from quests_ruleset_logic import (
 from quests_ruleset_models import BattleState, CombatantState, TeamState
 
 EXPECTED_CLASS_SKILLS = {
-    "Fighter": ("martial", "inevitable"),
+    "Fighter": ("martial", "vanguard"),
     "Rogue": ("covert", "assassin"),
     "Warden": ("bulwark", "vigilant"),
     "Mage": ("arcane", "archmage"),
@@ -230,7 +231,7 @@ def audit_mechanics() -> list[AuditResult]:
     results.append(check("Mechanics", "Root Immunity Cleanses Root", not unit.has_status("root") and unit.has_status("root_immunity"), "root removed on immunity gain"))
 
     meter_battle = make_battle(
-        [make_unit("little_jack", SLOT_FRONT, class_name="Fighter", skill_id="inevitable", primary="skyfall")],
+        [make_unit("little_jack", SLOT_FRONT, class_name="Fighter", skill_id="vanguard", primary="skyfall")],
         [make_unit("sir_roland", SLOT_FRONT, class_name="Warden", skill_id="bulwark", primary="pure_silver_shield")],
     )
     jack = meter_battle.team1.frontline()
@@ -253,9 +254,29 @@ def audit_mechanics() -> list[AuditResult]:
     sanctuary = next(effect for effect in rap.active_spells() if effect.id == "sanctuary")
     resolve_spell(rap, sanctuary, rap, sanctuary_battle)
     spell_meter = sanctuary_battle.team1.ultimate_meter
+
+    arcane_spell_battle = make_battle(
+        [make_unit("rapunzel_the_golden", SLOT_FRONT, class_name="Mage", skill_id="arcane", primary="ivory_tower")],
+        [make_unit("sir_roland", SLOT_FRONT, class_name="Warden", skill_id="bulwark", primary="pure_silver_shield")],
+    )
+    arcane_rap = arcane_spell_battle.team1.frontline()
+    arcane_sanctuary = next(effect for effect in arcane_rap.active_spells() if effect.id == "sanctuary")
+    resolve_spell(arcane_rap, arcane_sanctuary, arcane_rap, arcane_spell_battle)
+    arcane_spell_meter = arcane_spell_battle.team1.ultimate_meter
+
+    archmage_battle = make_battle(
+        [make_unit("hunold_the_piper", SLOT_FRONT, class_name="Mage", skill_id="archmage", primary="golden_fiddle")],
+        [make_unit("sir_roland", SLOT_FRONT, class_name="Warden", skill_id="bulwark", primary="pure_silver_shield")],
+    )
+    archmage_hunold = archmage_battle.team1.frontline()
+    resolve_strike(archmage_hunold, archmage_battle.team2.frontline(), archmage_battle)
+    archmage_cooldown = archmage_hunold.cooldowns.get(archmage_hunold.primary_weapon.strike.id, 0)
+
     results.append(check("Mechanics", "Melee Strike Meter", strike_meter == 2, f"meter={strike_meter}"))
     results.append(check("Mechanics", "Magic Strike Meter", magic_meter == 2, f"meter={magic_meter}"))
-    results.append(check("Mechanics", "Spell Meter", spell_meter == 2, f"meter={spell_meter}"))
+    results.append(check("Mechanics", "Spell Meter", spell_meter == 0, f"meter={spell_meter}"))
+    results.append(check("Mechanics", "Arcane Adds Spell Meter", arcane_spell_meter == 1, f"meter={arcane_spell_meter}"))
+    results.append(check("Mechanics", "Archmage Prevents Frontline Magic Cooldown", archmage_cooldown == 0, f"cooldown={archmage_cooldown}"))
 
     reactive_battle = make_battle(
         [make_unit("tam_lin_thornbound", SLOT_FRONT, class_name="Warden", skill_id="bulwark", primary="butterfly_knife", artifact_id="tarnhelm")],
@@ -264,7 +285,35 @@ def audit_mechanics() -> list[AuditResult]:
     tam = reactive_battle.team1.frontline()
     tam.hp = 1
     resolve_strike(reactive_battle.team2.frontline(), tam, reactive_battle)
-    results.append(check("Mechanics", "Reactive Spell Meter", reactive_battle.team1.ultimate_meter == 2 and tam.hp == 1, f"meter={reactive_battle.team1.ultimate_meter} hp={tam.hp}"))
+    results.append(check("Mechanics", "Reactive Spell Meter", reactive_battle.team1.ultimate_meter == 0 and tam.hp == 1, f"meter={reactive_battle.team1.ultimate_meter} hp={tam.hp}"))
+
+    vanguard_battle = make_battle(
+        [make_unit("little_jack", SLOT_FRONT, class_name="Fighter", skill_id="vanguard", primary="skyfall")],
+        [
+            make_unit("sir_roland", SLOT_FRONT, class_name="Warden", skill_id="bulwark", primary="pure_silver_shield"),
+            make_unit("briar_rose", SLOT_BACK_LEFT, class_name="Ranger", skill_id="deadeye", primary="thorn_snare"),
+            make_unit("hunold_the_piper", SLOT_BACK_RIGHT, class_name="Mage", skill_id="arcane", primary="golden_fiddle"),
+        ],
+    )
+    vanguard_user = vanguard_battle.team1.frontline()
+    resolve_strike(vanguard_user, vanguard_battle.team2.frontline(), vanguard_battle)
+    vanguard_backline_ok = (
+        vanguard_battle.team2.get_slot(SLOT_BACK_LEFT).hp == ADVENTURERS_BY_ID["briar_rose"].hp - 15
+        and vanguard_battle.team2.get_slot(SLOT_BACK_RIGHT).hp == ADVENTURERS_BY_ID["hunold_the_piper"].hp - 15
+    )
+    results.append(check("Mechanics", "Vanguard Splashes Enemies Behind The Target", vanguard_backline_ok, f"left_hp={vanguard_battle.team2.get_slot(SLOT_BACK_LEFT).hp} right_hp={vanguard_battle.team2.get_slot(SLOT_BACK_RIGHT).hp}"))
+
+    reynard_battle = make_battle(
+        [make_unit("reynard_lupine_trickster", SLOT_FRONT, class_name="Rogue", skill_id="assassin", primary="fang")],
+        [make_unit("lucky_constantine", SLOT_FRONT, class_name="Rogue", skill_id="assassin", primary="fortuna")],
+    )
+    start_round(reynard_battle)
+    reynard_battle.log.clear()
+    queue_strike(reynard_battle.team1.frontline(), reynard_battle.team2.frontline())
+    queue_strike(reynard_battle.team2.frontline(), reynard_battle.team1.frontline())
+    resolve_action_phase(reynard_battle)
+    reynard_first = bool(reynard_battle.log) and reynard_battle.log[0].startswith("Reynard, Lupine Trickster's Fang")
+    results.append(check("Mechanics", "Glowing Trail Makes Reynard Strike First", reynard_first, f"first_log={reynard_battle.log[:1]}"))
 
     ult_battle = make_battle(
         [make_unit("sir_roland", SLOT_FRONT, class_name="Warden", skill_id="bulwark", primary="pure_silver_shield")],
@@ -392,7 +441,7 @@ def audit_mechanics() -> list[AuditResult]:
     witch = witch_battle.team1.get_slot(SLOT_BACK_RIGHT)
     speed_with_current = witch.get_stat("speed", witch_battle)
     resolve_strike(witch, witch_battle.team2.frontline(), witch_battle)
-    results.append(check("Mechanics", "Headwinds Creates Air Current", speed_with_current == 59, f"speed={speed_with_current}"))
+    results.append(check("Mechanics", "Headwinds Creates Air Current", speed_with_current == 75, f"speed={speed_with_current}"))
     results.append(check("Mechanics", "Zephyr Swaps Target Left", witch_battle.team2.frontline().defn.id == "hunold_the_piper", f"front={witch_battle.team2.frontline().defn.id}"))
 
     tam_battle = make_battle(
@@ -404,7 +453,7 @@ def audit_mechanics() -> list[AuditResult]:
     )
     tam = tam_battle.team1.frontline()
     resolve_strike(tam_battle.team2.frontline(), tam, tam_battle)
-    faeries_ok = not tam.has_status("root") and tam.best_buff("defense") >= 15
+    faeries_ok = not tam.has_status("root") and tam.best_buff("defense") >= 25
     tam_battle.team1.ultimate_meter = 7
     resolve_ultimate(tam, tam.defn.ultimate, tam_battle.team1.get_slot(SLOT_BACK_LEFT), tam_battle)
     polymorphed = tam_battle.team1.get_slot(SLOT_BACK_LEFT)
@@ -546,7 +595,7 @@ def write_report(results: list[AuditResult], path: Path) -> None:
 
 def main() -> int:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_path = Path.cwd() / f"rulebook_audit_{timestamp}.txt"
+    report_path = Path.cwd() / f"rulebook_audit_{timestamp}.md"
     results: list[AuditResult] = []
     try:
         results.extend(audit_content_sync())
@@ -564,3 +613,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

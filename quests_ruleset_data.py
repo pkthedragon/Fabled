@@ -23,8 +23,8 @@ def stat(stat_name: str, amount: int, duration: int) -> StatSpec:
     return StatSpec(stat=stat_name, amount=amount, duration=duration)
 
 
-def passive(effect_id: str, name: str, description: str, *, special: str = "") -> PassiveEffect:
-    return PassiveEffect(id=effect_id, name=name, description=description, special=special)
+def passive(effect_id: str, name: str, description: str, *, special: str = "", hp_bonus: int = 0) -> PassiveEffect:
+    return PassiveEffect(id=effect_id, name=name, description=description, special=special, hp_bonus=hp_bonus)
 
 
 def active(effect_id: str, name: str, *, description: str = "", **kwargs) -> ActiveEffect:
@@ -111,6 +111,21 @@ def _extract_rulebook_strike_description(strike_line: str) -> str:
     return rest
 
 
+def _extract_first_int(text: str) -> int | None:
+    match = re.search(r"-?\d+", text)
+    return int(match.group(0)) if match else None
+
+
+def _extract_power_from_line(text: str) -> int | None:
+    match = re.search(r"(\d+)\s+Power", text, flags=re.IGNORECASE)
+    return int(match.group(1)) if match else None
+
+
+def _extract_heal_from_line(text: str) -> int | None:
+    match = re.search(r"(?:restores?|heal(?:s|ing)?).*?(\d+)\s+HP", text, flags=re.IGNORECASE)
+    return int(match.group(1)) if match else None
+
+
 def _clean_strike_description(effect: ActiveEffect, description: str) -> str:
     desc = description.strip()
     if not desc:
@@ -175,11 +190,16 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
                 elif current.startswith("Signature Weapon: "):
                     weapon_name = current.split(": ", 1)[1]
                     weapon_record = {
+                        "kind": "",
+                        "ammo": None,
+                        "strike_power": None,
+                        "strike_cooldown": None,
                         "strike_desc": "",
                         "passives_by_name": {},
                         "passives_ordered": [],
                         "spells_by_name": {},
                         "spells_ordered": [],
+                        "spells_meta": {},
                     }
                     index += 1
                     while index < len(lines):
@@ -191,8 +211,18 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
                         ):
                             index -= 1
                             break
+                        if inner in {"Melee", "Ranged", "Magic"}:
+                            weapon_record["kind"] = inner.lower()
+                        elif re.match(r"^\d+ Ammo$", inner):
+                            weapon_record["ammo"] = _extract_first_int(inner)
+                        elif inner.startswith("Cooldown:"):
+                            cooldown_value = _extract_first_int(inner)
+                            if cooldown_value is not None and weapon_record["strike_desc"] == "":
+                                weapon_record["strike_cooldown"] = cooldown_value
                         if inner.startswith("Strike: "):
-                            weapon_record["strike_desc"] = _extract_rulebook_strike_description(inner.split(": ", 1)[1])
+                            strike_line = inner.split(": ", 1)[1]
+                            weapon_record["strike_desc"] = _extract_rulebook_strike_description(strike_line)
+                            weapon_record["strike_power"] = _extract_power_from_line(strike_line)
                         elif inner.startswith("Skill: ") or inner.startswith("Passive: "):
                             skill_name = inner.split(": ", 1)[1].strip()
                             next_desc = _next_rulebook_description_line(lines, index + 1)
@@ -211,9 +241,25 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
                         elif inner.startswith("Spell: "):
                             spell_name = inner.split(": ", 1)[1].strip()
                             spell_desc = _next_rulebook_description_line(lines, index + 1)
+                            cooldown = None
+                            probe = index + 1
+                            while probe < len(lines) and not lines[probe].strip():
+                                probe += 1
+                            if probe < len(lines):
+                                probe_line = lines[probe].strip()
+                                if probe_line.startswith("Cooldown:"):
+                                    cooldown = _extract_first_int(probe_line)
+                                elif probe_line == "No Cooldown":
+                                    cooldown = 0
                             if spell_desc:
                                 weapon_record["spells_by_name"][spell_name] = spell_desc
                                 weapon_record["spells_ordered"].append(spell_desc)
+                            weapon_record["spells_meta"][spell_name] = {
+                                "cooldown": cooldown,
+                                "power": _extract_power_from_line(spell_desc) if spell_desc else None,
+                                "heal": _extract_heal_from_line(spell_desc) if spell_desc else None,
+                                "description": spell_desc,
+                            }
                         index += 1
                     record["weapons"][weapon_name] = weapon_record
                 elif current.startswith("Ultimate Spell: "):
@@ -240,7 +286,13 @@ def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]
             synced.append(adventurer)
             continue
 
-        updated = adventurer
+        updated = replace(
+            adventurer,
+            hp=record.get("hp", adventurer.hp) or adventurer.hp,
+            attack=record.get("attack", adventurer.attack) or adventurer.attack,
+            defense=record.get("defense", adventurer.defense) or adventurer.defense,
+            speed=record.get("speed", adventurer.speed) or adventurer.speed,
+        )
 
         innate = adventurer.innate
         if record["innate_desc"] and record["innate_desc"] != innate.description:
@@ -250,6 +302,10 @@ def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]
         for weapon in adventurer.signature_weapons:
             weapon_record = record["weapons"].get(weapon.name, {})
             strike = weapon.strike
+            if weapon_record.get("strike_power") is not None and weapon_record["strike_power"] != strike.power:
+                strike = replace(strike, power=weapon_record["strike_power"])
+            if weapon_record.get("strike_cooldown") is not None and weapon_record["strike_cooldown"] != strike.cooldown:
+                strike = replace(strike, cooldown=weapon_record["strike_cooldown"])
             strike_desc = weapon_record.get("strike_desc", None)
             if strike_desc is not None:
                 cleaned = _clean_strike_description(strike, strike_desc)
@@ -273,14 +329,23 @@ def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]
                 desc = weapon_record.get("spells_by_name", {}).get(spell_effect.name)
                 if desc is None and spell_index < len(ordered_spell_descs):
                     desc = ordered_spell_descs[spell_index]
-                if desc is not None and desc != spell_effect.description:
-                    spells.append(replace(spell_effect, description=desc))
-                else:
-                    spells.append(spell_effect)
+                spell_meta = weapon_record.get("spells_meta", {}).get(spell_effect.name, {})
+                updated_spell = spell_effect
+                if spell_meta.get("cooldown") is not None and spell_meta["cooldown"] != updated_spell.cooldown:
+                    updated_spell = replace(updated_spell, cooldown=spell_meta["cooldown"])
+                if spell_meta.get("heal") is not None and spell_meta["heal"] != updated_spell.heal:
+                    updated_spell = replace(updated_spell, heal=spell_meta["heal"])
+                if spell_meta.get("power") is not None and updated_spell.power > 0 and spell_meta["power"] != updated_spell.power:
+                    updated_spell = replace(updated_spell, power=spell_meta["power"])
+                if desc is not None and desc != updated_spell.description:
+                    updated_spell = replace(updated_spell, description=desc)
+                spells.append(updated_spell)
 
             weapons.append(
                 replace(
                     weapon,
+                    kind=weapon_record.get("kind", weapon.kind) or weapon.kind,
+                    ammo=weapon_record.get("ammo") if weapon_record.get("ammo") is not None else weapon.ammo,
                     strike=strike,
                     passive_skills=tuple(passives),
                     spells=tuple(spells),
@@ -304,30 +369,121 @@ def _sync_adventurer_descriptions_from_rulebook(adventurers: list[AdventurerDef]
     return synced
 
 
+def _parse_rulebook_artifacts() -> dict[str, dict]:
+    path = Path(__file__).with_name("rulebook.txt")
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    appendix_c = re.search(r"^APPENDIX C .*$", text, flags=re.MULTILINE)
+    if appendix_c is None:
+        return {}
+    lines = [line.rstrip() for line in text[appendix_c.start():].splitlines()]
+    records: dict[str, dict] = {}
+    index = 0
+    while index < len(lines):
+        line = lines[index].strip()
+        if line and index + 1 < len(lines) and lines[index + 1].startswith("Attunement:"):
+            name = _normalize_rulebook_name(line)
+            record = {
+                "amount": None,
+                "stat": "",
+                "spell_name": "",
+                "spell_desc": "",
+                "spell_power": None,
+                "spell_heal": None,
+                "spell_cooldown": None,
+                "spell_encounter_cooldown": False,
+            }
+            probe = index + 2
+            if probe < len(lines):
+                stat_line = lines[probe].strip()
+                stat_match = re.match(r"^\+(\d+)\s+(\w+)$", stat_line)
+                if stat_match:
+                    record["amount"] = int(stat_match.group(1))
+                    record["stat"] = stat_match.group(2).lower()
+            index += 1
+            while index < len(lines):
+                current = lines[index].strip()
+                if current and index + 1 < len(lines) and lines[index + 1].startswith("Attunement:"):
+                    index -= 1
+                    break
+                if current.startswith("Spell: "):
+                    record["spell_name"] = current.split(": ", 1)[1].strip()
+                    desc = _next_rulebook_description_line(lines, index + 1)
+                    record["spell_desc"] = desc
+                    record["spell_power"] = _extract_power_from_line(desc) if desc else None
+                    record["spell_heal"] = _extract_heal_from_line(desc) if desc else None
+                elif current.startswith("Cooldown:"):
+                    record["spell_cooldown"] = _extract_first_int(current)
+                    record["spell_encounter_cooldown"] = "encounter" in current.lower()
+                index += 1
+            records[name] = record
+        index += 1
+    return records
+
+
+def _sync_artifacts_from_rulebook(artifacts: list[ArtifactDef]) -> list[ArtifactDef]:
+    try:
+        parsed = _parse_rulebook_artifacts()
+    except Exception:
+        return artifacts
+    if not parsed:
+        return artifacts
+
+    synced: list[ArtifactDef] = []
+    for artifact_def in artifacts:
+        record = parsed.get(_normalize_rulebook_name(artifact_def.name))
+        if record is None:
+            synced.append(artifact_def)
+            continue
+        spell = artifact_def.spell
+        if record["spell_name"] and record["spell_name"] != spell.name:
+            spell = replace(spell, name=record["spell_name"])
+        if record["spell_desc"] and record["spell_desc"] != spell.description:
+            spell = replace(spell, description=record["spell_desc"])
+        if record["spell_power"] is not None and spell.power > 0 and record["spell_power"] != spell.power:
+            spell = replace(spell, power=record["spell_power"])
+        if record["spell_heal"] is not None and record["spell_heal"] != spell.heal:
+            spell = replace(spell, heal=record["spell_heal"])
+        if record["spell_cooldown"] is not None:
+            target_cooldown = 99 if record["spell_encounter_cooldown"] else record["spell_cooldown"]
+            if target_cooldown != spell.cooldown:
+                spell = replace(spell, cooldown=target_cooldown)
+        synced.append(
+            replace(
+                artifact_def,
+                stat=record["stat"] or artifact_def.stat,
+                amount=record["amount"] if record["amount"] is not None else artifact_def.amount,
+                spell=spell,
+            )
+        )
+    return synced
+
+
 CLASS_SKILLS = {
     "Fighter": [
-        passive("martial", "Martial", "Melee Strikes deal +15 damage."),
-        passive("inevitable", "Inevitable", "Melee Strikes charge the Ultimate Meter +1.", special="bonus_melee_strike_meter"),
+        passive("martial", "Martial", "The Adventurer's Melee Strikes deal +25 damage.", hp_bonus=25),
+        passive("vanguard", "Vanguard", "The Adventurer's Melee Strikes deal 15 damage to each enemy behind the target.", special="vanguard", hp_bonus=50),
     ],
     "Rogue": [
-        passive("covert", "Covert", "Can Swap positions as a bonus action.", special="bonus_swap"),
-        passive("assassin", "Assassin", "Ignore targeting restrictions against enemies who did not Strike or Swap.", special="assassin"),
+        passive("covert", "Covert", "The Adventurer can Swap positions as a Bonus Action.", special="bonus_swap", hp_bonus=25),
+        passive("assassin", "Assassin", "The Adventurer ignores targeting restrictions against enemies who did not Strike or Swap Positions.", special="assassin", hp_bonus=25),
     ],
     "Warden": [
-        passive("bulwark", "Bulwark", "Gain +15 Defense while in the frontline."),
-        passive("vigilant", "Vigilant", "Become Guarded for 2 rounds when you Swap positions.", special="vigilant"),
+        passive("bulwark", "Bulwark", "The Adventurer has +15 Defense while in the frontline, +5 otherwise.", hp_bonus=50),
+        passive("vigilant", "Vigilant", "The Adventurer is Guarded for 2 rounds when they Swap positions or Skip.", special="vigilant", hp_bonus=50),
     ],
     "Mage": [
-        passive("arcane", "Arcane", "Magic Strikes deal +10 damage."),
-        passive("archmage", "Archmage", "The first Spell after Switching weapons does not go on cooldown.", special="archmage"),
+        passive("arcane", "Arcane", "The Adventurer's Spells charge the Ultimate Meter +1.", special="arcane", hp_bonus=15),
+        passive("archmage", "Archmage", "The Adventurer's Magic Strikes do not go on cooldown in the frontline.", special="archmage", hp_bonus=25),
     ],
     "Ranger": [
-        passive("deadeye", "Deadeye", "Ranged Strikes deal +10 damage."),
-        passive("armed", "Armed", "The first Ranged Strike after Switching does not consume Ammo.", special="armed"),
+        passive("deadeye", "Deadeye", "The Adventurer's Ranged Strikes deal +5 damage.", hp_bonus=15),
+        passive("armed", "Armed", "The Adventurer's first Ranged Strike after Switching weapons does not consume Ammo.", special="armed", hp_bonus=15),
     ],
     "Cleric": [
-        passive("healer", "Healer", "Healing effects restore an additional +15 HP."),
-        passive("medic", "Medic", "Healing effects cleanse status conditions and stat penalties.", special="medic"),
+        passive("healer", "Healer", "The Adventurer's healing effects restore an additional +15 HP.", hp_bonus=25),
+        passive("medic", "Medic", "The Adventurer's healing effects cleanse status conditions and stat penalties.", special="medic", hp_bonus=50),
     ],
 }
 
@@ -367,8 +523,8 @@ ARTIFACTS = [
             "The Swiftness",
             target="ally",
             cooldown=2,
-            self_buffs=(stat("speed", 15, 2),),
-            description="Swap with an ally and gain +15 Speed.",
+            self_buffs=(stat("speed", 25, 2),),
+            description="Swap with an ally and gain +25 Speed.",
             special="artifact_swap_with_ally",
         ),
     ),
@@ -383,8 +539,8 @@ ARTIFACTS = [
             "Thunderclap",
             target="self",
             cooldown=2,
-            description="Next Strike deals +10 damage and Shocks.",
-            special="next_strike_bonus_10_shock",
+            description="Next Strike deals +25 damage and Shocks.",
+            special="next_strike_bonus_25_shock",
         ),
     ),
     artifact(
@@ -443,8 +599,8 @@ ARTIFACTS = [
             "Chroma",
             target="self",
             cooldown=1,
-            description="Next Magic Strike deals +15 damage.",
-            special="next_magic_strike_plus_15",
+            description="Next Magic Strike deals +25 damage.",
+            special="next_magic_strike_plus_25",
         ),
     ),
     artifact(
@@ -477,7 +633,6 @@ ARTIFACTS = [
             description="The next Strike this round deals 0 damage.",
             special="mistform",
         ),
-        reactive=True,
     ),
     artifact(
         "red_hood",
@@ -680,7 +835,7 @@ ARTIFACTS.extend([
             "Sky Assault",
             target="self",
             cooldown=2,
-            description="Next Strike deals +10 damage and Spotlights.",
+            description="Next Strike deals +10 damage, can target backline enemies in the user's lane, and Spotlights.",
             special="next_strike_plus_10_spotlight",
         ),
     ),
@@ -937,6 +1092,7 @@ ARTIFACTS.extend([
 ])
 
 
+ARTIFACTS = _sync_artifacts_from_rulebook(ARTIFACTS)
 ARTIFACTS_BY_ID = {artifact_def.id: artifact_def for artifact_def in ARTIFACTS}
 
 
@@ -1019,7 +1175,7 @@ JACK = AdventurerDef(
             "giants_harp",
             "Giant's Harp",
             "magic",
-            active("giants_harp_strike", "Strike", power=65, cooldown=1, counts_as_spell=True),
+            active("giants_harp_strike", "Strike", power=60, cooldown=1, counts_as_spell=True),
             passive_skills=(passive("belligerence", "Belligerence", "Ignore 20% of enemy Defense.", special="ignore_20_defense"),),
         ),
     ),
@@ -1051,7 +1207,7 @@ GRETEL = AdventurerDef(
                 "Strike",
                 power=65,
                 bonus_power_if_status="burn",
-                bonus_power=15,
+                bonus_power=50,
                 description="Burn the target if they are not already Burned.",
                 special="burn_if_not_burned",
             ),
@@ -1088,7 +1244,7 @@ CONSTANTINE = AdventurerDef(
             "fortuna",
             "Fortuna",
             "melee",
-            active("fortuna_strike", "Strike", power=65, description="Swap the target with an enemy ally.", special="swap_target_with_enemy"),
+            active("fortuna_strike", "Strike", power=65, description="Swap the target with the lowest health enemy.", special="swap_target_with_enemy"),
             spells=(
                 active(
                     "consensia",
@@ -1130,7 +1286,7 @@ HUNOLD = AdventurerDef(
             "lightning_rod",
             "Lightning Rod",
             "ranged",
-            active("lightning_rod_strike", "Strike", power=45, ammo_cost=1, target_statuses=(status("shock", 2),), special="lightning_rod"),
+            active("lightning_rod_strike", "Strike", power=40, ammo_cost=1, target_statuses=(status("shock", 2),), special="lightning_rod"),
             ammo=3,
         ),
         weapon(
@@ -1140,7 +1296,7 @@ HUNOLD = AdventurerDef(
             active(
                 "golden_fiddle_strike",
                 "Strike",
-                power=70,
+                power=65,
                 cooldown=1,
                 counts_as_spell=True,
                 description="If the target is Shocked, Root and Spotlight them and keep the strike ready.",
@@ -1263,7 +1419,7 @@ LADY = AdventurerDef(
     speed=42,
     innate=passive("reflecting_pools", "Reflecting Pools", "The Lady creates a Reflecting Pool for 2 rounds at her new position whenever she swaps. Strikes targeting Reflecting Pools reflect 25% of the damage onto the attacker, 50% if the Strike is Magic.", special="reflecting_pools"),
     signature_weapons=(
-        weapon("excalibur_doc", "Excalibur", "melee", active("excalibur_doc_strike", "Strike", power=70)),
+        weapon("excalibur", "Excalibur", "melee", active("excalibur_strike", "Strike", power=70)),
         weapon(
             "lantern_of_avalon",
             "Lantern of Avalon",
@@ -1348,7 +1504,7 @@ MARCH_HARE = AdventurerDef(
     attack=68,
     defense=44,
     speed=84,
-    innate=passive("on_time", "On Time!", "While the March Hare is frontline, the frontline enemy has -10 Speed.", special="on_time"),
+    innate=passive("erratic", "Erratic", "When the March Hare Swaps positions, he Switches weapons."),
     signature_weapons=(
         weapon(
             "stitch_in_time",
@@ -1412,7 +1568,7 @@ BRIAR = AdventurerDef(
             "spindle_bow",
             "Spindle Bow",
             "ranged",
-            active("spindle_bow_strike", "Strike", power=40, ammo_cost=1, bonus_power_if_status="root", bonus_power=20),
+            active("spindle_bow_strike", "Strike", power=40, ammo_cost=1, bonus_power_if_status="root", bonus_power=30),
             ammo=3,
             spells=(
                 active(
@@ -1429,7 +1585,7 @@ BRIAR = AdventurerDef(
             "thorn_snare",
             "Thorn Snare",
             "ranged",
-            active("thorn_snare_strike", "Strike", power=70, ammo_cost=1, spread=True, target_statuses=(status("root", 2),)),
+            active("thorn_snare_strike", "Strike", power=65, ammo_cost=1, spread=True, target_statuses=(status("root", 2),)),
             ammo=1,
             passive_skills=(passive("drowsiness", "Drowsiness", "Root enemies who Swap positions.", special="drowsiness"),),
         ),
@@ -1493,7 +1649,7 @@ ROBIN = AdventurerDef(
             "the_flock",
             "The Flock",
             "ranged",
-            active("the_flock_strike", "Strike", power=45, ammo_cost=1, spread=True, target_statuses=(status("spotlight", 2),)),
+            active("the_flock_strike", "Strike", power=50, ammo_cost=1, spread=True, target_statuses=(status("spotlight", 2),)),
             ammo=3,
             spells=(active("spread_fortune", "Spread Fortune", target="self", cooldown=2, description="Ignore the spread damage nerf.", special="spread_fortune"),),
         ),
@@ -1501,7 +1657,7 @@ ROBIN = AdventurerDef(
             "kingmaker",
             "Kingmaker",
             "melee",
-            active("kingmaker_strike", "Strike", power=60, description="+30 power against backline targets.", special="bonus_vs_backline_30"),
+            active("kingmaker_strike", "Strike", power=60, description="+55 power against backline targets.", special="bonus_vs_backline_55"),
         ),
     ),
     ultimate=active(
@@ -1570,7 +1726,7 @@ GOOD_BEAST = AdventurerDef(
             "Dinner Bell",
             "magic",
             active("dinner_bell_strike", "Strike", power=70, cooldown=1, counts_as_spell=True, target="ally", description="Target allies to restore HP equal to half the would-be damage.", special="ally_heal_from_damage"),
-            passive_skills=(passive("hospitality", "Hospitality", "Guests restore +10 HP from all sources.", special="hospitality"),),
+            passive_skills=(passive("hospitality", "Hospitality", "Guests restore +15 HP from all sources.", special="hospitality"),),
         ),
     ),
     ultimate=active(
@@ -1704,7 +1860,7 @@ RUMPEL = AdventurerDef(
                 power=100,
                 cooldown=2,
                 counts_as_spell=True,
-                target_buffs=(stat("attack", 10, 2), stat("defense", 10, 2), stat("speed", 10, 2)),
+                target_buffs=(stat("attack", 25, 2), stat("defense", 25, 2), stat("speed", 25, 2)),
             ),
         ),
         weapon(
@@ -1717,7 +1873,7 @@ RUMPEL = AdventurerDef(
                 active(
                     "straw_to_gold",
                     "Straw to Gold",
-                    target="enemy",
+                    target="ally",
                     cooldown=2,
                     description="Copy the target's stat penalties and reverse them.",
                     special="straw_to_gold",
@@ -1990,8 +2146,8 @@ REYNARD = AdventurerDef(
                 "Strike",
                 power=45,
                 ammo_cost=1,
-                target_debuffs=(stat("defense", 10, 2),),
-                description="The target has -10 Defense for 2 rounds.",
+                target_debuffs=(stat("defense", 25, 2),),
+                description="The target has -25 Defense for 2 rounds.",
                 special="foxfire_bow",
             ),
             ammo=3,
@@ -2061,7 +2217,7 @@ SCHEHERAZADE = AdventurerDef(
                 power=60,
                 cooldown=1,
                 counts_as_spell=True,
-                target_debuffs=(stat("speed", 10, 2),),
+                target_debuffs=(stat("speed", 25, 2),),
             ),
             passive_skills=(
                 passive(
@@ -2195,8 +2351,8 @@ ODYSSEUS = AdventurerDef(
                 "olivewood_spear_strike",
                 "Strike",
                 power=65,
-                description="+15 Power against targets in Odysseus' lane.",
-                special="lane_bonus_15",
+                description="+50 Power against targets in Odysseus' lane.",
+                special="olivewood_lane_bonus",
             ),
             spells=(
                 active(

@@ -29,6 +29,7 @@ class PassiveEffect:
     name: str
     description: str
     special: str = ""
+    hp_bonus: int = 0
 
 
 @dataclass(frozen=True)
@@ -127,7 +128,7 @@ class CombatantState:
 
     def __post_init__(self):
         if self.hp <= 0:
-            self.hp = self.defn.hp
+            self.hp = self.max_hp
         for weapon in self.defn.signature_weapons:
             if weapon.ammo > 0:
                 self.ammo_remaining.setdefault(weapon.id, weapon.ammo)
@@ -138,7 +139,7 @@ class CombatantState:
 
     @property
     def max_hp(self) -> int:
-        return self.defn.hp
+        return self.defn.hp + self.class_skill.hp_bonus
 
     def has_status(self, kind: str) -> bool:
         return any(status.kind == kind and status.duration > 0 for status in self.statuses)
@@ -175,27 +176,32 @@ class CombatantState:
         if self.artifact is not None and self.artifact.stat == stat:
             base += self.artifact.amount
         if self.markers.get("guest_of_beast", 0) and stat == "defense":
-            base += 15
+            base += 25
         if self.defn.id == "red_blanchette" and self.hp <= math.ceil(self.max_hp * 0.5):
-            bonus = 30 if self.markers.get("wolf_unchained_rounds", 0) > 0 else 15
+            bonus = 50 if self.markers.get("wolf_unchained_rounds", 0) > 0 else 25
             if stat in {"attack", "speed"}:
                 base += bonus
         if self.defn.id == "pinocchio_cursed_puppet" and stat in {"attack", "defense"}:
-            base += self.markers.get("malice", 0) * 5
+            base += self.markers.get("malice", 0) * 15
         if (
             battle is not None
-            and self.defn.id == "witch_of_the_east"
             and stat == "speed"
             and isinstance(battle.markers.get("air_currents"), dict)
             and battle.markers["air_currents"].get(self.slot, 0) > 0
         ):
-            base += 15
+            enemy_team = battle.team1 if self in battle.team2.members else battle.team2
+            ally_team = battle.team1 if self in battle.team1.members else battle.team2
+            if any(
+                ally.defn.id == "witch_of_the_east" and ally.primary_weapon.id == "comet"
+                for ally in ally_team.alive()
+            ):
+                base += 25
         if stat == "speed" and self.slot in BACKLINE_SLOTS:
-            base -= 30
+            base -= 50
         if stat == "speed" and self.has_status("shock"):
-            base -= 15
-        if self.class_skill.id == "bulwark" and stat == "defense" and self.slot == SLOT_FRONT:
-            base += 15
+            base -= 25
+        if self.class_skill.id == "bulwark" and stat == "defense":
+            base += 15 if self.slot == SLOT_FRONT else 5
         total = base + self.best_buff(stat) - self.best_debuff(stat)
         if self.defn.id == "maui_sunthief" and stat == "defense" and self.markers.get("raise_the_sky_rounds", 0) > 0:
             total *= 2

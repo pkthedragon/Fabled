@@ -17,7 +17,7 @@ from quests_ai_tags import (
     skill_preference_score,
     weapon_preference_score,
 )
-from quests_ai_preset_loadouts import presets_for
+from quests_ai_preset_loadouts import AI_LOADOUT_PRESETS, presets_for
 from quests_ruleset_data import ADVENTURERS_BY_ID, CLASS_SKILLS
 
 
@@ -41,15 +41,15 @@ BLIND_SKILL_PRIOR = {
     "deadeye": 11.0,
     "medic": 10.0,
     "assassin": 8.0,
-    "archmage": 5.5,
-    "arcane": 5.0,
+    "archmage": 5.0,
+    "arcane": 6.5,
     "healer": 4.0,
-    "bulwark": -1.0,
+    "bulwark": 1.0,
     "martial": -2.0,
     "armed": -2.0,
     "covert": -3.0,
     "vigilant": -9.0,
-    "inevitable": 1.0,
+    "vanguard": 1.5,
 }
 
 
@@ -180,7 +180,7 @@ BLIND_CLASS_OPTIONS = {
 
 BLIND_SKILL_ORDER = {
     "Ranger": ("deadeye", "armed"),
-    "Fighter": ("martial", "inevitable"),
+    "Fighter": ("martial", "vanguard"),
     "Rogue": ("assassin", "covert"),
     "Cleric": ("medic", "healer"),
     "Warden": ("bulwark", "vigilant"),
@@ -253,6 +253,17 @@ def _ordered_unique(values) -> tuple:
         seen.add(value)
         ordered.append(value)
     return tuple(ordered)
+
+
+for _adventurer_id, _presets in AI_LOADOUT_PRESETS.items():
+    preset_classes = tuple(preset.class_name for preset in _presets)
+    preset_weapons = tuple(preset.primary_weapon_id for preset in _presets)
+    BLIND_CLASS_OPTIONS[_adventurer_id] = _ordered_unique(
+        BLIND_CLASS_OPTIONS.get(_adventurer_id, ()) + preset_classes
+    )
+    BLIND_WEAPON_PRIORITY[_adventurer_id] = _ordered_unique(
+        BLIND_WEAPON_PRIORITY.get(_adventurer_id, ()) + preset_weapons
+    )
 
 
 def _sorted_ids(adventurer_ids: tuple[str, ...] | list[str]) -> tuple[str, ...]:
@@ -743,7 +754,7 @@ def _trio_style_scores(builds: tuple[QuestBlindBuild, ...]) -> dict[str, float]:
 def _formation_fit(build: QuestBlindBuild, slot: str) -> float:
     profile = ADVENTURER_AI[build.adventurer_id]
     weapon = _weapon_def(build.adventurer_id, build.primary_weapon_id)
-    base_speed = ADVENTURERS_BY_ID[build.adventurer_id].speed - (30 if slot != SLOT_FRONT else 0)
+    base_speed = ADVENTURERS_BY_ID[build.adventurer_id].speed - (50 if slot != SLOT_FRONT else 0)
     roles = set(profile.role_tags)
     value = profile.position_scores[slot] * 0.22
     if slot == SLOT_FRONT and {"primary_tank", "frontline_ready", "anti_burst", "bruiser"} & roles:

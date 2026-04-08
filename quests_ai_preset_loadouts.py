@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Optional
@@ -19,7 +19,7 @@ class LoadoutPreset:
 _PRESET_ROWS = {
     "red_blanchette": (
         ("enchanted_shackles", "Fighter", "martial", "dire_wolf_spine"),
-        ("enchanted_shackles", "Fighter", "inevitable", "blood_diamond"),
+        ("enchanted_shackles", "Fighter", "vanguard", "blood_diamond"),
         ("stomach_splitter", "Mage", "arcane", "last_prism"),
         ("stomach_splitter", "Cleric", "medic", "philosophers_stone"),
         ("enchanted_shackles", "Warden", "bulwark", "tarnhelm"),
@@ -28,12 +28,12 @@ _PRESET_ROWS = {
         ("giants_harp", "Mage", "arcane", "last_prism"),
         ("giants_harp", "Mage", "archmage", "glass_slipper"),
         ("skyfall", "Fighter", "martial", "dire_wolf_spine"),
-        ("skyfall", "Fighter", "inevitable", "blood_diamond"),
+        ("skyfall", "Fighter", "vanguard", "blood_diamond"),
         ("giants_harp", "Warden", "bulwark", "paradox_rings"),
     ),
     "witch_hunter_gretel": (
         ("hot_mitts", "Fighter", "martial", "dire_wolf_spine"),
-        ("hot_mitts", "Fighter", "inevitable", "red_hood"),
+        ("hot_mitts", "Fighter", "vanguard", "red_hood"),
         ("crumb_shot", "Ranger", "deadeye", "soaring_crown"),
         ("crumb_shot", "Ranger", "armed", "suspicious_eye"),
         ("hot_mitts", "Cleric", "healer", "misericorde"),
@@ -56,7 +56,7 @@ _PRESET_ROWS = {
         ("pure_silver_shield", "Warden", "bulwark", "sun_gods_banner"),
         ("pure_silver_shield", "Warden", "vigilant", "starskin_veil"),
         ("pure_gold_lance", "Fighter", "martial", "dragons_horn"),
-        ("pure_gold_lance", "Fighter", "inevitable", "dire_wolf_spine"),
+        ("pure_gold_lance", "Fighter", "vanguard", "blood_diamond"),
         ("pure_silver_shield", "Cleric", "medic", "holy_grail"),
     ),
     "porcus_iii": (
@@ -69,7 +69,7 @@ _PRESET_ROWS = {
     "lady_of_reflections": (
         ("lantern_of_avalon", "Mage", "arcane", "last_prism"),
         ("lantern_of_avalon", "Mage", "archmage", "glass_slipper"),
-        ("excalibur_doc", "Fighter", "martial", "naiads_knife"),
+        ("excalibur", "Fighter", "martial", "naiads_knife"),
         ("lantern_of_avalon", "Rogue", "covert", "swan_cloak"),
         ("lantern_of_avalon", "Cleric", "medic", "magic_mirror"),
     ),
@@ -78,7 +78,7 @@ _PRESET_ROWS = {
         ("obsidian_slippers", "Mage", "arcane", "cursed_spindle"),
         ("obsidian_slippers", "Rogue", "covert", "selkies_skin"),
         ("obsidian_slippers", "Rogue", "assassin", "glass_slipper"),
-        ("obsidian_slippers", "Fighter", "inevitable", "blood_diamond"),
+        ("obsidian_slippers", "Fighter", "vanguard", "blood_diamond"),
     ),
     "march_hare": (
         ("stitch_in_time", "Mage", "arcane", "last_prism"),
@@ -131,7 +131,7 @@ _PRESET_ROWS = {
     ),
     "rapunzel_the_golden": (
         ("golden_snare", "Fighter", "martial", "dragons_horn"),
-        ("golden_snare", "Fighter", "inevitable", "blood_diamond"),
+        ("golden_snare", "Fighter", "vanguard", "blood_diamond"),
         ("ivory_tower", "Warden", "bulwark", "golden_fleece"),
         ("ivory_tower", "Cleric", "healer", "holy_grail"),
         ("golden_snare", "Warden", "vigilant", "starskin_veil"),
@@ -175,7 +175,7 @@ _PRESET_ROWS = {
         ("ancestral_warclub", "Warden", "bulwark", "sun_gods_banner"),
         ("ancestral_warclub", "Warden", "vigilant", "golden_fleece"),
         ("whale_jaw_hook", "Fighter", "martial", "dragons_horn"),
-        ("whale_jaw_hook", "Fighter", "inevitable", "blood_diamond"),
+        ("whale_jaw_hook", "Fighter", "vanguard", "blood_diamond"),
         ("ancestral_warclub", "Cleric", "healer", "holy_grail"),
     ),
     "kama_the_honeyed": (
@@ -208,7 +208,7 @@ _PRESET_ROWS = {
     ),
     "odysseus_the_nobody": (
         ("olivewood_spear", "Fighter", "martial", "dragons_horn"),
-        ("olivewood_spear", "Fighter", "inevitable", "dire_wolf_spine"),
+        ("olivewood_spear", "Fighter", "vanguard", "dire_wolf_spine"),
         ("beggars_greatbow", "Ranger", "deadeye", "soaring_crown"),
         ("beggars_greatbow", "Ranger", "armed", "jade_rabbit"),
         ("olivewood_spear", "Rogue", "covert", "black_torch"),
@@ -266,3 +266,4 @@ AI_LOADOUT_PRESETS = _build_presets()
 
 def presets_for(adventurer_id: str) -> tuple[LoadoutPreset, ...]:
     return AI_LOADOUT_PRESETS.get(adventurer_id, ())
+

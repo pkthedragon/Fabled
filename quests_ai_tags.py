@@ -1,8 +1,9 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from dataclasses import dataclass
 
 from settings import SLOT_BACK_LEFT, SLOT_BACK_RIGHT, SLOT_FRONT
+from quests_ai_preset_loadouts import AI_LOADOUT_PRESETS
 from quests_ruleset_data import CLASS_SKILLS
 
 
@@ -63,7 +64,7 @@ def _profile(
 
 
 DEFAULT_CLASS_SKILL_ORDER = {
-    "Fighter": ("martial", "inevitable"),
+    "Fighter": ("martial", "vanguard"),
     "Rogue": ("covert", "assassin"),
     "Warden": ("bulwark", "vigilant"),
     "Mage": ("arcane", "archmage"),
@@ -74,13 +75,13 @@ DEFAULT_CLASS_SKILL_ORDER = {
 
 CLASS_SKILL_TAGS = {
     "martial": {"melee", "damage", "burst"},
-    "inevitable": {"melee", "strike_meter", "ultimate", "tempo"},
+    "vanguard": {"melee", "pressure", "chip", "reach"},
     "covert": {"swap", "bonus_action", "mobility"},
     "assassin": {"reach", "punish_idle"},
-    "bulwark": {"frontline", "durability"},
+    "bulwark": {"frontline", "durability", "baseline_bulk"},
     "vigilant": {"swap", "guard", "durability"},
-    "arcane": {"magic", "damage"},
-    "archmage": {"switch", "spell_tempo"},
+    "arcane": {"spell", "ultimate", "spell_tempo"},
+    "archmage": {"magic", "frontline", "tempo"},
     "deadeye": {"ranged", "damage"},
     "armed": {"ranged", "ammo", "switch"},
     "healer": {"healing", "sustain"},
@@ -142,9 +143,9 @@ ADVENTURER_AI = {
         bad_into=("hard_control",),
         classes=("Fighter", "Mage", "Rogue"),
         skills={
-            "Fighter": ("martial", "vanguard", "inevitable"),
-            "Mage": ("arcane", "overflow", "archmage"),
-            "Rogue": ("covert", "fleetfooted", "assassin"),
+            "Fighter": ("martial", "vanguard", "vanguard"),
+            "Mage": ("arcane", "archmage", "archmage"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("enchanted_shackles", "stomach_splitter"),
         artifacts=("naiads_knife", "red_hood", "enchanted_lamp", "lightning_helm"),
@@ -164,7 +165,7 @@ ADVENTURER_AI = {
         classes=("Mage", "Fighter", "Warden"),
         skills={
             "Mage": ("arcane", "archmage"),
-            "Fighter": ("martial", "inevitable"),
+            "Fighter": ("martial", "vanguard"),
             "Warden": ("bulwark", "vigilant"),
         },
         weapons=("giants_harp", "skyfall"),
@@ -184,8 +185,8 @@ ADVENTURER_AI = {
         bad_into=("burst_focus",),
         classes=("Fighter", "Ranger"),
         skills={
-            "Fighter": ("martial", "inevitable", "vanguard"),
-            "Ranger": ("deadeye", "armed", "tactical"),
+            "Fighter": ("martial", "vanguard", "vanguard"),
+            "Ranger": ("deadeye", "armed", "armed"),
         },
         weapons=("hot_mitts", "crumb_shot"),
         artifacts=("cursed_spindle", "black_torch", "red_hood", "fading_diadem"),
@@ -204,8 +205,8 @@ ADVENTURER_AI = {
         bad_into=("tank", "burst_focus"),
         classes=("Rogue", "Fighter"),
         skills={
-            "Rogue": ("covert", "assassin", "fleetfooted"),
-            "Fighter": ("martial", "vanguard", "inevitable"),
+            "Rogue": ("covert", "assassin", "covert"),
+            "Fighter": ("martial", "vanguard", "vanguard"),
         },
         weapons=("fortuna", "cat_o_nine"),
         artifacts=("glass_slipper", "naiads_knife", "enchanted_lamp", "selkies_skin"),
@@ -224,8 +225,8 @@ ADVENTURER_AI = {
         bad_into=("hard_cleanse",),
         classes=("Mage", "Ranger"),
         skills={
-            "Mage": ("arcane", "overflow", "archmage"),
-            "Ranger": ("deadeye", "armed", "tactical"),
+            "Mage": ("arcane", "archmage", "archmage"),
+            "Ranger": ("deadeye", "armed", "armed"),
         },
         weapons=("lightning_rod", "golden_fiddle"),
         artifacts=("lightning_helm", "cursed_spindle", "bottled_clouds", "soaring_crown"),
@@ -244,8 +245,8 @@ ADVENTURER_AI = {
         bad_into=("anti_guard",),
         classes=("Warden", "Fighter"),
         skills={
-            "Warden": ("bulwark", "vigilant", "stalwart"),
-            "Fighter": ("vanguard", "martial", "inevitable"),
+            "Warden": ("bulwark", "vigilant", "bulwark"),
+            "Fighter": ("vanguard", "martial", "vanguard"),
         },
         weapons=("pure_silver_shield", "pure_gold_lance"),
         artifacts=("sun_gods_banner", "holy_grail", "golden_fleece", "nettle_smock"),
@@ -264,8 +265,8 @@ ADVENTURER_AI = {
         bad_into=("anti_guard", "sustain_heavy"),
         classes=("Warden", "Ranger"),
         skills={
-            "Warden": ("bulwark", "stalwart", "vigilant"),
-            "Ranger": ("deadeye", "armed", "tactical"),
+            "Warden": ("bulwark", "bulwark", "vigilant"),
+            "Ranger": ("deadeye", "armed", "armed"),
         },
         weapons=("crafty_wall", "mortar_mortar"),
         artifacts=("sun_gods_banner", "holy_grail", "golden_fleece", "nettle_smock"),
@@ -284,11 +285,11 @@ ADVENTURER_AI = {
         bad_into=("anti_swap",),
         classes=("Warden", "Rogue", "Cleric"),
         skills={
-            "Warden": ("vigilant", "bulwark", "stalwart"),
-            "Rogue": ("covert", "fleetfooted", "assassin"),
-            "Cleric": ("protector", "healer", "medic"),
+            "Warden": ("vigilant", "bulwark", "bulwark"),
+            "Rogue": ("covert", "covert", "assassin"),
+            "Cleric": ("medic", "healer"),
         },
-        weapons=("lantern_of_avalon", "excalibur_doc"),
+        weapons=("lantern_of_avalon", "excalibur"),
         artifacts=("glass_slipper", "winged_sandals", "holy_grail", "selkies_skin"),
         front=72,
         back_left=78,
@@ -305,8 +306,8 @@ ADVENTURER_AI = {
         bad_into=("burst_focus", "anti_magic"),
         classes=("Mage", "Rogue"),
         skills={
-            "Mage": ("overflow", "arcane", "archmage"),
-            "Rogue": ("fleetfooted", "covert", "assassin"),
+            "Mage": ("archmage", "arcane", "archmage"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("obsidian_slippers", "dusty_broom"),
         artifacts=("last_prism", "cursed_spindle", "magic_mirror", "arcane_hourglass"),
@@ -325,8 +326,8 @@ ADVENTURER_AI = {
         bad_into=("burst_focus",),
         classes=("Mage", "Rogue"),
         skills={
-            "Mage": ("overflow", "archmage", "arcane"),
-            "Rogue": ("covert", "fleetfooted", "assassin"),
+            "Mage": ("archmage", "archmage", "arcane"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("stitch_in_time", "cracked_stopwatch"),
         artifacts=("arcane_hourglass", "last_prism", "glass_slipper", "goose_quill"),
@@ -345,8 +346,8 @@ ADVENTURER_AI = {
         bad_into=("hard_cleanse",),
         classes=("Ranger", "Rogue"),
         skills={
-            "Ranger": ("deadeye", "tactical", "armed"),
-            "Rogue": ("covert", "fleetfooted", "assassin"),
+            "Ranger": ("deadeye", "armed", "armed"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("thorn_snare", "spindle_bow"),
         artifacts=("soaring_crown", "cursed_spindle", "dragons_horn", "bottled_clouds"),
@@ -365,8 +366,8 @@ ADVENTURER_AI = {
         bad_into=("reflect", "anti_burst"),
         classes=("Ranger", "Rogue"),
         skills={
-            "Ranger": ("tactical", "armed", "deadeye"),
-            "Rogue": ("fleetfooted", "covert", "assassin"),
+            "Ranger": ("armed", "armed", "deadeye"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("pallid_musket", "convicted_shotgun"),
         artifacts=("soaring_crown", "dragons_horn", "selkies_skin", "red_hood"),
@@ -385,9 +386,9 @@ ADVENTURER_AI = {
         bad_into=("hard_cleanse",),
         classes=("Ranger", "Fighter", "Rogue"),
         skills={
-            "Ranger": ("deadeye", "armed", "tactical"),
-            "Fighter": ("martial", "inevitable", "vanguard"),
-            "Rogue": ("assassin", "fleetfooted", "covert"),
+            "Ranger": ("deadeye", "armed", "armed"),
+            "Fighter": ("martial", "vanguard", "vanguard"),
+            "Rogue": ("assassin", "covert", "covert"),
         },
         weapons=("the_flock", "kingmaker"),
         artifacts=("soaring_crown", "dragons_horn", "bottled_clouds", "red_hood"),
@@ -406,8 +407,8 @@ ADVENTURER_AI = {
         bad_into=("anti_heal",),
         classes=("Cleric", "Mage"),
         skills={
-            "Cleric": ("healer", "medic", "protector"),
-            "Mage": ("arcane", "overflow", "archmage"),
+            "Cleric": ("healer", "medic"),
+            "Mage": ("arcane", "archmage", "archmage"),
         },
         weapons=("matchsticks", "eternal_torch"),
         artifacts=("iron_rosary", "fading_diadem", "holy_grail", "cursed_spindle"),
@@ -426,8 +427,8 @@ ADVENTURER_AI = {
         bad_into=("anti_heal",),
         classes=("Cleric", "Warden"),
         skills={
-            "Cleric": ("protector", "healer", "medic"),
-            "Warden": ("bulwark", "vigilant", "stalwart"),
+            "Cleric": ("medic", "healer"),
+            "Warden": ("bulwark", "vigilant", "bulwark"),
         },
         weapons=("dinner_bell", "rosebush_sword"),
         artifacts=("holy_grail", "golden_fleece", "fading_diadem", "iron_rosary"),
@@ -446,9 +447,9 @@ ADVENTURER_AI = {
         bad_into=("wide_control",),
         classes=("Warden", "Fighter", "Ranger"),
         skills={
-            "Warden": ("vigilant", "bulwark", "stalwart"),
-            "Fighter": ("vanguard", "martial", "inevitable"),
-            "Ranger": ("deadeye", "tactical", "armed"),
+            "Warden": ("vigilant", "bulwark", "bulwark"),
+            "Fighter": ("vanguard", "martial", "vanguard"),
+            "Ranger": ("deadeye", "armed", "armed"),
         },
         weapons=("the_answer", "the_search"),
         artifacts=("winged_sandals", "dragons_horn", "sun_gods_banner", "nettle_smock"),
@@ -467,9 +468,9 @@ ADVENTURER_AI = {
         bad_into=("burst_focus",),
         classes=("Fighter", "Warden", "Cleric"),
         skills={
-            "Fighter": ("vanguard", "martial", "inevitable"),
-            "Warden": ("bulwark", "vigilant", "stalwart"),
-            "Cleric": ("healer", "protector", "medic"),
+            "Fighter": ("vanguard", "martial", "vanguard"),
+            "Warden": ("bulwark", "vigilant", "bulwark"),
+            "Cleric": ("healer", "medic"),
         },
         weapons=("golden_snare", "ivory_tower"),
         artifacts=("holy_grail", "winged_sandals", "bluebeards_key", "golden_fleece"),
@@ -488,9 +489,9 @@ ADVENTURER_AI = {
         bad_into=("burst_focus", "hard_control"),
         classes=("Mage", "Fighter", "Rogue"),
         skills={
-            "Mage": ("arcane", "overflow", "archmage"),
-            "Fighter": ("martial", "vanguard", "inevitable"),
-            "Rogue": ("fleetfooted", "covert", "assassin"),
+            "Mage": ("arcane", "archmage", "archmage"),
+            "Fighter": ("martial", "vanguard", "vanguard"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("string_cutter", "wooden_club"),
         artifacts=("last_prism", "selkies_skin", "enchanted_lamp", "nettle_smock"),
@@ -509,9 +510,9 @@ ADVENTURER_AI = {
         bad_into=("burst_focus",),
         classes=("Mage", "Ranger", "Rogue"),
         skills={
-            "Mage": ("arcane", "archmage", "overflow"),
-            "Ranger": ("tactical", "deadeye", "armed"),
-            "Rogue": ("covert", "fleetfooted", "assassin"),
+            "Mage": ("arcane", "archmage", "archmage"),
+            "Ranger": ("armed", "deadeye", "armed"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("devils_contract", "spinning_wheel"),
         artifacts=("goose_quill", "cursed_spindle", "last_prism", "bottled_clouds"),
@@ -530,8 +531,8 @@ ADVENTURER_AI = {
         bad_into=("burst_focus",),
         classes=("Mage", "Rogue"),
         skills={
-            "Mage": ("arcane", "overflow", "archmage"),
-            "Rogue": ("fleetfooted", "covert", "assassin"),
+            "Mage": ("arcane", "archmage", "archmage"),
+            "Rogue": ("covert", "covert", "assassin"),
         },
         weapons=("frost_scepter", "mirror_blade"),
         artifacts=("magic_mirror", "last_prism", "arcane_hourglass", "goose_quill"),
@@ -550,9 +551,9 @@ ADVENTURER_AI = {
         bad_into=("anti_heal",),
         classes=("Cleric", "Mage", "Warden"),
         skills={
-            "Cleric": ("healer", "protector", "medic"),
-            "Mage": ("arcane", "archmage", "overflow"),
-            "Warden": ("vigilant", "bulwark", "stalwart"),
+            "Cleric": ("healer", "medic"),
+            "Mage": ("arcane", "archmage", "archmage"),
+            "Warden": ("vigilant", "bulwark", "bulwark"),
         },
         weapons=("guiding_doll", "skull_lantern"),
         artifacts=("paradox_rings", "jade_rabbit", "holy_grail", "fading_diadem"),
@@ -571,9 +572,9 @@ ADVENTURER_AI = {
         bad_into=("tank",),
         classes=("Rogue", "Mage", "Fighter"),
         skills={
-            "Rogue": ("assassin", "fleetfooted", "covert"),
-            "Mage": ("arcane", "archmage", "overflow"),
-            "Fighter": ("vanguard", "martial", "inevitable"),
+            "Rogue": ("assassin", "covert", "covert"),
+            "Mage": ("arcane", "archmage", "archmage"),
+            "Fighter": ("vanguard", "martial", "vanguard"),
         },
         weapons=("jar_of_oil", "thiefs_dagger"),
         artifacts=("swan_cloak", "cursed_spindle", "lightning_helm", "red_hood"),
@@ -592,8 +593,8 @@ ADVENTURER_AI = {
         bad_into=("anti_guard",),
         classes=("Warden", "Fighter"),
         skills={
-            "Warden": ("bulwark", "stalwart", "vigilant"),
-            "Fighter": ("martial", "vanguard", "inevitable"),
+            "Warden": ("bulwark", "bulwark", "vigilant"),
+            "Fighter": ("martial", "vanguard", "vanguard"),
         },
         weapons=("whale_jaw_hook", "ancestral_warclub"),
         artifacts=("all_mill", "cornucopia", "sun_gods_banner", "golden_fleece"),
@@ -612,9 +613,9 @@ ADVENTURER_AI = {
         bad_into=("hard_cleanse",),
         classes=("Ranger", "Rogue", "Mage"),
         skills={
-            "Ranger": ("deadeye", "armed", "tactical"),
-            "Rogue": ("assassin", "fleetfooted", "covert"),
-            "Mage": ("arcane", "archmage", "overflow"),
+            "Ranger": ("deadeye", "armed", "armed"),
+            "Rogue": ("assassin", "covert", "covert"),
+            "Mage": ("arcane", "archmage", "archmage"),
         },
         weapons=("sugarcane_bow", "the_stinger"),
         artifacts=("jade_rabbit", "soaring_crown", "dragons_horn", "cornucopia"),
@@ -633,9 +634,9 @@ ADVENTURER_AI = {
         bad_into=("primary_tank",),
         classes=("Rogue", "Ranger", "Fighter"),
         skills={
-            "Rogue": ("assassin", "covert", "fleetfooted"),
-            "Ranger": ("deadeye", "tactical", "armed"),
-            "Fighter": ("vanguard", "martial", "inevitable"),
+            "Rogue": ("assassin", "covert", "covert"),
+            "Ranger": ("deadeye", "armed", "armed"),
+            "Fighter": ("vanguard", "martial", "vanguard"),
         },
         weapons=("foxfire_bow", "fang"),
         artifacts=("naiads_knife", "dragons_horn", "glass_slipper", "lightning_helm"),
@@ -696,7 +697,7 @@ ADVENTURER_AI = {
         bad_into=("root_heavy",),
         classes=("Fighter", "Ranger", "Rogue"),
         skills={
-            "Fighter": ("martial", "inevitable"),
+            "Fighter": ("martial", "vanguard"),
             "Ranger": ("armed", "deadeye"),
             "Rogue": ("covert", "assassin"),
         },
@@ -719,7 +720,7 @@ ADVENTURER_AI = {
         skills={
             "Mage": ("arcane", "archmage"),
             "Rogue": ("covert", "assassin"),
-            "Fighter": ("martial", "inevitable"),
+            "Fighter": ("martial", "vanguard"),
         },
         weapons=("zephyr", "comet"),
         artifacts=("winged_sandals", "paradox_rings", "lightning_helm", "walking_abode"),
@@ -739,7 +740,7 @@ ADVENTURER_AI = {
         classes=("Warden", "Fighter", "Cleric"),
         skills={
             "Warden": ("bulwark", "vigilant"),
-            "Fighter": ("martial", "inevitable"),
+            "Fighter": ("martial", "vanguard"),
             "Cleric": ("medic", "healer"),
         },
         weapons=("butterfly_knife", "beam_of_light"),
@@ -751,17 +752,47 @@ ADVENTURER_AI = {
 }
 
 
-def _normalize_profile(profile: AdventurerAIProfile) -> AdventurerAIProfile:
-    legal_classes = tuple(class_name for class_name in profile.preferred_classes if class_name in CLASS_SKILLS)
+def _ordered_unique(values) -> tuple:
+    ordered = []
+    seen = set()
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        ordered.append(value)
+    return tuple(ordered)
+
+
+def _normalize_profile(adventurer_id: str, profile: AdventurerAIProfile) -> AdventurerAIProfile:
+    preset_rows = AI_LOADOUT_PRESETS.get(adventurer_id, ())
+    preset_classes = tuple(preset.class_name for preset in preset_rows)
+    legal_classes = tuple(
+        class_name
+        for class_name in _ordered_unique(profile.preferred_classes + preset_classes)
+        if class_name in CLASS_SKILLS
+    )
     normalized_skills: dict[str, tuple[str, ...]] = {}
     for class_name in legal_classes:
         legal_skill_ids = tuple(skill.id for skill in CLASS_SKILLS[class_name])
+        preset_skill_ids = tuple(
+            preset.class_skill_id
+            for preset in preset_rows
+            if preset.class_name == class_name
+        )
         preferred = profile.preferred_skills.get(class_name, ())
         ordered = []
-        for skill_id in preferred + DEFAULT_CLASS_SKILL_ORDER[class_name] + legal_skill_ids:
+        for skill_id in preferred + preset_skill_ids + DEFAULT_CLASS_SKILL_ORDER[class_name] + legal_skill_ids:
             if skill_id in legal_skill_ids and skill_id not in ordered:
                 ordered.append(skill_id)
         normalized_skills[class_name] = tuple(ordered)
+    preferred_weapons = _ordered_unique(
+        profile.preferred_weapons + tuple(preset.primary_weapon_id for preset in preset_rows)
+    )
+    preferred_artifacts = _ordered_unique(
+        profile.preferred_artifacts + tuple(
+            preset.artifact_id for preset in preset_rows if preset.artifact_id is not None
+        )
+    )
     return AdventurerAIProfile(
         base_power=profile.base_power,
         reliability=profile.reliability,
@@ -773,14 +804,14 @@ def _normalize_profile(profile: AdventurerAIProfile) -> AdventurerAIProfile:
         bad_into=profile.bad_into,
         preferred_classes=legal_classes,
         preferred_skills=normalized_skills,
-        preferred_weapons=profile.preferred_weapons,
-        preferred_artifacts=profile.preferred_artifacts,
+        preferred_weapons=preferred_weapons,
+        preferred_artifacts=preferred_artifacts,
         position_scores=profile.position_scores,
     )
 
 
 ADVENTURER_AI = {
-    adventurer_id: _normalize_profile(profile)
+    adventurer_id: _normalize_profile(adventurer_id, profile)
     for adventurer_id, profile in ADVENTURER_AI.items()
 }
 
@@ -792,7 +823,16 @@ def artifact_preference_score(profile: AdventurerAIProfile, artifact_id: str) ->
 
 
 def skill_preference_score(profile: AdventurerAIProfile, class_name: str, skill_id: str) -> int:
-    ordered = profile.preferred_skills.get(class_name) or DEFAULT_CLASS_SKILL_ORDER[class_name]
+    legal_ids = {skill.id for skill in CLASS_SKILLS[class_name]}
+    ordered = tuple(
+        dict.fromkeys(
+            skill_name
+            for skill_name in (profile.preferred_skills.get(class_name) or DEFAULT_CLASS_SKILL_ORDER[class_name])
+            if skill_name in legal_ids
+        )
+    )
+    if not ordered:
+        ordered = DEFAULT_CLASS_SKILL_ORDER[class_name]
     if skill_id not in ordered:
         return 0
     return max(0, 12 - ordered.index(skill_id) * 4)
@@ -802,3 +842,4 @@ def weapon_preference_score(profile: AdventurerAIProfile, weapon_id: str) -> int
     if weapon_id not in profile.preferred_weapons:
         return 0
     return max(0, 14 - profile.preferred_weapons.index(weapon_id) * 6)
+

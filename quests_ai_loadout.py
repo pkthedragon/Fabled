@@ -241,9 +241,12 @@ def _build_tags(
         tags.add("cleanse")
     if class_skill_id == "healer":
         tags.add("healing")
-    if class_skill_id == "archmage":
+    if class_skill_id == "arcane":
+        tags.add("ultimate")
         tags.add("spell_tempo")
-        tags.add("resource")
+    if class_skill_id == "archmage":
+        tags.add("frontline_magic")
+        tags.add("tempo")
     if class_skill_id == "armed":
         tags.add("ammo")
         tags.add("resource")
@@ -276,7 +279,7 @@ def _team_need_tags(adventurer_ids: tuple[str, ...]) -> set[str]:
 def _formation_fit_score(adventurer_id: str, slot: str, primary_weapon_id: str) -> float:
     profile = ADVENTURER_AI[adventurer_id]
     weapon = _weapon_def(adventurer_id, primary_weapon_id)
-    base_speed = ADVENTURERS_BY_ID[adventurer_id].speed - (30 if slot != SLOT_FRONT else 0)
+    base_speed = ADVENTURERS_BY_ID[adventurer_id].speed - (50 if slot != SLOT_FRONT else 0)
     roles = set(profile.role_tags)
     value = profile.position_scores[slot] * 0.22
     if slot == SLOT_FRONT and {"primary_tank", "frontline_ready", "bruiser", "anti_burst"} & roles:
