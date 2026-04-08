@@ -216,10 +216,14 @@ class StorybookMode:
             "current_win_streak": 0,
             "current_loss_streak": 0,
             "opponent_glories": [],
+            "opponent_reputations": [],
             "team": None,
             "party_id": None,
             "match_count": 0,
             "total_gold_earned": 0,
+            "artifact_pool": [],
+            "reputation_gain_total": 0,
+            "gold_pool": 0,
         }
 
     def _normalize_profile(self):
@@ -2426,6 +2430,14 @@ class StorybookMode:
             run_state["current_win_streak"] = 0
             run_state["match_count"] += 1
             self.profile.ranked_total_losses = max(0, int(getattr(self.profile, "ranked_total_losses", 0))) + 1
+            # −50 Gold from quest pool per loss (pool floor: 0)
+            gold_penalty = 50
+            current_pool = run_state.get("gold_pool", 0)
+            run_state["gold_pool"] = max(0, current_pool - gold_penalty)
+            if self.profile.gold >= gold_penalty:
+                self.profile.gold -= gold_penalty
+            else:
+                self.profile.gold = 0
 
         summary = []
         if ranked_ai:
@@ -2433,6 +2445,7 @@ class StorybookMode:
                 [
                     f"Quest Record: {run_state['wins']}W-{run_state['losses']}L",
                     f"Winstreak: 0 | Lossstreak: {run_state['current_loss_streak']}",
+                    "Loss penalty: −50 Gold.",
                 ]
             )
         else:

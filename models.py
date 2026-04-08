@@ -1,7 +1,50 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Set
+from typing import Dict, List, Optional, Set
+
+
+@dataclass
+class QuestRunState:
+    """Tracks the state of a single active quest run (persists across encounters)."""
+    active: bool = False
+    quest_id: str | None = None
+    wins: int = 0
+    losses: int = 0
+    current_win_streak: int = 0
+    current_loss_streak: int = 0
+    opponent_reputations: List[int] = field(default_factory=list)
+    team: List[dict] | None = None
+    party_id: str | None = None
+    match_count: int = 0
+    total_gold_earned: int = 0
+    # Artifact pool: artifacts available to the party for this run (unequipped)
+    artifact_pool: List[str] = field(default_factory=list)
+    reputation_gain_total: int = 0
+    is_successful: bool = False
+
+
+@dataclass
+class BoutRunState:
+    """Tracks the state of a best-of-three bout."""
+    active: bool = False
+    mode: str = "random"
+    player_wins: int = 0
+    opponent_wins: int = 0
+    match_count: int = 0
+    team: List[dict] | None = None
+    opponent_reputation: int = 300
+    gold_earned: int = 0
+
+
+@dataclass
+class EmployeeState:
+    """Tracks active employee skill assignments and daily server state."""
+    assistant_skill: str = ""
+    bartender_skill: str = ""
+    server_skill: str = ""
+    server_daily_favorite: str | None = None
+    server_favorite_date: str | None = None
 
 
 @dataclass
