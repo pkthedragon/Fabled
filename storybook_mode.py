@@ -2595,44 +2595,6 @@ class StorybookMode:
     def _team_from_loadout(self, loadout) -> list[dict]:
         return [self._member_dict_from_build(member) for member in loadout.members]
 
-    def _generate_quest_ai_choice(self, target_reputation: int):
-        difficulty = ai_difficulty_for_reputation(target_reputation)
-        target_score = target_team_score_for_reputation(target_reputation)
-        best_choice = None
-        best_gap = None
-        for _ in range(7):
-            offer = draft_offer(6, seed=self.rng.randint(0, 999999))
-            choice = choose_quest_party(offer, difficulty=difficulty, rng=self.rng)
-            gap = abs(choice.loadout.score - target_score)
-            if best_gap is None or gap < best_gap:
-                best_choice = choice
-                best_gap = gap
-        return difficulty, best_choice
-
-    def _start_quest_draft(self):
-        self._clear_loadout_drag()
-        self.quest_context = "ranked"
-        self.quest_player_seat = 1
-        self.quest_draft_mode = "encounter"
-        self.quest_draft_locked_id = None
-        self.quest_offer_ids = draft_offer(6)
-        self.quest_focus_id = self.quest_offer_ids[0]
-        self.quest_selected_ids = []
-        self.quest_enemy_party_ids = []
-        self.quest_enemy_selected_ids = []
-        self.quest_enemy_setup_members = []
-        self.quest_draft_detail_scroll = 0
-        self.quest_draft_offer_scroll = 0
-        self.quest_setup_state = None
-        self.quest_local_ready = False
-        self.quest_remote_ready = False
-        self.quest_team_import_open = False
-        self.quest_team_import_text = ""
-        self.quest_team_import_status_lines = []
-        self.quest_imported_party_members = []
-        self.quest_imported_party_name = ""
-        self.route = "quest_draft"
-
     def _pick_quest_focus(self):
         if self.quest_focus_id is None or self.quest_focus_id in self.quest_selected_ids:
             return
