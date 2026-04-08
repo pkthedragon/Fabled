@@ -10,6 +10,7 @@ from models import BoutRunState
 from quests_ai_bout import choose_bout_pick
 from quests_ai_loadout import solve_team_loadout
 from quests_ai_quest import choose_quest_party
+from quests_ai_tags import ADVENTURER_AI
 from quests_ruleset_data import ADVENTURERS_BY_ID, ARTIFACTS, ARTIFACTS_BY_ID, CLASS_SKILLS
 from quests_sandbox import (
     NO_CLASS_NAME,
@@ -1297,6 +1298,13 @@ class StorybookMode:
                 mouse_pos,
                 has_current_quest=self._quest_run_state("ai").get("active", False),
             )
+        elif self.route == "quest_party_reveal":
+            self.last_buttons = sbui.draw_quest_party_reveal(
+                surf,
+                mouse_pos,
+                self.quest_selected_ids,
+                self.quest_draft_locked_id,
+            )
         elif self.route == "quest_draft":
             draft_title = "Start Quest" if self.quest_draft_mode == "party_builder" else "Encounter Prep"
             draft_continue = "Continue To Party Loadouts" if self.quest_draft_mode == "party_builder" else "Continue To Loadouts"
@@ -1674,6 +1682,17 @@ class StorybookMode:
                 if rect.collidepoint(pos) and not locked:
                     set_member_artifact(self.quest_party_loadout_state, 1, self.quest_party_loadout_index, artifact_id)
                     return None
+            return None
+
+        if route == "quest_party_reveal":
+            if self._hit(btns.get("back"), pos):
+                self.quest_selected_ids = []
+                self.quest_draft_locked_id = None
+                self.route = "quests_menu"
+                return None
+            if self._hit(btns.get("confirm"), pos):
+                self._confirm_quest_party_reveal()
+                return None
             return None
 
         if route == "quest_draft":
@@ -2619,6 +2638,32 @@ class StorybookMode:
         self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
         self._enter_quest_party_loadout()
 
+    def _confirm_quest_party_reveal(self):
+        if len(self.quest_selected_ids) != 6:
+            return
+        favorite_id = self.quest_draft_locked_id or self._favorite_adventurer_id()
+        run_state = self._quest_run_state("ai")
+        quest_id = f"quest-{self.rng.randint(100000, 999999)}"
+        run_state["active"] = True
+        run_state["quest_id"] = quest_id
+        run_state["wins"] = 0
+        run_state["losses"] = 0
+        run_state["current_win_streak"] = 0
+        run_state["current_loss_streak"] = 0
+        run_state["opponent_glories"] = []
+        run_state["team"] = [self._default_party_loadout_member(adventurer_id) for adventurer_id in self.quest_selected_ids]
+        run_state["party_id"] = f"Favorite:{favorite_id}"
+        run_state["match_count"] = 0
+        run_state["total_gold_earned"] = 0
+        self.profile.ranked_current_quest_id = quest_id
+        self.quest_draft_mode = "encounter"
+        self.quest_draft_locked_id = None
+        self._record_quested_adventurers(self.quest_selected_ids)
+        self._sync_quest_run_cache(run_state)
+        self._persist_profile()
+        self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
+        self._enter_quest_party_loadout()
+
     def _enter_quest_loadout(self):
         if len(self.quest_selected_ids) != 3:
             return
@@ -2703,21 +2748,50 @@ class StorybookMode:
         self._persist_profile()
         self._prepare_next_quest_encounter()
 
+    def _auto_assemble_quest_party(self, favorite_id: str) -> list:
+        """Pick 5 adventurers to join the favorite, applying a class-diversity constraint.
+
+        Constraint: each of the 6 classes must be represented in the preferred_classes of
+        at least 2 of the 6 adventurers.  Up to 50 random attempts are made; if none
+        satisfy the constraint the last sample is used as a fallback.
+        """
+        all_classes = list(CLASS_SKILLS.keys())
+        candidate_pool = [adv_id for adv_id in ADVENTURERS_BY_ID if adv_id != favorite_id]
+
+        def adv_classes(adv_id: str) -> set:
+            profile = ADVENTURER_AI.get(adv_id)
+            return set(profile.preferred_classes) if profile else set()
+
+        favorite_classes = adv_classes(favorite_id)
+        pick_count = min(5, len(candidate_pool))
+        fallback: list | None = None
+        for _ in range(50):
+            candidates = self.rng.sample(candidate_pool, pick_count)
+            class_counts = {c: (1 if c in favorite_classes else 0) for c in all_classes}
+            for adv_id in candidates:
+                for c in adv_classes(adv_id):
+                    if c in class_counts:
+                        class_counts[c] += 1
+            if fallback is None:
+                fallback = candidates
+            if all(count >= 2 for count in class_counts.values()):
+                return [favorite_id] + candidates
+        return [favorite_id] + (fallback or [])
+
     def _start_ranked_quest_from_favorite(self):
-        favorite_id = self._favorite_adventurer_id()
-        candidate_pool = [adventurer_id for adventurer_id in ADVENTURERS_BY_ID if adventurer_id != favorite_id]
-        if len(candidate_pool) < 8:
+        if len(ADVENTURERS_BY_ID) < 6:
             return
+        favorite_id = self._favorite_adventurer_id()
         self._reset_quest_run_state("ai")
         self.prepared_quest_id = None
         self.quest_context = "ranked"
         self.quest_opponent_mode = "ai"
         self.quest_player_seat = 1
-        self.quest_draft_mode = "party_builder"
+        self.quest_draft_mode = "encounter"
         self.quest_draft_locked_id = favorite_id
-        self.quest_offer_ids = [favorite_id] + self.rng.sample(candidate_pool, 8)
+        self.quest_selected_ids = self._auto_assemble_quest_party(favorite_id)
         self.quest_focus_id = favorite_id
-        self.quest_selected_ids = [favorite_id]
+        self.quest_offer_ids = []
         self.quest_enemy_party_ids = []
         self.quest_enemy_selected_ids = []
         self.quest_enemy_setup_members = []
@@ -2731,7 +2805,7 @@ class StorybookMode:
         self.quest_team_import_status_lines = []
         self.quest_imported_party_members = []
         self.quest_imported_party_name = ""
-        self.route = "quest_draft"
+        self.route = "quest_party_reveal"
 
     def _start_training_builder(self):
         self._clear_loadout_drag()

@@ -1625,7 +1625,7 @@ def draw_quests_menu(
     else:
         draw_text(
             surf,
-            "No active quest. Start one from this screen to draft 6 from a pool of 9 including your favorite.",
+            "No active quest. Start one to auto-assemble a 6-member party around your favorite adventurer.",
             font_body(19, bold=True),
             TEXT_SOFT,
             (party_rect.x + 24, party_rect.y + 66),
@@ -1637,7 +1637,7 @@ def draw_quests_menu(
     draw_text(surf, f"Lossstreak: {current_loss_streak}", font_body(18), TEXT_SOFT, (status_rect.x + 24, status_rect.y + 178))
     status_note = "Edit Party Loadouts first, then Prepare Encounter to reveal enemy names and choose your 3."
     if not run_active:
-        status_note = "Starting a quest gives you a 9-adventurer pool with your favorite locked in, then you build a 6-member run party."
+        status_note = "Starting a quest auto-assembles a 6-member party around your favorite adventurer with class diversity."
     for index, line in enumerate(_wrap_text_block(status_note, font_body(15), status_rect.width - 48)[:3]):
         draw_text(
             surf,
@@ -1656,9 +1656,9 @@ def draw_quests_menu(
         prep_lines.append(f"The next rival lineup is prepared in the background ({len(enemy_party_ids)} adventurers).")
     elif not run_active:
         prep_lines = [
-            "Start Quest opens a 9-adventurer pool with your favorite included.",
-            "Choose 6 for the run, then set loadouts for that party.",
-            "You can still retune those loadouts before every encounter.",
+            "Start Quest auto-assembles your 6-member party for review.",
+            "Set loadouts for all 6, then choose 3 for each encounter.",
+            "You can retune loadouts and formation before every fight.",
         ]
     if run_active:
         prep_lines.append(f"Forfeit Quest costs {max(0, 3 - quest_losses) * 10} Reputation right now.")
@@ -1688,6 +1688,71 @@ def draw_quests_menu(
     btns["edit_loadouts"] = edit_btn
     btns["advance"] = advance_btn
     btns["forfeit"] = forfeit_btn
+    return btns
+
+
+def draw_quest_party_reveal(surf, mouse_pos, party_ids: list, favorite_id: str | None = None):
+    """Show the auto-assembled 6-member quest party before confirming the run."""
+    draw_background(surf)
+    btns = draw_top_bar(
+        surf,
+        "Quest Party",
+        mouse_pos,
+        left_icon="<",
+        right_icons=(("settings", "S", False), ("quit", "X", True)),
+        subtitle="Your party has been assembled. Review and confirm to set loadouts.",
+    )
+
+    party_panel = pygame.Rect(80, 110, 840, 660)
+    rules_panel = pygame.Rect(950, 110, 370, 430)
+    draw_beveled_panel(surf, party_panel, title="Party (6 Members)")
+    draw_beveled_panel(surf, rules_panel, title="Quest Rules")
+
+    # 6 adventurer cards in a 3-column, 2-row grid
+    card_w, card_h = 244, 196
+    col_step = card_w + 18
+    row_step = card_h + 18
+    grid_w = 3 * card_w + 2 * 18
+    grid_x = party_panel.x + (party_panel.width - grid_w) // 2
+    grid_y = party_panel.y + 60
+
+    for index, adventurer_id in enumerate(party_ids[:6]):
+        adventurer = ADVENTURERS_BY_ID.get(adventurer_id)
+        if adventurer is None:
+            continue
+        row, col = divmod(index, 3)
+        card_rect = pygame.Rect(grid_x + col * col_step, grid_y + row * row_step, card_w, card_h)
+        is_favorite = adventurer_id == favorite_id
+        draw_adventurer_card(
+            surf,
+            card_rect,
+            mouse_pos,
+            adventurer,
+            selected=is_favorite,
+            tag_line="Favorite — Locked In" if is_favorite else None,
+        )
+
+    # Quest rules text
+    rule_lines = [
+        "Win Condition: 3 wins before 3 losses.",
+        "",
+        "Each encounter: choose 3 of your 6.",
+        "Tune formation between every fight.",
+        "",
+        "Rewards accumulate over the run.",
+        "Rep gain is applied at the end.",
+    ]
+    for index, line in enumerate(rule_lines):
+        if not line:
+            continue
+        draw_text(surf, line, font_body(16, bold=(index == 0)), GOLD_BRIGHT if index == 0 else TEXT_SOFT, (rules_panel.x + 24, rules_panel.y + 58 + index * 26))
+
+    back_btn = pygame.Rect(80, 802, 280, 46)
+    confirm_btn = pygame.Rect(400, 802, 520, 46)
+    draw_secondary_button(surf, back_btn, mouse_pos, "Back")
+    draw_primary_button(surf, confirm_btn, mouse_pos, "Confirm Party & Set Loadouts")
+    btns["back"] = btns.pop("left")
+    btns["confirm"] = confirm_btn
     return btns
 
 
