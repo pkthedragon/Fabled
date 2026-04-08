@@ -2590,14 +2590,21 @@ def draw_bouts_menu(surf, mouse_pos):
         right_icons=(("settings", "S", False), ("quit", "X", True)),
         subtitle=None,
     )
-    card_rect = pygame.Rect(340, 194, 720, 372)
+    card_rect = pygame.Rect(290, 160, 820, 460)
     draw_beveled_panel(surf, card_rect, title="Modes")
-    ai_rect = pygame.Rect(card_rect.x + 58, card_rect.y + 84, card_rect.width - 116, 92)
-    lan_rect = pygame.Rect(card_rect.x + 58, card_rect.y + 212, card_rect.width - 116, 92)
-    draw_primary_button(surf, ai_rect, mouse_pos, "AI")
-    draw_primary_button(surf, lan_rect, mouse_pos, "LAN")
+    btn_w = card_rect.width - 116
+    random_rect = pygame.Rect(card_rect.x + 58, card_rect.y + 72, btn_w, 88)
+    focused_rect = pygame.Rect(card_rect.x + 58, card_rect.y + 192, btn_w, 88)
+    lan_rect = pygame.Rect(card_rect.x + 58, card_rect.y + 316, btn_w, 88)
+    draw_primary_button(surf, random_rect, mouse_pos, "Random Bout")
+    draw_secondary_button(surf, focused_rect, mouse_pos, "Focused Bout")
+    draw_secondary_button(surf, lan_rect, mouse_pos, "LAN")
+    draw_text(surf, "Draft from a shared pool of 9 adventurers. Adapt to what your opponent leaves.", font_body(15), TEXT_SOFT, (random_rect.x + 16, random_rect.y + 52))
+    draw_text(surf, "Select from your full roster. Bring the team you know.", font_body(15), TEXT_SOFT, (focused_rect.x + 16, focused_rect.y + 52))
+    draw_text(surf, "Bout against a local opponent over LAN.", font_body(15), TEXT_SOFT, (lan_rect.x + 16, lan_rect.y + 52))
     btns["back"] = btns.pop("left")
-    btns["vs_ai"] = ai_rect
+    btns["vs_random"] = random_rect
+    btns["vs_focused"] = focused_rect
     btns["vs_lan"] = lan_rect
     return btns
 
@@ -2638,15 +2645,20 @@ def draw_bout_lobby(surf, mouse_pos, p1_ready: bool, p2_ready: bool, *, player_s
     return btns
 
 
-def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids, current_player, *, player_seat: int = 1, detail_scroll: int = 0):
+def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids, current_player, *, player_seat: int = 1, detail_scroll: int = 0, mode_id: str = "random"):
     draw_background(surf)
+    screen_title = "Focused Bout — Roster Selection" if mode_id == "focused" else "Bout Draft"
+    if current_player == player_seat:
+        pick_subtitle = "Your Pick"
+    else:
+        pick_subtitle = "AI Rival Picking..."
     btns = draw_top_bar(
         surf,
-        "Bout Draft",
+        screen_title,
         mouse_pos,
         left_icon="<",
         right_icons=(("settings", "S", False), ("quit", "X", True)),
-        subtitle=f"{'Your' if current_player == player_seat else 'AI Rival'} Pick - Player {current_player}",
+        subtitle=pick_subtitle,
     )
     def draw_compact_pick_tile(rect, adventurer, *, drafted_label="DRAFTED"):
         base, accent = _portrait_palette(adventurer)

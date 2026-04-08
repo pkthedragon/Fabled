@@ -6,6 +6,7 @@ import random
 import pygame
 
 from campaign_save import save_campaign
+from models import BoutRunState
 from quests_ai_bout import choose_bout_pick
 from quests_ai_loadout import solve_team_loadout
 from quests_ai_quest import choose_quest_party
@@ -143,6 +144,7 @@ class StorybookMode:
         self.guild_party_index = 0
         self.guild_party_adventurer_scroll = 0
 
+        self.bout_run = BoutRunState()
         self.bout_mode_index = 0
         self.bout_opponent_mode = "ai"
         self.bout_ready_1 = False
@@ -1391,6 +1393,7 @@ class StorybookMode:
                 self.bout_current_player,
                 player_seat=self.bout_player_seat,
                 detail_scroll=self.bout_draft_detail_scroll,
+                mode_id=self._bout_mode()["id"],
             )
         elif self.route == "bout_loadout":
             self.last_buttons = sbui.draw_bout_loadout(
@@ -1784,12 +1787,11 @@ class StorybookMode:
             if self._hit(btns.get("back"), pos):
                 self.route = "guild_hall"
                 return None
-            if self._hit(btns.get("vs_ai"), pos):
-                self.bout_opponent_mode = "ai"
-                self.bout_ready_1 = False
-                self.bout_ready_2 = True
-                self.bout_player_seat = 1
-                self.route = "bout_lobby"
+            if self._hit(btns.get("vs_random"), pos):
+                self._start_bout_series("random")
+                return None
+            if self._hit(btns.get("vs_focused"), pos):
+                self._start_bout_series("focused")
                 return None
             if self._hit(btns.get("vs_lan"), pos):
                 self.bout_opponent_mode = "lan"
@@ -2489,18 +2491,27 @@ class StorybookMode:
 
     def _finalize_bout_result(self, lines: list[str]) -> list[str]:
         mode = self._bout_mode()
+        self.bout_run.match_count += 1
         if self.result_victory:
             self.story_bout_wins += 1
+            self.bout_run.player_wins += 1
             level_lines = self._apply_exp_gain(0)
         else:
             self.story_bout_losses += 1
+            self.bout_run.opponent_wins += 1
             level_lines = []
+        series_score = f"{self.bout_run.player_wins}-{self.bout_run.opponent_wins}"
+        series_over = self.bout_run.player_wins >= 2 or self.bout_run.opponent_wins >= 2
+        if series_over:
+            self.bout_run.active = False
+            series_result = "Series won!" if self.bout_run.player_wins >= 2 else "Series lost."
+        else:
+            series_result = f"Match {self.bout_run.match_count} of 3."
         summary = [
             f"Mode: {mode['name']}",
-            f"Bout record: {self.story_bout_wins}-{self.story_bout_losses}",
+            f"Series: {series_score}  —  {series_result}",
         ]
         if self.result_victory:
-            summary.append("Bout complete.")
             summary.extend(level_lines)
         self._persist_profile()
         seat_note = "You drafted second and carried the round-one bonus swap." if self.bout_player_seat == 2 else "Your opponent drafted second and opened with the bonus swap advantage."
@@ -2517,10 +2528,16 @@ class StorybookMode:
         else:
             if self.bout_opponent_mode == "lan":
                 self.route = "bouts_menu"
+            elif self.bout_run.active:
+                # Series still in progress — start next match
+                mode_id = self._bout_mode()["id"]
+                if mode_id == "focused":
+                    self._enter_bout_loadout()
+                else:
+                    self._start_bout_draft()
             else:
-                self.bout_ready_1 = False
-                self.bout_ready_2 = True
-                self.route = "bout_lobby"
+                # Series over — return to bouts menu
+                self.route = "bouts_menu"
 
     def _return_from_results(self):
         if self.result_kind == "quest":
@@ -2531,6 +2548,7 @@ class StorybookMode:
             else:
                 self.route = "guild_hall"
         else:
+            self.bout_run.active = False
             self.route = "bouts_menu"
 
     def _restart_current_battle(self):
@@ -2555,6 +2573,7 @@ class StorybookMode:
                 self._persist_profile()
             self.route = "training_grounds" if self.quest_context == "training" else "guild_hall"
         elif self.current_battle_result_kind == "bout":
+            self.bout_run = BoutRunState()
             self.route = "bouts_menu"
         else:
             self.route = "guild_hall"
@@ -2906,6 +2925,31 @@ class StorybookMode:
             "focused": "hard",
         }.get(mode_id, "normal")
 
+    def _start_bout_series(self, mode: str):
+        mode_index = next((i for i, m in enumerate(BOUT_MODES) if m["id"] == mode), 0)
+        self.bout_mode_index = mode_index
+        self.bout_opponent_mode = "ai"
+        self.bout_player_seat = 1
+        self.bout_ai_seat = 2
+        self.bout_run = BoutRunState(active=True, mode=mode)
+        if mode == "focused":
+            self._start_focused_bout_selection()
+        else:
+            self._start_bout_draft()
+
+    def _start_focused_bout_selection(self):
+        all_ids = sorted(ADVENTURERS_BY_ID.keys())
+        self.bout_pool_ids = all_ids
+        self.bout_team1_ids = []
+        self.bout_team2_ids = []
+        self.bout_player_seat = self.rng.choice((1, 2))
+        self.bout_ai_seat = 1 if self.bout_player_seat == 2 else 2
+        self.bout_current_player = self.bout_player_seat
+        self.bout_focus_id = self.bout_pool_ids[0]
+        self.bout_draft_detail_scroll = 0
+        self.route = "bout_draft"
+        self._focus_next_available_bout_pick()
+
     def _start_bout_draft(self):
         self.bout_pool_ids = draft_offer(9)
         self.bout_team1_ids = []
@@ -2932,12 +2976,15 @@ class StorybookMode:
     def _record_bout_pick(self, seat: int, adventurer_id: str):
         if adventurer_id not in self._available_bout_ids():
             return
+        focused = self._bout_mode()["id"] == "focused"
         if seat == 1:
             self.bout_team1_ids.append(adventurer_id)
-            self.bout_current_player = 2
+            if not focused or len(self.bout_team1_ids) >= 3:
+                self.bout_current_player = 2
         else:
             self.bout_team2_ids.append(adventurer_id)
-            self.bout_current_player = 1
+            if not focused or len(self.bout_team2_ids) >= 3:
+                self.bout_current_player = 1
 
     def _focus_next_available_bout_pick(self):
         available = self._available_bout_ids()
