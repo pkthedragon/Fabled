@@ -954,10 +954,12 @@ class StorybookMode:
         run_state["team"] = team
         if not run_state.get("active") or len(team) != 6:
             return
+        pool_ids = run_state.get("artifact_pool") or []
+        allowed_artifact_ids = sorted(pool_ids) if pool_ids else sorted(self._loadout_artifact_ids(allow_all=False))
         self.quest_party_loadout_state = {
             "team1": run_state["team"],
             "team2": [],
-            "team1_allowed_artifact_ids": sorted(self._loadout_artifact_ids(allow_all=False)),
+            "team1_allowed_artifact_ids": allowed_artifact_ids,
         }
         self.quest_party_loadout_index = 0
         self.quest_party_loadout_detail_scroll = 0
@@ -2655,6 +2657,7 @@ class StorybookMode:
         run_state["party_id"] = f"Favorite:{favorite_id}"
         run_state["match_count"] = 0
         run_state["total_gold_earned"] = 0
+        run_state["artifact_pool"] = self._draw_quest_artifact_pool(self.quest_selected_ids)
         self.profile.ranked_current_quest_id = quest_id
         self.quest_draft_mode = "encounter"
         self.quest_draft_locked_id = None
@@ -2663,6 +2666,30 @@ class StorybookMode:
         self._persist_profile()
         self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
         self._enter_quest_party_loadout()
+
+    def _draw_quest_artifact_pool(self, party_ids: list, count: int = 3) -> list:
+        """Draw `count` random artifacts from the full pool for the quest run.
+
+        Prioritises artifacts that are compatible with at least one adventurer in the party,
+        but falls back to any artifact if needed.
+        """
+        party_classes: set[str] = set()
+        for adv_id in party_ids:
+            adventurer = ADVENTURERS_BY_ID.get(adv_id)
+            if adventurer is None:
+                continue
+            profile = ADVENTURER_AI.get(adv_id)
+            if profile:
+                party_classes.update(profile.preferred_classes)
+            else:
+                party_classes.update(CLASS_SKILLS.keys())
+
+        compatible = [a.id for a in ARTIFACTS if any(cls in party_classes for cls in a.attunement)]
+        pool = self.rng.sample(compatible, min(count, len(compatible)))
+        if len(pool) < count:
+            remaining = [a.id for a in ARTIFACTS if a.id not in pool]
+            pool += self.rng.sample(remaining, min(count - len(pool), len(remaining)))
+        return pool
 
     def _enter_quest_loadout(self):
         if len(self.quest_selected_ids) != 3:
@@ -2879,8 +2906,14 @@ class StorybookMode:
         )
         difficulty = ai_difficulty_for_reputation(match_profile.reputation)
         all_adventurer_ids = list(ADVENTURERS_BY_ID.keys())
+        # choose_quest_party requires a small pool (class-uniqueness constraint); sample 12
+        # from the full roster so the enemy conceptually draws from anyone.
+        candidate_pool = [adv_id for adv_id in all_adventurer_ids if adv_id not in player_party_ids]
+        # assign_blind_quest_loadouts requires unique classes per adventurer (6 classes max)
+        sample_size = min(6, len(candidate_pool))
+        enemy_sample = self.rng.sample(candidate_pool, sample_size)
         enemy_choice = choose_quest_party(
-            all_adventurer_ids,
+            enemy_sample,
             enemy_party_ids=player_party_ids,
             difficulty=difficulty,
             rng=self.rng,
