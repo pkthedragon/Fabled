@@ -287,7 +287,10 @@ def _can_swap(battle, actor, target, *, bonus: bool) -> bool:
         return False
     if not bonus:
         return True
-    intrinsic_bonus_swap = actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight"
+    if actor.class_skill.id == "covert":
+        intrinsic_bonus_swap = actor.markers.get("spells_cast_this_round", 0) > 0
+    else:
+        intrinsic_bonus_swap = actor.defn.id == "the_green_knight"
     return intrinsic_bonus_swap or _team_bonus_swap_available(team_for_actor(battle, actor))
 
 
@@ -611,7 +614,8 @@ def available_action_specs(battle, actor, *, bonus: bool = False) -> list[Action
     if bonus:
         if _can_switch(actor, bonus=True):
             specs.append(ActionSpec(kind="switch", bonus=True))
-        if actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight" or _team_bonus_swap_available(team):
+        covert_bonus_swap = actor.class_skill.id == "covert" and actor.markers.get("spells_cast_this_round", 0) > 0
+        if covert_bonus_swap or actor.defn.id == "the_green_knight" or _team_bonus_swap_available(team):
             for ally in _allies(actor, battle):
                 spec = ActionSpec(kind="swap", target_ref=_unit_ref(battle, ally), bonus=True)
                 if _spec_is_legal(battle, actor, spec):

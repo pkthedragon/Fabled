@@ -1,0 +1,119 @@
+{
+  "title": "Quest Encounter Select",
+  "route": "quest_draft",
+  "builder": "build_quest_draft_encounter",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "enemy_cards",
+      "label": "enemy_cards_0",
+      "hover": "hover__enemy_cards_0.png",
+      "click": "click__enemy_cards_0__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "enemy_cards",
+      "label": "enemy_cards_1",
+      "hover": "hover__enemy_cards_1.png",
+      "click": "click__enemy_cards_1__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "enemy_cards",
+      "label": "enemy_cards_2",
+      "hover": "hover__enemy_cards_2.png",
+      "click": "click__enemy_cards_2__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_0",
+      "hover": "hover__cards_0.png",
+      "click": "click__cards_0__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_1",
+      "hover": "hover__cards_1.png",
+      "click": "click__cards_1__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_2",
+      "hover": "hover__cards_2.png",
+      "click": "click__cards_2__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_3",
+      "hover": "hover__cards_3.png",
+      "click": "click__cards_3__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_4",
+      "hover": "hover__cards_4.png",
+      "click": "click__cards_4__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_5",
+      "hover": "hover__cards_5.png",
+      "click": "click__cards_5__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "pick",
+      "label": "pick",
+      "hover": "hover__pick.png",
+      "click": "click__pick__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "continue",
+      "label": "continue",
+      "hover": "hover__continue.png",
+      "click": "click__continue__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    }
+  ]
+}

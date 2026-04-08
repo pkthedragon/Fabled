@@ -1,0 +1,111 @@
+{
+  "title": "Favorite Select",
+  "route": "favored_adventurer_select",
+  "builder": "build_favorite_select",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__player_menu.png",
+      "after_route": "player_menu",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_0",
+      "hover": "hover__cards_0.png",
+      "click": "click__cards_0__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_1",
+      "hover": "hover__cards_1.png",
+      "click": "click__cards_1__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_2",
+      "hover": "hover__cards_2.png",
+      "click": "click__cards_2__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_3",
+      "hover": "hover__cards_3.png",
+      "click": "click__cards_3__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_4",
+      "hover": "hover__cards_4.png",
+      "click": "click__cards_4__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_5",
+      "hover": "hover__cards_5.png",
+      "click": "click__cards_5__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_6",
+      "hover": "hover__cards_6.png",
+      "click": "click__cards_6__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_7",
+      "hover": "hover__cards_7.png",
+      "click": "click__cards_7__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "cards",
+      "label": "cards_8",
+      "hover": "hover__cards_8.png",
+      "click": "click__cards_8__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "confirm",
+      "label": "confirm",
+      "hover": "hover__confirm.png",
+      "click": "click__confirm__player_menu.png",
+      "after_route": "player_menu",
+      "click_error": null
+    }
+  ]
+}

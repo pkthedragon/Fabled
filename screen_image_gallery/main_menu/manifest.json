@@ -1,0 +1,95 @@
+{
+  "title": "Main Menu",
+  "route": "main_menu",
+  "builder": "build_main_menu",
+  "interactables": [
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__main_menu.png",
+      "after_route": "main_menu",
+      "click_error": null
+    },
+    {
+      "key": "profile",
+      "label": "profile",
+      "hover": "hover__profile.png",
+      "click": "click__profile__player_menu.png",
+      "after_route": "player_menu",
+      "click_error": null
+    },
+    {
+      "key": "guild_hall",
+      "label": "guild_hall",
+      "hover": "hover__guild_hall.png",
+      "click": "click__guild_hall__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "bouts",
+      "label": "bouts",
+      "hover": "hover__bouts.png",
+      "click": "click__bouts__bouts_menu.png",
+      "after_route": "bouts_menu",
+      "click_error": null
+    },
+    {
+      "key": "market",
+      "label": "market",
+      "hover": "hover__market.png",
+      "click": "click__market__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "catalog",
+      "label": "catalog",
+      "hover": "hover__catalog.png",
+      "click": "click__catalog__catalog.png",
+      "after_route": "catalog",
+      "click_error": null
+    },
+    {
+      "key": "training_grounds",
+      "label": "training_grounds",
+      "hover": "hover__training_grounds.png",
+      "click": "click__training_grounds__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "employee_assistant",
+      "label": "employee_assistant",
+      "hover": "hover__employee_assistant.png",
+      "click": "click__employee_assistant__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "employee_bartender",
+      "label": "employee_bartender",
+      "hover": "hover__employee_bartender.png",
+      "click": "click__employee_bartender__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "employee_server",
+      "label": "employee_server",
+      "hover": "hover__employee_server.png",
+      "click": "click__employee_server__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    }
+  ]
+}

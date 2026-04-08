@@ -65,6 +65,8 @@ class CampaignProfile:
     tutorials_enabled: bool = True
     saved_teams: List[dict] = field(default_factory=list)
     fast_resolution: bool = False
+    battle_log_popups: bool = True
+    screen_shake: bool = True
     new_unlocks: Set[str] = field(default_factory=set)
     player_exp: int = 0
     gold: int = 0

@@ -189,7 +189,6 @@ class CombatantState:
             and isinstance(battle.markers.get("air_currents"), dict)
             and battle.markers["air_currents"].get(self.slot, 0) > 0
         ):
-            enemy_team = battle.team1 if self in battle.team2.members else battle.team2
             ally_team = battle.team1 if self in battle.team1.members else battle.team2
             if any(
                 ally.defn.id == "witch_of_the_east" and ally.primary_weapon.id == "comet"
@@ -197,11 +196,11 @@ class CombatantState:
             ):
                 base += 25
         if stat == "speed" and self.slot in BACKLINE_SLOTS:
-            base -= 50
+            base = base // 2
         if stat == "speed" and self.has_status("shock"):
             base -= 25
         if self.class_skill.id == "bulwark" and stat == "defense":
-            base += 15 if self.slot == SLOT_FRONT else 5
+            base += 25 if self.slot == SLOT_FRONT else 15
         total = base + self.best_buff(stat) - self.best_debuff(stat)
         if self.defn.id == "maui_sunthief" and stat == "defense" and self.markers.get("raise_the_sky_rounds", 0) > 0:
             total *= 2

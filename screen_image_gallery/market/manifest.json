@@ -1,0 +1,111 @@
+{
+  "title": "Market",
+  "route": "market",
+  "builder": "build_market",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__main_menu.png",
+      "after_route": "main_menu",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_0",
+      "hover": "hover__tabs_0.png",
+      "click": "click__tabs_0__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_1",
+      "hover": "hover__tabs_1.png",
+      "click": "click__tabs_1__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_2",
+      "hover": "hover__tabs_2.png",
+      "click": "click__tabs_2__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_3",
+      "hover": "hover__tabs_3.png",
+      "click": "click__tabs_3__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_4",
+      "hover": "hover__tabs_4.png",
+      "click": "click__tabs_4__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_5",
+      "hover": "hover__tabs_5.png",
+      "click": "click__tabs_5__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_6",
+      "hover": "hover__tabs_6.png",
+      "click": "click__tabs_6__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_7",
+      "hover": "hover__tabs_7.png",
+      "click": "click__tabs_7__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_8",
+      "hover": "hover__tabs_8.png",
+      "click": "click__tabs_8__market.png",
+      "after_route": "market",
+      "click_error": null
+    },
+    {
+      "key": "buy",
+      "label": "buy",
+      "hover": "hover__buy.png",
+      "click": "click__buy__market.png",
+      "after_route": "market",
+      "click_error": null
+    }
+  ]
+}

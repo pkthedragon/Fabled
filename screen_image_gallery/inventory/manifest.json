@@ -1,0 +1,111 @@
+{
+  "title": "Inventory",
+  "route": "inventory",
+  "builder": "build_inventory",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__player_menu.png",
+      "after_route": "player_menu",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_0",
+      "hover": "hover__entries_0.png",
+      "click": "click__entries_0__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_1",
+      "hover": "hover__entries_1.png",
+      "click": "click__entries_1__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_2",
+      "hover": "hover__entries_2.png",
+      "click": "click__entries_2__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_3",
+      "hover": "hover__entries_3.png",
+      "click": "click__entries_3__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_4",
+      "hover": "hover__entries_4.png",
+      "click": "click__entries_4__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_5",
+      "hover": "hover__entries_5.png",
+      "click": "click__entries_5__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_6",
+      "hover": "hover__entries_6.png",
+      "click": "click__entries_6__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_7",
+      "hover": "hover__entries_7.png",
+      "click": "click__entries_7__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_8",
+      "hover": "hover__entries_8.png",
+      "click": "click__entries_8__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_9",
+      "hover": "hover__entries_9.png",
+      "click": "click__entries_9__inventory.png",
+      "after_route": "inventory",
+      "click_error": null
+    }
+  ]
+}

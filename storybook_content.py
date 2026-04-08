@@ -365,6 +365,24 @@ def draft_offer(size: int, seed: int | None = None) -> list[str]:
     return [adventurer.id for adventurer in rng.sample(ADVENTURERS, size)]
 
 
+def _status_duration_text(status_spec) -> str:
+    return f"{status_spec.kind.title()} ({status_spec.duration}r)"
+
+
+def _stat_label(stat_name: str) -> str:
+    return {
+        "hp": "HP",
+        "attack": "Attack",
+        "defense": "Defense",
+        "speed": "Speed",
+    }.get(stat_name, stat_name.title())
+
+
+def _stat_mod_text(stat_spec) -> str:
+    sign = "+" if stat_spec.amount >= 0 else ""
+    return f"{_stat_label(stat_spec.stat)} {sign}{stat_spec.amount} ({stat_spec.duration}r)"
+
+
 def _effect_summary(effect) -> str:
     chunks: list[str] = []
     if effect.power > 0:
@@ -377,21 +395,40 @@ def _effect_summary(effect) -> str:
         chunks.append(f"Ammo {effect.ammo_cost}")
     if effect.spread:
         chunks.append("Spread")
+    if effect.counts_as_spell:
+        chunks.append("Counts as Spell")
+    if effect.ignore_targeting:
+        chunks.append("Ignores Targeting")
     if effect.recoil:
         chunks.append(f"{int(effect.recoil * 100)}% Recoil")
     if effect.lifesteal:
         chunks.append(f"{int(effect.lifesteal * 100)}% Lifesteal")
+    if effect.bonus_power_if_status and effect.bonus_power:
+        chunks.append(f"+{effect.bonus_power} vs {effect.bonus_power_if_status.title()}")
     if effect.description:
         chunks.append(effect.description)
+    if effect.target_statuses:
+        chunks.append(f"Target: {', '.join(_status_duration_text(status_spec) for status_spec in effect.target_statuses)}")
+    if effect.self_statuses:
+        chunks.append(f"Self: {', '.join(_status_duration_text(status_spec) for status_spec in effect.self_statuses)}")
+    if effect.target_buffs:
+        chunks.append(f"Target Buffs: {', '.join(_stat_mod_text(stat_spec) for stat_spec in effect.target_buffs)}")
+    if effect.target_debuffs:
+        chunks.append(f"Target Debuffs: {', '.join(_stat_mod_text(stat_spec) for stat_spec in effect.target_debuffs)}")
+    if effect.self_buffs:
+        chunks.append(f"Self Buffs: {', '.join(_stat_mod_text(stat_spec) for stat_spec in effect.self_buffs)}")
     return " | ".join(chunks) if chunks else effect.name
 
 
 def _weapon_block(weapon) -> str:
-    lines = [f"{weapon.name} ({weapon.kind.title()})", f"Strike: {_effect_summary(weapon.strike)}"]
+    lines = [f"{weapon.name} ({weapon.kind.title()})"]
+    if weapon.ammo:
+        lines.append(f"Ammo: {weapon.ammo}")
+    lines.append(f"Strike: {_effect_summary(weapon.strike)}")
     for passive in weapon.passive_skills:
-        lines.append(f"Passive: {passive.name} â€” {passive.description}")
+        lines.append(f"Passive: {passive.name} - {passive.description}")
     for spell in weapon.spells:
-        lines.append(f"Spell: {spell.name} â€” {_effect_summary(spell)}")
+        lines.append(f"Spell: {spell.name} - {_effect_summary(spell)}")
     return "\n".join(lines)
 
 

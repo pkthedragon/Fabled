@@ -249,7 +249,10 @@ def enemy_team_for_actor(battle: BattleState, actor: CombatantState) -> TeamStat
 
 
 def _intrinsic_bonus_swap(actor: CombatantState) -> bool:
-    return actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight"
+    if actor.class_skill.id == "covert":
+        # Covert only grants bonus swap if actor cast a Spell this round
+        return actor.markers.get("spells_cast_this_round", 0) > 0
+    return actor.defn.id == "the_green_knight"
 
 
 def _intrinsic_bonus_switch(actor: CombatantState) -> bool:
@@ -266,9 +269,12 @@ def _team_bonus_swap_available(actor: CombatantState, battle: BattleState) -> bo
 def _artifact_ready(unit: CombatantState, artifact_id: str, battle: Optional[BattleState] = None) -> bool:
     if battle is not None:
         enemy_team = enemy_team_for_actor(battle, unit)
-        enemy_front = enemy_team.frontline()
-        if enemy_front is not None and enemy_front.defn.id == "storyweaver_anansi":
-            return False
+        # Tangled Plots: block reactive artifacts during Anansi's acting turn or if this unit is Rooted
+        anansi_alive = any(e.defn.id == "storyweaver_anansi" for e in enemy_team.alive())
+        if anansi_alive:
+            anansi_acting = battle.markers.get("anansi_acting_turn", 0) > 0
+            if anansi_acting or unit.has_status("root"):
+                return False
     return (
         unit.artifact is not None
         and unit.artifact.id == artifact_id
@@ -295,7 +301,6 @@ def _spend_reactive_artifact(unit: CombatantState, battle: BattleState):
     unit.cooldowns[unit.artifact.spell.id] = cooldown
     unit.markers["spells_cast_this_round"] = unit.markers.get("spells_cast_this_round", 0) + 1
     unit.markers["cast_artifact_spell_this_round"] = 1
-    _grant_meter(unit, battle, counts_as_spell=True)
 
 
 def _hp_change_text(before_hp: int, after_hp: int) -> str:
@@ -435,11 +440,23 @@ def _try_prevent_fatal(unit: CombatantState, battle: BattleState, *, previous_hp
     if unit.hp > 0:
         return False
     if _artifact_ready(unit, "tarnhelm", battle):
-        _spend_reactive_artifact(unit, battle)
-        unit.hp = 1
-        unit.ko = False
-        battle.log_add(f"{unit.name}'s Tarnhelm leaves them at 1 HP.")
-        return True
+        source_kind = battle.markers.get("_current_source_kind", "")
+        if source_kind == "strike":
+            _spend_reactive_artifact(unit, battle)
+            attacker = battle.markers.get("_current_attacker")
+            if attacker is not None and not attacker.ko:
+                retaliation_dmg = max(1, math.ceil(
+                    60 * (_formula_offense_stat(unit, battle, opponent=attacker) / max(1, _formula_stat(attacker, "defense", battle, opponent=unit)))
+                ))
+                previous_attacker_hp = attacker.hp
+                attacker.hp = max(0, attacker.hp - retaliation_dmg)
+                battle.log_add(f"{unit.name}'s Tarnhelm retaliates for {retaliation_dmg} damage against {attacker.name} {_hp_change_text(previous_attacker_hp, attacker.hp)}.")
+                if attacker.hp <= 0:
+                    if not _try_prevent_fatal(attacker, battle, previous_hp=previous_attacker_hp):
+                        _set_ko(attacker, battle)
+                        battle.log_add(f"{attacker.name} is knocked out.")
+            # Unit still dies — do NOT return True
+            return False
     if _artifact_ready(unit, "enchanted_lamp", battle) and previous_hp > math.ceil(unit.max_hp * 0.5):
         _spend_reactive_artifact(unit, battle)
         unit.hp = 1
@@ -471,11 +488,27 @@ def _all_alive_units(battle: BattleState) -> List[CombatantState]:
 
 def determine_initiative_order(battle: BattleState) -> List[CombatantState]:
     order = list(battle.team1.alive()) + list(battle.team2.alive())
+    # Precompute team average speeds for tiebreaking (step 2)
+    def _team_avg_speed(unit: CombatantState) -> float:
+        team = team_for_actor(battle, unit)
+        alive = team.alive()
+        return sum(u.get_stat("speed", battle) for u in alive) / max(1, len(alive))
+    # Pre-assign coinflip values if not already set (step 3)
+    rng_key = "_initiative_rng"
+    if rng_key not in battle.markers:
+        import random as _random
+        battle.markers[rng_key] = {id(u): _random.random() for u in order}
+    rng_vals = battle.markers[rng_key]
+    for unit in order:
+        if id(unit) not in rng_vals:
+            import random as _random
+            rng_vals[id(unit)] = _random.random()
     order.sort(
         key=lambda unit: (
             -_initiative_speed(battle, unit),
-            player_num_for_actor(battle, unit),
-            SLOT_PRIORITY[unit.slot],
+            unit.primary_weapon.strike.power,   # lower power acts first (tiebreak step 1)
+            -_team_avg_speed(unit),              # higher team avg speed acts first (tiebreak step 2)
+            rng_vals.get(id(unit), 0.5),        # coinflip (tiebreak step 3)
         )
     )
     battle.initiative_order = order
@@ -513,7 +546,7 @@ def start_round(battle: BattleState) -> List[CombatantState]:
         unit.markers["spells_cast_this_round"] = 0
         unit.markers["cast_artifact_spell_this_round"] = 0
         if battle.round_num == 1 and unit.defn.id == "witch_of_the_east":
-            _set_air_current(battle, unit.slot, 2)
+            _set_air_current(battle, unit.slot, 1)
     battle.team1.markers["crumb_picked_round"] = 0
     battle.team2.markers["crumb_picked_round"] = 0
     order = determine_initiative_order(battle)
@@ -532,27 +565,8 @@ def apply_start_of_round_effects(battle: BattleState):
     for unit in battle.team1.alive() + battle.team2.alive():
         if unit.markers.get("cant_strike_rounds", 0) > 0:
             battle.log_add(f"{unit.name} cannot Strike this round.")
-    for team in (battle.team1, battle.team2):
-        enemy_team = battle.team2 if team is battle.team1 else battle.team1
-        for unit in team.alive():
-            if unit.defn.id != "briar_rose":
-                continue
-            rooted = [
-                enemy
-                for enemy in enemy_team.alive()
-                if enemy.has_status("root") and not enemy.has_status("root_immunity")
-            ]
-            if not rooted:
-                continue
-            target = min(rooted, key=lambda enemy: enemy.hp)
-            target.markers["cant_act_rounds"] = 1
-            target.markers["cant_act_reason"] = "curse_of_sleeping"
-            if unit.markers.get("falling_kingdom_rounds", 0) > 0:
-                battle.log_add(f"Curse of Sleeping stops {target.name} from acting.")
-            else:
-                target.remove_status("root")
-                target.add_status("root_immunity", 2)
-                battle.log_add(f"Curse of Sleeping removes Root from {target.name} and they cannot act.")
+    # Falling Kingdom passive: Rooted enemies are treated as Weakened for damage purposes
+    # (handled in compute_damage via the falling_kingdom_passive check)
 
 
 def queue_strike(actor: CombatantState, target: CombatantState):
@@ -725,6 +739,8 @@ def _cannot_act_message(actor: CombatantState) -> str:
     reason = actor.markers.get("cant_act_reason")
     if reason == "curse_of_sleeping":
         return f"{actor.name} cannot act because Curse of Sleeping stopped them this round."
+    if reason == "curse_of_slumber":
+        return f"{actor.name} cannot act because Curse of Slumber silenced them this round."
     if reason == "time_stop":
         return f"{actor.name} cannot act because Time Stop removed their action this round."
     return f"{actor.name} cannot act."
@@ -756,7 +772,9 @@ def resolve_action_phase(battle: BattleState):
         actor.queued_action = None
         if action is None:
             continue
+        battle.markers["anansi_acting_turn"] = 1 if actor.defn.id == "storyweaver_anansi" else 0
         resolve_action(actor, action, battle)
+        battle.markers["anansi_acting_turn"] = 0
         if battle.winner is not None:
             return
 
@@ -877,6 +895,11 @@ def do_switch(actor: CombatantState, battle: BattleState):
     actor.markers["switched_this_round"] = 1
     if actor.class_skill.id == "armed":
         actor.markers["free_ranged_after_switch"] = 1
+    if actor.class_skill.id == "arcane":
+        actor.markers["arcane_switch_ready"] = 1
+    if actor.class_skill.id == "vigilant":
+        actor.add_status("guard", 2)
+        battle.log_add(f"{actor.name}'s Vigilant stance grants Guard for 2 rounds.")
     if actor.defn.id == "storyweaver_anansi" and actor.primary_weapon.id == "the_sword":
         actor.add_buff("attack", 25, 2)
         actor.add_debuff("speed", 25, 2)
@@ -949,7 +972,7 @@ def do_swap(
         if participant.defn.id == "odysseus_the_nobody":
             participant.add_buff("attack", 25, 2)
         if participant.defn.id == "witch_of_the_east":
-            _set_air_current(battle, participant.slot, 2)
+            _set_air_current(battle, participant.slot, 1)
         enemy_team = enemy_team_for_actor(battle, participant)
         for enemy in enemy_team.alive():
             if enemy.defn.id == "tam_lin_thornbound" and enemy.primary_weapon.id == "butterfly_knife":
@@ -992,7 +1015,7 @@ def _prepare_strike_effect(
     target_statuses = list(effect.target_statuses)
 
     if effect.special == "stitch_in_time_strike":
-        power += 40 * (actor.markers.get("spells_cast_this_round", 0) + 1)
+        power += 50 * (actor.markers.get("spells_cast_this_round", 0) + 1)
     if actor.markers.pop("blood_diamond_ready", 0):
         power += 25
     if effect.special == "bonus_vs_backline_55" and target.slot != SLOT_FRONT:
@@ -1029,7 +1052,7 @@ def _prepare_strike_effect(
             target_statuses.extend(copied.get("target_statuses", []))
     if effect.special == "mortar_mortar" and actor.markers.get("bricklayer_triggered_this_round", 0) > 0:
         ammo_cost = 0
-    if effect.special == "spinning_wheel" and any(b.duration > 0 for b in actor.buffs):
+    if effect.special == "spinning_wheel" and (any(b.duration > 0 for b in actor.buffs) or (target is not None and any(b.duration > 0 for b in target.buffs))):
         ammo_cost = 0
     if effect.special == "the_stinger" and target.has_status("spotlight"):
         target_statuses.append(StatusInstance(kind="shock", duration=2))
@@ -1045,8 +1068,9 @@ def _prepare_strike_effect(
         ammo_cost = max(1, ammo_cost * 2)
     if actor.markers.pop("vine_snare_ready", 0):
         ammo_cost = 0
-        if target.has_status("root_immunity"):
-            target.remove_status("root_immunity")
+        if target is not None:
+            target.remove_status("root")
+            target.add_status("root", 2)
     if actor.markers.get("crowstorm_rounds", 0) > 0 and weapon.kind == "magic":
         cooldown = 0
 
@@ -1178,7 +1202,11 @@ def resolve_strike(actor: CombatantState, target: Optional[CombatantState], batt
             battle.log_add(f"{actor.name} has no legal Strike on that target.")
         return
     actor.markers.pop("next_strike_lane_reach", None)
+    battle.markers["_current_attacker"] = actor
+    battle.markers["_current_source_kind"] = "strike"
     _resolve_effect(actor, prepared_effect, target, battle, source_kind="strike", weapon=weapon)
+    battle.markers.pop("_current_attacker", None)
+    battle.markers.pop("_current_source_kind", None)
     actor.markers.pop("guiding_doll_lifesteal_bonus", None)
     if weapon.ammo > 0 and not actor.markers.pop("free_ranged_after_switch", 0):
         actor.ammo_remaining[weapon.id] = max(0, actor.ammo_remaining.get(weapon.id, weapon.ammo) - prepared_effect.ammo_cost)
@@ -1287,6 +1315,8 @@ def resolve_spell(
             enemy.markers["stolen_voices_rounds"] = 2
     if actor.defn.id == "pinocchio_cursed_puppet" and actor.primary_weapon.id == "string_cutter" and actor.markers.get("malice", 0) >= 3:
         actor.markers["next_spell_no_cooldown"] = 1
+    if actor.class_skill.id == "arcane" and actor.markers.pop("arcane_switch_ready", 0):
+        actor.markers["next_spell_no_cooldown"] = 1
     if effect.cooldown > 0 and not actor.markers.pop("next_spell_no_cooldown", 0):
         cooldown = effect.cooldown
         if actor.markers.get("spells_cast_this_round", 0) > 0:
@@ -1373,8 +1403,40 @@ def get_legal_targets(
         return team.alive()
 
     taunt_source = actor.markers.get("taunt_source")
+    # Keen Eye (Robin): ignore Taunt entirely
+    if actor.defn.id == "robin_hooded_avenger" and actor.has_status("taunt"):
+        actor.remove_status("taunt")
+        actor.markers.pop("taunt_source", None)
+        taunt_source = None
     if actor.has_status("taunt") and taunt_source is not None and not taunt_source.ko:
-        return [taunt_source]
+        # Only force-target the taunt source if it is a legal target for this weapon/effect
+        if effect.ignore_targeting or actor.markers.get("ignore_targeting_strikes", 0) > 0:
+            return [unit for unit in enemy.alive() if _is_targetable(actor, unit)]
+        # Compute what targets would be legal if Taunt were ignored
+        # If taunt source is reachable, force it; otherwise allow any legal target
+        enemy_front = enemy.frontline()
+        if weapon is not None and weapon.kind == "melee":
+            if actor.slot != SLOT_FRONT:
+                return []
+            melee_targets = []
+            if enemy_front is not None:
+                melee_targets.append(enemy_front)
+            melee_targets.extend(m for m in enemy.alive() if m.slot != SLOT_FRONT and m.has_status("spotlight"))
+            melee_targets = [u for u in _dedupe(melee_targets) if _is_targetable(actor, u)]
+            if _contains_target(melee_targets, taunt_source):
+                return [taunt_source]
+            return melee_targets if melee_targets else []
+        else:
+            ranged_targets = []
+            if enemy_front is not None:
+                ranged_targets.append(enemy_front)
+            across = enemy.get_slot(actor.slot)
+            if across is not None:
+                ranged_targets.append(across)
+            ranged_targets = [u for u in _dedupe(ranged_targets) if _is_targetable(actor, u)]
+            if _contains_target(ranged_targets, taunt_source):
+                return [taunt_source]
+            return ranged_targets if ranged_targets else []
     if effect.ignore_targeting or actor.markers.get("ignore_targeting_strikes", 0) > 0:
         return [unit for unit in enemy.alive() if _is_targetable(actor, unit)]
 
@@ -1530,7 +1592,7 @@ def _handle_post_damage_reactions(
         retaliation = max(
             1,
             math.ceil(
-                65
+                60
                 * (
                     _formula_offense_stat(target, battle, opponent=source)
                     / max(1, _formula_stat(source, "defense", battle, opponent=target))
@@ -1672,7 +1734,7 @@ def _resolve_effect(
         if effect.power > 0:
             if effect.special == "ally_heal_from_damage":
                 damage = compute_damage(actor, current_target, effect, battle=battle, weapon=weapon)
-                healed = math.ceil(damage * 0.5)
+                healed = math.ceil(damage * 0.75)
                 _heal_unit(current_target, healed, battle, source_label=source_label)
                 damage = 0
             else:
@@ -1757,7 +1819,7 @@ def _apply_nondamage_effects(
     extended_status = False
     applied_buffs: list[tuple[CombatantState, str, int, int]] = []
     for status_spec in effect.target_statuses:
-        if status_spec.kind == "guard" and target.markers.get("unsealed_rounds", 0) > 0:
+        if status_spec.kind in {"guard", "taunt"} and target.markers.get("unsealed_rounds", 0) > 0:
             continue
         if status_spec.kind == "burn":
             target_team = team_for_actor(battle, target)
@@ -1996,6 +2058,8 @@ def _apply_special(
             player_num_for_actor(battle, actor),
             actor.defn.id,
         )
+        actor.add_status("guard", 2)
+        battle.log_add(f"{actor.name}'s Dazzle Guards them for 2 rounds.")
         return
     if special == "average_hp_with_target" and target is not None:
         shared_hp = math.ceil((actor.hp + target.hp) / 2)
@@ -2123,11 +2187,14 @@ def _apply_special(
         for ally in team_for_actor(battle, actor).alive():
             ally.markers["rabbit_hole_extra_rounds"] = ally.markers.get("rabbit_hole_extra_rounds", 0) + 1
         return
-    if special == "falling_kingdom":
-        actor.markers["falling_kingdom_rounds"] = 2
+    if special == "curse_of_slumber":
         for enemy in enemy_team_for_actor(battle, actor).alive():
             enemy.remove_status("root")
             enemy.add_status("root", 2)
+            enemy.markers["cant_strike_rounds"] = max(enemy.markers.get("cant_strike_rounds", 0), 1)
+            enemy.markers["cant_act_rounds"] = max(enemy.markers.get("cant_act_rounds", 0), 1)
+            enemy.markers["cant_act_reason"] = "curse_of_slumber"
+        battle.log_add(f"Curse of Slumber roots and silences all enemies for 1 round.")
         return
     if special == "self_swap_after_strike":
         team = team_for_actor(battle, actor)
@@ -2287,6 +2354,8 @@ def _apply_special(
             min(candidates, key=lambda ally: ally.hp).add_status("guard", 2)
         return
     if special == "unseal" and target is not None:
+        target.remove_status("taunt")
+        target.markers.pop("taunt_source", None)
         target.remove_status("guard")
         target.buffs = [buff for buff in target.buffs if buff.stat != "defense"]
         target.markers["unsealed_rounds"] = 2
@@ -2334,7 +2403,9 @@ def compute_damage(
         if weapon.kind == "melee" and actor.class_skill.id == "martial":
             power += 25
         if weapon.kind == "ranged" and actor.class_skill.id == "deadeye":
-            power += 5
+            power += 15
+        if weapon.kind == "magic" and actor.class_skill.id == "archmage" and actor.slot == SLOT_FRONT:
+            power += 15
     if actor.defn.id == "little_jack" and target.max_hp > actor.max_hp:
         power += 25
     if actor.defn.id == "hunold_the_piper" and target.has_status("shock"):
@@ -2356,6 +2427,16 @@ def compute_damage(
         power = math.ceil(power * 0.85)
     if target.has_status("expose"):
         power = math.ceil(power * 1.15)
+    # Falling Kingdom passive: Rooted enemies are treated as Weakened (take 15% more damage)
+    if (
+        battle is not None
+        and target.has_status("root")
+        and any(
+            ally.defn.id == "briar_rose" and ally.defn.innate.special == "falling_kingdom_passive"
+            for ally in enemy_team_for_actor(battle, target).alive()
+        )
+    ):
+        power = math.ceil(power * 1.15)
     if target.markers.pop("silver_aegis_ready", 0):
         power = math.ceil(power * 0.4)
     if target.markers.get("silver_aegis_always_active", 0) > 0:
@@ -2366,7 +2447,7 @@ def compute_damage(
     if source_kind_is_strike(weapon) and target.has_status("root") and target.markers.get("silken_prose_rounds", 0) > 0:
         damage += 8
     if weapon is not None and weapon.kind == "magic" and target.markers.pop("comet_magic_amp_rounds", 0):
-        damage += 25
+        damage += 40
     if battle is not None and weapon is not None and source_kind_is_strike(weapon):
         actor_team = team_for_actor(battle, actor)
         target_team = team_for_actor(battle, target)
@@ -2407,9 +2488,13 @@ def _grant_meter(
         amount = 0
         if is_strike:
             strike_kind = weapon.kind if weapon is not None else actor.primary_weapon.kind
-            amount += 2 if strike_kind == "melee" else 1
-        if counts_as_spell and actor.class_skill.id == "arcane":
-            amount += 1
+            if strike_kind != "magic":
+                # Non-Magic Strikes charge +1
+                amount += 1
+            # Magic Strikes charge +0
+        elif counts_as_spell:
+            # Non-Ultimate Spells charge +2
+            amount += 2
     team.ultimate_meter = min(ULTIMATE_METER_MAX, team.ultimate_meter + amount)
 
 
@@ -2497,6 +2582,16 @@ def end_round(battle: BattleState):
             duel_lanes[lane] = turns
     if not duel_lanes:
         battle.markers.pop("fated_duel_lanes", None)
+    # Auto-fill meter: starting round 7 +1/round, starting round 12 +2/round
+    current_round = battle.round_num
+    auto_fill = 0
+    if current_round >= 12:
+        auto_fill = 2
+    elif current_round >= 7:
+        auto_fill = 1
+    if auto_fill > 0:
+        for _af_team in (battle.team1, battle.team2):
+            _af_team.ultimate_meter = min(ULTIMATE_METER_MAX, _af_team.ultimate_meter + auto_fill)
     _check_winner(battle)
     battle.round_num += 1
     determine_initiative_order(battle)

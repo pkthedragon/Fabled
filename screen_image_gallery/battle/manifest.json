@@ -1,0 +1,135 @@
+{
+  "title": "Battle",
+  "route": "battle",
+  "builder": "build_battle",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "log_toggle",
+      "label": "log_toggle",
+      "hover": "hover__log_toggle.png",
+      "click": "click__log_toggle__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "resolve",
+      "label": "resolve",
+      "hover": "hover__resolve.png",
+      "click": "click__resolve__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "action_buttons",
+      "label": "action_buttons_0",
+      "hover": "hover__action_buttons_0.png",
+      "click": "click__action_buttons_0__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "action_buttons",
+      "label": "action_buttons_1",
+      "hover": "hover__action_buttons_1.png",
+      "click": "click__action_buttons_1__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "action_buttons",
+      "label": "action_buttons_2",
+      "hover": "hover__action_buttons_2.png",
+      "click": "click__action_buttons_2__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "action_buttons",
+      "label": "action_buttons_3",
+      "hover": "hover__action_buttons_3.png",
+      "click": "click__action_buttons_3__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "action_buttons",
+      "label": "action_buttons_4",
+      "hover": "hover__action_buttons_4.png",
+      "click": "click__action_buttons_4__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "slot_buttons",
+      "label": "slot_buttons_0",
+      "hover": "hover__slot_buttons_0.png",
+      "click": "click__slot_buttons_0__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "slot_buttons",
+      "label": "slot_buttons_1",
+      "hover": "hover__slot_buttons_1.png",
+      "click": "click__slot_buttons_1__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "slot_buttons",
+      "label": "slot_buttons_2",
+      "hover": "hover__slot_buttons_2.png",
+      "click": "click__slot_buttons_2__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "slot_buttons",
+      "label": "slot_buttons_3",
+      "hover": "hover__slot_buttons_3.png",
+      "click": "click__slot_buttons_3__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "slot_buttons",
+      "label": "slot_buttons_4",
+      "hover": "hover__slot_buttons_4.png",
+      "click": "click__slot_buttons_4__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    },
+    {
+      "key": "slot_buttons",
+      "label": "slot_buttons_5",
+      "hover": "hover__slot_buttons_5.png",
+      "click": "click__slot_buttons_5__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    }
+  ]
+}

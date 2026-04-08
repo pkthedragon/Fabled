@@ -1,0 +1,55 @@
+{
+  "title": "Player Profile",
+  "route": "player_menu",
+  "builder": "build_player_menu",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__player_menu.png",
+      "after_route": "player_menu",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__main_menu.png",
+      "after_route": "main_menu",
+      "click_error": null
+    },
+    {
+      "key": "favorite_card",
+      "label": "favorite_card",
+      "hover": "hover__favorite_card.png",
+      "click": "click__favorite_card__favored_adventurer_select.png",
+      "after_route": "favored_adventurer_select",
+      "click_error": null
+    },
+    {
+      "key": "closet",
+      "label": "closet",
+      "hover": "hover__closet.png",
+      "click": "click__closet__closet.png",
+      "after_route": "closet",
+      "click_error": null
+    },
+    {
+      "key": "friends",
+      "label": "friends",
+      "hover": "hover__friends.png",
+      "click": "click__friends__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    }
+  ]
+}

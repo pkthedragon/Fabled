@@ -166,6 +166,8 @@ def save_campaign(profile: CampaignProfile) -> None:
         "saved_teams": profile.saved_teams,
         "tutorials_enabled": profile.tutorials_enabled,
         "fast_resolution": profile.fast_resolution,
+        "battle_log_popups": getattr(profile, "battle_log_popups", True),
+        "screen_shake": getattr(profile, "screen_shake", True),
         "new_unlocks": list(profile.new_unlocks),
         "player_exp": profile.player_exp,
         "gold": profile.gold,
@@ -223,6 +225,8 @@ def _load_modern_profile(data: dict) -> CampaignProfile:
     profile.saved_teams = data.get("saved_teams", [])
     profile.tutorials_enabled = bool(data.get("tutorials_enabled", profile.tutorials_enabled))
     profile.fast_resolution = bool(data.get("fast_resolution", profile.fast_resolution))
+    profile.battle_log_popups = bool(data.get("battle_log_popups", getattr(profile, "battle_log_popups", True)))
+    profile.screen_shake = bool(data.get("screen_shake", getattr(profile, "screen_shake", True)))
     profile.new_unlocks = set(data.get("new_unlocks", []))
     profile.player_exp = int(data.get("player_exp", profile.player_exp))
     profile.gold = int(data.get("gold", profile.gold))
@@ -284,6 +288,8 @@ def _load_legacy_profile(data: dict) -> CampaignProfile:
     profile.saved_teams = data.get("saved_teams", [])
     profile.tutorials_enabled = bool(data.get("tutorials_enabled", profile.tutorials_enabled))
     profile.fast_resolution = bool(data.get("fast_resolution", profile.fast_resolution))
+    profile.battle_log_popups = bool(data.get("battle_log_popups", getattr(profile, "battle_log_popups", True)))
+    profile.screen_shake = bool(data.get("screen_shake", getattr(profile, "screen_shake", True)))
     profile.new_unlocks = set(data.get("new_unlocks", []))
 
     profile.recruited = _normalize_adventurer_ids(profile.recruited)

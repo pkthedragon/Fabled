@@ -1,0 +1,71 @@
+{
+  "title": "Quest Hub Idle",
+  "route": "guild_hall",
+  "builder": "build_guild_hall_idle",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__main_menu.png",
+      "after_route": "main_menu",
+      "click_error": null
+    },
+    {
+      "key": "current_quest",
+      "label": "current_quest",
+      "hover": "hover__current_quest.png",
+      "click": "click__current_quest__quest_party_reveal.png",
+      "after_route": "quest_party_reveal",
+      "click_error": null
+    },
+    {
+      "key": "edit_loadouts",
+      "label": "edit_loadouts",
+      "hover": "hover__edit_loadouts.png",
+      "click": "click__edit_loadouts__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "training_grounds",
+      "label": "training_grounds",
+      "hover": "hover__training_grounds.png",
+      "click": "click__training_grounds__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "catalog",
+      "label": "catalog",
+      "hover": "hover__catalog.png",
+      "click": "click__catalog__catalog.png",
+      "after_route": "catalog",
+      "click_error": null
+    },
+    {
+      "key": "shops",
+      "label": "shops",
+      "hover": "hover__shops.png",
+      "click": "click__shops__armory.png",
+      "after_route": "armory",
+      "click_error": null
+    }
+  ]
+}

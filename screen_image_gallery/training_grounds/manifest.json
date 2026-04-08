@@ -1,0 +1,143 @@
+{
+  "title": "Training Grounds",
+  "route": "training_grounds",
+  "builder": "build_training_grounds",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_0",
+      "hover": "hover__training_cards_0.png",
+      "click": "click__training_cards_0__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_1",
+      "hover": "hover__training_cards_1.png",
+      "click": "click__training_cards_1__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_2",
+      "hover": "hover__training_cards_2.png",
+      "click": "click__training_cards_2__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_3",
+      "hover": "hover__training_cards_3.png",
+      "click": "click__training_cards_3__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_4",
+      "hover": "hover__training_cards_4.png",
+      "click": "click__training_cards_4__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_5",
+      "hover": "hover__training_cards_5.png",
+      "click": "click__training_cards_5__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_6",
+      "hover": "hover__training_cards_6.png",
+      "click": "click__training_cards_6__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_7",
+      "hover": "hover__training_cards_7.png",
+      "click": "click__training_cards_7__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "training_cards",
+      "label": "training_cards_8",
+      "hover": "hover__training_cards_8.png",
+      "click": "click__training_cards_8__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "weapon_cards",
+      "label": "weapon_cards_0",
+      "hover": "hover__weapon_cards_0.png",
+      "click": "click__weapon_cards_0__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "weapon_cards",
+      "label": "weapon_cards_1",
+      "hover": "hover__weapon_cards_1.png",
+      "click": "click__weapon_cards_1__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "vs_ai",
+      "label": "vs_ai",
+      "hover": "hover__vs_ai.png",
+      "click": "click__vs_ai__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "vs_lan",
+      "label": "vs_lan",
+      "hover": "hover__vs_lan.png",
+      "click": "click__vs_lan__lan_setup.png",
+      "after_route": "lan_setup",
+      "click_error": null
+    },
+    {
+      "key": "training_focus",
+      "label": "training_focus",
+      "hover": "hover__training_focus.png",
+      "click": "click__training_focus__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    }
+  ]
+}

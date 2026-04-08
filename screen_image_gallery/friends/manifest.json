@@ -1,0 +1,95 @@
+{
+  "title": "Friends",
+  "route": "friends",
+  "builder": "build_friends",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__player_menu.png",
+      "after_route": "player_menu",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_0",
+      "hover": "hover__entries_0.png",
+      "click": "click__entries_0__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_1",
+      "hover": "hover__entries_1.png",
+      "click": "click__entries_1__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "entries",
+      "label": "entries_2",
+      "hover": "hover__entries_2.png",
+      "click": "click__entries_2__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "name_box",
+      "label": "name_box",
+      "hover": "hover__name_box.png",
+      "click": "click__name_box__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "ip_box",
+      "label": "ip_box",
+      "hover": "hover__ip_box.png",
+      "click": "click__ip_box__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "save",
+      "label": "save",
+      "hover": "hover__save.png",
+      "click": "click__save__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "remove",
+      "label": "remove",
+      "hover": "hover__remove.png",
+      "click": "click__remove__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    },
+    {
+      "key": "new",
+      "label": "new",
+      "hover": "hover__new.png",
+      "click": "click__new__friends.png",
+      "after_route": "friends",
+      "click_error": null
+    }
+  ]
+}

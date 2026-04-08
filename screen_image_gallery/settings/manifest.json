@@ -1,0 +1,55 @@
+{
+  "title": "Settings",
+  "route": "settings",
+  "builder": "build_settings",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__main_menu.png",
+      "after_route": "main_menu",
+      "click_error": null
+    },
+    {
+      "key": "tutorials",
+      "label": "tutorials",
+      "hover": "hover__tutorials.png",
+      "click": "click__tutorials__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "fast",
+      "label": "fast",
+      "hover": "hover__fast.png",
+      "click": "click__fast__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "battle_log_popups",
+      "label": "battle_log_popups",
+      "hover": "hover__battle_log_popups.png",
+      "click": "click__battle_log_popups__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "screen_shake",
+      "label": "screen_shake",
+      "hover": "hover__screen_shake.png",
+      "click": "click__screen_shake__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    }
+  ]
+}

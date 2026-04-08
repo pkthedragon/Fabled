@@ -103,7 +103,7 @@ LOADOUT_WARNING = (201, 134, 108)
 STATUS_EFFECT_RULES = {
     "burn": {
         "name": "Burn",
-        "description": "Burned adventurers take 8% max HP damage each round.",
+        "description": "Burned adventurers take 8% of their max HP as damage at the end of each round.",
     },
     "root": {
         "name": "Root",
@@ -111,7 +111,7 @@ STATUS_EFFECT_RULES = {
     },
     "shock": {
         "name": "Shock",
-        "description": "Shocked adventurers have -15 Speed and their Strikes have 15% recoil.",
+        "description": "Shocked adventurers have -25 Speed and their Strikes have 15% recoil.",
     },
     "weaken": {
         "name": "Weaken",
@@ -131,7 +131,7 @@ STATUS_EFFECT_RULES = {
     },
     "taunt": {
         "name": "Taunt",
-        "description": "Taunted adventurers can only target whoever taunted them.",
+        "description": "Taunted adventurers can only target whoever taunted them, unless that target is illegal.",
     },
 }
 
@@ -1716,6 +1716,8 @@ def draw_quest_party_reveal(surf, mouse_pos, party_ids: list, favorite_id: str |
     grid_x = party_panel.x + (party_panel.width - grid_w) // 2
     grid_y = party_panel.y + 60
 
+    party_buttons = []
+    hover_adventurer = None
     for index, adventurer_id in enumerate(party_ids[:6]):
         adventurer = ADVENTURERS_BY_ID.get(adventurer_id)
         if adventurer is None:
@@ -1731,6 +1733,9 @@ def draw_quest_party_reveal(surf, mouse_pos, party_ids: list, favorite_id: str |
             selected=is_favorite,
             tag_line="Favorite — Locked In" if is_favorite else None,
         )
+        party_buttons.append((card_rect, adventurer_id))
+        if card_rect.collidepoint(mouse_pos):
+            hover_adventurer = adventurer
 
     # Quest rules text
     rule_lines = [
@@ -1753,6 +1758,9 @@ def draw_quest_party_reveal(surf, mouse_pos, party_ids: list, favorite_id: str |
     draw_primary_button(surf, confirm_btn, mouse_pos, "Confirm Party & Set Loadouts")
     btns["back"] = btns.pop("left")
     btns["confirm"] = confirm_btn
+    btns["party_cards"] = party_buttons
+    if hover_adventurer is not None:
+        _draw_adventurer_popout(surf, pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1), hover_adventurer)
     return btns
 
 
@@ -1815,6 +1823,7 @@ def draw_quest_reward_choice(surf, mouse_pos, options: list, *, wins: int = 0, l
     art_card_gap = 24
     art_card_w = right_panel.width - 60
     art_card_x = right_panel.x + 30
+    hovered_artifact = None
     for sub_index, artifact_choice in enumerate(artifact_choices[:3]):
         art_rect = pygame.Rect(art_card_x, right_panel.y + 60 + sub_index * (art_card_h + art_card_gap), art_card_w, art_card_h)
         art_hovered = art_rect.collidepoint(mouse_pos)
@@ -1826,8 +1835,12 @@ def draw_quest_reward_choice(surf, mouse_pos, options: list, *, wins: int = 0, l
         draw_text(surf, artifact_name, font_headline(20, bold=True), TEXT, (art_rect.x + 18, art_rect.y + 22))
         draw_text(surf, "Add to artifact pool.", font_body(15), TEXT_SOFT, (art_rect.x + 18, art_rect.y + 56))
         choices.append((art_rect, artifact_idx, artifact_id))
+        if art_hovered and artifact_id in ARTIFACTS_BY_ID:
+            hovered_artifact = (art_rect, ARTIFACTS_BY_ID[artifact_id])
 
     btns["choices"] = choices
+    if hovered_artifact is not None:
+        _draw_info_popout(surf, hovered_artifact[0], hovered_artifact[1].name, _artifact_detail_lines(hovered_artifact[1]))
     return btns
 
 
@@ -2098,6 +2111,37 @@ def _member_index_for_slot(members, slot: str):
     return None
 
 
+def _secondary_weapon_for_member(member):
+    primary = _active_weapon_for_member(member)
+    adventurer = ADVENTURERS_BY_ID[member["adventurer_id"]]
+    return next((weapon for weapon in adventurer.signature_weapons if weapon.id != primary.id), primary)
+
+
+def _selected_class_skill(class_name: str, class_skill_id: str | None):
+    skills = list(CLASS_SKILLS.get(class_name, []))
+    if not skills:
+        return None
+    return next((skill for skill in skills if skill.id == class_skill_id), skills[0])
+
+
+def _stat_short_label(stat_name: str) -> str:
+    return {
+        "hp": "HP",
+        "attack": "ATK",
+        "defense": "DEF",
+        "speed": "SPD",
+    }.get(stat_name, stat_name.title())
+
+
+def _status_duration_text(status_spec) -> str:
+    return f"{status_spec.kind.title()} ({status_spec.duration}r)"
+
+
+def _stat_mod_text(stat_spec) -> str:
+    sign = "+" if stat_spec.amount >= 0 else ""
+    return f"{_stat_short_label(stat_spec.stat)} {sign}{stat_spec.amount} ({stat_spec.duration}r)"
+
+
 def _effect_parts(effect):
     parts = []
     if effect.power:
@@ -2108,11 +2152,34 @@ def _effect_parts(effect):
         parts.append(f"CD {effect.cooldown}")
     if effect.ammo_cost:
         parts.append(f"Ammo {effect.ammo_cost}")
+    if effect.recoil:
+        parts.append(f"{int(effect.recoil * 100)}% Recoil")
+    if effect.lifesteal:
+        parts.append(f"{int(effect.lifesteal * 100)}% Lifesteal")
     if effect.spread:
         parts.append("Spread")
     if effect.counts_as_spell:
-        parts.append("Spell")
+        parts.append("Counts as Spell")
+    if effect.ignore_targeting:
+        parts.append("Ignores Targeting")
+    if effect.bonus_power_if_status and effect.bonus_power:
+        parts.append(f"+{effect.bonus_power} vs {effect.bonus_power_if_status.title()}")
     return parts
+
+
+def _effect_rule_lines(effect):
+    lines = []
+    if effect.target_statuses:
+        lines.append(f"Target: {', '.join(_status_duration_text(status_spec) for status_spec in effect.target_statuses)}")
+    if effect.self_statuses:
+        lines.append(f"Self: {', '.join(_status_duration_text(status_spec) for status_spec in effect.self_statuses)}")
+    if effect.target_buffs:
+        lines.append(f"Target Buffs: {', '.join(_stat_mod_text(stat_spec) for stat_spec in effect.target_buffs)}")
+    if effect.target_debuffs:
+        lines.append(f"Target Debuffs: {', '.join(_stat_mod_text(stat_spec) for stat_spec in effect.target_debuffs)}")
+    if effect.self_buffs:
+        lines.append(f"Self Buffs: {', '.join(_stat_mod_text(stat_spec) for stat_spec in effect.self_buffs)}")
+    return lines
 
 
 def _effect_text(effect):
@@ -2124,27 +2191,33 @@ def _effect_text(effect):
 
 def _weapon_detail_lines(weapon):
     lines = [f"{weapon.kind.title()} weapon"]
+    if weapon.ammo:
+        lines.append(f"Ammo: {weapon.ammo}")
     strike_text = _effect_text(weapon.strike)
     if strike_text:
         lines.append(f"Strike: {strike_text}")
+    for extra in _effect_rule_lines(weapon.strike):
+        lines.append(f"Strike: {extra}")
     for passive in weapon.passive_skills:
         lines.append(f"Skill: {passive.name} - {passive.description}")
     for spell in weapon.spells:
         lines.append(f"Spell: {spell.name} - {_effect_text(spell)}")
-    if weapon.ammo:
-        lines.append(f"Ammo: {weapon.ammo}")
+        for extra in _effect_rule_lines(spell):
+            lines.append(f"Spell: {extra}")
     return lines
 
 
 def _artifact_detail_lines(artifact):
     if artifact is None:
-        return ["No artifact selected."]
-    spell_prefix = "Reaction" if artifact.reactive else "Spell"
+        return ["No artifact equipped."]
+    spell_prefix = "Reactive Spell" if artifact.reactive else "Spell"
     lines = [
-        f"+{artifact.amount} {artifact.stat.title()}",
+        f"Stat Bonus: +{artifact.amount} {_stat_short_label(artifact.stat)}",
         f"Attunement: {', '.join(artifact.attunement)}",
         f"{spell_prefix}: {artifact.spell.name} - {_effect_text(artifact.spell)}",
     ]
+    for extra in _effect_rule_lines(artifact.spell):
+        lines.append(f"{spell_prefix}: {extra}")
     if artifact.description:
         lines.append(artifact.description)
     return lines
@@ -2173,6 +2246,156 @@ def _wrapped_lines_height(lines, *, font, width, line_height):
     for raw_line in lines:
         total += len(_wrap_text_block(raw_line, font, width)) * line_height
     return total
+
+
+def _draw_info_popout(surf, source_rect: pygame.Rect, title: str, lines: list[str], *, width: int = 360, accent=None, body_font=None, line_height: int = 15):
+    body_font = body_font or font_body(13)
+    title_font = font_headline(18, bold=True)
+    accent = accent or globals().get("UI_GOLD_BRIGHT", GOLD_BRIGHT)
+    fill_top = globals().get("UI_BG_RAISED", SURFACE_HIGH)
+    fill_bottom = globals().get("UI_BG_SURFACE", SURFACE_LOW)
+    border = globals().get("UI_GOLD_DIM", GOLD_DIM)
+    body_color = globals().get("UI_TEXT_SOFT", TEXT_SOFT)
+    body_width = width - 24
+    body_height = _wrapped_lines_height(lines, font=body_font, width=body_width, line_height=line_height)
+    height = max(112, 18 + title_font.get_height() + 12 + body_height + 16)
+    rect = _hover_popout_rect(source_rect, width, height)
+    draw_beveled_panel(surf, rect, fill_top=fill_top, fill_bottom=fill_bottom, border=border)
+    draw_text(surf, _ellipsize_text(title, title_font, rect.width - 24), title_font, accent, (rect.x + 12, rect.y + 12))
+    _draw_wrapped_lines(
+        surf,
+        lines,
+        rect.x + 12,
+        rect.y + 40,
+        rect.width - 24,
+        font=body_font,
+        color=body_color,
+        line_height=line_height,
+    )
+    return rect
+
+
+def _adventurer_detail_lines(adventurer, *, class_name: str | None = None, artifact_name: str | None = None, artifact=None):
+    lines = [
+        f"HP {adventurer.hp} | ATK {adventurer.attack} | DEF {adventurer.defense} | SPD {adventurer.speed}",
+        f"Innate: {adventurer.innate.name} - {adventurer.innate.description}",
+    ]
+    if class_name and class_name != NO_CLASS_NAME:
+        lines.append(f"Class: {class_name}")
+    for index, weapon in enumerate(adventurer.signature_weapons[:2], start=1):
+        lines.append(f"Weapon {index}: {weapon.name} ({weapon.kind.title()})")
+        lines.extend(_weapon_detail_lines(weapon)[1:])
+    lines.append(f"Ultimate: {adventurer.ultimate.name} - {_effect_text(adventurer.ultimate)}")
+    lines.extend(f"Ultimate: {extra}" for extra in _effect_rule_lines(adventurer.ultimate))
+    if artifact is not None:
+        lines.append(f"Artifact: {artifact.name}")
+        lines.extend(_artifact_detail_lines(artifact))
+    elif artifact_name:
+        lines.append(f"Artifact: {artifact_name}")
+    return lines
+
+
+def _class_detail_lines(class_name: str) -> list[str]:
+    if class_name == NO_CLASS_NAME:
+        return [CLASS_SUMMARIES.get(class_name, "No class selected.")]
+    lines = [CLASS_SUMMARIES.get(class_name, class_name)]
+    for skill in CLASS_SKILLS.get(class_name, []):
+        hp_bonus = f" | +{skill.hp_bonus} HP" if skill.hp_bonus else ""
+        lines.append(f"{skill.name}{hp_bonus} - {skill.description}")
+    return lines
+
+
+def _member_loadout_lines(member) -> list[str]:
+    adventurer = ADVENTURERS_BY_ID[member["adventurer_id"]]
+    class_name = member.get("class_name", NO_CLASS_NAME)
+    class_skill = _selected_class_skill(class_name, member.get("class_skill_id"))
+    primary_weapon = _active_weapon_for_member(member)
+    secondary_weapon = _secondary_weapon_for_member(member)
+    artifact = ARTIFACTS_BY_ID.get(member.get("artifact_id"))
+    lines = [
+        f"HP {adventurer.hp} | ATK {adventurer.attack} | DEF {adventurer.defense} | SPD {adventurer.speed}",
+        f"Innate: {adventurer.innate.name} - {adventurer.innate.description}",
+        f"Class: {class_name if class_name and class_name != NO_CLASS_NAME else 'Unassigned'}",
+    ]
+    if member.get("slot"):
+        lines.append(f"Slot: {SLOT_LABELS.get(member['slot'], member['slot'])}")
+    if class_skill is not None:
+        hp_bonus = f" | +{class_skill.hp_bonus} HP" if class_skill.hp_bonus else ""
+        lines.append(f"Class Skill: {class_skill.name}{hp_bonus} - {class_skill.description}")
+    else:
+        lines.append("Class Skill: None selected.")
+    lines.append(f"Primary: {primary_weapon.name} ({primary_weapon.kind.title()})")
+    lines.extend(_weapon_detail_lines(primary_weapon)[1:])
+    if secondary_weapon.id != primary_weapon.id:
+        lines.append(f"Secondary: {secondary_weapon.name} ({secondary_weapon.kind.title()})")
+        lines.extend(_weapon_detail_lines(secondary_weapon)[1:])
+    if artifact is not None:
+        lines.append(f"Artifact: {artifact.name}")
+        lines.extend(_artifact_detail_lines(artifact))
+    else:
+        lines.append("Artifact: None equipped.")
+    return lines
+
+
+def _runtime_weapon_lines(unit, weapon, *, label: str) -> list[str]:
+    ammo_text = ""
+    if weapon.ammo:
+        ammo_text = f" | Ammo {unit.ammo_remaining.get(weapon.id, weapon.ammo)}/{weapon.ammo}"
+    strike_cd = unit.cooldowns.get(weapon.strike.id, 0)
+    strike_state = "Ready" if strike_cd <= 0 else f"CD {strike_cd}"
+    lines = [f"{label}: {weapon.name} ({weapon.kind.title()})"]
+    lines.append(f"Strike [{strike_state}{ammo_text}]: {_effect_text(weapon.strike)}")
+    lines.extend(f"Strike: {extra}" for extra in _effect_rule_lines(weapon.strike))
+    for passive in weapon.passive_skills:
+        lines.append(f"Skill: {passive.name} - {passive.description}")
+    for spell in weapon.spells:
+        spell_cd = unit.cooldowns.get(spell.id, 0)
+        spell_state = "Ready" if spell_cd <= 0 else f"CD {spell_cd}"
+        lines.append(f"Spell: {spell.name} [{spell_state}] - {_effect_text(spell)}")
+        lines.extend(f"Spell: {extra}" for extra in _effect_rule_lines(spell))
+    return lines
+
+
+def _combatant_loadout_lines(unit) -> list[str]:
+    class_name = getattr(unit, "class_name", NO_CLASS_NAME) or NO_CLASS_NAME
+    class_skill = getattr(unit, "class_skill", None)
+    lines = [
+        f"{SLOT_LABELS.get(getattr(unit, 'slot', ''), getattr(unit, 'slot', ''))} | HP {unit.hp}/{unit.max_hp} | ATK {unit.get_stat('attack')} | DEF {unit.get_stat('defense')} | SPD {unit.get_stat('speed')}",
+        f"Innate: {unit.defn.innate.name} - {unit.defn.innate.description}",
+        f"Class: {class_name if class_name != NO_CLASS_NAME else 'Unassigned'}",
+    ]
+    if class_skill is not None:
+        hp_bonus = f" | +{class_skill.hp_bonus} HP" if class_skill.hp_bonus else ""
+        lines.append(f"Class Skill: {class_skill.name}{hp_bonus} - {class_skill.description}")
+    lines.extend(_runtime_weapon_lines(unit, unit.primary_weapon, label="Primary"))
+    if unit.secondary_weapon.id != unit.primary_weapon.id:
+        lines.extend(_runtime_weapon_lines(unit, unit.secondary_weapon, label="Secondary"))
+    if unit.artifact is not None:
+        artifact = unit.artifact
+        spell_state = ""
+        if not artifact.reactive:
+            turns = unit.cooldowns.get(artifact.spell.id, 0)
+            spell_state = f" [{'Ready' if turns <= 0 else f'CD {turns}'}]"
+        lines.append(f"Artifact: {artifact.name}")
+        lines.append(f"Stat Bonus: +{artifact.amount} {_stat_short_label(artifact.stat)}")
+        lines.append(f"Attunement: {', '.join(artifact.attunement)}")
+        lines.append(f"{'Reactive Spell' if artifact.reactive else 'Spell'}: {artifact.spell.name}{spell_state} - {_effect_text(artifact.spell)}")
+        lines.extend(f"{'Reactive Spell' if artifact.reactive else 'Spell'}: {extra}" for extra in _effect_rule_lines(artifact.spell))
+        if artifact.description:
+            lines.append(artifact.description)
+    else:
+        lines.append("Artifact: None equipped.")
+    active_buffs = [buff for buff in unit.buffs if buff.duration > 0]
+    active_debuffs = [debuff for debuff in unit.debuffs if debuff.duration > 0]
+    if active_buffs:
+        lines.append(f"Buffs: {', '.join(_stat_mod_text(buff) for buff in active_buffs)}")
+    if active_debuffs:
+        lines.append(f"Debuffs: {', '.join(_stat_mod_text(debuff) for debuff in active_debuffs)}")
+    if unit.statuses:
+        lines.append(f"Conditions: {', '.join(_status_duration_text(status) for status in unit.statuses)}")
+    else:
+        lines.append("Conditions: None")
+    return lines
 
 
 def _visible_button_entries(entries, viewport):
@@ -2777,13 +3000,96 @@ def draw_bout_lobby(surf, mouse_pos, p1_ready: bool, p2_ready: bool, *, player_s
     return btns
 
 
+def draw_bout_adapt(
+    surf,
+    mouse_pos,
+    artifact_options: list,
+    player_party: list,
+    recruit_options: list | None = None,
+    *,
+    wins: int = 0,
+    losses: int = 0,
+):
+    """Random Bout adapt phase: choose an artifact, recruit, or pass."""
+    draw_background(surf)
+    series = f"{wins}–{losses}"
+    btns = draw_top_bar(
+        surf,
+        "Adapt Phase",
+        mouse_pos,
+        left_icon=None,
+        right_icons=(("settings", "S", False), ("quit", "X", True)),
+        subtitle=f"Series: {series}  |  Add an artifact, recruit, or pass.",
+    )
+
+    # Left info panel — current party + pool
+    info_panel = pygame.Rect(60, 110, 380, 660)
+    draw_beveled_panel(surf, info_panel, title="Your Party (6)")
+    for idx, adv_id in enumerate(player_party[:6]):
+        adv = ADVENTURERS_BY_ID.get(adv_id)
+        name = adv.name if adv else adv_id
+        draw_text(surf, name, font_body(16), TEXT_SOFT, (info_panel.x + 24, info_panel.y + 58 + idx * 28))
+
+    # Right panel — artifact and recruit choices
+    art_panel = pygame.Rect(470, 110, 820, 660)
+    draw_beveled_panel(surf, art_panel, title="Choose One Upgrade")
+    artifact_choices = []
+    recruit_choices = []
+    card_h = 124
+    card_gap = 24
+    card_w = (art_panel.width - 84) // 2
+    artifact_x = art_panel.x + 20
+    recruit_x = artifact_x + card_w + 24
+    draw_text(surf, "Artifacts", font_body(16, bold=True), GOLD_BRIGHT, (artifact_x, art_panel.y + 24))
+    draw_text(surf, "Recruits", font_body(16, bold=True), GOLD_BRIGHT, (recruit_x, art_panel.y + 24))
+    for idx, artifact_id in enumerate(artifact_options[:3]):
+        artifact = ARTIFACTS_BY_ID.get(artifact_id)
+        rect = pygame.Rect(artifact_x, art_panel.y + 52 + idx * (card_h + card_gap), card_w, card_h)
+        hovered = rect.collidepoint(mouse_pos)
+        draw_beveled_panel(surf, rect, border=GOLD_BRIGHT if hovered else GOLD_DIM)
+        if hovered:
+            draw_glow_rect(surf, rect, GOLD_BRIGHT, alpha=24)
+        name = artifact.name if artifact else artifact_id
+        draw_text(surf, name, font_headline(20, bold=True), TEXT, (rect.x + 18, rect.y + 22))
+        if artifact:
+            attune_text = ", ".join(artifact.attunement) if artifact.attunement else "—"
+            draw_text(surf, f"Attunement: {attune_text}", font_body(15), TEXT_SOFT, (rect.x + 18, rect.y + 58))
+        draw_text(surf, "Add to artifact pool.", font_body(15), TEXT_MUTE, (rect.x + 18, rect.y + 86))
+        artifact_choices.append((rect, artifact_id))
+    for idx, adventurer_id in enumerate((recruit_options or [])[:3]):
+        adventurer = ADVENTURERS_BY_ID.get(adventurer_id)
+        rect = pygame.Rect(recruit_x, art_panel.y + 52 + idx * (card_h + card_gap), card_w, card_h)
+        hovered = rect.collidepoint(mouse_pos)
+        draw_beveled_panel(surf, rect, border=GOLD_BRIGHT if hovered else GOLD_DIM)
+        if hovered:
+            draw_glow_rect(surf, rect, GOLD_BRIGHT, alpha=24)
+        name = adventurer.name if adventurer else adventurer_id
+        draw_text(surf, name, font_headline(20, bold=True), TEXT, (rect.x + 18, rect.y + 22))
+        if adventurer:
+            stats_text = f"HP {adventurer.hp}  ATK {adventurer.attack}  DEF {adventurer.defense}  SPD {adventurer.speed}"
+            draw_text(surf, stats_text, font_body(14), TEXT_SOFT, (rect.x + 18, rect.y + 58))
+        draw_text(surf, "Replace one party member, then retune loadouts.", font_body(14), TEXT_MUTE, (rect.x + 18, rect.y + 86))
+        recruit_choices.append((rect, adventurer_id))
+
+    # Skip / pass button
+    skip_btn = pygame.Rect(470, 800, 820, 46)
+    draw_secondary_button(surf, skip_btn, mouse_pos, "Pass — No Change")
+    btns["artifact_choices"] = artifact_choices
+    btns["recruit_choices"] = recruit_choices
+    btns["skip"] = skip_btn
+    return btns
+
+
 def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids, current_player, *, player_seat: int = 1, detail_scroll: int = 0, mode_id: str = "random"):
     draw_background(surf)
     screen_title = "Focused Bout — Roster Selection" if mode_id == "focused" else "Bout Draft"
+    target_picks = 6 if mode_id == "focused" else 3
+    player_ids = team1_ids if player_seat == 1 else team2_ids
     if current_player == player_seat:
-        pick_subtitle = "Your Pick"
+        pick_subtitle = f"Your Pick  ({len(player_ids)}/{target_picks})"
     else:
-        pick_subtitle = "AI Rival Picking..."
+        ai_ids = team2_ids if player_seat == 1 else team1_ids
+        pick_subtitle = f"AI Rival Picking...  ({len(ai_ids)}/{target_picks})"
     btns = draw_top_bar(
         surf,
         screen_title,
@@ -2832,27 +3138,32 @@ def draw_bout_draft(surf, mouse_pos, pool_ids, focused_id, team1_ids, team2_ids,
         rect = pygame.Rect(366 + col * 188, 110 + row * 174, 172, 156)
         unavailable = adventurer_id in team1_ids or adventurer_id in team2_ids
         pick_pool.append((draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=focused_id == adventurer_id, unavailable=unavailable, small=True), adventurer_id))
-    side_panel = pygame.Rect(24, 104, 316, 478)
-    enemy_panel = pygame.Rect(1060, 104, 316, 478)
-    detail_rect = pygame.Rect(240, 612, 920, 244)
+    slots_per_side = target_picks
+    slot_h = min(100, (720 - 60) // slots_per_side - 8)
+    side_panel_h = 60 + slots_per_side * (slot_h + 8)
+    side_panel = pygame.Rect(24, 104, 316, side_panel_h)
+    enemy_panel = pygame.Rect(1060, 104, 316, side_panel_h)
+    detail_y = min(side_panel.bottom + 12, 612)
+    detail_rect = pygame.Rect(240, detail_y, 800, 244)
     draw_beveled_panel(surf, side_panel, title="Player 1 - You" if player_seat == 1 else "Player 1 - AI Rival")
     draw_beveled_panel(surf, enemy_panel, title="Player 2 - You" if player_seat == 2 else "Player 2 - AI Rival")
-    for index in range(3):
-        rect = pygame.Rect(side_panel.x + 18, side_panel.y + 54 + index * 124, side_panel.width - 36, 100)
+    for index in range(slots_per_side):
+        rect = pygame.Rect(side_panel.x + 18, side_panel.y + 54 + index * (slot_h + 8), side_panel.width - 36, slot_h)
         if index < len(team1_ids):
             draw_compact_pick_tile(rect, ADVENTURERS_BY_ID[team1_ids[index]])
         else:
             draw_beveled_panel(surf, rect, fill_top=SURFACE, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
             draw_text(surf, "Open Slot", font_label(12, bold=True), TEXT_MUTE, rect.center, center=True)
-    for index in range(3):
-        rect = pygame.Rect(enemy_panel.x + 18, enemy_panel.y + 54 + index * 124, enemy_panel.width - 36, 100)
+    for index in range(slots_per_side):
+        rect = pygame.Rect(enemy_panel.x + 18, enemy_panel.y + 54 + index * (slot_h + 8), enemy_panel.width - 36, slot_h)
         if index < len(team2_ids):
             draw_compact_pick_tile(rect, ADVENTURERS_BY_ID[team2_ids[index]])
         else:
             draw_beveled_panel(surf, rect, fill_top=SURFACE, fill_bottom=SURFACE_LOW, border=GOLD_DIM)
             draw_text(surf, "Open Slot", font_label(12, bold=True), TEXT_MUTE, rect.center, center=True)
     draft_btn = pygame.Rect(detail_rect.right - 190, detail_rect.bottom - 44, 168, 32)
-    can_pick = focused_id not in team1_ids and focused_id not in team2_ids and len(team1_ids) + len(team2_ids) < 6
+    max_total = slots_per_side * 2
+    can_pick = focused_id not in team1_ids and focused_id not in team2_ids and len(team1_ids) + len(team2_ids) < max_total
     focused = ADVENTURERS_BY_ID[focused_id]
     draw_beveled_panel(surf, detail_rect, title="Focused Adventurer")
     detail_viewport = pygame.Rect(detail_rect.x + 18, detail_rect.y + 50, detail_rect.width - 214, detail_rect.height - 74)
@@ -3357,3 +3668,1668 @@ def draw_results(surf, mouse_pos, result_kind, is_victory: bool, winner_label, l
     btns["return"] = return_btn
     return btns
 
+
+# ============================================================================
+# UI Redesign Overrides
+# ============================================================================
+
+
+def _hx(value: str) -> tuple[int, int, int]:
+    value = value.lstrip("#")
+    return tuple(int(value[index:index + 2], 16) for index in (0, 2, 4))
+
+
+UI_BG_DEEP = _hx("08090F")
+UI_BG_MID = _hx("0F1119")
+UI_BG_SURFACE = _hx("181B26")
+UI_BG_RAISED = _hx("222638")
+UI_GOLD = _hx("D4A843")
+UI_GOLD_BRIGHT = _hx("F5D978")
+UI_GOLD_DIM = _hx("6B5A2A")
+UI_TEXT = _hx("E8E4DC")
+UI_TEXT_SOFT = _hx("9A978E")
+UI_TEXT_MUTE = _hx("5C5950")
+UI_GREEN = _hx("4CAF50")
+UI_RED = _hx("C62828")
+UI_BLUE = _hx("5C7CFA")
+UI_ORANGE = _hx("E65100")
+UI_STATUS_COLORS = {
+    "burn": _hx("FF6D00"),
+    "root": _hx("66BB6A"),
+    "shock": _hx("FFEE58"),
+    "weaken": _hx("AB47BC"),
+    "expose": _hx("EF5350"),
+    "guard": _hx("42A5F5"),
+    "spotlight": _hx("FFF176"),
+    "taunt": _hx("FF8A65"),
+}
+UI_CLASS_COLORS = {
+    "Warden": _hx("5C6BC0"),
+    "Fighter": _hx("EF5350"),
+    "Mage": _hx("7E57C2"),
+    "Ranger": _hx("66BB6A"),
+    "Cleric": _hx("FFEE58"),
+    "Rogue": _hx("26C6DA"),
+    NO_CLASS_NAME: UI_TEXT_MUTE,
+}
+UI_TAB_ICONS = {
+    "Player Skins": "P",
+    "Player Chairs": "C",
+    "Emotes": "E",
+    "Poses": "O",
+    "Assistant Skins": "A",
+    "Bartender Skins": "B",
+    "Server Skins": "S",
+    "Adventurer Skins": "V",
+    "Guild Hall Skins": "H",
+}
+HUD_HEIGHT = 36
+
+
+def _with_alpha(color, alpha: int) -> tuple[int, int, int, int]:
+    return (color[0], color[1], color[2], alpha)
+
+
+def _blit_translucent_rect(surf, rect, color, *, border=None, radius: int = 16):
+    card = pygame.Surface((rect.width, rect.height), pygame.SRCALPHA)
+    pygame.draw.rect(card, color, pygame.Rect(0, 0, rect.width, rect.height), border_radius=radius)
+    if border is not None:
+        pygame.draw.rect(card, border, pygame.Rect(0, 0, rect.width, rect.height), 1, border_radius=radius)
+    surf.blit(card, rect.topleft)
+
+
+def _scene_lights(surf, *, warm=False):
+    overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+    palette = [(245, 217, 120, 30), (212, 168, 67, 20)] if warm else [(92, 124, 250, 18), (212, 168, 67, 10)]
+    points = [(180, 130), (WIDTH - 220, 180), (WIDTH // 2, HEIGHT // 2 + 40), (260, HEIGHT - 160)]
+    for index, (x, y) in enumerate(points):
+        color = palette[index % len(palette)]
+        pygame.draw.circle(overlay, color, (x, y), 180 + index * 32)
+    surf.blit(overlay, (0, 0))
+
+
+def draw_background(surf, scene: str = "default"):
+    fill_gradient(surf, pygame.Rect(0, 0, WIDTH, HEIGHT), UI_BG_DEEP, UI_BG_MID)
+    if scene in {"guild", "quest", "market"}:
+        pygame.draw.rect(surf, _lerp_color(UI_BG_SURFACE, UI_ORANGE, 0.18), pygame.Rect(0, HEIGHT - 210, WIDTH, 210))
+        pygame.draw.rect(surf, UI_BG_DEEP, pygame.Rect(0, HEIGHT - 150, WIDTH, 150))
+        for x in (140, 430, 730, 1030, 1260):
+            pillar = pygame.Surface((22, HEIGHT - 220), pygame.SRCALPHA)
+            pillar.fill(_with_alpha(UI_GOLD_DIM, 60))
+            surf.blit(pillar, (x, 90))
+        _scene_lights(surf, warm=True)
+    elif scene == "arena":
+        for ring in range(6):
+            pygame.draw.circle(
+                surf,
+                _lerp_color(UI_GOLD_DIM, UI_BG_RAISED, ring / 5 if ring else 0.0),
+                (WIDTH // 2, HEIGHT // 2 + 30),
+                180 + ring * 54,
+                1,
+            )
+        _scene_lights(surf, warm=False)
+    else:
+        _scene_lights(surf, warm=False)
+
+
+def draw_beveled_panel(
+    surf,
+    rect,
+    *,
+    title=None,
+    title_color=UI_TEXT,
+    fill_top=UI_BG_SURFACE,
+    fill_bottom=UI_BG_MID,
+    border=UI_GOLD_DIM,
+):
+    draw_shadow(surf, rect, radius=18, alpha=80)
+    fill_gradient(surf, rect, fill_top, fill_bottom)
+    glow = pygame.Surface((rect.width, rect.height), pygame.SRCALPHA)
+    pygame.draw.rect(glow, _with_alpha((255, 255, 255), 10), pygame.Rect(1, 1, rect.width - 2, rect.height - 2), border_radius=16)
+    surf.blit(glow, rect.topleft)
+    pygame.draw.rect(surf, border, rect, 1, border_radius=16)
+    if title:
+        draw_text(surf, str(title).upper(), font_label(11, bold=True), title_color, (rect.x + 16, rect.y + 12))
+
+
+def draw_icon_button(surf, rect, mouse_pos, label, *, active=False, danger=False):
+    hovered = rect.collidepoint(mouse_pos)
+    border = UI_RED if danger else (UI_GOLD_BRIGHT if active or hovered else UI_GOLD_DIM)
+    fill = UI_BG_RAISED if active or hovered else UI_BG_SURFACE
+    draw_beveled_panel(surf, rect, fill_top=fill, fill_bottom=UI_BG_MID, border=border)
+    draw_text(
+        surf,
+        label,
+        font_label(16, bold=True),
+        UI_RED if danger else (UI_GOLD_BRIGHT if active or hovered else UI_TEXT_SOFT),
+        rect.center,
+        center=True,
+    )
+    return rect
+
+
+def draw_primary_button(surf, rect, mouse_pos, label, *, disabled=False, accent=UI_GOLD):
+    hovered = rect.collidepoint(mouse_pos) and not disabled
+    top = _lerp_color(accent, UI_GOLD_BRIGHT, 0.3 if hovered else 0.0)
+    bottom = _lerp_color(UI_GOLD_DIM, accent, 0.65 if hovered else 0.4)
+    fill_gradient(surf, rect, UI_BG_RAISED if disabled else top, UI_BG_SURFACE if disabled else bottom)
+    pygame.draw.rect(surf, UI_GOLD_BRIGHT if not disabled else UI_GOLD_DIM, rect, 1, border_radius=14)
+    draw_text(
+        surf,
+        _ellipsize_text(label, font_body(14, bold=True), rect.width - 16),
+        font_body(14, bold=True),
+        UI_TEXT_MUTE if disabled else UI_BG_DEEP,
+        rect.center,
+        center=True,
+    )
+    return rect
+
+
+def draw_secondary_button(surf, rect, mouse_pos, label, *, active=False):
+    hovered = rect.collidepoint(mouse_pos)
+    draw_beveled_panel(
+        surf,
+        rect,
+        fill_top=UI_BG_RAISED if active or hovered else UI_BG_SURFACE,
+        fill_bottom=UI_BG_MID,
+        border=UI_GOLD_BRIGHT if active else (UI_GOLD if hovered else UI_GOLD_DIM),
+    )
+    draw_text(
+        surf,
+        _ellipsize_text(label, font_body(13, bold=True), rect.width - 16),
+        font_body(13, bold=True),
+        UI_GOLD_BRIGHT if active else UI_TEXT,
+        rect.center,
+        center=True,
+    )
+    return rect
+
+
+def draw_text_input(surf, rect, mouse_pos, label, value, *, active=False, placeholder=""):
+    hovered = rect.collidepoint(mouse_pos)
+    draw_beveled_panel(
+        surf,
+        rect,
+        fill_top=UI_BG_RAISED,
+        fill_bottom=UI_BG_SURFACE,
+        border=UI_GOLD_BRIGHT if active else (UI_GOLD if hovered else UI_GOLD_DIM),
+    )
+    draw_text(surf, label.upper(), font_label(10, bold=True), UI_TEXT_MUTE, (rect.x + 14, rect.y + 10))
+    shown = value or placeholder
+    draw_text(surf, shown, font_body(16), UI_TEXT if value else UI_TEXT_MUTE, (rect.x + 14, rect.y + 34))
+    return rect
+
+
+def draw_chip(surf, rect, text, color):
+    _blit_translucent_rect(surf, rect, _with_alpha(color, 30), border=color, radius=10)
+    draw_text(surf, text, font_label(9, bold=True), color, rect.center, center=True)
+
+
+def draw_meter(surf, rect, value, maximum, *, fill=UI_GOLD, label=None, right_label=None):
+    pygame.draw.rect(surf, UI_BG_DEEP, rect, border_radius=8)
+    pygame.draw.rect(surf, UI_GOLD_DIM, rect, 1, border_radius=8)
+    if maximum > 0 and value > 0:
+        amount = max(0.0, min(1.0, value / maximum))
+        fill_width = max(8, int((rect.width - 4) * amount))
+        pygame.draw.rect(surf, fill, pygame.Rect(rect.x + 2, rect.y + 2, fill_width, rect.height - 4), border_radius=6)
+    if label:
+        draw_text(surf, label.upper(), font_label(10, bold=True), UI_TEXT_MUTE, (rect.x, rect.y - 14))
+    if right_label:
+        draw_text(surf, right_label, font_label(10, bold=True), UI_TEXT_SOFT, (rect.right, rect.y - 14), right=True)
+
+
+def _rank_label():
+    profile = CURRENT_PROFILE
+    return getattr(profile, "storybook_rank_label", "Squire") if profile is not None else "Squire"
+
+
+def draw_top_bar(surf, title, mouse_pos, *, left_icon=None, right_icons=(), subtitle=None):
+    strip = pygame.Rect(18, 12, WIDTH - 36, HUD_HEIGHT)
+    _blit_translucent_rect(surf, strip, _with_alpha(UI_BG_DEEP, 220), border=None, radius=18)
+    btns = {}
+    if left_icon is not None:
+        left_rect = pygame.Rect(strip.x + 10, strip.y + 6, 24, 24)
+        btns["left"] = draw_icon_button(surf, left_rect, mouse_pos, "<")
+    title_x = strip.x + 48 if left_icon is not None else strip.x + 18
+    if title:
+        draw_text(surf, str(title).upper(), font_label(11, bold=True), UI_TEXT_SOFT, (title_x, strip.y + 12))
+    profile = CURRENT_PROFILE
+    right_gap = 10
+    icon_size = 24
+    row_y = strip.y + 6
+    right_cursor = strip.right - 12
+    icon_positions = []
+    for key, label, danger in reversed(list(right_icons)):
+        rect = pygame.Rect(right_cursor - icon_size, row_y, icon_size, icon_size)
+        icon_positions.append((key, label, danger, rect))
+        right_cursor = rect.x - right_gap
+    if profile is not None:
+        level_info = level_state(getattr(profile, "player_exp", 0))
+        clusters = [
+            ("gold_readout", f"G {getattr(profile, 'gold', 0)}"),
+            ("rank_readout", _rank_label()),
+            ("level_readout", f"{level_info.level}"),
+        ]
+        badge_font = font_label(10, bold=True)
+        badge_defs = []
+        for key, text in clusters:
+            width = max(42, badge_font.size(text)[0] + 20)
+            badge_defs.append((key, text, width))
+        total_badge_width = sum(width for _key, _text, width in badge_defs) + right_gap * max(0, len(badge_defs) - 1)
+        badge_x = right_cursor - total_badge_width
+        for key, text, width in badge_defs:
+            badge = pygame.Rect(badge_x, row_y, width, icon_size)
+            draw_beveled_panel(surf, badge, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+            color = UI_GOLD if key == "gold_readout" else UI_TEXT_SOFT
+            draw_text(surf, text, badge_font, color, badge.center, center=True)
+            badge_x += width + right_gap
+    for key, label, danger, rect in reversed(icon_positions):
+        btns[key] = draw_icon_button(surf, rect, mouse_pos, label, danger=danger)
+    return btns
+
+
+def _class_tint(class_name: str | None):
+    return UI_CLASS_COLORS.get(class_name or NO_CLASS_NAME, UI_GOLD)
+
+
+def _weapon_icon(kind: str) -> str:
+    return {"melee": "M", "ranged": "R", "magic": "S"}.get(kind, "?")
+
+
+def _status_dot_label(status_kind: str) -> str:
+    return status_kind[:1].upper()
+
+
+def _draw_portrait_block(surf, rect, title: str, *, accent, secondary=None, initials: str | None = None, show_badge: bool = True):
+    fill_gradient(surf, rect, _lerp_color(accent, UI_BG_RAISED, 0.3), UI_BG_DEEP)
+    pygame.draw.rect(surf, _lerp_color(accent, UI_GOLD_DIM, 0.35 if secondary is None else 0.15), rect, 1, border_radius=14)
+    if show_badge:
+        badge = pygame.Rect(rect.x + 12, rect.y + 12, 38, 22)
+        _blit_translucent_rect(surf, badge, _with_alpha(UI_BG_DEEP, 160), border=_lerp_color(accent, UI_GOLD_DIM, 0.4), radius=8)
+        draw_text(surf, title, font_label(9, bold=True), UI_GOLD_BRIGHT, badge.center, center=True)
+    if secondary is not None:
+        draw_text(surf, secondary, font_label(10, bold=True), UI_TEXT_SOFT, (rect.right - 12, rect.y + 16), right=True)
+    draw_text(surf, initials or title[:2], font_headline(min(44, rect.height // 2), bold=True), UI_TEXT, rect.center, center=True)
+
+
+def draw_adventurer_card(surf, rect, mouse_pos, adventurer, *, selected=False, unavailable=False, small=False, tag_line=None):
+    hovered = rect.collidepoint(mouse_pos)
+    tint = ROLE_COLORS.get(role_tags_for_adventurer(adventurer)[0], UI_GOLD)
+    border = UI_GOLD_BRIGHT if selected else (_lerp_color(tint, UI_GOLD_BRIGHT, 0.3) if hovered else UI_GOLD_DIM)
+    fill_top = _lerp_color(UI_BG_RAISED, tint, 0.18)
+    draw_beveled_panel(surf, rect, fill_top=fill_top, fill_bottom=UI_BG_MID, border=border)
+    art_h = 64 if small else 90
+    art_rect = pygame.Rect(rect.x + 10, rect.y + 10, rect.width - 20, art_h)
+    initials = "".join(part[0] for part in adventurer.name.split()[:2]).upper()
+    _draw_portrait_block(surf, art_rect, "ADV", accent=tint, secondary=None, initials=initials)
+    name_font = font_body(14 if small else 16, bold=True)
+    draw_text(
+        surf,
+        _ellipsize_text(adventurer.name, name_font, rect.width - 20),
+        name_font,
+        UI_TEXT,
+        (rect.x + 10, art_rect.bottom + 10),
+    )
+    if tag_line:
+        draw_text(
+            surf,
+            _ellipsize_text(tag_line, font_label(10, bold=True), rect.width - 20),
+            font_label(10, bold=True),
+            UI_GOLD_BRIGHT,
+            (rect.x + 10, art_rect.bottom + 30),
+        )
+    elif not small:
+        draw_text(
+            surf,
+            _ellipsize_text(", ".join(role_tags_for_adventurer(adventurer)), font_label(10, bold=True), rect.width - 20),
+            font_label(10, bold=True),
+            UI_TEXT_SOFT,
+            (rect.x + 10, art_rect.bottom + 30),
+        )
+    hp_rect = pygame.Rect(rect.x + 10, rect.bottom - 20, rect.width - 20, 8)
+    draw_meter(surf, hp_rect, adventurer.hp, adventurer.hp, fill=UI_GREEN)
+    class_chip = pygame.Rect(rect.x + 12, rect.bottom - 40, 18, 18)
+    draw_chip(surf, class_chip, role_tags_for_adventurer(adventurer)[0][:1], tint)
+    weapon_x = rect.right - 30
+    for weapon in adventurer.signature_weapons[:2]:
+        chip = pygame.Rect(weapon_x, rect.bottom - 40, 18, 18)
+        draw_chip(surf, chip, _weapon_icon(weapon.kind), _class_tint(weapon.kind.title()))
+        weapon_x -= 22
+    if unavailable:
+        veil = pygame.Surface((rect.width, rect.height), pygame.SRCALPHA)
+        veil.fill((6, 8, 12, 140))
+        surf.blit(veil, rect.topleft)
+        pygame.draw.rect(surf, UI_TEXT_MUTE, rect, 1, border_radius=16)
+    return rect
+
+
+def _hover_popout_rect(source: pygame.Rect, width: int = 300, height: int = 210):
+    if source.centerx < WIDTH // 2:
+        x = min(WIDTH - width - 24, source.right + 18)
+    else:
+        x = max(24, source.left - width - 18)
+    y = max(64, min(HEIGHT - height - 24, source.y - 10))
+    return pygame.Rect(x, y, width, height)
+
+
+def _draw_adventurer_popout(surf, rect, adventurer, *, class_name: str | None = None, artifact_name: str | None = None, artifact=None):
+    _draw_info_popout(
+        surf,
+        rect,
+        adventurer.name,
+        _adventurer_detail_lines(adventurer, class_name=class_name, artifact_name=artifact_name, artifact=artifact),
+        width=max(rect.width, 360),
+    )
+
+
+def _draw_avatar_stage(surf, rect, initials: str = "YOU"):
+    draw_beveled_panel(surf, rect, fill_top=_lerp_color(UI_GOLD, UI_BG_RAISED, 0.3), fill_bottom=UI_BG_DEEP, border=UI_GOLD_DIM)
+    draw_text(surf, initials, font_headline(40, bold=True), UI_TEXT, rect.center, center=True)
+
+
+def _draw_scrim(surf, alpha: int = 170):
+    overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+    overlay.fill((UI_BG_DEEP[0], UI_BG_DEEP[1], UI_BG_DEEP[2], alpha))
+    surf.blit(overlay, (0, 0))
+
+
+def _draw_overlay_panel(surf, rect, *, title=None):
+    _draw_scrim(surf, 160)
+    draw_beveled_panel(surf, rect, title=title, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+
+
+def _draw_scene_object(surf, rect, mouse_pos, title: str, subtitle: str, *, accent, label_key: str | None = None):
+    hovered = rect.collidepoint(mouse_pos)
+    draw_beveled_panel(
+        surf,
+        rect,
+        fill_top=_lerp_color(UI_BG_RAISED, accent, 0.18),
+        fill_bottom=UI_BG_MID,
+        border=UI_GOLD_BRIGHT if hovered else UI_GOLD_DIM,
+    )
+    if hovered:
+        glow = pygame.Surface((rect.width + 24, rect.height + 24), pygame.SRCALPHA)
+        pygame.draw.rect(glow, _with_alpha(accent, 40), pygame.Rect(12, 12, rect.width, rect.height), border_radius=20)
+        surf.blit(glow, (rect.x - 12, rect.y - 12))
+    label = label_key or title[:2].upper()
+    _draw_portrait_block(surf, pygame.Rect(rect.x + 18, rect.y + 18, rect.width - 36, rect.height - 74), label, accent=accent, initials=label, show_badge=False)
+    draw_text(
+        surf,
+        title,
+        font_body(15, bold=True),
+        UI_GOLD_BRIGHT if hovered else UI_TEXT,
+        (rect.centerx, rect.bottom - 42),
+        center=True,
+    )
+    if hovered:
+        draw_text(surf, subtitle, font_label(10, bold=True), UI_TEXT_SOFT, (rect.centerx, rect.bottom - 22), center=True)
+
+
+def draw_main_menu(surf, mouse_pos, profile, *, has_current_quest=False):
+    draw_background(surf, "guild")
+    btns = draw_top_bar(
+        surf,
+        "",
+        mouse_pos,
+        right_icons=(("settings", "S", False), ("quit", "X", True)),
+    )
+    pulse = (pygame.time.get_ticks() // 250) % 2
+    logo_color = UI_GOLD_BRIGHT if pulse else UI_GOLD
+    layout_x = 20
+    layout_top = 86
+    gap = 16
+    big_w = 250
+    big_h = 180
+    cluster_w = big_w * 2 + gap
+    small_w = (cluster_w - gap * 3) // 4
+    small_h = 104
+
+    draw_text(surf, "FABLED", font_headline(62, bold=True), logo_color, (layout_x + 8, layout_top), center=False)
+
+    quest_rect = pygame.Rect(layout_x, layout_top + 82, big_w, big_h)
+    bouts_rect = pygame.Rect(layout_x + big_w + gap, layout_top + 82, big_w, big_h)
+    catalog_rect = pygame.Rect(layout_x, layout_top + 82 + big_h + gap, big_w, big_h)
+    training_rect = pygame.Rect(layout_x + big_w + gap, layout_top + 82 + big_h + gap, big_w, big_h)
+
+    small_y = layout_top + 82 + (big_h + gap) * 2
+    market_rect = pygame.Rect(layout_x, small_y, small_w, small_h)
+    assistant_rect = pygame.Rect(layout_x + (small_w + gap), small_y, small_w, small_h)
+    bartender_rect = pygame.Rect(layout_x + (small_w + gap) * 2, small_y, small_w, small_h)
+    server_rect = pygame.Rect(layout_x + (small_w + gap) * 3, small_y, small_w, small_h)
+    avatar_right = assistant_rect.right + gap // 2
+    avatar_rect = pygame.Rect(layout_x, small_y + small_h + gap, avatar_right - layout_x, 104)
+
+    _draw_scene_object(surf, quest_rect, mouse_pos, "Quests", "Quest Runs", accent=UI_GOLD, label_key="Q")
+    _draw_scene_object(surf, bouts_rect, mouse_pos, "Bouts", "Best of Three", accent=UI_RED, label_key="B")
+    _draw_scene_object(surf, catalog_rect, mouse_pos, "Codex", "Rules & Roster", accent=UI_GOLD_BRIGHT, label_key="C")
+    _draw_scene_object(surf, training_rect, mouse_pos, "Training", "Practice Fights", accent=UI_BLUE, label_key="T")
+    _draw_scene_object(surf, market_rect, mouse_pos, "Market", "Cosmetics", accent=UI_ORANGE, label_key="M")
+
+    draw_beveled_panel(surf, avatar_rect, fill_top=_lerp_color(UI_BG_RAISED, UI_GOLD, 0.12), fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    _draw_avatar_stage(surf, pygame.Rect(avatar_rect.x + 12, avatar_rect.y + 12, 76, avatar_rect.height - 24), "YOU")
+    draw_text(surf, "Profile", font_body(18, bold=True), UI_TEXT, (avatar_rect.x + 104, avatar_rect.y + 24))
+    draw_text(surf, "Guildmaster", font_label(10, bold=True), UI_GOLD, (avatar_rect.x + 104, avatar_rect.y + 47))
+    draw_text(surf, _rank_label(), font_body(13), UI_TEXT_SOFT, (avatar_rect.x + 104, avatar_rect.y + 69))
+    draw_text(surf, f"Level {level_state(getattr(profile, 'player_exp', 0)).level}", font_body(13), UI_TEXT_SOFT, (avatar_rect.right - 14, avatar_rect.y + 69), right=True)
+    if avatar_rect.collidepoint(mouse_pos):
+        glow = pygame.Surface((avatar_rect.width + 24, avatar_rect.height + 24), pygame.SRCALPHA)
+        pygame.draw.rect(glow, _with_alpha(UI_GOLD, 36), pygame.Rect(12, 12, avatar_rect.width, avatar_rect.height), border_radius=20)
+        surf.blit(glow, (avatar_rect.x - 12, avatar_rect.y - 12))
+        tooltip = _hover_popout_rect(avatar_rect, 240, 108)
+        draw_beveled_panel(surf, tooltip, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+        draw_text(surf, "Guildmaster", font_body(15, bold=True), UI_TEXT, (tooltip.x + 12, tooltip.y + 14))
+        draw_text(surf, _rank_label(), font_label(10, bold=True), UI_GOLD, (tooltip.x + 12, tooltip.y + 40))
+        draw_text(surf, f"Level {level_state(getattr(profile, 'player_exp', 0)).level}", font_body(13), UI_TEXT_SOFT, (tooltip.x + 12, tooltip.y + 60))
+
+    employee_specs = [
+        (assistant_rect, "employee_assistant", "Assistant", getattr(profile, "assistant_skill", "") or "Select Skill", _hx("8BC34A")),
+        (bartender_rect, "employee_bartender", "Bartender", getattr(profile, "bartender_skill", "") or "Select Skill", _hx("FF8A65")),
+        (server_rect, "employee_server", "Supplier", getattr(profile, "server_skill", "") or "Select Skill", _hx("4DD0E1")),
+    ]
+    for rect, _key, name, skill_name, color in employee_specs:
+        _draw_scene_object(surf, rect, mouse_pos, name, skill_name, accent=color, label_key=name[:1].upper())
+
+    btns["profile"] = avatar_rect
+    btns["guild_hall"] = quest_rect
+    btns["bouts"] = bouts_rect
+    btns["market"] = market_rect
+    btns["catalog"] = catalog_rect
+    btns["training_grounds"] = training_rect
+    btns["employee_assistant"] = assistant_rect
+    btns["employee_bartender"] = bartender_rect
+    btns["employee_server"] = server_rect
+    return btns
+
+
+def draw_player_menu(
+    surf,
+    mouse_pos,
+    profile,
+    note_lines: list[str] | None = None,
+    *,
+    favorite_adventurer_id: str | None = None,
+    favorite_pool_ids: list[str] | None = None,
+):
+    draw_background(surf, "guild")
+    panel = pygame.Rect(40, 84, 820, 764)
+    _draw_overlay_panel(surf, panel, title="PROFILE")
+    btns = draw_top_bar(surf, "Profile", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+
+    avatar_rect = pygame.Rect(panel.x + 28, panel.y + 42, 180, 220)
+    _draw_avatar_stage(surf, avatar_rect, "YOU")
+    draw_text(surf, "Guildmaster", font_headline(24, bold=True), UI_TEXT, (panel.x + 236, panel.y + 62))
+    draw_text(surf, _rank_label(), font_body(14, bold=True), UI_GOLD, (panel.x + 236, panel.y + 98))
+    level_info = level_state(getattr(profile, "player_exp", 0))
+    draw_text(surf, str(level_info.level), font_headline(26, bold=True), UI_TEXT, (panel.x + 236, panel.y + 132))
+    draw_meter(
+        surf,
+        pygame.Rect(panel.x + 236, panel.y + 172, 342, 10),
+        level_info.current_level_exp,
+        max(1, level_info.next_level_exp),
+        fill=UI_GOLD,
+    )
+    draw_text(surf, f"{level_info.current_level_exp}/{level_info.next_level_exp}", font_label(10, bold=True), UI_TEXT_SOFT, (panel.x + 586, panel.y + 166), right=True)
+
+    icon_y = panel.y + 262
+    closet_rect = pygame.Rect(panel.x + 28, icon_y, 58, 58)
+    friends_rect = pygame.Rect(panel.x + 96, icon_y, 58, 58)
+    stats_rect = pygame.Rect(panel.x + 164, icon_y, 58, 58)
+    draw_icon_button(surf, closet_rect, mouse_pos, "C", active=False)
+    draw_icon_button(surf, friends_rect, mouse_pos, "F", active=False)
+    draw_icon_button(surf, stats_rect, mouse_pos, "S", active=False)
+    draw_text(surf, "Closet", font_label(10, bold=True), UI_TEXT_SOFT, (closet_rect.centerx, closet_rect.bottom + 8), center=True)
+    draw_text(surf, "Friends", font_label(10, bold=True), UI_TEXT_SOFT, (friends_rect.centerx, friends_rect.bottom + 8), center=True)
+    draw_text(surf, "Stats", font_label(10, bold=True), UI_TEXT_SOFT, (stats_rect.centerx, stats_rect.bottom + 8), center=True)
+
+    lifetime_rect = pygame.Rect(panel.x + 28, panel.y + 362, panel.width - 56, 120)
+    draw_beveled_panel(surf, lifetime_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+    stats_lines = [
+        f"Ranked record {getattr(profile, 'ranked_total_wins', 0)}-{getattr(profile, 'ranked_total_losses', 0)}",
+        f"Best quest run {getattr(profile, 'ranked_best_quest_wins', 0)} wins",
+        f"Gold on hand {getattr(profile, 'gold', 0)}",
+    ]
+    for index, line in enumerate(stats_lines):
+        draw_text(surf, line, font_body(14), UI_TEXT_SOFT, (lifetime_rect.x + 18, lifetime_rect.y + 24 + index * 26))
+
+    favorite_rect = pygame.Rect(panel.x + 28, panel.y + 514, panel.width - 56, 190)
+    draw_beveled_panel(surf, favorite_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    favorite = ADVENTURERS_BY_ID.get(favorite_adventurer_id or "")
+    favorite_card_rect = None
+    if favorite is not None:
+        card_rect = pygame.Rect(favorite_rect.x + 18, favorite_rect.y + 20, 164, 150)
+        draw_adventurer_card(surf, card_rect, mouse_pos, favorite, selected=True, small=True, tag_line="Favorite Adventurer")
+        draw_text(surf, f"G {getattr(profile, 'gold', 0)}", font_body(16, bold=True), UI_GOLD, (favorite_rect.right - 18, favorite_rect.y + 24), right=True)
+        favorite_card_rect = card_rect
+    btns["favorite_card"] = favorite_rect
+    btns["closet"] = closet_rect
+    btns["friends"] = friends_rect
+    if favorite is not None and favorite_card_rect is not None and favorite_card_rect.collidepoint(mouse_pos):
+        _draw_adventurer_popout(surf, favorite_card_rect, favorite)
+    return btns
+
+
+def draw_friends_menu(
+    surf,
+    mouse_pos,
+    friends,
+    selected_index: int,
+    edit_name: str,
+    edit_ip: str,
+    active_field: str | None,
+    status_lines: list[str] | None = None,
+    queued_ip: str = "",
+):
+    draw_background(surf, "guild")
+    panel = pygame.Rect(52, 92, 780, 730)
+    _draw_overlay_panel(surf, panel, title="FRIENDS")
+    btns = draw_top_bar(surf, "Friends", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    list_rect = pygame.Rect(panel.x + 24, panel.y + 40, panel.width - 48, 470)
+    edit_strip = pygame.Rect(panel.x + 24, panel.bottom - 156, panel.width - 48, 110)
+    draw_beveled_panel(surf, list_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, edit_strip, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+
+    entry_buttons = []
+    if friends:
+        selected_index = max(0, min(selected_index, len(friends) - 1))
+        for index, friend in enumerate(friends[:6]):
+            row = pygame.Rect(list_rect.x + 12, list_rect.y + 16 + index * 70, list_rect.width - 24, 56)
+            active = index == selected_index
+            draw_beveled_panel(surf, row, fill_top=UI_BG_RAISED if active or row.collidepoint(mouse_pos) else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if active else UI_GOLD_DIM)
+            pygame.draw.circle(surf, UI_GREEN if index == selected_index else UI_TEXT_MUTE, (row.x + 18, row.centery), 5)
+            draw_text(surf, friend["name"], font_body(14, bold=True), UI_TEXT, (row.x + 34, row.y + 12))
+            draw_text(surf, friend["ip"], font_label(10, bold=True), UI_TEXT_MUTE, (row.x + 34, row.y + 32))
+            entry_buttons.append((row, index))
+    else:
+        draw_text(surf, "No friends saved yet.", font_body(16, bold=True), UI_TEXT, (list_rect.x + 16, list_rect.y + 18))
+        draw_text(surf, "Add one below to keep a LAN roster handy.", font_body(14), UI_TEXT_SOFT, (list_rect.x + 16, list_rect.y + 40))
+
+    name_box = pygame.Rect(edit_strip.x + 14, edit_strip.y + 18, 250, 62)
+    ip_box = pygame.Rect(edit_strip.x + 278, edit_strip.y + 18, 270, 62)
+    save_btn = pygame.Rect(edit_strip.x + 566, edit_strip.y + 18, 52, 52)
+    remove_btn = pygame.Rect(edit_strip.x + 626, edit_strip.y + 18, 52, 52)
+    new_btn = pygame.Rect(edit_strip.x + 686, edit_strip.y + 18, 52, 52)
+    draw_text_input(surf, name_box, mouse_pos, "Name", edit_name, active=active_field == "name", placeholder="Friend name")
+    draw_text_input(surf, ip_box, mouse_pos, "IP", edit_ip, active=active_field == "ip", placeholder="Host IP")
+    draw_icon_button(surf, save_btn, mouse_pos, "S", active=bool(edit_name.strip() and edit_ip.strip()))
+    draw_icon_button(surf, remove_btn, mouse_pos, "D", danger=True)
+    draw_icon_button(surf, new_btn, mouse_pos, "+")
+    hint = queued_ip or (status_lines[0] if status_lines else "Select a friend to edit.")
+    draw_text(surf, hint, font_body(13), UI_TEXT_SOFT, (edit_strip.x + 16, edit_strip.bottom - 24))
+
+    btns["entries"] = entry_buttons
+    btns["name_box"] = name_box
+    btns["ip_box"] = ip_box
+    btns["save"] = save_btn
+    btns["remove"] = remove_btn
+    btns["new"] = new_btn
+    return btns
+
+
+def draw_employee_config(surf, mouse_pos, employee_name: str, role_description: str, skills: list[dict], active_skill_id: str):
+    draw_background(surf, "guild")
+    panel = pygame.Rect(300, 210, 800, 420)
+    _draw_overlay_panel(surf, panel, title="EMPLOYEE")
+    btns = draw_top_bar(surf, employee_name, mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    portrait = pygame.Rect(panel.x + 26, panel.y + 58, 176, 238)
+    _draw_avatar_stage(surf, portrait, employee_name[:2].upper())
+    draw_text(surf, employee_name, font_headline(20, bold=True), UI_TEXT, (panel.x + 226, panel.y + 62))
+    draw_text(surf, role_description, font_body(14), UI_TEXT_SOFT, (panel.x + 226, panel.y + 92))
+    skill_buttons = []
+    for index, skill in enumerate(skills[:5]):
+        rect = pygame.Rect(panel.x + 226 + index * 110, panel.y + 148, 100, 146)
+        active = skill["id"] == active_skill_id
+        draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED if active or rect.collidepoint(mouse_pos) else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if active else UI_GOLD_DIM)
+        draw_text(surf, _ellipsize_text(skill["name"], font_body(13, bold=True), rect.width - 16), font_body(13, bold=True), UI_GOLD_BRIGHT if active else UI_TEXT, (rect.x + 10, rect.y + 12))
+        _draw_wrapped_lines(surf, [skill["description"]], rect.x + 10, rect.y + 40, rect.width - 20, font=font_body(12), color=UI_TEXT_SOFT, line_height=16)
+        skill_buttons.append((rect, skill["id"]))
+    closet_rect = pygame.Rect(panel.x + 226, panel.bottom - 62, 180, 38)
+    draw_secondary_button(surf, closet_rect, mouse_pos, "Change Skin")
+    btns["skills"] = skill_buttons
+    btns["closet"] = closet_rect
+    return btns
+
+
+def _draw_nav_icon(surf, rect, mouse_pos, label: str, *, active=False):
+    draw_icon_button(surf, rect, mouse_pos, label, active=active)
+    return rect
+
+
+def _draw_pips(surf, start_x: int, y: int, count: int, filled: int, *, fill_color):
+    for index in range(count):
+        center = (start_x + index * 18, y)
+        pygame.draw.circle(surf, fill_color if index < filled else UI_GOLD_DIM, center, 6, 0 if index < filled else 1)
+
+
+def draw_quest_hub(
+    surf,
+    mouse_pos,
+    *,
+    run_active: bool,
+    quest_wins: int,
+    quest_losses: int,
+    current_win_streak: int,
+    current_loss_streak: int,
+    party_ids: list[str] | None = None,
+    favorite_id: str | None = None,
+):
+    draw_background(surf, "quest")
+    btns = draw_top_bar(surf, "Quests", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    left_rect = pygame.Rect(54, 94, 292, 710)
+    center_rect = pygame.Rect(370, 130, 960, 340)
+    bottom_rect = pygame.Rect(370, 620, 960, 144)
+    draw_beveled_panel(surf, left_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, center_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, bottom_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+
+    party_ids = list(party_ids or [])
+    favorite = ADVENTURERS_BY_ID.get(favorite_id or "")
+    if run_active:
+        draw_text(surf, "QUEST STATUS", font_label(11, bold=True), UI_TEXT_MUTE, (left_rect.x + 18, left_rect.y + 18))
+        draw_text(surf, str(quest_wins), font_headline(28, bold=True), UI_GOLD_BRIGHT, (left_rect.x + 18, left_rect.y + 54))
+        draw_text(surf, "wins", font_label(10, bold=True), UI_TEXT_SOFT, (left_rect.x + 62, left_rect.y + 66))
+        _draw_pips(surf, left_rect.x + 24, left_rect.y + 108, 3, quest_losses, fill_color=UI_RED)
+        draw_text(surf, "losses", font_label(10, bold=True), UI_TEXT_SOFT, (left_rect.x + 18, left_rect.y + 126))
+        flame_count = min(5, max(current_win_streak, current_loss_streak))
+        for index in range(flame_count):
+            color = UI_GOLD_BRIGHT if current_win_streak >= current_loss_streak else UI_RED
+            draw_chip(surf, pygame.Rect(left_rect.x + 18 + index * 34, left_rect.y + 168, 26, 22), "!", color)
+        draw_text(surf, f"G {quest_wins * 50}", font_body(16, bold=True), UI_GOLD, (left_rect.x + 18, left_rect.y + 224))
+        draw_text(surf, f"Artifacts {sum(1 for _ in party_ids)}", font_body(14), UI_TEXT_SOFT, (left_rect.x + 18, left_rect.y + 252))
+    else:
+        begin_rect = pygame.Rect(left_rect.x + 18, left_rect.y + 24, left_rect.width - 36, 48)
+        draw_primary_button(surf, begin_rect, mouse_pos, "Begin Quest")
+        btns["current_quest"] = begin_rect
+        btns["advance"] = begin_rect
+        if favorite is not None:
+            draw_text(surf, "Favorite", font_label(10, bold=True), UI_TEXT_MUTE, (left_rect.x + 18, left_rect.y + 108))
+            draw_adventurer_card(surf, pygame.Rect(left_rect.x + 18, left_rect.y + 128, left_rect.width - 36, 200), mouse_pos, favorite, selected=True, small=False)
+
+    draw_text(surf, "PARTY", font_label(11, bold=True), UI_TEXT_MUTE, (center_rect.x + 18, center_rect.y + 18))
+    hover_card = None
+    card_buttons = []
+    for index, adventurer_id in enumerate(party_ids[:6]):
+        adventurer = ADVENTURERS_BY_ID.get(adventurer_id)
+        if adventurer is None:
+            continue
+        rect = pygame.Rect(center_rect.x + 18 + index * 156, center_rect.y + 78, 136, 186)
+        draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=False, small=True)
+        card_buttons.append((rect, index))
+        if rect.collidepoint(mouse_pos):
+            hover_card = adventurer
+    if hover_card is not None:
+        _draw_adventurer_popout(surf, pygame.Rect(mouse_pos[0] - 10, mouse_pos[1] - 10, 20, 20), hover_card)
+
+    training_rect = pygame.Rect(center_rect.right - 144, center_rect.y + 16, 40, 40)
+    catalog_rect = pygame.Rect(center_rect.right - 96, center_rect.y + 16, 40, 40)
+    shop_rect = pygame.Rect(center_rect.right - 48, center_rect.y + 16, 40, 40)
+    _draw_nav_icon(surf, training_rect, mouse_pos, "T")
+    _draw_nav_icon(surf, catalog_rect, mouse_pos, "C")
+    _draw_nav_icon(surf, shop_rect, mouse_pos, "A")
+
+    prepare_rect = pygame.Rect(bottom_rect.x + 18, bottom_rect.y + 44, 280, 48)
+    edit_rect = pygame.Rect(bottom_rect.x + 314, bottom_rect.y + 44, 220, 48)
+    forfeit_rect = pygame.Rect(bottom_rect.x + 554, bottom_rect.y + 56, 120, 24)
+    if run_active:
+        draw_primary_button(surf, prepare_rect, mouse_pos, "Prepare Encounter")
+        draw_secondary_button(surf, edit_rect, mouse_pos, "Edit Loadouts")
+        draw_text(surf, "Forfeit", font_body(13), UI_TEXT_SOFT if not forfeit_rect.collidepoint(mouse_pos) else UI_GOLD_BRIGHT, (forfeit_rect.x, forfeit_rect.y))
+        btns["edit_loadouts"] = edit_rect
+        btns["forfeit"] = forfeit_rect
+    else:
+        draw_primary_button(surf, prepare_rect, mouse_pos, "Begin Quest")
+        draw_secondary_button(surf, edit_rect, mouse_pos, "Loadouts Locked", active=False)
+        btns["edit_loadouts"] = edit_rect
+    btns["advance"] = prepare_rect
+    btns["current_quest"] = prepare_rect
+    btns["party_cards"] = card_buttons
+    btns["training_grounds"] = training_rect
+    btns["catalog"] = catalog_rect
+    btns["shops"] = shop_rect
+    return btns
+
+
+def draw_quests_menu(surf, mouse_pos, **kwargs):
+    return draw_quest_hub(surf, mouse_pos, **kwargs)
+
+
+def draw_training_grounds(surf, mouse_pos, *, training_favorite_id: str | None = None, roster_scroll: int = 0):
+    draw_background(surf, "guild")
+    btns = draw_top_bar(surf, "Training", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    roster_rect = pygame.Rect(48, 96, 456, 748)
+    detail_rect = pygame.Rect(540, 96, 812, 748)
+    draw_beveled_panel(surf, roster_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, detail_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    adventurers = list(ADVENTURERS_BY_ID.values())
+    max_scroll = max(0, len(adventurers) - 9)
+    roster_scroll = max(0, min(roster_scroll, max_scroll))
+    visible = adventurers[roster_scroll:roster_scroll + 9]
+    selected = ADVENTURERS_BY_ID.get(training_favorite_id or "", visible[0] if visible else None)
+    card_buttons = []
+    hover_adv = None
+    hovered_weapon = None
+    weapon_buttons = []
+    for index, adventurer in enumerate(visible):
+        row = index // 3
+        col = index % 3
+        rect = pygame.Rect(roster_rect.x + 18 + col * 140, roster_rect.y + 18 + row * 194, 122, 172)
+        draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=selected is not None and adventurer.id == selected.id, small=True)
+        card_buttons.append((rect, adventurer.id))
+        if rect.collidepoint(mouse_pos):
+            hover_adv = adventurer
+    if hover_adv is not None:
+        _draw_adventurer_popout(surf, pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1), hover_adv)
+
+    if selected is not None:
+        portrait_rect = pygame.Rect(detail_rect.x + 24, detail_rect.y + 24, 260, 304)
+        _draw_portrait_block(surf, portrait_rect, "FOCUS", accent=_class_tint(selected.signature_weapons[0].kind.title()), initials="".join(part[0] for part in selected.name.split()[:2]).upper())
+        draw_text(surf, selected.name, font_headline(26, bold=True), UI_TEXT, (detail_rect.x + 314, detail_rect.y + 32))
+        draw_text(surf, f"HP {selected.hp}   ATK {selected.attack}   DEF {selected.defense}   SPD {selected.speed}", font_body(16, bold=True), UI_TEXT_SOFT, (detail_rect.x + 314, detail_rect.y + 74))
+        draw_text(surf, selected.innate.name, font_body(15, bold=True), UI_GOLD_BRIGHT, (detail_rect.x + 314, detail_rect.y + 112))
+        _draw_wrapped_lines(surf, [selected.innate.description], detail_rect.x + 314, detail_rect.y + 138, detail_rect.width - 338, font=font_body(14), color=UI_TEXT_SOFT, line_height=18)
+        for index, weapon in enumerate(selected.signature_weapons[:2]):
+            rect = pygame.Rect(detail_rect.x + 314, detail_rect.y + 232 + index * 120, 420, 98)
+            draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+            draw_text(surf, _ellipsize_text(weapon.name, font_body(16, bold=True), rect.width - 24), font_body(16, bold=True), UI_TEXT, (rect.x + 12, rect.y + 12))
+            draw_text(surf, f"{weapon.kind.title()}  Power {weapon.strike.power}", font_label(10, bold=True), UI_GOLD, (rect.x + 12, rect.y + 34))
+            detail_lines = _weapon_detail_lines(weapon)[1:3]
+            _draw_wrapped_lines(surf, detail_lines or [_effect_text(weapon.strike)], rect.x + 12, rect.y + 52, rect.width - 24, font=font_body(12), color=UI_TEXT_SOFT, line_height=14)
+            weapon_buttons.append((rect, weapon.id))
+            if rect.collidepoint(mouse_pos):
+                hovered_weapon = weapon
+        draw_text(surf, selected.ultimate.name, font_body(15, bold=True), UI_GOLD_BRIGHT, (detail_rect.x + 314, detail_rect.bottom - 136))
+        _draw_wrapped_lines(surf, [selected.ultimate.description or selected.ultimate.name], detail_rect.x + 314, detail_rect.bottom - 112, detail_rect.width - 338, font=font_body(14), color=UI_TEXT_SOFT, line_height=18)
+    if hovered_weapon is not None:
+        _draw_info_popout(surf, pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1), hovered_weapon.name, _weapon_detail_lines(hovered_weapon))
+    ai_btn = pygame.Rect(detail_rect.right - 262, detail_rect.bottom - 92, 240, 44)
+    lan_btn = pygame.Rect(detail_rect.right - 262, detail_rect.bottom - 40, 240, 44)
+    focus_btn = pygame.Rect(detail_rect.x + 24, detail_rect.bottom - 52, 160, 36)
+    draw_primary_button(surf, ai_btn, mouse_pos, "Practice vs AI")
+    draw_secondary_button(surf, lan_btn, mouse_pos, "Practice vs Friend")
+    draw_secondary_button(surf, focus_btn, mouse_pos, "Set Favorite")
+    btns["training_cards"] = card_buttons
+    btns["weapon_cards"] = weapon_buttons
+    btns["vs_ai"] = ai_btn
+    btns["vs_lan"] = lan_btn
+    btns["training_focus"] = focus_btn
+    btns["training_scroll_max"] = max_scroll
+    return btns
+
+
+def draw_favored_adventurer_select(
+    surf,
+    mouse_pos,
+    favorite_pool_ids: list[str],
+    focused_id: str | None,
+    selected_id: str | None,
+    *,
+    scroll: int = 0,
+):
+    draw_background(surf, "guild")
+    panel = pygame.Rect(160, 90, 1080, 760)
+    _draw_overlay_panel(surf, panel, title="FAVORITE")
+    btns = draw_top_bar(surf, "Favorite Adventurer", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    pool = [adventurer_id for adventurer_id in favorite_pool_ids if adventurer_id in ADVENTURERS_BY_ID]
+    max_scroll = max(0, len(pool) - 9)
+    scroll = max(0, min(scroll, max_scroll))
+    visible = pool[scroll:scroll + 9]
+    card_buttons = []
+    focus = ADVENTURERS_BY_ID.get(focused_id or "", ADVENTURERS_BY_ID.get(visible[0], None) if visible else None)
+    hover_adventurer = None
+    for index, adventurer_id in enumerate(visible):
+        adventurer = ADVENTURERS_BY_ID[adventurer_id]
+        row = index // 3
+        col = index % 3
+        rect = pygame.Rect(panel.x + 24 + col * 218, panel.y + 54 + row * 214, 194, 182)
+        draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=focus is not None and adventurer.id == focus.id, small=True, tag_line="Current Favorite" if adventurer.id == selected_id else None)
+        card_buttons.append((rect, adventurer_id))
+        if rect.collidepoint(mouse_pos):
+            hover_adventurer = adventurer
+    confirm_rect = pygame.Rect(panel.right - 250, panel.bottom - 62, 220, 40)
+    draw_primary_button(surf, confirm_rect, mouse_pos, "Confirm Favorite", disabled=focus is None)
+    btns["cards"] = card_buttons
+    btns["confirm"] = confirm_rect
+    if hover_adventurer is not None:
+        _draw_adventurer_popout(surf, pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1), hover_adventurer)
+    return btns
+
+
+def draw_quest_draft(
+    surf,
+    mouse_pos,
+    offer_ids,
+    focused_id,
+    selected_ids,
+    *,
+    detail_scroll: int = 0,
+    title: str = "Encounter Prep",
+    enemy_party_ids: list[str] | None = None,
+    card_scroll: int = 0,
+    allow_text_import: bool = False,
+    import_open: bool = False,
+    import_text: str = "",
+    import_status_lines: list[str] | None = None,
+    target_count: int = 3,
+    continue_label: str = "Continue To Loadouts",
+    selected_panel_title: str = "Encounter Team (Click To Remove)",
+    side_panel_title: str = "Enemy Party",
+    side_panel_lines: list[str] | None = None,
+):
+    draw_background(surf, "quest")
+    btns = draw_top_bar(surf, title, mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    cards = []
+    hover_adventurer = None
+    focused_id = focused_id if focused_id in ADVENTURERS_BY_ID else (offer_ids[0] if offer_ids else None)
+    focused = ADVENTURERS_BY_ID.get(focused_id or "")
+    if target_count > 3:
+        grid_rect = pygame.Rect(220, 120, 720, 620)
+        picks_rect = pygame.Rect(980, 120, 280, 620)
+        draw_beveled_panel(surf, grid_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+        draw_beveled_panel(surf, picks_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+        visible_offer_ids = list(offer_ids[:9])
+        for index, adventurer_id in enumerate(visible_offer_ids):
+            adventurer = ADVENTURERS_BY_ID[adventurer_id]
+            row = index // 3
+            col = index % 3
+            rect = pygame.Rect(grid_rect.x + 20 + col * 228, grid_rect.y + 20 + row * 198, 192, 172)
+            draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=adventurer_id == focused_id, unavailable=adventurer_id in selected_ids, small=True)
+            cards.append((rect, adventurer_id))
+            if rect.collidepoint(mouse_pos):
+                hover_adventurer = adventurer
+        slot_buttons = []
+        for index, adventurer_id in enumerate(selected_ids[:target_count]):
+            adventurer = ADVENTURERS_BY_ID[adventurer_id]
+            rect = pygame.Rect(picks_rect.x + 20, picks_rect.y + 26 + index * 96, picks_rect.width - 40, 78)
+            draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=True, small=True)
+            slot_buttons.append((rect, adventurer_id))
+            if rect.collidepoint(mouse_pos):
+                hover_adventurer = adventurer
+        if focused is not None:
+            favorite_rect = pygame.Rect(40, 118, 150, 196)
+            draw_adventurer_card(surf, favorite_rect, mouse_pos, focused, selected=True, small=True, tag_line="Pinned")
+            if favorite_rect.collidepoint(mouse_pos):
+                hover_adventurer = focused
+        pick_rect = pygame.Rect(220, 764, 220, 42)
+        continue_rect = pygame.Rect(1040, 764, 220, 42)
+        draw_secondary_button(surf, pick_rect, mouse_pos, "Pick")
+        draw_primary_button(surf, continue_rect, mouse_pos, "Confirm Party", disabled=len(selected_ids) != target_count)
+        btns["party_slots"] = slot_buttons
+    else:
+        enemy_rect = pygame.Rect(230, 98, 940, 140)
+        bench_rect = pygame.Rect(180, 276, 1040, 290)
+        picks_rect = pygame.Rect(430, 604, 540, 190)
+        draw_beveled_panel(surf, enemy_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+        draw_beveled_panel(surf, bench_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+        draw_beveled_panel(surf, picks_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+        draw_text(surf, "Enemy Preview", font_label(11, bold=True), UI_TEXT_MUTE, (enemy_rect.x + 16, enemy_rect.y + 14))
+        enemy_buttons = []
+        for index, adventurer_id in enumerate((enemy_party_ids or [])[:3]):
+            adventurer = ADVENTURERS_BY_ID.get(adventurer_id)
+            if adventurer is None:
+                continue
+            rect = pygame.Rect(enemy_rect.x + 18 + index * 304, enemy_rect.y + 34, 286, 86)
+            draw_beveled_panel(surf, rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+            draw_text(surf, _ellipsize_text(adventurer.name, font_body(14, bold=True), rect.width - 20), font_body(14, bold=True), UI_TEXT, (rect.x + 12, rect.y + 12))
+            draw_text(surf, ", ".join(role_tags_for_adventurer(adventurer)[:2]), font_label(10, bold=True), UI_TEXT_SOFT, (rect.x + 12, rect.y + 36))
+            enemy_buttons.append((rect, adventurer_id))
+            if rect.collidepoint(mouse_pos):
+                hover_adventurer = adventurer
+        for index, adventurer_id in enumerate(offer_ids[:6]):
+            adventurer = ADVENTURERS_BY_ID[adventurer_id]
+            rect = pygame.Rect(bench_rect.x + 18 + index * 170, bench_rect.y + 54, 152, 204)
+            draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=adventurer_id == focused_id, unavailable=adventurer_id in selected_ids, small=True)
+            cards.append((rect, adventurer_id))
+            if rect.collidepoint(mouse_pos):
+                hover_adventurer = adventurer
+        slot_buttons = []
+        slot_positions = [
+            pygame.Rect(picks_rect.centerx - 72, picks_rect.y + 88, 144, 82),
+            pygame.Rect(picks_rect.x + 38, picks_rect.y + 26, 144, 82),
+            pygame.Rect(picks_rect.right - 182, picks_rect.y + 26, 144, 82),
+        ]
+        for index, rect in enumerate(slot_positions):
+            if index < len(selected_ids):
+                adventurer = ADVENTURERS_BY_ID[selected_ids[index]]
+                draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=True, small=True)
+                slot_buttons.append((rect, selected_ids[index]))
+                if rect.collidepoint(mouse_pos):
+                    hover_adventurer = adventurer
+            else:
+                draw_beveled_panel(surf, rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+        pick_rect = pygame.Rect(230, 804, 220, 42)
+        continue_rect = pygame.Rect(950, 804, 220, 42)
+        draw_secondary_button(surf, pick_rect, mouse_pos, "Select")
+        draw_primary_button(surf, continue_rect, mouse_pos, "Lock In", disabled=len(selected_ids) != target_count)
+        btns["party_slots"] = slot_buttons
+        btns["enemy_cards"] = enemy_buttons
+    if import_open:
+        modal = pygame.Rect(380, 210, 640, 300)
+        _draw_overlay_panel(surf, modal, title="IMPORT")
+        text_box = pygame.Rect(modal.x + 18, modal.y + 54, modal.width - 36, 120)
+        draw_beveled_panel(surf, text_box, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+        preview = import_text[:200] if import_text else "Paste a team block here."
+        _draw_wrapped_lines(surf, [preview], text_box.x + 12, text_box.y + 12, text_box.width - 24, font=font_body(13), color=UI_TEXT if import_text else UI_TEXT_MUTE, line_height=16)
+        cancel_rect = pygame.Rect(modal.x + 18, modal.bottom - 52, 120, 34)
+        clear_rect = pygame.Rect(modal.x + 148, modal.bottom - 52, 120, 34)
+        paste_rect = pygame.Rect(modal.x + 278, modal.bottom - 52, 120, 34)
+        apply_rect = pygame.Rect(modal.right - 138, modal.bottom - 52, 120, 34)
+        draw_secondary_button(surf, cancel_rect, mouse_pos, "Close")
+        draw_secondary_button(surf, clear_rect, mouse_pos, "Clear")
+        draw_secondary_button(surf, paste_rect, mouse_pos, "Paste")
+        draw_primary_button(surf, apply_rect, mouse_pos, "Apply")
+        btns["import_cancel"] = cancel_rect
+        btns["import_clear"] = clear_rect
+        btns["import_paste"] = paste_rect
+        btns["import_apply"] = apply_rect
+    elif allow_text_import:
+        import_rect = pygame.Rect(46, 804, 140, 36)
+        draw_secondary_button(surf, import_rect, mouse_pos, "Import Team")
+        btns["import_team"] = import_rect
+    btns["cards"] = cards
+    btns["pick"] = pick_rect
+    btns["continue"] = continue_rect
+    if hover_adventurer is not None:
+        _draw_adventurer_popout(surf, pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1), hover_adventurer)
+    return btns
+
+
+def draw_market(
+    surf,
+    mouse_pos,
+    active_tab: str,
+    item_scroll: int,
+    profile,
+    focus_id: str | None,
+    status_message: str,
+    owned_cosmetics: set[str] | None = None,
+):
+    draw_background(surf, "market")
+    btns = draw_top_bar(surf, "Market", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    tabs_rect = pygame.Rect(54, 118, 72, 660)
+    grid_rect = pygame.Rect(150, 118, 756, 660)
+    preview_rect = pygame.Rect(934, 168, 372, 560)
+    draw_beveled_panel(surf, tabs_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, grid_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, preview_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+    tab_buttons = []
+    for index, tab_name in enumerate(MARKET_TABS):
+        rect = pygame.Rect(tabs_rect.x + 16, tabs_rect.y + 16 + index * 54, 40, 40)
+        _draw_nav_icon(surf, rect, mouse_pos, UI_TAB_ICONS.get(tab_name, tab_name[:1]), active=tab_name == active_tab)
+        tab_buttons.append((rect, tab_name))
+    items = market_items_for_tab(active_tab)
+    owned_cosmetics = owned_cosmetics or set()
+    item_buttons = []
+    selected_item = next((item for item in items if item["id"] == focus_id), items[0] if items else None)
+    for index, item in enumerate(items[:6]):
+        row = index // 3
+        col = index % 3
+        rect = pygame.Rect(grid_rect.x + 18 + col * 242, grid_rect.y + 20 + row * 236, 224, 214)
+        owned = item["id"] in owned_cosmetics
+        equipped = owned and item["id"] == _market_equipped_id_for_item(profile, item)
+        draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED if selected_item is not None and selected_item["id"] == item["id"] else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if selected_item is not None and selected_item["id"] == item["id"] else UI_GOLD_DIM)
+        _draw_portrait_block(surf, pygame.Rect(rect.x + 12, rect.y + 12, rect.width - 24, 112), UI_TAB_ICONS.get(active_tab, "I"), accent=UI_GOLD, initials=UI_TAB_ICONS.get(active_tab, "I"))
+        draw_text(surf, _ellipsize_text(item["name"], font_body(14, bold=True), rect.width - 24), font_body(14, bold=True), UI_TEXT, (rect.x + 12, rect.y + 136))
+        draw_text(surf, f"G {item['price']}", font_label(10, bold=True), UI_GOLD, (rect.x + 12, rect.y + 160))
+        if equipped:
+            draw_chip(surf, pygame.Rect(rect.right - 68, rect.y + 12, 56, 20), "EQUIP", UI_GREEN)
+        elif owned:
+            draw_chip(surf, pygame.Rect(rect.right - 68, rect.y + 12, 56, 20), "OWNED", UI_GREEN)
+        item_buttons.append((rect, item["id"]))
+    if not items:
+        draw_text(surf, market_tab_note(active_tab) or "New wares are being unpacked.", font_body(16), UI_TEXT_SOFT, (grid_rect.x + 24, grid_rect.y + 28))
+    buy_rect = pygame.Rect(preview_rect.x + 24, preview_rect.bottom - 54, preview_rect.width - 48, 38)
+    if selected_item is not None:
+        _draw_portrait_block(surf, pygame.Rect(preview_rect.x + 24, preview_rect.y + 24, preview_rect.width - 48, 210), UI_TAB_ICONS.get(active_tab, "I"), accent=UI_GOLD, initials=UI_TAB_ICONS.get(active_tab, "I"))
+        draw_text(surf, selected_item["name"], font_headline(20, bold=True), UI_TEXT, (preview_rect.x + 24, preview_rect.y + 252))
+        draw_text(surf, active_tab, font_label(10, bold=True), UI_GOLD, (preview_rect.x + 24, preview_rect.y + 286))
+        draw_text(surf, f"G {selected_item['price']}", font_body(16, bold=True), UI_GOLD, (preview_rect.x + 24, preview_rect.y + 316))
+        _draw_wrapped_lines(surf, [selected_item.get("subtitle", market_tab_note(active_tab) or "Preview")], preview_rect.x + 24, preview_rect.y + 350, preview_rect.width - 48, font=font_body(14), color=UI_TEXT_SOFT, line_height=18)
+        draw_primary_button(surf, buy_rect, mouse_pos, "Equip" if selected_item["id"] in owned_cosmetics else "Buy")
+    else:
+        draw_text(surf, "Select an item to preview it.", font_body(16), UI_TEXT_SOFT, (preview_rect.x + 24, preview_rect.y + 28))
+        draw_primary_button(surf, buy_rect, mouse_pos, "Buy", disabled=True)
+    btns["tabs"] = tab_buttons
+    btns["items"] = item_buttons
+    btns["packages"] = []
+    btns["buy"] = buy_rect
+    btns["market_scroll_max"] = max(0, len(items) - 6)
+    return btns
+
+
+def draw_closet(
+    surf,
+    mouse_pos,
+    active_tab: str,
+    items: list[dict],
+    focus_id: str | None,
+    owned_cosmetics: set[str] | None = None,
+    profile=None,
+    *,
+    item_scroll: int = 0,
+):
+    draw_background(surf, "guild")
+    panel = pygame.Rect(130, 86, 1140, 764)
+    _draw_overlay_panel(surf, panel, title="CLOSET")
+    btns = draw_top_bar(surf, "Closet", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    rail_rect = pygame.Rect(panel.x + 20, panel.y + 46, 66, panel.height - 92)
+    grid_rect = pygame.Rect(panel.x + 112, panel.y + 46, 604, panel.height - 92)
+    preview_rect = pygame.Rect(panel.x + 740, panel.y + 46, 370, panel.height - 92)
+    draw_beveled_panel(surf, rail_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, grid_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, preview_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+    category_buttons = []
+    for index, tab_name in enumerate(CLOSET_TABS):
+        rect = pygame.Rect(rail_rect.x + 13, rail_rect.y + 14 + index * 52, 40, 40)
+        _draw_nav_icon(surf, rect, mouse_pos, UI_TAB_ICONS.get(tab_name, tab_name[:1]), active=tab_name == active_tab)
+        category_buttons.append((rect, tab_name))
+    visible_items = [item for item in items if item["id"] in (owned_cosmetics or set())]
+    selected_item = next((item for item in visible_items if item["id"] == focus_id), visible_items[0] if visible_items else None)
+    item_buttons = []
+    for index, item in enumerate(visible_items[:6]):
+        row = index // 2
+        col = index % 2
+        rect = pygame.Rect(grid_rect.x + 20 + col * 286, grid_rect.y + 20 + row * 220, 266, 198)
+        equipped = profile is not None and item["id"] == _market_equipped_id_for_item(profile, item)
+        draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED if selected_item is not None and item["id"] == selected_item["id"] else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if equipped else UI_GOLD_DIM)
+        _draw_portrait_block(surf, pygame.Rect(rect.x + 12, rect.y + 12, rect.width - 24, 108), UI_TAB_ICONS.get(active_tab, "I"), accent=UI_GOLD, initials=UI_TAB_ICONS.get(active_tab, "I"))
+        draw_text(surf, _ellipsize_text(item["name"], font_body(14, bold=True), rect.width - 24), font_body(14, bold=True), UI_TEXT, (rect.x + 12, rect.y + 134))
+        if equipped:
+            draw_chip(surf, pygame.Rect(rect.right - 72, rect.y + 12, 60, 20), "EQUIP", UI_GOLD)
+        item_buttons.append((rect, item["id"], index))
+    if selected_item is not None:
+        _draw_portrait_block(surf, pygame.Rect(preview_rect.x + 24, preview_rect.y + 24, preview_rect.width - 48, 230), UI_TAB_ICONS.get(active_tab, "I"), accent=UI_GOLD, initials="YOU")
+        draw_text(surf, selected_item["name"], font_headline(20, bold=True), UI_TEXT, (preview_rect.x + 24, preview_rect.y + 274))
+        equip_rect = pygame.Rect(preview_rect.x + 24, preview_rect.bottom - 54, preview_rect.width - 48, 38)
+        draw_primary_button(surf, equip_rect, mouse_pos, "Equip")
+    else:
+        equip_rect = pygame.Rect(preview_rect.x + 24, preview_rect.bottom - 54, preview_rect.width - 48, 38)
+        draw_primary_button(surf, equip_rect, mouse_pos, "Equip", disabled=True)
+    btns["categories"] = category_buttons
+    btns["items"] = item_buttons
+    btns["equip"] = equip_rect
+    btns["scroll_max"] = max(0, len(visible_items) - 6)
+    return btns
+
+
+def draw_catalog(
+    surf,
+    mouse_pos,
+    section_index,
+    entry_index,
+    filters: dict[str, str] | None = None,
+    *,
+    scroll: int = 0,
+    detail_scroll: int = 0,
+    favorite_adventurer_id: str | None = None,
+):
+    draw_background(surf, "guild")
+    btns = draw_top_bar(surf, "Codex", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    rail_rect = pygame.Rect(52, 96, 76, 744)
+    filter_rect = pygame.Rect(150, 96, 1180, 88)
+    grid_rect = pygame.Rect(150, 206, 690, 634)
+    detail_rect = pygame.Rect(868, 96, 462, 744)
+    draw_beveled_panel(surf, rail_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, filter_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, grid_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, detail_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+    section_buttons = []
+    section_index = max(0, min(section_index, len(CATALOG_SECTIONS) - 1))
+    section_labels = ["A", "T", "R"]
+    for index, name in enumerate(CATALOG_SECTIONS):
+        rect = pygame.Rect(rail_rect.x + 18, rail_rect.y + 18 + index * 56, 40, 40)
+        _draw_nav_icon(surf, rect, mouse_pos, section_labels[index] if index < len(section_labels) else name[:1], active=index == section_index)
+        section_buttons.append((rect, index))
+    section_name = CATALOG_SECTIONS[section_index]
+    filter_defs = catalog_filter_definitions(section_name)
+    filters = dict(filters or {})
+    filter_buttons = []
+    cursor_x = filter_rect.x + 18
+    for definition in filter_defs:
+        current_value = next((label for value, label in definition["options"] if str(value) == str(filters.get(definition["key"], definition["options"][0][0]))), definition["options"][0][1])
+        label_rect = pygame.Rect(cursor_x, filter_rect.y + 22, 150, 42)
+        draw_secondary_button(surf, label_rect, mouse_pos, f"{definition['label']}: {current_value}")
+        filter_buttons.append((label_rect, definition["key"], 1))
+        cursor_x += 162
+    entries = catalog_entries(section_name, filters, favorite_adventurer_id=favorite_adventurer_id)
+    entry_index = max(0, min(entry_index, len(entries) - 1)) if entries else 0
+    entry_buttons = []
+    for index, entry in enumerate(entries[:6]):
+        row = index // 2
+        col = index % 2
+        rect = pygame.Rect(grid_rect.x + 18 + col * 332, grid_rect.y + 18 + row * 198, 314, 180)
+        active = index == entry_index
+        draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED if active else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if active else UI_GOLD_DIM)
+        _draw_portrait_block(surf, pygame.Rect(rect.x + 12, rect.y + 12, rect.width - 24, 84), section_labels[section_index] if section_index < len(section_labels) else "C", accent=UI_GOLD, initials=section_labels[section_index] if section_index < len(section_labels) else "C")
+        draw_text(surf, _ellipsize_text(entry["title"], font_body(14, bold=True), rect.width - 24), font_body(14, bold=True), UI_TEXT, (rect.x + 12, rect.y + 108))
+        _draw_wrapped_lines(surf, [entry["subtitle"]], rect.x + 12, rect.y + 132, rect.width - 24, font=font_body(12), color=UI_TEXT_SOFT, line_height=16)
+        entry_buttons.append((rect, index))
+    if entries:
+        entry = entries[entry_index]
+        draw_text(surf, entry["title"], font_headline(22, bold=True), UI_TEXT, (detail_rect.x + 20, detail_rect.y + 28))
+        draw_text(surf, entry["subtitle"], font_label(10, bold=True), UI_GOLD, (detail_rect.x + 20, detail_rect.y + 60))
+        detail_viewport = pygame.Rect(detail_rect.x + 20, detail_rect.y + 92, detail_rect.width - 40, detail_rect.height - 112)
+        old_clip = surf.get_clip()
+        surf.set_clip(detail_viewport)
+        y = detail_viewport.y - detail_scroll
+        for line in _wrap_multiline_block(entry["body"], font_body(15), detail_viewport.width, limit=240):
+            if line:
+                draw_text(surf, line, font_body(15), UI_TEXT_SOFT, (detail_viewport.x, y))
+                y += 20
+            else:
+                y += 10
+        surf.set_clip(old_clip)
+        detail_scroll_max = max(0, y - detail_viewport.bottom)
+    else:
+        detail_viewport = pygame.Rect(detail_rect.x + 20, detail_rect.y + 92, detail_rect.width - 40, detail_rect.height - 112)
+        draw_text(surf, "No entry selected.", font_body(15, bold=True), UI_TEXT, (detail_rect.x + 20, detail_rect.y + 28))
+        detail_scroll_max = 0
+    btns["sections"] = section_buttons
+    btns["filters"] = filter_buttons
+    btns["entries"] = entry_buttons
+    btns["entries_viewport"] = grid_rect
+    btns["entry_page_size"] = 6
+    btns["entry_scroll_max"] = max(0, len(entries) - 6)
+    btns["detail_viewport"] = detail_viewport
+    btns["detail_scroll_max"] = detail_scroll_max
+    return btns
+
+
+def draw_lan_setup(
+    surf,
+    mouse_pos,
+    title: str,
+    mode_label: str,
+    connection_mode: str,
+    join_ip: str,
+    local_ip: str,
+    connected: bool,
+    status_lines: list[str] | None = None,
+):
+    draw_background(surf, "guild")
+    modal = pygame.Rect(450, 250, 500, 300)
+    _draw_overlay_panel(surf, modal, title="LAN")
+    btns = draw_top_bar(surf, title, mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    draw_text(surf, local_ip or "Waiting...", font_headline(22, bold=True), UI_GOLD_BRIGHT, (modal.centerx, modal.y + 48), center=True)
+    draw_text(surf, "Share this with your friend", font_label(10, bold=True), UI_TEXT_MUTE, (modal.centerx, modal.y + 76), center=True)
+    ip_box = pygame.Rect(modal.x + 34, modal.y + 112, modal.width - 68, 58)
+    draw_text_input(surf, ip_box, mouse_pos, "Friend's IP", join_ip, active=connection_mode == "join", placeholder="Friend's IP")
+    host_rect = pygame.Rect(modal.x + 34, modal.y + 196, 200, 40)
+    join_rect = pygame.Rect(modal.right - 234, modal.y + 196, 200, 40)
+    connect_rect = pygame.Rect(modal.x + 34, modal.bottom - 52, 200, 34)
+    begin_rect = pygame.Rect(modal.right - 234, modal.bottom - 52, 200, 34)
+    draw_secondary_button(surf, host_rect, mouse_pos, "Host", active=connection_mode == "host")
+    draw_secondary_button(surf, join_rect, mouse_pos, "Join", active=connection_mode == "join")
+    draw_secondary_button(surf, connect_rect, mouse_pos, "Connect", active=connection_mode == "join")
+    draw_primary_button(surf, begin_rect, mouse_pos, "Begin", disabled=not connected)
+    draw_text(surf, (status_lines or ["Awaiting connection."])[0], font_body(13), UI_GREEN if connected else UI_TEXT_SOFT, (modal.x + 34, modal.bottom - 86))
+    btns["host"] = host_rect
+    btns["join"] = join_rect
+    btns["connect"] = connect_rect
+    btns["begin"] = begin_rect
+    btns["ip_box"] = ip_box
+    return btns
+
+
+def draw_story_settings(surf, mouse_pos, tutorials_enabled: bool, fast_resolution: bool, battle_log_popups: bool, screen_shake: bool):
+    draw_background(surf, "guild")
+    modal = pygame.Rect(450, 220, 500, 400)
+    _draw_overlay_panel(surf, modal, title="SETTINGS")
+    btns = draw_top_bar(surf, "Settings", mouse_pos, left_icon="<", right_icons=(("quit", "X", True),))
+    btns["back"] = btns.pop("left")
+    toggle_specs = [
+        ("tutorials", "Tutorial Popups", tutorials_enabled),
+        ("fast", "Fast Resolution", fast_resolution),
+        ("battle_log_popups", "Battle Log Popups", battle_log_popups),
+        ("screen_shake", "Screen Shake", screen_shake),
+    ]
+    for index, (key, label, state) in enumerate(toggle_specs):
+        row = pygame.Rect(modal.x + 28, modal.y + 54 + index * 78, modal.width - 56, 52)
+        draw_beveled_panel(surf, row, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+        draw_text(surf, label, font_body(15, bold=True), UI_TEXT, (row.x + 14, row.y + 16))
+        toggle_rect = pygame.Rect(row.right - 92, row.y + 12, 64, 28)
+        draw_beveled_panel(surf, toggle_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_BRIGHT if state else UI_GOLD_DIM)
+        knob_x = toggle_rect.right - 22 if state else toggle_rect.x + 22
+        pygame.draw.circle(surf, UI_GOLD_BRIGHT if state else UI_TEXT_SOFT, (knob_x, toggle_rect.centery), 10)
+        btns[key] = row
+    return btns
+
+
+def _loadout_skill_options(class_name: str) -> list:
+    return list(CLASS_SKILLS.get(class_name, []))
+
+
+def _loadout_artifact_options(class_name: str, allowed_artifact_ids=None) -> list[str]:
+    return compatible_artifact_ids(class_name, allowed_artifact_ids)
+
+
+def _draw_loadout_editor_core(surf, mouse_pos, members, selected_index: int, *, rect: pygame.Rect, allowed_artifact_ids=None, editable=True):
+    selected_index = max(0, min(selected_index, len(members) - 1)) if members else 0
+    buttons = {"weapon_prev": None, "weapon_next": None, "weapons": [], "classes": [], "skills": [], "artifacts": [], "viewport": rect, "scroll_max": 0}
+    if not members:
+        draw_text(surf, "No adventurers ready.", font_body(16, bold=True), UI_TEXT, (rect.x + 20, rect.y + 20))
+        return buttons
+    member = members[selected_index]
+    adventurer = ADVENTURERS_BY_ID[member["adventurer_id"]]
+    class_name = member.get("class_name", NO_CLASS_NAME)
+    weapon = _active_weapon_for_member(member)
+    alt_weapon = _secondary_weapon_for_member(member)
+    hover_source = None
+    hover_title = None
+    hover_lines = None
+    portrait = pygame.Rect(rect.centerx - 124, rect.y + 20, 248, 310)
+    _draw_portrait_block(surf, portrait, class_name[:1] if class_name and class_name != NO_CLASS_NAME else "A", accent=_class_tint(class_name), initials="".join(part[0] for part in adventurer.name.split()[:2]).upper())
+    draw_text(surf, adventurer.name, font_headline(24, bold=True), UI_TEXT, (rect.centerx, portrait.bottom + 10), center=True)
+    draw_text(surf, f"HP {adventurer.hp}  ATK {adventurer.attack}  DEF {adventurer.defense}  SPD {adventurer.speed}", font_body(14, bold=True), UI_TEXT_SOFT, (rect.centerx, portrait.bottom + 38), center=True)
+
+    left_weapon = pygame.Rect(rect.x + 24, rect.y + 80, 160, 96)
+    right_weapon = pygame.Rect(rect.x + 24, rect.y + 190, 160, 96)
+    draw_beveled_panel(surf, left_weapon, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_BRIGHT)
+    draw_beveled_panel(surf, right_weapon, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_text(surf, _ellipsize_text(weapon.name, font_body(14, bold=True), left_weapon.width - 20), font_body(14, bold=True), UI_TEXT, (left_weapon.x + 10, left_weapon.y + 16))
+    draw_text(surf, _ellipsize_text(alt_weapon.name, font_body(13, bold=True), right_weapon.width - 20), font_body(13, bold=True), UI_TEXT_SOFT, (right_weapon.x + 10, right_weapon.y + 16))
+    buttons["weapons"].append((left_weapon, "primary"))
+    buttons["weapons"].append((right_weapon, "secondary"))
+    if left_weapon.collidepoint(mouse_pos):
+        hover_source = left_weapon
+        hover_title = weapon.name
+        hover_lines = [f"Primary Weapon ({weapon.kind.title()})", *_weapon_detail_lines(weapon)[1:]]
+    elif right_weapon.collidepoint(mouse_pos):
+        hover_source = right_weapon
+        hover_title = alt_weapon.name
+        hover_lines = [f"Secondary Weapon ({alt_weapon.kind.title()})", *_weapon_detail_lines(alt_weapon)[1:]]
+    if editable:
+        buttons["weapon_prev"] = pygame.Rect(left_weapon.x + 10, left_weapon.bottom + 14, 36, 36)
+        buttons["weapon_next"] = pygame.Rect(left_weapon.right - 46, left_weapon.bottom + 14, 36, 36)
+        draw_icon_button(surf, buttons["weapon_prev"], mouse_pos, "<")
+        draw_icon_button(surf, buttons["weapon_next"], mouse_pos, ">")
+
+    class_names = list(CLASS_ORDER)
+    for index, cls_name in enumerate(class_names):
+        icon_rect = pygame.Rect(rect.right - 206 + (index % 3) * 62, rect.y + 90 + (index // 3) * 62, 46, 46)
+        locked = cls_name not in {NO_CLASS_NAME, class_name} and any(other.get("class_name", NO_CLASS_NAME) == cls_name for idx, other in enumerate(members) if idx != selected_index)
+        draw_beveled_panel(surf, icon_rect, fill_top=UI_BG_RAISED if cls_name == class_name else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if cls_name == class_name else UI_GOLD_DIM)
+        draw_text(surf, cls_name[:1], font_body(18, bold=True), UI_TEXT_MUTE if locked else _class_tint(cls_name), icon_rect.center, center=True)
+        if editable:
+            buttons["classes"].append((icon_rect, cls_name))
+        if icon_rect.collidepoint(mouse_pos):
+            hover_source = icon_rect
+            hover_title = cls_name
+            hover_lines = _class_detail_lines(cls_name)
+            if locked:
+                hover_lines = [*hover_lines, "Locked: another party member already has this class."]
+
+    skills = _loadout_skill_options(class_name)
+    for index, skill in enumerate(skills[:2]):
+        skill_rect = pygame.Rect(rect.centerx - 196 + index * 202, rect.bottom - 212, 190, 76)
+        active = skill.id == member.get("class_skill_id")
+        draw_beveled_panel(surf, skill_rect, fill_top=UI_BG_RAISED if active else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if active else UI_GOLD_DIM)
+        draw_text(surf, _ellipsize_text(skill.name, font_body(13, bold=True), skill_rect.width - 16), font_body(13, bold=True), UI_TEXT, (skill_rect.x + 10, skill_rect.y + 12))
+        _draw_wrapped_lines(surf, [skill.description], skill_rect.x + 10, skill_rect.y + 34, skill_rect.width - 20, font=font_body(12), color=UI_TEXT_SOFT, line_height=14)
+        if editable:
+            buttons["skills"].append((skill_rect, skill.id))
+        if skill_rect.collidepoint(mouse_pos):
+            hover_source = skill_rect
+            hover_title = skill.name
+            hp_bonus = f"+{skill.hp_bonus} HP" if skill.hp_bonus else "No HP bonus"
+            hover_lines = [hp_bonus, skill.description]
+
+    artifact_y = rect.bottom - 116
+    draw_text(surf, "Artifacts", font_label(10, bold=True), UI_TEXT_MUTE, (rect.x + 24, artifact_y - 18))
+    options = [(None, "Empty")] + [(artifact_id, ARTIFACTS_BY_ID[artifact_id].name) for artifact_id in _loadout_artifact_options(class_name, allowed_artifact_ids)[:5]]
+    used_by_others = {other.get("artifact_id") for idx, other in enumerate(members) if idx != selected_index}
+    for index, (artifact_id, artifact_name) in enumerate(options):
+        art_rect = pygame.Rect(rect.x + 24 + index * 108, artifact_y, 98, 76)
+        locked = artifact_id is not None and artifact_id in used_by_others
+        active = artifact_id == member.get("artifact_id") or (artifact_id is None and member.get("artifact_id") is None)
+        draw_beveled_panel(surf, art_rect, fill_top=UI_BG_RAISED if active else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if active and not locked else UI_GOLD_DIM)
+        draw_text(surf, _ellipsize_text(artifact_name, font_body(11, bold=True), art_rect.width - 10), font_body(11, bold=True), UI_TEXT_MUTE if locked else UI_TEXT, (art_rect.x + 6, art_rect.y + 12))
+        if editable:
+            buttons["artifacts"].append((art_rect, artifact_id, locked))
+        if art_rect.collidepoint(mouse_pos):
+            hover_source = art_rect
+            if artifact_id is None:
+                hover_title = "Unequip Artifact"
+                hover_lines = ["Leave the slot empty and return the equipped artifact to the pool."]
+            else:
+                artifact = ARTIFACTS_BY_ID[artifact_id]
+                hover_title = artifact.name
+                hover_lines = _artifact_detail_lines(artifact)
+                if locked:
+                    hover_lines = [*hover_lines, "Locked: another party member already has this artifact."]
+    if hover_source is not None and hover_title is not None and hover_lines is not None:
+        _draw_info_popout(surf, hover_source, hover_title, hover_lines)
+    return buttons
+
+
+def draw_quest_party_loadout(surf, mouse_pos, party_state, selected_index, *, detail_scroll: int = 0):
+    draw_background(surf, "quest")
+    btns = draw_top_bar(surf, "Loadouts", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    members = list(party_state.get("team1", []))
+    top_rect = pygame.Rect(72, 100, 1256, 170)
+    editor_rect = pygame.Rect(72, 292, 970, 520)
+    side_rect = pygame.Rect(1064, 292, 264, 520)
+    draw_beveled_panel(surf, top_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, editor_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    draw_beveled_panel(surf, side_rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+    member_buttons = []
+    hover_member = None
+    for index, member in enumerate(members[:6]):
+        adventurer = ADVENTURERS_BY_ID[member["adventurer_id"]]
+        rect = pygame.Rect(top_rect.x + 18 + index * 204, top_rect.y + 16, 186, 136)
+        draw_adventurer_card(surf, rect, mouse_pos, adventurer, selected=index == selected_index, small=True)
+        member_buttons.append((rect, index))
+        if rect.collidepoint(mouse_pos):
+            hover_member = member
+    editor_buttons = _draw_loadout_editor_core(
+        surf,
+        mouse_pos,
+        members,
+        selected_index,
+        rect=editor_rect,
+        allowed_artifact_ids=party_state.get("team1_allowed_artifact_ids"),
+        editable=True,
+    )
+    draw_text(surf, "Unique classes and artifacts are enforced visually.", font_body(13), UI_TEXT_SOFT, (side_rect.x + 16, side_rect.y + 30))
+    done_rect = pygame.Rect(side_rect.x + 16, side_rect.bottom - 54, side_rect.width - 32, 38)
+    draw_primary_button(surf, done_rect, mouse_pos, "Done")
+    btns["members"] = member_buttons
+    btns["weapon_prev"] = editor_buttons["weapon_prev"]
+    btns["weapon_next"] = editor_buttons["weapon_next"]
+    btns["weapons"] = editor_buttons["weapons"]
+    btns["classes"] = editor_buttons["classes"]
+    btns["skills"] = editor_buttons["skills"]
+    btns["artifacts"] = editor_buttons["artifacts"]
+    btns["done"] = done_rect
+    btns["detail_viewport"] = editor_rect
+    btns["detail_scroll_max"] = 0
+    if hover_member is not None:
+        adventurer = ADVENTURERS_BY_ID[hover_member["adventurer_id"]]
+        _draw_info_popout(surf, pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1), adventurer.name, _member_loadout_lines(hover_member))
+    return btns
+
+
+def draw_bouts_menu(surf, mouse_pos):
+    draw_background(surf, "guild")
+    panel = pygame.Rect(220, 170, 960, 480)
+    draw_beveled_panel(surf, panel, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    btns = draw_top_bar(surf, "Bouts", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    random_card = pygame.Rect(panel.x + 40, panel.y + 54, 400, 350)
+    focused_card = pygame.Rect(panel.right - 440, panel.y + 54, 400, 350)
+    for rect, title, subtitle in (
+        (random_card, "Random Bout", "Draft from a shared pool"),
+        (focused_card, "Focused Bout", "Bring a tuned roster"),
+    ):
+        draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+        draw_text(surf, title, font_headline(24, bold=True), UI_TEXT, (rect.x + 20, rect.y + 22))
+        draw_text(surf, subtitle, font_body(14), UI_TEXT_SOFT, (rect.x + 20, rect.y + 58))
+    random_ai = pygame.Rect(random_card.x + 20, random_card.bottom - 96, 160, 40)
+    random_lan = pygame.Rect(random_card.right - 180, random_card.bottom - 96, 160, 40)
+    focused_ai = pygame.Rect(focused_card.x + 20, focused_card.bottom - 96, 160, 40)
+    focused_lan = pygame.Rect(focused_card.right - 180, focused_card.bottom - 96, 160, 40)
+    draw_primary_button(surf, random_ai, mouse_pos, "vs AI")
+    draw_secondary_button(surf, random_lan, mouse_pos, "vs Friend")
+    draw_primary_button(surf, focused_ai, mouse_pos, "vs AI")
+    draw_secondary_button(surf, focused_lan, mouse_pos, "vs Friend")
+    btns["vs_random"] = random_ai
+    btns["vs_focused"] = focused_ai
+    btns["random_lan"] = random_lan
+    btns["focused_lan"] = focused_lan
+    btns["vs_lan"] = random_lan
+    return btns
+
+
+def _triangle_slot_layout(base_rect: pygame.Rect):
+    return {
+        SLOT_FRONT: pygame.Rect(base_rect.centerx - 88, base_rect.bottom - 128, 176, 96),
+        SLOT_BACK_LEFT: pygame.Rect(base_rect.x + 36, base_rect.y + 42, 156, 88),
+        SLOT_BACK_RIGHT: pygame.Rect(base_rect.right - 192, base_rect.y + 42, 156, 88),
+    }
+
+
+def _draw_formation_area(surf, mouse_pos, rect: pygame.Rect, members, selected_index: int, *, drag_state=None):
+    draw_beveled_panel(surf, rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    slot_map = _triangle_slot_layout(rect)
+    member_buttons = []
+    for slot_name, slot_rect in slot_map.items():
+        draw_beveled_panel(surf, slot_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if drag_state and drag_state.get("hover_slot") == slot_name else UI_GOLD_DIM)
+        member = next((item for item in members if item.get("slot") == slot_name), None)
+        if member is None:
+            continue
+        adventurer = ADVENTURERS_BY_ID[member["adventurer_id"]]
+        draw_adventurer_card(surf, slot_rect, mouse_pos, adventurer, selected=members.index(member) == selected_index, small=True)
+        member_buttons.append((slot_rect, members.index(member), slot_name))
+    return member_buttons, list(slot_map.items())
+
+
+def draw_quest_loadout(
+    surf,
+    mouse_pos,
+    setup_state,
+    selected_index,
+    *,
+    player_team_num: int = 1,
+    waiting_note: str = "",
+    drag_state: dict | None = None,
+    detail_scroll: int = 0,
+    summary_scroll: int = 0,
+    editable_loadout: bool = True,
+):
+    draw_background(surf, "quest")
+    btns = draw_top_bar(surf, "Encounter Loadout", mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    members = list((setup_state or {}).get(f"team{player_team_num}", []))
+    formation_rect = pygame.Rect(60, 118, 430, 620)
+    editor_rect = pygame.Rect(520, 118, 820, 620)
+    member_buttons, slot_items = _draw_formation_area(surf, mouse_pos, formation_rect, members, selected_index, drag_state=drag_state)
+    hover_member = None
+    for slot_rect, member_index, _slot_name in member_buttons:
+        if slot_rect.collidepoint(mouse_pos) and 0 <= member_index < len(members):
+            hover_member = members[member_index]
+    editor_buttons = _draw_loadout_editor_core(
+        surf,
+        mouse_pos,
+        members,
+        selected_index,
+        rect=editor_rect,
+        allowed_artifact_ids=(setup_state or {}).get(f"team{player_team_num}_allowed_artifact_ids"),
+        editable=editable_loadout,
+    )
+    if drag_state is not None and 0 <= drag_state.get("member_index", -1) < len(members):
+        drag_member = members[drag_state["member_index"]]
+        drag_adv = ADVENTURERS_BY_ID[drag_member["adventurer_id"]]
+        drag_rect = pygame.Rect(mouse_pos[0] - 56, mouse_pos[1] - 72, 112, 144)
+        draw_adventurer_card(surf, drag_rect, mouse_pos, drag_adv, selected=True, small=True)
+    confirm_rect = pygame.Rect(editor_rect.right - 220, editor_rect.bottom + 18, 220, 40)
+    draw_primary_button(surf, confirm_rect, mouse_pos, "Done" if editable_loadout else "Lock In", disabled=len(members) != 3)
+    if waiting_note:
+        draw_text(surf, waiting_note, font_body(13), UI_TEXT_SOFT, (editor_rect.x + 20, editor_rect.bottom + 30))
+    btns["formation_members"] = member_buttons
+    btns["formation_slots"] = slot_items
+    btns["weapon_prev"] = editor_buttons["weapon_prev"]
+    btns["weapon_next"] = editor_buttons["weapon_next"]
+    btns["weapons"] = editor_buttons["weapons"]
+    btns["classes"] = editor_buttons["classes"]
+    btns["skills"] = editor_buttons["skills"]
+    btns["artifacts"] = editor_buttons["artifacts"]
+    btns["confirm"] = confirm_rect
+    btns["detail_viewport"] = editor_rect
+    btns["detail_scroll_max"] = 0
+    btns["summary_viewport"] = formation_rect
+    btns["summary_scroll_max"] = 0
+    if hover_member is not None:
+        adventurer = ADVENTURERS_BY_ID[hover_member["adventurer_id"]]
+        _draw_info_popout(surf, pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1), adventurer.name, _member_loadout_lines(hover_member))
+    return btns
+
+
+def draw_bout_loadout(
+    surf,
+    mouse_pos,
+    setup_state,
+    selected_index,
+    *,
+    player_team_num: int = 1,
+    waiting_note: str = "",
+    drag_state: dict | None = None,
+    detail_scroll: int = 0,
+    summary_scroll: int = 0,
+):
+    return draw_quest_loadout(
+        surf,
+        mouse_pos,
+        setup_state,
+        selected_index,
+        player_team_num=player_team_num,
+        waiting_note=waiting_note,
+        drag_state=drag_state,
+        detail_scroll=detail_scroll,
+        summary_scroll=summary_scroll,
+        editable_loadout=True,
+    )
+
+
+def draw_battle_hud(surf, mouse_pos, controller, *, log_open=False, battle_log_popups=True):
+    draw_background(surf, "arena")
+    btns = draw_top_bar(surf, controller.current_phase_label(), mouse_pos, left_icon="<", right_icons=(("settings", "S", False), ("quit", "X", True)))
+    btns["back"] = btns.pop("left")
+    slot_buttons = []
+    log_toggle = pygame.Rect(34, 810, 46, 46)
+    draw_icon_button(surf, log_toggle, mouse_pos, "L", active=log_open)
+    draw_text(surf, "Log", font_label(10, bold=True), UI_TEXT_SOFT, (log_toggle.centerx, log_toggle.bottom + 8), center=True)
+    btns["log_toggle"] = log_toggle
+
+    your_meter = pygame.Rect(470, 90, 210, 14)
+    enemy_meter = pygame.Rect(720, 90, 210, 14)
+    draw_meter(surf, your_meter, controller.battle.team1.ultimate_meter, ULTIMATE_METER_MAX, fill=UI_BLUE)
+    draw_meter(surf, enemy_meter, controller.battle.team2.ultimate_meter, ULTIMATE_METER_MAX, fill=UI_ORANGE)
+    draw_text(surf, "VS", font_label(10, bold=True), UI_TEXT_SOFT, (700, 90), center=True)
+
+    target_lookup = {id(unit) for unit in controller.legal_targets()}
+    hovered_unit = None
+    for slot_data in controller.battlefield_slots():
+        rect = _battle_slot_rects()[(slot_data["team_num"], slot_data["slot"])]
+        unit = slot_data["unit"]
+        border = UI_GOLD_BRIGHT if unit is not None and id(unit) in target_lookup else UI_GOLD_DIM
+        draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED if slot_data["team_num"] == 1 else _lerp_color(UI_BG_RAISED, UI_RED, 0.2), fill_bottom=UI_BG_MID, border=border)
+        if unit is not None:
+            draw_text(surf, _ellipsize_text(unit.name, font_body(14, bold=True), rect.width - 24), font_body(14, bold=True), UI_TEXT, (rect.x + 12, rect.y + 10))
+            draw_meter(surf, pygame.Rect(rect.x + 12, rect.y + 36, rect.width - 24, 8), unit.hp, unit.max_hp, fill=UI_GREEN if unit.hp / max(1, unit.max_hp) > 0.35 else UI_RED)
+            draw_chip(surf, pygame.Rect(rect.x + 12, rect.y + 50, 18, 18), (getattr(unit, "class_name", NO_CLASS_NAME) or NO_CLASS_NAME)[:1], _class_tint(getattr(unit, "class_name", NO_CLASS_NAME)))
+            draw_chip(surf, pygame.Rect(rect.right - 30, rect.y + 50, 18, 18), _weapon_icon(unit.primary_weapon.kind), UI_GOLD)
+            for status_index, status in enumerate(unit.statuses[:3]):
+                draw_chip(surf, pygame.Rect(rect.x + 12 + status_index * 20, rect.bottom - 24, 18, 18), _status_dot_label(status.kind), UI_STATUS_COLORS.get(status.kind, UI_GOLD))
+            slot_buttons.append((rect, unit))
+            if rect.collidepoint(mouse_pos):
+                hovered_unit = unit
+
+    if hovered_unit is not None:
+        _draw_info_popout(
+            surf,
+            pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1),
+            hovered_unit.name,
+            _combatant_loadout_lines(hovered_unit),
+            width=420,
+            body_font=font_body(12),
+            line_height=14,
+        )
+
+    action_rect = pygame.Rect(150, 740, 1100, 120)
+    draw_beveled_panel(surf, action_rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+    action_buttons = []
+    spell_buttons = []
+    choice_icons = {"strike": "X", "spellbook": "S", "switch": "R", "swap": "W", "skip": "-", "ultimate": "U"}
+    action_tooltips = {
+        "strike": "Attack with the primary weapon. Targeting follows the weapon type's rules.",
+        "spellbook": "Cast a ready spell from the current weapon, your artifact, or granted effects.",
+        "switch": "Swap primary and secondary weapons. Both weapons reset their cooldowns.",
+        "swap": "Move to an open allied slot or swap positions with an ally.",
+        "skip": "Pass this action. Some passives reward skipping.",
+        "ultimate": "Spend a full Ultimate Meter to cast this adventurer's Ultimate Spell.",
+    }
+    hovered_action = None
+    for slot_data in controller.battlefield_slots():
+        unit = slot_data["unit"]
+        if unit is None or slot_data["team_num"] != 1:
+            continue
+        queued = controller.queued_label_for(unit)
+        chip_rect = pygame.Rect(_battle_slot_rects()[(slot_data["team_num"], slot_data["slot"])].centerx - 28, _battle_slot_rects()[(slot_data["team_num"], slot_data["slot"])].y - 24, 56, 20)
+        draw_chip(surf, chip_rect, queued[:3].upper(), UI_GOLD)
+    if controller.active_actor is not None:
+        choices = controller.available_actions()
+        for index, choice in enumerate(choices):
+            rect = pygame.Rect(action_rect.x + 20 + index * 104, action_rect.y + 26, 92, 64)
+            draw_beveled_panel(surf, rect, fill_top=UI_BG_RAISED if controller.pending_choice is not None and controller.pending_choice.kind == choice.kind else UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_BRIGHT if controller.pending_choice is not None and controller.pending_choice.kind == choice.kind else UI_GOLD_DIM)
+            draw_text(surf, choice_icons.get(choice.kind, "?"), font_headline(24, bold=True), UI_TEXT, (rect.centerx, rect.y + 20), center=True)
+            draw_text(surf, choice.label, font_label(10, bold=True), UI_TEXT_SOFT, (rect.centerx, rect.bottom - 14), center=True)
+            action_buttons.append((rect, choice.kind))
+            if rect.collidepoint(mouse_pos):
+                hovered_action = choice.kind
+        if controller.spellbook_open:
+            spells = controller.available_bonus_spells(controller.active_actor) if controller.phase.startswith("bonus") else controller.available_spells(controller.active_actor)
+            for index, spell in enumerate(spells):
+                rect = pygame.Rect(action_rect.x + 20 + index * 184, action_rect.bottom - 34, 170, 24)
+                draw_secondary_button(surf, rect, mouse_pos, spell.name, active=controller.pending_choice is not None and controller.pending_choice.effect_id == spell.id)
+                spell_buttons.append((rect, spell.id))
+    resolve_rect = pygame.Rect(1270, 778, 90, 44)
+    draw_primary_button(surf, resolve_rect, mouse_pos, controller.resolve_button_label(), disabled=not controller.can_resolve())
+    if log_open:
+        overlay = pygame.Rect(90, 140, 300, 520)
+        draw_beveled_panel(surf, overlay, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_DIM)
+        y = overlay.y + 16
+        for line in controller.battle.log[-16:]:
+            _draw_wrapped_lines(surf, [line], overlay.x + 14, y, overlay.width - 28, font=font_body(12), color=UI_TEXT_SOFT, line_height=14)
+            y += 30
+    if hovered_action is not None:
+        _draw_info_popout(
+            surf,
+            pygame.Rect(mouse_pos[0], mouse_pos[1], 1, 1),
+            hovered_action.title(),
+            [action_tooltips.get(hovered_action, hovered_action.title())],
+            width=280,
+            body_font=font_body(12),
+            line_height=14,
+        )
+    btns["resolve"] = resolve_rect
+    btns["action_buttons"] = action_buttons
+    btns["spell_buttons"] = spell_buttons
+    btns["slot_buttons"] = slot_buttons
+    return btns
+
+
+def draw_results(surf, mouse_pos, result_kind, is_victory: bool, winner_label, lines):
+    draw_background(surf, "arena")
+    btns = draw_top_bar(surf, "Results", mouse_pos, left_icon="<", right_icons=(("quit", "X", True),))
+    btns["back"] = btns.pop("left")
+    center = pygame.Rect(290, 156, 820, 548)
+    draw_beveled_panel(surf, center, fill_top=UI_BG_RAISED, fill_bottom=UI_BG_SURFACE, border=UI_GOLD_BRIGHT if is_victory else UI_RED)
+    draw_text(surf, "VICTORY" if is_victory else "DEFEAT", font_headline(48, bold=True), UI_GOLD_BRIGHT if is_victory else UI_RED, (center.centerx, center.y + 78), center=True)
+    if winner_label:
+        draw_text(surf, winner_label, font_body(18, bold=True), UI_TEXT_SOFT, (center.centerx, center.y + 132), center=True)
+    card_y = center.y + 200
+    for index, line in enumerate(lines[:3]):
+        rect = pygame.Rect(center.x + 46 + index * 244, card_y, 210, 140)
+        draw_beveled_panel(surf, rect, fill_top=UI_BG_SURFACE, fill_bottom=UI_BG_MID, border=UI_GOLD_DIM)
+        draw_text(surf, f"Card {index + 1}", font_label(10, bold=True), UI_GOLD, (rect.x + 12, rect.y + 12))
+        _draw_wrapped_lines(surf, [line], rect.x + 12, rect.y + 44, rect.width - 24, font=font_body(13), color=UI_TEXT, line_height=16)
+    continue_rect = pygame.Rect(center.x + 70, center.bottom - 72, 170, 40)
+    rematch_rect = pygame.Rect(center.centerx - 85, center.bottom - 72, 170, 40)
+    return_rect = pygame.Rect(center.right - 240, center.bottom - 72, 170, 40)
+    draw_primary_button(surf, continue_rect, mouse_pos, "Continue")
+    draw_secondary_button(surf, rematch_rect, mouse_pos, "Rematch")
+    draw_secondary_button(surf, return_rect, mouse_pos, "Return")
+    btns["continue"] = continue_rect
+    btns["rematch"] = rematch_rect
+    btns["return"] = return_rect
+    return btns

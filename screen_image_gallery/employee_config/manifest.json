@@ -1,0 +1,79 @@
+{
+  "title": "Employee Config",
+  "route": "employee_config",
+  "builder": "build_employee_config",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__main_menu.png",
+      "after_route": "main_menu",
+      "click_error": null
+    },
+    {
+      "key": "skills",
+      "label": "skills_0",
+      "hover": "hover__skills_0.png",
+      "click": "click__skills_0__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "skills",
+      "label": "skills_1",
+      "hover": "hover__skills_1.png",
+      "click": "click__skills_1__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "skills",
+      "label": "skills_2",
+      "hover": "hover__skills_2.png",
+      "click": "click__skills_2__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "skills",
+      "label": "skills_3",
+      "hover": "hover__skills_3.png",
+      "click": "click__skills_3__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "skills",
+      "label": "skills_4",
+      "hover": "hover__skills_4.png",
+      "click": "click__skills_4__employee_config.png",
+      "after_route": "employee_config",
+      "click_error": null
+    },
+    {
+      "key": "closet",
+      "label": "closet",
+      "hover": "hover__closet.png",
+      "click": "click__closet__closet.png",
+      "after_route": "closet",
+      "click_error": null
+    }
+  ]
+}

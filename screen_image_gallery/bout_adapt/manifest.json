@@ -1,0 +1,79 @@
+{
+  "title": "Bout Adapt",
+  "route": "bout_adapt",
+  "builder": "build_bout_adapt",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__bout_adapt.png",
+      "after_route": "bout_adapt",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "artifact_choices",
+      "label": "artifact_choices_0",
+      "hover": "hover__artifact_choices_0.png",
+      "click": "click__artifact_choices_0__quest_party_loadout.png",
+      "after_route": "quest_party_loadout",
+      "click_error": null
+    },
+    {
+      "key": "artifact_choices",
+      "label": "artifact_choices_1",
+      "hover": "hover__artifact_choices_1.png",
+      "click": "click__artifact_choices_1__quest_party_loadout.png",
+      "after_route": "quest_party_loadout",
+      "click_error": null
+    },
+    {
+      "key": "artifact_choices",
+      "label": "artifact_choices_2",
+      "hover": "hover__artifact_choices_2.png",
+      "click": "click__artifact_choices_2__quest_party_loadout.png",
+      "after_route": "quest_party_loadout",
+      "click_error": null
+    },
+    {
+      "key": "recruit_choices",
+      "label": "recruit_choices_0",
+      "hover": "hover__recruit_choices_0.png",
+      "click": "click__recruit_choices_0__quest_party_loadout.png",
+      "after_route": "quest_party_loadout",
+      "click_error": null
+    },
+    {
+      "key": "recruit_choices",
+      "label": "recruit_choices_1",
+      "hover": "hover__recruit_choices_1.png",
+      "click": "click__recruit_choices_1__quest_party_loadout.png",
+      "after_route": "quest_party_loadout",
+      "click_error": null
+    },
+    {
+      "key": "recruit_choices",
+      "label": "recruit_choices_2",
+      "hover": "hover__recruit_choices_2.png",
+      "click": "click__recruit_choices_2__quest_party_loadout.png",
+      "after_route": "quest_party_loadout",
+      "click_error": null
+    },
+    {
+      "key": "skip",
+      "label": "skip",
+      "hover": "hover__skip.png",
+      "click": "click__skip__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    }
+  ]
+}

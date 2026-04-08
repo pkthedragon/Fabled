@@ -1,0 +1,47 @@
+{
+  "title": "Results Quest",
+  "route": "results",
+  "builder": "build_results_quest",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__results.png",
+      "after_route": "results",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "continue",
+      "label": "continue",
+      "hover": "hover__continue.png",
+      "click": "click__continue__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "rematch",
+      "label": "rematch",
+      "hover": "hover__rematch.png",
+      "click": "click__rematch__results.png",
+      "after_route": "results",
+      "click_error": null
+    },
+    {
+      "key": "return",
+      "label": "return",
+      "hover": "hover__return.png",
+      "click": "click__return__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    }
+  ]
+}

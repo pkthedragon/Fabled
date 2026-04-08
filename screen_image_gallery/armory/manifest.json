@@ -1,0 +1,47 @@
+{
+  "title": "Armory",
+  "route": "armory",
+  "builder": "build_armory",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__armory.png",
+      "after_route": "armory",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "tabs",
+      "label": "tabs_0",
+      "hover": "hover__tabs_0.png",
+      "click": "click__tabs_0__armory.png",
+      "after_route": "armory",
+      "click_error": null
+    },
+    {
+      "key": "buy",
+      "label": "buy",
+      "hover": "hover__buy.png",
+      "click": "click__buy__armory.png",
+      "after_route": "armory",
+      "click_error": null
+    }
+  ]
+}

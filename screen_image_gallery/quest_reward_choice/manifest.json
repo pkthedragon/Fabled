@@ -1,0 +1,63 @@
+{
+  "title": "Quest Reward Choice",
+  "route": "quest_reward_choice",
+  "builder": "build_quest_reward_choice",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__quest_reward_choice.png",
+      "after_route": "quest_reward_choice",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "choices",
+      "label": "choices_0",
+      "hover": "hover__choices_0.png",
+      "click": "click__choices_0__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "choices",
+      "label": "choices_1",
+      "hover": "hover__choices_1.png",
+      "click": "click__choices_1__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "choices",
+      "label": "choices_2",
+      "hover": "hover__choices_2.png",
+      "click": "click__choices_2__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "choices",
+      "label": "choices_3",
+      "hover": "hover__choices_3.png",
+      "click": "click__choices_3__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "choices",
+      "label": "choices_4",
+      "hover": "hover__choices_4.png",
+      "click": "click__choices_4__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    }
+  ]
+}

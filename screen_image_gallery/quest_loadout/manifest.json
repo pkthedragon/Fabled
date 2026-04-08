@@ -1,0 +1,79 @@
+{
+  "title": "Quest Loadout",
+  "route": "quest_loadout",
+  "builder": "build_quest_loadout",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__quest_loadout.png",
+      "after_route": "quest_loadout",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "formation_members",
+      "label": "formation_members_0",
+      "hover": "hover__formation_members_0.png",
+      "click": "click__formation_members_0__quest_loadout.png",
+      "after_route": "quest_loadout",
+      "click_error": null
+    },
+    {
+      "key": "formation_members",
+      "label": "formation_members_1",
+      "hover": "hover__formation_members_1.png",
+      "click": "click__formation_members_1__quest_loadout.png",
+      "after_route": "quest_loadout",
+      "click_error": null
+    },
+    {
+      "key": "formation_members",
+      "label": "formation_members_2",
+      "hover": "hover__formation_members_2.png",
+      "click": "click__formation_members_2__quest_loadout.png",
+      "after_route": "quest_loadout",
+      "click_error": null
+    },
+    {
+      "key": "weapons",
+      "label": "weapons_0",
+      "hover": "hover__weapons_0.png",
+      "click": "click__weapons_0__quest_loadout.png",
+      "after_route": "quest_loadout",
+      "click_error": null
+    },
+    {
+      "key": "weapons",
+      "label": "weapons_1",
+      "hover": "hover__weapons_1.png",
+      "click": "click__weapons_1__quest_loadout.png",
+      "after_route": "quest_loadout",
+      "click_error": null
+    },
+    {
+      "key": "confirm",
+      "label": "confirm",
+      "hover": "hover__confirm.png",
+      "click": "click__confirm__battle.png",
+      "after_route": "battle",
+      "click_error": null
+    }
+  ]
+}

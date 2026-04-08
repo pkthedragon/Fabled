@@ -1,0 +1,127 @@
+{
+  "title": "Quest Hub Active",
+  "route": "guild_hall",
+  "builder": "build_guild_hall_active",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__main_menu.png",
+      "after_route": "main_menu",
+      "click_error": null
+    },
+    {
+      "key": "edit_loadouts",
+      "label": "edit_loadouts",
+      "hover": "hover__edit_loadouts.png",
+      "click": "click__edit_loadouts__quest_party_loadout.png",
+      "after_route": "quest_party_loadout",
+      "click_error": null
+    },
+    {
+      "key": "forfeit",
+      "label": "forfeit",
+      "hover": "hover__forfeit.png",
+      "click": "click__forfeit__quests_menu.png",
+      "after_route": "quests_menu",
+      "click_error": null
+    },
+    {
+      "key": "advance",
+      "label": "advance",
+      "hover": "hover__advance.png",
+      "click": "click__advance__quest_draft.png",
+      "after_route": "quest_draft",
+      "click_error": null
+    },
+    {
+      "key": "party_cards",
+      "label": "party_cards_0",
+      "hover": "hover__party_cards_0.png",
+      "click": "click__party_cards_0__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "party_cards",
+      "label": "party_cards_1",
+      "hover": "hover__party_cards_1.png",
+      "click": "click__party_cards_1__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "party_cards",
+      "label": "party_cards_2",
+      "hover": "hover__party_cards_2.png",
+      "click": "click__party_cards_2__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "party_cards",
+      "label": "party_cards_3",
+      "hover": "hover__party_cards_3.png",
+      "click": "click__party_cards_3__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "party_cards",
+      "label": "party_cards_4",
+      "hover": "hover__party_cards_4.png",
+      "click": "click__party_cards_4__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "party_cards",
+      "label": "party_cards_5",
+      "hover": "hover__party_cards_5.png",
+      "click": "click__party_cards_5__guild_hall.png",
+      "after_route": "guild_hall",
+      "click_error": null
+    },
+    {
+      "key": "training_grounds",
+      "label": "training_grounds",
+      "hover": "hover__training_grounds.png",
+      "click": "click__training_grounds__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "catalog",
+      "label": "catalog",
+      "hover": "hover__catalog.png",
+      "click": "click__catalog__catalog.png",
+      "after_route": "catalog",
+      "click_error": null
+    },
+    {
+      "key": "shops",
+      "label": "shops",
+      "hover": "hover__shops.png",
+      "click": "click__shops__armory.png",
+      "after_route": "armory",
+      "click_error": null
+    }
+  ]
+}

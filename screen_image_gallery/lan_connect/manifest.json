@@ -1,0 +1,71 @@
+{
+  "title": "LAN Connect",
+  "route": "lan_setup",
+  "builder": "build_lan_setup",
+  "interactables": [
+    {
+      "key": "quit",
+      "label": "quit",
+      "hover": "hover__quit.png",
+      "click": "click__quit__lan_setup.png",
+      "after_route": "lan_setup",
+      "click_error": null
+    },
+    {
+      "key": "settings",
+      "label": "settings",
+      "hover": "hover__settings.png",
+      "click": "click__settings__settings.png",
+      "after_route": "settings",
+      "click_error": null
+    },
+    {
+      "key": "back",
+      "label": "back",
+      "hover": "hover__back.png",
+      "click": "click__back__training_grounds.png",
+      "after_route": "training_grounds",
+      "click_error": null
+    },
+    {
+      "key": "host",
+      "label": "host",
+      "hover": "hover__host.png",
+      "click": "click__host__lan_setup.png",
+      "after_route": "lan_setup",
+      "click_error": null
+    },
+    {
+      "key": "join",
+      "label": "join",
+      "hover": "hover__join.png",
+      "click": "click__join__lan_setup.png",
+      "after_route": "lan_setup",
+      "click_error": null
+    },
+    {
+      "key": "connect",
+      "label": "connect",
+      "hover": "hover__connect.png",
+      "click": "click__connect__lan_setup.png",
+      "after_route": "lan_setup",
+      "click_error": null
+    },
+    {
+      "key": "begin",
+      "label": "begin",
+      "hover": "hover__begin.png",
+      "click": "click__begin__lan_setup.png",
+      "after_route": "lan_setup",
+      "click_error": null
+    },
+    {
+      "key": "ip_box",
+      "label": "ip_box",
+      "hover": "hover__ip_box.png",
+      "click": "click__ip_box__lan_setup.png",
+      "after_route": "lan_setup",
+      "click_error": null
+    }
+  ]
+}

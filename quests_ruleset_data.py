@@ -77,9 +77,9 @@ def artifact(
 
 _RULEBOOK_SECTION_SKIP_LINES = {"Magic", "Active", "Melee", "Ranged", "No Cooldown"}
 
-ULTIMATE_METER_MAX = 7
+ULTIMATE_METER_MAX = 5
 ULTIMATE_WIN_COUNT = 3
-GOOSE_QUILL_RETAINED_METER = (ULTIMATE_METER_MAX + 1) // 2
+GOOSE_QUILL_RETAINED_METER = 3
 
 
 def _next_rulebook_description_line(lines: list[str], start_index: int) -> str:
@@ -466,23 +466,23 @@ CLASS_SKILLS = {
         passive("vanguard", "Vanguard", "The Adventurer's Melee Strikes deal 15 damage to each enemy behind the target.", special="vanguard", hp_bonus=50),
     ],
     "Rogue": [
-        passive("covert", "Covert", "The Adventurer can Swap positions as a Bonus Action.", special="bonus_swap", hp_bonus=25),
+        passive("covert", "Covert", "The Adventurer can Swap positions as a Bonus Action each round they cast a Spell.", special="covert", hp_bonus=25),
         passive("assassin", "Assassin", "The Adventurer ignores targeting restrictions against enemies who did not Strike or Swap Positions.", special="assassin", hp_bonus=25),
     ],
     "Warden": [
-        passive("bulwark", "Bulwark", "The Adventurer has +15 Defense while in the frontline, +5 otherwise.", hp_bonus=50),
-        passive("vigilant", "Vigilant", "The Adventurer is Guarded for 2 rounds when they Swap positions or Skip.", special="vigilant", hp_bonus=50),
+        passive("bulwark", "Bulwark", "The Adventurer has +25 Defense while in the frontline, +15 otherwise.", hp_bonus=50),
+        passive("vigilant", "Vigilant", "The Adventurer is Guarded for 2 rounds when they Swap positions, Switch Weapons, or Skip.", special="vigilant", hp_bonus=50),
     ],
     "Mage": [
-        passive("arcane", "Arcane", "The Adventurer's Spells charge the Ultimate Meter +1.", special="arcane", hp_bonus=15),
-        passive("archmage", "Archmage", "The Adventurer's Magic Strikes do not go on cooldown in the frontline.", special="archmage", hp_bonus=25),
+        passive("arcane", "Arcane", "The Adventurer's first Spell after Switching weapons does not go on cooldown.", special="arcane", hp_bonus=15),
+        passive("archmage", "Archmage", "The Adventurer's Magic Strikes deal +15 damage and do not go on cooldown in the frontline.", special="archmage", hp_bonus=25),
     ],
     "Ranger": [
-        passive("deadeye", "Deadeye", "The Adventurer's Ranged Strikes deal +5 damage.", hp_bonus=15),
-        passive("armed", "Armed", "The Adventurer's first Ranged Strike after Switching weapons does not consume Ammo.", special="armed", hp_bonus=15),
+        passive("deadeye", "Deadeye", "The Adventurer's Ranged Strikes deal +15 damage.", hp_bonus=15),
+        passive("armed", "Armed", "The Adventurer's first Ranged Strike after Switching weapons does not consume Ammo.", special="armed", hp_bonus=25),
     ],
     "Cleric": [
-        passive("healer", "Healer", "The Adventurer's healing effects restore an additional +15 HP.", hp_bonus=25),
+        passive("healer", "Healer", "The Adventurer's healing effects restore an additional +25 HP.", hp_bonus=25),
         passive("medic", "Medic", "The Adventurer's healing effects cleanse status conditions and stat penalties.", special="medic", hp_bonus=50),
     ],
 }
@@ -553,7 +553,7 @@ ARTIFACTS = [
             "restoration",
             "Restoration",
             target="self",
-            heal=25,
+            heal=50,
             cooldown=2,
             self_buffs=(stat("attack", 10, 2),),
         ),
@@ -744,7 +744,7 @@ ARTIFACTS.extend([
             "Unseal",
             target="enemy",
             cooldown=2,
-            description="Remove Guard and Defense bonuses for 2 rounds.",
+            description="Remove Taunt, Guard, and Defense bonuses. Target cannot gain them for 2 rounds.",
             special="unseal",
         ),
     ),
@@ -975,7 +975,7 @@ ARTIFACTS.extend([
             "Dazzle",
             target="ally",
             cooldown=2,
-            description="Redirect the target's next Spell or Strike to the user.",
+            description="Redirect the target's next Spell or Strike to the user. Guard the user for 2 rounds.",
             special="dazzle",
         ),
     ),
@@ -1053,7 +1053,7 @@ ARTIFACTS.extend([
             "Feign Death",
             target="self",
             cooldown=6,
-            description="When the user takes fatal damage, they survive at 1 HP.",
+            description="When the user takes fatal Strike damage, retaliate for 60 Power. The user still dies.",
             special="tarnhelm",
         ),
         reactive=True,
@@ -1513,7 +1513,7 @@ MARCH_HARE = AdventurerDef(
             active(
                 "stitch_in_time_strike",
                 "Strike",
-                power=60,
+                power=70,
                 cooldown=1,
                 counts_as_spell=True,
                 target_statuses=(status("shock", 2),),
@@ -1562,7 +1562,7 @@ BRIAR = AdventurerDef(
     attack=54,
     defense=46,
     speed=76,
-    innate=passive("curse_of_sleeping", "Curse of Sleeping", "The lowest HP Rooted enemy is unable to act each round but gains Root Immunity for 2 rounds at the end of round.", special="curse_of_sleeping"),
+    innate=passive("falling_kingdom_passive", "Falling Kingdom", "Rooted enemies are considered Weakened.", special="falling_kingdom_passive"),
     signature_weapons=(
         weapon(
             "spindle_bow",
@@ -1576,7 +1576,7 @@ BRIAR = AdventurerDef(
                     "Vine Snare",
                     target="self",
                     cooldown=2,
-                    description="Next Strike removes Root Immunity and does not consume Ammo.",
+                    description="Next Strike refreshes the target's Root duration and does not consume Ammo.",
                     special="vine_snare",
                 ),
             ),
@@ -1591,11 +1591,11 @@ BRIAR = AdventurerDef(
         ),
     ),
     ultimate=active(
-        "falling_kingdom",
-        "Falling Kingdom",
+        "curse_of_slumber",
+        "Curse of Slumber",
         target="none",
-        description="Root all enemies and suppress Root Immunity from Curse of Sleeping.",
-        special="falling_kingdom",
+        description="Root all enemies. Rooted enemies cannot Strike or cast a Spell next round.",
+        special="curse_of_slumber",
     ),
 )
 
@@ -1638,18 +1638,18 @@ HUMBERT = AdventurerDef(
 
 ROBIN = AdventurerDef(
     id="robin_hooded_avenger",
-    name="Robin, Hooded Avenger",
+    name="Robin, Generous Avenger",
     hp=232,
     attack=70,
     defense=46,
     speed=80,
-    innate=passive("keen_eye", "Keen Eye", "Robin's Strikes can't be redirected and ignore Guard.", special="keen_eye"),
+    innate=passive("keen_eye", "Keen Eye", "Robin's Strikes can't be redirected, ignore Guard, and ignore Taunt.", special="keen_eye"),
     signature_weapons=(
         weapon(
             "the_flock",
             "The Flock",
             "ranged",
-            active("the_flock_strike", "Strike", power=50, ammo_cost=1, spread=True, target_statuses=(status("spotlight", 2),)),
+            active("the_flock_strike", "Strike", power=60, ammo_cost=1, spread=True, target_statuses=(status("spotlight", 2),)),
             ammo=3,
             spells=(active("spread_fortune", "Spread Fortune", target="self", cooldown=2, description="Ignore the spread damage nerf.", special="spread_fortune"),),
         ),
@@ -1725,7 +1725,7 @@ GOOD_BEAST = AdventurerDef(
             "dinner_bell",
             "Dinner Bell",
             "magic",
-            active("dinner_bell_strike", "Strike", power=70, cooldown=1, counts_as_spell=True, target="ally", description="Target allies to restore HP equal to half the would-be damage.", special="ally_heal_from_damage"),
+            active("dinner_bell_strike", "Strike", power=70, cooldown=1, counts_as_spell=True, target="ally", description="Target allies to restore HP equal to 75% of the would-be damage.", special="ally_heal_from_damage"),
             passive_skills=(passive("hospitality", "Hospitality", "Guests restore +15 HP from all sources.", special="hospitality"),),
         ),
     ),
@@ -1760,7 +1760,7 @@ GREEN_KNIGHT = AdventurerDef(
             "The Answer",
             "melee",
             active("the_answer_strike", "Strike", power=70),
-            passive_skills=(passive("awaited_blow", "Awaited Blow", "The Green Knight retaliates for 35 Power against incoming attackers not in his lane.", special="awaited_blow"),),
+            passive_skills=(passive("awaited_blow", "Awaited Blow", "The Green Knight retaliates for 60 Power against incoming attackers not in his lane.", special="awaited_blow"),),
         ),
     ),
     ultimate=active(
@@ -1860,7 +1860,7 @@ RUMPEL = AdventurerDef(
                 power=100,
                 cooldown=2,
                 counts_as_spell=True,
-                target_buffs=(stat("attack", 25, 2), stat("defense", 25, 2), stat("speed", 25, 2)),
+                target_buffs=(stat("attack", 15, 2), stat("defense", 15, 2), stat("speed", 15, 2)),
             ),
         ),
         weapon(
@@ -1904,7 +1904,7 @@ ASHA = AdventurerDef(
             "frost_scepter",
             "Frost Scepter",
             "magic",
-            active("frost_scepter_strike", "Strike", power=65, cooldown=1, counts_as_spell=True, description="The target cannot Strike next turn.", special="cant_strike_next_turn"),
+            active("frost_scepter_strike", "Strike", power=65, cooldown=2, counts_as_spell=True, description="The target cannot Strike next turn.", special="cant_strike_next_turn"),
         ),
         weapon(
             "mirror_blade",
@@ -2085,7 +2085,7 @@ KAMA = AdventurerDef(
             "Sugarcane Bow",
             "ranged",
             active("sugarcane_bow_strike", "Strike", power=55, ammo_cost=1, target_statuses=(status("spotlight", 2),)),
-            ammo=3,
+            ammo=5,
             passive_skills=(passive("flower_arrows", "Flower Arrows", "Sugarcane Bow does not reload by Switching weapons. Other effects can pick up flower arrows to reload 1 Ammo.", special="flower_arrows"),),
         ),
         weapon(
@@ -2146,8 +2146,8 @@ REYNARD = AdventurerDef(
                 "Strike",
                 power=45,
                 ammo_cost=1,
-                target_debuffs=(stat("defense", 25, 2),),
-                description="The target has -25 Defense for 2 rounds.",
+                target_debuffs=(stat("defense", 15, 2),),
+                description="The target has -15 Defense for 2 rounds.",
                 special="foxfire_bow",
             ),
             ammo=3,
@@ -2271,7 +2271,7 @@ ANANSI = AdventurerDef(
     innate=passive(
         "tangled_plots",
         "Tangled Plots",
-        "While Anansi is frontline, enemies cannot cast Reactive Spells.",
+        "During Anansi's turn or if the enemy is Rooted, enemies cannot cast Reactive Spells.",
         special="tangled_plots",
     ),
     signature_weapons=(
@@ -2408,7 +2408,7 @@ WITCH_OF_THE_EAST = AdventurerDef(
     innate=passive(
         "headwinds",
         "Headwinds",
-        "The Witch of the East creates an air current in her lane for 2 rounds when she Swaps positions and at the start of an encounter.",
+        "The Witch of the East creates an air current in her lane for 1 round when she Swaps positions and at the start of an encounter.",
         special="headwinds",
     ),
     signature_weapons=(
@@ -2441,8 +2441,8 @@ WITCH_OF_THE_EAST = AdventurerDef(
             active(
                 "comet_strike",
                 "Strike",
-                power=60,
-                description="The target takes +15 damage from the next Magic Strike.",
+                power=80,
+                description="The target takes +40 damage from the next Magic Strike.",
                 special="comet",
             ),
             passive_skills=(
