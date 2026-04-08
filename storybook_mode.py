@@ -157,6 +157,10 @@ class StorybookMode:
         self.bout_team1_ids: list[str] = []
         self.bout_team2_ids: list[str] = []
         self.bout_current_player = 1
+        # Full 6-person parties for random/focused bouts (new flow)
+        self.bout_player_full_party: list[str] = []
+        self.bout_ai_full_party: list[str] = []
+        self.bout_player_artifact_pool: list[str] = []
         self.bout_player_seat = 1
         self.bout_ai_seat = 2
         self.bout_setup_state: dict | None = None
@@ -2557,8 +2561,9 @@ class StorybookMode:
             self.bout_run.player_wins += 1
             bout_exp = 80 if mode_id == "random" else 50
             level_lines = self._apply_exp_gain(bout_exp)
-            gold_earned = 50
-            if gold_earned > 0:
+            # AI bouts: no Gold reward (Section 5.1/5.2); LAN bouts use Bartender skill
+            if self.bout_opponent_mode == "lan":
+                gold_earned = 50  # placeholder; Bartender skill determines actual amount
                 self.profile.gold += gold_earned
                 self.bout_run.gold_earned += gold_earned
         else:
@@ -2601,10 +2606,13 @@ class StorybookMode:
             if self.bout_opponent_mode == "lan":
                 self.route = "bouts_menu"
             elif self.bout_run.active:
-                # Series still in progress — start next match
+                # Series still in progress — start next encounter
                 mode_id = self._bout_mode()["id"]
                 if mode_id == "focused":
                     self._enter_bout_loadout()
+                elif self.bout_player_full_party:
+                    # Random bout with auto-assembled parties: re-pick 3 from same 6
+                    self._restart_random_bout_encounter()
                 else:
                     self._start_bout_draft()
             else:
@@ -2856,6 +2864,31 @@ class StorybookMode:
         )
         return f"Reputation applied: {old_rep} → {new_rep} ({rep_total:+d})"
 
+    def _restart_random_bout_encounter(self):
+        """Re-enter encounter pick for the next Random Bout match from the same 6-person parties."""
+        self.quest_context = "bout_random"
+        self.quest_draft_mode = "encounter"
+        self.quest_offer_ids = list(self.bout_player_full_party)
+        self.quest_focus_id = self.bout_player_full_party[0] if self.bout_player_full_party else None
+        self.quest_selected_ids = []
+        self.quest_enemy_party_ids = list(self.bout_ai_full_party)
+        candidate_pool = list(self.bout_ai_full_party)[:6]
+        try:
+            enemy_choice = choose_quest_party(
+                candidate_pool,
+                enemy_party_ids=list(self.bout_player_full_party),
+                difficulty="normal",
+                rng=self.rng,
+            )
+            self.quest_enemy_selected_ids = list(enemy_choice.team_ids)
+            self.quest_enemy_setup_members = self._team_from_loadout(enemy_choice.loadout)
+        except Exception:
+            self.quest_enemy_selected_ids = candidate_pool[:3]
+            self.quest_enemy_setup_members = [self._default_party_loadout_member(adv_id) for adv_id in candidate_pool[:3]]
+        self.quest_draft_detail_scroll = 0
+        self.quest_setup_state = None
+        self.route = "quest_draft"
+
     def _advance_quest_after_reward(self):
         if self.quest_context == "ranked" and self.quest_opponent_mode == "ai" and self._quest_run_state("ai").get("active"):
             self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
@@ -2871,7 +2904,10 @@ class StorybookMode:
         if len(enemy_ids) < 3:
             enemy_ids = [adventurer_id for adventurer_id in self.quest_offer_ids if adventurer_id not in self.quest_selected_ids][:3]
         allow_all = self.quest_context == "training" or self.quest_opponent_mode == "lan"
-        player_artifacts = self._loadout_artifact_ids(allow_all=allow_all)
+        if self.quest_context == "bout_random" and self.bout_player_artifact_pool:
+            player_artifacts = set(self.bout_player_artifact_pool)
+        else:
+            player_artifacts = self._loadout_artifact_ids(allow_all=allow_all)
         self.quest_setup_state = create_setup_from_team_ids(
             self.quest_selected_ids,
             enemy_ids,
@@ -3120,9 +3156,10 @@ class StorybookMode:
         else:
             enemy_name = self.current_battle_enemy_name or "Ranked Rival"
             opponent_glory = self.current_battle_opponent_glory
+        result_kind = "bout" if self.quest_context == "bout_random" else "quest"
         self._start_battle(
             self.quest_setup_state,
-            "quest",
+            result_kind,
             human_team_num=1,
             ai_difficulties={2: difficulty},
             second_picker=0,
@@ -3156,12 +3193,58 @@ class StorybookMode:
         self.bout_player_seat = 1
         self.bout_ai_seat = 2
         self.bout_run = BoutRunState(active=True, mode=mode)
+        self.bout_player_full_party = []
+        self.bout_ai_full_party = []
+        self.bout_player_artifact_pool = []
         if mode == "focused":
             self._start_focused_bout_selection()
         else:
-            self._start_bout_draft()
+            self._start_random_bout_setup()
+
+    def _start_random_bout_setup(self):
+        """Auto-assemble both parties for a Random Bout (Section 5.1)."""
+        favorite_id = self._favorite_adventurer_id()
+        # Player party: favorite + 5 random (class-diversity constraint)
+        player_party = self._auto_assemble_quest_party(favorite_id)
+        self.bout_player_full_party = player_party
+        self.bout_player_artifact_pool = self._draw_quest_artifact_pool(player_party)
+        # AI party: auto-assembled around a different random favorite
+        all_ids = list(ADVENTURERS_BY_ID.keys())
+        ai_candidates = [adv_id for adv_id in all_ids if adv_id not in player_party]
+        ai_favorite = self.rng.choice(ai_candidates) if ai_candidates else all_ids[0]
+        self.bout_ai_full_party = self._auto_assemble_quest_party(ai_favorite)
+        # Set up teams for the encounter draft (choose 3 from 6 on each side)
+        self.bout_player_seat = 1
+        self.bout_ai_seat = 2
+        # Use quest infrastructure: offer = player party, enemy = AI party
+        self.quest_context = "bout_random"
+        self.quest_opponent_mode = "ai"
+        self.quest_player_seat = 1
+        self.quest_draft_mode = "encounter"
+        self.quest_draft_locked_id = None
+        self.quest_offer_ids = list(player_party)
+        self.quest_focus_id = player_party[0] if player_party else None
+        self.quest_selected_ids = []
+        self.quest_enemy_party_ids = list(self.bout_ai_full_party)
+        # AI picks 3 from its party via choose_quest_party
+        candidate_pool = [adv_id for adv_id in self.bout_ai_full_party]
+        enemy_choice = choose_quest_party(
+            candidate_pool[:6],
+            enemy_party_ids=player_party,
+            difficulty="normal",
+            rng=self.rng,
+        )
+        self.quest_enemy_selected_ids = list(enemy_choice.team_ids)
+        self.quest_enemy_setup_members = self._team_from_loadout(enemy_choice.loadout)
+        self.quest_draft_detail_scroll = 0
+        self.quest_draft_offer_scroll = 0
+        self.quest_setup_state = None
+        self.current_battle_ai_difficulties = {2: "normal"}
+        self.current_battle_enemy_name = "AI Rival"
+        self.route = "quest_draft"
 
     def _start_focused_bout_selection(self):
+        """Focused Bout: player builds a party of 6 from the full roster (Section 5.2)."""
         all_ids = sorted(ADVENTURERS_BY_ID.keys())
         self.bout_pool_ids = all_ids
         self.bout_team1_ids = []
@@ -3195,6 +3278,7 @@ class StorybookMode:
         return self.bout_team1_ids if seat == 1 else self.bout_team2_ids
 
     def _draft_complete(self) -> bool:
+        # TODO: Focused Bout should pick 6, then choose 3 per encounter (Section 5.2)
         return len(self.bout_team1_ids) == 3 and len(self.bout_team2_ids) == 3
 
     def _record_bout_pick(self, seat: int, adventurer_id: str):
