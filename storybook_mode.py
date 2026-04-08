@@ -854,13 +854,6 @@ class StorybookMode:
             return ["No current streak"]
         return [member["adventurer_id"].replace("_", " ").title() for member in team[:3]]
 
-    def _apply_run_start_employee_skills(self, run_state: dict):
-        """Apply one-time employee skill effects at the start of a quest run."""
-        if getattr(self.profile, "assistant_skill", "") == "quartermaster":
-            available = list(ALL_ARTIFACT_IDS - set(run_state.get("artifact_pool", [])))
-            if available:
-                run_state["artifact_pool"].append(self.rng.choice(available))
-
     def _reset_quest_run_state(self, mode: str):
         self.quest_runs[mode] = self._empty_quest_run_state()
         if mode == self.quest_opponent_mode:
@@ -890,8 +883,6 @@ class StorybookMode:
             return
         remaining_losses = max(0, 3 - int(run_state.get("losses", 0)))
         reputation_penalty = remaining_losses * 10
-        if getattr(self.profile, "assistant_skill", "") == "liaison":
-            reputation_penalty = max(0, reputation_penalty - 5)
         current_reputation = ensure_storybook_reputation(
             getattr(self.profile, "reputation", 300),
             getattr(self.profile, "ranked_games_played", 0),
@@ -2456,17 +2447,11 @@ class StorybookMode:
         if ranked_ai and run_state["losses"] >= 3:
             final_wins = run_state["wins"]
             total_gold = run_state["total_gold_earned"]
-            quest_finish_bonus = 300 if final_wins >= 10 else 150 if final_wins >= 5 else 0
-            if quest_finish_bonus > 0:
-                self.profile.gold += quest_finish_bonus
-                total_gold += quest_finish_bonus
-                summary.append(f"Quest completion bonus: +{quest_finish_bonus} Gold")
-            if getattr(self.profile, "assistant_skill", "") == "scribe" and final_wins > 0:
-                scribe_bonus = final_wins * 50
-                self.profile.gold += scribe_bonus
-                total_gold += scribe_bonus
-                summary.append(f"Scribe bonus: +{scribe_bonus} Gold ({final_wins} wins × 50)")
+            quest_exp = 50 + (20 * final_wins)
+            quest_level_lines = self._apply_exp_gain(quest_exp)
             summary.append(f"Quest complete: {final_wins} wins before 3 losses.")
+            summary.append(f"Quest Exp: +{quest_exp}")
+            summary.extend(quest_level_lines)
             summary.append(f"Total quest Gold earned: {total_gold}")
             self._reset_quest_run_state(run_mode)
         elif ranked_ai:
@@ -2484,23 +2469,21 @@ class StorybookMode:
         opponent_wins_before = self.bout_run.opponent_wins
         self.bout_run.match_count += 1
         gold_earned = 0
+        mode_id = self._bout_mode()["id"]
         if self.result_victory:
             self.story_bout_wins += 1
             self.bout_run.player_wins += 1
-            level_lines = self._apply_exp_gain(0)
+            bout_exp = 80 if mode_id == "random" else 50
+            level_lines = self._apply_exp_gain(bout_exp)
             gold_earned = 50
-            bartender_skill = getattr(self.profile, "bartender_skill", "")
-            if bartender_skill == "house_brew":
-                gold_earned += 30
-            if bartender_skill == "last_round" and player_wins_before == 0 and opponent_wins_before == 1:
-                gold_earned *= 2
             if gold_earned > 0:
                 self.profile.gold += gold_earned
                 self.bout_run.gold_earned += gold_earned
         else:
             self.story_bout_losses += 1
             self.bout_run.opponent_wins += 1
-            level_lines = []
+            bout_exp = 30 if mode_id == "random" else 20
+            level_lines = self._apply_exp_gain(bout_exp)
         series_score = f"{self.bout_run.player_wins}-{self.bout_run.opponent_wins}"
         series_over = self.bout_run.player_wins >= 2 or self.bout_run.opponent_wins >= 2
         if series_over:
@@ -2514,8 +2497,8 @@ class StorybookMode:
         ]
         if gold_earned > 0:
             summary.append(f"+{gold_earned} Gold")
-        if self.result_victory:
-            summary.extend(level_lines)
+        summary.append(f"+{bout_exp} Exp")
+        summary.extend(level_lines)
         self._persist_profile()
         seat_note = "You drafted second and carried the round-one bonus swap." if self.bout_player_seat == 2 else "Your opponent drafted second and opened with the bonus swap advantage."
         return summary + [seat_note] + lines
@@ -2712,7 +2695,6 @@ class StorybookMode:
         run_state["party_id"] = party["name"]
         run_state["match_count"] = 0
         run_state["total_gold_earned"] = 0
-        self._apply_run_start_employee_skills(run_state)
         self.profile.ranked_current_quest_id = quest_id
         self.quest_context = "ranked"
         self.quest_opponent_mode = "ai"
@@ -2727,7 +2709,6 @@ class StorybookMode:
         if len(candidate_pool) < 8:
             return
         self._reset_quest_run_state("ai")
-        self._apply_run_start_employee_skills(self._quest_run_state("ai"))
         self.prepared_quest_id = None
         self.quest_context = "ranked"
         self.quest_opponent_mode = "ai"

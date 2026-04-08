@@ -94,17 +94,26 @@ CATALOG_SECTIONS = [
 SHOP_TABS = ["Artifacts"]
 COSMETIC_CATEGORIES = ["Hats", "Shirts", "Pants", "Socks", "Shoes"]
 CLOSET_TABS = [
-    "Outfits",
-    "Chairs",
+    "Player Skins",
+    "Player Chairs",
     "Emotes",
+    "Poses",
     "Adventurer Skins",
+    "Assistant Skins",
+    "Bartender Skins",
+    "Server Skins",
+    "Guild Hall Skins",
 ]
 MARKET_TABS = [
-    "Featured",
-    "Outfits",
-    "Chairs",
-    "Adventurer Skins",
+    "Player Skins",
+    "Player Chairs",
     "Emotes",
+    "Poses",
+    "Assistant Skins",
+    "Bartender Skins",
+    "Server Skins",
+    "Adventurer Skins",
+    "Guild Hall Skins",
 ]
 
 MARKET_ITEMS = []
@@ -115,65 +124,65 @@ MARKET_ITEMS = []
 
 ASSISTANT_SKILLS = [
     {
-        "id": "scribe",
-        "name": "Scribe",
-        "description": "Records each quest encounter outcome. At quest-end, adds +50 Gold per win in the completed run.",
+        "id": "shrewd",
+        "name": "Shrewd",
+        "description": "+25% Gold from unspent Quest Gold collection; +50% if the Quest was successful.",
     },
     {
-        "id": "strategist",
-        "name": "Strategist",
-        "description": "At the start of each ranked quest encounter, reveals the opponent's first pick adventurer.",
+        "id": "resourceful",
+        "name": "Resourceful",
+        "description": "+50% Gold from Artifact sales at end of Quest and from duplicate cosmetic Gold.",
     },
     {
-        "id": "archivist",
-        "name": "Archivist",
-        "description": "Unlocks a second draft offer slot each quest encounter (choose from 2 extra adventurers per pick).",
+        "id": "erudite",
+        "name": "Erudite",
+        "description": "All Quest Gold converts to Exp at a 1:1 ratio. Player receives 0 Gold from the Quest.",
     },
     {
-        "id": "quartermaster",
-        "name": "Quartermaster",
-        "description": "The artifact pool for each quest run gains one additional randomly drawn artifact at the start.",
+        "id": "appraiser",
+        "name": "Appraiser",
+        "description": "Artifacts sell for 150g (not 100g). Recruit costs 150g (not 100g).",
     },
     {
-        "id": "liaison",
-        "name": "Liaison",
-        "description": "Reduces the Reputation penalty for forfeiting a quest by 5.",
+        "id": "ambitious",
+        "name": "Ambitious",
+        "description": "Level-up Gold doubled. Unspent Quest Gold reduced by 25%.",
     },
 ]
 
 BARTENDER_SKILLS = [
     {
-        "id": "house_brew",
-        "name": "House Brew",
-        "description": "After each bout win, grants +30 bonus Gold on top of the standard reward.",
+        "id": "safe_income",
+        "name": "Safe Income",
+        "description": "PvP Random Bout entry: 100g. Win payout: 200g.",
     },
     {
-        "id": "last_round",
-        "name": "Last Round",
-        "description": "In a best-of-three bout, if the player is down 0–1, the next match awards double Gold on a win.",
+        "id": "high_roller",
+        "name": "High Roller",
+        "description": "PvP Random Bout entry: player chooses 300–600g. Win payout: 2× entry; 3× if 2-0.",
     },
     {
-        "id": "regulars",
-        "name": "Regulars",
-        "description": "Tracking a win streak in bouts: every 3rd consecutive win grants a free draft re-roll.",
+        "id": "generous_pour",
+        "name": "Generous Pour",
+        "description": "PvP Random Bout entry: 200g. Win payout: 500g.",
     },
     {
-        "id": "tab_keeper",
-        "name": "Tab Keeper",
-        "description": "Reduces Gold spent on cosmetic market purchases by 10%.",
+        "id": "penny_pincher",
+        "name": "Penny Pincher",
+        "description": "PvP Random Bout entry: 0g. Win payout: 100g.",
     },
     {
-        "id": "strong_pour",
-        "name": "Strong Pour",
-        "description": "The AI opponent in any bout begins the match with one fewer draft pick.",
+        "id": "double_or_nothing",
+        "name": "Double or Nothing",
+        "description": "PvP Random Bout entry: 300g. Win payout: 0g on 2-1; 900g on 2-0.",
     },
 ]
 
 SERVER_SKILLS = [
     {
-        "id": "daily_special",
-        "name": "Daily Special",
-        "description": "Each day, the server selects a Favorite Adventurer. Using that adventurer in a quest or bout grants +1 additional artifact in their loadout pool.",
+        "id": "friendly",
+        "name": "Friendly",
+        "description": "Each day, randomly select a favorite adventurer. At end of Bout win or successful Quest, if that adventurer is in the party, grant 100 Gold.",
     },
 ]
 
@@ -572,11 +581,15 @@ def market_items_for_tab(tab_name: str) -> list[dict]:
 
 def market_tab_note(tab_name: str) -> str:
     notes = {
-        "Featured": "Curated highlights from across the cosmetic market.",
-        "Outfits": "Player wardrobe pieces for your profile showcase.",
-        "Chairs": "Seating flourishes for the player profile stage.",
-        "Adventurer Skins": "Alternative looks for individual adventurers.",
-        "Emotes": "Short expressive flourishes.",
+        "Player Skins": "Player wardrobe pieces for your profile showcase. (400–2,500g)",
+        "Player Chairs": "Seating flourishes for the player profile stage. (250–1,500g)",
+        "Emotes": "Short expressive flourishes. (150–600g)",
+        "Poses": "Short expressive poses. (150–600g)",
+        "Adventurer Skins": "Alternative looks for individual adventurers. (800–3,000g)",
+        "Assistant Skins": "Alternate looks for your Assistant. (300–1,200g)",
+        "Bartender Skins": "Alternate looks for your Bartender. (300–1,200g)",
+        "Server Skins": "Alternate looks for your Server. (300–1,200g)",
+        "Guild Hall Skins": "Visual themes for your Guild Hall. (1,500–5,000g)",
     }
     return notes.get(tab_name, "")
 
