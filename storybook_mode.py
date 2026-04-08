@@ -3177,7 +3177,7 @@ class StorybookMode:
             self.bout_remote_ready = False
             self._sync_bout_ready_flags()
             if self.lan_session.is_host:
-                self.lan_session.send({"type": "bout_lobby", "host_reputation": self.profile.reputation})
+                self.lan_session.send({"type": "bout_lobby", "host_reputation": self.profile.reputation, "mode": self._bout_mode()["id"]})
             self.route = "bout_lobby"
 
     def _confirm_lan_quest_loadout(self):
@@ -3237,12 +3237,21 @@ class StorybookMode:
         )
 
     def _start_lan_bout_draft(self):
-        self.bout_pool_ids = draft_offer(9)
+        mode_id = self._bout_mode()["id"]
+        if mode_id == "focused":
+            self.bout_pool_ids = sorted(ADVENTURERS_BY_ID.keys())
+        else:
+            self.bout_pool_ids = draft_offer(9)
         self.bout_team1_ids = []
         self.bout_team2_ids = []
         self.bout_current_player = 1
         self.bout_focus_id = self.bout_pool_ids[0]
-        self.lan_session.send({"type": "bout_start", "pool_ids": self.bout_pool_ids, "host_reputation": self.profile.reputation})
+        self.lan_session.send({
+            "type": "bout_start",
+            "pool_ids": self.bout_pool_ids,
+            "host_reputation": self.profile.reputation,
+            "mode": mode_id,
+        })
         self.route = "bout_draft"
 
     def _draft_lan_bout_focus(self):
@@ -3342,6 +3351,8 @@ class StorybookMode:
                 continue
             if message_type == "bout_lobby":
                 self.bout_player_seat = 2
+                host_mode = str(message.get("mode", "random"))
+                self.bout_mode_index = next((i for i, m in enumerate(BOUT_MODES) if m["id"] == host_mode), 0)
                 self.route = "bout_lobby"
                 self.bout_local_ready = False
                 self.bout_remote_ready = False
@@ -3353,6 +3364,8 @@ class StorybookMode:
                 continue
             if message_type == "bout_start":
                 self.bout_pool_ids = list(message.get("pool_ids", []))
+                recv_mode = str(message.get("mode", "random"))
+                self.bout_mode_index = next((i for i, m in enumerate(BOUT_MODES) if m["id"] == recv_mode), 0)
                 self.bout_team1_ids = []
                 self.bout_team2_ids = []
                 self.bout_focus_id = self.bout_pool_ids[0] if self.bout_pool_ids else None
