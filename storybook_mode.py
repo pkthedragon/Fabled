@@ -10,7 +10,6 @@ from models import BoutRunState
 from quests_ai_bout import choose_bout_pick
 from quests_ai_loadout import solve_team_loadout
 from quests_ai_quest import choose_quest_party
-from quests_ai_quest_loadout import choose_blind_quest_roster_from_offer
 from quests_ruleset_data import ADVENTURERS_BY_ID, ARTIFACTS, ARTIFACTS_BY_ID, CLASS_SKILLS
 from quests_sandbox import (
     NO_CLASS_NAME,
@@ -769,7 +768,7 @@ class StorybookMode:
         return [ARTIFACTS_BY_ID[artifact_id] for artifact_id in ids]
 
     def _owned_artifact_ids(self) -> set[str]:
-        return {artifact_id for artifact_id in getattr(self.profile, "unlocked_artifacts", set()) if artifact_id in ARTIFACTS_BY_ID}
+        return set(ALL_ARTIFACT_IDS)
 
     def _owned_shop_item_keys(self) -> set[str]:
         return set(self._owned_artifact_ids())
@@ -2806,7 +2805,7 @@ class StorybookMode:
         self.quest_focus_id = training_favorite_id if training_favorite_id in ADVENTURERS_BY_ID else (self.quest_offer_ids[0] if self.quest_offer_ids else None)
         self.quest_selected_ids = []
         self.quest_draft_offer_scroll = 0
-        self.quest_enemy_party_ids = draft_offer(6, seed=self.rng.randint(0, 999999))
+        self.quest_enemy_party_ids = list(ADVENTURERS_BY_ID.keys())
         training_enemy_choice = choose_quest_party(
             self.quest_enemy_party_ids,
             enemy_party_ids=self.quest_offer_ids,
@@ -2862,16 +2861,14 @@ class StorybookMode:
             rng=self.rng,
         )
         difficulty = ai_difficulty_for_reputation(match_profile.reputation)
-        enemy_offer = draft_offer(9, seed=self.rng.randint(0, 999999))
-        enemy_package = choose_blind_quest_roster_from_offer(enemy_offer, roster_size=6)
-        enemy_party_ids = list(enemy_package.offer_ids)
+        all_adventurer_ids = list(ADVENTURERS_BY_ID.keys())
         enemy_choice = choose_quest_party(
-            enemy_party_ids,
+            all_adventurer_ids,
             enemy_party_ids=player_party_ids,
             difficulty=difficulty,
             rng=self.rng,
         )
-        self.quest_enemy_party_ids = enemy_party_ids
+        self.quest_enemy_party_ids = all_adventurer_ids
         self.quest_enemy_selected_ids = list(enemy_choice.team_ids)
         self.quest_enemy_setup_members = self._team_from_loadout(enemy_choice.loadout)
         self.quest_focus_id = self.quest_offer_ids[0] if self.quest_offer_ids else None
