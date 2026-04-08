@@ -738,7 +738,7 @@ def draw_player_menu(
     detail_width = portrait_rect.right - detail_x - 18
     draw_text(surf, _ellipsize_text(f"Outfit: {getattr(profile, 'storybook_equipped_outfit', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 108))
     draw_text(surf, _ellipsize_text(f"Chair: {getattr(profile, 'storybook_equipped_chair', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 132))
-    draw_text(surf, _ellipsize_text(f"Icon: {getattr(profile, 'storybook_equipped_icon', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 156))
+    draw_text(surf, _ellipsize_text(f"Emote: {getattr(profile, 'storybook_equipped_emote', '') or 'Default'}", font_body(14), detail_width), font_body(14), TEXT_SOFT, (detail_x, portrait_rect.y + 156))
 
     level_line = f"Level {level_info.level} | {exp_value} EXP"
     exp_progress = f"{level_info.current_level_exp} / {level_info.next_level_exp}"
@@ -1134,16 +1134,8 @@ def _market_equipped_id_for_item(profile, item: dict) -> str:
         return str(getattr(profile, "storybook_equipped_outfit", ""))
     if slot == "chair":
         return str(getattr(profile, "storybook_equipped_chair", ""))
-    if slot == "icon":
-        return str(getattr(profile, "storybook_equipped_icon", ""))
     if slot == "emote":
         return str(getattr(profile, "storybook_equipped_emote", ""))
-    if slot == "dance":
-        return str(getattr(profile, "storybook_equipped_dance", ""))
-    if slot == "celebration":
-        return str(getattr(profile, "storybook_equipped_celebration", ""))
-    if slot == "battlefield_skin":
-        return str(getattr(profile, "storybook_equipped_battlefield_skin", ""))
     if slot == "adventurer_skin":
         equipped = dict(getattr(profile, "storybook_equipped_adventurer_skins", {}))
         return str(equipped.get(str(item.get("adventurer_id", "")), ""))

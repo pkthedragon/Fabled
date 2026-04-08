@@ -270,16 +270,8 @@ class StorybookMode:
             self.profile.storybook_equipped_outfit = ""
         if not hasattr(self.profile, "storybook_equipped_chair"):
             self.profile.storybook_equipped_chair = ""
-        if not hasattr(self.profile, "storybook_equipped_icon"):
-            self.profile.storybook_equipped_icon = ""
         if not hasattr(self.profile, "storybook_equipped_emote"):
             self.profile.storybook_equipped_emote = ""
-        if not hasattr(self.profile, "storybook_equipped_dance"):
-            self.profile.storybook_equipped_dance = ""
-        if not hasattr(self.profile, "storybook_equipped_celebration"):
-            self.profile.storybook_equipped_celebration = ""
-        if not hasattr(self.profile, "storybook_equipped_battlefield_skin"):
-            self.profile.storybook_equipped_battlefield_skin = ""
         if not hasattr(self.profile, "storybook_equipped_adventurer_skins"):
             self.profile.storybook_equipped_adventurer_skins = {}
         if not hasattr(self.profile, "saved_teams"):
@@ -412,16 +404,8 @@ class StorybookMode:
             return getattr(self.profile, "storybook_equipped_outfit", "")
         if slot == "chair":
             return getattr(self.profile, "storybook_equipped_chair", "")
-        if slot == "icon":
-            return getattr(self.profile, "storybook_equipped_icon", "")
         if slot == "emote":
             return getattr(self.profile, "storybook_equipped_emote", "")
-        if slot == "dance":
-            return getattr(self.profile, "storybook_equipped_dance", "")
-        if slot == "celebration":
-            return getattr(self.profile, "storybook_equipped_celebration", "")
-        if slot == "battlefield_skin":
-            return getattr(self.profile, "storybook_equipped_battlefield_skin", "")
         if slot == "adventurer_skin":
             adventurer_id = str(item.get("adventurer_id", ""))
             return dict(getattr(self.profile, "storybook_equipped_adventurer_skins", {})).get(adventurer_id, "")
@@ -436,16 +420,8 @@ class StorybookMode:
             self.profile.storybook_equipped_outfit = item_id
         elif slot == "chair":
             self.profile.storybook_equipped_chair = item_id
-        elif slot == "icon":
-            self.profile.storybook_equipped_icon = item_id
         elif slot == "emote":
             self.profile.storybook_equipped_emote = item_id
-        elif slot == "dance":
-            self.profile.storybook_equipped_dance = item_id
-        elif slot == "celebration":
-            self.profile.storybook_equipped_celebration = item_id
-        elif slot == "battlefield_skin":
-            self.profile.storybook_equipped_battlefield_skin = item_id
         elif slot == "adventurer_skin":
             adventurer_id = str(item.get("adventurer_id", ""))
             if adventurer_id:
