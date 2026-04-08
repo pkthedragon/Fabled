@@ -1757,7 +1757,10 @@ def draw_quest_party_reveal(surf, mouse_pos, party_ids: list, favorite_id: str |
 
 
 def draw_quest_reward_choice(surf, mouse_pos, options: list, *, wins: int = 0, losses: int = 0):
-    """Show the three reward options after a quest encounter win."""
+    """Show the three reward options after a quest encounter win.
+
+    Returns choices as list of (rect, choice_index, artifact_id | None).
+    """
     draw_background(surf)
     btns = draw_top_bar(
         surf,
@@ -1768,52 +1771,61 @@ def draw_quest_reward_choice(surf, mouse_pos, options: list, *, wins: int = 0, l
         subtitle=f"Quest Record: {wins}W – {losses}L  |  Choose your reward.",
     )
 
-    panel = pygame.Rect(260, 130, 880, 590)
-    draw_beveled_panel(surf, panel, title="Choose One Reward")
+    # Left panel: Gold and Recruit options
+    left_panel = pygame.Rect(60, 120, 500, 640)
+    # Right panel: Artifact choices
+    right_panel = pygame.Rect(590, 120, 750, 640)
+    draw_beveled_panel(surf, left_panel, title="Rewards")
+    draw_beveled_panel(surf, right_panel, title="Option B — Artifact (Choose One)")
 
-    choice_h = 140
-    choice_gap = 22
-    total_h = 3 * choice_h + 2 * choice_gap
-    start_y = panel.y + (panel.height - total_h) // 2 + 20
-    choice_w = panel.width - 80
-    choice_x = panel.x + 40
-
-    icons = ["G", "A", "R"]
-    default_labels = ["Gold Reward", "Artifact", "Recruit"]
     choices = []
-    for index, option in enumerate(options[:3]):
-        rect = pygame.Rect(choice_x, start_y + index * (choice_h + choice_gap), choice_w, choice_h)
-        kind = option.get("kind", "")
-        hovered = rect.collidepoint(mouse_pos)
-        border = GOLD_BRIGHT if hovered else GOLD_DIM
-        draw_beveled_panel(surf, rect, border=border)
-        if hovered:
-            draw_glow_rect(surf, rect, GOLD_BRIGHT, alpha=24)
+    btn_w = left_panel.width - 60
+    btn_x = left_panel.x + 30
 
-        icon_rect = pygame.Rect(rect.x + 18, rect.y + (choice_h - 60) // 2, 60, 60)
-        fill_gradient(surf, icon_rect, SURFACE_HIGH, SBG_DEEP)
-        pygame.draw.rect(surf, GOLD_DIM, icon_rect, 1, border_radius=8)
-        draw_text(surf, icons[index], font_headline(28, bold=True), GOLD_BRIGHT, icon_rect.center, center=True)
+    # Option A: Gold
+    gold_option = next((o for o in options if o.get("kind") == "gold"), None)
+    gold_rect = pygame.Rect(btn_x, left_panel.y + 72, btn_w, 100)
+    gold_hovered = gold_rect.collidepoint(mouse_pos)
+    draw_beveled_panel(surf, gold_rect, border=GOLD_BRIGHT if gold_hovered else GOLD_DIM)
+    if gold_hovered:
+        draw_glow_rect(surf, gold_rect, GOLD_BRIGHT, alpha=24)
+    gold_amount = gold_option.get("amount", 100) if gold_option else 100
+    draw_text(surf, f"A — +{gold_amount} Gold", font_headline(20, bold=True), TEXT, (gold_rect.x + 18, gold_rect.y + 20))
+    draw_text(surf, "Added to your quest's Gold pool.", font_body(15), TEXT_SOFT, (gold_rect.x + 18, gold_rect.y + 52))
+    gold_idx = next((i for i, o in enumerate(options) if o.get("kind") == "gold"), 0)
+    choices.append((gold_rect, gold_idx, None))
 
-        label_x = rect.x + 96
-        if kind == "gold":
-            label = f"+{option.get('amount', 100)} Gold"
-            desc = "Add gold to your treasury immediately."
-        elif kind == "artifact":
-            label = option.get("artifact_name") or "Artifact"
-            if option.get("artifact_id"):
-                desc = "Add this artifact to your run's artifact pool."
-            else:
-                desc = "Artifact pool is already full."
-        elif kind == "recruit":
-            label = "Recruit (Coming Soon)"
-            desc = "Add a new adventurer to your quest party."
-        else:
-            label = default_labels[index]
-            desc = ""
-        draw_text(surf, label, font_headline(22, bold=True), TEXT, (label_x, rect.y + 28))
-        draw_text(surf, desc, font_body(16), TEXT_SOFT, (label_x, rect.y + 62))
-        choices.append((rect, index))
+    # Option C: Recruit
+    recruit_option = next((o for o in options if o.get("kind") == "recruit"), None)
+    recruit_idx = next((i for i, o in enumerate(options) if o.get("kind") == "recruit"), 2)
+    recruit_rect = pygame.Rect(btn_x, left_panel.y + 200, btn_w, 100)
+    rec_hovered = recruit_rect.collidepoint(mouse_pos)
+    draw_beveled_panel(surf, recruit_rect, border=GOLD_BRIGHT if rec_hovered else GOLD_DIM)
+    if rec_hovered:
+        draw_glow_rect(surf, recruit_rect, GOLD_BRIGHT, alpha=24)
+    draw_text(surf, "C — Recruit (100 Gold)", font_headline(20, bold=True), TEXT, (recruit_rect.x + 18, recruit_rect.y + 20))
+    draw_text(surf, "Replace an adventurer (coming soon).", font_body(15), TEXT_SOFT, (recruit_rect.x + 18, recruit_rect.y + 52))
+    choices.append((recruit_rect, recruit_idx, None))
+
+    # Option B: Artifact sub-choices (right panel)
+    artifact_option = next((o for o in options if o.get("kind") == "artifact"), None)
+    artifact_idx = next((i for i, o in enumerate(options) if o.get("kind") == "artifact"), 1)
+    artifact_choices = (artifact_option or {}).get("artifact_choices") or []
+    art_card_h = 140
+    art_card_gap = 24
+    art_card_w = right_panel.width - 60
+    art_card_x = right_panel.x + 30
+    for sub_index, artifact_choice in enumerate(artifact_choices[:3]):
+        art_rect = pygame.Rect(art_card_x, right_panel.y + 60 + sub_index * (art_card_h + art_card_gap), art_card_w, art_card_h)
+        art_hovered = art_rect.collidepoint(mouse_pos)
+        draw_beveled_panel(surf, art_rect, border=GOLD_BRIGHT if art_hovered else GOLD_DIM)
+        if art_hovered:
+            draw_glow_rect(surf, art_rect, GOLD_BRIGHT, alpha=24)
+        artifact_name = artifact_choice.get("artifact_name", "Unknown")
+        artifact_id = artifact_choice.get("artifact_id")
+        draw_text(surf, artifact_name, font_headline(20, bold=True), TEXT, (art_rect.x + 18, art_rect.y + 22))
+        draw_text(surf, "Add to artifact pool.", font_body(15), TEXT_SOFT, (art_rect.x + 18, art_rect.y + 56))
+        choices.append((art_rect, artifact_idx, artifact_id))
 
     btns["choices"] = choices
     return btns

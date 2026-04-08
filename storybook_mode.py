@@ -884,14 +884,24 @@ class StorybookMode:
         run_state = self._quest_run_state("ai")
         if not run_state.get("active"):
             return
+        # Forfeit Penalty: −10 Rep × losses remaining, added to quest's running total
         remaining_losses = max(0, 3 - int(run_state.get("losses", 0)))
-        reputation_penalty = remaining_losses * 10
-        current_reputation = ensure_storybook_reputation(
-            getattr(self.profile, "reputation", 300),
-            getattr(self.profile, "ranked_games_played", 0),
-        )
-        self.profile.reputation = clamp_reputation(current_reputation - reputation_penalty)
-        self.profile.storybook_rank_label = get_rank_from_reputation(self.profile.reputation)
+        forfeit_rep_penalty = -(remaining_losses * 10)
+        run_state["reputation_gain_total"] = run_state.get("reputation_gain_total", 0) + forfeit_rep_penalty
+        # Run end-of-quest resolution (sell artifacts, collect gold, apply rep, exp)
+        artifact_pool = list(run_state.get("artifact_pool") or [])
+        party_team = run_state.get("team") or []
+        equipped_artifact_ids = [m.get("artifact_id") for m in party_team if m.get("artifact_id")]
+        all_quest_artifacts = list(dict.fromkeys(equipped_artifact_ids + artifact_pool))
+        artifact_sale_gold = len(all_quest_artifacts) * 100
+        run_state["gold_pool"] = run_state.get("gold_pool", 0) + artifact_sale_gold
+        quest_gold = run_state.get("gold_pool", 0)
+        self.profile.gold = getattr(self.profile, "gold", 0) + quest_gold
+        rep_total = run_state.get("reputation_gain_total", 0)
+        self._commit_quest_reputation(rep_total)
+        final_wins = run_state.get("wins", 0)
+        quest_exp = 50 + (20 * final_wins)
+        self._apply_exp_gain(quest_exp)
         self._reset_quest_run_state("ai")
         self._persist_profile()
         self.route = "quests_menu"
@@ -1709,9 +1719,10 @@ class StorybookMode:
             return None
 
         if route == "quest_reward_choice":
-            for rect, index in btns.get("choices", []):
+            # Top-level choices (gold, recruit) and artifact sub-choices
+            for rect, choice_index, artifact_id in btns.get("choices", []):
                 if rect.collidepoint(pos):
-                    self._apply_quest_reward(index)
+                    self._apply_quest_reward(choice_index, artifact_id)
                     return None
             return None
 
@@ -2375,11 +2386,19 @@ class StorybookMode:
         ranked_ai = self.quest_context == "ranked" and run_mode == "ai"
 
         if ranked_ai:
-            reputation_line = self._apply_reputation_result(
+            # Accumulate reputation delta; apply total at quest end (Section 2.6)
+            _, rep_delta = update_reputation_after_match(
+                self.profile.reputation + run_state.get("reputation_gain_total", 0),
+                self.current_battle_opponent_glory,
                 did_win=self.result_victory,
-                current_win_streak_before=win_streak_before,
-                current_loss_streak_before=loss_streak_before,
+                current_win_streak_before_match=win_streak_before,
+                current_loss_streak_before_match=loss_streak_before,
+                floor_reputation=1,
             )
+            run_state["reputation_gain_total"] = run_state.get("reputation_gain_total", 0) + rep_delta
+            self.profile.ranked_games_played = getattr(self.profile, "ranked_games_played", 0) + 1
+            running_total = run_state["reputation_gain_total"]
+            reputation_line = f"Rep change this encounter: {rep_delta:+d} (quest total: {running_total:+d}, applied at end)"
         else:
             reputation_line = "Reputation is unchanged in training or LAN encounters."
 
@@ -2436,17 +2455,6 @@ class StorybookMode:
                 )
             else:
                 summary.append("Training Encounter Complete")
-            if ranked_ai and run_state["wins"] >= 3:
-                # Quest successfully completed — end-of-quest resolution
-                final_wins = run_state["wins"]
-                quest_exp = 50 + (20 * final_wins)
-                quest_level_lines = self._apply_exp_gain(quest_exp)
-                summary.append(f"Quest Complete! {final_wins} wins.")
-                summary.append(f"Quest Exp: +{quest_exp}")
-                summary.extend(quest_level_lines)
-                self._reset_quest_run_state(run_mode)
-                self._persist_profile()
-                return [*summary, reputation_line, *lines]
             if ranked_ai:
                 self.quest_reward_pending = True
                 self.quest_reward_options = self._build_quest_reward_options()
@@ -2462,22 +2470,21 @@ class StorybookMode:
             run_state["current_win_streak"] = 0
             run_state["match_count"] += 1
             self.profile.ranked_total_losses = max(0, int(getattr(self.profile, "ranked_total_losses", 0))) + 1
-            # −50 Gold from quest pool per loss (pool floor: 0)
+            # −10 Rep subtracted from quest's running total; −50 Gold from quest pool (floor: 0)
+            run_state["reputation_gain_total"] = run_state.get("reputation_gain_total", 0) - 10
             gold_penalty = 50
             current_pool = run_state.get("gold_pool", 0)
             run_state["gold_pool"] = max(0, current_pool - gold_penalty)
-            if self.profile.gold >= gold_penalty:
-                self.profile.gold -= gold_penalty
-            else:
-                self.profile.gold = 0
 
         summary = []
         if ranked_ai:
+            rep_running = run_state.get("reputation_gain_total", 0)
             summary.extend(
                 [
                     f"Quest Record: {run_state['wins']}W-{run_state['losses']}L",
                     f"Winstreak: 0 | Lossstreak: {run_state['current_loss_streak']}",
-                    "Loss penalty: −50 Gold.",
+                    "Loss: −10 Rep (quest total), −50 Gold from quest pool.",
+                    f"Quest Rep total: {rep_running:+d}",
                 ]
             )
         else:
@@ -2500,14 +2507,34 @@ class StorybookMode:
                 }
             )
         if ranked_ai and run_state["losses"] >= 3:
+            # --- End of Quest: 4-step resolution (Section 4.5) ---
+            # Step 1: Sell all artifacts (equipped + pool) for 100 Gold each
+            artifact_pool = list(run_state.get("artifact_pool") or [])
+            party_team = run_state.get("team") or []
+            equipped_artifact_ids = [m.get("artifact_id") for m in party_team if m.get("artifact_id")]
+            all_quest_artifacts = list(dict.fromkeys(equipped_artifact_ids + artifact_pool))
+            artifact_sale_gold = len(all_quest_artifacts) * 100
+            run_state["gold_pool"] = run_state.get("gold_pool", 0) + artifact_sale_gold
+            # Step 2: Collect Gold — transfer quest pool to permanent balance
+            quest_gold = run_state.get("gold_pool", 0)
+            self.profile.gold = getattr(self.profile, "gold", 0) + quest_gold
+            # Step 3: Apply Reputation
+            rep_total = run_state.get("reputation_gain_total", 0)
+            rep_applied_line = self._commit_quest_reputation(rep_total)
+            is_successful = rep_total > 0
+            # Step 4: Earn Exp
             final_wins = run_state["wins"]
-            total_gold = run_state["total_gold_earned"]
             quest_exp = 50 + (20 * final_wins)
             quest_level_lines = self._apply_exp_gain(quest_exp)
-            summary.append(f"Quest complete: {final_wins} wins before 3 losses.")
+            summary.append(f"Quest ended: {final_wins} wins, 3 losses.")
+            if artifact_sale_gold > 0:
+                summary.append(f"Artifacts sold: {len(all_quest_artifacts)} × 100 = {artifact_sale_gold} Gold")
+            summary.append(f"Quest Gold collected: {quest_gold} Gold")
+            summary.append(rep_applied_line)
+            if is_successful:
+                summary.append("Successful Quest (net Rep gain is positive).")
             summary.append(f"Quest Exp: +{quest_exp}")
             summary.extend(quest_level_lines)
-            summary.append(f"Total quest Gold earned: {total_gold}")
             self._reset_quest_run_state(run_mode)
         elif ranked_ai:
             run_state["active"] = True
@@ -2695,6 +2722,8 @@ class StorybookMode:
         run_state["party_id"] = f"Favorite:{favorite_id}"
         run_state["match_count"] = 0
         run_state["total_gold_earned"] = 0
+        run_state["gold_pool"] = 0
+        run_state["reputation_gain_total"] = 0
         run_state["artifact_pool"] = self._draw_quest_artifact_pool(self.quest_selected_ids)
         self.profile.ranked_current_quest_id = quest_id
         self.quest_draft_mode = "encounter"
@@ -2706,28 +2735,57 @@ class StorybookMode:
         self._enter_quest_party_loadout()
 
     def _draw_quest_artifact_pool(self, party_ids: list, count: int = 3) -> list:
-        """Draw `count` random artifacts from the full pool for the quest run.
+        """Draw `count` starting artifacts for a quest run (Section 4.1 Step 3).
 
-        Prioritises artifacts that are compatible with at least one adventurer in the party,
-        but falls back to any artifact if needed.
+        Constraints:
+        - No two selected artifacts share any attunement classes.
+        - Every class represented in the party can attune to at least one of the three.
+        Falls back gracefully if the full constraint cannot be satisfied.
         """
         party_classes: set[str] = set()
         for adv_id in party_ids:
-            adventurer = ADVENTURERS_BY_ID.get(adv_id)
-            if adventurer is None:
-                continue
             profile = ADVENTURER_AI.get(adv_id)
             if profile:
                 party_classes.update(profile.preferred_classes)
             else:
                 party_classes.update(CLASS_SKILLS.keys())
 
-        compatible = [a.id for a in ARTIFACTS if any(cls in party_classes for cls in a.attunement)]
-        pool = self.rng.sample(compatible, min(count, len(compatible)))
-        if len(pool) < count:
-            remaining = [a.id for a in ARTIFACTS if a.id not in pool]
-            pool += self.rng.sample(remaining, min(count - len(pool), len(remaining)))
-        return pool
+        all_artifacts = list(ARTIFACTS)
+        self.rng.shuffle(all_artifacts)
+        selected: list = []
+        used_attunements: set[str] = set()
+        covered_classes: set[str] = set()
+        # Greedy selection with constraint check
+        for attempt_expanded in (False, True):
+            selected = []
+            used_attunements = set()
+            covered_classes = set()
+            candidates = all_artifacts[:]
+            if attempt_expanded:
+                # Relax no-shared-attunement constraint on second pass
+                pass
+            for artifact in candidates:
+                if len(selected) >= count:
+                    break
+                attunement_set = set(artifact.attunement)
+                if not attempt_expanded and attunement_set & used_attunements:
+                    continue
+                # Prefer artifacts that cover uncovered party classes
+                new_coverage = attunement_set & party_classes - covered_classes
+                if not new_coverage and covered_classes >= party_classes and len(selected) > 0:
+                    # Already covered all classes; still add if we need more
+                    pass
+                selected.append(artifact.id)
+                used_attunements.update(attunement_set)
+                covered_classes.update(attunement_set & party_classes)
+            if len(selected) == count:
+                break
+        # Fill remaining slots if needed
+        if len(selected) < count:
+            remaining = [a.id for a in ARTIFACTS if a.id not in selected]
+            self.rng.shuffle(remaining)
+            selected += remaining[:count - len(selected)]
+        return selected[:count]
 
     def _build_quest_reward_options(self) -> list[dict]:
         """Generate the three reward choices shown after a quest win."""
@@ -2735,18 +2793,29 @@ class StorybookMode:
         current_pool = list(run_state.get("artifact_pool") or [])
         # Option 1: Gold
         gold_amount = 100
-        # Option 2: Artifact — pick a random artifact not already in the pool
+        # Option 2: Artifact — choose from 3 with different stat bonuses, no shared attunements
         existing_ids = set(current_pool)
-        new_artifact_candidates = [a.id for a in ARTIFACTS if a.id not in existing_ids]
-        artifact_option: dict = {}
-        if new_artifact_candidates:
-            picked_artifact_id = self.rng.choice(new_artifact_candidates)
-            artifact_def = ARTIFACTS_BY_ID.get(picked_artifact_id)
-            artifact_name = artifact_def.name if artifact_def else picked_artifact_id
-            artifact_option = {"kind": "artifact", "artifact_id": picked_artifact_id, "artifact_name": artifact_name}
-        else:
-            artifact_option = {"kind": "artifact", "artifact_id": None, "artifact_name": "Pool Full"}
-        # Option 3: Recruit — placeholder for adding an adventurer
+        available = [a for a in ARTIFACTS if a.id not in existing_ids]
+        self.rng.shuffle(available)
+        artifact_choices: list[dict] = []
+        used_attunements: set[str] = set()
+        for artifact in available:
+            if len(artifact_choices) >= 3:
+                break
+            attunement_set = set(artifact.attunement)
+            if attunement_set & used_attunements:
+                continue
+            artifact_choices.append({"artifact_id": artifact.id, "artifact_name": artifact.name})
+            used_attunements.update(attunement_set)
+        # Fallback: fill with any remaining if constraint can't be met
+        if len(artifact_choices) < 3:
+            for artifact in available:
+                if len(artifact_choices) >= 3:
+                    break
+                if not any(c["artifact_id"] == artifact.id for c in artifact_choices):
+                    artifact_choices.append({"artifact_id": artifact.id, "artifact_name": artifact.name})
+        artifact_option = {"kind": "artifact", "artifact_choices": artifact_choices}
+        # Option 3: Recruit — costs 100 Gold from quest pool (placeholder)
         recruit_option = {"kind": "recruit", "adventurer_id": None}
         return [
             {"kind": "gold", "amount": gold_amount},
@@ -2754,7 +2823,7 @@ class StorybookMode:
             recruit_option,
         ]
 
-    def _apply_quest_reward(self, choice_index: int):
+    def _apply_quest_reward(self, choice_index: int, artifact_id: str | None = None):
         """Apply the selected reward option and advance to the next encounter."""
         if not self.quest_reward_options or choice_index >= len(self.quest_reward_options):
             self._advance_quest_after_reward()
@@ -2762,16 +2831,30 @@ class StorybookMode:
         option = self.quest_reward_options[choice_index]
         run_state = self._quest_run_state("ai")
         if option["kind"] == "gold":
-            self.profile.gold = getattr(self.profile, "gold", 0) + option["amount"]
-        elif option["kind"] == "artifact" and option.get("artifact_id"):
+            run_state["gold_pool"] = run_state.get("gold_pool", 0) + option["amount"]
+        elif option["kind"] == "artifact" and artifact_id:
             pool = list(run_state.get("artifact_pool") or [])
-            if option["artifact_id"] not in pool:
-                pool.append(option["artifact_id"])
+            if artifact_id not in pool:
+                pool.append(artifact_id)
             run_state["artifact_pool"] = pool
         # "recruit" is deferred — no action yet
         self.quest_reward_options = []
         self._persist_profile()
         self._advance_quest_after_reward()
+
+    def _commit_quest_reputation(self, rep_total: int) -> str:
+        """Apply the accumulated quest reputation total to the player's permanent profile."""
+        old_rep = self.profile.reputation
+        new_rep = max(1, old_rep + rep_total)
+        self.profile.reputation = new_rep
+        from storybook_ranked import get_rank_from_reputation, rank_floor_for_reputation
+        self.profile.storybook_rank_label = get_rank_from_reputation(new_rep)
+        self.profile.floor_reputation = rank_floor_for_reputation(new_rep)
+        self.profile.season_high_reputation = max(
+            getattr(self.profile, "season_high_reputation", new_rep),
+            new_rep,
+        )
+        return f"Reputation applied: {old_rep} → {new_rep} ({rep_total:+d})"
 
     def _advance_quest_after_reward(self):
         if self.quest_context == "ranked" and self.quest_opponent_mode == "ai" and self._quest_run_state("ai").get("active"):
