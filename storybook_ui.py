@@ -1756,6 +1756,69 @@ def draw_quest_party_reveal(surf, mouse_pos, party_ids: list, favorite_id: str |
     return btns
 
 
+def draw_quest_reward_choice(surf, mouse_pos, options: list, *, wins: int = 0, losses: int = 0):
+    """Show the three reward options after a quest encounter win."""
+    draw_background(surf)
+    btns = draw_top_bar(
+        surf,
+        "Encounter Won!",
+        mouse_pos,
+        left_icon=None,
+        right_icons=(("settings", "S", False), ("quit", "X", True)),
+        subtitle=f"Quest Record: {wins}W – {losses}L  |  Choose your reward.",
+    )
+
+    panel = pygame.Rect(260, 130, 880, 590)
+    draw_beveled_panel(surf, panel, title="Choose One Reward")
+
+    choice_h = 140
+    choice_gap = 22
+    total_h = 3 * choice_h + 2 * choice_gap
+    start_y = panel.y + (panel.height - total_h) // 2 + 20
+    choice_w = panel.width - 80
+    choice_x = panel.x + 40
+
+    icons = ["G", "A", "R"]
+    default_labels = ["Gold Reward", "Artifact", "Recruit"]
+    choices = []
+    for index, option in enumerate(options[:3]):
+        rect = pygame.Rect(choice_x, start_y + index * (choice_h + choice_gap), choice_w, choice_h)
+        kind = option.get("kind", "")
+        hovered = rect.collidepoint(mouse_pos)
+        border = GOLD_BRIGHT if hovered else GOLD_DIM
+        draw_beveled_panel(surf, rect, border=border)
+        if hovered:
+            draw_glow_rect(surf, rect, GOLD_BRIGHT, alpha=24)
+
+        icon_rect = pygame.Rect(rect.x + 18, rect.y + (choice_h - 60) // 2, 60, 60)
+        fill_gradient(surf, icon_rect, SURFACE_HIGH, SBG_DEEP)
+        pygame.draw.rect(surf, GOLD_DIM, icon_rect, 1, border_radius=8)
+        draw_text(surf, icons[index], font_headline(28, bold=True), GOLD_BRIGHT, icon_rect.center, center=True)
+
+        label_x = rect.x + 96
+        if kind == "gold":
+            label = f"+{option.get('amount', 100)} Gold"
+            desc = "Add gold to your treasury immediately."
+        elif kind == "artifact":
+            label = option.get("artifact_name") or "Artifact"
+            if option.get("artifact_id"):
+                desc = "Add this artifact to your run's artifact pool."
+            else:
+                desc = "Artifact pool is already full."
+        elif kind == "recruit":
+            label = "Recruit (Coming Soon)"
+            desc = "Add a new adventurer to your quest party."
+        else:
+            label = default_labels[index]
+            desc = ""
+        draw_text(surf, label, font_headline(22, bold=True), TEXT, (label_x, rect.y + 28))
+        draw_text(surf, desc, font_body(16), TEXT_SOFT, (label_x, rect.y + 62))
+        choices.append((rect, index))
+
+    btns["choices"] = choices
+    return btns
+
+
 def draw_quest_draft(
     surf,
     mouse_pos,

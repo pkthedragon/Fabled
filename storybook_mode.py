@@ -130,6 +130,8 @@ class StorybookMode:
         self.quest_imported_party_name = ""
         self.prepared_quest_id: str | None = None
         self.quest_player_team: list[dict] | None = None
+        self.quest_reward_pending: bool = False
+        self.quest_reward_options: list[dict] = []
         self.quest_runs = {
             "ai": self._empty_quest_run_state(),
             "lan": self._empty_quest_run_state(),
@@ -1307,6 +1309,15 @@ class StorybookMode:
                 self.quest_selected_ids,
                 self.quest_draft_locked_id,
             )
+        elif self.route == "quest_reward_choice":
+            run_state = self._quest_run_state("ai")
+            self.last_buttons = sbui.draw_quest_reward_choice(
+                surf,
+                mouse_pos,
+                self.quest_reward_options,
+                wins=int(run_state.get("wins", 0)),
+                losses=int(run_state.get("losses", 0)),
+            )
         elif self.route == "quest_draft":
             draft_title = "Start Quest" if self.quest_draft_mode == "party_builder" else "Encounter Prep"
             draft_continue = "Continue To Party Loadouts" if self.quest_draft_mode == "party_builder" else "Continue To Loadouts"
@@ -1695,6 +1706,13 @@ class StorybookMode:
             if self._hit(btns.get("confirm"), pos):
                 self._confirm_quest_party_reveal()
                 return None
+            return None
+
+        if route == "quest_reward_choice":
+            for rect, index in btns.get("choices", []):
+                if rect.collidepoint(pos):
+                    self._apply_quest_reward(index)
+                    return None
             return None
 
         if route == "quest_draft":
@@ -2418,7 +2436,23 @@ class StorybookMode:
                 )
             else:
                 summary.append("Training Encounter Complete")
-            reward_line = "Encounter complete."
+            if ranked_ai and run_state["wins"] >= 3:
+                # Quest successfully completed — end-of-quest resolution
+                final_wins = run_state["wins"]
+                quest_exp = 50 + (20 * final_wins)
+                quest_level_lines = self._apply_exp_gain(quest_exp)
+                summary.append(f"Quest Complete! {final_wins} wins.")
+                summary.append(f"Quest Exp: +{quest_exp}")
+                summary.extend(quest_level_lines)
+                self._reset_quest_run_state(run_mode)
+                self._persist_profile()
+                return [*summary, reputation_line, *lines]
+            if ranked_ai:
+                self.quest_reward_pending = True
+                self.quest_reward_options = self._build_quest_reward_options()
+                reward_line = "Choose your reward below after reviewing results."
+            else:
+                reward_line = "Encounter complete."
             self._persist_profile()
             return [*summary, reward_line, *level_lines, reputation_line, *lines]
 
@@ -2526,6 +2560,10 @@ class StorybookMode:
 
     def _continue_from_results(self):
         if self.result_kind == "quest":
+            if self.quest_reward_pending:
+                self.quest_reward_pending = False
+                self.route = "quest_reward_choice"
+                return
             if self.quest_context == "ranked" and self.quest_opponent_mode == "ai" and self._quest_run_state("ai").get("active"):
                 self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
             elif self.quest_context == "training":
@@ -2690,6 +2728,56 @@ class StorybookMode:
             remaining = [a.id for a in ARTIFACTS if a.id not in pool]
             pool += self.rng.sample(remaining, min(count - len(pool), len(remaining)))
         return pool
+
+    def _build_quest_reward_options(self) -> list[dict]:
+        """Generate the three reward choices shown after a quest win."""
+        run_state = self._quest_run_state("ai")
+        current_pool = list(run_state.get("artifact_pool") or [])
+        # Option 1: Gold
+        gold_amount = 100
+        # Option 2: Artifact — pick a random artifact not already in the pool
+        existing_ids = set(current_pool)
+        new_artifact_candidates = [a.id for a in ARTIFACTS if a.id not in existing_ids]
+        artifact_option: dict = {}
+        if new_artifact_candidates:
+            picked_artifact_id = self.rng.choice(new_artifact_candidates)
+            artifact_def = ARTIFACTS_BY_ID.get(picked_artifact_id)
+            artifact_name = artifact_def.name if artifact_def else picked_artifact_id
+            artifact_option = {"kind": "artifact", "artifact_id": picked_artifact_id, "artifact_name": artifact_name}
+        else:
+            artifact_option = {"kind": "artifact", "artifact_id": None, "artifact_name": "Pool Full"}
+        # Option 3: Recruit — placeholder for adding an adventurer
+        recruit_option = {"kind": "recruit", "adventurer_id": None}
+        return [
+            {"kind": "gold", "amount": gold_amount},
+            artifact_option,
+            recruit_option,
+        ]
+
+    def _apply_quest_reward(self, choice_index: int):
+        """Apply the selected reward option and advance to the next encounter."""
+        if not self.quest_reward_options or choice_index >= len(self.quest_reward_options):
+            self._advance_quest_after_reward()
+            return
+        option = self.quest_reward_options[choice_index]
+        run_state = self._quest_run_state("ai")
+        if option["kind"] == "gold":
+            self.profile.gold = getattr(self.profile, "gold", 0) + option["amount"]
+        elif option["kind"] == "artifact" and option.get("artifact_id"):
+            pool = list(run_state.get("artifact_pool") or [])
+            if option["artifact_id"] not in pool:
+                pool.append(option["artifact_id"])
+            run_state["artifact_pool"] = pool
+        # "recruit" is deferred — no action yet
+        self.quest_reward_options = []
+        self._persist_profile()
+        self._advance_quest_after_reward()
+
+    def _advance_quest_after_reward(self):
+        if self.quest_context == "ranked" and self.quest_opponent_mode == "ai" and self._quest_run_state("ai").get("active"):
+            self._prepare_next_quest_encounter(force_new=True, route_if_ready="quests_menu")
+        else:
+            self.route = "guild_hall"
 
     def _enter_quest_loadout(self):
         if len(self.quest_selected_ids) != 3:
