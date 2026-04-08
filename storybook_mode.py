@@ -2814,7 +2814,10 @@ class StorybookMode:
             rng=self.rng,
         )
         self.quest_enemy_selected_ids = list(training_enemy_choice.team_ids)
-        self.quest_enemy_setup_members = self._team_from_loadout(training_enemy_choice.loadout)
+        training_enemy_members = self._team_from_loadout(training_enemy_choice.loadout)
+        for member in training_enemy_members:
+            member["artifact_id"] = None
+        self.quest_enemy_setup_members = training_enemy_members
         self.current_battle_opponent_glory = self.profile.reputation
         self.current_battle_ai_difficulties = {2: "normal"}
         self.current_battle_enemy_name = "Training Rival"
@@ -2873,7 +2876,10 @@ class StorybookMode:
         )
         self.quest_enemy_party_ids = enemy_party_ids
         self.quest_enemy_selected_ids = list(enemy_choice.team_ids)
-        self.quest_enemy_setup_members = self._team_from_loadout(enemy_choice.loadout)
+        enemy_members = self._team_from_loadout(enemy_choice.loadout)
+        for member in enemy_members:
+            member["artifact_id"] = None
+        self.quest_enemy_setup_members = enemy_members
         self.quest_focus_id = self.quest_offer_ids[0] if self.quest_offer_ids else None
         self.quest_selected_ids = []
         self.quest_draft_detail_scroll = 0
