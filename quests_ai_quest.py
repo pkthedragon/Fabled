@@ -102,8 +102,12 @@ def _team_matchup_heuristic(attackers: tuple[str, ...], defenders: tuple[str, ..
         return 0.0
     value = 0.0
     for attacker_id in attackers:
+        if attacker_id not in ADVENTURER_AI:
+            continue
         attacker = ADVENTURER_AI[attacker_id]
         for defender_id in defenders:
+            if defender_id not in ADVENTURER_AI:
+                continue
             value += matchup_value(attacker, ADVENTURER_AI[defender_id])
     return value
 
@@ -344,7 +348,7 @@ def choose_quest_party(
     offered = _unique_ids(offer_ids)
     if len(offered) < 3:
         raise ValueError("Quest AI requires at least 3 unique adventurers in the offered party.")
-    enemy_party = _unique_ids(enemy_party_ids)
+    enemy_party = tuple(adventurer_id for adventurer_id in _unique_ids(enemy_party_ids) if adventurer_id in ADVENTURER_AI)
     rng = rng or random.Random()
 
     package = assign_blind_quest_loadouts(offered)

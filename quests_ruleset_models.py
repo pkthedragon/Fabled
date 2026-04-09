@@ -77,7 +77,33 @@ class ArtifactDef:
     amount: int
     spell: ActiveEffect
     reactive: bool = False
+    reactive_spell: Optional[ActiveEffect] = None
+    legendary: bool = False
+    quest_only: bool = False
+    enemy_only: bool = False
     description: str = ""
+
+    @property
+    def active_spell(self) -> Optional[ActiveEffect]:
+        if self.reactive and self.reactive_spell is None:
+            return None
+        return self.spell
+
+    @property
+    def reactive_effect(self) -> Optional[ActiveEffect]:
+        if self.reactive_spell is not None:
+            return self.reactive_spell
+        if self.reactive:
+            return self.spell
+        return None
+
+    @property
+    def has_active_spell(self) -> bool:
+        return self.active_spell is not None
+
+    @property
+    def has_reactive_spell(self) -> bool:
+        return self.reactive_effect is not None
 
 
 @dataclass(frozen=True)
@@ -93,10 +119,33 @@ class AdventurerDef:
     ultimate: ActiveEffect
 
 
+@dataclass(frozen=True)
+class QuestEnemyTierDef:
+    id: str
+    name: str
+    description: str
+    has_secondary_weapon: bool = False
+    has_class_skill: bool = False
+    has_innate: bool = False
+    uses_artifact: bool = False
+    uses_legendary_artifact: bool = False
+    uses_legendary_class_skill: bool = False
+    apex_dual_primaries: bool = False
+    unique_named: bool = False
+
+
+@dataclass(frozen=True)
+class QuestLocaleDef:
+    id: str
+    name: str
+    description: str
+
+
 @dataclass
 class StatusInstance:
     kind: str
     duration: int
+    applied_round: int = 0
 
 
 @dataclass
@@ -104,6 +153,7 @@ class StatMod:
     stat: str
     amount: int
     duration: int
+    applied_round: int = 0
 
 
 @dataclass
@@ -145,6 +195,9 @@ class CombatantState:
         return any(status.kind == kind and status.duration > 0 for status in self.statuses)
 
     def add_status(self, kind: str, duration: int) -> bool:
+        current_round = int(self.markers.get("_current_round", 0))
+        if kind != "root_immunity" and self.markers.get("status_immunity_rounds", 0) > 0:
+            return False
         if kind == "root" and self.has_status("root_immunity"):
             return False
         if kind == "root_immunity":
@@ -153,11 +206,10 @@ class CombatantState:
             return False
         for status in self.statuses:
             if status.kind == kind and status.duration > 0:
-                if duration > status.duration:
-                    status.duration = duration
-                    return True
-                return False
-        self.statuses.append(StatusInstance(kind=kind, duration=duration))
+                status.duration = max(status.duration, duration)
+                status.applied_round = current_round
+                return True
+        self.statuses.append(StatusInstance(kind=kind, duration=duration, applied_round=current_round))
         return True
 
     def remove_status(self, kind: str):
@@ -195,6 +247,8 @@ class CombatantState:
                 for ally in ally_team.alive()
             ):
                 base += 25
+        if stat == "speed" and self.defn.innate.special == "bygone" and self.slot in BACKLINE_SLOTS:
+            base += 25
         if stat == "speed" and self.slot in BACKLINE_SLOTS:
             base = base // 2
         if stat == "speed" and self.has_status("shock"):
@@ -207,23 +261,78 @@ class CombatantState:
         return max(1, total)
 
     def add_buff(self, stat: str, amount: int, duration: int):
+        current_round = int(self.markers.get("_current_round", 0))
         for buff in self.buffs:
             if buff.stat == stat and buff.amount == amount:
                 buff.duration = max(buff.duration, duration)
+                buff.applied_round = current_round
                 return
-        self.buffs.append(StatMod(stat=stat, amount=amount, duration=duration))
+        self.buffs.append(StatMod(stat=stat, amount=amount, duration=duration, applied_round=current_round))
 
     def add_debuff(self, stat: str, amount: int, duration: int):
+        current_round = int(self.markers.get("_current_round", 0))
         for debuff in self.debuffs:
             if debuff.stat == stat and debuff.amount == amount:
                 debuff.duration = max(debuff.duration, duration)
+                debuff.applied_round = current_round
                 return
-        self.debuffs.append(StatMod(stat=stat, amount=amount, duration=duration))
+        self.debuffs.append(StatMod(stat=stat, amount=amount, duration=duration, applied_round=current_round))
+
+    def dual_primary_weapons_active(self) -> bool:
+        return bool(self.markers.get("dual_primary_weapons", 0)) and self.secondary_weapon.id != self.primary_weapon.id
+
+    def active_strike_weapons(self) -> List[WeaponDef]:
+        weapons: List[WeaponDef] = [self.primary_weapon]
+        if self.dual_primary_weapons_active():
+            weapons.append(self.secondary_weapon)
+        seen: set[str] = set()
+        unique: List[WeaponDef] = []
+        for weapon in weapons:
+            if weapon.id in seen:
+                continue
+            seen.add(weapon.id)
+            unique.append(weapon)
+        return unique
+
+    def strike_weapon_by_id(self, weapon_id: str | None) -> WeaponDef:
+        if weapon_id is None:
+            return self.primary_weapon
+        for weapon in self.active_strike_weapons():
+            if weapon.id == weapon_id:
+                return weapon
+        if self.primary_weapon.id == weapon_id:
+            return self.primary_weapon
+        if self.secondary_weapon.id == weapon_id:
+            return self.secondary_weapon
+        return self.primary_weapon
+
+    def weapon_for_effect(self, effect_id: str | None) -> Optional[WeaponDef]:
+        if effect_id is None:
+            return None
+        for weapon in self.active_strike_weapons():
+            if weapon.strike.id == effect_id:
+                return weapon
+            if any(effect.id == effect_id for effect in weapon.spells):
+                return weapon
+        for weapon in self.defn.signature_weapons:
+            if weapon.strike.id == effect_id:
+                return weapon
+            if any(effect.id == effect_id for effect in weapon.spells):
+                return weapon
+        return None
 
     def active_spells(self) -> List[ActiveEffect]:
-        spells = list(self.primary_weapon.spells)
-        if self.artifact is not None and not self.artifact.reactive:
-            spells.append(self.artifact.spell)
+        spells: List[ActiveEffect] = []
+        for weapon in self.active_strike_weapons():
+            for effect in weapon.spells:
+                if all(existing.id != effect.id for existing in spells):
+                    spells.append(effect)
+        if (
+            self.artifact is not None
+            and self.artifact.active_spell is not None
+            and self.class_name in self.artifact.attunement
+        ):
+            spells.append(self.artifact.active_spell)
         for effect in self.markers.get("stolen_spells", []):
             if effect not in spells:
                 spells.append(effect)

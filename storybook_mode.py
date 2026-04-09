@@ -7,6 +7,8 @@ import pygame
 
 from campaign_save import save_campaign
 from models import BoutRunState
+from quest_enemy_catalog import choose_ranked_quest_enemy_party
+from quest_enemy_runtime import ALL_COMBATANT_DEFS_BY_ID, ALL_RUNTIME_ARTIFACTS_BY_ID
 from quests_ai_bout import choose_bout_pick
 from quests_ai_loadout import solve_team_loadout
 from quests_ai_quest import choose_quest_party
@@ -16,7 +18,6 @@ from quests_sandbox import (
     NO_CLASS_NAME,
     build_battle_from_setup,
     create_setup_from_team_ids,
-    cycle_member_weapon,
     import_team_from_text,
     set_member_artifact,
     set_member_class,
@@ -25,7 +26,7 @@ from quests_sandbox import (
     set_member_weapon,
     setup_is_ready,
 )
-from storybook_battle import StoryBattleController, StoryLanBattleController
+from storybook_battle import StoryBattleController, StoryLanBattleController, TutorialBattleController
 from storybook_content import (
     ASSISTANT_SKILLS,
     BARTENDER_SKILLS,
@@ -59,6 +60,24 @@ from storybook_ranked import (
     target_team_score_for_reputation,
     update_reputation_after_match,
 )
+from storybook_tutorial import (
+    TUTORIAL_COMPLETION_GOLD,
+    TUTORIAL_PLAYER_IDS,
+    TUTORIAL_STARTING_GOLD,
+    build_player_setup,
+    build_tutorial_battle,
+    encounter_roster_ids,
+    encounter_spec,
+    encounter_unlocked_actions,
+    tutorial_adventurer_lookup,
+    tutorial_artifact_lookup,
+    tutorial_is_selection_encounter,
+    tutorial_loadout_adventurer_lookup,
+    tutorial_loadout_lines,
+    tutorial_loadout_note,
+    tutorial_loadout_options,
+    tutorial_party_select_lines,
+)
 import storybook_ui as sbui
 
 
@@ -76,6 +95,13 @@ class StorybookMode:
         self.last_mouse_pos = (0, 0)
         self.employee_focus = "assistant"
         self.battle_log_open = False
+        self.tutorial_selected_ids: list[str] = []
+        self.tutorial_focus_id: str | None = None
+        self.tutorial_setup_state: dict | None = None
+        self.tutorial_loadout_index = 0
+        self.tutorial_loadout_detail_scroll = 0
+        self.tutorial_loadout_summary_scroll = 0
+        self.tutorial_pending_lines: list[str] = []
 
         self.player_note_lines = [
             "Little Jack is always eligible as your quest favorite.",
@@ -122,6 +148,9 @@ class StorybookMode:
         self.quest_enemy_party_ids: list[str] = []
         self.quest_enemy_selected_ids: list[str] = []
         self.quest_enemy_setup_members: list[dict] = []
+        self.quest_enemy_locale_name: str | None = None
+        self.quest_enemy_tier_name: str | None = None
+        self.quest_enemy_party_title: str | None = None
         self.quest_draft_detail_scroll = 0
         self.quest_setup_state: dict | None = None
         self.quest_loadout_index = 0
@@ -232,6 +261,8 @@ class StorybookMode:
         ]
 
         self._normalize_profile()
+        if self._tutorial_prompt_required():
+            self.route = "first_run_prompt"
         if self._friends():
             self.friend_selected_index = 0
             self._load_selected_friend_into_editor()
@@ -258,8 +289,26 @@ class StorybookMode:
         }
 
     def _normalize_profile(self):
-        if getattr(self.profile, "gold", 0) <= 0 and getattr(self.profile, "player_exp", 0) <= 0:
-            self.profile.gold = 1200
+        existing_progress = any(
+            [
+                getattr(self.profile, "gold", 0) > 0,
+                getattr(self.profile, "player_exp", 0) > 0,
+                getattr(self.profile, "ranked_games_played", 0) > 0,
+                bool(getattr(self.profile, "saved_teams", [])),
+                bool(getattr(self.profile, "tutorial_complete", False)),
+            ]
+        )
+        if existing_progress and not getattr(self.profile, "tutorial_prompt_answered", False):
+            self.profile.tutorial_prompt_answered = True
+            self.profile.tutorial_played_before = True
+            self.profile.tutorial_complete = True
+            self.profile.quick_play_unlocked = True
+        if (
+            getattr(self.profile, "tutorial_prompt_answered", False)
+            and getattr(self.profile, "gold", 0) <= 0
+            and getattr(self.profile, "player_exp", 0) <= 0
+        ):
+            self.profile.gold = TUTORIAL_STARTING_GOLD if getattr(self.profile, "tutorial_complete", False) else 0
         self.profile.reputation = ensure_storybook_reputation(
             getattr(self.profile, "reputation", 300),
             getattr(self.profile, "ranked_games_played", 0),
@@ -309,6 +358,16 @@ class StorybookMode:
             self.profile.battle_log_popups = True
         if not hasattr(self.profile, "screen_shake"):
             self.profile.screen_shake = True
+        if not hasattr(self.profile, "tutorial_prompt_answered"):
+            self.profile.tutorial_prompt_answered = False
+        if not hasattr(self.profile, "tutorial_played_before"):
+            self.profile.tutorial_played_before = False
+        if not hasattr(self.profile, "tutorial_current_encounter"):
+            self.profile.tutorial_current_encounter = 1
+        if not hasattr(self.profile, "tutorial_completed_encounters"):
+            self.profile.tutorial_completed_encounters = set()
+        if not hasattr(self.profile, "tutorial_artifact_pool"):
+            self.profile.tutorial_artifact_pool = []
         self.shop_owned_cosmetics = set(getattr(self.profile, "storybook_cosmetic_unlocks", set()))
         if self.market_tab not in MARKET_TABS:
             self.market_tab = MARKET_TABS[0] if MARKET_TABS else "Player Skins"
@@ -557,6 +616,172 @@ class StorybookMode:
         }
         self.profile.saved_teams = self._guild_parties_serialized()
         save_campaign(self.profile)
+
+    def _tutorial_prompt_required(self) -> bool:
+        return not getattr(self.profile, "tutorial_prompt_answered", False)
+
+    def _tutorial_active(self) -> bool:
+        return (
+            getattr(self.profile, "tutorial_prompt_answered", False)
+            and not getattr(self.profile, "tutorial_played_before", False)
+            and not getattr(self.profile, "tutorial_complete", False)
+        )
+
+    def _tutorial_encounter_index(self) -> int:
+        return max(1, min(10, int(getattr(self.profile, "tutorial_current_encounter", 1) or 1)))
+
+    def _tutorial_complete_now(self, *, skipped: bool):
+        self.profile.tutorial_prompt_answered = True
+        self.profile.tutorial_played_before = bool(skipped)
+        self.profile.tutorial_complete = True
+        self.profile.quick_play_unlocked = True
+        self.profile.tutorial_current_encounter = 10
+        self.profile.tutorial_completed_encounters = set(range(1, 11))
+        self.profile.tutorial_artifact_pool = []
+        self.profile.gold = max(getattr(self.profile, "gold", 0), TUTORIAL_STARTING_GOLD)
+        self.profile.reputation = max(getattr(self.profile, "reputation", 300), 300)
+        self.profile.storybook_quested_adventurers.update(TUTORIAL_PLAYER_IDS)
+        if getattr(self.profile, "storybook_favorite_adventurer", "") not in self.profile.storybook_quested_adventurers:
+            self.profile.storybook_favorite_adventurer = "little_jack"
+        self.tutorial_selected_ids = []
+        self.tutorial_focus_id = None
+        self.tutorial_setup_state = None
+        self.tutorial_loadout_index = 0
+        self.tutorial_loadout_detail_scroll = 0
+        self.tutorial_loadout_summary_scroll = 0
+        self._persist_profile()
+
+    def _accept_first_run_choice(self, *, played_before: bool):
+        self.profile.tutorial_prompt_answered = True
+        self.profile.tutorial_played_before = played_before
+        self.profile.reputation = max(getattr(self.profile, "reputation", 300), 300)
+        if played_before:
+            self._tutorial_complete_now(skipped=True)
+            self.route = "main_menu"
+            return
+        self.profile.gold = 0
+        self.profile.tutorial_complete = False
+        self.profile.quick_play_unlocked = False
+        self.profile.tutorial_current_encounter = 1
+        self.profile.tutorial_completed_encounters = set()
+        self.profile.tutorial_artifact_pool = []
+        self.tutorial_selected_ids = []
+        self.tutorial_setup_state = None
+        self.tutorial_loadout_index = 0
+        self.tutorial_loadout_detail_scroll = 0
+        self.tutorial_loadout_summary_scroll = 0
+        self.route = "main_menu"
+        self._persist_profile()
+
+    def _tutorial_briefing_lines(self) -> list[str]:
+        spec = encounter_spec(self._tutorial_encounter_index())
+        lines = list(spec.briefing)
+        if spec.reward_artifact_ids:
+            lines.append("Reward this encounter: Wishing Table and Selkie's Skin enter the tutorial artifact pool.")
+        if getattr(self.profile, "tutorial_artifact_pool", []):
+            lines.append(f"Tutorial pool: {len(self.profile.tutorial_artifact_pool)} artifact(s) ready for future encounters.")
+        return lines
+
+    def _tutorial_party_select_lines(self) -> list[str]:
+        lines = tutorial_party_select_lines(self._tutorial_encounter_index())
+        pool = list(getattr(self.profile, "tutorial_artifact_pool", []))
+        if pool:
+            lines.append(f"Tutorial pool ready: {len(pool)} artifact(s) will be available in later loadouts.")
+        return lines or self._tutorial_briefing_lines()
+
+    def _tutorial_loadout_lines(self) -> list[str]:
+        lines = tutorial_loadout_lines(self._tutorial_encounter_index())
+        pool = list(getattr(self.profile, "tutorial_artifact_pool", []))
+        if pool:
+            lines.append(f"Tutorial pool: {', '.join(artifact_id.replace('_', ' ').title() for artifact_id in pool)}.")
+        return lines or ([tutorial_loadout_note(self._tutorial_encounter_index())] if tutorial_loadout_note(self._tutorial_encounter_index()) else [])
+
+    def _open_tutorial_current_step(self):
+        self.tutorial_pending_lines = self._tutorial_briefing_lines()
+        self.route = "tutorial_briefing"
+
+    def _continue_tutorial_from_briefing(self):
+        encounter_index = self._tutorial_encounter_index()
+        if tutorial_is_selection_encounter(encounter_index):
+            roster_ids = encounter_roster_ids(encounter_index)
+            current_selection = [adventurer_id for adventurer_id in self.tutorial_selected_ids if adventurer_id in roster_ids]
+            if len(current_selection) == 3:
+                self.tutorial_selected_ids = current_selection
+            else:
+                self.tutorial_selected_ids = roster_ids[:3]
+            if self.tutorial_focus_id not in roster_ids:
+                self.tutorial_focus_id = roster_ids[0] if roster_ids else None
+            self.route = "tutorial_party_select"
+            return
+        if encounter_spec(encounter_index).show_loadout:
+            expected_ids = set(encounter_roster_ids(encounter_index))
+            current_ids = {
+                member.get("adventurer_id")
+                for member in ((self.tutorial_setup_state or {}).get("team1", []) if self.tutorial_setup_state else [])
+            }
+            if self.tutorial_setup_state is None or current_ids != expected_ids:
+                self.tutorial_setup_state = build_player_setup(encounter_index, artifact_pool=getattr(self.profile, "tutorial_artifact_pool", []))
+            self.tutorial_loadout_index = 0
+            self.tutorial_loadout_detail_scroll = 0
+            self.tutorial_loadout_summary_scroll = 0
+            self.route = "tutorial_loadout"
+            return
+        self._start_tutorial_battle()
+
+    def _start_tutorial_battle(self):
+        encounter_index = self._tutorial_encounter_index()
+        if self.tutorial_setup_state is None:
+            self.tutorial_setup_state = build_player_setup(
+                encounter_index,
+                selected_ids=self.tutorial_selected_ids if self.tutorial_selected_ids else None,
+                artifact_pool=getattr(self.profile, "tutorial_artifact_pool", []),
+            )
+        battle = build_tutorial_battle(encounter_index, self.tutorial_setup_state)
+        self.current_battle_setup = copy.deepcopy(self.tutorial_setup_state)
+        self.current_battle_human_team = 1
+        self.current_battle_ai_difficulties = {}
+        self.current_battle_second_picker = 0
+        self.current_battle_player_name = "You"
+        self.current_battle_enemy_name = "Tutorial Rival"
+        self.current_battle_result_kind = "tutorial"
+        self.current_battle_opponent_glory = 300
+        spec = encounter_spec(encounter_index)
+        self.battle_controller = TutorialBattleController(
+            battle=battle,
+            results_kind="tutorial",
+            human_team_num=1,
+            ai_difficulties={},
+            encounter_index=encounter_index,
+            unlocked_actions=encounter_unlocked_actions(encounter_index),
+            allow_bonus_actions=spec.allow_bonus_actions,
+            allow_ultimate_meter=spec.allow_ultimate_meter,
+            tutorial_prompt=spec.battle_hint,
+            tutorials_enabled=getattr(self.profile, "tutorials_enabled", True),
+        )
+        self.battle_log_open = False
+        self.route = "battle"
+
+    def _finalize_tutorial_result(self, lines: list[str]) -> list[str]:
+        spec = encounter_spec(self._tutorial_encounter_index())
+        if self.result_victory:
+            new_pool = list(getattr(self.profile, "tutorial_artifact_pool", []))
+            for artifact_id in spec.reward_artifact_ids:
+                if artifact_id not in new_pool:
+                    new_pool.append(artifact_id)
+            self.profile.tutorial_artifact_pool = new_pool
+            completed = set(getattr(self.profile, "tutorial_completed_encounters", set()))
+            completed.add(spec.index)
+            self.profile.tutorial_completed_encounters = completed
+            if spec.index >= 10:
+                artifact_sale_gold = len(new_pool) * 100
+                self._tutorial_complete_now(skipped=False)
+                self.result_winner = "Welcome To Fabled"
+                return ["Tutorial complete.", f"Artifacts sold for +{artifact_sale_gold} Gold.", "Your guild is ready for quests, bouts, training, and the market."]
+            self.profile.tutorial_current_encounter = min(10, spec.index + 1)
+            self._persist_profile()
+            return [f"Encounter {spec.index} cleared.", "Continue to the next lesson.", *(["Tutorial pool updated."] if spec.reward_artifact_ids else [])]
+        self._persist_profile()
+        return [f"Encounter {spec.index} failed.", spec.defeat_hint, "Continue to restart the encounter."]
 
     @staticmethod
     def _employee_definitions() -> dict[str, dict]:
@@ -1107,6 +1332,9 @@ class StorybookMode:
             self.quest_enemy_party_ids = []
             self.quest_enemy_selected_ids = []
             self.quest_enemy_setup_members = []
+            self.quest_enemy_locale_name = None
+            self.quest_enemy_tier_name = None
+            self.quest_enemy_party_title = None
             self.quest_selected_ids = []
             self.quest_draft_mode = "encounter"
             self.quest_draft_locked_id = None
@@ -1330,15 +1558,25 @@ class StorybookMode:
             return self.quest_setup_state
         if current_route == "bout_loadout":
             return self.bout_setup_state
+        if current_route == "tutorial_loadout":
+            return self.tutorial_setup_state
         return None
 
     def _current_loadout_team_num(self, route: str | None = None) -> int:
         current_route = route or self.route
-        return self.quest_player_seat if current_route == "quest_loadout" else self.bout_player_seat
+        if current_route == "quest_loadout":
+            return self.quest_player_seat
+        if current_route == "tutorial_loadout":
+            return 1
+        return self.bout_player_seat
 
     def _current_loadout_index(self, route: str | None = None) -> int:
         current_route = route or self.route
-        return self.quest_loadout_index if current_route == "quest_loadout" else self.bout_loadout_index
+        if current_route == "quest_loadout":
+            return self.quest_loadout_index
+        if current_route == "tutorial_loadout":
+            return self.tutorial_loadout_index
+        return self.bout_loadout_index
 
     def _set_current_loadout_index(self, index: int, route: str | None = None):
         current_route = route or self.route
@@ -1351,22 +1589,38 @@ class StorybookMode:
         if current_route == "quest_loadout":
             self.quest_loadout_index = clamped
             self.quest_loadout_detail_scroll = 0
+            self.quest_loadout_summary_scroll = 0
+        elif current_route == "tutorial_loadout":
+            self.tutorial_loadout_index = clamped
+            self.tutorial_loadout_detail_scroll = 0
+            self.tutorial_loadout_summary_scroll = 0
         elif current_route == "bout_loadout":
             self.bout_loadout_index = clamped
             self.bout_loadout_detail_scroll = 0
+            self.bout_loadout_summary_scroll = 0
 
     def _current_loadout_detail_scroll(self, route: str | None = None) -> int:
         current_route = route or self.route
-        return self.quest_loadout_detail_scroll if current_route == "quest_loadout" else self.bout_loadout_detail_scroll
+        if current_route == "quest_loadout":
+            return self.quest_loadout_detail_scroll
+        if current_route == "tutorial_loadout":
+            return self.tutorial_loadout_detail_scroll
+        return self.bout_loadout_detail_scroll
 
     def _current_loadout_summary_scroll(self, route: str | None = None) -> int:
         current_route = route or self.route
-        return self.quest_loadout_summary_scroll if current_route == "quest_loadout" else self.bout_loadout_summary_scroll
+        if current_route == "quest_loadout":
+            return self.quest_loadout_summary_scroll
+        if current_route == "tutorial_loadout":
+            return self.tutorial_loadout_summary_scroll
+        return self.bout_loadout_summary_scroll
 
     def _set_current_loadout_detail_scroll(self, value: int, route: str | None = None):
         current_route = route or self.route
         if current_route == "quest_loadout":
             self.quest_loadout_detail_scroll = max(0, value)
+        elif current_route == "tutorial_loadout":
+            self.tutorial_loadout_detail_scroll = max(0, value)
         elif current_route == "bout_loadout":
             self.bout_loadout_detail_scroll = max(0, value)
 
@@ -1374,6 +1628,8 @@ class StorybookMode:
         current_route = route or self.route
         if current_route == "quest_loadout":
             self.quest_loadout_summary_scroll = max(0, value)
+        elif current_route == "tutorial_loadout":
+            self.tutorial_loadout_summary_scroll = max(0, value)
         elif current_route == "bout_loadout":
             self.bout_loadout_summary_scroll = max(0, value)
 
@@ -1381,6 +1637,8 @@ class StorybookMode:
         current_route = route or self.route
         if current_route == "quest_loadout":
             return self.quest_local_ready
+        if current_route == "tutorial_loadout":
+            return not tutorial_loadout_options(self._tutorial_encounter_index()).get("formation_editable", False)
         if current_route == "bout_loadout":
             return self.bout_local_ready
         return True
@@ -1419,6 +1677,52 @@ class StorybookMode:
     def _lan_mode_label(self) -> str:
         return "Quest Duel" if self.lan_context == "quest" else "Bout Match"
 
+    def _quest_enemy_caption(self) -> str | None:
+        if self.quest_context != "ranked" or self.quest_draft_mode == "party_builder":
+            return None
+        parts = [part for part in (self.quest_enemy_tier_name, self.quest_enemy_party_title) if part]
+        return " | ".join(parts) if parts else None
+
+    def _quest_enemy_locale_lines(self) -> list[str] | None:
+        if self.quest_context != "ranked" or self.quest_draft_mode == "party_builder" or not self.quest_enemy_locale_name:
+            return None
+        return [f"Locale: {self.quest_enemy_locale_name}"]
+
+    def _quest_loadout_enemy_members(self) -> list[dict]:
+        if self.quest_context in {"bout_random", "bout_focused"} and self.bout_ai_party_loadout:
+            return list(self.bout_ai_party_loadout)
+        if self.quest_setup_state is not None:
+            enemy_team_num = 2 if self.quest_player_seat == 1 else 1
+            members = list(self.quest_setup_state.get(f"team{enemy_team_num}", []))
+            if members:
+                return members
+        return list(self.quest_enemy_setup_members)
+
+    def _quest_loadout_enemy_list_title(self) -> str:
+        if self.quest_context in {"bout_random", "bout_focused"}:
+            return "Enemy Roster"
+        return "Enemy Party"
+
+    def _tutorial_loadout_enemy_members(self) -> list[dict]:
+        if self.tutorial_setup_state is None:
+            return []
+        battle = build_tutorial_battle(self._tutorial_encounter_index(), self.tutorial_setup_state)
+        slot_order = {"front": 0, "back_left": 1, "back_right": 2}
+        members = []
+        for unit in battle.team2.members:
+            members.append(
+                {
+                    "adventurer_id": unit.defn.id,
+                    "slot": unit.slot,
+                    "class_name": unit.class_name,
+                    "class_skill_id": unit.class_skill.id if unit.class_skill is not None else None,
+                    "primary_weapon_id": unit.primary_weapon.id,
+                    "artifact_id": unit.artifact.id if unit.artifact is not None else None,
+                }
+            )
+        members.sort(key=lambda member: slot_order.get(str(member.get("slot")), 99))
+        return members
+
     def draw(self, surf, mouse_pos):
         self.last_mouse_pos = mouse_pos
         self._normalize_profile()
@@ -1429,12 +1733,63 @@ class StorybookMode:
             self.battle_controller.poll_network()
             self._check_battle_results()
 
-        if self.route == "main_menu":
-            self.last_buttons = sbui.draw_main_menu(
+        if self.route == "first_run_prompt":
+            self.last_buttons = sbui.draw_first_run_prompt(surf, mouse_pos)
+        elif self.route == "main_menu":
+            if self._tutorial_active():
+                self.last_buttons = sbui.draw_tutorial_gate_menu(surf, mouse_pos)
+            else:
+                self.last_buttons = sbui.draw_main_menu(
+                    surf,
+                    mouse_pos,
+                    self.profile,
+                    has_current_quest=self._quest_run_state("ai").get("active", False),
+                )
+        elif self.route == "tutorial_briefing":
+            self.last_buttons = sbui.draw_tutorial_briefing(
                 surf,
                 mouse_pos,
-                self.profile,
-                has_current_quest=self._quest_run_state("ai").get("active", False),
+                encounter_spec(self._tutorial_encounter_index()).title,
+                self.tutorial_pending_lines or self._tutorial_briefing_lines(),
+                continue_label="Begin",
+            )
+        elif self.route == "tutorial_party_select":
+            roster_ids = encounter_roster_ids(self._tutorial_encounter_index())
+            self.last_buttons = sbui.draw_quest_draft(
+                surf,
+                mouse_pos,
+                roster_ids,
+                self.tutorial_focus_id,
+                self.tutorial_selected_ids,
+                title=encounter_spec(self._tutorial_encounter_index()).title,
+                side_panel_title="Lesson",
+                side_panel_lines=self._tutorial_party_select_lines(),
+                target_count=3,
+                continue_label="Continue To Loadout",
+                selected_panel_title="Chosen Party",
+                adventurer_lookup=tutorial_adventurer_lookup(),
+            )
+        elif self.route == "tutorial_loadout":
+            encounter_index = self._tutorial_encounter_index()
+            self.last_buttons = sbui.draw_quest_loadout(
+                surf,
+                mouse_pos,
+                self.tutorial_setup_state,
+                self.tutorial_loadout_index,
+                player_team_num=1,
+                waiting_note=tutorial_loadout_note(encounter_index),
+                waiting_lines=self._tutorial_loadout_lines(),
+                drag_state=self.loadout_drag if self.route == "tutorial_loadout" else None,
+                detail_scroll=self.tutorial_loadout_detail_scroll,
+                summary_scroll=self.tutorial_loadout_summary_scroll,
+                editable_loadout=True,
+                adventurer_lookup=tutorial_loadout_adventurer_lookup(),
+                artifact_lookup=tutorial_artifact_lookup(),
+                loadout_options=tutorial_loadout_options(encounter_index),
+                required_member_count=max(1, len((self.tutorial_setup_state or {}).get("team1", []))),
+                confirm_label="Begin Encounter",
+                enemy_list_title="Enemy Party",
+                enemy_members=self._tutorial_loadout_enemy_members(),
             )
         elif self.route == "player_menu":
             self.last_buttons = sbui.draw_player_menu(
@@ -1604,7 +1959,9 @@ class StorybookMode:
                 continue_label=draft_continue,
                 selected_panel_title=selected_panel_title,
                 side_panel_title=side_panel_title,
-                side_panel_lines=side_panel_lines,
+                side_panel_caption=self._quest_enemy_caption(),
+                side_panel_lines=(self._quest_enemy_locale_lines() or side_panel_lines),
+                adventurer_lookup=ALL_COMBATANT_DEFS_BY_ID if self.quest_draft_mode != "party_builder" else None,
             )
         elif self.route == "quest_loadout":
             self.last_buttons = sbui.draw_quest_loadout(
@@ -1618,6 +1975,10 @@ class StorybookMode:
                 detail_scroll=self.quest_loadout_detail_scroll,
                 summary_scroll=self.quest_loadout_summary_scroll,
                 editable_loadout=self.quest_context != "ranked",
+                adventurer_lookup=ALL_COMBATANT_DEFS_BY_ID if self.quest_context == "ranked" else None,
+                artifact_lookup=ALL_RUNTIME_ARTIFACTS_BY_ID if self.quest_context == "ranked" else None,
+                enemy_members=self._quest_loadout_enemy_members(),
+                enemy_list_title=self._quest_loadout_enemy_list_title(),
             )
         elif self.route == "bouts_menu":
             self.last_buttons = sbui.draw_bouts_menu(surf, mouse_pos)
@@ -1748,7 +2109,18 @@ class StorybookMode:
             self.route = "settings"
             return None
 
+        if route == "first_run_prompt":
+            if self._hit(btns.get("played_before"), pos):
+                self._accept_first_run_choice(played_before=True)
+            elif self._hit(btns.get("new_to_fabled"), pos):
+                self._accept_first_run_choice(played_before=False)
+            return None
+
         if route == "main_menu":
+            if self._tutorial_active():
+                if self._hit(btns.get("tutorial_story"), pos):
+                    self._open_tutorial_current_step()
+                return None
             if self._hit(btns.get("profile"), pos):
                 self.route = "player_menu"
             elif self._hit(btns.get("guild_hall"), pos):
@@ -1770,6 +2142,81 @@ class StorybookMode:
             elif self._hit(btns.get("employee_server"), pos):
                 self.employee_focus = "server"
                 self.route = "employee_config"
+            return None
+
+        if route == "tutorial_briefing":
+            if self._hit(btns.get("back"), pos):
+                self.route = "main_menu"
+                return None
+            if self._hit(btns.get("continue"), pos):
+                self._continue_tutorial_from_briefing()
+                return None
+            return None
+
+        if route == "tutorial_party_select":
+            if self._hit(btns.get("back"), pos):
+                self.route = "tutorial_briefing"
+                return None
+            if self._hit(btns.get("pick"), pos):
+                if self.tutorial_focus_id in self.tutorial_selected_ids:
+                    self.tutorial_selected_ids = [adventurer_id for adventurer_id in self.tutorial_selected_ids if adventurer_id != self.tutorial_focus_id]
+                elif self.tutorial_focus_id is not None and len(self.tutorial_selected_ids) < 3:
+                    self.tutorial_selected_ids.append(self.tutorial_focus_id)
+                return None
+            if self._hit(btns.get("continue"), pos) and len(self.tutorial_selected_ids) == 3:
+                self.tutorial_setup_state = build_player_setup(
+                    self._tutorial_encounter_index(),
+                    selected_ids=self.tutorial_selected_ids,
+                    artifact_pool=getattr(self.profile, "tutorial_artifact_pool", []),
+                )
+                self.tutorial_loadout_index = 0
+                self.tutorial_loadout_detail_scroll = 0
+                self.tutorial_loadout_summary_scroll = 0
+                self.route = "tutorial_loadout"
+                return None
+            for rect, adventurer_id in btns.get("party_slots", []):
+                if rect.collidepoint(pos):
+                    self.tutorial_selected_ids = [value for value in self.tutorial_selected_ids if value != adventurer_id]
+                    return None
+            for rect, adventurer_id in btns.get("cards", []):
+                if rect.collidepoint(pos):
+                    self.tutorial_focus_id = adventurer_id
+                    return None
+            return None
+
+        if route == "tutorial_loadout":
+            if self._hit(btns.get("back"), pos):
+                self.route = "tutorial_party_select" if tutorial_is_selection_encounter(self._tutorial_encounter_index()) else "tutorial_briefing"
+                return None
+            if self._hit(btns.get("confirm"), pos):
+                self._start_tutorial_battle()
+                return None
+            for rect, index, _slot in btns.get("formation_members", []):
+                if rect.collidepoint(pos):
+                    self.tutorial_loadout_index = index
+                    return None
+            for rect, weapon_id in btns.get("weapons", []):
+                if rect.collidepoint(pos):
+                    set_member_weapon(self.tutorial_setup_state, 1, self.tutorial_loadout_index, weapon_id)
+                    return None
+            for rect, class_name in btns.get("classes", []):
+                if rect.collidepoint(pos):
+                    options = tutorial_loadout_options(self._tutorial_encounter_index())
+                    if options.get("class_editable"):
+                        set_member_class(self.tutorial_setup_state, 1, self.tutorial_loadout_index, class_name)
+                    return None
+            for rect, skill_id in btns.get("skills", []):
+                if rect.collidepoint(pos):
+                    options = tutorial_loadout_options(self._tutorial_encounter_index())
+                    if options.get("skills_editable"):
+                        set_member_skill(self.tutorial_setup_state, 1, self.tutorial_loadout_index, skill_id)
+                    return None
+            for rect, artifact_id, locked in btns.get("artifacts", []):
+                if rect.collidepoint(pos) and not locked:
+                    options = tutorial_loadout_options(self._tutorial_encounter_index())
+                    if options.get("artifacts_editable"):
+                        set_member_artifact(self.tutorial_setup_state, 1, self.tutorial_loadout_index, artifact_id)
+                    return None
             return None
 
         if route == "player_menu":
@@ -1992,9 +2439,10 @@ class StorybookMode:
                     self.quest_party_loadout_index = index
                     self.quest_party_loadout_detail_scroll = 0
                     return None
-            if self._hit(btns.get("weapon_prev"), pos) or self._hit(btns.get("weapon_next"), pos):
-                cycle_member_weapon(self.quest_party_loadout_state, 1, self.quest_party_loadout_index)
-                return None
+            for rect, weapon_id in btns.get("weapons", []):
+                if rect.collidepoint(pos):
+                    set_member_weapon(self.quest_party_loadout_state, 1, self.quest_party_loadout_index, weapon_id)
+                    return None
             for rect, class_name in btns.get("classes", []):
                 if rect.collidepoint(pos):
                     set_member_class(self.quest_party_loadout_state, 1, self.quest_party_loadout_index, class_name)
@@ -2093,9 +2541,10 @@ class StorybookMode:
                     return None
             if self.quest_context == "ranked":
                 return None
-            if self._hit(btns.get("weapon_prev"), pos) or self._hit(btns.get("weapon_next"), pos):
-                cycle_member_weapon(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index)
-                return None
+            for rect, weapon_id in btns.get("weapons", []):
+                if rect.collidepoint(pos):
+                    set_member_weapon(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index, weapon_id)
+                    return None
             for rect, class_name in btns.get("classes", []):
                 if rect.collidepoint(pos):
                     set_member_class(self.quest_setup_state, self.quest_player_seat, self.quest_loadout_index, class_name)
@@ -2205,9 +2654,10 @@ class StorybookMode:
                 if rect.collidepoint(pos):
                     self.bout_loadout_index = index
                     return None
-            if self._hit(btns.get("weapon_prev"), pos) or self._hit(btns.get("weapon_next"), pos):
-                cycle_member_weapon(self.bout_setup_state, self.bout_player_seat, self.bout_loadout_index)
-                return None
+            for rect, weapon_id in btns.get("weapons", []):
+                if rect.collidepoint(pos):
+                    set_member_weapon(self.bout_setup_state, self.bout_player_seat, self.bout_loadout_index, weapon_id)
+                    return None
             for rect, class_name in btns.get("classes", []):
                 if rect.collidepoint(pos):
                     set_member_class(self.bout_setup_state, self.bout_player_seat, self.bout_loadout_index, class_name)
@@ -2382,9 +2832,20 @@ class StorybookMode:
                 return None
             return None
 
+        if self.route == "tutorial_briefing" and e.key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_KP_ENTER):
+            self._continue_tutorial_from_briefing()
+            return None
+
         if e.key == pygame.K_ESCAPE:
             if self.route == "settings":
                 self.route = self.previous_route
+            elif self.route == "tutorial_briefing":
+                self.route = "main_menu"
+            elif self.route == "tutorial_party_select":
+                self.route = "tutorial_briefing"
+            elif self.route == "tutorial_loadout":
+                self._clear_loadout_drag()
+                self.route = "tutorial_party_select" if tutorial_is_selection_encounter(self._tutorial_encounter_index()) else "tutorial_briefing"
             elif self.route in {"player_menu", "market", "employee_config"}:
                 self.route = "main_menu"
             elif self.route in {"armory", "shops", "catalog", "training_grounds", "quests_menu", "bouts_menu"}:
@@ -2424,6 +2885,14 @@ class StorybookMode:
             return None
 
         if self.route == "battle" and self.battle_controller is not None:
+            if (
+                getattr(self.battle_controller, "tutorial_prompt", "")
+                and e.key in (pygame.K_RETURN, pygame.K_KP_ENTER)
+                and hasattr(self.battle_controller, "dismiss_tutorial_prompt")
+                and not self.battle_controller.can_resolve()
+            ):
+                self.battle_controller.dismiss_tutorial_prompt()
+                return None
             if e.key == pygame.K_TAB:
                 allies = [
                     slot_data["unit"]
@@ -2526,7 +2995,7 @@ class StorybookMode:
                 max_scroll = btns.get("detail_scroll_max", 0)
                 self.quest_party_loadout_detail_scroll = max(0, min(max_scroll, self.quest_party_loadout_detail_scroll - (event.y * 28)))
                 return None
-        if self.route in {"quest_loadout", "bout_loadout"}:
+        if self.route in {"quest_loadout", "bout_loadout", "tutorial_loadout"}:
             mouse_pos = self.last_mouse_pos
             btns = self.last_buttons or {}
             detail_viewport = btns.get("detail_viewport")
@@ -2583,7 +3052,7 @@ class StorybookMode:
         return None
 
     def handle_mouse_down(self, pos):
-        if self.route not in {"quest_loadout", "bout_loadout"} or self._loadout_locked():
+        if self.route not in {"quest_loadout", "bout_loadout", "tutorial_loadout"} or self._loadout_locked():
             return False
         for rect, member_index, slot in (self.last_buttons or {}).get("formation_members", []):
             if rect.collidepoint(pos):
@@ -2694,6 +3163,10 @@ class StorybookMode:
         if self._hit(btns.get("back"), pos):
             self._abandon_battle()
             return None
+        if self._hit(btns.get("tutorial_prompt_dismiss"), pos):
+            if hasattr(controller, "dismiss_tutorial_prompt"):
+                controller.dismiss_tutorial_prompt()
+            return None
         if self._hit(btns.get("resolve"), pos) and controller.can_resolve():
             controller.resolve_current_phase()
             self._check_battle_results()
@@ -2723,9 +3196,17 @@ class StorybookMode:
         winner = self.battle_controller.battle.winner
         self.result_kind = self.battle_controller.results_kind
         self.result_victory = winner == self.current_battle_human_team
+        if self.result_kind == "tutorial" and not self.result_victory and encounter_spec(self._tutorial_encounter_index()).no_defeat:
+            spec = encounter_spec(self._tutorial_encounter_index())
+            self.battle_controller = None
+            self.tutorial_pending_lines = [spec.defeat_hint, "This lesson restarts immediately. There is no penalty for learning here."]
+            self.route = "tutorial_briefing"
+            return
         self.result_winner = "You" if self.result_victory else self.battle_controller.winner_label()
         lines = list(self.battle_controller.result_lines())
-        if self.result_kind == "quest":
+        if self.result_kind == "tutorial":
+            lines = self._finalize_tutorial_result(lines)
+        elif self.result_kind == "quest":
             lines = self._finalize_quest_result(lines)
         else:
             lines = self._finalize_bout_result(lines)
@@ -2986,6 +3467,15 @@ class StorybookMode:
         return summary + [seat_note] + lines
 
     def _continue_from_results(self):
+        if self.result_kind == "tutorial":
+            if self.result_victory:
+                if getattr(self.profile, "tutorial_complete", False):
+                    self.route = "main_menu"
+                else:
+                    self._open_tutorial_current_step()
+            else:
+                self._open_tutorial_current_step()
+            return
         if self.result_kind == "quest":
             if self.quest_reward_pending:
                 self.quest_reward_pending = False
@@ -3016,7 +3506,9 @@ class StorybookMode:
                 self.route = "bouts_menu"
 
     def _return_from_results(self):
-        if self.result_kind == "quest":
+        if self.result_kind == "tutorial":
+            self.route = "main_menu" if getattr(self.profile, "tutorial_complete", False) else "tutorial_briefing"
+        elif self.result_kind == "quest":
             if self.quest_context == "training":
                 self.route = "training_grounds"
             elif self.quest_context == "ranked" and self.quest_opponent_mode == "ai" and self._quest_run_state("ai").get("active"):
@@ -3029,6 +3521,9 @@ class StorybookMode:
 
     def _restart_current_battle(self):
         if self.current_battle_setup is None:
+            return
+        if self.current_battle_result_kind == "tutorial":
+            self._start_tutorial_battle()
             return
         self._start_battle(
             self.current_battle_setup,
@@ -3043,7 +3538,9 @@ class StorybookMode:
         )
 
     def _abandon_battle(self):
-        if self.current_battle_result_kind == "quest":
+        if self.current_battle_result_kind == "tutorial":
+            self.route = "main_menu" if getattr(self.profile, "tutorial_complete", False) else "tutorial_briefing"
+        elif self.current_battle_result_kind == "quest":
             if self.quest_context == "ranked" and self.quest_opponent_mode == "ai":
                 self._reset_quest_run_state("ai")
                 self._persist_profile()
@@ -3102,6 +3599,9 @@ class StorybookMode:
         self.quest_enemy_party_ids = []
         self.quest_enemy_selected_ids = []
         self.quest_enemy_setup_members = []
+        self.quest_enemy_locale_name = None
+        self.quest_enemy_tier_name = None
+        self.quest_enemy_party_title = None
         self.route = "quest_party_loadout"
 
     def _apply_bout_recruit(self, adventurer_id: str):
@@ -3462,15 +3962,32 @@ class StorybookMode:
             }
         else:
             player_artifacts = self._loadout_artifact_ids(allow_all=allow_all)
+        setup_enemy_ids = list(enemy_ids)
+        if self.quest_enemy_setup_members and any(
+            member.get("adventurer_id") not in ADVENTURERS_BY_ID for member in self.quest_enemy_setup_members
+        ):
+            placeholder_count = max(1, len(self.quest_enemy_setup_members))
+            setup_enemy_ids = list((self.quest_selected_ids or self.quest_offer_ids)[:placeholder_count])
         self.quest_setup_state = create_setup_from_team_ids(
             self.quest_selected_ids,
-            enemy_ids,
+            setup_enemy_ids,
             team1_allowed_artifact_ids=player_artifacts if self.quest_player_seat == 1 else None,
             team2_allowed_artifact_ids=player_artifacts if self.quest_player_seat == 2 else None,
         )
         if self.quest_enemy_setup_members:
             enemy_key = f"team{2 if self.quest_player_seat == 1 else 1}"
             self.quest_setup_state[enemy_key] = copy.deepcopy(self.quest_enemy_setup_members)
+            self.quest_setup_state[f"{enemy_key}_required_size"] = len(self.quest_enemy_setup_members)
+            enemy_classes = [
+                member.get("class_name")
+                for member in self.quest_enemy_setup_members
+                if member.get("class_name") not in {None, "", "None"}
+            ]
+            if (
+                any(member.get("adventurer_id") not in ADVENTURERS_BY_ID for member in self.quest_enemy_setup_members)
+                or len(set(enemy_classes)) != len(enemy_classes)
+            ):
+                self.quest_setup_state[f"{enemy_key}_enforce_unique_classes"] = False
         if self.quest_context in {"bout_random", "bout_focused"}:
             self._apply_saved_party_loadout(self.quest_setup_state, self.quest_player_seat, self.bout_player_party_loadout)
         if self.quest_context == "ranked":
@@ -3564,6 +4081,9 @@ class StorybookMode:
         self.quest_enemy_party_ids = []
         self.quest_enemy_selected_ids = []
         self.quest_enemy_setup_members = []
+        self.quest_enemy_locale_name = None
+        self.quest_enemy_tier_name = None
+        self.quest_enemy_party_title = None
         self.quest_draft_detail_scroll = 0
         self.quest_draft_offer_scroll = 0
         self.quest_setup_state = None
@@ -3633,9 +4153,9 @@ class StorybookMode:
             not force_new
             and self.prepared_quest_id == run_state["quest_id"]
             and self.quest_offer_ids == list(player_party_ids)
-            and len(self.quest_enemy_party_ids) == 3
-            and len(self.quest_enemy_selected_ids) == 3
-            and len(self.quest_enemy_setup_members) == 3
+            and len(self.quest_enemy_party_ids) >= 1
+            and len(self.quest_enemy_selected_ids) == len(self.quest_enemy_party_ids)
+            and len(self.quest_enemy_setup_members) == len(self.quest_enemy_party_ids)
         )
         if has_prepared_encounter:
             self._sync_quest_run_cache(run_state)
@@ -3651,21 +4171,42 @@ class StorybookMode:
         )
         difficulty = ai_difficulty_for_reputation(match_profile.reputation)
         all_adventurer_ids = list(ADVENTURERS_BY_ID.keys())
-        # choose_quest_party requires a small pool (class-uniqueness constraint); sample 12
-        # from the full roster so the enemy conceptually draws from anyone.
         candidate_pool = [adv_id for adv_id in all_adventurer_ids if adv_id not in player_party_ids]
-        # assign_blind_quest_loadouts requires unique classes per adventurer (6 classes max)
-        sample_size = min(6, len(candidate_pool))
-        enemy_sample = self.rng.sample(candidate_pool, sample_size)
-        enemy_choice = choose_quest_party(
-            enemy_sample,
-            enemy_party_ids=player_party_ids,
-            difficulty=difficulty,
-            rng=self.rng,
-        )
-        self.quest_enemy_selected_ids = list(enemy_choice.team_ids)
-        self.quest_enemy_party_ids = list(self.quest_enemy_selected_ids)
-        self.quest_enemy_setup_members = self._team_from_loadout(enemy_choice.loadout)
+        curated_choice = None
+        try:
+            curated_choice = choose_ranked_quest_enemy_party(
+                player_party_ids=player_party_ids,
+                reputation=match_profile.reputation,
+                rng=self.rng,
+            )
+        except Exception:
+            curated_choice = None
+        if curated_choice is not None:
+            self.quest_enemy_selected_ids = list(curated_choice.selected_ids)
+            self.quest_enemy_party_ids = list(self.quest_enemy_selected_ids)
+            self.quest_enemy_setup_members = curated_choice.setup_members
+            self.quest_enemy_locale_name = curated_choice.blueprint.locale_name
+            self.quest_enemy_tier_name = curated_choice.blueprint.tier_name
+            self.quest_enemy_party_title = curated_choice.blueprint.title
+            self.current_battle_enemy_name = curated_choice.enemy_name
+        else:
+            # Legacy fallback while the curated quest-enemy catalog is still growing.
+            # choose_quest_party requires a small pool (class-uniqueness constraint).
+            sample_size = min(6, len(candidate_pool))
+            enemy_sample = self.rng.sample(candidate_pool, sample_size)
+            enemy_choice = choose_quest_party(
+                enemy_sample,
+                enemy_party_ids=player_party_ids,
+                difficulty=difficulty,
+                rng=self.rng,
+            )
+            self.quest_enemy_selected_ids = list(enemy_choice.team_ids)
+            self.quest_enemy_party_ids = list(self.quest_enemy_selected_ids)
+            self.quest_enemy_setup_members = self._team_from_loadout(enemy_choice.loadout)
+            self.quest_enemy_locale_name = None
+            self.quest_enemy_tier_name = None
+            self.quest_enemy_party_title = None
+            self.current_battle_enemy_name = f"{rank_name(match_profile.reputation)} Rival"
         self.quest_focus_id = self.quest_offer_ids[0] if self.quest_offer_ids else None
         self.quest_selected_ids = []
         self.quest_draft_detail_scroll = 0
@@ -3678,7 +4219,6 @@ class StorybookMode:
         self.quest_imported_party_members = []
         self.quest_imported_party_name = ""
         self.current_battle_opponent_glory = match_profile.reputation
-        self.current_battle_enemy_name = f"{rank_name(match_profile.reputation)} Rival"
         self.current_battle_ai_difficulties = {2: difficulty}
         self.prepared_quest_id = run_state["quest_id"]
         self._sync_quest_run_cache(run_state)
@@ -3854,6 +4394,7 @@ class StorybookMode:
                 enemy_ids,
                 seat=self.bout_ai_seat,
                 difficulty=self._bout_ai_difficulty(),
+                target_size=6 if self._bout_mode()["id"] == "focused" else 3,
                 rng=self.rng,
             )
             self._record_bout_pick(self.bout_ai_seat, choice)

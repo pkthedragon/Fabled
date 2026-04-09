@@ -1,4 +1,5 @@
-﻿FABLED
+﻿Fabled — Official Rulebook
+FABLED
 A Guildmaster’s Game
 Official Rulebook
 
@@ -231,6 +232,64 @@ Quest enemy strength scales with the player’s Match Rating:
 Match Rating = Reputation + (20 × current winstreak) − (15 × current lossstreak)
 
 The winstreak modifier pushes successful players toward tougher enemies. The lossstreak modifier provides slightly easier encounters after consecutive losses. Enemy parties always consist of three enemies.
+
+4.9 Quest Enemies
+
+Quest enemies are not adventurers. They are creatures, monsters, and rival forces from the world of Fantasia. Unlike adventurers, enemies do not have Ultimate Spells unless explicitly stated otherwise, and they use simplified loadouts based on their tier.
+
+Humanoid enemies have classes and class skills, while nonhumanoid enemies do not. If an enemy tier only grants one of either a class skill or an innate skill, humanoid enemies use the class skill and nonhumanoid enemies use the innate skill.
+
+4.9.1 Enemy Tiers
+
+Quest enemies are divided into six tiers. A tier determines how complete and complex an enemy’s loadout is.
+
+Tier 1
+A primary weapon with only a Strike, and either a class skill or an innate skill.
+
+Tier 2
+A full primary weapon (Strike plus Spell or Skill), and either a class skill or an innate skill.
+
+Tier 3
+A full primary weapon, a class skill, and an innate skill.
+
+Tier 4
+A full primary weapon, a full secondary weapon, a class skill, an innate skill, and an Artifact. Tier 4 enemies are unique named characters.
+
+Tier 5
+A full primary weapon, a full secondary weapon, a class skill, an innate skill, and a Legendary Artifact. Tier 5 enemies are unique named characters.
+
+Apex
+Two primary weapons equipped simultaneously. The enemy may choose between two different Strikes each round, and the Skills and Spells from both weapons are active. Apex enemies also have a class with a Legendary Class Skill, an innate skill, and a Legendary Artifact. Apex enemies are unique named characters.
+
+Tier 4 through Apex enemies are all unique figures drawn from myths and fairy tales.
+
+Legendary Artifacts are Artifacts unique to a specific enemy. Each grants +50 to one stat and provides both a Spell and a Reactive Spell.
+
+Legendary Class Skills are special class skills available only to Apex-tier enemies. See Appendix B.
+
+4.9.2 Locales
+
+Each Quest encounter takes place in one of six locales. Only enemies native to that locale may appear in the enemy party.
+
+The Forest of Dreams
+A seemingly endless vivid forest full of wonder and magical beasts.
+
+The Cloud Peaks
+An impossibly tall mountain range floating in the sky, reached by leaping across thousands of drifting rocks around its outskirts.
+
+The Blackwells
+Dark bog-pits the size of lakes or seas, separated by miles of swamp and inhabited by vile, malevolent creatures.
+
+The Static Plains
+Vast yellow plains of rolling hills and meadows filled with electric flowers, broken up by mile-high trees that attract lightning.
+
+The Scar
+A deep valley-like crack in the earth leading straight toward the underworld, both cold as ice and hot as fire.
+
+The High Court
+The Kingdom of Fantasia itself, along with its surrounding outskirts.
+
+Each locale contains six Tier 1 enemies, four Tier 2 enemies, four Tier 3 enemies, three Tier 4 enemies, three Tier 5 enemies, and one Apex enemy.
 
 5. BOUTS
 Bouts are Fabled’s competitive encounter mode. A Bout is a best-of-three series: the first player to win two encounters wins the Bout. There are two types: Random Bouts and Focused Bouts.
@@ -1078,22 +1137,44 @@ Allies have the effects of Faerie's Ransom.
 Ultimate Spell: Polymorph
 Target Adventurer becomes a beast for 2 rounds and can't swap and has +25 Attack, +25 Defense, +25 Speed, and their Strikes have 30% recoil (can be the user).
 
-APPENDIX B — CLASS SKILLS
+APPENDIX B — CLASS SKILLS (Updated with Legendary Skills)
 
 FIGHTER
 Martial
 +25 HP
-The Adventurer's Melee Strikes deal +25 damage.
+The Adventurer’s Melee Strikes deal +25 damage.
 Vanguard
 +50 HP
-The Adventurer's Melee Strikes deal 15 damage to each enemy behind the target.
+The Adventurer’s Melee Strikes deal 15 damage to each enemy behind the target.
+Enemy Only:
+Warlord
++50 HP
+The Adventurer’s Melee Strikes deal +40 damage and Weaken the target for 2 rounds.
+Berserker
++25 HP
+The Adventurer has +15 Attack for each knocked-out adventurer (ally or enemy) this encounter. Melee Strikes deal +25 damage.
+Champion
++50 HP
+The Adventurer’s Melee Strikes deal 30 damage to each enemy behind the target and Expose them for 2 rounds.
+
 ROGUE
+Assassin
++25 HP
+The Adventurer ignores targeting restrictions against enemies who Swapped positions last round.
 Covert
 +25 HP
 The Adventurer can Swap positions as a Bonus Action each round they cast a Spell.
-Assassin
-+ 25 HP
-The Adventurer ignores targeting restrictions against enemies who did not Strike or Swap Positions.
+Enemy Only:
+Phantom
++25 HP
+The Adventurer ignores all targeting restrictions. Strikes deal +25 damage from the backline.
+Saboteur
++25 HP
+When the Adventurer casts a Spell, increase all enemy cooldowns by 1 round. The Adventurer can Swap positions as a Bonus Action.
+Nightblade
++25 HP
+The Adventurer’s Strikes deal +25 damage to targets with a status condition. When the Adventurer knocks out an enemy, become untargetable until next round.
+
 WARDEN
 Bulwark
 +50 HP
@@ -1101,27 +1182,70 @@ The Adventurer has +25 Defense while in the frontline, +15 otherwise.
 Vigilant
 +50 HP
 The Adventurer is Guarded for 2 rounds when they Swap positions, Switch Weapons, or Skip.
+Enemy Only:
+Bastion
++75 HP
+The Adventurer has +25 Defense. Allies behind the Adventurer take 20% less damage from Strikes.
+Sentinel
++50 HP
+The Adventurer is permanently Guarded. Retaliates for 50 Power against incoming Strikes.
+Colossus
++75 HP
+The Adventurer has +50 Defense while in the frontline. Strikes against the Adventurer cannot deal more than 15% of the Adventurer’s max HP per hit.
+
 MAGE
-Arcane
-+15
-The Adventurer's first Spell after Switching weapons does not go on cooldown.
 Archmage
-+25
-The Adventurer's Magic Strikes deal +15 damage and do not go on cooldown in the frontline.
++25 HP
+The Adventurer’s Magic Strikes deal +15 damage and do not go on cooldown in the frontline.
+Arcane
++15 HP
+The Adventurer’s first Spell after Switching weapons does not go on cooldown.
+Enemy Only:
+Arcane Sovereign
++25 HP
+The Adventurer’s Magic Strikes deal +25 damage and do not go on cooldown.
+Spellweaver
++25 HP
+The Adventurer’s first two Spells each round do not go on cooldown. Magic Strikes deal +15 damage.
+Hexmaster
++25 HP
+The Adventurer’s Magic Strikes inflict a random status condition (Burn, Shock, or Weaken) for 2 rounds and deal +15 damage.
+
 RANGER
 Deadeye
-+15
-The Adventurer's Ranged Strikes deal +15 damage.
++15 HP
+The Adventurer’s Ranged Strikes deal +15 damage.
 Armed
-+25
-The Adventurer's first Ranged Strike after Switching weapons does not consume Ammo.
++25 HP
+The Adventurer’s first Ranged Strike after Switching weapons does not consume Ammo.
+Enemy Only:
+Sharpshooter
++15 HP
+The Adventurer’s Ranged Strikes deal +25 damage and ignore targeting restrictions.
+Arsenal
++25 HP
+The Adventurer’s Ranged Strikes do not consume Ammo and deal +15 damage.
+Marksman
++25 HP
+The Adventurer’s consecutive Ranged Strikes against the same target deal +15 cumulative damage (stacks up to 3 times, resets on target switch). Ranged Strikes deal +15 damage.
+
 CLERIC
 Healer
-+25
-The Adventurer's healing effects restore an additional +25 HP.
++25 HP
+The Adventurer’s healing effects restore an additional +25 HP.
 Medic
-+50
-The Adventurer's healing effects cleanse status conditions and stat penalties.
++50 HP
+The Adventurer’s healing effects cleanse status conditions and stat penalties.
+Enemy Only:
+Saint
++50 HP
+The Adventurer’s healing effects restore an additional +50 HP and Guard the target for 2 rounds.
+Oracle
++50 HP
+The Adventurer’s healing effects cleanse all status conditions and stat penalties. At the start of each round, the lowest HP ally restores 30 HP.
+Shepherd
++25 HP
+When the Adventurer heals an ally, that ally’s next Strike deals +25 damage and has 25% Lifesteal. Healing effects restore +25 HP.
 
 APPENDIX C — ARTIFACTS
 
@@ -1358,3 +1482,371 @@ Attunement: Fighter, Rogue, Warden
 Spell: Event Horizon
 Cooldown: 2 rounds
 For 2 rounds, when the user takes damage from a Strike, charge the Ultimate Meter +1.
+
+APPENDIX D - ENEMY ARTIFACTS
+
+Papa Bear's Bowl
+Attunement: Rogue
++15 Attack
+Spell: Too Hot
+Cooldown: 2 rounds
+Burn target enemy for 2 rounds.
+
+Collar of the Wild Hunt
+Attunement: Fighter
++15 Defense
+Spell: Relentless Pursuit
+Cooldown: 2 rounds
+Next Strike ignores targeting; Roots target for 2 rounds.
+
+Diadem of the Glade
+Attunement: Ranger
++15 Speed
+Spell: Sylvan Shield
+Cooldown: 2 rounds
+Target ally Guarded for 2 rounds; restores 40 HP.
+
+Heart of the Forest
+Attunement: Warden
++50 HP
+Spell: Renewal
+Cooldown: 2 rounds
+All allies restore 60 HP.
+Reactive Spell: Nature's Revenge
+Cooldown: 2 rounds
+Reaction: When taking Strike damage, Root attacker for 2 rounds.
+
+Titania's Favor
+Attunement: Fighter
++50 Attack
+Spell: Queen's Blade
+Cooldown: 2 rounds
+Next Strike +40 damage, 30% Lifesteal.
+Reactive Spell: Fey Resilience
+Cooldown: 2 rounds
+Reaction: When dropping below 50% HP from a Strike, restore 60 HP.
+
+Skull Gate
+Attunement: Mage
++50 Defense
+Spell: Death's Passage
+Cooldown: 2 rounds
+Target takes +30 damage from all sources for 2 rounds.
+Reactive Spell: Bone Ward
+Cooldown: 2 rounds
+Reaction: When ally takes fatal damage, survive at 1 HP.
+
+Crown of the Dreaming
+Attunement: Cleric
++50 Defense
+Spell: Dreamwalk
+Cooldown: 2 rounds
+All allies restore 70 HP and are cleansed of status conditions.
+Reactive Spell: Lucid Shield
+Cooldown: 2 rounds
+Reaction: When ally takes fatal damage, survive at 1 HP; restore 50 HP.
+
+War Pennant
+Attunement: Fighter
++15 Attack
+Spell: Battle Cry
+Cooldown: 2 rounds
++25 Attack for 2 rounds; cleanse status conditions.
+
+Storm Plume
+Attunement: Fighter
++15 Speed
+Spell: Cyclone
+Cooldown: 2 rounds
+Swap all enemies' positions.
+
+Stone Mantle
+Attunement: Warden
++15 Defense
+Spell: Fortify
+Cooldown: 2 rounds
++25 Defense for 2 rounds; cleanse Root and Expose.
+
+Five-Peaked Prison
+Attunement: Rogue
++50 Attack
+Spell: Havoc in Heaven
+Cooldown: 2 rounds
+Deal 50 damage to all enemies; Expose all for 2 rounds.
+Reactive Spell: Stone Skin
+Cooldown: 2 rounds
+Reaction: When Struck below 50% HP, take 50% less damage.
+
+Eye of the Cyclops
+Attunement: Warden
++50 Defense
+Spell: Baleful Gaze
+Cooldown: 2 rounds
+Expose, Spotlight, and -25 Speed to target for 2 rounds.
+Reactive Spell: Titan's Endurance
+Cooldown: 2 rounds
+Reaction: When taking fatal damage, survive at 1 HP.
+
+Crown of Eternal Winter
+Attunement: Fighter
++50 HP
+Spell: Absolute Zero
+Cooldown: 2 rounds
+All enemies -25 Speed and -25 Attack for 2 rounds.
+Reactive Spell: Ice Armor
+Cooldown: 2 rounds
+Reaction: When Struck, Guard self for 2 rounds.
+
+Heart of the Mountain
+Attunement: Fighter
++50 Attack
+Spell: Seismic Rend
+Cooldown: 2 rounds
+Deal 50 damage to all enemies; Expose all for 2 rounds.
+Reactive Spell: Stoneblood
+Cooldown: 2 rounds
+Reaction: When dropping below 50% HP, +50 Defense for 2 rounds.
+
+Pendant of Filth
+Attunement: Mage
++15 Defense
+Spell: Putrid Shield
+Cooldown: 2 rounds
+Guard self for 2 rounds; enemies who Strike Jenny are Weakened for 2 rounds.
+
+Grendel's Arm
+Attunement: Warden
++15 Attack
+Spell: Unstoppable
+Cooldown: 2 rounds
+Immune to status conditions next round.
+
+Wisp Crown
+Attunement: Cleric
++15 Speed
+Spell: Wandering Lights
+Cooldown: 2 rounds
+Spotlight and Taunt all enemies for 1 round.
+
+Hilt of the Mere
+Attunement: Warden
++50 Defense
+Spell: Abyssal Shield
+Cooldown: 2 rounds
+Guard self and all allies for 2 rounds; +25 Defense for 2 rounds.
+Reactive Spell: Mother's Vengeance
+Cooldown: 2 rounds
+Reaction: When ally takes fatal damage, deal 80 damage to the attacker.
+
+Death's Bridle
+Attunement: Rogue
++50 Speed
+Spell: Ride of the Dead
+Cooldown: 2 rounds
+Next 2 Strikes ignore Guard and targeting restrictions.
+Reactive Spell: Headless Resilience
+Cooldown: 2 rounds
+Reaction: Survive fatal damage at 1 HP; +25 Speed for 2 rounds.
+
+The Black Barge
+Attunement: Mage
++50 HP
+Spell: Cross the River
+Cooldown: 2 rounds
+Deal 50 damage to all enemies; restore 50 HP to self.
+Reactive Spell: Soul Anchor
+Cooldown: 2 rounds
+Reaction: When an enemy would restore HP, halve the amount.
+
+Skinless Crown
+Attunement: Warden
++50 Defense
+Spell: Festering Wounds
+Cooldown: 2 rounds
+All enemies' healing halved for 2 rounds; deal 30 damage to all.
+Reactive Spell: Undying Horror
+Cooldown: 2 rounds
+Reaction: Survive fatal damage at 1 HP; Guard self for 2 rounds.
+
+Kraken's Eye
+Attunement: Mage
++15 Attack
+Spell: Tidal Shock
+Cooldown: 2 rounds
+Next Strike deals +30 damage and is Spread.
+
+Tainted Jewel
+Attunement: Rogue
++15 Speed
+Spell: Consume Vitality
+Cooldown: 2 rounds
+Deal 40 damage to target; restore equal HP.
+
+Storm Quiver
+Attunement: Ranger
++15 Attack
+Spell: Lightning Volley
+Cooldown: 2 rounds
+Next Strike is Spread; does not consume Ammo.
+
+Core of the Tempest
+Attunement: Mage
++50 Attack
+Spell: Supercell
+Cooldown: 2 rounds
+Deal 40 damage to all enemies; Shock and Expose all for 2 rounds.
+Reactive Spell: Lightning Reflex
+Cooldown: 2 rounds
+Reaction: When targeted by a Strike, Swap positions.
+
+Perun's Mantle
+Attunement: Cleric
++50 Defense
+Spell: Divine Storm
+Cooldown: 2 rounds
+Deal 40 damage to all enemies; all allies restore 40 HP.
+Reactive Spell: Storm Shield
+Cooldown: 2 rounds
+Reaction: When ally takes fatal damage, survive at 1 HP; Shock attacker for 2 rounds.
+
+Storm Shroud
+Attunement: Rogue
++50 Speed
+Spell: Chimeric Horror
+Cooldown: 2 rounds
+-25 Attack, -25 Defense, -25 Speed to target for 2 rounds.
+Reactive Spell: Mist Form
+Cooldown: 2 rounds
+Reaction: Next Strike against Nue this round deals 0 damage.
+
+Drum of a Thousand Storms
+Attunement: Mage
++50 Attack
+Spell: Apocalypse Thunder
+Cooldown: 2 rounds
+Deal 50 damage to all enemies; Shock, Burn, Expose all for 1 round.
+Reactive Spell: Thunder God's Mantle
+Cooldown: 2 rounds
+Reaction: When Struck, Shock attacker for 2 rounds; take 25% less damage.
+
+Frostbite Collar
+Attunement: Rogue
++15 Speed
+Spell: Winter's Howl
+Cooldown: 2 rounds
+-25 Speed to all enemies for 2 rounds.
+
+Ember Crown
+Attunement: Fighter
++15 Attack
+Spell: Immolation
+Cooldown: 2 rounds
+Deal 50 damage to all enemies; Burn all for 2 rounds.
+
+Sampo Fragment
+Attunement: Mage
++15 Defense
+Spell: Frost Barrier
+Cooldown: 2 rounds
+Guard self and all allies for 2 rounds.
+
+Throne of Niflheim
+Attunement: Cleric
++50 HP
+Spell: Realm of the Dead
+Cooldown: 2 rounds
+All allies restore 60 HP; all enemies take 30 damage.
+Reactive Spell: Death's Embrace
+Cooldown: 2 rounds
+Reaction: When ally takes fatal damage, survive at 1 HP; attacker Weakened for 2 rounds.
+
+Heart of the Pyre
+Attunement: Fighter
++50 Attack
+Spell: Conflagration
+Cooldown: 2 rounds
+Deal 60 damage to all; Burns deal 12% while active.
+Reactive Spell: Phoenix Rebirth
+Cooldown: 2 rounds
+Reaction: Survive fatal damage at 1 HP; restore 100 HP; Burn all enemies for 2 rounds.
+
+Cloak of Midnight
+Attunement: Rogue
++50 Speed
+Spell: From the Shadows
+Cooldown: 2 rounds
+Swap to backline; untargetable 1 round; +50 Attack 1 round.
+Reactive Spell: Shadow Step
+Cooldown: 2 rounds
+Reaction: When targeted by a Strike, Swap positions.
+
+Mask of the End
+Attunement: Rogue
++50 Speed
+Spell: Ragnarok's Edge
+Cooldown: 2 rounds
+Deal 60 damage to all enemies; Burn and Expose all for 1 round.
+Reactive Spell: Between Worlds
+Cooldown: 2 rounds
+Reaction: When Struck, take 50% less damage; Swap positions.
+
+Crown of Lies
+Attunement: Ranger
++15 Speed
+Spell: Inspiring Presence
+Cooldown: 2 rounds
+All allies +15 Attack, +15 Speed for 2 rounds.
+
+Adamant Plate
+Attunement: Warden
++15 Defense
+Spell: Hunker
+Cooldown: 2 rounds
++50 Defense for 1 round; Taunt all enemies for 1 round.
+
+Fool's Crown
+Attunement: Rogue
++15 Speed
+Spell: Prank
+Cooldown: 2 rounds
+Swap two enemies' positions.
+
+The Obsidian Throne
+Attunement: Mage
++50 Attack
+Spell: Absolute Authority
+Cooldown: 2 rounds
+All enemies -25 Attack, -25 Speed for 2 rounds.
+Reactive Spell: Royal Guard
+Cooldown: 2 rounds
+Reaction: When Struck, reflect 30% damage; Weaken attacker for 2 rounds.
+
+Titan's Heart
+Attunement: Fighter
++50 HP
+Spell: Devour the Earth
+Cooldown: 2 rounds
+Deal 70 damage to frontline enemy; restore equal HP.
+Reactive Spell: Unyielding Mass
+Cooldown: 2 rounds
+Reaction: Survive fatal damage at 1 HP; +50 Defense for 1 round.
+
+The King's Standard
+Attunement: Ranger
++50 Attack
+Spell: Grand Assault
+Cooldown: 2 rounds
+All allies +25 Attack for 2 rounds; Spotlight all enemies for 2 rounds.
+Reactive Spell: Tactical Retreat
+Cooldown: 2 rounds
+Reaction: When ally takes fatal damage, survive at 1 HP; Swap to backline.
+
+Crown of the Wild Hunt
+Attunement: Ranger
++50 Attack
+Spell: Release the Hunt
+Cooldown: 2 rounds
+Deal 50 damage to all enemies; Spotlight all for 2 rounds; allies +25 Speed for 2 rounds.
+Reactive Spell: Sovereign's Will
+Cooldown: 2 rounds
+Reaction: When Struck, +25 Defense for 2 rounds; next Strike +25 damage.

@@ -138,8 +138,8 @@ def import_team_from_text(text: str, *, expected_members: int = 6) -> tuple[list
             errors.append(f"Duplicate artifact is not allowed: {member['artifact_name_raw']}.")
             continue
         artifact_def = ARTIFACTS_BY_ID.get(artifact_id)
-        if artifact_def is None or class_name not in artifact_def.attunement:
-            errors.append(f"Artifact '{member['artifact_name_raw']}' cannot be attuned by class {class_name}.")
+        if artifact_def is None:
+            errors.append(f"Invalid artifact for {member['adventurer_name']}: {member['artifact_name_raw'] or '(missing)'}")
             continue
         used_artifacts.add(artifact_id)
 
@@ -179,6 +179,18 @@ def _allowed_artifact_ids_for_team(setup_state: dict, team_num: int) -> set[str]
     return {artifact_id for artifact_id in raw_ids if artifact_id in ALL_ARTIFACT_IDS}
 
 
+def _team_enforces_unique_classes(setup_state: dict, team_num: int) -> bool:
+    return bool(setup_state.get(f"{_team_key(team_num)}_enforce_unique_classes", True))
+
+
+def available_artifact_ids(allowed_artifact_ids: set[str] | None = None) -> list[str]:
+    return [
+        artifact.id
+        for artifact in ARTIFACTS
+        if allowed_artifact_ids is None or artifact.id in allowed_artifact_ids
+    ]
+
+
 def compatible_artifact_ids(class_name: str, allowed_artifact_ids: set[str] | None = None) -> list[str]:
     if class_name == NO_CLASS_NAME:
         return []
@@ -191,19 +203,14 @@ def compatible_artifact_ids(class_name: str, allowed_artifact_ids: set[str] | No
 
 def _normalize_team_artifacts(team: list[dict], allowed_artifact_ids: set[str] | None = None):
     used: set[str] = set()
+    valid_ids = set(available_artifact_ids(allowed_artifact_ids))
     for member in team:
-        artifact_ids = compatible_artifact_ids(member["class_name"], allowed_artifact_ids)
-        if not artifact_ids:
-            member["artifact_id"] = None
-            continue
         if member.get("artifact_id") is None:
             continue
-        if member.get("artifact_id") in artifact_ids and member["artifact_id"] not in used:
-            chosen = member["artifact_id"]
-        else:
-            chosen = next((artifact_id for artifact_id in artifact_ids if artifact_id not in used), artifact_ids[0])
-        member["artifact_id"] = chosen
-        used.add(chosen)
+        if member["artifact_id"] not in valid_ids or member["artifact_id"] in used:
+            member["artifact_id"] = None
+            continue
+        used.add(member["artifact_id"])
 
 
 def _build_member(adventurer_id: str, slot: str, allowed_artifact_ids: set[str] | None = None) -> dict:
@@ -340,6 +347,7 @@ def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> b
     if not (0 <= member_index < len(team)):
         return False
     member = team[member_index]
+    enforce_unique_classes = _team_enforces_unique_classes(setup_state, team_num)
     used_classes = {
         other["class_name"]
         for index, other in enumerate(team)
@@ -349,10 +357,10 @@ def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> b
     class_name = member["class_name"]
     for offset in range(1, len(CLASS_ORDER) + 1):
         candidate = CLASS_ORDER[(class_index + offset) % len(CLASS_ORDER)]
-        if candidate == NO_CLASS_NAME or candidate not in used_classes:
+        if not enforce_unique_classes or candidate == NO_CLASS_NAME or candidate not in used_classes:
             class_name = candidate
             break
-    if class_name != NO_CLASS_NAME and class_name in used_classes:
+    if enforce_unique_classes and class_name != NO_CLASS_NAME and class_name in used_classes:
         return False
     member["class_name"] = class_name
     if class_name == NO_CLASS_NAME:
@@ -360,11 +368,6 @@ def cycle_member_class(setup_state: dict, team_num: int, member_index: int) -> b
         member["artifact_id"] = None
         return True
     member["class_skill_id"] = CLASS_SKILLS[class_name][0].id
-    artifacts = compatible_artifact_ids(class_name, _allowed_artifact_ids_for_team(setup_state, team_num))
-    if member.get("artifact_id") is None:
-        member["artifact_id"] = None
-    elif member["artifact_id"] not in artifacts:
-        member["artifact_id"] = artifacts[0] if artifacts else None
     _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
     return True
 
@@ -373,7 +376,11 @@ def set_member_class(setup_state: dict, team_num: int, member_index: int, class_
     team = setup_state[_team_key(team_num)]
     if not (0 <= member_index < len(team)) or class_name not in CLASS_ORDER:
         return False
-    if class_name != NO_CLASS_NAME and any(other["class_name"] == class_name for index, other in enumerate(team) if index != member_index):
+    if (
+        _team_enforces_unique_classes(setup_state, team_num)
+        and class_name != NO_CLASS_NAME
+        and any(other["class_name"] == class_name for index, other in enumerate(team) if index != member_index)
+    ):
         return False
     member = team[member_index]
     member["class_name"] = class_name
@@ -385,11 +392,6 @@ def set_member_class(setup_state: dict, team_num: int, member_index: int, class_
     current_skill = member.get("class_skill_id")
     if current_skill not in {skill.id for skill in available_skills}:
         member["class_skill_id"] = available_skills[0].id
-    artifacts = compatible_artifact_ids(class_name, _allowed_artifact_ids_for_team(setup_state, team_num))
-    if member.get("artifact_id") is None:
-        member["artifact_id"] = None
-    elif member.get("artifact_id") not in artifacts:
-        member["artifact_id"] = artifacts[0] if artifacts else None
     _normalize_team_artifacts(team, _allowed_artifact_ids_for_team(setup_state, team_num))
     return True
 
@@ -459,7 +461,7 @@ def cycle_member_artifact(setup_state: dict, team_num: int, member_index: int) -
     if not (0 <= member_index < len(team)):
         return False
     member = team[member_index]
-    artifact_ids = compatible_artifact_ids(member["class_name"], _allowed_artifact_ids_for_team(setup_state, team_num))
+    artifact_ids = available_artifact_ids(_allowed_artifact_ids_for_team(setup_state, team_num))
     if not artifact_ids:
         member["artifact_id"] = None
         return True
@@ -484,7 +486,7 @@ def set_member_artifact(setup_state: dict, team_num: int, member_index: int, art
         return False
     member = team[member_index]
     allowed_artifact_ids = _allowed_artifact_ids_for_team(setup_state, team_num)
-    valid_ids = compatible_artifact_ids(member["class_name"], allowed_artifact_ids)
+    valid_ids = available_artifact_ids(allowed_artifact_ids)
     if artifact_id is None:
         member["artifact_id"] = None
         return True
@@ -517,11 +519,17 @@ def cycle_member_field(setup_state: dict, team_num: int, member_index: int, fiel
 
 def team_is_ready(setup_state: dict, team_num: int) -> bool:
     team = setup_state[_team_key(team_num)]
+    required_size = int(setup_state.get(f"{_team_key(team_num)}_required_size", 3))
+    slots = [member["slot"] for member in team]
     non_empty_classes = [member["class_name"] for member in team if member.get("class_name") not in {None, "", NO_CLASS_NAME}]
+    class_ready = True
+    if _team_enforces_unique_classes(setup_state, team_num):
+        class_ready = len(set(non_empty_classes)) == len(non_empty_classes)
     return (
-        len(team) == 3
-        and {member["slot"] for member in team} == set(SLOT_ORDER)
-        and len(set(non_empty_classes)) == len(non_empty_classes)
+        len(team) == required_size
+        and len(set(slots)) == len(slots)
+        and all(slot in SLOT_ORDER for slot in slots)
+        and class_ready
     )
 
 
@@ -535,7 +543,7 @@ def _sorted_team_members(team: list[dict]) -> list[dict]:
 
 def build_battle_from_setup(setup_state: dict):
     if not setup_is_ready(setup_state):
-        raise ValueError("Setup must have three assigned adventurers with unique slots on each team.")
+        raise ValueError("Setup must meet each team's required size with unique slots.")
 
     team1 = create_team(
         "Magnate A",

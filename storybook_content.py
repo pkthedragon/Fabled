@@ -4,7 +4,7 @@ import random
 from dataclasses import dataclass
 
 from quests_ai_tags import ADVENTURER_AI
-from quests_ruleset_data import ADVENTURERS, ARTIFACTS, CLASS_SKILLS
+from quests_ruleset_data import ADVENTURERS, ALL_ARTIFACTS, CLASS_SKILLS, ENEMY_ONLY_CLASS_SKILLS, QUEST_LOCALES
 
 
 @dataclass(frozen=True)
@@ -117,6 +117,12 @@ MARKET_TABS = [
 ]
 
 MARKET_ITEMS = []
+
+
+QUEST_LOCALE_SUMMARIES = [
+    {"id": locale.id, "name": locale.name, "description": locale.description}
+    for locale in QUEST_LOCALES
+]
 
 # ---------------------------------------------------------------------------
 # Employee skill definitions
@@ -481,9 +487,16 @@ def catalog_filter_definitions(section: str) -> list[dict]:
             }
         ]
     if section == "Items":
-        cooldown_values = sorted({artifact.spell.cooldown for artifact in ARTIFACTS})
+        cooldown_values = sorted(
+            {
+                effect.cooldown
+                for artifact in ALL_ARTIFACTS
+                for effect in (artifact.active_spell, artifact.reactive_effect)
+                if effect is not None
+            }
+        )
         stat_names = sorted(
-            {artifact.stat for artifact in ARTIFACTS},
+            {artifact.stat for artifact in ALL_ARTIFACTS},
             key=lambda name: ("attack", "defense", "speed").index(name) if name in {"attack", "defense", "speed"} else 99,
         )
         return [
@@ -543,33 +556,58 @@ def catalog_entries(section: str, filters: dict | None = None, *, favorite_adven
         return entries
     if section == "Class Skills":
         class_filter = _catalog_filter_value(filters, "class_name")
-        return [
-            {
-                "title": skill.name,
-                "subtitle": class_name,
-                "body": "\n".join([f"Class: {class_name}", skill.description]).strip(),
-            }
-            for class_name, skills in CLASS_SKILLS.items()
-            if class_filter == "all" or class_name == class_filter
-            for skill in skills
-        ]
+        entries = []
+        for class_name, skills in CLASS_SKILLS.items():
+            if class_filter != "all" and class_name != class_filter:
+                continue
+            for skill in skills:
+                entries.append(
+                    {
+                        "title": skill.name,
+                        "subtitle": f"{class_name} | Player",
+                        "body": "\n".join([f"Class: {class_name}", f"HP Bonus: +{skill.hp_bonus}", skill.description]).strip(),
+                    }
+                )
+            for skill in ENEMY_ONLY_CLASS_SKILLS.get(class_name, ()):
+                entries.append(
+                    {
+                        "title": skill.name,
+                        "subtitle": f"{class_name} | Enemy Only",
+                        "body": "\n".join([f"Class: {class_name}", f"HP Bonus: +{skill.hp_bonus}", skill.description]).strip(),
+                    }
+                )
+        return entries
     if section == "Items":
         attunement_filter = _catalog_filter_value(filters, "attunement")
         stat_filter = _catalog_filter_value(filters, "stat")
         cooldown_filter = _catalog_filter_value(filters, "cooldown")
         reactive_filter = _catalog_filter_value(filters, "reactive")
         entries = []
-        for artifact in ARTIFACTS:
+        for artifact in ALL_ARTIFACTS:
+            active_effect = artifact.active_spell
+            reactive_effect = artifact.reactive_effect
+            active_cooldown = active_effect.cooldown if active_effect is not None else None
+            reactive_cooldown = reactive_effect.cooldown if reactive_effect is not None else None
             if attunement_filter != "all" and attunement_filter not in artifact.attunement:
                 continue
             if stat_filter != "all" and artifact.stat != stat_filter:
                 continue
-            if cooldown_filter != "all" and str(artifact.spell.cooldown) != cooldown_filter:
+            if cooldown_filter != "all" and cooldown_filter not in {str(value) for value in (active_cooldown, reactive_cooldown) if value is not None}:
                 continue
-            if reactive_filter == "reactive" and not artifact.reactive:
+            if reactive_filter == "reactive" and not artifact.has_reactive_spell:
                 continue
-            if reactive_filter == "active" and artifact.reactive:
+            if reactive_filter == "active" and artifact.has_reactive_spell and not artifact.has_active_spell:
                 continue
+            effect_parts = []
+            if active_effect is not None:
+                effect_parts.append(f"Spell: {active_effect.name} - {_effect_summary(active_effect)}")
+            if reactive_effect is not None:
+                effect_parts.append(f"Reactive: {reactive_effect.name} - {_effect_summary(reactive_effect)}")
+            cooldown_parts = []
+            if active_cooldown is not None:
+                cooldown_parts.append(f"Spell CD {active_cooldown}")
+            if reactive_cooldown is not None:
+                cooldown_parts.append(f"Reactive CD {reactive_cooldown}")
             entries.append(
                 {
                     "title": artifact.name,
@@ -577,16 +615,16 @@ def catalog_entries(section: str, filters: dict | None = None, *, favorite_adven
                         [
                             ", ".join(artifact.attunement),
                             f"+{artifact.amount} {artifact.stat.title()}",
-                            f"CD {artifact.spell.cooldown}",
-                            "Reactive" if artifact.reactive else "Spell",
+                            *cooldown_parts,
+                            "Enemy Only" if artifact.enemy_only else ("Quest Only" if artifact.quest_only else "Player"),
+                            "Legendary" if artifact.legendary else ("Reactive" if artifact.has_reactive_spell and not artifact.has_active_spell else "Spell"),
                         ]
                     ),
                     "body": "\n".join(
                         [
                             f"Attunement: {', '.join(artifact.attunement)}",
                             f"Stat Bonus: +{artifact.amount} {artifact.stat.title()}",
-                            f"Cooldown: {artifact.spell.cooldown}",
-                            f"{'Reactive' if artifact.reactive else 'Spell'}: {artifact.spell.name} - {_effect_summary(artifact.spell)}",
+                            *effect_parts,
                             artifact.description or "",
                         ]
                     ).strip(),

@@ -25,6 +25,7 @@ from quests_ruleset_logic import (
 )
 from quests_ruleset_data import ULTIMATE_METER_MAX
 from storybook_lan import apply_phase_plan, serialize_phase_plan
+from storybook_tutorial import queue_tutorial_enemy_plan
 
 
 @dataclass
@@ -172,7 +173,11 @@ class StoryBattleController:
             is_intrinsic_swapper = actor.class_skill.id == "covert" or actor.defn.id == "the_green_knight"
             if (is_intrinsic_swapper or (team_bonus_swap and not team_swap_taken)) and self._ally_targets(actor):
                 actions.append(PendingChoice("swap", "Bonus Swap", needs_target=True, bonus=True))
-            if actor.defn.id != "ashen_ella" and (actor.defn.id == "wayward_humbert" or actor.markers.get("bonus_switch_rounds", 0) > 0):
+            if (
+                actor.defn.id != "ashen_ella"
+                and not actor.dual_primary_weapons_active()
+                and (actor.defn.id == "wayward_humbert" or actor.markers.get("bonus_switch_rounds", 0) > 0)
+            ):
                 actions.append(PendingChoice("switch", "Bonus Switch", bonus=True))
             if self.available_bonus_spells(actor):
                 actions.append(PendingChoice("spellbook", "Bonus Spell", bonus=True))
@@ -185,7 +190,7 @@ class StoryBattleController:
             actions.append(PendingChoice("strike", "Strike", needs_target=True))
         if self.available_spells(actor):
             actions.append(PendingChoice("spellbook", "Spellcast"))
-        if actor.defn.id != "ashen_ella":
+        if actor.defn.id != "ashen_ella" and not actor.dual_primary_weapons_active():
             actions.append(PendingChoice("switch", "Switch"))
         own_team = team_for_actor(self.battle, actor)
         team_swap_queued = any(
@@ -427,6 +432,413 @@ class StoryBattleController:
     def suggested_frontliner(self) -> str:
         front = self.battle.team1.frontline()
         return front.name if front is not None else "No frontline"
+
+
+@dataclass
+class TutorialBattleController(StoryBattleController):
+    encounter_index: int = 1
+    unlocked_actions: set[str] = field(default_factory=set)
+    allow_bonus_actions: bool = False
+    allow_ultimate_meter: bool = False
+    tutorials_enabled: bool = True
+    tutorial_prompt: str = ""
+    tutorial_prompt_id: str | None = None
+    tutorial_prompt_seen: set[str] = field(default_factory=set)
+    tutorial_highlight_action: str | None = None
+    tutorial_prompt_button_label: str = "Next"
+
+    def begin_round(self):
+        super().begin_round()
+        self.refresh_tutorial_guidance()
+
+    def _is_ai_team(self, team_num: int) -> bool:
+        return team_num != self.human_team_num
+
+    def _queue_ai_phase(self, *, bonus: bool):
+        queue_tutorial_enemy_plan(self.battle, self.encounter_index, bonus=bonus)
+
+    def available_spells(self, actor) -> list:
+        spells = super().available_spells(actor)
+        if "spellbook" not in self.unlocked_actions:
+            return []
+        if "ultimate" not in self.unlocked_actions:
+            return [effect for effect in spells if effect.id != actor.defn.ultimate.id]
+        return spells
+
+    def available_actions(self, actor=None) -> list[PendingChoice]:
+        actions = super().available_actions(actor)
+        if self.phase.startswith("bonus") and not self.allow_bonus_actions:
+            return [choice for choice in actions if choice.kind == "skip"]
+        filtered = []
+        for choice in actions:
+            if choice.kind == "spellbook" and "spellbook" not in self.unlocked_actions:
+                continue
+            if choice.kind == "switch" and "switch" not in self.unlocked_actions:
+                continue
+            if choice.kind == "swap" and "swap" not in self.unlocked_actions:
+                continue
+            if choice.kind == "strike" and "strike" not in self.unlocked_actions:
+                continue
+            filtered.append(choice)
+        forced_kind = self._forced_tutorial_action_kind(actor or self.active_actor)
+        if forced_kind is not None:
+            forced = [choice for choice in filtered if choice.kind == forced_kind]
+            skips = [choice for choice in filtered if choice.kind == "skip"]
+            if forced:
+                return forced + skips
+        return filtered
+
+    def select_action(self, kind: str):
+        super().select_action(kind)
+        self.refresh_tutorial_guidance()
+
+    def select_spell(self, effect_id: str):
+        super().select_spell(effect_id)
+        self.refresh_tutorial_guidance()
+
+    def select_target(self, unit):
+        super().select_target(unit)
+        self.refresh_tutorial_guidance()
+
+    def resolve_current_phase(self):
+        if self.phase == "action_resolve_ready" and not self.allow_bonus_actions:
+            resolve_action_phase(self.battle)
+            if self.battle.winner is None:
+                end_round(self.battle)
+            if self.battle.winner is not None:
+                self.phase = "result"
+                self.refresh_tutorial_guidance()
+                return
+            self.begin_round()
+            return
+        super().resolve_current_phase()
+        self.refresh_tutorial_guidance()
+
+    def dismiss_tutorial_prompt(self):
+        if self.tutorial_prompt_id is not None:
+            self.tutorial_prompt_seen.add(self.tutorial_prompt_id)
+        self.tutorial_prompt = ""
+        self.tutorial_prompt_id = None
+        self.tutorial_highlight_action = None
+        self.refresh_tutorial_guidance()
+
+    def _prompt_unit(self, defn_id: str, *, team_num: int):
+        team = self.battle.team1 if team_num == 1 else self.battle.team2
+        return next((unit for unit in team.members if unit.defn.id == defn_id), None)
+
+    def _set_tutorial_prompt(self, prompt_id: str, text: str, *, highlight_action: str | None = None):
+        self.tutorial_prompt_id = prompt_id
+        self.tutorial_prompt = text
+        self.tutorial_highlight_action = highlight_action
+
+    def _forced_tutorial_action_kind(self, actor) -> str | None:
+        if not self.tutorials_enabled or actor is None or self.phase.startswith("bonus") or self.encounter_index > 3:
+            return None
+        enemy_team_num = 2 if self.human_team_num == 1 else 1
+        jack = self._prompt_unit("little_jack", team_num=self.human_team_num)
+        marigold = self._prompt_unit("tutorial_marigold", team_num=enemy_team_num)
+        daeny = self._prompt_unit("tutorial_daeny", team_num=enemy_team_num)
+        rowan = self._prompt_unit("tutorial_rowan", team_num=enemy_team_num)
+        if actor is not jack:
+            return None
+        if self.encounter_index == 1 and self.battle.round_num == 1:
+            return "strike"
+        if self.encounter_index == 2:
+            if self.battle.round_num == 1 and jack.markers.get("ignore_targeting_strikes", 0) <= 0 and jack.cooldowns.get("cloudburst", 0) <= 0:
+                return "spellbook"
+            if marigold is not None and not marigold.ko and jack.markers.get("ignore_targeting_strikes", 0) > 0:
+                return "strike"
+        if self.encounter_index == 3:
+            if self.battle.round_num == 1 and daeny is not None and not daeny.ko:
+                return "strike"
+        return None
+
+    def refresh_tutorial_guidance(self):
+        if not self.tutorials_enabled:
+            self.tutorial_prompt = ""
+            self.tutorial_prompt_id = None
+            self.tutorial_highlight_action = None
+            return
+        if self.phase == "result":
+            self.tutorial_prompt = ""
+            self.tutorial_prompt_id = None
+            self.tutorial_highlight_action = None
+            return
+        if self.tutorial_prompt_id is not None:
+            return
+
+        player_team = self.battle.team1 if self.human_team_num == 1 else self.battle.team2
+        enemy_team = self.battle.team2 if self.human_team_num == 1 else self.battle.team1
+        player_front = player_team.frontline()
+        enemy_team_num = 2 if self.human_team_num == 1 else 1
+        jack = self._prompt_unit("little_jack", team_num=self.human_team_num)
+        liesl = self._prompt_unit("matchbox_liesl", team_num=self.human_team_num)
+        porcus = self._prompt_unit("porcus_iii", team_num=self.human_team_num)
+        marigold = self._prompt_unit("tutorial_marigold", team_num=enemy_team_num)
+        daeny = self._prompt_unit("tutorial_daeny", team_num=enemy_team_num)
+        rowan = self._prompt_unit("tutorial_rowan", team_num=enemy_team_num)
+        tree_sentry = self._prompt_unit("tutorial_tree_sentry", team_num=enemy_team_num)
+        tree_scout = self._prompt_unit("tutorial_tree_scout", team_num=enemy_team_num)
+        tree_sentinel = self._prompt_unit("tutorial_tree_sentinel", team_num=enemy_team_num)
+        tree_druid = self._prompt_unit("tutorial_tree_druid", team_num=enemy_team_num)
+        tree_knight = self._prompt_unit("tutorial_tree_knight", team_num=enemy_team_num)
+        tree_sorcerer = self._prompt_unit("tutorial_tree_sorcerer", team_num=enemy_team_num)
+        wormwood_beast = self._prompt_unit("tutorial_wormwood_beast", team_num=enemy_team_num)
+
+        prompt_checks: list[tuple[str, bool, str, str | None]] = []
+        if self.encounter_index == 1:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc1_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1 and self.active_actor is jack,
+                        "Select Strike to attack with Jack's Skyfall. Melee weapons hit the enemy in front of you.",
+                        "strike",
+                    ),
+                    (
+                        "enc1_formula",
+                        jack is not None and any(enemy.hp < enemy.max_hp for enemy in enemy_team.members),
+                        "Damage is Weapon Power x (your Attack / target Defense), rounded up.",
+                        None,
+                    ),
+                    (
+                        "enc1_giant_slayer",
+                        jack is not None and any(enemy.hp < enemy.max_hp and enemy.max_hp > jack.max_hp for enemy in enemy_team.members),
+                        "Jack's Giant Slayer is active here, adding +25 damage against enemies with higher max HP than him.",
+                        None,
+                    ),
+                ]
+            )
+        elif self.encounter_index == 2:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc2_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1 and self.active_actor is jack,
+                        "Try Spellcast first. Cloudburst makes Jack's next Strike ignore targeting restrictions, so he can reach Marigold behind Bar.",
+                        "spellbook",
+                    ),
+                    (
+                        "enc2_cloudburst",
+                        jack is not None and (jack.cooldowns.get("cloudburst", 0) > 0 or jack.markers.get("ignore_targeting_strikes", 0) > 0),
+                        "Cloudburst is active. Strike Marigold now, even though she is in the backline.",
+                        "strike",
+                    ),
+                    (
+                        "enc2_cooldown",
+                        jack is not None and jack.cooldowns.get("cloudburst", 0) > 0,
+                        "Cloudburst is on cooldown for 1 round now. Spells with cooldowns need time before they can be cast again.",
+                        None,
+                    ),
+                    (
+                        "enc2_ammo",
+                        marigold is not None and marigold.primary_weapon.ammo > 0 and marigold.ammo_remaining.get(marigold.primary_weapon.id, marigold.primary_weapon.ammo) < marigold.primary_weapon.ammo,
+                        "Marigold's Darts spend Ammo each time she Strikes. When it runs out, she has to reload before attacking again.",
+                        None,
+                    ),
+                ]
+            )
+        elif self.encounter_index == 3:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc3_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1 and self.active_actor is jack,
+                        "Jack now has two signature weapons. Start with Skyfall on Daeny, then swap to Giant's Harp when you need backline reach.",
+                        "strike",
+                    ),
+                    (
+                        "enc3_switch",
+                        jack is not None
+                        and daeny is not None
+                        and daeny.ko
+                        and rowan is not None
+                        and not rowan.ko
+                        and rowan.slot != SLOT_FRONT
+                        and jack.primary_weapon.id == "skyfall",
+                        "Daeny is down, but Rowan is still protected in the backline. Switch to Giant's Harp so Jack can hit her with Magic.",
+                        "switch",
+                    ),
+                    (
+                        "enc3_magic",
+                        jack is not None and jack.primary_weapon.id == "giants_harp",
+                        "Magic weapons can strike from the frontline into the matching lane, but they go on cooldown after attacking.",
+                        "strike",
+                    ),
+                ]
+            )
+        elif self.encounter_index == 4:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc4_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1,
+                        "Classes add bonus HP and passive power. Initiative also matters now, and backline Speed is halved before turn order is set.",
+                        None,
+                    ),
+                    (
+                        "enc4_initiative",
+                        self.phase == "action_select" and self.battle.round_num == 1 and self.active_actor is jack,
+                        "Check the initiative order: Jack acts before Liesl because he is in the frontline, while backline Speed is halved for Liesl and the Tree Archer.",
+                        None,
+                    ),
+                    (
+                        "enc4_martial",
+                        jack is not None and jack.markers.get("struck_this_round", 0) > 0,
+                        "Jack's Martial class skill adds +25 damage to his Melee Strikes, on top of his weapon's normal power.",
+                        None,
+                    ),
+                    (
+                        "enc4_guard",
+                        tree_sentry is not None and tree_sentry.has_status("guard"),
+                        "Tree Sentry's shield strike applies Guard, reducing the damage it takes while the condition lasts.",
+                        None,
+                    ),
+                ]
+            )
+        elif self.encounter_index == 5:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc5_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1 and self.active_actor is not None,
+                        "Swap Positions is unlocked. Try moving Liesl forward to remove her backline Speed penalty, but remember Tree Scout punishes recent Swappers.",
+                        "swap",
+                    ),
+                    (
+                        "enc5_swapped",
+                        any(unit.markers.get("swapped_this_round", 0) > 0 for unit in player_team.members),
+                        "That swap immediately changed formation. Frontline removes the Speed penalty, while backline halves Speed again.",
+                        None,
+                    ),
+                    (
+                        "enc5_assassin",
+                        tree_scout is not None and any(unit.markers.get("swapped_this_round", 0) > 0 for unit in player_team.members),
+                        "Tree Scout's Assassin skill threatens units that just swapped. Powerful repositioning always comes with some risk.",
+                        None,
+                    ),
+                ]
+            )
+        elif self.encounter_index == 6:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc6_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1 and player_front is porcus,
+                        "Porcus holds the frontline now. This is your first full 3v3 battle, so use him to protect Jack and Liesl.",
+                        None,
+                    ),
+                    (
+                        "enc6_bonus",
+                        self.phase == "bonus_select",
+                        "This is the Bonus Action phase. Not every adventurer has one yet, but from here on the round is split into main actions and bonus actions.",
+                        None,
+                    ),
+                    (
+                        "enc6_bricklayer",
+                        porcus is not None and porcus.markers.get("bricklayer_triggered_this_round", 0) > 0,
+                        "Porcus's Bricklayer just triggered. Heavy Strikes into him are softened, and the attacker is Weakened for 2 rounds.",
+                        None,
+                    ),
+                ]
+            )
+        elif self.encounter_index == 7:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc7_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1,
+                        "This is your first battle with a self-built trio. Your class and class-skill choices from loadout matter now.",
+                        None,
+                    ),
+                    (
+                        "enc7_sentinel",
+                        tree_sentinel is not None and any(buff.stat == "defense" and buff.duration > 0 for buff in tree_sentinel.buffs),
+                        "Tree Sentinel's strike fortifies the whole enemy team with extra Defense for 2 rounds. Bursting through that timing matters.",
+                        None,
+                    ),
+                    (
+                        "enc7_druid",
+                        tree_druid is not None and tree_druid.markers.get("spells_cast_this_round", 0) > 0,
+                        "Tree Druid can use its sigil to heal allies instead of damaging you, and Medic-style healing removes status problems too.",
+                        None,
+                    ),
+                ]
+            )
+        elif self.encounter_index == 8:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc8_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1,
+                        "Artifacts grant their stat bonus even when unattuned. Attunement only controls whether the artifact spell can be used.",
+                        None,
+                    ),
+                    (
+                        "enc8_unattuned",
+                        any(unit.artifact is not None and unit.class_name not in unit.artifact.attunement for unit in player_team.members),
+                        "One of your artifacts is unattuned here. You still keep its stat bonus, but its spell stays unavailable until the class matches.",
+                        None,
+                    ),
+                    (
+                        "enc8_enemy_artifact",
+                        (
+                            tree_knight is not None
+                            and tree_knight.cooldowns.get("grave_tiding", 0) > 0
+                        ) or (
+                            tree_sorcerer is not None
+                            and tree_sorcerer.cooldowns.get("clear_skies", 0) > 0
+                        ),
+                        "Enemy artifacts are active too. Some are reactive like Black Torch, while others set up a stronger follow-up strike like Bottled Clouds.",
+                        None,
+                    ),
+                ]
+            )
+        elif self.encounter_index == 9:
+            prompt_checks.extend(
+                [
+                    (
+                        "enc9_intro",
+                        self.phase == "action_select" and self.battle.round_num == 1,
+                        "The Ultimate Meter is live now. Non-Magic Strikes add 1, Spells add 2, and a full meter unlocks an Ultimate.",
+                        None,
+                    ),
+                    (
+                        "enc9_meter",
+                        player_team.ultimate_meter > 0,
+                        "Your team has started charging the Ultimate Meter. Keep mixing Strikes and Spells to fill it.",
+                        None,
+                    ),
+                    (
+                        "enc9_full",
+                        player_team.ultimate_meter >= 5 and self.active_actor is not None,
+                        "The meter is full. Open Spellcast for the active adventurer and choose their Ultimate.",
+                        "spellbook",
+                    ),
+                    (
+                        "enc9_cast",
+                        player_team.markers.get("ultimates_cast", 0) > 0 and player_team.ultimate_meter == 0,
+                        "An Ultimate was cast, so the meter reset to 0. Cast three Ultimates in one encounter to win instantly by Ultimate Victory.",
+                        None,
+                    ),
+                    (
+                        "enc9_one_more",
+                        player_team.markers.get("ultimates_cast", 0) >= 2,
+                        "One more Ultimate cast will end the encounter immediately with Ultimate Victory.",
+                        None,
+                    ),
+                ]
+            )
+        for prompt_id, condition, text, highlight_action in prompt_checks:
+            if prompt_id in self.tutorial_prompt_seen:
+                continue
+            if condition:
+                self._set_tutorial_prompt(prompt_id, text, highlight_action=highlight_action)
+                return
+
+        self.tutorial_prompt = ""
+        self.tutorial_prompt_id = None
+        self.tutorial_highlight_action = None
 
 
 class StoryLanBattleController(StoryBattleController):

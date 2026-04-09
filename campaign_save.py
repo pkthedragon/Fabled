@@ -10,7 +10,7 @@ from models import CampaignProfile
 from quests_ruleset_data import ADVENTURERS_BY_ID, ARTIFACTS_BY_ID
 
 
-SAVE_VERSION = 3
+SAVE_VERSION = 4
 LEGACY_SAVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "campaign_save.json")
 
 _KNOWN_ADVENTURER_IDS = set(ADVENTURERS_BY_ID.keys())
@@ -95,6 +95,19 @@ def _normalize_profile(profile: CampaignProfile) -> CampaignProfile:
         for adventurer_id, sig_id in dict(profile.default_sigs).items()
         if _LEGACY_ADVENTURER_ID_MAP.get(str(adventurer_id), str(adventurer_id)) in _KNOWN_ADVENTURER_IDS
     }
+    profile.tutorial_prompt_answered = bool(getattr(profile, "tutorial_prompt_answered", False))
+    profile.tutorial_played_before = bool(getattr(profile, "tutorial_played_before", False))
+    profile.tutorial_current_encounter = max(1, min(10, int(getattr(profile, "tutorial_current_encounter", 1) or 1)))
+    profile.tutorial_completed_encounters = {
+        max(1, min(10, int(value)))
+        for value in getattr(profile, "tutorial_completed_encounters", set())
+        if str(value).strip()
+    }
+    profile.tutorial_artifact_pool = [
+        artifact_id
+        for artifact_id in list(getattr(profile, "tutorial_artifact_pool", []))
+        if artifact_id in _KNOWN_ARTIFACT_IDS
+    ]
     profile.quick_play_unlocked = bool(profile.quick_play_unlocked or profile.tutorial_complete)
     profile.highest_quest_cleared = max(int(profile.highest_quest_cleared), 0)
     profile.player_exp = max(0, int(profile.player_exp))
@@ -186,6 +199,11 @@ def save_campaign(profile: CampaignProfile) -> None:
         "adventurer_quest_clears": dict(profile.adventurer_quest_clears),
         "class_points": dict(profile.class_points),
         "tutorial_complete": profile.tutorial_complete,
+        "tutorial_prompt_answered": profile.tutorial_prompt_answered,
+        "tutorial_played_before": profile.tutorial_played_before,
+        "tutorial_current_encounter": profile.tutorial_current_encounter,
+        "tutorial_completed_encounters": list(profile.tutorial_completed_encounters),
+        "tutorial_artifact_pool": list(profile.tutorial_artifact_pool),
         "quick_play_unlocked": profile.quick_play_unlocked,
         "premium_dollars_spent": profile.premium_dollars_spent,
         "storybook_friends": profile.storybook_friends,
@@ -245,6 +263,11 @@ def _load_modern_profile(data: dict) -> CampaignProfile:
     profile.adventurer_quest_clears = {str(k): int(v) for k, v in data.get("adventurer_quest_clears", {}).items()}
     profile.class_points = {str(k): int(v) for k, v in data.get("class_points", {}).items()}
     profile.tutorial_complete = bool(data.get("tutorial_complete", profile.tutorial_complete))
+    profile.tutorial_prompt_answered = bool(data.get("tutorial_prompt_answered", getattr(profile, "tutorial_prompt_answered", False)))
+    profile.tutorial_played_before = bool(data.get("tutorial_played_before", getattr(profile, "tutorial_played_before", False)))
+    profile.tutorial_current_encounter = int(data.get("tutorial_current_encounter", getattr(profile, "tutorial_current_encounter", 1)))
+    profile.tutorial_completed_encounters = set(data.get("tutorial_completed_encounters", []))
+    profile.tutorial_artifact_pool = list(data.get("tutorial_artifact_pool", []))
     profile.quick_play_unlocked = bool(data.get("quick_play_unlocked", profile.quick_play_unlocked))
     profile.premium_dollars_spent = int(data.get("premium_dollars_spent", profile.premium_dollars_spent))
     profile.storybook_friends = _normalize_friends(data.get("storybook_friends", []))
@@ -296,6 +319,11 @@ def _load_legacy_profile(data: dict) -> CampaignProfile:
     cleared_nonzero = sum(1 for quest_id, cleared in profile.quest_cleared.items() if quest_id > 0 and cleared)
     profile.player_exp = max(0, cleared_nonzero * 100)
     profile.tutorial_complete = bool(profile.highest_quest_cleared >= 4)
+    profile.tutorial_prompt_answered = bool(profile.tutorial_complete or profile.player_exp > 0 or data.get("gold", 0) > 0)
+    profile.tutorial_played_before = bool(profile.tutorial_prompt_answered)
+    profile.tutorial_current_encounter = 10 if profile.tutorial_complete else 1
+    profile.tutorial_completed_encounters = set(range(1, 11)) if profile.tutorial_complete else set()
+    profile.tutorial_artifact_pool = []
     profile.quick_play_unlocked = profile.tutorial_complete
     # Migrate old reputation fields
     profile.reputation = int(data.get("ranked_rating", 300))

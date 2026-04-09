@@ -9,6 +9,8 @@ from quests_ruleset_models import (
     AdventurerDef,
     ArtifactDef,
     PassiveEffect,
+    QuestEnemyTierDef,
+    QuestLocaleDef,
     StatSpec,
     StatusSpec,
     WeaponDef,
@@ -61,6 +63,10 @@ def artifact(
     spell: ActiveEffect,
     *,
     reactive: bool = False,
+    reactive_spell: ActiveEffect | None = None,
+    legendary: bool = False,
+    quest_only: bool = False,
+    enemy_only: bool = False,
     description: str = "",
 ) -> ArtifactDef:
     return ArtifactDef(
@@ -71,6 +77,10 @@ def artifact(
         amount=amount,
         spell=spell,
         reactive=reactive,
+        reactive_spell=reactive_spell,
+        legendary=legendary,
+        quest_only=quest_only,
+        enemy_only=enemy_only,
         description=description,
     )
 
@@ -80,6 +90,82 @@ _RULEBOOK_SECTION_SKIP_LINES = {"Magic", "Active", "Melee", "Ranged", "No Cooldo
 ULTIMATE_METER_MAX = 5
 ULTIMATE_WIN_COUNT = 3
 GOOSE_QUILL_RETAINED_METER = 3
+
+
+QUEST_ENEMY_TIERS = (
+    QuestEnemyTierDef(
+        id="tier_1",
+        name="Tier 1",
+        description="A primary weapon with only a Strike, and either a class skill or an innate skill.",
+    ),
+    QuestEnemyTierDef(
+        id="tier_2",
+        name="Tier 2",
+        description="A full primary weapon (Strike plus Spell or Skill), and either a class skill or an innate skill.",
+    ),
+    QuestEnemyTierDef(
+        id="tier_3",
+        name="Tier 3",
+        description="A full primary weapon, a class skill, and an innate skill.",
+        has_class_skill=True,
+        has_innate=True,
+    ),
+    QuestEnemyTierDef(
+        id="tier_4",
+        name="Tier 4",
+        description="A full primary weapon, a full secondary weapon, a class skill, an innate skill, and an Artifact.",
+        has_secondary_weapon=True,
+        has_class_skill=True,
+        has_innate=True,
+        uses_artifact=True,
+        unique_named=True,
+    ),
+    QuestEnemyTierDef(
+        id="tier_5",
+        name="Tier 5",
+        description="A full primary weapon, a full secondary weapon, a class skill, an innate skill, and a Legendary Artifact.",
+        has_secondary_weapon=True,
+        has_class_skill=True,
+        has_innate=True,
+        uses_artifact=True,
+        uses_legendary_artifact=True,
+        unique_named=True,
+    ),
+    QuestEnemyTierDef(
+        id="apex",
+        name="Apex",
+        description="Two primary weapons equipped simultaneously. Both weapons' Skills and Spells are active, plus a Legendary Class Skill, an innate skill, and a Legendary Artifact.",
+        has_secondary_weapon=True,
+        has_class_skill=True,
+        has_innate=True,
+        uses_artifact=True,
+        uses_legendary_artifact=True,
+        uses_legendary_class_skill=True,
+        apex_dual_primaries=True,
+        unique_named=True,
+    ),
+)
+
+
+QUEST_LOCALES = (
+    QuestLocaleDef("forest_of_dreams", "The Forest of Dreams", "A seemingly endless vivid forest full of wonder and magical beasts."),
+    QuestLocaleDef("cloud_peaks", "The Cloud Peaks", "An impossibly tall mountain range floating in the sky, reached by leaping across thousands of drifting rocks around its outskirts."),
+    QuestLocaleDef("blackwells", "The Blackwells", "Dark bog-pits the size of lakes or seas, separated by miles of swamp and inhabited by vile, malevolent creatures."),
+    QuestLocaleDef("static_plains", "The Static Plains", "Vast yellow plains of rolling hills and meadows filled with electric flowers, broken up by mile-high trees that attract lightning."),
+    QuestLocaleDef("the_scar", "The Scar", "A deep valley-like crack in the earth leading straight toward the underworld, both cold as ice and hot as fire."),
+    QuestLocaleDef("high_court", "The High Court", "The Kingdom of Fantasia itself, along with its surrounding outskirts."),
+)
+
+QUEST_ENEMY_TIER_BY_ID = {tier.id: tier for tier in QUEST_ENEMY_TIERS}
+QUEST_LOCALES_BY_ID = {locale.id: locale for locale in QUEST_LOCALES}
+QUEST_LOCALE_TIER_COUNTS = {
+    "tier_1": 6,
+    "tier_2": 4,
+    "tier_3": 4,
+    "tier_4": 3,
+    "tier_5": 3,
+    "apex": 1,
+}
 
 
 def _next_rulebook_description_line(lines: list[str], start_index: int) -> str:
@@ -201,6 +287,7 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
                         "spells_ordered": [],
                         "spells_meta": {},
                     }
+                    last_entry: str | tuple[str, str] | None = None
                     index += 1
                     while index < len(lines):
                         inner = lines[index].strip()
@@ -213,16 +300,26 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
                             break
                         if inner in {"Melee", "Ranged", "Magic"}:
                             weapon_record["kind"] = inner.lower()
+                            last_entry = "weapon_kind"
                         elif re.match(r"^\d+ Ammo$", inner):
                             weapon_record["ammo"] = _extract_first_int(inner)
+                            last_entry = None
                         elif inner.startswith("Cooldown:"):
                             cooldown_value = _extract_first_int(inner)
-                            if cooldown_value is not None and weapon_record["strike_desc"] == "":
+                            if cooldown_value is not None and isinstance(last_entry, tuple) and last_entry[0] == "spell":
+                                weapon_record["spells_meta"].setdefault(last_entry[1], {})["cooldown"] = cooldown_value
+                            elif cooldown_value is not None and last_entry in {"weapon_kind", "strike"}:
                                 weapon_record["strike_cooldown"] = cooldown_value
+                        elif inner == "No Cooldown":
+                            if isinstance(last_entry, tuple) and last_entry[0] == "spell":
+                                weapon_record["spells_meta"].setdefault(last_entry[1], {})["cooldown"] = 0
+                            elif last_entry in {"weapon_kind", "strike"}:
+                                weapon_record["strike_cooldown"] = 0
                         if inner.startswith("Strike: "):
                             strike_line = inner.split(": ", 1)[1]
                             weapon_record["strike_desc"] = _extract_rulebook_strike_description(strike_line)
                             weapon_record["strike_power"] = _extract_power_from_line(strike_line)
+                            last_entry = "strike"
                         elif inner.startswith("Skill: ") or inner.startswith("Passive: "):
                             skill_name = inner.split(": ", 1)[1].strip()
                             next_desc = _next_rulebook_description_line(lines, index + 1)
@@ -238,6 +335,7 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
                                 weapon_record["passives_ordered"].append(next_desc)
                             else:
                                 weapon_record["passives_ordered"].append(skill_name)
+                            last_entry = ("passive", skill_name)
                         elif inner.startswith("Spell: "):
                             spell_name = inner.split(": ", 1)[1].strip()
                             spell_desc = _next_rulebook_description_line(lines, index + 1)
@@ -260,6 +358,7 @@ def _parse_rulebook_adventurer_descriptions() -> dict[str, dict]:
                                 "heal": _extract_heal_from_line(spell_desc) if spell_desc else None,
                                 "description": spell_desc,
                             }
+                            last_entry = ("spell", spell_name)
                         index += 1
                     record["weapons"][weapon_name] = weapon_record
                 elif current.startswith("Ultimate Spell: "):
@@ -375,9 +474,11 @@ def _parse_rulebook_artifacts() -> dict[str, dict]:
         return {}
     text = path.read_text(encoding="utf-8")
     appendix_c = re.search(r"^APPENDIX C .*$", text, flags=re.MULTILINE)
+    appendix_d = re.search(r"^APPENDIX D .*$", text, flags=re.MULTILINE)
     if appendix_c is None:
         return {}
-    lines = [line.rstrip() for line in text[appendix_c.start():].splitlines()]
+    end_index = appendix_d.start() if appendix_d is not None else len(text)
+    lines = [line.rstrip() for line in text[appendix_c.start():end_index].splitlines()]
     records: dict[str, dict] = {}
     index = 0
     while index < len(lines):
@@ -422,9 +523,62 @@ def _parse_rulebook_artifacts() -> dict[str, dict]:
     return records
 
 
-def _sync_artifacts_from_rulebook(artifacts: list[ArtifactDef]) -> list[ArtifactDef]:
+def _parse_rulebook_enemy_artifacts() -> dict[str, dict]:
+    path = Path(__file__).with_name("rulebook.txt")
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    appendix_d = re.search(r"^APPENDIX D .*$", text, flags=re.MULTILINE)
+    if appendix_d is None:
+        return {}
+    lines = [line.rstrip() for line in text[appendix_d.start():].splitlines()]
+    records: dict[str, dict] = {}
+    index = 0
+    while index < len(lines):
+        line = lines[index].strip()
+        if line and index + 1 < len(lines) and lines[index + 1].startswith("Attunement:"):
+            name = _normalize_rulebook_name(line)
+            record = {
+                "amount": None,
+                "stat": "",
+                "spell_name": "",
+                "spell_desc": "",
+                "spell_power": None,
+                "spell_heal": None,
+                "spell_cooldown": None,
+                "spell_encounter_cooldown": False,
+            }
+            probe = index + 2
+            if probe < len(lines):
+                stat_line = lines[probe].strip()
+                stat_match = re.match(r"^\+(\d+)\s+(\w+)$", stat_line)
+                if stat_match:
+                    record["amount"] = int(stat_match.group(1))
+                    record["stat"] = stat_match.group(2).lower()
+            index += 1
+            while index < len(lines):
+                current = lines[index].strip()
+                if current and index + 1 < len(lines) and lines[index + 1].startswith("Attunement:"):
+                    index -= 1
+                    break
+                if current.startswith("Spell: "):
+                    record["spell_name"] = current.split(": ", 1)[1].strip()
+                    desc = _next_rulebook_description_line(lines, index + 1)
+                    record["spell_desc"] = desc
+                    record["spell_power"] = _extract_power_from_line(desc) if desc else None
+                    record["spell_heal"] = _extract_heal_from_line(desc) if desc else None
+                elif current.startswith("Cooldown:"):
+                    record["spell_cooldown"] = _extract_first_int(current)
+                    record["spell_encounter_cooldown"] = "encounter" in current.lower()
+                index += 1
+            records[name] = record
+        index += 1
+    return records
+
+
+def _sync_artifacts_from_rulebook(artifacts: list[ArtifactDef], *, parsed: dict[str, dict] | None = None) -> list[ArtifactDef]:
     try:
-        parsed = _parse_rulebook_artifacts()
+        parsed = _parse_rulebook_artifacts() if parsed is None else parsed
     except Exception:
         return artifacts
     if not parsed:
@@ -436,7 +590,7 @@ def _sync_artifacts_from_rulebook(artifacts: list[ArtifactDef]) -> list[Artifact
         if record is None:
             synced.append(artifact_def)
             continue
-        spell = artifact_def.spell
+        spell = artifact_def.active_spell or artifact_def.spell
         if record["spell_name"] and record["spell_name"] != spell.name:
             spell = replace(spell, name=record["spell_name"])
         if record["spell_desc"] and record["spell_desc"] != spell.description:
@@ -466,16 +620,16 @@ CLASS_SKILLS = {
         passive("vanguard", "Vanguard", "The Adventurer's Melee Strikes deal 15 damage to each enemy behind the target.", special="vanguard", hp_bonus=50),
     ],
     "Rogue": [
+        passive("assassin", "Assassin", "The Adventurer ignores targeting restrictions against enemies who Swapped positions last round.", special="assassin", hp_bonus=25),
         passive("covert", "Covert", "The Adventurer can Swap positions as a Bonus Action each round they cast a Spell.", special="covert", hp_bonus=25),
-        passive("assassin", "Assassin", "The Adventurer ignores targeting restrictions against enemies who did not Strike or Swap Positions.", special="assassin", hp_bonus=25),
     ],
     "Warden": [
         passive("bulwark", "Bulwark", "The Adventurer has +25 Defense while in the frontline, +15 otherwise.", hp_bonus=50),
         passive("vigilant", "Vigilant", "The Adventurer is Guarded for 2 rounds when they Swap positions, Switch Weapons, or Skip.", special="vigilant", hp_bonus=50),
     ],
     "Mage": [
-        passive("arcane", "Arcane", "The Adventurer's first Spell after Switching weapons does not go on cooldown.", special="arcane", hp_bonus=15),
         passive("archmage", "Archmage", "The Adventurer's Magic Strikes deal +15 damage and do not go on cooldown in the frontline.", special="archmage", hp_bonus=25),
+        passive("arcane", "Arcane", "The Adventurer's first Spell after Switching weapons does not go on cooldown.", special="arcane", hp_bonus=15),
     ],
     "Ranger": [
         passive("deadeye", "Deadeye", "The Adventurer's Ranged Strikes deal +15 damage.", hp_bonus=15),
@@ -488,9 +642,54 @@ CLASS_SKILLS = {
 }
 
 
+ENEMY_ONLY_CLASS_SKILLS = {
+    "Fighter": [
+        passive("warlord", "Warlord", "The Adventurer's Melee Strikes deal +40 damage and Weaken the target for 2 rounds.", hp_bonus=50),
+        passive("berserker", "Berserker", "The Adventurer has +15 Attack for each knocked-out adventurer (ally or enemy) this encounter. Melee Strikes deal +25 damage.", special="berserker", hp_bonus=25),
+        passive("champion", "Champion", "The Adventurer's Melee Strikes deal 30 damage to each enemy behind the target and Expose them for 2 rounds.", special="champion", hp_bonus=50),
+    ],
+    "Rogue": [
+        passive("phantom", "Phantom", "The Adventurer ignores all targeting restrictions. Strikes deal +25 damage from the backline.", special="phantom", hp_bonus=25),
+        passive("saboteur", "Saboteur", "When the Adventurer casts a Spell, increase all enemy cooldowns by 1 round. The Adventurer can Swap positions as a Bonus Action.", special="saboteur", hp_bonus=25),
+        passive("nightblade", "Nightblade", "The Adventurer's Strikes deal +25 damage to targets with a status condition. When the Adventurer knocks out an enemy, become untargetable until next round.", special="nightblade", hp_bonus=25),
+    ],
+    "Warden": [
+        passive("bastion", "Bastion", "The Adventurer has +25 Defense. Allies behind the Adventurer take 20% less damage from Strikes.", special="bastion", hp_bonus=75),
+        passive("sentinel", "Sentinel", "The Adventurer is permanently Guarded. Retaliates for 50 Power against incoming Strikes.", special="sentinel", hp_bonus=50),
+        passive("colossus", "Colossus", "The Adventurer has +50 Defense while in the frontline. Strikes against the Adventurer cannot deal more than 15% of the Adventurer's max HP per hit.", special="colossus", hp_bonus=75),
+    ],
+    "Mage": [
+        passive("arcane_sovereign", "Arcane Sovereign", "The Adventurer's Magic Strikes deal +25 damage and do not go on cooldown.", special="arcane_sovereign", hp_bonus=25),
+        passive("spellweaver", "Spellweaver", "The Adventurer's first two Spells each round do not go on cooldown. Magic Strikes deal +15 damage.", special="spellweaver", hp_bonus=25),
+        passive("hexmaster", "Hexmaster", "The Adventurer's Magic Strikes inflict a random status condition (Burn, Shock, or Weaken) for 2 rounds and deal +15 damage.", special="hexmaster", hp_bonus=25),
+    ],
+    "Ranger": [
+        passive("sharpshooter", "Sharpshooter", "The Adventurer's Ranged Strikes deal +25 damage and ignore targeting restrictions.", special="sharpshooter", hp_bonus=15),
+        passive("arsenal", "Arsenal", "The Adventurer's Ranged Strikes do not consume Ammo and deal +15 damage.", special="arsenal", hp_bonus=25),
+        passive("marksman", "Marksman", "The Adventurer's consecutive Ranged Strikes against the same target deal +15 cumulative damage (stacks up to 3 times, resets on target switch). Ranged Strikes deal +15 damage.", special="marksman", hp_bonus=25),
+    ],
+    "Cleric": [
+        passive("saint", "Saint", "The Adventurer's healing effects restore an additional +50 HP and Guard the target for 2 rounds.", special="saint", hp_bonus=50),
+        passive("oracle", "Oracle", "The Adventurer's healing effects cleanse all status conditions and stat penalties. At the start of each round, the lowest HP ally restores 30 HP.", special="oracle", hp_bonus=50),
+        passive("shepherd", "Shepherd", "When the Adventurer heals an ally, that ally's next Strike deals +25 damage and has 25% Lifesteal. Healing effects restore +25 HP.", special="shepherd", hp_bonus=25),
+    ],
+}
+
+ALL_CLASS_SKILLS = {
+    class_name: tuple(list(CLASS_SKILLS.get(class_name, ())) + list(ENEMY_ONLY_CLASS_SKILLS.get(class_name, ())))
+    for class_name in CLASS_SKILLS
+}
+
+ENEMY_ONLY_CLASS_SKILL_IDS = {
+    skill.id
+    for skills in ENEMY_ONLY_CLASS_SKILLS.values()
+    for skill in skills
+}
+
+
 CLASS_SKILLS_BY_ID = {
     skill.id: skill
-    for skills in CLASS_SKILLS.values()
+    for skills in ALL_CLASS_SKILLS.values()
     for skill in skills
 }
 
@@ -1094,6 +1293,10 @@ ARTIFACTS.extend([
 
 ARTIFACTS = _sync_artifacts_from_rulebook(ARTIFACTS)
 ARTIFACTS_BY_ID = {artifact_def.id: artifact_def for artifact_def in ARTIFACTS}
+ENEMY_ARTIFACTS: list[ArtifactDef] = _sync_artifacts_from_rulebook([], parsed=_parse_rulebook_enemy_artifacts())
+ENEMY_ARTIFACTS_BY_ID = {artifact_def.id: artifact_def for artifact_def in ENEMY_ARTIFACTS}
+ALL_ARTIFACTS = [*ARTIFACTS, *ENEMY_ARTIFACTS]
+ALL_ARTIFACTS_BY_ID = {artifact_def.id: artifact_def for artifact_def in ALL_ARTIFACTS}
 
 
 RED = AdventurerDef(

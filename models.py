@@ -85,6 +85,11 @@ class CampaignProfile:
     adventurer_quest_clears: Dict[str, int] = field(default_factory=dict)
     class_points: Dict[str, int] = field(default_factory=dict)
     tutorial_complete: bool = False
+    tutorial_prompt_answered: bool = False
+    tutorial_played_before: bool = False
+    tutorial_current_encounter: int = 1
+    tutorial_completed_encounters: Set[int] = field(default_factory=set)
+    tutorial_artifact_pool: List[str] = field(default_factory=list)
     quick_play_unlocked: bool = False
     premium_dollars_spent: int = 0
     storybook_friends: List[Dict[str, str]] = field(default_factory=list)

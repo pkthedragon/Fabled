@@ -28,14 +28,44 @@ def _top_pick_count(difficulty: str) -> int:
     }.get(difficulty, 2)
 
 
-def _team_ceiling_score(current_ids: tuple[str, ...], available_ids: tuple[str, ...], enemy_ids: tuple[str, ...], *, seat: int) -> float:
-    needed = 3 - len(current_ids)
+def _best_encounter_team_score(roster_ids: tuple[str, ...], enemy_ids: tuple[str, ...], *, seat: int) -> float:
+    if len(roster_ids) < 3:
+        return 0.0
+    best = float("-inf")
+    for trio_ids in combinations(roster_ids, 3):
+        try:
+            score = solve_team_loadout(trio_ids, enemy_ids=enemy_ids, mode="bout", seat=seat).score
+        except ValueError:
+            continue
+        best = max(best, score)
+    return best if best != float("-inf") else 0.0
+
+
+def _team_ceiling_score(
+    current_ids: tuple[str, ...],
+    available_ids: tuple[str, ...],
+    enemy_ids: tuple[str, ...],
+    *,
+    seat: int,
+    target_size: int,
+) -> float:
+    if target_size > 3:
+        trio_needed = max(0, 3 - len(current_ids))
+        if trio_needed <= 0:
+            return _best_encounter_team_score(current_ids, enemy_ids, seat=seat)
+        best = float("-inf")
+        for extra_ids in combinations(available_ids, trio_needed):
+            trial_ids = tuple(sorted(current_ids + tuple(extra_ids)))
+            best = max(best, _best_encounter_team_score(trial_ids, enemy_ids, seat=seat))
+        return best if best != float("-inf") else 0.0
+
+    needed = target_size - len(current_ids)
     if needed <= 0:
-        return solve_team_loadout(current_ids, enemy_ids=enemy_ids, mode="bout", seat=seat).score
+        return _best_encounter_team_score(current_ids, enemy_ids, seat=seat)
     best = float("-inf")
     for extra_ids in combinations(available_ids, needed):
         trial_ids = tuple(sorted(current_ids + tuple(extra_ids)))
-        best = max(best, solve_team_loadout(trial_ids, enemy_ids=enemy_ids, mode="bout", seat=seat).score)
+        best = max(best, _best_encounter_team_score(trial_ids, enemy_ids, seat=seat))
     return best if best != float("-inf") else 0.0
 
 
@@ -71,6 +101,7 @@ def _pick_score(
     available_ids: tuple[str, ...],
     *,
     seat: int,
+    target_size: int,
 ) -> float:
     profile = ADVENTURER_AI[candidate_id]
     score = float(profile.base_power)
@@ -82,8 +113,21 @@ def _pick_score(
         score += matchup_value(profile, ADVENTURER_AI[enemy_id]) * 0.35
     score += _denial_value(candidate_id, enemy_ids)
     score += _seat_adjustment(candidate_id, seat)
+    if target_size > 3:
+        role_tags = set(profile.role_tags)
+        if len(own_ids) < 2 and {"primary_tank", "frontline_ready", "anti_burst", "bruiser"} & role_tags:
+            score += 6.0
+        if len(own_ids) < 3 and {"backline_reach", "ranged_pressure", "magic_carry", "healer"} & role_tags:
+            score += 4.0
+        return score
     future_pool = tuple(item for item in available_ids if item != candidate_id)
-    future_score = _team_ceiling_score(tuple(sorted(own_ids + (candidate_id,))), future_pool, enemy_ids, seat=seat)
+    future_score = _team_ceiling_score(
+        tuple(sorted(own_ids + (candidate_id,))),
+        future_pool,
+        enemy_ids,
+        seat=seat,
+        target_size=target_size,
+    )
     score += future_score * 0.12
     return score
 
@@ -95,10 +139,21 @@ def _choose_pick(
     *,
     seat: int,
     difficulty: str,
+    target_size: int,
     rng: random.Random,
 ) -> str:
     scored = [
-        (candidate_id, _pick_score(candidate_id, own_ids, enemy_ids, available_ids, seat=seat))
+        (
+            candidate_id,
+            _pick_score(
+                candidate_id,
+                own_ids,
+                enemy_ids,
+                available_ids,
+                seat=seat,
+                target_size=target_size,
+            ),
+        )
         for candidate_id in available_ids
     ]
     scored.sort(key=lambda item: item[1], reverse=True)
@@ -118,6 +173,7 @@ def choose_bout_pick(
     *,
     seat: int,
     difficulty: str = "hard",
+    target_size: int = 3,
     rng: random.Random | None = None,
 ) -> str:
     rng = rng or random.Random()
@@ -127,6 +183,7 @@ def choose_bout_pick(
         tuple(sorted(enemy_ids)),
         seat=seat,
         difficulty=difficulty,
+        target_size=target_size,
         rng=rng,
     )
 

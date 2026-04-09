@@ -6,9 +6,10 @@ from dataclasses import dataclass
 from itertools import product
 from typing import Optional
 
+from quest_enemy_runtime import QUEST_ENEMY_META_BY_ID
 from settings import SLOT_BACK_LEFT, SLOT_BACK_RIGHT, SLOT_FRONT
 
-from quests_ai_tags import ADVENTURER_AI
+from quests_ai_tags import ADVENTURER_AI, AdventurerAIProfile
 from quests_ruleset_data import ULTIMATE_METER_MAX, ULTIMATE_WIN_COUNT
 from quests_ruleset_logic import (
     determine_initiative_order,
@@ -97,6 +98,7 @@ class ActionSpec:
     kind: str
     target_ref: Optional[tuple[int, str]] = None
     effect_id: Optional[str] = None
+    weapon_id: Optional[str] = None
     bonus: bool = False
 
 
@@ -145,6 +147,84 @@ def _find_unit(battle, ref: tuple[int, str]):
     return next((unit for unit in team.members if unit.defn.id == ref[1]), None)
 
 
+def _all_unit_effects(unit) -> list:
+    effects = []
+    for weapon in unit.active_strike_weapons():
+        effects.append(weapon.strike)
+        effects.extend(weapon.spells)
+    if getattr(unit.defn, "ultimate", None) is not None:
+        effects.append(unit.defn.ultimate)
+    if unit.artifact is not None:
+        if unit.artifact.active_spell is not None:
+            effects.append(unit.artifact.active_spell)
+        if unit.artifact.reactive_effect is not None:
+            effects.append(unit.artifact.reactive_effect)
+    return effects
+
+
+def _profile_for(unit) -> AdventurerAIProfile:
+    profile = ADVENTURER_AI.get(unit.defn.id)
+    if profile is not None:
+        return profile
+    meta = QUEST_ENEMY_META_BY_ID.get(unit.defn.id, {})
+    weapons = unit.active_strike_weapons()
+    effects = _all_unit_effects(unit)
+    role_tags: set[str] = set()
+    if any(effect.heal > 0 for effect in effects) or unit.class_skill.id in {"healer", "medic", "saint", "oracle"}:
+        role_tags.add("healer")
+    if any(status.kind == "guard" for effect in effects for status in effect.target_statuses):
+        role_tags.add("guard_support")
+    if any(status.kind == "shock" for effect in effects for status in effect.target_statuses):
+        role_tags.add("shock_engine")
+    if any(status.kind == "root" for effect in effects for status in effect.target_statuses):
+        role_tags.add("root_enabler")
+    if any(status.kind == "expose" for effect in effects for status in effect.target_statuses):
+        role_tags.add("expose_enabler")
+    if any(status.kind == "burn" for effect in effects for status in effect.target_statuses):
+        role_tags.add("burn_enabler")
+    if any(weapon.kind == "magic" for weapon in weapons) or any(effect.target in {"ally", "self"} or effect.cooldown > 0 for effect in effects):
+        role_tags.add("spell_loop")
+    if any(weapon.kind == "melee" for weapon in weapons):
+        role_tags.add("frontline_ready")
+    if any(weapon.kind != "melee" or weapon.strike.spread or weapon.strike.ignore_targeting for weapon in weapons):
+        role_tags.add("tempo_engine")
+    if max((weapon.strike.power for weapon in weapons), default=0) >= 110:
+        role_tags.add("burst_finisher")
+    if unit.defn.hp <= 300 and unit.defn.defense <= 65:
+        role_tags.add("fragile")
+    front_score = int(meta.get("frontline_score") or (45 + unit.defn.defense * 2 + unit.defn.hp // 6 + (18 if any(weapon.kind == "melee" for weapon in weapons) else 0)))
+    back_score = int(meta.get("backline_score") or (45 + unit.defn.speed * 2 + (22 if any(weapon.kind in {"ranged", "magic"} for weapon in weapons) else 0) - (12 if all(weapon.kind == "melee" for weapon in weapons) else 0)))
+    return AdventurerAIProfile(
+        base_power=max((weapon.strike.power for weapon in weapons), default=70) + int(unit.defn.attack * 0.2),
+        reliability=70,
+        complexity=55,
+        role_tags=tuple(sorted(role_tags)),
+        shell_tags=(),
+        matchup_tags=(),
+        good_into=(),
+        bad_into=(),
+        preferred_classes=(),
+        preferred_skills={},
+        preferred_weapons=tuple(weapon.id for weapon in weapons),
+        preferred_artifacts=((unit.artifact.id,) if unit.artifact is not None else ()),
+        position_scores={
+            SLOT_FRONT: front_score,
+            SLOT_BACK_LEFT: back_score,
+            SLOT_BACK_RIGHT: back_score,
+        },
+    )
+
+
+def _strike_weapon_for_spec(actor, spec: ActionSpec):
+    return actor.strike_weapon_by_id(spec.weapon_id)
+
+
+def _weapon_for_effect(actor, effect):
+    if effect is None:
+        return actor.primary_weapon
+    return actor.weapon_for_effect(getattr(effect, "id", None)) or actor.primary_weapon
+
+
 def _team_bonus_swap_available(team) -> bool:
     return team.markers.get("bonus_swap_rounds", 0) > 0 and team.markers.get("bonus_swap_used", 0) <= 0
 
@@ -152,8 +232,9 @@ def _team_bonus_swap_available(team) -> bool:
 def _rough_damage(battle, actor, target, effect, *, weapon=None) -> int:
     if effect.power <= 0 or target is None or target.ko:
         return 0
+    weapon = weapon or _weapon_for_effect(actor, effect)
     attack_stat = "attack"
-    if actor.defn.id == "maui_sunthief" and actor.primary_weapon.id == "ancestral_warclub":
+    if actor.defn.id == "maui_sunthief" and weapon is not None and weapon.id == "ancestral_warclub":
         attack_stat = "defense"
     power = effect.power
     if weapon is not None:
@@ -189,8 +270,9 @@ def _rough_damage(battle, actor, target, effect, *, weapon=None) -> int:
 def _effect_usable(actor, effect) -> bool:
     if actor.cooldowns.get(effect.id, 0) > 0:
         return False
-    if effect in actor.primary_weapon.spells and actor.primary_weapon.ammo > 0:
-        ammo_left = actor.ammo_remaining.get(actor.primary_weapon.id, actor.primary_weapon.ammo)
+    source_weapon = _weapon_for_effect(actor, effect)
+    if source_weapon is not None and any(spell.id == effect.id for spell in source_weapon.spells) and source_weapon.ammo > 0:
+        ammo_left = actor.ammo_remaining.get(source_weapon.id, source_weapon.ammo)
         if ammo_left < effect.ammo_cost:
             return False
     return True
@@ -228,8 +310,8 @@ def _actor_forced_to_skip(actor, battle) -> bool:
     return actor.ko or actor.markers.get("cant_act_rounds", 0) > 0 or _fated_duel_blocks(actor, battle)
 
 
-def _can_attempt_strike(actor) -> bool:
-    weapon = actor.primary_weapon
+def _can_attempt_strike(actor, weapon=None) -> bool:
+    weapon = weapon or actor.primary_weapon
     if actor.markers.get("cant_strike_rounds", 0) > 0:
         return False
     if actor.cooldowns.get(weapon.strike.id, 0) > 0:
@@ -256,7 +338,8 @@ def _can_cast_effect(battle, actor, effect) -> bool:
         return False
     if (
         actor.artifact is not None
-        and effect.id == actor.artifact.spell.id
+        and actor.artifact.active_spell is not None
+        and effect.id == actor.artifact.active_spell.id
         and (actor.has_status("burn") or _has_seal_the_cave_cooldown(actor))
     ):
         enemy_team = _enemy_team_for_actor(battle, actor)
@@ -266,7 +349,7 @@ def _can_cast_effect(battle, actor, effect) -> bool:
 
 
 def _can_switch(actor, *, bonus: bool) -> bool:
-    if actor.defn.id == "ashen_ella":
+    if actor.defn.id == "ashen_ella" or actor.dual_primary_weapons_active():
         return False
     if not bonus:
         return True
@@ -296,7 +379,8 @@ def _can_swap(battle, actor, target, *, bonus: bool) -> bool:
 
 def _legal_targets_for_spec(battle, actor, spec: ActionSpec):
     if spec.kind == "strike":
-        return get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
+        weapon = _strike_weapon_for_spec(actor, spec)
+        return get_legal_targets(battle, actor, effect=weapon.strike, weapon=weapon)
     if spec.kind == "ultimate":
         return get_legal_targets(battle, actor, effect=actor.defn.ultimate)
     if spec.kind == "spell" and spec.effect_id is not None:
@@ -304,13 +388,13 @@ def _legal_targets_for_spec(battle, actor, spec: ActionSpec):
             effect = _effect_by_id(actor, spec.effect_id)
         except KeyError:
             return []
-        return get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon)
+        return get_legal_targets(battle, actor, effect=effect, weapon=_weapon_for_effect(actor, effect))
     return []
 
 
 def _spec_effect(actor, spec: ActionSpec):
     if spec.kind == "strike":
-        return actor.primary_weapon.strike
+        return _strike_weapon_for_spec(actor, spec).strike
     if spec.kind == "spell" and spec.effect_id is not None:
         try:
             return _effect_by_id(actor, spec.effect_id)
@@ -334,7 +418,7 @@ def _spec_is_legal(battle, actor, spec: ActionSpec) -> bool:
         target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
         return _can_swap(battle, actor, target, bonus=spec.bonus)
     if spec.kind == "strike":
-        if not _can_attempt_strike(actor):
+        if not _can_attempt_strike(actor, _strike_weapon_for_spec(actor, spec)):
             return False
         target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
         return any(candidate is target for candidate in _legal_targets_for_spec(battle, actor, spec))
@@ -404,7 +488,7 @@ def _allies(actor, battle):
 
 
 def _threat_value(unit) -> float:
-    profile = ADVENTURER_AI[unit.defn.id]
+    profile = _profile_for(unit)
     value = profile.base_power * 0.4
     tags = set(profile.role_tags)
     if "burst_finisher" in tags:
@@ -452,14 +536,17 @@ def _access_count(battle, team_num: int, target) -> int:
     if target is None or target.ko:
         return 0
     for actor in battle.get_team(team_num).alive():
-        strike_targets = get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
-        if target in strike_targets:
+        if any(
+            target in get_legal_targets(battle, actor, effect=weapon.strike, weapon=weapon)
+            for weapon in actor.active_strike_weapons()
+            if _can_attempt_strike(actor, weapon)
+        ):
             count += 1
             continue
         for effect in _active_spells_for_phase(actor, bonus=False):
             if effect.target != "enemy":
                 continue
-            if target in get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon):
+            if target in get_legal_targets(battle, actor, effect=effect, weapon=_weapon_for_effect(actor, effect)):
                 count += 1
                 break
     return count
@@ -469,18 +556,22 @@ def _estimate_team_damage_to_target(battle, team_num: int, target) -> float:
     total = 0.0
     for actor in battle.get_team(team_num).alive():
         best = 0.0
-        strike_targets = get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
-        if target in strike_targets:
-            best = max(best, _rough_damage(battle, actor, target, actor.primary_weapon.strike, weapon=actor.primary_weapon))
+        for weapon in actor.active_strike_weapons():
+            if not _can_attempt_strike(actor, weapon):
+                continue
+            strike_targets = get_legal_targets(battle, actor, effect=weapon.strike, weapon=weapon)
+            if target in strike_targets:
+                best = max(best, _rough_damage(battle, actor, target, weapon.strike, weapon=weapon))
         for effect in _active_spells_for_phase(actor, bonus=False):
             if effect.target != "enemy":
                 continue
-            if target in get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon):
-                best = max(best, _rough_damage(battle, actor, target, effect, weapon=actor.primary_weapon))
+            spell_weapon = _weapon_for_effect(actor, effect)
+            if target in get_legal_targets(battle, actor, effect=effect, weapon=spell_weapon):
+                best = max(best, _rough_damage(battle, actor, target, effect, weapon=spell_weapon))
         if team_for_actor(battle, actor).ultimate_meter >= ULTIMATE_METER_MAX:
             effect = actor.defn.ultimate
             if effect.target == "enemy" and target in get_legal_targets(battle, actor, effect=effect):
-                best = max(best, _rough_damage(battle, actor, target, effect, weapon=actor.primary_weapon))
+                best = max(best, _rough_damage(battle, actor, target, effect, weapon=_weapon_for_effect(actor, effect)))
         total += best
     return total
 
@@ -495,13 +586,16 @@ def _ally_will_ko_target(battle, team_num: int, actor, target) -> bool:
             continue
         if _initiative_index(battle, ally) >= actor_idx:
             continue  # acts after us, won't pre-empt
-        rough = _rough_damage(battle, ally, target, ally.primary_weapon.strike, weapon=ally.primary_weapon)
-        if rough >= target.hp:
-            return True
+        for weapon in ally.active_strike_weapons():
+            if not _can_attempt_strike(ally, weapon):
+                continue
+            rough = _rough_damage(battle, ally, target, weapon.strike, weapon=weapon)
+            if rough >= target.hp:
+                return True
         for effect in _active_spells_for_phase(ally, bonus=False):
             if effect.target != "enemy":
                 continue
-            if _rough_damage(battle, ally, target, effect, weapon=ally.primary_weapon) >= target.hp:
+            if _rough_damage(battle, ally, target, effect, weapon=_weapon_for_effect(ally, effect)) >= target.hp:
                 return True
     return False
 
@@ -518,7 +612,7 @@ def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
         if estimated >= enemy_unit.hp:
             killable.append(target_ref)
         collapse = 12 if enemy_unit.slot == SLOT_FRONT else 6
-        tags = set(ADVENTURER_AI[enemy_unit.defn.id].role_tags)
+        tags = set(_profile_for(enemy_unit).role_tags)
         if "healer" in tags:
             collapse += 8
         if {"guard_support", "tempo_engine", "spell_loop", "shock_engine", "root_enabler", "expose_enabler"} & tags:
@@ -542,7 +636,7 @@ def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
         risk = (1.0 - hp_ratio) * 100.0
         if ally.slot == SLOT_FRONT:
             risk += 10.0
-        if "fragile" in ADVENTURER_AI[ally.defn.id].role_tags:
+        if "fragile" in _profile_for(ally).role_tags:
             risk += 12.0
         if risk > vulnerable_score:
             vulnerable_score = risk
@@ -552,8 +646,8 @@ def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
     fallback_ref = _unit_ref(battle, back_left) if back_left is not None else None
     pivot_needed = False
     if front is not None and back_left is not None:
-        front_score = ADVENTURER_AI[front.defn.id].position_scores[SLOT_FRONT]
-        back_left_score = ADVENTURER_AI[back_left.defn.id].position_scores[SLOT_FRONT]
+        front_score = _profile_for(front).position_scores[SLOT_FRONT]
+        back_left_score = _profile_for(back_left).position_scores[SLOT_FRONT]
         if back_left_score - front_score >= 16:
             pivot_needed = True
         if front.hp / max(1, front.max_hp) <= 0.3 and back_left_score > front_score:
@@ -590,7 +684,7 @@ def analyze_round_state(battle, team_num: int) -> RoundAnalysis:
     else:
         roles = set()
         for ally in own.alive():
-            roles.update(ADVENTURER_AI[ally.defn.id].role_tags)
+            roles.update(_profile_for(ally).role_tags)
         if {"root_enabler", "shock_engine", "expose_enabler", "burn_enabler"} & roles:
             plan_kind = "setup"
     return RoundAnalysis(
@@ -621,7 +715,7 @@ def available_action_specs(battle, actor, *, bonus: bool = False) -> list[Action
                 if _spec_is_legal(battle, actor, spec):
                     specs.append(spec)
         for effect in _active_spells_for_phase(actor, bonus=True):
-            targets = get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon)
+            targets = get_legal_targets(battle, actor, effect=effect, weapon=_weapon_for_effect(actor, effect))
             if effect.target in {"none", "self"}:
                 spec = ActionSpec(kind="spell", effect_id=effect.id, bonus=True)
                 if _spec_is_legal(battle, actor, spec):
@@ -634,10 +728,12 @@ def available_action_specs(battle, actor, *, bonus: bool = False) -> list[Action
         specs.append(ActionSpec(kind="skip", bonus=True))
         return specs
 
-    if _can_attempt_strike(actor):
-        strike_targets = get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
+    for weapon in actor.active_strike_weapons():
+        if not _can_attempt_strike(actor, weapon):
+            continue
+        strike_targets = get_legal_targets(battle, actor, effect=weapon.strike, weapon=weapon)
         for target in strike_targets:
-            spec = ActionSpec(kind="strike", target_ref=_unit_ref(battle, target))
+            spec = ActionSpec(kind="strike", target_ref=_unit_ref(battle, target), weapon_id=weapon.id)
             if _spec_is_legal(battle, actor, spec):
                 specs.append(spec)
     team_meter = team.ultimate_meter
@@ -650,7 +746,8 @@ def available_action_specs(battle, actor, *, bonus: bool = False) -> list[Action
             for target in targets:
                 specs.append(ActionSpec(kind="ultimate", effect_id=effect.id, target_ref=_unit_ref(battle, target)))
     for effect in _active_spells_for_phase(actor, bonus=False):
-        targets = get_legal_targets(battle, actor, effect=effect, weapon=actor.primary_weapon)
+        spell_weapon = _weapon_for_effect(actor, effect)
+        targets = get_legal_targets(battle, actor, effect=effect, weapon=spell_weapon)
         if effect.target in {"none", "self"}:
             spec = ActionSpec(kind="spell", effect_id=effect.id)
             if _spec_is_legal(battle, actor, spec):
@@ -686,9 +783,9 @@ def _queue_spec(actor, battle, spec: ActionSpec):
     target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
     if spec.kind == "strike":
         if spec.bonus:
-            queue_bonus_action(actor, {"type": "strike", "target": target})
+            queue_bonus_action(actor, {"type": "strike", "target": target, "weapon_id": spec.weapon_id or actor.primary_weapon.id})
         else:
-            queue_strike(actor, target)
+            queue_strike(actor, target, weapon_id=spec.weapon_id)
         return
     if spec.kind == "spell":
         effect = _effect_by_id(actor, spec.effect_id)
@@ -745,8 +842,8 @@ def _evaluate_status_block(unit) -> int:
 def _reactive_artifact_ready(unit) -> bool:
     return (
         unit.artifact is not None
-        and unit.artifact.reactive
-        and unit.cooldowns.get(unit.artifact.spell.id, 0) <= 0
+        and unit.artifact.reactive_effect is not None
+        and unit.cooldowns.get(unit.artifact.reactive_effect.id, 0) <= 0
     )
 
 
@@ -777,8 +874,9 @@ def _marker_state_score(unit) -> float:
 
 def _resource_state_score(unit) -> float:
     value = 0.0
-    primary = unit.primary_weapon
-    if primary.ammo > 0:
+    for primary in unit.active_strike_weapons():
+        if primary.ammo <= 0:
+            continue
         ammo_left = unit.ammo_remaining.get(primary.id, primary.ammo)
         ammo_ratio = ammo_left / max(1, primary.ammo)
         if ammo_left <= 0:
@@ -788,7 +886,7 @@ def _resource_state_score(unit) -> float:
     ready_spells = sum(1 for effect in unit.active_spells() if unit.cooldowns.get(effect.id, 0) <= 0)
     value += ready_spells * 1.4
     if _reactive_artifact_ready(unit):
-        value += 6.0 if "fragile" in ADVENTURER_AI[unit.defn.id].role_tags else 4.0
+        value += 6.0 if "fragile" in _profile_for(unit).role_tags else 4.0
     return value
 
 
@@ -809,7 +907,7 @@ def _lethal_pressure_score(battle, team_num: int) -> float:
         estimated = _estimate_team_damage_to_target(battle, enemy_team_num, ally)
         if estimated >= ally.hp:
             penalty = 30.0 + _threat_value(ally) * 0.12
-            if "fragile" in ADVENTURER_AI[ally.defn.id].role_tags or ally.slot != SLOT_FRONT:
+            if "fragile" in _profile_for(ally).role_tags or ally.slot != SLOT_FRONT:
                 penalty += 10.0
             value -= penalty
         elif estimated >= ally.hp * 0.7:
@@ -826,7 +924,7 @@ def evaluate_battle_state(battle, team_num: int) -> float:
         if unit.ko:
             value -= 60.0
             continue
-        profile = ADVENTURER_AI[unit.defn.id]
+        profile = _profile_for(unit)
         value += 80.0 * (unit.hp / max(1, unit.max_hp))
         value += profile.position_scores[unit.slot] * 0.12
         value += _evaluate_status_block(unit) * (-1.0 if unit.has_status("burn") or unit.has_status("root") or unit.has_status("shock") or unit.has_status("weaken") or unit.has_status("expose") or unit.has_status("spotlight") or unit.has_status("taunt") else 0.35)
@@ -838,7 +936,7 @@ def evaluate_battle_state(battle, team_num: int) -> float:
         if unit.ko:
             value += 60.0
             continue
-        profile = ADVENTURER_AI[unit.defn.id]
+        profile = _profile_for(unit)
         value -= 80.0 * (unit.hp / max(1, unit.max_hp))
         value -= profile.position_scores[unit.slot] * 0.12
         value += _evaluate_status_block(unit) * 0.55
@@ -858,7 +956,7 @@ def evaluate_battle_state(battle, team_num: int) -> float:
         value += 15.0
     back_left = own.get_slot(SLOT_BACK_LEFT)
     if back_left is not None:
-        value += ADVENTURER_AI[back_left.defn.id].position_scores[SLOT_BACK_LEFT] * 0.08
+        value += _profile_for(back_left).position_scores[SLOT_BACK_LEFT] * 0.08
     meter_weight = 50.0 / ULTIMATE_METER_MAX
     if battle.round_num > 10:
         meter_weight *= min(2.5, 1.0 + (battle.round_num - 10) / 8.0)
@@ -984,7 +1082,8 @@ def _pre_resolution_enemy_risk(battle, team_num: int, actor_ref: tuple[int, str]
             if failure_weight > 0:
                 enemy_risk = max(enemy_risk, failure_weight * 0.4)
                 continue
-            if spec.kind == "strike" and actor.primary_weapon.kind == "melee" and sim_actor.slot != actor.slot:
+            strike_weapon = _strike_weapon_for_spec(actor, spec) if spec.kind == "strike" else None
+            if spec.kind == "strike" and strike_weapon is not None and strike_weapon.kind == "melee" and sim_actor.slot != actor.slot:
                 enemy_risk = max(enemy_risk, 12.0)
         total_risk += enemy_risk
     return min(total_risk, 18.0)
@@ -1038,8 +1137,13 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
         if spec.target_ref == actor_ref:
             delta -= 4.0
     elif spec.kind in {"strike", "spell", "ultimate"} and target is not None and effect is not None and real_actor is not None:
+        source_weapon = (
+            _strike_weapon_for_spec(real_actor, spec)
+            if spec.kind == "strike"
+            else _weapon_for_effect(real_actor, effect)
+        )
         if effect.target == "enemy":
-            rough = _rough_damage(battle, real_actor, target, effect, weapon=real_actor.primary_weapon)
+            rough = _rough_damage(battle, real_actor, target, effect, weapon=source_weapon)
             if rough >= target.hp:
                 delta += 24.0
                 if target.slot == SLOT_FRONT:
@@ -1114,8 +1218,8 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
 def _formation_delta(battle, actor, target) -> float:
     if target is None or target.ko or team_for_actor(battle, actor) != team_for_actor(battle, target):
         return 0.0
-    actor_profile = ADVENTURER_AI[actor.defn.id]
-    target_profile = ADVENTURER_AI[target.defn.id]
+    actor_profile = _profile_for(actor)
+    target_profile = _profile_for(target)
     before = actor_profile.position_scores[actor.slot] + target_profile.position_scores[target.slot]
     after = actor_profile.position_scores[target.slot] + target_profile.position_scores[actor.slot]
     return (after - before) * 0.18
@@ -1226,7 +1330,8 @@ def _plan_bias(battle, actor, spec: ActionSpec, analysis: RoundAnalysis) -> floa
     if (
         spec.kind == "strike"
         and actor.defn.id == "march_hare"
-        and actor.primary_weapon.id == "cracked_stopwatch"
+        and strike_weapon is not None
+        and strike_weapon.id == "cracked_stopwatch"
         and target is not None
         and target.has_status("shock")
     ):
@@ -1267,6 +1372,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
     team = team_for_actor(battle, actor)
     enemy_team = battle.team1 if team is battle.team2 else battle.team2
     enemy_team_num = 2 if player_num_for_actor(battle, actor) == 1 else 1
+    strike_weapon = _strike_weapon_for_spec(actor, spec) if spec.kind == "strike" else None
 
     if actor.artifact is not None:
         if actor.artifact.id == "suspicious_eye" and spec.kind == "strike" and target is not None and target.slot == actor.slot:
@@ -1292,17 +1398,19 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
     if actor.defn.id == "little_jack":
         if spec.kind == "spell" and spec.effect_id == "cloudburst":
             priority_target = _find_unit(battle, analysis.priority_target_ref) if analysis.priority_target_ref is not None else None
-            legal_now = get_legal_targets(battle, actor, effect=actor.primary_weapon.strike, weapon=actor.primary_weapon)
+            legal_now = []
+            for weapon in actor.active_strike_weapons():
+                legal_now.extend(get_legal_targets(battle, actor, effect=weapon.strike, weapon=weapon))
             if priority_target is not None and priority_target not in legal_now:
                 bias += 8.0
             elif analysis.plan_kind in {"kill", "ultimate"}:
                 bias += 4.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "skyfall" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "skyfall" and target is not None:
             if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 5.0
             if target.has_status("expose"):
                 bias += 3.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "giants_harp" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "giants_harp" and target is not None:
             if target.get_stat("defense") >= 70:
                 bias += 4.0
 
@@ -1314,19 +1422,19 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
             bias += 6.0
 
     if actor.defn.id == "witch_hunter_gretel":
-        if spec.kind == "strike" and actor.primary_weapon.id == "hot_mitts" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "hot_mitts" and target is not None:
             if target.has_status("burn"):
                 bias += 6.0
             else:
                 bias += 4.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "crumb_shot":
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "crumb_shot":
             if team.markers.get("crumb_picked_round", 0) > 0:
                 bias += 6.0
             else:
                 bias += 2.5
 
     if actor.defn.id == "destitute_vasilisa":
-        if spec.kind == "strike" and actor.primary_weapon.id == "guiding_doll" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "guiding_doll" and target is not None:
             bias += 6.0
             if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 4.0
@@ -1334,8 +1442,11 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
             for ally in team.alive():
                 if ally is actor:
                     continue
-                strike_targets = get_legal_targets(battle, ally, effect=ally.primary_weapon.strike, weapon=ally.primary_weapon)
-                if target in strike_targets:
+                if any(
+                    target in get_legal_targets(battle, ally, effect=weapon.strike, weapon=weapon)
+                    for weapon in ally.active_strike_weapons()
+                    if _can_attempt_strike(ally, weapon)
+                ):
                     ally_followups += 1
             bias += min(6.0, ally_followups * 2.0)
         if spec.kind == "spell" and spec.effect_id is not None:
@@ -1352,7 +1463,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
             bias += 4.0 + min(6.0, active_cooldowns * 1.6)
             if target.artifact is not None:
                 bias += 2.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "jar_of_oil" and target is not None and not target.has_status("burn"):
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "jar_of_oil" and target is not None and not target.has_status("burn"):
             bias += 4.0
         if spec.kind == "ultimate":
             ranged_enemies = 0
@@ -1362,7 +1473,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
             bias += ranged_enemies * 2.5
 
     if actor.defn.id == "maui_sunthief":
-        if spec.kind == "strike" and actor.primary_weapon.id == "whale_jaw_hook" and target is not None and not target.has_status("expose"):
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "whale_jaw_hook" and target is not None and not target.has_status("expose"):
             bias += 3.0
         if spec.kind == "spell" and spec.effect_id == "swallow_the_sun":
             pressured_allies = sum(1 for ally in team.alive() if ally.hp / max(1, ally.max_hp) <= 0.65)
@@ -1378,15 +1489,15 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
             threatened = _estimate_team_damage_to_target(battle, enemy_team_num, actor)
             if threatened >= actor.max_hp * 0.20 or actor.hp / max(1, actor.max_hp) <= 0.65:
                 bias += 10.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "crafty_wall":
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "crafty_wall":
             threatened = _estimate_team_damage_to_target(battle, enemy_team_num, actor)
             if threatened >= actor.max_hp * 0.18:
                 bias += 4.0
 
     if actor.defn.id == "kama_the_honeyed":
-        if spec.kind == "strike" and actor.primary_weapon.id == "sugarcane_bow" and target is not None and not target.has_status("spotlight"):
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "sugarcane_bow" and target is not None and not target.has_status("spotlight"):
             bias += 4.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "the_stinger" and target is not None and target.has_status("spotlight"):
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "the_stinger" and target is not None and target.has_status("spotlight"):
             bias += 8.0
         if spec.kind == "spell" and spec.effect_id == "sukas_eyes":
             unlit = sum(1 for enemy in enemy_team.alive() if not enemy.has_status("spotlight"))
@@ -1396,13 +1507,13 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
             bias += 2.0 + ranged_allies * 2.0
 
     if actor.defn.id == "hunold_the_piper":
-        if spec.kind == "strike" and actor.primary_weapon.id == "lightning_rod" and target is not None and not target.has_status("shock"):
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "lightning_rod" and target is not None and not target.has_status("shock"):
             bias += 3.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "golden_fiddle" and target is not None and target.has_status("shock"):
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "golden_fiddle" and target is not None and target.has_status("shock"):
             bias += 8.0
 
     if actor.defn.id == "briar_rose":
-        if spec.kind == "strike" and actor.primary_weapon.id == "thorn_snare":
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "thorn_snare":
             bias += min(6.0, len(enemy_team.alive()) * 1.5)
         if spec.kind == "spell" and spec.effect_id == "vine_snare":
             bias += 3.0
@@ -1415,7 +1526,7 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
                 bias += 2.5
 
     if actor.defn.id == "lady_of_reflections":
-        if spec.kind == "strike" and actor.primary_weapon.id == "lantern_of_avalon":
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "lantern_of_avalon":
             if actor.slot == SLOT_FRONT and actor.hp / max(1, actor.max_hp) <= 0.65:
                 bias += 5.0
             if analysis.plan_kind in {"pivot", "stabilize"}:
@@ -1427,16 +1538,17 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
 
     if actor.defn.id == "robin_hooded_avenger":
         if spec.kind == "spell" and spec.effect_id == "spread_fortune":
-            if actor.primary_weapon.id == "the_flock" and len(enemy_team.alive()) >= 2:
+            spell_weapon = _weapon_for_effect(actor, _effect_by_id(actor, spec.effect_id))
+            if spell_weapon.id == "the_flock" and len(enemy_team.alive()) >= 2:
                 bias += 7.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "kingmaker" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "kingmaker" and target is not None:
             if target.slot != SLOT_FRONT or target.has_status("spotlight"):
                 bias += 7.0
 
     if actor.defn.id == "the_good_beast":
         if spec.kind == "spell" and spec.effect_id == "crystal_ball" and actor.markers.get("guest_last_attacker") is not None:
             bias += 6.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "dinner_bell" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "dinner_bell" and target is not None:
             if target in team.alive() and target.hp / max(1, target.max_hp) <= 0.5:
                 bias += 6.0
 
@@ -1460,16 +1572,16 @@ def _character_specific_bias(battle, actor, spec: ActionSpec, analysis: RoundAna
         if spec.kind == "spell" and spec.effect_id == "straw_to_gold" and target is not None:
             active_debuffs = sum(1 for debuff in target.debuffs if debuff.duration > 0)
             bias += active_debuffs * 2.5
-        if spec.kind == "strike" and actor.primary_weapon.id == "spinning_wheel":
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "spinning_wheel":
             bias += 2.0
 
     if actor.defn.id == "reynard_lupine_trickster":
-        if spec.kind == "strike" and actor.primary_weapon.id == "foxfire_bow" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "foxfire_bow" and target is not None:
             if all(debuff.stat != "defense" or debuff.duration <= 0 for debuff in target.debuffs):
                 bias += 4.5
             if _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
                 bias += 2.0
-        if spec.kind == "strike" and actor.primary_weapon.id == "fang" and target is not None:
+        if spec.kind == "strike" and strike_weapon is not None and strike_weapon.id == "fang" and target is not None:
             if any(debuff.duration > 0 for debuff in target.debuffs):
                 bias += 5.0
         if spec.kind == "spell" and spec.effect_id == "silver_tongue" and _same_target_slot(battle, spec.target_ref, analysis.priority_target_ref):
@@ -1520,7 +1632,8 @@ def _combo_overkill_penalty(
         effect = _spec_effect(actor, spec)
         if target is None or target.ko or effect is None or effect.power <= 0:
             continue
-        damage = _rough_damage(battle, actor, target, effect, weapon=actor.primary_weapon)
+        source_weapon = _strike_weapon_for_spec(actor, spec) if spec.kind == "strike" else _weapon_for_effect(actor, effect)
+        damage = _rough_damage(battle, actor, target, effect, weapon=source_weapon)
         if damage <= 0:
             continue
         damage_by_target.setdefault(spec.target_ref, []).append(float(damage))
