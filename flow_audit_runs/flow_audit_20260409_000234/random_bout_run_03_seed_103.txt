@@ -1,0 +1,559 @@
+Run Category: random_bout
+Seed: 103
+Started: 2026-04-09T00:05:54
+
+=== Screen 01: Main Menu ===
+Route: main_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+
+Action: Click Bouts
+=== Screen 02: Bout Mode Select ===
+Route: bouts_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Run Active: False
+Bout Record: 0-0
+
+Action: Start a Random Bout versus AI
+=== Screen 03: Bout Full Party Loadout ===
+Route: quest_party_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Full Party Loadout:
+  - Little Jack | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Glass Slipper
+  - Kama the Honeyed | Class Ranger | Skill Deadeye | Weapon Sugarcane Bow | Artifact Cornucopia
+  - The Green Knight | Class Warden | Skill Bulwark | Weapon The Search
+  - Reynard, Lupine Trickster | Class Rogue | Skill Assassin | Weapon Foxfire Bow
+  - Odysseus the Nobody | Class Fighter | Skill Martial | Weapon Olivewood Spear | Artifact Dire-Wolf Spine
+  - Lady of Reflections | Class Cleric | Skill Healer | Weapon Excalibur
+
+Action: Accept the full-party bout loadout
+=== Screen 04: Random Bout Encounter Select ===
+Route: quest_draft
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Score: 0-0
+Available Picks: Little Jack, Kama the Honeyed, The Green Knight, Reynard, Lupine Trickster, Odysseus the Nobody, Lady of Reflections
+Enemy Roster Preview:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife
+  - Scheherazade, Dawn's Ransom | [back_left] | Class Cleric | Skill Healer | Weapon Tome of Ancients
+  - Storyweaver Anansi | [back_right] | Class Ranger | Skill Deadeye | Weapon The Pen | Artifact Suspicious Eye
+
+Note: Autoplayer chose trio: Little Jack, Odysseus the Nobody, Lady of Reflections
+Action: Select encounter pick 1: Little Jack
+Action: Select encounter pick 2: Odysseus the Nobody
+Action: Select encounter pick 3: Lady of Reflections
+Action: Lock in Random Bout match 1
+=== Screen 05: Random Bout Match 1 Loadout ===
+Route: quest_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Player Encounter Team:
+  - Little Jack | [front] | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Glass Slipper
+  - Odysseus the Nobody | [back_left] | Class Fighter | Skill Martial | Weapon Olivewood Spear | Artifact Dire-Wolf Spine
+  - Lady of Reflections | [back_right] | Class Cleric | Skill Healer | Weapon Excalibur
+Enemy Encounter Team:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife
+  - Scheherazade, Dawn's Ransom | [back_left] | Class Cleric | Skill Healer | Weapon Tome of Ancients
+  - Storyweaver Anansi | [back_right] | Class Ranger | Skill Deadeye | Weapon The Pen | Artifact Suspicious Eye
+
+Action: Confirm the encounter loadout
+=== Screen 06: Random Bout Match 1 Battle ===
+Route: battle
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Round: 1
+Player Team:
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses none
+  - Odysseus the Nobody [back_left] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses none
+Enemy Team:
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 1 State --
+Note: Player Team
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses none
+  - Odysseus the Nobody [back_left] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 1 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Tam Lin, Thornbound
+  - Odysseus the Nobody: Eye Piercer
+  - Lady of Reflections: Swap with Odysseus the Nobody
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Little Jack
+  - Storyweaver Anansi: Strike with The Pen -> Little Jack
+
+-- Round 1 Action Log --
+  - Little Jack's Skyfall hits Tam Lin, Thornbound for 157 damage (HP 415->258).
+  - Storyweaver Anansi's The Pen hits Little Jack for 94 damage (HP 290->196).
+  - Storyweaver Anansi's The Pen inflicts Root on Little Jack for 2 rounds.
+  - Scheherazade, Dawn's Ransom's Tome of Ancients hits Little Jack for 87 damage (HP 196->109).
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 100 damage (HP 109->9).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Lady of Reflections swaps positions with Odysseus the Nobody.
+
+-- Battle Log --
+  - Little Jack takes no bonus action.
+  - Storyweaver Anansi takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Odysseus the Nobody takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 2 State --
+Note: Player Team
+  - Little Jack [front] | HP 9/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [back_right] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_left] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses reflecting_pool:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 258/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 2 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Tam Lin, Thornbound
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Storyweaver Anansi
+  - Lady of Reflections: Swap with Odysseus the Nobody
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Scheherazade, Dawn's Ransom: Swap with Storyweaver Anansi
+  - Storyweaver Anansi: Silken Prose -> Little Jack
+
+-- Round 2 Action Log --
+  - Little Jack's Skyfall hits Tam Lin, Thornbound for 157 damage (HP 258->101).
+  - Scheherazade, Dawn's Ransom swaps positions with Storyweaver Anansi.
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 108 damage (HP 9->0).
+  - Little Jack is knocked out.
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Odysseus the Nobody's Olivewood Spear hits Scheherazade, Dawn's Ransom for 285 damage (HP 335->50).
+  - Lady of Reflections swaps positions with Odysseus the Nobody.
+
+-- Battle Log --
+  - Odysseus the Nobody takes no bonus action.
+  - Storyweaver Anansi takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 3 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [front] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses reflecting_pool:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 101/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_right] | HP 50/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_left] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 3 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Tam Lin, Thornbound
+  - Lady of Reflections: Switch
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Odysseus the Nobody
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Odysseus the Nobody
+  - Storyweaver Anansi: Strike with The Pen -> Odysseus the Nobody
+
+-- Round 3 Action Log --
+  - Odysseus the Nobody's Olivewood Spear hits Tam Lin, Thornbound for 240 damage (HP 101->0).
+  - Tam Lin, Thornbound is knocked out.
+  - Storyweaver Anansi's The Pen hits Odysseus the Nobody for 95 damage (HP 370->275).
+  - Storyweaver Anansi's Suspicious Eye Spotlights Odysseus the Nobody.
+  - Storyweaver Anansi's The Pen inflicts Root on Odysseus the Nobody for 2 rounds.
+  - Scheherazade, Dawn's Ransom's Tome of Ancients hits Odysseus the Nobody for 90 damage (HP 275->185).
+  - Lady of Reflections switches weapons to Lantern of Avalon.
+
+-- Battle Log --
+  - Odysseus the Nobody takes no bonus action.
+  - Storyweaver Anansi takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 4 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [front] | HP 185/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses spotlight:2, root:2
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Lantern of Avalon | Secondary Excalibur | Artifact None | Statuses reflecting_pool:1
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 0/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_right] | HP 50/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [front] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 4 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Storyweaver Anansi
+  - Lady of Reflections: Switch
+Note: Enemy
+  - Scheherazade, Dawn's Ransom: Switch
+  - Storyweaver Anansi: Strike with The Pen -> Odysseus the Nobody
+
+-- Round 4 Action Log --
+  - Storyweaver Anansi's The Pen hits Odysseus the Nobody for 95 damage (HP 185->90).
+  - Storyweaver Anansi's The Pen inflicts Root on Odysseus the Nobody for 2 rounds.
+  - Odysseus the Nobody's Olivewood Spear hits Storyweaver Anansi for 380 damage (HP 310->0).
+  - Storyweaver Anansi is knocked out.
+  - Scheherazade, Dawn's Ransom switches weapons to Lamp of Infinity.
+  - Lady of Reflections switches weapons to Excalibur.
+
+-- Battle Log --
+  - Odysseus the Nobody takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 5 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [front] | HP 90/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses spotlight:1, root:2
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 0/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [front] | HP 50/335 | Class Cleric | Skill Healer | Primary Lamp of Infinity | Secondary Tome of Ancients | Artifact None | Statuses none
+  - Storyweaver Anansi [front] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 5 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Scheherazade, Dawn's Ransom
+  - Lady of Reflections: Swap with Odysseus the Nobody
+Note: Enemy
+  - Scheherazade, Dawn's Ransom: Strike with Lamp of Infinity -> Odysseus the Nobody
+
+-- Round 5 Action Log --
+  - Scheherazade, Dawn's Ransom's Lamp of Infinity hits Odysseus the Nobody for 61 damage (HP 90->29).
+  - Odysseus the Nobody's Olivewood Spear hits Scheherazade, Dawn's Ransom for 230 damage (HP 50->0).
+  - Scheherazade, Dawn's Ransom's Evermore leaves Scheherazade, Dawn's Ransom at 1 HP.
+  - Lady of Reflections swaps positions with Odysseus the Nobody.
+
+-- Battle Log --
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+  - Odysseus the Nobody takes no bonus action.
+
+-- Round 6 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [back_right] | HP 29/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses root:1
+  - Lady of Reflections [front] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses reflecting_pool:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 0/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [front] | HP 1/335 | Class Cleric | Skill Healer | Primary Lamp of Infinity | Secondary Tome of Ancients | Artifact None | Statuses none
+  - Storyweaver Anansi [front] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 6 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Eye Piercer
+  - Lady of Reflections: Strike with Excalibur -> Scheherazade, Dawn's Ransom
+Note: Enemy
+  - Scheherazade, Dawn's Ransom: Switch
+
+-- Battle Action Log --
+  - Scheherazade, Dawn's Ransom switches weapons to Tome of Ancients.
+  - Lady of Reflections's Excalibur hits Scheherazade, Dawn's Ransom for 57 damage (HP 1->0).
+  - Scheherazade, Dawn's Ransom is knocked out.
+
+=== Screen 07: Random Bout Match 1 Results ===
+Route: results
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Winner: You
+Victory: True
+Result Lines:
+  - Mode: Random Bout
+  - Series: 1-0  —  Match 1 of 3.
+  - +80 Exp
+  - Your opponent drafted second and opened with the bonus swap advantage.
+  - Rounds fought: 5
+  - You survivors: 2
+  - AI Rival survivors: 0
+
+Action: Continue from the results screen
+=== Screen 08: Random Bout Match 1 Adapt ===
+Route: bout_adapt
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Artifact Options: Black Torch, Magic Mirror, Goose Quill
+Recruit Options: Rapunzel the Golden, The Good Beast, Porcus III
+
+Action: Take the first available adapt option
+=== Screen 09: Bout Full Party Loadout ===
+Route: quest_party_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Full Party Loadout:
+  - Little Jack | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Glass Slipper
+  - Kama the Honeyed | Class Ranger | Skill Deadeye | Weapon Sugarcane Bow | Artifact Cornucopia
+  - The Green Knight | Class Warden | Skill Bulwark | Weapon The Search
+  - Reynard, Lupine Trickster | Class Rogue | Skill Assassin | Weapon Foxfire Bow
+  - Odysseus the Nobody | Class Fighter | Skill Martial | Weapon Olivewood Spear | Artifact Dire-Wolf Spine
+  - Lady of Reflections | Class Cleric | Skill Healer | Weapon Excalibur
+
+Action: Accept the adapted full-party loadout
+=== Screen 10: Random Bout Match 2 Select ===
+Route: quest_draft
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Score: 1-0
+Available Picks: Little Jack, Kama the Honeyed, The Green Knight, Reynard, Lupine Trickster, Odysseus the Nobody, Lady of Reflections
+Enemy Roster Preview:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife
+  - Scheherazade, Dawn's Ransom | [back_left] | Class Cleric | Skill Healer | Weapon Tome of Ancients
+  - Storyweaver Anansi | [back_right] | Class Ranger | Skill Deadeye | Weapon The Pen | Artifact Suspicious Eye
+
+Note: Autoplayer chose trio: Little Jack, Odysseus the Nobody, Lady of Reflections
+Action: Select encounter pick 1: Little Jack
+Action: Select encounter pick 2: Odysseus the Nobody
+Action: Select encounter pick 3: Lady of Reflections
+Action: Lock in Random Bout match 2
+=== Screen 11: Random Bout Match 2 Loadout ===
+Route: quest_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Player Encounter Team:
+  - Little Jack | [front] | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Glass Slipper
+  - Odysseus the Nobody | [back_left] | Class Fighter | Skill Martial | Weapon Olivewood Spear | Artifact Dire-Wolf Spine
+  - Lady of Reflections | [back_right] | Class Cleric | Skill Healer | Weapon Excalibur
+Enemy Encounter Team:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife
+  - Scheherazade, Dawn's Ransom | [back_left] | Class Cleric | Skill Healer | Weapon Tome of Ancients
+  - Storyweaver Anansi | [back_right] | Class Ranger | Skill Deadeye | Weapon The Pen | Artifact Suspicious Eye
+
+Action: Confirm the encounter loadout
+=== Screen 12: Random Bout Match 2 Battle ===
+Route: battle
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Round: 1
+Player Team:
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses none
+  - Odysseus the Nobody [back_left] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses none
+Enemy Team:
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 1 State --
+Note: Player Team
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses none
+  - Odysseus the Nobody [back_left] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 1 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Tam Lin, Thornbound
+  - Odysseus the Nobody: Eye Piercer
+  - Lady of Reflections: Swap with Odysseus the Nobody
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Little Jack
+  - Storyweaver Anansi: Strike with The Pen -> Little Jack
+
+-- Round 1 Action Log --
+  - Little Jack's Skyfall hits Tam Lin, Thornbound for 157 damage (HP 415->258).
+  - Storyweaver Anansi's The Pen hits Little Jack for 94 damage (HP 290->196).
+  - Storyweaver Anansi's The Pen inflicts Root on Little Jack for 2 rounds.
+  - Scheherazade, Dawn's Ransom's Tome of Ancients hits Little Jack for 87 damage (HP 196->109).
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 100 damage (HP 109->9).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Lady of Reflections swaps positions with Odysseus the Nobody.
+
+-- Battle Log --
+  - Little Jack takes no bonus action.
+  - Storyweaver Anansi takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Odysseus the Nobody takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 2 State --
+Note: Player Team
+  - Little Jack [front] | HP 9/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [back_right] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_left] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses reflecting_pool:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 258/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 2 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Tam Lin, Thornbound
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Storyweaver Anansi
+  - Lady of Reflections: Swap with Odysseus the Nobody
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Scheherazade, Dawn's Ransom: Swap with Storyweaver Anansi
+  - Storyweaver Anansi: Silken Prose -> Little Jack
+
+-- Round 2 Action Log --
+  - Little Jack's Skyfall hits Tam Lin, Thornbound for 157 damage (HP 258->101).
+  - Scheherazade, Dawn's Ransom swaps positions with Storyweaver Anansi.
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 108 damage (HP 9->0).
+  - Little Jack is knocked out.
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Odysseus the Nobody's Olivewood Spear hits Scheherazade, Dawn's Ransom for 285 damage (HP 335->50).
+  - Lady of Reflections swaps positions with Odysseus the Nobody.
+
+-- Battle Log --
+  - Odysseus the Nobody takes no bonus action.
+  - Storyweaver Anansi takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 3 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [front] | HP 370/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses none
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses reflecting_pool:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 101/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_right] | HP 50/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [back_left] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 3 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Tam Lin, Thornbound
+  - Lady of Reflections: Switch
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Odysseus the Nobody
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Odysseus the Nobody
+  - Storyweaver Anansi: Strike with The Pen -> Odysseus the Nobody
+
+-- Round 3 Action Log --
+  - Odysseus the Nobody's Olivewood Spear hits Tam Lin, Thornbound for 240 damage (HP 101->0).
+  - Tam Lin, Thornbound is knocked out.
+  - Storyweaver Anansi's The Pen hits Odysseus the Nobody for 95 damage (HP 370->275).
+  - Storyweaver Anansi's Suspicious Eye Spotlights Odysseus the Nobody.
+  - Storyweaver Anansi's The Pen inflicts Root on Odysseus the Nobody for 2 rounds.
+  - Scheherazade, Dawn's Ransom's Tome of Ancients hits Odysseus the Nobody for 90 damage (HP 275->185).
+  - Lady of Reflections switches weapons to Lantern of Avalon.
+
+-- Battle Log --
+  - Odysseus the Nobody takes no bonus action.
+  - Storyweaver Anansi takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 4 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [front] | HP 185/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses spotlight:2, root:2
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Lantern of Avalon | Secondary Excalibur | Artifact None | Statuses reflecting_pool:1
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 0/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [back_right] | HP 50/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [front] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 4 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Storyweaver Anansi
+  - Lady of Reflections: Switch
+Note: Enemy
+  - Scheherazade, Dawn's Ransom: Swap with Storyweaver Anansi
+  - Storyweaver Anansi: Strike with The Pen -> Odysseus the Nobody
+
+-- Round 4 Action Log --
+  - Storyweaver Anansi's The Pen hits Odysseus the Nobody for 95 damage (HP 185->90).
+  - Storyweaver Anansi's The Pen inflicts Root on Odysseus the Nobody for 2 rounds.
+  - Odysseus the Nobody's Olivewood Spear hits Storyweaver Anansi for 380 damage (HP 310->0).
+  - Storyweaver Anansi is knocked out.
+  - Scheherazade, Dawn's Ransom's queued Swap failed because Storyweaver Anansi was knocked out before resolution.
+  - Lady of Reflections switches weapons to Excalibur.
+
+-- Battle Log --
+  - Odysseus the Nobody takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 5 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [front] | HP 90/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses spotlight:1, root:2
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 0/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [front] | HP 50/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Storyweaver Anansi [front] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 5 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Scheherazade, Dawn's Ransom
+  - Lady of Reflections: Skip
+Note: Enemy
+  - Scheherazade, Dawn's Ransom: Switch
+
+-- Round 5 Action Log --
+  - Scheherazade, Dawn's Ransom switches weapons to Lamp of Infinity.
+  - Odysseus the Nobody's Olivewood Spear hits Scheherazade, Dawn's Ransom for 230 damage (HP 50->0).
+  - Scheherazade, Dawn's Ransom's Evermore leaves Scheherazade, Dawn's Ransom at 1 HP.
+  - Lady of Reflections skips.
+
+-- Battle Log --
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Odysseus the Nobody takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 6 State --
+Note: Player Team
+  - Little Jack [front] | HP 0/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Glass Slipper | Statuses root:2, taunt:2
+  - Odysseus the Nobody [front] | HP 90/370 | Class Fighter | Skill Martial | Primary Olivewood Spear | Secondary Beggar's Greatbow | Artifact Dire-Wolf Spine | Statuses root:1
+  - Lady of Reflections [back_right] | HP 410/410 | Class Cleric | Skill Healer | Primary Excalibur | Secondary Lantern of Avalon | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 0/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact None | Statuses none
+  - Scheherazade, Dawn's Ransom [front] | HP 1/335 | Class Cleric | Skill Healer | Primary Lamp of Infinity | Secondary Tome of Ancients | Artifact None | Statuses none
+  - Storyweaver Anansi [front] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 6 Action Plans --
+Note: Player
+  - Odysseus the Nobody: Strike with Olivewood Spear -> Scheherazade, Dawn's Ransom
+  - Lady of Reflections: Skip
+Note: Enemy
+  - Scheherazade, Dawn's Ransom: Strike with Lamp of Infinity -> Odysseus the Nobody
+
+-- Battle Action Log --
+  - Scheherazade, Dawn's Ransom's Lamp of Infinity hits Odysseus the Nobody for 61 damage (HP 90->29).
+  - Odysseus the Nobody's Olivewood Spear hits Scheherazade, Dawn's Ransom for 230 damage (HP 1->0).
+  - Scheherazade, Dawn's Ransom is knocked out.
+
+=== Screen 13: Random Bout Match 2 Results ===
+Route: results
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Winner: You
+Victory: True
+Result Lines:
+  - Mode: Random Bout
+  - Series: 2-0  —  Series won!
+  - +80 Exp
+  - Your opponent drafted second and opened with the bonus swap advantage.
+  - Rounds fought: 5
+  - You survivors: 2
+  - AI Rival survivors: 0
+
+Action: Continue from the results screen
+=== Screen 14: Bout Mode Select ===
+Route: bouts_menu
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Run Active: False
+Bout Record: 2-0
+
+
+Run Status: SUCCESS
+Final Screen: Bout Mode Select
+Finished: 2026-04-09T00:06:07

@@ -1,0 +1,119 @@
+Run Category: quest
+Seed: 20
+Started: 2026-04-09T00:05:08
+
+=== Screen 01: Main Menu ===
+Route: main_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+
+Action: Click Quests
+=== Screen 02: Quest Hub ===
+Route: guild_hall
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Quest State: No active quest.
+
+Action: Begin a new quest
+=== Screen 03: Quest Party Reveal ===
+Route: quest_party_reveal
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Revealed Quest Party:
+  - Little Jack
+  - Tam Lin, Thornbound
+  - Reynard, Lupine Trickster
+  - Maui, Sun-Thief
+  - Storyweaver Anansi
+  - Scheherazade, Dawn's Ransom
+Starting Artifact Pool: None
+
+Action: Confirm the revealed six-adventurer quest party
+=== Screen 04: Quest Full Party Loadout ===
+Route: quest_party_loadout
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Full Party Loadout:
+  - Little Jack | Class None | Skill None | Weapon Skyfall
+  - Tam Lin, Thornbound | Class None | Skill None | Weapon Butterfly Knife
+  - Reynard, Lupine Trickster | Class None | Skill None | Weapon Foxfire Bow
+  - Maui, Sun-Thief | Class None | Skill None | Weapon Whale-Jaw Hook
+  - Storyweaver Anansi | Class None | Skill None | Weapon The Pen
+  - Scheherazade, Dawn's Ransom | Class None | Skill None | Weapon Tome of Ancients
+
+Action: Accept the current full-party loadout and continue
+=== Screen 05: Quest Hub ===
+Route: quests_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Quest State: 0W-0L | Quest Gold 0 | Quest Rep +0 | Artifacts Black Torch, Magic Mirror, Sun-God's Banner
+Party:
+  - Little Jack | Class None | Skill None | Weapon Skyfall
+  - Maui, Sun-Thief | Class None | Skill None | Weapon Whale-Jaw Hook
+  - Reynard, Lupine Trickster | Class None | Skill None | Weapon Foxfire Bow
+  - Scheherazade, Dawn's Ransom | Class None | Skill None | Weapon Tome of Ancients
+  - Storyweaver Anansi | Class None | Skill None | Weapon The Pen
+  - Tam Lin, Thornbound | Class None | Skill None | Weapon Butterfly Knife
+
+Action: Prepare quest encounter 1
+=== Screen 06: Quest Encounter 1 Select ===
+Route: quest_draft
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Enemy Locale: The Static Plains
+Enemy Tier: Tier 2
+Enemy Party: Dire Elk Raid
+Available Picks: Little Jack, Tam Lin, Thornbound, Reynard, Lupine Trickster, Maui, Sun-Thief, Storyweaver Anansi, Scheherazade, Dawn's Ransom
+Enemy Roster Preview:
+  - Dire Elk | [front] | Class None | Skill None | Weapon Thunder Charge
+  - Thunderbird Fledgling | [back_left] | Class None | Skill None | Weapon Storm Wing
+  - Plains Witch | [back_right] | Class Mage | Skill Arcane | Weapon Hex Staff
+
+
+Run Status: FAILED
+Error:
+Traceback (most recent call last):
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 409, in _safe_choose_quest_party
+    return base_choose_quest_party(
+        offered,
+    ...<2 lines>...
+        rng=rng,
+    )
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_quest.py", line 353, in choose_quest_party
+    enemy_package = assign_blind_quest_loadouts(enemy_party)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_quest_loadout.py", line 1125, in assign_blind_quest_loadouts
+    return _assign_blind_quest_loadouts_cached(ids)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_quest_loadout.py", line 1113, in _assign_blind_quest_loadouts_cached
+    return _build_package(ids, expanded=False)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_quest_loadout.py", line 1010, in _build_package
+    adventurer_id: generate_plausible_blind_builds(adventurer_id, adventurer_ids, expanded=expanded)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_quest_loadout.py", line 668, in generate_plausible_blind_builds
+    classes = _class_options_for(adventurer_id)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_quest_loadout.py", line 328, in _class_options_for
+    profile = ADVENTURER_AI[adventurer_id]
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'quest_enemy_dire_elk'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 741, in _run_successful_transcripts
+    mode = runner(writer, seed)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 573, in _run_quest
+    _pick_quest_trio(mode, writer, difficulty="normal")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 499, in _pick_quest_trio
+    _safe_choose_quest_party(
+    ~~~~~~~~~~~~~~~~~~~~~~~~^
+        mode.quest_offer_ids,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        rng=mode.rng,
+        ^^^^^^^^^^^^^
+    ).team_ids
+    ^
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 448, in _safe_choose_quest_party
+    raise RuntimeError(f"Could not build a quest trio from offer {offered}.") from original_error
+RuntimeError: Could not build a quest trio from offer ['little_jack', 'tam_lin_thornbound', 'reynard_lupine_trickster', 'maui_sunthief', 'storyweaver_anansi', 'scheherazade_dawns_ransom'].
+Finished: 2026-04-09T00:05:15

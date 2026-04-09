@@ -1,0 +1,946 @@
+Run Category: random_bout
+Seed: 101
+Started: 2026-04-08T23:04:53
+
+=== Screen 01: Main Menu ===
+Route: main_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+
+Action: Click Bouts
+=== Screen 02: Bout Mode Select ===
+Route: bouts_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Run Active: False
+Bout Record: 0-0
+
+Action: Start a Random Bout versus AI
+=== Screen 03: Bout Full Party Loadout ===
+Route: quest_party_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Full Party Loadout:
+  - Little Jack | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Arcane Hourglass
+  - Sea Wench Asha | Class Rogue | Skill Assassin | Weapon Frost Scepter | Artifact Misericorde
+  - Witch of the East | Class Fighter | Skill Martial | Weapon Zephyr
+  - Lady of Reflections | Class Warden | Skill Bulwark | Weapon Excalibur | Artifact Sun-God's Banner
+  - Rumpelstiltskin | Class Ranger | Skill Deadeye | Weapon Devil's Contract
+  - Robin, Generous Avenger | Class Cleric | Skill Healer | Weapon The Flock
+
+Action: Accept the full-party bout loadout
+=== Screen 04: Random Bout Encounter Select ===
+Route: quest_draft
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Score: 0-0
+Available Picks: Little Jack, Sea Wench Asha, Witch of the East, Lady of Reflections, Rumpelstiltskin, Robin, Generous Avenger
+Enemy Roster Preview:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife | Artifact Nettle Smock
+  - Robin, Generous Avenger | [back_left] | Class Fighter | Skill Martial | Weapon The Flock
+  - Storyweaver Anansi | [back_right] | Class Ranger | Skill Deadeye | Weapon The Pen | Artifact Suspicious Eye
+
+Note: Autoplayer chose trio: Little Jack, Lady of Reflections, Robin, Generous Avenger
+Action: Select encounter pick 1: Little Jack
+Action: Select encounter pick 2: Lady of Reflections
+Action: Select encounter pick 3: Robin, Generous Avenger
+Action: Lock in Random Bout match 1
+=== Screen 05: Random Bout Match 1 Loadout ===
+Route: quest_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Player Encounter Team:
+  - Little Jack | [front] | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Arcane Hourglass
+  - Lady of Reflections | [back_left] | Class Warden | Skill Bulwark | Weapon Excalibur | Artifact Sun-God's Banner
+  - Robin, Generous Avenger | [back_right] | Class Cleric | Skill Healer | Weapon The Flock
+Enemy Encounter Team:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife | Artifact Nettle Smock
+  - Robin, Generous Avenger | [back_left] | Class Fighter | Skill Martial | Weapon The Flock
+  - Storyweaver Anansi | [back_right] | Class Ranger | Skill Deadeye | Weapon The Pen | Artifact Suspicious Eye
+
+Action: Confirm the encounter loadout
+=== Screen 06: Random Bout Match 1 Battle ===
+Route: battle
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Round: 1
+Player Team:
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [back_left] | HP 435/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 315/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Enemy Team:
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 315/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 1 State --
+Note: Player Team
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [back_left] | HP 435/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 315/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 315/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 310/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses none
+
+-- Round 1 Action Plans --
+Note: Player
+  - Little Jack: Cloudburst
+  - Lady of Reflections: Hold
+  - Robin, Generous Avenger: Strike with The Flock -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Robin, Generous Avenger: Strike with The Flock -> Little Jack
+  - Storyweaver Anansi: Strike with The Pen -> Robin, Generous Avenger
+
+-- Round 1 Action Log --
+  - Storyweaver Anansi's The Pen hits Robin, Generous Avenger for 94 damage (HP 315->221).
+  - Storyweaver Anansi's Suspicious Eye Spotlights Robin, Generous Avenger.
+  - Storyweaver Anansi's The Pen inflicts Root on Robin, Generous Avenger for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 25 damage (HP 415->390).
+  - Tam Lin, Thornbound's Thornmail reflects 5 damage to Robin, Generous Avenger (HP 221->216).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Storyweaver Anansi for 45 damage (HP 310->265).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Storyweaver Anansi for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Little Jack for 32 damage (HP 290->258).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Little Jack for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Lady of Reflections for 20 damage (HP 435->415).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Lady of Reflections for 2 rounds.
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 71 damage (HP 258->187).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Lady of Reflections's Sun-God's Banner (Hold) grants Guard to Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Little Jack takes no bonus action.
+  - Storyweaver Anansi takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 2 State --
+Note: Player Team
+  - Little Jack [front] | HP 187/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses spotlight:2, taunt:2
+  - Lady of Reflections [back_left] | HP 415/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses spotlight:2, guard:2
+  - Robin, Generous Avenger [back_right] | HP 216/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2, root:2, heal_cut:2, guard:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 390/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 315/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 265/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 2 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Storyweaver Anansi
+  - Lady of Reflections: Switch
+  - Robin, Generous Avenger: Strike with The Flock -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Robin, Generous Avenger
+  - Robin, Generous Avenger: Strike with The Flock -> Little Jack
+  - Storyweaver Anansi: Strike with The Pen -> Robin, Generous Avenger
+
+-- Round 2 Action Log --
+  - Little Jack's Skyfall hits Storyweaver Anansi for 248 damage (HP 265->17).
+  - Storyweaver Anansi's The Pen hits Robin, Generous Avenger for 80 damage (HP 216->136).
+  - Storyweaver Anansi's The Pen inflicts Root on Robin, Generous Avenger for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 20 damage (HP 390->370).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Storyweaver Anansi for 45 damage (HP 17->0).
+  - Storyweaver Anansi is knocked out.
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Storyweaver Anansi for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Little Jack for 32 damage (HP 187->155).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Little Jack for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Lady of Reflections for 20 damage (HP 415->395).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Lady of Reflections for 2 rounds.
+  - Tam Lin, Thornbound's Butterfly Knife hits Robin, Generous Avenger for 85 damage (HP 136->51).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Robin, Generous Avenger for 2 rounds.
+  - Lady of Reflections switches weapons to Lantern of Avalon.
+
+-- Battle Log --
+  - Little Jack takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 3 State --
+Note: Player Team
+  - Little Jack [front] | HP 155/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses spotlight:2, taunt:1
+  - Lady of Reflections [back_left] | HP 395/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses spotlight:2, guard:1
+  - Robin, Generous Avenger [back_right] | HP 51/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:1, root:2, heal_cut:1, guard:1
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 370/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 315/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 3 Action Plans --
+Note: Player
+  - Little Jack: Swap with Robin, Generous Avenger
+  - Lady of Reflections: Strike with Lantern of Avalon -> Tam Lin, Thornbound
+  - Robin, Generous Avenger: Spread Fortune
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Robin, Generous Avenger
+  - Robin, Generous Avenger: Switch
+
+-- Round 3 Action Log --
+  - Little Jack swaps positions with Robin, Generous Avenger.
+  - Robin, Generous Avenger switches weapons to Kingmaker.
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 96 damage (HP 155->59).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Lady of Reflections's Lantern of Avalon hits Tam Lin, Thornbound for 32 damage (HP 370->338).
+  - Lady of Reflections swaps positions with Robin, Generous Avenger.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 4 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 59/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses spotlight:1, taunt:2
+  - Lady of Reflections [front] | HP 395/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses spotlight:1, reflecting_pool:2
+  - Robin, Generous Avenger [back_left] | HP 51/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses root:1
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 338/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 315/315 | Class Fighter | Skill Martial | Primary Kingmaker | Secondary The Flock | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 4 Action Plans --
+Note: Player
+  - Little Jack: Time Stop
+  - Lady of Reflections: Drown in the Loch -> Tam Lin, Thornbound
+  - Robin, Generous Avenger: Strike with The Flock -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Robin, Generous Avenger: Switch
+
+-- Round 4 Action Log --
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 65 damage (HP 338->273).
+  - Tam Lin, Thornbound's Thornmail reflects 13 damage to Robin, Generous Avenger (HP 51->38).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Robin, Generous Avenger for 90 damage (HP 315->225).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Robin, Generous Avenger for 2 rounds.
+  - Robin, Generous Avenger switches weapons to The Flock.
+  - Tam Lin, Thornbound's queued Strike failed because Little Jack is no longer a legal target from front.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack cannot act because Time Stop removed their action this round.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 5 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 59/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses taunt:1
+  - Lady of Reflections [front] | HP 395/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses reflecting_pool:1
+  - Robin, Generous Avenger [back_left] | HP 38/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 273/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses damage_amp:2
+  - Robin, Generous Avenger [back_left] | HP 225/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 5 Action Plans --
+Note: Player
+  - Little Jack: Skip
+  - Lady of Reflections: Hold
+  - Robin, Generous Avenger: Swap with Little Jack
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+  - Robin, Generous Avenger: Spread Fortune
+
+-- Round 5 Action Log --
+  - Lady of Reflections's Sun-God's Banner (Hold) grants Guard to Lady of Reflections for 2 rounds.
+  - Robin, Generous Avenger swaps positions with Little Jack.
+  - Little Jack cannot act because Time Stop removed their action this round.
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 61 damage (HP 395->334).
+  - Lady of Reflections's Reflecting Pool reflects 16 damage to Tam Lin, Thornbound (HP 273->257).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack cannot act because Time Stop removed their action this round.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 6 State --
+Note: Player Team
+  - Little Jack [back_left] | HP 59/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [front] | HP 334/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses guard:2, taunt:2
+  - Robin, Generous Avenger [back_right] | HP 38/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1, guard:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 257/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses damage_amp:1
+  - Robin, Generous Avenger [back_left] | HP 225/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:1
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 6 Action Plans --
+Note: Player
+  - Little Jack: Cloudburst
+  - Lady of Reflections: Skip
+  - Robin, Generous Avenger: Swap with Little Jack
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+  - Robin, Generous Avenger: Strike with The Flock -> Little Jack
+
+-- Round 6 Action Log --
+  - Lady of Reflections skips.
+  - Robin, Generous Avenger swaps positions with Little Jack.
+  - Robin, Generous Avenger's The Flock hits Lady of Reflections for 38 damage (HP 334->296).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Lady of Reflections for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Robin, Generous Avenger for 90 damage (HP 38->0).
+  - Robin, Generous Avenger is knocked out.
+  - Lady of Reflections' Postmortem Passage retaliates against Robin, Generous Avenger for 128 damage (HP 225->97).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Robin, Generous Avenger for 2 rounds.
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 36 damage (HP 296->260).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 7 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 59/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [front] | HP 260/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses guard:1, taunt:2, spotlight:2
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1, guard:2, spotlight:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 257/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 97/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 7 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Robin, Generous Avenger
+  - Lady of Reflections: Strike with Lantern of Avalon -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+  - Robin, Generous Avenger: Strike with The Flock -> Lady of Reflections
+
+-- Round 7 Action Log --
+  - Lady of Reflections's Lantern of Avalon hits Tam Lin, Thornbound for 39 damage (HP 257->218).
+  - Tam Lin, Thornbound's Thornmail reflects 8 damage to Lady of Reflections (HP 260->252).
+  - Robin, Generous Avenger's The Flock hits Lady of Reflections for 38 damage (HP 252->214).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Lady of Reflections for 2 rounds.
+  - Little Jack's Skyfall hits Robin, Generous Avenger for 248 damage (HP 97->0).
+  - Robin, Generous Avenger is knocked out.
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 36 damage (HP 214->178).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 8 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 59/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [front] | HP 178/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses taunt:2, spotlight:2, heal_cut:2
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1, guard:2, spotlight:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 218/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 8 Action Plans --
+Note: Player
+  - Little Jack: Switch
+  - Lady of Reflections: Hold
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+
+-- Round 8 Action Log --
+  - Lady of Reflections's Sun-God's Banner (Hold) grants Guard to Lady of Reflections for 2 rounds.
+  - Little Jack switches weapons to Giant's Harp.
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 36 damage (HP 178->142).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 9 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 59/290 | Class Mage | Skill Archmage | Primary Giant's Harp | Secondary Skyfall | Artifact Arcane Hourglass | Statuses guard:2
+  - Lady of Reflections [front] | HP 142/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses taunt:2, spotlight:1, heal_cut:1, guard:2
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1, guard:2, spotlight:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 218/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 9 Action Plans --
+Note: Player
+  - Little Jack: Strike with Giant's Harp -> Tam Lin, Thornbound
+  - Lady of Reflections: Drown in the Loch -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+
+-- Round 9 Action Log --
+  - Little Jack's Giant's Harp hits Tam Lin, Thornbound for 146 damage (HP 218->72).
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 36 damage (HP 142->106).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 10 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 59/290 | Class Mage | Skill Archmage | Primary Giant's Harp | Secondary Skyfall | Artifact Arcane Hourglass | Statuses guard:1
+  - Lady of Reflections [front] | HP 106/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses taunt:2, guard:1
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1, guard:2, spotlight:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 72/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses damage_amp:2
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 10 Action Plans --
+Note: Player
+  - Little Jack: Skip
+  - Lady of Reflections: Strike with Lantern of Avalon -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+
+-- Round 10 Action Log --
+  - Lady of Reflections's Lantern of Avalon hits Tam Lin, Thornbound for 64 damage (HP 72->8).
+  - Tam Lin, Thornbound's Thornmail reflects 13 damage to Lady of Reflections (HP 106->93).
+  - Little Jack skips.
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 36 damage (HP 93->57).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 11 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 59/290 | Class Mage | Skill Archmage | Primary Giant's Harp | Secondary Skyfall | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [front] | HP 57/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses taunt:2, heal_cut:2
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1, guard:2, spotlight:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 8/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses damage_amp:1
+  - Robin, Generous Avenger [back_left] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+  - Storyweaver Anansi [back_right] | HP 0/310 | Class Ranger | Skill Deadeye | Primary The Pen | Secondary The Sword | Artifact Suspicious Eye | Statuses spotlight:2
+
+-- Round 11 Action Plans --
+Note: Player
+  - Little Jack: Strike with Giant's Harp -> Tam Lin, Thornbound
+  - Lady of Reflections: Hold
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+
+-- Battle Action Log --
+  - Lady of Reflections's Sun-God's Banner (Hold) grants Guard to Lady of Reflections for 2 rounds.
+  - Little Jack's Giant's Harp hits Tam Lin, Thornbound for 146 damage (HP 8->0).
+  - Tam Lin, Thornbound is knocked out.
+
+=== Screen 07: Random Bout Match 1 Results ===
+Route: results
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Winner: You
+Victory: True
+Result Lines:
+  - Mode: Random Bout
+  - Series: 1-0  —  Match 1 of 3.
+  - +80 Exp
+  - Your opponent drafted second and opened with the bonus swap advantage.
+  - Rounds fought: 10
+  - You survivors: 2
+  - AI Rival survivors: 0
+
+Action: Continue from the results screen
+=== Screen 08: Random Bout Match 1 Adapt ===
+Route: bout_adapt
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Artifact Options: Seeking Yarn, Bluebeard’s Key, Goose Quill
+Recruit Options: The Good Beast, Porcus III, Maui, Sun-Thief
+
+Action: Take the first available adapt option
+=== Screen 09: Bout Full Party Loadout ===
+Route: quest_party_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Full Party Loadout:
+  - Little Jack | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Arcane Hourglass
+  - Sea Wench Asha | Class Rogue | Skill Assassin | Weapon Frost Scepter | Artifact Misericorde
+  - Witch of the East | Class Fighter | Skill Martial | Weapon Zephyr
+  - Lady of Reflections | Class Warden | Skill Bulwark | Weapon Excalibur | Artifact Sun-God's Banner
+  - Rumpelstiltskin | Class Ranger | Skill Deadeye | Weapon Devil's Contract
+  - Robin, Generous Avenger | Class Cleric | Skill Healer | Weapon The Flock
+
+Action: Accept the adapted full-party loadout
+=== Screen 10: Random Bout Match 2 Select ===
+Route: quest_draft
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Score: 1-0
+Available Picks: Little Jack, Sea Wench Asha, Witch of the East, Lady of Reflections, Rumpelstiltskin, Robin, Generous Avenger
+Enemy Roster Preview:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife | Artifact Nettle Smock
+  - Scheherazade, Dawn's Ransom | [back_left] | Class Cleric | Skill Healer | Weapon Tome of Ancients
+  - Robin, Generous Avenger | [back_right] | Class Fighter | Skill Martial | Weapon The Flock
+
+Note: Autoplayer chose trio: Little Jack, Lady of Reflections, Robin, Generous Avenger
+Action: Select encounter pick 1: Little Jack
+Action: Select encounter pick 2: Lady of Reflections
+Action: Select encounter pick 3: Robin, Generous Avenger
+Action: Lock in Random Bout match 2
+=== Screen 11: Random Bout Match 2 Loadout ===
+Route: quest_loadout
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Player Encounter Team:
+  - Little Jack | [front] | Class Mage | Skill Archmage | Weapon Skyfall | Artifact Arcane Hourglass
+  - Lady of Reflections | [back_left] | Class Warden | Skill Bulwark | Weapon Excalibur | Artifact Sun-God's Banner
+  - Robin, Generous Avenger | [back_right] | Class Cleric | Skill Healer | Weapon The Flock
+Enemy Encounter Team:
+  - Tam Lin, Thornbound | [front] | Class Warden | Skill Bulwark | Weapon Butterfly Knife | Artifact Nettle Smock
+  - Scheherazade, Dawn's Ransom | [back_left] | Class Cleric | Skill Healer | Weapon Tome of Ancients
+  - Robin, Generous Avenger | [back_right] | Class Fighter | Skill Martial | Weapon The Flock
+
+Action: Confirm the encounter loadout
+=== Screen 12: Random Bout Match 2 Battle ===
+Route: battle
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Round: 1
+Player Team:
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [back_left] | HP 435/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 315/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Enemy Team:
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 315/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+
+-- Round 1 State --
+Note: Player Team
+  - Little Jack [front] | HP 290/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [back_left] | HP 435/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 315/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 415/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 315/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+
+-- Round 1 Action Plans --
+Note: Player
+  - Little Jack: Cloudburst
+  - Lady of Reflections: Hold
+  - Robin, Generous Avenger: Strike with The Flock -> Robin, Generous Avenger
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Little Jack
+  - Robin, Generous Avenger: Strike with The Flock -> Little Jack
+
+-- Round 1 Action Log --
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 25 damage (HP 415->390).
+  - Tam Lin, Thornbound's Thornmail reflects 5 damage to Robin, Generous Avenger (HP 315->310).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Robin, Generous Avenger for 45 damage (HP 315->270).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Robin, Generous Avenger for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Little Jack for 32 damage (HP 290->258).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Little Jack for 2 rounds.
+  - Robin, Generous Avenger's The Flock hits Robin, Generous Avenger for 45 damage (HP 310->265).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Robin, Generous Avenger for 2 rounds.
+  - Scheherazade, Dawn's Ransom's Tome of Ancients hits Little Jack for 62 damage (HP 258->196).
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 71 damage (HP 196->125).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Lady of Reflections's Sun-God's Banner (Hold) grants Guard to Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Little Jack takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 2 State --
+Note: Player Team
+  - Little Jack [front] | HP 125/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses spotlight:2, taunt:2
+  - Lady of Reflections [back_left] | HP 435/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses guard:2
+  - Robin, Generous Avenger [back_right] | HP 265/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:2, spotlight:2, guard:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 390/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 270/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 2 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Robin, Generous Avenger
+  - Lady of Reflections: Swap with Robin, Generous Avenger
+  - Robin, Generous Avenger: Strike with The Flock -> Robin, Generous Avenger
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Scheherazade, Dawn's Ransom: Swap with Robin, Generous Avenger
+  - Robin, Generous Avenger: Spread Fortune
+
+-- Round 2 Action Log --
+  - Little Jack's Skyfall hits Robin, Generous Avenger for 248 damage (HP 270->22).
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 20 damage (HP 390->370).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Robin, Generous Avenger for 45 damage (HP 22->0).
+  - Robin, Generous Avenger is knocked out.
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Robin, Generous Avenger for 2 rounds.
+  - Scheherazade, Dawn's Ransom's queued Swap failed because Robin, Generous Avenger was knocked out before resolution.
+  - Tam Lin, Thornbound's Butterfly Knife hits Little Jack for 71 damage (HP 125->54).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Little Jack for 2 rounds.
+  - Lady of Reflections swaps positions with Robin, Generous Avenger.
+
+-- Battle Log --
+  - Little Jack takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 3 State --
+Note: Player Team
+  - Little Jack [front] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses spotlight:1, taunt:2
+  - Lady of Reflections [back_right] | HP 435/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses guard:1, reflecting_pool:2
+  - Robin, Generous Avenger [back_left] | HP 265/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1, spotlight:1, guard:1
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 370/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 335/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 3 Action Plans --
+Note: Player
+  - Little Jack: Time Stop
+  - Lady of Reflections: Switch
+  - Robin, Generous Avenger: Strike with The Flock -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Little Jack
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Little Jack
+
+-- Round 3 Action Log --
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 20 damage (HP 370->350).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Scheherazade, Dawn's Ransom for 34 damage (HP 335->301).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Scheherazade, Dawn's Ransom for 2 rounds.
+  - Scheherazade, Dawn's Ransom's queued Strike failed because Little Jack is no longer a legal target from back_left.
+  - Tam Lin, Thornbound's queued Strike failed because Little Jack is no longer a legal target from front.
+  - Lady of Reflections switches weapons to Lantern of Avalon.
+
+-- Battle Log --
+  - Little Jack cannot act because Time Stop removed their action this round.
+  - Robin, Generous Avenger takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 4 State --
+Note: Player Team
+  - Little Jack [front] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses taunt:1
+  - Lady of Reflections [back_right] | HP 435/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses reflecting_pool:1
+  - Robin, Generous Avenger [back_left] | HP 265/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 350/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 301/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses spotlight:2
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 4 Action Plans --
+Note: Player
+  - Little Jack: Skip
+  - Lady of Reflections: Hold
+  - Robin, Generous Avenger: Switch
+Note: Enemy
+  - Tam Lin, Thornbound: Switch
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Robin, Generous Avenger
+
+-- Round 4 Action Log --
+  - Little Jack cannot act because Time Stop removed their action this round.
+  - Robin, Generous Avenger switches weapons to Kingmaker.
+  - Scheherazade, Dawn's Ransom's Tome of Ancients hits Robin, Generous Avenger for 87 damage (HP 265->178).
+  - Tam Lin, Thornbound switches weapons to Beam of Light.
+  - Lady of Reflections's Sun-God's Banner (Hold) grants Guard to Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Little Jack cannot act because Time Stop removed their action this round.
+  - Robin, Generous Avenger takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+
+-- Round 5 State --
+Note: Player Team
+  - Little Jack [front] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [back_right] | HP 435/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses guard:2
+  - Robin, Generous Avenger [back_left] | HP 178/315 | Class Cleric | Skill Healer | Primary Kingmaker | Secondary The Flock | Artifact None | Statuses guard:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 350/415 | Class Warden | Skill Bulwark | Primary Beam of Light | Secondary Butterfly Knife | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 301/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses spotlight:1
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 5 Action Plans --
+Note: Player
+  - Little Jack: Swap with Lady of Reflections
+  - Lady of Reflections: Strike with Lantern of Avalon -> Tam Lin, Thornbound
+  - Robin, Generous Avenger: Switch
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Beam of Light -> Little Jack
+  - Scheherazade, Dawn's Ransom: Skip
+
+-- Round 5 Action Log --
+  - Little Jack swaps positions with Lady of Reflections.
+  - Scheherazade, Dawn's Ransom skips.
+  - Tam Lin, Thornbound's Beam of Light hits Lady of Reflections for 36 damage (HP 435->399).
+  - Lady of Reflections's Reflecting Pool reflects 9 damage to Tam Lin, Thornbound (HP 350->341).
+  - Tam Lin, Thornbound's Beam of Light inflicts Burn on Lady of Reflections for 2 rounds.
+  - Robin, Generous Avenger switches weapons to The Flock.
+  - Lady of Reflections's Lantern of Avalon hits Tam Lin, Thornbound for 32 damage (HP 341->309).
+  - Tam Lin, Thornbound's Thornmail reflects 7 damage to Lady of Reflections (HP 399->392).
+  - Lady of Reflections swaps positions with Robin, Generous Avenger.
+
+-- Battle Log --
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+  - Burn deals 35 damage to Lady of Reflections (HP 392->357).
+
+-- Round 6 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [back_left] | HP 357/435 | Class Warden | Skill Bulwark | Primary Lantern of Avalon | Secondary Excalibur | Artifact Sun-God's Banner | Statuses guard:1, burn:2, heal_cut:2, reflecting_pool:2
+  - Robin, Generous Avenger [front] | HP 178/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses guard:1
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 309/415 | Class Warden | Skill Bulwark | Primary Beam of Light | Secondary Butterfly Knife | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 301/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 6 Action Plans --
+Note: Player
+  - Little Jack: Cloudburst
+  - Lady of Reflections: Switch
+  - Robin, Generous Avenger: Swap with Lady of Reflections
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Beam of Light -> Robin, Generous Avenger
+  - Scheherazade, Dawn's Ransom: Strike with Tome of Ancients -> Robin, Generous Avenger
+
+-- Round 6 Action Log --
+  - Robin, Generous Avenger swaps positions with Lady of Reflections.
+  - Scheherazade, Dawn's Ransom's Tome of Ancients hits Lady of Reflections for 31 damage (HP 357->326).
+  - Lady of Reflections's Reflecting Pool reflects 16 damage to Scheherazade, Dawn's Ransom (HP 301->285).
+  - Tam Lin, Thornbound's Beam of Light hits Lady of Reflections for 36 damage (HP 326->290).
+  - Lady of Reflections's Reflecting Pool reflects 9 damage to Tam Lin, Thornbound (HP 309->300).
+  - Tam Lin, Thornbound's Beam of Light inflicts Burn on Lady of Reflections for 2 rounds.
+  - Lady of Reflections switches weapons to Excalibur.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Burn deals 35 damage to Lady of Reflections (HP 290->255).
+
+-- Round 7 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [front] | HP 255/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses burn:2, heal_cut:1, reflecting_pool:2
+  - Robin, Generous Avenger [back_left] | HP 178/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 300/415 | Class Warden | Skill Bulwark | Primary Beam of Light | Secondary Butterfly Knife | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 285/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 7 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Scheherazade, Dawn's Ransom
+  - Lady of Reflections: Strike with Excalibur -> Tam Lin, Thornbound
+  - Robin, Generous Avenger: Strike with The Flock -> Scheherazade, Dawn's Ransom
+Note: Enemy
+  - Tam Lin, Thornbound: Switch
+  - Scheherazade, Dawn's Ransom: Switch
+
+-- Round 7 Action Log --
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 25 damage (HP 300->275).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Scheherazade, Dawn's Ransom for 34 damage (HP 285->251).
+  - Scheherazade, Dawn's Ransom's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Little Jack's Skyfall hits Scheherazade, Dawn's Ransom for 142 damage (HP 251->109).
+  - Scheherazade, Dawn's Ransom switches weapons to Lamp of Infinity.
+  - Tam Lin, Thornbound switches weapons to Butterfly Knife.
+  - Lady of Reflections's Excalibur hits Tam Lin, Thornbound for 43 damage (HP 275->232).
+
+-- Battle Log --
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+  - Burn deals 35 damage to Lady of Reflections (HP 255->220).
+
+-- Round 8 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [front] | HP 220/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses burn:1, reflecting_pool:1
+  - Robin, Generous Avenger [back_left] | HP 178/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 232/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 109/335 | Class Cleric | Skill Healer | Primary Lamp of Infinity | Secondary Tome of Ancients | Artifact None | Statuses none
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 8 Action Plans --
+Note: Player
+  - Little Jack: Cloudburst
+  - Lady of Reflections: Strike with Excalibur -> Tam Lin, Thornbound
+  - Robin, Generous Avenger: Strike with The Flock -> Tam Lin, Thornbound
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+  - Scheherazade, Dawn's Ransom: Strike with Lamp of Infinity -> Robin, Generous Avenger
+
+-- Round 8 Action Log --
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 20 damage (HP 232->212).
+  - Tam Lin, Thornbound's Thornmail reflects 4 damage to Robin, Generous Avenger (HP 178->174).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Scheherazade, Dawn's Ransom for 26 damage (HP 109->83).
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Scheherazade, Dawn's Ransom for 2 rounds.
+  - Scheherazade, Dawn's Ransom's Lamp of Infinity hits Robin, Generous Avenger for 82 damage (HP 174->92).
+  - Tam Lin, Thornbound restores 65 HP (HP 212->277).
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 42 damage (HP 220->178).
+  - Lady of Reflections's Reflecting Pool reflects 11 damage to Tam Lin, Thornbound (HP 277->266).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+  - Lady of Reflections's Excalibur hits Tam Lin, Thornbound for 43 damage (HP 266->223).
+
+-- Battle Log --
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+  - Lady of Reflections takes no bonus action.
+  - Burn deals 35 damage to Lady of Reflections (HP 178->143).
+
+-- Round 9 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses none
+  - Lady of Reflections [front] | HP 143/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses taunt:2
+  - Robin, Generous Avenger [back_left] | HP 92/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:2
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 223/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 83/335 | Class Cleric | Skill Healer | Primary Lamp of Infinity | Secondary Tome of Ancients | Artifact None | Statuses spotlight:2
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 9 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Scheherazade, Dawn's Ransom
+  - Lady of Reflections: Hold
+  - Robin, Generous Avenger: Spread Fortune
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+  - Scheherazade, Dawn's Ransom: Switch
+
+-- Round 9 Action Log --
+  - Lady of Reflections's Sun-God's Banner (Hold) grants Guard to Lady of Reflections for 2 rounds.
+  - Little Jack's Skyfall hits Scheherazade, Dawn's Ransom for 142 damage (HP 83->0).
+  - Scheherazade, Dawn's Ransom's Evermore leaves Scheherazade, Dawn's Ransom at 1 HP.
+  - Scheherazade, Dawn's Ransom switches weapons to Tome of Ancients.
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 36 damage (HP 143->107).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Scheherazade, Dawn's Ransom takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 10 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses guard:2
+  - Lady of Reflections [front] | HP 107/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses taunt:2, guard:2
+  - Robin, Generous Avenger [back_left] | HP 92/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses heal_cut:1
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 223/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 1/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses spotlight:1
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 10 Action Plans --
+Note: Player
+  - Little Jack: Cloudburst
+  - Lady of Reflections: Strike with Excalibur -> Tam Lin, Thornbound
+  - Robin, Generous Avenger: Strike with The Flock -> Scheherazade, Dawn's Ransom
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+  - Scheherazade, Dawn's Ransom: Ultimate Daybreak
+
+-- Round 10 Action Log --
+  - Lady of Reflections's Excalibur hits Tam Lin, Thornbound for 43 damage (HP 223->180).
+  - Robin, Generous Avenger's The Flock hits Tam Lin, Thornbound for 40 damage (HP 180->140).
+  - Tam Lin, Thornbound's Faerie's Ransom rejects Robin, Generous Avenger's The Flock's Spotlight.
+  - Robin, Generous Avenger's The Flock hits Scheherazade, Dawn's Ransom for 68 damage (HP 1->0).
+  - Scheherazade, Dawn's Ransom is knocked out.
+  - Robin, Generous Avenger's The Flock inflicts Spotlight on Scheherazade, Dawn's Ransom for 2 rounds.
+  - Tam Lin, Thornbound's Butterfly Knife hits Lady of Reflections for 36 damage (HP 107->71).
+  - Tam Lin, Thornbound's Butterfly Knife inflicts Taunt on Lady of Reflections for 2 rounds.
+
+-- Battle Log --
+  - Lady of Reflections takes no bonus action.
+  - Robin, Generous Avenger takes no bonus action.
+  - Little Jack takes no bonus action.
+  - Tam Lin, Thornbound takes no bonus action.
+
+-- Round 11 State --
+Note: Player Team
+  - Little Jack [back_right] | HP 54/290 | Class Mage | Skill Archmage | Primary Skyfall | Secondary Giant's Harp | Artifact Arcane Hourglass | Statuses guard:1
+  - Lady of Reflections [front] | HP 71/435 | Class Warden | Skill Bulwark | Primary Excalibur | Secondary Lantern of Avalon | Artifact Sun-God's Banner | Statuses taunt:2, guard:1
+  - Robin, Generous Avenger [back_left] | HP 92/315 | Class Cleric | Skill Healer | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses none
+Note: Enemy Team
+  - Tam Lin, Thornbound [front] | HP 140/415 | Class Warden | Skill Bulwark | Primary Butterfly Knife | Secondary Beam of Light | Artifact Nettle Smock | Statuses none
+  - Scheherazade, Dawn's Ransom [back_left] | HP 0/335 | Class Cleric | Skill Healer | Primary Tome of Ancients | Secondary Lamp of Infinity | Artifact None | Statuses spotlight:2
+  - Robin, Generous Avenger [back_right] | HP 0/315 | Class Fighter | Skill Martial | Primary The Flock | Secondary Kingmaker | Artifact None | Statuses spotlight:2
+
+-- Round 11 Action Plans --
+Note: Player
+  - Little Jack: Strike with Skyfall -> Tam Lin, Thornbound
+  - Lady of Reflections: Strike with Excalibur -> Tam Lin, Thornbound
+  - Robin, Generous Avenger: Switch
+Note: Enemy
+  - Tam Lin, Thornbound: Strike with Butterfly Knife -> Lady of Reflections
+
+-- Battle Action Log --
+  - Lady of Reflections's Excalibur hits Tam Lin, Thornbound for 43 damage (HP 140->97).
+  - Tam Lin, Thornbound's Thornmail reflects 9 damage to Lady of Reflections (HP 71->62).
+  - Robin, Generous Avenger switches weapons to Kingmaker.
+  - Little Jack's Skyfall hits Tam Lin, Thornbound for 111 damage (HP 97->0).
+  - Tam Lin, Thornbound is knocked out.
+
+=== Screen 13: Random Bout Match 2 Results ===
+Route: results
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Winner: You
+Victory: True
+Result Lines:
+  - Mode: Random Bout
+  - Series: 2-0  —  Series won!
+  - +80 Exp
+  - Your opponent drafted second and opened with the bonus swap advantage.
+  - Rounds fought: 10
+  - You survivors: 3
+  - AI Rival survivors: 0
+
+Action: Continue from the results screen
+=== Screen 14: Bout Mode Select ===
+Route: bouts_menu
+Quest Context: bout_random
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Run Active: False
+Bout Record: 2-0
+
+
+Run Status: SUCCESS
+Final Screen: Bout Mode Select
+Finished: 2026-04-08T23:05:19

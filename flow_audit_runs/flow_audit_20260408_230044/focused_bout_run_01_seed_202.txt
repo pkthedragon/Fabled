@@ -1,0 +1,76 @@
+Run Category: focused_bout
+Seed: 202
+Started: 2026-04-08T23:29:26
+
+=== Screen 01: Main Menu ===
+Route: main_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+
+Action: Click Bouts
+=== Screen 02: Bout Mode Select ===
+Route: bouts_menu
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Bout Run Active: False
+Bout Record: 0-0
+
+Action: Start a Focused Bout versus AI
+=== Screen 03: Focused Bout Roster Draft ===
+Route: bout_draft
+Quest Context: ranked
+Gold: 2500 | Reputation: 420 | Rank: Knight
+Mode: focused
+Current Picker Seat: 2
+Player Seat: 2 | AI Seat: 1
+Available Roster: Ali Baba, Bandit King, Ashen Ella, Briar Rose, Destitute Vasilisa, Hunold the Piper, Kama the Honeyed, Lady of Reflections, Little Jack, Lucky Constantine, March Hare, Matchbox Liesl, Maui, Sun-Thief, Odysseus the Nobody, Pinocchio, Cursed Puppet, Porcus III, Rapunzel the Golden, Red Blanchette, Reynard, Lupine Trickster, Robin, Generous Avenger, Rumpelstiltskin, Scheherazade, Dawn's Ransom, Sea Wench Asha, Sir Roland, Storyweaver Anansi, Tam Lin, Thornbound, The Good Beast, The Green Knight, Wayward Humbert, Witch-Hunter Gretel, Witch of the East
+Player Drafted: None
+AI Drafted: None
+
+Action: Draft Sir Roland for the focused bout roster
+Note: Player added: Sir Roland
+Note: AI added: Little Jack
+
+Action: Draft Little Jack for the focused bout roster
+Note: Player added: Little Jack
+Note: AI added: Sir Roland
+
+Action: Draft Lucky Constantine for the focused bout roster
+Note: Player added: Lucky Constantine
+Note: AI added: Lucky Constantine
+
+
+Run Status: FAILED
+Error:
+Traceback (most recent call last):
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 678, in _run_successful_transcripts
+    mode = runner(writer, seed)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 593, in _run_focused_bout
+    _pick_focused_roster(mode, writer)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\run_flow_transcript_audit.py", line 457, in _pick_focused_roster
+    choice = choose_bout_pick(
+        available_ids,
+    ...<4 lines>...
+        rng=mode.rng,
+    )
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_bout.py", line 124, in choose_bout_pick
+    return _choose_pick(
+        tuple(available_ids),
+    ...<4 lines>...
+        rng=rng,
+    )
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_bout.py", line 101, in _choose_pick
+    (candidate_id, _pick_score(candidate_id, own_ids, enemy_ids, available_ids, seat=seat))
+                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_bout.py", line 86, in _pick_score
+    future_score = _team_ceiling_score(tuple(sorted(own_ids + (candidate_id,))), future_pool, enemy_ids, seat=seat)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_bout.py", line 34, in _team_ceiling_score
+    return solve_team_loadout(current_ids, enemy_ids=enemy_ids, mode="bout", seat=seat).score
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_loadout.py", line 770, in solve_team_loadout
+    return _solve_team_loadout_cached(_sorted_ids(tuple(adventurer_ids)), _sorted_ids(tuple(enemy_ids)), mode, seat)
+  File "C:\Users\prana\OneDrive\Desktop\GitHub\Fabled\quests_ai_loadout.py", line 758, in _solve_team_loadout_cached
+    raise ValueError(f"Could not solve legal loadout for {adventurer_ids}.")
+ValueError: Could not solve legal loadout for ('ali_baba', 'little_jack', 'lucky_constantine', 'sir_roland').
+Finished: 2026-04-08T23:53:57
