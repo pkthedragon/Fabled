@@ -825,6 +825,8 @@ def _resolve_queued_target(actor: CombatantState, action: dict, battle: BattleSt
     target_slot = action.get("target_slot")
     if side == "self":
         return actor
+    if side == "ally" and isinstance(target, CombatantState) and not target.ko and team_for_actor(battle, target) is team_for_actor(battle, actor):
+        return target
     if side == "any":
         target_team_num = action.get("target_team_num")
         target_slot = action.get("target_slot")
@@ -904,8 +906,6 @@ def _queued_swap_failure_message(actor: CombatantState, action: Optional[dict], 
     slot_target = _queued_slot_target(actor, action, battle)
     if original_target is not None and original_target.ko:
         return f"{subject} failed because {original_target.name} was knocked out before resolution."
-    if original_target is not None and target_slot is not None and original_target.slot != target_slot:
-        return f"{subject} failed because {original_target.name} moved from {target_slot} before resolution."
     if target_slot is not None and slot_target is None:
         return f"{subject} failed because the original ally slot {target_slot} is empty."
     return f"{subject} failed because the ally target is no longer legal."
@@ -1468,6 +1468,9 @@ def resolve_spell(
             return
     if actor.cooldowns.get(effect.id, 0) > 0:
         battle.log_add(f"{effect.name} is on cooldown.")
+        return
+    if effect.special == "time_stop" and actor.markers.get("time_stop_used", 0) > 0:
+        battle.log_add(f"{effect.name} can only be used once per encounter.")
         return
     paradox_swap_target = target if effect.target == "ally" and target is not None and target is not actor else None
     legal_targets = get_legal_targets(battle, actor, effect=effect)
@@ -2207,7 +2210,8 @@ def _apply_special(
         allies = team_for_actor(battle, actor).alive()
         recipient = min(allies, key=lambda ally: ally.hp / max(1, ally.max_hp)) if allies else None
         if recipient is not None:
-            _heal_unit(recipient, 55, battle, source_label=f"{actor.name}'s healing")
+            heal_amount = 30 + (25 if actor.class_skill.id == "healer" else 0)
+            _heal_unit(recipient, heal_amount, battle, source_label=f"{actor.name}'s healing")
         return
     if special == "tutorial_team_defense_up_15":
         for ally in team_for_actor(battle, actor).alive():
@@ -2457,6 +2461,7 @@ def _apply_special(
         _set_unit_round_marker(actor, "spread_fortune_rounds", 2)
         return
     if special == "time_stop":
+        actor.markers["time_stop_used"] = 1
         _set_unit_round_marker(actor, "untargetable_rounds", 1)
         _set_unit_round_marker(actor, "cant_act_rounds", 1)
         actor.markers["cant_act_reason"] = "time_stop"

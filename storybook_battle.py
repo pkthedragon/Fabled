@@ -122,6 +122,8 @@ class StoryBattleController:
         if effect.id == actor.defn.ultimate.id:
             team = team_for_actor(self.battle, actor)
             return team.ultimate_meter >= ULTIMATE_METER_MAX
+        if effect.special == "time_stop" and actor.markers.get("time_stop_used", 0) > 0:
+            return False
         if actor.cooldowns.get(effect.id, 0) > 0:
             return False
         if effect in actor.primary_weapon.spells and actor.primary_weapon.ammo > 0:

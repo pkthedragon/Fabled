@@ -1,498 +1,671 @@
-﻿Fabled — Official Rulebook
+﻿Fabled — Official Technical Game Manual
 FABLED
-A Guildmaster’s Game
-Official Rulebook
+A Guildmaster's Game
+Official Rulebook and Systems Reference
 
-You just inherited a guild in the kingdom of Fantasia, home of the mystical and magical. However, the guild has a rather poor reputation, and it’s up to you to turn your family’s fortunes around.
-Luckily, adventurers with prestige too poor for other guilds still frequent your establishment, and you know how to get the best out of even the most motley crews. Form parties and send them on quests to build up your reputation and get some capital. It’s only a matter of time before you own the greatest guild in Fantasia!
+You just inherited a guild in the kingdom of Fantasia, home of the mystical and magical. Your house is short on prestige, short on gold, and rich only in possibility. Adventurers who cannot find work elsewhere still pass through your doors, and your role as Guildmaster is to turn that castoff talent into a disciplined force capable of conquering Quests, winning Bouts, and restoring your family's standing.
+Luckily, guildcraft in Fabled is not only about recruiting strong heroes. It is about understanding timing, positioning, attrition, scouting, adaptation, and how dozens of interacting passives and spells reshape each round. This rulebook is the complete technical reference for those systems while preserving the appendix structure the game uses for live reference data.
 
 1. OVERVIEW
-Fabled is a tactical turn-based combat game focused on positioning, ability timing, and party optimization. The player manages a Guild Hall, assembles parties of adventurers, and sends them into encounters across two game modes: Quests and Bouts.
-In Quests, the player faces a gauntlet of AI-controlled encounters, earning Gold and Reputation until three encounters are lost. In Bouts, the player competes in a best-of-three series against another player or AI, with both Random and Focused variants.
-Between encounters, players adapt their strategy by adjusting loadouts, acquiring Artifacts, and recruiting new adventurers. Outside of encounters, the Guild Hall provides persistent progression through Guild Level, employee management, and the Market.
-This rulebook is organized as follows: Section 2 defines the core components of the game. Section 3 details encounter rules. Sections 4 and 5 describe the two game modes. Sections 6 through 8 cover progression, the Guild Hall, and the Market. Appendices A through C contain reference data for all Adventurers, Class Skills, and Artifacts.
+Fabled is a tactical turn-based combat and guild-management game focused on positioning, ability timing, target legality, and loadout mastery. The player manages a Guild Hall, builds six-member parties, configures weapons, classes, class skills, and artifacts, and then commits three-member formations into individual encounters.
+The game is built around several overlapping loops. The encounter loop is the battle itself: choose actions, resolve initiative, manage conditions, and win through party elimination or Ultimate Victory. The run loop belongs to Quests, Bouts, and Tutorial play: scout opponents, choose which three to deploy, adapt loadouts, and manage resources between battles. The guild loop handles persistent Gold, Reputation, Guild Exp, employee configuration, cosmetics, social data, and first-run onboarding.
+The major playable destinations are Tutorial Mode, Quests, Random Bouts, Focused Bouts, Training Grounds, the Codex, the Market, the Closet, and the Guild Hall overlays for profile, friends, LAN, settings, and employee configuration.
+This manual is organized as follows. Section 2 defines the core game entities. Section 3 explains how encounters resolve, including formation, timing, actions, conditions, and the Ultimate Meter. Sections 4 through 9 cover Quests, Bouts, progression, the Guild Hall, the Market, and Tutorial Mode. Sections 10 through 14 cover reference surfaces, social systems, interface expectations, technical reference notes, and glossary terminology.
 
 2. CORE CONCEPTS
 2.1 Adventurers
-Adventurers are the characters the player recruits and sends into encounters. Each adventurer is a unique individual with fixed innate attributes and configurable loadout attributes.
-Innate Attributes
-Every adventurer has the following attributes, which are fixed and cannot be changed:
-Innate Skill. A passive ability unique to the adventurer.
-Two Signature Weapons. The adventurer’s personal weapons. See 2.3 Weapons.
-Ultimate Spell. A powerful ability fueled by the party’s Ultimate Meter. See 3.5 The Ultimate Meter.
-Stats
-Every adventurer has four stats:
-HP. The adventurer’s maximum health. An adventurer is knocked out when their HP reaches 0.
-Attack. Determines the damage dealt by the adventurer’s Strikes.
-Defense. Reduces the damage the adventurer takes from abilities.
-Speed. Determines the adventurer’s initiative order within a round. Higher Speed acts first.
-Stat bonuses and penalties from multiple sources do not stack. When calculating stats, the game uses the single highest bonus and the single highest penalty currently applied to the adventurer.
-Loadout Attributes
-The following attributes are chosen by the player and can be changed between encounters:
-Primary Weapon. One of the adventurer’s two Signature Weapons. The other becomes the secondary weapon.
-Class. One of six roles. See 2.4 Classes.
-Class Skill. A passive effect determined by the adventurer’s Class. See 2.4 Classes.
-Artifact (optional). An equippable item drawn from the player’s Artifact pool. See 2.5 Artifacts.
-2.2 Skills and Spells
-Adventurers gain Skills and Spells from their innate attributes, weapons, Class Skills, and Artifacts.
-Skills — passive effects that are always active while their source is active (e.g., while the relevant weapon is equipped as primary).
-Spells — activated effects that consume an action to use. After a Spell is cast, it goes on cooldown for a specified number of rounds before it can be used again.
-There is no limit to the number of Skills or Spells an adventurer can have simultaneously.
-2.3 Weapons
-Weapons determine the strength and type of an adventurer’s Strike action. Every weapon has a Power value and may provide additional Skills and Spells. Weapons come in three types:
-Melee. Can only be used to Strike from the frontline. Can only target the enemy frontline.
-Ranged. Can target the enemy frontline or a backline enemy in the user’s lane. Consumes Ammo with each Strike. Once Ammo is depleted, the weapon cannot be used to Strike.
-Magic. Follows the same targeting rules as Ranged weapons. Striking with a Magic weapon counts as casting a Spell and triggers all relevant effects, and the weapon goes on cooldown after use.
+Adventurers are the primary controllable combatants in Fabled. Each adventurer has fixed identity data and configurable loadout data.
+Fixed identity data:
+Name and presentation identity
+Base HP, Attack, Defense, and Speed
+Innate Skill
+Two Signature Weapons
+Ultimate Spell
+Configurable loadout data:
+Primary Weapon choice
+Class assignment
+Chosen Class Skill
+Optional Artifact
+Encounter formation assignment when selected into the active three
 
-Each adventurer has two Signature Weapons. Before an encounter, the player designates one as the primary weapon and the other as the secondary weapon. Only the primary weapon’s Skills and Spells are active during the encounter.
-2.4 Classes
-There are six classes. Each class defines a role and grants access to two Class Skills, of which the player selects one. Class Skills provide a passive effect and increase the adventurer’s maximum HP by a fixed amount.
-Warden — Tanks and position manipulators.
-Fighter — Melee damage dealers.
-Mage — Magic damage dealers.
-Ranger — Ranged damage dealers.
-Cleric — Healers and enchanters.
-Rogue — Disruptors and speedsters.
+2.2 Quest Enemies
+Quest enemies are not pulled from the player's adventurer roster. They are authored hostile combatants tied to locales and tiers. Unlike player adventurers, quest enemies may use simplified kits, enemy-only skills, enemy-only artifacts, or Apex dual-primary setups depending on tier. Humanoid enemies can use classes and class skills, while nonhumanoid enemies rely more heavily on innate kits.
 
-A party of six may contain at most one adventurer of each Class. See Appendix B for the full list of Class Skills.
-2.5 Artifacts
-Artifacts are equippable items that raise one of the holder’s stats and grant a Spell. Artifacts are managed through an Artifact pool, which is separate from the party itself. The pool holds Artifacts that are not currently equipped to any adventurer.
+2.3 Skills, Spells, Ultimates, and Reactions
+Fabled distinguishes several types of gameplay effects:
+Skills are passive effects that remain active while their source is active.
+Spells are activated effects chosen during an action or bonus-action window and usually placed on cooldown after use.
+Ultimate Spells are special action choices that require a full Ultimate Meter.
+Reactive Spells are not manually selected; they trigger automatically when their condition is met.
+There is no global hard cap on how many skills or spells a combatant can have, but only effects from active sources matter. For example, a normal adventurer only benefits from the current primary weapon's passives and spells.
 
-Artifact Rules
-Only one copy of each Artifact may be equipped across the party at any time.
-Each Artifact specifies one or more classes that can attune to it. An Artifact’s Spell can only be used if the holder’s Class matches one of the Artifact’s attunement classes.
-An adventurer does not need to hold an Artifact. The Artifact slot is optional.
-Some Artifacts have Reactive Spells. Reactive Spells are not actions; they trigger automatically when their condition is met, then go on cooldown. Triggering a Reactive Spell counts as casting a Spell.
-Acquiring Artifacts
-At the start of a Quest or Random Bout, three random Artifacts are added to the player’s Artifact pool. The three will not share any attunement classes, and every Class in the party will be able to attune to at least one of the three. Additional Artifacts can be earned as Quest encounter rewards. In Focused Bouts, the player chooses their own Artifacts. See Sections 4 and 5 for details.
-See Appendix C for the full list of Artifacts.
-2.6 Parties
-A party consists of six adventurers. Only three are brought into any given encounter. The remaining three sit out but retain their loadouts and equipped Artifacts.
-Parties are assembled at the start of a Quest or Bout. The method of assembly differs by mode (see Sections 4 and 5). A party may contain at most one adventurer of each Class and at most one copy of each Artifact equipped at a time.
+2.4 Weapons
+Weapons define Strike behavior and may add passive skills or spells. Every weapon has a type and a strike definition, and some also have ammo or cooldown constraints.
+Melee. May only Strike from the frontline and normally only targets the enemy frontline.
+Ranged. May Strike from any position, targets the enemy frontline or a same-lane backline enemy, and consumes Ammo unless prevented.
+Magic. Uses Ranged legality, but Magic Strikes count as spellcasting and usually place the weapon on cooldown after use.
+Every normal adventurer owns two Signature Weapons. Before or between encounters, the player assigns one as primary and the other as secondary. Only the primary weapon's skills and spells are active during combat unless a specific rule says otherwise. Apex enemies are the major exception: they wield two simultaneous primaries.
+
+2.5 Classes
+There are six standard classes:
+Warden, the tanking and positional control class
+Fighter, the primary Melee damage class
+Mage, the primary Magic damage class
+Ranger, the primary Ranged damage class
+Cleric, the healing and support class
+Rogue, the disruption and speed class
+Each class grants access to two class skills, of which exactly one is selected. Class skills always grant bonus HP and usually define a major playstyle fork. A six-member party may contain at most one adventurer of each class. Appendix B contains the full class skill list, including enemy-only legendary skills.
+
+2.6 Artifacts
+Artifacts are optional equipment that provide a stat bonus and at least one spell. Standard player-facing artifacts typically provide one spell. Enemy legendary artifacts can provide both an activated spell and a reactive spell.
+Artifact rules:
+Only one copy of any specific artifact may be equipped across the party at one time.
+Each artifact lists attunement classes. A holder always gains the artifact's stat bonus, but may only use its spell if their current class matches one of the attunement classes unless the artifact is explicitly authored otherwise.
+The artifact slot is optional.
+Reactive Spells are not actions. They trigger automatically when their condition is satisfied and then go on cooldown.
+Artifacts that are not equipped live in the current run's Artifact Pool.
+Appendix C lists standard artifacts. Appendix D lists enemy artifacts.
+
+2.7 Parties, Benches, and Pools
+Most non-tutorial run formats are built around a six-member party. Only three members are active in any individual encounter. The other three remain on the bench and keep their loadouts unless changed in a legal editing step.
+Key terms:
+Party means the full six-member run roster.
+Bench means the three or fewer members not currently deployed.
+Artifact Pool means unequipped artifacts available within the active Quest or Bout.
+Active three means the currently deployed encounter team.
 
 3. ENCOUNTERS
-An encounter is a single battle between two parties of three adventurers. Encounters are composed of rounds; each round, every adventurer acts at least once. This section describes the rules governing all encounters, regardless of game mode.
+An encounter is a single battle between two teams of up to three active combatants each. Most combat surfaces in Fabled, including Quests, Bouts, Tutorial fights, and practice encounters, all run on the same core encounter engine.
 3.1 Formation
-Each party uses a triangle formation consisting of one frontline position and two backline positions (left and right). The frontlines of both parties face each other, with their respective backlines behind them.
+Each side occupies a triangle formation with one Frontline slot and two Backline slots, Left and Right. The Frontline slots oppose each other directly and the Backline slots create left and right lanes behind them.
+Key formation rules:
+Exactly one unit must occupy the frontline at all times while any unit remains.
+Up to two units may occupy the backline.
+Backline units have their Speed halved for initiative purposes.
+If the frontline unit is knocked out, the leftmost surviving backline unit automatically advances; if Backline Left is empty, Backline Right advances instead.
+Position matters not only for defense but also for legality, speed, and how certain passives trigger.
 
-Player A Backline LeftPlayer A Backline Right
-Player A Frontline
-Player B Frontline
-Player B Backline LeftPlayer B Backline Right
+3.2 Lanes and Targeting Legality
+The formation creates three lanes:
+center lane, occupied by the frontlines
+left lane, shared by Backline Left on each side
+right lane, shared by Backline Right on each side
+Melee effects generally require the user to be in the frontline and normally target the enemy frontline only.
+Ranged and Magic effects can target the enemy frontline or a same-lane backline target.
+Spotlight modifies legality by allowing Melee access to a backline target.
+Effects that say they ignore targeting restrictions temporarily override the normal legality map.
 
-The three columns formed by these positions are called lanes. Each backline position shares a lane with the opposing backline position directly across from it. The frontline occupies a central lane shared by both frontline positions.
-Formation Rules
-Backline adventurers have their Speed halved.
-Exactly one adventurer must occupy the frontline at all times. Up to two adventurers may occupy the backline.
-If the frontline adventurer is knocked out, the leftmost backline adventurer automatically moves to the frontline.
-3.2 Round Structure
-Each round proceeds through the following phases in order:
-Initiative Check. Each adventurer’s Speed (including backline penalty, stat bonuses, and stat penalties) is evaluated. Adventurers are ordered from highest to lowest Speed. Initiative is only checked once at the start of the round. In the case of a Speed tie, the adventurer with the lower Power primary weapon acts first. If that is also tied, it is decided by which adventurer’s party has the higher average Speed, or a coinflip if that returns equal.
-Start of Round Effects. All “Start of Round” effects resolve in initiative order.
-Action Selection. Each player simultaneously selects one action for each of their adventurers.
-Action Resolution. Each adventurer’s selected action resolves in initiative order.
-Bonus Action Selection. Each player selects one bonus action for each adventurer that has one available.
-Bonus Action Resolution. Bonus actions resolve in initiative order.
-End of Round Effects. All “End of Round” and “Each Round” effects resolve in initiative order.
-3.3 Actions
-During the Action Selection phase, an adventurer must choose exactly one of the following five actions:
+3.3 Stats and Effective State
+Every combatant ultimately resolves actions using effective stats, not printed base stats. Effective stats combine:
+base stats
+class-skill HP bonus
+artifact stat bonus
+the strongest active positive stat modifier
+the strongest active negative stat modifier
+current positional penalty or benefit
+The game does not ordinarily stack multiple positive bonuses to the same stat or multiple negative penalties to the same stat. It uses the single highest positive and single highest negative effect currently active.
+
+3.4 Duration Semantics
+If an effect lasts for 1 round, 2 rounds, or more, it lasts that many full rounds after the round in which it was applied.
+This means:
+1 round lasts for the remainder of the current round plus the next full round.
+2 rounds lasts for the remainder of the current round plus the next two full rounds.
+Separate from that, some effects last only for this round, until the next Strike, until the next Spell, or once per encounter. Those effects are consumed by trigger rather than ordinary round countdown.
+
+3.5 Round Structure
+Every round proceeds in this order:
+Initiative Check
+Start of Round Effects
+Action Selection
+Action Resolution
+Bonus Action Selection
+Bonus Action Resolution
+End of Round Effects
+
+Initiative is checked once at round start using current effective Speed. Tie-breakers are:
+lower Power active primary weapon first
+higher party average Speed first
+coinflip if still tied
+Because initiative is locked for the round, later Speed changes do not retroactively reorder already-planned actions in that same round.
+
+3.6 Action Selection and Resolution
+Both sides choose actions before anything resolves. Actions then resolve in initiative order, which means a target that was legal during selection can become illegal before a slower unit acts. A later action may fail because:
+its target moved
+its target was knocked out
+frontline replacement changed lane occupancy
+an immunity, reactive effect, or legality override invalidated the original plan
+
+3.7 Core Actions
 Strike
-The adventurer attacks a target with their primary weapon. Targeting rules depend on weapon type (see 2.3 Weapons). Damage is calculated as:
+Uses the active weapon's Strike definition.
+Base damage formula:
+Damage = ceil(Power × (Attack / Defense))
+Flat power bonuses or reductions apply before the Attack-to-Defense scaling. Percentage damage dealt or damage taken modifiers apply after scaling unless an effect states otherwise. Caps, floor rules, and replacement effects apply after rounding as needed.
 
-Damage = Power × (Attack / Defense), rounded up
-
-The target’s HP is reduced by the damage amount. If the target’s HP reaches 0, they are knocked out and removed from the encounter.
-Spread Strikes target all legal targets simultaneously but deal half damage to each.
 Spellcast
-The adventurer casts one of their available Spells (from weapons, Artifacts, or Class Skills). Spells that target enemies may target enemies in the caster’s lane or the enemy frontline. Spells that target allies may target any ally. After casting, the Spell goes on cooldown.
+Uses one available spell from the combatant's active sources. Enemy-targeting spells usually follow lane legality; ally-targeting spells may usually target any ally. Spells normally enter cooldown after use.
+
 Switch Weapons
-The adventurer swaps their primary and secondary weapons. All cooldowns on both weapons are reset. Ranged weapons fully reload their Ammo.
+Swaps primary and secondary weapons, resets cooldowns on both, and fully reloads ranged ammo. It also changes which weapon passives and weapon spells are active. Switch is illegal for units without two switchable weapons and for Apex enemies, who already wield both primaries.
+
 Swap Positions
-The adventurer swaps positions with a target ally. If the target ally has not yet resolved their action this round, they resolve it from their new position. Each player may select the Swap action for at most one adventurer per round; however, other effects (such as abilities) may still cause additional swaps.
+Swaps the acting unit with a target ally. If the target has not acted yet, they resolve from their new position. Each side may usually choose the Swap action for only one unit per round, although abilities may still cause extra movement.
+
 Skip
-The adventurer takes no action.
+Consumes the action and does nothing directly. Some passives still care whether the unit skipped, switched, or swapped.
 
-3.4 Conditions
-Conditions are temporary status effects applied to adventurers. Multiple different conditions can affect the same adventurer simultaneously, but the same condition does not stack with itself (a new application refreshes the duration).
+Ultimate
+Available only when the shared Ultimate Meter is full. Consumes the action and empties the meter.
 
-Condition
-Effect
+3.8 Conditions
+Conditions are temporary status effects. Different conditions stack together. The same condition does not stack with itself; reapplying it refreshes duration instead.
+
 Burn
-The adventurer takes 8% of their max HP as damage at the end of each round.
+Deals 8% of max HP at end of round.
 Root
-The adventurer cannot use the Swap Positions action.
+Prevents the unit from using Swap Positions.
 Shock
-The adventurer has −25 Speed and their Strikes deal 15% of the damage back to themselves as recoil.
+Applies -25 Speed and causes the unit's Strikes to deal 15% recoil to itself.
 Weaken
-The adventurer deals 15% less damage.
+Causes the unit to deal 15% less damage.
 Expose
-The adventurer takes 15% more damage.
+Causes the unit to take 15% more damage.
 Guard
-The adventurer takes 15% less damage.
+Causes the unit to take 15% less damage.
 Spotlight
-The adventurer can be targeted by Melee Strikes while in the backline.
+Allows the unit to be targeted by Melee while in the backline.
 Taunt
-The adventurer can only target the source of the Taunt, unless the target is illegal.
+Restricts the unit so it may only target the Taunt source unless that target is illegal.
 
-3.5 The Ultimate Meter
-Each party has an Ultimate Meter that starts at 0. When an adventurer uses a non-Magic Strike, the meter increases by +1. When an adventurer casts a non-Ultimate Spell, the meter increases by +2. When the meter reaches 5, any adventurer in the party may use their Ultimate Spell as their action. Casting an Ultimate Spell depletes the meter to 0.
-Starting from round 7, each player’s Ultimate Meter automatically fills by +1 at the end of each round. Starting from round 12, this auto-fill increases to +2 per round.
-3.6 Ending an Encounter
-An encounter ends immediately when either of the following conditions is met:
-Party Elimination. All three of one party’s adventurers are knocked out. The other party wins.
-Ultimate Victory. A party casts their third Ultimate Spell during the encounter. That party wins immediately.
+3.9 Special Keywords
+Spread causes an effect to hit all legal targets, usually at half damage each unless a modifier removes the penalty.
+Lifesteal restores HP based on damage actually dealt.
+Recoil deals self-damage based on damage dealt.
+Ammo gates repeated use of some Ranged Strikes.
+Cooldown prevents repeated spell or Magic-Strike usage until enough rounds pass.
+
+3.10 The Ultimate Meter
+Each side has a shared Ultimate Meter starting at 0.
+Non-Magic Strike: +1 meter
+Non-Ultimate Spell cast: +2 meter
+Meter cap: 5
+Ultimate cast: meter resets to 0
+Starting from round 7, the meter auto-fills by +1 at end of round.
+Starting from round 12, it auto-fills by +2 instead.
+
+3.11 Ending an Encounter
+An encounter ends immediately when either win condition is satisfied:
+Party Elimination. One side has no surviving active combatants.
+Ultimate Victory. One side casts its third Ultimate Spell during the encounter.
 
 4. QUESTS
-Quests are the primary single-player game mode. The player faces a gauntlet of encounters against AI-controlled enemies, earning Reputation and Gold. A Quest ends when the player has accumulated three losses. Quest enemies are not adventurers—they are creatures, monsters, and rival forces from the world of Fantasia whose strength scales with the player’s Match Rating (see 4.8 Matchmaking).
+Quests are the primary single-player progression mode. A Quest is a live run with its own party, artifact pool, gold total, reputation delta, streak state, and loss count. The run continues until the player reaches three losses or chooses to forfeit.
+
 4.1 Starting a Quest
-To begin a Quest, the player completes the following steps in order:
+The standard Quest start sequence is:
+Choose a Favorite. The player selects one previously quested-with adventurer who is guaranteed a place in the six-member party.
+Receive five more adventurers. The random generation is constrained so that the party can plausibly cover classes rather than collapsing into unusable role overlap.
+Receive starting artifacts. Three random artifacts are added to the run's Artifact Pool with attunement-diversity constraints.
+Set full-party loadouts. The player chooses each member's primary weapon, class, class skill, and any equipped artifact from the pool.
 
-Step 1: Choose a Favorite. The player selects one adventurer they have previously quested with. This adventurer is guaranteed a place in the party.
-Step 2: Receive a Party. Five additional adventurers are randomly assigned to the party. The random selection is constrained so that, based on each adventurer’s preferred or optimal classes, at least two full sets of six distinct classes are achievable among the six party members.
-Step 3: Receive Starting Artifacts. Three random Artifacts are added to the player’s Artifact pool. No two of the three share any attunement classes, and every Class represented in the party can attune to at least one of the three.
-Step 4: Set Loadouts. The player assigns each adventurer a Primary Weapon, Class, and Class Skill, and may equip Artifacts from the pool. Only one of each Class may be assigned across the party. Only one copy of each Artifact may be equipped at a time. Unequipped Artifacts remain in the pool.
-4.2 Encounter Flow
-Each encounter within a Quest proceeds through these steps:
+4.2 Quest Run State
+A Quest tracks:
+the six-member party
+the current deployed trio per encounter
+the current Artifact Pool
+unspent Quest gold
+running Quest reputation total
+current winstreak and lossstreak for matchmaking and payouts
+current loss count
+encounters won
 
-Step 1: Scout. The player sees the enemy party of three.
-Step 2: Select and Form. The player selects three adventurers from their party and assigns starting positions. During this formation phase, the player may swap Artifacts between any party member (including unequipping from the three sitting out) and change any selected adventurer’s Class Skill. The player may not equip Artifacts from the pool or change any adventurer’s Class.
-Step 3: Fight. The encounter resolves under the rules in Section 3.
-Step 4: Results. The player receives or loses Reputation and collects rewards or takes penalties. See 4.3 and 4.4.
-Step 5: Regroup. The player may alter their entire party’s loadouts: Primary Weapon, Class, Class Skill, and Artifact assignments from the full Artifact pool. This is the only phase where the pool is freely accessible.
-4.3 Winning a Quest Encounter
-When the player wins an encounter, two things happen: Reputation is gained and the player chooses one reward.
-Reputation Gain
-Reputation is added to the Quest’s running gain total using the following formula:
+These values are run-specific. They are only converted into permanent progression at the end of the Quest.
 
+4.3 Encounter Flow Inside a Quest
+Each Quest encounter proceeds through:
+Scout. The player sees the enemy trio and associated context such as tier, locale, or authored title where revealed.
+Select and Form. The player chooses which three party members to bring and arranges their formation.
+Encounter-only adjustments. During this step the player may swap artifacts between party members where the flow allows and change class skills for the selected combatants, but may not freely rebuild the entire six-member party from scratch.
+Fight. The encounter resolves under the combat rules in Section 3.
+Results. Reputation and gold are updated, and rewards or penalties are applied.
+Regroup. The player returns to the full loadout editor and may freely reconfigure the party for the next scout.
+
+4.4 Winning a Quest Encounter
+On a win, the player gains reputation for the Quest's running total and then chooses a reward.
+Reputation gain formula:
 ReputationGain = round(BaseChange + WinstreakBonus), clamped from 8 to 30
-
-BaseChange = 28 × (ActualScore − ExpectedScore)
-ActualScore = 1 (always 1 on a win).
-ExpectedScore = 1 / (1 + 10^((OpponentReputation − PlayerReputation) / 400))
+BaseChange = 28 × (ActualScore - ExpectedScore)
+ActualScore = 1
+ExpectedScore = 1 / (1 + 10^((OpponentReputation - PlayerReputation) / 400))
 WinstreakBonus = min(current Quest winstreak before this win, 5) × 2
-Encounter Reward
-After gaining Reputation, the player selects one of three reward options:
 
-Option A — Gold. Gain 100 Gold, added to the Quest’s unspent Gold pool.
+Reward options:
+Gold. Gain 100 Gold in the Quest gold pool.
+Artifact. Choose one of three offered artifacts and add it to the Quest Artifact Pool.
+Recruit. Spend 100 Gold to replace one party member with one of three offered adventurers. The departing member's equipped artifact, if any, returns to the pool.
 
-Option B — Artifact. Choose one Artifact from a selection of three. The three offered Artifacts will each grant a different stat bonus, and where possible, no two will share the same attunement classes. The chosen Artifact is added to the Artifact pool and may be equipped between encounters. Standard Artifact rules apply.
+4.5 Losing a Quest Encounter
+On a loss:
+-10 Reputation is applied to the Quest's running reputation total.
+-50 Gold is removed from the Quest gold pool, to a minimum of 0.
+The loss count increases by one.
+When the third loss is recorded, the Quest ends immediately after that encounter's resolution flow.
 
-Option C — Recruit (costs 100 Gold). Spend 100 Gold from the Quest’s unspent Gold pool to replace one adventurer in the party with a new one. The player is shown three randomly selected adventurers, each of a markedly different role or preferred class. The player chooses one; the replaced adventurer leaves, and any Artifact they held returns to the pool. This option may be selected multiple times in a single reward phase, each costing an additional 100 Gold with a fresh selection of three candidates. The new adventurer’s loadout must be set before the next encounter.
-4.4 Losing a Quest Encounter
-When the player loses an encounter:
-−10 Reputation is subtracted from the Quest’s running gain total.
-−50 Gold is subtracted from the Quest’s unspent Gold pool (the pool cannot drop below 0).
+4.6 Successful Quest Definition
+A Quest is successful if its final net reputation total is positive. This matters for employee effects and for how the run is interpreted by some reward systems.
 
-The player’s loss count increases by one. When the loss count reaches three, the Quest ends.
-4.5 End of Quest
-When the Quest concludes (after the third loss or by forfeit), the following steps are resolved in order:
+4.7 End of Quest
+At Quest end, resolution happens in this order:
+Sell Artifacts. All artifacts still in the run, equipped or pooled, are sold for 100 Gold each unless another system modifies that value.
+Collect Gold. The resulting Quest gold total is added to permanent Gold, subject to Assistant skill modifiers.
+Apply Reputation. The Quest's net reputation change is added to permanent Reputation.
+Award Guild Exp. Exp is granted based on encounters won.
 
-1. Sell Artifacts. All Artifacts in the player’s possession—equipped and in the pool—are sold for 100 Gold each. The Gold is added to the Quest’s Gold pool.
-2. Collect Gold. The Quest’s total unspent Gold (including Artifact sale proceeds) is added to the player’s permanent Gold balance. This amount may be modified by the Assistant’s active skill (see 7.2 The Assistant).
-3. Apply Reputation. The Quest’s running Reputation gain total is added to the player’s permanent Reputation. This value may be positive or negative.
-4. Earn Exp. The player earns Guild Exp. See 6.1 Earning Experience.
+4.8 Forfeiting a Quest
+Forfeit ends the run immediately and applies:
+Forfeit Penalty = -10 Reputation × losses remaining
+Losses remaining equals 3 minus the current loss count. Standard end-of-Quest resolution then occurs.
 
-Successful Quest: A Quest is considered successful if the final net Reputation gain total is positive. This distinction affects certain Guild Hall employee skills (see Section 7).
-4.6 Forfeiting a Quest
-The player may forfeit a Quest at any time. Forfeiting ends the Quest immediately and applies a penalty:
+4.9 Reputation and Ranks
+Reputation is the persistent ranked measure primarily earned through Quests.
+Squire: 1-199
+Knight: 200-399
+Baron: 400-599
+Viscount: 600-799
+Earl: 800-999
+Margrave: 1,000-1,199
+Duke: 1,200-1,399
+Prince: 1,400-1,599
+King: 1,600-1,799
+Emperor: 1,800-2,000
 
-Forfeit Penalty = −10 Reputation × losses remaining
+4.10 Match Rating
+Quest enemy strength scales using Match Rating:
+Match Rating = Reputation + (20 × current winstreak) - (15 × current lossstreak)
+This nudges hot runs toward tougher encounters and gives slightly softer matchmaking after consecutive losses.
 
-Losses remaining equals 3 minus the player’s current loss count. If the player has 1 loss and forfeits, they had 2 remaining, so the penalty is −20 Reputation applied to the Quest’s gain total. After the penalty, the standard End of Quest steps proceed.
+4.11 Quest Enemies
+Quest enemies are creatures, monsters, spirits, rivals, and named antagonists from Fantasia rather than player-owned adventurers. They obey the combat engine but are built from authored enemy definitions.
+Humanoid enemies use classes and class skills where their tier requires them.
+Nonhumanoid enemies rely on innate kits when a comparable humanoid would instead use a class skill.
+Enemies do not ordinarily have Ultimate Spells unless an enemy is specifically authored with one.
 
-4.7 Reputation and Ranks
-Reputation is the player’s persistent competitive rating, accumulated across Quests. Reputation determines the player’s Rank:
-
-Rank
-Reputation Range
-Squire
-1–199
-Knight
-200–399
-Baron
-400–599
-Viscount
-600–799
-Earl
-800–999
-Margrave
-1,000–1,199
-Duke
-1,200–1,399
-Prince
-1,400–1,599
-King
-1,600–1,799
-Emperor
-1,800–2,000
-
-4.8 Matchmaking
-Quest enemy strength scales with the player’s Match Rating:
-
-Match Rating = Reputation + (20 × current winstreak) − (15 × current lossstreak)
-
-The winstreak modifier pushes successful players toward tougher enemies. The lossstreak modifier provides slightly easier encounters after consecutive losses. Enemy parties always consist of three enemies.
-
-4.9 Quest Enemies
-
-Quest enemies are not adventurers. They are creatures, monsters, and rival forces from the world of Fantasia. Unlike adventurers, enemies do not have Ultimate Spells unless explicitly stated otherwise, and they use simplified loadouts based on their tier.
-
-Humanoid enemies have classes and class skills, while nonhumanoid enemies do not. If an enemy tier only grants one of either a class skill or an innate skill, humanoid enemies use the class skill and nonhumanoid enemies use the innate skill.
-
-4.9.1 Enemy Tiers
-
-Quest enemies are divided into six tiers. A tier determines how complete and complex an enemy’s loadout is.
-
+4.12 Enemy Tiers
 Tier 1
-A primary weapon with only a Strike, and either a class skill or an innate skill.
+Primary weapon with Strike only, and either a class skill or an innate skill.
 
 Tier 2
-A full primary weapon (Strike plus Spell or Skill), and either a class skill or an innate skill.
+Full primary weapon, and either a class skill or an innate skill.
 
 Tier 3
-A full primary weapon, a class skill, and an innate skill.
+Full primary weapon, class skill, and innate skill.
 
 Tier 4
-A full primary weapon, a full secondary weapon, a class skill, an innate skill, and an Artifact. Tier 4 enemies are unique named characters.
+Full primary weapon, full secondary weapon, class skill, innate skill, and an artifact. These are unique named enemies.
 
 Tier 5
-A full primary weapon, a full secondary weapon, a class skill, an innate skill, and a Legendary Artifact. Tier 5 enemies are unique named characters.
+Full primary weapon, full secondary weapon, class skill, innate skill, and a legendary artifact. These are unique named enemies.
 
 Apex
-Two primary weapons equipped simultaneously. The enemy may choose between two different Strikes each round, and the Skills and Spells from both weapons are active. Apex enemies also have a class with a Legendary Class Skill, an innate skill, and a Legendary Artifact. Apex enemies are unique named characters.
+Two simultaneous primary weapons, a legendary class skill, an innate skill, and a legendary artifact. Apex enemies can choose between two distinct Strike profiles each round, and the skills and spells from both weapons are active.
 
-Tier 4 through Apex enemies are all unique figures drawn from myths and fairy tales.
+Tier 4 through Apex enemies are unique mythic or fairytale figures. Legendary artifacts are enemy-specific pieces that grant +50 to one stat and include both an activated spell and a reactive spell. Legendary class skills are Apex-only and are listed in Appendix B.
 
-Legendary Artifacts are Artifacts unique to a specific enemy. Each grants +50 to one stat and provides both a Spell and a Reactive Spell.
+4.13 Locales
+Each quest encounter takes place in one of six locales, and only enemies native to that locale may appear there.
+The Forest of Dreams. A vivid magical forest full of wonder and beasts.
+The Cloud Peaks. Floating mountain ranges reached by leaping across drifting rocks.
+The Blackwells. Vast bog-seas and swamps inhabited by vile creatures.
+The Static Plains. Yellow plains, storm flora, and mile-high lightning-struck trees.
+The Scar. A deep world-crack leading toward the underworld.
+The High Court. The kingdom and surrounding civilized territories of Fantasia.
 
-Legendary Class Skills are special class skills available only to Apex-tier enemies. See Appendix B.
-
-4.9.2 Locales
-
-Each Quest encounter takes place in one of six locales. Only enemies native to that locale may appear in the enemy party.
-
-The Forest of Dreams
-A seemingly endless vivid forest full of wonder and magical beasts.
-
-The Cloud Peaks
-An impossibly tall mountain range floating in the sky, reached by leaping across thousands of drifting rocks around its outskirts.
-
-The Blackwells
-Dark bog-pits the size of lakes or seas, separated by miles of swamp and inhabited by vile, malevolent creatures.
-
-The Static Plains
-Vast yellow plains of rolling hills and meadows filled with electric flowers, broken up by mile-high trees that attract lightning.
-
-The Scar
-A deep valley-like crack in the earth leading straight toward the underworld, both cold as ice and hot as fire.
-
-The High Court
-The Kingdom of Fantasia itself, along with its surrounding outskirts.
-
-Each locale contains six Tier 1 enemies, four Tier 2 enemies, four Tier 3 enemies, three Tier 4 enemies, three Tier 5 enemies, and one Apex enemy.
+Each locale contains 6 Tier 1 enemies, 4 Tier 2 enemies, 4 Tier 3 enemies, 3 Tier 4 enemies, 3 Tier 5 enemies, and 1 Apex enemy.
 
 5. BOUTS
-Bouts are Fabled’s competitive encounter mode. A Bout is a best-of-three series: the first player to win two encounters wins the Bout. There are two types: Random Bouts and Focused Bouts.
-Bouts may be played against another player over LAN (with server-based online play planned for the future) or against an AI opponent. Unlike Quest enemies, enemy parties in Bouts are always composed of adventurers—the same heroes available to the player.
-5.1 Random Bouts
-In a Random Bout, each player receives a randomly assembled party and Artifact pool, mirroring the Quest setup.
-Setup
-Step 1: Receive a Party. Each player selects a favorite adventurer, then receives five random adventurers. The same class-diversity constraint from Quests applies.
-Step 2: Receive Starting Artifacts. Each player receives three random Artifacts in their pool, following the same attunement diversity rules as Quests.
-Step 3: Set Loadouts. Each player sets their party’s loadouts, including equipping Artifacts from the pool.
-Encounter Flow
-Each encounter follows these steps:
+Bouts are Fabled's competitive set-play mode. A Bout is a best-of-three series, and the first side to win two encounters wins the set. Bouts can be played against AI or over LAN. Unlike Quests, Bout enemy sides are always built from adventurers rather than authored quest-enemy rosters.
 
-Step 1: Scout. Both players see each other’s full party of six.
-Step 2: Select and Form. Each player selects three adventurers and assigns positions. During formation, players may swap Artifacts between party members and change Class Skills. Players may not access the Artifact pool or change Classes.
-Step 3: Fight. The encounter resolves under the rules in Section 3.
-Step 4: Adapt. After the encounter (if the Bout is not yet decided), each player makes one free adaptation:
-Add an Artifact: Choose one Artifact from a selection of three randomly offered (different stat bonuses, no shared attunements where possible) and add it to the pool.
-Replace an Adventurer: Swap one party member for a new one chosen from three randomly offered candidates of different roles. The replaced adventurer leaves; any Artifact they held returns to the pool.
+5.1 Shared Bout Structure
+Every Bout encounter follows the same broad pattern:
+Scout the opposing six-member side
+Choose which three to bring
+Assign formation
+Fight the encounter
+Adapt or adjust before the next encounter if the set is not over
 
-Players may also freely adjust all loadouts (Primary Weapon, Class, Class Skill, and Artifact assignments from the pool) before the next encounter.
+The combat engine is the same as in Quests. The differences lie in how parties are assembled and what can change between encounters.
 
-Entry Fee and Rewards
-Against another player: the entry fee and payout are determined by the Bartender’s active skill (see 7.3 The Bartender). Each player pays their own Bartender’s fee and receives their own Bartender’s payout on a win. The losing player forfeits their entry fee and receives nothing. Random Bouts do not affect Reputation or Rank.
-Against AI: Random Bouts against AI have no entry fee and no Gold reward. They still award Guild Exp.
-5.2 Focused Bouts
-In a Focused Bout, each player builds their own party from scratch using the full adventurer roster and Artifact list. Focused Bouts have no entry fee and no rewards—they exist purely as a competitive and practice format.
-Setup
-Step 1: Build a Party. Each player constructs a party of six adventurers from the full roster. The standard constraint applies: at most one of each Class.
-Step 2: Choose Artifacts. Each player equips Artifacts to their adventurers and places up to three additional Artifacts in their Artifact pool. All Artifacts are chosen from the full list. Standard rules apply.
-Step 3: Set Loadouts. Each player assigns all loadout attributes.
-Encounter Flow
-Each encounter follows these steps:
+5.2 Random Bouts
+Random Bouts mirror Quest-style party acquisition.
+Setup:
+Each side selects a favorite adventurer and receives five additional random adventurers.
+Each side receives a starting Artifact Pool of three random artifacts using the same diversity logic used by Quests.
+Each side sets full-party loadouts before the first encounter.
 
-Step 1: Scout. Both players see each other’s full party of six.
-Step 2: Select and Form. Each player selects three and assigns positions. During formation, players may swap Artifacts between party members and change Class Skills. Players may not access the pool or change Classes.
-Step 3: Fight. The encounter resolves under the rules in Section 3.
-Step 4: Adjust. After the encounter (if the Bout is not yet decided), each player may change loadouts using only the existing roster and pool. This includes reassigning Primary Weapons, Classes, Class Skills, and moving Artifacts between adventurers and the pool. No new adventurers or Artifacts are added.
-Rewards
-Focused Bouts award Guild Exp (see 6.1) but no Gold, Reputation, or Rank changes.
+Between encounters, if the set is still active, each side receives one free adaptation package:
+Add Artifact. Choose one from a three-artifact offer and add it to the pool.
+Replace Adventurer. Replace one party member with one of three offered adventurers. Any artifact on the departing member returns to the pool.
+
+After adaptation, full legal loadout editing is available before the next encounter.
+
+5.3 Random Bout Stakes
+Against another player, the Bartender determines the entry fee and payout structure. Each player pays their own fee and receives their own payout on victory. Random Bouts do not change Reputation or Rank.
+Against AI, Random Bouts have no entry fee and no Gold reward, but still grant Guild Exp.
+
+5.4 Focused Bouts
+Focused Bouts are the constructed format.
+Each side manually builds a six-member party from the full adventurer roster.
+Each side manually chooses equipped artifacts and may place up to three additional artifacts into the pool.
+Each side assigns full loadouts before the set begins.
+
+After each encounter, if the set is still active, the player may adjust loadouts using only the existing roster and pool. No new adventurers or artifacts are introduced mid-set.
+
+5.5 Focused Bout Stakes
+Focused Bouts are a pure competition and practice format.
+No entry fee
+No Gold reward
+No Reputation change
+Guild Exp awarded on win or loss
 
 6. PROGRESSION
-Fabled has three currencies that track player progress: Reputation (competitive rank, earned through Quests), Gold (economic currency, earned through Quests, Bouts, and leveling), and Guild Experience (persistent progression tied to the Guild Hall).
-6.1 Earning Experience
-Guild Exp is earned at the end of every Quest and Bout.
-Quest Exp
+Fabled tracks three major persistent progression currencies: Reputation, Gold, and Guild Exp.
+
+6.1 Reputation
+Reputation is the game's ranked competitive measure and is earned primarily through Quests. It drives rank titles and is also used inside Quest matchmaking to scale encounter difficulty.
+
+6.2 Gold
+Gold is the persistent economy currency. It is earned from Quest payouts, certain Bout outcomes, level-up rewards, duplicate-cosmetic conversions, and some employee bonuses. Gold is primarily spent in the Market, though some run-time decisions such as Quest recruiting also consume run-local gold before that value is paid out permanently.
+
+6.3 Guild Exp
+Guild Exp is the account-level progression currency tied to Guild Level.
 Quest Exp = 50 + (20 × encounters won during the Quest)
-A player who wins zero encounters earns 50 Exp. A player who wins ten encounters before their third loss earns 250 Exp.
-Bout Exp
-Bout Type
-Win
-Loss
-Random Bout
-80 Exp
-30 Exp
-Focused Bout
-50 Exp
-20 Exp
+Random Bout Exp: 80 on win, 30 on loss
+Focused Bout Exp: 50 on win, 20 on loss
+Random Bouts pay more Exp because they can involve higher stakes or adaptation pressure. Focused Bouts still contribute to progression even though they do not pay Gold or Reputation.
 
+6.4 Guild Level Curve
+The Guild starts at Level 1.
+Exp to next level = current level × 100
+Excess Exp carries over after each level-up.
 
-Random Bouts award more Exp because they carry economic stakes (when played against another player). Focused Bouts still contribute to Guild progression.
-6.2 Guild Level
-The Guild starts at Level 1. Exp required to advance from one level to the next:
+Representative cumulative thresholds:
+Level 2: 100 total Exp
+Level 5: 1,000 total Exp
+Level 10: 4,500 total Exp
+Level 15: 10,500 total Exp
+Level 20: 19,000 total Exp
+Level 25: 30,000 total Exp
+Level 30: 43,500 total Exp
+Level 40: 78,000 total Exp
+Level 50: 122,500 total Exp
 
-Exp to Next Level = current level × 100
+Guild Level primarily gates Market inventory and broader account progression.
 
-Excess Exp carries over. Example thresholds:
-Level
-Exp to Reach
-Cumulative Exp
-2
-100
-100
-5
-400
-1,000
-10
-900
-4,500
-15
-1,400
-10,500
-20
-1,900
-19,000
-25
-2,400
-30,000
-30
-2,900
-43,500
-40
-3,900
-78,000
-50
-4,900
-122,500
-
-
-Guild Level determines what items are available in the Market (see Section 8) and will be used in Random Bout matchmaking once server-based play is available.
-6.3 Level-Up Rewards
-Gold
-On every level-up, the player receives Gold:
-
+6.5 Level-Up Rewards
+Every level-up grants Gold:
 Level-Up Gold = 50 + (10 × new level)
 
-Level 2 grants 70 Gold. Level 10 grants 150 Gold. Level 25 grants 300 Gold. This amount may be modified by the Assistant’s active skill (see 7.2).
-Cosmetics
-At certain milestones, the player receives cosmetic items:
-Every 5 levels (5, 10, 15, 20, …): one random Common cosmetic. Common cosmetics have a Gold value of 650.
-Every 10 levels (10, 20, 30, 40, …): one random Rare cosmetic, in addition to the Common cosmetic. Rare cosmetics have a Gold value of 2,000.
+Examples:
+Level 2 grants 70 Gold
+Level 10 grants 150 Gold
+Level 25 grants 300 Gold
 
-Duplicate Protection: If the player already owns all cosmetics of the awarded rarity, the item is automatically sold and the player receives its Gold value instead (650 for Common, 2,000 for Rare).
+Some employee skills modify this payout.
+
+6.6 Cosmetic Milestone Rewards
+Every 5 levels, the player receives one random Common cosmetic.
+Every 10 levels, the player receives one random Rare cosmetic in addition to the Common reward.
+For level-up reward purposes:
+Common cosmetic value = 650 Gold
+Rare cosmetic value = 2,000 Gold
+
+Duplicate protection applies. If the player already owns the entire reward pool for the awarded rarity, the duplicate is auto-sold for its gold value instead.
 
 7. THE GUILD HALL
-The Guild Hall is the player’s home base. It serves as the hub for party management, Quest and Bout preparation, Market access, and employee management. The Guild Hall is staffed by three employees, each of whom provides a passive economic benefit.
-Each employee has one or more skills. The player selects one active skill per employee. Skills may be changed at any time between Quests and Bouts but are locked for the duration of an active Quest or Bout. Skills are designed around committed playstyles: each offers a distinct advantage with a corresponding tradeoff to discourage frequent swapping.
-7.1 Employees
-The three employees are:
-The Assistant — affects non-Reputation rewards from Quests and Guild leveling. Five skills.
-The Bartender — sets the entry fee and payout for Random Bouts against other players. Five skills.
-The Server — provides a daily bonus tied to a favorite adventurer. One skill (always active).
+The Guild Hall is the player's persistent home base and primary navigation hub. It provides access to Quests, Bouts, Training, Codex, Market, profile management, employee configuration, LAN play, and settings.
+Employee skills can be changed between runs but are locked while a Quest or Bout is active. Their design philosophy is commitment: each skill provides a meaningful upside paired with a meaningful tradeoff.
 
-Employee appearances can be customized with skins purchased from the Market (see Section 8).
+7.1 Employees
+The three core employees are:
+The Assistant, who modifies non-Reputation rewards from Quests and level progression
+The Bartender, who controls Random Bout entry-fee and payout structure in player-vs-player contexts
+The Server, who provides a daily favorite-adventurer gold bonus
+
+Employee appearances may be customized with owned cosmetics.
+
 7.2 The Assistant
-The Assistant manages the guild’s finances. Their active skill modifies non-Reputation rewards from Quests and from leveling the guild. Reputation is never altered by any Assistant skill.
+The Assistant never alters Reputation directly. Instead, the Assistant modifies gold and progression conversion.
 
 Shrewd
-The player receives 25% more Gold when collecting unspent Gold at the end of a Quest. If the Quest was successful, the bonus increases to 50%.
-Tradeoff: No artifact sale bonus, no Exp conversion, no level-up bonus. Pure Gold-per-Quest optimization.
+Collect 25% more unspent Gold at end of Quest.
+If the Quest was successful, the bonus becomes 50%.
+
 Resourceful
-The player receives 50% more Gold when selling Artifacts at the end of a Quest and when receiving Gold from duplicate cosmetics as level-up rewards.
-Tradeoff: No bonus to unspent Gold collection. Rewards artifact-hoarding Quest strategies.
+Artifacts sell for 50% more at end of Quest.
+Duplicate-cosmetic conversions also pay 50% more Gold.
 
 Erudite
-All Gold the player would gain from a Quest (unspent Gold and Artifact sales combined) is immediately converted to Guild Exp at a rate of 1 Exp per Gold. The player receives zero Gold from the Quest.
-Tradeoff: Complete loss of Quest income. The player must rely on Bouts and level-up rewards for Gold.
+All Quest gold that would be gained is converted into Guild Exp at 1 Exp per Gold.
+The player receives no Gold from that Quest.
+
 Appraiser
-Artifacts sell for 150 Gold instead of 100 Gold at the end of a Quest. However, the Recruit reward option costs 150 Gold instead of 100 Gold.
-Tradeoff: More valuable artifact sales, but recruiting mid-Quest becomes significantly more expensive.
+Artifacts sell for 150 instead of 100 at end of Quest.
+Quest Recruit costs rise from 100 to 150.
+
 Ambitious
-Level-up Gold rewards are doubled. However, unspent Gold collected from Quests is reduced by 25%.
-Tradeoff: Stronger milestone paydays at the cost of consistent Quest income. Best at higher levels where level-up Gold is large.
+Level-up Gold rewards are doubled.
+Unspent Gold collected from Quests is reduced by 25%.
+
 7.3 The Bartender
-The Bartender runs the guild’s Bout operations. Their active skill determines the entry fee and payout for Random Bouts played against other players. Random Bouts against AI and all Focused Bouts are unaffected by the Bartender.
+The Bartender affects Random Bouts against other players. AI Random Bouts and Focused Bouts ignore Bartender economics.
 
 Safe Income
-Entry fee: 100 Gold. Payout on win: 200 Gold.
-Net: +100 on win, −100 on loss. Low risk, steady income.
+Entry fee 100
+Payout 200 on win
+
 High Roller
-The player chooses an entry fee between 300 and 600 Gold. Payout on win: 2× the entry fee. If the Bout is won 2–0, the payout is 3× the entry fee instead.
-Net at 600: +600 on 2–1, +1,200 on 2–0, −600 on loss. Maximum upside for confident players.
+Entry fee chosen between 300 and 600
+Payout 2x on win
+Payout 3x on a 2-0 win
+
 Generous Pour
-Entry fee: 200 Gold. Payout on win: 500 Gold.
-Net: +300 on win, −200 on loss. Strong payout with moderate risk.
+Entry fee 200
+Payout 500 on win
 
 Penny Pincher
-Entry fee: 0 Gold. Payout on win: 100 Gold.
-Net: +100 on win, 0 on loss. Zero downside, capped upside.
-Double or Nothing
-Entry fee: 300 Gold. Payout on 2–1 win: 0 Gold (entry fee is lost). Payout on 2–0 win: 900 Gold.
-Net: +600 on 2–0, −300 on 2–1, −300 on loss. Only profitable with consistent sweeps.
-7.4 The Server
-The Server has a single skill that is always active.
+Entry fee 0
+Payout 100 on win
 
-Friendly
-Each day, the Server selects a favorite adventurer from the full roster. The favorite is displayed in the Guild Hall and changes daily. When the player wins a Bout or completes a successful Quest with the Server’s current favorite in their party of six (the adventurer does not need to be one of the three brought into an encounter), the Server awards the player 100 Gold.
+Double or Nothing
+Entry fee 300
+Payout 900 only on a 2-0 win
+Payout 0 on a 2-1 win
+
+7.4 The Server
+The Server's Friendly effect is always active.
+Each day, the Server selects a favorite adventurer from the full roster.
+If the player wins a Bout or completes a successful Quest with that adventurer somewhere in the six-member party, the Server grants 100 Gold.
 
 8. THE MARKET
-The Market is the in-game shop where Gold is spent on cosmetic items. All Market items are purely cosmetic and do not affect gameplay. Items unlock progressively as Guild Level increases; higher-level items are more expensive and visually elaborate.
-For the purposes of level-up cosmetic rewards, Common items are those costing 650 Gold or less. Rare items cost more than 650 Gold.
+The Market is the cosmetic shop. Market purchases never alter combat power, matchmaking, or encounter legality. They only change presentation.
+Typical market categories and ranges:
+Player Skins: 400-2,500
+Player Chairs: 250-1,500
+Emotes: 150-600
+Poses: 150-600
+Assistant Skins: 300-1,200
+Bartender Skins: 300-1,200
+Server Skins: 300-1,200
+Adventurer Skins: 800-3,000
+Guild Hall Skins: 1,500-5,000
+For level-up reward purposes, Common cosmetics cost 650 Gold or less, while Rare cosmetics cost more than 650 Gold.
 
-Category
-Description
-Price Range (Gold)
-Player Skins
-Cosmetic appearances for the player’s avatar.
-400–2,500
-Player Chairs
-The chair the player sits in during encounters and in the Guild Hall.
-250–1,500
-Emotes
-Expressive animations usable during encounters and in the Guild Hall.
-150–600
-Poses
-Static poses displayed on the player’s profile and during pre-encounter scouting.
-150–600
-Assistant Skins
-Cosmetic appearances for the Assistant.
-300–1,200
-Bartender Skins
-Cosmetic appearances for the Bartender.
-300–1,200
-Server Skins
-Cosmetic appearances for the Server.
-300–1,200
-Adventurer Skins
-Alternate appearances for individual adventurers, visible during encounters.
-800–3,000
-Guild Hall Skins
-Themed visual overhauls for the Guild Hall itself.
-1,500–5,000
+9. TUTORIAL MODE
+Tutorial Mode is the first-run onboarding campaign. It is a ten-encounter scripted progression that teaches the game by progressively unlocking mechanics instead of showing the player the full system all at once.
 
+9.1 First-Run Prompt
+On first launch, the player is asked whether they have played Fabled before.
+If the player answers no, the main menu is restricted to the tutorial entry until the tutorial is cleared.
+If the player answers yes, the tutorial is skipped and the player receives the same starting gold they would have had after clearing it.
+
+9.2 Tutorial Unlock Philosophy
+Tutorial encounters progressively unlock:
+Strike
+Spellcast
+Switch
+Classes and first class skills
+Swap Positions
+Bonus-action awareness
+Party selection and second class skills
+Artifacts
+Ultimates
+Final full-rules combat
+
+9.3 Tutorial Rewards
+Artifacts gained during the tutorial go into a tutorial-only pool. They are usable only inside Tutorial Mode and are not converted into permanent owned combat artifacts. At tutorial completion, those tutorial artifacts are effectively sold during the graduation sequence and then cleared.
+
+9.4 Tutorial Completion
+Clearing the final tutorial encounter:
+marks tutorial completion in save data
+awards the game's starting permanent resources
+unlocks the standard game flow
+clears tutorial-only artifact ownership
+marks the tutorial roster as previously quested with for later favorite selection logic
+
+10. TRAINING, CODEX, AND REFERENCE SYSTEMS
+10.1 Training Grounds
+Training Grounds is the low-friction practice and inspection surface. It emphasizes roster browsing, weapon and skill readability, and quick practice fights rather than run economy.
+
+10.2 Codex
+The Codex unifies adventurer, artifact, and rules reference into a single in-game manual surface. It is informational. Seeing an artifact or adventurer entry in the Codex does not imply ownership or current-run availability.
+
+10.3 Inspection Standard
+When the UI surfaces detail on an adventurer, weapon, artifact, or enemy, the intent is that the player can understand the currently relevant gameplay information. In battle, this means the live loadout state rather than only the base biography.
+
+11. SOCIAL AND LAN SYSTEMS
+11.1 Friends
+The Friends overlay stores player-managed entries containing a display name and connection IP. It is a convenience layer for LAN setup rather than a live progression system.
+
+11.2 LAN Connect
+LAN play is built around host and join flow. The LAN interface exposes the player's local IP, allows manual or friend-list IP selection, and reports connection status such as connecting, connected, or failed.
+
+12. USER INTERFACE MODEL
+12.1 Interaction Philosophy
+Fabled is hover-first and drag-friendly. Information is generally revealed with popouts and tooltips rather than by leaving heavy static detail panels on screen at all times.
+
+12.2 Core Interaction Modes
+Hover reveals detail.
+Click commits actions or opens overlays.
+Drag and drop handles formation, artifact movement, and several loadout interactions.
+Keyboard shortcuts supplement the pointer for battle speed.
+
+12.3 Tooltip and Popout Roles
+Tooltips provide short, low-density explanations for buttons, conditions, or brief labels.
+Popouts provide structured detail cards for adventurers, weapons, artifacts, and live battle loadouts.
+
+12.4 Battle Readability
+The battle interface is built around:
+formation-centered readability
+hover inspection instead of a permanent inspect panel
+inline queued-action indicators
+floating combat text in place of a permanent always-open log
+a toggleable overlay log for players who want the full transcript
+
+12.5 Keyboard Shortcuts
+The live battle interface supports:
+1-5 for core actions
+Q for Ultimate when available
+TAB to cycle friendly units
+SPACE to resolve when all actions are queued
+ESC to cancel, back out, or close overlays
+
+12.6 Settings
+The settings overlay currently governs gameplay-presentation preferences such as Tutorial Popups, Fast Resolution, Battle Log Popups, and Screen Shake. These settings affect readability and pacing but do not alter combat legality or balance.
+
+13. TECHNICAL REFERENCE NOTES
+13.1 Authoritative Appendices
+The appendices are the canonical data tables for:
+all adventurers
+all class skills
+all standard artifacts
+all enemy artifacts
+
+13.2 Runtime Data Interpretation
+The game distinguishes between printed reference data and effective runtime state. A unit's base table entry may differ from what the player sees in live battle because class bonuses, artifact bonuses, temporary buffs, penalties, or position effects have been applied.
+
+13.3 Description Integrity
+Where a description is displayed in the live UI, it should tell the player the relevant gameplay truth for that surface. If the player is inspecting a combatant in battle, the text should reflect the current weapon, class skill, artifact, cooldown, ammo, and condition state that actually matters during that encounter.
+
+13.4 Combat Resolution Order Reference
+For technical reasoning, the encounter engine should be understood as operating on layered state snapshots rather than as one monolithic simultaneous event.
+Battle construction establishes the active combatants, their current loadouts, starting positions, effective max HP, artifact access, and any mode-authored modifications.
+At the start of each round, initiative order is computed once from effective Speed and the stated tiebreakers. That order is then fixed for the round.
+Start-of-round effects resolve in initiative order.
+Both sides then queue their main actions simultaneously.
+Main actions resolve one at a time in initiative order. After each action resolves, the battlefield state may change immediately: HP changes, knockouts occur, frontline replacement can happen, conditions can be applied or refreshed, cooldown and ammo resources can change, and reactive effects can trigger if their conditions are met.
+Because state is updated after each action, later actions resolve against the current live board state rather than the state that existed when plans were chosen.
+After all main actions have resolved, the same pattern repeats for bonus actions.
+End-of-round effects then resolve, followed by ordinary round-based countdowns and later-round Ultimate Meter autofill.
+
+13.5 Action-Failure and Legality Model
+Fabled is intentionally not a fully guaranteed-plan game. The system allows a selected action to fail at resolution if the original assumptions are no longer true.
+Common reasons include:
+the target was knocked out earlier in the round
+the target changed position and is no longer legal for the chosen action
+frontline replacement altered lane structure
+the acting unit was knocked out or prevented from acting
+a once-per-round or once-per-encounter reactive effect invalidated the attack window
+This behavior is not merely an edge case. It is part of the skill expression of planning around initiative and disruption.
+
+13.6 AI Planning Assumptions
+The AI is intended to plan under the same legality rules as the player rather than receiving hidden exemptions.
+AI planning should assume:
+initiative order for both teams is knowable at plan time from current effective Speed
+legal targets depend on current formation, lane rules, conditions, and weapon type
+earlier actions can disrupt later actions by movement, knockout, immunity windows, or reactive effects
+resource states such as ammo, cooldowns, attunement access, and once-per-encounter triggers matter
+The AI may evaluate likely disruption and avoid fragile lines, but it still commits actions before full resolution just like the player does. It should not be documented or implemented as omniscient about outcomes that are not derivable from the current public state.
+Quest AI, Bout AI, and tutorial enemy scripts may differ in selection policy, but they all hand actions to the same core encounter engine.
+
+13.7 Save, Run, and Encounter State Objects
+Fabled operates on three practical state layers.
+Persistent profile state lives across sessions. This includes Gold, Reputation, Guild Exp, Guild Level-related progress, tutorial completion, employee selections, cosmetic ownership and equipment, friend records, favorite adventurer selections, and other account-wide flags.
+Run state lives across encounters inside a Quest or Bout. This includes the current six-member party, current Artifact Pool, encounter score, win-loss record, streak state, and per-run economy values.
+Encounter state lives only inside the current battle. This includes current HP, current position, queued actions, current conditions, cooldown counters, ammo, round counters, temporary markers, and Ultimate Meter values.
+
+13.8 Representative Runtime State Fields
+The live save model is expected to cover at least the following categories:
+Campaign profile fields such as persistent Gold, Reputation, tutorial flags, gameplay settings, employee skill selections, cosmetic unlocks, and social data
+Quest run fields such as active status, current wins and losses, streak state, opponent values, run gold, run reputation, active team snapshot, and Artifact Pool
+Bout run fields such as mode, current score, opponent context, adaptation state, and temporary economic results
+These objects are implementation details, but the game manual records them because they explain why some values reset between encounters while others persist through a run or across the whole account.
+
+13.9 Rulebook Parsing Boundary
+The body of this manual exists for human-readable technical reference. The appendices are additionally used as live structured data sources.
+Appendix A is consumed for adventurer reference syncing.
+Appendix C is consumed for standard artifact reference syncing.
+Appendix D is consumed for enemy artifact reference syncing.
+Because of that, prose may expand freely before Appendix A, but the appendix anchors and their entry structure must remain stable for runtime tools that parse them.
+
+14. GLOSSARY
+Action. The main selected move for a combatant during the Action phase.
+Active Three. The currently deployed combatants in an encounter.
+Artifact Pool. The unequipped artifacts available in the current run.
+Attunement. The class restriction governing whether an equipped artifact's spell may be used.
+Bench. The party members not deployed into the current encounter.
+Bout. A best-of-three competitive set.
+Encounter. A single battle between two active teams.
+Formation. The placement of combatants into Frontline, Backline Left, and Backline Right.
+Guild Exp. Persistent account progression experience.
+Lane. One of the three targetable columns formed by the triangle formation.
+Loadout. A combatant's chosen primary weapon, class, class skill, and artifact.
+Locale. The regional source pool for a quest encounter's enemies.
+Match Rating. The rating used to scale quest-enemy strength.
+Primary Weapon. The active weapon used for Strike and active weapon-based passives.
+Quest. The main PvE gauntlet mode that ends at three losses.
+Reactive Spell. A spell that triggers automatically when its condition is satisfied.
+Run. The current Quest, Bout, or Tutorial progression in progress.
+Scout. The information-reveal step before selecting which three to deploy.
 
 APPENDIX A — ADVENTURERS
 

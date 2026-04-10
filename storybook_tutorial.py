@@ -148,13 +148,13 @@ TUTORIAL_UNIT_CALLOUTS = {
         "Key Mechanic: Solid Oak cuts the first Strike Bar takes each round by 20%.",
     ),
     "tutorial_marigold": (
-        "Key Mechanic: Darts spend Ammo, and Take a Shot reloads while healing Marigold.",
+        "Key Mechanic: Darts spend Ammo, and Take a Shot restores 40 HP while fully reloading Marigold's primary weapon.",
     ),
     "tutorial_daeny": (
-        "Key Mechanic: Flurry grants +15 SPD for 2 rounds after each Strike.",
+        "Key Mechanic: Daeny is a simple melee attacker with a 100 Power Claws Strike.",
     ),
     "tutorial_rowan": (
-        "Key Mechanic: Rowan attacks with a Magic weapon and can lower your Speed with Margin Note.",
+        "Key Mechanic: Spellbook is a Magic weapon, and Margin Note lowers the target's Speed by 15 for 2 rounds.",
     ),
     "tutorial_tree_sentry": (
         "Key Mechanic: Bulwark boosts frontline DEF, and Guard reduces incoming damage.",
@@ -166,7 +166,7 @@ TUTORIAL_UNIT_CALLOUTS = {
         "Key Mechanic: Assassin can target units that swapped last round.",
     ),
     "tutorial_tree_healer": (
-        "Key Mechanic: Wooden Amulet strikes heal the lowest-HP ally for 55 HP.",
+        "Key Mechanic: Wooden Amulet heals the lowest-HP ally on Strike; in encounter 5, Healer boosts that restore amount.",
     ),
     "tutorial_tree_warrior": (
         "Key Mechanic: Martial adds +25 damage to its melee Strikes.",
@@ -184,13 +184,13 @@ TUTORIAL_UNIT_CALLOUTS = {
         "Key Mechanic: Carved Sigil can heal allies for 60 HP, and Medic cleansing removes conditions.",
     ),
     "tutorial_tree_knight": (
-        "Key Mechanic: Vanguard splash reaches your backline, and Black Torch can trigger automatically on fatal damage.",
+        "Key Mechanic: Oaken Lance splashes the backline when it hits the frontline, and encounter 8 adds Black Torch.",
     ),
     "tutorial_wormwood_spirit": (
-        "Key Mechanic: Bygone adds Speed in backline, and Decayed Athame punishes Guarded targets.",
+        "Key Mechanic: Bygone grants +25 Speed in backline, and Decayed Athame punishes Guarded targets.",
     ),
     "tutorial_tree_sorcerer": (
-        "Key Mechanic: Bottled Clouds empowers the next Strike with extra damage and Spread.",
+        "Key Mechanic: Dense Rod is a CD 1 Magic strike; encounter 8 adds Bottled Clouds to empower a follow-up Strike.",
     ),
     "tutorial_wormwood_beast": (
         "Key Mechanic: Ravenous adds damage against Weakened or Rooted targets.",
@@ -202,10 +202,10 @@ TUTORIAL_UNIT_CALLOUTS = {
         "Key Mechanic: Anachronism caps the first huge Strike each round to 1 damage taken.",
     ),
     "tutorial_sapling_handmaiden": (
-        "Key Mechanic: Restoration and Golden Fleece keep the boss team sustained and cleansed.",
+        "Key Mechanic: Restoration sustains the boss team, and encounter 10 adds Medic plus Golden Fleece support.",
     ),
     "tutorial_frau_trude": (
-        "Key Mechanic: Malevolent doubles Burn damage, Hex amplifies focus fire, and Philosopher's Stone can auto-cleanse.",
+        "Key Mechanic: Malevolent makes Burn hit twice as hard, while Hex and Philosopher's Stone amplify and protect her setup.",
     ),
 }
 
@@ -478,7 +478,7 @@ def _default_tutorial_primary_weapon_id(encounter_index: int, adventurer_id: str
 
 
 def _dummy_weapon(label: str):
-    return weapon(f"{label}_dummy", "Training Frame", "melee", active(f"{label}_dummy_strike", "Strike", power=0))
+    return weapon(f"{label}_dummy", "No Weapon", "melee", active(f"{label}_dummy_strike", "Strike", power=0))
 
 
 def _enemy(defn_id: str, name: str, hp: int, attack: int, defense: int, speed: int, primary, *, innate=None, ultimate=None):
@@ -492,7 +492,7 @@ def _enemy(defn_id: str, name: str, hp: int, attack: int, defense: int, speed: i
         defense=defense,
         speed=speed,
         innate=innate or passive("tutorial_none", "None", "No innate effect."),
-        signature_weapons=(primary, _dummy_weapon(defn_id)),
+        signature_weapons=(primary,),
         ultimate=ultimate or active(f"{defn_id}_ult", "Hold Fast", target="self"),
     )
 
@@ -512,26 +512,26 @@ def _enemy_pick(definition_id: str, slot: str, *, class_name: str = "None", clas
 TUTORIAL_ENEMY_DEFS = {
     "tutorial_francis": _enemy("tutorial_francis", "Francis", 275, 70, 85, 40, weapon("tutorial_plate", "Plate", "melee", active("tutorial_plate_strike", "Strike", power=90))),
     "tutorial_bar": _enemy("tutorial_bar", "Bar", 320, 0, 110, 0, _dummy_weapon("tutorial_bar"), innate=passive("solid_oak", "Solid Oak", "Takes 20% less damage from the first Strike each round.", special="solid_oak")),
-    "tutorial_marigold": _enemy("tutorial_marigold", "Marigold", 235, 70, 55, 95, weapon("tutorial_darts", "Darts", "ranged", active("tutorial_darts_strike", "Strike", power=55, ammo_cost=1), ammo=4, spells=(active("tutorial_take_a_shot", "Take a Shot", target="self", heal=40, cooldown=2, description="Restore 40 HP and fully reload.", special="tutorial_reload_primary"),))),
-    "tutorial_daeny": _enemy("tutorial_daeny", "Daeny", 255, 75, 60, 90, weapon("tutorial_claws", "Claws", "melee", active("tutorial_claws_strike", "Strike", power=100, self_buffs=(stat("speed", 15, 2),)))),
-    "tutorial_rowan": _enemy("tutorial_rowan", "Rowan", 210, 65, 60, 90, weapon("tutorial_spellbook", "Spellbook", "magic", active("tutorial_spellbook_strike", "Strike", power=75, cooldown=1, counts_as_spell=True), spells=(active("tutorial_margin_note", "Margin Note", target="enemy", cooldown=2, target_debuffs=(stat("speed", 15, 2),), description="Target has -15 SPD for 2 rounds."),))),
-    "tutorial_tree_sentry": _enemy("tutorial_tree_sentry", "Tree Sentry", 300, 55, 95, 35, weapon("tutorial_wooden_shield", "Wooden Shield", "melee", active("tutorial_wooden_shield_strike", "Strike", power=85, self_statuses=(status("guard", 2),)))),
-    "tutorial_tree_archer": _enemy("tutorial_tree_archer", "Tree Archer", 235, 65, 55, 85, weapon("tutorial_wooden_longbow", "Wooden Longbow", "ranged", active("tutorial_wooden_longbow_strike", "Strike", power=55, ammo_cost=1), ammo=3)),
-    "tutorial_tree_scout": _enemy("tutorial_tree_scout", "Tree Scout", 240, 70, 55, 95, weapon("tutorial_wooden_knife", "Wooden Knife", "melee", active("tutorial_wooden_knife_strike", "Strike", power=85))),
-    "tutorial_tree_healer": _enemy("tutorial_tree_healer", "Tree Healer", 285, 50, 65, 70, weapon("tutorial_wooden_amulet", "Wooden Amulet", "magic", active("tutorial_wooden_amulet_strike", "Strike", power=60, cooldown=1, counts_as_spell=True, description="Lowest HP ally restores 55 HP.", special="tutorial_heal_lowest_ally_55"))),
-    "tutorial_tree_warrior": _enemy("tutorial_tree_warrior", "Tree Warrior", 285, 75, 75, 55, weapon("tutorial_wooden_sword", "Wooden Sword", "melee", active("tutorial_wooden_sword_strike", "Strike", power=90))),
-    "tutorial_tree_witch": _enemy("tutorial_tree_witch", "Tree Witch", 240, 70, 55, 80, weapon("tutorial_wooden_scepter", "Wooden Scepter", "magic", active("tutorial_wooden_scepter_strike", "Strike", power=75, cooldown=1, counts_as_spell=True))),
+    "tutorial_marigold": _enemy("tutorial_marigold", "Marigold", 235, 70, 55, 95, weapon("tutorial_darts", "Darts", "ranged", active("tutorial_darts_strike", "Strike", power=55, ammo_cost=1), ammo=4, spells=(active("tutorial_take_a_shot", "Take a Shot", target="self", heal=40, cooldown=2, description="Marigold restores 40 HP and fully reloads her primary weapon.", special="tutorial_reload_primary"),))),
+    "tutorial_daeny": _enemy("tutorial_daeny", "Daeny", 255, 75, 60, 90, weapon("tutorial_claws", "Claws", "melee", active("tutorial_claws_strike", "Strike", power=100, description="100 Power."))),
+    "tutorial_rowan": _enemy("tutorial_rowan", "Rowan", 170, 40, 60, 90, weapon("tutorial_spellbook", "Spellbook", "magic", active("tutorial_spellbook_strike", "Strike", power=75, cooldown=1, counts_as_spell=True, description="75 Power."), spells=(active("tutorial_margin_note", "Margin Note", target="enemy", cooldown=2, target_debuffs=(stat("speed", 15, 2),), description="The target has -15 Speed for 2 rounds."),))),
+    "tutorial_tree_sentry": _enemy("tutorial_tree_sentry", "Tree Sentry", 300, 55, 95, 35, weapon("tutorial_wooden_shield", "Wooden Shield", "melee", active("tutorial_wooden_shield_strike", "Strike", power=85, description="85 Power. Guards the Tree Sentry for 2 rounds.", self_statuses=(status("guard", 2),)))),
+    "tutorial_tree_archer": _enemy("tutorial_tree_archer", "Tree Archer", 235, 65, 55, 85, weapon("tutorial_wooden_longbow", "Wooden Longbow", "ranged", active("tutorial_wooden_longbow_strike", "Strike", power=55, ammo_cost=1, description="55 Power."), ammo=3)),
+    "tutorial_tree_scout": _enemy("tutorial_tree_scout", "Tree Scout", 240, 70, 55, 95, weapon("tutorial_wooden_knife", "Wooden Knife", "melee", active("tutorial_wooden_knife_strike", "Strike", power=85, description="85 Power."))),
+    "tutorial_tree_healer": _enemy("tutorial_tree_healer", "Tree Healer", 285, 50, 65, 70, weapon("tutorial_wooden_amulet", "Wooden Amulet", "magic", active("tutorial_wooden_amulet_strike", "Strike", power=60, cooldown=1, counts_as_spell=True, description="Tree Healer's lowest HP ally restores 30 HP.", special="tutorial_heal_lowest_ally_55"))),
+    "tutorial_tree_warrior": _enemy("tutorial_tree_warrior", "Tree Warrior", 285, 75, 75, 55, weapon("tutorial_wooden_sword", "Wooden Sword", "melee", active("tutorial_wooden_sword_strike", "Strike", power=90, description="90 Power."))),
+    "tutorial_tree_witch": _enemy("tutorial_tree_witch", "Tree Witch", 240, 70, 55, 80, weapon("tutorial_wooden_scepter", "Wooden Scepter", "magic", active("tutorial_wooden_scepter_strike", "Strike", power=75, cooldown=1, counts_as_spell=True, description="75 Power."))),
     "tutorial_tree_sentinel": _enemy("tutorial_tree_sentinel", "Tree Sentinel", 330, 55, 100, 30, weapon("tutorial_indomitable_tower", "Indomitable Tower", "melee", active("tutorial_indomitable_tower_strike", "Strike", power=80, description="Sentinel and allies gain +15 DEF for 2 rounds.", special="tutorial_team_defense_up_15"))),
-    "tutorial_tree_marksman": _enemy("tutorial_tree_marksman", "Tree Marksman", 260, 70, 55, 85, weapon("tutorial_sturdy_crossbow", "Sturdy Crossbow", "ranged", active("tutorial_sturdy_crossbow_strike", "Strike", power=65, ammo_cost=1), ammo=3)),
+    "tutorial_tree_marksman": _enemy("tutorial_tree_marksman", "Tree Marksman", 260, 70, 55, 85, weapon("tutorial_sturdy_crossbow", "Sturdy Crossbow", "ranged", active("tutorial_sturdy_crossbow_strike", "Strike", power=65, ammo_cost=1, description="65 Power."), ammo=3)),
     "tutorial_tree_druid": _enemy("tutorial_tree_druid", "Tree Druid", 315, 50, 70, 70, weapon("tutorial_carved_sigil", "Carved Sigil", "magic", active("tutorial_carved_sigil_strike", "Strike", target="any", power=60, heal=60, cooldown=1, counts_as_spell=True, description="Damage enemies or heal allies.", special="tutorial_druid_sigil"))),
-    "tutorial_tree_knight": _enemy("tutorial_tree_knight", "Tree Knight", 325, 80, 85, 55, weapon("tutorial_oaken_lance", "Oaken Lance", "melee", active("tutorial_oaken_lance_strike", "Strike", power=100))),
-    "tutorial_wormwood_spirit": _enemy("tutorial_wormwood_spirit", "Wormwood Spirit", 260, 70, 60, 95, weapon("tutorial_decayed_athame", "Decayed Athame", "magic", active("tutorial_decayed_athame_strike", "Strike", power=70, cooldown=1, counts_as_spell=True, bonus_power_if_status="guard", bonus_power=35)), innate=passive("bygone", "Bygone", "+25 SPD while backline.", special="bygone")),
-    "tutorial_tree_sorcerer": _enemy("tutorial_tree_sorcerer", "Tree Sorcerer", 280, 75, 55, 85, weapon("tutorial_dense_rod", "Dense Rod", "magic", active("tutorial_dense_rod_strike", "Strike", power=80, cooldown=1, counts_as_spell=True))),
-    "tutorial_wormwood_beast": _enemy("tutorial_wormwood_beast", "Wormwood Beast", 345, 85, 70, 75, weapon("tutorial_rotting_claws", "Rotting Claws", "melee", active("tutorial_rotting_claws_strike", "Strike", power=105, bonus_power_if_status="weaken", bonus_power=15))),
-    "tutorial_wormwood_fiend": _enemy("tutorial_wormwood_fiend", "Wormwood Fiend", 295, 80, 55, 105, weapon("tutorial_charred_idol", "Charred Idol", "magic", active("tutorial_charred_idol_strike", "Strike", power=80, cooldown=1, counts_as_spell=True, target_statuses=(status("burn", 2),)))),
+    "tutorial_tree_knight": _enemy("tutorial_tree_knight", "Tree Knight", 325, 80, 85, 55, weapon("tutorial_oaken_lance", "Oaken Lance", "melee", active("tutorial_oaken_lance_strike", "Strike", power=100, description="100 Power. If the target is frontline, each backline enemy takes 15 damage."))),
+    "tutorial_wormwood_spirit": _enemy("tutorial_wormwood_spirit", "Wormwood Spirit", 260, 70, 60, 95, weapon("tutorial_decayed_athame", "Decayed Athame", "magic", active("tutorial_decayed_athame_strike", "Strike", power=70, cooldown=1, counts_as_spell=True, bonus_power_if_status="guard", bonus_power=35, description="70 Power, +35 Power if the target is Guarded.")), innate=passive("bygone", "Bygone", "Wormwood Spirit has +25 Speed while in the backline.", special="bygone")),
+    "tutorial_tree_sorcerer": _enemy("tutorial_tree_sorcerer", "Tree Sorcerer", 280, 75, 55, 85, weapon("tutorial_dense_rod", "Dense Rod", "magic", active("tutorial_dense_rod_strike", "Strike", power=80, cooldown=1, counts_as_spell=True, description="80 Power."))),
+    "tutorial_wormwood_beast": _enemy("tutorial_wormwood_beast", "Wormwood Beast", 345, 85, 70, 75, weapon("tutorial_rotting_claws", "Rotting Claws", "melee", active("tutorial_rotting_claws_strike", "Strike", power=105, bonus_power_if_status="weaken", bonus_power=15, description="105 Power."))),
+    "tutorial_wormwood_fiend": _enemy("tutorial_wormwood_fiend", "Wormwood Fiend", 295, 80, 55, 105, weapon("tutorial_charred_idol", "Charred Idol", "magic", active("tutorial_charred_idol_strike", "Strike", power=80, cooldown=1, counts_as_spell=True, target_statuses=(status("burn", 2),), description="80 Power. Burns the target for 2 rounds."))),
     "tutorial_wormwood_monstrosity": _enemy("tutorial_wormwood_monstrosity", "Wormwood Monstrosity", 410, 95, 95, 45, weapon("tutorial_petrified_fangs", "Petrified Fangs", "melee", active("tutorial_petrified_fangs_strike", "Strike", power=120, description="If fatal, Anachronism triggers on all Strikes next round.", special="tutorial_monstrosity_fatal")), innate=passive("anachronism", "Anachronism", "The first time each round a Strike would deal 20% max HP or more, reduce it to 1.", special="anachronism")),
-    "tutorial_sapling_handmaiden": _enemy("tutorial_sapling_handmaiden", "Sapling Handmaiden", 320, 55, 75, 75, weapon("tutorial_twig_caduceus", "Twig Caduceus", "magic", active("tutorial_twig_caduceus_strike", "Strike", power=70, cooldown=1, counts_as_spell=True, lifesteal=0.50), spells=(active("tutorial_handmaiden_restoration", "Restoration", target="ally", heal=70, cooldown=1),)), innate=passive("perennial", "Perennial", "This unit and allies heal 50% more below half HP.", special="perennial")),
-    "tutorial_frau_trude": _enemy("tutorial_frau_trude", "Frau Trude", 340, 80, 75, 100, weapon("tutorial_wormwood_wand", "Wormwood Wand", "magic", active("tutorial_wormwood_wand_strike", "Strike", power=90, cooldown=1, counts_as_spell=True, target_statuses=(status("burn", 2),)), spells=(active("tutorial_hex", "Hex", target="enemy", cooldown=2, description="Target takes +15 damage from all sources for 2 rounds.", special="takes_plus_15_damage"),)), innate=passive("malevolent", "Malevolent", "Enemies take double Burn damage.", special="malevolent"), ultimate=active("tutorial_petrify", "Petrify", target="enemy", description="Target gains +25 DEF and cannot act for 2 rounds.", target_buffs=(stat("defense", 25, 2),), special="tutorial_petrify")),
+    "tutorial_sapling_handmaiden": _enemy("tutorial_sapling_handmaiden", "Sapling Handmaiden", 320, 55, 75, 75, weapon("tutorial_twig_caduceus", "Twig Caduceus", "magic", active("tutorial_twig_caduceus_strike", "Strike", power=70, cooldown=1, counts_as_spell=True, lifesteal=0.50, description="70 Power, 50% Lifesteal."), spells=(active("tutorial_handmaiden_restoration", "Restoration", target="ally", heal=70, cooldown=1, description="Target ally restores 70 HP."),)), innate=passive("perennial", "Perennial", "Spring Handmaiden and her allies restore +50% HP when below 50% max HP.", special="perennial")),
+    "tutorial_frau_trude": _enemy("tutorial_frau_trude", "Frau Trude", 340, 80, 75, 100, weapon("tutorial_wormwood_wand", "Wormwood Wand", "magic", active("tutorial_wormwood_wand_strike", "Strike", power=90, cooldown=1, counts_as_spell=True, target_statuses=(status("burn", 2),), description="Burns the target for 2 rounds."), spells=(active("tutorial_hex", "Hex", target="enemy", cooldown=2, description="Target enemy takes +15 damage from all sources for 2 rounds.", special="takes_plus_15_damage"),)), innate=passive("malevolent", "Malevolent", "Enemies take x2 damage from Burn.", special="malevolent"), ultimate=active("tutorial_petrify", "Petrify", target="enemy", description="For 2 rounds, the target enemy has +25 Defense and cannot act.", target_buffs=(stat("defense", 25, 2),), special="tutorial_petrify")),
 }
 
 
@@ -539,7 +539,7 @@ TUTORIAL_ENEMY_DEFS["tutorial_frau_trude"] = replace(
     TUTORIAL_ENEMY_DEFS["tutorial_frau_trude"],
     signature_weapons=(
         TUTORIAL_ENEMY_DEFS["tutorial_frau_trude"].signature_weapons[0],
-        weapon("tutorial_ash_mothers_brand", "Ash-Mother's Brand", "magic", active("tutorial_ash_mothers_brand_strike", "Strike", power=80, cooldown=2, counts_as_spell=True, bonus_power_if_status="burn", bonus_power=40)),
+        weapon("tutorial_ash_mothers_brand", "Ash-Mother's Brand", "magic", active("tutorial_ash_mothers_brand_strike", "Strike", power=80, cooldown=2, counts_as_spell=True, bonus_power_if_status="burn", bonus_power=40, description="80 Power, +40 Power vs Burned targets.")),
     ),
 )
 

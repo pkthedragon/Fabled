@@ -448,7 +448,7 @@ def _safe_choose_quest_party(
     raise RuntimeError(f"Could not build a quest trio from offer {offered}.") from original_error
 
 
-def _autoplay_battle_with_transcript(mode, writer: TranscriptWriter, *, difficulty: str, max_rounds: int = 60):
+def _autoplay_battle_with_transcript(mode, writer: TranscriptWriter, *, difficulty: str, max_rounds: int = 150):
     seen_rounds: set[int] = set()
     while mode.route == "battle":
         controller = mode.battle_controller

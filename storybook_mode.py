@@ -102,6 +102,7 @@ class StorybookMode:
         self.tutorial_loadout_detail_scroll = 0
         self.tutorial_loadout_summary_scroll = 0
         self.tutorial_pending_lines: list[str] = []
+        self.tutorial_replay_encounter_index: int | None = None
 
         self.player_note_lines = [
             "Little Jack is always eligible as your quest favorite.",
@@ -246,6 +247,7 @@ class StorybookMode:
         self.current_battle_enemy_name = "AI Rival"
         self.current_battle_result_kind = "quest"
         self.current_battle_opponent_glory = ensure_storybook_reputation(getattr(self.profile, "reputation", 300), getattr(self.profile, "ranked_games_played", 0))
+        self.current_tutorial_battle_encounter_index: int | None = None
 
         self.result_kind = "quest"
         self.result_lines: list[str] = []
@@ -627,8 +629,29 @@ class StorybookMode:
             and not getattr(self.profile, "tutorial_complete", False)
         )
 
-    def _tutorial_encounter_index(self) -> int:
+    def _tutorial_progress_encounter_index(self) -> int:
         return max(1, min(10, int(getattr(self.profile, "tutorial_current_encounter", 1) or 1)))
+
+    def _tutorial_encounter_index(self) -> int:
+        if self.tutorial_replay_encounter_index is not None:
+            return max(1, min(10, int(self.tutorial_replay_encounter_index)))
+        return self._tutorial_progress_encounter_index()
+
+    def _clear_tutorial_replay_state(self):
+        self.tutorial_replay_encounter_index = None
+        self.current_tutorial_battle_encounter_index = None
+
+    def _current_tutorial_battle_index(self) -> int:
+        if self.current_tutorial_battle_encounter_index is not None:
+            return max(1, min(10, int(self.current_tutorial_battle_encounter_index)))
+        return self._tutorial_encounter_index()
+
+    def _tutorial_result_is_replay(self, encounter_index: int | None = None) -> bool:
+        current_index = self._tutorial_progress_encounter_index()
+        battle_index = encounter_index if encounter_index is not None else self._current_tutorial_battle_index()
+        return self.tutorial_replay_encounter_index is not None and (
+            battle_index != current_index or getattr(self.profile, "tutorial_complete", False)
+        )
 
     def _tutorial_complete_now(self, *, skipped: bool):
         self.profile.tutorial_prompt_answered = True
@@ -649,6 +672,7 @@ class StorybookMode:
         self.tutorial_loadout_index = 0
         self.tutorial_loadout_detail_scroll = 0
         self.tutorial_loadout_summary_scroll = 0
+        self._clear_tutorial_replay_state()
         self._persist_profile()
 
     def _accept_first_run_choice(self, *, played_before: bool):
@@ -670,6 +694,7 @@ class StorybookMode:
         self.tutorial_loadout_index = 0
         self.tutorial_loadout_detail_scroll = 0
         self.tutorial_loadout_summary_scroll = 0
+        self._clear_tutorial_replay_state()
         self.route = "main_menu"
         self._persist_profile()
 
@@ -728,16 +753,21 @@ class StorybookMode:
             return
         self._start_tutorial_battle()
 
-    def _start_tutorial_battle(self):
-        encounter_index = self._tutorial_encounter_index()
-        if self.tutorial_setup_state is None:
-            self.tutorial_setup_state = build_player_setup(
+    def _start_tutorial_battle(self, *, encounter_index_override: int | None = None, setup_state_override: dict | None = None):
+        encounter_index = max(1, min(10, int(encounter_index_override))) if encounter_index_override is not None else self._tutorial_encounter_index()
+        if encounter_index_override is None:
+            self.tutorial_replay_encounter_index = None
+        setup_state = copy.deepcopy(setup_state_override) if setup_state_override is not None else self.tutorial_setup_state
+        if setup_state is None:
+            setup_state = build_player_setup(
                 encounter_index,
                 selected_ids=self.tutorial_selected_ids if self.tutorial_selected_ids else None,
                 artifact_pool=getattr(self.profile, "tutorial_artifact_pool", []),
             )
-        battle = build_tutorial_battle(encounter_index, self.tutorial_setup_state)
-        self.current_battle_setup = copy.deepcopy(self.tutorial_setup_state)
+            if encounter_index_override is None:
+                self.tutorial_setup_state = copy.deepcopy(setup_state)
+        battle = build_tutorial_battle(encounter_index, setup_state)
+        self.current_battle_setup = copy.deepcopy(setup_state)
         self.current_battle_human_team = 1
         self.current_battle_ai_difficulties = {}
         self.current_battle_second_picker = 0
@@ -745,6 +775,7 @@ class StorybookMode:
         self.current_battle_enemy_name = "Tutorial Rival"
         self.current_battle_result_kind = "tutorial"
         self.current_battle_opponent_glory = 300
+        self.current_tutorial_battle_encounter_index = encounter_index
         spec = encounter_spec(encounter_index)
         self.battle_controller = TutorialBattleController(
             battle=battle,
@@ -762,8 +793,13 @@ class StorybookMode:
         self.route = "battle"
 
     def _finalize_tutorial_result(self, lines: list[str]) -> list[str]:
-        spec = encounter_spec(self._tutorial_encounter_index())
+        encounter_index = self._current_tutorial_battle_index()
+        spec = encounter_spec(encounter_index)
+        is_replay = self._tutorial_result_is_replay(encounter_index)
         if self.result_victory:
+            if is_replay:
+                self._persist_profile()
+                return [f"Encounter {spec.index} replay cleared.", "Continue returns to your current tutorial step."]
             new_pool = list(getattr(self.profile, "tutorial_artifact_pool", []))
             for artifact_id in spec.reward_artifact_ids:
                 if artifact_id not in new_pool:
@@ -781,6 +817,8 @@ class StorybookMode:
             self._persist_profile()
             return [f"Encounter {spec.index} cleared.", "Continue to the next lesson.", *(["Tutorial pool updated."] if spec.reward_artifact_ids else [])]
         self._persist_profile()
+        if is_replay:
+            return [f"Encounter {spec.index} replay failed.", spec.defeat_hint, "Continue returns to your current tutorial step."]
         return [f"Encounter {spec.index} failed.", spec.defeat_hint, "Continue to restart the encounter."]
 
     @staticmethod
@@ -2146,6 +2184,7 @@ class StorybookMode:
 
         if route == "tutorial_briefing":
             if self._hit(btns.get("back"), pos):
+                self._clear_tutorial_replay_state()
                 self.route = "main_menu"
                 return None
             if self._hit(btns.get("continue"), pos):
@@ -3196,8 +3235,8 @@ class StorybookMode:
         winner = self.battle_controller.battle.winner
         self.result_kind = self.battle_controller.results_kind
         self.result_victory = winner == self.current_battle_human_team
-        if self.result_kind == "tutorial" and not self.result_victory and encounter_spec(self._tutorial_encounter_index()).no_defeat:
-            spec = encounter_spec(self._tutorial_encounter_index())
+        if self.result_kind == "tutorial" and not self.result_victory and encounter_spec(self._current_tutorial_battle_index()).no_defeat:
+            spec = encounter_spec(self._current_tutorial_battle_index())
             self.battle_controller = None
             self.tutorial_pending_lines = [spec.defeat_hint, "This lesson restarts immediately. There is no penalty for learning here."]
             self.route = "tutorial_briefing"
@@ -3468,6 +3507,7 @@ class StorybookMode:
 
     def _continue_from_results(self):
         if self.result_kind == "tutorial":
+            self._clear_tutorial_replay_state()
             if self.result_victory:
                 if getattr(self.profile, "tutorial_complete", False):
                     self.route = "main_menu"
@@ -3507,6 +3547,7 @@ class StorybookMode:
 
     def _return_from_results(self):
         if self.result_kind == "tutorial":
+            self._clear_tutorial_replay_state()
             self.route = "main_menu" if getattr(self.profile, "tutorial_complete", False) else "tutorial_briefing"
         elif self.result_kind == "quest":
             if self.quest_context == "training":
@@ -3523,7 +3564,12 @@ class StorybookMode:
         if self.current_battle_setup is None:
             return
         if self.current_battle_result_kind == "tutorial":
-            self._start_tutorial_battle()
+            encounter_index = self.current_tutorial_battle_encounter_index or self._tutorial_encounter_index()
+            self.tutorial_replay_encounter_index = encounter_index
+            self._start_tutorial_battle(
+                encounter_index_override=encounter_index,
+                setup_state_override=copy.deepcopy(self.current_battle_setup),
+            )
             return
         self._start_battle(
             self.current_battle_setup,
@@ -3539,6 +3585,7 @@ class StorybookMode:
 
     def _abandon_battle(self):
         if self.current_battle_result_kind == "tutorial":
+            self._clear_tutorial_replay_state()
             self.route = "main_menu" if getattr(self.profile, "tutorial_complete", False) else "tutorial_briefing"
         elif self.current_battle_result_kind == "quest":
             if self.quest_context == "ranked" and self.quest_opponent_mode == "ai":
@@ -4489,6 +4536,7 @@ class StorybookMode:
         self.current_battle_enemy_name = enemy_name
         self.current_battle_result_kind = result_kind
         self.current_battle_opponent_glory = opponent_glory
+        self.current_tutorial_battle_encounter_index = None
 
         battle = build_battle_from_setup(self.current_battle_setup)
         if second_picker == 1:

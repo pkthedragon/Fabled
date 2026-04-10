@@ -76,6 +76,19 @@ DISRUPTIVE_EFFECT_SPECIALS = {
     "zephyr",
 }
 
+SELF_PROTECTION_INVALIDATING_SPECIALS = {
+    "crowstorm",
+}
+
+SELF_PROTECTION_DISRUPTION_SPECIALS = {
+    "crowstorm",
+    "time_stop",
+}
+
+SELF_PROTECTION_STRIKE_SOFT_SPECIALS = {
+    "mistform",
+}
+
 
 INVALID_PLAN_LOG_WEIGHTS: tuple[tuple[str, float], ...] = (
     (" queued Strike failed because ", 34.0),
@@ -268,6 +281,8 @@ def _rough_damage(battle, actor, target, effect, *, weapon=None) -> int:
 
 
 def _effect_usable(actor, effect) -> bool:
+    if effect.special == "time_stop" and actor.markers.get("time_stop_used", 0) > 0:
+        return False
     if actor.cooldowns.get(effect.id, 0) > 0:
         return False
     source_weapon = _weapon_for_effect(actor, effect)
@@ -350,6 +365,8 @@ def _can_cast_effect(battle, actor, effect) -> bool:
 
 def _can_switch(actor, *, bonus: bool) -> bool:
     if actor.defn.id == "ashen_ella" or actor.dual_primary_weapons_active():
+        return False
+    if actor.primary_weapon.id == actor.secondary_weapon.id:
         return False
     if not bonus:
         return True
@@ -574,6 +591,166 @@ def _estimate_team_damage_to_target(battle, team_num: int, target) -> float:
                 best = max(best, _rough_damage(battle, actor, target, effect, weapon=_weapon_for_effect(actor, effect)))
         total += best
     return total
+
+
+def _estimate_window_damage_to_target(
+    battle,
+    start_index: int,
+    end_index: int,
+    team_num: int,
+    target,
+) -> float:
+    if target is None or target.ko:
+        return 0.0
+    total = 0.0
+    start_index = max(0, start_index)
+    end_index = min(end_index, len(battle.initiative_order))
+    for attacker in battle.initiative_order[start_index:end_index]:
+        if attacker.ko or player_num_for_actor(battle, attacker) != team_num:
+            continue
+        best = 0.0
+        for weapon in attacker.active_strike_weapons():
+            if not _can_attempt_strike(attacker, weapon):
+                continue
+            strike_targets = get_legal_targets(battle, attacker, effect=weapon.strike, weapon=weapon)
+            if target in strike_targets:
+                best = max(best, _rough_damage(battle, attacker, target, weapon.strike, weapon=weapon))
+        for effect in _active_spells_for_phase(attacker, bonus=False):
+            if effect.target != "enemy":
+                continue
+            spell_weapon = _weapon_for_effect(attacker, effect)
+            if target in get_legal_targets(battle, attacker, effect=effect, weapon=spell_weapon):
+                best = max(best, _rough_damage(battle, attacker, target, effect, weapon=spell_weapon))
+        if team_for_actor(battle, attacker).ultimate_meter >= ULTIMATE_METER_MAX:
+            effect = attacker.defn.ultimate
+            if effect.target == "enemy" and target in get_legal_targets(battle, attacker, effect=effect):
+                best = max(best, _rough_damage(battle, attacker, target, effect, weapon=_weapon_for_effect(attacker, effect)))
+        total += best
+    return total
+
+
+def _estimate_pre_actor_damage_to_target(battle, actor_index: int, team_num: int, target) -> float:
+    return _estimate_window_damage_to_target(battle, 0, actor_index, team_num, target)
+
+
+def _has_pre_actor_swap_risk(battle, actor_index: int, target_ref: tuple[int, str] | None) -> bool:
+    if target_ref is None:
+        return False
+    for mover in battle.initiative_order[:actor_index]:
+        if mover.ko or player_num_for_actor(battle, mover) != target_ref[0]:
+            continue
+        mover_ref = _unit_ref(battle, mover)
+        for spec in available_action_specs(battle, mover, bonus=False):
+            if spec.kind != "swap":
+                continue
+            if not _spec_is_legal(battle, mover, spec):
+                continue
+            if mover_ref == target_ref or spec.target_ref == target_ref:
+                return True
+    return False
+
+
+def _has_pre_actor_ally_swap_exposure_risk(battle, actor, actor_index: int, target) -> bool:
+    if target is None or target.ko:
+        return False
+    actor_team_num = player_num_for_actor(battle, actor)
+    enemy_team_num = 2 if actor_team_num == 1 else 1
+    actor_ref = _unit_ref(battle, actor)
+    target_ref = _unit_ref(battle, target)
+    for mover in battle.initiative_order[:actor_index]:
+        if mover.ko or player_num_for_actor(battle, mover) != actor_team_num:
+            continue
+        mover_ref = _unit_ref(battle, mover)
+        if mover_ref == actor_ref:
+            continue
+        mover_index = _initiative_index(battle, mover)
+        for spec in available_action_specs(battle, mover, bonus=False):
+            if spec.kind != "swap" or not _spec_is_legal(battle, mover, spec):
+                continue
+            if target_ref not in {mover_ref, spec.target_ref}:
+                continue
+            sim = copy.deepcopy(battle)
+            sim_mover = _find_unit(sim, mover_ref)
+            if sim_mover is None or sim_mover.ko:
+                continue
+            _queue_spec(sim_mover, sim, spec)
+            sim_action = sim_mover.queued_bonus_action if spec.bonus else sim_mover.queued_action
+            resolve_action(sim_mover, sim_action, sim, is_bonus=spec.bonus)
+            sim_target = _find_unit(sim, target_ref)
+            if sim_target is None or sim_target.ko:
+                return True
+            threatened = _estimate_window_damage_to_target(
+                sim,
+                mover_index + 1,
+                actor_index,
+                enemy_team_num,
+                sim_target,
+            )
+            if threatened >= sim_target.hp:
+                return True
+    return False
+
+
+def _pre_actor_target_self_protection_risk(
+    battle,
+    actor,
+    actor_index: int,
+    target,
+    spec: ActionSpec,
+) -> tuple[float, bool]:
+    if (
+        target is None
+        or target.ko
+        or spec.kind not in {"strike", "spell", "ultimate"}
+        or spec.target_ref is None
+        or player_num_for_actor(battle, target) == player_num_for_actor(battle, actor)
+    ):
+        return 0.0, False
+    target_index = _initiative_index(battle, target)
+    if target_index >= actor_index:
+        return 0.0, False
+
+    incoming_effect = _spec_effect(actor, spec)
+    if incoming_effect is None or incoming_effect.target != "enemy":
+        return 0.0, False
+
+    incoming_weapon = (
+        _strike_weapon_for_spec(actor, spec)
+        if spec.kind == "strike"
+        else _weapon_for_effect(actor, incoming_effect)
+    )
+    direct_pressure = _rough_damage(battle, actor, target, incoming_effect, weapon=incoming_weapon)
+    team_pressure = _estimate_team_damage_to_target(
+        battle, player_num_for_actor(battle, actor), target
+    )
+    hp_ratio = target.hp / max(1, target.max_hp)
+    threatened = (
+        direct_pressure >= max(1, int(target.hp * 0.45))
+        or team_pressure >= max(1, int(target.hp * 0.75))
+        or hp_ratio <= 0.55
+    )
+
+    risk = 0.0
+    hard_invalid = False
+    for target_spec in available_action_specs(battle, target, bonus=False):
+        if target_spec.kind not in {"spell", "ultimate"}:
+            continue
+        effect = _spec_effect(target, target_spec)
+        if effect is None or effect.target != "self":
+            continue
+        if effect.special in SELF_PROTECTION_INVALIDATING_SPECIALS:
+            if threatened:
+                return 28.0, True
+            risk = max(risk, 10.0)
+            continue
+        if effect.special == "time_stop":
+            if threatened:
+                risk = max(risk, 6.0)
+            continue
+        if effect.special in SELF_PROTECTION_STRIKE_SOFT_SPECIALS and spec.kind == "strike":
+            if direct_pressure > 0 or hp_ratio <= 0.8:
+                risk = max(risk, 10.0)
+    return risk, hard_invalid
 
 
 def _ally_will_ko_target(battle, team_num: int, actor, target) -> bool:
@@ -1005,6 +1182,32 @@ def _actor_failure_weight(log_lines: list[str], actor_name: str) -> float:
     return best
 
 
+def _team_failure_penalty(log_lines: list[str], actor_names: list[str]) -> tuple[float, float]:
+    penalty = 0.0
+    failures = 0.0
+    if not actor_names:
+        return penalty, failures
+    actor_prefixes = {
+        actor_name: (
+            f"{actor_name}'s queued ",
+            f"{actor_name} cannot ",
+            f"{actor_name} has no ",
+        )
+        for actor_name in actor_names
+    }
+    for line in log_lines:
+        weight = 0.0
+        for prefixes in actor_prefixes.values():
+            if line.startswith(prefixes):
+                weight = _failure_weight_for_line(line)
+                break
+        if weight <= 0.0:
+            continue
+        penalty += weight
+        failures += 1.0
+    return penalty, failures
+
+
 def _relevant_enemy_disruption_specs(battle, enemy, actor, own_spec: ActionSpec) -> list[ActionSpec]:
     actor_ref = _unit_ref(battle, actor)
     own_target_ref = own_spec.target_ref
@@ -1015,19 +1218,41 @@ def _relevant_enemy_disruption_specs(battle, enemy, actor, own_spec: ActionSpec)
         if spec.kind in {"skip", "switch"}:
             continue
         if spec.kind == "swap":
-            if own_target_ref is None or own_target_ref[0] != enemy_team_num:
-                continue
             moved_refs = {_unit_ref(battle, enemy)}
             if spec.target_ref is not None:
                 moved_refs.add(spec.target_ref)
-            if own_target_ref in moved_refs:
+            if actor_ref in moved_refs:
+                relevant.append(spec)
+                continue
+            if own_target_ref is not None and own_target_ref in moved_refs:
                 relevant.append(spec)
             continue
         effect = _spec_effect(enemy, spec)
         if effect is None:
             continue
+        if (
+            own_target_ref is not None
+            and own_target_ref == _unit_ref(battle, enemy)
+            and effect.target == "self"
+            and (
+                effect.special in SELF_PROTECTION_DISRUPTION_SPECIALS
+                or (effect.special in SELF_PROTECTION_STRIKE_SOFT_SPECIALS and own_spec.kind == "strike")
+            )
+        ):
+            relevant.append(spec)
+            continue
         target_ref = spec.target_ref
         status_kinds = {status.kind for status in effect.target_statuses}
+        if target_ref is not None and target_ref[0] == actor_team_num:
+            if (
+                target_ref == actor_ref
+                or own_target_ref == target_ref
+                or effect.power > 0
+                or effect.special in DISRUPTIVE_EFFECT_SPECIALS
+                or bool(status_kinds)
+            ):
+                relevant.append(spec)
+                continue
         if effect.special in {"zephyr", "swap_target_with_enemy"} and target_ref is not None and target_ref[0] == actor_team_num:
             relevant.append(spec)
             continue
@@ -1050,7 +1275,7 @@ def _relevant_enemy_disruption_specs(battle, enemy, actor, own_spec: ActionSpec)
 
 
 def _pre_resolution_enemy_risk(battle, team_num: int, actor_ref: tuple[int, str], spec: ActionSpec) -> float:
-    if spec.bonus or spec.kind not in {"strike", "spell", "ultimate"}:
+    if spec.bonus or spec.kind == "skip":
         return 0.0
     actor = _find_unit(battle, actor_ref)
     if actor is None or actor.ko:
@@ -1080,13 +1305,13 @@ def _pre_resolution_enemy_risk(battle, team_num: int, actor_ref: tuple[int, str]
             resolve_action(sim_actor, own_action, sim, is_bonus=spec.bonus)
             failure_weight = _actor_failure_weight(sim.log[log_start:], sim_actor.name)
             if failure_weight > 0:
-                enemy_risk = max(enemy_risk, failure_weight * 0.4)
+                enemy_risk = max(enemy_risk, failure_weight * 0.9)
                 continue
             strike_weapon = _strike_weapon_for_spec(actor, spec) if spec.kind == "strike" else None
             if spec.kind == "strike" and strike_weapon is not None and strike_weapon.kind == "melee" and sim_actor.slot != actor.slot:
                 enemy_risk = max(enemy_risk, 12.0)
         total_risk += enemy_risk
-    return min(total_risk, 18.0)
+    return min(total_risk, 24.0)
 
 
 def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec: ActionSpec) -> float:
@@ -1122,6 +1347,8 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
     real_actor = _find_unit(battle, actor_ref)
     target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
     effect = _spec_effect(real_actor, spec) if real_actor is not None else None
+    actor_index = _initiative_index(battle, real_actor) if real_actor is not None else len(battle.initiative_order)
+    enemy_team_num = 2 if team_num == 1 else 1
     if spec.kind == "skip":
         delta -= 3.0
     elif spec.kind == "switch":
@@ -1136,6 +1363,13 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
             delta += 3.0
         if spec.target_ref == actor_ref:
             delta -= 4.0
+        threatened = _estimate_pre_actor_damage_to_target(battle, actor_index, enemy_team_num, target)
+        if threatened >= target.hp:
+            delta -= 120.0
+        elif threatened >= target.hp * 0.85:
+            delta -= 60.0
+        elif threatened >= target.hp * 0.6:
+            delta -= 20.0
     elif spec.kind in {"strike", "spell", "ultimate"} and target is not None and effect is not None and real_actor is not None:
         source_weapon = (
             _strike_weapon_for_spec(real_actor, spec)
@@ -1143,6 +1377,10 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
             else _weapon_for_effect(real_actor, effect)
         )
         if effect.target == "enemy":
+            self_protection_risk, _hard_invalid = _pre_actor_target_self_protection_risk(
+                battle, real_actor, actor_index, target, spec
+            )
+            delta -= self_protection_risk
             rough = _rough_damage(battle, real_actor, target, effect, weapon=source_weapon)
             if rough >= target.hp:
                 delta += 24.0
@@ -1160,6 +1398,24 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
                 delta += 6.0
             if target.has_status("expose") or target.has_status("root") or target.has_status("shock") or target.has_status("spotlight"):
                 delta += 3.0
+            if target.slot != SLOT_FRONT:
+                if _has_pre_actor_swap_risk(battle, actor_index, spec.target_ref):
+                    delta -= 24.0
+                target_front = team_for_actor(battle, target).frontline()
+                if target_front is not None and target_front is not target:
+                    front_threatened = _estimate_pre_actor_damage_to_target(battle, actor_index, team_num, target_front)
+                    if front_threatened >= target_front.hp * 0.85:
+                        delta -= 12.0
+                    elif front_threatened >= target_front.hp * 0.6:
+                        delta -= 5.0
+            if real_actor.slot != SLOT_FRONT:
+                own_front = team_for_actor(battle, real_actor).frontline()
+                if own_front is not None and own_front is not real_actor:
+                    own_front_threatened = _estimate_pre_actor_damage_to_target(battle, actor_index, enemy_team_num, own_front)
+                    if own_front_threatened >= own_front.hp * 0.85:
+                        delta -= 14.0
+                    elif own_front_threatened >= own_front.hp * 0.6:
+                        delta -= 6.0
             # Redundant debuff suppression (non-stacking: only best debuff applies)
             for debuff_spec in effect.target_debuffs:
                 if target.best_debuff(debuff_spec.stat) >= debuff_spec.amount:
@@ -1174,6 +1430,18 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
                     delta -= 3.0
         elif effect.target in {"ally", "self"}:
             resolved_target = target if effect.target == "ally" else real_actor
+            if effect.target == "ally" and resolved_target is not None:
+                threatened = _estimate_pre_actor_damage_to_target(battle, actor_index, enemy_team_num, resolved_target)
+                if threatened >= resolved_target.hp:
+                    delta -= 120.0
+                elif _has_pre_actor_ally_swap_exposure_risk(
+                    battle, real_actor, actor_index, resolved_target
+                ):
+                    delta -= 120.0
+                elif threatened >= resolved_target.hp * 0.85:
+                    delta -= 60.0
+                elif threatened >= resolved_target.hp * 0.6:
+                    delta -= 20.0
             if effect.heal > 0 and resolved_target is not None:
                 hp_ratio = resolved_target.hp / max(1, resolved_target.max_hp)
                 delta += effect.heal * (0.08 if hp_ratio > 0.5 else 0.16)
@@ -1213,6 +1481,35 @@ def _simulate_spec_delta(battle, team_num: int, actor_ref: tuple[int, str], spec
     if real_actor is not None:
         delta -= _pre_resolution_enemy_risk(battle, team_num, actor_ref, spec)
     return delta
+
+
+def _spec_has_hard_invalid_pre_resolution_risk(battle, actor, spec: ActionSpec) -> bool:
+    if spec.bonus or spec.kind == "skip":
+        return False
+    actor_ref = _unit_ref(battle, actor)
+    team_num = player_num_for_actor(battle, actor)
+    enemy_team_num = 2 if team_num == 1 else 1
+    actor_index = _initiative_index(battle, actor)
+    target = _find_unit(battle, spec.target_ref) if spec.target_ref is not None else None
+    if spec.kind == "swap" and target is not None:
+        threatened = _estimate_pre_actor_damage_to_target(battle, actor_index, enemy_team_num, target)
+        return threatened >= target.hp
+    if spec.kind in {"strike", "spell", "ultimate"}:
+        effect = _spec_effect(actor, spec)
+        if target is not None and effect is not None and effect.target == "enemy":
+            if target.slot != SLOT_FRONT and _has_pre_actor_swap_risk(battle, actor_index, spec.target_ref):
+                return True
+            _risk, hard_invalid = _pre_actor_target_self_protection_risk(
+                battle, actor, actor_index, target, spec
+            )
+            if hard_invalid:
+                return True
+        if target is not None and effect is not None and effect.target == "ally":
+            threatened = _estimate_pre_actor_damage_to_target(battle, actor_index, enemy_team_num, target)
+            return threatened >= target.hp or _has_pre_actor_ally_swap_exposure_risk(
+                battle, actor, actor_index, target
+            )
+    return _pre_resolution_enemy_risk(battle, team_num, actor_ref, spec) >= 18.0
 
 
 def _formation_delta(battle, actor, target) -> float:
@@ -1613,7 +1910,7 @@ def _friendly_melee_swap_penalty(battle, actors: list, combo: tuple[ActionSpec, 
             if initiative.get(moved_ref, -1) <= swap_index:
                 continue
             if moved_actor.primary_weapon.kind == "melee" and new_slot != SLOT_FRONT:
-                penalty += 4.0
+                penalty += 10.0
     return penalty
 
 
@@ -1821,9 +2118,13 @@ def _top_local_specs(battle, actor, *, bonus: bool, difficulty: str, analysis: R
     for spec in available_action_specs(battle, actor, bonus=bonus):
         if not _spec_is_legal(battle, actor, spec):
             continue
+        if _spec_has_hard_invalid_pre_resolution_risk(battle, actor, spec):
+            continue
         score = _simulate_spec_delta(battle, player_num_for_actor(battle, actor), actor_ref, spec)
         score += _plan_bias(battle, actor, spec, analysis)
         scored.append((score, spec))
+    if not scored:
+        scored = [(0.0, ActionSpec(kind="skip", bonus=bonus))]
     scored.sort(key=lambda item: item[0], reverse=True)
     keep = LOCAL_KEEP.get(difficulty, 4)
     diverse: list[ActionSpec] = []
@@ -1909,7 +2210,8 @@ def _rank_team_plan_candidates(
         score = evaluate_battle_state(sim, team_num) - base_value
         metrics = _combo_metrics(battle, team_num, actors, combo, analysis)
         failure_penalty, failure_count = _plan_failure_penalty(sim.log[log_start:])
-        score -= failure_penalty
+        score -= failure_penalty * 2.0
+        score -= failure_count * 18.0
         metrics["self_sabotage"] = failure_count
         sim_enemy = sim.get_enemy(team_num)
         sim_own = sim.get_team(team_num)
@@ -1935,6 +2237,8 @@ def _rank_team_plan_candidates(
         score -= own_losses * 38.0
         score += metrics["focus"] * 1.2
         score += metrics["ultimate"] * 0.25
+        metrics["intrinsic_failures"] = failure_count
+        metrics["intrinsic_failure_penalty"] = failure_penalty
         candidate_sets.append((score, specs_by_ref, metrics))
     candidate_sets.sort(key=lambda item: item[0], reverse=True)
     keep = TEAM_KEEP.get(difficulty, 24)
@@ -2017,13 +2321,12 @@ def _get_enemy_plans(
 
     # Beam-searched candidates for 2–3 alive enemies (LOCAL_KEEP × actors → TEAM_KEEP plans)
     predictor_difficulty = "normal" if difficulty in {"easy", "normal", "hard"} else "hard"
-    _analysis, enemy_candidates = _rank_team_plan_candidates(
+    analysis, enemy_candidates = _rank_team_plan_candidates(
         battle, enemy_team_num, bonus=False, difficulty=predictor_difficulty,
     )
     if not enemy_candidates:
         return []
-    w = 1.0 / len(enemy_candidates)
-    return [(w, specs_by_ref) for _score, specs_by_ref, _metrics in enemy_candidates]
+    return _select_likely_plan_packages(enemy_candidates, analysis, predictor_difficulty)
 
 
 def _simultaneous_plan_score(
@@ -2040,20 +2343,50 @@ def _simultaneous_plan_score(
     """
     enemy_team_num = 2 if team_num == 1 else 1
     weighted_scores: list[tuple[float, float]] = []
+    actor_names = [unit.name for unit in battle.get_team(team_num).members]
     for weight, enemy_specs_by_ref in enemy_plans:
         sim = copy.deepcopy(battle)
+        log_start = len(sim.log)
         _queue_team_plan(sim, team_num, own_specs_by_ref, bonus=False)
         _queue_team_plan(sim, enemy_team_num, enemy_specs_by_ref, bonus=False)
         resolve_action_phase(sim)
-        weighted_scores.append((weight, evaluate_battle_state(sim, team_num)))
+        sim_score = evaluate_battle_state(sim, team_num)
+        failure_penalty, failure_count = _team_failure_penalty(sim.log[log_start:], actor_names)
+        sim_score -= failure_penalty * 2.5
+        sim_score -= failure_count * 24.0
+        weighted_scores.append((weight, sim_score))
     if not weighted_scores:
         return evaluate_battle_state(battle, team_num)
     total_weight = sum(w for w, _ in weighted_scores)
     expected = sum(w * s for w, s in weighted_scores) / max(total_weight, 1e-9)
     worst = min(s for _, s in weighted_scores)
     # Hard/ranked: blend a conservative minimax component to avoid catastrophic misplays
-    minimax_weight = 0.30 if difficulty in {"hard", "ranked"} else 0.0
+    minimax_weight = 0.55 if difficulty in {"hard", "ranked"} else 0.0
     return expected * (1.0 - minimax_weight) + worst * minimax_weight
+
+
+def _simulated_plan_failure_profile(
+    battle,
+    team_num: int,
+    own_specs_by_ref: dict[tuple[int, str], ActionSpec],
+    enemy_plans: list[tuple[float, dict[tuple[int, str], ActionSpec]]],
+) -> tuple[float, float]:
+    if not enemy_plans:
+        return 0.0, 0.0
+    enemy_team_num = 2 if team_num == 1 else 1
+    actor_names = [unit.name for unit in battle.get_team(team_num).members]
+    weighted_failures = 0.0
+    weighted_penalty = 0.0
+    for weight, enemy_specs_by_ref in enemy_plans:
+        sim = copy.deepcopy(battle)
+        log_start = len(sim.log)
+        _queue_team_plan(sim, team_num, own_specs_by_ref, bonus=False)
+        _queue_team_plan(sim, enemy_team_num, enemy_specs_by_ref, bonus=False)
+        resolve_action_phase(sim)
+        failure_penalty, failure_count = _team_failure_penalty(sim.log[log_start:], actor_names)
+        weighted_failures += failure_count * weight
+        weighted_penalty += failure_penalty * weight
+    return weighted_failures, weighted_penalty
 
 
 def choose_team_plan(
@@ -2078,7 +2411,7 @@ def choose_team_plan(
         enemy_plans = _get_enemy_plans(battle, team_num, difficulty)
 
     base_value = evaluate_battle_state(battle, team_num)
-    rescored: list[tuple[float, dict[tuple[int, str], ActionSpec]]] = []
+    rescored: list[tuple[float, dict[tuple[int, str], ActionSpec], dict[str, float]]] = []
     for score, specs_by_ref, metrics in ranked_candidates:
         # Profile/race adjustments
         profile_adj = 0.0
@@ -2100,12 +2433,60 @@ def choose_team_plan(
             # Bonus phase: no concurrent enemy actions — use isolated own-team score
             final_score = score + profile_adj
 
-        rescored.append((final_score, specs_by_ref))
+        rescored.append((final_score, specs_by_ref, metrics))
 
     rescored.sort(key=lambda item: item[0], reverse=True)
     top_score = rescored[0][0]
     threshold = 6.0 if difficulty in {"easy", "normal"} else 4.0
     band = [item for item in rescored if top_score - item[0] <= threshold]
+    if len(band) > 1:
+        min_intrinsic_failures = min(item[2].get("intrinsic_failures", 0.0) for item in band)
+        intrinsic_filtered = [
+            item for item in band if item[2].get("intrinsic_failures", 0.0) <= min_intrinsic_failures + 1e-6
+        ]
+        if intrinsic_filtered:
+            min_intrinsic_penalty = min(
+                item[2].get("intrinsic_failure_penalty", 0.0) for item in intrinsic_filtered
+            )
+            tighter = [
+                item
+                for item in intrinsic_filtered
+                if item[2].get("intrinsic_failure_penalty", 0.0) <= min_intrinsic_penalty + 1e-6
+            ]
+            if tighter:
+                band = tighter
+    if enemy_plans and len(band) > 1:
+        risk_scored_band: list[tuple[float, float, dict[tuple[int, str], ActionSpec], dict[str, float]]] = []
+        for score, specs_by_ref, metrics in band:
+            plan_risk = 0.0
+            for actor_ref, spec in specs_by_ref.items():
+                plan_risk += _pre_resolution_enemy_risk(battle, team_num, actor_ref, spec)
+            risk_scored_band.append((plan_risk, score, specs_by_ref, metrics))
+        best_risk = min(item[0] for item in risk_scored_band)
+        filtered = [
+            (score, specs_by_ref, metrics)
+            for risk, score, specs_by_ref, metrics in risk_scored_band
+            if risk <= best_risk + 0.5
+        ]
+        if filtered:
+            filtered.sort(key=lambda item: item[0], reverse=True)
+            band = filtered
+    if enemy_plans and len(band) > 1:
+        failure_scored_band: list[tuple[float, float, float, dict[tuple[int, str], ActionSpec], dict[str, float]]] = []
+        for score, specs_by_ref, metrics in band:
+            weighted_failures, weighted_penalty = _simulated_plan_failure_profile(
+                battle, team_num, specs_by_ref, enemy_plans
+            )
+            failure_scored_band.append((weighted_failures, weighted_penalty, score, specs_by_ref, metrics))
+        min_failures = min(item[0] for item in failure_scored_band)
+        filtered = [item for item in failure_scored_band if item[0] <= min_failures + 1e-6]
+        min_penalty = min(item[1] for item in filtered)
+        filtered = [item for item in filtered if item[1] <= min_penalty + 1e-6]
+        band = sorted(
+            ((score, specs_by_ref, metrics) for _fails, _penalty, score, specs_by_ref, metrics in filtered),
+            key=lambda item: item[0],
+            reverse=True,
+        )
     if difficulty == "ranked" and len(band) > 1 and rng.random() < 0.8:
         return band[0][1]
     return rng.choice(band)[1]
